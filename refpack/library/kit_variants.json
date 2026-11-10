@@ -1,0 +1,1503 @@
+{
+ "_note": "Enum-level variants of EXISTING core generators (params only; no new geometry code). Each is resolved fail-closed against the lane-kits registry by build_library.py (generator defaults <- params). Tags use the notes vocabulary. 'slots' lists the layout fixture slots a variant may fill; 'default' marks it as a candidate generator default.",
+ "variants": [
+  {
+   "id": "variant:arch.room_shell:rect_flat",
+   "generator": "arch.room_shell",
+   "default": true,
+   "params": {
+    "plan": "rect",
+    "ceiling": "flat",
+    "cove": 0.0,
+    "trim": true,
+    "floor_role": "floor",
+    "wall_role": "wall",
+    "ceiling_role": "ceiling"
+   },
+   "tags": [
+    "boxy",
+    "angular",
+    "industrial",
+    "chunky",
+    "mine",
+    "city",
+    "lab",
+    "cave",
+    "castle"
+   ]
+  },
+  {
+   "id": "variant:arch.room_shell:rounded_dome",
+   "generator": "arch.room_shell",
+   "default": true,
+   "params": {
+    "plan": "rounded_rect",
+    "ceiling": "dome",
+    "ceiling_rise": 1.0,
+    "cove": 0.3,
+    "trim": false,
+    "floor_role": "floor",
+    "wall_role": "wall",
+    "ceiling_role": "ceiling"
+   },
+   "tags": [
+    "rounded",
+    "organic",
+    "chunky",
+    "desert",
+    "temple",
+    "cave",
+    "underwater",
+    "coast"
+   ]
+  },
+  {
+   "id": "variant:arch.room_shell:rect_gable_plain",
+   "generator": "arch.room_shell",
+   "default": true,
+   "params": {
+    "plan": "rect",
+    "ceiling": "gable",
+    "ceiling_rise": 1.0,
+    "cove": 0.0,
+    "trim": false,
+    "floor_role": "floor",
+    "wall_role": "wall",
+    "ceiling_role": "ceiling"
+   },
+   "tags": [
+    "boxy",
+    "angular",
+    "rustic",
+    "harbor",
+    "coast",
+    "village"
+   ]
+  },
+  {
+   "id": "variant:arch.door:rect_panel",
+   "generator": "arch.door",
+   "default": true,
+   "slots": [
+    "door_main"
+   ],
+   "params": {
+    "shape": "rect",
+    "leaf": "panel",
+    "frame_role": "frame",
+    "leaf_role": "door"
+   },
+   "tags": [
+    "boxy",
+    "industrial",
+    "angular",
+    "city",
+    "lab",
+    "mine"
+   ]
+  },
+  {
+   "id": "variant:arch.door:arch_planks",
+   "generator": "arch.door",
+   "default": true,
+   "slots": [
+    "door_main"
+   ],
+   "params": {
+    "shape": "arch",
+    "leaf": "planks",
+    "frame_role": "frame",
+    "leaf_role": "door"
+   },
+   "tags": [
+    "rounded",
+    "rustic",
+    "ornate",
+    "desert",
+    "temple",
+    "castle",
+    "ruins"
+   ]
+  },
+  {
+   "id": "variant:arch.door:gothic",
+   "generator": "arch.door",
+   "slots": [
+    "door_main"
+   ],
+   "params": {
+    "shape": "gothic",
+    "leaf": "planks",
+    "frame_role": "stone",
+    "leaf_role": "door"
+   },
+   "tags": [
+    "ornate",
+    "angular",
+    "castle",
+    "temple",
+    "ruins"
+   ]
+  },
+  {
+   "id": "variant:arch.door:hatch_slab",
+   "generator": "arch.door",
+   "slots": [
+    "door_main"
+   ],
+   "params": {
+    "shape": "hatch",
+    "leaf": "slab",
+    "frame_role": "metal",
+    "leaf_role": "metal",
+    "frame_width": 0.14,
+    "frame_depth": 0.3
+   },
+   "tags": [
+    "industrial",
+    "rounded",
+    "chunky",
+    "mine",
+    "underwater",
+    "space",
+    "ocean"
+   ]
+  },
+  {
+   "id": "variant:arch.window:rect_flat",
+   "generator": "arch.window",
+   "default": true,
+   "slots": [
+    "window_main",
+    "window_side"
+   ],
+   "params": {
+    "shape": "rect",
+    "frame_style": "flat",
+    "ledge": false,
+    "shutters": false,
+    "glass": false,
+    "frame_role": "frame"
+   },
+   "tags": [
+    "boxy",
+    "industrial",
+    "sleek",
+    "angular",
+    "city",
+    "lab",
+    "mine"
+   ]
+  },
+  {
+   "id": "variant:arch.window:arch_ledge",
+   "generator": "arch.window",
+   "default": true,
+   "slots": [
+    "window_main",
+    "window_side"
+   ],
+   "params": {
+    "shape": "arch",
+    "frame_style": "flat",
+    "ledge": true,
+    "glass": false,
+    "frame_role": "frame"
+   },
+   "tags": [
+    "rounded",
+    "ornate",
+    "rustic",
+    "chunky",
+    "desert",
+    "temple"
+   ]
+  },
+  {
+   "id": "variant:arch.window:round_flat",
+   "generator": "arch.window",
+   "slots": [
+    "window_main",
+    "window_side"
+   ],
+   "params": {
+    "shape": "round",
+    "frame_style": "flat",
+    "frame_width": 0.12,
+    "ledge": false,
+    "glass": false,
+    "frame_role": "metal"
+   },
+   "tags": [
+    "rounded",
+    "industrial",
+    "chunky",
+    "ocean",
+    "underwater",
+    "harbor",
+    "mine"
+   ]
+  },
+  {
+   "id": "variant:arch.window:gothic",
+   "generator": "arch.window",
+   "slots": [
+    "window_main",
+    "window_side"
+   ],
+   "params": {
+    "shape": "gothic",
+    "frame_style": "molded",
+    "ledge": true,
+    "glass": false,
+    "frame_role": "stone"
+   },
+   "tags": [
+    "ornate",
+    "angular",
+    "castle",
+    "temple",
+    "ruins"
+   ]
+  },
+  {
+   "id": "variant:furn.chair:stool_pedestal",
+   "generator": "furn.chair",
+   "slots": [
+    "seat_chair"
+   ],
+   "params": {
+    "kind": "stool",
+    "legs": "pedestal",
+    "seat_shape": "round",
+    "back_height": 0.0,
+    "cushion": false,
+    "frame_role": "metal",
+    "seat_role": "body"
+   },
+   "tags": [
+    "rounded",
+    "sleek",
+    "industrial",
+    "lab",
+    "city"
+   ]
+  },
+  {
+   "id": "variant:furn.chair:bench_four",
+   "generator": "furn.chair",
+   "slots": [
+    "seat_chair"
+   ],
+   "params": {
+    "kind": "bench",
+    "legs": "four",
+    "seat_shape": "rect",
+    "width": 1.2,
+    "back_height": 0.0,
+    "cushion": false,
+    "frame_role": "wood",
+    "seat_role": "wood"
+   },
+   "tags": [
+    "boxy",
+    "rustic",
+    "chunky",
+    "harbor",
+    "mine",
+    "desert"
+   ]
+  },
+  {
+   "id": "variant:furn.chair:chair_sled",
+   "generator": "furn.chair",
+   "slots": [
+    "seat_chair"
+   ],
+   "params": {
+    "kind": "chair",
+    "legs": "sled",
+    "frame_role": "metal",
+    "seat_role": "body",
+    "cushion": true,
+    "cushion_role": "leather"
+   },
+   "tags": [
+    "sleek",
+    "industrial",
+    "angular",
+    "lab",
+    "city"
+   ]
+  },
+  {
+   "id": "variant:furn.chair:armchair_four",
+   "generator": "furn.chair",
+   "slots": [
+    "seat_chair"
+   ],
+   "params": {
+    "kind": "armchair",
+    "legs": "four",
+    "seat_shape": "rect",
+    "frame_role": "wood",
+    "seat_role": "body",
+    "cushion": true,
+    "cushion_role": "cushion",
+    "width": 0.8,
+    "depth": 0.7,
+    "back_height": 0.5
+   },
+   "tags": [
+    "boxy",
+    "chunky",
+    "ornate",
+    "castle",
+    "desert"
+   ]
+  },
+  {
+   "id": "variant:furn.table:rect_four",
+   "generator": "furn.table",
+   "default": true,
+   "slots": [
+    "table_main"
+   ],
+   "params": {
+    "top_shape": "rect",
+    "legs": "four",
+    "top_role": "body",
+    "base_role": "metal"
+   },
+   "tags": [
+    "boxy",
+    "industrial",
+    "angular",
+    "mine",
+    "lab",
+    "city"
+   ]
+  },
+  {
+   "id": "variant:furn.table:round_pedestal_low",
+   "generator": "furn.table",
+   "slots": [
+    "table_low",
+    "table_main"
+   ],
+   "params": {
+    "top_shape": "round",
+    "legs": "pedestal",
+    "width": 1.0,
+    "depth": 1.0,
+    "height": 0.45,
+    "top_role": "stone",
+    "base_role": "body"
+   },
+   "tags": [
+    "rounded",
+    "chunky",
+    "desert",
+    "ocean",
+    "harbor",
+    "temple",
+    "stone"
+   ]
+  },
+  {
+   "id": "variant:furn.table:oval_trestle",
+   "generator": "furn.table",
+   "slots": [
+    "table_main"
+   ],
+   "params": {
+    "top_shape": "oval",
+    "legs": "trestle",
+    "top_role": "wood",
+    "base_role": "wood"
+   },
+   "tags": [
+    "organic",
+    "rustic",
+    "rounded",
+    "jungle",
+    "coast"
+   ]
+  },
+  {
+   "id": "variant:furn.table:rect_four_low",
+   "generator": "furn.table",
+   "slots": [
+    "table_low"
+   ],
+   "params": {
+    "top_shape": "rect",
+    "legs": "four",
+    "height": 0.42,
+    "width": 1.1,
+    "depth": 0.7,
+    "top_role": "metal",
+    "base_role": "metal"
+   },
+   "tags": [
+    "boxy",
+    "industrial",
+    "angular",
+    "mine",
+    "lab",
+    "city",
+    "iron"
+   ]
+  },
+  {
+   "id": "variant:furn.container:locker",
+   "generator": "furn.container",
+   "slots": [
+    "container"
+   ],
+   "params": {
+    "kind": "locker",
+    "width": 0.6,
+    "depth": 0.5,
+    "height": 1.6,
+    "body_role": "metal",
+    "band_role": "trim"
+   },
+   "tags": [
+    "boxy",
+    "industrial",
+    "angular",
+    "mine",
+    "lab",
+    "city",
+    "iron"
+   ]
+  },
+  {
+   "id": "variant:furn.container:basket",
+   "generator": "furn.container",
+   "slots": [
+    "container"
+   ],
+   "params": {
+    "kind": "basket",
+    "body_role": "wood",
+    "band_role": "rope"
+   },
+   "tags": [
+    "organic",
+    "rustic",
+    "rounded",
+    "desert",
+    "jungle",
+    "coast"
+   ]
+  },
+  {
+   "id": "variant:furn.container:barrel_iron",
+   "generator": "furn.container",
+   "slots": [
+    "container"
+   ],
+   "params": {
+    "kind": "barrel",
+    "body_role": "metal",
+    "band_role": "trim"
+   },
+   "tags": [
+    "rounded",
+    "industrial",
+    "harbor",
+    "mine",
+    "iron"
+   ]
+  },
+  {
+   "id": "variant:furn.lamp:hanging_dome",
+   "generator": "furn.lamp",
+   "slots": [
+    "lamp_floor"
+   ],
+   "params": {
+    "kind": "hanging",
+    "shade": "dome",
+    "height": 0.9,
+    "shade_size": 0.4,
+    "stand_role": "metal"
+   },
+   "tags": [
+    "industrial",
+    "rounded",
+    "mine",
+    "harbor",
+    "city"
+   ]
+  },
+  {
+   "id": "variant:furn.lamp:table_drum",
+   "generator": "furn.lamp",
+   "slots": [
+    "lamp_table"
+   ],
+   "params": {
+    "kind": "table",
+    "shade": "drum",
+    "height": 0.5,
+    "shade_size": 0.3,
+    "stand_role": "wood"
+   },
+   "tags": [
+    "boxy",
+    "rustic",
+    "village",
+    "city",
+    "desert"
+   ]
+  },
+  {
+   "id": "variant:furn.lamp:floor_cone_tripod",
+   "generator": "furn.lamp",
+   "slots": [
+    "lamp_floor"
+   ],
+   "params": {
+    "kind": "floor",
+    "shade": "cone",
+    "base": "tripod",
+    "height": 1.6,
+    "shade_size": 0.4,
+    "stand_role": "metal"
+   },
+   "tags": [
+    "angular",
+    "sleek",
+    "industrial",
+    "lab",
+    "city"
+   ]
+  },
+  {
+   "id": "variant:furn.lamp:lantern_floor",
+   "generator": "furn.lamp",
+   "slots": [
+    "lamp_floor",
+    "lamp_table"
+   ],
+   "params": {
+    "kind": "lantern",
+    "height": 0.55,
+    "stand_role": "metal"
+   },
+   "tags": [
+    "rustic",
+    "industrial",
+    "chunky",
+    "mine",
+    "desert",
+    "harbor",
+    "cave"
+   ]
+  },
+  {
+   "id": "variant:furn.console:terminal_plain",
+   "generator": "furn.console",
+   "slots": [
+    "console"
+   ],
+   "params": {
+    "kind": "terminal",
+    "height": 1.3,
+    "width": 0.8,
+    "screens": 1,
+    "keyboard": true,
+    "joystick": false,
+    "body_role": "metal"
+   },
+   "tags": [
+    "boxy",
+    "industrial",
+    "angular",
+    "lab",
+    "mine",
+    "city",
+    "screens"
+   ]
+  },
+  {
+   "id": "variant:furn.console:lectern_stone",
+   "generator": "furn.console",
+   "slots": [
+    "console"
+   ],
+   "params": {
+    "kind": "lectern",
+    "screens": 0,
+    "joystick": false,
+    "body_role": "stone"
+   },
+   "tags": [
+    "ornate",
+    "temple",
+    "castle",
+    "ruins",
+    "desert",
+    "stone"
+   ]
+  },
+  {
+   "id": "variant:furn.shelf:cabinet",
+   "generator": "furn.shelf",
+   "slots": [
+    "shelf"
+   ],
+   "params": {
+    "kind": "cabinet",
+    "frame_role": "body"
+   },
+   "tags": [
+    "boxy",
+    "industrial",
+    "city",
+    "lab"
+   ]
+  },
+  {
+   "id": "variant:furn.shelf:open_rack_metal",
+   "generator": "furn.shelf",
+   "slots": [
+    "shelf"
+   ],
+   "params": {
+    "kind": "open_rack",
+    "frame_role": "metal",
+    "books": 0.3
+   },
+   "tags": [
+    "industrial",
+    "angular",
+    "mine",
+    "harbor",
+    "iron"
+   ]
+  },
+  {
+   "id": "variant:furn.shelf:bookshelf_stone",
+   "generator": "furn.shelf",
+   "slots": [
+    "shelf"
+   ],
+   "params": {
+    "kind": "bookshelf",
+    "frame_role": "stone",
+    "books": 0.7
+   },
+   "tags": [
+    "ornate",
+    "chunky",
+    "desert",
+    "temple",
+    "castle"
+   ]
+  },
+  {
+   "id": "variant:furn.bed:cot",
+   "generator": "furn.bed",
+   "slots": [
+    "bed"
+   ],
+   "params": {
+    "kind": "cot",
+    "headboard": "none",
+    "frame_role": "metal",
+    "mattress_role": "fabric",
+    "blanket_role": "fabric",
+    "pillow_role": "fabric"
+   },
+   "tags": [
+    "industrial",
+    "angular",
+    "mine",
+    "lab",
+    "harbor"
+   ]
+  },
+  {
+   "id": "variant:furn.bed:nook",
+   "generator": "furn.bed",
+   "slots": [
+    "bed"
+   ],
+   "params": {
+    "kind": "nook",
+    "headboard": "high",
+    "frame_role": "body",
+    "mattress_role": "cushion",
+    "blanket_role": "fabric",
+    "pillow_role": "cushion"
+   },
+   "tags": [
+    "rounded",
+    "organic",
+    "cave",
+    "desert",
+    "chunky"
+   ]
+  },
+  {
+   "id": "variant:furn.rug:round_fringe",
+   "generator": "furn.rug",
+   "slots": [
+    "rug",
+    "seat_pit"
+   ],
+   "params": {
+    "shape": "round",
+    "fringe": true,
+    "width": 2.2,
+    "depth": 2.2,
+    "rug_role": "fabric"
+   },
+   "tags": [
+    "rounded",
+    "rustic",
+    "ornate",
+    "desert"
+   ]
+  },
+  {
+   "id": "variant:furn.rug:rect_plain",
+   "generator": "furn.rug",
+   "slots": [
+    "rug",
+    "seat_pit"
+   ],
+   "params": {
+    "shape": "rect",
+    "fringe": false,
+    "width": 2.2,
+    "depth": 1.5,
+    "rug_role": "fabric"
+   },
+   "tags": [
+    "boxy",
+    "industrial",
+    "sleek",
+    "lab",
+    "city"
+   ]
+  },
+  {
+   "id": "variant:furn.hearth:brazier",
+   "generator": "furn.hearth",
+   "slots": [
+    "hearth"
+   ],
+   "params": {
+    "kind": "brazier",
+    "body_role": "metal"
+   },
+   "tags": [
+    "ornate",
+    "rustic",
+    "temple",
+    "desert",
+    "cave",
+    "ruins"
+   ]
+  },
+  {
+   "id": "variant:furn.hearth:stove",
+   "generator": "furn.hearth",
+   "slots": [
+    "hearth"
+   ],
+   "params": {
+    "kind": "stove",
+    "body_role": "metal"
+   },
+   "tags": [
+    "industrial",
+    "boxy",
+    "mine",
+    "harbor"
+   ]
+  },
+  {
+   "id": "variant:furn.pod:bowl_plain",
+   "generator": "furn.pod",
+   "slots": [
+    "seat_chair",
+    "seat_lounge"
+   ],
+   "params": {
+    "kind": "bowl",
+    "portholes": 0,
+    "feet": 1,
+    "lobes": 0,
+    "cushion": true,
+    "shell_role": "body",
+    "cushion_role": "cushion",
+    "foot_role": "body"
+   },
+   "tags": [
+    "rounded",
+    "chunky",
+    "organic",
+    "desert",
+    "underwater"
+   ]
+  },
+  {
+   "id": "variant:furn.bench:straight",
+   "generator": "furn.bench",
+   "slots": [
+    "seat_lounge",
+    "seat_bench"
+   ],
+   "params": {
+    "curl": 0.0,
+    "curl_height": 0.9,
+    "legs": 4,
+    "throw": false,
+    "orb": false,
+    "body_role": "wood",
+    "leg_role": "metal",
+    "thickness": 0.1
+   },
+   "tags": [
+    "boxy",
+    "industrial",
+    "angular",
+    "mine",
+    "harbor",
+    "city"
+   ]
+  },
+  {
+   "id": "variant:furn.bench:stone_curl",
+   "generator": "furn.bench",
+   "slots": [
+    "seat_lounge",
+    "seat_bench"
+   ],
+   "params": {
+    "curl": 0.45,
+    "curl_height": 1.1,
+    "legs": 0,
+    "throw": true,
+    "orb": false,
+    "body_role": "stone",
+    "leg_role": "body",
+    "throw_role": "fabric",
+    "thickness": 0.12
+   },
+   "tags": [
+    "rounded",
+    "chunky",
+    "organic",
+    "desert",
+    "temple",
+    "cave",
+    "stone"
+   ]
+  },
+  {
+   "id": "variant:nature.tree:palm",
+   "generator": "nature.tree",
+   "slots": [
+    "tree"
+   ],
+   "params": {
+    "kind": "palm",
+    "height": 5.0
+   },
+   "tags": [
+    "desert",
+    "coast",
+    "jungle",
+    "ocean",
+    "organic"
+   ]
+  },
+  {
+   "id": "variant:nature.tree:bare",
+   "generator": "nature.tree",
+   "slots": [
+    "tree"
+   ],
+   "params": {
+    "kind": "bare",
+    "height": 4.0
+   },
+   "tags": [
+    "ruins",
+    "cave",
+    "mine",
+    "swamp",
+    "angular"
+   ]
+  },
+  {
+   "id": "variant:nature.tree:conifer",
+   "generator": "nature.tree",
+   "slots": [
+    "tree"
+   ],
+   "params": {
+    "kind": "conifer",
+    "cap": false,
+    "height": 5.0
+   },
+   "tags": [
+    "mountain",
+    "forest",
+    "organic"
+   ]
+  },
+  {
+   "id": "variant:nature.rock:rock",
+   "generator": "nature.rock",
+   "slots": [
+    "rock"
+   ],
+   "params": {
+    "role": "rock",
+    "cap": false
+   },
+   "tags": [
+    "desert",
+    "cave",
+    "mine",
+    "mountain",
+    "coast",
+    "ruins",
+    "ocean",
+    "rock"
+   ]
+  },
+  {
+   "id": "variant:nature.bush:plain",
+   "generator": "nature.bush",
+   "slots": [
+    "plant"
+   ],
+   "params": {
+    "cap": false,
+    "flowers": 0
+   },
+   "tags": [
+    "jungle",
+    "plains",
+    "coast",
+    "desert",
+    "organic"
+   ]
+  },
+  {
+   "id": "variant:terrain.patch:sand_mounds",
+   "generator": "terrain.patch",
+   "slots": [
+    "ground"
+   ],
+   "params": {
+    "surface": "sand",
+    "feature": "mounds"
+   },
+   "tags": [
+    "desert",
+    "coast",
+    "ocean",
+    "sand"
+   ]
+  },
+  {
+   "id": "variant:terrain.patch:rock_ridge",
+   "generator": "terrain.patch",
+   "slots": [
+    "ground"
+   ],
+   "params": {
+    "surface": "rock",
+    "feature": "ridge"
+   },
+   "tags": [
+    "mountain",
+    "cave",
+    "mine",
+    "ruins",
+    "rock"
+   ]
+  },
+  {
+   "id": "variant:terrain.patch:dirt_crater",
+   "generator": "terrain.patch",
+   "slots": [
+    "ground"
+   ],
+   "params": {
+    "surface": "dirt",
+    "feature": "crater"
+   },
+   "tags": [
+    "mine",
+    "cave",
+    "swamp",
+    "dirt"
+   ]
+  },
+  {
+   "id": "variant:terrain.patch:floor_flat",
+   "generator": "terrain.patch",
+   "slots": [
+    "ground"
+   ],
+   "params": {
+    "surface": "floor",
+    "feature": "none"
+   },
+   "tags": [
+    "city",
+    "lab",
+    "space",
+    "habitat"
+   ]
+  },
+  {
+   "id": "variant:vehicle.craft:rover",
+   "generator": "vehicle.craft",
+   "slots": [
+    "vehicle_main"
+   ],
+   "params": {
+    "kind": "rover",
+    "body_role": "metal",
+    "trim_role": "trim"
+   },
+   "tags": [
+    "industrial",
+    "boxy",
+    "mine",
+    "desert",
+    "space"
+   ]
+  },
+  {
+   "id": "variant:vehicle.craft:hover",
+   "generator": "vehicle.craft",
+   "slots": [
+    "vehicle_main"
+   ],
+   "params": {
+    "kind": "hover",
+    "body_role": "body",
+    "trim_role": "metal"
+   },
+   "tags": [
+    "sleek",
+    "space",
+    "lab",
+    "city"
+   ]
+  },
+  {
+   "id": "variant:vehicle.craft:wagon",
+   "generator": "vehicle.craft",
+   "slots": [
+    "vehicle_main"
+   ],
+   "params": {
+    "kind": "wagon",
+    "body_role": "wood",
+    "trim_role": "metal"
+   },
+   "tags": [
+    "rustic",
+    "boxy",
+    "village",
+    "desert",
+    "mine"
+   ]
+  },
+  {
+   "id": "variant:vehicle.boat:sailboat",
+   "generator": "vehicle.boat",
+   "slots": [
+    "boat"
+   ],
+   "params": {
+    "kind": "sailboat",
+    "hull_role": "hull",
+    "trim_role": "trim"
+   },
+   "tags": [
+    "ocean",
+    "coast",
+    "harbor",
+    "organic"
+   ]
+  },
+  {
+   "id": "variant:vehicle.boat:raft",
+   "generator": "vehicle.boat",
+   "slots": [
+    "boat"
+   ],
+   "params": {
+    "kind": "raft",
+    "hull_role": "wood",
+    "trim_role": "wood"
+   },
+   "tags": [
+    "rustic",
+    "jungle",
+    "swamp",
+    "coast"
+   ]
+  },
+  {
+   "id": "variant:prop.key:classic",
+   "generator": "prop.key",
+   "slots": [
+    "key"
+   ],
+   "params": {
+    "kind": "classic",
+    "role": "metal"
+   },
+   "tags": [
+    "ornate",
+    "rustic",
+    "iron"
+   ]
+  },
+  {
+   "id": "variant:prop.key:crystal",
+   "generator": "prop.key",
+   "slots": [
+    "key"
+   ],
+   "params": {
+    "kind": "crystal"
+   },
+   "tags": [
+    "ornate",
+    "temple",
+    "cave",
+    "crystal"
+   ]
+  },
+  {
+   "id": "variant:prop.tool:pick",
+   "generator": "prop.tool",
+   "slots": [
+    "tool"
+   ],
+   "params": {
+    "kind": "pick"
+   },
+   "tags": [
+    "mine",
+    "cave",
+    "industrial"
+   ]
+  },
+  {
+   "id": "variant:prop.tool:wrench",
+   "generator": "prop.tool",
+   "slots": [
+    "tool"
+   ],
+   "params": {
+    "kind": "wrench"
+   },
+   "tags": [
+    "industrial",
+    "lab",
+    "harbor"
+   ]
+  },
+  {
+   "id": "variant:prop.tool:shovel",
+   "generator": "prop.tool",
+   "slots": [
+    "tool"
+   ],
+   "params": {
+    "kind": "shovel"
+   },
+   "tags": [
+    "desert",
+    "mine",
+    "village"
+   ]
+  },
+  {
+   "id": "variant:prop.tool:fishing_rod",
+   "generator": "prop.tool",
+   "slots": [
+    "tool"
+   ],
+   "params": {
+    "kind": "fishing_rod"
+   },
+   "tags": [
+    "harbor",
+    "coast",
+    "ocean"
+   ]
+  },
+  {
+   "id": "variant:prop.device:beacon",
+   "generator": "prop.device",
+   "slots": [
+    "device",
+    "lamp_table"
+   ],
+   "params": {
+    "kind": "beacon",
+    "body_role": "metal"
+   },
+   "tags": [
+    "industrial",
+    "harbor",
+    "coast",
+    "space",
+    "ocean"
+   ]
+  },
+  {
+   "id": "variant:prop.device:clock",
+   "generator": "prop.device",
+   "slots": [
+    "device"
+   ],
+   "params": {
+    "kind": "clock",
+    "body_role": "wood"
+   },
+   "tags": [
+    "ornate",
+    "village",
+    "castle"
+   ]
+  },
+  {
+   "id": "variant:prop.device:tablet",
+   "generator": "prop.device",
+   "slots": [
+    "device"
+   ],
+   "params": {
+    "kind": "tablet",
+    "body_role": "body"
+   },
+   "tags": [
+    "sleek",
+    "lab",
+    "city",
+    "screens"
+   ]
+  },
+  {
+   "id": "variant:prop.vessel:bottle",
+   "generator": "prop.vessel",
+   "slots": [
+    "vessel"
+   ],
+   "params": {
+    "kind": "bottle",
+    "role": "glass"
+   },
+   "tags": [
+    "harbor",
+    "coast",
+    "ocean",
+    "glass"
+   ]
+  },
+  {
+   "id": "variant:prop.vessel:pot",
+   "generator": "prop.vessel",
+   "slots": [
+    "vessel"
+   ],
+   "params": {
+    "kind": "pot",
+    "role": "stone"
+   },
+   "tags": [
+    "rustic",
+    "desert",
+    "village",
+    "chunky"
+   ]
+  },
+  {
+   "id": "variant:prop.vessel:kettle",
+   "generator": "prop.vessel",
+   "slots": [
+    "vessel"
+   ],
+   "params": {
+    "kind": "kettle",
+    "role": "metal"
+   },
+   "tags": [
+    "industrial",
+    "mine",
+    "iron"
+   ]
+  },
+  {
+   "id": "variant:prop.sign:post_rect",
+   "generator": "prop.sign",
+   "slots": [
+    "sign_main"
+   ],
+   "params": {
+    "kind": "post",
+    "board_shape": "rect",
+    "board_role": "wood",
+    "text_role": "paper"
+   },
+   "tags": [
+    "rustic",
+    "boxy",
+    "desert",
+    "mine",
+    "coast"
+   ]
+  },
+  {
+   "id": "variant:prop.sign:arrow_metal",
+   "generator": "prop.sign",
+   "slots": [
+    "sign_main"
+   ],
+   "params": {
+    "kind": "arrow",
+    "board_role": "metal",
+    "text_role": "light",
+    "post_height": 1.1,
+    "height": 0.3
+   },
+   "tags": [
+    "industrial",
+    "mine",
+    "city",
+    "angular"
+   ]
+  },
+  {
+   "id": "variant:prop.book:stack",
+   "generator": "prop.book",
+   "slots": [
+    "book"
+   ],
+   "params": {
+    "kind": "stack",
+    "cover_role": "leather"
+   },
+   "tags": [
+    "ornate",
+    "temple",
+    "castle",
+    "rustic"
+   ]
+  },
+  {
+   "id": "variant:soft.pillow:bolster",
+   "generator": "soft.pillow",
+   "slots": [
+    "pillow"
+   ],
+   "params": {
+    "shape": "bolster",
+    "role": "fabric",
+    "piping": true
+   },
+   "tags": [
+    "rounded",
+    "ornate",
+    "desert"
+   ]
+  },
+  {
+   "id": "variant:soft.blanket:rolled",
+   "generator": "soft.blanket",
+   "slots": [
+    "blanket"
+   ],
+   "params": {
+    "kind": "rolled",
+    "role": "fabric"
+   },
+   "tags": [
+    "rustic",
+    "desert",
+    "mine"
+   ]
+  },
+  {
+   "id": "variant:fx.particles:puff",
+   "generator": "fx.particles",
+   "slots": [
+    "weather"
+   ],
+   "params": {
+    "shape": "puff"
+   },
+   "tags": [
+    "desert",
+    "cave",
+    "mine",
+    "swamp",
+    "ruins"
+   ]
+  },
+  {
+   "id": "variant:fx.particles:spark",
+   "generator": "fx.particles",
+   "slots": [
+    "weather"
+   ],
+   "params": {
+    "shape": "spark"
+   },
+   "tags": [
+    "mine",
+    "industrial",
+    "cave",
+    "lab"
+   ]
+  },
+  {
+   "id": "variant:fx.particles:disc",
+   "generator": "fx.particles",
+   "slots": [
+    "weather"
+   ],
+   "params": {
+    "shape": "disc"
+   },
+   "tags": [
+    "ocean",
+    "underwater",
+    "coast",
+    "harbor"
+   ]
+  },
+  {
+   "id": "variant:sky.backdrop:dome",
+   "generator": "sky.backdrop",
+   "default": true,
+   "slots": [
+    "sky"
+   ],
+   "params": {
+    "kind": "dome"
+   },
+   "tags": []
+  }
+ ]
+}

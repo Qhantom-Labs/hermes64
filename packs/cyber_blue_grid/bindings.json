@@ -1,0 +1,836 @@
+{
+ "assets": {
+  "arch.door": {
+   "alias_of": "cyroom.portal",
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.portal.glb",
+   "kit_id": "cyroom.portal",
+   "preset": null,
+   "sha256": "178fab1199467ed16f6de9856dc338e738aa702f456058c4cb9b20182a939f91"
+  },
+  "cydress.ac": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.ac.glb",
+   "kit_id": "cydress.ac",
+   "preset": null,
+   "sha256": "d26701a32e5cd152eb2e5af444158cf5472fe1aa867e2380e0af1a113041b33c"
+  },
+  "cydress.awning": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.awning.glb",
+   "kit_id": "cydress.awning",
+   "preset": null,
+   "sha256": "cdb0f35a0ff0c1cb1ceaf972b3079250073246272e769b339496ee1fd5077dcb"
+  },
+  "cydress.barrel": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.barrel.glb",
+   "kit_id": "cydress.barrel",
+   "preset": null,
+   "sha256": "be44b409cf22cf7195d0999299c1619aaa8a69590c22a6d5e463a41035765dc2"
+  },
+  "cydress.bench": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.bench.glb",
+   "kit_id": "cydress.bench",
+   "preset": null,
+   "sha256": "4835d81f7abd846013a4d39e349ebdedd6afe617c1fb5df94f923e2128234672"
+  },
+  "cydress.bin": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.bin.glb",
+   "kit_id": "cydress.bin",
+   "preset": null,
+   "sha256": "9674d605eaae5528cd369d4974ee1f1d3f956096094492f310c1045175ffe155"
+  },
+  "cydress.bollard": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.bollard.glb",
+   "kit_id": "cydress.bollard",
+   "preset": null,
+   "sha256": "806fddb60933360a9dca353215e37a991b7ddf6139c786b4000774554fc284a2"
+  },
+  "cydress.cart": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.cart.glb",
+   "kit_id": "cydress.cart",
+   "preset": null,
+   "sha256": "65bdffe573997a3e6405679026b33da86e0a4a982db29f29880f13c35bc51fca"
+  },
+  "cydress.crates": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.crates.glb",
+   "kit_id": "cydress.crates",
+   "preset": null,
+   "sha256": "cfa99dec33c8718f94f892387fa1a83d514571d0bb6b26f72a64b14430f99c59"
+  },
+  "cydress.cup": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.cup.glb",
+   "kit_id": "cydress.cup",
+   "preset": null,
+   "sha256": "b01f4072dd48daa36cb077d092746a1be83c5c7b74e93879f182e6840660e9a8"
+  },
+  "cydress.pipe_elbow": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.pipe_elbow.glb",
+   "kit_id": "cydress.pipe_elbow",
+   "preset": null,
+   "sha256": "2322637ad655cab5c91f4c276860e010708540cacb3403fde55bf71d11b74eed"
+  },
+  "cydress.shutter": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.shutter.glb",
+   "kit_id": "cydress.shutter",
+   "preset": null,
+   "sha256": "5e395678e838ac3132d1b5c3a427e80308fcde44e17be88df471fcb81a72d9bf"
+  },
+  "cydress.speaker": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.speaker.glb",
+   "kit_id": "cydress.speaker",
+   "preset": null,
+   "sha256": "9636b12c4a5eb491bef87877b127c73ff7e852d289b7e63649a04ce1ba454715"
+  },
+  "cydress.traffic_signal": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.traffic_signal.glb",
+   "kit_id": "cydress.traffic_signal",
+   "preset": null,
+   "sha256": "a18e4d50609394641b8f7d2cc0b7ec67a4477406a992a15a4ceb71624a60c53e"
+  },
+  "cydress.water_tank": {
+   "glb": "kits/library/cyber_blue_grid/assets/cydress.water_tank.glb",
+   "kit_id": "cydress.water_tank",
+   "preset": null,
+   "sha256": "02e7cc12b1f26e3d08a361a300f3249ac5e6ecf03033bebe6b107246efc249aa"
+  },
+  "cyroom.apartment": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.apartment.glb",
+   "kit_id": "cyroom.apartment",
+   "preset": null,
+   "sha256": "fca6305d4d9f3a81d373a3fe725ac08971603cb24ae099aa81f7488a7954500c"
+  },
+  "cyroom.bar": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.bar.glb",
+   "kit_id": "cyroom.bar",
+   "preset": null,
+   "sha256": "05b706d474483c10785e39c317cd785c4277cf23e984bc9d6ce309166edc55a9"
+  },
+  "cyroom.bed": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.bed.glb",
+   "kit_id": "cyroom.bed",
+   "preset": null,
+   "sha256": "17609869841a5c2684071adc92eb88c01054b85acd7ed96c5e834694c9d45434"
+  },
+  "cyroom.booth": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.booth.glb",
+   "kit_id": "cyroom.booth",
+   "preset": null,
+   "sha256": "a16fa280643c38fbe4f281aa7716c1bf89b966b00642d8f39d4aa6136430fe31"
+  },
+  "cyroom.canopy": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.canopy.glb",
+   "kit_id": "cyroom.canopy",
+   "preset": null,
+   "sha256": "e5ac4cbb53a84aa3515f49283b582cc74509f353bd86c1790303b390b233e1d7"
+  },
+  "cyroom.chair": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.chair.glb",
+   "kit_id": "cyroom.chair",
+   "preset": null,
+   "sha256": "dff99a84dda965fce678dc4be96c0b3f87e0426f428bdbe3bdac47a3a393b2b8"
+  },
+  "cyroom.chair__captive": {
+   "glb": "kits/library/cyber_blue_grid/presets/cyroom.chair__captive.glb",
+   "kit_id": "cyroom.chair",
+   "preset": "captive",
+   "sha256": "bd895302bf5f6bc65da0869196c973424a585ae290ae8aab9b6835559cf79a38"
+  },
+  "cyroom.club": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.club.glb",
+   "kit_id": "cyroom.club",
+   "preset": null,
+   "sha256": "b739c07dc9ecd526fbdef5d51c7b400d710eefdbdcca8a6381f37d364e88258b"
+  },
+  "cyroom.club__arena": {
+   "glb": "kits/library/cyber_blue_grid/presets/cyroom.club__arena.glb",
+   "kit_id": "cyroom.club",
+   "preset": "arena",
+   "sha256": "6a47ee74ecabf046965c7fbd945bcad831146f6107406d1b02066da204c57c49"
+  },
+  "cyroom.den": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.den.glb",
+   "kit_id": "cyroom.den",
+   "preset": null,
+   "sha256": "ea1c8926cb2c238fc060cb3c2ba6bb2a85380a546cbb88ed1eca9549b1e73bb7"
+  },
+  "cyroom.desk": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.desk.glb",
+   "kit_id": "cyroom.desk",
+   "preset": null,
+   "sha256": "b12fc4c73dab1c96d370084e3f702e02b3ece714b771f87a2a3eaddfda25d0c5"
+  },
+  "cyroom.desk__single": {
+   "glb": "kits/library/cyber_blue_grid/presets/cyroom.desk__single.glb",
+   "kit_id": "cyroom.desk",
+   "preset": "single",
+   "sha256": "79b21631fc42d6946a42bc45b1d7a4372b000dd5044bfc12c53ff9731bae94e0"
+  },
+  "cyroom.lobby": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.lobby.glb",
+   "kit_id": "cyroom.lobby",
+   "preset": null,
+   "sha256": "08ff1d88c1dec77f9c334de3d1dea03b4e9c32877c3e6a73d884c9aa69dbfbeb"
+  },
+  "cyroom.locker": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.locker.glb",
+   "kit_id": "cyroom.locker",
+   "preset": null,
+   "sha256": "50aa6eab13c5845863f7b5e2347a3bc7173a85d0f88b270d6b706b1a5b8cb498"
+  },
+  "cyroom.platform": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.platform.glb",
+   "kit_id": "cyroom.platform",
+   "preset": null,
+   "sha256": "9b78760735a4fd898881f1ded916b505195e44fc1cb1625bf6c1e69005b3d034"
+  },
+  "cyroom.portal": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.portal.glb",
+   "kit_id": "cyroom.portal",
+   "preset": null,
+   "sha256": "178fab1199467ed16f6de9856dc338e738aa702f456058c4cb9b20182a939f91"
+  },
+  "cyroom.rooftop": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.rooftop.glb",
+   "kit_id": "cyroom.rooftop",
+   "preset": null,
+   "sha256": "d5c2dccc661ae47c8704f0d0f584beedc6b1c62e86a2f5133875bb0f8ac93514"
+  },
+  "cyroom.rooftop__tower": {
+   "glb": "kits/library/cyber_blue_grid/presets/cyroom.rooftop__tower.glb",
+   "kit_id": "cyroom.rooftop",
+   "preset": "tower",
+   "sha256": "70d0c41d1eaf1aa1518af6df60ba969128eb121f16879519514b26c788cbcf58"
+  },
+  "cyroom.server": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.server.glb",
+   "kit_id": "cyroom.server",
+   "preset": null,
+   "sha256": "fca6305d4d9f3a81d373a3fe725ac08971603cb24ae099aa81f7488a7954500c"
+  },
+  "cyroom.server__arena": {
+   "glb": "kits/library/cyber_blue_grid/presets/cyroom.server__arena.glb",
+   "kit_id": "cyroom.server",
+   "preset": "arena",
+   "sha256": "badddbf249f4c046212a6383d94434e3b7dd2088e31e4665a067275af100c2d5"
+  },
+  "cyroom.sofa": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.sofa.glb",
+   "kit_id": "cyroom.sofa",
+   "preset": null,
+   "sha256": "2175e12f39e2a8f379d98d5270e437d803787f58992e53f200d85faaf43855d6"
+  },
+  "cyroom.subway": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.subway.glb",
+   "kit_id": "cyroom.subway",
+   "preset": null,
+   "sha256": "17899ccc8a8b42d361470566f621d3a8ee7f9853528bab6ebfb4e74815a21e7a"
+  },
+  "cyroom.subway__arena": {
+   "glb": "kits/library/cyber_blue_grid/presets/cyroom.subway__arena.glb",
+   "kit_id": "cyroom.subway",
+   "preset": "arena",
+   "sha256": "e8dd74fdcbf2044b2bf9e914557088b41cca7658a912af71cce90a7435f90825"
+  },
+  "cyroom.train": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.train.glb",
+   "kit_id": "cyroom.train",
+   "preset": null,
+   "sha256": "c07870498a30a34e9f469a9c2523552d62f5068aaf09dc22ce1f7f85620a716b"
+  },
+  "cyroom.train__carriage": {
+   "glb": "kits/library/cyber_blue_grid/presets/cyroom.train__carriage.glb",
+   "kit_id": "cyroom.train",
+   "preset": "carriage",
+   "sha256": "68058253ca3d65204d583360fdca792861ca14954f0c9c33f33d6d347d15b73c"
+  },
+  "cyroom.turnstile": {
+   "glb": "kits/library/cyber_blue_grid/assets/cyroom.turnstile.glb",
+   "kit_id": "cyroom.turnstile",
+   "preset": null,
+   "sha256": "12352deb838101b15c8bf97c8e7416118ee1acd8ff05ec0140c0324f8adbee13"
+  },
+  "cysign.adpanel": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.adpanel.glb",
+   "kit_id": "cysign.adpanel",
+   "preset": null,
+   "sha256": "8ecf441ef4b8d9df751b1a86c7ed571b5d94c7966fdf4c927d60086d46b34514"
+  },
+  "cysign.arcade": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.arcade.glb",
+   "kit_id": "cysign.arcade",
+   "preset": null,
+   "sha256": "8e264b772aee3979958c74e0d021a3786b243d8766a9a6c736b1027ff2bc5adf"
+  },
+  "cysign.banner": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.banner.glb",
+   "kit_id": "cysign.banner",
+   "preset": null,
+   "sha256": "a375b508ae5bfe678b76ddd456ff18d2fe0c13c7cebf421a53ef93b0ecbf1594"
+  },
+  "cysign.billboard": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.billboard.glb",
+   "kit_id": "cysign.billboard",
+   "preset": null,
+   "sha256": "4c27ade378c96128893f0e36db700b870b93bc62d3609ac7a17677b37bd19ad3"
+  },
+  "cysign.blade": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.blade.glb",
+   "kit_id": "cysign.blade",
+   "preset": null,
+   "sha256": "4994db390f42b67be5b240ad090cbf25dfeba789782dd7aaf070cc0ca776d1d5"
+  },
+  "cysign.clinic": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.clinic.glb",
+   "kit_id": "cysign.clinic",
+   "preset": null,
+   "sha256": "aace5a7ffa133ff2432ae630844fcf5f724e20145de35834a0850a5350c6b219"
+  },
+  "cysign.frame": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.frame.glb",
+   "kit_id": "cysign.frame",
+   "preset": null,
+   "sha256": "3bb3bd488959a496e0bafbbab175b65c50f5f7e0236c62cb3984fa09b605f095"
+  },
+  "cysign.frame__amber": {
+   "glb": "kits/library/cyber_blue_grid/presets/cysign.frame__amber.glb",
+   "kit_id": "cysign.frame",
+   "preset": "amber",
+   "sha256": "0d66d7fa4ccb06e948c6e6ed666cf9075c844b24ca51352477359c4f140161f4"
+  },
+  "cysign.frame__magenta": {
+   "glb": "kits/library/cyber_blue_grid/presets/cysign.frame__magenta.glb",
+   "kit_id": "cysign.frame",
+   "preset": "magenta",
+   "sha256": "62c3fb81d4aa9bcfc9e398d91c37f3c0b56ea44f56f0ed9ec942d93203260a44"
+  },
+  "cysign.holo": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.holo.glb",
+   "kit_id": "cysign.holo",
+   "preset": null,
+   "sha256": "e8e8735c339adcbba4ef99e958cf3bf31f6dbff176bfba25a344188464c17961"
+  },
+  "cysign.hotel": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.hotel.glb",
+   "kit_id": "cysign.hotel",
+   "preset": null,
+   "sha256": "7437dc2bd1be28302743b6b8a64dcabf41de14a9f89ceeabf1705aa5fa5b5764"
+  },
+  "cysign.noodle": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.noodle.glb",
+   "kit_id": "cysign.noodle",
+   "preset": null,
+   "sha256": "a15391151f45482988c4adf4792de0a9dec6d615479b3166ea4f8701a15a6cde"
+  },
+  "cysign.pawn": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.pawn.glb",
+   "kit_id": "cysign.pawn",
+   "preset": null,
+   "sha256": "4378b4546e9824dda7263696d82c6329e3fe7721745b431ef630a0161b491210"
+  },
+  "cysign.roof": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.roof.glb",
+   "kit_id": "cysign.roof",
+   "preset": null,
+   "sha256": "19677470ca7f4a259f21c41e5700aa87bd73a53f89f197cffb70899107e6f661"
+  },
+  "cysign.ticker": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.ticker.glb",
+   "kit_id": "cysign.ticker",
+   "preset": null,
+   "sha256": "8cdb4c3e6f37c540ae0e6230a4b401c0bd75492d528125d87c0d8501a833d4ad"
+  },
+  "cysign.tube": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysign.tube.glb",
+   "kit_id": "cysign.tube",
+   "preset": null,
+   "sha256": "826fc37fecbc003ab1ef12e01c094acf89f591eae35bbaafa23b20fe3037bec9"
+  },
+  "cysky.airship": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.airship.glb",
+   "kit_id": "cysky.airship",
+   "preset": null,
+   "sha256": "7707f8e5c515a28651c053855b04973b3f63c05199a16975b986fcbc1c024603"
+  },
+  "cysky.arch": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.arch.glb",
+   "kit_id": "cysky.arch",
+   "preset": null,
+   "sha256": "681ec5cd84d154a024c36b6da1a7c285b101c633f9b3daf09af910454b6b675d"
+  },
+  "cysky.cargo": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.cargo.glb",
+   "kit_id": "cysky.cargo",
+   "preset": null,
+   "sha256": "2e2de9a9b20711bb17a013ad8ff00a54bd8b79193efc1025da0ab01808b54acf"
+  },
+  "cysky.corner": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.corner.glb",
+   "kit_id": "cysky.corner",
+   "preset": null,
+   "sha256": "40f970f4cbd04fcb3fcc5296d4e1bd65b8a9310ed13293ef76376829efe6eb1e"
+  },
+  "cysky.courier": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.courier.glb",
+   "kit_id": "cysky.courier",
+   "preset": null,
+   "sha256": "835f394a571bf181a51c1f0b919a8b3bd60959920f1e06fe1a1f1a61560b00da"
+  },
+  "cysky.far": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.far.glb",
+   "kit_id": "cysky.far",
+   "preset": null,
+   "sha256": "b333b8c57dc799ee40c2529841afef1e249b98289ca7104f16381cb5e0aea1ae"
+  },
+  "cysky.far__tile": {
+   "glb": "kits/library/cyber_blue_grid/presets/cysky.far__tile.glb",
+   "kit_id": "cysky.far",
+   "preset": "tile",
+   "sha256": "171bdb9df64d459a9ff35042e46146ad4dd63e88bfded8540014e4e334ab8972"
+  },
+  "cysky.halocard": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.halocard.glb",
+   "kit_id": "cysky.halocard",
+   "preset": null,
+   "sha256": "a9a6c37c2153badce2be351511905d2f1d3972eaeecd0b7695fba28efdeae479"
+  },
+  "cysky.hololine": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.hololine.glb",
+   "kit_id": "cysky.hololine",
+   "preset": null,
+   "sha256": "ea19bed41aea793633bda351104a86153f61237f975e6ac7f6e5744e04885c2f"
+  },
+  "cysky.megatower": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.megatower.glb",
+   "kit_id": "cysky.megatower",
+   "preset": null,
+   "sha256": "4caed50243aed9e90c1e25c6329fa89d2506be05ff99fed5ee9731c4eccadd2e"
+  },
+  "cysky.near": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.near.glb",
+   "kit_id": "cysky.near",
+   "preset": null,
+   "sha256": "360bffac9c78667b65752788c4a06a4f90e18c88b86d5bd5d67bcad1fc9a9805"
+  },
+  "cysky.near__low": {
+   "glb": "kits/library/cyber_blue_grid/presets/cysky.near__low.glb",
+   "kit_id": "cysky.near",
+   "preset": "low",
+   "sha256": "a57f4dff0929e967965cd14650ab36b368797358a943ab9ec838d17b8ddbaf2d"
+  },
+  "cysky.near__tile": {
+   "glb": "kits/library/cyber_blue_grid/presets/cysky.near__tile.glb",
+   "kit_id": "cysky.near",
+   "preset": "tile",
+   "sha256": "70a3e0c72ffc9397d9bb2be0fdf89a86a6ebe0f79d9b5b32b5a90faa61982a00"
+  },
+  "cysky.needle": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.needle.glb",
+   "kit_id": "cysky.needle",
+   "preset": null,
+   "sha256": "51bbb6b0ed0d3e7cb3a6e7015822c843f39d09d1f8cec1efb1bdea581684efd1"
+  },
+  "cysky.needle__low": {
+   "glb": "kits/library/cyber_blue_grid/presets/cysky.needle__low.glb",
+   "kit_id": "cysky.needle",
+   "preset": "low",
+   "sha256": "330e67842d9b47ed6f23941625727aeef061d130c8bdc0017dd946ceacc50397"
+  },
+  "cysky.needle__tile": {
+   "glb": "kits/library/cyber_blue_grid/presets/cysky.needle__tile.glb",
+   "kit_id": "cysky.needle",
+   "preset": "tile",
+   "sha256": "e4211fbbe569fc01ac088927b92baace112645ce9c150e80d852891ad2da20bf"
+  },
+  "cysky.network": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.network.glb",
+   "kit_id": "cysky.network",
+   "preset": null,
+   "sha256": "01d7076562b66338fa450f33915de7829ef8da21f8f411fa351e011851e335b8"
+  },
+  "cysky.shuttle": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.shuttle.glb",
+   "kit_id": "cysky.shuttle",
+   "preset": null,
+   "sha256": "8db529f70843f3abc00a3c7e4d2d8a8e35352a8f04c34d6306bd79032de91c87"
+  },
+  "cysky.stepped": {
+   "glb": "kits/library/cyber_blue_grid/assets/cysky.stepped.glb",
+   "kit_id": "cysky.stepped",
+   "preset": null,
+   "sha256": "a62241b367a4002c914a16461517e3557b7a9de694f697d43434b8f0a51d46ef"
+  },
+  "cysky.stepped__low": {
+   "glb": "kits/library/cyber_blue_grid/presets/cysky.stepped__low.glb",
+   "kit_id": "cysky.stepped",
+   "preset": "low",
+   "sha256": "f0de29f131a74ce69e03170931f3794cce5cebed49ec7d56afa2bf45a6cb6729"
+  },
+  "cysky.stepped__tile": {
+   "glb": "kits/library/cyber_blue_grid/presets/cysky.stepped__tile.glb",
+   "kit_id": "cysky.stepped",
+   "preset": "tile",
+   "sha256": "e23ad5fe921500482d3d717a7ea31d74b669ff4a5bff322c44de4a8eb41721ab"
+  },
+  "cystreet.alley": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.alley.glb",
+   "kit_id": "cystreet.alley",
+   "preset": null,
+   "sha256": "0e5837e16198fa8f39fa06f5e9c0460c53a181ac68b48837e9c2cbc2660eb8c0"
+  },
+  "cystreet.bridge": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.bridge.glb",
+   "kit_id": "cystreet.bridge",
+   "preset": null,
+   "sha256": "15dc56605556ae35916cdfd9a3d93f1e215040a7a8a240874aa5ed5f8cc722f7"
+  },
+  "cystreet.corner": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.corner.glb",
+   "kit_id": "cystreet.corner",
+   "preset": null,
+   "sha256": "dd5c90c2612a4cddecf9fb921fc5244c763fe3824bd4faed0226060b70d06ac7"
+  },
+  "cystreet.crossing": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.crossing.glb",
+   "kit_id": "cystreet.crossing",
+   "preset": null,
+   "sha256": "d6105c77a60d1d672d1e813a658d8cc94f2bbc02a4a2931469b5c27ca8ee188e"
+  },
+  "cystreet.elevated": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.elevated.glb",
+   "kit_id": "cystreet.elevated",
+   "preset": null,
+   "sha256": "3e38b0e4afa1b8592380d09a0060f2a33698b5545644eaee8c5d63da45354d1e"
+  },
+  "cystreet.end": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.end.glb",
+   "kit_id": "cystreet.end",
+   "preset": null,
+   "sha256": "f64fa3b564a35ab8ccf957fe5a70f541604536e934978e7a29a1ea663557a641"
+  },
+  "cystreet.metro": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.metro.glb",
+   "kit_id": "cystreet.metro",
+   "preset": null,
+   "sha256": "bfa365314c8b58c5b19bcbb7cf9f9e27418b5b3d987ce6c2a31ed4ce3fedb25b"
+  },
+  "cystreet.plaza": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.plaza.glb",
+   "kit_id": "cystreet.plaza",
+   "preset": null,
+   "sha256": "d9daaafee5d7b301d3e6f1e4af1ab0b3b0ccfd90d047c54b3688777423ac3119"
+  },
+  "cystreet.rail": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.rail.glb",
+   "kit_id": "cystreet.rail",
+   "preset": null,
+   "sha256": "c23173dbe84fb3576c093ff452b40b148f44b1cb58c11fc03286b6bf4dd9ee08"
+  },
+  "cystreet.ramp": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.ramp.glb",
+   "kit_id": "cystreet.ramp",
+   "preset": null,
+   "sha256": "e35addd51169a78460a6060551a8a735c5bb00c611382dcffcc42babb8749c5f"
+  },
+  "cystreet.road": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.road.glb",
+   "kit_id": "cystreet.road",
+   "preset": null,
+   "sha256": "693a242d57397fdddae4bccbb3bdca52ba418e072921d123109aac6b3fb668e7"
+  },
+  "cystreet.road__long": {
+   "glb": "kits/library/cyber_blue_grid/presets/cystreet.road__long.glb",
+   "kit_id": "cystreet.road",
+   "preset": "long",
+   "sha256": "d6113a928a8d495a84d6adf077e513200424fb97f5d9c28f6e22ddb0fa38c6e2"
+  },
+  "cystreet.road__short": {
+   "glb": "kits/library/cyber_blue_grid/presets/cystreet.road__short.glb",
+   "kit_id": "cystreet.road",
+   "preset": "short",
+   "sha256": "ecf5f7f5b6c4d4bbb067ae8a315a1b713467750bd5d228521604a20f46e82936"
+  },
+  "cystreet.sidewalk": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.sidewalk.glb",
+   "kit_id": "cystreet.sidewalk",
+   "preset": null,
+   "sha256": "351c0919fa84339b3f6fc0f629c6accbb985e652a4785f2d33fa26175bc7c7a1"
+  },
+  "cystreet.sidewalk__strip": {
+   "glb": "kits/library/cyber_blue_grid/presets/cystreet.sidewalk__strip.glb",
+   "kit_id": "cystreet.sidewalk",
+   "preset": "strip",
+   "sha256": "7b7d47f0c8d431377da9fee8d63d9f0eb0a198e36b6e5a8e05211c58d8528f9c"
+  },
+  "cystreet.sidewalk__strip2": {
+   "glb": "kits/library/cyber_blue_grid/presets/cystreet.sidewalk__strip2.glb",
+   "kit_id": "cystreet.sidewalk",
+   "preset": "strip2",
+   "sha256": "199246091a0539b8f9e8b6ccab4f276b5932912d52c37f6fa791d6b3e1a2fc27"
+  },
+  "cystreet.stairs": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.stairs.glb",
+   "kit_id": "cystreet.stairs",
+   "preset": null,
+   "sha256": "dab029262d4450f5c9abe864de587724882d69240e7ea8d35d875891df024d53"
+  },
+  "cystreet.tee": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.tee.glb",
+   "kit_id": "cystreet.tee",
+   "preset": null,
+   "sha256": "4d9d33c39f1e1d112f8f74e66e16a9a12cc92d0ffed5e4dfcd2410a75a2984dd"
+  },
+  "cystreet.walkway": {
+   "glb": "kits/library/cyber_blue_grid/assets/cystreet.walkway.glb",
+   "kit_id": "cystreet.walkway",
+   "preset": null,
+   "sha256": "d3c1b2d1a8f98e55d216649002cfd63c3a1adffe5825182980f0405a4b9d7a20"
+  },
+  "cytech.antenna": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.antenna.glb",
+   "kit_id": "cytech.antenna",
+   "preset": null,
+   "sha256": "df8b00dc036f2b5f38dc475f2df70564366d91be27977b1f769f34baef53e5ee"
+  },
+  "cytech.barrier": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.barrier.glb",
+   "kit_id": "cytech.barrier",
+   "preset": null,
+   "sha256": "0e56033ab3ce397d2f08f72d83106b8d6f74063af152891c00d33a95734faf1e"
+  },
+  "cytech.bike": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.bike.glb",
+   "kit_id": "cytech.bike",
+   "preset": null,
+   "sha256": "180a27daa6c033bc70a517b06c84be7297c01c5876963f82cd6ec0fe7fd11518"
+  },
+  "cytech.cables": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.cables.glb",
+   "kit_id": "cytech.cables",
+   "preset": null,
+   "sha256": "5b0386462c5e68a009ed79b60a27859b6d790c8468c5a673c269d7b6e2f20de3"
+  },
+  "cytech.camera": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.camera.glb",
+   "kit_id": "cytech.camera",
+   "preset": null,
+   "sha256": "6d392fecaa265a1e48a9930285160354dc6aecaa806decb052dd0ca68ac3bc9a"
+  },
+  "cytech.charger": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.charger.glb",
+   "kit_id": "cytech.charger",
+   "preset": null,
+   "sha256": "5e053ab25996e9e5222961b90e70995be368c2c98894b096e052dac2b0d7c090"
+  },
+  "cytech.conduit": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.conduit.glb",
+   "kit_id": "cytech.conduit",
+   "preset": null,
+   "sha256": "b06620611bdc66234f8955ca47a3007f46d5ea0248aef41aea75f8db9bcc5265"
+  },
+  "cytech.drone": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.drone.glb",
+   "kit_id": "cytech.drone",
+   "preset": null,
+   "sha256": "383739eaeefa68965fcb10cd359302e340d1b1e87ff14eaee550c093c8d1c22c"
+  },
+  "cytech.hovercar": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.hovercar.glb",
+   "kit_id": "cytech.hovercar",
+   "preset": null,
+   "sha256": "d101ee98d5d200b6c07522fad78216232d2764a6bd922b046dbc77d45328a50d"
+  },
+  "cytech.hovercar__taxi": {
+   "glb": "kits/library/cyber_blue_grid/presets/cytech.hovercar__taxi.glb",
+   "kit_id": "cytech.hovercar",
+   "preset": "taxi",
+   "sha256": "547d90b5d104802a05d2fc09c863360fb8e0f68f95330f6c0437e9dd93b65d3b"
+  },
+  "cytech.hovercar__van": {
+   "glb": "kits/library/cyber_blue_grid/presets/cytech.hovercar__van.glb",
+   "kit_id": "cytech.hovercar",
+   "preset": "van",
+   "sha256": "51305759c90a41236d347b03b76fe6fcec8f0c0e8855dac531b509cfb4c101e3"
+  },
+  "cytech.puddle": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.puddle.glb",
+   "kit_id": "cytech.puddle",
+   "preset": null,
+   "sha256": "62d9ada8a6793db4017e965d51c46a9e7e542de8bea4ab7cbda25e6b34c23f1e"
+  },
+  "cytech.rack": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.rack.glb",
+   "kit_id": "cytech.rack",
+   "preset": null,
+   "sha256": "865a5857faa505e0db90d708584beea8559a90b2ab1681197698f23a421b1332"
+  },
+  "cytech.rack__tall": {
+   "glb": "kits/library/cyber_blue_grid/presets/cytech.rack__tall.glb",
+   "kit_id": "cytech.rack",
+   "preset": "tall",
+   "sha256": "744e1ec0979de469a67364d43e22a926cdfc4f724691fcf769c744f0a532ffe6"
+  },
+  "cytech.street_light": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.street_light.glb",
+   "kit_id": "cytech.street_light",
+   "preset": null,
+   "sha256": "faa55b00d2365b1fdb00e8cd90d18e7dba4d16e0cc2009e55391cb8bf0c24c87"
+  },
+  "cytech.street_light__double": {
+   "glb": "kits/library/cyber_blue_grid/presets/cytech.street_light__double.glb",
+   "kit_id": "cytech.street_light",
+   "preset": "double",
+   "sha256": "b23bce8efc2324e286a2048c59c5f84bf6b6985d52917962dd5b766f1ec05153"
+  },
+  "cytech.terminal": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.terminal.glb",
+   "kit_id": "cytech.terminal",
+   "preset": null,
+   "sha256": "203fd4e248316033ecb49c4060ccd00096ef085b538800aacbcc0f187fe3c183"
+  },
+  "cytech.utility": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.utility.glb",
+   "kit_id": "cytech.utility",
+   "preset": null,
+   "sha256": "6070e516b6d196c8aa3bdee280394c3f49f54eaf3dd452a684c32f62f4d46800"
+  },
+  "cytech.vending": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.vending.glb",
+   "kit_id": "cytech.vending",
+   "preset": null,
+   "sha256": "8abc693f9767428495507727f0bbb4937e6b339f36b5f0e3c868a144af068322"
+  },
+  "cytech.vent": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytech.vent.glb",
+   "kit_id": "cytech.vent",
+   "preset": null,
+   "sha256": "f39ea9444f49fbbe5aefa4f5ea3b474825b54bbc4d82509f590e69620a5eee8a"
+  },
+  "cytower.annex": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.annex.glb",
+   "kit_id": "cytower.annex",
+   "preset": null,
+   "sha256": "eeb3dda04080311d9f05d9e9b61d91f0716b7839cd1101b6ad44cadcece98623"
+  },
+  "cytower.arch": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.arch.glb",
+   "kit_id": "cytower.arch",
+   "preset": null,
+   "sha256": "7af5a04639e9694f2c94971cde52fd8ce6aa9fc7081dba5e28cf4490de867366"
+  },
+  "cytower.arch__low": {
+   "glb": "kits/library/cyber_blue_grid/presets/cytower.arch__low.glb",
+   "kit_id": "cytower.arch",
+   "preset": "low",
+   "sha256": "c5408bf95b51abf451e40d334a06c90b3ed93fc46a68220278fe1272accc884e"
+  },
+  "cytower.balcony": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.balcony.glb",
+   "kit_id": "cytower.balcony",
+   "preset": null,
+   "sha256": "00681def966ab1e536a0512cb046bb4fe60a275eb5c0e23cc34942ba634f32fc"
+  },
+  "cytower.crown": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.crown.glb",
+   "kit_id": "cytower.crown",
+   "preset": null,
+   "sha256": "225906af3f5f9f8dcbe57d7dab80895c9640a82bfadfd97bb5f44d6f16a66205"
+  },
+  "cytower.drum": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.drum.glb",
+   "kit_id": "cytower.drum",
+   "preset": null,
+   "sha256": "b76177efe92c6166892f697eb3e14f2d7d91c286887bdea3b20733cc6c1f7aea"
+  },
+  "cytower.drum__dome": {
+   "glb": "kits/library/cyber_blue_grid/presets/cytower.drum__dome.glb",
+   "kit_id": "cytower.drum",
+   "preset": "dome",
+   "sha256": "2d81522f8120048b23107501ae12d26100edde97ba14ec0a029ada9bd5e1fb35"
+  },
+  "cytower.facade": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.facade.glb",
+   "kit_id": "cytower.facade",
+   "preset": null,
+   "sha256": "8df6f415142021cb1aab054035e883758e58636da3ef6cb0d74d43adeb457d1c"
+  },
+  "cytower.facade__canyon": {
+   "glb": "kits/library/cyber_blue_grid/presets/cytower.facade__canyon.glb",
+   "kit_id": "cytower.facade",
+   "preset": "canyon",
+   "sha256": "0e9aacf3032853b481d701624d7f3be2a46949556410291ad23e63dc3ab9f052"
+  },
+  "cytower.facade__shops": {
+   "glb": "kits/library/cyber_blue_grid/presets/cytower.facade__shops.glb",
+   "kit_id": "cytower.facade",
+   "preset": "shops",
+   "sha256": "a19c195d92a19f694ff4c2a58e70b842915ab5c465a257d958848220a7ad7914"
+  },
+  "cytower.garden": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.garden.glb",
+   "kit_id": "cytower.garden",
+   "preset": null,
+   "sha256": "bbc2c8ed11e08e7063c9405429235525ba8f58c0ec182a828026cba011cca708"
+  },
+  "cytower.garden__small": {
+   "glb": "kits/library/cyber_blue_grid/presets/cytower.garden__small.glb",
+   "kit_id": "cytower.garden",
+   "preset": "small",
+   "sha256": "a7a2db577e3bfe931d530b7f7b45d0d0ca13be5efaa9c7aaf946127b05f08379"
+  },
+  "cytower.needle": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.needle.glb",
+   "kit_id": "cytower.needle",
+   "preset": null,
+   "sha256": "1e064c9f4248731faaf2eb4a0563b5e0db9015ccc96fb58c03dd89c5112054ef"
+  },
+  "cytower.setback": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.setback.glb",
+   "kit_id": "cytower.setback",
+   "preset": null,
+   "sha256": "3555c6e17a2ddcd3e4652491fab1cbd4bda3f56cc6920309ce22f0012d0e3bfc"
+  },
+  "cytower.setback__halo": {
+   "glb": "kits/library/cyber_blue_grid/presets/cytower.setback__halo.glb",
+   "kit_id": "cytower.setback",
+   "preset": "halo",
+   "sha256": "6929fb85ab17a9c6af917be096bf0c88ce6d1cae29f64ef23c19a38838f810b9"
+  },
+  "cytower.skybridge": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.skybridge.glb",
+   "kit_id": "cytower.skybridge",
+   "preset": null,
+   "sha256": "c14b157e809491f467ab73f5b4129d54c0d1152dcde728c94a1b440f95a21b2b"
+  },
+  "cytower.spire": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.spire.glb",
+   "kit_id": "cytower.spire",
+   "preset": null,
+   "sha256": "e11415206cec343fb50ff29acfd73187d993bb0c9a93e1c17f85a00d2cd0e10f"
+  },
+  "cytower.stack": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.stack.glb",
+   "kit_id": "cytower.stack",
+   "preset": null,
+   "sha256": "5d6990870230ec44b67eb1587bcb167ff86966c0842fe0c974366804044a9e98"
+  },
+  "cytower.twin": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.twin.glb",
+   "kit_id": "cytower.twin",
+   "preset": null,
+   "sha256": "7d42e66e3870c90ed65f74cc8dfd468e92829b0f27abb56e6e8b589279f4d6db"
+  },
+  "cytower.wedge": {
+   "glb": "kits/library/cyber_blue_grid/assets/cytower.wedge.glb",
+   "kit_id": "cytower.wedge",
+   "preset": null,
+   "sha256": "cd5a36a446d46f09e45bedfaca377a967859458bf7a30c71db18dd342b5fe383"
+  },
+  "sky.backdrop": {
+   "glb": "kits/library/cyber_blue_grid/assets/sky.backdrop.glb",
+   "kit_id": "sky.backdrop",
+   "preset": null,
+   "sha256": "177e270d5d88db8c24a502855317835138b882d05dc1ac7dc1fb1cd4f0de3f05"
+  }
+ },
+ "format": 1,
+ "kit_pack": "cyber_blue_grid",
+ "pack": "cyber_blue_grid"
+}

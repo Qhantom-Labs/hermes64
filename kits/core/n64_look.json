@@ -1,0 +1,121 @@
+{
+  "id": "hermes64.n64_look",
+  "version": "1.0.0",
+  "note": "Theme-agnostic N64-era look convention shared by every pack, kit build and future style profile (docs/N64-LOOK-CONVENTIONS.md). Packs supply colours and environment data; they inherit these rules and may only override a rule through an explicit view.json \"n64\" block. Runtime copy: theme.json \"n64\" (adventure_maker/assets_v3.runtime_snapshot).",
+  "output": {
+    "internal_resolution": [320, 240],
+    "aspect": "4:3",
+    "upscale_filter": "bilinear",
+    "upscale_fit": "integer_letterbox",
+    "edge_aa": "msaa_4x",
+    "dither": "none",
+    "dither_strength": 0.0,
+    "vertex_snap": false,
+    "affine_uv": false,
+    "note": "Fixed 320x240 framebuffer, 4:3, shown 3x with bilinear (no sharpening); polygon edges antialiased like the RDP coverage AA. PS1-style vertex snapping and affine texture warp are never used (perspective-correct texturing)."
+  },
+  "filtering": {
+    "world": "n64",
+    "actors": "three_point",
+    "env": "bilinear",
+    "lod_bias": -0.75,
+    "sky_vblur_texels": 3.0,
+    "note": "n64 = three-point (triangle) filtering when magnified, the mip chain only when minified, biased by lod_bias toward detail (distant ground keeps its painted blotches without unmipmapped sparkle); the same soft filter on characters (unmipmapped, so face atlas cells never average)."
+  },
+  "lighting": {
+    "model": "vertex",
+    "per_pixel_point_lights": false,
+    "specular_glints": false,
+    "fresnel_rim": false,
+    "per_pixel_gloss": false,
+    "lattice_m": 1.0,
+    "point_lights_max": 4,
+    "lamp_pool": {"max_strength": 0.3, "note": "soft radial floor decal under an emitter (painted light), not a per-pixel circle"},
+    "halo": {"max_size_m": 1.2, "max_strength": 0.85, "note": "soft glow billboard around a lamp (N64 lantern/torch glow sprite), a few times the shade's size; no screen-space bloom and no room-sized halos"},
+    "emission_max": 0.15,
+    "unlit_level": 0.88,
+    "chrome": {"gamma_max": 1.25, "hot_max": 0.2, "hot_from_min": 0.94, "rim_max": 0.0,
+               "note": "chrome/glass = painted sphere-map texture lit by the room rig; no white-hot boosts or fresnel catch"},
+    "actor": {"rim": 0.0, "kicker_max": 0.22, "note": "characters use the world rig; a modest second directional (kicker) from behind the subject is the only extra"},
+    "note": "Gouraud: baked vertex colour x (ambient + sky/ground hemisphere + key + fill + up to 4 point lights), evaluated per vertex. Point lights on static surfaces are sampled on a virtual vertex lattice of lattice_m metres and interpolated (the look of vertex light on a tessellated N64 floor: soft polygonal pools, no per-pixel circles, no wedges across big triangles). Gloss/chrome env lookups use per-vertex sphere-map texgen. The room value structure (darker ceilings, wall-base contact shadow) is a smooth baked-lightmap-like term. No PBR, no per-pixel lights, no real-time specular, no fresnel rim."
+  },
+  "fog": {
+    "model": "linear_per_vertex",
+    "exterior_colour": "horizon",
+    "sky_horizon": [-0.03, 0.12],
+    "note": "Linear distance fog evaluated per vertex. Exteriors: the painted sky melts into the fog colour across sky_horizon = [from, to] (sin of the view elevation relative to the top of the far terrain seen from the room camera, presenter.fit_sky_horizon), so the visible horizon and the fogged distance share one colour. Interiors: fog colour = the room's darkest ambient tone, close enough to soften the far wall."
+  },
+  "environments": {
+    "interior_cool": {
+      "note": "blue futuristic, cool but restrained: pearl/cobalt values, no neon, sparing warm practicals",
+      "ranges": {"grade.contrast": [0.95, 1.12], "grade.saturation": [0.8, 1.0], "fog.near": [4.0, 14.0], "fog.far": [16.0, 40.0],
+                 "ambient": [0.3, 0.55], "key": [0.2, 0.55], "fill": [0.05, 0.25]}
+    },
+    "interior_warm": {
+      "note": "cottage, warm natural: soft warm key, cool-ish fill in the shadows, warm window light",
+      "ranges": {"grade.contrast": [0.95, 1.12], "grade.saturation": [0.85, 1.05], "fog.near": [4.0, 14.0], "fog.far": [14.0, 40.0],
+                 "ambient": [0.3, 0.6], "key": [0.2, 0.5], "fill": [0.05, 0.3]}
+    },
+    "exterior_day": {
+      "note": "village daylight/dusk: painted sky gradient, fog tinted to the horizon",
+      "ranges": {"grade.contrast": [0.95, 1.12], "grade.saturation": [0.85, 1.05], "fog.near": [6.0, 20.0], "fog.far": [30.0, 70.0],
+                 "ambient": [0.3, 0.65], "key": [0.25, 0.6], "fill": [0.05, 0.35]}
+    },
+    "exterior_night": {
+      "note": "night snow field: painted aurora sky, pale snow, fog tinted to the horizon",
+      "ranges": {"grade.contrast": [0.95, 1.12], "grade.saturation": [0.8, 1.0], "fog.near": [6.0, 20.0], "fog.far": [30.0, 70.0],
+                 "ambient": [0.3, 0.6], "key": [0.2, 0.5], "fill": [0.05, 0.3]}
+    }
+  },
+  "texel_density": {
+    "note": "Texels per metre by material class (texture size / tile_m). Same class = same density in every pack, so a scene reads at one consistent texel scale. Flat, emissive, view-plane, env and character roles are outside the table.",
+    "tolerance": 0.25,
+    "sizes": [16, 32, 64, 128],
+    "classes": {
+      "ground": {"texels_per_m": 10.67, "roles": ["field", "grass", "snow", "dirt", "sand", "path", "cap", "ice", "water"]},
+      "rockface": {"texels_per_m": 16, "roles": ["cliff", "rock"]},
+      "architecture": {"texels_per_m": 16, "roles": ["wall", "wall_alt", "floor", "ceiling", "stone", "roof", "door", "step", "frame", "trim"]},
+      "furniture": {"texels_per_m": 21.33, "roles": ["body", "body_alt", "hull", "hull_alt", "wood", "bark", "foliage", "flower", "post", "rail", "band"]},
+      "textile": {"texels_per_m": 53.33, "roles": ["cushion", "fabric", "knit", "fur", "quilt", "leather", "rope"]},
+      "detail": {"texels_per_m": 80, "roles": ["paper", "book"]}
+    }
+  },
+  "bake": {
+    "vertex_variation": {
+      "amount": 0.16,
+      "scale_m": 3.0,
+      "roles": ["cliff", "rock", "field", "grass", "snow", "dirt", "sand", "cap"],
+      "note": "painted low-frequency light/dark patches in the baked vertex colour of large terrain roles (deterministic value noise of the vertex position, +-amount of the light ramp): N64 artists broke up big cliff and ground faces with vertex colour, not with texture detail"
+    }
+  },
+  "textures": {
+    "dither": 1.0,
+    "dither_pattern": "mottle",
+    "mottle_clump": 0,
+    "soften": 0,
+    "crisp_gens": ["screen", "paper", "spines"],
+    "painted_sky": true,
+    "note": "Hand-painted look with palette-exact texels. Fields keep their mid-frequency painted structure and are quantized to the pack ramp with an IRREGULAR mottle threshold (seeded, rank-equalised white noise) instead of the regular 4x4 Bayer grid, so band transitions read as painted mottling that three-point filtering turns into the soft blotchy look of N64 textures (fully clean bands were tried in round 2: frames went posterised-flat, 0.36-0.52 near-uniform, beyond the defect gate). Readable textures (crisp_gens) are quantized clean. Sky/window scene cards paint their aurora/cloud/haze layers into the gradient with soft masks (painted_sky). A recipe may set `dither` (amount or false), `dither_pattern` (bayer/mottle), `soften` (wrapped blur passes) or `painted` explicitly."
+  },
+  "gate": {
+    "note": "n64_fidelity section (adventure_maker/n64_gate.py). Thresholds calibrated so the round-0 renders (before this convention, commit 80d5236) fail and private N64 study references (downscaled to 320x240: crisp 0.00-0.23, clip <= 0.002) pass where comparable; they are additions, never loosened defect-gate thresholds. Calibration numbers: docs/N64-FIDELITY-AUDIT.md.",
+    "thresholds": {
+      "modern_light_energy_max": 0.005,
+      "glow_energy_max": 0.006,
+      "glow_coverage_max": 0.04,
+      "clip_fraction_max": 0.02,
+      "neon_fraction_max": 0.01,
+      "crisp_edge_fraction_max": 0.45,
+      "upscale_nearest_ratio_max": 0.25,
+      "fog_horizon_delta_max": 0.04,
+      "closeup_crisp_edge_fraction_max": 0.5
+    },
+    "library": {
+      "density_spread_max": 1.25,
+      "hf_energy_max": 0.18,
+      "hf_energy_median_max": 0.05,
+      "hf_exempt_roles": ["screen", "paper", "book"],
+      "note": "Texture library checks (n64_gate library). density_spread_max = 1 + texel_density.tolerance (every role of a class within 25% of the others; round 0 had 1.33-8x). hf_energy_max / median: per-texel energy of each generated texture, readable text/screens exempt; calibrated so the round-0 library (commit 80d5236: worst texture 0.188, village median 0.0525) fails. Known-bad control: tests/fixtures/n64fidelity/library-round0."
+    }
+  }
+}

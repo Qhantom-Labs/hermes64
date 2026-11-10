@@ -1,0 +1,562 @@
+{
+ "schema": "hermes64-rig/1.0.0",
+ "id": "human16_v1",
+ "version": "1.0.0",
+ "kind": "humanoid",
+ "conventions": {
+  "units": "metre",
+  "gltf_up": "+Y",
+  "gltf_forward": "+Z (the character faces +Z; Blender authoring: Z up, faces -Y)",
+  "left_side": "+X (bones *_l sit on +X)",
+  "handedness": "right-handed",
+  "rest_rotation": "identity on every joint; unit scale; translation-only offsets from the parent",
+  "blender_authoring": "every bone head at the joint, tail = head + (0, 0, 0.05), roll 0, export with +Y up, export_rest_position_armature",
+  "armature_node": "rig_human16_v1",
+  "mesh_node": "kit_body",
+  "inverse_bind": "IBM[i] = inverse(world rest matrix of joint i) = translation(-rest_world_position[i])"
+ },
+ "bones": [
+  {
+   "name": "root",
+   "parent": null,
+   "index": 0,
+   "rest_translation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rest_world": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "pelvis",
+   "parent": "root",
+   "index": 1,
+   "rest_translation": [
+    0.0,
+    0.752777,
+    0.0
+   ],
+   "rest_world": [
+    0.0,
+    0.752777,
+    0.0
+   ]
+  },
+  {
+   "name": "spine",
+   "parent": "pelvis",
+   "index": 2,
+   "rest_translation": [
+    0.0,
+    0.099516,
+    0.0
+   ],
+   "rest_world": [
+    0.0,
+    0.852292,
+    0.0
+   ]
+  },
+  {
+   "name": "head",
+   "parent": "spine",
+   "index": 3,
+   "rest_translation": [
+    0.0,
+    0.382964,
+    0.0
+   ],
+   "rest_world": [
+    0.0,
+    1.235257,
+    0.0
+   ]
+  },
+  {
+   "name": "upper_arm_l",
+   "parent": "spine",
+   "index": 4,
+   "rest_translation": [
+    0.221435,
+    0.281961,
+    0.0
+   ],
+   "rest_world": [
+    0.221435,
+    1.134254,
+    0.0
+   ]
+  },
+  {
+   "name": "forearm_l",
+   "parent": "upper_arm_l",
+   "index": 5,
+   "rest_translation": [
+    0.094459,
+    -0.199032,
+    0.00815
+   ],
+   "rest_world": [
+    0.315894,
+    0.935222,
+    0.00815
+   ]
+  },
+  {
+   "name": "hand_l",
+   "parent": "forearm_l",
+   "index": 6,
+   "rest_translation": [
+    0.040261,
+    -0.182446,
+    0.02119
+   ],
+   "rest_world": [
+    0.356155,
+    0.752777,
+    0.02934
+   ]
+  },
+  {
+   "name": "upper_arm_r",
+   "parent": "spine",
+   "index": 7,
+   "rest_translation": [
+    -0.221435,
+    0.281961,
+    0.0
+   ],
+   "rest_world": [
+    -0.221435,
+    1.134254,
+    0.0
+   ]
+  },
+  {
+   "name": "forearm_r",
+   "parent": "upper_arm_r",
+   "index": 8,
+   "rest_translation": [
+    -0.094459,
+    -0.199032,
+    0.00815
+   ],
+   "rest_world": [
+    -0.315894,
+    0.935222,
+    0.00815
+   ]
+  },
+  {
+   "name": "hand_r",
+   "parent": "forearm_r",
+   "index": 9,
+   "rest_translation": [
+    -0.040261,
+    -0.182446,
+    0.02119
+   ],
+   "rest_world": [
+    -0.356155,
+    0.752777,
+    0.02934
+   ]
+  },
+  {
+   "name": "thigh_l",
+   "parent": "pelvis",
+   "index": 10,
+   "rest_translation": [
+    0.131623,
+    0.0,
+    0.0
+   ],
+   "rest_world": [
+    0.131623,
+    0.752777,
+    0.0
+   ]
+  },
+  {
+   "name": "shin_l",
+   "parent": "thigh_l",
+   "index": 11,
+   "rest_translation": [
+    0.023227,
+    -0.299778,
+    0.00978
+   ],
+   "rest_world": [
+    0.15485,
+    0.452998,
+    0.00978
+   ]
+  },
+  {
+   "name": "foot_l",
+   "parent": "shin_l",
+   "index": 12,
+   "rest_translation": [
+    -0.006024,
+    -0.316433,
+    -0.00978
+   ],
+   "rest_world": [
+    0.148826,
+    0.136566,
+    0.0
+   ]
+  },
+  {
+   "name": "thigh_r",
+   "parent": "pelvis",
+   "index": 13,
+   "rest_translation": [
+    -0.131623,
+    0.0,
+    0.0
+   ],
+   "rest_world": [
+    -0.131623,
+    0.752777,
+    0.0
+   ]
+  },
+  {
+   "name": "shin_r",
+   "parent": "thigh_r",
+   "index": 14,
+   "rest_translation": [
+    -0.023227,
+    -0.299778,
+    0.00978
+   ],
+   "rest_world": [
+    -0.15485,
+    0.452998,
+    0.00978
+   ]
+  },
+  {
+   "name": "foot_r",
+   "parent": "shin_r",
+   "index": 15,
+   "rest_translation": [
+    0.006024,
+    -0.316433,
+    -0.00978
+   ],
+   "rest_world": [
+    -0.148826,
+    0.136566,
+    0.0
+   ]
+  }
+ ],
+ "mirror_pairs": [
+  [
+   "upper_arm_l",
+   "upper_arm_r"
+  ],
+  [
+   "forearm_l",
+   "forearm_r"
+  ],
+  [
+   "hand_l",
+   "hand_r"
+  ],
+  [
+   "thigh_l",
+   "thigh_r"
+  ],
+  [
+   "shin_l",
+   "shin_r"
+  ],
+  [
+   "foot_l",
+   "foot_r"
+  ]
+ ],
+ "skin": {
+  "max_influences": 4,
+  "weights_sum_tolerance": 0.001,
+  "joints_component": [
+   "UNSIGNED_BYTE",
+   "UNSIGNED_SHORT"
+  ],
+  "weights_component": "FLOAT",
+  "ibm_tolerance_m": 1e-05
+ },
+ "joint_limits": {
+  "root": {
+   "max_angle_deg": 10.0
+  },
+  "pelvis": {
+   "max_angle_deg": 175.0
+  },
+  "spine": {
+   "max_angle_deg": 50.0
+  },
+  "head": {
+   "max_angle_deg": 40.0
+  },
+  "upper_arm_l": {
+   "max_angle_deg": 180.0
+  },
+  "forearm_l": {
+   "max_angle_deg": 110.0
+  },
+  "hand_l": {
+   "max_angle_deg": 25.0
+  },
+  "upper_arm_r": {
+   "max_angle_deg": 180.0
+  },
+  "forearm_r": {
+   "max_angle_deg": 125.0
+  },
+  "hand_r": {
+   "max_angle_deg": 20.0
+  },
+  "thigh_l": {
+   "max_angle_deg": 95.0
+  },
+  "shin_l": {
+   "max_angle_deg": 100.0
+  },
+  "foot_l": {
+   "max_angle_deg": 30.0
+  },
+  "thigh_r": {
+   "max_angle_deg": 95.0
+  },
+  "shin_r": {
+   "max_angle_deg": 105.0
+  },
+  "foot_r": {
+   "max_angle_deg": 30.0
+  }
+ },
+ "joint_limits_source": "envelope of every key of every clip of 17 Blender-published files + 10 deg, rounded up to 5 deg",
+ "proportions": {
+  "height_m": [
+   0.948,
+   2.314
+  ],
+  "segment_fraction_of_height": {
+   "pelvis": [
+    0.316,
+    0.6014
+   ],
+   "spine": [
+    0.0465,
+    0.0922
+   ],
+   "head": [
+    0.1846,
+    0.3183
+   ],
+   "upper_arm_l": [
+    0.1639,
+    0.3168
+   ],
+   "forearm_l": [
+    0.1037,
+    0.2121
+   ],
+   "hand_l": [
+    0.0897,
+    0.185
+   ],
+   "upper_arm_r": [
+    0.1639,
+    0.3168
+   ],
+   "forearm_r": [
+    0.1037,
+    0.2121
+   ],
+   "hand_r": [
+    0.0897,
+    0.185
+   ],
+   "thigh_l": [
+    0.0519,
+    0.1374
+   ],
+   "shin_l": [
+    0.1254,
+    0.2625
+   ],
+   "foot_l": [
+    0.1324,
+    0.2722
+   ],
+   "thigh_r": [
+    0.0519,
+    0.1374
+   ],
+   "shin_r": [
+    0.1254,
+    0.2625
+   ],
+   "foot_r": [
+    0.1324,
+    0.2722
+   ]
+  }
+ },
+ "proportions_source": "Blender-published files: segment length / rest mesh height, range x0.8 .. x1.25",
+ "reference_body": {
+  "generator": "core/people.person(packs/polar_pod face_defaults + face_cast 'pp_medic' params)",
+  "pack": "polar_pod",
+  "cast_id": "pp_medic",
+  "height_m": 1.63,
+  "topology": "human16_face_v3",
+  "role": "reference rest skeleton, mannequin skeleton and clip-pack pose source"
+ },
+ "clips": {
+  "required": [
+   "idle",
+   "walk",
+   "run",
+   "interact",
+   "talk",
+   "carry",
+   "sit"
+  ],
+  "combat": [
+   "idle_combat",
+   "swing",
+   "hurt",
+   "death",
+   "roll",
+   "block"
+  ],
+  "fps": 15,
+  "keys": 16,
+  "duration_s": 1.0,
+  "interpolation": "STEP",
+  "key_time": "key k at t = k / 15 s",
+  "channels": {
+   "rotation": "every joint (root included)",
+   "translation": [
+    "root"
+   ]
+  },
+  "root_motion": "root translation = vertical grounding only (x = z = 0); the runtime moves actors",
+  "combat_required_for": "combatants (the 16 published cast humanoids); optional otherwise"
+ },
+ "sockets": [
+  {
+   "name": "attach_hand_l",
+   "bone": "hand_l"
+  },
+  {
+   "name": "attach_hand_r",
+   "bone": "hand_r"
+  },
+  {
+   "name": "attach_head",
+   "bone": "head"
+  },
+  {
+   "name": "attach_back",
+   "bone": "spine"
+  },
+  {
+   "name": "attach_belt",
+   "bone": "pelvis"
+  }
+ ],
+ "props": {
+  "node_pattern": "kit_acc_<slot>_<kind>",
+  "parent": "the socket bone",
+  "tris_le": 200,
+  "weapon": {
+   "id": "trail_staff",
+   "bone": "hand_r",
+   "rotation_xyzw": [
+    0.8660254,
+    0.0,
+    0.0,
+    0.5
+   ],
+   "translation": "per character: manifest characters[].combat.weapon_grip.translation"
+  }
+ },
+ "budgets": {
+  "body_tris_lt": 700,
+  "prop_tris_le": 200
+ },
+ "seams": [
+  {
+   "name": "neck",
+   "parent": "spine",
+   "child": "head"
+  },
+  {
+   "name": "shoulder_l",
+   "parent": "spine",
+   "child": "upper_arm_l"
+  },
+  {
+   "name": "shoulder_r",
+   "parent": "spine",
+   "child": "upper_arm_r"
+  },
+  {
+   "name": "hip_l",
+   "parent": "pelvis",
+   "child": "thigh_l"
+  },
+  {
+   "name": "hip_r",
+   "parent": "pelvis",
+   "child": "thigh_r"
+  },
+  {
+   "name": "wrist_l",
+   "parent": "forearm_l",
+   "child": "hand_l"
+  },
+  {
+   "name": "wrist_r",
+   "parent": "forearm_r",
+   "child": "hand_r"
+  },
+  {
+   "name": "ankle_l",
+   "parent": "shin_l",
+   "child": "foot_l"
+  },
+  {
+   "name": "ankle_r",
+   "parent": "shin_r",
+   "child": "foot_r"
+  }
+ ],
+ "hover": {
+  "mapping": "floater robots use this rig: shell -> pelvis+spine, dome -> head, arm pods -> arm chains, emitter/skirt -> pelvis; leg joints present with zero weight",
+  "profile": "validate_character(profile='hover'); lowest vertex >= rig node extras hover_m - 2 mm",
+  "optional_clips": [
+   "sit"
+  ]
+ },
+ "silhouette": {
+  "rest_height_m": [
+   0.948,
+   2.314
+  ],
+  "floor": "touch",
+  "floor_tolerance_m": 0.002,
+  "blowup_height_factor": 1.6,
+  "max_vertex_departure_m": 0.5
+ }
+}

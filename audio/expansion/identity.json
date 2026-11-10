@@ -1,0 +1,24 @@
+{
+  "schema_version": "2.0.0",
+  "description": "N64-era sequenced/low-memory aesthetic, not console emulation. Original synthesized material only.",
+  "mastering": {
+    "sample_rate": 22050,
+    "bits": 14,
+    "rate_divisor": 1,
+    "filter_hz": 3200.0,
+    "reverb_ms": 73.0,
+    "reverb_mix": 0.12,
+    "peak_ceiling": 0.46,
+    "target_rms": 0.075
+  },
+  "conventions": {
+    "export": "mono PCM16 at 22050 or 32000 Hz",
+    "dynamics": "tanh soft saturation, RMS target with peak-limited gain; no hard clipping",
+    "reverb": "three early reflection taps, circular on loops; maximum tap 216 ms at default",
+    "filter": "two gentle one-pole low passes around internal quantization",
+    "loop": "periodic generators and circular tails; fixed-origin short Hermite boundary bridge, no endpoint fade or timeline rotation",
+    "music": "five shared-clock sequenced stems; original motifs, GM-labelled MIDI, synthetic instruments",
+    "loudness": "20 log10(unweighted RMS full scale), not LUFS/BS.1770 or true peak",
+    "review": "machine-checked, not human-approved"
+  }
+}

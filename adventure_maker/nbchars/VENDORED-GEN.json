@@ -1,0 +1,220 @@
+{
+ "compared_with": {
+  "different": [],
+  "shared_files": 29,
+  "tree": "gen"
+ },
+ "excluded": [
+  "core/cameo.py",
+  "core/cameo_paint.py",
+  "core/visorcheck.py"
+ ],
+ "files": [
+  {
+   "file": "characters/gen/core/attach.py",
+   "sha256": "7d0bfec35dd55e3279bcd0b77624be714a3176e7981e0545c09107478f35d190",
+   "source": "core/attach.py",
+   "source_sha256": "7d0bfec35dd55e3279bcd0b77624be714a3176e7981e0545c09107478f35d190",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/blender.py",
+   "sha256": "fa14feb60aef44555e72b93bd74f0e252a69db9aadd537775ae9c1bddd7afadd",
+   "source": "core/blender.py",
+   "source_sha256": "fa14feb60aef44555e72b93bd74f0e252a69db9aadd537775ae9c1bddd7afadd",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/combat.py",
+   "sha256": "7f30e312782a4bde1ab8c5915c0eb1d586f7dc8b4c0cb48c96e182a75fddd14b",
+   "source": "core/combat.py",
+   "source_sha256": "7f30e312782a4bde1ab8c5915c0eb1d586f7dc8b4c0cb48c96e182a75fddd14b",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/combat_blender.py",
+   "sha256": "a7227370f56cb8e4664311eb63d627db6d06f9484949ce9d9d5e64245ac8c7ec",
+   "source": "core/combat_blender.py",
+   "source_sha256": "a7227370f56cb8e4664311eb63d627db6d06f9484949ce9d9d5e64245ac8c7ec",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/combat_check.py",
+   "sha256": "9395a29769cf18a032bc561bce8824542e7cc36e8dc56f27c1230fdd68f98954",
+   "source": "core/combat_check.py",
+   "source_sha256": "9395a29769cf18a032bc561bce8824542e7cc36e8dc56f27c1230fdd68f98954",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/combat_paint.py",
+   "sha256": "b95705a463f33c4ee255028e6010eb69d35caa9977a458cdce81b07f3977ff71",
+   "source": "core/combat_paint.py",
+   "source_sha256": "b95705a463f33c4ee255028e6010eb69d35caa9977a458cdce81b07f3977ff71",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/connectivity.py",
+   "sha256": "f31a964342d7b9456e158ada831190200e604b37f258cb730223107a36845a14",
+   "source": "core/connectivity.py",
+   "source_sha256": "f31a964342d7b9456e158ada831190200e604b37f258cb730223107a36845a14",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/enemies.py",
+   "sha256": "4024d783b505893cb631626a867a1bdcb7ae5a47ba9a2a0ae21b07751e49b134",
+   "source": "core/enemies.py",
+   "source_sha256": "4024d783b505893cb631626a867a1bdcb7ae5a47ba9a2a0ae21b07751e49b134",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/enemy_paint.py",
+   "sha256": "63b73ff7647aff118a33df7f384ab4f666cbdc35c2ba5d0a71e2a700e7ae2509",
+   "source": "core/enemy_paint.py",
+   "source_sha256": "63b73ff7647aff118a33df7f384ab4f666cbdc35c2ba5d0a71e2a700e7ae2509",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/enemy_pose.py",
+   "sha256": "dd753894d9e397391dc6448f0fc42af5b6fa7ff53d2a8baa609590f86c7aae50",
+   "source": "core/enemy_pose.py",
+   "source_sha256": "dd753894d9e397391dc6448f0fc42af5b6fa7ff53d2a8baa609590f86c7aae50",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/enemy_props.py",
+   "sha256": "a08087d4b6cd4b77424add3e71249046bfa66dcf2b81fb780d21801b83c6d72f",
+   "source": "core/enemy_props.py",
+   "source_sha256": "a08087d4b6cd4b77424add3e71249046bfa66dcf2b81fb780d21801b83c6d72f",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/face_paint.py",
+   "sha256": "bd13acc64ae3c55f9aa16a01d6875c9fc187a023abd768c7fadb9a3e49e654dc",
+   "source": "core/face_paint.py",
+   "source_sha256": "bd13acc64ae3c55f9aa16a01d6875c9fc187a023abd768c7fadb9a3e49e654dc",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/gates.py",
+   "sha256": "fb929553390247cbc7e160d7fb2833f7110cf36acd93ad05bbc58ff07d8568cc",
+   "source": "core/gates.py",
+   "source_sha256": "fb929553390247cbc7e160d7fb2833f7110cf36acd93ad05bbc58ff07d8568cc",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/geometry.py",
+   "sha256": "930aeecc2753ed95ce493c6e1aaab6219a8861875ba686dea3d894d2c826f12b",
+   "source": "core/geometry.py",
+   "source_sha256": "930aeecc2753ed95ce493c6e1aaab6219a8861875ba686dea3d894d2c826f12b",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/glb.py",
+   "sha256": "f8ccc5aed3e56f7f1bcf02ce2b3b6e4f97f1a5775d33b5dd7451a90567cd3384",
+   "source": "core/glb.py",
+   "source_sha256": "f8ccc5aed3e56f7f1bcf02ce2b3b6e4f97f1a5775d33b5dd7451a90567cd3384",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/graft.py",
+   "sha256": "b0e294e2b3417ece0c94126628f9cd33ba4c26944a348b95a8ef5b8abd0e7fc3",
+   "source": "core/graft.py",
+   "source_sha256": "b0e294e2b3417ece0c94126628f9cd33ba4c26944a348b95a8ef5b8abd0e7fc3",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/paint.py",
+   "sha256": "fe300b238424368ffef302b959ea46813b93eb000c5251c655840847a9bcba32",
+   "source": "core/paint.py",
+   "source_sha256": "fe300b238424368ffef302b959ea46813b93eb000c5251c655840847a9bcba32",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/people.py",
+   "sha256": "0c1978f00ab3a9e8aca817023475a18fc1ec50f44a282ab85d73e3cf3b9c63b3",
+   "source": "core/people.py",
+   "source_sha256": "0c1978f00ab3a9e8aca817023475a18fc1ec50f44a282ab85d73e3cf3b9c63b3",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/people_paint.py",
+   "sha256": "9218931843e51099f1eb9f82cb4b5e031610e8a20f8d392509135c68ff26a98f",
+   "source": "core/people_paint.py",
+   "source_sha256": "9218931843e51099f1eb9f82cb4b5e031610e8a20f8d392509135c68ff26a98f",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/pose.py",
+   "sha256": "83c8951416319c6dfd76e7b30ddf29b05c80378da5e7eda2a30b57010aead1de",
+   "source": "core/pose.py",
+   "source_sha256": "83c8951416319c6dfd76e7b30ddf29b05c80378da5e7eda2a30b57010aead1de",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/posecheck.py",
+   "sha256": "29d09ed6fe3a808906dadbf0bdeb56aecd974317705866ccf88604bb6d1dcfbe",
+   "source": "core/posecheck.py",
+   "source_sha256": "29d09ed6fe3a808906dadbf0bdeb56aecd974317705866ccf88604bb6d1dcfbe",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/proportion.py",
+   "sha256": "cf487dd6c90598e07d32882ee1e66a3dd2c4d302636d25c6baff737c16818138",
+   "source": "core/proportion.py",
+   "source_sha256": "cf487dd6c90598e07d32882ee1e66a3dd2c4d302636d25c6baff737c16818138",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/props.py",
+   "sha256": "7ecd8503337590f6975716c5ab1e827d09c303c1a6979f6c7f204b61445b34db",
+   "source": "core/props.py",
+   "source_sha256": "7ecd8503337590f6975716c5ab1e827d09c303c1a6979f6c7f204b61445b34db",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/roles.py",
+   "sha256": "c13ae8665cd8d92940168c4507fbd0eb09fd457560cc0199061c9d5782a38206",
+   "source": "core/roles.py",
+   "source_sha256": "c13ae8665cd8d92940168c4507fbd0eb09fd457560cc0199061c9d5782a38206",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/core/weapon.py",
+   "sha256": "da82c10c95b85d6f6209bccef077e74284716010e4b876ab03f12b501bccfb0d",
+   "source": "core/weapon.py",
+   "source_sha256": "da82c10c95b85d6f6209bccef077e74284716010e4b876ab03f12b501bccfb0d",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/packs/polar_pod/pack.json",
+   "sha256": "9e011231b71028174cfbf26a9cb94209670d1e797272339fb20473c7783931a3",
+   "source": "packs/polar_pod/pack.json",
+   "source_sha256": "b35d1d4de242413be7806737bbd5c9df1fd9c7e43ecdb507ce456767c462f723",
+   "transform": "removed keys ['source_palette'] (absolute source path; restricted cameo params); neither is read by generator code"
+  },
+  {
+   "file": "characters/gen/packs/polar_pod/combat_roles.json",
+   "sha256": "483e8c7f390fe686e2b438d7f9a682a17556198dfdbbb181d61ab4f5507a573e",
+   "source": "packs/polar_pod/combat_roles.json",
+   "source_sha256": "483e8c7f390fe686e2b438d7f9a682a17556198dfdbbb181d61ab4f5507a573e",
+   "transform": "verbatim"
+  },
+  {
+   "file": "characters/gen/packs/forest_village/pack.json",
+   "sha256": "a65c580a48fd89ec49ee522453fd2877c4bdce0728b0f86fd29adf0652ebc415",
+   "source": "packs/forest_village/pack.json",
+   "source_sha256": "e81faa1a6fed95051e3569e46c5c43529c03dbcebaf0bb25267aff027589e685",
+   "transform": "removed keys ['source_palette', 'cameo_cast'] (absolute source path; restricted cameo params); neither is read by generator code"
+  },
+  {
+   "file": "characters/gen/packs/forest_village/combat_roles.json",
+   "sha256": "118ade5340564757bd879a079211f53ac1b0e22bc453d1869da1db523119d232",
+   "source": "packs/forest_village/combat_roles.json",
+   "source_sha256": "118ade5340564757bd879a079211f53ac1b0e22bc453d1869da1db523119d232",
+   "transform": "verbatim"
+  }
+ ],
+ "note": "Generator core copied byte-for-byte from the read-only combat-art lane, same module list and pack transform as CHARSYS so both branches add identical files.",
+ "schema": "hermes64-nbchars-vendored/1",
+ "source_lane": "lane-combat-art"
+}

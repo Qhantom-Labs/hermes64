@@ -1,0 +1,108 @@
+{
+ "description": "Ocarina-era frontier: painted lap siding and board-and-batten, shingles and tin, ochre dust, red-rock strata, sage scrub, lamplight. Red-rock canyons and mesas, sage scrub, warm dust haze. Data only; WESTERNKIT kit families (wtown./wrail./wmine./wprop./wland./wsky.) from the shared Hermes64 core.",
+ "format": 1,
+ "id": "canyon_mesa",
+ "kit_pack_id": "canyon_mesa",
+ "lighting": {
+  "ambient_colour": "#E9D3A2",
+  "fog_colour": "#E9D3A2",
+  "fog_enabled": true,
+  "fog_end": 56.0,
+  "fog_start": 14.0
+ },
+ "materials": [
+  {
+   "colour": "#957657",
+   "id": "weathered_wood",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#C08F4E",
+   "id": "ochre_dust",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#A95534",
+   "id": "red_rock",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#69764A",
+   "id": "sage",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#85878D",
+   "id": "tin",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#F1C776",
+   "id": "lamplight",
+   "kind": "emissive"
+  },
+  {
+   "colour": "#3F8A87",
+   "id": "paint_trim",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#383E60",
+   "id": "shadow",
+   "kind": "baked_unlit"
+  }
+ ],
+ "name": "Canyon Mesa",
+ "palette": [
+  "#0E0F1D",
+  "#1E2442",
+  "#383E60",
+  "#60648A",
+  "#1F4592",
+  "#3C72C6",
+  "#80ABDE",
+  "#CADCED",
+  "#6B4629",
+  "#97693C",
+  "#C08F4E",
+  "#D8B476",
+  "#E9D3A2",
+  "#3B2618",
+  "#67482F",
+  "#957657",
+  "#BFA785",
+  "#4D2521",
+  "#7E3B28",
+  "#A95534",
+  "#C97A52",
+  "#DFA274",
+  "#3E4B30",
+  "#69764A",
+  "#9CA273",
+  "#963B2E",
+  "#3F8A87",
+  "#B6631F",
+  "#F1C776",
+  "#3A3B43",
+  "#85878D",
+  "#F2E8D0"
+ ],
+ "presets": [
+  {
+   "asset_id": "furn.lamp",
+   "id": "street_lamp",
+   "params_json": "{}"
+  }
+ ],
+ "sound_palette": {
+  "ambient": "audio/stock/wav/core.nature.wind.breeze.wav",
+  "interact": "audio/wav/ui.select.wav"
+ },
+ "thresholds": {
+  "character_tris": 700,
+  "kit_tris": 1500,
+  "prop_tris": 150,
+  "room_tris": 6000,
+  "texture_px": 128
+ }
+}

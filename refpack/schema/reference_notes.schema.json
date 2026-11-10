@@ -1,0 +1,805 @@
+{
+ "$id": "hermes64.reference_notes/1.0",
+ "title": "Hermes64 reference notes (agent side of hermes64_pack_from_refs)",
+ "description": "Filled by Hermes after LOOKING at each reference image. Every field that drives the draft is a controlled word or a number, so equal notes give an equal pack. Free-text fields (notes, *_notes, title) are for humans only and are never copied into pack.json/audio.json; only their hash is recorded. Never put names of source games, films, studios, brands or people in any field.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": [
+  "schema",
+  "version",
+  "setting",
+  "time_of_day",
+  "mood",
+  "materials",
+  "shape_language",
+  "fog",
+  "lighting",
+  "references"
+ ],
+ "properties": {
+  "schema": {
+   "type": "string",
+   "enum": [
+    "hermes64.reference_notes"
+   ]
+  },
+  "version": {
+   "type": "string",
+   "enum": [
+    "1.0"
+   ]
+  },
+  "title": {
+   "type": "string",
+   "maxLength": 80,
+   "description": "free text, human only"
+  },
+  "setting": {
+   "type": "string",
+   "enum": [
+    "interior",
+    "exterior",
+    "mixed"
+   ]
+  },
+  "time_of_day": {
+   "type": "string",
+   "enum": [
+    "dawn",
+    "day",
+    "golden_hour",
+    "dusk",
+    "night",
+    "artificial",
+    "unknown"
+   ]
+  },
+  "themes": {
+   "type": "array",
+   "maxItems": 4,
+   "uniqueItems": true,
+   "items": {
+    "type": "string",
+    "enum": [
+     "polar",
+     "desert",
+     "forest",
+     "jungle",
+     "ocean",
+     "underwater",
+     "coast",
+     "harbor",
+     "cave",
+     "mine",
+     "mountain",
+     "swamp",
+     "plains",
+     "village",
+     "city",
+     "ruins",
+     "temple",
+     "habitat",
+     "space",
+     "lab",
+     "castle",
+     "industrial"
+    ]
+   }
+  },
+  "mood": {
+   "type": "array",
+   "minItems": 1,
+   "maxItems": 6,
+   "uniqueItems": true,
+   "items": {
+    "type": "string",
+    "enum": [
+     "serene",
+     "cozy",
+     "cold",
+     "warm",
+     "eerie",
+     "lonely",
+     "playful",
+     "mysterious",
+     "tense",
+     "melancholic",
+     "hopeful",
+     "sacred",
+     "wild",
+     "festive",
+     "bleak",
+     "dreamy",
+     "clean",
+     "gritty",
+     "ancient",
+     "futuristic",
+     "rustic",
+     "harsh",
+     "lush",
+     "quiet"
+    ]
+   }
+  },
+  "materials": {
+   "type": "array",
+   "minItems": 1,
+   "maxItems": 8,
+   "uniqueItems": true,
+   "description": "dominant materials, most dominant first",
+   "items": {
+    "$ref": "#/definitions/material"
+   }
+  },
+  "surfaces": {
+   "type": "object",
+   "additionalProperties": false,
+   "description": "optional per-surface material overrides",
+   "properties": {
+    "walls": {
+     "$ref": "#/definitions/material"
+    },
+    "floor": {
+     "$ref": "#/definitions/material"
+    },
+    "ceiling": {
+     "$ref": "#/definitions/material"
+    },
+    "trim": {
+     "$ref": "#/definitions/material"
+    },
+    "furniture": {
+     "$ref": "#/definitions/material"
+    },
+    "soft": {
+     "$ref": "#/definitions/material"
+    },
+    "metal": {
+     "$ref": "#/definitions/material"
+    },
+    "ground": {
+     "$ref": "#/definitions/material"
+    },
+    "roof": {
+     "$ref": "#/definitions/material"
+    },
+    "nature": {
+     "$ref": "#/definitions/material"
+    }
+   }
+  },
+  "finish": {
+   "type": "string",
+   "enum": [
+    "chrome",
+    "glossy",
+    "satin",
+    "matte",
+    "rough"
+   ]
+  },
+  "metal_finish": {
+   "type": "string",
+   "enum": [
+    "chrome",
+    "brushed",
+    "iron",
+    "rust",
+    "brass",
+    "none"
+   ]
+  },
+  "shape_language": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "architecture",
+    "furniture"
+   ],
+   "description": "per kit class, 1-3 shape words, strongest first",
+   "properties": {
+    "architecture": {
+     "$ref": "#/definitions/shapes"
+    },
+    "openings": {
+     "$ref": "#/definitions/shapes"
+    },
+    "furniture": {
+     "$ref": "#/definitions/shapes"
+    },
+    "seating": {
+     "$ref": "#/definitions/shapes"
+    },
+    "props": {
+     "$ref": "#/definitions/shapes"
+    },
+    "vehicles": {
+     "$ref": "#/definitions/shapes"
+    },
+    "nature": {
+     "$ref": "#/definitions/shapes"
+    }
+   }
+  },
+  "fog": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "density"
+   ],
+   "properties": {
+    "density": {
+     "$ref": "#/definitions/fog_density"
+    },
+    "tint": {
+     "$ref": "#/definitions/hue_or_none"
+    }
+   }
+  },
+  "lighting": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "temperature",
+    "contrast"
+   ],
+   "properties": {
+    "temperature": {
+     "type": "string",
+     "enum": [
+      "cold",
+      "cool",
+      "neutral",
+      "warm",
+      "hot"
+     ]
+    },
+    "contrast": {
+     "type": "string",
+     "enum": [
+      "low",
+      "medium",
+      "high"
+     ]
+    },
+    "key": {
+     "type": "string",
+     "enum": [
+      "sun",
+      "moon",
+      "lamps",
+      "screens",
+      "fire",
+      "sky",
+      "mixed",
+      "none"
+     ]
+    },
+    "light_sources": {
+     "type": "array",
+     "maxItems": 6,
+     "uniqueItems": true,
+     "items": {
+      "type": "string",
+      "enum": [
+       "sun",
+       "moon",
+       "lamps",
+       "lanterns",
+       "screens",
+       "fire",
+       "neon",
+       "windows",
+       "bioluminescence",
+       "crystals"
+      ]
+     }
+    }
+   }
+  },
+  "palette": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "temperature": {
+     "type": "string",
+     "enum": [
+      "cold",
+      "cool",
+      "neutral",
+      "warm",
+      "hot"
+     ]
+    },
+    "saturation": {
+     "type": "string",
+     "enum": [
+      "muted",
+      "moderate",
+      "vivid"
+     ]
+    },
+    "accent_hues": {
+     "type": "array",
+     "maxItems": 3,
+     "uniqueItems": true,
+     "items": {
+      "$ref": "#/definitions/hue"
+     }
+    },
+    "avoid_hues": {
+     "type": "array",
+     "maxItems": 4,
+     "uniqueItems": true,
+     "items": {
+      "$ref": "#/definitions/hue"
+     }
+    }
+   }
+  },
+  "detail": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "texture_detail": {
+     "type": "string",
+     "enum": [
+      "flat",
+      "soft",
+      "detailed"
+     ]
+    },
+    "dither": {
+     "type": "string",
+     "enum": [
+      "auto",
+      "yes",
+      "no"
+     ]
+    }
+   }
+  },
+  "character_style": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "proportions": {
+     "type": "string",
+     "enum": [
+      "chunky",
+      "stylised",
+      "realistic",
+      "chibi"
+     ]
+    },
+    "faces": {
+     "type": "string",
+     "enum": [
+      "painted",
+      "faceless",
+      "masked",
+      "visor",
+      "none"
+     ]
+    },
+    "notes": {
+     "type": "string",
+     "maxLength": 400
+    }
+   }
+  },
+  "avoid": {
+   "type": "array",
+   "maxItems": 10,
+   "uniqueItems": true,
+   "items": {
+    "type": "string",
+    "enum": [
+     "text_logos",
+     "neon",
+     "gore",
+     "weapons",
+     "modern_brands",
+     "photoreal_textures",
+     "high_saturation",
+     "pure_black",
+     "pure_white",
+     "clutter",
+     "sharp_spikes",
+     "horror",
+     "chrome",
+     "wood",
+     "foliage"
+    ]
+   }
+  },
+  "avoid_notes": {
+   "type": "string",
+   "maxLength": 400
+  },
+  "sound": {
+   "type": "object",
+   "additionalProperties": false,
+   "properties": {
+    "inside_floor": {
+     "$ref": "#/definitions/step_surface"
+    },
+    "outside_ground": {
+     "$ref": "#/definitions/step_surface"
+    },
+    "ambience": {
+     "type": "array",
+     "maxItems": 4,
+     "uniqueItems": true,
+     "items": {
+      "type": "string",
+      "enum": [
+       "wind",
+       "snow",
+       "rain",
+       "storm",
+       "forest",
+       "birds",
+       "insects",
+       "waves",
+       "river",
+       "cave_drip",
+       "fire",
+       "machines",
+       "hum",
+       "fan",
+       "generator",
+       "habitat",
+       "silence"
+      ]
+     }
+    },
+    "music": {
+     "type": "string",
+     "enum": [
+      "cozy",
+      "explore",
+      "night",
+      "tense",
+      "ruins",
+      "harbor",
+      "forest_day",
+      "credits"
+     ]
+    },
+    "creatures": {
+     "type": "array",
+     "maxItems": 4,
+     "uniqueItems": true,
+     "items": {
+      "type": "string",
+      "enum": [
+       "cat",
+       "dog",
+       "bird",
+       "frog",
+       "owl",
+       "horse",
+       "monster"
+      ]
+     }
+    },
+    "voices": {
+     "type": "array",
+     "maxItems": 3,
+     "uniqueItems": true,
+     "items": {
+      "type": "string",
+      "enum": [
+       "calm",
+       "airy",
+       "bright",
+       "child",
+       "elder",
+       "gruff",
+       "low",
+       "nasal",
+       "robotic",
+       "rounded",
+       "tiny",
+       "whisper"
+      ]
+     }
+    }
+   }
+  },
+  "references": {
+   "type": "array",
+   "minItems": 1,
+   "maxItems": 8,
+   "items": {
+    "$ref": "#/definitions/reference"
+   }
+  },
+  "notes": {
+   "type": "string",
+   "maxLength": 2000
+  }
+ },
+ "definitions": {
+  "material": {
+   "type": "string",
+   "enum": [
+    "glossy_plastic",
+    "chrome",
+    "brushed_metal",
+    "rusted_iron",
+    "iron",
+    "brass",
+    "glass",
+    "crystal",
+    "timber",
+    "polished_wood",
+    "plaster",
+    "adobe",
+    "stone",
+    "cobble",
+    "brick",
+    "concrete",
+    "marble",
+    "thatch",
+    "tile",
+    "sand",
+    "snow",
+    "ice",
+    "rock",
+    "dirt",
+    "mud",
+    "grass",
+    "moss",
+    "foliage",
+    "water",
+    "coral",
+    "quilted_vinyl",
+    "knit",
+    "fur",
+    "leather",
+    "canvas",
+    "cloth",
+    "rope",
+    "paper",
+    "neon",
+    "screens"
+   ]
+  },
+  "shapes": {
+   "type": "array",
+   "minItems": 1,
+   "maxItems": 3,
+   "uniqueItems": true,
+   "items": {
+    "type": "string",
+    "enum": [
+     "rounded",
+     "molded",
+     "boxy",
+     "angular",
+     "organic",
+     "ornate",
+     "rustic",
+     "industrial",
+     "sleek",
+     "chunky"
+    ]
+   }
+  },
+  "fog_density": {
+   "type": "string",
+   "enum": [
+    "none",
+    "light",
+    "medium",
+    "heavy",
+    "very_heavy"
+   ]
+  },
+  "hue": {
+   "type": "string",
+   "enum": [
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "teal",
+    "blue",
+    "purple",
+    "pink",
+    "brown"
+   ]
+  },
+  "hue_or_none": {
+   "type": "string",
+   "enum": [
+    "none",
+    "white",
+    "grey",
+    "black",
+    "red",
+    "orange",
+    "yellow",
+    "green",
+    "teal",
+    "blue",
+    "purple",
+    "pink",
+    "brown"
+   ]
+  },
+  "step_surface": {
+   "type": "string",
+   "enum": [
+    "floor",
+    "metal",
+    "wood",
+    "stone",
+    "carpet",
+    "sand",
+    "snow",
+    "grass",
+    "gravel",
+    "mud",
+    "water"
+   ]
+  },
+  "box": {
+   "type": "array",
+   "minItems": 4,
+   "maxItems": 4,
+   "items": {
+    "type": "number",
+    "minimum": 0,
+    "maximum": 1
+   },
+   "description": "[x0, y0, x1, y1] normalised, origin top-left, x0<x1 and y0<y1"
+  },
+  "reference": {
+   "type": "object",
+   "additionalProperties": false,
+   "required": [
+    "index",
+    "kind"
+   ],
+   "properties": {
+    "index": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 7
+    },
+    "sha256": {
+     "type": "string",
+     "pattern": "^[0-9a-f]{64}$"
+    },
+    "kind": {
+     "type": "string",
+     "enum": [
+      "game_screenshot",
+      "concept_art",
+      "render",
+      "photo",
+      "sketch",
+      "contact_sheet",
+      "ui_mock",
+      "character_sheet"
+     ]
+    },
+    "use": {
+     "type": "array",
+     "minItems": 1,
+     "maxItems": 8,
+     "uniqueItems": true,
+     "items": {
+      "type": "string",
+      "enum": [
+       "palette",
+       "lighting",
+       "fog",
+       "materials",
+       "shapes",
+       "mood",
+       "characters",
+       "ui"
+      ]
+     }
+    },
+    "weight": {
+     "type": "number",
+     "minimum": 0,
+     "maximum": 1
+    },
+    "setting": {
+     "type": "string",
+     "enum": [
+      "interior",
+      "exterior",
+      "mixed"
+     ]
+    },
+    "time_of_day": {
+     "type": "string",
+     "enum": [
+      "dawn",
+      "day",
+      "golden_hour",
+      "dusk",
+      "night",
+      "artificial",
+      "unknown"
+     ]
+    },
+    "fog_density": {
+     "$ref": "#/definitions/fog_density"
+    },
+    "crop": {
+     "$ref": "#/definitions/box"
+    },
+    "exclude": {
+     "type": "array",
+     "maxItems": 8,
+     "items": {
+      "$ref": "#/definitions/box"
+     }
+    },
+    "materials": {
+     "type": "array",
+     "maxItems": 6,
+     "uniqueItems": true,
+     "items": {
+      "$ref": "#/definitions/material"
+     }
+    },
+    "notes": {
+     "type": "string",
+     "maxLength": 500
+    },
+    "regions": {
+     "type": "object",
+     "additionalProperties": false,
+     "description": "optional rough boxes the agent marks per surface (agent = semantics, tool = numbers); the tool measures a robust colour inside each",
+     "properties": {
+      "walls": {
+       "$ref": "#/definitions/box"
+      },
+      "floor": {
+       "$ref": "#/definitions/box"
+      },
+      "ceiling": {
+       "$ref": "#/definitions/box"
+      },
+      "sky": {
+       "$ref": "#/definitions/box"
+      },
+      "ground": {
+       "$ref": "#/definitions/box"
+      },
+      "furniture": {
+       "$ref": "#/definitions/box"
+      },
+      "soft": {
+       "$ref": "#/definitions/box"
+      },
+      "metal": {
+       "$ref": "#/definitions/box"
+      },
+      "accent": {
+       "$ref": "#/definitions/box"
+      },
+      "foliage": {
+       "$ref": "#/definitions/box"
+      },
+      "water": {
+       "$ref": "#/definitions/box"
+      },
+      "view": {
+       "$ref": "#/definitions/box"
+      }
+     }
+    }
+   }
+  }
+ }
+}

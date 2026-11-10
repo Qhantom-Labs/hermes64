@@ -1,0 +1,399 @@
+{
+ "mat_polar_pod_band": {
+  "env": "env_glass",
+  "kind": "glass_env",
+  "pack": "polar_pod",
+  "role": "band",
+  "tint": "navy_0"
+ },
+ "mat_polar_pod_bark": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "bark",
+  "texture_gen": "bark",
+  "tile_m": 0.75
+ },
+ "mat_polar_pod_body": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "body",
+  "texture_gen": "gloss",
+  "tile_m": 0.75
+ },
+ "mat_polar_pod_body_alt": {
+  "env": "env_chrome",
+  "kind": "chrome_env",
+  "pack": "polar_pod",
+  "role": "body_alt",
+  "tint": "chrome_3"
+ },
+ "mat_polar_pod_book": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "book",
+  "texture_gen": "spines",
+  "tile_m": 0.4
+ },
+ "mat_polar_pod_cap": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "cap",
+  "texture_gen": "snow",
+  "tile_m": 1.5
+ },
+ "mat_polar_pod_ceiling": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "ceiling",
+  "texture_gen": "gloss",
+  "tile_m": 2.0
+ },
+ "mat_polar_pod_chrome": {
+  "env": "env_chrome",
+  "kind": "chrome_env",
+  "pack": "polar_pod",
+  "role": "chrome",
+  "tint": "chrome_3"
+ },
+ "mat_polar_pod_cliff": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "cliff",
+  "texture_gen": "streaks",
+  "tile_m": 4.0
+ },
+ "mat_polar_pod_coat": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "coat"
+ },
+ "mat_polar_pod_costume": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "costume"
+ },
+ "mat_polar_pod_cushion": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "cushion",
+  "texture_gen": "quilt_diamond",
+  "tile_m": 0.6
+ },
+ "mat_polar_pod_dirt": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "dirt",
+  "texture_gen": "dirt",
+  "tile_m": 3.0
+ },
+ "mat_polar_pod_door": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "door",
+  "texture_gen": "panel",
+  "tile_m": 2.0
+ },
+ "mat_polar_pod_fabric": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "fabric",
+  "texture_gen": "fabric",
+  "tile_m": 0.3
+ },
+ "mat_polar_pod_face": {
+  "kind": "face_atlas",
+  "pack": "polar_pod",
+  "role": "face"
+ },
+ "mat_polar_pod_field": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "field",
+  "texture_gen": "blotch",
+  "tile_m": 6.0
+ },
+ "mat_polar_pod_fire": {
+  "kind": "emissive",
+  "pack": "polar_pod",
+  "role": "fire",
+  "texture_gen": "fire"
+ },
+ "mat_polar_pod_floor": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "floor",
+  "texture_gen": "gloss",
+  "tile_m": 2.0
+ },
+ "mat_polar_pod_flower": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "flower",
+  "texture_gen": "ice",
+  "tile_m": 0.75
+ },
+ "mat_polar_pod_foliage": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "foliage",
+  "texture_gen": "leaves",
+  "tile_m": 1.5
+ },
+ "mat_polar_pod_frame": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "frame",
+  "texture_gen": "gloss",
+  "tile_m": 1.0
+ },
+ "mat_polar_pod_fur": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "fur",
+  "texture_gen": "fur",
+  "tile_m": 0.6
+ },
+ "mat_polar_pod_glass": {
+  "env": "env_glass",
+  "kind": "glass_env",
+  "pack": "polar_pod",
+  "role": "glass",
+  "tint": "peri_1"
+ },
+ "mat_polar_pod_grass": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "grass",
+  "texture_gen": "snow",
+  "tile_m": 3.0
+ },
+ "mat_polar_pod_headwear": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "headwear"
+ },
+ "mat_polar_pod_hull": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "hull",
+  "texture_gen": "gloss",
+  "tile_m": 0.75
+ },
+ "mat_polar_pod_hull_alt": {
+  "env": "env_chrome",
+  "kind": "chrome_env",
+  "pack": "polar_pod",
+  "role": "hull_alt",
+  "tint": "chrome_3"
+ },
+ "mat_polar_pod_ice": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "ice",
+  "texture_gen": "ice",
+  "tile_m": 3.0
+ },
+ "mat_polar_pod_knit": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "knit",
+  "texture_gen": "knit",
+  "tile_m": 0.6
+ },
+ "mat_polar_pod_leather": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "leather",
+  "texture_gen": "leather",
+  "tile_m": 0.6
+ },
+ "mat_polar_pod_light": {
+  "kind": "emissive",
+  "pack": "polar_pod",
+  "role": "light",
+  "texture_gen": "glow"
+ },
+ "mat_polar_pod_metal": {
+  "env": "env_chrome",
+  "kind": "chrome_env",
+  "pack": "polar_pod",
+  "role": "metal",
+  "tint": "chrome_2"
+ },
+ "mat_polar_pod_opening": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "opening",
+  "texture_gen": "flat",
+  "tile_m": 1.0
+ },
+ "mat_polar_pod_orb": {
+  "env": "env_glass",
+  "kind": "glass_env",
+  "pack": "polar_pod",
+  "role": "orb",
+  "tint": "cobalt_1"
+ },
+ "mat_polar_pod_paper": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "paper",
+  "texture_gen": "paper",
+  "tile_m": 0.4
+ },
+ "mat_polar_pod_particle": {
+  "kind": "card_alpha",
+  "pack": "polar_pod",
+  "role": "particle",
+  "texture_gen": "flat"
+ },
+ "mat_polar_pod_path": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "path",
+  "texture_gen": "blotch",
+  "tile_m": 3.0
+ },
+ "mat_polar_pod_post": {
+  "env": "env_chrome",
+  "kind": "chrome_env",
+  "pack": "polar_pod",
+  "role": "post",
+  "tint": "chrome_2"
+ },
+ "mat_polar_pod_quilt": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "quilt",
+  "texture_gen": "quilt_wave",
+  "tile_m": 0.6
+ },
+ "mat_polar_pod_rail": {
+  "env": "env_chrome",
+  "kind": "chrome_env",
+  "pack": "polar_pod",
+  "role": "rail",
+  "tint": "chrome_3"
+ },
+ "mat_polar_pod_rock": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "rock",
+  "texture_gen": "rock",
+  "tile_m": 2.0
+ },
+ "mat_polar_pod_roof": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "roof",
+  "texture_gen": "snow",
+  "tile_m": 2.0
+ },
+ "mat_polar_pod_rope": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "rope",
+  "texture_gen": "rope",
+  "tile_m": 0.3
+ },
+ "mat_polar_pod_sand": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "sand",
+  "texture_gen": "sand",
+  "tile_m": 3.0
+ },
+ "mat_polar_pod_screen": {
+  "kind": "emissive",
+  "pack": "polar_pod",
+  "role": "screen",
+  "texture_gen": "screen"
+ },
+ "mat_polar_pod_skin": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "skin",
+  "texture_gen": "flat",
+  "tile_m": 1.0
+ },
+ "mat_polar_pod_sky": {
+  "kind": "view_plane",
+  "pack": "polar_pod",
+  "role": "sky",
+  "texture_gen": "scene"
+ },
+ "mat_polar_pod_snow": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "snow",
+  "texture_gen": "snow",
+  "tile_m": 3.0
+ },
+ "mat_polar_pod_step": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "step",
+  "texture_gen": "gloss",
+  "tile_m": 1.0
+ },
+ "mat_polar_pod_stone": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "stone",
+  "texture_gen": "blocks",
+  "tile_m": 2.0
+ },
+ "mat_polar_pod_trim": {
+  "env": "env_chrome",
+  "kind": "chrome_env",
+  "pack": "polar_pod",
+  "role": "trim",
+  "tint": "chrome_3"
+ },
+ "mat_polar_pod_view": {
+  "kind": "view_plane",
+  "pack": "polar_pod",
+  "role": "view",
+  "texture_gen": "scene"
+ },
+ "mat_polar_pod_vista": {
+  "kind": "view_plane",
+  "pack": "polar_pod",
+  "role": "vista",
+  "texture_gen": "vgrad"
+ },
+ "mat_polar_pod_vista_far": {
+  "kind": "view_plane",
+  "pack": "polar_pod",
+  "role": "vista_far",
+  "texture_gen": "vgrad"
+ },
+ "mat_polar_pod_wall": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "wall",
+  "texture_gen": "gloss",
+  "tile_m": 2.0
+ },
+ "mat_polar_pod_wall_alt": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "wall_alt",
+  "texture_gen": "gloss",
+  "tile_m": 2.0
+ },
+ "mat_polar_pod_water": {
+  "kind": "water",
+  "pack": "polar_pod",
+  "role": "water",
+  "texture_gen": "water",
+  "tile_m": 3.0
+ },
+ "mat_polar_pod_wood": {
+  "kind": "baked_unlit",
+  "pack": "polar_pod",
+  "role": "wood",
+  "texture_gen": "gloss",
+  "tile_m": 0.75
+ }
+}

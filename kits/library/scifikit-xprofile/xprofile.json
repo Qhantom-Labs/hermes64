@@ -1,0 +1,90 @@
+{
+ "builds": [
+  {
+   "glb": "kits/library/scifikit-xprofile/polar_pod/stn.corridor.glb",
+   "id": "stn.corridor",
+   "pack": "polar_pod",
+   "sha256": "4ceb41f12b45ef4df598176c8914945f240c4d06553d8f546c0764cc3b48f1ca",
+   "tris": 216
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/polar_pod/tech.console.glb",
+   "id": "tech.console",
+   "pack": "polar_pod",
+   "sha256": "1e81199d2f42882077dc21692592c84a0d2a6b3eadf527f5c9f5ef6594b335d1",
+   "tris": 152
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/polar_pod/tech.crate.glb",
+   "id": "tech.crate",
+   "pack": "polar_pod",
+   "sha256": "52ddc51c28bdff751e6d3f328aa0ea2d9256a059b2f60dacf8206a51b59a7e7b",
+   "tris": 220
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/polar_pod/ship.shuttle.glb",
+   "id": "ship.shuttle",
+   "pack": "polar_pod",
+   "sha256": "1cc0a50f5e5bf7f4b1456bf2f1452acc428b5d15c5b7dc4258fe0ec79b6b154f",
+   "tris": 404
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/polar_pod/alien.crystal.glb",
+   "id": "alien.crystal",
+   "pack": "polar_pod",
+   "sha256": "bbbce889aa6ff01655e53df406e39ab8ef9cbb6e3c4d2301db3610298d783e7b",
+   "tris": 168
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/polar_pod/alien.cap_tree.glb",
+   "id": "alien.cap_tree",
+   "pack": "polar_pod",
+   "sha256": "238ae344d650af7b324eaa3ac8a73bed236b4470eb20d760bfd9fc331756fdfc",
+   "tris": 134
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/forest_village/stn.corridor.glb",
+   "id": "stn.corridor",
+   "pack": "forest_village",
+   "sha256": "b1df407a645292d07474469409e65ded37e3502122dfb0b5cfb8dc446753e905",
+   "tris": 216
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/forest_village/tech.console.glb",
+   "id": "tech.console",
+   "pack": "forest_village",
+   "sha256": "d197b7cf344db61750ba844ada13f6b5a87360924efcec489f705889577d394b",
+   "tris": 152
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/forest_village/tech.crate.glb",
+   "id": "tech.crate",
+   "pack": "forest_village",
+   "sha256": "82f3c04a28b7dd8fa2aedb5af22e2e4631916af9f576d50c08285660d0f9a4c0",
+   "tris": 220
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/forest_village/ship.shuttle.glb",
+   "id": "ship.shuttle",
+   "pack": "forest_village",
+   "sha256": "b8a435054f649caf02d7f943dc3e4f70a8ff2957edf8e770992c2fa8ef57d7db",
+   "tris": 404
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/forest_village/alien.crystal.glb",
+   "id": "alien.crystal",
+   "pack": "forest_village",
+   "sha256": "800172b5fe235a833a11b803768ed5adb481b02676b153ef18858a6a49dc3b7d",
+   "tris": 168
+  },
+  {
+   "glb": "kits/library/scifikit-xprofile/forest_village/alien.cap_tree.glb",
+   "id": "alien.cap_tree",
+   "pack": "forest_village",
+   "sha256": "e5f5b5f243fb567d690a012a35e08452cc4e7749b3fb6f9a06a924f511773d77",
+   "tris": 134
+  }
+ ],
+ "format": 1,
+ "note": "SCIFIKIT pieces built with other style profiles' kit packs (same generators, palette roles only)"
+}

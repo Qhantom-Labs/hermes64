@@ -1,0 +1,973 @@
+{
+  "fog": {
+    "color": "#26398F",
+    "far": 24.0,
+    "near": 6.0
+  },
+  "kit_pack_id": "polar_pod",
+  "light_rig": {
+    "ambient": 0.46,
+    "ao": 0.28,
+    "ao_height": 0.45,
+    "gamma": 1.0,
+    "ground": 0.14,
+    "key": 0.42,
+    "key_dir": [
+      0.3,
+      -0.45,
+      0.85
+    ],
+    "sky": 0.16
+  },
+  "look": {
+    "accent_fallback": {
+      "asset": "furn.lamp",
+      "clearance": 0.9,
+      "inset": 0.9,
+      "intensity_scale": 0.3,
+      "note": "every interior shows at least one warm practical (sparing warm accents); room.gd ensure_accent",
+      "scale": 1.15
+    },
+    "backdrop": {
+      "asset": "sky.backdrop",
+      "interiors": false,
+      "note": "sky dome for exteriors; interiors show the world through window view planes, so no hidden dome there (saves its triangles)",
+      "scale": 0.1,
+      "y": -1.0
+    },
+    "camera": {
+      "fov": 64,
+      "height_frac": 0.78,
+      "inset": 0.8,
+      "note": "Fixed cameras authored outside an enclosed shell are pulled inside on the same side (room.gd inside_camera).",
+      "people": {
+        "centroid_weight": 0.45,
+        "fovs": [
+          0,
+          6
+        ],
+        "lift": 0.3,
+        "max_size": 0.34,
+        "max_turn": 36,
+        "note": "room.gd frame_people(): after dressing, re-aim the inside camera so people sit in frame naturally (no figure looming at the lens, no stacked figures, no tall piece crowding the frame near the lens)",
+        "occluder_cost": 10,
+        "occluder_free": 0.015,
+        "occluder_min_height": 0.0,
+        "occluder_near": 2.6,
+        "size_cost": 14,
+        "stack_animal": 0.35,
+        "stack_cost": 6,
+        "stack_human": 1.0,
+        "steps": 3,
+        "turn_cost": 1.0
+      },
+      "policy": "inside",
+      "target_frac": 0.2,
+      "target_y": 0.8
+    },
+    "emitters": {
+      "arch.window": {
+        "color": "#a9b5f8",
+        "intensity": 0.5,
+        "offset": [
+          0,
+          1.6,
+          0.6
+        ],
+        "pool": [
+          2.0,
+          0.12
+        ],
+        "radius": 3.5
+      },
+      "furn.lamp": {
+        "color": "#ffd9a0",
+        "halo": [
+          1.2,
+          0.85
+        ],
+        "halo_color": "#ffc248",
+        "halo_mode": "mix",
+        "halo_softness": 0.9,
+        "intensity": 0.85,
+        "offset": [
+          0,
+          1.5,
+          0
+        ],
+        "pool": [
+          3.2,
+          0.18
+        ],
+        "pool_color": "#ffd9a0",
+        "radius": 5.0,
+        "tint_roles": {
+          "light": "#f2a65a"
+        }
+      },
+      "kit/blob_desk": {
+        "color": "#9fe6ff",
+        "intensity": 0.6,
+        "offset": [
+          0,
+          1.2,
+          0.6
+        ],
+        "pool": [
+          2.6,
+          0.18
+        ],
+        "radius": 3.5
+      },
+      "kit/glowing_dome": {
+        "color": "#ffd9a0",
+        "intensity": 0.9,
+        "offset": [
+          0,
+          1.2,
+          0
+        ],
+        "pool": [
+          5.0,
+          0.22
+        ],
+        "radius": 6.0
+      },
+      "kit/heated_path": {
+        "color": "#ffd9a0",
+        "intensity": 0.6,
+        "offset": [
+          0,
+          0.3,
+          0
+        ],
+        "pool": [
+          3.2,
+          0.3
+        ],
+        "pool_color": "#ffd9a0",
+        "radius": 3.2
+      },
+      "kit/panoramic_window": {
+        "color": "#8e9ff5",
+        "intensity": 0.8,
+        "offset": [
+          0,
+          0.0,
+          0.8
+        ],
+        "pool": [
+          3.6,
+          0.14
+        ],
+        "radius": 5.0
+      },
+      "kit/small_fountain": {
+        "color": "#9fe6ff",
+        "intensity": 0.5,
+        "offset": [
+          0,
+          0.8,
+          0
+        ],
+        "pool": [
+          1.8,
+          0.16
+        ],
+        "radius": 2.6
+      },
+      "kit/warm_pipe": {
+        "color": "#ffd9a0",
+        "halo": [
+          1.2,
+          0.6
+        ],
+        "halo_color": "#ffc248",
+        "halo_mode": "mix",
+        "halo_pull": 0.6,
+        "halo_softness": 0.9,
+        "intensity": 0.7,
+        "offset": [
+          0,
+          1.6,
+          0
+        ],
+        "pool": [
+          2.6,
+          0.3
+        ],
+        "pool_color": "#ffd9a0",
+        "radius": 3.0
+      },
+      "prop/central_lamp": {
+        "color": "#ffd9a0",
+        "halo": [
+          1.2,
+          0.85
+        ],
+        "halo_color": "#ffc248",
+        "halo_mode": "mix",
+        "halo_softness": 0.9,
+        "intensity": 0.9,
+        "offset": [
+          0,
+          1.5,
+          0
+        ],
+        "pool": [
+          3.2,
+          0.18
+        ],
+        "pool_color": "#ffd9a0",
+        "radius": 5.5,
+        "tint_roles": {
+          "light": "#f2a65a"
+        }
+      },
+      "prop/crt_screen": {
+        "color": "#43b4ff",
+        "intensity": 0.6,
+        "offset": [
+          0,
+          0.0,
+          0.4
+        ],
+        "pool": [
+          1.6,
+          0.16
+        ],
+        "radius": 3.0
+      },
+      "prop/keycard_cache": {
+        "color": "#ffd9a0",
+        "halo": [
+          0.5,
+          0.3
+        ],
+        "intensity": 0.45,
+        "offset": [
+          0,
+          0.6,
+          0
+        ],
+        "radius": 2.2
+      },
+      "prop/keycard_reader": {
+        "color": "#43b4ff",
+        "intensity": 0.45,
+        "offset": [
+          0,
+          0.0,
+          0.3
+        ],
+        "radius": 2.0
+      },
+      "prop/path_marker": {
+        "color": "#43b4ff",
+        "halo": [
+          0.7,
+          0.35
+        ],
+        "intensity": 0.6,
+        "offset": [
+          0,
+          0.8,
+          0
+        ],
+        "radius": 3.0
+      },
+      "prop/steaming_mug": {
+        "color": "#f2a65a",
+        "halo": [
+          0.6,
+          0.6
+        ],
+        "halo_color": "#ffc248",
+        "halo_mode": "mix",
+        "halo_softness": 0.9,
+        "intensity": 0.5,
+        "offset": [
+          0,
+          0.3,
+          0
+        ],
+        "radius": 1.8
+      },
+      "prop/storm_panel": {
+        "color": "#43b4ff",
+        "intensity": 0.45,
+        "offset": [
+          0,
+          0.0,
+          0.3
+        ],
+        "radius": 2.0
+      },
+      "prop/thermos": {
+        "color": "#f2a65a",
+        "halo": [
+          0.5,
+          0.3
+        ],
+        "intensity": 0.7,
+        "offset": [
+          0,
+          0.4,
+          0
+        ],
+        "pool": [
+          2.0,
+          0.3
+        ],
+        "radius": 2.8
+      }
+    },
+    "exterior": {
+      "backdrop_scale": 0.25,
+      "camera": {
+        "back": 2.0,
+        "fov": 62,
+        "height": 3.4,
+        "target_frac": 0.45,
+        "target_y": 2.8
+      },
+      "clusters": [
+        {
+          "asset": "nature.rock",
+          "at": [
+            0.8,
+            0.3
+          ],
+          "count": 3,
+          "scale": [
+            0.3,
+            0.75
+          ],
+          "spread": 1.7
+        }
+      ],
+      "door_building": {
+        "asset": "kit/glowing_dome",
+        "back": 2.4,
+        "scale": 0.72
+      },
+      "drifts": {
+        "angle": 0,
+        "count": 8,
+        "crest": "#ffffff",
+        "jitter": 14,
+        "lee": "#5a72e0",
+        "length": [
+          3.0,
+          6.5
+        ],
+        "lift": 0.04,
+        "note": "wind drift lines: lit crest + blue lee",
+        "orient": "across",
+        "strength": 0.62,
+        "width": [
+          0.6,
+          1.0
+        ]
+      },
+      "framing": [
+        {
+          "asset": "nature.rock",
+          "distance": 4.2,
+          "scale": [
+            2.6,
+            2.2,
+            2.4
+          ],
+          "shade": 0.58,
+          "side": -1.0
+        },
+        {
+          "asset": "look/frosted_tree",
+          "distance": 6.5,
+          "scale": 0.9,
+          "shade": 0.68,
+          "side": 1.0
+        }
+      ],
+      "landmark": {
+        "asset": "look/crystal_tree",
+        "crest_frac": 1.0,
+        "distance": 34.0,
+        "height_frac": 0.35,
+        "scale": 1.6,
+        "shade": 0.85,
+        "side": 0.22
+      },
+      "note": "room.gd compose_exterior: near/mid/far layering rule. Assets are binding refs; positions deterministic. Budget: leave >= 1,000 triangles of the 6,000 room cap for actors (snow_field environment under 5,000).",
+      "particles": {
+        "area": [
+          34,
+          11,
+          34
+        ],
+        "color": "#ffffff",
+        "count": 240,
+        "drift": 0.3,
+        "size": 0.07,
+        "speed": 0.45
+      },
+      "rhythm": {
+        "asset": "prop/path_marker",
+        "max": 4,
+        "offset": 1.35,
+        "scale": 0.85,
+        "spacing": 3.4
+      },
+      "supersede": [
+        "sky.backdrop",
+        "terrain.patch"
+      ],
+      "trail": {
+        "bend": 0.45,
+        "color": "#3f5dd0",
+        "lift": 0.05,
+        "max": 26,
+        "note": "footprints from the protagonist's mark to the nearest door building",
+        "size": [
+          0.42,
+          0.62
+        ],
+        "spacing": 0.6,
+        "stop": 1.8,
+        "strength": 0.85,
+        "to": [
+          "kit/glowing_dome",
+          "arch.house"
+        ]
+      },
+      "vegetation": {
+        "asset": "look/frosted_tree",
+        "count": 4,
+        "scale": [
+          0.75,
+          1.3
+        ],
+        "shade": 0.72
+      },
+      "vista": {
+        "above_terraces": true,
+        "asset": "terrain.vista",
+        "scale": 1.0,
+        "y": 0.0
+      }
+    },
+    "materials": {
+      "band": {
+        "tint": "#3f5dd0"
+      },
+      "body": {
+        "gloss": 0.6
+      },
+      "body_alt": {
+        "tint": "#d9defd"
+      },
+      "cap": {
+        "gloss": 0.08
+      },
+      "ceiling": {
+        "gloss": 0.0
+      },
+      "chrome": {
+        "tint": "#d9defd"
+      },
+      "cliff": {
+        "gloss": 0.0
+      },
+      "cushion": {
+        "gloss": 0.28
+      },
+      "door": {
+        "gloss": 0.25
+      },
+      "field": {
+        "gloss": 0.0
+      },
+      "fire": {
+        "emission": 0.15,
+        "lit": 0.0
+      },
+      "floor": {
+        "gloss": 0.0,
+        "note": "matte floor (N64 convention: no per-pixel specular glints; lamp light comes from the vertex lattice and the painted pool decal)"
+      },
+      "frame": {
+        "gloss": 0.3
+      },
+      "glass": {
+        "tint": "#a9b5f8"
+      },
+      "hull": {
+        "gloss": 0.6
+      },
+      "hull_alt": {
+        "tint": "#d9defd"
+      },
+      "ice": {
+        "gloss": 0.4
+      },
+      "leather": {
+        "gloss": 0.3
+      },
+      "light": {
+        "emission": 0.15,
+        "lit": 0.0
+      },
+      "metal": {
+        "tint": "#c3cbfb"
+      },
+      "orb": {
+        "tint": "#7088f0"
+      },
+      "path": {
+        "gloss": 0.05
+      },
+      "post": {
+        "tint": "#c3cbfb"
+      },
+      "quilt": {
+        "gloss": 0.3
+      },
+      "rail": {
+        "tint": "#d9defd"
+      },
+      "screen": {
+        "emission": 0.15,
+        "lit": 0.0
+      },
+      "sky": {
+        "fog_scale": 0.0,
+        "lit": 0.0
+      },
+      "snow": {
+        "gloss": 0.08
+      },
+      "step": {
+        "gloss": 0.25
+      },
+      "stone": {
+        "gloss": 0.1
+      },
+      "trim": {
+        "tint": "#d9defd"
+      },
+      "view": {
+        "fog_scale": 0.12,
+        "lit": 0.0
+      },
+      "vista": {
+        "fog_scale": 0.65,
+        "lit": 0.0
+      },
+      "vista_far": {
+        "fog_scale": 0.8,
+        "lit": 0.0
+      },
+      "wall": {
+        "gloss": 0.0
+      },
+      "wall_alt": {
+        "gloss": 0.0
+      }
+    },
+    "note": "Room look data for the polar pod pack (theme-agnostic runtime reads it). Terms are [colour, strength(, exponent)]; directions point towards the light in Godot world space (y up).",
+    "profile_by_kit_ref": {
+      "kit/glowing_dome": "warm_interior",
+      "kit/snow_patch": "exterior"
+    },
+    "profiles": {
+      "exterior": {
+        "actors": {
+          "kicker": [
+            "#c3cbfb",
+            0.2
+          ],
+          "kicker_up": 0.7,
+          "note": "characters share the world rig; a modest kicker from behind the subject keeps hoods and suits readable against walls"
+        },
+        "ambient": [
+          "#a9b5f8",
+          0.44
+        ],
+        "background": "#d9defd",
+        "bake_desaturate": 0.5,
+        "chrome": {
+          "gamma": 1.25,
+          "hot": 0.2,
+          "hot_from": 0.94,
+          "note": "painted sphere-map chrome (N64 convention): the env texture carries the look, no white-hot boost or rim catch",
+          "rim": 0.0
+        },
+        "environment": "exterior_night",
+        "fill": [
+          "#8e9ff5",
+          0.2
+        ],
+        "fill_dir": [
+          0.6,
+          0.25,
+          -0.4
+        ],
+        "fog": {
+          "color": "#d9defd",
+          "far": 58.0,
+          "max": 0.9,
+          "near": 10.0
+        },
+        "grade": {
+          "contrast": 1.08,
+          "exposure": 0.93,
+          "gain": "#ffffff",
+          "gamma": 1.0,
+          "lift": "#04050c",
+          "saturation": 0.98
+        },
+        "ground": [
+          "#5674e6",
+          0.12
+        ],
+        "key": [
+          "#ebeefe",
+          0.36
+        ],
+        "key_dir": [
+          -0.45,
+          0.62,
+          0.5
+        ],
+        "sky": [
+          "#d9defd",
+          0.22
+        ]
+      },
+      "interior": {
+        "actors": {
+          "kicker": [
+            "#a9b5f8",
+            0.22
+          ],
+          "kicker_up": 0.7,
+          "note": "characters share the world rig; a modest kicker from behind the subject keeps hoods and suits readable against walls"
+        },
+        "ambient": [
+          "#9aa4d8",
+          0.4
+        ],
+        "background": "#04050c",
+        "bake_desaturate": 0.6,
+        "chrome": {
+          "gamma": 1.25,
+          "hot": 0.2,
+          "hot_from": 0.94,
+          "note": "painted sphere-map chrome (N64 convention): the env texture carries the look, no white-hot boost or rim catch",
+          "rim": 0.0
+        },
+        "environment": "interior_cool",
+        "fill": [
+          "#6a7dc4",
+          0.2
+        ],
+        "fill_dir": [
+          -0.6,
+          0.25,
+          -0.5
+        ],
+        "fog": {
+          "color": "#0a1030",
+          "far": 40.0,
+          "max": 0.35,
+          "near": 12.0
+        },
+        "grade": {
+          "contrast": 1.1,
+          "exposure": 1.0,
+          "gain": "#ffffff",
+          "gamma": 0.94,
+          "lift": "#04050c",
+          "saturation": 0.9
+        },
+        "ground": [
+          "#6a7dc4",
+          0.22
+        ],
+        "key": [
+          "#ebeefe",
+          0.5
+        ],
+        "key_dir": [
+          0.35,
+          0.82,
+          0.45
+        ],
+        "room": {
+          "base_ao": 0.35,
+          "base_height": 0.5,
+          "floor_lift": 0.1,
+          "note": "value structure: light falls off toward the ceiling (gently: N64 rooms keep ceilings readable), wall bases in contact shadow, lit floor centre",
+          "top_dark": 0.22,
+          "top_from": 1.0,
+          "top_to": 3.0
+        },
+        "sky": [
+          "#c8cee9",
+          0.16
+        ]
+      },
+      "warm_interior": {
+        "ambient": [
+          "#9aa4d8",
+          0.38
+        ],
+        "background": "#04050c",
+        "bake_desaturate": 0.6,
+        "environment": "interior_cool",
+        "fill": [
+          "#6a7dc4",
+          0.18
+        ],
+        "fill_dir": [
+          -0.6,
+          0.25,
+          -0.5
+        ],
+        "fog": {
+          "color": "#0a1030",
+          "far": 36.0,
+          "max": 0.5,
+          "near": 9.0
+        },
+        "grade": {
+          "contrast": 1.08,
+          "exposure": 1.0,
+          "gain": "#ffffff",
+          "gamma": 0.94,
+          "lift": "#04050c",
+          "saturation": 0.9
+        },
+        "ground": [
+          "#6a7dc4",
+          0.22
+        ],
+        "key": [
+          "#ebeefe",
+          0.4
+        ],
+        "key_dir": [
+          0.35,
+          0.82,
+          0.45
+        ],
+        "sky": [
+          "#c8cee9",
+          0.15
+        ]
+      }
+    },
+    "shadows": {
+      "color": "#04050c",
+      "kinds": [
+        "prop",
+        "piece",
+        "collectible",
+        "dressing"
+      ],
+      "max": 3.0,
+      "max_lift": 0.08,
+      "min": 0.4,
+      "note": "N64-era blob shadows under floor-standing props (room.gd blob_shadows)",
+      "scale": 1.4,
+      "strength": 0.72
+    },
+    "supports": {
+      "asset": "look/plinth",
+      "drop_min_height": 0.45,
+      "max_drop": 0.6,
+      "max_scale": 1.0,
+      "min_scale": 0.6,
+      "min_support": 0.3,
+      "note": "room.gd settle(): props authored above the floor rest on furniture, stand on their own pedestal, or get this low-poly plinth (56 tris; budget headroom for actors)."
+    },
+    "view_fog_scale": 0.15
+  },
+  "pack_id": "polar_pod",
+  "palette": {
+    "body": "#A9B5F8",
+    "boots": "#04050C",
+    "collectible": "#FFFFFF",
+    "door": "#7088F0",
+    "floor": "#3149B0",
+    "head": "#EBEEFE",
+    "prop": "#A9B5F8",
+    "ui_bg": "#04050C",
+    "ui_text": "#EBEEFE",
+    "void": "#04050C",
+    "wall": "#7088F0"
+  },
+  "palette_colors": [
+    "#04050C",
+    "#0A1030",
+    "#121C4C",
+    "#1B2A6E",
+    "#26398F",
+    "#3149B0",
+    "#3F5DD0",
+    "#5674E6",
+    "#7088F0",
+    "#8E9FF5",
+    "#A9B5F8",
+    "#C3CBFB",
+    "#D9DEFD",
+    "#EBEEFE",
+    "#FFFFFF",
+    "#2B3150",
+    "#4A5378",
+    "#727CA3",
+    "#A3ABCD",
+    "#1A1C2B",
+    "#2C2F45",
+    "#44486A",
+    "#0F1018",
+    "#B8D4FF",
+    "#E2F0FF",
+    "#43B4FF",
+    "#9FE6FF",
+    "#F2A65A",
+    "#FFD9A0",
+    "#C8553D",
+    "#8A3A6B",
+    "#E8C547"
+  ],
+  "shells": {
+    "by_kit_ref": {
+      "kit/curved_wall": {
+        "ceiling_panel": 0.0,
+        "height": 2.7,
+        "plan": "oval",
+        "window": "kit/round_window",
+        "windows": 3
+      },
+      "kit/glowing_dome": {
+        "ceiling": "dome",
+        "ceiling_panel": 0.25,
+        "ceiling_rise": 2.0,
+        "height": 2.7,
+        "plan": "round",
+        "window": "kit/round_window",
+        "windows": 3
+      },
+      "kit/molded_wall": {
+        "plan": "rounded_rect",
+        "windows": 1
+      },
+      "kit/panoramic_window": {
+        "plan": "rounded_rect",
+        "window": "kit/panoramic_window",
+        "windows": 1
+      },
+      "kit/pod_wall": {
+        "ceiling": "dome",
+        "ceiling_panel": 0.25,
+        "ceiling_rise": 1.0,
+        "floor_rings": 2,
+        "plan": "oval",
+        "wall_segments": 14,
+        "windows": 1
+      }
+    },
+    "default": {
+      "cap_center": true,
+      "ceiling": "flat",
+      "ceiling_panel": 0.3,
+      "ceiling_rise": 0.8,
+      "cove": 0.3,
+      "door": "kit/rounded_hatch",
+      "floor_rings": 3,
+      "height": 3.0,
+      "plan": "rounded_rect",
+      "ring_bias": 2.2,
+      "trim": false,
+      "wall_segments": 24,
+      "window": "kit/oval_window",
+      "windows": 1
+    },
+    "note": "Room shells (adventure_maker/shells.py -> kit arch.room_shell per interior room). Keys merge default <- by_kit_ref in room kit_ref order <- presentation room 'shell'. door/window = binding refs whose kit params size the openings."
+  },
+  "style_gate": {
+    "accent_fraction_max": 0.1,
+    "accent_hues": [
+      [
+        15.0,
+        55.0
+      ]
+    ],
+    "accent_rooms_min_fraction": 0.5,
+    "black_point_max": 0.14,
+    "camera_inside_interior": true,
+    "contrast_range_min": 0.4,
+    "edge_density_max": 0.4,
+    "edge_density_min": 0.08,
+    "edge_threshold": 0.07,
+    "flat_fraction_max": 0.4,
+    "flat_std": 0.006,
+    "floating_max": 0,
+    "fog_near_dist": 0.07,
+    "fog_swallowed_max": 0.2,
+    "mean_luma_max": 0.62,
+    "mean_luma_min": 0.12,
+    "note": "Calibrated against round-0 control (all fail) and private reference crops (contrast 0.30-0.64, p2 0.00-0.14). Never loosened to pass a round.",
+    "palette_adherence_min": 0.9,
+    "palette_hue_tol_deg": 20.0,
+    "uncut_doors_max": 0,
+    "void_fraction_max_exterior": 0.3,
+    "void_fraction_max_interior": 0.01,
+    "white_point_min": 0.82
+  },
+  "ui": {
+    "accent": "#ffd27a",
+    "dim": "#87a3e0",
+    "fill": "#0b1430d6",
+    "frame": "#b7bfd1",
+    "ink": "#05070f",
+    "text": "#e8eefa"
+  },
+  "yards": {
+    "by_kit_ref": {},
+    "default": {
+      "bowl": 0.75,
+      "cap_role": "cap",
+      "cliff_role": "cliff",
+      "exit_width": 2.4,
+      "floor_rings": 3,
+      "ground_role": "field",
+      "jag": 0.6,
+      "path_role": "path",
+      "path_width": 1.7,
+      "plan": "rounded_rect",
+      "pond_role": "ice",
+      "ponds": [
+        {
+          "rx": 2.3,
+          "ry": 1.5,
+          "thickness": 0.16,
+          "x": -0.24,
+          "y": 0.14
+        }
+      ],
+      "ridge_height": 6.0,
+      "ridge_run": 5.5,
+      "segments": 28,
+      "terrace_rise": 0.8,
+      "terrace_run": 3.0,
+      "terraces": 2,
+      "tread_role": "field",
+      "view_gap": 0.75,
+      "view_gap_width": 90.0
+    },
+    "note": "Exterior yards (adventure_maker/yards.py -> kit terrain.yard per exterior room). default <- by_kit_ref <- presentation room 'yard'."
+  }
+}

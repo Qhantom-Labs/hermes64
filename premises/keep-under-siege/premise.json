@@ -1,0 +1,20 @@
+{
+  "format": "hermes64-premise/1", "id": "keep-under-siege", "title": "Keep Under Siege",
+  "template": "arena_run_v1", "style": "castle_keep",
+  "hero": {"id": "champion", "name": "Rowan", "binding": "fv_scribe"},
+  "rooms": {"order": ["gatehouse", "outer_court", "banner_court", "inner_court", "crown_court"]},
+  "robots": [
+    {"id": "tin_guard", "name": "Tin Guard", "base": "walker", "max_health": 1, "damage": 1},
+    {"id": "iron_guard", "name": "Iron Guard", "base": "brute", "max_health": 2, "damage": 1}
+  ],
+  "bosses": [{"id": "keep_warden", "name": "Clockwork Warden", "max_health": 3}],
+  "arenas": [
+    {"room": "outer_court", "label": "The Tin Guard", "waves": [[{"robot": "tin_guard", "count": 4}]]},
+    {"room": "banner_court", "label": "The Banner Guard", "waves": [[{"robot": "tin_guard", "count": 2}], [{"robot": "tin_guard", "count": 1}]]},
+    {"room": "inner_court", "label": "The Iron Guard", "waves": [[{"robot": "iron_guard", "count": 1}]]}
+  ],
+  "finale": {"room": "crown_court", "bosses": ["keep_warden"], "attack_budget": {"count": 1, "gap_ticks": 30}},
+  "goal": {"label": "Raise the banner", "text": "The keep is safe.", "ending": "Rowan raises the banner over the quiet keep."},
+  "run": {"max_health": 3, "death_penalty_ticks": 600, "clock": "first_control_to_last_challenge", "reset_encounter_on_death": true, "pause_clock_in_cutscene": true},
+  "moveset": "brawler_v1", "results": {"enabled": true, "title": "Keep Under Siege"}
+}

@@ -1,0 +1,3395 @@
+{
+  "hermes64_module_add": {
+    "description": "Add an enemy archetype, finite ability or puzzle switch using a typed transaction; recheck progression and migrate an optional checkpoint. No scripts or style assumptions.",
+    "name": "hermes64_module_add",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "expected_game_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "expected_spec_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "operation": {
+          "oneOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "enemy": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "aggro_range_m": {
+                      "maximum": 64,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "attack": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "active_ticks": {
+                          "maximum": 120,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "damage": {
+                          "maximum": 64,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "recovery_ticks": {
+                          "maximum": 600,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "windup_ticks": {
+                          "maximum": 600,
+                          "minimum": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "windup_ticks",
+                        "active_ticks",
+                        "recovery_ticks",
+                        "damage"
+                      ],
+                      "type": "object"
+                    },
+                    "attack_range_m": {
+                      "maximum": 8,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "fsm": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "initial": {
+                          "enum": [
+                            "idle"
+                          ]
+                        },
+                        "states": {
+                          "items": {
+                            "enum": [
+                              "idle",
+                              "approach",
+                              "telegraph",
+                              "attack",
+                              "recover",
+                              "hurt",
+                              "dead"
+                            ]
+                          },
+                          "maxItems": 7,
+                          "minItems": 7,
+                          "type": "array",
+                          "uniqueItems": true
+                        },
+                        "template": {
+                          "enum": [
+                            "melee_approach_v1",
+                            "melee_dash_v1"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "template",
+                        "initial",
+                        "states"
+                      ],
+                      "type": "object"
+                    },
+                    "id": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "leash_range_m": {
+                      "maximum": 64,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "max_health": {
+                      "maximum": 64,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "name": {
+                      "maxLength": 256,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "speed_mps": {
+                      "maximum": 20,
+                      "minimum": 0.1,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "max_health",
+                    "speed_mps",
+                    "aggro_range_m",
+                    "leash_range_m",
+                    "attack_range_m",
+                    "fsm",
+                    "attack"
+                  ],
+                  "type": "object"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "add-enemy"
+                }
+              },
+              "required": [
+                "kind",
+                "enemy"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "changes": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "aggro_range_m": {
+                      "maximum": 64,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "attack": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "active_ticks": {
+                          "maximum": 120,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "damage": {
+                          "maximum": 64,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "recovery_ticks": {
+                          "maximum": 600,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "windup_ticks": {
+                          "maximum": 600,
+                          "minimum": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "windup_ticks",
+                        "active_ticks",
+                        "recovery_ticks",
+                        "damage"
+                      ],
+                      "type": "object"
+                    },
+                    "attack_range_m": {
+                      "maximum": 8,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "fsm": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "initial": {
+                          "enum": [
+                            "idle"
+                          ]
+                        },
+                        "states": {
+                          "items": {
+                            "enum": [
+                              "idle",
+                              "approach",
+                              "telegraph",
+                              "attack",
+                              "recover",
+                              "hurt",
+                              "dead"
+                            ]
+                          },
+                          "maxItems": 7,
+                          "minItems": 7,
+                          "type": "array",
+                          "uniqueItems": true
+                        },
+                        "template": {
+                          "enum": [
+                            "melee_approach_v1",
+                            "melee_dash_v1"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "template",
+                        "initial",
+                        "states"
+                      ],
+                      "type": "object"
+                    },
+                    "leash_range_m": {
+                      "maximum": 64,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "max_health": {
+                      "maximum": 64,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "name": {
+                      "maxLength": 256,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "speed_mps": {
+                      "maximum": 20,
+                      "minimum": 0.1,
+                      "type": "number"
+                    }
+                  },
+                  "required": [],
+                  "type": "object"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "id": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "kind": {
+                  "const": "modify-enemy"
+                }
+              },
+              "required": [
+                "kind",
+                "id",
+                "changes"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "changes": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "arena": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "max": {
+                          "items": {
+                            "maximum": 1024,
+                            "minimum": -1024,
+                            "type": "number"
+                          },
+                          "maxItems": 3,
+                          "minItems": 3,
+                          "type": "array"
+                        },
+                        "min": {
+                          "items": {
+                            "maximum": 1024,
+                            "minimum": -1024,
+                            "type": "number"
+                          },
+                          "maxItems": 3,
+                          "minItems": 3,
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "min",
+                        "max"
+                      ],
+                      "type": "object"
+                    },
+                    "room": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "spawns": {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "archetype": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "id": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "position_m": {
+                            "items": {
+                              "maximum": 1024,
+                              "minimum": -1024,
+                              "type": "number"
+                            },
+                            "maxItems": 3,
+                            "minItems": 3,
+                            "type": "array"
+                          },
+                          "wave": {
+                            "maximum": 7,
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "archetype",
+                          "position_m",
+                          "wave"
+                        ],
+                        "type": "object"
+                      },
+                      "maxItems": 24,
+                      "minItems": 1,
+                      "type": "array"
+                    }
+                  },
+                  "required": [],
+                  "type": "object"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "id": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "kind": {
+                  "const": "change-arena"
+                }
+              },
+              "required": [
+                "kind",
+                "id",
+                "changes"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "conditions": {
+                  "items": {
+                    "oneOf": [
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "ability": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "ability"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "challenge": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "status": {
+                            "enum": [
+                              "completed"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "challenge",
+                          "status"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "item": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "present": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "item",
+                          "present"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "equals": {
+                            "type": "boolean"
+                          },
+                          "flag": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "flag",
+                          "equals"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "location": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "location"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "tide": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "tide"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "dialogue": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "node": {
+                            "oneOf": [
+                              {
+                                "maxLength": 64,
+                                "minLength": 1,
+                                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                                "type": "string"
+                              },
+                              {
+                                "const": ""
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "dialogue",
+                          "node"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "equals": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "role": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "role",
+                          "equals"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "collected": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "collected"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "at_least": {
+                            "maximum": 128,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "group": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "group",
+                          "at_least"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "maxItems": 32,
+                  "minItems": 0,
+                  "type": "array"
+                },
+                "endpoint": {
+                  "enum": [
+                    "a",
+                    "b"
+                  ]
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "id": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "kind": {
+                  "const": "gate-region"
+                }
+              },
+              "required": [
+                "kind",
+                "id",
+                "endpoint",
+                "conditions"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "checkpoints": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "id": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                        "type": "string"
+                      },
+                      "position_m": {
+                        "items": {
+                          "maximum": 1024,
+                          "minimum": -1024,
+                          "type": "number"
+                        },
+                        "maxItems": 3,
+                        "minItems": 3,
+                        "type": "array"
+                      },
+                      "radius_m": {
+                        "maximum": 4,
+                        "minimum": 0.1,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "position_m",
+                      "radius_m"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 32,
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "id": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "kind": {
+                  "const": "change-course-checkpoints"
+                }
+              },
+              "required": [
+                "kind",
+                "id",
+                "checkpoints"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "ability": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "name": {
+                      "maxLength": 256,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "requires": {
+                      "items": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                        "type": "string"
+                      },
+                      "maxItems": 32,
+                      "minItems": 0,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "requires"
+                  ],
+                  "type": "object"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "grant": {
+                  "oneOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "kind": {
+                          "const": "initial"
+                        }
+                      },
+                      "required": [
+                        "kind"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "interaction"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "challenge"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                },
+                "kind": {
+                  "const": "add-ability"
+                }
+              },
+              "required": [
+                "kind",
+                "ability",
+                "grant"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "add-switch"
+                },
+                "puzzle": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "switch": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "cell": {
+                      "items": {
+                        "maximum": 15,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "maxItems": 2,
+                      "minItems": 2,
+                      "type": "array"
+                    },
+                    "id": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "mode": {
+                      "enum": [
+                        "toggle",
+                        "latch"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "cell",
+                    "mode"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "kind",
+                "puzzle",
+                "switch"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "door": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "link-door"
+                },
+                "puzzle": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "when": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "at_least": {
+                      "maximum": 8,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "invert": {
+                      "type": "boolean"
+                    },
+                    "of": {
+                      "items": {
+                        "maxLength": 48,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                        "type": "string"
+                      },
+                      "maxItems": 8,
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "of",
+                    "at_least",
+                    "invert"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "kind",
+                "puzzle",
+                "door",
+                "when"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "block": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "cell": {
+                  "items": {
+                    "maximum": 15,
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "type": "array"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "move-block"
+                },
+                "puzzle": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "kind",
+                "puzzle",
+                "block",
+                "cell"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "hint": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 16,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "set-solution-hint"
+                },
+                "puzzle": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "kind",
+                "puzzle",
+                "hint"
+              ],
+              "type": "object"
+            }
+          ]
+        },
+        "project": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_-]*$",
+          "type": "string"
+        },
+        "save_path": {
+          "maxLength": 512,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "project",
+        "operation",
+        "expected_spec_hash",
+        "expected_game_hash"
+      ],
+      "type": "object"
+    }
+  },
+  "hermes64_module_benchmark": {
+    "description": "Measure 1-20 sequential typed module edits without moving the data or runtime pointer. Reports data checks separately from unrun engine, bot and human evidence.",
+    "name": "hermes64_module_benchmark",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "expected_game_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "expected_spec_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "operations": {
+          "items": {
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "enemy": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "aggro_range_m": {
+                        "maximum": 64,
+                        "minimum": 0.1,
+                        "type": "number"
+                      },
+                      "attack": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "active_ticks": {
+                            "maximum": 120,
+                            "minimum": 1,
+                            "type": "integer"
+                          },
+                          "damage": {
+                            "maximum": 64,
+                            "minimum": 1,
+                            "type": "integer"
+                          },
+                          "recovery_ticks": {
+                            "maximum": 600,
+                            "minimum": 1,
+                            "type": "integer"
+                          },
+                          "windup_ticks": {
+                            "maximum": 600,
+                            "minimum": 1,
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "windup_ticks",
+                          "active_ticks",
+                          "recovery_ticks",
+                          "damage"
+                        ],
+                        "type": "object"
+                      },
+                      "attack_range_m": {
+                        "maximum": 8,
+                        "minimum": 0.1,
+                        "type": "number"
+                      },
+                      "fsm": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "initial": {
+                            "enum": [
+                              "idle"
+                            ]
+                          },
+                          "states": {
+                            "items": {
+                              "enum": [
+                                "idle",
+                                "approach",
+                                "telegraph",
+                                "attack",
+                                "recover",
+                                "hurt",
+                                "dead"
+                              ]
+                            },
+                            "maxItems": 7,
+                            "minItems": 7,
+                            "type": "array",
+                            "uniqueItems": true
+                          },
+                          "template": {
+                            "enum": [
+                              "melee_approach_v1",
+                              "melee_dash_v1"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "template",
+                          "initial",
+                          "states"
+                        ],
+                        "type": "object"
+                      },
+                      "id": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                        "type": "string"
+                      },
+                      "leash_range_m": {
+                        "maximum": 64,
+                        "minimum": 0.1,
+                        "type": "number"
+                      },
+                      "max_health": {
+                        "maximum": 64,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "name": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "speed_mps": {
+                        "maximum": 20,
+                        "minimum": 0.1,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "max_health",
+                      "speed_mps",
+                      "aggro_range_m",
+                      "leash_range_m",
+                      "attack_range_m",
+                      "fsm",
+                      "attack"
+                    ],
+                    "type": "object"
+                  },
+                  "expected_changed_rooms": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "kind": {
+                    "const": "add-enemy"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "enemy"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "changes": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "aggro_range_m": {
+                        "maximum": 64,
+                        "minimum": 0.1,
+                        "type": "number"
+                      },
+                      "attack": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "active_ticks": {
+                            "maximum": 120,
+                            "minimum": 1,
+                            "type": "integer"
+                          },
+                          "damage": {
+                            "maximum": 64,
+                            "minimum": 1,
+                            "type": "integer"
+                          },
+                          "recovery_ticks": {
+                            "maximum": 600,
+                            "minimum": 1,
+                            "type": "integer"
+                          },
+                          "windup_ticks": {
+                            "maximum": 600,
+                            "minimum": 1,
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "windup_ticks",
+                          "active_ticks",
+                          "recovery_ticks",
+                          "damage"
+                        ],
+                        "type": "object"
+                      },
+                      "attack_range_m": {
+                        "maximum": 8,
+                        "minimum": 0.1,
+                        "type": "number"
+                      },
+                      "fsm": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "initial": {
+                            "enum": [
+                              "idle"
+                            ]
+                          },
+                          "states": {
+                            "items": {
+                              "enum": [
+                                "idle",
+                                "approach",
+                                "telegraph",
+                                "attack",
+                                "recover",
+                                "hurt",
+                                "dead"
+                              ]
+                            },
+                            "maxItems": 7,
+                            "minItems": 7,
+                            "type": "array",
+                            "uniqueItems": true
+                          },
+                          "template": {
+                            "enum": [
+                              "melee_approach_v1",
+                              "melee_dash_v1"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "template",
+                          "initial",
+                          "states"
+                        ],
+                        "type": "object"
+                      },
+                      "leash_range_m": {
+                        "maximum": 64,
+                        "minimum": 0.1,
+                        "type": "number"
+                      },
+                      "max_health": {
+                        "maximum": 64,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "name": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "speed_mps": {
+                        "maximum": 20,
+                        "minimum": 0.1,
+                        "type": "number"
+                      }
+                    },
+                    "required": [],
+                    "type": "object"
+                  },
+                  "expected_changed_rooms": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "const": "modify-enemy"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "id",
+                  "changes"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "changes": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "arena": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "max": {
+                            "items": {
+                              "maximum": 1024,
+                              "minimum": -1024,
+                              "type": "number"
+                            },
+                            "maxItems": 3,
+                            "minItems": 3,
+                            "type": "array"
+                          },
+                          "min": {
+                            "items": {
+                              "maximum": 1024,
+                              "minimum": -1024,
+                              "type": "number"
+                            },
+                            "maxItems": 3,
+                            "minItems": 3,
+                            "type": "array"
+                          }
+                        },
+                        "required": [
+                          "min",
+                          "max"
+                        ],
+                        "type": "object"
+                      },
+                      "room": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                        "type": "string"
+                      },
+                      "spawns": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "archetype": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            },
+                            "id": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            },
+                            "position_m": {
+                              "items": {
+                                "maximum": 1024,
+                                "minimum": -1024,
+                                "type": "number"
+                              },
+                              "maxItems": 3,
+                              "minItems": 3,
+                              "type": "array"
+                            },
+                            "wave": {
+                              "maximum": 7,
+                              "minimum": 0,
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "archetype",
+                            "position_m",
+                            "wave"
+                          ],
+                          "type": "object"
+                        },
+                        "maxItems": 24,
+                        "minItems": 1,
+                        "type": "array"
+                      }
+                    },
+                    "required": [],
+                    "type": "object"
+                  },
+                  "expected_changed_rooms": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "const": "change-arena"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "id",
+                  "changes"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "conditions": {
+                    "items": {
+                      "oneOf": [
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "ability": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "ability"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "challenge": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            },
+                            "status": {
+                              "enum": [
+                                "completed"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "challenge",
+                            "status"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "item": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            },
+                            "present": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "item",
+                            "present"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "equals": {
+                              "type": "boolean"
+                            },
+                            "flag": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "flag",
+                            "equals"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "location": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "location"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "tide": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "tide"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "dialogue": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            },
+                            "node": {
+                              "oneOf": [
+                                {
+                                  "maxLength": 64,
+                                  "minLength": 1,
+                                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": ""
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "dialogue",
+                            "node"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "equals": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            },
+                            "role": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "role",
+                            "equals"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "collected": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "collected"
+                          ],
+                          "type": "object"
+                        },
+                        {
+                          "additionalProperties": false,
+                          "properties": {
+                            "at_least": {
+                              "maximum": 128,
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "group": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "group",
+                            "at_least"
+                          ],
+                          "type": "object"
+                        }
+                      ]
+                    },
+                    "maxItems": 32,
+                    "minItems": 0,
+                    "type": "array"
+                  },
+                  "endpoint": {
+                    "enum": [
+                      "a",
+                      "b"
+                    ]
+                  },
+                  "expected_changed_rooms": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "const": "gate-region"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "id",
+                  "endpoint",
+                  "conditions"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "checkpoints": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "position_m": {
+                          "items": {
+                            "maximum": 1024,
+                            "minimum": -1024,
+                            "type": "number"
+                          },
+                          "maxItems": 3,
+                          "minItems": 3,
+                          "type": "array"
+                        },
+                        "radius_m": {
+                          "maximum": 4,
+                          "minimum": 0.1,
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "position_m",
+                        "radius_m"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 32,
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "expected_changed_rooms": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "kind": {
+                    "const": "change-course-checkpoints"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "id",
+                  "checkpoints"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "ability": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "id": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                        "type": "string"
+                      },
+                      "name": {
+                        "maxLength": 256,
+                        "minLength": 1,
+                        "type": "string"
+                      },
+                      "requires": {
+                        "items": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "maxItems": 32,
+                        "minItems": 0,
+                        "type": "array",
+                        "uniqueItems": true
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "name",
+                      "requires"
+                    ],
+                    "type": "object"
+                  },
+                  "expected_changed_rooms": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "grant": {
+                    "oneOf": [
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "kind": {
+                            "const": "initial"
+                          }
+                        },
+                        "required": [
+                          "kind"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "id": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "kind": {
+                            "const": "interaction"
+                          }
+                        },
+                        "required": [
+                          "kind",
+                          "id"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "id": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "kind": {
+                            "const": "challenge"
+                          }
+                        },
+                        "required": [
+                          "kind",
+                          "id"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "kind": {
+                    "const": "add-ability"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "ability",
+                  "grant"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "expected_changed_rooms": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "kind": {
+                    "const": "add-switch"
+                  },
+                  "puzzle": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "switch": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "cell": {
+                        "items": {
+                          "maximum": 15,
+                          "minimum": 0,
+                          "type": "integer"
+                        },
+                        "maxItems": 2,
+                        "minItems": 2,
+                        "type": "array"
+                      },
+                      "id": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                        "type": "string"
+                      },
+                      "mode": {
+                        "enum": [
+                          "toggle",
+                          "latch"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "cell",
+                      "mode"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "puzzle",
+                  "switch"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "door": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "expected_changed_rooms": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "kind": {
+                    "const": "link-door"
+                  },
+                  "puzzle": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "when": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "at_least": {
+                        "maximum": 8,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "invert": {
+                        "type": "boolean"
+                      },
+                      "of": {
+                        "items": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "maxItems": 8,
+                        "minItems": 1,
+                        "type": "array",
+                        "uniqueItems": true
+                      }
+                    },
+                    "required": [
+                      "of",
+                      "at_least",
+                      "invert"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "puzzle",
+                  "door",
+                  "when"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "block": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "cell": {
+                    "items": {
+                      "maximum": 15,
+                      "minimum": 0,
+                      "type": "integer"
+                    },
+                    "maxItems": 2,
+                    "minItems": 2,
+                    "type": "array"
+                  },
+                  "expected_changed_rooms": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "kind": {
+                    "const": "move-block"
+                  },
+                  "puzzle": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "puzzle",
+                  "block",
+                  "cell"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "expected_changed_rooms": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 100,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "hint": {
+                    "items": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "maxItems": 16,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "kind": {
+                    "const": "set-solution-hint"
+                  },
+                  "puzzle": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "kind",
+                  "puzzle",
+                  "hint"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "maxItems": 20,
+          "minItems": 1,
+          "type": "array"
+        },
+        "project": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_-]*$",
+          "type": "string"
+        },
+        "save_path": {
+          "maxLength": 512,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "project",
+        "operations",
+        "expected_spec_hash",
+        "expected_game_hash"
+      ],
+      "type": "object"
+    }
+  },
+  "hermes64_module_check": {
+    "description": "Compile and check a STORY 1.2 or 1.3 (puzzle) data candidate. Explicit adoption advances only the isolated DATA pointer after the declared proof policy passes. Never creates runtime verification.",
+    "name": "hermes64_module_check",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "adopt": {
+          "type": "boolean"
+        },
+        "expected_game_hash": {
+          "oneOf": [
+            {
+              "maxLength": 64,
+              "minLength": 64,
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": ""
+            }
+          ]
+        },
+        "expected_spec_hash": {
+          "oneOf": [
+            {
+              "maxLength": 64,
+              "minLength": 64,
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "const": ""
+            }
+          ]
+        },
+        "max_states": {
+          "maximum": 100000,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "project": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_-]*$",
+          "type": "string"
+        },
+        "spec_path": {
+          "maxLength": 512,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "project",
+        "spec_path",
+        "adopt"
+      ],
+      "type": "object"
+    }
+  },
+  "hermes64_module_edit": {
+    "description": "Apply a typed enemy, arena, region-gate, course-checkpoint, ability or puzzle (link-door, move-block, set-solution-hint) edit with exact source/build revisions. Failed validation, proof, locality or save migration leaves the data pointer unchanged.",
+    "name": "hermes64_module_edit",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "expected_game_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "expected_spec_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "operation": {
+          "oneOf": [
+            {
+              "additionalProperties": false,
+              "properties": {
+                "enemy": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "aggro_range_m": {
+                      "maximum": 64,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "attack": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "active_ticks": {
+                          "maximum": 120,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "damage": {
+                          "maximum": 64,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "recovery_ticks": {
+                          "maximum": 600,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "windup_ticks": {
+                          "maximum": 600,
+                          "minimum": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "windup_ticks",
+                        "active_ticks",
+                        "recovery_ticks",
+                        "damage"
+                      ],
+                      "type": "object"
+                    },
+                    "attack_range_m": {
+                      "maximum": 8,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "fsm": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "initial": {
+                          "enum": [
+                            "idle"
+                          ]
+                        },
+                        "states": {
+                          "items": {
+                            "enum": [
+                              "idle",
+                              "approach",
+                              "telegraph",
+                              "attack",
+                              "recover",
+                              "hurt",
+                              "dead"
+                            ]
+                          },
+                          "maxItems": 7,
+                          "minItems": 7,
+                          "type": "array",
+                          "uniqueItems": true
+                        },
+                        "template": {
+                          "enum": [
+                            "melee_approach_v1",
+                            "melee_dash_v1"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "template",
+                        "initial",
+                        "states"
+                      ],
+                      "type": "object"
+                    },
+                    "id": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "leash_range_m": {
+                      "maximum": 64,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "max_health": {
+                      "maximum": 64,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "name": {
+                      "maxLength": 256,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "speed_mps": {
+                      "maximum": 20,
+                      "minimum": 0.1,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "max_health",
+                    "speed_mps",
+                    "aggro_range_m",
+                    "leash_range_m",
+                    "attack_range_m",
+                    "fsm",
+                    "attack"
+                  ],
+                  "type": "object"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "add-enemy"
+                }
+              },
+              "required": [
+                "kind",
+                "enemy"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "changes": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "aggro_range_m": {
+                      "maximum": 64,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "attack": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "active_ticks": {
+                          "maximum": 120,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "damage": {
+                          "maximum": 64,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "recovery_ticks": {
+                          "maximum": 600,
+                          "minimum": 1,
+                          "type": "integer"
+                        },
+                        "windup_ticks": {
+                          "maximum": 600,
+                          "minimum": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "windup_ticks",
+                        "active_ticks",
+                        "recovery_ticks",
+                        "damage"
+                      ],
+                      "type": "object"
+                    },
+                    "attack_range_m": {
+                      "maximum": 8,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "fsm": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "initial": {
+                          "enum": [
+                            "idle"
+                          ]
+                        },
+                        "states": {
+                          "items": {
+                            "enum": [
+                              "idle",
+                              "approach",
+                              "telegraph",
+                              "attack",
+                              "recover",
+                              "hurt",
+                              "dead"
+                            ]
+                          },
+                          "maxItems": 7,
+                          "minItems": 7,
+                          "type": "array",
+                          "uniqueItems": true
+                        },
+                        "template": {
+                          "enum": [
+                            "melee_approach_v1",
+                            "melee_dash_v1"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "template",
+                        "initial",
+                        "states"
+                      ],
+                      "type": "object"
+                    },
+                    "leash_range_m": {
+                      "maximum": 64,
+                      "minimum": 0.1,
+                      "type": "number"
+                    },
+                    "max_health": {
+                      "maximum": 64,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "name": {
+                      "maxLength": 256,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "speed_mps": {
+                      "maximum": 20,
+                      "minimum": 0.1,
+                      "type": "number"
+                    }
+                  },
+                  "required": [],
+                  "type": "object"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "id": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "kind": {
+                  "const": "modify-enemy"
+                }
+              },
+              "required": [
+                "kind",
+                "id",
+                "changes"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "changes": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "arena": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "max": {
+                          "items": {
+                            "maximum": 1024,
+                            "minimum": -1024,
+                            "type": "number"
+                          },
+                          "maxItems": 3,
+                          "minItems": 3,
+                          "type": "array"
+                        },
+                        "min": {
+                          "items": {
+                            "maximum": 1024,
+                            "minimum": -1024,
+                            "type": "number"
+                          },
+                          "maxItems": 3,
+                          "minItems": 3,
+                          "type": "array"
+                        }
+                      },
+                      "required": [
+                        "min",
+                        "max"
+                      ],
+                      "type": "object"
+                    },
+                    "room": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "spawns": {
+                      "items": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "archetype": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "id": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "position_m": {
+                            "items": {
+                              "maximum": 1024,
+                              "minimum": -1024,
+                              "type": "number"
+                            },
+                            "maxItems": 3,
+                            "minItems": 3,
+                            "type": "array"
+                          },
+                          "wave": {
+                            "maximum": 7,
+                            "minimum": 0,
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "archetype",
+                          "position_m",
+                          "wave"
+                        ],
+                        "type": "object"
+                      },
+                      "maxItems": 24,
+                      "minItems": 1,
+                      "type": "array"
+                    }
+                  },
+                  "required": [],
+                  "type": "object"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "id": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "kind": {
+                  "const": "change-arena"
+                }
+              },
+              "required": [
+                "kind",
+                "id",
+                "changes"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "conditions": {
+                  "items": {
+                    "oneOf": [
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "ability": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "ability"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "challenge": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "status": {
+                            "enum": [
+                              "completed"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "challenge",
+                          "status"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "item": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "present": {
+                            "type": "boolean"
+                          }
+                        },
+                        "required": [
+                          "item",
+                          "present"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "equals": {
+                            "type": "boolean"
+                          },
+                          "flag": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "flag",
+                          "equals"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "location": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "location"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "tide": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "tide"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "dialogue": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "node": {
+                            "oneOf": [
+                              {
+                                "maxLength": 64,
+                                "minLength": 1,
+                                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                                "type": "string"
+                              },
+                              {
+                                "const": ""
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "dialogue",
+                          "node"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "equals": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "role": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "role",
+                          "equals"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "collected": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "collected"
+                        ],
+                        "type": "object"
+                      },
+                      {
+                        "additionalProperties": false,
+                        "properties": {
+                          "at_least": {
+                            "maximum": 128,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "group": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "group",
+                          "at_least"
+                        ],
+                        "type": "object"
+                      }
+                    ]
+                  },
+                  "maxItems": 32,
+                  "minItems": 0,
+                  "type": "array"
+                },
+                "endpoint": {
+                  "enum": [
+                    "a",
+                    "b"
+                  ]
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "id": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "kind": {
+                  "const": "gate-region"
+                }
+              },
+              "required": [
+                "kind",
+                "id",
+                "endpoint",
+                "conditions"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "checkpoints": {
+                  "items": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "id": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                        "type": "string"
+                      },
+                      "position_m": {
+                        "items": {
+                          "maximum": 1024,
+                          "minimum": -1024,
+                          "type": "number"
+                        },
+                        "maxItems": 3,
+                        "minItems": 3,
+                        "type": "array"
+                      },
+                      "radius_m": {
+                        "maximum": 4,
+                        "minimum": 0.1,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "position_m",
+                      "radius_m"
+                    ],
+                    "type": "object"
+                  },
+                  "maxItems": 32,
+                  "minItems": 1,
+                  "type": "array"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "id": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "kind": {
+                  "const": "change-course-checkpoints"
+                }
+              },
+              "required": [
+                "kind",
+                "id",
+                "checkpoints"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "ability": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "name": {
+                      "maxLength": 256,
+                      "minLength": 1,
+                      "type": "string"
+                    },
+                    "requires": {
+                      "items": {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                        "type": "string"
+                      },
+                      "maxItems": 32,
+                      "minItems": 0,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "name",
+                    "requires"
+                  ],
+                  "type": "object"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "grant": {
+                  "oneOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "kind": {
+                          "const": "initial"
+                        }
+                      },
+                      "required": [
+                        "kind"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "interaction"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "id": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "challenge"
+                        }
+                      },
+                      "required": [
+                        "kind",
+                        "id"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                },
+                "kind": {
+                  "const": "add-ability"
+                }
+              },
+              "required": [
+                "kind",
+                "ability",
+                "grant"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "add-switch"
+                },
+                "puzzle": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "switch": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "cell": {
+                      "items": {
+                        "maximum": 15,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "maxItems": 2,
+                      "minItems": 2,
+                      "type": "array"
+                    },
+                    "id": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "mode": {
+                      "enum": [
+                        "toggle",
+                        "latch"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "cell",
+                    "mode"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "kind",
+                "puzzle",
+                "switch"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "door": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "link-door"
+                },
+                "puzzle": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "when": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "at_least": {
+                      "maximum": 8,
+                      "minimum": 1,
+                      "type": "integer"
+                    },
+                    "invert": {
+                      "type": "boolean"
+                    },
+                    "of": {
+                      "items": {
+                        "maxLength": 48,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                        "type": "string"
+                      },
+                      "maxItems": 8,
+                      "minItems": 1,
+                      "type": "array",
+                      "uniqueItems": true
+                    }
+                  },
+                  "required": [
+                    "of",
+                    "at_least",
+                    "invert"
+                  ],
+                  "type": "object"
+                }
+              },
+              "required": [
+                "kind",
+                "puzzle",
+                "door",
+                "when"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "block": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                },
+                "cell": {
+                  "items": {
+                    "maximum": 15,
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  "maxItems": 2,
+                  "minItems": 2,
+                  "type": "array"
+                },
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "move-block"
+                },
+                "puzzle": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "kind",
+                "puzzle",
+                "block",
+                "cell"
+              ],
+              "type": "object"
+            },
+            {
+              "additionalProperties": false,
+              "properties": {
+                "expected_changed_rooms": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 100,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "hint": {
+                  "items": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "maxItems": 16,
+                  "minItems": 0,
+                  "type": "array",
+                  "uniqueItems": true
+                },
+                "kind": {
+                  "const": "set-solution-hint"
+                },
+                "puzzle": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "kind",
+                "puzzle",
+                "hint"
+              ],
+              "type": "object"
+            }
+          ]
+        },
+        "project": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_-]*$",
+          "type": "string"
+        },
+        "save_path": {
+          "maxLength": 512,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "project",
+        "operation",
+        "expected_spec_hash",
+        "expected_game_hash"
+      ],
+      "type": "object"
+    }
+  },
+  "hermes64_modules": {
+    "description": "Inspect registered data-only mechanics and their evidence status. Does not certify a playable runtime or prescribe a visual style.",
+    "name": "hermes64_modules",
+    "parameters": {
+      "additionalProperties": false,
+      "properties": {
+        "action": {
+          "enum": [
+            "list",
+            "inspect"
+          ]
+        },
+        "id": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "action"
+      ],
+      "type": "object"
+    }
+  }
+}

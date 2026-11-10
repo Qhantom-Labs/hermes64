@@ -1,0 +1,679 @@
+{
+ "audio": {
+  "ambient": "audio/stock/wav/core.nature.wind.breeze.wav",
+  "birds": "audio/stock/wav/core.creature.bird.tweet.wav",
+  "fire": "audio/stock/wav/core.nature.fire.crackle.wav",
+  "gust": "audio/stock/wav/core.nature.wind.gust.wav",
+  "note": "pointers only (existing stock sounds); the style pack sound_palette carries ambient + interact",
+  "steps_sand": "audio/stock/wav/core.footstep.sand.01.wav",
+  "steps_water": "audio/stock/wav/core.footstep.water.01.wav",
+  "ui": "audio/wav/ui.select.wav"
+ },
+ "fog": {
+  "color": "#E4DCCB",
+  "far": 66.0,
+  "near": 18.0
+ },
+ "kit_pack_id": "ancient_ruins",
+ "light_rig": {
+  "ambient": 0.5,
+  "ao": 0.3,
+  "ao_height": 0.7,
+  "gamma": 1.0,
+  "ground": 0.04,
+  "key": 0.4,
+  "key_dir": [
+   0.4,
+   -0.55,
+   0.73
+  ],
+  "sky": 0.14
+ },
+ "look": {
+  "backdrop": {
+   "asset": "sky.backdrop",
+   "interiors": true,
+   "note": "painted sky set (land.sky via the sky.backdrop binding): deep zenith, pale horizon = fog colour, the sun, and a ring of distant mesas; the roofless shrine shows it through the open vault",
+   "scale": 0.2,
+   "y": -1.0
+  },
+  "emitters": {
+   "relic.altar__fire": {
+    "color": "#f4dcaa",
+    "halo": [
+     0.8,
+     0.4
+    ],
+    "halo_color": "#f4dcaa",
+    "intensity": 0.45,
+    "offset": [
+     0.0,
+     1.8,
+     0.0
+    ],
+    "pool": [
+     2.2,
+     0.16
+    ],
+    "pool_color": "#e2731f",
+    "radius": 4.5
+   },
+   "relic.brazier": {
+    "color": "#f4dcaa",
+    "halo": [
+     0.8,
+     0.4
+    ],
+    "halo_color": "#f4dcaa",
+    "intensity": 0.55,
+    "offset": [
+     0.0,
+     1.6,
+     0.0
+    ],
+    "pool": [
+     2.2,
+     0.16
+    ],
+    "pool_color": "#e2731f",
+    "radius": 4.5
+   },
+   "relic.brazier__pedestal": {
+    "color": "#f4dcaa",
+    "halo": [
+     0.8,
+     0.4
+    ],
+    "halo_color": "#f4dcaa",
+    "intensity": 0.55,
+    "offset": [
+     0.0,
+     1.55,
+     0.0
+    ],
+    "pool": [
+     2.2,
+     0.16
+    ],
+    "pool_color": "#e2731f",
+    "radius": 4.5
+   },
+   "relic.brazier__pit": {
+    "color": "#f4dcaa",
+    "halo": [
+     0.9,
+     0.4
+    ],
+    "halo_color": "#f4dcaa",
+    "intensity": 0.55,
+    "offset": [
+     0.0,
+     0.6,
+     0.0
+    ],
+    "pool": [
+     2.2,
+     0.16
+    ],
+    "pool_color": "#e2731f",
+    "radius": 4.5
+   },
+   "relic.tablet__awakened": {
+    "color": "#86d4c6",
+    "intensity": 0.3,
+    "offset": [
+     0.0,
+     1.4,
+     0.4
+    ],
+    "radius": 3.0
+   }
+  },
+  "materials": {
+   "chrome": {
+    "tint": "#b98a2c"
+   },
+   "cliff": {
+    "gloss": 0.0
+   },
+   "fire": {
+    "emission": 0.15,
+    "lit": 0.0
+   },
+   "floor": {
+    "gloss": 0.0,
+    "note": "matte stone (N64 convention: no per-pixel glints)"
+   },
+   "frame": {
+    "gloss": 0.0
+   },
+   "glass": {
+    "tint": "#1f8c8a"
+   },
+   "light": {
+    "emission": 0.15,
+    "lit": 0.0
+   },
+   "orb": {
+    "tint": "#1f8c8a"
+   },
+   "rock": {
+    "gloss": 0.0
+   },
+   "screen": {
+    "emission": 0.1,
+    "lit": 0.0
+   },
+   "stone": {
+    "gloss": 0.0
+   },
+   "trim": {
+    "gloss": 0.0
+   },
+   "vista_far": {
+    "fog_scale": 0.6
+   },
+   "wall": {
+    "gloss": 0.0
+   },
+   "water": {
+    "gloss": 0.0
+   }
+  },
+  "note": "ancient_ruins room look (theme-agnostic runtime reads it). Terms are [colour, strength]; directions point towards the light in Godot world space (y up). Kit rooms set presentation look_profile per region (approach / oasis / shrine) and kit_shell: true.",
+  "profiles": {
+   "approach": {
+    "actors": {
+     "kicker": [
+      "#e3b778",
+      0.18
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#7a7f96",
+     0.36
+    ],
+    "background": "#c9c2b3",
+    "bake_desaturate": 0.15,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#6a9fe0",
+     0.12
+    ],
+    "fill_dir": [
+     -0.6,
+     0.3,
+     -0.5
+    ],
+    "fog": {
+     "color": "#c9c2b3",
+     "far": 38.0,
+     "max": 1.0,
+     "near": 8.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.05,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#cc9459",
+     0.12
+    ],
+    "key": [
+     "#f4dcaa",
+     0.56
+    ],
+    "key_dir": [
+     0.6,
+     0.77,
+     0.2
+    ],
+    "note": "Ocarina-era desert noon: a warm stone-white key from a high sun, cool blue-grey shade (sky bounce in the ambient, the N64 desert trick: coloured shadow, never black), a pale blue-white haze that IS the sky's horizon band, so far dunes and mesas melt into the sky.",
+    "sky": [
+     "#a9cdef",
+     0.16
+    ]
+   },
+   "clearing": {
+    "actors": {
+     "kicker": [
+      "#e3b778",
+      0.18
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#7a7f96",
+     0.46
+    ],
+    "background": "#c9c2b3",
+    "bake_desaturate": 0.15,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#86d4c6",
+     0.12
+    ],
+    "fill_dir": [
+     -0.6,
+     0.3,
+     -0.5
+    ],
+    "fog": {
+     "color": "#c9c2b3",
+     "far": 38.0,
+     "max": 1.0,
+     "near": 8.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.05,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#cc9459",
+     0.12
+    ],
+    "key": [
+     "#f4dcaa",
+     0.52
+    ],
+    "key_dir": [
+     0.6,
+     0.77,
+     0.2
+    ],
+    "note": "oasis late afternoon: the sun lower and warmer across the water, the same cool shade and horizon haze; palms and water read by silhouette and painted ripples",
+    "sky": [
+     "#a9cdef",
+     0.16
+    ]
+   },
+   "exterior": {
+    "actors": {
+     "kicker": [
+      "#e3b778",
+      0.18
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#7a7f96",
+     0.36
+    ],
+    "background": "#c9c2b3",
+    "bake_desaturate": 0.15,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#6a9fe0",
+     0.12
+    ],
+    "fill_dir": [
+     -0.6,
+     0.3,
+     -0.5
+    ],
+    "fog": {
+     "color": "#c9c2b3",
+     "far": 38.0,
+     "max": 1.0,
+     "near": 8.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.05,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#cc9459",
+     0.12
+    ],
+    "key": [
+     "#f4dcaa",
+     0.56
+    ],
+    "key_dir": [
+     0.6,
+     0.77,
+     0.2
+    ],
+    "note": "Ocarina-era desert noon: a warm stone-white key from a high sun, cool blue-grey shade (sky bounce in the ambient, the N64 desert trick: coloured shadow, never black), a pale blue-white haze that IS the sky's horizon band, so far dunes and mesas melt into the sky.",
+    "sky": [
+     "#a9cdef",
+     0.16
+    ]
+   },
+   "interior": {
+    "actors": {
+     "kicker": [
+      "#e9dfcf",
+      0.2
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps characters readable against pale stone"
+    },
+    "ambient": [
+     "#7a7f96",
+     0.44
+    ],
+    "background": "#e4dccb",
+    "bake_desaturate": 0.3,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "interior_warm",
+    "fill": [
+     "#7a7f96",
+     0.14
+    ],
+    "fill_dir": [
+     -0.5,
+     0.2,
+     -0.6
+    ],
+    "fog": {
+     "color": "#4a4d68",
+     "far": 36.0,
+     "max": 0.35,
+     "near": 12.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.24,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.88
+    },
+    "ground": [
+     "#a96d43",
+     0.08
+    ],
+    "key": [
+     "#e9dfcf",
+     0.46
+    ],
+    "key_dir": [
+     0.2,
+     0.92,
+     0.3
+    ],
+    "note": "roofless inner sanctum: daylight falls in from the open vault onto pale carved stone, the walls' feet in warm-grey shade and the braziers adding the only orange; the dark fog swallows nothing near.",
+    "room": {
+     "base_ao": 0.22,
+     "base_height": 0.5,
+     "floor_lift": 0.25,
+     "note": "value structure: lit floor, wall bases in contact shadow, wall tops open to the sky",
+     "top_dark": 0.06,
+     "top_from": 3.6,
+     "top_to": 6.0
+    },
+    "sky": [
+     "#a9cdef",
+     0.16
+    ]
+   },
+   "oasis": {
+    "actors": {
+     "kicker": [
+      "#e3b778",
+      0.18
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#7a7f96",
+     0.46
+    ],
+    "background": "#c9c2b3",
+    "bake_desaturate": 0.15,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#86d4c6",
+     0.12
+    ],
+    "fill_dir": [
+     -0.6,
+     0.3,
+     -0.5
+    ],
+    "fog": {
+     "color": "#c9c2b3",
+     "far": 38.0,
+     "max": 1.0,
+     "near": 8.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.05,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#cc9459",
+     0.12
+    ],
+    "key": [
+     "#f4dcaa",
+     0.52
+    ],
+    "key_dir": [
+     0.6,
+     0.77,
+     0.2
+    ],
+    "note": "oasis late afternoon: the sun lower and warmer across the water, the same cool shade and horizon haze; palms and water read by silhouette and painted ripples",
+    "sky": [
+     "#a9cdef",
+     0.16
+    ]
+   },
+   "shrine": {
+    "actors": {
+     "kicker": [
+      "#e9dfcf",
+      0.2
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps characters readable against pale stone"
+    },
+    "ambient": [
+     "#7a7f96",
+     0.44
+    ],
+    "background": "#e4dccb",
+    "bake_desaturate": 0.3,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "interior_warm",
+    "fill": [
+     "#7a7f96",
+     0.14
+    ],
+    "fill_dir": [
+     -0.5,
+     0.2,
+     -0.6
+    ],
+    "fog": {
+     "color": "#4a4d68",
+     "far": 36.0,
+     "max": 0.35,
+     "near": 12.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.24,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.88
+    },
+    "ground": [
+     "#a96d43",
+     0.08
+    ],
+    "key": [
+     "#e9dfcf",
+     0.46
+    ],
+    "key_dir": [
+     0.2,
+     0.92,
+     0.3
+    ],
+    "note": "roofless inner sanctum: daylight falls in from the open vault onto pale carved stone, the walls' feet in warm-grey shade and the braziers adding the only orange; the dark fog swallows nothing near.",
+    "room": {
+     "base_ao": 0.22,
+     "base_height": 0.5,
+     "floor_lift": 0.25,
+     "note": "value structure: lit floor, wall bases in contact shadow, wall tops open to the sky",
+     "top_dark": 0.06,
+     "top_from": 3.6,
+     "top_to": 6.0
+    },
+    "sky": [
+     "#a9cdef",
+     0.16
+    ]
+   }
+  },
+  "shadows": {
+   "color": "#110e1a",
+   "kinds": [
+    "prop",
+    "piece",
+    "collectible",
+    "dressing"
+   ],
+   "max": 3.0,
+   "max_lift": 0.08,
+   "min": 0.4,
+   "note": "N64-era blob shadows under floor-standing props",
+   "scale": 1.3,
+   "strength": 0.55
+  },
+  "view_fog_scale": 0.15
+ },
+ "pack_id": "ancient_ruins",
+ "palette": {
+  "body": "#cc9459",
+  "boots": "#110e1a",
+  "collectible": "#f3d36e",
+  "door": "#a96d43",
+  "floor": "#a96d43",
+  "head": "#e3b778",
+  "prop": "#cc9459",
+  "ui_bg": "#110e1a",
+  "ui_text": "#f4dcaa",
+  "void": "#110e1a",
+  "wall": "#cc9459"
+ },
+ "palette_colors": [
+  "#110E1A",
+  "#2B2A40",
+  "#4A4D68",
+  "#7A7F96",
+  "#4B2C1E",
+  "#7D4B2F",
+  "#A96D43",
+  "#CC9459",
+  "#E3B778",
+  "#F4DCAA",
+  "#4F4A5A",
+  "#7D7782",
+  "#AAA29F",
+  "#E9DFCF",
+  "#6E4A14",
+  "#B98A2C",
+  "#F3D36E",
+  "#1D3F94",
+  "#3569C4",
+  "#6A9FE0",
+  "#A9CDEF",
+  "#E4DCCB",
+  "#1D3A20",
+  "#31612C",
+  "#5D8F36",
+  "#A0BD4F",
+  "#08303C",
+  "#1F8C8A",
+  "#86D4C6",
+  "#93300F",
+  "#E2731F",
+  "#FFD884"
+ ],
+ "style_gate": {
+  "accent_fraction_max": 0.06,
+  "accent_hues": [
+   [
+    10.0,
+    50.0
+   ]
+  ],
+  "accent_sat_min": 0.7,
+  "note": "ancient_ruins thresholds, calibrated in the real runtime (docs/ANCIENTKIT-RESULT.md): core defaults or stricter, with the accent family defined as saturated flame/ember (sat >= 0.70, hue 10-50 deg) because the base material (sun-baked sandstone / mossy temple stone) is itself warm (hue 25-45 deg, sat 0.30-0.62) and gold leaf shares the sandstone hue; the accent budget is tightened from 15% to 6%. Known-bad controls (the early real-runtime rounds, tools/ancientkit_demo.py gatecheck) fail this set; never loosened to pass a round."
+ },
+ "ui": {
+  "accent": "#f3d36e",
+  "dim": "#a96d43",
+  "fill": "#2b2a40d9",
+  "frame": "#cc9459",
+  "ink": "#110e1a",
+  "note": "dark shade panels, pale stone text, gold-leaf accent; keyboard prompts only, no text-bubble clutter",
+  "text": "#f4dcaa"
+ }
+}

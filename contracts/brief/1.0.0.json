@@ -1,0 +1,591 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hermes64-brief/1.0.0",
+  "title": "Hermes64 structured brief (hermes64-brief/1)",
+  "description": "What a prompt asks for, as bounded data: setting, mood, palette mood, build types, props, characters, genre hints, user-supplied asset slots and franchise/person terms. The model fills it (or adventure_maker.brief.from_prompt fills it from keywords); adventure_maker.brief.validate is the authority and adds three checks JSON Schema cannot express: free-text fields refuse quality or style-override wording (triangle counts, texture sizes, \"ignore the style\"), no ip_terms entry may appear in any descriptive field, and user asset files must be project-relative paths with an extension the slot kind accepts. Saved as <project>/brief.json. The brief has no field for budgets, texture sizes or render settings: the style bible owns those.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "format",
+    "prompt",
+    "filled_by",
+    "setting",
+    "mood",
+    "palette_mood",
+    "build_types",
+    "props",
+    "characters",
+    "sources",
+    "ip_terms",
+    "unrecognised",
+    "assumptions"
+  ],
+  "properties": {
+    "format": {
+      "const": "hermes64-brief/1"
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600,
+      "description": "The user's words, kept as a record. Never executed, never used as an id."
+    },
+    "filled_by": {
+      "$ref": "#/$defs/filled_by"
+    },
+    "setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "genre",
+        "genre_hints",
+        "place",
+        "era",
+        "scale"
+      ],
+      "properties": {
+        "genre": {
+          "$ref": "#/$defs/genre"
+        },
+        "genre_hints": {
+          "type": "array",
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "anyOf": [
+              {
+                "$ref": "#/$defs/genre"
+              },
+              {
+                "$ref": "#/$defs/hint"
+              }
+            ]
+          }
+        },
+        "place": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80,
+          "description": "Short label, e.g. \"wizard tower and grounds\"."
+        },
+        "era": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "scale": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 60,
+          "description": "e.g. \"small outdoor hub + 2 interiors\"."
+        }
+      }
+    },
+    "mood": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "time",
+        "weather",
+        "season",
+        "tone"
+      ],
+      "properties": {
+        "time": {
+          "$ref": "#/$defs/time"
+        },
+        "weather": {
+          "$ref": "#/$defs/weather"
+        },
+        "season": {
+          "$ref": "#/$defs/season"
+        },
+        "tone": {
+          "$ref": "#/$defs/tone"
+        }
+      }
+    },
+    "palette_mood": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "dominant",
+        "support",
+        "accent",
+        "value_key",
+        "saturation"
+      ],
+      "description": "Hue identity only. The mood remap may change hues, never quality thresholds; neon and glow are clamped by the gates whatever is asked here.",
+      "properties": {
+        "dominant": {
+          "$ref": "#/$defs/hue"
+        },
+        "support": {
+          "type": "array",
+          "maxItems": 3,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/hue"
+          }
+        },
+        "accent": {
+          "$ref": "#/$defs/hue"
+        },
+        "value_key": {
+          "$ref": "#/$defs/value_key"
+        },
+        "saturation": {
+          "$ref": "#/$defs/saturation"
+        }
+      }
+    },
+    "build_types": {
+      "type": "array",
+      "maxItems": 12,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 60
+      }
+    },
+    "props": {
+      "type": "array",
+      "maxItems": 40,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "want",
+          "count",
+          "importance"
+        ],
+        "properties": {
+          "want": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60,
+            "description": "Free text, used only as a search phrase and a report label."
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 32
+          },
+          "importance": {
+            "$ref": "#/$defs/importance"
+          },
+          "source": {
+            "$ref": "#/$defs/prop_source"
+          }
+        }
+      }
+    },
+    "characters": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "want",
+          "role"
+        ],
+        "description": "Handed to the character system; the asset tiers report these as not covered.",
+        "properties": {
+          "want": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "role": {
+            "$ref": "#/$defs/role"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 16
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "user_assets",
+        "allow_generate"
+      ],
+      "properties": {
+        "allow_generate": {
+          "type": "boolean"
+        },
+        "user_assets": {
+          "type": "array",
+          "maxItems": 32,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "slot",
+              "kind",
+              "for"
+            ],
+            "description": "A slot for a user-supplied file. Without \"file\" it is an open slot the user will fill; licence and rights are what the user declared, not verified.",
+            "properties": {
+              "slot": {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9_-]{0,47}$"
+              },
+              "kind": {
+                "$ref": "#/$defs/slot_kind"
+              },
+              "for": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 60
+              },
+              "file": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "description": "Project-relative path, e.g. assets/user/logo.png."
+              },
+              "licence": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9.+-]{1,40}$"
+              },
+              "credit": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "rights_confirmed": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      }
+    },
+    "ip_terms": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "term",
+          "kind",
+          "generic"
+        ],
+        "description": "Franchise, brand or real-person names seen in the prompt. The game gets the generic version; the term stays out of every descriptive field, asset id and hub entry.",
+        "properties": {
+          "term": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "kind": {
+            "$ref": "#/$defs/ip_kind"
+          },
+          "generic": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          }
+        }
+      }
+    },
+    "unrecognised": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 32
+      },
+      "description": "Prompt words nothing could classify; reported as gaps, never replaced."
+    },
+    "assumptions": {
+      "type": "array",
+      "maxItems": 24,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 120
+      },
+      "description": "Report only: what was defaulted and why. No build step reads it."
+    },
+    "tags": {
+      "type": "array",
+      "maxItems": 40,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 40
+      },
+      "description": "Derived by normalise(); must equal adventure_maker.brief.tags(brief) when present."
+    }
+  },
+  "$defs": {
+    "filled_by": {
+      "enum": [
+        "model",
+        "fallback",
+        "user"
+      ]
+    },
+    "genre": {
+      "enum": [
+        "adventure",
+        "fantasy",
+        "medieval",
+        "fairy-tale",
+        "sci-fi",
+        "space",
+        "cyberpunk",
+        "steampunk",
+        "post-apocalypse",
+        "horror",
+        "mystery",
+        "noir",
+        "western",
+        "pirate",
+        "underwater",
+        "desert",
+        "volcano",
+        "jungle",
+        "polar",
+        "ancient",
+        "samurai",
+        "viking",
+        "candy",
+        "dream",
+        "cozy",
+        "modern",
+        "school",
+        "sports"
+      ]
+    },
+    "hint": {
+      "enum": [
+        "platformer",
+        "puzzle",
+        "racing",
+        "combat",
+        "stealth",
+        "exploration",
+        "collectathon",
+        "boss-rush",
+        "survival",
+        "arena",
+        "magic",
+        "wizard",
+        "haunted",
+        "robot",
+        "toy",
+        "mushroom",
+        "dinosaur",
+        "dragon",
+        "ghost",
+        "treasure",
+        "heist",
+        "farming",
+        "cooking",
+        "music"
+      ]
+    },
+    "time": {
+      "enum": [
+        "dawn",
+        "morning",
+        "noon",
+        "afternoon",
+        "golden-hour",
+        "dusk",
+        "night"
+      ]
+    },
+    "weather": {
+      "enum": [
+        "clear",
+        "cloudy",
+        "rain",
+        "storm",
+        "fog",
+        "snow",
+        "wind",
+        "sandstorm",
+        "ash",
+        "underwater",
+        "none"
+      ]
+    },
+    "season": {
+      "enum": [
+        "none",
+        "spring",
+        "summer",
+        "autumn",
+        "winter"
+      ]
+    },
+    "tone": {
+      "enum": [
+        "adventurous",
+        "cozy",
+        "mysterious",
+        "eerie",
+        "heroic",
+        "playful",
+        "whimsical",
+        "melancholy",
+        "tense",
+        "serene",
+        "epic",
+        "gritty",
+        "hopeful",
+        "dreamy"
+      ]
+    },
+    "hue": {
+      "enum": [
+        "red",
+        "crimson",
+        "orange",
+        "amber",
+        "gold",
+        "yellow",
+        "lime",
+        "green",
+        "emerald",
+        "teal",
+        "cyan",
+        "blue",
+        "indigo",
+        "purple",
+        "violet",
+        "magenta",
+        "pink",
+        "brown",
+        "tan",
+        "grey",
+        "silver",
+        "white",
+        "black"
+      ]
+    },
+    "value_key": {
+      "enum": [
+        "low",
+        "mid",
+        "high"
+      ]
+    },
+    "saturation": {
+      "enum": [
+        "muted",
+        "moderate",
+        "rich"
+      ]
+    },
+    "importance": {
+      "enum": [
+        "key",
+        "dressing"
+      ]
+    },
+    "prop_source": {
+      "enum": [
+        "prompt",
+        "default",
+        "model",
+        "user"
+      ]
+    },
+    "role": {
+      "enum": [
+        "player",
+        "npc",
+        "enemy",
+        "boss",
+        "companion",
+        "crowd"
+      ]
+    },
+    "slot_kind": {
+      "enum": [
+        "model",
+        "texture",
+        "logo",
+        "image",
+        "audio",
+        "character"
+      ]
+    },
+    "ip_kind": {
+      "enum": [
+        "franchise",
+        "person",
+        "brand"
+      ]
+    }
+  },
+  "x-slot-extensions": {
+    "model": [
+      "glb",
+      "gltf",
+      "obj"
+    ],
+    "character": [
+      "glb",
+      "gltf"
+    ],
+    "texture": [
+      "png",
+      "jpg",
+      "jpeg"
+    ],
+    "logo": [
+      "png",
+      "jpg",
+      "jpeg"
+    ],
+    "image": [
+      "png",
+      "jpg",
+      "jpeg"
+    ],
+    "audio": [
+      "wav",
+      "ogg",
+      "mp3",
+      "flac"
+    ]
+  },
+  "x-hue-family": {
+    "red": "red",
+    "crimson": "red",
+    "orange": "orange",
+    "amber": "orange",
+    "gold": "yellow",
+    "yellow": "yellow",
+    "lime": "green",
+    "green": "green",
+    "emerald": "green",
+    "teal": "cyan",
+    "cyan": "cyan",
+    "blue": "blue",
+    "indigo": "blue",
+    "purple": "purple",
+    "violet": "purple",
+    "magenta": "magenta",
+    "pink": "magenta",
+    "brown": "brown",
+    "tan": "brown",
+    "grey": "neutral",
+    "silver": "neutral",
+    "white": "neutral",
+    "black": "neutral"
+  }
+}

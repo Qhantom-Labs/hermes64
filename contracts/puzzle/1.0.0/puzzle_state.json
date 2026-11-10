@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "entry": {
+      "oneOf": [
+        {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+          "type": "string"
+        },
+        {
+          "const": ""
+        }
+      ]
+    },
+    "latched": {
+      "items": {
+        "maxLength": 48,
+        "minLength": 1,
+        "pattern": "^[a-z][a-z0-9_]{0,47}$",
+        "type": "string"
+      },
+      "maxItems": 64,
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "opened": {
+      "items": {
+        "maxLength": 48,
+        "minLength": 1,
+        "pattern": "^[a-z][a-z0-9_]{0,47}$",
+        "type": "string"
+      },
+      "maxItems": 64,
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "solved": {
+      "items": {
+        "maxLength": 48,
+        "minLength": 1,
+        "pattern": "^[a-z][a-z0-9_]{0,47}$",
+        "type": "string"
+      },
+      "maxItems": 16,
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "taken": {
+      "items": {
+        "maxLength": 48,
+        "minLength": 1,
+        "pattern": "^[a-z][a-z0-9_]{0,47}$",
+        "type": "string"
+      },
+      "maxItems": 64,
+      "minItems": 0,
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "solved",
+    "taken",
+    "opened",
+    "latched",
+    "entry"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,15 @@
+{
+ "schema": "hermes64-cameo-pack/1",
+ "id": "cameo_visor_01",
+ "model": "cameo_visor_01.glb",
+ "status": "available",
+ "expected_sha256": "3df7030d6a4c4a9460def532a3779b43be1aedee39f242a2637d1f826e2c2f87",
+ "bytes": 111204,
+ "tris": 690,
+ "rig": "human16_v1",
+ "clips": ["carry", "idle", "interact", "run", "sit", "talk", "walk"],
+ "source": "lane-characters/published-r21/cameo_visor/cameo_visor_01.glb (round-21 frozen export, SHA256SUMS verified)",
+ "provenance": "lane-characters round-21 export: procedural human16 visor rig (human16_visor_v1 topology on the human16_v1 skeleton), 7 clips, audit and gate passed; real-person likeness with consent relayed by Dylan. Assembled at MERGE4 as a byte copy of the frozen export (sha256 checked against its SHA256SUMS); the rig kit validator passes it as human16_v1@1.0.0.",
+ "visibility": "public-with-notice",
+ "notice": "LICENSE-CAMEO.md"
+}

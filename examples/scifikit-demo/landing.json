@@ -1,0 +1,671 @@
+{
+  "characters": [
+    {
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "id": "pilot",
+      "name": "Ade",
+      "params": {
+        "colour": "#aebce6",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "arrival"
+        ],
+        "suit": {
+          "accessories": [
+            "blank_name_tab"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#879aca",
+          "sweater_wear": "fresh",
+          "trouser_colour": "#33486d",
+          "trouser_volume": 1.0,
+          "trouser_wear": "fresh",
+          "vest_colour": "#aebce6",
+          "vest_pattern": "wide_wave"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "role": "pilot",
+      "role_profiles": {
+        "pilot": {
+          "colour": "#aebce6",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "arrival"
+          ],
+          "suit": {
+            "accessories": [
+              "blank_name_tab"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#879aca",
+            "sweater_wear": "fresh",
+            "trouser_colour": "#33486d",
+            "trouser_volume": 1.0,
+            "trouser_wear": "fresh",
+            "vest_colour": "#aebce6",
+            "vest_pattern": "wide_wave"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "id": "tamsin",
+      "name": "Tamsin",
+      "params": {
+        "colour": "#8cace4",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "helper"
+        ],
+        "suit": {
+          "accessories": [
+            "three_screen_pin"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#415fad",
+          "sweater_wear": "polished_knees",
+          "trouser_colour": "#263e79",
+          "trouser_volume": 1.1,
+          "trouser_wear": "polished_knees",
+          "vest_colour": "#8cace4",
+          "vest_pattern": "parallel_wave"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "role": "engineer",
+      "role_profiles": {
+        "engineer": {
+          "colour": "#8cace4",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "helper"
+          ],
+          "suit": {
+            "accessories": [
+              "three_screen_pin"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#415fad",
+            "sweater_wear": "polished_knees",
+            "trouser_colour": "#263e79",
+            "trouser_volume": 1.1,
+            "trouser_wear": "polished_knees",
+            "vest_colour": "#8cace4",
+            "vest_pattern": "parallel_wave"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        }
+      }
+    }
+  ],
+  "collectible_groups": [],
+  "collectibles": [],
+  "contract_version": "1.2.0",
+  "description": "SCIFIKIT demo built only from the planet terrain, alien flora/rock/crystal, ship and sky kits: a landing site on an alien mesa plain at dusk. Original names and designs.",
+  "dialogues": [],
+  "endings": [
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "goal"
+        }
+      ],
+      "id": "beacon_back",
+      "text": "The beacon pulses amber again, and far above the relay answers."
+    }
+  ],
+  "flags": [
+    {
+      "description": "Read the landing beacon",
+      "id": "beacon_read",
+      "initial": false
+    },
+    {
+      "description": "Found Tamsin and the reason the beacon went quiet",
+      "id": "goal",
+      "initial": false
+    }
+  ],
+  "gameplay": {
+    "api_version": "1.0.0",
+    "modules": [
+      {
+        "config": {
+          "max_health": 6
+        },
+        "entities": {
+          "abilities": [
+            {
+              "id": "suit_lamp",
+              "name": "Suit lamp",
+              "requires": []
+            }
+          ]
+        },
+        "id": "abilities",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "entry_cost": "none",
+          "failure_progress": "unchanged",
+          "max_active": 1
+        },
+        "entities": {
+          "challenges": [],
+          "checkpoints": [
+            {
+              "id": "landing_site_safe",
+              "position_m": [
+                12.5,
+                0,
+                15.0
+              ],
+              "room": "landing_site"
+            }
+          ]
+        },
+        "id": "challenge",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "fast_travel": false,
+          "load_policy": "one_region"
+        },
+        "entities": {
+          "links": [],
+          "regions": [
+            {
+              "checkpoint": "landing_site_safe",
+              "id": "landing_site",
+              "landmarks": [
+                {
+                  "id": "needle_rock",
+                  "name": "The needle rock",
+                  "position_m": [
+                    2.2,
+                    0,
+                    3.0
+                  ]
+                }
+              ],
+              "room": "landing_site"
+            }
+          ]
+        },
+        "id": "regions",
+        "version": "1.0.0"
+      }
+    ],
+    "seed": 7,
+    "verification_policy": "conditional"
+  },
+  "id": "corva_landing_demo",
+  "interactions": [
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "beacon_read",
+          "value": true
+        },
+        {
+          "unlock": "suit_lamp"
+        }
+      ],
+      "id": "read_beacon",
+      "kind": "examine",
+      "label": "Read the beacon",
+      "room": "landing_site",
+      "target": "beacon",
+      "text": "The beacon's screen flickers: power low, crystal dust in the vents. Someone has wiped it clean."
+    },
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "beacon_read"
+        }
+      ],
+      "effects": [
+        {
+          "flag": "goal",
+          "value": true
+        }
+      ],
+      "id": "talk_tamsin",
+      "kind": "talk",
+      "label": "Talk to Tamsin",
+      "room": "landing_site",
+      "target": "tamsin",
+      "text": "Tamsin holds up a shard of blue crystal. \"It grows into everything out here. The beacon just needed a clean.\""
+    }
+  ],
+  "items": [],
+  "metadata": {
+    "presentation": {
+      "convention": "hermes64-presentation/1",
+      "rooms": {
+        "landing_site": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                22.0,
+                3.4,
+                -6.0
+              ],
+              "position": [
+                4.0,
+                2.6,
+                16.4
+              ]
+            }
+          ],
+          "characters": {
+            "tamsin": {
+              "position": [
+                14.6,
+                0,
+                13.6
+              ],
+              "yaw": 230
+            }
+          },
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "surface",
+          "pieces": [
+            {
+              "asset": "planet.trail__end",
+              "kind": "floor",
+              "position": [
+                4.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "planet.crater",
+              "kind": "floor",
+              "position": [
+                12.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "planet.ground__rough",
+              "kind": "floor",
+              "position": [
+                20.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "planet.trail",
+              "kind": "floor",
+              "position": [
+                4.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "planet.ground",
+              "kind": "floor",
+              "position": [
+                12.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "planet.pad",
+              "kind": "floor",
+              "position": [
+                20.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "planet.ridge",
+              "kind": "floor",
+              "position": [
+                4.5,
+                0.0,
+                -3.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "planet.ridge",
+              "kind": "floor",
+              "position": [
+                12.5,
+                0.0,
+                -3.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "planet.mesa",
+              "position": [
+                6.0,
+                5.6,
+                -5.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 15.0
+            },
+            {
+              "asset": "planet.mesa",
+              "kind": "vista",
+              "position": [
+                40.0,
+                0.0,
+                -24.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": -35.0
+            },
+            {
+              "asset": "skyx.horizon",
+              "kind": "vista",
+              "position": [
+                12.5,
+                -1.0,
+                8.5
+              ],
+              "scale": [
+                0.5,
+                0.5,
+                0.5
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "skyx.planet__ringed",
+              "kind": "vista",
+              "position": [
+                12.5,
+                -2.0,
+                8.5
+              ],
+              "scale": [
+                0.2,
+                0.2,
+                0.2
+              ],
+              "yaw": -40.0
+            },
+            {
+              "asset": "ship.shuttle__level",
+              "kind": "landmark",
+              "position": [
+                20.5,
+                0.0,
+                12.4
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 160.0
+            },
+            {
+              "asset": "alien.crystal__tall",
+              "position": [
+                10.2,
+                0.0,
+                8.8
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 20.0
+            },
+            {
+              "asset": "alien.cap_tree__triple",
+              "position": [
+                3.6,
+                0.0,
+                12.6
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 40.0
+            },
+            {
+              "asset": "alien.bulb",
+              "position": [
+                6.6,
+                0.0,
+                10.6
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 10.0
+            },
+            {
+              "asset": "alien.boulder__big",
+              "position": [
+                16.4,
+                0.0,
+                5.6
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 70.0
+            },
+            {
+              "asset": "alien.rock_spire__tall",
+              "kind": "landmark",
+              "position": [
+                2.2,
+                0.0,
+                3.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 25.0
+            }
+          ],
+          "wall_height": 8.0
+        }
+      },
+      "rotation_order": "YXZ",
+      "rotation_units": "degrees"
+    },
+    "protagonist": "pilot",
+    "scifikit_note": "Built only from SCIFIKIT kits (kits/core/gen_scifikit_*.py) by data: tools/scifikit_rooms.py snaps every piece to the STATION GRID / TERRAIN GRID and checks the socket manifest kits/library/scifikit-sockets.json. Generated by tools/scifikit_demo.py.",
+    "style_pack": "alien_world"
+  },
+  "quests": [],
+  "rooms": [
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            22.0,
+            3.4,
+            -6.0
+          ],
+          "position": [
+            4.0,
+            2.6,
+            16.4
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilot",
+        "tamsin"
+      ],
+      "description": "The mesa plain of Corva at dusk. The shuttle has set down on the beacon pad; crystals glitter along the trail and coral-capped stalks lean in the thin wind.",
+      "doors": [],
+      "grid_size": [
+        25,
+        17
+      ],
+      "id": "landing_site",
+      "kit_refs": [],
+      "name": "Corva Landing",
+      "props": [
+        {
+          "asset": "tech.terminal",
+          "id": "beacon",
+          "position": [
+            16.0,
+            0,
+            15.2
+          ],
+          "rotation": [
+            0,
+            -40.0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "start": {
+    "collected": [],
+    "dialogue": {},
+    "flags": {
+      "beacon_read": false,
+      "goal": false
+    },
+    "inventory": [],
+    "location": "landing_site",
+    "modules": {
+      "abilities": [],
+      "active": "",
+      "checkpoint": "landing_site_safe",
+      "completed": [],
+      "discovered": [
+        "landing_site"
+      ],
+      "failed": ""
+    },
+    "tide": {
+      "state": "clear",
+      "tick": 0
+    }
+  },
+  "tide": {
+    "id": "day",
+    "states": [
+      {
+        "duration": 1,
+        "id": "clear",
+        "label": "Shift"
+      }
+    ],
+    "wait_label": "Wait",
+    "wait_text": "The wind combs the regolith."
+  },
+  "title": "Corva Landing"
+}

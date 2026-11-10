@@ -1,0 +1,87 @@
+{
+ "$schema": "http://json-schema.org/draft-07/schema#",
+ "$id": "hermes64-rig/1.0.0",
+ "title": "Hermes64 rig contract (rig kit) 1.0.0",
+ "description": "Schema of rigs/<rig_id>/rig.json. A character GLB conforms when adventure_maker.rigkit.validate_character(glb, rig) reports ok. Stdlib checker: adventure_maker.rigkit.rig.check_doc. Clip-pack metadata (rigs/<rig_id>/clips.json) and the validate report are defined under definitions.",
+ "type": "object",
+ "required": ["schema", "id", "version", "kind", "conventions", "bones", "mirror_pairs", "skin", "joint_limits", "proportions", "clips", "budgets", "seams", "sockets"],
+ "properties": {
+  "schema": {"const": "hermes64-rig/1.0.0"},
+  "id": {"type": "string", "pattern": "^[a-z][a-z0-9]*[0-9]+_v[0-9]+$"},
+  "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+  "kind": {"enum": ["humanoid", "quadruped", "creature"]},
+  "conventions": {
+   "type": "object",
+   "required": ["units", "gltf_up", "gltf_forward", "rest_rotation", "armature_node", "mesh_node", "inverse_bind"],
+   "properties": {"units": {"const": "metre"}, "gltf_up": {"const": "+Y"}}
+  },
+  "bones": {
+   "type": "array", "minItems": 2,
+   "description": "Joint order of the skin: depth-first pre-order from the root, children sorted by name.",
+   "items": {
+    "type": "object",
+    "required": ["name", "parent", "index", "rest_translation", "rest_world"],
+    "properties": {
+     "name": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+     "parent": {"type": ["string", "null"]},
+     "index": {"type": "integer", "minimum": 0},
+     "rest_translation": {"$ref": "#/definitions/vec3"},
+     "rest_world": {"$ref": "#/definitions/vec3"}
+    }
+   }
+  },
+  "mirror_pairs": {"type": "array", "items": {"type": "array", "items": {"type": "string"}, "minItems": 2, "maxItems": 2}},
+  "skin": {
+   "type": "object",
+   "required": ["max_influences", "weights_sum_tolerance", "ibm_tolerance_m"],
+   "properties": {"max_influences": {"const": 4}}
+  },
+  "joint_limits": {"type": "object", "additionalProperties": {"type": "object", "required": ["max_angle_deg"], "properties": {"max_angle_deg": {"type": "number", "minimum": 0, "maximum": 180}}}},
+  "proportions": {
+   "type": "object",
+   "required": ["height_m", "segment_fraction_of_height"],
+   "properties": {"height_m": {"$ref": "#/definitions/range"}, "segment_fraction_of_height": {"type": "object", "additionalProperties": {"$ref": "#/definitions/range"}}}
+  },
+  "clips": {
+   "type": "object",
+   "required": ["required", "fps", "keys", "duration_s", "interpolation", "key_time", "channels", "root_motion"],
+   "properties": {
+    "required": {"type": "array", "items": {"type": "string"}},
+    "combat": {"type": "array", "items": {"type": "string"}},
+    "fps": {"const": 15}, "keys": {"const": 16}, "duration_s": {"const": 1.0}, "interpolation": {"const": "STEP"},
+    "channels": {"type": "object", "required": ["rotation", "translation"]}
+   }
+  },
+  "budgets": {"type": "object"},
+  "seams": {"type": "array", "items": {"type": "object", "required": ["name", "parent", "child"]}},
+  "sockets": {"type": "array", "items": {"type": "object", "required": ["name", "bone"]}},
+  "silhouette": {"type": "object"},
+  "reference_body": {"type": "object"},
+  "hover": {"type": "object"}
+ },
+ "definitions": {
+  "vec3": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+  "range": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+  "clip_pack": {
+   "description": "rigs/<rig_id>/clips.json",
+   "type": "object",
+   "required": ["schema", "rig", "clips_glb_sha256", "clips"],
+   "properties": {
+    "schema": {"const": "hermes64-rig-clips/1.0.0"},
+    "rig": {"type": "string"},
+    "clips_glb_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "clips": {"type": "object", "additionalProperties": {"type": "object", "required": ["loop", "keys_sha256"],
+     "properties": {"loop": {"type": "boolean"}, "phases": {"type": "object"}, "hit_window": {"type": "object"}, "face_cell": {"type": "integer"}, "keys_sha256": {"type": "string"}}}}
+   }
+  },
+  "validate_report": {
+   "type": "object",
+   "required": ["schema", "ok", "rig", "file_sha256", "errors", "warnings", "checks"],
+   "properties": {
+    "schema": {"const": "hermes64-rig-validate/1.0.0"},
+    "ok": {"type": "boolean"},
+    "errors": {"type": "array", "items": {"type": "object", "required": ["code", "message"]}}
+   }
+  }
+ }
+}

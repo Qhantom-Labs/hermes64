@@ -1,0 +1,3156 @@
+{
+  "characters": [
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "wayfarer",
+      "name": "Seren",
+      "params": {
+        "colour": "#8d6a58",
+        "costume": "travel_coat",
+        "voice_tags": [
+          "quiet",
+          "measured"
+        ]
+      },
+      "role": "wayfarer",
+      "role_profiles": {
+        "wayfarer": {
+          "colour": "#8d6a58",
+          "costume": "travel_coat",
+          "voice_tags": [
+            "quiet",
+            "measured"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "tamsin",
+      "name": "Tamsin",
+      "params": {
+        "colour": "#a89a64",
+        "costume": "oilskin",
+        "voice_tags": [
+          "weathered",
+          "restrained"
+        ]
+      },
+      "role": "water_keeper",
+      "role_profiles": {
+        "water_keeper": {
+          "colour": "#a89a64",
+          "costume": "oilskin",
+          "voice_tags": [
+            "weathered",
+            "restrained"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "orrin",
+      "name": "Orrin",
+      "params": {
+        "colour": "#514958",
+        "costume": "buttoned_storm_coat",
+        "voice_tags": [
+          "withholding",
+          "accusatory"
+        ]
+      },
+      "role": "surveyor",
+      "role_profiles": {
+        "surveyor": {
+          "colour": "#514958",
+          "costume": "buttoned_storm_coat",
+          "voice_tags": [
+            "withholding",
+            "accusatory"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "ilka",
+      "name": "Ilka",
+      "params": {
+        "colour": "#a89a64",
+        "costume": "oilskin",
+        "voice_tags": [
+          "weathered",
+          "restrained"
+        ]
+      },
+      "role": "gardener",
+      "role_profiles": {
+        "gardener": {
+          "colour": "#a89a64",
+          "costume": "oilskin",
+          "voice_tags": [
+            "weathered",
+            "restrained"
+          ]
+        }
+      }
+    }
+  ],
+  "collectible_groups": [],
+  "collectibles": [],
+  "contract_version": "1.2.0",
+  "description": "ANCIENTKIT demo built only from the ruin, relic, wild and land kits: an oasis at the edge of a buried city, the processional sun road to a pylon gate, the roofless sanctum and an overgrown court with a great sun dial. Original names, figures, glyphs and designs.",
+  "dialogues": [],
+  "endings": [
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "goal"
+        }
+      ],
+      "id": "noon",
+      "text": "The dial's shadow shrinks to nothing. Somewhere under the sand a door that waited a thousand years for noon opens."
+    }
+  ],
+  "flags": [
+    {
+      "description": "Weight on the sanctum plate; the east door is unsealed",
+      "id": "plate_pressed",
+      "initial": false
+    },
+    {
+      "description": "The gold sun key from the reliquary",
+      "id": "sun_key",
+      "initial": false
+    },
+    {
+      "description": "The great dial turned to noon",
+      "id": "goal",
+      "initial": false
+    }
+  ],
+  "gameplay": {
+    "api_version": "1.0.0",
+    "modules": [
+      {
+        "config": {
+          "max_health": 6
+        },
+        "entities": {
+          "abilities": [
+            {
+              "id": "sun_reading",
+              "name": "Sun reading",
+              "requires": []
+            }
+          ]
+        },
+        "id": "abilities",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "entry_cost": "none",
+          "failure_progress": "unchanged",
+          "max_active": 1
+        },
+        "entities": {
+          "challenges": [],
+          "checkpoints": [
+            {
+              "id": "oasis_safe",
+              "position_m": [
+                13.0,
+                0,
+                18.6
+              ],
+              "room": "oasis"
+            },
+            {
+              "id": "approach_safe",
+              "position_m": [
+                10.5,
+                0,
+                15.6
+              ],
+              "room": "approach"
+            },
+            {
+              "id": "shrine_safe",
+              "position_m": [
+                4.4,
+                0,
+                9.2
+              ],
+              "room": "shrine"
+            },
+            {
+              "id": "court_safe",
+              "position_m": [
+                10.5,
+                0,
+                20.2
+              ],
+              "room": "court"
+            }
+          ]
+        },
+        "id": "challenge",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "fast_travel": false,
+          "load_policy": "one_region"
+        },
+        "entities": {
+          "links": [
+            {
+              "a": {
+                "door": "east_gate",
+                "region": "oasis"
+              },
+              "b": {
+                "door": "west_gate",
+                "region": "approach"
+              },
+              "id": "oasis__approach"
+            },
+            {
+              "a": {
+                "door": "temple_gate",
+                "region": "approach"
+              },
+              "b": {
+                "door": "south_door",
+                "region": "shrine"
+              },
+              "id": "approach__shrine"
+            },
+            {
+              "a": {
+                "door": "east_door",
+                "region": "shrine"
+              },
+              "b": {
+                "door": "west_gate",
+                "region": "court"
+              },
+              "id": "shrine__court"
+            }
+          ],
+          "regions": [
+            {
+              "checkpoint": "oasis_safe",
+              "id": "oasis",
+              "landmarks": [
+                {
+                  "id": "keeper_head",
+                  "name": "The buried Keeper",
+                  "position_m": [
+                    15.2,
+                    0,
+                    2.0
+                  ]
+                }
+              ],
+              "room": "oasis"
+            },
+            {
+              "checkpoint": "approach_safe",
+              "id": "approach",
+              "landmarks": [
+                {
+                  "id": "pylon_gate",
+                  "name": "The pylon gate under the pyramid",
+                  "position_m": [
+                    10.5,
+                    0,
+                    1.6
+                  ]
+                }
+              ],
+              "room": "approach"
+            },
+            {
+              "checkpoint": "shrine_safe",
+              "id": "shrine",
+              "landmarks": [
+                {
+                  "id": "sun_altar",
+                  "name": "The sun altar",
+                  "position_m": [
+                    6.5,
+                    0,
+                    3.2
+                  ]
+                }
+              ],
+              "room": "shrine"
+            },
+            {
+              "checkpoint": "court_safe",
+              "id": "court",
+              "landmarks": [
+                {
+                  "id": "strangler_fig",
+                  "name": "The fig that ate a column",
+                  "position_m": [
+                    3.6,
+                    0,
+                    3.4
+                  ]
+                }
+              ],
+              "room": "court"
+            }
+          ]
+        },
+        "id": "regions",
+        "version": "1.0.0"
+      }
+    ],
+    "seed": 11,
+    "verification_policy": "conditional"
+  },
+  "id": "patient_sun_demo",
+  "interactions": [
+    {
+      "conditions": [],
+      "effects": [],
+      "id": "read_waystone",
+      "kind": "examine",
+      "label": "Read the waystone",
+      "room": "oasis",
+      "target": "waystone",
+      "text": "Glyphs climb the stone in rows: a sun, a road, a door that wants weight, and a dial with its shadow gone."
+    },
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "unlock": "sun_reading"
+        }
+      ],
+      "id": "talk_tamsin",
+      "kind": "talk",
+      "label": "Talk to Tamsin",
+      "room": "oasis",
+      "target": "tamsin",
+      "text": "Tamsin fills your flask. \"The sun road starts at the east gate. The sanctum door listens for weight, not for keys. Drink before you go.\""
+    },
+    {
+      "conditions": [],
+      "effects": [],
+      "id": "talk_orrin",
+      "kind": "talk",
+      "label": "Talk to Orrin",
+      "room": "approach",
+      "target": "orrin",
+      "text": "Orrin lowers his sighting rod. \"Every carving on that pylon shows the sun turning. Somebody stopped it. Somebody could start it again.\""
+    },
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "plate_pressed",
+          "value": true
+        }
+      ],
+      "id": "press_plate",
+      "kind": "use",
+      "label": "Step onto the sun plate",
+      "room": "shrine",
+      "target": "plate",
+      "text": "The plate sinks under you with a sigh of sand. In the east wall, stone grinds on stone."
+    },
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "sun_key",
+          "value": true
+        }
+      ],
+      "id": "open_reliquary",
+      "kind": "use",
+      "label": "Open the reliquary",
+      "room": "shrine",
+      "target": "reliquary",
+      "text": "Under the lid lies a small gold sun on a stone pin, warm as if it had been in someone's hand."
+    },
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "sun_key"
+        }
+      ],
+      "effects": [
+        {
+          "flag": "goal",
+          "value": true
+        }
+      ],
+      "id": "turn_dial",
+      "kind": "use",
+      "label": "Set the gold sun on the dial",
+      "room": "court",
+      "target": "dial",
+      "text": "You set the gold sun on the gnomon and push. The great dial turns, and its shadow walks toward noon."
+    },
+    {
+      "conditions": [],
+      "effects": [],
+      "id": "talk_ilka",
+      "kind": "talk",
+      "label": "Talk to Ilka",
+      "room": "court",
+      "target": "ilka",
+      "text": "Ilka pats the fig's roots. \"It ate the column, but it kept the dial clear. Trees know what matters.\""
+    }
+  ],
+  "items": [],
+  "metadata": {
+    "ancientkit_note": "Built only from ANCIENTKIT kits (kits/core/gen_ancientkit_*.py) by data: tools/ancientkit_rooms.py snaps every piece to the RUIN GRID and checks the socket manifest kits/library/ancientkit-sockets.json. Generated by tools/ancientkit_demo.py.",
+    "presentation": {
+      "convention": "hermes64-presentation/1",
+      "rooms": {
+        "approach": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                10.5,
+                4.2,
+                0.0
+              ],
+              "position": [
+                10.5,
+                3.4,
+                23.0
+              ]
+            }
+          ],
+          "characters": {
+            "orrin": {
+              "position": [
+                13.4,
+                0,
+                12.8
+              ],
+              "yaw": -120
+            }
+          },
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "approach",
+          "pieces": [
+            {
+              "asset": "land.ground__paved_1",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__paved_1",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__paved_1",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__paved_1",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                14.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__paved_1",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                18.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__paved_1",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                22.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__paved_1",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                26.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__paved_1",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                30.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                4.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                4.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                4.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                4.5,
+                0.0,
+                28.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                16.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                16.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                16.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                16.5,
+                0.0,
+                28.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                24.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                28.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                28.5,
+                0.0,
+                24.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                -23.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                -23.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                40.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                40.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                40.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.pyramid__great",
+              "kind": "landmark",
+              "position": [
+                10.5,
+                0.0,
+                -9.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.wall",
+              "kind": "wall",
+              "position": [
+                2.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.wall__door",
+              "kind": "wall",
+              "position": [
+                10.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.wall",
+              "kind": "wall",
+              "position": [
+                18.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "relic.statue__guardian",
+              "position": [
+                6.2,
+                0.0,
+                9.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "relic.statue__guardian",
+              "position": [
+                14.8,
+                0.0,
+                9.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "wild.palm",
+              "position": [
+                3.0,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 30.0
+            },
+            {
+              "asset": "wild.palm__leaning",
+              "position": [
+                19.0,
+                0.0,
+                13.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 200.0
+            },
+            {
+              "asset": "wild.rock__cluster",
+              "position": [
+                15.6,
+                0.0,
+                15.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 20.0
+            },
+            {
+              "asset": "ruin.wall__door",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                26.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wild.dune__small",
+              "position": [
+                -3.0,
+                0.0,
+                24.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 10.0
+            },
+            {
+              "asset": "wild.dune",
+              "position": [
+                25.0,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 70.0
+            },
+            {
+              "asset": "ruin.gate__pylon",
+              "kind": "wall",
+              "note": "door insert on temple_gate",
+              "position": [
+                10.5,
+                0.0,
+                0.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "court": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                10.5,
+                1.0,
+                6.0
+              ],
+              "position": [
+                10.5,
+                5.0,
+                25.5
+              ]
+            }
+          ],
+          "characters": {
+            "ilka": {
+              "position": [
+                13.6,
+                0,
+                17.6
+              ],
+              "yaw": 200
+            }
+          },
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "clearing",
+          "pieces": [
+            {
+              "asset": "land.ground__jungle_4",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__jungle",
+              "kind": "floor",
+              "position": [
+                20.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__jungle",
+              "kind": "floor",
+              "position": [
+                20.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__jungle",
+              "kind": "floor",
+              "position": [
+                4.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__jungle",
+              "kind": "floor",
+              "position": [
+                12.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__jungle",
+              "kind": "floor",
+              "position": [
+                20.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                24.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                32.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                32.5,
+                0.0,
+                24.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                32.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                32.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                32.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.court",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wild.tree__strangler",
+              "kind": "landmark",
+              "position": [
+                3.6,
+                0.0,
+                3.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 30.0
+            },
+            {
+              "asset": "wild.tree",
+              "position": [
+                18.0,
+                0.0,
+                3.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -40.0
+            },
+            {
+              "asset": "wild.fern",
+              "position": [
+                6.0,
+                0.0,
+                17.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wild.fern",
+              "position": [
+                16.0,
+                0.0,
+                16.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 40.0
+            },
+            {
+              "asset": "wild.fern__spray",
+              "position": [
+                2.6,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wild.shrub__broadleaf",
+              "position": [
+                18.6,
+                0.0,
+                12.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wild.shrub__broadleaf",
+              "position": [
+                4.0,
+                0.0,
+                19.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 60.0
+            },
+            {
+              "asset": "ruin.wall__broken",
+              "kind": "wall",
+              "position": [
+                14.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "ruin.obelisk__broken",
+              "position": [
+                16.4,
+                0.0,
+                7.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 25.0
+            },
+            {
+              "asset": "wild.log",
+              "position": [
+                7.2,
+                0.0,
+                1.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 10.0
+            },
+            {
+              "asset": "ruin.wall__door",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "ruin.wall__low",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "ruin.wall__low",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                14.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "oasis": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                14.5,
+                0.6,
+                9.0
+              ],
+              "position": [
+                14.5,
+                4.6,
+                26.5
+              ]
+            }
+          ],
+          "characters": {
+            "tamsin": {
+              "position": [
+                9.0,
+                0,
+                18.6
+              ],
+              "yaw": 150
+            }
+          },
+          "exterior": true,
+          "floor": "",
+          "interactions": {
+            "read_waystone": {
+              "position": [
+                7.4,
+                0,
+                19.8
+              ]
+            }
+          },
+          "kit_shell": true,
+          "look_profile": "oasis",
+          "pieces": [
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                2.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                6.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                14.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                18.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                22.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                2.5,
+                0.0,
+                14.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                6.5,
+                0.0,
+                14.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                22.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                22.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_1",
+              "kind": "floor",
+              "position": [
+                22.5,
+                0.0,
+                14.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                4.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                12.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                20.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                4.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                40.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                32.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                32.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                32.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                40.5,
+                0.0,
+                32.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground__sand_far",
+              "kind": "floor",
+              "position": [
+                32.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                -11.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                -3.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                28.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "land.ground",
+              "kind": "floor",
+              "position": [
+                36.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wild.oasis",
+              "kind": "floor",
+              "position": [
+                14.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wild.palm__leaning",
+              "position": [
+                9.6,
+                0.0,
+                6.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wild.palm__leaning",
+              "position": [
+                20.0,
+                0.0,
+                7.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 170.0
+            },
+            {
+              "asset": "wild.palm",
+              "position": [
+                8.0,
+                0.0,
+                15.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 40.0
+            },
+            {
+              "asset": "wild.palm__twin",
+              "position": [
+                18.8,
+                0.0,
+                22.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 120.0
+            },
+            {
+              "asset": "wild.reeds",
+              "position": [
+                10.0,
+                0.0,
+                12.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wild.reeds",
+              "position": [
+                18.6,
+                0.0,
+                7.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 70.0
+            },
+            {
+              "asset": "wild.reeds__papyrus",
+              "position": [
+                19.2,
+                0.0,
+                13.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 30.0
+            },
+            {
+              "asset": "wild.rock__cluster",
+              "position": [
+                22.4,
+                0.0,
+                2.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 30.0
+            },
+            {
+              "asset": "wild.rock",
+              "position": [
+                3.4,
+                0.0,
+                11.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 80.0
+            },
+            {
+              "asset": "wild.dune__crescent",
+              "position": [
+                -6.0,
+                0.0,
+                -8.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 20.0
+            },
+            {
+              "asset": "wild.dune__ridge",
+              "position": [
+                30.0,
+                0.0,
+                -10.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -15.0
+            },
+            {
+              "asset": "ruin.column__broken",
+              "position": [
+                4.2,
+                0.0,
+                2.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 40.0
+            },
+            {
+              "asset": "ruin.rubble",
+              "position": [
+                6.4,
+                0.0,
+                4.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 15.0
+            },
+            {
+              "asset": "relic.statue__buried",
+              "kind": "landmark",
+              "position": [
+                15.2,
+                0.0,
+                2.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -20.0
+            },
+            {
+              "asset": "land.skyline",
+              "position": [
+                10.0,
+                0.0,
+                -62.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.wall__broken",
+              "kind": "wall",
+              "position": [
+                24.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "ruin.wall__door",
+              "kind": "wall",
+              "position": [
+                24.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "ruin.wall__low",
+              "kind": "wall",
+              "position": [
+                24.5,
+                0.0,
+                14.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "ruin.pier__broken",
+              "kind": "wall",
+              "position": [
+                24.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.pier",
+              "kind": "wall",
+              "position": [
+                24.5,
+                0.0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "shrine": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 66,
+              "id": "game",
+              "look_at": [
+                6.5,
+                1.0,
+                2.6
+              ],
+              "position": [
+                6.5,
+                3.4,
+                11.4
+              ]
+            }
+          ],
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "shrine",
+          "pieces": [
+            {
+              "asset": "ruin.floor",
+              "kind": "floor",
+              "position": [
+                2.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.floor",
+              "kind": "floor",
+              "position": [
+                2.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.floor",
+              "kind": "floor",
+              "position": [
+                2.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.floor",
+              "kind": "floor",
+              "position": [
+                6.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.floor",
+              "kind": "floor",
+              "position": [
+                6.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.floor",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.floor",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.floor",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.floor__inlay",
+              "kind": "floor",
+              "position": [
+                6.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.wall__relief",
+              "kind": "wall",
+              "position": [
+                2.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.wall__relief",
+              "kind": "wall",
+              "position": [
+                6.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.wall__relief",
+              "kind": "wall",
+              "position": [
+                10.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.wall",
+              "kind": "wall",
+              "position": [
+                12.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "ruin.wall__door",
+              "kind": "wall",
+              "position": [
+                12.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "ruin.wall",
+              "kind": "wall",
+              "position": [
+                12.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "ruin.wall__relief",
+              "kind": "wall",
+              "position": [
+                2.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "ruin.wall__door",
+              "kind": "wall",
+              "position": [
+                6.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "ruin.wall__relief",
+              "kind": "wall",
+              "position": [
+                10.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "ruin.wall",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "ruin.wall__window",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "ruin.wall",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "ruin.pier",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "ruin.pier",
+              "kind": "wall",
+              "position": [
+                12.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ruin.pier",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "ruin.pier",
+              "kind": "wall",
+              "position": [
+                12.5,
+                0.0,
+                12.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "relic.altar__sun",
+              "kind": "landmark",
+              "position": [
+                6.5,
+                0.0,
+                3.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "relic.brazier__pedestal",
+              "position": [
+                3.5,
+                0.0,
+                3.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "relic.brazier__pedestal",
+              "position": [
+                9.5,
+                0.0,
+                3.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "relic.sarcophagus",
+              "position": [
+                9.9,
+                0.0,
+                8.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "relic.urn",
+              "position": [
+                2.3,
+                0.0,
+                9.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 20.0
+            },
+            {
+              "asset": "relic.urn__amphora",
+              "position": [
+                2.2,
+                0.0,
+                8.1
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 60.0
+            },
+            {
+              "asset": "relic.urn__bowl",
+              "position": [
+                3.3,
+                0.0,
+                10.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "relic.banner",
+              "kind": "dressing",
+              "mounted": true,
+              "position": [
+                2.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "wall_ok": true,
+              "yaw": 0.0
+            },
+            {
+              "asset": "relic.banner",
+              "kind": "dressing",
+              "mounted": true,
+              "position": [
+                10.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "wall_ok": true,
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        }
+      },
+      "rotation_order": "YXZ",
+      "rotation_units": "degrees"
+    },
+    "protagonist": "wayfarer",
+    "style_pack": "ancient_ruins"
+  },
+  "quests": [],
+  "rooms": [
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            14.5,
+            0.6,
+            9.0
+          ],
+          "position": [
+            14.5,
+            4.6,
+            26.5
+          ]
+        }
+      ],
+      "character_ids": [
+        "wayfarer",
+        "tamsin"
+      ],
+      "description": "A spring under leaning palms at the edge of a buried city. The colossal head of a stone Keeper watches the water from the sand, its fan crown half drowned in the dunes.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "east_gate",
+          "label": "Take the sun road",
+          "position": 10,
+          "to_door": "west_gate",
+          "to_room": "approach",
+          "wall": "east"
+        }
+      ],
+      "grid_size": [
+        25,
+        25
+      ],
+      "id": "oasis",
+      "kit_refs": [],
+      "name": "Oasis of the Patient Sun",
+      "props": [
+        {
+          "asset": "relic.tablet",
+          "id": "waystone",
+          "position": [
+            7.4,
+            0.0,
+            19.8
+          ],
+          "rotation": [
+            0,
+            10.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            10.5,
+            4.2,
+            0.0
+          ],
+          "position": [
+            10.5,
+            3.4,
+            23.0
+          ]
+        }
+      ],
+      "character_ids": [
+        "wayfarer",
+        "orrin"
+      ],
+      "description": "A paved processional way runs north between crested guardians to a pylon gate. Beyond the wall the stepped pyramid of the Patient Sun climbs into the haze.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "west_gate",
+          "label": "Back to the oasis",
+          "position": 26,
+          "to_door": "east_gate",
+          "to_room": "oasis",
+          "wall": "west"
+        },
+        {
+          "conditions": [],
+          "id": "temple_gate",
+          "label": "Enter the sanctum",
+          "position": 10,
+          "to_door": "south_door",
+          "to_room": "shrine",
+          "wall": "north"
+        }
+      ],
+      "grid_size": [
+        21,
+        33
+      ],
+      "id": "approach",
+      "kit_refs": [],
+      "name": "The Sun Road",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            6.5,
+            1.0,
+            2.6
+          ],
+          "position": [
+            6.5,
+            3.4,
+            11.4
+          ]
+        }
+      ],
+      "character_ids": [
+        "wayfarer"
+      ],
+      "description": "The vault fell long ago and the sky looks in. Processions of bearers walk the carved walls toward a gold sun on its altar; braziers still burn on either side.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "south_door",
+          "label": "Out to the sun road",
+          "position": 6,
+          "to_door": "temple_gate",
+          "to_room": "approach",
+          "wall": "south"
+        },
+        {
+          "conditions": [
+            {
+              "equals": true,
+              "flag": "plate_pressed"
+            }
+          ],
+          "id": "east_door",
+          "label": "Through to the court",
+          "position": 6,
+          "to_door": "west_gate",
+          "to_room": "court",
+          "wall": "east"
+        }
+      ],
+      "grid_size": [
+        13,
+        13
+      ],
+      "id": "shrine",
+      "kit_refs": [],
+      "name": "Sanctum of the Patient Sun",
+      "props": [
+        {
+          "asset": "relic.plate",
+          "id": "plate",
+          "position": [
+            6.5,
+            0.0,
+            6.3
+          ],
+          "rotation": [
+            0,
+            0.0,
+            0
+          ]
+        },
+        {
+          "asset": "relic.coffer",
+          "id": "reliquary",
+          "position": [
+            4.4,
+            0.0,
+            6.0
+          ],
+          "rotation": [
+            0,
+            25.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            10.5,
+            1.0,
+            6.0
+          ],
+          "position": [
+            10.5,
+            5.0,
+            25.5
+          ]
+        }
+      ],
+      "character_ids": [
+        "wayfarer",
+        "ilka"
+      ],
+      "description": "Behind the sanctum the city gives way to green. A stepped court holds a great sun dial, and a fig has swallowed a column whole.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "west_gate",
+          "label": "Back into the sanctum",
+          "position": 10,
+          "to_door": "east_door",
+          "to_room": "shrine",
+          "wall": "west"
+        }
+      ],
+      "grid_size": [
+        21,
+        21
+      ],
+      "id": "court",
+      "kit_refs": [],
+      "name": "The Overgrown Court",
+      "props": [
+        {
+          "asset": "relic.dial",
+          "id": "dial",
+          "position": [
+            10.5,
+            0.0,
+            6.5
+          ],
+          "rotation": [
+            0,
+            0.0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "start": {
+    "collected": [],
+    "dialogue": {},
+    "flags": {
+      "goal": false,
+      "plate_pressed": false,
+      "sun_key": false
+    },
+    "inventory": [],
+    "location": "oasis",
+    "modules": {
+      "abilities": [],
+      "active": "",
+      "checkpoint": "oasis_safe",
+      "completed": [],
+      "discovered": [
+        "oasis"
+      ],
+      "failed": ""
+    },
+    "tide": {
+      "state": "clear",
+      "tick": 0
+    }
+  },
+  "tide": {
+    "id": "day",
+    "states": [
+      {
+        "duration": 1,
+        "id": "clear",
+        "label": "Noon"
+      }
+    ],
+    "wait_label": "Wait",
+    "wait_text": "The wind moves the sand a finger's width."
+  },
+  "title": "The Patient Sun"
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "hermes64-character-staging/1",
+  "note": "Additive presentation-only overlay. No new NPCs, actions, story identities or save fields.",
+  "room_overrides": {
+    "last_light": {
+      "boathouse": {"cameras":[{"id":"showcase","fov":62,"position":[7.1,2.8,7.4],"look_at":[4,0.9,3.6]}]},
+      "keepers_cottage": {"cameras":[{"id":"showcase","fov":62,"position":[8.7,2.8,7.4],"look_at":[5,0.9,3.6]}]},
+      "lamp_room": {"cameras":[{"id":"showcase","fov":62,"position":[7.1,2.8,7.4],"look_at":[4,0.9,3.6]}]}
+    }
+  },
+  "games": {
+    "thaw": {
+      "pod_bay": {"new_arrival":{"position":[8.6,0,6.5],"yaw":210},"tavi":{"position":[4.6,0,6],"yaw":25},"cat_purl":{"position":[3.6,0,5.7],"yaw":40},"cat_button":{"position":[6.1,0,7.2],"yaw":-25},"cat_mica":{"position":[7.4,0,4.3],"yaw":45},"cat_thread":{"position":[8,0,7.1],"yaw":-30}},
+      "workstation": {"new_arrival":{"position":[6,0,5.2],"yaw":210},"neri":{"position":[3.8,0,3.7],"yaw":25},"cat_echo":{"position":[3.2,0,5],"yaw":40},"cat_spool":{"position":[6,0,3.5],"yaw":-20}},
+      "conversation_pit": {"new_arrival":{"position":[8.8,0,7.9],"yaw":210},"sol":{"position":[3.3,0,4.2],"yaw":35},"cat_pebble":{"position":[4,0,8.8],"yaw":40},"cat_comet":{"position":[7.5,0,3.3],"yaw":30}},
+      "curved_corridor": {"new_arrival":{"position":[8.3,0,3.1],"yaw":210},"ivo":{"position":[5.6,0,2.6],"yaw":60},"cat_patch":{"position":[6.4,0,3.5],"yaw":60}},
+      "snow_field": {"new_arrival":{"position":[10.2,0,10.4],"yaw":210},"cat_drift":{"position":[9,0,9.5],"yaw":30}},
+      "dome_shelter": {"new_arrival":{"position":[5.6,0,6.2],"yaw":210},"luma":{"position":[3.6,0,4.1],"yaw":30},"cat_cinder":{"position":[3.8,0,7.3],"yaw":60},"cat_nori":{"position":[6.3,0,4],"yaw":25}}
+    },
+    "last_light": {
+      "fog_street": {"mara":{"position":[8.5,0,3.5],"yaw":210},"ferryman":{"position":[4.4,0,4.4],"yaw":25}},
+      "boathouse": {"mara":{"position":[4.8,0,4.8],"yaw":210}},
+      "keepers_cottage": {"mara":{"position":[5.8,0,4.8],"yaw":210}},
+      "lamp_room": {"mara":{"position":[4.8,0,4.8],"yaw":210}}
+    }
+  }
+}

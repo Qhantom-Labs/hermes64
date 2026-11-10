@@ -1,0 +1,348 @@
+{
+  "convention": "hermes64-presentation/1",
+  "ending_titles": {
+    "leave_dark": "Leave Dark",
+    "relight": "Relight"
+  },
+  "rooms": {
+    "boathouse": {
+      "camera": "showcase",
+      "cameras": [
+        {
+          "fov": 62,
+          "id": "showcase",
+          "look_at": [
+            4.0,
+            0.8,
+            3.4
+          ],
+          "position": [
+            9.8,
+            7.6,
+            12.3
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "asset": "furn.shelf",
+          "position": [
+            4,
+            0,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "furn.table",
+          "position": [
+            3,
+            0,
+            3
+          ],
+          "scale": [
+            1.5,
+            1,
+            1
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "furn.container",
+          "position": [
+            6,
+            0,
+            5
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "furn.rug",
+          "position": [
+            4.6,
+            0,
+            4.7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 15
+        },
+        {
+          "asset": "prop.vessel",
+          "position": [
+            5.7,
+            0,
+            4.0
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 0
+        }
+      ]
+    },
+    "fog_street": {
+      "camera": "showcase",
+      "cameras": [
+        {
+          "fov": 62,
+          "id": "showcase",
+          "look_at": [
+            6.0,
+            0.8,
+            4.4
+          ],
+          "position": [
+            11.8,
+            7.6,
+            13.3
+          ]
+        }
+      ],
+      "exterior": true,
+      "pieces": [
+        {
+          "asset": "arch.pier",
+          "position": [
+            7,
+            0,
+            6
+          ],
+          "scale": [
+            1.2,
+            1,
+            1.5
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "nature.tree",
+          "position": [
+            2,
+            0,
+            2
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "arch.house",
+          "position": [
+            2,
+            0,
+            -2
+          ],
+          "scale": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "terrain.water",
+          "position": [
+            7,
+            -0.1,
+            6
+          ],
+          "scale": [
+            1.8,
+            1,
+            1.8
+          ],
+          "yaw": 0
+        }
+      ]
+    },
+    "keepers_cottage": {
+      "camera": "showcase",
+      "cameras": [
+        {
+          "fov": 62,
+          "id": "showcase",
+          "look_at": [
+            5.0,
+            0.8,
+            3.4
+          ],
+          "position": [
+            10.8,
+            7.6,
+            12.3
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "asset": "furn.hearth",
+          "position": [
+            7,
+            0,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "furn.table",
+          "position": [
+            4,
+            0,
+            4
+          ],
+          "scale": [
+            1.5,
+            1,
+            1
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "furn.bench",
+          "position": [
+            3.6,
+            0,
+            6.2
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 20
+        },
+        {
+          "asset": "furn.rug",
+          "position": [
+            5.6,
+            0,
+            4.9
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": -10
+        }
+      ]
+    },
+    "lamp_room": {
+      "camera": "showcase",
+      "cameras": [
+        {
+          "fov": 62,
+          "id": "showcase",
+          "look_at": [
+            4.0,
+            0.8,
+            3.4
+          ],
+          "position": [
+            9.8,
+            7.6,
+            12.3
+          ]
+        }
+      ],
+      "pieces": [
+        {
+          "asset": "arch.column",
+          "position": [
+            0.8,
+            0,
+            3.2
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "arch.column",
+          "position": [
+            7,
+            0,
+            1
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "arch.railing",
+          "position": [
+            4,
+            0,
+            7
+          ],
+          "scale": [
+            3,
+            1,
+            1
+          ],
+          "yaw": 0
+        },
+        {
+          "asset": "furn.rug",
+          "position": [
+            4.6,
+            0,
+            4.7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 20
+        },
+        {
+          "asset": "furn.chair",
+          "position": [
+            3.5,
+            0,
+            4.3
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ],
+          "yaw": 40
+        }
+      ]
+    }
+  },
+  "rotation_order": "YXZ",
+  "rotation_units": "degrees"
+}

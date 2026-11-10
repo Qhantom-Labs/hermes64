@@ -1,0 +1,6850 @@
+{
+ "builds": [
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/alien.arch.glb",
+   "height_m": null,
+   "id": "alien.arch",
+   "key": "alien.arch",
+   "preset": null,
+   "sha256": "56b694bec9e4ec756c909a310d60ee3763d84fb010a5c178f6ec9f21a074438c",
+   "sockets": [],
+   "source_sha256": "56b694bec9e4ec756c909a310d60ee3763d84fb010a5c178f6ec9f21a074438c",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png"
+   ],
+   "tri_limit": 500,
+   "tris": 212,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/alien.boulder.glb",
+   "height_m": null,
+   "id": "alien.boulder",
+   "key": "alien.boulder",
+   "preset": null,
+   "sha256": "40008538ae591fdab1bd935fb7027f35ce674cdbbe6dc3c73687a5efae94e1a1",
+   "sockets": [],
+   "source_sha256": "40008538ae591fdab1bd935fb7027f35ce674cdbbe6dc3c73687a5efae94e1a1",
+   "textures": [
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 500,
+   "tris": 64,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/alien.boulder__big.glb",
+   "height_m": null,
+   "id": "alien.boulder",
+   "key": "alien.boulder__big",
+   "preset": "big",
+   "sha256": "e2da683268eb06eb566e56b6e277fa90964910da8f9387343f4d09d6bf7eddb0",
+   "sockets": [],
+   "source_sha256": "e2da683268eb06eb566e56b6e277fa90964910da8f9387343f4d09d6bf7eddb0",
+   "textures": [
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 500,
+   "tris": 64,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/alien.boulder__slab.glb",
+   "height_m": null,
+   "id": "alien.boulder",
+   "key": "alien.boulder__slab",
+   "preset": "slab",
+   "sha256": "364dde817c8834e1a30b7e755e6bd6345ce2142f92c3d4e9344d887b7be958b8",
+   "sockets": [],
+   "source_sha256": "364dde817c8834e1a30b7e755e6bd6345ce2142f92c3d4e9344d887b7be958b8",
+   "textures": [
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 500,
+   "tris": 64,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": "bulb_glow",
+   "glb": "kits/library/alien_world/assets/alien.bulb.glb",
+   "height_m": null,
+   "id": "alien.bulb",
+   "key": "alien.bulb",
+   "preset": null,
+   "sha256": "bf73ab780bce6d6a89bf9fe6ddceaea224bed7377a6fa7dcbc80a853ad80ccf8",
+   "sockets": [],
+   "source_sha256": "bf73ab780bce6d6a89bf9fe6ddceaea224bed7377a6fa7dcbc80a853ad80ccf8",
+   "textures": [
+    "alien_world/textures/tex_alien_world_bark.png",
+    "alien_world/textures/tex_alien_world_foliage.png",
+    "alien_world/textures/tex_alien_world_light.png"
+   ],
+   "tri_limit": 300,
+   "tris": 248,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": "bulb_glow",
+   "glb": "kits/library/alien_world/presets/alien.bulb__tall.glb",
+   "height_m": null,
+   "id": "alien.bulb",
+   "key": "alien.bulb__tall",
+   "preset": "tall",
+   "sha256": "e36d44c741f4b016658e91c6e81c63239880c60c31ab65bfa7f3168d8e650647",
+   "sockets": [],
+   "source_sha256": "e36d44c741f4b016658e91c6e81c63239880c60c31ab65bfa7f3168d8e650647",
+   "textures": [
+    "alien_world/textures/tex_alien_world_bark.png",
+    "alien_world/textures/tex_alien_world_foliage.png",
+    "alien_world/textures/tex_alien_world_light.png"
+   ],
+   "tri_limit": 300,
+   "tris": 248,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": "cap_spots",
+   "glb": "kits/library/alien_world/assets/alien.cap_tree.glb",
+   "height_m": null,
+   "id": "alien.cap_tree",
+   "key": "alien.cap_tree",
+   "preset": null,
+   "sha256": "8ad1839826a83c1e76de1b2b0bd941a24b75ce75001f84a391e572e38b5d2b67",
+   "sockets": [],
+   "source_sha256": "8ad1839826a83c1e76de1b2b0bd941a24b75ce75001f84a391e572e38b5d2b67",
+   "textures": [
+    "alien_world/textures/tex_alien_world_bark.png",
+    "alien_world/textures/tex_alien_world_cap.png",
+    "alien_world/textures/tex_alien_world_foliage.png"
+   ],
+   "tri_limit": 300,
+   "tris": 134,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": "cap_spots",
+   "glb": "kits/library/alien_world/presets/alien.cap_tree__triple.glb",
+   "height_m": null,
+   "id": "alien.cap_tree",
+   "key": "alien.cap_tree__triple",
+   "preset": "triple",
+   "sha256": "40e8fd8633c8c4abc86e17147ec73201266659b2605281dac1fbd122a77f8ee9",
+   "sockets": [],
+   "source_sha256": "40e8fd8633c8c4abc86e17147ec73201266659b2605281dac1fbd122a77f8ee9",
+   "textures": [
+    "alien_world/textures/tex_alien_world_bark.png",
+    "alien_world/textures/tex_alien_world_cap.png",
+    "alien_world/textures/tex_alien_world_foliage.png"
+   ],
+   "tri_limit": 300,
+   "tris": 258,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": "cap_spots",
+   "glb": "kits/library/alien_world/presets/alien.cap_tree__young.glb",
+   "height_m": null,
+   "id": "alien.cap_tree",
+   "key": "alien.cap_tree__young",
+   "preset": "young",
+   "sha256": "b8a22b8e170e2671fef807859751cf6596ddeb4e6748228e8cebf5e76e2b2642",
+   "sockets": [],
+   "source_sha256": "b8a22b8e170e2671fef807859751cf6596ddeb4e6748228e8cebf5e76e2b2642",
+   "textures": [
+    "alien_world/textures/tex_alien_world_bark.png",
+    "alien_world/textures/tex_alien_world_cap.png",
+    "alien_world/textures/tex_alien_world_foliage.png"
+   ],
+   "tri_limit": 300,
+   "tris": 134,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": "crystal_glow",
+   "glb": "kits/library/alien_world/assets/alien.crystal.glb",
+   "height_m": null,
+   "id": "alien.crystal",
+   "key": "alien.crystal",
+   "preset": null,
+   "sha256": "d277570d850b2d0a0887d04a2d6ee86fe31256eda63ca52860a3ff9638a13b03",
+   "sockets": [],
+   "source_sha256": "d277570d850b2d0a0887d04a2d6ee86fe31256eda63ca52860a3ff9638a13b03",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ice.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 300,
+   "tris": 168,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": "crystal_glow",
+   "glb": "kits/library/alien_world/presets/alien.crystal__small.glb",
+   "height_m": null,
+   "id": "alien.crystal",
+   "key": "alien.crystal__small",
+   "preset": "small",
+   "sha256": "98bd9c8833c559dec39976121754c7c790491903a94eee782f6192e206e3eaaf",
+   "sockets": [],
+   "source_sha256": "98bd9c8833c559dec39976121754c7c790491903a94eee782f6192e206e3eaaf",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ice.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 300,
+   "tris": 120,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": "crystal_glow",
+   "glb": "kits/library/alien_world/presets/alien.crystal__tall.glb",
+   "height_m": null,
+   "id": "alien.crystal",
+   "key": "alien.crystal__tall",
+   "preset": "tall",
+   "sha256": "3c2a379ea36962d3b2140cfe84eefbba18d8d6819be0b18cb8a786f1ade85f26",
+   "sockets": [],
+   "source_sha256": "3c2a379ea36962d3b2140cfe84eefbba18d8d6819be0b18cb8a786f1ade85f26",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ice.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 300,
+   "tris": 192,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/alien.frond.glb",
+   "height_m": null,
+   "id": "alien.frond",
+   "key": "alien.frond",
+   "preset": null,
+   "sha256": "75fb97c8c23c610caae9f44ac04e479b7a0ecde9cb449e341e20c0f7b96ea5e4",
+   "sockets": [],
+   "source_sha256": "75fb97c8c23c610caae9f44ac04e479b7a0ecde9cb449e341e20c0f7b96ea5e4",
+   "textures": [
+    "alien_world/textures/tex_alien_world_bark.png",
+    "alien_world/textures/tex_alien_world_foliage.png"
+   ],
+   "tri_limit": 300,
+   "tris": 204,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/alien.frond__low.glb",
+   "height_m": null,
+   "id": "alien.frond",
+   "key": "alien.frond__low",
+   "preset": "low",
+   "sha256": "8ceb76beac7c5b533b712723feeb4619d4506f85d5041d1e8703ae47917ec530",
+   "sockets": [],
+   "source_sha256": "8ceb76beac7c5b533b712723feeb4619d4506f85d5041d1e8703ae47917ec530",
+   "textures": [
+    "alien_world/textures/tex_alien_world_bark.png",
+    "alien_world/textures/tex_alien_world_foliage.png"
+   ],
+   "tri_limit": 300,
+   "tris": 176,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": "geode_glow",
+   "glb": "kits/library/alien_world/assets/alien.geode.glb",
+   "height_m": null,
+   "id": "alien.geode",
+   "key": "alien.geode",
+   "preset": null,
+   "sha256": "e3ec860ba01b016b2a2e6a59c26d87fc50ce0b672fbe2cec518dddefd5d68af3",
+   "sockets": [],
+   "source_sha256": "e3ec860ba01b016b2a2e6a59c26d87fc50ce0b672fbe2cec518dddefd5d68af3",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ice.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 400,
+   "tris": 240,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/alien.grass.glb",
+   "height_m": null,
+   "id": "alien.grass",
+   "key": "alien.grass",
+   "preset": null,
+   "sha256": "b55c584946ba7edf96f8d87d25ff2db2020f9cfb7bb50cd1f0394e863ee9a62b",
+   "sockets": [],
+   "source_sha256": "b55c584946ba7edf96f8d87d25ff2db2020f9cfb7bb50cd1f0394e863ee9a62b",
+   "textures": [
+    "alien_world/textures/tex_alien_world_flower.png",
+    "alien_world/textures/tex_alien_world_grass.png"
+   ],
+   "tri_limit": 300,
+   "tris": 168,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/alien.rock_spire.glb",
+   "height_m": null,
+   "id": "alien.rock_spire",
+   "key": "alien.rock_spire",
+   "preset": null,
+   "sha256": "2412a2262f84961846a8ff186f8f368361eaa7507686285bf4d89992bb71f7a5",
+   "sockets": [],
+   "source_sha256": "2412a2262f84961846a8ff186f8f368361eaa7507686285bf4d89992bb71f7a5",
+   "textures": [
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 500,
+   "tris": 122,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/alien.rock_spire__tall.glb",
+   "height_m": null,
+   "id": "alien.rock_spire",
+   "key": "alien.rock_spire__tall",
+   "preset": "tall",
+   "sha256": "4b5648ad56dc71f03223a7ad02c8d41d5f3c0984b442a4f2674d775b59b39bdb",
+   "sockets": [],
+   "source_sha256": "4b5648ad56dc71f03223a7ad02c8d41d5f3c0984b442a4f2674d775b59b39bdb",
+   "textures": [
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 500,
+   "tris": 150,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": "spire_crown",
+   "glb": "kits/library/alien_world/assets/alien.spire.glb",
+   "height_m": null,
+   "id": "alien.spire",
+   "key": "alien.spire",
+   "preset": null,
+   "sha256": "eeb6f05fd0a7856e441f0badcb605468c4a09b66b14f5bc5c7102e95accb09be",
+   "sockets": [],
+   "source_sha256": "eeb6f05fd0a7856e441f0badcb605468c4a09b66b14f5bc5c7102e95accb09be",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ice.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 500,
+   "tris": 162,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": "spire_crown",
+   "glb": "kits/library/alien_world/presets/alien.spire__short.glb",
+   "height_m": null,
+   "id": "alien.spire",
+   "key": "alien.spire__short",
+   "preset": "short",
+   "sha256": "af7ef75ab0b90b11c2027fe03ba34e8a49683a13b25bb428798becd7aa35a594",
+   "sockets": [],
+   "source_sha256": "af7ef75ab0b90b11c2027fe03ba34e8a49683a13b25bb428798becd7aa35a594",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ice.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_rock.png"
+   ],
+   "tri_limit": 500,
+   "tris": 138,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "flora",
+   "edges": null,
+   "emitter": "tendril_mouths",
+   "glb": "kits/library/alien_world/assets/alien.tendril.glb",
+   "height_m": null,
+   "id": "alien.tendril",
+   "key": "alien.tendril",
+   "preset": null,
+   "sha256": "f9890655eefabfc1d98319b1c5c5feba6e14e963164da29433678d741fb3259e",
+   "sockets": [],
+   "source_sha256": "f9890655eefabfc1d98319b1c5c5feba6e14e963164da29433678d741fb3259e",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cap.png",
+    "alien_world/textures/tex_alien_world_light.png"
+   ],
+   "tri_limit": 300,
+   "tris": 180,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/planet.crater.glb",
+   "height_m": null,
+   "id": "planet.crater",
+   "key": "planet.crater",
+   "preset": null,
+   "sha256": "a0333f005df11e73203ea1f0f6d304a22744f367ad8cb6e4bd748d6bdbd68f90",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "a0333f005df11e73203ea1f0f6d304a22744f367ad8cb6e4bd748d6bdbd68f90",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_dirt.png",
+    "alien_world/textures/tex_alien_world_rock.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 318,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/planet.dune.glb",
+   "height_m": null,
+   "id": "planet.dune",
+   "key": "planet.dune",
+   "preset": null,
+   "sha256": "0ed58a4b028ef586f08e65375103ec003dfdf1cf6a225271ae19548ee9505bed",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "0ed58a4b028ef586f08e65375103ec003dfdf1cf6a225271ae19548ee9505bed",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_path.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 398,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/planet.ground.glb",
+   "height_m": null,
+   "id": "planet.ground",
+   "key": "planet.ground",
+   "preset": null,
+   "sha256": "f4e6f6c76307fe8e15a73c1735fc4f13134565be174dedcd131c77f33de1d370",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "f4e6f6c76307fe8e15a73c1735fc4f13134565be174dedcd131c77f33de1d370",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 222,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/planet.ground__dirt.glb",
+   "height_m": null,
+   "id": "planet.ground",
+   "key": "planet.ground__dirt",
+   "preset": "dirt",
+   "sha256": "6e5fe958d47f6933fad187034aaee06b569dcb67535edeeffd158d687b11d4f7",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "6e5fe958d47f6933fad187034aaee06b569dcb67535edeeffd158d687b11d4f7",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_dirt.png"
+   ],
+   "tri_limit": 512,
+   "tris": 222,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/planet.ground__field.glb",
+   "height_m": null,
+   "id": "planet.ground",
+   "key": "planet.ground__field",
+   "preset": "field",
+   "sha256": "76e0a207cf01c8af18ad75a065131ee4a58c6d2cb6e77003ac7c2a4ba297e2c3",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "76e0a207cf01c8af18ad75a065131ee4a58c6d2cb6e77003ac7c2a4ba297e2c3",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_field.png"
+   ],
+   "tri_limit": 512,
+   "tris": 222,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 6.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 6.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 6.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 6.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/planet.ground__high.glb",
+   "height_m": null,
+   "id": "planet.ground",
+   "key": "planet.ground__high",
+   "preset": "high",
+   "sha256": "91ad4ccfb1f968d6b056a7b77d3a041ae4c24f55ba7000c259698dd0e9d57137",
+   "sockets": [
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      6.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      6.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      6.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      6.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "91ad4ccfb1f968d6b056a7b77d3a041ae4c24f55ba7000c259698dd0e9d57137",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 222,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 2.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 2.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 2.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 2.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/planet.ground__plateau.glb",
+   "height_m": null,
+   "id": "planet.ground",
+   "key": "planet.ground__plateau",
+   "preset": "plateau",
+   "sha256": "bb07a55276a7908e4a4b876480328200dbf8067cc7d62cc64b703fcac2e9b529",
+   "sockets": [
+    {
+     "edge": {
+      "level": 2.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      2.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 2.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      2.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 2.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      2.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 2.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      2.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "bb07a55276a7908e4a4b876480328200dbf8067cc7d62cc64b703fcac2e9b529",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 222,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/planet.ground__rough.glb",
+   "height_m": null,
+   "id": "planet.ground",
+   "key": "planet.ground__rough",
+   "preset": "rough",
+   "sha256": "c1bf96f21250615dfa7dea70f88a3bfd817b6f31b0a0c0f84629ed62344bf2ae",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "c1bf96f21250615dfa7dea70f88a3bfd817b6f31b0a0c0f84629ed62344bf2ae",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_rock.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 222,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/planet.mesa.glb",
+   "height_m": null,
+   "id": "planet.mesa",
+   "key": "planet.mesa",
+   "preset": null,
+   "sha256": "400948c0e356713f73a9b358dc8b2d904a380f8db52900176fbc8e4d092a85ec",
+   "sockets": [],
+   "source_sha256": "400948c0e356713f73a9b358dc8b2d904a380f8db52900176fbc8e4d092a85ec",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_rock.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 500,
+   "tris": 68,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "emitter": "pad_beacons",
+   "glb": "kits/library/alien_world/assets/planet.pad.glb",
+   "height_m": null,
+   "id": "planet.pad",
+   "key": "planet.pad",
+   "preset": null,
+   "sha256": "3c53c00f1ccfe0e222052750c202eb7c41229fa94bef84248f9c42f70173a9c6",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "3c53c00f1ccfe0e222052750c202eb7c41229fa94bef84248f9c42f70173a9c6",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_floor.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_post.png",
+    "alien_world/textures/tex_alien_world_sand.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 512,
+   "tris": 406,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "from": 0.0,
+     "to": 6.0,
+     "type": "cliff"
+    },
+    "n": {
+     "level": 6.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "from": 0.0,
+     "to": 6.0,
+     "type": "cliff"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/planet.ridge.glb",
+   "height_m": null,
+   "id": "planet.ridge",
+   "key": "planet.ridge",
+   "preset": null,
+   "sha256": "db40539979a6c4531aef8ea3d3bd212f63bc99a6e9e360d5413c02ea5ecf58b8",
+   "sockets": [
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 6.0,
+      "type": "cliff"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      6.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 6.0,
+      "type": "cliff"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "db40539979a6c4531aef8ea3d3bd212f63bc99a6e9e360d5413c02ea5ecf58b8",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_rock.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 244,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "from": 0.0,
+     "to": 2.0,
+     "type": "ramp"
+    },
+    "n": {
+     "level": 2.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "from": 0.0,
+     "to": 2.0,
+     "type": "ramp"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/planet.rise.glb",
+   "height_m": null,
+   "id": "planet.rise",
+   "key": "planet.rise",
+   "preset": null,
+   "sha256": "626423588c713ec085a5c6440145be6c1359bf5dad6a8bf572dc973b21437ec1",
+   "sockets": [
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 2.0,
+      "type": "ramp"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 2.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      2.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 2.0,
+      "type": "ramp"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "626423588c713ec085a5c6440145be6c1359bf5dad6a8bf572dc973b21437ec1",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 222,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "from": 0.0,
+     "to": 6.0,
+     "type": "ramp"
+    },
+    "n": {
+     "level": 6.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "from": 0.0,
+     "to": 6.0,
+     "type": "ramp"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/planet.rise__steep.glb",
+   "height_m": null,
+   "id": "planet.rise",
+   "key": "planet.rise__steep",
+   "preset": "steep",
+   "sha256": "df9255feb91058cd96aad325e414b806d9ed92c465526d016b223333522854b6",
+   "sockets": [
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 6.0,
+      "type": "ramp"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      6.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 6.0,
+      "type": "ramp"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "df9255feb91058cd96aad325e414b806d9ed92c465526d016b223333522854b6",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 222,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "trail": 2.4,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "trail": 2.4,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/planet.trail.glb",
+   "height_m": null,
+   "id": "planet.trail",
+   "key": "planet.trail",
+   "preset": null,
+   "sha256": "8b4388ce993077fa84d688ba63fb134847543607f8abfd584503a7290ec160c9",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "trail": 2.4,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "trail": 2.4,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "8b4388ce993077fa84d688ba63fb134847543607f8abfd584503a7290ec160c9",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_path.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 430,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "trail": 2.4,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "trail": 2.4,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/planet.trail__bend.glb",
+   "height_m": null,
+   "id": "planet.trail",
+   "key": "planet.trail__bend",
+   "preset": "bend",
+   "sha256": "5e502009254409b6cad63de48c6ad75c0f7e89d59b1b49b256e9c64427894c4a",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "trail": 2.4,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "trail": 2.4,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "5e502009254409b6cad63de48c6ad75c0f7e89d59b1b49b256e9c64427894c4a",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_path.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 430,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "terrain_tile",
+   "back_m": null,
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "trail": 2.4,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/planet.trail__end.glb",
+   "height_m": null,
+   "id": "planet.trail",
+   "key": "planet.trail__end",
+   "preset": "end",
+   "sha256": "d731d7f0983ac34d32c91973f69426fc3992ac0efdb600adaa9ad987ae1bd4f3",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "trail": 2.4,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "source_sha256": "d731d7f0983ac34d32c91973f69426fc3992ac0efdb600adaa9ad987ae1bd4f3",
+   "textures": [
+    "alien_world/textures/tex_alien_world_cliff.png",
+    "alien_world/textures/tex_alien_world_path.png",
+    "alien_world/textures/tex_alien_world_sand.png"
+   ],
+   "tri_limit": 512,
+   "tris": 430,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "prop",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/ship.drone.glb",
+   "height_m": null,
+   "id": "ship.drone",
+   "key": "ship.drone",
+   "preset": null,
+   "sha256": "a4ef8d269bd9b85199f7ca0323786e06dc0eada6504f828efeabe832c59f64fa",
+   "sockets": [],
+   "source_sha256": "a4ef8d269bd9b85199f7ca0323786e06dc0eada6504f828efeabe832c59f64fa",
+   "textures": [
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_metal.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 150,
+   "tris": 132,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "prop",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/ship.drone__lifter.glb",
+   "height_m": null,
+   "id": "ship.drone",
+   "key": "ship.drone__lifter",
+   "preset": "lifter",
+   "sha256": "9739b2a26d6a5c295f88dccd1c951deed45101bb62f61510f922d7c39a3833f1",
+   "sockets": [],
+   "source_sha256": "9739b2a26d6a5c295f88dccd1c951deed45101bb62f61510f922d7c39a3833f1",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_metal.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 150,
+   "tris": 148,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "pod_beacon",
+   "glb": "kits/library/alien_world/assets/ship.escape_pod.glb",
+   "height_m": null,
+   "id": "ship.escape_pod",
+   "key": "ship.escape_pod",
+   "preset": null,
+   "sha256": "5d1e8c117390bb3564390365c381e64df0d96e478932dbf380a03bd79d7ae454",
+   "sockets": [],
+   "source_sha256": "5d1e8c117390bb3564390365c381e64df0d96e478932dbf380a03bd79d7ae454",
+   "textures": [
+    "alien_world/textures/tex_alien_world_door.png",
+    "alien_world/textures/tex_alien_world_frame.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_rock.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 252,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "pod_beacon",
+   "glb": "kits/library/alien_world/presets/ship.escape_pod__crashed.glb",
+   "height_m": null,
+   "id": "ship.escape_pod",
+   "key": "ship.escape_pod__crashed",
+   "preset": "crashed",
+   "sha256": "4d24c618c0754ed693c5816b8c08e014c6e146fdb5bf5abe8df859a8e03fe79d",
+   "sockets": [],
+   "source_sha256": "4d24c618c0754ed693c5816b8c08e014c6e146fdb5bf5abe8df859a8e03fe79d",
+   "textures": [
+    "alien_world/textures/tex_alien_world_door.png",
+    "alien_world/textures/tex_alien_world_frame.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_rock.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 252,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "pod_beacon",
+   "glb": "kits/library/alien_world/presets/ship.escape_pod__open.glb",
+   "height_m": null,
+   "id": "ship.escape_pod",
+   "key": "ship.escape_pod__open",
+   "preset": "open",
+   "sha256": "cab4317d7af1c27821545cc80232b3e1de6383ef4d79b32e44e40c1e6b645c8b",
+   "sockets": [],
+   "source_sha256": "cab4317d7af1c27821545cc80232b3e1de6383ef4d79b32e44e40c1e6b645c8b",
+   "textures": [
+    "alien_world/textures/tex_alien_world_door.png",
+    "alien_world/textures/tex_alien_world_frame.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_opening.png",
+    "alien_world/textures/tex_alien_world_rock.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 280,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "hauler_engines",
+   "glb": "kits/library/alien_world/assets/ship.hauler.glb",
+   "height_m": null,
+   "id": "ship.hauler",
+   "key": "ship.hauler",
+   "preset": null,
+   "sha256": "d8d74a9a5a3ba2bfd75184afcc352b3c9702a591024b01c8a6fd0380458b4aa4",
+   "sockets": [],
+   "source_sha256": "d8d74a9a5a3ba2bfd75184afcc352b3c9702a591024b01c8a6fd0380458b4aa4",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_fire.png",
+    "alien_world/textures/tex_alien_world_frame.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_metal.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 500,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "hauler_engines",
+   "glb": "kits/library/alien_world/presets/ship.hauler__empty.glb",
+   "height_m": null,
+   "id": "ship.hauler",
+   "key": "ship.hauler__empty",
+   "preset": "empty",
+   "sha256": "14f53677c11c096e4833bc6f020ecdec61b773268c03fd7cbd7145f9dc67db32",
+   "sockets": [],
+   "source_sha256": "14f53677c11c096e4833bc6f020ecdec61b773268c03fd7cbd7145f9dc67db32",
+   "textures": [
+    "alien_world/textures/tex_alien_world_fire.png",
+    "alien_world/textures/tex_alien_world_frame.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_metal.png"
+   ],
+   "tri_limit": 500,
+   "tris": 356,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/ship.rover.glb",
+   "height_m": null,
+   "id": "ship.rover",
+   "key": "ship.rover",
+   "preset": null,
+   "sha256": "c51e2a68872a11a9b3a4212984e9137ded5f66072f5e3f8fbb8a815edeac8d9c",
+   "sockets": [],
+   "source_sha256": "c51e2a68872a11a9b3a4212984e9137ded5f66072f5e3f8fbb8a815edeac8d9c",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_metal.png",
+    "alien_world/textures/tex_alien_world_rail.png",
+    "alien_world/textures/tex_alien_world_rope.png"
+   ],
+   "tri_limit": 500,
+   "tris": 420,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/ship.rover__scout.glb",
+   "height_m": null,
+   "id": "ship.rover",
+   "key": "ship.rover__scout",
+   "preset": "scout",
+   "sha256": "f44cd4fe9930a8e4d703c6df1f57291dd922e6daa3547cc82b6e86676e923f2f",
+   "sockets": [],
+   "source_sha256": "f44cd4fe9930a8e4d703c6df1f57291dd922e6daa3547cc82b6e86676e923f2f",
+   "textures": [
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_rail.png",
+    "alien_world/textures/tex_alien_world_rope.png"
+   ],
+   "tri_limit": 500,
+   "tris": 320,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "shuttle_engines",
+   "glb": "kits/library/alien_world/assets/ship.shuttle.glb",
+   "height_m": null,
+   "id": "ship.shuttle",
+   "key": "ship.shuttle",
+   "preset": null,
+   "sha256": "746db85bb5eaa35774aa9117d17ec9d214a57505c16a3a3ead94a32b3229ffba",
+   "sockets": [],
+   "source_sha256": "746db85bb5eaa35774aa9117d17ec9d214a57505c16a3a3ead94a32b3229ffba",
+   "textures": [
+    "alien_world/textures/tex_alien_world_fire.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_metal.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 404,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "shuttle_engines",
+   "glb": "kits/library/alien_world/presets/ship.shuttle__cargo.glb",
+   "height_m": null,
+   "id": "ship.shuttle",
+   "key": "ship.shuttle__cargo",
+   "preset": "cargo",
+   "sha256": "654e2dfdc6fd2d3603cfd24494c0653691375259c1a4390bcbdc15e660252de9",
+   "sockets": [],
+   "source_sha256": "654e2dfdc6fd2d3603cfd24494c0653691375259c1a4390bcbdc15e660252de9",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_fire.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_metal.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 464,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "shuttle_engines",
+   "glb": "kits/library/alien_world/presets/ship.shuttle__level.glb",
+   "height_m": null,
+   "id": "ship.shuttle",
+   "key": "ship.shuttle__level",
+   "preset": "level",
+   "sha256": "8b6b4ac88f4f4c789f9bae51cb62493a2f31e188987a870d88d5e29649d823a5",
+   "sockets": [],
+   "source_sha256": "8b6b4ac88f4f4c789f9bae51cb62493a2f31e188987a870d88d5e29649d823a5",
+   "textures": [
+    "alien_world/textures/tex_alien_world_fire.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_metal.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 404,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/skyx.horizon.glb",
+   "height_m": null,
+   "id": "skyx.horizon",
+   "key": "skyx.horizon",
+   "preset": null,
+   "sha256": "aaf51ba9db5dda2f3d7e9482da72cc74ce3a85687f0c5db268bfefc17124fb32",
+   "sockets": [],
+   "source_sha256": "aaf51ba9db5dda2f3d7e9482da72cc74ce3a85687f0c5db268bfefc17124fb32",
+   "textures": [
+    "alien_world/textures/tex_alien_world_vista.png"
+   ],
+   "tri_limit": 128,
+   "tris": 60,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/skyx.horizon__dunes.glb",
+   "height_m": null,
+   "id": "skyx.horizon",
+   "key": "skyx.horizon__dunes",
+   "preset": "dunes",
+   "sha256": "e69fc2b7ee660881b17d4d05c9ab6cc2be4e2db38be299795657d337e66b32d1",
+   "sockets": [],
+   "source_sha256": "e69fc2b7ee660881b17d4d05c9ab6cc2be4e2db38be299795657d337e66b32d1",
+   "textures": [
+    "alien_world/textures/tex_alien_world_vista.png"
+   ],
+   "tri_limit": 128,
+   "tris": 60,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/skyx.horizon__spires.glb",
+   "height_m": null,
+   "id": "skyx.horizon",
+   "key": "skyx.horizon__spires",
+   "preset": "spires",
+   "sha256": "f993a2b93106f062bf02326328e45d9c8c8431e62046307f8f3189389f02b3fd",
+   "sockets": [],
+   "source_sha256": "f993a2b93106f062bf02326328e45d9c8c8431e62046307f8f3189389f02b3fd",
+   "textures": [
+    "alien_world/textures/tex_alien_world_vista.png"
+   ],
+   "tri_limit": 128,
+   "tris": 60,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/skyx.nebula.glb",
+   "height_m": null,
+   "id": "skyx.nebula",
+   "key": "skyx.nebula",
+   "preset": null,
+   "sha256": "f846a64ef24f5cc8f860ee7ed92c6963ada05d24d4f33547e85be50d9a303267",
+   "sockets": [],
+   "source_sha256": "f846a64ef24f5cc8f860ee7ed92c6963ada05d24d4f33547e85be50d9a303267",
+   "textures": [
+    "alien_world/textures/tex_alien_world_view.png"
+   ],
+   "tri_limit": 128,
+   "tris": 12,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/skyx.planet.glb",
+   "height_m": null,
+   "id": "skyx.planet",
+   "key": "skyx.planet",
+   "preset": null,
+   "sha256": "860720a16ccff51f0bef43ef4e583e1b82ea1714f67dd93027ffe546cdce09ad",
+   "sockets": [],
+   "source_sha256": "860720a16ccff51f0bef43ef4e583e1b82ea1714f67dd93027ffe546cdce09ad",
+   "textures": [
+    "alien_world/textures/tex_alien_world_vista_far.png"
+   ],
+   "tri_limit": 128,
+   "tris": 100,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/skyx.planet__moon.glb",
+   "height_m": null,
+   "id": "skyx.planet",
+   "key": "skyx.planet__moon",
+   "preset": "moon",
+   "sha256": "857b312bb5d1dfc6bcfaf9622436677b50d8d164c41325597ec85aac44a793f1",
+   "sockets": [],
+   "source_sha256": "857b312bb5d1dfc6bcfaf9622436677b50d8d164c41325597ec85aac44a793f1",
+   "textures": [
+    "alien_world/textures/tex_alien_world_vista_far.png"
+   ],
+   "tri_limit": 128,
+   "tris": 100,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/skyx.planet__ringed.glb",
+   "height_m": null,
+   "id": "skyx.planet",
+   "key": "skyx.planet__ringed",
+   "preset": "ringed",
+   "sha256": "7cbe28005dcb6879065de1abe1a82fe7903fd6481c036245ace7ff958497582d",
+   "sockets": [],
+   "source_sha256": "7cbe28005dcb6879065de1abe1a82fe7903fd6481c036245ace7ff958497582d",
+   "textures": [
+    "alien_world/textures/tex_alien_world_vista_far.png"
+   ],
+   "tri_limit": 128,
+   "tris": 120,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/skyx.starfield.glb",
+   "height_m": null,
+   "id": "skyx.starfield",
+   "key": "skyx.starfield",
+   "preset": null,
+   "sha256": "7d0cca3a7d071791cb90bf2d00157de8098fa6645bf46760bd0d6471879df828",
+   "sockets": [],
+   "source_sha256": "7d0cca3a7d071791cb90bf2d00157de8098fa6645bf46760bd0d6471879df828",
+   "textures": [
+    "alien_world/textures/tex_alien_world_sky.png"
+   ],
+   "tri_limit": 128,
+   "tris": 84,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/stn.airlock.glb",
+   "height_m": null,
+   "id": "stn.airlock",
+   "key": "stn.airlock",
+   "preset": null,
+   "sha256": "e97f382fc47fa69477a664cdcd3fad63028bf2ef4b7635c674487a9ab84e4da8",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "e97f382fc47fa69477a664cdcd3fad63028bf2ef4b7635c674487a9ab84e4da8",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_door.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 300,
+   "tris": 264,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.airlock__open.glb",
+   "height_m": null,
+   "id": "stn.airlock",
+   "key": "stn.airlock__open",
+   "preset": "open",
+   "sha256": "32d20177ffea5217b730ac1d972d8364a6e1f6b7b780c14abbadc12e412939db",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "32d20177ffea5217b730ac1d972d8364a6e1f6b7b780c14abbadc12e412939db",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_door.png"
+   ],
+   "tri_limit": 300,
+   "tris": 168,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/stn.corridor.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor",
+   "preset": null,
+   "sha256": "f64bafe57bd2988cdb01f46ef81ea8591da059b65d3b979882ef82b659595dba",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "f64bafe57bd2988cdb01f46ef81ea8591da059b65d3b979882ef82b659595dba",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ceiling.png",
+    "alien_world/textures/tex_alien_world_floor.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 216,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.corridor__corner.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__corner",
+   "preset": "corner",
+   "sha256": "c8d93558b55795c73c42febbb6e08dcf621876271f93828ffd19d9d7cadc2ed5",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "c8d93558b55795c73c42febbb6e08dcf621876271f93828ffd19d9d7cadc2ed5",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ceiling.png",
+    "alien_world/textures/tex_alien_world_floor.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_wall.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 146,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.corridor__cross.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__cross",
+   "preset": "cross",
+   "sha256": "8d42df24007cb7cffaf4a43078f28a9503adabe5aaeac095ae0cc6f9d565e922",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "8d42df24007cb7cffaf4a43078f28a9503adabe5aaeac095ae0cc6f9d565e922",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ceiling.png",
+    "alien_world/textures/tex_alien_world_floor.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_wall.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 128,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.corridor__end.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__end",
+   "preset": "end",
+   "sha256": "00664432a1119162b2da7c10ade9fd915927ab53028032727562307347db9981",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "00664432a1119162b2da7c10ade9fd915927ab53028032727562307347db9981",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ceiling.png",
+    "alien_world/textures/tex_alien_world_floor.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 244,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.corridor__end_door.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__end_door",
+   "preset": "end_door",
+   "sha256": "9206242453bcb414e00b1abfa3318ddea1aaafaed7583dd7e56c7d2574d6d96b",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.1
+     ],
+     "side": "n",
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "9206242453bcb414e00b1abfa3318ddea1aaafaed7583dd7e56c7d2574d6d96b",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ceiling.png",
+    "alien_world/textures/tex_alien_world_floor.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 246,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.corridor__plain.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__plain",
+   "preset": "plain",
+   "sha256": "fe60e0a92e27dc0420afd123c36b63e2c72f753685f9bbfb07728ddb62d746f8",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "fe60e0a92e27dc0420afd123c36b63e2c72f753685f9bbfb07728ddb62d746f8",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ceiling.png",
+    "alien_world/textures/tex_alien_world_floor.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_wall.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 124,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.corridor__tee.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__tee",
+   "preset": "tee",
+   "sha256": "988a28e66fdcd641c27eb3193cafbb247c135c3d8a09a4af3b24d26d74e544d3",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "988a28e66fdcd641c27eb3193cafbb247c135c3d8a09a4af3b24d26d74e544d3",
+   "textures": [
+    "alien_world/textures/tex_alien_world_ceiling.png",
+    "alien_world/textures/tex_alien_world_floor.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_wall.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 126,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": "door_lights",
+   "glb": "kits/library/alien_world/assets/stn.doorway.glb",
+   "height_m": null,
+   "id": "stn.doorway",
+   "key": "stn.doorway",
+   "preset": null,
+   "sha256": "3219c6abca02751a67357d85442b66a37c7a1fb94f90b90ba3961e9bf5a03826",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "3219c6abca02751a67357d85442b66a37c7a1fb94f90b90ba3961e9bf5a03826",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_frame.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_opening.png"
+   ],
+   "tri_limit": 300,
+   "tris": 130,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": "door_lights",
+   "glb": "kits/library/alien_world/presets/stn.doorway__lit.glb",
+   "height_m": null,
+   "id": "stn.doorway",
+   "key": "stn.doorway__lit",
+   "preset": "lit",
+   "sha256": "00028e6e1e10c7fdc81a7e2a26c925aa8b34439a645d4f982a061e9c79d12c21",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "00028e6e1e10c7fdc81a7e2a26c925aa8b34439a645d4f982a061e9c79d12c21",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_frame.png",
+    "alien_world/textures/tex_alien_world_light.png"
+   ],
+   "tri_limit": 300,
+   "tris": 130,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/stn.floor.glb",
+   "height_m": null,
+   "id": "stn.floor",
+   "key": "stn.floor",
+   "preset": null,
+   "sha256": "6beb68bb6ff1270404865483f4ea67c7113c70ba5a26107566a4e10de9518e1e",
+   "sockets": [],
+   "source_sha256": "6beb68bb6ff1270404865483f4ea67c7113c70ba5a26107566a4e10de9518e1e",
+   "textures": [
+    "alien_world/textures/tex_alien_world_floor.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 268,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.floor__grate.glb",
+   "height_m": null,
+   "id": "stn.floor",
+   "key": "stn.floor__grate",
+   "preset": "grate",
+   "sha256": "df587d0bd3da43055fc41c5c528c70560094725a8bbad625c4534667128a6e05",
+   "sockets": [],
+   "source_sha256": "df587d0bd3da43055fc41c5c528c70560094725a8bbad625c4534667128a6e05",
+   "textures": [
+    "alien_world/textures/tex_alien_world_step.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 92,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.floor__pad.glb",
+   "height_m": null,
+   "id": "stn.floor",
+   "key": "stn.floor__pad",
+   "preset": "pad",
+   "sha256": "049bee44ed9e07251922b5d68c5b561dcae1ee90c149292464c698788c8846b9",
+   "sockets": [],
+   "source_sha256": "049bee44ed9e07251922b5d68c5b561dcae1ee90c149292464c698788c8846b9",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_floor.png"
+   ],
+   "tri_limit": 500,
+   "tris": 276,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.floor__plain.glb",
+   "height_m": null,
+   "id": "stn.floor",
+   "key": "stn.floor__plain",
+   "preset": "plain",
+   "sha256": "aeac6d6b4199e79cc2d1b23d0bd1b7ae9ffd9bf817439a3ed5c5fa8cd9a66593",
+   "sockets": [],
+   "source_sha256": "aeac6d6b4199e79cc2d1b23d0bd1b7ae9ffd9bf817439a3ed5c5fa8cd9a66593",
+   "textures": [
+    "alien_world/textures/tex_alien_world_floor.png"
+   ],
+   "tri_limit": 500,
+   "tris": 44,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/stn.stairs.glb",
+   "height_m": null,
+   "id": "stn.stairs",
+   "key": "stn.stairs",
+   "preset": null,
+   "sha256": "8f5fa49c1c24fff43d497356b69e1025c26d28f1efa103003bcb71051ab43ffb",
+   "sockets": [],
+   "source_sha256": "8f5fa49c1c24fff43d497356b69e1025c26d28f1efa103003bcb71051ab43ffb",
+   "textures": [
+    "alien_world/textures/tex_alien_world_frame.png",
+    "alien_world/textures/tex_alien_world_post.png",
+    "alien_world/textures/tex_alien_world_rail.png",
+    "alien_world/textures/tex_alien_world_step.png"
+   ],
+   "tri_limit": 500,
+   "tris": 204,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.stairs__dais.glb",
+   "height_m": null,
+   "id": "stn.stairs",
+   "key": "stn.stairs__dais",
+   "preset": "dais",
+   "sha256": "13497b4c060924cd89d9ba20505ea1a3ad2d901fdb3c1e59dd17c10f333b35fd",
+   "sockets": [],
+   "source_sha256": "13497b4c060924cd89d9ba20505ea1a3ad2d901fdb3c1e59dd17c10f333b35fd",
+   "textures": [
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_step.png"
+   ],
+   "tri_limit": 500,
+   "tris": 320,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/stn.stairs__ramp.glb",
+   "height_m": null,
+   "id": "stn.stairs",
+   "key": "stn.stairs__ramp",
+   "preset": "ramp",
+   "sha256": "66162523fa1be3110fd2c9a502d43bb866b3795de868c6d80d4c23b2ae446899",
+   "sockets": [],
+   "source_sha256": "66162523fa1be3110fd2c9a502d43bb866b3795de868c6d80d4c23b2ae446899",
+   "textures": [
+    "alien_world/textures/tex_alien_world_frame.png",
+    "alien_world/textures/tex_alien_world_post.png",
+    "alien_world/textures/tex_alien_world_rail.png",
+    "alien_world/textures/tex_alien_world_step.png"
+   ],
+   "tri_limit": 500,
+   "tris": 176,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/tech.cables.glb",
+   "height_m": null,
+   "id": "tech.cables",
+   "key": "tech.cables",
+   "preset": null,
+   "sha256": "0798d49c4e11bb89fc8ac240d1f4091b0a87dbcc7c6592c01b9d7fc37514f1ea",
+   "sockets": [],
+   "source_sha256": "0798d49c4e11bb89fc8ac240d1f4091b0a87dbcc7c6592c01b9d7fc37514f1ea",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_rope.png"
+   ],
+   "tri_limit": 500,
+   "tris": 436,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/tech.cables__hang.glb",
+   "height_m": null,
+   "id": "tech.cables",
+   "key": "tech.cables__hang",
+   "preset": "hang",
+   "sha256": "ecece8134964a7b82ed2bc9df4e5314a9a3f7fc817d004995e08c7a8afe1dd6d",
+   "sockets": [],
+   "source_sha256": "ecece8134964a7b82ed2bc9df4e5314a9a3f7fc817d004995e08c7a8afe1dd6d",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_post.png",
+    "alien_world/textures/tex_alien_world_rope.png"
+   ],
+   "tri_limit": 500,
+   "tris": 432,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": "pod_ring",
+   "glb": "kits/library/alien_world/assets/tech.charge_pod.glb",
+   "height_m": null,
+   "id": "tech.charge_pod",
+   "key": "tech.charge_pod",
+   "preset": null,
+   "sha256": "5f6697909ad3f9404f4c48cacbadbd3e27969fa64e00cbf126b3440fd7605c6b",
+   "sockets": [],
+   "source_sha256": "5f6697909ad3f9404f4c48cacbadbd3e27969fa64e00cbf126b3440fd7605c6b",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body.png",
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_hull.png",
+    "alien_world/textures/tex_alien_world_hull_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_screen.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 400,
+   "tris": 362,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": "console_glow",
+   "glb": "kits/library/alien_world/assets/tech.console.glb",
+   "height_m": null,
+   "id": "tech.console",
+   "key": "tech.console",
+   "preset": null,
+   "sha256": "b2737e4564046c2c9b50e6d7a166c91cdd8c0b43e083509b34138d46d485a4bb",
+   "sockets": [],
+   "source_sha256": "b2737e4564046c2c9b50e6d7a166c91cdd8c0b43e083509b34138d46d485a4bb",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body.png",
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_screen.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 300,
+   "tris": 152,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": "console_glow",
+   "glb": "kits/library/alien_world/presets/tech.console__pillar.glb",
+   "height_m": null,
+   "id": "tech.console",
+   "key": "tech.console__pillar",
+   "preset": "pillar",
+   "sha256": "297309c9fc63bae607e3ff6c583d036f090061ae50a60206c6fcd75e6af639cb",
+   "sockets": [],
+   "source_sha256": "297309c9fc63bae607e3ff6c583d036f090061ae50a60206c6fcd75e6af639cb",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body.png",
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_screen.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 300,
+   "tris": 140,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": "console_glow",
+   "glb": "kits/library/alien_world/presets/tech.console__tall.glb",
+   "height_m": null,
+   "id": "tech.console",
+   "key": "tech.console__tall",
+   "preset": "tall",
+   "sha256": "ee5ef49d7e608c1ff1cddf310a80e3f5ba67b0811568591138fbed30e3b7a693",
+   "sockets": [],
+   "source_sha256": "ee5ef49d7e608c1ff1cddf310a80e3f5ba67b0811568591138fbed30e3b7a693",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body.png",
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_screen.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 300,
+   "tris": 188,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/tech.crate.glb",
+   "height_m": null,
+   "id": "tech.crate",
+   "key": "tech.crate",
+   "preset": null,
+   "sha256": "d9c60d25a6629562ad04611f2ed97217d282ae81255280cfc7cf7bea98a9463b",
+   "sockets": [],
+   "source_sha256": "d9c60d25a6629562ad04611f2ed97217d282ae81255280cfc7cf7bea98a9463b",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_frame.png"
+   ],
+   "tri_limit": 400,
+   "tris": 220,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/tech.crate__large.glb",
+   "height_m": null,
+   "id": "tech.crate",
+   "key": "tech.crate__large",
+   "preset": "large",
+   "sha256": "cd6baa352d3d323553bff76ee4f5698e63f6925224c674725cdcb1005fdc913d",
+   "sockets": [],
+   "source_sha256": "cd6baa352d3d323553bff76ee4f5698e63f6925224c674725cdcb1005fdc913d",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_frame.png"
+   ],
+   "tri_limit": 400,
+   "tris": 220,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/tech.crate__long.glb",
+   "height_m": null,
+   "id": "tech.crate",
+   "key": "tech.crate__long",
+   "preset": "long",
+   "sha256": "96cdd7437931efe13c7ecac4ddc41db047023129d5a0c1c3585eb638ca2aa17c",
+   "sockets": [],
+   "source_sha256": "96cdd7437931efe13c7ecac4ddc41db047023129d5a0c1c3585eb638ca2aa17c",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_frame.png"
+   ],
+   "tri_limit": 400,
+   "tris": 156,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/tech.crate__stack.glb",
+   "height_m": null,
+   "id": "tech.crate",
+   "key": "tech.crate__stack",
+   "preset": "stack",
+   "sha256": "3a8d7243bb163aa45a32ed4ef1b3b9817a3ed4500ee292eabccc42ac9d8599dd",
+   "sockets": [],
+   "source_sha256": "3a8d7243bb163aa45a32ed4ef1b3b9817a3ed4500ee292eabccc42ac9d8599dd",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_frame.png"
+   ],
+   "tri_limit": 400,
+   "tris": 376,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/tech.tank.glb",
+   "height_m": null,
+   "id": "tech.tank",
+   "key": "tech.tank",
+   "preset": null,
+   "sha256": "5b7697575ea96f20afe8f2d054cb4e2e71e6b42897d3781f0efd04a5d3454faf",
+   "sockets": [],
+   "source_sha256": "5b7697575ea96f20afe8f2d054cb4e2e71e6b42897d3781f0efd04a5d3454faf",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_metal.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 400,
+   "tris": 360,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/tech.tank__horizontal.glb",
+   "height_m": null,
+   "id": "tech.tank",
+   "key": "tech.tank__horizontal",
+   "preset": "horizontal",
+   "sha256": "31450399fc8c666a99216f2eb1ef5916eb19fdfb7c4d5309f744cb3317930ffc",
+   "sockets": [],
+   "source_sha256": "31450399fc8c666a99216f2eb1ef5916eb19fdfb7c4d5309f744cb3317930ffc",
+   "textures": [
+    "alien_world/textures/tex_alien_world_band.png",
+    "alien_world/textures/tex_alien_world_metal.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 400,
+   "tris": 336,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/assets/tech.terminal.glb",
+   "height_m": null,
+   "id": "tech.terminal",
+   "key": "tech.terminal",
+   "preset": null,
+   "sha256": "05557036b969b3c67afc2752f2a31e166edaacc801a697e68bbf8c04737f337e",
+   "sockets": [],
+   "source_sha256": "05557036b969b3c67afc2752f2a31e166edaacc801a697e68bbf8c04737f337e",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body.png",
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_light.png",
+    "alien_world/textures/tex_alien_world_screen.png",
+    "alien_world/textures/tex_alien_world_trim.png",
+    "alien_world/textures/tex_alien_world_wall_alt.png"
+   ],
+   "tri_limit": 300,
+   "tris": 104,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "wall_face",
+   "back_m": 0.15,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/alien_world/presets/tech.terminal__wall.glb",
+   "height_m": null,
+   "id": "tech.terminal",
+   "key": "tech.terminal__wall",
+   "preset": "wall",
+   "sha256": "eadc6ad0fdb96add9dc2b2ce7f905c6d44f3eccd806e841b5ded51968eabd34c",
+   "sockets": [],
+   "source_sha256": "eadc6ad0fdb96add9dc2b2ce7f905c6d44f3eccd806e841b5ded51968eabd34c",
+   "textures": [
+    "alien_world/textures/tex_alien_world_body_alt.png",
+    "alien_world/textures/tex_alien_world_screen.png",
+    "alien_world/textures/tex_alien_world_trim.png"
+   ],
+   "tri_limit": 300,
+   "tris": 40,
+   "variant": "alien_world"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "prop",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/ship.drone.glb",
+   "height_m": null,
+   "id": "ship.drone",
+   "key": "ship.drone",
+   "preset": null,
+   "sha256": "dc163fc9cfd309d269bbc68e6c55535147983167cef4145d98af4abc3ec6f7c7",
+   "sockets": [],
+   "source_sha256": "dc163fc9cfd309d269bbc68e6c55535147983167cef4145d98af4abc3ec6f7c7",
+   "textures": [
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 150,
+   "tris": 132,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "prop",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/ship.drone__lifter.glb",
+   "height_m": null,
+   "id": "ship.drone",
+   "key": "ship.drone__lifter",
+   "preset": "lifter",
+   "sha256": "34219ab51351446cbfbac813cdc149fff2d876f00f7a8a9719c3c040e1f75a97",
+   "sockets": [],
+   "source_sha256": "34219ab51351446cbfbac813cdc149fff2d876f00f7a8a9719c3c040e1f75a97",
+   "textures": [
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 150,
+   "tris": 148,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "pod_beacon",
+   "glb": "kits/library/space_station/assets/ship.escape_pod.glb",
+   "height_m": null,
+   "id": "ship.escape_pod",
+   "key": "ship.escape_pod",
+   "preset": null,
+   "sha256": "222e10b443a18b9a7c56a68927d1c74048baf300f220ca9f10f3d7f539924462",
+   "sockets": [],
+   "source_sha256": "222e10b443a18b9a7c56a68927d1c74048baf300f220ca9f10f3d7f539924462",
+   "textures": [
+    "space_station/textures/tex_space_station_door.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_rock.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 252,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "pod_beacon",
+   "glb": "kits/library/space_station/presets/ship.escape_pod__crashed.glb",
+   "height_m": null,
+   "id": "ship.escape_pod",
+   "key": "ship.escape_pod__crashed",
+   "preset": "crashed",
+   "sha256": "460ef7ffc068d97c99b049eb903f8567e0db6dae0b04a5c6d23199520010a62a",
+   "sockets": [],
+   "source_sha256": "460ef7ffc068d97c99b049eb903f8567e0db6dae0b04a5c6d23199520010a62a",
+   "textures": [
+    "space_station/textures/tex_space_station_door.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_rock.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 252,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "pod_beacon",
+   "glb": "kits/library/space_station/presets/ship.escape_pod__open.glb",
+   "height_m": null,
+   "id": "ship.escape_pod",
+   "key": "ship.escape_pod__open",
+   "preset": "open",
+   "sha256": "ce56f65ebc85505752ab6169fbcba2be95f28d67f78226b9314d95b6db745bf9",
+   "sockets": [],
+   "source_sha256": "ce56f65ebc85505752ab6169fbcba2be95f28d67f78226b9314d95b6db745bf9",
+   "textures": [
+    "space_station/textures/tex_space_station_door.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_opening.png",
+    "space_station/textures/tex_space_station_rock.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 280,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "hauler_engines",
+   "glb": "kits/library/space_station/assets/ship.hauler.glb",
+   "height_m": null,
+   "id": "ship.hauler",
+   "key": "ship.hauler",
+   "preset": null,
+   "sha256": "db913daaed0071b115d807792b847c5ded9a46fb3fe06d1d555f50985b711dfc",
+   "sockets": [],
+   "source_sha256": "db913daaed0071b115d807792b847c5ded9a46fb3fe06d1d555f50985b711dfc",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_fire.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 500,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "hauler_engines",
+   "glb": "kits/library/space_station/presets/ship.hauler__empty.glb",
+   "height_m": null,
+   "id": "ship.hauler",
+   "key": "ship.hauler__empty",
+   "preset": "empty",
+   "sha256": "9e8c2fe8af60476b1b60eef72631170961cf064e40dc4e4636a827d027decb2a",
+   "sockets": [],
+   "source_sha256": "9e8c2fe8af60476b1b60eef72631170961cf064e40dc4e4636a827d027decb2a",
+   "textures": [
+    "space_station/textures/tex_space_station_fire.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_metal.png"
+   ],
+   "tri_limit": 500,
+   "tris": 356,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/ship.rover.glb",
+   "height_m": null,
+   "id": "ship.rover",
+   "key": "ship.rover",
+   "preset": null,
+   "sha256": "6f0388ca26f59902be97258af8262dab233598f5ceb527fe419bcafc94cba090",
+   "sockets": [],
+   "source_sha256": "6f0388ca26f59902be97258af8262dab233598f5ceb527fe419bcafc94cba090",
+   "textures": [
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_rail.png",
+    "space_station/textures/tex_space_station_rope.png"
+   ],
+   "tri_limit": 500,
+   "tris": 420,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/ship.rover__scout.glb",
+   "height_m": null,
+   "id": "ship.rover",
+   "key": "ship.rover__scout",
+   "preset": "scout",
+   "sha256": "17de5b6e717ee4e08546398e31bd40b6ba0dfed1b6825ed91d9999dc10c2a4c9",
+   "sockets": [],
+   "source_sha256": "17de5b6e717ee4e08546398e31bd40b6ba0dfed1b6825ed91d9999dc10c2a4c9",
+   "textures": [
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_rail.png",
+    "space_station/textures/tex_space_station_rope.png"
+   ],
+   "tri_limit": 500,
+   "tris": 320,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "shuttle_engines",
+   "glb": "kits/library/space_station/assets/ship.shuttle.glb",
+   "height_m": null,
+   "id": "ship.shuttle",
+   "key": "ship.shuttle",
+   "preset": null,
+   "sha256": "21f2e22ca02362a82deb815fee953883b01f95b9a954dce3c2c64426892170a8",
+   "sockets": [],
+   "source_sha256": "21f2e22ca02362a82deb815fee953883b01f95b9a954dce3c2c64426892170a8",
+   "textures": [
+    "space_station/textures/tex_space_station_fire.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 404,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "shuttle_engines",
+   "glb": "kits/library/space_station/presets/ship.shuttle__cargo.glb",
+   "height_m": null,
+   "id": "ship.shuttle",
+   "key": "ship.shuttle__cargo",
+   "preset": "cargo",
+   "sha256": "8a001716879f448aec74a2522f6b434a680a776189000ae0d9002075c8dda910",
+   "sockets": [],
+   "source_sha256": "8a001716879f448aec74a2522f6b434a680a776189000ae0d9002075c8dda910",
+   "textures": [
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_fire.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 464,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "vehicle",
+   "edges": null,
+   "emitter": "shuttle_engines",
+   "glb": "kits/library/space_station/presets/ship.shuttle__level.glb",
+   "height_m": null,
+   "id": "ship.shuttle",
+   "key": "ship.shuttle__level",
+   "preset": "level",
+   "sha256": "90cb8a69bd8f0ea00add769df2e7e47a55916bab734410ea5f8ca605e72a8955",
+   "sockets": [],
+   "source_sha256": "90cb8a69bd8f0ea00add769df2e7e47a55916bab734410ea5f8ca605e72a8955",
+   "textures": [
+    "space_station/textures/tex_space_station_fire.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 404,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/skyx.horizon.glb",
+   "height_m": null,
+   "id": "skyx.horizon",
+   "key": "skyx.horizon",
+   "preset": null,
+   "sha256": "5386cbd1fef5fad0abad73f4ebde53a92942804440a6699c48a7cbf3ccd7491e",
+   "sockets": [],
+   "source_sha256": "5386cbd1fef5fad0abad73f4ebde53a92942804440a6699c48a7cbf3ccd7491e",
+   "textures": [
+    "space_station/textures/tex_space_station_vista.png"
+   ],
+   "tri_limit": 128,
+   "tris": 60,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/skyx.nebula.glb",
+   "height_m": null,
+   "id": "skyx.nebula",
+   "key": "skyx.nebula",
+   "preset": null,
+   "sha256": "71765ff4fb0d0dcdfd1a3b287cb3cd11da4ed82b89cacb974bfe43144c5edd4c",
+   "sockets": [],
+   "source_sha256": "71765ff4fb0d0dcdfd1a3b287cb3cd11da4ed82b89cacb974bfe43144c5edd4c",
+   "textures": [
+    "space_station/textures/tex_space_station_view.png"
+   ],
+   "tri_limit": 128,
+   "tris": 12,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/skyx.planet.glb",
+   "height_m": null,
+   "id": "skyx.planet",
+   "key": "skyx.planet",
+   "preset": null,
+   "sha256": "55550e6e139ff85b58a824dcab39f7e8417b91bd024f80cd269adb37d8ae4d44",
+   "sockets": [],
+   "source_sha256": "55550e6e139ff85b58a824dcab39f7e8417b91bd024f80cd269adb37d8ae4d44",
+   "textures": [
+    "space_station/textures/tex_space_station_vista_far.png"
+   ],
+   "tri_limit": 128,
+   "tris": 100,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/skyx.planet__moon.glb",
+   "height_m": null,
+   "id": "skyx.planet",
+   "key": "skyx.planet__moon",
+   "preset": "moon",
+   "sha256": "4f77998c54e0ac76b482ae8d2ee724da7e04acca044787b10be1ef2b8916391a",
+   "sockets": [],
+   "source_sha256": "4f77998c54e0ac76b482ae8d2ee724da7e04acca044787b10be1ef2b8916391a",
+   "textures": [
+    "space_station/textures/tex_space_station_vista.png"
+   ],
+   "tri_limit": 128,
+   "tris": 100,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/skyx.planet__ringed.glb",
+   "height_m": null,
+   "id": "skyx.planet",
+   "key": "skyx.planet__ringed",
+   "preset": "ringed",
+   "sha256": "ffa0cbb7016d7bb2d11220caec26cd758d57f80e89c73e17f9ff304beb51d9f3",
+   "sockets": [],
+   "source_sha256": "ffa0cbb7016d7bb2d11220caec26cd758d57f80e89c73e17f9ff304beb51d9f3",
+   "textures": [
+    "space_station/textures/tex_space_station_vista_far.png"
+   ],
+   "tri_limit": 128,
+   "tris": 120,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/skyx.starfield.glb",
+   "height_m": null,
+   "id": "skyx.starfield",
+   "key": "skyx.starfield",
+   "preset": null,
+   "sha256": "c4e3eac45f323fcb3df0121368856335c1b552e927204a8c832f6d99b0b2a35d",
+   "sockets": [],
+   "source_sha256": "c4e3eac45f323fcb3df0121368856335c1b552e927204a8c832f6d99b0b2a35d",
+   "textures": [
+    "space_station/textures/tex_space_station_sky.png"
+   ],
+   "tri_limit": 128,
+   "tris": 84,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "viewer",
+   "back_m": null,
+   "cells": null,
+   "class": "sky",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/skyx.starfield__cylinder.glb",
+   "height_m": null,
+   "id": "skyx.starfield",
+   "key": "skyx.starfield__cylinder",
+   "preset": "cylinder",
+   "sha256": "098a975dc0e94313d0f7bb8f1594b7b3d9c7ccaee94f3fd8c81da95dfffb655a",
+   "sockets": [],
+   "source_sha256": "098a975dc0e94313d0f7bb8f1594b7b3d9c7ccaee94f3fd8c81da95dfffb655a",
+   "textures": [
+    "space_station/textures/tex_space_station_sky.png"
+   ],
+   "tri_limit": 128,
+   "tris": 48,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/stn.airlock.glb",
+   "height_m": null,
+   "id": "stn.airlock",
+   "key": "stn.airlock",
+   "preset": null,
+   "sha256": "bed6e846281f6f00ca6a5aee99c66cd1c5258865c3c7ada8dbb6e7e3422fa5ab",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "bed6e846281f6f00ca6a5aee99c66cd1c5258865c3c7ada8dbb6e7e3422fa5ab",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_door.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 300,
+   "tris": 264,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.airlock__open.glb",
+   "height_m": null,
+   "id": "stn.airlock",
+   "key": "stn.airlock__open",
+   "preset": "open",
+   "sha256": "f165983045dc136a869bed91475b6efabbc9c63d570a41df6f43a3f5ea486f8b",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "f165983045dc136a869bed91475b6efabbc9c63d570a41df6f43a3f5ea486f8b",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_door.png"
+   ],
+   "tri_limit": 300,
+   "tris": 168,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "back_m": null,
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/stn.bridge.glb",
+   "height_m": 4.0,
+   "id": "stn.bridge",
+   "key": "stn.bridge",
+   "preset": null,
+   "sha256": "e447cb76196642e3c08070b2b0f6a5354f21039e9c045919f37181b5da9e62d1",
+   "sockets": [
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      6.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "e447cb76196642e3c08070b2b0f6a5354f21039e9c045919f37181b5da9e62d1",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_view.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 630,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_edge",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/stn.bulkhead.glb",
+   "height_m": null,
+   "id": "stn.bulkhead",
+   "key": "stn.bulkhead",
+   "preset": null,
+   "sha256": "f0948b9066eb08ae0c59a48b80b35ec20f1bb8f64267db8d912129e10c1e869d",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "f0948b9066eb08ae0c59a48b80b35ec20f1bb8f64267db8d912129e10c1e869d",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_light.png"
+   ],
+   "tri_limit": 300,
+   "tris": 232,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "back_m": null,
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/stn.ceiling.glb",
+   "height_m": 4.0,
+   "id": "stn.ceiling",
+   "key": "stn.ceiling",
+   "preset": null,
+   "sha256": "2622d55e9e660239e13d73f1fba3c3f15ef01000bac051512232583aa9ebcb57",
+   "sockets": [],
+   "source_sha256": "2622d55e9e660239e13d73f1fba3c3f15ef01000bac051512232583aa9ebcb57",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 174,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "back_m": null,
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.ceiling__c2x2.glb",
+   "height_m": 4.0,
+   "id": "stn.ceiling",
+   "key": "stn.ceiling__c2x2",
+   "preset": "c2x2",
+   "sha256": "ba97bd422409e1c7a8ca8af5fc38511112df5036c1d2ada1a996999ac0f3d388",
+   "sockets": [],
+   "source_sha256": "ba97bd422409e1c7a8ca8af5fc38511112df5036c1d2ada1a996999ac0f3d388",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 80,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "back_m": null,
+   "cells": [
+    2,
+    3
+   ],
+   "class": "shell",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.ceiling__c2x3.glb",
+   "height_m": 4.0,
+   "id": "stn.ceiling",
+   "key": "stn.ceiling__c2x3",
+   "preset": "c2x3",
+   "sha256": "832a8db2d6df8c7dc3ec7e7d11da41ddf9d90f81cf92ebf6e21fa98cc85ed83a",
+   "sockets": [],
+   "source_sha256": "832a8db2d6df8c7dc3ec7e7d11da41ddf9d90f81cf92ebf6e21fa98cc85ed83a",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 120,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "back_m": null,
+   "cells": [
+    4,
+    4
+   ],
+   "class": "shell",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.ceiling__hangar.glb",
+   "height_m": 7.0,
+   "id": "stn.ceiling",
+   "key": "stn.ceiling__hangar",
+   "preset": "hangar",
+   "sha256": "24aaa5fa95bdc2abbaf54c23dc346db253d9b279a79e4301b948b164ed775774",
+   "sockets": [],
+   "source_sha256": "24aaa5fa95bdc2abbaf54c23dc346db253d9b279a79e4301b948b164ed775774",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 296,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/stn.corridor.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor",
+   "preset": null,
+   "sha256": "1c779308922316d3c26209db1881a730c5ce05de015977b50fa6ec9a33595bb9",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "1c779308922316d3c26209db1881a730c5ce05de015977b50fa6ec9a33595bb9",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 216,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.corridor__corner.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__corner",
+   "preset": "corner",
+   "sha256": "e2c0048ed2b85cc80942b3529c03963d42978c892d5649a0bc8d6ac8f2ad1951",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "e2c0048ed2b85cc80942b3529c03963d42978c892d5649a0bc8d6ac8f2ad1951",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 146,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.corridor__cross.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__cross",
+   "preset": "cross",
+   "sha256": "42ce9d2067ffc23d2e01c526261b2803f844edb2da323d790102c3557f2f6165",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "42ce9d2067ffc23d2e01c526261b2803f844edb2da323d790102c3557f2f6165",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 128,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.corridor__end.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__end",
+   "preset": "end",
+   "sha256": "12095c2847d62d7a2eb6c3f1be9c44574ab1e6407176eddacfcba04609de9001",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "12095c2847d62d7a2eb6c3f1be9c44574ab1e6407176eddacfcba04609de9001",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 244,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.corridor__end_door.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__end_door",
+   "preset": "end_door",
+   "sha256": "761ff8c78cd68f0545e45fc4af88ba57f7371d063629616df0d3d348ff4b6d2a",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.1
+     ],
+     "side": "n",
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "761ff8c78cd68f0545e45fc4af88ba57f7371d063629616df0d3d348ff4b6d2a",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 246,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.corridor__plain.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__plain",
+   "preset": "plain",
+   "sha256": "2cc3770cd9130fe927aabea3c9524b29c4a84c7697741114b3e56c6d0e2e2caa",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "2cc3770cd9130fe927aabea3c9524b29c4a84c7697741114b3e56c6d0e2e2caa",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 124,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.corridor__tee.glb",
+   "height_m": null,
+   "id": "stn.corridor",
+   "key": "stn.corridor__tee",
+   "preset": "tee",
+   "sha256": "2a62fe942fb43ac132f0c632c850f2593a3ec03354443213586c61f8c257d35f",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "source_sha256": "2a62fe942fb43ac132f0c632c850f2593a3ec03354443213586c61f8c257d35f",
+   "textures": [
+    "space_station/textures/tex_space_station_ceiling.png",
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 126,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": "door_lights",
+   "glb": "kits/library/space_station/assets/stn.doorway.glb",
+   "height_m": null,
+   "id": "stn.doorway",
+   "key": "stn.doorway",
+   "preset": null,
+   "sha256": "35025e150bcb2f2c9cd1daa464fce915a9dbb9ee03d4d262641888c3157f8543",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "35025e150bcb2f2c9cd1daa464fce915a9dbb9ee03d4d262641888c3157f8543",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_opening.png"
+   ],
+   "tri_limit": 300,
+   "tris": 130,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": "door_lights",
+   "glb": "kits/library/space_station/presets/stn.doorway__lit.glb",
+   "height_m": null,
+   "id": "stn.doorway",
+   "key": "stn.doorway__lit",
+   "preset": "lit",
+   "sha256": "6040c33dc6da9778a7aeb0eb121670915b7b410f4bd199ec3224db2fc7bdc72d",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "6040c33dc6da9778a7aeb0eb121670915b7b410f4bd199ec3224db2fc7bdc72d",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_light.png"
+   ],
+   "tri_limit": 300,
+   "tris": 130,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/stn.floor.glb",
+   "height_m": null,
+   "id": "stn.floor",
+   "key": "stn.floor",
+   "preset": null,
+   "sha256": "33f61a81d47b9cf11f5b60220eadc2324c8af06775109bf659a639da495550a7",
+   "sockets": [],
+   "source_sha256": "33f61a81d47b9cf11f5b60220eadc2324c8af06775109bf659a639da495550a7",
+   "textures": [
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 268,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.floor__grate.glb",
+   "height_m": null,
+   "id": "stn.floor",
+   "key": "stn.floor__grate",
+   "preset": "grate",
+   "sha256": "95e92726c5d6f602a311151e0c39f020130eff0bf5a5c80f70d49abd8a684256",
+   "sockets": [],
+   "source_sha256": "95e92726c5d6f602a311151e0c39f020130eff0bf5a5c80f70d49abd8a684256",
+   "textures": [
+    "space_station/textures/tex_space_station_step.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 92,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.floor__pad.glb",
+   "height_m": null,
+   "id": "stn.floor",
+   "key": "stn.floor__pad",
+   "preset": "pad",
+   "sha256": "91539fee56c21813031a137bbfd1e8c7f9e813020e0030d7bbdbeb7e20b164cd",
+   "sockets": [],
+   "source_sha256": "91539fee56c21813031a137bbfd1e8c7f9e813020e0030d7bbdbeb7e20b164cd",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_floor.png"
+   ],
+   "tri_limit": 500,
+   "tris": 276,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.floor__plain.glb",
+   "height_m": null,
+   "id": "stn.floor",
+   "key": "stn.floor__plain",
+   "preset": "plain",
+   "sha256": "9f45a10117dacfe843d5f0034b8703a20494f98f124b7d188e4063bfad2a1114",
+   "sockets": [],
+   "source_sha256": "9f45a10117dacfe843d5f0034b8703a20494f98f124b7d188e4063bfad2a1114",
+   "textures": [
+    "space_station/textures/tex_space_station_floor.png"
+   ],
+   "tri_limit": 500,
+   "tris": 44,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "back_m": null,
+   "cells": [
+    4,
+    4
+   ],
+   "class": "shell",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/stn.hangar.glb",
+   "height_m": 7.0,
+   "id": "stn.hangar",
+   "key": "stn.hangar",
+   "preset": null,
+   "sha256": "7da816c7a30c8b56f7843e32944bb57a7db49a580cd91ac1a6c488ad244a6cf3",
+   "sockets": [
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      -2.0,
+      0.0,
+      8.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "n",
+     "height_m": 5.4,
+     "position": [
+      0.0,
+      0.0,
+      -7.5
+     ],
+     "type": "hangar_mouth",
+     "width_m": 10.0
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -6.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      2.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "s",
+     "position": [
+      6.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      7.5,
+      0.0,
+      -6.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      7.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      7.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "e",
+     "position": [
+      7.5,
+      0.0,
+      6.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -7.5,
+      0.0,
+      -6.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -7.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -7.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "w",
+     "position": [
+      -7.5,
+      0.0,
+      6.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "source_sha256": "7da816c7a30c8b56f7843e32944bb57a7db49a580cd91ac1a6c488ad244a6cf3",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_view.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 1090,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_centre",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": "lift_ring",
+   "glb": "kits/library/space_station/assets/stn.lift.glb",
+   "height_m": null,
+   "id": "stn.lift",
+   "key": "stn.lift",
+   "preset": null,
+   "sha256": "2f0f9567b9779372f94cc12b2a610a0f8a89bd5294fa57b826ac25f70b13d4c1",
+   "sockets": [],
+   "source_sha256": "2f0f9567b9779372f94cc12b2a610a0f8a89bd5294fa57b826ac25f70b13d4c1",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_screen.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 500,
+   "tris": 436,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "back_m": null,
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/stn.room.glb",
+   "height_m": 4.0,
+   "id": "stn.room",
+   "key": "stn.room",
+   "preset": null,
+   "sha256": "c49e1d4c37eb17597aa478d0731874c6a9374ce964dffc4c8bf2e19236bfa7b7",
+   "sockets": [
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      6.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "position": [
+      4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "source_sha256": "c49e1d4c37eb17597aa478d0731874c6a9374ce964dffc4c8bf2e19236bfa7b7",
+   "textures": [
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 732,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "back_m": null,
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.room__airlock_2x2.glb",
+   "height_m": 4.0,
+   "id": "stn.room",
+   "key": "stn.room__airlock_2x2",
+   "preset": "airlock_2x2",
+   "sha256": "f7d7286b551319341646c148ecbff537638533f01c9eeae7b90ea6b5d609788a",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -4.1,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      4.1,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "kind": "port",
+     "position": [
+      2.0,
+      0.0,
+      -4.1
+     ],
+     "side": "n",
+     "type": "window"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -2.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -2.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      2.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      3.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -3.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "source_sha256": "f7d7286b551319341646c148ecbff537638533f01c9eeae7b90ea6b5d609788a",
+   "textures": [
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 488,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "back_m": null,
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.room__deck_3x3.glb",
+   "height_m": 4.0,
+   "id": "stn.room",
+   "key": "stn.room__deck_3x3",
+   "preset": "deck_3x3",
+   "sha256": "aaa0640adc7d80b2ca2ece76e2139896a23740a54500d1af3dbba29e49610f10",
+   "sockets": [
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      6.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -6.1
+     ],
+     "side": "n",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "kind": "band",
+     "position": [
+      6.1,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "kind": "band",
+     "position": [
+      -6.1,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "window"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "position": [
+      4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "source_sha256": "aaa0640adc7d80b2ca2ece76e2139896a23740a54500d1af3dbba29e49610f10",
+   "textures": [
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 888,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "back_m": null,
+   "cells": [
+    2,
+    3
+   ],
+   "class": "shell",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.room__quarters_2x3.glb",
+   "height_m": 4.0,
+   "id": "stn.room",
+   "key": "stn.room__quarters_2x3",
+   "preset": "quarters_2x3",
+   "sha256": "fe1c357b175d766b1848d09d7c886a80d621d27a692e14df34f729459a4fc8de",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -2.0,
+      0.0,
+      6.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "kind": "tall",
+     "position": [
+      4.1,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "window"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "kind": "port",
+     "position": [
+      -2.0,
+      0.0,
+      -6.1
+     ],
+     "side": "n",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      2.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      2.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      3.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      3.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -3.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -3.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -3.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "source_sha256": "fe1c357b175d766b1848d09d7c886a80d621d27a692e14df34f729459a4fc8de",
+   "textures": [
+    "space_station/textures/tex_space_station_floor.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 768,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/stn.stairs.glb",
+   "height_m": null,
+   "id": "stn.stairs",
+   "key": "stn.stairs",
+   "preset": null,
+   "sha256": "b1fafd0cf93671880c971d3784cb98147c403090c364fe0adef87c2b0b496bdf",
+   "sockets": [],
+   "source_sha256": "b1fafd0cf93671880c971d3784cb98147c403090c364fe0adef87c2b0b496bdf",
+   "textures": [
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_post.png",
+    "space_station/textures/tex_space_station_rail.png",
+    "space_station/textures/tex_space_station_step.png"
+   ],
+   "tri_limit": 500,
+   "tris": 204,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.stairs__dais.glb",
+   "height_m": null,
+   "id": "stn.stairs",
+   "key": "stn.stairs__dais",
+   "preset": "dais",
+   "sha256": "964f4b913cf108f302ec9139c56a5a4c8270174288ea6c0f6796988cbf82b234",
+   "sockets": [],
+   "source_sha256": "964f4b913cf108f302ec9139c56a5a4c8270174288ea6c0f6796988cbf82b234",
+   "textures": [
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_step.png"
+   ],
+   "tri_limit": 500,
+   "tris": 320,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.stairs__ramp.glb",
+   "height_m": null,
+   "id": "stn.stairs",
+   "key": "stn.stairs__ramp",
+   "preset": "ramp",
+   "sha256": "a09d1da8e65e39f6d117c6d97bd33b7905c61995e98e1dfc0308a198548600d5",
+   "sockets": [],
+   "source_sha256": "a09d1da8e65e39f6d117c6d97bd33b7905c61995e98e1dfc0308a198548600d5",
+   "textures": [
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_post.png",
+    "space_station/textures/tex_space_station_rail.png",
+    "space_station/textures/tex_space_station_step.png"
+   ],
+   "tri_limit": 500,
+   "tris": 176,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/stn.viewport.glb",
+   "height_m": null,
+   "id": "stn.viewport",
+   "key": "stn.viewport",
+   "preset": null,
+   "sha256": "773da6d137a31d2fdd5f294561c501bb4331254e79ae8442c6aff53241ec1fe6",
+   "sockets": [
+    {
+     "facing": "s",
+     "kind": "band",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "window"
+    }
+   ],
+   "source_sha256": "773da6d137a31d2fdd5f294561c501bb4331254e79ae8442c6aff53241ec1fe6",
+   "textures": [
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_view.png"
+   ],
+   "tri_limit": 300,
+   "tris": 110,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.viewport__port.glb",
+   "height_m": null,
+   "id": "stn.viewport",
+   "key": "stn.viewport__port",
+   "preset": "port",
+   "sha256": "eefb6148a201ac76930774c9e85def5df85437f9af9262b8345c79e8d38f4074",
+   "sockets": [
+    {
+     "facing": "s",
+     "kind": "port",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "window"
+    }
+   ],
+   "source_sha256": "eefb6148a201ac76930774c9e85def5df85437f9af9262b8345c79e8d38f4074",
+   "textures": [
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_view.png"
+   ],
+   "tri_limit": 300,
+   "tris": 110,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "door_anchor",
+   "back_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/stn.viewport__tall.glb",
+   "height_m": null,
+   "id": "stn.viewport",
+   "key": "stn.viewport__tall",
+   "preset": "tall",
+   "sha256": "258c06b5148e596c661970eae1f677e80cd8780fef7943978bed28481c4e26bd",
+   "sockets": [
+    {
+     "facing": "s",
+     "kind": "tall",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "window"
+    }
+   ],
+   "source_sha256": "258c06b5148e596c661970eae1f677e80cd8780fef7943978bed28481c4e26bd",
+   "textures": [
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_view.png"
+   ],
+   "tri_limit": 300,
+   "tris": 110,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/tech.cables.glb",
+   "height_m": null,
+   "id": "tech.cables",
+   "key": "tech.cables",
+   "preset": null,
+   "sha256": "ed45cb8cc1ac395bcb5e47689a1f8e5b575aa10b153fe4c994847c9ab76b9216",
+   "sockets": [],
+   "source_sha256": "ed45cb8cc1ac395bcb5e47689a1f8e5b575aa10b153fe4c994847c9ab76b9216",
+   "textures": [
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_rope.png"
+   ],
+   "tri_limit": 500,
+   "tris": 436,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/tech.cables__hang.glb",
+   "height_m": null,
+   "id": "tech.cables",
+   "key": "tech.cables__hang",
+   "preset": "hang",
+   "sha256": "363d049ff10f906158dcfdf1a358e42641353c02ec7e8123f3ef57467ac075b1",
+   "sockets": [],
+   "source_sha256": "363d049ff10f906158dcfdf1a358e42641353c02ec7e8123f3ef57467ac075b1",
+   "textures": [
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_post.png",
+    "space_station/textures/tex_space_station_rope.png"
+   ],
+   "tri_limit": 500,
+   "tris": 432,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": "pod_ring",
+   "glb": "kits/library/space_station/assets/tech.charge_pod.glb",
+   "height_m": null,
+   "id": "tech.charge_pod",
+   "key": "tech.charge_pod",
+   "preset": null,
+   "sha256": "2dfaa9a43b24bde341ea08a09e0af269bb6103acedbcf96f15ec6d3ce49b31dd",
+   "sockets": [],
+   "source_sha256": "2dfaa9a43b24bde341ea08a09e0af269bb6103acedbcf96f15ec6d3ce49b31dd",
+   "textures": [
+    "space_station/textures/tex_space_station_body.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_hull.png",
+    "space_station/textures/tex_space_station_hull_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_screen.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 400,
+   "tris": 362,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": "console_glow",
+   "glb": "kits/library/space_station/assets/tech.console.glb",
+   "height_m": null,
+   "id": "tech.console",
+   "key": "tech.console",
+   "preset": null,
+   "sha256": "28429e44c028f376161f47ca2ad251b3d5f9fe677b82c54fec41c6656b1d705e",
+   "sockets": [],
+   "source_sha256": "28429e44c028f376161f47ca2ad251b3d5f9fe677b82c54fec41c6656b1d705e",
+   "textures": [
+    "space_station/textures/tex_space_station_body.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_screen.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 300,
+   "tris": 152,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": "console_glow",
+   "glb": "kits/library/space_station/presets/tech.console__pillar.glb",
+   "height_m": null,
+   "id": "tech.console",
+   "key": "tech.console__pillar",
+   "preset": "pillar",
+   "sha256": "30ce6b1995dbe8b7960a3806500501200af511b10e4e25691ed9c5616c4b6e34",
+   "sockets": [],
+   "source_sha256": "30ce6b1995dbe8b7960a3806500501200af511b10e4e25691ed9c5616c4b6e34",
+   "textures": [
+    "space_station/textures/tex_space_station_body.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_screen.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 300,
+   "tris": 140,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": "console_glow",
+   "glb": "kits/library/space_station/presets/tech.console__tall.glb",
+   "height_m": null,
+   "id": "tech.console",
+   "key": "tech.console__tall",
+   "preset": "tall",
+   "sha256": "9063b15a58ffb431a062e4c99ad3708b77997131b33e49c8c284526287527e49",
+   "sockets": [],
+   "source_sha256": "9063b15a58ffb431a062e4c99ad3708b77997131b33e49c8c284526287527e49",
+   "textures": [
+    "space_station/textures/tex_space_station_body.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_screen.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 300,
+   "tris": 188,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/tech.crate.glb",
+   "height_m": null,
+   "id": "tech.crate",
+   "key": "tech.crate",
+   "preset": null,
+   "sha256": "cfd8a843ac6c07137e49318639b7c8b2cd1e6b86281a7adc9aef01362d352ada",
+   "sockets": [],
+   "source_sha256": "cfd8a843ac6c07137e49318639b7c8b2cd1e6b86281a7adc9aef01362d352ada",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_frame.png"
+   ],
+   "tri_limit": 400,
+   "tris": 220,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/tech.crate__large.glb",
+   "height_m": null,
+   "id": "tech.crate",
+   "key": "tech.crate__large",
+   "preset": "large",
+   "sha256": "943beb4507593e2c23f979da03736d7acb2c29a3860c5eb3c1d3c899fce3b22d",
+   "sockets": [],
+   "source_sha256": "943beb4507593e2c23f979da03736d7acb2c29a3860c5eb3c1d3c899fce3b22d",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_frame.png"
+   ],
+   "tri_limit": 400,
+   "tris": 220,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/tech.crate__long.glb",
+   "height_m": null,
+   "id": "tech.crate",
+   "key": "tech.crate__long",
+   "preset": "long",
+   "sha256": "41d1dfe72f9050e37fdeae9ef78a1db35e848ca251caeb671e9686b1f5fa1f9e",
+   "sockets": [],
+   "source_sha256": "41d1dfe72f9050e37fdeae9ef78a1db35e848ca251caeb671e9686b1f5fa1f9e",
+   "textures": [
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_frame.png"
+   ],
+   "tri_limit": 400,
+   "tris": 156,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/tech.crate__stack.glb",
+   "height_m": null,
+   "id": "tech.crate",
+   "key": "tech.crate__stack",
+   "preset": "stack",
+   "sha256": "8bec94db01f19e439317e0980696865cc2cab1ed5d6a0ccd170043a100aaa514",
+   "sockets": [],
+   "source_sha256": "8bec94db01f19e439317e0980696865cc2cab1ed5d6a0ccd170043a100aaa514",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_frame.png"
+   ],
+   "tri_limit": 400,
+   "tris": 376,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": "pod_band",
+   "glb": "kits/library/space_station/assets/tech.cryo_pod.glb",
+   "height_m": null,
+   "id": "tech.cryo_pod",
+   "key": "tech.cryo_pod",
+   "preset": null,
+   "sha256": "f04f3f37457578331c8ce050aedf016f71a828dc0776462964f9edafca694bfa",
+   "sockets": [],
+   "source_sha256": "f04f3f37457578331c8ce050aedf016f71a828dc0776462964f9edafca694bfa",
+   "textures": [
+    "space_station/textures/tex_space_station_body.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_rope.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 400,
+   "tris": 388,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": "pod_band",
+   "glb": "kits/library/space_station/presets/tech.cryo_pod__open.glb",
+   "height_m": null,
+   "id": "tech.cryo_pod",
+   "key": "tech.cryo_pod__open",
+   "preset": "open",
+   "sha256": "9695cf802b6b706b534d9a0c0d6e354f95c68bf953bff73bd6067f6de6bd2114",
+   "sockets": [],
+   "source_sha256": "9695cf802b6b706b534d9a0c0d6e354f95c68bf953bff73bd6067f6de6bd2114",
+   "textures": [
+    "space_station/textures/tex_space_station_body.png",
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_rope.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 400,
+   "tris": 388,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": "holo_glow",
+   "glb": "kits/library/space_station/assets/tech.holo_table.glb",
+   "height_m": null,
+   "id": "tech.holo_table",
+   "key": "tech.holo_table",
+   "preset": null,
+   "sha256": "5d7e3b28f0bd27b5c9fc2c4f890fd6feff5463bb9a81ef37d7fd9e4ff3cdf2b7",
+   "sockets": [],
+   "source_sha256": "5d7e3b28f0bd27b5c9fc2c4f890fd6feff5463bb9a81ef37d7fd9e4ff3cdf2b7",
+   "textures": [
+    "space_station/textures/tex_space_station_body.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 300,
+   "tris": 262,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "wall_face",
+   "back_m": 0.2924,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/tech.locker.glb",
+   "height_m": null,
+   "id": "tech.locker",
+   "key": "tech.locker",
+   "preset": null,
+   "sha256": "a617697018feaa232cb4e6d9988c081109ea00cabf08dc66f51d57c5e8ac246f",
+   "sockets": [],
+   "source_sha256": "a617697018feaa232cb4e6d9988c081109ea00cabf08dc66f51d57c5e8ac246f",
+   "textures": [
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_door.png",
+    "space_station/textures/tex_space_station_screen.png",
+    "space_station/textures/tex_space_station_step.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 300,
+   "tris": 280,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "wall_face",
+   "back_m": 0.2924,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/tech.locker__single.glb",
+   "height_m": null,
+   "id": "tech.locker",
+   "key": "tech.locker__single",
+   "preset": "single",
+   "sha256": "c484d4130f1ff31c499403d7520a628deecc68b6ec67bc17168a1ad4b6c60b6f",
+   "sockets": [],
+   "source_sha256": "c484d4130f1ff31c499403d7520a628deecc68b6ec67bc17168a1ad4b6c60b6f",
+   "textures": [
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_door.png",
+    "space_station/textures/tex_space_station_screen.png",
+    "space_station/textures/tex_space_station_step.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 300,
+   "tris": 104,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "structure",
+   "edges": null,
+   "emitter": "reactor_core",
+   "glb": "kits/library/space_station/assets/tech.reactor.glb",
+   "height_m": null,
+   "id": "tech.reactor",
+   "key": "tech.reactor",
+   "preset": null,
+   "sha256": "59d12affe6e87d11fd2be4518b4797e71d438c046d7f32ea33e5670227e03fbb",
+   "sockets": [],
+   "source_sha256": "59d12affe6e87d11fd2be4518b4797e71d438c046d7f32ea33e5670227e03fbb",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 500,
+   "tris": 460,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/tech.seat.glb",
+   "height_m": null,
+   "id": "tech.seat",
+   "key": "tech.seat",
+   "preset": null,
+   "sha256": "0cb785ec3bb02e08518a659efab928fb09b904e0ba64c9d25e50f101489a2f5b",
+   "sockets": [],
+   "source_sha256": "0cb785ec3bb02e08518a659efab928fb09b904e0ba64c9d25e50f101489a2f5b",
+   "textures": [
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_cushion.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_screen.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 300,
+   "tris": 268,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/tech.tank.glb",
+   "height_m": null,
+   "id": "tech.tank",
+   "key": "tech.tank",
+   "preset": null,
+   "sha256": "ad3f8a8cb2bef343439f4e85da55b9b985831e37d6c61bcf534cad2ded69ae8c",
+   "sockets": [],
+   "source_sha256": "ad3f8a8cb2bef343439f4e85da55b9b985831e37d6c61bcf534cad2ded69ae8c",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 400,
+   "tris": 360,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture_large",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/tech.tank__horizontal.glb",
+   "height_m": null,
+   "id": "tech.tank",
+   "key": "tech.tank__horizontal",
+   "preset": "horizontal",
+   "sha256": "19a5fda8ce15f842238b62731e0176cc40a1e881a18f05a9d87bacf52d4f9d41",
+   "sockets": [],
+   "source_sha256": "19a5fda8ce15f842238b62731e0176cc40a1e881a18f05a9d87bacf52d4f9d41",
+   "textures": [
+    "space_station/textures/tex_space_station_band.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 400,
+   "tris": 336,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/tech.terminal.glb",
+   "height_m": null,
+   "id": "tech.terminal",
+   "key": "tech.terminal",
+   "preset": null,
+   "sha256": "21d71276720f040b1fc4468c89ce9c54f9c4b5909f54559cfee3616e963bb8a9",
+   "sockets": [],
+   "source_sha256": "21d71276720f040b1fc4468c89ce9c54f9c4b5909f54559cfee3616e963bb8a9",
+   "textures": [
+    "space_station/textures/tex_space_station_body.png",
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_light.png",
+    "space_station/textures/tex_space_station_screen.png",
+    "space_station/textures/tex_space_station_trim.png",
+    "space_station/textures/tex_space_station_wall_alt.png"
+   ],
+   "tri_limit": 300,
+   "tris": 104,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "wall_face",
+   "back_m": 0.15,
+   "cells": null,
+   "class": "furniture",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/tech.terminal__wall.glb",
+   "height_m": null,
+   "id": "tech.terminal",
+   "key": "tech.terminal__wall",
+   "preset": "wall",
+   "sha256": "440c32b5416118dddf4a89a19ba3527bdd374da7683b1b34eb9bf0be5a09fbcc",
+   "sockets": [],
+   "source_sha256": "440c32b5416118dddf4a89a19ba3527bdd374da7683b1b34eb9bf0be5a09fbcc",
+   "textures": [
+    "space_station/textures/tex_space_station_body_alt.png",
+    "space_station/textures/tex_space_station_screen.png",
+    "space_station/textures/tex_space_station_trim.png"
+   ],
+   "tri_limit": 300,
+   "tris": 40,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "wall_face",
+   "back_m": 0.04,
+   "cells": null,
+   "class": "prop",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/assets/tech.vent.glb",
+   "height_m": null,
+   "id": "tech.vent",
+   "key": "tech.vent",
+   "preset": null,
+   "sha256": "6aa91a904f799362ec574a22863268f7f315fc2cff7cebbbd1c2bca1cf88976d",
+   "sockets": [],
+   "source_sha256": "6aa91a904f799362ec574a22863268f7f315fc2cff7cebbbd1c2bca1cf88976d",
+   "textures": [
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_step.png"
+   ],
+   "tri_limit": 150,
+   "tris": 108,
+   "variant": "space_station"
+  },
+  {
+   "anchor": "free",
+   "back_m": null,
+   "cells": null,
+   "class": "prop",
+   "edges": null,
+   "emitter": null,
+   "glb": "kits/library/space_station/presets/tech.vent__floor.glb",
+   "height_m": null,
+   "id": "tech.vent",
+   "key": "tech.vent__floor",
+   "preset": "floor",
+   "sha256": "7b5aeff3f04439283007b17f229ad9494ca47decb15eaace57101ed52c84ae11",
+   "sockets": [],
+   "source_sha256": "7b5aeff3f04439283007b17f229ad9494ca47decb15eaace57101ed52c84ae11",
+   "textures": [
+    "space_station/textures/tex_space_station_frame.png",
+    "space_station/textures/tex_space_station_metal.png",
+    "space_station/textures/tex_space_station_step.png"
+   ],
+   "tri_limit": 150,
+   "tris": 108,
+   "variant": "space_station"
+  }
+ ],
+ "families": [
+  "stn.",
+  "tech.",
+  "ship.",
+  "alien.",
+  "planet.",
+  "skyx."
+ ],
+ "format": 1,
+ "kits": {
+  "alien.arch": {
+   "class": "structure",
+   "description": "Natural rock arch: two leaning eroded legs and a sagging octagonal span swept along an arc, in strata rock (cliff role). A landmark gateway for alien regions.",
+   "family": "alien.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "alien.boulder": {
+   "class": "structure",
+   "description": "Faceted alien boulder: a jittered low sphere in violet basalt strata (rock role), flattened underside.",
+   "family": "alien.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "alien.bulb": {
+   "class": "flora",
+   "description": "Glow-bulb plant: curved stems ending in round glowing bulbs (light role) over a rosette of broad lens leaves.",
+   "family": "alien.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "alien.cap_tree": {
+   "class": "flora",
+   "description": "Cap tree: curving tapered stalks carrying wide umbrella caps with gilled undersides and glowing spots (cap role), a ring of root knuckles at the base.",
+   "family": "alien.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "alien.crystal": {
+   "class": "flora",
+   "description": "Crystal cluster: faceted hexagonal crystals with glowing tips leaning out of a low basalt foot; every crystal is its own node.",
+   "family": "alien.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "alien.frond": {
+   "class": "flora",
+   "description": "Fan frond: long curved blade leaves (diamond-section sweeps) fanning out of a bulbous core, teal with spore-lit veins (foliage role).",
+   "family": "alien.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "alien.geode": {
+   "class": "furniture_large",
+   "description": "Split geode: a half-buried faceted rock bowl (closed thick shell, rock outside, crystal-lined inside) with glowing crystal points standing in its hollow.",
+   "family": "alien.",
+   "tri_limit": 400,
+   "version": "1.0.0"
+  },
+  "alien.grass": {
+   "class": "flora",
+   "description": "Alien grass clump: thin twisting three-sided blades leaning out of a tuft, tips spore-lit (flower role).",
+   "family": "alien.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "alien.rock_spire": {
+   "class": "structure",
+   "description": "Rock spire (hoodoo): stacked eroded tiers narrowing upward with pinched waists and a wide balanced cap rock (rock role).",
+   "family": "alien.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "alien.spire": {
+   "class": "structure",
+   "description": "Crystal spire: a tall leaning six-sided monolith crystal with a glowing crown band and tip, small satellite crystals and a split basalt foot. A landmark for alien regions.",
+   "family": "alien.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "alien.tendril": {
+   "class": "flora",
+   "description": "Tendril coral: a colony of leaning lathed tubes with flared glowing mouths (light role rims), magenta-coral skin (cap role).",
+   "family": "alien.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "planet.crater": {
+   "class": "terrain",
+   "description": "Crater tile (8 m): a bowl with a raised rim (rim faces rock role) inside a flat-edged regolith tile.",
+   "family": "planet.",
+   "tri_limit": 512,
+   "version": "1.0.0"
+  },
+  "planet.dune": {
+   "class": "terrain",
+   "description": "Dune tile (8 m): wind ridges with a sharp crest and soft lee slope running east-west, fading to flat ground on every edge (sand role, crests path role for a lighter tone).",
+   "family": "planet.",
+   "tri_limit": 512,
+   "version": "1.0.0"
+  },
+  "planet.ground": {
+   "class": "terrain",
+   "description": "Planet ground tile (8 m): closed regolith slab, gently undulating inside and flat at its level on all four edges, optional low rock bumps (rock role). Interlocks with any tile whose edge is ground at the same level.",
+   "family": "planet.",
+   "tri_limit": 512,
+   "version": "1.0.0"
+  },
+  "planet.mesa": {
+   "class": "structure",
+   "description": "Mesa: a flat-topped strata plateau with tapering eroded sides and a ledge band (cliff sides, sand top), a landmark for alien regions; stands on the ground anywhere off the tile grid.",
+   "family": "planet.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "planet.pad": {
+   "class": "terrain",
+   "description": "Landing pad tile (8 m): flat ground tile carrying a round bevelled hex-plated pad (floor role) with a hazard ring and up to four beacon posts with glowing heads. Interlocks as level-0 ground.",
+   "family": "planet.",
+   "tri_limit": 512,
+   "version": "1.0.0"
+  },
+  "planet.ridge": {
+   "class": "terrain",
+   "description": "Ridge tile (8 m): flat ground on the south half rising in a steep strata cliff (cliff role) to the 6 m plateau level on the north edge, the face broken into buttresses and gullies with rim bumps behind the crest; a backdrop wall for alien regions that interlocks with plateau tiles at level 6 and with other ridges cliff to cliff.",
+   "family": "planet.",
+   "tri_limit": 512,
+   "version": "1.0.0"
+  },
+  "planet.rise": {
+   "class": "terrain",
+   "description": "Rise tile (8 m): a smooth ramp from level 0 on the south edge to level 2 (or 6) on the north edge; east/west edges follow the shared ramp profile, steep cells take the cliff role.",
+   "family": "planet.",
+   "tri_limit": 512,
+   "version": "1.0.0"
+  },
+  "planet.trail": {
+   "class": "terrain",
+   "description": "Trail tile (8 m): a 2.4 m packed trail (path role) worn slightly into flat-edged ground, crossing the tile on the trail edges; neighbours must carry the trail on the shared edge.",
+   "family": "planet.",
+   "tri_limit": 512,
+   "version": "1.0.0"
+  },
+  "ship.drone": {
+   "class": "prop",
+   "description": "Service drone (0.9 m): lathed saucer body with a sensor eye, three thruster rings on short arms, resting on three small feet; cargo variant clutches a crate.",
+   "family": "ship.",
+   "tri_limit": 150,
+   "version": "1.0.0"
+  },
+  "ship.escape_pod": {
+   "class": "vehicle",
+   "description": "Escape pod (2.7 m): faceted octagonal cone capsule with a scorched heat-shield skirt, three fin legs, a round side hatch (open variant swings it aside over a dark opening) and a beacon light on top.",
+   "family": "ship.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "ship.hauler": {
+   "class": "vehicle",
+   "description": "Cargo hauler (12 m): long chamfered spine with a bubble cab at the nose, clamp frames carrying up to four cargo pods with hazard bands, four rear nacelles and tapered landing legs. Original silhouette.",
+   "family": "ship.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "ship.rover": {
+   "class": "vehicle",
+   "description": "Planet rover (4.6 m): raised chamfered chassis with a slant-glass cab, cargo deck with a light bar, sensor mast and dish, six (or four) lathed wheels with hub caps.",
+   "family": "ship.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "ship.shuttle": {
+   "class": "vehicle",
+   "description": "Small shuttle (6.6 m): blunt-nosed octagonal wedge with a dorsal spine, slanted canopy, downswept stub wings ending in round tip pods, twin rear thrusters with glowing bells and landing skids (optional belly cargo pod). Original silhouette.",
+   "family": "ship.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "skyx.horizon": {
+   "class": "sky",
+   "description": "Horizon ring: an inward silhouette ring around the viewer (v = 0 at the base .. 1 at the crest so the pack's vista haze gradient paints it): flat-topped mesas, needle spires or dunes, original alien skylines.",
+   "family": "skyx.",
+   "tri_limit": 128,
+   "version": "1.0.0"
+  },
+  "skyx.nebula": {
+   "class": "sky",
+   "description": "Nebula band: a gently curved inward card (role view: painted star field, nebula and planet) placed beyond big windows and hangar mouths for parallax depth.",
+   "family": "skyx.",
+   "tri_limit": 128,
+   "version": "1.0.0"
+  },
+  "skyx.planet": {
+   "class": "sky",
+   "description": "Sky planet: a smooth banded sphere (10 x 6, painted terminator in the texture) hanging over the horizon, optionally ringed; moons are small presets. Place with the room backdrop or as a region piece far out.",
+   "family": "skyx.",
+   "tri_limit": 128,
+   "version": "1.0.0"
+  },
+  "skyx.starfield": {
+   "class": "sky",
+   "description": "Star-field sky: inward-facing dome (or cylinder) carrying the pack's painted sky (role sky, v = elevation 0..1): deep space with nebula wisps and stars on space_station, the painted alien sky on alien_world.",
+   "family": "skyx.",
+   "tri_limit": 128,
+   "version": "1.0.0"
+  },
+  "stn.airlock": {
+   "class": "arch",
+   "description": "Airlock leaves for the 2.0 x 2.6 doorway cut (insert piece, flag-swapped closed -> open): two white leaves with a hazard-striped zig-zag seal and a round lock hub. Origin on the door anchor like stn.doorway.",
+   "family": "stn.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "stn.bridge": {
+   "class": "shell",
+   "description": "Bridge / cockpit shell on a 3x3-cell plot: the side walls angle in toward a faceted front viewport band (star-field card beyond, mullions, sill ledge), back door on the south side cell 1, panelled ceiling with a light ring. Origin on the cell-block centre.",
+   "family": "stn.",
+   "tri_limit": 1500,
+   "version": "1.0.0"
+  },
+  "stn.bulkhead": {
+   "class": "arch",
+   "description": "Heavy bulkhead frame ring across a corridor on a cell edge: follows the chamfered section, thicker at the base, hazard lip inside. Origin on the cell-edge midpoint (frame centred on the boundary).",
+   "family": "stn.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "stn.ceiling": {
+   "class": "shell",
+   "description": "Room ceiling for stn.room / stn.hangar plots: one-sided panel sheet facing down (cameras above see in), recessed light panels and tapered beams. Origin on the cell-block centre at floor level (geometry at the ceiling height).",
+   "family": "stn.",
+   "tri_limit": 1500,
+   "version": "1.0.0"
+  },
+  "stn.corridor": {
+   "class": "structure",
+   "description": "Station corridor cell (4 m, 3 m clear, 3.2 m high): chamfered octagonal section, mitred one-sided walls with a recessed light band, floor and ceiling sheets, cap ledges for the cutaway; corridor sockets on open cell-edge midpoints.",
+   "family": "stn.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "stn.doorway": {
+   "class": "arch",
+   "description": "Bulkhead doorway frame for a 2.0 x 2.6 door cut: chamfered steel frame with a hazard lip, raised sill and a card behind the opening. Origin on the room.gd door anchor (0.6 m behind the inner wall face); room.gd places it on every door through the arch.door binding.",
+   "family": "stn.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "stn.floor": {
+   "class": "structure",
+   "description": "Deck tile for one cell laid over a room floor: raised bevelled hex plates, a framed grate, a plain bevelled deck plate or a circular marked pad. Origin on the cell centre.",
+   "family": "stn.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "stn.hangar": {
+   "class": "shell",
+   "description": "Hangar bay shell (7 m high): tall chamfered walls with a high light band, a wide north mouth open to space (star-field card, heavy chamfered frame with hazard lips), painted landing ring on the hex deck, crew door on the south wall. Ceiling: stn.ceiling height 7. Origin on the cell-block centre.",
+   "family": "stn.",
+   "tri_limit": 1500,
+   "version": "1.0.0"
+  },
+  "stn.lift": {
+   "class": "structure",
+   "description": "Lift platform for one cell: bevelled round platform with a hazard rim, tapered guide columns, a top guide ring with a light band and a call post on the front. Origin on the cell centre.",
+   "family": "stn.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "stn.room": {
+   "class": "shell",
+   "description": "Station room shell: deck floor + mitred one-sided chamfered walls (kick chamfer, panels, light band, upper chamfer to a 4 m ceiling line) with door / viewport cuts on side-cell midpoints and pilaster ribs. Ceiling: stn.ceiling. Origin on the cell-block centre.",
+   "family": "stn.",
+   "tri_limit": 1500,
+   "version": "1.0.0"
+  },
+  "stn.stairs": {
+   "class": "structure",
+   "description": "Stairs, ramp or dais for raised decks (command platforms, catwalk ends): one solid zig-zag flight with grille treads, tapered side stringers, tube handrails on posts. Origin on the footprint centre.",
+   "family": "stn.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "stn.viewport": {
+   "class": "arch",
+   "description": "Viewport window for a room-wall cut: chamfered frame (depth through the wall), sill ledge and a star-field card behind (dark space, nebula, a distant violet planet). Origin on the wall anchor (0.6 m behind the inner face, side-cell midpoint, floor level); the card reaches the floor behind the wall.",
+   "family": "stn.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "tech.cables": {
+   "class": "structure",
+   "description": "Cable run: a bundle of tube cables (wavy on the floor or sagging between bracket posts) ending in chamfered junction boxes; cables never interpenetrate (laterally offset).",
+   "family": "tech.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "tech.charge_pod": {
+   "class": "furniture_large",
+   "description": "Robot charging pod: curved alcove wall with a canopy and light strips, a round contact pad with a glowing ring, and (optional) a dormant service robot of original design (dome head, visor, stubby arm pods) docked on it. Alcove opens to -Y.",
+   "family": "tech.",
+   "tri_limit": 400,
+   "version": "1.0.0"
+  },
+  "tech.console": {
+   "class": "furniture",
+   "description": "Operator console: chamfered plinth, tapered body set back from the toes, slanted desk with painted emissive screens and a light strip, side fins; tall adds a leaning back display. Operator side -Y.",
+   "family": "tech.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "tech.crate": {
+   "class": "furniture_large",
+   "description": "Cargo crate: chamfered bevelled box with corner bumpers and an optional hazard band; stack piles a small crate on a large one (2 mm gap, no interpenetration).",
+   "family": "tech.",
+   "tri_limit": 400,
+   "version": "1.0.0"
+  },
+  "tech.cryo_pod": {
+   "class": "furniture_large",
+   "description": "Standing cryo pod: hexagonal plinth with a light band, elliptic lathed capsule, oval glass window on the front, two hoses from the domed cap into the back. open swings the window door aside.",
+   "family": "tech.",
+   "tri_limit": 400,
+   "version": "1.0.0"
+  },
+  "tech.holo_table": {
+   "class": "furniture",
+   "description": "Holo-table stand: hexagonal lathe with a wide foot, tapered neck and flared top, a light rim and an emitter disc; an optional small globe hovers over the emitter (a static prop, no hologram shader).",
+   "family": "tech.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "tech.locker": {
+   "class": "furniture",
+   "description": "Locker bank against a wall (back on y = 0 before centring): chamfered carcass with a sloped top, raised doors with vent slots and grip bars, a label strip per door.",
+   "family": "tech.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "tech.reactor": {
+   "class": "structure",
+   "description": "Reactor column: stepped round plinth with a hazard ring, a glowing core cylinder inside tapered cage ribs, coil rings and a domed top cap.",
+   "family": "tech.",
+   "tri_limit": 500,
+   "version": "1.0.0"
+  },
+  "tech.seat": {
+   "class": "furniture",
+   "description": "Command seat: tapered hex swivel base, upholstered seat and tilted backrest with a headrest wing, armrests with small emissive panels. Faces -Y.",
+   "family": "tech.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "tech.tank": {
+   "class": "furniture_large",
+   "description": "Pressure tank: lathed capsule with domed ends and two painted bands, a valve wheel, standing on a hex foot ring (upright) or two tapered saddles (horizontal).",
+   "family": "tech.",
+   "tri_limit": 400,
+   "version": "1.0.0"
+  },
+  "tech.terminal": {
+   "class": "furniture",
+   "description": "Info terminal: a tapered pillar (stand) or a wall panel with a tilted emissive screen, a keypad ledge and a status light.",
+   "family": "tech.",
+   "tri_limit": 300,
+   "version": "1.0.0"
+  },
+  "tech.vent": {
+   "class": "prop",
+   "description": "Vent: chamfered frame, recessed grille plate and a three-blade fan hub behind it. wall stands on the floor against a wall (back on y = 0); floor lies in the deck.",
+   "family": "tech.",
+   "tri_limit": 150,
+   "version": "1.0.0"
+  }
+ },
+ "lane": "SCIFIKIT",
+ "note": "Every GLB here exists for consumers only with this sha256 (explicit sRGB8, converted after the kit validators and the SCIFIKIT gates ran on the linear build; source_sha256 = validated build). textures are relative to kits/library/.",
+ "pack_gens": {
+  "alien_world": [
+   "alien.",
+   "planet.",
+   "skyx.",
+   "ship.",
+   "stn.corridor",
+   "stn.doorway",
+   "stn.airlock",
+   "stn.floor",
+   "stn.stairs",
+   "tech.crate",
+   "tech.tank",
+   "tech.cables",
+   "tech.terminal",
+   "tech.charge_pod",
+   "tech.console"
+  ],
+  "space_station": [
+   "stn.",
+   "tech.",
+   "ship.",
+   "skyx."
+  ]
+ },
+ "variants": [
+  "space_station",
+  "alien_world"
+ ]
+}

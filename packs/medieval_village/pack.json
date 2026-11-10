@@ -1,0 +1,113 @@
+{
+ "description": "Ocarina-era medieval village: whitewashed half-timbering, golden thatch, cobbles, clay and slate roofs, oak and meadow greens, warm lantern light. Data only; MEDIEVALKIT kit families (vlg./cst./mprop./mnat./mter.) from the shared Hermes64 core.",
+ "format": 1,
+ "id": "medieval_village",
+ "kit_pack_id": "medieval_village",
+ "lighting": {
+  "ambient_colour": "#B0ACA0",
+  "fog_colour": "#D4C7A7",
+  "fog_enabled": true,
+  "fog_end": 46.0,
+  "fog_start": 7.0
+ },
+ "materials": [
+  {
+   "colour": "#F0E7CC",
+   "id": "whitewash",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#74604E",
+   "id": "timber",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#B38E3F",
+   "id": "thatch",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#8B8A86",
+   "id": "stone",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#5E6C89",
+   "id": "slate",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#A83730",
+   "id": "heraldry",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#4A7A31",
+   "id": "foliage",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#F5B94F",
+   "id": "lantern",
+   "kind": "emissive"
+  },
+  {
+   "colour": "#D6A842",
+   "id": "gilt",
+   "kind": "chrome_env"
+  }
+ ],
+ "name": "Medieval Village",
+ "palette": [
+  "#1A130E",
+  "#332921",
+  "#4F3F35",
+  "#74604E",
+  "#9C856A",
+  "#A89A80",
+  "#D4C7A7",
+  "#F0E7CC",
+  "#80602A",
+  "#B38E3F",
+  "#DBB862",
+  "#46474D",
+  "#66686D",
+  "#8B8A86",
+  "#B0ACA0",
+  "#D0CABB",
+  "#3A455B",
+  "#5E6C89",
+  "#8C472D",
+  "#B86A45",
+  "#1D361A",
+  "#315524",
+  "#4A7A31",
+  "#74A143",
+  "#A8C867",
+  "#4B7DC2",
+  "#8DB6E5",
+  "#6C2327",
+  "#A83730",
+  "#2C487E",
+  "#D6A842",
+  "#F5B94F"
+ ],
+ "presets": [
+  {
+   "asset_id": "furn.lamp",
+   "id": "lantern",
+   "params_json": "{}"
+  }
+ ],
+ "sound_palette": {
+  "ambient": "audio/stock/wav/core.nature.wind.breeze.wav",
+  "interact": "audio/wav/ui.select.wav"
+ },
+ "thresholds": {
+  "character_tris": 700,
+  "kit_tris": 1500,
+  "prop_tris": 150,
+  "room_tris": 6000,
+  "texture_px": 128
+ }
+}

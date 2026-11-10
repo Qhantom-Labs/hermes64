@@ -1,0 +1,5019 @@
+{
+ "anchors": {
+  "cell_block_centre": "origin on the centre of the cell block at floor level (interior rooms)",
+  "cell_centre": "origin on one cell's centre at floor level (track, tunnels, trestles, riverbeds, ground)",
+  "door_anchor": "origin on the room.gd door anchor: 0.4 m in from the room edge = 0.1 m behind the boundary",
+  "free": "footprint-centred free prop (any position on the floor)",
+  "lot_line": "origin on a cell boundary line at floor level, mid-frontage; buildings stand behind it (-Z), boardwalks / porches / balconies in front of it (+Z, toward the street)"
+ },
+ "connectors": [
+  {
+   "a": "door",
+   "b": "wtown.doorway",
+   "rule": "a door socket takes exactly one wtown.doorway frame (room.gd places it from the room's door data via the arch.door binding)"
+  },
+  {
+   "a": "frontage",
+   "b": "wtown.boardwalk|wtown.porch|wtown.balcony",
+   "rule": "lot-line pieces share the lot line: boardwalk modules (4 m) and porch / balcony fits of the same span line up in front of a building frontage"
+  },
+  {
+   "a": "walk",
+   "b": "walk",
+   "rule": "boardwalk / platform modules join end to end (x = +-2 m, 1 m in front of the line)"
+  },
+  {
+   "a": "track",
+   "b": "track",
+   "rule": "facing track sockets on the same cell-edge midpoint, same gauge"
+  },
+  {
+   "a": "tunnel",
+   "b": "tunnel",
+   "rule": "facing tunnel sockets on the same cell edge; clear width 3.0 m"
+  },
+  {
+   "a": "lamp",
+   "b": "wprop.lantern__wall",
+   "rule": "wall lantern origin on the socket, facing the socket direction"
+  },
+  {
+   "a": "cliff_edge",
+   "b": "cliff_edge",
+   "rule": "canyon walls meet end to end on cell boundaries"
+  }
+ ],
+ "format": 1,
+ "grid": {
+  "boardwalk_m": [
+   2.0,
+   0.3
+  ],
+  "cell_m": 4.0,
+  "door_anchor_from_room_edge_m": 0.4,
+  "doorway_clear_m": [
+   2.4,
+   3.0
+  ],
+  "front": "glTF +Z (south, toward the street / room)",
+  "interior_wall_inset_m": 0.12,
+  "mine_gauge_m": 0.6,
+  "note": "room plot = cells x 4 m + 0.5 m apron each side; door.position for side cell i = 4*i + 2; lot-line buildings may take doors every 2 m along their frontage",
+  "rail_gauge_m": 1.1,
+  "room_apron_m": 0.5,
+  "storey_m": 3.0,
+  "tunnel_clear_m": [
+   3.0,
+   3.0
+  ],
+  "up": "glTF +Y",
+  "yaw_steps_deg": 90
+ },
+ "pieces": {
+  "wland.arch": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.arch",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 242
+  },
+  "wland.arch__small": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.arch",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 242
+  },
+  "wland.boulder": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "wland.boulder",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 126
+  },
+  "wland.boulder__big": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "wland.boulder",
+   "preset": "big",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 84
+  },
+  "wland.boulder__small": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "wland.boulder",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 126
+  },
+  "wland.butte": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.butte",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 156
+  },
+  "wland.butte__slim": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.butte",
+   "preset": "slim",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 156
+  },
+  "wland.canyon_wall": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wland.canyon_wall",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "cliff_edge",
+     "width_m": 8.0
+    }
+   ],
+   "tris": 144
+  },
+  "wland.canyon_wall__corner": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wland.canyon_wall",
+   "preset": "corner",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "cliff_edge",
+     "width_m": 8.0
+    }
+   ],
+   "tris": 144
+  },
+  "wland.canyon_wall__end": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wland.canyon_wall",
+   "preset": "end",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "cliff_edge",
+     "width_m": 8.0
+    }
+   ],
+   "tris": 144
+  },
+  "wland.canyon_wall__end_w": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wland.canyon_wall",
+   "preset": "end_w",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "cliff_edge",
+     "width_m": 8.0
+    }
+   ],
+   "tris": 144
+  },
+  "wland.canyon_wall__low": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wland.canyon_wall",
+   "preset": "low",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "cliff_edge",
+     "width_m": 8.0
+    }
+   ],
+   "tris": 112
+  },
+  "wland.canyon_wall__tall": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wland.canyon_wall",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "cliff_edge",
+     "width_m": 8.0
+    }
+   ],
+   "tris": 176
+  },
+  "wland.dead_tree": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wland.dead_tree",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 102
+  },
+  "wland.dead_tree__small": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wland.dead_tree",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 88
+  },
+  "wland.grass": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wland.grass",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 48
+  },
+  "wland.grass__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wland.grass",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 64
+  },
+  "wland.ground": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "terrain",
+   "kit_id": "wland.ground",
+   "preset": null,
+   "sockets": [],
+   "tris": 128
+  },
+  "wland.ground__desert": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    6,
+    6
+   ],
+   "class": "terrain",
+   "kit_id": "wland.ground",
+   "preset": "desert",
+   "sockets": [],
+   "tris": 288
+  },
+  "wland.ground__dunes": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "terrain",
+   "kit_id": "wland.ground",
+   "preset": "dunes",
+   "sockets": [],
+   "tris": 128
+  },
+  "wland.ground__main": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    12,
+    12
+   ],
+   "class": "terrain",
+   "kit_id": "wland.ground",
+   "preset": "main",
+   "sockets": [],
+   "tris": 288
+  },
+  "wland.ground__plaza": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    6,
+    6
+   ],
+   "class": "terrain",
+   "kit_id": "wland.ground",
+   "preset": "plaza",
+   "sockets": [],
+   "tris": 288
+  },
+  "wland.ground__ruts": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "terrain",
+   "kit_id": "wland.ground",
+   "preset": "ruts",
+   "sockets": [],
+   "tris": 128
+  },
+  "wland.ground__street": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    4
+   ],
+   "class": "terrain",
+   "kit_id": "wland.ground",
+   "preset": "street",
+   "sockets": [],
+   "tris": 200
+  },
+  "wland.ground__yard": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    12,
+    12
+   ],
+   "class": "terrain",
+   "kit_id": "wland.ground",
+   "preset": "yard",
+   "sockets": [],
+   "tris": 288
+  },
+  "wland.hoodoo": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.hoodoo",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 396
+  },
+  "wland.hoodoo__single": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.hoodoo",
+   "preset": "single",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 132
+  },
+  "wland.ledge": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.ledge",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 92
+  },
+  "wland.ledge__high": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.ledge",
+   "preset": "high",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 92
+  },
+  "wland.ledge__low": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.ledge",
+   "preset": "low",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 92
+  },
+  "wland.mesa": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.mesa",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 220
+  },
+  "wland.mesa__far": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.mesa",
+   "preset": "far",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 220
+  },
+  "wland.mesa__small": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.mesa",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 220
+  },
+  "wland.oasis": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.oasis",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 398
+  },
+  "wland.oasis__big": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.oasis",
+   "preset": "big",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 492
+  },
+  "wland.palm": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wland.palm",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 94
+  },
+  "wland.palm__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wland.palm",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 94
+  },
+  "wland.riverbed": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "wland.riverbed",
+   "preset": null,
+   "sockets": [],
+   "tris": 260
+  },
+  "wland.riverbed__bend": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "wland.riverbed",
+   "preset": "bend",
+   "sockets": [],
+   "tris": 260
+  },
+  "wland.riverbed__canyon": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    8,
+    8
+   ],
+   "class": "terrain",
+   "kit_id": "wland.riverbed",
+   "preset": "canyon",
+   "sockets": [],
+   "tris": 472
+  },
+  "wland.scrub": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wland.scrub",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 108
+  },
+  "wland.scrub__big": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wland.scrub",
+   "preset": "big",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 132
+  },
+  "wland.slope": {
+   "anchor": "free",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wland.slope",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 46
+  },
+  "wland.yucca": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wland.yucca",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 120
+  },
+  "wland.yucca__no_stalk": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wland.yucca",
+   "preset": "no_stalk",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 76
+  },
+  "wmine.cart": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wmine.cart",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rides": "mine_track",
+     "type": "prop"
+    }
+   ],
+   "tris": 252
+  },
+  "wmine.cart__empty": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wmine.cart",
+   "preset": "empty",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rides": "mine_track",
+     "type": "prop"
+    }
+   ],
+   "tris": 224
+  },
+  "wmine.cart__tipped": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wmine.cart",
+   "preset": "tipped",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rides": "mine_track",
+     "type": "prop"
+    }
+   ],
+   "tris": 224
+  },
+  "wmine.headframe": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wmine.headframe",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 438
+  },
+  "wmine.headframe__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wmine.headframe",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 438
+  },
+  "wmine.ladder": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wmine.ladder",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 152
+  },
+  "wmine.ladder__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wmine.ladder",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 200
+  },
+  "wmine.ore_bin": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wmine.ore_bin",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 260
+  },
+  "wmine.ore_pile": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "wmine.ore_pile",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 92
+  },
+  "wmine.ore_pile__big": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "wmine.ore_pile",
+   "preset": "big",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 112
+  },
+  "wmine.portal": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.portal",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 200
+  },
+  "wmine.portal__bare": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.portal",
+   "preset": "bare",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 146
+  },
+  "wmine.portal__canyon": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.portal",
+   "preset": "canyon",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 200
+  },
+  "wmine.rubble": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "wmine.rubble",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 128
+  },
+  "wmine.shaft": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wmine.shaft",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 242
+  },
+  "wmine.shaft__small": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wmine.shaft",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 182
+  },
+  "wmine.timber_set": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wmine.timber_set",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 140
+  },
+  "wmine.track": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wmine.track",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "gauge_m": 0.6,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    },
+    {
+     "facing": "n",
+     "gauge_m": 0.6,
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 196
+  },
+  "wmine.track__corner": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wmine.track",
+   "preset": "corner",
+   "sockets": [
+    {
+     "facing": "s",
+     "gauge_m": 0.6,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    },
+    {
+     "facing": "e",
+     "gauge_m": 0.6,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 276
+  },
+  "wmine.track__end": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wmine.track",
+   "preset": "end",
+   "sockets": [
+    {
+     "facing": "s",
+     "gauge_m": 0.6,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 264
+  },
+  "wmine.tunnel": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.tunnel",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 376
+  },
+  "wmine.tunnel__corner": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.tunnel",
+   "preset": "corner",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 408
+  },
+  "wmine.tunnel__cross": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.tunnel",
+   "preset": "cross",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 736
+  },
+  "wmine.tunnel__end": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.tunnel",
+   "preset": "end",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 252
+  },
+  "wmine.tunnel__end_door": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.tunnel",
+   "preset": "end_door",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -2.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 238
+  },
+  "wmine.tunnel__mouth": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.tunnel",
+   "preset": "mouth",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -2.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 238
+  },
+  "wmine.tunnel__tee": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.tunnel",
+   "preset": "tee",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 556
+  },
+  "wmine.tunnel__track": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "wmine.tunnel",
+   "preset": "track",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "tunnel",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 572
+  },
+  "wmine.windlass": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wmine.windlass",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 290
+  },
+  "wprop.bar": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "wprop.bar",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 82
+  },
+  "wprop.bar__back_bar": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "wprop.bar",
+   "preset": "back_bar",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 82
+  },
+  "wprop.bar__short": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "wprop.bar",
+   "preset": "short",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 82
+  },
+  "wprop.barrel": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.barrel",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 108
+  },
+  "wprop.barrel__keg": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.barrel",
+   "preset": "keg",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 108
+  },
+  "wprop.barrel__powder": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.barrel",
+   "preset": "powder",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 108
+  },
+  "wprop.barrel__tipped": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.barrel",
+   "preset": "tipped",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 108
+  },
+  "wprop.barrel__water": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.barrel",
+   "preset": "water",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 148
+  },
+  "wprop.bottles": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.bottles",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 108
+  },
+  "wprop.bucket": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.bucket",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 76
+  },
+  "wprop.bucket__basin": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.bucket",
+   "preset": "basin",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 28
+  },
+  "wprop.bucket__spittoon": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.bucket",
+   "preset": "spittoon",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 76
+  },
+  "wprop.cactus": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wprop.cactus",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 194
+  },
+  "wprop.cactus__barrel": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wprop.cactus",
+   "preset": "barrel",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 128
+  },
+  "wprop.cactus__organ": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wprop.cactus",
+   "preset": "organ",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 170
+  },
+  "wprop.cactus__prickly": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wprop.cactus",
+   "preset": "prickly",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 290
+  },
+  "wprop.cactus__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wprop.cactus",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 194
+  },
+  "wprop.campfire": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.campfire",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 124
+  },
+  "wprop.campfire__cold": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.campfire",
+   "preset": "cold",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 118
+  },
+  "wprop.chair": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.chair",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 196
+  },
+  "wprop.chair__bench": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.chair",
+   "preset": "bench",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 68
+  },
+  "wprop.chair__rocking": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.chair",
+   "preset": "rocking",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 300
+  },
+  "wprop.chair__stool": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.chair",
+   "preset": "stool",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 128
+  },
+  "wprop.crate": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.crate",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 84
+  },
+  "wprop.crate__long": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.crate",
+   "preset": "long",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 84
+  },
+  "wprop.crate__powder": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.crate",
+   "preset": "powder",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 132
+  },
+  "wprop.crate__slats": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.crate",
+   "preset": "slats",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 140
+  },
+  "wprop.crate__small": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.crate",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 84
+  },
+  "wprop.hay": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.hay",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 60
+  },
+  "wprop.hay__stack": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.hay",
+   "preset": "stack",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 180
+  },
+  "wprop.lantern": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.lantern",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 116
+  },
+  "wprop.lantern__post": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.lantern",
+   "preset": "post",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 128
+  },
+  "wprop.lantern__table": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.lantern",
+   "preset": "table",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 82
+  },
+  "wprop.lantern__wall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.lantern",
+   "preset": "wall",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 136
+  },
+  "wprop.piano": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "wprop.piano",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 262
+  },
+  "wprop.sacks": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.sacks",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 138
+  },
+  "wprop.sacks__one": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.sacks",
+   "preset": "one",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 46
+  },
+  "wprop.saloon_doors": {
+   "anchor": "free",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "wprop.saloon_doors",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 132
+  },
+  "wprop.signpost": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.signpost",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 74
+  },
+  "wprop.signpost__two": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.signpost",
+   "preset": "two",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 58
+  },
+  "wprop.skull": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.skull",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 88
+  },
+  "wprop.stove": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.stove",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 150
+  },
+  "wprop.table": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.table",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 124
+  },
+  "wprop.table__card": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.table",
+   "preset": "card",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 124
+  },
+  "wprop.table__long": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.table",
+   "preset": "long",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 112
+  },
+  "wprop.table__square": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.table",
+   "preset": "square",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 76
+  },
+  "wprop.tombstone": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.tombstone",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 60
+  },
+  "wprop.tombstone__board": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.tombstone",
+   "preset": "board",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 22
+  },
+  "wprop.tombstone__cairn": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.tombstone",
+   "preset": "cairn",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 74
+  },
+  "wprop.tombstone__cross": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.tombstone",
+   "preset": "cross",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 56
+  },
+  "wprop.trough": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.trough",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 108
+  },
+  "wprop.wagon": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wprop.wagon",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 336
+  },
+  "wprop.wagon__broken": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wprop.wagon",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 256
+  },
+  "wprop.wagon__buckboard": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wprop.wagon",
+   "preset": "buckboard",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 368
+  },
+  "wprop.wanted_board": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.wanted_board",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 114
+  },
+  "wprop.wanted_board__wall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wprop.wanted_board",
+   "preset": "wall",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 60
+  },
+  "wprop.well": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wprop.well",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 288
+  },
+  "wprop.well__open": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wprop.well",
+   "preset": "open",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 268
+  },
+  "wprop.wheel": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.wheel",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 36
+  },
+  "wprop.wheel__flat": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "wprop.wheel",
+   "preset": "flat",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 36
+  },
+  "wprop.windmill": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wprop.windmill",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 458
+  },
+  "wrail.car": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wrail.car",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rides": "track",
+     "type": "prop"
+    }
+   ],
+   "tris": 396
+  },
+  "wrail.car__caboose": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wrail.car",
+   "preset": "caboose",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rides": "track",
+     "type": "prop"
+    }
+   ],
+   "tris": 496
+  },
+  "wrail.car__flatcar": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wrail.car",
+   "preset": "flatcar",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rides": "track",
+     "type": "prop"
+    }
+   ],
+   "tris": 480
+  },
+  "wrail.handcar": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wrail.handcar",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rides": "track",
+     "type": "prop"
+    }
+   ],
+   "tris": 368
+  },
+  "wrail.handcar__pumped": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wrail.handcar",
+   "preset": "pumped",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rides": "track",
+     "type": "prop"
+    }
+   ],
+   "tris": 368
+  },
+  "wrail.locomotive": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wrail.locomotive",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rides": "track",
+     "type": "prop"
+    }
+   ],
+   "tris": 452
+  },
+  "wrail.locomotive__straight_stack": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "wrail.locomotive",
+   "preset": "straight_stack",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "rides": "track",
+     "type": "prop"
+    }
+   ],
+   "tris": 440
+  },
+  "wrail.platform": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wrail.platform",
+   "preset": null,
+   "sockets": [
+    {
+     "depth_m": 2.5,
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      1.0
+     ],
+     "type": "walk"
+    },
+    {
+     "depth_m": 2.5,
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      1.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 176
+  },
+  "wrail.platform__end_e": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wrail.platform",
+   "preset": "end_e",
+   "sockets": [
+    {
+     "depth_m": 2.5,
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      1.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 184
+  },
+  "wrail.platform__end_w": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wrail.platform",
+   "preset": "end_w",
+   "sockets": [
+    {
+     "depth_m": 2.5,
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      1.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 184
+  },
+  "wrail.signal": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wrail.signal",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 208
+  },
+  "wrail.signal__clear": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wrail.signal",
+   "preset": "clear",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 208
+  },
+  "wrail.station": {
+   "anchor": "lot_line",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wrail.station",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 3,
+     "type": "frontage"
+    }
+   ],
+   "tris": 414
+  },
+  "wrail.station__entry": {
+   "anchor": "lot_line",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wrail.station",
+   "preset": "entry",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 3,
+     "type": "frontage"
+    },
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      2.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 354
+  },
+  "wrail.station__small": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wrail.station",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 414
+  },
+  "wrail.track": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wrail.track",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "gauge_m": 1.1,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    },
+    {
+     "facing": "n",
+     "gauge_m": 1.1,
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 136
+  },
+  "wrail.track__bumper": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wrail.track",
+   "preset": "bumper",
+   "sockets": [
+    {
+     "facing": "s",
+     "gauge_m": 1.1,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 260
+  },
+  "wrail.track__crossing": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wrail.track",
+   "preset": "crossing",
+   "sockets": [
+    {
+     "facing": "s",
+     "gauge_m": 1.1,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    },
+    {
+     "facing": "n",
+     "gauge_m": 1.1,
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 220
+  },
+  "wrail.track__curve": {
+   "anchor": "cell_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "structure",
+   "kit_id": "wrail.track",
+   "preset": "curve",
+   "sockets": [
+    {
+     "facing": "s",
+     "gauge_m": 1.1,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    },
+    {
+     "facing": "e",
+     "gauge_m": 1.1,
+     "position": [
+      6.0,
+      0.0,
+      -4.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 424
+  },
+  "wrail.trestle": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wrail.trestle",
+   "preset": null,
+   "sockets": [
+    {
+     "deck_m": 4.0,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    },
+    {
+     "deck_m": 4.0,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 404
+  },
+  "wrail.trestle__end": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wrail.trestle",
+   "preset": "end",
+   "sockets": [
+    {
+     "deck_m": 4.0,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    },
+    {
+     "deck_m": 4.0,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 432
+  },
+  "wrail.trestle__low": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wrail.trestle",
+   "preset": "low",
+   "sockets": [
+    {
+     "deck_m": 2.4,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    },
+    {
+     "deck_m": 2.4,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 404
+  },
+  "wrail.trestle__tall": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wrail.trestle",
+   "preset": "tall",
+   "sockets": [
+    {
+     "deck_m": 7.0,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "track"
+    },
+    {
+     "deck_m": 7.0,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "track"
+    }
+   ],
+   "tris": 404
+  },
+  "wsky.dome": {
+   "anchor": null,
+   "cells": null,
+   "class": "sky",
+   "kit_id": "wsky.dome",
+   "preset": null,
+   "sockets": [],
+   "tris": 112
+  },
+  "wsky.mesas": {
+   "anchor": null,
+   "cells": null,
+   "class": "sky",
+   "kit_id": "wsky.mesas",
+   "preset": null,
+   "sockets": [],
+   "tris": 80
+  },
+  "wsky.mesas__canyon": {
+   "anchor": null,
+   "cells": null,
+   "class": "sky",
+   "kit_id": "wsky.mesas",
+   "preset": "canyon",
+   "sockets": [],
+   "tris": 80
+  },
+  "wsky.mesas__near": {
+   "anchor": null,
+   "cells": null,
+   "class": "sky",
+   "kit_id": "wsky.mesas",
+   "preset": "near",
+   "sockets": [],
+   "tris": 80
+  },
+  "wsky.mesas__town": {
+   "anchor": null,
+   "cells": null,
+   "class": "sky",
+   "kit_id": "wsky.mesas",
+   "preset": "town",
+   "sockets": [],
+   "tris": 80
+  },
+  "wsky.sun": {
+   "anchor": "free",
+   "cells": null,
+   "class": "fx",
+   "kit_id": "wsky.sun",
+   "preset": null,
+   "sockets": [],
+   "tris": 6
+  },
+  "wtown.balcony": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "wtown.balcony",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "span": 1,
+     "type": "balcony_fit"
+    }
+   ],
+   "tris": 216
+  },
+  "wtown.balcony__wide": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "wtown.balcony",
+   "preset": "wide",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "span": 2,
+     "type": "balcony_fit"
+    }
+   ],
+   "tris": 284
+  },
+  "wtown.bank": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.bank",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 388
+  },
+  "wtown.bank__entry": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.bank",
+   "preset": "entry",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    },
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      2.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 322
+  },
+  "wtown.bank__wide": {
+   "anchor": "lot_line",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.bank",
+   "preset": "wide",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 3,
+     "type": "frontage"
+    }
+   ],
+   "tris": 388
+  },
+  "wtown.boardwalk": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.boardwalk",
+   "preset": null,
+   "sockets": [
+    {
+     "depth_m": 2.0,
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      1.0
+     ],
+     "type": "walk"
+    },
+    {
+     "depth_m": 2.0,
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      1.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 88
+  },
+  "wtown.boardwalk__end_e": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.boardwalk",
+   "preset": "end_e",
+   "sockets": [
+    {
+     "depth_m": 2.0,
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      1.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 116
+  },
+  "wtown.boardwalk__end_w": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.boardwalk",
+   "preset": "end_w",
+   "sockets": [
+    {
+     "depth_m": 2.0,
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      1.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 116
+  },
+  "wtown.boardwalk__ends": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.boardwalk",
+   "preset": "ends",
+   "sockets": [],
+   "tris": 144
+  },
+  "wtown.boardwalk__steps": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.boardwalk",
+   "preset": "steps",
+   "sockets": [
+    {
+     "depth_m": 2.0,
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      1.0
+     ],
+     "type": "walk"
+    },
+    {
+     "depth_m": 2.0,
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      1.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 116
+  },
+  "wtown.church": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.church",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 516
+  },
+  "wtown.church__wide": {
+   "anchor": "lot_line",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.church",
+   "preset": "wide",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 3,
+     "type": "frontage"
+    }
+   ],
+   "tris": 516
+  },
+  "wtown.doorway": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "wtown.doorway",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "fits": "door",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 128
+  },
+  "wtown.doorway__gate": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "wtown.doorway",
+   "preset": "gate",
+   "sockets": [
+    {
+     "facing": "n",
+     "fits": "door",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 182
+  },
+  "wtown.facade": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.facade",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 1,
+     "type": "frontage"
+    }
+   ],
+   "tris": 238
+  },
+  "wtown.facade__a_square": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.facade",
+   "preset": "a_square",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 1,
+     "type": "frontage"
+    }
+   ],
+   "tris": 238
+  },
+  "wtown.facade__b_stepped": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.facade",
+   "preset": "b_stepped",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 1,
+     "type": "frontage"
+    }
+   ],
+   "tris": 322
+  },
+  "wtown.facade__c_arched": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.facade",
+   "preset": "c_arched",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 1,
+     "type": "frontage"
+    }
+   ],
+   "tris": 278
+  },
+  "wtown.facade__d_gabled": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.facade",
+   "preset": "d_gabled",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 1,
+     "type": "frontage"
+    }
+   ],
+   "tris": 294
+  },
+  "wtown.facade__e_pediment": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.facade",
+   "preset": "e_pediment",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 308
+  },
+  "wtown.facade__entry": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.facade",
+   "preset": "entry",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 1,
+     "type": "frontage"
+    },
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 232
+  },
+  "wtown.facade__f_tall": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.facade",
+   "preset": "f_tall",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 400
+  },
+  "wtown.facade__g_brick": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.facade",
+   "preset": "g_brick",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 436
+  },
+  "wtown.fence": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.fence",
+   "preset": null,
+   "sockets": [],
+   "tris": 132
+  },
+  "wtown.fence__broken": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.fence",
+   "preset": "broken",
+   "sockets": [],
+   "tris": 132
+  },
+  "wtown.fence__gateway": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.fence",
+   "preset": "gateway",
+   "sockets": [
+    {
+     "exit": true,
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 144
+  },
+  "wtown.fence__picket": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.fence",
+   "preset": "picket",
+   "sockets": [],
+   "tris": 192
+  },
+  "wtown.gallery": {
+   "anchor": "lot_line",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.gallery",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 3,
+     "type": "gallery"
+    }
+   ],
+   "tris": 332
+  },
+  "wtown.gallery__long": {
+   "anchor": "lot_line",
+   "cells": [
+    4,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.gallery",
+   "preset": "long",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 4,
+     "type": "gallery"
+    }
+   ],
+   "tris": 408
+  },
+  "wtown.gallery__west_stair": {
+   "anchor": "lot_line",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "wtown.gallery",
+   "preset": "west_stair",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 3,
+     "type": "gallery"
+    }
+   ],
+   "tris": 332
+  },
+  "wtown.hitching_post": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wtown.hitching_post",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "tie",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 108
+  },
+  "wtown.hitching_post__double": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "wtown.hitching_post",
+   "preset": "double",
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "tie",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 172
+  },
+  "wtown.hotel": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.hotel",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 640
+  },
+  "wtown.hotel__entry": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.hotel",
+   "preset": "entry",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    },
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      2.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 580
+  },
+  "wtown.hotel__grand": {
+   "anchor": "lot_line",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.hotel",
+   "preset": "grand",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 3,
+     "type": "frontage"
+    }
+   ],
+   "tris": 680
+  },
+  "wtown.porch": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "wtown.porch",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "span": 1,
+     "type": "frontage_fit"
+    }
+   ],
+   "tris": 52
+  },
+  "wtown.porch__canvas": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "wtown.porch",
+   "preset": "canvas",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "span": 1,
+     "type": "frontage_fit"
+    }
+   ],
+   "tris": 36
+  },
+  "wtown.porch__tin": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "wtown.porch",
+   "preset": "tin",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "span": 2,
+     "type": "frontage_fit"
+    }
+   ],
+   "tris": 72
+  },
+  "wtown.porch__wide": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "wtown.porch",
+   "preset": "wide",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "span": 2,
+     "type": "frontage_fit"
+    }
+   ],
+   "tris": 72
+  },
+  "wtown.room": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "wtown.room",
+   "preset": null,
+   "sockets": [
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      0.0,
+      0.0,
+      6.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 922
+  },
+  "wtown.room__office": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "wtown.room",
+   "preset": "office",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      -2.0,
+      0.0,
+      4.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.4
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "mount_height_m": 2.3,
+     "position": [
+      -3.88,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "lamp"
+    }
+   ],
+   "tris": 552
+  },
+  "wtown.room__saloon": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "wtown.room",
+   "preset": "saloon",
+   "sockets": [
+    {
+     "cell": 3,
+     "facing": "n",
+     "mount_height_m": 2.3,
+     "position": [
+      6.0,
+      0.0,
+      -5.88
+     ],
+     "side": "n",
+     "type": "lamp"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.3,
+     "position": [
+      7.88,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "lamp"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "mount_height_m": 2.3,
+     "position": [
+      -6.0,
+      0.0,
+      5.88
+     ],
+     "side": "s",
+     "type": "lamp"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      -2.0,
+      0.0,
+      6.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.4
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "mount_height_m": 2.3,
+     "position": [
+      2.0,
+      0.0,
+      5.88
+     ],
+     "side": "s",
+     "type": "lamp"
+    }
+   ],
+   "tris": 1374
+  },
+  "wtown.room__store": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "wtown.room",
+   "preset": "store",
+   "sockets": [
+    {
+     "cell": 1,
+     "facing": "n",
+     "mount_height_m": 2.3,
+     "position": [
+      0.0,
+      0.0,
+      -3.88
+     ],
+     "side": "n",
+     "type": "lamp"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      0.0,
+      0.0,
+      4.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 816
+  },
+  "wtown.saloon": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.saloon",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 828
+  },
+  "wtown.saloon__arched": {
+   "anchor": "lot_line",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.saloon",
+   "preset": "arched",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 3,
+     "type": "frontage"
+    }
+   ],
+   "tris": 814
+  },
+  "wtown.saloon__entry": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.saloon",
+   "preset": "entry",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    },
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 768
+  },
+  "wtown.saloon__plain": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.saloon",
+   "preset": "plain",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 552
+  },
+  "wtown.shack": {
+   "anchor": "free",
+   "cells": null,
+   "class": "building",
+   "kit_id": "wtown.shack",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 244
+  },
+  "wtown.shack__shingle": {
+   "anchor": "free",
+   "cells": null,
+   "class": "building",
+   "kit_id": "wtown.shack",
+   "preset": "shingle",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 176
+  },
+  "wtown.sheriff": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.sheriff",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 434
+  },
+  "wtown.sheriff__entry": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.sheriff",
+   "preset": "entry",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    },
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      -2.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 374
+  },
+  "wtown.sheriff__office": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.sheriff",
+   "preset": "office",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 1,
+     "type": "frontage"
+    }
+   ],
+   "tris": 262
+  },
+  "wtown.stable": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.stable",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 380
+  },
+  "wtown.stable__barn": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.stable",
+   "preset": "barn",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 280
+  },
+  "wtown.stable__wide": {
+   "anchor": "lot_line",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.stable",
+   "preset": "wide",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 3,
+     "type": "frontage"
+    }
+   ],
+   "tris": 380
+  },
+  "wtown.stairs": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wtown.stairs",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 240
+  },
+  "wtown.stairs__gallery": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wtown.stairs",
+   "preset": "gallery",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 240
+  },
+  "wtown.stairs__short": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wtown.stairs",
+   "preset": "short",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 60
+  },
+  "wtown.store": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.store",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 336
+  },
+  "wtown.store__battens": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.store",
+   "preset": "battens",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    }
+   ],
+   "tris": 340
+  },
+  "wtown.store__brick": {
+   "anchor": "lot_line",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.store",
+   "preset": "brick",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 3,
+     "type": "frontage"
+    }
+   ],
+   "tris": 380
+  },
+  "wtown.store__entry": {
+   "anchor": "lot_line",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.store",
+   "preset": "entry",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 2,
+     "type": "frontage"
+    },
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "wtown.doorway",
+     "position": [
+      2.0,
+      0.0,
+      -0.1
+     ],
+     "type": "door",
+     "width_m": 2.4
+    }
+   ],
+   "tris": 246
+  },
+  "wtown.store__narrow": {
+   "anchor": "lot_line",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "building",
+   "kit_id": "wtown.store",
+   "preset": "narrow",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "span": 1,
+     "type": "frontage"
+    }
+   ],
+   "tris": 248
+  },
+  "wtown.water_tower": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wtown.water_tower",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 494
+  },
+  "wtown.water_tower__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "wtown.water_tower",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 466
+  }
+ }
+}

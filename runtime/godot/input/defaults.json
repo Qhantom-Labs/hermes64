@@ -1,0 +1,33 @@
+{
+  "status": "Original tuning proposals; human feel not verified",
+  "version": 1,
+  "options": {"run_mode": "hold", "focus_mode": "hold", "reduced_motion": false, "opposite_key_rule": "last_wins"},
+  "tuning": {
+    "stick_ramp_up_s": 0.22, "stick_ramp_down_s": 0.10, "walk_modifier_cap": 0.35, "jog_modifier_cap": 0.65,
+    "dead_zone_pad": 0.18, "outer_saturation": 0.95, "magnitude_curve_power": 1.5,
+    "walk_speed_mps": 1.1, "run_speed_mps": 3.2, "accel_mps2": 12.0, "brake_mps2": 18.0,
+    "turn_moving_deg_s": 720.0, "turn_still_deg_s": 1080.0, "still_speed_mps": 0.05,
+    "focus_speed_mps": 1.2, "focus_acquire_m": 2.2, "focus_release_m": 2.6,
+    "interaction_height_m": 1.8, "action_buffer_s": 0.10, "coyote_s": 0.10,
+    "hold_to_retry_s": 0.6, "latch_release_magnitude": 0.15, "latch_direction_rad": 0.6,
+    "gravity_mps2": 9.8, "ground_pull_mps": 0.5, "capsule_radius_m": 0.26, "capsule_height_m": 1.4,
+    "floor_snap_m": 0.15, "step_height_m": 0.18, "slope_max_deg": 40.0, "safe_margin_m": 0.001, "position_quantum_m": 0.0001,
+    "bounds_margin_m": 0.4, "walk_stride_mps": 1.1,
+    "prompt_fade_after_uses": 3, "prompt_idle_ticks": 1800, "prompt_fade_ticks": 24,
+    "checkpoint_icon_ticks": 90, "camera_hysteresis_m": 0.75
+  },
+  "ranges": {
+    "stick_ramp_up_s": [0.10,0.40], "stick_ramp_down_s": [0.04,0.20], "walk_modifier_cap": [0.20,0.60], "jog_modifier_cap": [0.40,0.85],
+    "dead_zone_pad": [0.0,0.4], "outer_saturation": [0.6,1.0], "magnitude_curve_power": [1.0,2.0],
+    "walk_speed_mps": [0.8,1.6], "run_speed_mps": [2.0,3.2], "accel_mps2": [6.0,24.0], "brake_mps2": [9.0,36.0],
+    "turn_moving_deg_s": [180.0,1080.0], "turn_still_deg_s": [180.0,1440.0], "still_speed_mps": [0.01,0.2],
+    "focus_speed_mps": [0.5,2.0], "focus_acquire_m": [1.8,3.0], "focus_release_m": [2.0,3.5],
+    "interaction_height_m": [0.5,3.0], "action_buffer_s": [0.05,0.20], "coyote_s": [0.05,0.15],
+    "hold_to_retry_s": [0.3,1.0], "latch_release_magnitude": [0.05,0.2], "latch_direction_rad": [0.3,1.0],
+    "gravity_mps2": [5.0,20.0], "ground_pull_mps": [0.1,1.0], "capsule_radius_m": [0.15,0.4], "capsule_height_m": [1.0,1.8],
+    "floor_snap_m": [0.10,0.3], "step_height_m": [0.0,0.18], "slope_max_deg": [20.0,45.0], "safe_margin_m": [0.001,0.02], "position_quantum_m": [0.0001,0.001],
+    "bounds_margin_m": [0.3,0.6], "walk_stride_mps": [0.8,2.4],
+    "prompt_fade_after_uses": [1,5], "prompt_idle_ticks": [600,3600], "prompt_fade_ticks": [1,60],
+    "checkpoint_icon_ticks": [30,120], "camera_hysteresis_m": [0.4,1.5]
+  }
+}

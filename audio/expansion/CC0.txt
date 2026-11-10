@@ -1,0 +1,17 @@
+Hermes64 AUDIO2 generated-audio dedication
+SPDX-License-Identifier: CC0-1.0
+
+The original procedural audio, musical compositions, MIDI sequences, voice-blip
+outputs, sound recipes, and generated timing data in this expansion are offered
+under Creative Commons CC0 1.0 Universal. To the extent copyright and related
+rights exist, the contributors waive those rights to the fullest extent allowed
+by law under CC0, with its fallback licence where a waiver is not effective.
+
+Canonical legal instrument:
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+No recordings, speech samples, soundfonts, game music, external sound libraries,
+model outputs or third-party audio assets are included. The synthesis/tool source
+code remains under the repository's software licence. No trademark, endorsement,
+patent clearance or warranty of fitness is implied. Numerical validation is not
+human listening approval.

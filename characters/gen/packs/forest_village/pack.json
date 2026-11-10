@@ -1,0 +1,1358 @@
+{
+ "id": "forest_village",
+ "version": "3.0.0",
+ "note": "Warm N64-era woodland village: timber, plaster, thatch, stone, meadow greens, sky blue, lantern light. Face-atlas cast. Data only; built from the same Hermes64 core as polar_pod.",
+ "palette": [
+  "#120d08",
+  "#2b1b0e",
+  "#4a2f18",
+  "#6e4724",
+  "#8f6334",
+  "#b08348",
+  "#d0a868",
+  "#ecd9a8",
+  "#fff8e8",
+  "#1d3315",
+  "#2f4f1d",
+  "#487028",
+  "#6a9234",
+  "#96b84c",
+  "#c4d77a",
+  "#3a3833",
+  "#5d5850",
+  "#868074",
+  "#b2ab9b",
+  "#355f9c",
+  "#5e8fce",
+  "#9cc4ec",
+  "#a8862f",
+  "#d8b95c",
+  "#8e3a24",
+  "#c25a2c",
+  "#f3cfa6",
+  "#d9a06e",
+  "#a7693f",
+  "#6b4127",
+  "#7a2f4f",
+  "#2f6f6a"
+ ],
+ "palette_names": [
+  "ink",
+  "umber_0",
+  "umber_1",
+  "umber_2",
+  "wood_0",
+  "wood_1",
+  "wood_2",
+  "cream",
+  "white",
+  "leaf_0",
+  "leaf_1",
+  "leaf_2",
+  "leaf_3",
+  "leaf_4",
+  "leaf_5",
+  "stone_0",
+  "stone_1",
+  "stone_2",
+  "stone_3",
+  "sky_0",
+  "sky_1",
+  "sky_2",
+  "straw_0",
+  "straw_1",
+  "brick",
+  "rust",
+  "skin_0",
+  "skin_1",
+  "skin_2",
+  "skin_3",
+  "berry",
+  "teal"
+ ],
+ "ramps": {
+  "wood": [
+   "umber_0",
+   "umber_1",
+   "umber_2",
+   "wood_0",
+   "wood_1",
+   "wood_2"
+  ],
+  "leaf": [
+   "leaf_0",
+   "leaf_1",
+   "leaf_2",
+   "leaf_3",
+   "leaf_4",
+   "leaf_5"
+  ],
+  "stone": [
+   "stone_0",
+   "stone_1",
+   "stone_2",
+   "stone_3"
+  ],
+  "sky": [
+   "sky_0",
+   "sky_1",
+   "sky_2",
+   "white"
+  ],
+  "skin": [
+   "skin_0",
+   "skin_1",
+   "skin_2",
+   "skin_3"
+  ]
+ },
+ "light_ramp": [
+  "umber_0",
+  "stone_0",
+  "stone_1",
+  "stone_2",
+  "stone_3",
+  "cream",
+  "white"
+ ],
+ "light_rig": {
+  "key_dir": [
+   0.55,
+   -0.45,
+   0.7
+  ],
+  "ambient": 0.5,
+  "key": 0.48,
+  "sky": 0.1,
+  "ground": 0.02,
+  "ao": 0.32,
+  "ao_height": 0.4,
+  "gamma": 1.0
+ },
+ "fog": {
+  "color": "sky_2",
+  "start": 12.0,
+  "end": 70.0,
+  "interior": {
+   "color": "umber_1",
+   "start": 6.0,
+   "end": 20.0
+  }
+ },
+ "env_maps": {
+  "env_iron": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "ink",
+    "stone_0",
+    "stone_1",
+    "stone_2",
+    "stone_3",
+    "cream"
+   ],
+   "edge": "stone_0",
+   "glint": "white",
+   "glints": [
+    [
+     0.36,
+     0.26,
+     0.06
+    ]
+   ]
+  },
+  "env_glass": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "leaf_0",
+    "teal",
+    "sky_0",
+    "sky_1",
+    "sky_2"
+   ],
+   "edge": "teal",
+   "glint": "white",
+   "glints": [
+    [
+     0.33,
+     0.27,
+     0.07
+    ]
+   ]
+  }
+ },
+ "materials": {
+  "wall": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plaster",
+    "size": 32,
+    "ramp": [
+     "stone_3",
+     "cream",
+     "white"
+    ]
+   }
+  },
+  "wall_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "planks",
+    "size": 32,
+    "boards": 4,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "floor": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "planks",
+    "size": 32,
+    "boards": 5,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "ceiling": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "planks",
+    "size": 32,
+    "boards": 4,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "trim": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grain",
+    "size": 16,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2"
+    ]
+   }
+  },
+  "frame": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grain",
+    "size": 16,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "door": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "planks",
+    "size": 32,
+    "boards": 4,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "glass": {
+   "kind": "glass_env",
+   "tint": "sky_1",
+   "env": "env_glass"
+  },
+  "view": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "scene",
+    "width": 128,
+    "height": 64,
+    "sky": [
+     "sky_0",
+     "sky_1",
+     "sky_2"
+    ],
+    "layers": [
+     {
+      "kind": "mountains",
+      "base": 0.38,
+      "height": 0.16,
+      "count": 6,
+      "color": "sky_1"
+     },
+     {
+      "kind": "forest",
+      "base": 0.32,
+      "height": 0.2,
+      "count": 14,
+      "ramp": [
+       "leaf_0",
+       "leaf_1",
+       "leaf_2"
+      ]
+     },
+     {
+      "kind": "roofs",
+      "base": 0.3,
+      "height": 0.1,
+      "count": 4,
+      "color": "straw_0",
+      "lights": {
+       "color": "straw_1",
+       "count": 3
+      }
+     }
+    ],
+    "ground": {
+     "ramp": [
+      "leaf_1",
+      "leaf_2",
+      "leaf_3",
+      "leaf_4"
+     ],
+     "height": 0.32
+    }
+   }
+  },
+  "roof": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "thatch",
+    "size": 32,
+    "rows": 3,
+    "ramp": [
+     "umber_2",
+     "straw_0",
+     "straw_1",
+     "wood_2"
+    ]
+   }
+  },
+  "step": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "blocks",
+    "size": 32,
+    "rows": 2,
+    "cols": 2,
+    "ramp": [
+     "stone_1",
+     "stone_2",
+     "stone_3"
+    ]
+   }
+  },
+  "rail": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grain",
+    "size": 16,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "post": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "bark",
+    "size": 16,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2"
+    ]
+   }
+  },
+  "stone": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "blocks",
+    "size": 32,
+    "rows": 4,
+    "cols": 2,
+    "ramp": [
+     "stone_0",
+     "stone_1",
+     "stone_2",
+     "stone_3"
+    ]
+   }
+  },
+  "metal": {
+   "kind": "chrome_env",
+   "tint": "stone_2",
+   "env": "env_iron"
+  },
+  "chrome": {
+   "kind": "chrome_env",
+   "tint": "stone_3",
+   "env": "env_iron"
+  },
+  "body": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grain",
+    "size": 32,
+    "ramp": [
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "body_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grain",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "cushion": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fabric",
+    "size": 16,
+    "ramp": [
+     "brick",
+     "rust",
+     "straw_1"
+    ]
+   }
+  },
+  "fabric": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "checks",
+    "size": 16,
+    "count": 2,
+    "ramp": [
+     "teal",
+     "sky_0",
+     "cream"
+    ]
+   }
+  },
+  "knit": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "knit",
+    "size": 32,
+    "cols": 6,
+    "rows": 6,
+    "ramp": [
+     "brick",
+     "rust",
+     "straw_0",
+     "straw_1"
+    ]
+   }
+  },
+  "fur": {
+   "kind": "baked_unlit",
+   "tile_m": 0.8,
+   "texture": {
+    "gen": "fur",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "quilt": {
+   "kind": "baked_unlit",
+   "tile_m": 0.5,
+   "texture": {
+    "gen": "quilt_diamond",
+    "size": 32,
+    "cells": 2,
+    "ramp": [
+     "brick",
+     "rust",
+     "wood_2",
+     "cream"
+    ]
+   }
+  },
+  "screen": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "paper",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "wood_2",
+     "cream",
+     "white"
+    ]
+   }
+  },
+  "light": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "glow",
+    "size": 16,
+    "ramp": [
+     "rust",
+     "straw_1",
+     "cream",
+     "white"
+    ]
+   }
+  },
+  "orb": {
+   "kind": "glass_env",
+   "tint": "leaf_2",
+   "env": "env_glass"
+  },
+  "wood": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grain",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "paper": {
+   "kind": "baked_unlit",
+   "tile_m": 0.3,
+   "texture": {
+    "gen": "paper",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "wood_2",
+     "cream",
+     "white"
+    ]
+   }
+  },
+  "book": {
+   "kind": "baked_unlit",
+   "tile_m": 0.4,
+   "texture": {
+    "gen": "spines",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "brick",
+     "teal",
+     "berry",
+     "wood_1"
+    ]
+   }
+  },
+  "leather": {
+   "kind": "baked_unlit",
+   "tile_m": 0.5,
+   "texture": {
+    "gen": "leather",
+    "size": 32,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2"
+    ]
+   }
+  },
+  "rope": {
+   "kind": "baked_unlit",
+   "tile_m": 0.3,
+   "texture": {
+    "gen": "rope",
+    "size": 16,
+    "ramp": [
+     "straw_0",
+     "straw_1",
+     "wood_2"
+    ]
+   }
+  },
+  "fire": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "fire",
+    "size": 16,
+    "ramp": [
+     "brick",
+     "rust",
+     "straw_1",
+     "white"
+    ]
+   }
+  },
+  "grass": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "grass",
+    "size": 32,
+    "ramp": [
+     "leaf_1",
+     "leaf_2",
+     "leaf_3",
+     "leaf_4"
+    ]
+   }
+  },
+  "snow": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "snow",
+    "size": 32,
+    "ramp": [
+     "stone_3",
+     "cream",
+     "white"
+    ]
+   }
+  },
+  "sand": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "sand",
+    "size": 32,
+    "ripples": 4,
+    "ramp": [
+     "wood_1",
+     "wood_2",
+     "cream"
+    ]
+   }
+  },
+  "rock": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "rock",
+    "size": 32,
+    "ramp": [
+     "stone_0",
+     "stone_1",
+     "stone_2",
+     "stone_3"
+    ]
+   }
+  },
+  "dirt": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "dirt",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "water": {
+   "kind": "water",
+   "tile_m": 3.0,
+   "scroll": [
+    0.03,
+    0.01
+   ],
+   "texture": {
+    "gen": "water",
+    "size": 32,
+    "ramp": [
+     "teal",
+     "sky_0",
+     "sky_1",
+     "sky_2"
+    ]
+   }
+  },
+  "ice": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "ice",
+    "size": 32,
+    "ramp": [
+     "sky_1",
+     "sky_2",
+     "white"
+    ]
+   }
+  },
+  "bark": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "bark",
+    "size": 16,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "foliage": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "leaves",
+    "size": 32,
+    "ramp": [
+     "leaf_0",
+     "leaf_1",
+     "leaf_2",
+     "leaf_3",
+     "leaf_4"
+    ]
+   }
+  },
+  "cap": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grass",
+    "size": 16,
+    "ramp": [
+     "leaf_2",
+     "leaf_3",
+     "leaf_4"
+    ]
+   }
+  },
+  "flower": {
+   "kind": "baked_unlit",
+   "tile_m": 0.5,
+   "texture": {
+    "gen": "leaves",
+    "size": 16,
+    "cells": 6,
+    "ramp": [
+     "brick",
+     "rust",
+     "straw_1",
+     "cream"
+    ]
+   }
+  },
+  "hull": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "planks",
+    "size": 32,
+    "boards": 4,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "hull_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grain",
+    "size": 16,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2"
+    ]
+   }
+  },
+  "band": {
+   "kind": "baked_unlit",
+   "tile_m": 0.5,
+   "texture": {
+    "gen": "stripes",
+    "size": 16,
+    "count": 2,
+    "ramp": [
+     "brick",
+     "cream"
+    ]
+   }
+  },
+  "sky": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "scene",
+    "width": 128,
+    "height": 64,
+    "sky": [
+     "sky_0",
+     "sky_1",
+     "sky_2",
+     "cream"
+    ],
+    "layers": [
+     {
+      "kind": "mountains",
+      "base": 0.2,
+      "height": 0.16,
+      "count": 6,
+      "color": "sky_1"
+     },
+     {
+      "kind": "forest",
+      "base": 0.12,
+      "height": 0.12,
+      "count": 18,
+      "color": "leaf_1"
+     }
+    ]
+   }
+  },
+  "particle": {
+   "kind": "card_alpha",
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "straw_1"
+    ],
+    "alpha": "disc"
+   }
+  },
+  "skin": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "skin_1"
+    ]
+   }
+  },
+  "face": {
+   "kind": "face_atlas"
+  },
+  "headwear": {
+   "kind": "baked_unlit"
+  },
+  "opening": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "ink"
+    ]
+   }
+  },
+  "costume": {
+   "kind": "baked_unlit"
+  },
+  "coat": {
+   "kind": "baked_unlit"
+  }
+ },
+ "kit_presets": {},
+ "fixtures": {},
+ "cast": {},
+ "validator_thresholds": {
+  "tri_limits": {},
+  "stretch": [
+   0.45,
+   1.8
+  ],
+  "visdiff_min": 0.015,
+  "people_pairwise_min": 0.02
+ },
+ "colors": {
+  "fog_ext": "#9cc4ec",
+  "fog_int": "#4a2f18",
+  "amb_ext": "#5d5850",
+  "sun_ext": "#ecd9a8",
+  "amb_int": "#4a2f18",
+  "sun_int": "#d0a868",
+  "lamp": "#d8b95c",
+  "lamp_dim": "#c25a2c",
+  "window_light": "#ecd9a8"
+ },
+ "ui": {
+  "ink": "#120d08",
+  "fill": "#2b1b0ed6",
+  "frame": "#d0a868",
+  "text": "#fff8e8",
+  "dim": "#b2ab9b",
+  "accent": "#d8b95c"
+ },
+ "character_defaults": {
+  "head_mode": "face",
+  "headwear": "crop",
+  "headwear_finish": "matte",
+  "hands": "bare",
+  "vest": "leather",
+  "mantle": 0,
+  "skin": "skin_0",
+  "headwear_color": "umber_1",
+  "top_color": "cream",
+  "vest_color": "leaf_2",
+  "vest_trim_color": "straw_1",
+  "mantle_color": "leaf_1",
+  "skirt_color": "umber_0",
+  "bottom_color": "umber_1",
+  "glove_color": "skin_0",
+  "boot_color": "umber_0",
+  "belt_color": "wood_1",
+  "armband_color": "brick"
+ },
+ "animal_defaults": {
+  "coat_color_1": "umber_1",
+  "coat_color_2": "cream",
+  "coat_color_3": "rust",
+  "eye_color": "leaf_3"
+ },
+ "character_cast": [],
+ "animal_cast": [
+  {
+   "id": "cat_tuxedo",
+   "params": {
+    "coat_color_1": "umber_1",
+    "coat_color_2": "cream",
+    "coat_color_3": "rust",
+    "eye_color": "leaf_3",
+    "coat_pattern": "tuxedo"
+   }
+  },
+  {
+   "id": "cat_tabby",
+   "params": {
+    "coat_color_1": "rust",
+    "coat_color_2": "umber_1",
+    "coat_color_3": "rust",
+    "eye_color": "leaf_3",
+    "coat_pattern": "tabby"
+   }
+  },
+  {
+   "id": "cat_calico",
+   "params": {
+    "coat_color_1": "cream",
+    "coat_color_2": "umber_1",
+    "coat_color_3": "rust",
+    "eye_color": "leaf_3",
+    "coat_pattern": "calico"
+   }
+  },
+  {
+   "id": "cat_black",
+   "params": {
+    "coat_color_1": "umber_1",
+    "coat_color_2": "umber_1",
+    "coat_color_3": "rust",
+    "eye_color": "leaf_3",
+    "coat_pattern": "solid"
+   }
+  },
+  {
+   "id": "cat_white",
+   "params": {
+    "coat_color_1": "cream",
+    "coat_color_2": "cream",
+    "coat_color_3": "rust",
+    "eye_color": "leaf_3",
+    "coat_pattern": "solid"
+   }
+  },
+  {
+   "id": "dog_saddle",
+   "params": {
+    "coat_color_1": "umber_1",
+    "coat_color_2": "cream",
+    "coat_color_3": "rust",
+    "eye_color": "leaf_3",
+    "species": "dog",
+    "coat_pattern": "saddle",
+    "ear_shape": "floppy"
+   }
+  }
+ ],
+ "face_defaults": {
+  "skin": "skin_0",
+  "hair_color": "umber_1",
+  "eye_color": "sky_0",
+  "brow_color": "umber_0",
+  "lip_color": "rust",
+  "top_color": "cream",
+  "garment_color": "leaf_2",
+  "trim_color": "straw_1",
+  "accent_color": "straw_0",
+  "bottom_color": "umber_1",
+  "boot_color": "umber_0",
+  "glove_color": "umber_2",
+  "belt_color": "umber_0",
+  "collar_color": "straw_1",
+  "extra_color": "white",
+  "extra_color_2": "brick"
+ },
+ "char_ramps": {
+  "grey": [
+   "ink",
+   "stone_0",
+   "stone_1",
+   "stone_2",
+   "stone_3",
+   "cream",
+   "white"
+  ],
+  "hair_brown": [
+   "ink",
+   "umber_0",
+   "umber_1",
+   "umber_2",
+   "wood_0",
+   "wood_1"
+  ],
+  "hair_blond": [
+   "umber_2",
+   "wood_0",
+   "wood_1",
+   "straw_0",
+   "straw_1"
+  ],
+  "red": [
+   "umber_0",
+   "brick",
+   "rust",
+   "skin_1"
+  ],
+  "teal": [
+   "leaf_0",
+   "teal",
+   "sky_0",
+   "sky_1"
+  ],
+  "berry": [
+   "ink",
+   "berry",
+   "brick"
+  ],
+  "green": [
+   "ink",
+   "leaf_0",
+   "leaf_1",
+   "leaf_2",
+   "leaf_3",
+   "leaf_4",
+   "leaf_5"
+  ],
+  "skin_all": [
+   "ink",
+   "umber_0",
+   "umber_1",
+   "skin_3",
+   "skin_2",
+   "skin_1",
+   "skin_0",
+   "cream"
+  ]
+ },
+ "eye_white": "cream",
+ "face_line": "ink",
+ "teeth": "cream",
+ "sole": "ink",
+ "blush": "rust",
+ "prop_colors": {
+  "body": "cream",
+  "dark": "umber_0",
+  "light": "white",
+  "metal": "stone_2",
+  "glass": "straw_1",
+  "accent": "brick",
+  "cloth": "wood_1",
+  "wood": "wood_0"
+ },
+ "retired_character_cast": "round-5 face studies (old face mode) kept in round-5/source/forest_village.json",
+ "face_cast": [
+  {
+   "id": "fv_warden",
+   "stance": "satchel",
+   "props": [
+    "satchel"
+   ],
+   "params": {
+    "head_mode": "face",
+    "height": 1.5,
+    "build": 0.95,
+    "age": "teen",
+    "jaw": 0.97,
+    "chin": 0.3,
+    "nose": 1.0,
+    "hair": "swept",
+    "part": 1.0,
+    "hair_color": "rust",
+    "hair_volume": 1.15,
+    "garment": "tunic",
+    "hem": 0.4,
+    "garment_color": "teal",
+    "trim_color": "straw_1",
+    "top_color": "cream",
+    "sleeves": "short",
+    "collar": "flat",
+    "collar_color": "straw_1",
+    "trouser_volume": 0.82,
+    "bottom_color": "umber_1",
+    "boots": "cuffed",
+    "boot_color": "umber_2",
+    "belt": true,
+    "belt_color": "umber_0",
+    "accent_color": "straw_0",
+    "strap": "satchel",
+    "brows": "heavy",
+    "brow_tilt": 0.6,
+    "eye_shape": "narrow",
+    "eye_color": "leaf_2",
+    "gaze": -0.35,
+    "skin": "skin_0",
+    "brow_color": "umber_1",
+    "lip_color": "skin_2",
+    "wear": 0.3,
+    "face_length": 0.15,
+    "brow_ridge": 0.2,
+    "eye_tilt": 0.55,
+    "eye_spacing": -0.1,
+    "brow_height": -0.25,
+    "brow_gap": -0.2,
+    "mouth_width": -0.15,
+    "cheek": 1.08
+   }
+  },
+  {
+   "id": "fv_smith",
+   "stance": "arms_crossed",
+   "props": [],
+   "params": {
+    "head_mode": "face",
+    "height": 1.8,
+    "build": 1.28,
+    "age": "adult",
+    "jaw": 1.18,
+    "cheek": 1.05,
+    "chin": 0.6,
+    "nose": 1.3,
+    "ear": 1.1,
+    "hair": "bald",
+    "hair_color": "ink",
+    "beard": "full",
+    "garment": "apron",
+    "garment_color": "umber_2",
+    "top_color": "stone_3",
+    "sleeves": "rolled",
+    "collar": "none",
+    "bottom_color": "umber_1",
+    "trouser_volume": 1.15,
+    "boots": "heavy",
+    "boot_color": "umber_0",
+    "belt": false,
+    "brows": "heavy",
+    "brow_tilt": 0.75,
+    "scar": true,
+    "eye_shape": "narrow",
+    "eye_color": "umber_2",
+    "skin": "skin_2",
+    "brow_color": "ink",
+    "lip_color": "skin_3",
+    "trim_color": "umber_0",
+    "accent_color": "stone_2",
+    "wear": 0.7,
+    "belly": 0.4,
+    "face_length": -0.45,
+    "brow_ridge": 1.0,
+    "nose_shape": "broad",
+    "eye_spacing": -0.45,
+    "eye_tilt": -0.15,
+    "brow_height": -0.85,
+    "brow_gap": -0.6,
+    "mouth_width": 0.3
+   }
+  },
+  {
+   "id": "fv_elder",
+   "stance": "stoop_cane",
+   "props": [
+    "cane"
+   ],
+   "params": {
+    "head_mode": "face",
+    "height": 1.52,
+    "build": 0.95,
+    "age": "elder",
+    "jaw": 0.92,
+    "cheek": 0.95,
+    "nose": 1.1,
+    "hair": "bun",
+    "hair_color": "stone_3",
+    "garment": "robe",
+    "hem": 0.92,
+    "garment_color": "leaf_1",
+    "trim_color": "straw_1",
+    "accent_color": "brick",
+    "collar": "shawl",
+    "collar_color": "berry",
+    "top_color": "cream",
+    "trouser_volume": 0.8,
+    "bottom_color": "leaf_0",
+    "boots": "shoes",
+    "boot_color": "umber_1",
+    "brows": "thin",
+    "brow_color": "stone_2",
+    "brow_tilt": 0.1,
+    "wrinkles": 0.85,
+    "eye_shape": "narrow",
+    "eye_color": "sky_0",
+    "skin": "skin_1",
+    "lip_color": "brick",
+    "wear": 0.4,
+    "face_length": 0.5,
+    "eye_spacing": 0.25,
+    "eye_tilt": -0.45,
+    "brow_height": 0.6,
+    "brow_gap": 0.5,
+    "mouth": "thin",
+    "mouth_width": -0.2,
+    "nose_shape": "straight",
+    "mole": true,
+    "part": 1.0
+   }
+  },
+  {
+   "id": "fv_scribe",
+   "stance": "reading",
+   "props": [
+    "book"
+   ],
+   "params": {
+    "head_mode": "face",
+    "height": 1.66,
+    "build": 0.92,
+    "age": "adult",
+    "jaw": 0.93,
+    "nose": 0.95,
+    "hair": "long",
+    "hair_color": "ink",
+    "part": -0.6,
+    "garment": "vest",
+    "garment_color": "brick",
+    "top_color": "cream",
+    "trim_color": "straw_0",
+    "accent_color": "straw_1",
+    "collar": "flat",
+    "collar_color": "cream",
+    "bottom_color": "stone_1",
+    "boots": "boots",
+    "boot_color": "umber_1",
+    "belt": true,
+    "belt_color": "umber_0",
+    "brows": "thin",
+    "brow_tilt": 0.25,
+    "eye_shape": "narrow",
+    "eye_color": "umber_2",
+    "lashes": true,
+    "skin": "skin_3",
+    "brow_color": "ink",
+    "lip_color": "brick",
+    "buttons": true,
+    "wear": 0.2,
+    "face_length": 0.25,
+    "cheek": 1.12,
+    "eye_tilt": 0.6,
+    "eye_spacing": -0.25,
+    "brow_height": 0.25,
+    "brow_gap": -0.1,
+    "mouth": "full",
+    "mouth_width": 0.25,
+    "nose_shape": "straight"
+   }
+  }
+ ],
+ "skin_ramps": {
+  "skin_0": [
+   "umber_1",
+   "skin_2",
+   "skin_1",
+   "skin_0",
+   "cream"
+  ],
+  "skin_1": [
+   "umber_0",
+   "skin_3",
+   "skin_2",
+   "skin_1",
+   "skin_0"
+  ],
+  "skin_2": [
+   "ink",
+   "umber_1",
+   "skin_3",
+   "skin_2",
+   "skin_1"
+  ],
+  "skin_3": [
+   "ink",
+   "umber_0",
+   "umber_1",
+   "skin_3",
+   "skin_2"
+  ]
+ }
+}

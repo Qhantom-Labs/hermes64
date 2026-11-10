@@ -1,0 +1,73 @@
+{
+  "format": "hermes64-room-plans/1",
+  "pack": "castle_keep",
+  "compiler": "medieval",
+  "context_pieces": [
+    {"key": "mter.ground__meadow_far", "block": [-4, -4], "kind": "floor"},
+    {"key": "mter.ground__meadow_far", "block": [0, -4], "kind": "floor"},
+    {"key": "mter.ground__meadow_far", "block": [4, -4], "kind": "floor"},
+    {"key": "mter.ground__meadow_far", "block": [-4, 0], "kind": "floor"},
+    {"key": "mter.ground__meadow_far", "block": [4, 0], "kind": "floor"},
+    {"key": "mter.ground__meadow_far", "block": [-4, 4], "kind": "floor"},
+    {"key": "mter.ground__meadow_far", "block": [0, 4], "kind": "floor"},
+    {"key": "mter.ground__meadow_far", "block": [4, 4], "kind": "floor"},
+    {"key": "mter.backdrop__mountains", "at_m": [8.5, 8.5], "scale": 0.2, "kind": "backdrop"},
+    {"key": "mnat.pine", "at_m": [21, 5]},
+    {"key": "mnat.rock__cluster", "at_m": [21, 15]},
+    {"key": "cst.keep__crenellated", "at_m": [8.5, -26], "kind": "landmark"},
+    {"key": "vlg.wall", "edge": [0, 0, "n"]}, {"key": "vlg.wall", "edge": [2, 0, "n"]}, {"key": "vlg.wall", "edge": [3, 0, "n"]},
+    {"key": "vlg.wall", "edge": [0, 3, "s"]}, {"key": "vlg.wall", "edge": [2, 3, "s"]}, {"key": "vlg.wall", "edge": [3, 3, "s"]}
+  ],
+  "common": {
+    "plot_cells": [4, 4], "protagonist": "hero", "exterior": true, "look_profile": "castle",
+    "camera": {"position": [15, 6, 19], "look_at": [8.5, 0.8, 8.5], "fov": 60},
+    "description": "A cobbled keep courtyard, its wide fighting floor framed by stone posterns and watchtowers."
+  },
+  "rooms": {
+    "gatehouse": {
+      "roles": ["opening"],
+      "plan": {
+        "name": "Keep Gatehouse",
+        "pieces": [{"key": "mter.ground__plaza_4", "block": [0, 0], "kind": "floor"}, {"key": "vlg.wall__postern", "edge": [1, 0, "n"]}, {"key": "mnat.pine", "at_m": [-7, 5]}],
+        "doors": [{"id": "forward", "side": "n", "cell": 1, "to_room": "outer_court", "to_door": "back", "label": "Enter the keep"}]
+      },
+      "anchors": {"hero_start": [6.5, 0, 14], "checkpoint": [6.5, 0, 13], "arena": {"min": [1, 0, 2], "max": [16, 4, 15]}, "spawns": [[4, 0, 5], [8, 0, 5], [12, 0, 5], [4, 0, 8], [8, 0, 8], [12, 0, 8], [4, 0, 11], [12, 0, 11]], "boss": [[4, 0, 5], [8, 0, 5], [12, 0, 5]], "captive": [14, 0, 1.5], "interact": [14, 0, 1.5]}
+    },
+    "outer_court": {
+      "roles": ["arena"],
+      "plan": {
+        "name": "Outer Court",
+        "pieces": [{"key": "mter.ground__plaza_4", "block": [0, 0], "kind": "floor"}, {"key": "vlg.wall__postern", "edge": [1, 0, "n"]}, {"key": "vlg.wall__postern", "edge": [1, 3, "s"]}, {"key": "mnat.pine", "at_m": [-7, 7]}],
+        "doors": [{"id": "back", "side": "s", "cell": 1, "to_room": "gatehouse", "to_door": "forward", "label": "Back to the gatehouse"}, {"id": "forward", "side": "n", "cell": 1, "to_room": "banner_court", "to_door": "back", "label": "On to the banners"}]
+      },
+      "anchors": {"hero_start": [6.5, 0, 14], "checkpoint": [6.5, 0, 13], "arena": {"min": [1, 0, 2], "max": [16, 4, 15]}, "spawns": [[4, 0, 5], [8, 0, 5], [12, 0, 5], [4, 0, 8], [8, 0, 8], [12, 0, 8], [4, 0, 11], [12, 0, 11]], "boss": [[4, 0, 5], [8, 0, 5], [12, 0, 5]], "captive": [14, 0, 1.5], "interact": [14, 0, 1.5]}
+    },
+    "banner_court": {
+      "roles": ["arena"],
+      "plan": {
+        "name": "Banner Court",
+        "pieces": [{"key": "mter.ground__plaza_4", "block": [0, 0], "kind": "floor"}, {"key": "vlg.wall__postern", "edge": [1, 0, "n"]}, {"key": "vlg.wall__postern", "edge": [1, 3, "s"]}, {"key": "mnat.pine", "at_m": [24, 7]}],
+        "doors": [{"id": "back", "side": "s", "cell": 1, "to_room": "outer_court", "to_door": "forward", "label": "Back to the outer court"}, {"id": "forward", "side": "n", "cell": 1, "to_room": "inner_court", "to_door": "back", "label": "On to the inner court"}]
+      },
+      "anchors": {"hero_start": [6.5, 0, 14], "checkpoint": [6.5, 0, 13], "arena": {"min": [1, 0, 2], "max": [16, 4, 15]}, "spawns": [[4, 0, 5], [8, 0, 5], [12, 0, 5], [4, 0, 8], [8, 0, 8], [12, 0, 8], [4, 0, 11], [12, 0, 11]], "boss": [[4, 0, 5], [8, 0, 5], [12, 0, 5]], "captive": [14, 0, 1.5], "interact": [14, 0, 1.5]}
+    },
+    "inner_court": {
+      "roles": ["arena"],
+      "plan": {
+        "name": "Inner Court",
+        "pieces": [{"key": "mter.ground__plaza_4", "block": [0, 0], "kind": "floor"}, {"key": "vlg.wall__postern", "edge": [1, 0, "n"]}, {"key": "vlg.wall__postern", "edge": [1, 3, "s"]}, {"key": "mnat.pine", "at_m": [-7, -4]}],
+        "doors": [{"id": "back", "side": "s", "cell": 1, "to_room": "banner_court", "to_door": "forward", "label": "Back to the banner court"}, {"id": "forward", "side": "n", "cell": 1, "to_room": "crown_court", "to_door": "back", "label": "On to the crown court"}]
+      },
+      "anchors": {"hero_start": [6.5, 0, 14], "checkpoint": [6.5, 0, 13], "arena": {"min": [1, 0, 2], "max": [16, 4, 15]}, "spawns": [[4, 0, 5], [8, 0, 5], [12, 0, 5], [4, 0, 8], [8, 0, 8], [12, 0, 8], [4, 0, 11], [12, 0, 11]], "boss": [[4, 0, 5], [8, 0, 5], [12, 0, 5]], "captive": [14, 0, 1.5], "interact": [14, 0, 1.5]}
+    },
+    "crown_court": {
+      "roles": ["finale"],
+      "plan": {
+        "name": "Crown Court",
+        "pieces": [{"key": "mter.ground__plaza_4", "block": [0, 0], "kind": "floor"}, {"key": "vlg.wall__postern", "edge": [1, 3, "s"]}, {"key": "mnat.pine", "at_m": [8.5, -7]}],
+        "doors": [{"id": "back", "side": "s", "cell": 1, "to_room": "inner_court", "to_door": "forward", "label": "Back to the inner court"}]
+      },
+      "anchors": {"hero_start": [6.5, 0, 14], "checkpoint": [6.5, 0, 13], "arena": {"min": [1, 0, 2], "max": [16, 4, 15]}, "spawns": [[4, 0, 5], [8, 0, 5], [12, 0, 5], [4, 0, 8], [8, 0, 8], [12, 0, 8], [4, 0, 11], [12, 0, 11]], "boss": [[4, 0, 5], [8, 0, 5], [12, 0, 5]], "captive": [14, 0, 1.5], "interact": [14, 0, 1.5]}
+    }
+  }
+}

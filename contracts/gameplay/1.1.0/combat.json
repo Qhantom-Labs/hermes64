@@ -1,0 +1,1412 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "config": {
+      "additionalProperties": false,
+      "properties": {
+        "max_simultaneous": {
+          "maximum": 3,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_simultaneous"
+      ],
+      "type": "object"
+    },
+    "entities": {
+      "additionalProperties": false,
+      "properties": {
+        "archetypes": {
+          "items": {
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "aggro_range_m": {
+                    "maximum": 64,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "attack": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "active_ticks": {
+                        "maximum": 120,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "damage": {
+                        "maximum": 64,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "recovery_ticks": {
+                        "maximum": 600,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "windup_ticks": {
+                        "maximum": 600,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "windup_ticks",
+                      "active_ticks",
+                      "recovery_ticks",
+                      "damage"
+                    ],
+                    "type": "object"
+                  },
+                  "attack_range_m": {
+                    "maximum": 8,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "fsm": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "initial": {
+                        "enum": [
+                          "idle"
+                        ]
+                      },
+                      "states": {
+                        "items": {
+                          "enum": [
+                            "idle",
+                            "approach",
+                            "telegraph",
+                            "attack",
+                            "recover",
+                            "hurt",
+                            "dead"
+                          ]
+                        },
+                        "maxItems": 7,
+                        "minItems": 7,
+                        "type": "array",
+                        "uniqueItems": true
+                      },
+                      "template": {
+                        "enum": [
+                          "melee_approach_v1",
+                          "melee_dash_v1"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "template",
+                      "initial",
+                      "states"
+                    ],
+                    "type": "object"
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "leash_range_m": {
+                    "maximum": 64,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "max_health": {
+                    "maximum": 64,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "name": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "speed_mps": {
+                    "maximum": 20,
+                    "minimum": 0.1,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "max_health",
+                  "speed_mps",
+                  "aggro_range_m",
+                  "leash_range_m",
+                  "attack_range_m",
+                  "fsm",
+                  "attack"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "aggro_range_m": {
+                    "maximum": 64,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "attack": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "active_ticks": {
+                        "maximum": 120,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "damage": {
+                        "maximum": 64,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "recovery_ticks": {
+                        "maximum": 600,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "windup_ticks": {
+                        "maximum": 600,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "windup_ticks",
+                      "active_ticks",
+                      "recovery_ticks",
+                      "damage"
+                    ],
+                    "type": "object"
+                  },
+                  "attack_range_m": {
+                    "maximum": 8,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "fsm": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "initial": {
+                        "enum": [
+                          "idle"
+                        ]
+                      },
+                      "states": {
+                        "items": {
+                          "enum": [
+                            "idle",
+                            "approach",
+                            "telegraph",
+                            "attack",
+                            "recover",
+                            "hurt",
+                            "dead"
+                          ]
+                        },
+                        "maxItems": 7,
+                        "minItems": 7,
+                        "type": "array",
+                        "uniqueItems": true
+                      },
+                      "template": {
+                        "enum": [
+                          "walker_patrol_v1"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "template",
+                      "initial",
+                      "states"
+                    ],
+                    "type": "object"
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "leash_range_m": {
+                    "maximum": 64,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "max_health": {
+                    "maximum": 64,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "name": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "robot": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "armor": {
+                        "enum": [
+                          "none",
+                          "until_recover"
+                        ]
+                      },
+                      "cue": {
+                        "oneOf": [
+                          {
+                            "maxLength": 96,
+                            "minLength": 3,
+                            "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+){1,5}$",
+                            "type": "string"
+                          },
+                          {
+                            "const": ""
+                          }
+                        ]
+                      },
+                      "heal_drop": {
+                        "maximum": 4,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "hitstop_ticks": {
+                        "maximum": 3,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "hurt_ticks": {
+                        "maximum": 60,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "knockback_m": {
+                        "maximum": 1.5,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "push_m": {
+                        "maximum": 1.5,
+                        "minimum": 0,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "hurt_ticks",
+                      "knockback_m",
+                      "push_m",
+                      "hitstop_ticks",
+                      "armor",
+                      "heal_drop",
+                      "cue"
+                    ],
+                    "type": "object"
+                  },
+                  "speed_mps": {
+                    "maximum": 20,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "walker": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "bump_speed_mps": {
+                        "maximum": 12,
+                        "minimum": 0.5,
+                        "type": "number"
+                      },
+                      "patrol_m": {
+                        "maximum": 8,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "spot_ticks": {
+                        "maximum": 60,
+                        "minimum": 0,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "patrol_m",
+                      "spot_ticks",
+                      "bump_speed_mps"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "max_health",
+                  "speed_mps",
+                  "aggro_range_m",
+                  "leash_range_m",
+                  "attack_range_m",
+                  "fsm",
+                  "attack",
+                  "robot",
+                  "walker"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "aggro_range_m": {
+                    "maximum": 64,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "attack": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "active_ticks": {
+                        "maximum": 120,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "damage": {
+                        "maximum": 64,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "recovery_ticks": {
+                        "maximum": 600,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "windup_ticks": {
+                        "maximum": 600,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "windup_ticks",
+                      "active_ticks",
+                      "recovery_ticks",
+                      "damage"
+                    ],
+                    "type": "object"
+                  },
+                  "attack_range_m": {
+                    "maximum": 8,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "brute": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "slam_radius_m": {
+                        "maximum": 4,
+                        "minimum": 0.3,
+                        "type": "number"
+                      },
+                      "wave_max_m": {
+                        "maximum": 12,
+                        "minimum": 0.5,
+                        "type": "number"
+                      },
+                      "wave_speed_mps": {
+                        "maximum": 12,
+                        "minimum": 0.5,
+                        "type": "number"
+                      },
+                      "wave_width_m": {
+                        "maximum": 2,
+                        "minimum": 0.1,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "slam_radius_m",
+                      "wave_speed_mps",
+                      "wave_max_m",
+                      "wave_width_m"
+                    ],
+                    "type": "object"
+                  },
+                  "fsm": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "initial": {
+                        "enum": [
+                          "idle"
+                        ]
+                      },
+                      "states": {
+                        "items": {
+                          "enum": [
+                            "idle",
+                            "approach",
+                            "telegraph",
+                            "attack",
+                            "recover",
+                            "hurt",
+                            "dead"
+                          ]
+                        },
+                        "maxItems": 7,
+                        "minItems": 7,
+                        "type": "array",
+                        "uniqueItems": true
+                      },
+                      "template": {
+                        "enum": [
+                          "brute_slam_v1"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "template",
+                      "initial",
+                      "states"
+                    ],
+                    "type": "object"
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "leash_range_m": {
+                    "maximum": 64,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "max_health": {
+                    "maximum": 64,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "name": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "robot": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "armor": {
+                        "enum": [
+                          "none",
+                          "until_recover"
+                        ]
+                      },
+                      "cue": {
+                        "oneOf": [
+                          {
+                            "maxLength": 96,
+                            "minLength": 3,
+                            "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+){1,5}$",
+                            "type": "string"
+                          },
+                          {
+                            "const": ""
+                          }
+                        ]
+                      },
+                      "heal_drop": {
+                        "maximum": 4,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "hitstop_ticks": {
+                        "maximum": 3,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "hurt_ticks": {
+                        "maximum": 60,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "knockback_m": {
+                        "maximum": 1.5,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "push_m": {
+                        "maximum": 1.5,
+                        "minimum": 0,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "hurt_ticks",
+                      "knockback_m",
+                      "push_m",
+                      "hitstop_ticks",
+                      "armor",
+                      "heal_drop",
+                      "cue"
+                    ],
+                    "type": "object"
+                  },
+                  "speed_mps": {
+                    "maximum": 20,
+                    "minimum": 0.1,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "max_health",
+                  "speed_mps",
+                  "aggro_range_m",
+                  "leash_range_m",
+                  "attack_range_m",
+                  "fsm",
+                  "attack",
+                  "robot",
+                  "brute"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "aggro_range_m": {
+                    "maximum": 64,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "attack": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "active_ticks": {
+                        "maximum": 120,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "damage": {
+                        "maximum": 64,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "recovery_ticks": {
+                        "maximum": 600,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "windup_ticks": {
+                        "maximum": 600,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "windup_ticks",
+                      "active_ticks",
+                      "recovery_ticks",
+                      "damage"
+                    ],
+                    "type": "object"
+                  },
+                  "attack_range_m": {
+                    "maximum": 8,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "fsm": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "initial": {
+                        "enum": [
+                          "idle"
+                        ]
+                      },
+                      "states": {
+                        "items": {
+                          "enum": [
+                            "idle",
+                            "approach",
+                            "telegraph",
+                            "attack",
+                            "recover",
+                            "hurt",
+                            "dead"
+                          ]
+                        },
+                        "maxItems": 7,
+                        "minItems": 7,
+                        "type": "array",
+                        "uniqueItems": true
+                      },
+                      "template": {
+                        "enum": [
+                          "hover_drone_v1"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "template",
+                      "initial",
+                      "states"
+                    ],
+                    "type": "object"
+                  },
+                  "hover": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "hover_m": {
+                        "maximum": 2,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "keep_distance_m": {
+                        "maximum": 12,
+                        "minimum": 0.5,
+                        "type": "number"
+                      },
+                      "shot": {
+                        "additionalProperties": false,
+                        "properties": {
+                          "deflectable": {
+                            "type": "boolean"
+                          },
+                          "lifetime_ticks": {
+                            "maximum": 600,
+                            "minimum": 1,
+                            "type": "integer"
+                          },
+                          "radius_m": {
+                            "maximum": 2,
+                            "minimum": 0.05,
+                            "type": "number"
+                          },
+                          "speed_mps": {
+                            "maximum": 20,
+                            "minimum": 0.5,
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "speed_mps",
+                          "radius_m",
+                          "lifetime_ticks",
+                          "deflectable"
+                        ],
+                        "type": "object"
+                      },
+                      "strafe_mps": {
+                        "maximum": 8,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "strafe_ticks": {
+                        "maximum": 600,
+                        "minimum": 1,
+                        "type": "integer"
+                      }
+                    },
+                    "required": [
+                      "keep_distance_m",
+                      "strafe_mps",
+                      "strafe_ticks",
+                      "hover_m",
+                      "shot"
+                    ],
+                    "type": "object"
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "leash_range_m": {
+                    "maximum": 64,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "max_health": {
+                    "maximum": 64,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "name": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "robot": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "armor": {
+                        "enum": [
+                          "none",
+                          "until_recover"
+                        ]
+                      },
+                      "cue": {
+                        "oneOf": [
+                          {
+                            "maxLength": 96,
+                            "minLength": 3,
+                            "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+){1,5}$",
+                            "type": "string"
+                          },
+                          {
+                            "const": ""
+                          }
+                        ]
+                      },
+                      "heal_drop": {
+                        "maximum": 4,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "hitstop_ticks": {
+                        "maximum": 3,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "hurt_ticks": {
+                        "maximum": 60,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "knockback_m": {
+                        "maximum": 1.5,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "push_m": {
+                        "maximum": 1.5,
+                        "minimum": 0,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "hurt_ticks",
+                      "knockback_m",
+                      "push_m",
+                      "hitstop_ticks",
+                      "armor",
+                      "heal_drop",
+                      "cue"
+                    ],
+                    "type": "object"
+                  },
+                  "speed_mps": {
+                    "maximum": 20,
+                    "minimum": 0.1,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "max_health",
+                  "speed_mps",
+                  "aggro_range_m",
+                  "leash_range_m",
+                  "attack_range_m",
+                  "fsm",
+                  "attack",
+                  "robot",
+                  "hover"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "aggro_range_m": {
+                    "maximum": 64,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "attack_range_m": {
+                    "maximum": 8,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "boss": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "defeat_hitstop_ticks": {
+                        "maximum": 6,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "patterns": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "active_ticks": {
+                              "maximum": 120,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "count": {
+                              "maximum": 5,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "cue": {
+                              "oneOf": [
+                                {
+                                  "maxLength": 96,
+                                  "minLength": 3,
+                                  "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+){1,5}$",
+                                  "type": "string"
+                                },
+                                {
+                                  "const": ""
+                                }
+                              ]
+                            },
+                            "damage": {
+                              "maximum": 64,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "deflectable": {
+                              "type": "boolean"
+                            },
+                            "id": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            },
+                            "kind": {
+                              "enum": [
+                                "bump",
+                                "slam",
+                                "shot",
+                                "surge"
+                              ]
+                            },
+                            "recovery_ticks": {
+                              "maximum": 600,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "size_m": {
+                              "maximum": 12,
+                              "minimum": 0.05,
+                              "type": "number"
+                            },
+                            "speed_mps": {
+                              "maximum": 20,
+                              "minimum": 0.5,
+                              "type": "number"
+                            },
+                            "windup_ticks": {
+                              "maximum": 600,
+                              "minimum": 1,
+                              "type": "integer"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "kind",
+                            "windup_ticks",
+                            "active_ticks",
+                            "recovery_ticks",
+                            "damage",
+                            "speed_mps",
+                            "size_m",
+                            "count",
+                            "deflectable",
+                            "cue"
+                          ],
+                          "type": "object"
+                        },
+                        "maxItems": 8,
+                        "minItems": 1,
+                        "type": "array"
+                      },
+                      "phases": {
+                        "items": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "health_permille": {
+                              "maximum": 1000,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "id": {
+                              "maxLength": 64,
+                              "minLength": 1,
+                              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                              "type": "string"
+                            },
+                            "patterns": {
+                              "items": {
+                                "maxLength": 64,
+                                "minLength": 1,
+                                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                                "type": "string"
+                              },
+                              "maxItems": 8,
+                              "minItems": 0,
+                              "type": "array"
+                            }
+                          },
+                          "required": [
+                            "id",
+                            "health_permille",
+                            "patterns"
+                          ],
+                          "type": "object"
+                        },
+                        "maxItems": 4,
+                        "minItems": 1,
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "phases",
+                      "patterns",
+                      "defeat_hitstop_ticks"
+                    ],
+                    "type": "object"
+                  },
+                  "fsm": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "initial": {
+                        "enum": [
+                          "idle"
+                        ]
+                      },
+                      "states": {
+                        "items": {
+                          "enum": [
+                            "idle",
+                            "approach",
+                            "telegraph",
+                            "attack",
+                            "recover",
+                            "hurt",
+                            "dead"
+                          ]
+                        },
+                        "maxItems": 7,
+                        "minItems": 7,
+                        "type": "array",
+                        "uniqueItems": true
+                      },
+                      "template": {
+                        "enum": [
+                          "boss_phases_v1"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "template",
+                      "initial",
+                      "states"
+                    ],
+                    "type": "object"
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "leash_range_m": {
+                    "maximum": 64,
+                    "minimum": 0.1,
+                    "type": "number"
+                  },
+                  "max_health": {
+                    "maximum": 64,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "name": {
+                    "maxLength": 256,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "robot": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "armor": {
+                        "enum": [
+                          "none",
+                          "until_recover"
+                        ]
+                      },
+                      "cue": {
+                        "oneOf": [
+                          {
+                            "maxLength": 96,
+                            "minLength": 3,
+                            "pattern": "^[a-z][a-z0-9_]*(\\.[a-z0-9_]+){1,5}$",
+                            "type": "string"
+                          },
+                          {
+                            "const": ""
+                          }
+                        ]
+                      },
+                      "heal_drop": {
+                        "maximum": 4,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "hitstop_ticks": {
+                        "maximum": 3,
+                        "minimum": 0,
+                        "type": "integer"
+                      },
+                      "hurt_ticks": {
+                        "maximum": 60,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "knockback_m": {
+                        "maximum": 1.5,
+                        "minimum": 0,
+                        "type": "number"
+                      },
+                      "push_m": {
+                        "maximum": 1.5,
+                        "minimum": 0,
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "hurt_ticks",
+                      "knockback_m",
+                      "push_m",
+                      "hitstop_ticks",
+                      "armor",
+                      "heal_drop",
+                      "cue"
+                    ],
+                    "type": "object"
+                  },
+                  "speed_mps": {
+                    "maximum": 20,
+                    "minimum": 0.1,
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "max_health",
+                  "speed_mps",
+                  "aggro_range_m",
+                  "leash_range_m",
+                  "attack_range_m",
+                  "fsm",
+                  "robot",
+                  "boss"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "type": "array"
+        },
+        "encounters": {
+          "items": {
+            "oneOf": [
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "arena": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "max": {
+                        "items": {
+                          "maximum": 1024,
+                          "minimum": -1024,
+                          "type": "number"
+                        },
+                        "maxItems": 3,
+                        "minItems": 3,
+                        "type": "array"
+                      },
+                      "min": {
+                        "items": {
+                          "maximum": 1024,
+                          "minimum": -1024,
+                          "type": "number"
+                        },
+                        "maxItems": 3,
+                        "minItems": 3,
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "min",
+                      "max"
+                    ],
+                    "type": "object"
+                  },
+                  "double_ko": {
+                    "enum": [
+                      "failure"
+                    ]
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "lose": {
+                    "enum": [
+                      "player_health_zero"
+                    ]
+                  },
+                  "room": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "spawns": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "archetype": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "id": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "position_m": {
+                          "items": {
+                            "maximum": 1024,
+                            "minimum": -1024,
+                            "type": "number"
+                          },
+                          "maxItems": 3,
+                          "minItems": 3,
+                          "type": "array"
+                        },
+                        "wave": {
+                          "maximum": 7,
+                          "minimum": 0,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "archetype",
+                        "position_m",
+                        "wave"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 24,
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "win": {
+                    "enum": [
+                      "all_spawns_defeated"
+                    ]
+                  }
+                },
+                "required": [
+                  "id",
+                  "room",
+                  "arena",
+                  "spawns",
+                  "win",
+                  "lose",
+                  "double_ko"
+                ],
+                "type": "object"
+              },
+              {
+                "additionalProperties": false,
+                "properties": {
+                  "arena": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "max": {
+                        "items": {
+                          "maximum": 1024,
+                          "minimum": -1024,
+                          "type": "number"
+                        },
+                        "maxItems": 3,
+                        "minItems": 3,
+                        "type": "array"
+                      },
+                      "min": {
+                        "items": {
+                          "maximum": 1024,
+                          "minimum": -1024,
+                          "type": "number"
+                        },
+                        "maxItems": 3,
+                        "minItems": 3,
+                        "type": "array"
+                      }
+                    },
+                    "required": [
+                      "min",
+                      "max"
+                    ],
+                    "type": "object"
+                  },
+                  "boss": {
+                    "oneOf": [
+                      {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                        "type": "string"
+                      },
+                      {
+                        "const": ""
+                      }
+                    ]
+                  },
+                  "double_ko": {
+                    "enum": [
+                      "failure"
+                    ]
+                  },
+                  "gate": {
+                    "oneOf": [
+                      {
+                        "maxLength": 64,
+                        "minLength": 1,
+                        "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                        "type": "string"
+                      },
+                      {
+                        "const": ""
+                      }
+                    ]
+                  },
+                  "id": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "lose": {
+                    "enum": [
+                      "player_health_zero"
+                    ]
+                  },
+                  "room": {
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                    "type": "string"
+                  },
+                  "spawns": {
+                    "items": {
+                      "additionalProperties": false,
+                      "properties": {
+                        "archetype": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "id": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "position_m": {
+                          "items": {
+                            "maximum": 1024,
+                            "minimum": -1024,
+                            "type": "number"
+                          },
+                          "maxItems": 3,
+                          "minItems": 3,
+                          "type": "array"
+                        },
+                        "wave": {
+                          "maximum": 7,
+                          "minimum": 0,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "archetype",
+                        "position_m",
+                        "wave"
+                      ],
+                      "type": "object"
+                    },
+                    "maxItems": 24,
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  "win": {
+                    "enum": [
+                      "all_spawns_defeated"
+                    ]
+                  }
+                },
+                "required": [
+                  "id",
+                  "room",
+                  "arena",
+                  "spawns",
+                  "win",
+                  "lose",
+                  "double_ko",
+                  "boss",
+                  "gate"
+                ],
+                "type": "object"
+              }
+            ]
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "archetypes",
+        "encounters"
+      ],
+      "type": "object"
+    },
+    "id": {
+      "const": "combat"
+    },
+    "version": {
+      "const": "1.1.0"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "config",
+    "entities"
+  ],
+  "type": "object"
+}

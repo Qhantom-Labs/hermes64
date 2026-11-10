@@ -1,0 +1,2307 @@
+{
+ "connectors": [
+  {
+   "a": "street_end",
+   "b": "street_end",
+   "rule": "same world point, opposite facing, width 12 m"
+  },
+  {
+   "a": "door",
+   "b": "cyroom.portal",
+   "rule": "door socket matches normal room doorway anchor"
+  },
+  {
+   "a": "shopfront",
+   "b": "wall_mount",
+   "rule": "frontage-mounted signs face the street"
+  },
+  {
+   "a": "roof",
+   "b": "roof",
+   "rule": "match up/down datum and footprint"
+  }
+ ],
+ "format": 1,
+ "grid": {
+  "cell_m": 4.0,
+  "curb_m": 0.15,
+  "doorway_m": [
+   2.0,
+   3.0
+  ],
+  "road_m": 8.0,
+  "room_storey_m": 4.5,
+  "sidewalk_m": 2.0,
+  "storey_m": 4.0,
+  "street_m": 12.0,
+  "wall_inset_m": 0.5
+ },
+ "pieces": {
+  "cydress.ac": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cydress.ac",
+   "sockets": [],
+   "tris": 42
+  },
+  "cydress.awning": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture_large",
+   "id": "cydress.awning",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0376,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 52
+  },
+  "cydress.barrel": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cydress.barrel",
+   "sockets": [],
+   "tris": 126
+  },
+  "cydress.bench": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cydress.bench",
+   "sockets": [],
+   "tris": 112
+  },
+  "cydress.bin": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cydress.bin",
+   "sockets": [],
+   "tris": 64
+  },
+  "cydress.bollard": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cydress.bollard",
+   "sockets": [],
+   "tris": 48
+  },
+  "cydress.cart": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cydress.cart",
+   "sockets": [],
+   "tris": 148
+  },
+  "cydress.crates": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cydress.crates",
+   "sockets": [],
+   "tris": 84
+  },
+  "cydress.cup": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "id": "cydress.cup",
+   "sockets": [],
+   "tris": 58
+  },
+  "cydress.pipe_elbow": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cydress.pipe_elbow",
+   "sockets": [],
+   "tris": 84
+  },
+  "cydress.shutter": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "id": "cydress.shutter",
+   "sockets": [],
+   "tris": 86
+  },
+  "cydress.speaker": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cydress.speaker",
+   "sockets": [],
+   "tris": 32
+  },
+  "cydress.traffic_signal": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cydress.traffic_signal",
+   "sockets": [],
+   "tris": 66
+  },
+  "cydress.water_tank": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cydress.water_tank",
+   "sockets": [],
+   "tris": 94
+  },
+  "cyroom.apartment": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cyroom.apartment",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 648
+  },
+  "cyroom.bar": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "id": "cyroom.bar",
+   "sockets": [],
+   "tris": 58
+  },
+  "cyroom.bed": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cyroom.bed",
+   "sockets": [],
+   "tris": 112
+  },
+  "cyroom.booth": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cyroom.booth",
+   "sockets": [],
+   "tris": 152
+  },
+  "cyroom.canopy": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cyroom.canopy",
+   "sockets": [],
+   "tris": 86
+  },
+  "cyroom.chair": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cyroom.chair",
+   "sockets": [],
+   "tris": 98
+  },
+  "cyroom.chair__captive": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cyroom.chair",
+   "sockets": [],
+   "tris": 174
+  },
+  "cyroom.club": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cyroom.club",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 680
+  },
+  "cyroom.club__arena": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    5,
+    5
+   ],
+   "class": "shell",
+   "id": "cyroom.club",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      -9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 1046
+  },
+  "cyroom.den": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cyroom.den",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 676
+  },
+  "cyroom.desk": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cyroom.desk",
+   "sockets": [],
+   "tris": 144
+  },
+  "cyroom.desk__single": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cyroom.desk",
+   "sockets": [],
+   "tris": 114
+  },
+  "cyroom.lobby": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cyroom.lobby",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 704
+  },
+  "cyroom.locker": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cyroom.locker",
+   "sockets": [],
+   "tris": 148
+  },
+  "cyroom.platform": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    3
+   ],
+   "class": "shell",
+   "id": "cyroom.platform",
+   "sockets": [],
+   "tris": 32
+  },
+  "cyroom.portal": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "id": "cyroom.portal",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 88
+  },
+  "cyroom.rooftop": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cyroom.rooftop",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 492
+  },
+  "cyroom.rooftop__tower": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    5,
+    5
+   ],
+   "class": "shell",
+   "id": "cyroom.rooftop",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 702
+  },
+  "cyroom.server": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cyroom.server",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 648
+  },
+  "cyroom.server__arena": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    5,
+    5
+   ],
+   "class": "shell",
+   "id": "cyroom.server",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      -9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 1072
+  },
+  "cyroom.sofa": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cyroom.sofa",
+   "sockets": [],
+   "tris": 140
+  },
+  "cyroom.subway": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cyroom.subway",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 706
+  },
+  "cyroom.subway__arena": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    5,
+    4
+   ],
+   "class": "shell",
+   "id": "cyroom.subway",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "position": [
+      -2.0,
+      0.0,
+      -7.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "height_m": 3.0,
+     "position": [
+      -2.0,
+      0.0,
+      7.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 1026
+  },
+  "cyroom.train": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "id": "cyroom.train",
+   "sockets": [],
+   "tris": 56
+  },
+  "cyroom.train__carriage": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "id": "cyroom.train",
+   "sockets": [],
+   "tris": 172
+  },
+  "cyroom.turnstile": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cyroom.turnstile",
+   "sockets": [],
+   "tris": 66
+  },
+  "cysign.adpanel": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cysign.adpanel",
+   "sockets": [],
+   "tris": 90
+  },
+  "cysign.arcade": {
+   "anchor": "shop_slot",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "building",
+   "id": "cysign.arcade",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      -0.0141,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    }
+   ],
+   "tris": 244
+  },
+  "cysign.banner": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture",
+   "id": "cysign.banner",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      -0.22,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 56
+  },
+  "cysign.billboard": {
+   "anchor": "roof",
+   "cells": null,
+   "class": "arch",
+   "id": "cysign.billboard",
+   "sockets": [
+    {
+     "facing": "down",
+     "footprint_m": 8.0,
+     "position": [
+      0.0,
+      0.019,
+      -0.0442
+     ],
+     "type": "roof"
+    }
+   ],
+   "tris": 228
+  },
+  "cysign.blade": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture_large",
+   "id": "cysign.blade",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 96
+  },
+  "cysign.clinic": {
+   "anchor": "shop_slot",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "building",
+   "id": "cysign.clinic",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      -0.005,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    }
+   ],
+   "tris": 208
+  },
+  "cysign.frame": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture",
+   "id": "cysign.frame",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 42
+  },
+  "cysign.frame__amber": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture",
+   "id": "cysign.frame",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 42
+  },
+  "cysign.frame__magenta": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture",
+   "id": "cysign.frame",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 42
+  },
+  "cysign.holo": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cysign.holo",
+   "sockets": [],
+   "tris": 158
+  },
+  "cysign.hotel": {
+   "anchor": "shop_slot",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "building",
+   "id": "cysign.hotel",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    }
+   ],
+   "tris": 260
+  },
+  "cysign.noodle": {
+   "anchor": "shop_slot",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "building",
+   "id": "cysign.noodle",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    }
+   ],
+   "tris": 414
+  },
+  "cysign.pawn": {
+   "anchor": "shop_slot",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "building",
+   "id": "cysign.pawn",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      -0.04,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    }
+   ],
+   "tris": 326
+  },
+  "cysign.roof": {
+   "anchor": "roof",
+   "cells": null,
+   "class": "arch",
+   "id": "cysign.roof",
+   "sockets": [
+    {
+     "facing": "down",
+     "footprint_m": 9.8,
+     "position": [
+      0.0,
+      0.0309,
+      0.5582
+     ],
+     "type": "roof"
+    }
+   ],
+   "tris": 194
+  },
+  "cysign.ticker": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "arch",
+   "id": "cysign.ticker",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 40
+  },
+  "cysign.tube": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture",
+   "id": "cysign.tube",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 156
+  },
+  "cysky.airship": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "id": "cysky.airship",
+   "sockets": [],
+   "tris": 100
+  },
+  "cysky.arch": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.arch",
+   "sockets": [],
+   "tris": 32
+  },
+  "cysky.cargo": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "id": "cysky.cargo",
+   "sockets": [],
+   "tris": 96
+  },
+  "cysky.corner": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.corner",
+   "sockets": [],
+   "tris": 64
+  },
+  "cysky.courier": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "id": "cysky.courier",
+   "sockets": [],
+   "tris": 40
+  },
+  "cysky.far": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.far",
+   "sockets": [],
+   "tris": 32
+  },
+  "cysky.far__tile": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.far",
+   "sockets": [],
+   "tris": 32
+  },
+  "cysky.halocard": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.halocard",
+   "sockets": [],
+   "tris": 20
+  },
+  "cysky.hololine": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.hololine",
+   "sockets": [],
+   "tris": 2
+  },
+  "cysky.megatower": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cysky.megatower",
+   "sockets": [],
+   "tris": 184
+  },
+  "cysky.near": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.near",
+   "sockets": [],
+   "tris": 32
+  },
+  "cysky.near__low": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.near",
+   "sockets": [],
+   "tris": 32
+  },
+  "cysky.near__tile": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.near",
+   "sockets": [],
+   "tris": 32
+  },
+  "cysky.needle": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.needle",
+   "sockets": [],
+   "tris": 40
+  },
+  "cysky.needle__low": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.needle",
+   "sockets": [],
+   "tris": 40
+  },
+  "cysky.needle__tile": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.needle",
+   "sockets": [],
+   "tris": 40
+  },
+  "cysky.network": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.network",
+   "sockets": [],
+   "tris": 10
+  },
+  "cysky.shuttle": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "id": "cysky.shuttle",
+   "sockets": [],
+   "tris": 40
+  },
+  "cysky.stepped": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.stepped",
+   "sockets": [],
+   "tris": 48
+  },
+  "cysky.stepped__low": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.stepped",
+   "sockets": [],
+   "tris": 48
+  },
+  "cysky.stepped__tile": {
+   "anchor": "free",
+   "cells": null,
+   "class": "sky",
+   "id": "cysky.stepped",
+   "sockets": [],
+   "tris": 48
+  },
+  "cystreet.alley": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    2
+   ],
+   "class": "shell",
+   "id": "cystreet.alley",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "alley_end",
+     "width_m": 4.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "alley_end",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 172
+  },
+  "cystreet.bridge": {
+   "anchor": "street_span",
+   "cells": null,
+   "class": "structure",
+   "id": "cystreet.bridge",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "span_m": 14.0,
+     "type": "street_span"
+    }
+   ],
+   "tris": 114
+  },
+  "cystreet.corner": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cystreet.corner",
+   "sockets": [
+    {
+     "facing": "e",
+     "position": [
+      6.0,
+      0.0,
+      0.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      6.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    }
+   ],
+   "tris": 108
+  },
+  "cystreet.crossing": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cystreet.crossing",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -6.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      6.0,
+      0.0,
+      0.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      6.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -6.0,
+      0.0,
+      0.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    }
+   ],
+   "tris": 198
+  },
+  "cystreet.elevated": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    2
+   ],
+   "class": "structure",
+   "id": "cystreet.elevated",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      7.0,
+      -4.0
+     ],
+     "type": "deck_end",
+     "width_m": 12.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      7.0,
+      4.0
+     ],
+     "type": "deck_end",
+     "width_m": 12.0
+    }
+   ],
+   "tris": 194
+  },
+  "cystreet.end": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "shell",
+   "id": "cystreet.end",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    }
+   ],
+   "tris": 254
+  },
+  "cystreet.metro": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    3
+   ],
+   "class": "structure",
+   "id": "cystreet.metro",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.3225
+     ],
+     "type": "metro_top",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      -4.0,
+      4.6775
+     ],
+     "type": "metro_bottom",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 310
+  },
+  "cystreet.plaza": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "id": "cystreet.plaza",
+   "sockets": [],
+   "tris": 144
+  },
+  "cystreet.rail": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    2
+   ],
+   "class": "structure",
+   "id": "cystreet.rail",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      9.0,
+      -4.0
+     ],
+     "type": "rail_end"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      9.0,
+      4.0
+     ],
+     "type": "rail_end"
+    }
+   ],
+   "tris": 98
+  },
+  "cystreet.ramp": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    2
+   ],
+   "class": "structure",
+   "id": "cystreet.ramp",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      3.9
+     ],
+     "type": "ramp_foot",
+     "width_m": 4.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      1.5,
+      -3.9
+     ],
+     "type": "ramp_head",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 112
+  },
+  "cystreet.road": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    2
+   ],
+   "class": "shell",
+   "id": "cystreet.road",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    }
+   ],
+   "tris": 78
+  },
+  "cystreet.road__long": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cystreet.road",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -6.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      6.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    }
+   ],
+   "tris": 100
+  },
+  "cystreet.road__short": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "shell",
+   "id": "cystreet.road",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    }
+   ],
+   "tris": 60
+  },
+  "cystreet.sidewalk": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "id": "cystreet.sidewalk",
+   "sockets": [],
+   "tris": 20
+  },
+  "cystreet.sidewalk__strip": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    1
+   ],
+   "class": "shell",
+   "id": "cystreet.sidewalk",
+   "sockets": [],
+   "tris": 20
+  },
+  "cystreet.sidewalk__strip2": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "shell",
+   "id": "cystreet.sidewalk",
+   "sockets": [],
+   "tris": 20
+  },
+  "cystreet.stairs": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    2
+   ],
+   "class": "structure",
+   "id": "cystreet.stairs",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      1.92
+     ],
+     "type": "stair_foot",
+     "width_m": 4.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      3.0,
+      -1.92
+     ],
+     "type": "stair_head",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 260
+  },
+  "cystreet.tee": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "id": "cystreet.tee",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -6.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      6.0,
+      0.0,
+      0.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      6.0
+     ],
+     "type": "street_end",
+     "width_m": 12.0
+    }
+   ],
+   "tris": 152
+  },
+  "cystreet.walkway": {
+   "anchor": "wall_face",
+   "cells": [
+    2,
+    0
+   ],
+   "class": "structure",
+   "id": "cystreet.walkway",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      4.6,
+      0.0
+     ],
+     "type": "wall_mount"
+    },
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      4.6,
+      1.0
+     ],
+     "type": "walkway_end"
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      4.6,
+      1.0
+     ],
+     "type": "walkway_end"
+    }
+   ],
+   "tris": 174
+  },
+  "cytech.antenna": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.antenna",
+   "sockets": [],
+   "tris": 204
+  },
+  "cytech.barrier": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.barrier",
+   "sockets": [],
+   "tris": 30
+  },
+  "cytech.bike": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "id": "cytech.bike",
+   "sockets": [],
+   "tris": 380
+  },
+  "cytech.cables": {
+   "anchor": "street_span",
+   "cells": null,
+   "class": "structure",
+   "id": "cytech.cables",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "span_m": 12.0,
+     "type": "street_span"
+    }
+   ],
+   "tris": 328
+  },
+  "cytech.camera": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "prop",
+   "id": "cytech.camera",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 80
+  },
+  "cytech.charger": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.charger",
+   "sockets": [],
+   "tris": 138
+  },
+  "cytech.conduit": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "structure",
+   "id": "cytech.conduit",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 228
+  },
+  "cytech.drone": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.drone",
+   "sockets": [],
+   "tris": 232
+  },
+  "cytech.hovercar": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "id": "cytech.hovercar",
+   "sockets": [],
+   "tris": 368
+  },
+  "cytech.hovercar__taxi": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "id": "cytech.hovercar",
+   "sockets": [],
+   "tris": 402
+  },
+  "cytech.hovercar__van": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "id": "cytech.hovercar",
+   "sockets": [],
+   "tris": 340
+  },
+  "cytech.puddle": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.puddle",
+   "sockets": [],
+   "tris": 14
+  },
+  "cytech.rack": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.rack",
+   "sockets": [],
+   "tris": 76
+  },
+  "cytech.rack__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.rack",
+   "sockets": [],
+   "tris": 126
+  },
+  "cytech.street_light": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cytech.street_light",
+   "sockets": [],
+   "tris": 106
+  },
+  "cytech.street_light__double": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cytech.street_light",
+   "sockets": [],
+   "tris": 164
+  },
+  "cytech.terminal": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.terminal",
+   "sockets": [],
+   "tris": 60
+  },
+  "cytech.utility": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.utility",
+   "sockets": [],
+   "tris": 72
+  },
+  "cytech.vending": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.vending",
+   "sockets": [],
+   "tris": 90
+  },
+  "cytech.vent": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytech.vent",
+   "sockets": [],
+   "tris": 86
+  },
+  "cytower.annex": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "building",
+   "id": "cytower.annex",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      -0.305,
+      9.6,
+      -0.305
+     ],
+     "type": "roof"
+    }
+   ],
+   "tris": 264
+  },
+  "cytower.arch": {
+   "anchor": "street_span",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.arch",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "span_m": 16.0,
+     "type": "street_span"
+    }
+   ],
+   "tris": 240
+  },
+  "cytower.arch__low": {
+   "anchor": "street_span",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.arch",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "span_m": 16.0,
+     "type": "street_span"
+    }
+   ],
+   "tris": 144
+  },
+  "cytower.balcony": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture",
+   "id": "cytower.balcony",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "wall_mount"
+    }
+   ],
+   "tris": 204
+  },
+  "cytower.crown": {
+   "anchor": "roof",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.crown",
+   "sockets": [
+    {
+     "facing": "down",
+     "footprint_m": 5.4,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "roof"
+    }
+   ],
+   "tris": 204
+  },
+  "cytower.drum": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.drum",
+   "sockets": [],
+   "tris": 474
+  },
+  "cytower.drum__dome": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.drum",
+   "sockets": [],
+   "tris": 394
+  },
+  "cytower.facade": {
+   "anchor": "cell_edge",
+   "cells": [
+    3,
+    0
+   ],
+   "class": "shell",
+   "id": "cytower.facade",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      -2.0,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      3.8,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "position": [
+      -2.0,
+      5.0,
+      0.0
+     ],
+     "type": "sign_wall"
+    },
+    {
+     "facing": "s",
+     "position": [
+      2.0,
+      5.0,
+      0.0
+     ],
+     "type": "sign_wall"
+    },
+    {
+     "facing": "up",
+     "length_m": 12.0,
+     "position": [
+      0.0,
+      24.6,
+      0.0
+     ],
+     "type": "roof_edge"
+    }
+   ],
+   "tris": 578
+  },
+  "cytower.facade__canyon": {
+   "anchor": "cell_edge",
+   "cells": [
+    3,
+    0
+   ],
+   "class": "shell",
+   "id": "cytower.facade",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      -2.0,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      3.8,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "position": [
+      -2.0,
+      5.0,
+      0.0
+     ],
+     "type": "sign_wall"
+    },
+    {
+     "facing": "s",
+     "position": [
+      2.0,
+      5.0,
+      0.0
+     ],
+     "type": "sign_wall"
+    },
+    {
+     "facing": "up",
+     "length_m": 12.0,
+     "position": [
+      0.0,
+      20.6,
+      0.0
+     ],
+     "type": "roof_edge"
+    }
+   ],
+   "tris": 312
+  },
+  "cytower.facade__shops": {
+   "anchor": "cell_edge",
+   "cells": [
+    3,
+    0
+   ],
+   "class": "shell",
+   "id": "cytower.facade",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      -2.0,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "height_m": 3.7,
+     "position": [
+      3.8,
+      0.0,
+      0.0
+     ],
+     "type": "shopfront",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "position": [
+      -2.0,
+      5.0,
+      0.0
+     ],
+     "type": "sign_wall"
+    },
+    {
+     "facing": "s",
+     "position": [
+      2.0,
+      5.0,
+      0.0
+     ],
+     "type": "sign_wall"
+    },
+    {
+     "facing": "up",
+     "length_m": 12.0,
+     "position": [
+      0.0,
+      12.6,
+      0.0
+     ],
+     "type": "roof_edge"
+    }
+   ],
+   "tris": 290
+  },
+  "cytower.garden": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "furniture_large",
+   "id": "cytower.garden",
+   "sockets": [
+    {
+     "facing": "down",
+     "footprint_m": 6.0,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "roof"
+    }
+   ],
+   "tris": 392
+  },
+  "cytower.garden__small": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "furniture_large",
+   "id": "cytower.garden",
+   "sockets": [
+    {
+     "facing": "down",
+     "footprint_m": 4.0,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "roof"
+    }
+   ],
+   "tris": 232
+  },
+  "cytower.needle": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.needle",
+   "sockets": [],
+   "tris": 440
+  },
+  "cytower.setback": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.setback",
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 7.92,
+     "position": [
+      0.0,
+      29.5,
+      -1.2
+     ],
+     "type": "roof"
+    }
+   ],
+   "tris": 280
+  },
+  "cytower.setback__halo": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.setback",
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 7.92,
+     "position": [
+      0.0,
+      21.5,
+      -1.2
+     ],
+     "type": "roof"
+    }
+   ],
+   "tris": 336
+  },
+  "cytower.skybridge": {
+   "anchor": "street_span",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.skybridge",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.3,
+      0.0
+     ],
+     "span_m": 12.0,
+     "type": "street_span"
+    }
+   ],
+   "tris": 124
+  },
+  "cytower.spire": {
+   "anchor": "roof",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.spire",
+   "sockets": [
+    {
+     "facing": "down",
+     "footprint_m": 2.6,
+     "position": [
+      0.011,
+      0.0049,
+      0.0735
+     ],
+     "type": "roof"
+    }
+   ],
+   "tris": 404
+  },
+  "cytower.stack": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.stack",
+   "sockets": [],
+   "tris": 358
+  },
+  "cytower.twin": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.twin",
+   "sockets": [],
+   "tris": 400
+  },
+  "cytower.wedge": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "id": "cytower.wedge",
+   "sockets": [],
+   "tris": 162
+  }
+ }
+}

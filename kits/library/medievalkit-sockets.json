@@ -1,0 +1,4865 @@
+{
+ "anchors": {
+  "ceiling_hook": "origin on the ceiling hook (chandeliers, hanging lanterns hang down)",
+  "cell_block_centre": "origin on the centre of the cell block at floor level (rooms, halls, ceilings, fields)",
+  "cell_centre": "origin on one cell's centre at floor level (ground tiles, bridges, stairs, cells, water)",
+  "cell_corner": "origin on a cell corner (towers; the castle gate block centred on a corner between two edges)",
+  "cell_edge": "origin on a cell boundary line at floor level; the piece runs along X and faces its front (+Z)",
+  "door_anchor": "origin on the room.gd door anchor: 0.4 m in from the room edge = 0.1 m behind the boundary",
+  "free": "footprint-centred free prop (any position on the floor)",
+  "gate_anchor": "origin on a gatehouse portcullis / drawbridge socket",
+  "lot_centre": "origin on the centre of a building lot (lot_m in meta, door socket on the street side, +Z)",
+  "wall_face": "origin on a wall's inner face at floor level (banners, shields, shelves, sconces, hearths)"
+ },
+ "connectors": [
+  {
+   "a": "door",
+   "b": "vlg.doorway",
+   "rule": "a room / building door socket takes exactly one vlg.doorway frame (room.gd places it from the room's door data via the arch.door binding)"
+  },
+  {
+   "a": "wall_end",
+   "b": "wall_end",
+   "rule": "edge pieces (town walls, fences, hedges, curtains, banks) meet end to end on cell corners; towers carry curtain wall_end sockets on four axes"
+  },
+  {
+   "a": "torch",
+   "b": "cst.sconce",
+   "rule": "sconce origin on the socket, facing the socket direction"
+  },
+  {
+   "a": "lantern",
+   "b": "mprop.lantern_hung",
+   "rule": "wall lantern on the socket"
+  },
+  {
+   "a": "hearth",
+   "b": "vlg.hearth",
+   "rule": "inglenook origin on the socket"
+  },
+  {
+   "a": "wall",
+   "b": "cst.banner|mprop.shield|mprop.shelf",
+   "rule": "wall-face props on wall sockets"
+  },
+  {
+   "a": "portcullis",
+   "b": "cst.portcullis",
+   "rule": "closed <-> raised state pair on the gatehouse passage"
+  },
+  {
+   "a": "drawbridge",
+   "b": "cst.drawbridge",
+   "rule": "lowered <-> raised state pair in front of the gate"
+  },
+  {
+   "a": "gate",
+   "b": "vlg.gatehouse",
+   "rule": "closed <-> open gate leaves state pair"
+  },
+  {
+   "a": "path",
+   "b": "path",
+   "rule": "ground tiles meet on cell-edge midpoints; path width 2 m"
+  }
+ ],
+ "format": 1,
+ "grid": {
+  "castle_storey_m": 4.5,
+  "cell_m": 4.0,
+  "door_anchor_from_room_edge_m": 0.4,
+  "door_cut_m": [
+   1.5,
+   2.6
+  ],
+  "doorway_m": [
+   1.3,
+   2.4
+  ],
+  "front": "glTF +Z (south)",
+  "half_cell_m": 2.0,
+  "note": "room plot = cells x 4 m + 0.5 m apron each side; door.position for side cell i = 4*i + 2",
+  "room_apron_m": 0.5,
+  "up": "glTF +Y",
+  "village_storey_m": 3.4,
+  "wall_inset_m": 0.5,
+  "yaw_steps_deg": 90
+ },
+ "pieces": {
+  "cst.banner": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "soft",
+   "kit_id": "cst.banner",
+   "preset": null,
+   "sockets": [],
+   "tris": 92
+  },
+  "cst.banner__cross": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "soft",
+   "kit_id": "cst.banner",
+   "preset": "cross",
+   "sockets": [],
+   "tris": 92
+  },
+  "cst.banner__pale": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "soft",
+   "kit_id": "cst.banner",
+   "preset": "pale",
+   "sockets": [],
+   "tris": 92
+  },
+  "cst.banner__roundel": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "soft",
+   "kit_id": "cst.banner",
+   "preset": "roundel",
+   "sockets": [],
+   "tris": 92
+  },
+  "cst.battlement": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.battlement",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "battlement"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "battlement"
+    }
+   ],
+   "tris": 80
+  },
+  "cst.battlement__machicolated": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.battlement",
+   "preset": "machicolated",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "battlement"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "battlement"
+    }
+   ],
+   "tris": 112
+  },
+  "cst.brazier": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "cst.brazier",
+   "preset": null,
+   "sockets": [],
+   "tris": 146
+  },
+  "cst.carpet": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.carpet",
+   "preset": null,
+   "sockets": [],
+   "tris": 20
+  },
+  "cst.carpet__short": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.carpet",
+   "preset": "short",
+   "sockets": [],
+   "tris": 20
+  },
+  "cst.ceiling": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    4
+   ],
+   "class": "shell",
+   "kit_id": "cst.ceiling",
+   "preset": null,
+   "sockets": [],
+   "tris": 204
+  },
+  "cst.ceiling__throne": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    4
+   ],
+   "class": "shell",
+   "kit_id": "cst.ceiling",
+   "preset": "throne",
+   "sockets": [],
+   "tris": 204
+  },
+  "cst.ceiling__vault": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    4
+   ],
+   "class": "shell",
+   "kit_id": "cst.ceiling",
+   "preset": "vault",
+   "sockets": [],
+   "tris": 264
+  },
+  "cst.cell": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "cst.cell",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "pair": "cst.cell__open",
+     "position": [
+      0.0,
+      0.0,
+      1.55
+     ],
+     "state": "closed",
+     "type": "cell_door"
+    }
+   ],
+   "tris": 456
+  },
+  "cst.cell__open": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "cst.cell",
+   "preset": "open",
+   "sockets": [
+    {
+     "facing": "s",
+     "pair": "cst.cell",
+     "position": [
+      0.0,
+      0.0,
+      1.55
+     ],
+     "state": "open",
+     "type": "cell_door"
+    }
+   ],
+   "tris": 456
+  },
+  "cst.chandelier": {
+   "anchor": "ceiling_hook",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "cst.chandelier",
+   "preset": null,
+   "sockets": [],
+   "tris": 260
+  },
+  "cst.curtain": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.curtain",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    }
+   ],
+   "tris": 96
+  },
+  "cst.curtain__broken": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.curtain",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    }
+   ],
+   "tris": 112
+  },
+  "cst.curtain__slits": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.curtain",
+   "preset": "slits",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    }
+   ],
+   "tris": 144
+  },
+  "cst.curtain__stair": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.curtain",
+   "preset": "stair",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "note": "stair foot on the inner side",
+     "position": [
+      2.0,
+      0.0,
+      -1.62
+     ],
+     "type": "path",
+     "width_m": 1.2
+    }
+   ],
+   "tris": 196
+  },
+  "cst.dais": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.dais",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "needs": "cst.throne",
+     "position": [
+      0.0,
+      0.66,
+      -0.3
+     ],
+     "type": "throne"
+    }
+   ],
+   "tris": 132
+  },
+  "cst.dais__wide": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.dais",
+   "preset": "wide",
+   "sockets": [
+    {
+     "facing": "up",
+     "needs": "cst.throne",
+     "position": [
+      0.0,
+      0.66,
+      -0.3
+     ],
+     "type": "throne"
+    }
+   ],
+   "tris": 132
+  },
+  "cst.drawbridge": {
+   "anchor": "gate_anchor",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.drawbridge",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "drawbridge",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      5.0
+     ],
+     "type": "path",
+     "width_m": 3.5500000000000003
+    }
+   ],
+   "tris": 164
+  },
+  "cst.drawbridge__raised": {
+   "anchor": "gate_anchor",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.drawbridge",
+   "preset": "raised",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "drawbridge",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "path",
+     "width_m": 3.5500000000000003
+    }
+   ],
+   "tris": 164
+  },
+  "cst.gatehouse": {
+   "anchor": "cell_corner",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.gatehouse",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "s",
+     "height_m": 4.6,
+     "needs": "cst.portcullis",
+     "position": [
+      0.0,
+      0.0,
+      2.25
+     ],
+     "type": "portcullis",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "needs": "cst.drawbridge",
+     "position": [
+      0.0,
+      0.0,
+      3.15
+     ],
+     "type": "drawbridge",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "note": "inner door at the end of the passage: a region door here takes the room's vlg.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -2.2
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 448
+  },
+  "cst.gatehouse__crenellated": {
+   "anchor": "cell_corner",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.gatehouse",
+   "preset": "crenellated",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "s",
+     "height_m": 4.6,
+     "needs": "cst.portcullis",
+     "position": [
+      0.0,
+      0.0,
+      2.25
+     ],
+     "type": "portcullis",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "needs": "cst.drawbridge",
+     "position": [
+      0.0,
+      0.0,
+      3.15
+     ],
+     "type": "drawbridge",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "note": "inner door at the end of the passage: a region door here takes the room's vlg.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -2.2
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 396
+  },
+  "cst.gatehouse__deep": {
+   "anchor": "cell_corner",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.gatehouse",
+   "preset": "deep",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "s",
+     "height_m": 4.6,
+     "needs": "cst.portcullis",
+     "position": [
+      0.0,
+      0.0,
+      3.25
+     ],
+     "type": "portcullis",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "needs": "cst.drawbridge",
+     "position": [
+      0.0,
+      0.0,
+      4.15
+     ],
+     "type": "drawbridge",
+     "width_m": 3.6
+    },
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "note": "inner door at the end of the passage: a region door here takes the room's vlg.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -3.2
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 452
+  },
+  "cst.hall": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    4
+   ],
+   "class": "shell",
+   "kit_id": "cst.hall",
+   "preset": null,
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -4.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "position": [
+      4.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "window"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -6.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      6.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -4.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      0.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 1.3
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      4.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -6.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "torch"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      6.0
+     ],
+     "side": "w",
+     "type": "torch"
+    }
+   ],
+   "tris": 1160
+  },
+  "cst.hall__dungeon": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "cst.hall",
+   "preset": "dungeon",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -4.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "position": [
+      4.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -4.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      4.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      -5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "door",
+     "width_m": 1.3
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 272
+  },
+  "cst.hall__great": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    4
+   ],
+   "class": "shell",
+   "kit_id": "cst.hall",
+   "preset": "great",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -4.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "position": [
+      4.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -6.0
+     ],
+     "side": "e",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "window"
+    },
+    {
+     "cell": 3,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      6.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -4.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      0.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 1.3
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      4.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -6.0
+     ],
+     "side": "w",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "torch"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "window"
+    },
+    {
+     "cell": 3,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      6.0
+     ],
+     "side": "w",
+     "type": "torch"
+    }
+   ],
+   "tris": 1264
+  },
+  "cst.hall__throne": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    4
+   ],
+   "class": "shell",
+   "kit_id": "cst.hall",
+   "preset": "throne",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -4.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "position": [
+      4.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "window"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -6.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "window"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 3,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      6.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -4.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      0.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 1.3
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      4.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -6.0
+     ],
+     "side": "w",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "window"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "torch"
+    },
+    {
+     "cell": 3,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      6.0
+     ],
+     "side": "w",
+     "type": "torch"
+    }
+   ],
+   "tris": 1264
+  },
+  "cst.keep": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.keep",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door?",
+     "note": "optional: a declared region door here takes the room's vlg.doorway",
+     "position": [
+      0.0,
+      0.0,
+      5.21
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 816
+  },
+  "cst.keep__crenellated": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.keep",
+   "preset": "crenellated",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door?",
+     "note": "optional: a declared region door here takes the room's vlg.doorway",
+     "position": [
+      0.0,
+      0.0,
+      5.21
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 824
+  },
+  "cst.pillar": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.pillar",
+   "preset": null,
+   "sockets": [],
+   "tris": 148
+  },
+  "cst.pillar__clustered": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.pillar",
+   "preset": "clustered",
+   "sockets": [],
+   "tris": 200
+  },
+  "cst.pillar__square": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.pillar",
+   "preset": "square",
+   "sockets": [],
+   "tris": 92
+  },
+  "cst.portcullis": {
+   "anchor": "gate_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "cst.portcullis",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "portcullis",
+     "width_m": 3.6
+    }
+   ],
+   "tris": 256
+  },
+  "cst.portcullis__raised": {
+   "anchor": "gate_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "cst.portcullis",
+   "preset": "raised",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "portcullis",
+     "width_m": 3.6
+    }
+   ],
+   "tris": 256
+  },
+  "cst.sconce": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "cst.sconce",
+   "preset": null,
+   "sockets": [],
+   "tris": 88
+  },
+  "cst.sconce__unlit": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "cst.sconce",
+   "preset": "unlit",
+   "sockets": [],
+   "tris": 68
+  },
+  "cst.spiral_stair": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.spiral_stair",
+   "preset": null,
+   "sockets": [],
+   "tris": 340
+  },
+  "cst.spiral_stair__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cst.spiral_stair",
+   "preset": "tall",
+   "sockets": [],
+   "tris": 424
+  },
+  "cst.throne": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "cst.throne",
+   "preset": null,
+   "sockets": [],
+   "tris": 252
+  },
+  "cst.throne__canopy": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "cst.throne",
+   "preset": "canopy",
+   "sockets": [],
+   "tris": 312
+  },
+  "cst.tower_round": {
+   "anchor": "cell_corner",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.tower_round",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "n",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "s",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    }
+   ],
+   "tris": 486
+  },
+  "cst.tower_round__crenellated": {
+   "anchor": "cell_corner",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.tower_round",
+   "preset": "crenellated",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "n",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "s",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    }
+   ],
+   "tris": 486
+  },
+  "cst.tower_round__door": {
+   "anchor": "cell_corner",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.tower_round",
+   "preset": "door",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "n",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "s",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door?",
+     "position": [
+      0.0,
+      0.0,
+      3.2
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 426
+  },
+  "cst.tower_round__roofed": {
+   "anchor": "cell_corner",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.tower_round",
+   "preset": "roofed",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "n",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "s",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    }
+   ],
+   "tris": 358
+  },
+  "cst.tower_square": {
+   "anchor": "cell_corner",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.tower_square",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "n",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "s",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    }
+   ],
+   "tris": 720
+  },
+  "cst.tower_square__roofed": {
+   "anchor": "cell_corner",
+   "cells": null,
+   "class": "building",
+   "kit_id": "cst.tower_square",
+   "preset": "roofed",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 7.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "e",
+     "height_m": 7.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "n",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    },
+    {
+     "facing": "s",
+     "height_m": 7.0,
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "wall_end",
+     "wall": "curtain"
+    }
+   ],
+   "tris": 442
+  },
+  "mnat.bush": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.bush",
+   "preset": null,
+   "sockets": [],
+   "tris": 42
+  },
+  "mnat.bush__berry": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.bush",
+   "preset": "berry",
+   "sockets": [],
+   "tris": 98
+  },
+  "mnat.bush__bramble": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.bush",
+   "preset": "bramble",
+   "sockets": [],
+   "tris": 72
+  },
+  "mnat.bush__flowering": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.bush",
+   "preset": "flowering",
+   "sockets": [],
+   "tris": 98
+  },
+  "mnat.dead_tree": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.dead_tree",
+   "preset": null,
+   "sockets": [],
+   "tris": 148
+  },
+  "mnat.dead_tree__snowy": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.dead_tree",
+   "preset": "snowy",
+   "sockets": [],
+   "tris": 208
+  },
+  "mnat.field": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "mnat.field",
+   "preset": null,
+   "sockets": [],
+   "tris": 192
+  },
+  "mnat.field__cabbage": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "mnat.field",
+   "preset": "cabbage",
+   "sockets": [],
+   "tris": 352
+  },
+  "mnat.field__ploughed": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "mnat.field",
+   "preset": "ploughed",
+   "sockets": [],
+   "tris": 128
+  },
+  "mnat.field__vines": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "mnat.field",
+   "preset": "vines",
+   "sockets": [],
+   "tris": 176
+  },
+  "mnat.flowers": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.flowers",
+   "preset": null,
+   "sockets": [],
+   "tris": 98
+  },
+  "mnat.flowers__mushrooms": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.flowers",
+   "preset": "mushrooms",
+   "sockets": [],
+   "tris": 192
+  },
+  "mnat.flowers__reeds": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.flowers",
+   "preset": "reeds",
+   "sockets": [],
+   "tris": 154
+  },
+  "mnat.flowers__tufts": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.flowers",
+   "preset": "tufts",
+   "sockets": [],
+   "tris": 48
+  },
+  "mnat.hedgerow": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.hedgerow",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "hedge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "hedge"
+    }
+   ],
+   "tris": 56
+  },
+  "mnat.hedgerow__corner": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.hedgerow",
+   "preset": "corner",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "hedge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      2.0,
+      0.0,
+      4.0
+     ],
+     "type": "wall_end",
+     "wall": "hedge"
+    }
+   ],
+   "tris": 112
+  },
+  "mnat.hedgerow__gap": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.hedgerow",
+   "preset": "gap",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "hedge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "hedge"
+    }
+   ],
+   "tris": 64
+  },
+  "mnat.oak": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.oak",
+   "preset": null,
+   "sockets": [],
+   "tris": 238
+  },
+  "mnat.oak__old": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.oak",
+   "preset": "old",
+   "sockets": [],
+   "tris": 238
+  },
+  "mnat.oak__young": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.oak",
+   "preset": "young",
+   "sockets": [],
+   "tris": 184
+  },
+  "mnat.orchard": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.orchard",
+   "preset": null,
+   "sockets": [],
+   "tris": 164
+  },
+  "mnat.orchard__bare": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.orchard",
+   "preset": "bare",
+   "sockets": [],
+   "tris": 148
+  },
+  "mnat.orchard__blossom": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.orchard",
+   "preset": "blossom",
+   "sockets": [],
+   "tris": 100
+  },
+  "mnat.orchard__pear": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.orchard",
+   "preset": "pear",
+   "sockets": [],
+   "tris": 164
+  },
+  "mnat.pine": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.pine",
+   "preset": null,
+   "sockets": [],
+   "tris": 196
+  },
+  "mnat.pine__short": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.pine",
+   "preset": "short",
+   "sockets": [],
+   "tris": 154
+  },
+  "mnat.pine__snowy": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.pine",
+   "preset": "snowy",
+   "sockets": [],
+   "tris": 252
+  },
+  "mnat.rock": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.rock",
+   "preset": null,
+   "sockets": [],
+   "tris": 60
+  },
+  "mnat.rock__cluster": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.rock",
+   "preset": "cluster",
+   "sockets": [],
+   "tris": 72
+  },
+  "mnat.rock__outcrop": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.rock",
+   "preset": "outcrop",
+   "sockets": [],
+   "tris": 96
+  },
+  "mnat.rock__standing": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.rock",
+   "preset": "standing",
+   "sockets": [],
+   "tris": 44
+  },
+  "mnat.stump": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.stump",
+   "preset": null,
+   "sockets": [],
+   "tris": 42
+  },
+  "mnat.stump__log": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.stump",
+   "preset": "log",
+   "sockets": [],
+   "tris": 24
+  },
+  "mnat.stump__mossy_log": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "mnat.stump",
+   "preset": "mossy_log",
+   "sockets": [],
+   "tris": 58
+  },
+  "mprop.anvil": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.anvil",
+   "preset": null,
+   "sockets": [],
+   "tris": 116
+  },
+  "mprop.anvil__bare": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.anvil",
+   "preset": "bare",
+   "sockets": [],
+   "tris": 72
+  },
+  "mprop.barrel": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.barrel",
+   "preset": null,
+   "sockets": [],
+   "tris": 104
+  },
+  "mprop.barrel__keg": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.barrel",
+   "preset": "keg",
+   "sockets": [],
+   "tris": 104
+  },
+  "mprop.barrel__lying": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.barrel",
+   "preset": "lying",
+   "sockets": [],
+   "tris": 104
+  },
+  "mprop.barrel__water": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.barrel",
+   "preset": "water",
+   "sockets": [],
+   "tris": 136
+  },
+  "mprop.basket": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.basket",
+   "preset": null,
+   "sockets": [],
+   "tris": 66
+  },
+  "mprop.basket__bread": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.basket",
+   "preset": "bread",
+   "sockets": [],
+   "tris": 66
+  },
+  "mprop.basket__empty": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.basket",
+   "preset": "empty",
+   "sockets": [],
+   "tris": 42
+  },
+  "mprop.basket__wool": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.basket",
+   "preset": "wool",
+   "sockets": [],
+   "tris": 66
+  },
+  "mprop.bed": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "mprop.bed",
+   "preset": null,
+   "sockets": [],
+   "tris": 152
+  },
+  "mprop.bed__fourposter": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "mprop.bed",
+   "preset": "fourposter",
+   "sockets": [],
+   "tris": 252
+  },
+  "mprop.bench": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.bench",
+   "preset": null,
+   "sockets": [],
+   "tris": 44
+  },
+  "mprop.bench__settle": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.bench",
+   "preset": "settle",
+   "sockets": [],
+   "tris": 88
+  },
+  "mprop.bench__stool": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.bench",
+   "preset": "stool",
+   "sockets": [],
+   "tris": 64
+  },
+  "mprop.bucket": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.bucket",
+   "preset": null,
+   "sockets": [],
+   "tris": 128
+  },
+  "mprop.bucket__empty": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.bucket",
+   "preset": "empty",
+   "sockets": [],
+   "tris": 100
+  },
+  "mprop.cart": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "mprop.cart",
+   "preset": null,
+   "sockets": [],
+   "tris": 286
+  },
+  "mprop.cart__barrels": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "mprop.cart",
+   "preset": "barrels",
+   "sockets": [],
+   "tris": 328
+  },
+  "mprop.cart__empty": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "mprop.cart",
+   "preset": "empty",
+   "sockets": [],
+   "tris": 244
+  },
+  "mprop.cart__sacks": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "mprop.cart",
+   "preset": "sacks",
+   "sockets": [],
+   "tris": 340
+  },
+  "mprop.cauldron": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.cauldron",
+   "preset": null,
+   "sockets": [],
+   "tris": 272
+  },
+  "mprop.cauldron__cold": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.cauldron",
+   "preset": "cold",
+   "sockets": [],
+   "tris": 252
+  },
+  "mprop.chest": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.chest",
+   "preset": null,
+   "sockets": [],
+   "tris": 136
+  },
+  "mprop.chest__open": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.chest",
+   "preset": "open",
+   "sockets": [],
+   "tris": 148
+  },
+  "mprop.chest__plain": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.chest",
+   "preset": "plain",
+   "sockets": [],
+   "tris": 52
+  },
+  "mprop.crate": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.crate",
+   "preset": null,
+   "sockets": [],
+   "tris": 92
+  },
+  "mprop.crate__slatted": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.crate",
+   "preset": "slatted",
+   "sockets": [],
+   "tris": 116
+  },
+  "mprop.crate__small": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.crate",
+   "preset": "small",
+   "sockets": [],
+   "tris": 68
+  },
+  "mprop.grindstone": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.grindstone",
+   "preset": null,
+   "sockets": [],
+   "tris": 144
+  },
+  "mprop.hay": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.hay",
+   "preset": null,
+   "sockets": [],
+   "tris": 52
+  },
+  "mprop.hay__rick": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.hay",
+   "preset": "rick",
+   "sockets": [],
+   "tris": 80
+  },
+  "mprop.hay__stack": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.hay",
+   "preset": "stack",
+   "sockets": [],
+   "tris": 156
+  },
+  "mprop.lantern": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.lantern",
+   "preset": null,
+   "sockets": [],
+   "tris": 116
+  },
+  "mprop.lantern__plain": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.lantern",
+   "preset": "plain",
+   "sockets": [],
+   "tris": 96
+  },
+  "mprop.lantern_hung": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.lantern_hung",
+   "preset": null,
+   "sockets": [],
+   "tris": 96
+  },
+  "mprop.lantern_hung__hanging": {
+   "anchor": "ceiling_hook",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.lantern_hung",
+   "preset": "hanging",
+   "sockets": [],
+   "tris": 76
+  },
+  "mprop.sack": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.sack",
+   "preset": null,
+   "sockets": [],
+   "tris": 68
+  },
+  "mprop.sack__open": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.sack",
+   "preset": "open",
+   "sockets": [],
+   "tris": 36
+  },
+  "mprop.sack__pile": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.sack",
+   "preset": "pile",
+   "sockets": [],
+   "tris": 140
+  },
+  "mprop.shelf": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.shelf",
+   "preset": null,
+   "sockets": [],
+   "tris": 192
+  },
+  "mprop.shelf__books": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.shelf",
+   "preset": "books",
+   "sockets": [],
+   "tris": 216
+  },
+  "mprop.shelf__empty": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.shelf",
+   "preset": "empty",
+   "sockets": [],
+   "tris": 72
+  },
+  "mprop.shield": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.shield",
+   "preset": null,
+   "sockets": [],
+   "tris": 24
+  },
+  "mprop.shield__chevron": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.shield",
+   "preset": "chevron",
+   "sockets": [],
+   "tris": 24
+  },
+  "mprop.shield__round": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.shield",
+   "preset": "round",
+   "sockets": [],
+   "tris": 36
+  },
+  "mprop.signpost": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.signpost",
+   "preset": null,
+   "sockets": [],
+   "tris": 80
+  },
+  "mprop.signpost__hanging": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.signpost",
+   "preset": "hanging",
+   "sockets": [],
+   "tris": 80
+  },
+  "mprop.signpost__notice": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.signpost",
+   "preset": "notice",
+   "sockets": [],
+   "tris": 140
+  },
+  "mprop.table": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.table",
+   "preset": null,
+   "sockets": [],
+   "tris": 56
+  },
+  "mprop.table__feast": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.table",
+   "preset": "feast",
+   "sockets": [],
+   "tris": 68
+  },
+  "mprop.table__round": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.table",
+   "preset": "round",
+   "sockets": [],
+   "tris": 96
+  },
+  "mprop.tableware": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.tableware",
+   "preset": null,
+   "sockets": [],
+   "tris": 104
+  },
+  "mprop.tableware__candles": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.tableware",
+   "preset": "candles",
+   "sockets": [],
+   "tris": 144
+  },
+  "mprop.tableware__drinks": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "mprop.tableware",
+   "preset": "drinks",
+   "sockets": [],
+   "tris": 120
+  },
+  "mprop.trough": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.trough",
+   "preset": null,
+   "sockets": [],
+   "tris": 80
+  },
+  "mprop.trough__feed": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.trough",
+   "preset": "feed",
+   "sockets": [],
+   "tris": 80
+  },
+  "mprop.weapon_rack": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.weapon_rack",
+   "preset": null,
+   "sockets": [],
+   "tris": 168
+  },
+  "mprop.weapon_rack__shields": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.weapon_rack",
+   "preset": "shields",
+   "sockets": [],
+   "tris": 152
+  },
+  "mprop.weapon_rack__swords": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.weapon_rack",
+   "preset": "swords",
+   "sockets": [],
+   "tris": 232
+  },
+  "mprop.woodpile": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.woodpile",
+   "preset": null,
+   "sockets": [],
+   "tris": 272
+  },
+  "mprop.woodpile__block": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "mprop.woodpile",
+   "preset": "block",
+   "sockets": [],
+   "tris": 108
+  },
+  "mter.backdrop": {
+   "anchor": null,
+   "cells": null,
+   "class": "sky",
+   "kit_id": "mter.backdrop",
+   "preset": null,
+   "sockets": [],
+   "tris": 128
+  },
+  "mter.backdrop__hills": {
+   "anchor": null,
+   "cells": null,
+   "class": "sky",
+   "kit_id": "mter.backdrop",
+   "preset": "hills",
+   "sockets": [],
+   "tris": 48
+  },
+  "mter.backdrop__mountains": {
+   "anchor": null,
+   "cells": null,
+   "class": "sky",
+   "kit_id": "mter.backdrop",
+   "preset": "mountains",
+   "sockets": [],
+   "tris": 96
+  },
+  "mter.bank": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "mter.bank",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 2.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "bank"
+    },
+    {
+     "facing": "e",
+     "height_m": 2.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "bank"
+    }
+   ],
+   "tris": 16
+  },
+  "mter.bank__rock": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "mter.bank",
+   "preset": "rock",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 2.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "bank"
+    },
+    {
+     "facing": "e",
+     "height_m": 2.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "bank"
+    }
+   ],
+   "tris": 16
+  },
+  "mter.bank__wall": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "mter.bank",
+   "preset": "wall",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 2.0,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "bank"
+    },
+    {
+     "facing": "e",
+     "height_m": 2.0,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "bank"
+    }
+   ],
+   "tris": 32
+  },
+  "mter.ground": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": null,
+   "sockets": [],
+   "tris": 32
+  },
+  "mter.ground__cobble": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "cobble",
+   "sockets": [],
+   "tris": 32
+  },
+  "mter.ground__dirt": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "dirt",
+   "sockets": [],
+   "tris": 32
+  },
+  "mter.ground__field_edge": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "field_edge",
+   "sockets": [],
+   "tris": 32
+  },
+  "mter.ground__meadow_3": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "meadow_3",
+   "sockets": [],
+   "tris": 72
+  },
+  "mter.ground__meadow_4": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    4
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "meadow_4",
+   "sockets": [],
+   "tris": 128
+  },
+  "mter.ground__meadow_far": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    4
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "meadow_far",
+   "sockets": [],
+   "tris": 32
+  },
+  "mter.ground__path": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "path",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 192
+  },
+  "mter.ground__path_corner": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "path_corner",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 192
+  },
+  "mter.ground__path_cross": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "path_cross",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 352
+  },
+  "mter.ground__path_end": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "path_end",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 112
+  },
+  "mter.ground__path_tee": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "path_tee",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 272
+  },
+  "mter.ground__plaza": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "plaza",
+   "sockets": [],
+   "tris": 32
+  },
+  "mter.ground__plaza_4": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    4
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "plaza_4",
+   "sockets": [],
+   "tris": 128
+  },
+  "mter.ground__snow": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "snow",
+   "sockets": [],
+   "tris": 32
+  },
+  "mter.ground__snow_4": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    4
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "snow_4",
+   "sockets": [],
+   "tris": 128
+  },
+  "mter.ground__snow_far": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    4
+   ],
+   "class": "terrain",
+   "kit_id": "mter.ground",
+   "preset": "snow_far",
+   "sockets": [],
+   "tris": 32
+  },
+  "mter.hill": {
+   "anchor": null,
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "mter.hill",
+   "preset": null,
+   "sockets": [],
+   "tris": 128
+  },
+  "mter.hill__big": {
+   "anchor": null,
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "mter.hill",
+   "preset": "big",
+   "sockets": [],
+   "tris": 128
+  },
+  "mter.hill__low": {
+   "anchor": null,
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "mter.hill",
+   "preset": "low",
+   "sockets": [],
+   "tris": 128
+  },
+  "mter.water": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.water",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "water"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "water"
+    }
+   ],
+   "tris": 44
+  },
+  "mter.water__moat": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "mter.water",
+   "preset": "moat",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "water"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "water"
+    }
+   ],
+   "tris": 36
+  },
+  "mter.water__pond": {
+   "anchor": null,
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "mter.water",
+   "preset": "pond",
+   "sockets": [],
+   "tris": 156
+  },
+  "vlg.bridge": {
+   "anchor": "cell_centre",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "vlg.bridge",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "path",
+     "width_m": 2.6
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "path",
+     "width_m": 2.6
+    }
+   ],
+   "tris": 204
+  },
+  "vlg.bridge__timber": {
+   "anchor": "cell_centre",
+   "cells": [
+    2,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "vlg.bridge",
+   "preset": "timber",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "path",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 252
+  },
+  "vlg.ceiling": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "vlg.ceiling",
+   "preset": null,
+   "sockets": [],
+   "tris": 84
+  },
+  "vlg.ceiling__small": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "vlg.ceiling",
+   "preset": "small",
+   "sockets": [],
+   "tris": 68
+  },
+  "vlg.chapel": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.chapel",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.7,
+     "needs": "path|plaza",
+     "position": [
+      0.0,
+      0.0,
+      4.5
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 862
+  },
+  "vlg.chapel__doorway": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.chapel",
+   "preset": "doorway",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      0.0,
+      0.0,
+      4.56
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 734
+  },
+  "vlg.chapel__plain": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.chapel",
+   "preset": "plain",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.7,
+     "needs": "path|plaza",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 568
+  },
+  "vlg.cottage": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.cottage",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.1,
+     "needs": "path|plaza",
+     "position": [
+      -0.0,
+      0.0,
+      2.5
+     ],
+     "type": "door",
+     "width_m": 1.1
+    }
+   ],
+   "tris": 696
+  },
+  "vlg.cottage__doorway": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.cottage",
+   "preset": "doorway",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      -0.0,
+      0.0,
+      2.56
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 612
+  },
+  "vlg.cottage__longhouse": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.cottage",
+   "preset": "longhouse",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 1.85,
+     "needs": "path|plaza",
+     "position": [
+      1.5,
+      0.0,
+      2.5
+     ],
+     "type": "door",
+     "width_m": 1.05
+    }
+   ],
+   "tris": 632
+  },
+  "vlg.cottage__small": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.cottage",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.1,
+     "needs": "path|plaza",
+     "position": [
+      1.0,
+      0.0,
+      2.0
+     ],
+     "type": "door",
+     "width_m": 1.1
+    }
+   ],
+   "tris": 660
+  },
+  "vlg.cottage__stone": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.cottage",
+   "preset": "stone",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.1,
+     "needs": "path|plaza",
+     "position": [
+      -0.0,
+      0.0,
+      2.5
+     ],
+     "type": "door",
+     "width_m": 1.1
+    }
+   ],
+   "tris": 744
+  },
+  "vlg.cottage__stone_doorway": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.cottage",
+   "preset": "stone_doorway",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      -0.0,
+      0.0,
+      2.56
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 616
+  },
+  "vlg.cottage__townhouse": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.cottage",
+   "preset": "townhouse",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.15,
+     "needs": "path|plaza",
+     "position": [
+      -0.8,
+      0.0,
+      3.0
+     ],
+     "type": "door",
+     "width_m": 1.1
+    }
+   ],
+   "tris": 840
+  },
+  "vlg.doorway": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "vlg.doorway",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "position": [
+      0.0,
+      0.0,
+      0.6
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 76
+  },
+  "vlg.doorway__ajar": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "vlg.doorway",
+   "preset": "ajar",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "position": [
+      0.0,
+      0.0,
+      0.6
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 76
+  },
+  "vlg.fence": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.fence",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "fence"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "fence"
+    }
+   ],
+   "tris": 116
+  },
+  "vlg.fence__drystone": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.fence",
+   "preset": "drystone",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "fence"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "fence"
+    }
+   ],
+   "tris": 140
+  },
+  "vlg.fence__gate": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.fence",
+   "preset": "gate",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "fence"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "fence"
+    }
+   ],
+   "tris": 132
+  },
+  "vlg.fence__rail": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.fence",
+   "preset": "rail",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "fence"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "fence"
+    }
+   ],
+   "tris": 104
+  },
+  "vlg.gatehouse": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.gatehouse",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 3.4,
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    },
+    {
+     "facing": "e",
+     "height_m": 3.4,
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    },
+    {
+     "facing": "s",
+     "pair": "vlg.gatehouse__open",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "state": "closed",
+     "type": "gate",
+     "width_m": 3.2
+    }
+   ],
+   "tris": 424
+  },
+  "vlg.gatehouse__open": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.gatehouse",
+   "preset": "open",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 3.4,
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    },
+    {
+     "facing": "e",
+     "height_m": 3.4,
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    },
+    {
+     "facing": "s",
+     "pair": "vlg.gatehouse",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "state": "open",
+     "type": "gate",
+     "width_m": 3.2
+    }
+   ],
+   "tris": 424
+  },
+  "vlg.hearth": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "vlg.hearth",
+   "preset": null,
+   "sockets": [],
+   "tris": 168
+  },
+  "vlg.hearth__cold": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "vlg.hearth",
+   "preset": "cold",
+   "sockets": [],
+   "tris": 112
+  },
+  "vlg.mill": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.mill",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.0,
+     "needs": "path|plaza",
+     "position": [
+      0.0,
+      0.0,
+      2.4021
+     ],
+     "type": "door",
+     "width_m": 1.0
+    }
+   ],
+   "tris": 406
+  },
+  "vlg.mill__turned": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.mill",
+   "preset": "turned",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.0,
+     "needs": "path|plaza",
+     "position": [
+      0.0,
+      0.0,
+      2.4021
+     ],
+     "type": "door",
+     "width_m": 1.0
+    }
+   ],
+   "tris": 406
+  },
+  "vlg.mill__watermill": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.mill",
+   "preset": "watermill",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.0,
+     "needs": "path|plaza",
+     "position": [
+      -1.2,
+      0.0,
+      2.5
+     ],
+     "type": "door",
+     "width_m": 1.0
+    }
+   ],
+   "tris": 508
+  },
+  "vlg.room": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "vlg.room",
+   "preset": null,
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -4.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "position": [
+      4.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "hearth"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -4.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      0.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 1.3
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      4.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 696
+  },
+  "vlg.room__cottage": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "vlg.room",
+   "preset": "cottage",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -2.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      2.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "hearth"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      3.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      3.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "window"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      -2.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 1.3
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      2.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -3.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -3.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 524
+  },
+  "vlg.room__taproom": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "vlg.room",
+   "preset": "taproom",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -4.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "position": [
+      4.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "hearth"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -4.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "lantern"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      0.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 1.3
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      4.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "lantern"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 748
+  },
+  "vlg.smithy": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.smithy",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.1,
+     "needs": "path|plaza",
+     "position": [
+      1.75,
+      0.0,
+      2.5
+     ],
+     "type": "door",
+     "width_m": 1.1
+    }
+   ],
+   "tris": 440
+  },
+  "vlg.smithy__doorway": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.smithy",
+   "preset": "doorway",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      1.75,
+      0.0,
+      2.56
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 376
+  },
+  "vlg.smithy__thatch": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.smithy",
+   "preset": "thatch",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.1,
+     "needs": "path|plaza",
+     "position": [
+      1.75,
+      0.0,
+      2.5
+     ],
+     "type": "door",
+     "width_m": 1.1
+    }
+   ],
+   "tris": 464
+  },
+  "vlg.stairs": {
+   "anchor": "cell_centre",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.stairs",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      1.06
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      1.5,
+      -0.96
+     ],
+     "type": "path",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 76
+  },
+  "vlg.stairs__tall": {
+   "anchor": "cell_centre",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.stairs",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.02
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      3.0,
+      -1.92
+     ],
+     "type": "path",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 124
+  },
+  "vlg.stairs__timber": {
+   "anchor": "cell_centre",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.stairs",
+   "preset": "timber",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0321,
+      1.06
+     ],
+     "type": "path",
+     "width_m": 2.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      1.5321,
+      -0.96
+     ],
+     "type": "path",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 144
+  },
+  "vlg.stall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.stall",
+   "preset": null,
+   "sockets": [],
+   "tris": 256
+  },
+  "vlg.stall__bread": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.stall",
+   "preset": "bread",
+   "sockets": [],
+   "tris": 256
+  },
+  "vlg.stall__cloth": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.stall",
+   "preset": "cloth",
+   "sockets": [],
+   "tris": 244
+  },
+  "vlg.stall__empty": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.stall",
+   "preset": "empty",
+   "sockets": [],
+   "tris": 124
+  },
+  "vlg.stall__pottery": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.stall",
+   "preset": "pottery",
+   "sockets": [],
+   "tris": 348
+  },
+  "vlg.tavern": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.tavern",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.25,
+     "needs": "path|plaza",
+     "position": [
+      2.3,
+      0.0,
+      3.0
+     ],
+     "type": "door",
+     "width_m": 1.2
+    }
+   ],
+   "tris": 840
+  },
+  "vlg.tavern__doorway": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.tavern",
+   "preset": "doorway",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "position": [
+      2.3,
+      0.0,
+      3.06
+     ],
+     "type": "door",
+     "width_m": 1.3
+    }
+   ],
+   "tris": 712
+  },
+  "vlg.tavern__thatch": {
+   "anchor": "lot_centre",
+   "cells": null,
+   "class": "building",
+   "kit_id": "vlg.tavern",
+   "preset": "thatch",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.25,
+     "needs": "path|plaza",
+     "position": [
+      2.3,
+      0.0,
+      3.0
+     ],
+     "type": "door",
+     "width_m": 1.2
+    }
+   ],
+   "tris": 864
+  },
+  "vlg.wall": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.wall",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 3.4,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    },
+    {
+     "facing": "e",
+     "height_m": 3.4,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    }
+   ],
+   "tris": 100
+  },
+  "vlg.wall__corner": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.wall",
+   "preset": "corner",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 3.4,
+     "position": [
+      2.0,
+      0.0,
+      4.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    },
+    {
+     "facing": "w",
+     "height_m": 3.4,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    }
+   ],
+   "tris": 180
+  },
+  "vlg.wall__end": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.wall",
+   "preset": "end",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 3.4,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    }
+   ],
+   "tris": 144
+  },
+  "vlg.wall__palisade": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.wall",
+   "preset": "palisade",
+   "sockets": [
+    {
+     "facing": "w",
+     "height_m": 3.4,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "palisade"
+    },
+    {
+     "facing": "e",
+     "height_m": 3.4,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "palisade"
+    }
+   ],
+   "tris": 210
+  },
+  "vlg.wall__palisade_corner": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.wall",
+   "preset": "palisade_corner",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 3.4,
+     "position": [
+      2.0,
+      0.0,
+      4.0
+     ],
+     "type": "wall_end",
+     "wall": "palisade"
+    },
+    {
+     "facing": "w",
+     "height_m": 3.4,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "palisade"
+    }
+   ],
+   "tris": 386
+  },
+  "vlg.wall__postern": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.wall",
+   "preset": "postern",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.4,
+     "needs": "arch.door",
+     "note": "postern: a declared door here takes the room's vlg.doorway",
+     "position": [
+      0.0,
+      0.0,
+      0.5
+     ],
+     "type": "door",
+     "width_m": 1.3
+    },
+    {
+     "facing": "w",
+     "height_m": 3.4,
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    },
+    {
+     "facing": "e",
+     "height_m": 3.4,
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "wall_end",
+     "wall": "town"
+    }
+   ],
+   "tris": 196
+  },
+  "vlg.well": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.well",
+   "preset": null,
+   "sockets": [],
+   "tris": 388
+  },
+  "vlg.well__open": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.well",
+   "preset": "open",
+   "sockets": [],
+   "tris": 312
+  },
+  "vlg.well__slate": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "vlg.well",
+   "preset": "slate",
+   "sockets": [],
+   "tris": 388
+  }
+ }
+}

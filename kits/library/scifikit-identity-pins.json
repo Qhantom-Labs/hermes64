@@ -1,0 +1,21 @@
+{
+ "base": "0f5f361",
+ "builder": "python",
+ "format": "scifikit-identity-pins/1",
+ "note": "sha256 of pre-existing generator builds from `git archive 0f5f361`; tests/test_scifikit.py rebuilds them in this tree and compares",
+ "pins": {
+  "forest_village/arch.floor_module": "0a1bdb3d4a1480daaaffecd6ab2a219a9929660afa9f5336dbda6f8a41f33964",
+  "forest_village/arch.wall_module": "141d75a982da8d27f904dd1a4b6ad162315f5a2e507eaff1f370d6e10ae1174e",
+  "forest_village/furn.console": "bbdace24da9c1e738fbdaa79040eb94834f0cca5d47cc06d6fecb6009a6d5f25",
+  "forest_village/furn.pod": "e708773dff66400c3ae07a90cdb23691aaac0b80c4e06b74bbe22cde09e96ac2",
+  "forest_village/nature.rock": "a4858159225f07864815789a6af17f2d4d3ddd735b0ada906d146144f1554e5f",
+  "forest_village/prop.device": "4e696fbd7e8a63e236095b4c24e45ae26f05a5b8a66c101321f1b0304a6f650b",
+  "polar_pod/arch.floor_module": "368404c59eb117130766e997ce7547d8f782d2e0c12211a0d74b19a44ee9044c",
+  "polar_pod/arch.wall_module": "00bbde854ae0d7c56a2dd6a9cf3d07f2ca1b15b613503c84974e19159480fa4e",
+  "polar_pod/furn.console": "36e6d0837b2149f99de93383384125730a99942a728c3fa34923c201734fd62b",
+  "polar_pod/furn.pod": "ce709bcb04db83496b8780913fb88563b28046b69420885f2eec3d145179c8fe",
+  "polar_pod/nature.rock": "f3b5413595b2c2ae0fb29586b2ff145c3fff864461f2f2f021a59a1f9d463e60",
+  "polar_pod/prop.device": "1c9ded80e7e612a2d203c71d4fdd5b01db01fd1181db25702b88e76219298e02"
+ },
+ "seed": 0
+}

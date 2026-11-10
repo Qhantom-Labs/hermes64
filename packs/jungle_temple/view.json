@@ -1,0 +1,679 @@
+{
+ "audio": {
+  "ambient": "audio/stock/wav/core.nature.night.insects.wav",
+  "birds": "audio/stock/wav/core.creature.bird.tweet.wav",
+  "fire": "audio/stock/wav/core.nature.fire.crackle.wav",
+  "gust": "audio/stock/wav/core.nature.wind.gust.wav",
+  "note": "pointers only (existing stock sounds); the style pack sound_palette carries ambient + interact",
+  "steps_sand": "audio/stock/wav/core.footstep.sand.01.wav",
+  "steps_water": "audio/stock/wav/core.footstep.water.01.wav",
+  "ui": "audio/wav/ui.select.wav"
+ },
+ "fog": {
+  "color": "#C9DCCB",
+  "far": 46.0,
+  "near": 12.0
+ },
+ "kit_pack_id": "jungle_temple",
+ "light_rig": {
+  "ambient": 0.5,
+  "ao": 0.3,
+  "ao_height": 0.7,
+  "gamma": 1.0,
+  "ground": 0.04,
+  "key": 0.4,
+  "key_dir": [
+   -0.3,
+   -0.45,
+   0.84
+  ],
+  "sky": 0.14
+ },
+ "look": {
+  "backdrop": {
+   "asset": "sky.backdrop",
+   "interiors": true,
+   "note": "painted sky set (land.sky via the sky.backdrop binding): deep zenith, pale horizon = fog colour, the sun, and a ring of distant jungle canopy; the roofless shrine shows it through the open vault",
+   "scale": 0.2,
+   "y": -1.0
+  },
+  "emitters": {
+   "relic.altar__fire": {
+    "color": "#d6d2b6",
+    "halo": [
+     0.8,
+     0.4
+    ],
+    "halo_color": "#d6d2b6",
+    "intensity": 0.45,
+    "offset": [
+     0.0,
+     1.8,
+     0.0
+    ],
+    "pool": [
+     2.2,
+     0.16
+    ],
+    "pool_color": "#e0752a",
+    "radius": 4.5
+   },
+   "relic.brazier": {
+    "color": "#d6d2b6",
+    "halo": [
+     0.8,
+     0.4
+    ],
+    "halo_color": "#d6d2b6",
+    "intensity": 0.55,
+    "offset": [
+     0.0,
+     1.6,
+     0.0
+    ],
+    "pool": [
+     2.2,
+     0.16
+    ],
+    "pool_color": "#e0752a",
+    "radius": 4.5
+   },
+   "relic.brazier__pedestal": {
+    "color": "#d6d2b6",
+    "halo": [
+     0.8,
+     0.4
+    ],
+    "halo_color": "#d6d2b6",
+    "intensity": 0.55,
+    "offset": [
+     0.0,
+     1.55,
+     0.0
+    ],
+    "pool": [
+     2.2,
+     0.16
+    ],
+    "pool_color": "#e0752a",
+    "radius": 4.5
+   },
+   "relic.brazier__pit": {
+    "color": "#d6d2b6",
+    "halo": [
+     0.9,
+     0.4
+    ],
+    "halo_color": "#d6d2b6",
+    "intensity": 0.55,
+    "offset": [
+     0.0,
+     0.6,
+     0.0
+    ],
+    "pool": [
+     2.2,
+     0.16
+    ],
+    "pool_color": "#e0752a",
+    "radius": 4.5
+   },
+   "relic.tablet__awakened": {
+    "color": "#a7c9bf",
+    "intensity": 0.3,
+    "offset": [
+     0.0,
+     1.4,
+     0.4
+    ],
+    "radius": 3.0
+   }
+  },
+  "materials": {
+   "chrome": {
+    "tint": "#b48a30"
+   },
+   "cliff": {
+    "gloss": 0.0
+   },
+   "fire": {
+    "emission": 0.15,
+    "lit": 0.0
+   },
+   "floor": {
+    "gloss": 0.0,
+    "note": "matte stone (N64 convention: no per-pixel glints)"
+   },
+   "frame": {
+    "gloss": 0.0
+   },
+   "glass": {
+    "tint": "#2f7566"
+   },
+   "light": {
+    "emission": 0.15,
+    "lit": 0.0
+   },
+   "orb": {
+    "tint": "#2f7566"
+   },
+   "rock": {
+    "gloss": 0.0
+   },
+   "screen": {
+    "emission": 0.1,
+    "lit": 0.0
+   },
+   "stone": {
+    "gloss": 0.0
+   },
+   "trim": {
+    "gloss": 0.0
+   },
+   "vista_far": {
+    "fog_scale": 0.6
+   },
+   "wall": {
+    "gloss": 0.0
+   },
+   "water": {
+    "gloss": 0.0
+   }
+  },
+  "note": "jungle_temple room look (theme-agnostic runtime reads it). Terms are [colour, strength]; directions point towards the light in Godot world space (y up). Kit rooms set presentation look_profile per region (approach / clearing / shrine) and kit_shell: true.",
+  "profiles": {
+   "approach": {
+    "actors": {
+     "kicker": [
+      "#b2b098",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "keeps characters readable against foliage"
+    },
+    "ambient": [
+     "#8d8e78",
+     0.56
+    ],
+    "background": "#b1c2b3",
+    "bake_desaturate": 0.1,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#a7c9bf",
+     0.24
+    ],
+    "fill_dir": [
+     0.5,
+     0.35,
+     0.55
+    ],
+    "fog": {
+     "color": "#b1c2b3",
+     "far": 34.0,
+     "max": 1.0,
+     "near": 7.0
+    },
+    "grade": {
+     "contrast": 1.1,
+     "exposure": 1.1,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#355a20",
+     0.14
+    ],
+    "key": [
+     "#d6d2b6",
+     0.46
+    ],
+    "key_dir": [
+     -0.55,
+     0.81,
+     0.2
+    ],
+    "note": "jungle temple approach: the same humid rig; a softer grade because dark mossy silhouettes against the pale fog are the frame's strongest edges",
+    "sky": [
+     "#a7c9bf",
+     0.16
+    ]
+   },
+   "clearing": {
+    "actors": {
+     "kicker": [
+      "#b2b098",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "keeps characters readable against foliage"
+    },
+    "ambient": [
+     "#8d8e78",
+     0.56
+    ],
+    "background": "#b1c2b3",
+    "bake_desaturate": 0.1,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#a7c9bf",
+     0.24
+    ],
+    "fill_dir": [
+     0.5,
+     0.35,
+     0.55
+    ],
+    "fog": {
+     "color": "#b1c2b3",
+     "far": 34.0,
+     "max": 1.0,
+     "near": 7.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.12,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#355a20",
+     0.14
+    ],
+    "key": [
+     "#d6d2b6",
+     0.46
+    ],
+    "key_dir": [
+     -0.55,
+     0.81,
+     0.2
+    ],
+    "note": "humid jungle day: a soft warm key through haze, green-grey ambient and moss bounce, and a close pale green fog that swallows the far canopy (the N64 jungle trick: fog as atmosphere, layered silhouettes).",
+    "sky": [
+     "#a7c9bf",
+     0.16
+    ]
+   },
+   "exterior": {
+    "actors": {
+     "kicker": [
+      "#b2b098",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "keeps characters readable against foliage"
+    },
+    "ambient": [
+     "#8d8e78",
+     0.56
+    ],
+    "background": "#b1c2b3",
+    "bake_desaturate": 0.1,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#a7c9bf",
+     0.24
+    ],
+    "fill_dir": [
+     0.5,
+     0.35,
+     0.55
+    ],
+    "fog": {
+     "color": "#b1c2b3",
+     "far": 34.0,
+     "max": 1.0,
+     "near": 7.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.12,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#355a20",
+     0.14
+    ],
+    "key": [
+     "#d6d2b6",
+     0.46
+    ],
+    "key_dir": [
+     -0.55,
+     0.81,
+     0.2
+    ],
+    "note": "humid jungle day: a soft warm key through haze, green-grey ambient and moss bounce, and a close pale green fog that swallows the far canopy (the N64 jungle trick: fog as atmosphere, layered silhouettes).",
+    "sky": [
+     "#a7c9bf",
+     0.16
+    ]
+   },
+   "interior": {
+    "actors": {
+     "kicker": [
+      "#b2b098",
+      0.2
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps characters readable against dark stone"
+    },
+    "ambient": [
+     "#8d8e78",
+     0.52
+    ],
+    "background": "#c9dccb",
+    "bake_desaturate": 0.1,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "interior_warm",
+    "fill": [
+     "#4e605a",
+     0.12
+    ],
+    "fill_dir": [
+     -0.5,
+     0.2,
+     -0.6
+    ],
+    "fog": {
+     "color": "#2c3b36",
+     "far": 34.0,
+     "max": 0.35,
+     "near": 12.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.44,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#355a20",
+     0.12
+    ],
+    "key": [
+     "#d6d2b6",
+     0.42
+    ],
+    "key_dir": [
+     0.2,
+     0.92,
+     0.3
+    ],
+    "note": "overgrown roofless sanctum: green-grey light from the open vault, moss-dark wall feet, a brazier's warm pool on the floor; fog the darkest ambient tone.",
+    "room": {
+     "base_ao": 0.24,
+     "base_height": 0.5,
+     "floor_lift": 0.25,
+     "note": "value structure: lit floor, wall bases in contact shadow, wall tops open to the sky",
+     "top_dark": 0.06,
+     "top_from": 3.6,
+     "top_to": 6.0
+    },
+    "sky": [
+     "#a7c9bf",
+     0.14
+    ]
+   },
+   "oasis": {
+    "actors": {
+     "kicker": [
+      "#b2b098",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "keeps characters readable against foliage"
+    },
+    "ambient": [
+     "#8d8e78",
+     0.56
+    ],
+    "background": "#b1c2b3",
+    "bake_desaturate": 0.1,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#a7c9bf",
+     0.24
+    ],
+    "fill_dir": [
+     0.5,
+     0.35,
+     0.55
+    ],
+    "fog": {
+     "color": "#b1c2b3",
+     "far": 34.0,
+     "max": 1.0,
+     "near": 7.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.12,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#355a20",
+     0.14
+    ],
+    "key": [
+     "#d6d2b6",
+     0.46
+    ],
+    "key_dir": [
+     -0.55,
+     0.81,
+     0.2
+    ],
+    "note": "humid jungle day: a soft warm key through haze, green-grey ambient and moss bounce, and a close pale green fog that swallows the far canopy (the N64 jungle trick: fog as atmosphere, layered silhouettes).",
+    "sky": [
+     "#a7c9bf",
+     0.16
+    ]
+   },
+   "shrine": {
+    "actors": {
+     "kicker": [
+      "#b2b098",
+      0.2
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps characters readable against dark stone"
+    },
+    "ambient": [
+     "#8d8e78",
+     0.52
+    ],
+    "background": "#c9dccb",
+    "bake_desaturate": 0.1,
+    "chrome": {
+     "gamma": 1.2,
+     "hot": 0.15,
+     "hot_from": 0.95,
+     "note": "painted sphere-map gold (N64 convention): the env texture carries the look, no white-hot boost",
+     "rim": 0.0
+    },
+    "environment": "interior_warm",
+    "fill": [
+     "#4e605a",
+     0.12
+    ],
+    "fill_dir": [
+     -0.5,
+     0.2,
+     -0.6
+    ],
+    "fog": {
+     "color": "#2c3b36",
+     "far": 34.0,
+     "max": 0.35,
+     "near": 12.0
+    },
+    "grade": {
+     "contrast": 1.12,
+     "exposure": 1.44,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#355a20",
+     0.12
+    ],
+    "key": [
+     "#d6d2b6",
+     0.42
+    ],
+    "key_dir": [
+     0.2,
+     0.92,
+     0.3
+    ],
+    "note": "overgrown roofless sanctum: green-grey light from the open vault, moss-dark wall feet, a brazier's warm pool on the floor; fog the darkest ambient tone.",
+    "room": {
+     "base_ao": 0.24,
+     "base_height": 0.5,
+     "floor_lift": 0.25,
+     "note": "value structure: lit floor, wall bases in contact shadow, wall tops open to the sky",
+     "top_dark": 0.06,
+     "top_from": 3.6,
+     "top_to": 6.0
+    },
+    "sky": [
+     "#a7c9bf",
+     0.14
+    ]
+   }
+  },
+  "shadows": {
+   "color": "#0b120f",
+   "kinds": [
+    "prop",
+    "piece",
+    "collectible",
+    "dressing"
+   ],
+   "max": 3.0,
+   "max_lift": 0.08,
+   "min": 0.4,
+   "note": "N64-era blob shadows under floor-standing props",
+   "scale": 1.3,
+   "strength": 0.55
+  },
+  "view_fog_scale": 0.15
+ },
+ "pack_id": "jungle_temple",
+ "palette": {
+  "body": "#8d8e78",
+  "boots": "#0b120f",
+  "collectible": "#eed27a",
+  "door": "#686b58",
+  "floor": "#686b58",
+  "head": "#b2b098",
+  "prop": "#8d8e78",
+  "ui_bg": "#0b120f",
+  "ui_text": "#d6d2b6",
+  "void": "#0b120f",
+  "wall": "#8d8e78"
+ },
+ "palette_colors": [
+  "#0B120F",
+  "#18231F",
+  "#2C3B36",
+  "#4E605A",
+  "#2A2C24",
+  "#474A3C",
+  "#686B58",
+  "#8D8E78",
+  "#B2B098",
+  "#D6D2B6",
+  "#1E3517",
+  "#355A20",
+  "#5C832C",
+  "#93B346",
+  "#13271A",
+  "#22432B",
+  "#3B6A3A",
+  "#6C9C4E",
+  "#33241A",
+  "#5A4130",
+  "#87694A",
+  "#6A4A16",
+  "#B48A30",
+  "#EED27A",
+  "#3B6F86",
+  "#6FA1AA",
+  "#A7C9BF",
+  "#C9DCCB",
+  "#163F3A",
+  "#2F7566",
+  "#E0752A",
+  "#FFD27E"
+ ],
+ "style_gate": {
+  "accent_fraction_max": 0.06,
+  "accent_hues": [
+   [
+    10.0,
+    50.0
+   ]
+  ],
+  "accent_sat_min": 0.7,
+  "note": "jungle_temple thresholds, calibrated in the real runtime (docs/ANCIENTKIT-RESULT.md): core defaults or stricter, with the accent family defined as saturated flame/ember (sat >= 0.70, hue 10-50 deg) because the base material (sun-baked sandstone / mossy temple stone) is itself warm (hue 25-45 deg, sat 0.30-0.62) and gold leaf shares the sandstone hue; the accent budget is tightened from 15% to 6%. Known-bad controls (the early real-runtime rounds, tools/ancientkit_demo.py gatecheck) fail this set; never loosened to pass a round."
+ },
+ "ui": {
+  "accent": "#eed27a",
+  "dim": "#686b58",
+  "fill": "#18231fd9",
+  "frame": "#8d8e78",
+  "ink": "#0b120f",
+  "note": "dark shade panels, pale stone text, gold-leaf accent; keyboard prompts only, no text-bubble clutter",
+  "text": "#d6d2b6"
+ }
+}

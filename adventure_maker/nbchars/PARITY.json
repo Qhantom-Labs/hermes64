@@ -1,0 +1,176 @@
+{
+ "deterministic": true,
+ "environment": {
+  "hypot_compat": true,
+  "numpy": "2.0.2",
+  "python": "3.9.6",
+  "reference": "CPython 3.13 (Blender 5.2.1 bundled interpreter)",
+  "sum_compat": true,
+  "zlib": "1.2.12",
+  "zlib_runtime": "1.2.12"
+ },
+ "files": 37,
+ "fingerprint": "480d4c3db43c93a6cd22ecab9fe21382efe882b3d75f815dfe61a68cdee1eaae",
+ "glb_validate_ok": true,
+ "max_skinned_error_m": 9.929969596310734e-07,
+ "note": "skinned vertex positions compared at every key of every clip (numpy LBS of both files); bytes identical for POSITION/TEXCOORD_0/COLOR_0/JOINTS_0/WEIGHTS_0/indices/IBM/textures/layout; NORMAL and animation floats differ only by float32 rounding noise (docs/NBCHARS-RESULT.md)",
+ "oracle": "Blender 5.2.1 published cast (lane-combat-art/published)",
+ "oracle_manifest_sha256": "4705f007608ea8c467a368a221cfd1d75a8b356d05664de4d17eb65bc3f729ed",
+ "per_file": {
+  "cameo_visor/cameo_visor_01.glb": [
+   "equivalent-within-tolerance",
+   3.405088660855106e-07
+  ],
+  "enemies/forest_village/cairn_dasher.glb": [
+   "equivalent-within-tolerance",
+   2.616741930314743e-07
+  ],
+  "enemies/forest_village/reed_warden.glb": [
+   "equivalent-within-tolerance",
+   1.6684536545439123e-07
+  ],
+  "enemies/polar_pod/cairn_dasher.glb": [
+   "equivalent-within-tolerance",
+   2.616741930314743e-07
+  ],
+  "enemies/polar_pod/reed_warden.glb": [
+   "equivalent-within-tolerance",
+   1.6684536545439123e-07
+  ],
+  "forest_village/cat_black.glb": [
+   "equivalent-within-tolerance",
+   7.505233154417465e-08
+  ],
+  "forest_village/cat_calico.glb": [
+   "equivalent-within-tolerance",
+   7.505233154417465e-08
+  ],
+  "forest_village/cat_tabby.glb": [
+   "equivalent-within-tolerance",
+   7.505233154417465e-08
+  ],
+  "forest_village/cat_tuxedo.glb": [
+   "equivalent-within-tolerance",
+   7.505233154417465e-08
+  ],
+  "forest_village/cat_white.glb": [
+   "equivalent-within-tolerance",
+   7.505233154417465e-08
+  ],
+  "forest_village/dog_saddle.glb": [
+   "equivalent-within-tolerance",
+   6.834444584957907e-08
+  ],
+  "forest_village/fv_elder.glb": [
+   "equivalent-within-tolerance",
+   5.795088644170442e-07
+  ],
+  "forest_village/fv_scribe.glb": [
+   "equivalent-within-tolerance",
+   4.755879091993529e-07
+  ],
+  "forest_village/fv_smith.glb": [
+   "equivalent-within-tolerance",
+   5.899757884861067e-07
+  ],
+  "forest_village/fv_warden.glb": [
+   "equivalent-within-tolerance",
+   5.987696428576666e-07
+  ],
+  "polar_pod/cat_black.glb": [
+   "equivalent-within-tolerance",
+   7.505233154417465e-08
+  ],
+  "polar_pod/cat_calico.glb": [
+   "equivalent-within-tolerance",
+   7.505233154417465e-08
+  ],
+  "polar_pod/cat_tabby.glb": [
+   "equivalent-within-tolerance",
+   7.505233154417465e-08
+  ],
+  "polar_pod/cat_tuxedo.glb": [
+   "equivalent-within-tolerance",
+   7.505233154417465e-08
+  ],
+  "polar_pod/cat_white.glb": [
+   "equivalent-within-tolerance",
+   7.505233154417465e-08
+  ],
+  "polar_pod/dog_saddle.glb": [
+   "equivalent-within-tolerance",
+   6.834444584957907e-08
+  ],
+  "polar_pod/ivo.glb": [
+   "equivalent-within-tolerance",
+   9.929969596310734e-07
+  ],
+  "polar_pod/luma.glb": [
+   "equivalent-within-tolerance",
+   4.366643399034387e-07
+  ],
+  "polar_pod/neri.glb": [
+   "equivalent-within-tolerance",
+   4.843820270479952e-07
+  ],
+  "polar_pod/new_arrival.glb": [
+   "equivalent-within-tolerance",
+   5.768162178759302e-07
+  ],
+  "polar_pod/pp_elder.glb": [
+   "equivalent-within-tolerance",
+   5.304050369494541e-07
+  ],
+  "polar_pod/pp_engineer.glb": [
+   "equivalent-within-tolerance",
+   4.6948534902891915e-07
+  ],
+  "polar_pod/pp_kid.glb": [
+   "equivalent-within-tolerance",
+   4.817514517722234e-07
+  ],
+  "polar_pod/pp_medic.glb": [
+   "equivalent-within-tolerance",
+   4.86940648895033e-07
+  ],
+  "polar_pod/sol.glb": [
+   "equivalent-within-tolerance",
+   5.876403608102787e-07
+  ],
+  "polar_pod/study_07.glb": [
+   "equivalent-within-tolerance",
+   5.456891874596386e-07
+  ],
+  "polar_pod/study_08.glb": [
+   "equivalent-within-tolerance",
+   3.5474440847278167e-07
+  ],
+  "polar_pod/tavi.glb": [
+   "equivalent-within-tolerance",
+   5.665703469580212e-07
+  ],
+  "props/forest_village/reed_burr.glb": [
+   "equivalent-within-tolerance",
+   0.0
+  ],
+  "props/forest_village/trail_staff.glb": [
+   "equivalent-within-tolerance",
+   0.0
+  ],
+  "props/polar_pod/reed_burr.glb": [
+   "equivalent-within-tolerance",
+   0.0
+  ],
+  "props/polar_pod/trail_staff.glb": [
+   "equivalent-within-tolerance",
+   0.0
+  ]
+ },
+ "rigkit_ok": true,
+ "schema": "hermes64-nbchars-parity-verdict/1",
+ "tolerance_m": 0.0001,
+ "verdict": "PASS",
+ "verdicts": {
+  "equivalent-within-tolerance": 37
+ }
+}

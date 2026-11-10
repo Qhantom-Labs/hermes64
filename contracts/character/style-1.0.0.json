@@ -1,0 +1,75 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "urn:hermes64:character-style:1.0.0",
+ "title": "Character style lock (companion of a style profile)",
+ "description": "Additive companion of contracts/style/1.0.0: the character rules of one style profile (or one legacy palette pack) - palette derivation from the profile's palette anchors, palette ROLE bindings, proportion ranges, shading ramp, texture grain, face style and budgets. Stored at profiles/character-styles/<id>.json (outside the profile directory, whose inventory is closed) and pinned to the profile by id + version; the build receipt records the profile closure hash. Fold into a style 1.1.0 section when the style resolver is next revised.",
+ "type": "object",
+ "required": ["schema_version", "id", "source"],
+ "additionalProperties": false,
+ "properties": {
+  "schema_version": {"const": "1.0.0"},
+  "id": {"$ref": "#/$defs/id"},
+  "description": {"type": "string", "maxLength": 400},
+  "extends": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/id"}]},
+  "source": {
+   "type": "object", "additionalProperties": false, "required": ["kind"],
+   "properties": {
+    "kind": {"enum": ["profile", "legacy_pack"]},
+    "profile": {"type": "object", "additionalProperties": false, "required": ["id", "version", "path"],
+                "properties": {"id": {"$ref": "#/$defs/id"}, "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+                               "path": {"type": "string", "pattern": "^[a-z0-9_./-]{1,128}$"}}},
+    "pack": {"$ref": "#/$defs/id"}
+   }
+  },
+  "palette": {
+   "type": "object", "additionalProperties": false,
+   "properties": {
+    "derive": {"type": "array", "maxItems": 64, "items": {
+     "type": "object", "additionalProperties": false, "required": ["name", "mix"],
+     "properties": {"name": {"$ref": "#/$defs/id"},
+                    "mix": {"type": "array", "minItems": 3, "maxItems": 3, "description": "[colour a, colour b, t]: linear-light mix a*(1-t) + b*t; a/b = profile palette anchors, earlier derived names, or black/pure_white (checked by adventure_maker.character_style)"},
+                    "desaturate": {"type": "number", "minimum": 0, "maximum": 1}}}},
+    "ramps": {"type": "object", "maxProperties": 24, "additionalProperties": {"type": "array", "items": {"$ref": "#/$defs/id"}, "minItems": 2, "maxItems": 16}},
+    "skin_ramps": {"type": "object", "maxProperties": 16, "additionalProperties": {"type": "array", "items": {"$ref": "#/$defs/token"}, "minItems": 5, "maxItems": 5}},
+    "light_ramp": {"type": "array", "items": {"$ref": "#/$defs/id"}, "minItems": 3, "maxItems": 16},
+    "specials": {"type": "object", "additionalProperties": false,
+                 "properties": {"eye_white": {"$ref": "#/$defs/id"}, "face_line": {"$ref": "#/$defs/id"}, "teeth": {"$ref": "#/$defs/id"},
+                                "sole": {"$ref": "#/$defs/id"}, "blush": {"$ref": "#/$defs/id"}}}
+   }
+  },
+  "roles": {"type": "object", "maxProperties": 96, "propertyNames": {"$ref": "#/$defs/id"}, "additionalProperties": {"$ref": "#/$defs/token"}},
+  "proportions": {
+   "type": "object", "additionalProperties": false,
+   "properties": {
+    "height": {"type": "object", "additionalProperties": false,
+               "properties": {"child": {"$ref": "#/$defs/range"}, "teen": {"$ref": "#/$defs/range"}, "adult": {"$ref": "#/$defs/range"},
+                              "elder": {"$ref": "#/$defs/range"}, "masked": {"$ref": "#/$defs/range"}}},
+    "head": {"$ref": "#/$defs/range"}, "shoulders": {"$ref": "#/$defs/range"}, "waist": {"$ref": "#/$defs/range"},
+    "legs": {"$ref": "#/$defs/range"},
+    "robot_height": {"type": "object", "additionalProperties": false,
+                     "properties": {"walker": {"$ref": "#/$defs/range"}, "brute": {"$ref": "#/$defs/range"}, "floater": {"$ref": "#/$defs/range"}}},
+    "boss_scale": {"$ref": "#/$defs/range"}
+   }
+  },
+  "texture": {"type": "object", "additionalProperties": false,
+              "properties": {"wear": {"$ref": "#/$defs/range"}, "patterns": {"type": "array", "items": {"$ref": "#/$defs/part"}, "maxItems": 16}}},
+  "face": {"type": "object", "additionalProperties": false,
+           "properties": {"styles": {"type": "array", "items": {"enum": ["painted_atlas", "faceless", "visor"]}, "minItems": 1, "maxItems": 3},
+                          "presets": {"type": "array", "items": {"$ref": "#/$defs/part"}, "maxItems": 32},
+                          "expressions": {"type": "array", "items": {"enum": ["neutral", "blink", "talk_a", "talk_b", "smile", "worried", "surprised", "sleepy"]}, "maxItems": 8}}},
+  "bodies": {"type": "array", "items": {"$ref": "#/$defs/part"}, "minItems": 1, "maxItems": 16},
+  "parts_denied": {"type": "array", "items": {"$ref": "#/$defs/part"}, "maxItems": 128},
+  "budgets": {"type": "object", "additionalProperties": false,
+              "properties": {"humanoid_body_lt": {"type": "integer", "minimum": 1, "maximum": 700},
+                             "creature_body_lt": {"type": "integer", "minimum": 1, "maximum": 500},
+                             "prop_le": {"type": "integer", "minimum": 1, "maximum": 200},
+                             "actor_total_le": {"type": "integer", "minimum": 1, "maximum": 1000}}},
+  "defaults": {"type": "object", "maxProperties": 64, "propertyNames": {"$ref": "#/$defs/id"}, "additionalProperties": {"$ref": "#/$defs/id"}}
+ },
+ "$defs": {
+  "id": {"type": "string", "pattern": "^[a-z][a-z0-9_]{0,63}$"},
+  "part": {"type": "string", "pattern": "^[a-z]+\\.[a-z0-9_]{1,40}$"},
+  "token": {"type": "string", "pattern": "^[a-z][a-z0-9_]{0,31}(\\+[a-z][a-z0-9_]{0,31})?$"},
+  "range": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "minimum": -10, "maximum": 10}}
+ }
+}

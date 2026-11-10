@@ -1,0 +1,156 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "config": {
+      "additionalProperties": false,
+      "properties": {
+        "max_speed_mps": {
+          "maximum": 12,
+          "minimum": 0.1,
+          "type": "number"
+        },
+        "mover": {
+          "const": "on_foot"
+        },
+        "simulation_hz": {
+          "const": 60
+        }
+      },
+      "required": [
+        "simulation_hz",
+        "mover",
+        "max_speed_mps"
+      ],
+      "type": "object"
+    },
+    "entities": {
+      "additionalProperties": false,
+      "properties": {
+        "tracks": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "checkpoints": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "position_m": {
+                      "items": {
+                        "maximum": 1024,
+                        "minimum": -1024,
+                        "type": "number"
+                      },
+                      "maxItems": 3,
+                      "minItems": 3,
+                      "type": "array"
+                    },
+                    "radius_m": {
+                      "maximum": 4,
+                      "minimum": 0.1,
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "position_m",
+                    "radius_m"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 32,
+                "minItems": 1,
+                "type": "array"
+              },
+              "countdown_ticks": {
+                "maximum": 600,
+                "minimum": 0,
+                "type": "integer"
+              },
+              "id": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                "type": "string"
+              },
+              "laps": {
+                "enum": [
+                  1
+                ]
+              },
+              "par_ticks": {
+                "maximum": 216000,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "pause_policy": {
+                "enum": [
+                  "freeze"
+                ]
+              },
+              "room": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                "type": "string"
+              },
+              "start_position_m": {
+                "items": {
+                  "maximum": 1024,
+                  "minimum": -1024,
+                  "type": "number"
+                },
+                "maxItems": 3,
+                "minItems": 3,
+                "type": "array"
+              },
+              "time_limit_ticks": {
+                "maximum": 216000,
+                "minimum": 1,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "room",
+              "start_position_m",
+              "countdown_ticks",
+              "par_ticks",
+              "time_limit_ticks",
+              "laps",
+              "pause_policy",
+              "checkpoints"
+            ],
+            "type": "object"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "tracks"
+      ],
+      "type": "object"
+    },
+    "id": {
+      "const": "course"
+    },
+    "version": {
+      "const": "1.1.0"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "config",
+    "entities"
+  ],
+  "type": "object"
+}

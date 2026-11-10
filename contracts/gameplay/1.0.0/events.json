@@ -1,0 +1,358 @@
+{
+  "oneOf": [
+    {
+      "additionalProperties": false,
+      "properties": {
+        "api_version": {
+          "const": "1.0.0"
+        },
+        "attempt": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "build_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "challenge": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+          "type": "string"
+        },
+        "kind": {
+          "const": "combat_completed"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "defeated_spawns": {
+              "items": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                "type": "string"
+              },
+              "maxItems": 24,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "player_alive": {
+              "const": true
+            }
+          },
+          "required": [
+            "defeated_spawns",
+            "player_alive"
+          ],
+          "type": "object"
+        },
+        "physics_tick": {
+          "maximum": 2147483647,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sequence": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "api_version",
+        "build_hash",
+        "challenge",
+        "attempt",
+        "sequence",
+        "physics_tick",
+        "kind",
+        "payload"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "api_version": {
+          "const": "1.0.0"
+        },
+        "attempt": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "build_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "challenge": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+          "type": "string"
+        },
+        "kind": {
+          "const": "combat_failed"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "reason": {
+              "enum": [
+                "player_defeated",
+                "aborted"
+              ]
+            }
+          },
+          "required": [
+            "reason"
+          ],
+          "type": "object"
+        },
+        "physics_tick": {
+          "maximum": 2147483647,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sequence": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "api_version",
+        "build_hash",
+        "challenge",
+        "attempt",
+        "sequence",
+        "physics_tick",
+        "kind",
+        "payload"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "api_version": {
+          "const": "1.0.0"
+        },
+        "attempt": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "build_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "challenge": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+          "type": "string"
+        },
+        "kind": {
+          "const": "course_checkpoint"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "checkpoint": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-z][a-z0-9_]{0,63}$",
+              "type": "string"
+            },
+            "elapsed_ticks": {
+              "maximum": 216000,
+              "minimum": 0,
+              "type": "integer"
+            },
+            "index": {
+              "maximum": 31,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "checkpoint",
+            "index",
+            "elapsed_ticks"
+          ],
+          "type": "object"
+        },
+        "physics_tick": {
+          "maximum": 2147483647,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sequence": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "api_version",
+        "build_hash",
+        "challenge",
+        "attempt",
+        "sequence",
+        "physics_tick",
+        "kind",
+        "payload"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "api_version": {
+          "const": "1.0.0"
+        },
+        "attempt": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "build_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "challenge": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+          "type": "string"
+        },
+        "kind": {
+          "const": "course_completed"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "checkpoints": {
+              "items": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                "type": "string"
+              },
+              "maxItems": 32,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "elapsed_ticks": {
+              "maximum": 216000,
+              "minimum": 1,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "checkpoints",
+            "elapsed_ticks"
+          ],
+          "type": "object"
+        },
+        "physics_tick": {
+          "maximum": 2147483647,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sequence": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "api_version",
+        "build_hash",
+        "challenge",
+        "attempt",
+        "sequence",
+        "physics_tick",
+        "kind",
+        "payload"
+      ],
+      "type": "object"
+    },
+    {
+      "additionalProperties": false,
+      "properties": {
+        "api_version": {
+          "const": "1.0.0"
+        },
+        "attempt": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "build_hash": {
+          "maxLength": 64,
+          "minLength": 64,
+          "pattern": "^[0-9a-f]{64}$",
+          "type": "string"
+        },
+        "challenge": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+          "type": "string"
+        },
+        "kind": {
+          "const": "course_failed"
+        },
+        "payload": {
+          "additionalProperties": false,
+          "properties": {
+            "reason": {
+              "enum": [
+                "deadline",
+                "aborted"
+              ]
+            }
+          },
+          "required": [
+            "reason"
+          ],
+          "type": "object"
+        },
+        "physics_tick": {
+          "maximum": 2147483647,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "sequence": {
+          "maximum": 2147483647,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "api_version",
+        "build_hash",
+        "challenge",
+        "attempt",
+        "sequence",
+        "physics_tick",
+        "kind",
+        "payload"
+      ],
+      "type": "object"
+    }
+  ]
+}

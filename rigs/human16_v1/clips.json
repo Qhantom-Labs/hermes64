@@ -1,0 +1,741 @@
+{
+ "attach": "rigkit.attach_clips(glb, 'human16_v1'): rotations copied verbatim; the root translation regrounded per key so the lowest vertex keeps floor_clearance_m",
+ "channels": {
+  "rotation": "every joint (root included)",
+  "translation": [
+   "root"
+  ]
+ },
+ "clips": [
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "combat",
+   "guard_frames": [
+    3,
+    15
+   ],
+   "key_sha256": "7f7e56973d49c838cf790c8231bfc564b24a779a9edc86ec545528f525d31ba0",
+   "keys": 16,
+   "loop": false,
+   "loop_source": "core/combat.PHASES",
+   "name": "block",
+   "phases": {
+    "guard_hold": [
+     3,
+     15
+    ],
+    "raise": [
+     1,
+     2
+    ]
+   },
+   "vertical_offset_m": {
+    "root": [
+     -0.016436,
+     -0.016313,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534,
+     -0.016534
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "base",
+   "key_sha256": "41e77e60c7ef07fec51b7584bb3b22a19ad7145d9d32bc56b9fc897d831664de",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "carry",
+   "vertical_offset_m": {
+    "root": [
+     0.00162,
+     0.027529,
+     -0.003264,
+     -0.021539,
+     -0.026372,
+     -0.013092,
+     0.009535,
+     0.026284,
+     0.026284,
+     0.009535,
+     -0.013092,
+     -0.026372,
+     -0.021539,
+     -0.003264,
+     0.027529,
+     0.00162
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "combat",
+   "key_sha256": "67e029f27b80d7a80a52ecf7b9980bab16aa06f12782c00d1154b5acc3ee389e",
+   "keys": 16,
+   "loop": false,
+   "loop_source": "core/combat.PHASES",
+   "name": "death",
+   "phases": {
+    "collapse": [
+     3,
+     9
+    ],
+    "down_hold": [
+     10,
+     15
+    ],
+    "impact": [
+     1,
+     2
+    ]
+   },
+   "vertical_offset_m": {
+    "root": [
+     -0.016436,
+     -0.026582,
+     -0.026582,
+     -0.034133,
+     -0.045314,
+     -0.085746,
+     -0.269925,
+     -0.374157,
+     -0.470886,
+     -0.535749,
+     -0.5624,
+     -0.5624,
+     -0.5624,
+     -0.5624,
+     -0.5624,
+     -0.5624
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "combat",
+   "key_sha256": "ebc79f4125c0c87bbe26d7174193ab11fe7af17a1b65f48b4dd0cd4a2dcd63b6",
+   "keys": 16,
+   "loop": false,
+   "loop_source": "core/combat.PHASES",
+   "name": "hurt",
+   "phases": {
+    "impact": [
+     1,
+     3
+    ],
+    "recover": [
+     4,
+     15
+    ]
+   },
+   "vertical_offset_m": {
+    "root": [
+     -0.016436,
+     -0.026582,
+     -0.026582,
+     -0.025301,
+     -0.02295,
+     -0.020033,
+     -0.017367,
+     -0.01524,
+     -0.015689,
+     -0.015964,
+     -0.016171,
+     -0.016319,
+     -0.016436,
+     -0.016436,
+     -0.016436,
+     -0.016436
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "base",
+   "key_sha256": "c6384574ce00ed323ec011dd42e2d7d0f2298851a68ff027d39898cf1a32e12a",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "idle",
+   "vertical_offset_m": {
+    "root": [
+     0.011073,
+     0.012547,
+     0.013706,
+     0.014395,
+     0.014537,
+     0.014116,
+     0.013177,
+     0.011836,
+     0.010289,
+     0.008804,
+     0.007672,
+     0.007137,
+     0.007319,
+     0.008176,
+     0.00952,
+     0.011073
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "combat",
+   "key_sha256": "d2a4bc6c68526eed4bf21d923293b5437ccd1e00e3018df34273eba51b40c32a",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "core/combat.PHASES",
+   "name": "idle_combat",
+   "phases": {
+    "loop": [
+     0,
+     15
+    ]
+   },
+   "vertical_offset_m": {
+    "root": [
+     -0.016436,
+     -0.016955,
+     -0.018203,
+     -0.019378,
+     -0.019666,
+     -0.018858,
+     -0.017531,
+     -0.016571,
+     -0.016571,
+     -0.017531,
+     -0.018858,
+     -0.019666,
+     -0.019378,
+     -0.018203,
+     -0.016955,
+     -0.016436
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "base",
+   "key_sha256": "770c1537d9b3eea621e0798101c3cbac40eda5e91107b90f8c9228645557d67d",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "interact",
+   "vertical_offset_m": {
+    "root": [
+     0.0,
+     0.002267,
+     0.004083,
+     0.005179,
+     0.005406,
+     0.004733,
+     0.003251,
+     0.001169,
+     0.001169,
+     0.003251,
+     0.004733,
+     0.005406,
+     0.005179,
+     0.004083,
+     0.002267,
+     0.0
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "combat",
+   "iframes": [
+    2,
+    9
+   ],
+   "key_sha256": "37ce51f3078a39ac995439fa206450ff2602aa2a7477c9af8db1bffa4a5ff504",
+   "keys": 16,
+   "loop": false,
+   "loop_source": "core/combat.PHASES",
+   "name": "roll",
+   "phases": {
+    "crouch": [
+     1,
+     1
+    ],
+    "ready": [
+     14,
+     15
+    ],
+    "rise": [
+     10,
+     13
+    ],
+    "tuck_roll": [
+     2,
+     9
+    ]
+   },
+   "travel_m": [
+    2.2,
+    3.2
+   ],
+   "travel_recommended_m": 2.6,
+   "vertical_offset_m": {
+    "root": [
+     -0.016436,
+     -0.068476,
+     -0.109103,
+     -0.079512,
+     0.122962,
+     -0.068176,
+     -0.529744,
+     -0.607381,
+     -0.389868,
+     -0.21895,
+     -0.154639,
+     -0.086687,
+     -0.095315,
+     -0.068476,
+     -0.025059,
+     -0.016436
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "base",
+   "key_sha256": "95cf0f489b3d37075b4d2b333fb06a1faf457846cbe20187513b44ed17e2529e",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "run",
+   "vertical_offset_m": {
+    "root": [
+     0.00162,
+     0.001154,
+     -0.061678,
+     -0.129213,
+     -0.145882,
+     -0.099099,
+     -0.025238,
+     0.028797,
+     0.028797,
+     -0.025238,
+     -0.099099,
+     -0.145882,
+     -0.129213,
+     -0.061678,
+     0.001154,
+     0.00162
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "base",
+   "key_sha256": "69648524566ef0206828cdf1b20d623ae9a3c8731356aff83817b7d198e499ac",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "sit",
+   "vertical_offset_m": {
+    "root": [
+     -0.235773,
+     -0.234286,
+     -0.233097,
+     -0.23238,
+     -0.232232,
+     -0.232672,
+     -0.233641,
+     -0.235006,
+     -0.235006,
+     -0.233641,
+     -0.232672,
+     -0.232232,
+     -0.23238,
+     -0.233097,
+     -0.234286,
+     -0.235773
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "combat",
+   "hit_window": {
+    "end_s": 0.533333,
+    "frames": [
+     5,
+     7
+    ],
+    "start_s": 0.333333
+   },
+   "key_sha256": "95784b33c52f997253993282ab6c2e6055dcd8b233735f32e6c8221d45fc2474",
+   "keys": 16,
+   "loop": false,
+   "loop_source": "core/combat.PHASES",
+   "name": "swing",
+   "phases": {
+    "active": [
+     5,
+     7
+    ],
+    "anticipation": [
+     1,
+     4
+    ],
+    "recovery": [
+     8,
+     15
+    ]
+   },
+   "vertical_offset_m": {
+    "root": [
+     -0.016436,
+     -0.014306,
+     -0.021287,
+     -0.024853,
+     -0.024853,
+     -0.028381,
+     -0.043586,
+     -0.044342,
+     -0.044342,
+     -0.044342,
+     -0.039404,
+     -0.032339,
+     -0.025632,
+     -0.020572,
+     -0.017545,
+     -0.016436
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "base",
+   "key_sha256": "a70207212c6b55800849c515cf4d9cd0cf20a2e41d5f12b2e17f09ac200ca24a",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "talk",
+   "vertical_offset_m": {
+    "root": [
+     0.0,
+     0.002267,
+     0.004083,
+     0.005179,
+     0.005406,
+     0.004733,
+     0.003251,
+     0.001169,
+     0.001169,
+     0.003251,
+     0.004733,
+     0.005406,
+     0.005179,
+     0.004083,
+     0.002267,
+     0.0
+    ]
+   }
+  },
+  {
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "base",
+   "key_sha256": "c11b96117ed69aab0ccd1dd275bea50f106c6c26a76043e4877a2165cde60a0a",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "walk",
+   "vertical_offset_m": {
+    "root": [
+     0.00162,
+     0.027529,
+     -0.003264,
+     -0.021539,
+     -0.026372,
+     -0.013092,
+     0.009535,
+     0.026284,
+     0.026284,
+     0.009535,
+     -0.013092,
+     -0.026372,
+     -0.021539,
+     -0.003264,
+     0.027529,
+     0.00162
+    ]
+   }
+  }
+ ],
+ "combat_rules": {
+  "blend": "clips are STEP; do not crossfade into swing keys 6-8",
+  "hand_props": "hide kit_acc_hand_l_* / kit_acc_hand_r_* while a combat clip plays",
+  "weapon": "trail_staff on hand_r (rig.json props.weapon)"
+ },
+ "duration_s": 1.0,
+ "files": {
+  "clips.glb": {
+   "bytes": 108164,
+   "sha256": "50c9a6b7127e06011da81373da4430928418ac7a8ea9527dd5dff847d86ae3d1"
+  },
+  "mannequin.glb": {
+   "bytes": 167792,
+   "deterministic": true,
+   "sha256": "fadd068fe19141c5df163ef3ad14c675755bd3644029610b7fdb3663af0a0411",
+   "tris": 354,
+   "validate_ok": true
+  }
+ },
+ "fps": 15,
+ "interpolation": "STEP",
+ "key_time": "key k at t = k / 15 s",
+ "keys": 16,
+ "reference_body": {
+  "cast_id": "pp_medic",
+  "generator": "core/people.person(packs/polar_pod face_defaults + face_cast 'pp_medic' params)",
+  "height_m": 1.63,
+  "pack": "polar_pod",
+  "props": [],
+  "reference_glb_sha256": "b9e42c47d0fe59c597fe9842fa655a2c5c71767ea279d526a8079d8623685948",
+  "role": "reference rest skeleton, mannequin skeleton and clip-pack pose source",
+  "stance": "neutral",
+  "topology": "human16_face_v3"
+ },
+ "rig": "human16_v1",
+ "rig_version": "1.0.0",
+ "root_motion": "root translation = vertical grounding only (x = z = 0); the runtime moves actors",
+ "schema": "hermes64-rig-clips/1.0.0",
+ "source": "vendored generator (characters/gen) through adventure_maker.nbchars: the same per-key data the Blender exporter writes for this body (docs/NBCHARS-RESULT.md parity)"
+}

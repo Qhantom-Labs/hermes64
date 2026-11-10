@@ -1,0 +1,2236 @@
+{
+  "characters": [
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "wayfarer",
+      "name": "Wren",
+      "params": {
+        "colour": "#8d6a58",
+        "costume": "travel_coat",
+        "voice_tags": [
+          "quiet",
+          "measured"
+        ]
+      },
+      "role": "wayfarer",
+      "role_profiles": {
+        "wayfarer": {
+          "colour": "#8d6a58",
+          "costume": "travel_coat",
+          "voice_tags": [
+            "quiet",
+            "measured"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "mirela",
+      "name": "Mirela",
+      "params": {
+        "colour": "#a89a64",
+        "costume": "oilskin",
+        "voice_tags": [
+          "weathered",
+          "restrained"
+        ]
+      },
+      "role": "innkeeper",
+      "role_profiles": {
+        "innkeeper": {
+          "colour": "#a89a64",
+          "costume": "oilskin",
+          "voice_tags": [
+            "weathered",
+            "restrained"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "tobin",
+      "name": "Tobin",
+      "params": {
+        "colour": "#a89a64",
+        "costume": "oilskin",
+        "voice_tags": [
+          "weathered",
+          "restrained"
+        ]
+      },
+      "role": "warden",
+      "role_profiles": {
+        "warden": {
+          "colour": "#a89a64",
+          "costume": "oilskin",
+          "voice_tags": [
+            "weathered",
+            "restrained"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "ysolde",
+      "name": "Ysolde",
+      "params": {
+        "colour": "#514958",
+        "costume": "buttoned_storm_coat",
+        "voice_tags": [
+          "withholding",
+          "accusatory"
+        ]
+      },
+      "role": "steward",
+      "role_profiles": {
+        "steward": {
+          "colour": "#514958",
+          "costume": "buttoned_storm_coat",
+          "voice_tags": [
+            "withholding",
+            "accusatory"
+          ]
+        }
+      }
+    }
+  ],
+  "collectible_groups": [],
+  "collectibles": [],
+  "contract_version": "1.2.0",
+  "description": "MEDIEVALKIT demo built only from the village, castle, props, nature and terrain kits: a market square, its tavern, a castle gate over a moat and the torchlit throne room beyond. Original names and designs.",
+  "dialogues": [],
+  "endings": [
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "audience"
+        }
+      ],
+      "id": "audience",
+      "text": "Ysolde sets your petition beside the throne. \"The hall has heard you, wayfarer.\""
+    }
+  ],
+  "flags": [
+    {
+      "description": "Mirela told you how the warden opens the gate",
+      "id": "heard_rumour",
+      "initial": false
+    },
+    {
+      "description": "Tobin has raised the portcullis",
+      "id": "gate_open",
+      "initial": false
+    },
+    {
+      "description": "The steward has heard your petition",
+      "id": "audience",
+      "initial": false
+    }
+  ],
+  "gameplay": {
+    "api_version": "1.0.0",
+    "modules": [
+      {
+        "config": {
+          "max_health": 6
+        },
+        "entities": {
+          "abilities": [
+            {
+              "id": "lantern",
+              "name": "Lantern",
+              "requires": []
+            }
+          ]
+        },
+        "id": "abilities",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "entry_cost": "none",
+          "failure_progress": "unchanged",
+          "max_active": 1
+        },
+        "entities": {
+          "challenges": [],
+          "checkpoints": [
+            {
+              "id": "square_safe",
+              "position_m": [
+                8.5,
+                0,
+                13.0
+              ],
+              "room": "square"
+            },
+            {
+              "id": "tavern_safe",
+              "position_m": [
+                6.5,
+                0,
+                7.0
+              ],
+              "room": "tavern"
+            },
+            {
+              "id": "castle_gate_safe",
+              "position_m": [
+                9.5,
+                0,
+                16.0
+              ],
+              "room": "castle_gate"
+            },
+            {
+              "id": "throne_room_safe",
+              "position_m": [
+                6.5,
+                0,
+                15.0
+              ],
+              "room": "throne_room"
+            }
+          ]
+        },
+        "id": "challenge",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "fast_travel": false,
+          "load_policy": "one_region"
+        },
+        "entities": {
+          "links": [
+            {
+              "a": {
+                "door": "to_tavern",
+                "region": "square"
+              },
+              "b": {
+                "door": "to_square",
+                "region": "tavern"
+              },
+              "id": "square__tavern"
+            },
+            {
+              "a": {
+                "door": "to_castle",
+                "region": "square"
+              },
+              "b": {
+                "door": "to_square",
+                "region": "castle_gate"
+              },
+              "id": "square__castle_gate"
+            },
+            {
+              "a": {
+                "door": "to_hall",
+                "region": "castle_gate"
+              },
+              "b": {
+                "door": "to_gate",
+                "region": "throne_room"
+              },
+              "id": "castle_gate__throne_room"
+            }
+          ],
+          "regions": [
+            {
+              "checkpoint": "square_safe",
+              "id": "square",
+              "landmarks": [
+                {
+                  "id": "well",
+                  "name": "The old well",
+                  "position_m": [
+                    8.0,
+                    0,
+                    9.2
+                  ]
+                }
+              ],
+              "room": "square"
+            },
+            {
+              "checkpoint": "tavern_safe",
+              "id": "tavern",
+              "landmarks": [
+                {
+                  "id": "hearth",
+                  "name": "The inglenook",
+                  "position_m": [
+                    10.5,
+                    0,
+                    1.2
+                  ]
+                }
+              ],
+              "room": "tavern"
+            },
+            {
+              "checkpoint": "castle_gate_safe",
+              "id": "castle_gate",
+              "landmarks": [
+                {
+                  "id": "gatehouse",
+                  "name": "The Greywatch gatehouse",
+                  "position_m": [
+                    10.5,
+                    0,
+                    6.5
+                  ]
+                }
+              ],
+              "room": "castle_gate"
+            },
+            {
+              "checkpoint": "throne_room_safe",
+              "id": "throne_room",
+              "landmarks": [
+                {
+                  "id": "throne",
+                  "name": "The throne of Greywatch",
+                  "position_m": [
+                    6.5,
+                    0,
+                    2.4
+                  ]
+                }
+              ],
+              "room": "throne_room"
+            }
+          ]
+        },
+        "id": "regions",
+        "version": "1.0.0"
+      }
+    ],
+    "seed": 7,
+    "verification_policy": "conditional"
+  },
+  "id": "wayfarers_audience_demo",
+  "interactions": [
+    {
+      "conditions": [],
+      "effects": [],
+      "id": "read_notice",
+      "kind": "examine",
+      "label": "Read the notice board",
+      "room": "square",
+      "target": "notice",
+      "text": "Pinned notes, all blank but one: the steward of Greywatch hears petitions at the turning of the bell."
+    },
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "heard_rumour",
+          "value": true
+        },
+        {
+          "unlock": "lantern"
+        }
+      ],
+      "id": "talk_mirela",
+      "kind": "talk",
+      "label": "Talk to Mirela",
+      "room": "tavern",
+      "target": "mirela",
+      "text": "Mirela slides a cup across. \"The castle? Tobin keeps the gate. Tell him the Lantern sent you, he owes me for a winter's ale. Take a lantern, the road is dark under the gate.\""
+    },
+    {
+      "conditions": [],
+      "effects": [],
+      "id": "tap_keg",
+      "kind": "examine",
+      "label": "Look at the keg",
+      "room": "tavern",
+      "target": "keg",
+      "text": "Brown ale, still cold from the cellar. The tap is worn bright."
+    },
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "heard_rumour"
+        }
+      ],
+      "effects": [
+        {
+          "flag": "gate_open",
+          "value": true
+        }
+      ],
+      "id": "talk_tobin",
+      "kind": "talk",
+      "label": "Talk to Tobin",
+      "room": "castle_gate",
+      "target": "tobin",
+      "text": "Tobin grunts at the name of the Lantern, then hauls on the winch. The portcullis grinds up."
+    },
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "audience",
+          "value": true
+        }
+      ],
+      "id": "talk_ysolde",
+      "kind": "talk",
+      "label": "Present your petition",
+      "room": "throne_room",
+      "target": "ysolde",
+      "text": "Ysolde reads your letter twice, then nods. \"Greywatch will send grain to your valley before the frost.\""
+    }
+  ],
+  "items": [],
+  "metadata": {
+    "medievalkit_note": "Built only from MEDIEVALKIT kits (kits/core/gen_medievalkit_*.py) by data: tools/medievalkit_rooms.py snaps every piece to the MEDIEVAL GRID and checks the socket manifest kits/library/medievalkit-sockets.json. Generated by tools/medievalkit_demo.py.",
+    "presentation": {
+      "convention": "hermes64-presentation/1",
+      "rooms": {
+        "castle_gate": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                13.5,
+                3.0,
+                6.0
+              ],
+              "position": [
+                0.5,
+                6.5,
+                20.5
+              ]
+            }
+          ],
+          "characters": {
+            "tobin": {
+              "position": [
+                12.6,
+                0,
+                14.6
+              ],
+              "yaw": -150
+            }
+          },
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "bailey",
+          "pieces": [
+            {
+              "asset": "mter.ground__meadow_4",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.ground__meadow_4",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                -1.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                2.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                14.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                18.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.gatehouse__deep",
+              "kind": "landmark",
+              "position": [
+                10.5,
+                0.0,
+                4.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.tower_round__roofed",
+              "kind": "wall",
+              "position": [
+                4.5,
+                0.0,
+                4.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "cst.tower_round__roofed",
+              "kind": "wall",
+              "position": [
+                16.5,
+                0.0,
+                4.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.curtain__slits",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                4.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "cst.curtain",
+              "kind": "wall",
+              "position": [
+                20.5,
+                0.0,
+                4.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.keep__crenellated",
+              "kind": "landmark",
+              "position": [
+                10.5,
+                0.0,
+                -10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mnat.pine",
+              "position": [
+                1.6,
+                0.0,
+                15.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mnat.rock__cluster",
+              "position": [
+                4.2,
+                0.0,
+                13.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.ground__meadow_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.ground__meadow_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                22.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                26.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                30.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.ground__meadow_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.ground__meadow_far",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                -5.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                -9.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.water__moat",
+              "kind": "shell",
+              "position": [
+                -13.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.backdrop__mountains",
+              "position": [
+                8.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                0.2,
+                0.2,
+                0.2
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "vlg.wall__postern",
+              "kind": "wall",
+              "position": [
+                6.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "mnat.hedgerow",
+              "kind": "wall",
+              "position": [
+                2.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "mnat.hedgerow",
+              "kind": "wall",
+              "position": [
+                10.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "mnat.hedgerow__gap",
+              "kind": "wall",
+              "position": [
+                14.5,
+                0.0,
+                20.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "cst.portcullis",
+              "asset_when_set": "cst.portcullis__raised",
+              "flag": "gate_open",
+              "kind": "insert",
+              "position": [
+                10.5,
+                0.0,
+                7.45
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.drawbridge",
+              "kind": "insert",
+              "position": [
+                10.5,
+                0.0,
+                8.35
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "square": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                6.0,
+                1.4,
+                4.0
+              ],
+              "position": [
+                15.6,
+                4.6,
+                16.4
+              ]
+            }
+          ],
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "village",
+          "pieces": [
+            {
+              "asset": "mter.ground__plaza_4",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.ground__meadow_4",
+              "kind": "floor",
+              "position": [
+                -7.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.ground__meadow_4",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                24.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.ground__meadow_far",
+              "kind": "floor",
+              "position": [
+                8.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.ground__meadow_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                -7.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mter.ground__meadow_far",
+              "kind": "floor",
+              "position": [
+                24.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "vlg.tavern__doorway",
+              "kind": "landmark",
+              "position": [
+                4.2,
+                0.0,
+                -2.06
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "vlg.cottage__stone",
+              "position": [
+                -4.6,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "vlg.wall__postern",
+              "kind": "wall",
+              "position": [
+                16.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "vlg.wall",
+              "kind": "wall",
+              "position": [
+                16.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "vlg.wall",
+              "kind": "wall",
+              "position": [
+                16.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "vlg.wall",
+              "kind": "wall",
+              "position": [
+                16.5,
+                0.0,
+                14.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "vlg.well",
+              "kind": "landmark",
+              "position": [
+                8.0,
+                0.0,
+                9.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "vlg.stall",
+              "position": [
+                12.6,
+                0.0,
+                8.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "vlg.stall__cloth",
+              "position": [
+                12.6,
+                0.0,
+                12.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "mnat.oak",
+              "position": [
+                2.0,
+                0.0,
+                14.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mnat.oak__young",
+              "position": [
+                14.8,
+                0.0,
+                16.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.lantern",
+              "position": [
+                4.6,
+                0.0,
+                5.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.lantern",
+              "position": [
+                12.2,
+                0.0,
+                4.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "mprop.cart",
+              "position": [
+                3.0,
+                0.0,
+                9.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 60.0
+            },
+            {
+              "asset": "mprop.barrel",
+              "position": [
+                10.6,
+                0.0,
+                2.9
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.barrel__keg",
+              "position": [
+                11.4,
+                0.0,
+                3.3
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.crate",
+              "position": [
+                2.6,
+                0.0,
+                3.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 12.0
+            },
+            {
+              "asset": "mprop.trough",
+              "position": [
+                5.6,
+                0.0,
+                13.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "mter.backdrop",
+              "position": [
+                8.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                0.2,
+                0.2,
+                0.2
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "tavern": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                8.8,
+                1.0,
+                2.2
+              ],
+              "position": [
+                1.6,
+                2.9,
+                7.9
+              ]
+            }
+          ],
+          "characters": {
+            "mirela": {
+              "position": [
+                10.4,
+                0,
+                3.1
+              ],
+              "yaw": -120
+            }
+          },
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "tavern",
+          "pieces": [
+            {
+              "asset": "vlg.room__taproom",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "vlg.ceiling",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.table",
+              "position": [
+                4.2,
+                0.0,
+                4.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.bench",
+              "position": [
+                4.2,
+                0.0,
+                3.7
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.bench",
+              "position": [
+                4.2,
+                0.0,
+                5.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.table__round",
+              "position": [
+                9.0,
+                0.0,
+                5.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.bench__stool",
+              "position": [
+                8.1,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.bench__stool",
+              "position": [
+                9.9,
+                0.0,
+                5.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.tableware",
+              "position": [
+                3.8,
+                0.8,
+                4.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.tableware__candles",
+              "position": [
+                4.8,
+                0.8,
+                4.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.tableware__drinks",
+              "position": [
+                9.0,
+                0.8,
+                5.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.barrel",
+              "position": [
+                11.4,
+                0.0,
+                1.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.barrel",
+              "position": [
+                11.6,
+                0.0,
+                2.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.barrel__lying",
+              "position": [
+                1.7,
+                0.0,
+                7.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "mprop.crate__small",
+              "position": [
+                2.5,
+                0.0,
+                7.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 20.0
+            },
+            {
+              "asset": "vlg.hearth",
+              "mounted": true,
+              "position": [
+                10.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "mprop.lantern_hung",
+              "mounted": true,
+              "position": [
+                2.5,
+                0.0,
+                8.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "mprop.lantern_hung",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "mprop.shelf",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            }
+          ],
+          "wall_height": 3.4
+        },
+        "throne_room": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                6.5,
+                2.0,
+                2.0
+              ],
+              "position": [
+                6.5,
+                4.6,
+                16.0
+              ]
+            }
+          ],
+          "characters": {
+            "ysolde": {
+              "position": [
+                8.6,
+                0,
+                5.2
+              ],
+              "yaw": 200
+            }
+          },
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "hall",
+          "pieces": [
+            {
+              "asset": "cst.hall__throne",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.ceiling__throne",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.dais",
+              "position": [
+                6.5,
+                0.0,
+                2.7
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.throne__canopy",
+              "position": [
+                6.5,
+                0.66,
+                2.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.carpet",
+              "position": [
+                6.5,
+                0.0,
+                9.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.pillar",
+              "position": [
+                3.2,
+                0.0,
+                6.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.pillar",
+              "position": [
+                9.8,
+                0.0,
+                6.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.pillar",
+              "position": [
+                3.2,
+                0.0,
+                11.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.pillar",
+              "position": [
+                9.8,
+                0.0,
+                11.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.brazier",
+              "position": [
+                4.3,
+                0.0,
+                4.1
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.brazier",
+              "position": [
+                8.7,
+                0.0,
+                4.1
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.chandelier",
+              "mounted": true,
+              "position": [
+                6.5,
+                7.0,
+                9.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.sconce",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "cst.sconce",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "cst.sconce",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                14.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "cst.sconce",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "cst.sconce",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "cst.sconce",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                14.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "cst.banner",
+              "mounted": true,
+              "position": [
+                6.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cst.banner__cross",
+              "mounted": true,
+              "position": [
+                2.5,
+                0.0,
+                16.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "cst.banner__cross",
+              "mounted": true,
+              "position": [
+                10.5,
+                0.0,
+                16.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            }
+          ],
+          "wall_height": 7.0
+        }
+      },
+      "rotation_order": "YXZ",
+      "rotation_units": "degrees"
+    },
+    "protagonist": "wayfarer",
+    "style_pack": "medieval_village"
+  },
+  "quests": [],
+  "rooms": [
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            6.0,
+            1.4,
+            4.0
+          ],
+          "position": [
+            15.6,
+            4.6,
+            16.4
+          ]
+        }
+      ],
+      "character_ids": [
+        "wayfarer"
+      ],
+      "description": "Hollowmere's market square. Cobbles ring an old well, the Crooked Lantern leans over the north side, and a postern in the town wall opens on the castle road.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_tavern",
+          "label": "Step into the Crooked Lantern",
+          "position": 6,
+          "to_door": "to_square",
+          "to_room": "tavern",
+          "wall": "north"
+        },
+        {
+          "conditions": [],
+          "id": "to_castle",
+          "label": "Take the castle road",
+          "position": 6,
+          "to_door": "to_square",
+          "to_room": "castle_gate",
+          "wall": "east"
+        }
+      ],
+      "grid_size": [
+        17,
+        17
+      ],
+      "id": "square",
+      "kit_refs": [],
+      "name": "Hollowmere Square",
+      "props": [
+        {
+          "asset": "mprop.signpost__notice",
+          "id": "notice",
+          "position": [
+            9.6,
+            0,
+            14.6
+          ],
+          "rotation": [
+            0,
+            -20.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            8.8,
+            1.0,
+            2.2
+          ],
+          "position": [
+            1.6,
+            2.9,
+            7.9
+          ]
+        }
+      ],
+      "character_ids": [
+        "wayfarer",
+        "mirela"
+      ],
+      "description": "The Crooked Lantern's tap-room. A fire crackles in the inglenook, lanterns burn on the beams and Mirela polishes tankards behind the barrels.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_square",
+          "label": "Back out to the square",
+          "position": 6,
+          "to_door": "to_tavern",
+          "to_room": "square",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        13,
+        9
+      ],
+      "id": "tavern",
+      "kit_refs": [],
+      "name": "The Crooked Lantern",
+      "props": [
+        {
+          "asset": "mprop.barrel__keg",
+          "id": "keg",
+          "position": [
+            10.6,
+            0,
+            1.7
+          ],
+          "rotation": [
+            0,
+            0.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            13.5,
+            3.0,
+            6.0
+          ],
+          "position": [
+            0.5,
+            6.5,
+            20.5
+          ]
+        }
+      ],
+      "character_ids": [
+        "wayfarer",
+        "tobin"
+      ],
+      "description": "Greywatch's gate. A drawbridge spans the moat to a twin-towered gatehouse; the portcullis is down and the warden Tobin keeps the bridge.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_square",
+          "label": "Back down the road to the square",
+          "position": 6,
+          "to_door": "to_castle",
+          "to_room": "square",
+          "wall": "south"
+        },
+        {
+          "conditions": [
+            {
+              "equals": true,
+              "flag": "gate_open"
+            }
+          ],
+          "id": "to_hall",
+          "label": "Pass under the gate",
+          "position": 10,
+          "to_door": "to_gate",
+          "to_room": "throne_room",
+          "wall": "north"
+        }
+      ],
+      "grid_size": [
+        17,
+        21
+      ],
+      "id": "castle_gate",
+      "kit_refs": [],
+      "name": "The Greywatch Gate",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            6.5,
+            2.0,
+            2.0
+          ],
+          "position": [
+            6.5,
+            4.6,
+            16.0
+          ]
+        }
+      ],
+      "character_ids": [
+        "wayfarer",
+        "ysolde"
+      ],
+      "description": "The great hall of Greywatch. Torches line the walls, a red runner leads to the dais, and the steward Ysolde waits beside the empty throne.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_gate",
+          "label": "Back out through the gate",
+          "position": 6,
+          "to_door": "to_hall",
+          "to_room": "castle_gate",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        13,
+        17
+      ],
+      "id": "throne_room",
+      "kit_refs": [],
+      "name": "The Hall of Greywatch",
+      "props": []
+    }
+  ],
+  "start": {
+    "collected": [],
+    "dialogue": {},
+    "flags": {
+      "audience": false,
+      "gate_open": false,
+      "heard_rumour": false
+    },
+    "inventory": [],
+    "location": "square",
+    "modules": {
+      "abilities": [],
+      "active": "",
+      "checkpoint": "square_safe",
+      "completed": [],
+      "discovered": [
+        "square"
+      ],
+      "failed": ""
+    },
+    "tide": {
+      "state": "clear",
+      "tick": 0
+    }
+  },
+  "tide": {
+    "id": "day",
+    "states": [
+      {
+        "duration": 1,
+        "id": "clear",
+        "label": "Day"
+      }
+    ],
+    "wait_label": "Wait",
+    "wait_text": "A cart rattles by; somewhere a bell counts the hour."
+  },
+  "title": "The Wayfarer's Audience"
+}

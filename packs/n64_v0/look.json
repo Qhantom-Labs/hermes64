@@ -1,0 +1,34 @@
+{
+  "id": "harbor_dusk",
+  "version": "0.1.0",
+  "note": "lane-look test pack (foggy harbour at dusk). Provisional palette authored for the spike; not the kits palette.",
+  "palette": [
+    "#0b0d12", "#1a1f2b", "#2b3242", "#3f4859", "#5a6475", "#7c8696", "#a3acb8", "#d2d6da",
+    "#24364a", "#35506a", "#4f6f88", "#7895a8", "#1f3a3a", "#2f5650", "#4d7a6c", "#2a1d15",
+    "#45301f", "#63452b", "#85613c", "#a98252", "#4b4540", "#6e655b", "#958a7b", "#bdb19c",
+    "#f2d58a", "#e0a347", "#b5652a", "#7a2e22", "#c98f6b", "#8c5a44", "#2e4a7a", "#e8e0cc"
+  ],
+  "colors": {
+    "fog_ext": "#4f6f88", "fog_int": "#2b3242", "fog_tower": "#35506a",
+    "amb_ext": "#2b3242", "sun_ext": "#4f6f88",
+    "amb_int": "#24364a", "sun_int": "#35506a",
+    "amb_tower": "#24364a", "sun_tower": "#4f6f88",
+    "lamp": "#f2d58a", "lamp_dim": "#e0a347", "sea_light": "#4f6f88", "window_light": "#7895a8"
+  },
+  "textures": {
+    "cobble": {"gen": "cobbles", "px": 8, "c": [4, 21, 2, 3, 5]},
+    "planks": {"gen": "boards", "px": 8, "c": [18, 19, 15, 3]},
+    "planks_dark": {"gen": "boards", "px": 8, "c": [16, 17, 15, 3]},
+    "plaster": {"gen": "noise", "c": [22, 23, 21]},
+    "stone": {"gen": "blocks", "px": 8, "c": [21, 22, 20]},
+    "slate": {"gen": "slates", "px": 6, "c": [3, 4, 1]},
+    "water": {"gen": "ripples", "c": [12, 13, 14]},
+    "metal": {"gen": "panel", "c": [2, 3, 6]},
+    "pane": {"gen": "panes", "c": [8, 9, 3, 10]},
+    "glass": {"gen": "radial", "c": [24, 25]},
+    "cloth_red": {"gen": "noise", "c": [27, 26, 27]},
+    "face": {"gen": "face", "c": [28, 15, 0, 31, 29, 27]},
+    "env_chrome": {"gen": "env", "size": 64, "stops": [7, 6, 5, 3, 1], "glints": [[0.32, 0.22], [0.66, 0.28]], "glint": 31}
+  },
+  "ui": {"ink": "#0b0d12", "fill": "#0b0d12d6", "frame": "#bdb19c", "text": "#e8e0cc", "dim": "#a3acb8", "accent": "#f2d58a"}
+}

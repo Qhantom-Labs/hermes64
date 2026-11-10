@@ -1,0 +1,873 @@
+{
+ "audio": {
+  "ambient": "audio/stock/wav/core.nature.wind.breeze.wav",
+  "hearth": "audio/stock/wav/core.nature.fire.crackle.wav",
+  "night": "audio/stock/wav/core.nature.night.insects.wav",
+  "note": "pointers only (existing stock sounds); the style pack sound_palette carries ambient + interact",
+  "ui": "audio/wav/ui.select.wav"
+ },
+ "fog": {
+  "color": "#D4C7A7",
+  "far": 46.0,
+  "near": 7.0
+ },
+ "kit_pack_id": "castle_keep",
+ "light_rig": {
+  "ambient": 0.46,
+  "ao": 0.3,
+  "ao_height": 0.45,
+  "gamma": 1.0,
+  "ground": 0.03,
+  "key": 0.34,
+  "key_dir": [
+   0.55,
+   -0.45,
+   0.7
+  ],
+  "sky": 0.08
+ },
+ "look": {
+  "backdrop": {
+   "asset": "sky.backdrop",
+   "interiors": false,
+   "note": "painted sky dome for exteriors; interiors show the void colour, never a sky",
+   "scale": 0.2,
+   "y": -1.0
+  },
+  "ceiling": {
+   "note": "kit ceilings (vlg.ceiling, cst.ceiling) are one-sided facing down, so cameras above a room see in (N64 cutaway); beyond the fog and above open tops is the void colour, never a sky."
+  },
+  "emitters": {
+   "cst.brazier": {
+    "color": "#f0e7cc",
+    "halo": [
+     1.1,
+     0.6
+    ],
+    "halo_color": "#f0e7cc",
+    "intensity": 1.1,
+    "offset": [
+     0.0,
+     1.35,
+     0.0
+    ],
+    "pool": [
+     3.4,
+     0.22
+    ],
+    "pool_color": "#f0e7cc",
+    "radius": 6.5
+   },
+   "cst.chandelier": {
+    "color": "#f0e7cc",
+    "halo": [
+     1.1,
+     0.5
+    ],
+    "halo_color": "#f0e7cc",
+    "intensity": 0.9,
+    "offset": [
+     0.0,
+     -1.3,
+     0.0
+    ],
+    "radius": 7.0
+   },
+   "cst.sconce": {
+    "color": "#f0e7cc",
+    "halo": [
+     0.9,
+     0.55
+    ],
+    "halo_color": "#f0e7cc",
+    "intensity": 1.0,
+    "offset": [
+     0.0,
+     2.3,
+     0.4
+    ],
+    "pool": [
+     3.0,
+     0.2
+    ],
+    "pool_color": "#f0e7cc",
+    "radius": 5.5
+   },
+   "mprop.cauldron": {
+    "color": "#f0e7cc",
+    "halo": [
+     0.8,
+     0.5
+    ],
+    "halo_color": "#f0e7cc",
+    "intensity": 0.8,
+    "offset": [
+     0.0,
+     0.4,
+     0.0
+    ],
+    "pool": [
+     2.6,
+     0.2
+    ],
+    "pool_color": "#f0e7cc",
+    "radius": 4.5
+   },
+   "mprop.lantern": {
+    "color": "#f0e7cc",
+    "halo": [
+     0.8,
+     0.5
+    ],
+    "halo_color": "#f0e7cc",
+    "intensity": 0.8,
+    "offset": [
+     0.0,
+     2.2,
+     0.55
+    ],
+    "pool": [
+     2.6,
+     0.18
+    ],
+    "pool_color": "#f0e7cc",
+    "radius": 5.0
+   },
+   "mprop.lantern_hung": {
+    "color": "#f0e7cc",
+    "halo": [
+     0.8,
+     0.5
+    ],
+    "halo_color": "#f0e7cc",
+    "intensity": 0.75,
+    "offset": [
+     0.0,
+     2.05,
+     0.4
+    ],
+    "radius": 4.5
+   },
+   "mprop.lantern_hung__hanging": {
+    "color": "#f0e7cc",
+    "halo": [
+     0.8,
+     0.5
+    ],
+    "halo_color": "#f0e7cc",
+    "intensity": 0.75,
+    "offset": [
+     0.0,
+     -0.95,
+     0.0
+    ],
+    "radius": 4.5
+   },
+   "mprop.tableware__candles": {
+    "color": "#f0e7cc",
+    "halo": [
+     0.5,
+     0.45
+    ],
+    "halo_color": "#f0e7cc",
+    "intensity": 0.5,
+    "offset": [
+     0.0,
+     0.42,
+     0.0
+    ],
+    "radius": 3.0
+   },
+   "vlg.hearth": {
+    "color": "#f0e7cc",
+    "halo": [
+     1.1,
+     0.55
+    ],
+    "halo_color": "#f0e7cc",
+    "intensity": 1.1,
+    "offset": [
+     0.0,
+     0.6,
+     0.6
+    ],
+    "pool": [
+     3.2,
+     0.22
+    ],
+    "pool_color": "#f0e7cc",
+    "radius": 6.5
+   },
+   "vlg.smithy": {
+    "color": "#f0e7cc",
+    "intensity": 0.8,
+    "offset": [
+     -2.6,
+     1.1,
+     0.0
+    ],
+    "radius": 4.0
+   }
+  },
+  "materials": {
+   "cliff": {
+    "gloss": 0.0
+   },
+   "fire": {
+    "emission": 0.15,
+    "lit": 0.0
+   },
+   "floor": {
+    "gloss": 0.0,
+    "note": "matte (N64 convention: no per-pixel glints)"
+   },
+   "frame": {
+    "gloss": 0.0
+   },
+   "hull": {
+    "gloss": 0.0
+   },
+   "hull_alt": {
+    "gloss": 0.0
+   },
+   "light": {
+    "emission": 0.15,
+    "lit": 0.0
+   },
+   "path": {
+    "gloss": 0.0
+   },
+   "rock": {
+    "gloss": 0.0
+   },
+   "roof": {
+    "gloss": 0.0
+   },
+   "screen": {
+    "emission": 0.1,
+    "lit": 0.0
+   },
+   "sky": {
+    "emission": 0.15,
+    "note": "painted horizon daub_2 x full-bright step daub_2 (+ emission 0.15) x unlit_level 0.88 x linear tint = fog daub_1",
+    "tint": "#f6f7fd"
+   },
+   "stone": {
+    "gloss": 0.0
+   },
+   "trim": {
+    "gloss": 0.0
+   },
+   "vista_far": {
+    "fog_scale": 0.6
+   },
+   "wall": {
+    "gloss": 0.0
+   },
+   "wall_alt": {
+    "gloss": 0.0
+   },
+   "water": {
+    "gloss": 0.0
+   }
+  },
+  "note": "medieval room look (theme-agnostic runtime reads it). Terms are [colour, strength]; directions point towards the light in Godot world space (y up). Kit rooms set presentation look_profile per room (village / bailey / tavern / hall / dungeon) and kit_shell: true.",
+  "profiles": {
+   "bailey": {
+    "actors": {
+     "kicker": [
+      "#f0e7cc",
+      0.18
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker keeps people readable"
+    },
+    "ambient": [
+     "#b0aca0",
+     0.5
+    ],
+    "background": "#d4c7a7",
+    "bake_desaturate": 0.2,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#4b7dc2",
+     0.14
+    ],
+    "fill_dir": [
+     -0.6,
+     0.3,
+     -0.5
+    ],
+    "fog": {
+     "color": "#d4c7a7",
+     "far": 46.0,
+     "max": 0.88,
+     "near": 7.0
+    },
+    "grade": {
+     "contrast": 1.06,
+     "exposure": 1.0,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#4a7a31",
+     0.12
+    ],
+    "key": [
+     "#f0e7cc",
+     0.5
+    ],
+    "key_dir": [
+     0.55,
+     0.7,
+     0.45
+    ],
+    "note": "Ocarina-era village by day: a warm high sun, cream key on whitewash and thatch, cool sky fill in the shade, meadow bounce from below, a painted sky melting into a pale horizon fog. Castle bailey: the same rig over grey ashlar.",
+    "sky": [
+     "#8db6e5",
+     0.18
+    ]
+   },
+   "dungeon": {
+    "actors": {
+     "kicker": [
+      "#d4c7a7",
+      0.22
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps people readable against dark timber"
+    },
+    "ambient": [
+     "#8b8a86",
+     0.48
+    ],
+    "background": "#1a130e",
+    "bake_desaturate": 0.5,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_cool",
+    "fill": [
+     "#5e6c89",
+     0.12
+    ],
+    "fill_dir": [
+     -0.6,
+     0.25,
+     -0.5
+    ],
+    "fog": {
+     "color": "#1a130e",
+     "far": 24.0,
+     "max": 0.94,
+     "near": 7.0
+    },
+    "grade": {
+     "contrast": 1.08,
+     "exposure": 1.22,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#46474d",
+     0.12
+    ],
+    "key": [
+     "#d0cabb",
+     0.42
+    ],
+    "key_dir": [
+     0.35,
+     0.8,
+     0.45
+    ],
+    "note": "Castle dungeon cells: rubble walls, a cool stone key, torch pools, a close dark fog.",
+    "room": {
+     "base_ao": 0.24,
+     "base_height": 0.45,
+     "floor_lift": 0.3,
+     "note": "lit floor, wall bases in contact shadow, beams dimming gently",
+     "top_dark": 0.14,
+     "top_from": 2.6,
+     "top_to": 4.2
+    },
+    "sky": [
+     "#d0cabb",
+     0.12
+    ]
+   },
+   "exterior": {
+    "actors": {
+     "kicker": [
+      "#f0e7cc",
+      0.18
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker keeps people readable"
+    },
+    "ambient": [
+     "#b0aca0",
+     0.5
+    ],
+    "background": "#d4c7a7",
+    "bake_desaturate": 0.2,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#4b7dc2",
+     0.14
+    ],
+    "fill_dir": [
+     -0.6,
+     0.3,
+     -0.5
+    ],
+    "fog": {
+     "color": "#d4c7a7",
+     "far": 46.0,
+     "max": 0.88,
+     "near": 7.0
+    },
+    "grade": {
+     "contrast": 1.06,
+     "exposure": 1.0,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#4a7a31",
+     0.12
+    ],
+    "key": [
+     "#f0e7cc",
+     0.5
+    ],
+    "key_dir": [
+     0.55,
+     0.7,
+     0.45
+    ],
+    "note": "Ocarina-era village by day: a warm high sun, cream key on whitewash and thatch, cool sky fill in the shade, meadow bounce from below, a painted sky melting into a pale horizon fog. Castle bailey: the same rig over grey ashlar.",
+    "sky": [
+     "#8db6e5",
+     0.18
+    ]
+   },
+   "hall": {
+    "actors": {
+     "kicker": [
+      "#d4c7a7",
+      0.22
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps people readable against dark timber"
+    },
+    "ambient": [
+     "#b0aca0",
+     0.52
+    ],
+    "background": "#1a130e",
+    "bake_desaturate": 0.5,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_warm",
+    "fill": [
+     "#5e6c89",
+     0.14
+    ],
+    "fill_dir": [
+     -0.6,
+     0.25,
+     -0.5
+    ],
+    "fog": {
+     "color": "#2c487e",
+     "far": 34.0,
+     "max": 0.9,
+     "near": 10.0
+    },
+    "grade": {
+     "contrast": 1.0,
+     "exposure": 1.22,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.86
+    },
+    "ground": [
+     "#66686d",
+     0.12
+    ],
+    "key": [
+     "#d0cabb",
+     0.44
+    ],
+    "key_dir": [
+     0.35,
+     0.8,
+     0.45
+    ],
+    "note": "Torchlit castle hall / throne room: grey ashlar under a pale stone key from the high lancets, warm torch pools baked round every sconce, a royal red runner and gilt, a deep blue dark in the roof trusses.",
+    "room": {
+     "base_ao": 0.26,
+     "base_height": 0.55,
+     "floor_lift": 0.32,
+     "note": "lit floor, plinths in contact shadow, trusses falling into the dark",
+     "top_dark": 0.16,
+     "top_from": 3.6,
+     "top_to": 7.0
+    },
+    "sky": [
+     "#d0cabb",
+     0.12
+    ]
+   },
+   "interior": {
+    "actors": {
+     "kicker": [
+      "#d4c7a7",
+      0.22
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps people readable against dark timber"
+    },
+    "ambient": [
+     "#b0aca0",
+     0.52
+    ],
+    "background": "#1a130e",
+    "bake_desaturate": 0.5,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_warm",
+    "fill": [
+     "#5e6c89",
+     0.14
+    ],
+    "fill_dir": [
+     -0.6,
+     0.25,
+     -0.5
+    ],
+    "fog": {
+     "color": "#2c487e",
+     "far": 34.0,
+     "max": 0.9,
+     "near": 10.0
+    },
+    "grade": {
+     "contrast": 1.0,
+     "exposure": 1.22,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.86
+    },
+    "ground": [
+     "#66686d",
+     0.12
+    ],
+    "key": [
+     "#d0cabb",
+     0.44
+    ],
+    "key_dir": [
+     0.35,
+     0.8,
+     0.45
+    ],
+    "note": "Torchlit castle hall / throne room: grey ashlar under a pale stone key from the high lancets, warm torch pools baked round every sconce, a royal red runner and gilt, a deep blue dark in the roof trusses.",
+    "room": {
+     "base_ao": 0.26,
+     "base_height": 0.55,
+     "floor_lift": 0.32,
+     "note": "lit floor, plinths in contact shadow, trusses falling into the dark",
+     "top_dark": 0.16,
+     "top_from": 3.6,
+     "top_to": 7.0
+    },
+    "sky": [
+     "#d0cabb",
+     0.12
+    ]
+   },
+   "tavern": {
+    "actors": {
+     "kicker": [
+      "#d4c7a7",
+      0.22
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps people readable against dark timber"
+    },
+    "ambient": [
+     "#b0aca0",
+     0.38
+    ],
+    "background": "#1a130e",
+    "bake_desaturate": 0.5,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_warm",
+    "fill": [
+     "#5e6c89",
+     0.14
+    ],
+    "fill_dir": [
+     -0.6,
+     0.25,
+     -0.5
+    ],
+    "fog": {
+     "color": "#3a455b",
+     "far": 28.0,
+     "max": 0.9,
+     "near": 9.0
+    },
+    "grade": {
+     "contrast": 1.0,
+     "exposure": 1.36,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.85
+    },
+    "ground": [
+     "#8b8a86",
+     0.1
+    ],
+    "key": [
+     "#d0cabb",
+     0.44
+    ],
+    "key_dir": [
+     0.35,
+     0.8,
+     0.45
+    ],
+    "note": "Tavern / cottage interior: a warm key from the hearth side, cool-ish slate fill in the shade, whitewash and oak beams; hearth and lantern pools are baked into the vertex colour (point_bake), the far corners fall into a cool woodsmoke-slate fog. Ceilings are one-sided (N64 cutaway).",
+    "room": {
+     "base_ao": 0.24,
+     "base_height": 0.45,
+     "floor_lift": 0.3,
+     "note": "lit floor, wall bases in contact shadow, beams dimming gently",
+     "top_dark": 0.14,
+     "top_from": 2.6,
+     "top_to": 4.2
+    },
+    "sky": [
+     "#d0cabb",
+     0.12
+    ]
+   },
+   "village": {
+    "actors": {
+     "kicker": [
+      "#f0e7cc",
+      0.18
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker keeps people readable"
+    },
+    "ambient": [
+     "#b0aca0",
+     0.5
+    ],
+    "background": "#d4c7a7",
+    "bake_desaturate": 0.2,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#4b7dc2",
+     0.14
+    ],
+    "fill_dir": [
+     -0.6,
+     0.3,
+     -0.5
+    ],
+    "fog": {
+     "color": "#d4c7a7",
+     "far": 46.0,
+     "max": 0.88,
+     "near": 7.0
+    },
+    "grade": {
+     "contrast": 1.06,
+     "exposure": 1.0,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#4a7a31",
+     0.12
+    ],
+    "key": [
+     "#f0e7cc",
+     0.5
+    ],
+    "key_dir": [
+     0.55,
+     0.7,
+     0.45
+    ],
+    "note": "Ocarina-era village by day: a warm high sun, cream key on whitewash and thatch, cool sky fill in the shade, meadow bounce from below, a painted sky melting into a pale horizon fog.",
+    "sky": [
+     "#8db6e5",
+     0.18
+    ]
+   }
+  },
+  "shadows": {
+   "color": "#1a130e",
+   "kinds": [
+    "prop",
+    "piece",
+    "collectible",
+    "dressing"
+   ],
+   "max": 3.0,
+   "max_lift": 0.08,
+   "min": 0.4,
+   "note": "N64-era blob shadows under floor-standing props",
+   "scale": 1.3,
+   "strength": 0.55
+  },
+  "view_fog_scale": 0.15
+ },
+ "pack_id": "castle_keep",
+ "palette": {
+  "body": "#74604e",
+  "boots": "#1a130e",
+  "collectible": "#d6a842",
+  "door": "#74604e",
+  "floor": "#8b8a86",
+  "head": "#d4c7a7",
+  "prop": "#9c856a",
+  "ui_bg": "#1a130e",
+  "ui_text": "#f0e7cc",
+  "void": "#1a130e",
+  "wall": "#b0aca0"
+ },
+ "palette_colors": [
+  "#1A130E",
+  "#332921",
+  "#4F3F35",
+  "#74604E",
+  "#9C856A",
+  "#A89A80",
+  "#D4C7A7",
+  "#F0E7CC",
+  "#80602A",
+  "#B38E3F",
+  "#DBB862",
+  "#46474D",
+  "#66686D",
+  "#8B8A86",
+  "#B0ACA0",
+  "#D0CABB",
+  "#3A455B",
+  "#5E6C89",
+  "#8C472D",
+  "#B86A45",
+  "#1D361A",
+  "#315524",
+  "#4A7A31",
+  "#74A143",
+  "#A8C867",
+  "#4B7DC2",
+  "#8DB6E5",
+  "#6C2327",
+  "#A83730",
+  "#2C487E",
+  "#D6A842",
+  "#F5B94F"
+ ],
+ "style_gate": {
+  "accent_fraction_max": 0.15,
+  "accent_hues": [
+   [
+    8.0,
+    55.0
+   ]
+  ],
+  "accent_rooms_min_fraction": 0.5,
+  "accent_sat_min": 0.4,
+  "black_point_max": 0.14,
+  "camera_inside_interior": true,
+  "contrast_range_min": 0.4,
+  "edge_density_max": 0.42,
+  "edge_density_min": 0.07,
+  "edge_threshold": 0.07,
+  "flat_fraction_max": 0.4,
+  "flat_std": 0.006,
+  "floating_max": 0,
+  "fog_near_dist": 0.07,
+  "fog_swallowed_max": 0.22,
+  "mean_luma_max": 0.66,
+  "mean_luma_min": 0.12,
+  "note": "medieval_village / castle_keep thresholds (docs/MEDIEVALKIT-RESULT.md): core defaults or stricter except two deviations, set in round 1 at the DUNGEONKIT precedent and never changed to pass a round: white_point_min 0.60 (core 0.80; measured p99.5: day exteriors 0.79, where the brightest pixels are the fog-coloured horizon, and the firelit tavern 0.67) and contrast_range_min 0.40 (core 0.42; measured tavern 0.419). accent = saturated warm hearth / torch / heraldry (sat >= 0.4, hue 8-55). Known-bad controls (tools/medievalkit_controls.py) all fail.",
+  "palette_adherence_min": 0.88,
+  "palette_hue_tol_deg": 20.0,
+  "uncut_doors_max": 0,
+  "void_fraction_max_exterior": 0.45,
+  "void_fraction_max_interior": 0.01,
+  "white_point_min": 0.6
+ },
+ "ui": {
+  "accent": "#d6a842",
+  "dim": "#b0aca0",
+  "fill": "#332921d9",
+  "frame": "#9c856a",
+  "ink": "#1a130e",
+  "note": "dark umber panels, parchment text, heraldic gold accent; keyboard prompts only, no text-bubble clutter",
+  "text": "#f0e7cc"
+ }
+}

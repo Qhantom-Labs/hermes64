@@ -1,0 +1,1876 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hermes64:style-profile:1.0.0",
+  "title": "Hermes64 Style Profile v1 (architecture draft)",
+  "description": "Data-only authored profile. Base sections are complete. Derived profiles replace whole named sections; omitted sections inherit. Semantic resolver and resource validation are mandatory; JSON Schema alone does not authorize a build.",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "id": {
+      "$ref": "#/$defs/id"
+    },
+    "version": {
+      "$ref": "#/$defs/version"
+    },
+    "description": {
+      "$ref": "#/$defs/text"
+    },
+    "extends": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/base_ref"
+        }
+      ]
+    },
+    "requirements": {
+      "$ref": "#/$defs/requirements"
+    },
+    "sections": {
+      "$ref": "#/$defs/sections"
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/resource"
+      },
+      "minItems": 0,
+      "maxItems": 128
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "version",
+    "description",
+    "extends",
+    "requirements",
+    "sections",
+    "resources"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "extends": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "extends"
+        ]
+      },
+      "then": {
+        "properties": {
+          "sections": {
+            "required": [
+              "render",
+              "palette",
+              "materials",
+              "lighting",
+              "camera",
+              "kits",
+              "geometry",
+              "characters",
+              "props",
+              "exterior",
+              "ui",
+              "audio",
+              "validators",
+              "variation"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_.-]{0,63}$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+    },
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 1000
+    },
+    "hex": {
+      "type": "string",
+      "pattern": "^#[0-9A-F]{6}$"
+    },
+    "relative_path": {
+      "type": "string",
+      "maxLength": 240,
+      "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$))(?!.*[\\\\:])[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*$"
+    },
+    "scalar": {
+      "oneOf": [
+        {
+          "type": "string",
+          "maxLength": 128
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "number"
+        }
+      ]
+    },
+    "range": {
+      "type": "object",
+      "properties": {
+        "min": {
+          "type": "number"
+        },
+        "max": {
+          "type": "number"
+        },
+        "default": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "min",
+        "max",
+        "default"
+      ],
+      "additionalProperties": false
+    },
+    "vec3": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": -10000,
+        "maximum": 10000
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "base_ref": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "version": {
+          "$ref": "#/$defs/version"
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "sha256"
+      ],
+      "additionalProperties": false
+    },
+    "parameter_rule": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "number",
+                "integer"
+              ]
+            },
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            },
+            "default": {
+              "type": "number"
+            },
+            "behavior": {
+              "enum": [
+                "reject",
+                "clamp_explicit"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "min",
+            "max",
+            "default",
+            "behavior"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "enum"
+              ]
+            },
+            "values": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/scalar"
+              },
+              "minItems": 1,
+              "maxItems": 64
+            },
+            "default": {
+              "$ref": "#/$defs/scalar"
+            }
+          },
+          "required": [
+            "type",
+            "values",
+            "default"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "type": {
+              "enum": [
+                "boolean"
+              ]
+            },
+            "default": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "default"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "recipe": {
+      "type": "object",
+      "properties": {
+        "generator": {
+          "$ref": "#/$defs/id"
+        },
+        "preset": {
+          "$ref": "#/$defs/id"
+        },
+        "params": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/scalar"
+          },
+          "minProperties": 0,
+          "maxProperties": 64
+        }
+      },
+      "required": [
+        "generator",
+        "preset",
+        "params"
+      ],
+      "additionalProperties": false
+    },
+    "render": {
+      "type": "object",
+      "properties": {
+        "resolution": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 64,
+            "maximum": 640
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "upscale": {
+          "enum": [
+            "nearest_integer"
+          ]
+        },
+        "filter": {
+          "enum": [
+            "nearest",
+            "bilinear",
+            "three_point"
+          ]
+        },
+        "vertex_lighting": {
+          "enum": [
+            "baked",
+            "dynamic",
+            "hybrid"
+          ]
+        },
+        "mipmaps": {
+          "type": "boolean"
+        },
+        "animation_hz": {
+          "type": "integer",
+          "minimum": 6,
+          "maximum": 30
+        },
+        "color_pipeline": {
+          "enum": [
+            "srgb8_linear_vertex_v1"
+          ]
+        },
+        "post": {
+          "type": "object",
+          "properties": {
+            "quantization_bits": {
+              "type": "integer",
+              "minimum": 5,
+              "maximum": 8
+            },
+            "dither": {
+              "enum": [
+                "none",
+                "bayer4"
+              ]
+            },
+            "dither_strength": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "quantization_bits",
+            "dither",
+            "dither_strength"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "resolution",
+        "upscale",
+        "filter",
+        "vertex_lighting",
+        "mipmaps",
+        "animation_hz",
+        "color_pipeline",
+        "post"
+      ],
+      "additionalProperties": false
+    },
+    "palette": {
+      "type": "object",
+      "properties": {
+        "colors": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/hex"
+          },
+          "minProperties": 3,
+          "maxProperties": 32
+        },
+        "ramps": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/id"
+            },
+            "minItems": 2,
+            "maxItems": 32,
+            "uniqueItems": true
+          },
+          "minProperties": 1,
+          "maxProperties": 16
+        },
+        "allowed_sets": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/id"
+            },
+            "minItems": 1,
+            "maxItems": 32,
+            "uniqueItems": true
+          },
+          "minProperties": 1,
+          "maxProperties": 16
+        },
+        "roles": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/id"
+          },
+          "minProperties": 1,
+          "maxProperties": 64
+        },
+        "vertex_light_ramp": {
+          "$ref": "#/$defs/id"
+        },
+        "alpha": {
+          "enum": [
+            "opaque_or_cutout"
+          ]
+        },
+        "material_factor_tolerance_rgb8": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "vertex_tolerance_rgb8": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2
+        }
+      },
+      "required": [
+        "colors",
+        "ramps",
+        "allowed_sets",
+        "roles",
+        "vertex_light_ramp",
+        "alpha",
+        "material_factor_tolerance_rgb8",
+        "vertex_tolerance_rgb8"
+      ],
+      "additionalProperties": false
+    },
+    "texture": {
+      "type": "object",
+      "properties": {
+        "generator": {
+          "$ref": "#/$defs/id"
+        },
+        "ramp": {
+          "$ref": "#/$defs/id"
+        },
+        "size_px": {
+          "enum": [
+            16,
+            32,
+            64,
+            128
+          ]
+        },
+        "tile_m": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 100
+        },
+        "params": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/scalar"
+          },
+          "minProperties": 0,
+          "maxProperties": 64
+        }
+      },
+      "required": [
+        "generator",
+        "ramp",
+        "size_px",
+        "tile_m",
+        "params"
+      ],
+      "additionalProperties": false
+    },
+    "material": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "enum": [
+            "baked_unlit",
+            "chrome_env",
+            "glass_env",
+            "emissive",
+            "view_plane",
+            "card_alpha",
+            "water",
+            "face_atlas"
+          ]
+        },
+        "color": {
+          "$ref": "#/$defs/id"
+        },
+        "texture": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/texture"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "environment": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/id"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "gloss": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "specular": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "emission": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "alpha_cut": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "kind",
+        "color",
+        "texture",
+        "environment",
+        "gloss",
+        "specular",
+        "emission",
+        "alpha_cut"
+      ],
+      "additionalProperties": false
+    },
+    "materials": {
+      "type": "object",
+      "properties": {
+        "library": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/material"
+          },
+          "minProperties": 1,
+          "maxProperties": 64
+        },
+        "role_bindings": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/id"
+          },
+          "minProperties": 1,
+          "maxProperties": 64
+        },
+        "environments": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "generator": {
+                "$ref": "#/$defs/id"
+              },
+              "stops": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/id"
+                },
+                "minItems": 2,
+                "maxItems": 16,
+                "uniqueItems": true
+              },
+              "size_px": {
+                "enum": [
+                  32,
+                  64,
+                  128
+                ]
+              }
+            },
+            "required": [
+              "generator",
+              "stops",
+              "size_px"
+            ],
+            "additionalProperties": false
+          },
+          "minProperties": 0,
+          "maxProperties": 16
+        },
+        "chrome_glass": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "allowed_roles": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "minItems": 0,
+              "maxItems": 64,
+              "uniqueItems": true
+            },
+            "reflection": {
+              "enum": [
+                "vertex_sphere_map"
+              ]
+            },
+            "glass": {
+              "enum": [
+                "opaque_env",
+                "binary_cutout"
+              ]
+            },
+            "max_visible_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "enabled",
+            "allowed_roles",
+            "reflection",
+            "glass",
+            "max_visible_fraction"
+          ],
+          "additionalProperties": false
+        },
+        "diffuse_wrap": {
+          "$ref": "#/$defs/range"
+        }
+      },
+      "required": [
+        "library",
+        "role_bindings",
+        "environments",
+        "chrome_glass",
+        "diffuse_wrap"
+      ],
+      "additionalProperties": false
+    },
+    "light_term": {
+      "type": "object",
+      "properties": {
+        "color": {
+          "$ref": "#/$defs/id"
+        },
+        "energy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 2
+        },
+        "direction": {
+          "$ref": "#/$defs/vec3"
+        }
+      },
+      "required": [
+        "color",
+        "energy",
+        "direction"
+      ],
+      "additionalProperties": false
+    },
+    "light_mood": {
+      "type": "object",
+      "properties": {
+        "ambient": {
+          "type": "object",
+          "properties": {
+            "color": {
+              "$ref": "#/$defs/id"
+            },
+            "energy": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2
+            }
+          },
+          "required": [
+            "color",
+            "energy"
+          ],
+          "additionalProperties": false
+        },
+        "key": {
+          "$ref": "#/$defs/light_term"
+        },
+        "fill": {
+          "$ref": "#/$defs/light_term"
+        },
+        "rim": {
+          "type": "object",
+          "properties": {
+            "color": {
+              "$ref": "#/$defs/id"
+            },
+            "energy": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "exponent": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 32
+            }
+          },
+          "required": [
+            "color",
+            "energy",
+            "exponent"
+          ],
+          "additionalProperties": false
+        },
+        "fog": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "const": true
+            },
+            "color": {
+              "$ref": "#/$defs/id"
+            },
+            "near_m": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1000
+            },
+            "far_m": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 1000
+            },
+            "max_density": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "enabled",
+            "color",
+            "near_m",
+            "far_m",
+            "max_density"
+          ],
+          "additionalProperties": false
+        },
+        "grade": {
+          "type": "object",
+          "properties": {
+            "exposure": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 3
+            },
+            "contrast": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 2
+            },
+            "saturation": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 2
+            },
+            "gamma": {
+              "type": "number",
+              "minimum": 0.1,
+              "maximum": 3
+            },
+            "lift": {
+              "$ref": "#/$defs/id"
+            },
+            "gain": {
+              "$ref": "#/$defs/id"
+            }
+          },
+          "required": [
+            "exposure",
+            "contrast",
+            "saturation",
+            "gamma",
+            "lift",
+            "gain"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "ambient",
+        "key",
+        "fill",
+        "rim",
+        "fog",
+        "grade"
+      ],
+      "additionalProperties": false
+    },
+    "lighting": {
+      "type": "object",
+      "properties": {
+        "moods": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/light_mood"
+          },
+          "minProperties": 2,
+          "maxProperties": 16
+        },
+        "interior_default": {
+          "$ref": "#/$defs/id"
+        },
+        "exterior_default": {
+          "$ref": "#/$defs/id"
+        },
+        "point_lights_max": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4
+        },
+        "shadow_recipe": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "moods",
+        "interior_default",
+        "exterior_default",
+        "point_lights_max",
+        "shadow_recipe"
+      ],
+      "additionalProperties": false
+    },
+    "camera": {
+      "type": "object",
+      "properties": {
+        "modes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 4,
+          "uniqueItems": true
+        },
+        "fov_deg": {
+          "$ref": "#/$defs/range"
+        },
+        "height_m": {
+          "$ref": "#/$defs/range"
+        },
+        "near_m": {
+          "type": "number",
+          "minimum": 0.01,
+          "maximum": 2
+        },
+        "far_m": {
+          "type": "number",
+          "minimum": 2,
+          "maximum": 1000
+        },
+        "require_inside_interior": {
+          "type": "boolean"
+        },
+        "occlusion_policy": {
+          "enum": [
+            "reject",
+            "approved_cutaway"
+          ]
+        },
+        "safe_margin_px": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 32
+        }
+      },
+      "required": [
+        "modes",
+        "fov_deg",
+        "height_m",
+        "near_m",
+        "far_m",
+        "require_inside_interior",
+        "occlusion_policy",
+        "safe_margin_px"
+      ],
+      "additionalProperties": false
+    },
+    "kits": {
+      "type": "object",
+      "properties": {
+        "selected": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "presets": {
+                "type": "object",
+                "propertyNames": {
+                  "$ref": "#/$defs/id"
+                },
+                "additionalProperties": {
+                  "$ref": "#/$defs/recipe"
+                },
+                "minProperties": 1,
+                "maxProperties": 32
+              },
+              "parameter_rules": {
+                "type": "object",
+                "propertyNames": {
+                  "$ref": "#/$defs/id"
+                },
+                "additionalProperties": {
+                  "$ref": "#/$defs/parameter_rule"
+                },
+                "minProperties": 0,
+                "maxProperties": 64
+              }
+            },
+            "required": [
+              "presets",
+              "parameter_rules"
+            ],
+            "additionalProperties": false
+          },
+          "minProperties": 1,
+          "maxProperties": 64
+        },
+        "required_slots": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/id"
+          },
+          "minProperties": 1,
+          "maxProperties": 64
+        },
+        "fallbacks": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/id"
+            },
+            "minItems": 1,
+            "maxItems": 8,
+            "uniqueItems": true
+          },
+          "minProperties": 0,
+          "maxProperties": 64
+        }
+      },
+      "required": [
+        "selected",
+        "required_slots",
+        "fallbacks"
+      ],
+      "additionalProperties": false
+    },
+    "geometry": {
+      "type": "object",
+      "properties": {
+        "shape_vocabulary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true
+        },
+        "bevel_m": {
+          "$ref": "#/$defs/range"
+        },
+        "round_segments": {
+          "$ref": "#/$defs/range"
+        },
+        "shading": {
+          "enum": [
+            "flat",
+            "smooth_grouped"
+          ]
+        },
+        "triangle_caps": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6000
+          },
+          "minProperties": 1,
+          "maxProperties": 20
+        },
+        "proportions": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/range"
+          },
+          "minProperties": 1,
+          "maxProperties": 16
+        },
+        "silhouette_checks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "shape_vocabulary",
+        "bevel_m",
+        "round_segments",
+        "shading",
+        "triangle_caps",
+        "proportions",
+        "silhouette_checks"
+      ],
+      "additionalProperties": false
+    },
+    "characters": {
+      "type": "object",
+      "properties": {
+        "families": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true
+        },
+        "rigs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 8,
+          "uniqueItems": true
+        },
+        "proportions": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/range"
+          },
+          "minProperties": 1,
+          "maxProperties": 16
+        },
+        "costume_palettes": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/id"
+          },
+          "minProperties": 1,
+          "maxProperties": 16
+        },
+        "skin_palette": {
+          "$ref": "#/$defs/id"
+        },
+        "costume_recipes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true
+        },
+        "face_styles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 8,
+          "uniqueItems": true
+        },
+        "hair_set": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true
+        },
+        "animation_set": {
+          "$ref": "#/$defs/id"
+        },
+        "clip_ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true
+        },
+        "attachment_slots": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 0,
+          "maxItems": 16,
+          "uniqueItems": true
+        },
+        "body_triangles_max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 700
+        },
+        "attachment_triangles_max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 150
+        },
+        "total_actor_triangles_max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 700
+        },
+        "pose_validator": {
+          "$ref": "#/$defs/id"
+        }
+      },
+      "required": [
+        "families",
+        "rigs",
+        "proportions",
+        "costume_palettes",
+        "skin_palette",
+        "costume_recipes",
+        "face_styles",
+        "hair_set",
+        "animation_set",
+        "clip_ids",
+        "attachment_slots",
+        "body_triangles_max",
+        "attachment_triangles_max",
+        "total_actor_triangles_max",
+        "pose_validator"
+      ],
+      "additionalProperties": false
+    },
+    "props": {
+      "type": "object",
+      "properties": {
+        "vocabulary": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "recipes": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/recipe"
+          },
+          "minProperties": 1,
+          "maxProperties": 64
+        },
+        "allowed_material_roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "hero_policy": {
+          "enum": [
+            "profile_validated_import",
+            "generated_only"
+          ]
+        }
+      },
+      "required": [
+        "vocabulary",
+        "recipes",
+        "allowed_material_roles",
+        "hero_policy"
+      ],
+      "additionalProperties": false
+    },
+    "exterior": {
+      "type": "object",
+      "properties": {
+        "terrain": {
+          "$ref": "#/$defs/recipe"
+        },
+        "sky": {
+          "$ref": "#/$defs/recipe"
+        },
+        "flora": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/recipe"
+          },
+          "minItems": 0,
+          "maxItems": 16
+        },
+        "climate": {
+          "$ref": "#/$defs/id"
+        },
+        "depth_bands_m": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1000
+          },
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "allowed_ground_roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "terrain",
+        "sky",
+        "flora",
+        "climate",
+        "depth_bands_m",
+        "allowed_ground_roles"
+      ],
+      "additionalProperties": false
+    },
+    "ui": {
+      "type": "object",
+      "properties": {
+        "font": {
+          "$ref": "#/$defs/id"
+        },
+        "frame_recipe": {
+          "$ref": "#/$defs/id"
+        },
+        "icons": {
+          "$ref": "#/$defs/id"
+        },
+        "colors": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/id"
+          },
+          "minProperties": 3,
+          "maxProperties": 16
+        },
+        "panel_alpha": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "font_scale": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 3
+        },
+        "typewriter_cps": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "layout": {
+          "$ref": "#/$defs/id"
+        },
+        "min_contrast_ratio": {
+          "type": "number",
+          "minimum": 1,
+          "maximum": 21
+        }
+      },
+      "required": [
+        "font",
+        "frame_recipe",
+        "icons",
+        "colors",
+        "panel_alpha",
+        "font_scale",
+        "typewriter_cps",
+        "layout",
+        "min_contrast_ratio"
+      ],
+      "additionalProperties": false
+    },
+    "audio": {
+      "type": "object",
+      "properties": {
+        "sound_set": {
+          "$ref": "#/$defs/id"
+        },
+        "allowed_tags": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true
+        },
+        "cues": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "generator": {
+                "$ref": "#/$defs/id"
+              },
+              "preset": {
+                "$ref": "#/$defs/id"
+              },
+              "gain_db": {
+                "type": "number",
+                "minimum": -60,
+                "maximum": 0
+              },
+              "loop": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "generator",
+              "preset",
+              "gain_db",
+              "loop"
+            ],
+            "additionalProperties": false
+          },
+          "minProperties": 1,
+          "maxProperties": 32
+        },
+        "gain_db": {
+          "$ref": "#/$defs/range"
+        },
+        "sample_rates": {
+          "type": "array",
+          "items": {
+            "enum": [
+              11025,
+              22050,
+              44100
+            ]
+          },
+          "minItems": 1,
+          "maxItems": 3
+        },
+        "channels_max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2
+        },
+        "peak_dbfs_max": {
+          "type": "number",
+          "minimum": -24,
+          "maximum": 0
+        },
+        "loop_seam_max": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "duration_seconds_max": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 180
+        }
+      },
+      "required": [
+        "sound_set",
+        "allowed_tags",
+        "cues",
+        "gain_db",
+        "sample_rates",
+        "channels_max",
+        "peak_dbfs_max",
+        "loop_seam_max",
+        "duration_seconds_max"
+      ],
+      "additionalProperties": false
+    },
+    "metric": {
+      "type": "object",
+      "properties": {
+        "validator": {
+          "$ref": "#/$defs/id"
+        },
+        "version": {
+          "$ref": "#/$defs/version"
+        },
+        "scope": {
+          "enum": [
+            "asset",
+            "room",
+            "exterior",
+            "character",
+            "ui",
+            "audio"
+          ]
+        },
+        "metric": {
+          "$ref": "#/$defs/id"
+        },
+        "op": {
+          "enum": [
+            "min",
+            "max",
+            "between",
+            "equals"
+          ]
+        },
+        "value": {
+          "oneOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "minItems": 2,
+              "maxItems": 2
+            }
+          ]
+        },
+        "severity": {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        "on_missing": {
+          "enum": [
+            "fail",
+            "not_applicable"
+          ]
+        }
+      },
+      "required": [
+        "validator",
+        "version",
+        "scope",
+        "metric",
+        "op",
+        "value",
+        "severity",
+        "on_missing"
+      ],
+      "additionalProperties": false
+    },
+    "validators": {
+      "type": "object",
+      "properties": {
+        "budgets": {
+          "type": "object",
+          "properties": {
+            "room_triangles": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 6000
+            },
+            "texture_px": {
+              "enum": [
+                16,
+                32,
+                64,
+                128
+              ]
+            },
+            "palette_colors": {
+              "type": "integer",
+              "minimum": 3,
+              "maximum": 32
+            },
+            "visible_lights": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 4
+            }
+          },
+          "required": [
+            "room_triangles",
+            "texture_px",
+            "palette_colors",
+            "visible_lights"
+          ],
+          "additionalProperties": false
+        },
+        "asset_palette": {
+          "type": "object",
+          "properties": {
+            "texel_tolerance_rgb8": {
+              "const": 0
+            },
+            "max_off_palette": {
+              "const": 0
+            },
+            "max_partial_alpha": {
+              "const": 0
+            }
+          },
+          "required": [
+            "texel_tolerance_rgb8",
+            "max_off_palette",
+            "max_partial_alpha"
+          ],
+          "additionalProperties": false
+        },
+        "metrics": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/metric"
+          },
+          "minItems": 1,
+          "maxItems": 64
+        },
+        "golden": {
+          "type": "object",
+          "properties": {
+            "required": {
+              "type": "boolean"
+            },
+            "max_changed_fraction": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "regions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/id"
+              },
+              "minItems": 0,
+              "maxItems": 16,
+              "uniqueItems": true
+            },
+            "renderer_pin_required": {
+              "const": true
+            }
+          },
+          "required": [
+            "required",
+            "max_changed_fraction",
+            "regions",
+            "renderer_pin_required"
+          ],
+          "additionalProperties": false
+        },
+        "coverage": {
+          "enum": [
+            "all_rooms_and_cameras"
+          ]
+        },
+        "known_bad_controls": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 32,
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "budgets",
+        "asset_palette",
+        "metrics",
+        "golden",
+        "coverage",
+        "known_bad_controls"
+      ],
+      "additionalProperties": false
+    },
+    "variation": {
+      "type": "object",
+      "properties": {
+        "room_moods": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 2,
+          "maxItems": 16,
+          "uniqueItems": true
+        },
+        "room_numeric": {
+          "type": "object",
+          "propertyNames": {
+            "$ref": "#/$defs/id"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/range"
+          },
+          "minProperties": 0,
+          "maxProperties": 64
+        },
+        "character_costume_sets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 16,
+          "uniqueItems": true
+        },
+        "asset_roles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 64,
+          "uniqueItems": true
+        },
+        "palette_extensions": {
+          "const": false
+        },
+        "unknown_fields": {
+          "enum": [
+            "reject"
+          ]
+        },
+        "on_violation": {
+          "enum": [
+            "reject_with_profile_change_option"
+          ]
+        }
+      },
+      "required": [
+        "room_moods",
+        "room_numeric",
+        "character_costume_sets",
+        "asset_roles",
+        "palette_extensions",
+        "unknown_fields",
+        "on_violation"
+      ],
+      "additionalProperties": false
+    },
+    "resource": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "kind": {
+          "enum": [
+            "texture",
+            "font",
+            "audio",
+            "glb",
+            "atlas",
+            "lut",
+            "animation"
+          ]
+        },
+        "path": {
+          "$ref": "#/$defs/relative_path"
+        },
+        "sha256": {
+          "$ref": "#/$defs/hash"
+        },
+        "license": {
+          "$ref": "#/$defs/text"
+        },
+        "redistribution": {
+          "enum": [
+            "allowed",
+            "private_only",
+            "restricted"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "path",
+        "sha256",
+        "license",
+        "redistribution"
+      ],
+      "additionalProperties": false
+    },
+    "sections": {
+      "type": "object",
+      "properties": {
+        "render": {
+          "$ref": "#/$defs/render"
+        },
+        "palette": {
+          "$ref": "#/$defs/palette"
+        },
+        "materials": {
+          "$ref": "#/$defs/materials"
+        },
+        "lighting": {
+          "$ref": "#/$defs/lighting"
+        },
+        "camera": {
+          "$ref": "#/$defs/camera"
+        },
+        "kits": {
+          "$ref": "#/$defs/kits"
+        },
+        "geometry": {
+          "$ref": "#/$defs/geometry"
+        },
+        "characters": {
+          "$ref": "#/$defs/characters"
+        },
+        "props": {
+          "$ref": "#/$defs/props"
+        },
+        "exterior": {
+          "$ref": "#/$defs/exterior"
+        },
+        "ui": {
+          "$ref": "#/$defs/ui"
+        },
+        "audio": {
+          "$ref": "#/$defs/audio"
+        },
+        "validators": {
+          "$ref": "#/$defs/validators"
+        },
+        "variation": {
+          "$ref": "#/$defs/variation"
+        }
+      },
+      "required": [],
+      "additionalProperties": false,
+      "minProperties": 1
+    },
+    "requirements": {
+      "type": "object",
+      "properties": {
+        "renderer_api": {
+          "enum": [
+            "hermes64.render/1"
+          ]
+        },
+        "generator_api": {
+          "enum": [
+            "hermes64.kits/1"
+          ]
+        },
+        "character_api": {
+          "enum": [
+            "hermes64.characters/1"
+          ]
+        },
+        "validator_api": {
+          "enum": [
+            "hermes64.validation/1"
+          ]
+        }
+      },
+      "required": [
+        "renderer_api",
+        "generator_api",
+        "character_api",
+        "validator_api"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$comment": "Cross-field checks: ranges ordered/default in range; all IDs/roles/resources resolve; palettes unique; effective limits intersect installed core ceilings; source colors use palette, lit pixels do not require exact membership; fog near<far; inheritance bounded and hash-pinned; path/no-code/resource policy; semantic checker version pinned in lock."
+}

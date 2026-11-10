@@ -1,0 +1,1972 @@
+{
+ "compiler": "tools.cyberkit_rooms.compile_room",
+ "format": "hermes64-room-plans/1",
+ "note": "Room plans as pack data. A game instantiates any subset in any order with its own doors and cast (tools.cyberkit_rooms.chain / instantiate). Coordinates in metres on the 4 m cell grid; plot_cells sets the grid; cameras a-d are authored bearings; actor_spots are optional placements.",
+ "pack": "neon_city_night",
+ "rooms": {
+  "canyon": {
+   "actor_spots": [
+    {
+     "position": [
+      11.5,
+      0,
+      11.0
+     ],
+     "yaw": 155
+    }
+   ],
+   "arena": {
+    "min_clear_m": 14.0,
+    "spots": [
+     [
+      10.5,
+      2.5
+     ],
+     [
+      6.0,
+      8.0
+     ],
+     [
+      15.0,
+      8.0
+     ]
+    ]
+   },
+   "cameras": {
+    "a": {
+     "fov": 60,
+     "look_at": [
+      9.6,
+      4.2,
+      -4
+     ],
+     "position": [
+      8.6,
+      2.9,
+      18.6
+     ]
+    },
+    "b": {
+     "fov": 60,
+     "look_at": [
+      2.5,
+      4.0,
+      0.5
+     ],
+     "position": [
+      10.5,
+      3.6,
+      18.5
+     ]
+    },
+    "c": {
+     "fov": 60,
+     "look_at": [
+      10.5,
+      5.0,
+      25
+     ],
+     "position": [
+      10.5,
+      3.2,
+      1.0
+     ]
+    },
+    "d": {
+     "fov": 60,
+     "look_at": [
+      13.4,
+      3.8,
+      26
+     ],
+     "position": [
+      2.5,
+      2.8,
+      1.6
+     ]
+    }
+   },
+   "description": "Lattice Lane. A kit-built quarter of an original neon city.",
+   "door_x_m": 10.5,
+   "exterior": true,
+   "look_profile": "city",
+   "name": "Lattice Lane",
+   "open_streets": [
+    [
+     10.5,
+     0,
+     -23.5
+    ],
+    [
+     10.5,
+     0,
+     44.5
+    ]
+   ],
+   "open_transitions": true,
+   "pieces": [
+    {
+     "block": [
+      1,
+      -6
+     ],
+     "key": "cystreet.road__long"
+    },
+    {
+     "block": [
+      1,
+      -3
+     ],
+     "key": "cystreet.road__long"
+    },
+    {
+     "block": [
+      1,
+      0
+     ],
+     "key": "cystreet.road__long"
+    },
+    {
+     "block": [
+      1,
+      3
+     ],
+     "key": "cystreet.road"
+    },
+    {
+     "block": [
+      1,
+      5
+     ],
+     "key": "cystreet.road__long"
+    },
+    {
+     "block": [
+      1,
+      8
+     ],
+     "key": "cystreet.road__long"
+    },
+    {
+     "block": [
+      0,
+      0
+     ],
+     "key": "cystreet.sidewalk__strip",
+     "yaw": 90
+    },
+    {
+     "block": [
+      0,
+      3
+     ],
+     "key": "cystreet.sidewalk__strip2",
+     "yaw": 90
+    },
+    {
+     "block": [
+      4,
+      0
+     ],
+     "key": "cystreet.sidewalk__strip",
+     "yaw": 90
+    },
+    {
+     "block": [
+      4,
+      3
+     ],
+     "key": "cystreet.sidewalk__strip2",
+     "yaw": 90
+    },
+    {
+     "edge": [
+      0.5,
+      6.5
+     ],
+     "key": "cytower.facade__canyon",
+     "yaw": 90
+    },
+    {
+     "edge": [
+      0.5,
+      18.5
+     ],
+     "key": "cytower.facade__canyon",
+     "yaw": 90
+    },
+    {
+     "edge": [
+      20.5,
+      6.5
+     ],
+     "key": "cytower.facade__canyon",
+     "yaw": -90
+    },
+    {
+     "edge": [
+      20.5,
+      18.5
+     ],
+     "key": "cytower.facade__canyon",
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      -13.5,
+      -17.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      10.5,
+      -17.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      34.5,
+      -17.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      -13.5,
+      -35.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      10.5,
+      -35.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      34.5,
+      -35.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      34.5,
+      44.5
+     ],
+     "key": "cysky.stepped__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      10.5,
+      44.5
+     ],
+     "key": "cysky.stepped__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      -13.5,
+      44.5
+     ],
+     "key": "cysky.stepped__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      34.5,
+      60.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      10.5,
+      60.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      -13.5,
+      60.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      -24.5,
+      10.5
+     ],
+     "key": "cysky.needle__low",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -39.5,
+      10.5
+     ],
+     "key": "cysky.far",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      45.5,
+      10.5
+     ],
+     "key": "cysky.near__low",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      60.5,
+      10.5
+     ],
+     "key": "cysky.far",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      1.1,
+      8.5
+     ],
+     "key": "cysign.blade",
+     "kind": "landmark",
+     "mounted": true,
+     "y": 3.2,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      1.0,
+      15.5
+     ],
+     "key": "cysign.noodle",
+     "kind": "landmark",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      10.5,
+      40.5
+     ],
+     "key": "cytower.arch__low",
+     "kind": "landmark",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      19.9,
+      9.5
+     ],
+     "key": "cysign.blade",
+     "kind": "landmark",
+     "mounted": true,
+     "y": 3.4,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      1.0,
+      5.5
+     ],
+     "key": "cytech.street_light",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      20.0,
+      16.0
+     ],
+     "key": "cytech.street_light",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      19.2,
+      4.2
+     ],
+     "key": "cytech.hovercar__taxi",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      9.0,
+      12.0
+     ],
+     "key": "cytech.puddle",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      19.6,
+      18.2
+     ],
+     "key": "cydress.bin",
+     "y": 0.0,
+     "yaw": 0.0
+    }
+   ],
+   "plot_cells": [
+    5,
+    5
+   ],
+   "role": "street"
+  },
+  "club": {
+   "actor_spots": [
+    {
+     "position": [
+      12.0,
+      0,
+      9.0
+     ],
+     "yaw": 200
+    }
+   ],
+   "arena": {
+    "min_clear_m": 14.0,
+    "spots": [
+     [
+      10.5,
+      5.0
+     ],
+     [
+      6.0,
+      10.5
+     ],
+     [
+      15.0,
+      10.5
+     ]
+    ]
+   },
+   "cameras": {
+    "a": {
+     "fov": 60,
+     "look_at": [
+      11.5,
+      0.0,
+      9.5
+     ],
+     "position": [
+      2.4,
+      4.0,
+      19.2
+     ]
+    },
+    "b": {
+     "fov": 60,
+     "look_at": [
+      9.5,
+      0.0,
+      9.5
+     ],
+     "position": [
+      18.6,
+      4.0,
+      19.2
+     ]
+    },
+    "c": {
+     "fov": 60,
+     "look_at": [
+      12.5,
+      0.2,
+      13.5
+     ],
+     "position": [
+      2.4,
+      3.9,
+      2.4
+     ]
+    },
+    "d": {
+     "fov": 60,
+     "look_at": [
+      8.5,
+      0.2,
+      13.5
+     ],
+     "position": [
+      18.6,
+      3.9,
+      2.4
+     ]
+    }
+   },
+   "description": "The Violet Relay. A kit-built quarter of an original neon city.",
+   "exterior": false,
+   "look_profile": "arena",
+   "name": "The Violet Relay",
+   "open_streets": [],
+   "open_transitions": false,
+   "pieces": [
+    {
+     "block": [
+      0,
+      0
+     ],
+     "key": "cyroom.club__arena"
+    },
+    {
+     "at_m": [
+      2.3,
+      10.5
+     ],
+     "key": "cyroom.bar",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      2.4,
+      9.8
+     ],
+     "key": "cydress.cup",
+     "mounted": true,
+     "y": 1.25,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      18.2,
+      4.5
+     ],
+     "key": "cyroom.booth",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      18.2,
+      16.5
+     ],
+     "key": "cyroom.booth",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      19.2,
+      10.5
+     ],
+     "key": "cyroom.sofa",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      6.4,
+      2.0
+     ],
+     "key": "cydress.speaker",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      14.6,
+      2.0
+     ],
+     "key": "cydress.speaker",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      14.6,
+      19.0
+     ],
+     "key": "cydress.speaker",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      17.2,
+      19.0
+     ],
+     "key": "cydress.speaker",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      5.0,
+      1.1
+     ],
+     "key": "cysign.frame__magenta",
+     "mounted": true,
+     "y": 2.2,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      16.0,
+      1.1
+     ],
+     "key": "cysign.frame__amber",
+     "mounted": true,
+     "y": 2.2,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      1.1,
+      6.0
+     ],
+     "key": "cysign.tube",
+     "mounted": true,
+     "y": 2.3,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      19.9,
+      14.5
+     ],
+     "key": "cysign.tube",
+     "mounted": true,
+     "y": 2.3,
+     "yaw": -90
+    }
+   ],
+   "plot_cells": [
+    5,
+    5
+   ],
+   "role": "interior"
+  },
+  "rooftop": {
+   "actor_spots": [
+    {
+     "position": [
+      10.0,
+      0,
+      9.0
+     ],
+     "yaw": 155
+    }
+   ],
+   "cameras": {
+    "a": {
+     "fov": 60,
+     "look_at": [
+      -8,
+      1.8,
+      -14
+     ],
+     "position": [
+      11.2,
+      2.8,
+      11.3
+     ]
+    },
+    "b": {
+     "fov": 60,
+     "look_at": [
+      17,
+      1.5,
+      -12
+     ],
+     "position": [
+      1.6,
+      3.0,
+      14.0
+     ]
+    },
+    "c": {
+     "fov": 60,
+     "look_at": [
+      14,
+      2.2,
+      4.0
+     ],
+     "position": [
+      1.2,
+      2.4,
+      9.0
+     ]
+    },
+    "d": {
+     "fov": 60,
+     "look_at": [
+      3.0,
+      3.5,
+      10.0
+     ],
+     "position": [
+      11.0,
+      2.0,
+      1.5
+     ]
+    }
+   },
+   "description": "Relay Roof. A kit-built quarter of an original neon city.",
+   "exterior": true,
+   "look_profile": "rooftop",
+   "name": "Relay Roof",
+   "open_streets": [],
+   "open_transitions": false,
+   "pieces": [
+    {
+     "block": [
+      0,
+      0
+     ],
+     "key": "cyroom.rooftop"
+    },
+    {
+     "block": [
+      1,
+      1
+     ],
+     "key": "cytower.garden__small"
+    },
+    {
+     "at_m": [
+      -17.5,
+      -21.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      6.5,
+      -21.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      30.5,
+      -21.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      -17.5,
+      -39.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      6.5,
+      -39.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      30.5,
+      -39.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      30.5,
+      40.5
+     ],
+     "key": "cysky.stepped__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      6.5,
+      40.5
+     ],
+     "key": "cysky.stepped__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      -17.5,
+      40.5
+     ],
+     "key": "cysky.stepped__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      30.5,
+      56.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      6.5,
+      56.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      -17.5,
+      56.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      -28.5,
+      30.5
+     ],
+     "key": "cysky.needle__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -28.5,
+      6.5
+     ],
+     "key": "cysky.needle__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -28.5,
+      -17.5
+     ],
+     "key": "cysky.needle__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -43.5,
+      30.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -43.5,
+      6.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -43.5,
+      -17.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      41.5,
+      -17.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      41.5,
+      6.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      41.5,
+      30.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      56.5,
+      -17.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      56.5,
+      6.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      56.5,
+      30.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      10.4,
+      3
+     ],
+     "key": "cytech.vent",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      9.3,
+      9.6
+     ],
+     "key": "cydress.bench",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      9,
+      5.5
+     ],
+     "key": "cytech.drone",
+     "mounted": true,
+     "y": 1.2,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      2.8,
+      7.0
+     ],
+     "key": "cydress.bench",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      -8,
+      -16
+     ],
+     "key": "cysky.megatower",
+     "kind": "landmark",
+     "y": -10.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      6.5,
+      -14
+     ],
+     "key": "cysky.hololine",
+     "y": 12,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      26,
+      -12
+     ],
+     "key": "cytower.setback__halo",
+     "kind": "landmark",
+     "y": -10.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      -20,
+      24
+     ],
+     "key": "cytower.wedge",
+     "kind": "landmark",
+     "y": -10.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      24,
+      26
+     ],
+     "key": "cytower.drum__dome",
+     "kind": "landmark",
+     "y": -10.0,
+     "yaw": 0.0
+    }
+   ],
+   "plot_cells": [
+    3,
+    3
+   ],
+   "role": "roof"
+  },
+  "server_room": {
+   "actor_spots": [
+    {
+     "position": [
+      10.5,
+      0,
+      8.0
+     ],
+     "yaw": 180
+    },
+    {
+     "position": [
+      7.0,
+      0,
+      9.0
+     ],
+     "yaw": 160
+    },
+    {
+     "position": [
+      14.0,
+      0,
+      9.0
+     ],
+     "yaw": 200
+    },
+    {
+     "pose": "captive",
+     "position": [
+      10.5,
+      0,
+      3.1
+     ],
+     "yaw": 180
+    }
+   ],
+   "arena": {
+    "min_clear_m": 14.0,
+    "spots": [
+     [
+      10.5,
+      8.0
+     ],
+     [
+      7.0,
+      9.0
+     ],
+     [
+      14.0,
+      9.0
+     ]
+    ]
+   },
+   "cameras": {
+    "a": {
+     "fov": 60,
+     "look_at": [
+      9.6,
+      0.3,
+      5.0
+     ],
+     "position": [
+      12.2,
+      3.9,
+      19.4
+     ]
+    },
+    "b": {
+     "fov": 60,
+     "look_at": [
+      6.0,
+      1.3,
+      4.0
+     ],
+     "position": [
+      18.8,
+      3.6,
+      19.0
+     ]
+    },
+    "c": {
+     "fov": 60,
+     "look_at": [
+      14.0,
+      1.3,
+      14.0
+     ],
+     "position": [
+      2.2,
+      3.4,
+      2.4
+     ]
+    },
+    "d": {
+     "fov": 60,
+     "look_at": [
+      7.0,
+      1.3,
+      14.0
+     ],
+     "position": [
+      18.8,
+      3.4,
+      2.4
+     ]
+    }
+   },
+   "description": "Core Floor. A sealed server hall: rack rows, a terminal wall and a monitor bank around an open floor.",
+   "exterior": false,
+   "look_profile": "arena",
+   "name": "Core Floor",
+   "note": "Club shell. Open 7 m centre kept clear for an arena. Kit has no chair piece; the desk stands alone.",
+   "open_streets": [],
+   "open_transitions": false,
+   "pieces": [
+    {
+     "block": [
+      0,
+      0
+     ],
+     "key": "cyroom.server__arena"
+    },
+    {
+     "at_m": [
+      1.75,
+      6.0
+     ],
+     "key": "cytech.rack__tall",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      1.75,
+      11.5
+     ],
+     "key": "cytech.rack__tall",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      19.25,
+      6.0
+     ],
+     "key": "cytech.rack__tall",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      19.25,
+      11.5
+     ],
+     "key": "cytech.rack__tall",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      7.3,
+      1.85
+     ],
+     "key": "cytech.terminal",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      13.7,
+      1.85
+     ],
+     "key": "cytech.terminal",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      7.3,
+      1.1
+     ],
+     "key": "cysign.frame",
+     "mounted": true,
+     "y": 2.3,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      13.7,
+      1.1
+     ],
+     "key": "cysign.frame",
+     "mounted": true,
+     "y": 2.3,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      10.5,
+      1.1
+     ],
+     "key": "cysign.frame__magenta",
+     "mounted": true,
+     "y": 3.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      10.5,
+      3.0
+     ],
+     "key": "cyroom.chair__captive",
+     "y": 0.0,
+     "yaw": 0.0
+    }
+   ],
+   "plot_cells": [
+    5,
+    5
+   ],
+   "role": "arena"
+  },
+  "subway": {
+   "actor_spots": [
+    {
+     "position": [
+      11.0,
+      0,
+      8.0
+     ],
+     "yaw": 200
+    }
+   ],
+   "arena": {
+    "min_clear_m": 14.0,
+    "spots": [
+     [
+      8.5,
+      4.0
+     ],
+     [
+      4.0,
+      8.5
+     ],
+     [
+      14.5,
+      8.5
+     ]
+    ]
+   },
+   "cameras": {
+    "a": {
+     "fov": 60,
+     "look_at": [
+      16.0,
+      1.4,
+      5.0
+     ],
+     "position": [
+      3.0,
+      3.4,
+      15.8
+     ]
+    },
+    "b": {
+     "fov": 60,
+     "look_at": [
+      6.0,
+      1.2,
+      4.0
+     ],
+     "position": [
+      15.8,
+      3.2,
+      15.8
+     ]
+    },
+    "c": {
+     "fov": 60,
+     "look_at": [
+      15.0,
+      1.4,
+      12.0
+     ],
+     "position": [
+      2.2,
+      3.4,
+      2.2
+     ]
+    },
+    "d": {
+     "fov": 60,
+     "look_at": [
+      5.0,
+      1.2,
+      12.0
+     ],
+     "position": [
+      15.8,
+      3.2,
+      2.2
+     ]
+    }
+   },
+   "description": "Lower Transit. A kit-built quarter of an original neon city.",
+   "exterior": false,
+   "look_profile": "arena",
+   "name": "Lower Transit",
+   "open_streets": [],
+   "open_transitions": false,
+   "pieces": [
+    {
+     "block": [
+      0,
+      0
+     ],
+     "key": "cyroom.subway__arena"
+    },
+    {
+     "at_m": [
+      18.65,
+      8.5
+     ],
+     "key": "cyroom.train__carriage",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      1.6,
+      4.2
+     ],
+     "key": "cyroom.locker",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      1.75,
+      6.6
+     ],
+     "key": "cytech.vending",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      1.75,
+      11.6
+     ],
+     "key": "cytech.terminal",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      1.75,
+      14.2
+     ],
+     "key": "cydress.bench",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      4.0,
+      1.1
+     ],
+     "key": "cysign.frame__amber",
+     "mounted": true,
+     "y": 2.4,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      13.5,
+      1.1
+     ],
+     "key": "cysign.ticker",
+     "mounted": true,
+     "y": 3.0,
+     "yaw": 0.0
+    }
+   ],
+   "plot_cells": [
+    5,
+    4
+   ],
+   "role": "interior"
+  },
+  "tower_roof": {
+   "actor_spots": [
+    {
+     "position": [
+      6.6,
+      0,
+      12.4
+     ],
+     "yaw": 120
+    }
+   ],
+   "arena": {
+    "min_clear_m": 14.0,
+    "spots": [
+     [
+      10.5,
+      8.0
+     ]
+    ]
+   },
+   "cameras": {
+    "a": {
+     "fov": 60,
+     "look_at": [
+      -14,
+      2.0,
+      -6
+     ],
+     "position": [
+      18.8,
+      3.2,
+      19.2
+     ]
+    },
+    "b": {
+     "fov": 60,
+     "look_at": [
+      26,
+      1.8,
+      -10
+     ],
+     "position": [
+      2.2,
+      3.0,
+      19.0
+     ]
+    },
+    "c": {
+     "fov": 60,
+     "look_at": [
+      20,
+      2.2,
+      6.0
+     ],
+     "position": [
+      2.0,
+      2.6,
+      13.0
+     ]
+    },
+    "d": {
+     "fov": 60,
+     "look_at": [
+      4.0,
+      3.2,
+      14.0
+     ],
+     "position": [
+      18.6,
+      2.4,
+      2.0
+     ]
+    }
+   },
+   "description": "Signal Roof. A tower-top deck with a work desk, a glyph sign and a signal in the sky.",
+   "exterior": true,
+   "look_profile": "rooftop",
+   "name": "Signal Roof",
+   "note": "Rooftop re-dressed: desk mid-deck facing the skyline, tower sign (north edge), sky signal halo + network card in the camera-a bearing.",
+   "open_streets": [],
+   "open_transitions": false,
+   "pieces": [
+    {
+     "block": [
+      0,
+      0
+     ],
+     "key": "cyroom.rooftop__tower"
+    },
+    {
+     "at_m": [
+      -13.5,
+      -17.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      10.5,
+      -17.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      34.5,
+      -17.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      -13.5,
+      -35.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      10.5,
+      -35.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      34.5,
+      -35.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      34.5,
+      44.5
+     ],
+     "key": "cysky.stepped__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      10.5,
+      44.5
+     ],
+     "key": "cysky.stepped__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      -13.5,
+      44.5
+     ],
+     "key": "cysky.stepped__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      34.5,
+      60.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      10.5,
+      60.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      -13.5,
+      60.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      -24.5,
+      34.5
+     ],
+     "key": "cysky.needle__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -24.5,
+      10.5
+     ],
+     "key": "cysky.needle__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -24.5,
+      -13.5
+     ],
+     "key": "cysky.needle__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -39.5,
+      10.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      45.5,
+      -13.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      45.5,
+      10.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      45.5,
+      34.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      60.5,
+      10.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      -8,
+      -16
+     ],
+     "key": "cysky.megatower",
+     "kind": "landmark",
+     "y": -10.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      6.5,
+      -14
+     ],
+     "key": "cysky.hololine",
+     "y": 12,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      26,
+      -12
+     ],
+     "key": "cytower.setback__halo",
+     "kind": "landmark",
+     "y": -10.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      -20,
+      24
+     ],
+     "key": "cytower.wedge",
+     "kind": "landmark",
+     "y": -10.0,
+     "yaw": 180
+    },
+    {
+     "at_m": [
+      24,
+      26
+     ],
+     "key": "cytower.drum__dome",
+     "kind": "landmark",
+     "y": -10.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      -10,
+      -6
+     ],
+     "key": "cysky.halocard",
+     "kind": "landmark",
+     "y": 7,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      -2,
+      -34
+     ],
+     "key": "cysky.network",
+     "y": 10,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      18.2,
+      2.6
+     ],
+     "key": "cytech.antenna",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      2.9,
+      17.8
+     ],
+     "key": "cydress.water_tank",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      12.5,
+      2.2
+     ],
+     "key": "cytech.vent",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      14.2,
+      2.2
+     ],
+     "key": "cytech.vent",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      7.2,
+      2.1
+     ],
+     "key": "cytech.utility",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      9.0,
+      2.1
+     ],
+     "key": "cydress.ac",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      9.0,
+      2.6
+     ],
+     "key": "cytech.cables",
+     "mounted": true,
+     "y": 3.7,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      3.6,
+      13.0
+     ],
+     "key": "cyroom.desk",
+     "y": 0.0,
+     "yaw": 90.0
+    },
+    {
+     "at_m": [
+      4.6,
+      13.0
+     ],
+     "key": "cyroom.chair",
+     "y": 0.0,
+     "yaw": -90.0
+    },
+    {
+     "at_m": [
+      3.0,
+      9.5
+     ],
+     "key": "cytech.terminal",
+     "y": 0.0,
+     "yaw": 90.0
+    },
+    {
+     "at_m": [
+      1.3,
+      11.0
+     ],
+     "key": "cysign.roof",
+     "kind": "landmark",
+     "y": 0.0,
+     "yaw": -90.0
+    }
+   ],
+   "plot_cells": [
+    5,
+    5
+   ],
+   "role": "roof"
+  }
+ },
+ "sockets": "kits/library/cyberkit-sockets.json",
+ "weather": {
+  "rain": false
+ }
+}

@@ -1,0 +1,4736 @@
+{
+ "anchors": {
+  "cell_block_centre": "origin on the centre of the cell block at floor level (rooms, floors, ceilings)",
+  "cell_centre": "origin on one cell's centre at floor level (corridors, stairs, pits, cave corners)",
+  "cell_edge": "origin on a cell boundary line at floor level; the piece stands toward its front (+Z)",
+  "corner": "origin on an inner corner line at floor level, facing the room diagonal",
+  "door_anchor": "origin on the room.gd door anchor: 0.4 m in from the room edge = 0.1 m behind the boundary",
+  "free": "footprint-centred free prop (any position on the floor)",
+  "wall_face": "origin on a wall's inner face at floor level (sconces, banners, reliefs)"
+ },
+ "connectors": [
+  {
+   "a": "corridor",
+   "b": "corridor",
+   "rule": "facing sockets on the same cell edge; width 3.0 m"
+  },
+  {
+   "a": "door",
+   "b": "dgn.doorway",
+   "rule": "a door socket takes exactly one dgn.doorway frame (room.gd places it from the room's door data via the arch.door binding); dgn.door_locked / tmpl.boss_door may add an insert"
+  },
+  {
+   "a": "torch",
+   "b": "dprop.sconce",
+   "rule": "sconce origin on the socket, facing the socket direction"
+  },
+  {
+   "a": "wall",
+   "b": "dprop.banner|tmpl.relief",
+   "rule": "wall-face props on wall sockets"
+  },
+  {
+   "a": "pit",
+   "b": "dgn.bridge",
+   "rule": "bridge deck centred over a full pit cell, running north-south"
+  },
+  {
+   "a": "shore",
+   "b": "lake.water",
+   "rule": "water tile at the water level (WATER_Z) under the shore slope"
+  },
+  {
+   "a": "cave_edge",
+   "b": "cave_edge",
+   "rule": "cave walls meet end to end on cell boundaries"
+  }
+ ],
+ "format": 1,
+ "grid": {
+  "cell_m": 4.0,
+  "corridor_clear_m": 3.0,
+  "door_anchor_from_room_edge_m": 0.4,
+  "doorway_m": [
+   2.0,
+   3.0
+  ],
+  "front": "glTF +Z (south)",
+  "note": "room plot = cells x 4 m + 0.5 m apron each side; door.position for side cell i = 4*i + 2",
+  "room_apron_m": 0.5,
+  "storey_m": 4.5,
+  "up": "glTF +Y",
+  "wall_inset_m": 0.5,
+  "yaw_steps_deg": 90
+ },
+ "pieces": {
+  "cave.boulder": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "cave.boulder",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 96
+  },
+  "cave.boulder__big": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "cave.boulder",
+   "preset": "big",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 144
+  },
+  "cave.ceiling": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "cave.ceiling",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      5.0,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 216
+  },
+  "cave.cliff": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "shell",
+   "kit_id": "cave.cliff",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "cliff_edge",
+     "width_m": 8.0
+    }
+   ],
+   "tris": 96
+  },
+  "cave.cliff__tall": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "shell",
+   "kit_id": "cave.cliff",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "cliff_edge",
+     "width_m": 12.0
+    }
+   ],
+   "tris": 160
+  },
+  "cave.floor": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "cave.floor",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    }
+   ],
+   "tris": 128
+  },
+  "cave.floor__puddle": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "cave.floor",
+   "preset": "puddle",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    }
+   ],
+   "tris": 134
+  },
+  "cave.ledge": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cave.ledge",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "height_m": 1.8,
+     "position": [
+      0.0,
+      0.0,
+      -1.8
+     ],
+     "type": "walk_top"
+    }
+   ],
+   "tris": 108
+  },
+  "cave.mouth": {
+   "anchor": "threshold",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cave.mouth",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 4.2,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "cave_mouth",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 166
+  },
+  "cave.spike": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cave.spike",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 168
+  },
+  "cave.spike__column": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cave.spike",
+   "preset": "column",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 182
+  },
+  "cave.spike__stalactite": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "cave.spike",
+   "preset": "stalactite",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 168
+  },
+  "cave.wall": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "shell",
+   "kit_id": "cave.wall",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "profile": "cave.wall",
+     "type": "cave_edge"
+    }
+   ],
+   "tris": 184
+  },
+  "cave.wall__corner": {
+   "anchor": "cell_centre",
+   "cells": null,
+   "class": "shell",
+   "kit_id": "cave.wall",
+   "preset": "corner",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "cave_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      0.0
+     ],
+     "type": "cave_edge"
+    }
+   ],
+   "tris": 140
+  },
+  "dgn.bridge": {
+   "anchor": "deck_top_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "dgn.bridge",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "walk"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 248
+  },
+  "dgn.bridge__one": {
+   "anchor": "deck_top_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "dgn.bridge",
+   "preset": "one",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "walk"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 248
+  },
+  "dgn.bridge__two": {
+   "anchor": "deck_top_centre",
+   "cells": [
+    1,
+    2
+   ],
+   "class": "structure",
+   "kit_id": "dgn.bridge",
+   "preset": "two",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "walk"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 296
+  },
+  "dgn.ceiling": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 184
+  },
+  "dgn.ceiling__flat_2x2": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": "flat_2x2",
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 76
+  },
+  "dgn.ceiling__flat_2x3": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": "flat_2x3",
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 136
+  },
+  "dgn.ceiling__flat_3x3": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": "flat_3x3",
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 160
+  },
+  "dgn.ceiling__flat_4x3": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": "flat_4x3",
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 184
+  },
+  "dgn.ceiling__groin": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": "groin",
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 160
+  },
+  "dgn.ceiling__groin_2x2": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": "groin_2x2",
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 160
+  },
+  "dgn.ceiling__groin_3x3": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": "groin_3x3",
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 360
+  },
+  "dgn.ceiling__groin_3x4": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    4
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": "groin_3x4",
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 480
+  },
+  "dgn.ceiling__vault": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": "vault",
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 184
+  },
+  "dgn.ceiling__vault_1x3": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.ceiling",
+   "preset": "vault_1x3",
+   "sockets": [
+    {
+     "facing": "down",
+     "position": [
+      0.0,
+      4.5,
+      0.0
+     ],
+     "type": "ceiling"
+    }
+   ],
+   "tris": 384
+  },
+  "dgn.corridor": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.corridor",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 164
+  },
+  "dgn.corridor__corner": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.corridor",
+   "preset": "corner",
+   "sockets": [
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 324
+  },
+  "dgn.corridor__cross": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.corridor",
+   "preset": "cross",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 700
+  },
+  "dgn.corridor__end_door": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.corridor",
+   "preset": "end_door",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -1.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 240
+  },
+  "dgn.corridor__end_door_torch": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.corridor",
+   "preset": "end_door_torch",
+   "sockets": [
+    {
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -1.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 240
+  },
+  "dgn.corridor__end_wall": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.corridor",
+   "preset": "end_wall",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 216
+  },
+  "dgn.corridor__end_wall_torch": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.corridor",
+   "preset": "end_wall_torch",
+   "sockets": [
+    {
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      0.0,
+      0.0,
+      -1.5
+     ],
+     "type": "torch"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 216
+  },
+  "dgn.corridor__straight": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.corridor",
+   "preset": "straight",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 164
+  },
+  "dgn.corridor__straight_torch": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.corridor",
+   "preset": "straight_torch",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      1.5,
+      0.0,
+      -0.0
+     ],
+     "type": "torch"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 164
+  },
+  "dgn.corridor__tee": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.corridor",
+   "preset": "tee",
+   "sockets": [
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 432
+  },
+  "dgn.door_locked": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "dgn.door_locked",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "state": "closed",
+     "type": "door_insert"
+    }
+   ],
+   "tris": 272
+  },
+  "dgn.door_locked__gate": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "dgn.door_locked",
+   "preset": "gate",
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "state": "closed",
+     "type": "door_insert"
+    }
+   ],
+   "tris": 192
+  },
+  "dgn.door_locked__gate_open": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "dgn.door_locked",
+   "preset": "gate_open",
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "state": "open",
+     "type": "door_insert"
+    }
+   ],
+   "tris": 84
+  },
+  "dgn.door_locked__locked": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "dgn.door_locked",
+   "preset": "locked",
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "state": "closed",
+     "type": "door_insert"
+    }
+   ],
+   "tris": 272
+  },
+  "dgn.door_locked__locked_open": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "dgn.door_locked",
+   "preset": "locked_open",
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "state": "open",
+     "type": "door_insert"
+    }
+   ],
+   "tris": 112
+  },
+  "dgn.doorway": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "dgn.doorway",
+   "preset": null,
+   "sockets": [
+    {
+     "depth_m": 0.75,
+     "facing": "s",
+     "fills_cut_m": [
+      2.8,
+      3.6
+     ],
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 230
+  },
+  "dgn.doorway__arch": {
+   "anchor": "cell_edge",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "dgn.doorway",
+   "preset": "arch",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 256
+  },
+  "dgn.doorway__frame": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "dgn.doorway",
+   "preset": "frame",
+   "sockets": [
+    {
+     "depth_m": 0.75,
+     "facing": "s",
+     "fills_cut_m": [
+      2.8,
+      3.6
+     ],
+     "height_m": 3.0,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 230
+  },
+  "dgn.floor": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.floor",
+   "preset": null,
+   "sockets": [
+    {
+     "cells": [
+      1,
+      1
+     ],
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    }
+   ],
+   "tris": 8
+  },
+  "dgn.floor__border": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.floor",
+   "preset": "border",
+   "sockets": [
+    {
+     "cells": [
+      1,
+      1
+     ],
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    }
+   ],
+   "tris": 32
+  },
+  "dgn.floor__cracked": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.floor",
+   "preset": "cracked",
+   "sockets": [
+    {
+     "cells": [
+      1,
+      1
+     ],
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    }
+   ],
+   "tris": 112
+  },
+  "dgn.floor__grate": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.floor",
+   "preset": "grate",
+   "sockets": [
+    {
+     "cells": [
+      1,
+      1
+     ],
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    }
+   ],
+   "tris": 118
+  },
+  "dgn.floor__plain": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.floor",
+   "preset": "plain",
+   "sockets": [
+    {
+     "cells": [
+      1,
+      1
+     ],
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    }
+   ],
+   "tris": 8
+  },
+  "dgn.pillar": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "dgn.pillar",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 1.15,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "pillar"
+    }
+   ],
+   "tris": 132
+  },
+  "dgn.pillar__broken": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "dgn.pillar",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 1.15,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "pillar"
+    }
+   ],
+   "tris": 194
+  },
+  "dgn.pillar__round": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "dgn.pillar",
+   "preset": "round",
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 1.15,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "pillar"
+    }
+   ],
+   "tris": 208
+  },
+  "dgn.pillar__square": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "dgn.pillar",
+   "preset": "square",
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 1.15,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "pillar"
+    }
+   ],
+   "tris": 132
+  },
+  "dgn.pit": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.pit",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    },
+    {
+     "bridgeable": true,
+     "facing": "up",
+     "hole_m": [
+      3.3,
+      3.3
+     ],
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "pit"
+    }
+   ],
+   "tris": 562
+  },
+  "dgn.pit__corner": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.pit",
+   "preset": "corner",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    },
+    {
+     "bridgeable": false,
+     "facing": "up",
+     "hole_m": [
+      1.65,
+      1.65
+     ],
+     "position": [
+      1.175,
+      0.0,
+      -1.175
+     ],
+     "type": "pit"
+    }
+   ],
+   "tris": 198
+  },
+  "dgn.pit__edge": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.pit",
+   "preset": "edge",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    },
+    {
+     "bridgeable": false,
+     "facing": "up",
+     "hole_m": [
+      4.0,
+      1.65
+     ],
+     "position": [
+      0.0,
+      0.0,
+      -1.175
+     ],
+     "type": "pit"
+    }
+   ],
+   "tris": 188
+  },
+  "dgn.pit__full": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "dgn.pit",
+   "preset": "full",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    },
+    {
+     "bridgeable": true,
+     "facing": "up",
+     "hole_m": [
+      3.3,
+      3.3
+     ],
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "pit"
+    }
+   ],
+   "tris": 562
+  },
+  "dgn.room": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.room",
+   "preset": null,
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 1088
+  },
+  "dgn.room__antechamber": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.room",
+   "preset": "antechamber",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      -5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 1164
+  },
+  "dgn.room__boss_hall": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    4
+   ],
+   "class": "shell",
+   "kit_id": "dgn.room",
+   "preset": "boss_hall",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      -7.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      -6.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 3,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      6.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      -6.0
+     ],
+     "side": "w",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "torch"
+    },
+    {
+     "cell": 3,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      6.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": [
+      1,
+      2
+     ],
+     "facing": "up",
+     "needs": "dgn.pit|dgn.stairs|dgn.floor|tmpl.floor",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "pit"
+    }
+   ],
+   "tris": 1448
+  },
+  "dgn.room__entry": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.room",
+   "preset": "entry",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "torch"
+    }
+   ],
+   "tris": 1164
+  },
+  "dgn.room__hub": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.room",
+   "preset": "hub",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      -5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 1240
+  },
+  "dgn.room__large": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.room",
+   "preset": "large",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -6.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -2.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      2.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      6.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      7.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      7.5,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      7.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      -6.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      -2.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      2.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      6.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -7.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -7.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "torch"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -7.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 1308
+  },
+  "dgn.room__medium": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.room",
+   "preset": "medium",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      5.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      -4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -5.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 1088
+  },
+  "dgn.room__pit": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "dgn.room",
+   "preset": "pit",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -6.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -2.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      2.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      6.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      7.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      7.5,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      7.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      -6.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      -2.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      2.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      6.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -7.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      -7.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -7.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": [
+      1,
+      1
+     ],
+     "facing": "up",
+     "needs": "dgn.pit|dgn.stairs|dgn.floor|tmpl.floor",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "pit"
+    },
+    {
+     "cell": [
+      2,
+      1
+     ],
+     "facing": "up",
+     "needs": "dgn.pit|dgn.stairs|dgn.floor|tmpl.floor",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "type": "pit"
+    }
+   ],
+   "tris": 1384
+  },
+  "dgn.room__shrine": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "dgn.room",
+   "preset": "shrine",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -2.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      2.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      3.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      3.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      -2.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      2.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -3.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -3.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 704
+  },
+  "dgn.room__small": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "dgn.room",
+   "preset": "small",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      -2.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "torch"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "mount_height_m": 2.35,
+     "position": [
+      2.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "torch"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      3.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "mount_height_m": 2.35,
+     "position": [
+      3.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      -2.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      2.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -3.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "mount_height_m": 2.35,
+     "position": [
+      -3.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 668
+  },
+  "dgn.rubble": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "dgn.rubble",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 280
+  },
+  "dgn.rubble__small": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "dgn.rubble",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 172
+  },
+  "dgn.stairs": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "dgn.stairs",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "replaces": "dgn.wall",
+     "type": "wall"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      1.5,
+      -2.25
+     ],
+     "type": "stairs_up"
+    }
+   ],
+   "tris": 244
+  },
+  "dgn.stairs__down": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "dgn.stairs",
+   "preset": "down",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      1.5,
+      2.6
+     ],
+     "type": "stairs_down"
+    }
+   ],
+   "tris": 264
+  },
+  "dgn.stairs__up": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "dgn.stairs",
+   "preset": "up",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "replaces": "dgn.wall",
+     "type": "wall"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      1.5,
+      -2.25
+     ],
+     "type": "stairs_up"
+    }
+   ],
+   "tris": 244
+  },
+  "dgn.wall": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "shell",
+   "kit_id": "dgn.wall",
+   "preset": null,
+   "sockets": [],
+   "tris": 36
+  },
+  "dgn.wall__alcove": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "shell",
+   "kit_id": "dgn.wall",
+   "preset": "alcove",
+   "sockets": [
+    {
+     "depth_m": 0.36,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.5,
+      0.32
+     ],
+     "type": "alcove",
+     "width_m": 1.6
+    }
+   ],
+   "tris": 110
+  },
+  "dgn.wall__door": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "shell",
+   "kit_id": "dgn.wall",
+   "preset": "door",
+   "sockets": [
+    {
+     "anchor_offset_m": 0.1,
+     "facing": "s",
+     "height_m": 3.0,
+     "needs": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      0.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 60
+  },
+  "dgn.wall__end_piers": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "shell",
+   "kit_id": "dgn.wall",
+   "preset": "end_piers",
+   "sockets": [],
+   "tris": 300
+  },
+  "dgn.wall__relief": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "shell",
+   "kit_id": "dgn.wall",
+   "preset": "relief",
+   "sockets": [],
+   "tris": 88
+  },
+  "dgn.wall__slit": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "shell",
+   "kit_id": "dgn.wall",
+   "preset": "slit",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 1.9499999999999997,
+     "position": [
+      0.0,
+      2.325,
+      0.5
+     ],
+     "type": "window",
+     "width_m": 0.22
+    }
+   ],
+   "tris": 118
+  },
+  "dgn.wall__solid": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "shell",
+   "kit_id": "dgn.wall",
+   "preset": "solid",
+   "sockets": [],
+   "tris": 36
+  },
+  "dgn.wall__torch": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "shell",
+   "kit_id": "dgn.wall",
+   "preset": "torch",
+   "sockets": [
+    {
+     "facing": "s",
+     "mount_height_m": 2.35,
+     "position": [
+      0.0,
+      0.0,
+      0.5
+     ],
+     "type": "torch"
+    }
+   ],
+   "tris": 36
+  },
+  "dprop.banner": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "soft",
+   "kit_id": "dprop.banner",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "wall",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "mount"
+    }
+   ],
+   "tris": 96
+  },
+  "dprop.banner__point": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "soft",
+   "kit_id": "dprop.banner",
+   "preset": "point",
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "wall",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "mount"
+    }
+   ],
+   "tris": 96
+  },
+  "dprop.block": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.block",
+   "preset": null,
+   "sockets": [
+    {
+     "cell_m": 1.2,
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "pushable"
+    }
+   ],
+   "tris": 108
+  },
+  "dprop.block__eye": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.block",
+   "preset": "eye",
+   "sockets": [
+    {
+     "cell_m": 1.2,
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "pushable"
+    }
+   ],
+   "tris": 108
+  },
+  "dprop.brazier": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.brazier",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 286
+  },
+  "dprop.brazier__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.brazier",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 286
+  },
+  "dprop.brazier__unlit": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.brazier",
+   "preset": "unlit",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 178
+  },
+  "dprop.breakable": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.breakable",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "break",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 112
+  },
+  "dprop.breakable__crates": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.breakable",
+   "preset": "crates",
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "break",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 276
+  },
+  "dprop.breakable__urn": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.breakable",
+   "preset": "urn",
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "break",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 200
+  },
+  "dprop.chest": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.chest",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "open",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 176
+  },
+  "dprop.chest__large": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.chest",
+   "preset": "large",
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "open",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 268
+  },
+  "dprop.chest__large_open": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.chest",
+   "preset": "large_open",
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "open",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 290
+  },
+  "dprop.chest__open": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.chest",
+   "preset": "open",
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "open",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 198
+  },
+  "dprop.cobweb": {
+   "anchor": "corner",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "dprop.cobweb",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "corner"
+    }
+   ],
+   "tris": 1
+  },
+  "dprop.crystal": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.crystal",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 148
+  },
+  "dprop.crystal__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.crystal",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 172
+  },
+  "dprop.plate": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "dprop.plate",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "step",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor_prop"
+    }
+   ],
+   "tris": 76
+  },
+  "dprop.plate__down": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "dprop.plate",
+   "preset": "down",
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "step",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor_prop"
+    }
+   ],
+   "tris": 76
+  },
+  "dprop.sconce": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "dprop.sconce",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "torch",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "mount"
+    }
+   ],
+   "tris": 126
+  },
+  "dprop.sconce__cage": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "dprop.sconce",
+   "preset": "cage",
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "torch",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "mount"
+    }
+   ],
+   "tris": 150
+  },
+  "dprop.sconce__unlit": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "dprop.sconce",
+   "preset": "unlit",
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "torch",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "mount"
+    }
+   ],
+   "tris": 78
+  },
+  "dprop.statue": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "dprop.statue",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "front": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 326
+  },
+  "dprop.statue__shield": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "dprop.statue",
+   "preset": "shield",
+   "sockets": [
+    {
+     "facing": "up",
+     "front": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 330
+  },
+  "dprop.switch": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.switch",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "toggle",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 212
+  },
+  "dprop.switch__lever": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.switch",
+   "preset": "lever",
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "toggle",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 108
+  },
+  "dprop.tablet": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "dprop.tablet",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "read",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 88
+  },
+  "lake.bed": {
+   "anchor": "water_centre",
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "lake.bed",
+   "preset": null,
+   "sockets": [
+    {
+     "depth_m": 1.4,
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "lake_bed"
+    }
+   ],
+   "tris": 434
+  },
+  "lake.bridge": {
+   "anchor": "crossing_centre",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "lake.bridge",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      -4.0,
+      0.0
+     ],
+     "type": "walk"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      4.0,
+      0.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 392
+  },
+  "lake.bridge__planks": {
+   "anchor": "crossing_centre",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "lake.bridge",
+   "preset": "planks",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      -4.0,
+      0.0
+     ],
+     "type": "walk"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      4.0,
+      0.0
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 380
+  },
+  "lake.dock": {
+   "anchor": "shore_edge",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "lake.dock",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "land"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      -6.0,
+      -0.28
+     ],
+     "type": "walk"
+    }
+   ],
+   "tris": 400
+  },
+  "lake.lilies": {
+   "anchor": "water_surface",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "lake.lilies",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "water_plant"
+    }
+   ],
+   "tris": 264
+  },
+  "lake.reeds": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "lake.reeds",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "water_plant"
+    }
+   ],
+   "tris": 268
+  },
+  "lake.shore": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "lake.shore",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "shore"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "land"
+    }
+   ],
+   "tris": 224
+  },
+  "lake.shore__corner_in": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "lake.shore",
+   "preset": "corner_in",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      2.0,
+      0.0,
+      2.0
+     ],
+     "type": "shore"
+    }
+   ],
+   "tris": 224
+  },
+  "lake.shore__corner_out": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "lake.shore",
+   "preset": "corner_out",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "shore"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      0.0
+     ],
+     "type": "shore"
+    }
+   ],
+   "tris": 224
+  },
+  "lake.shore__land": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "lake.shore",
+   "preset": "land",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "type": "land"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "type": "land"
+    }
+   ],
+   "tris": 224
+  },
+  "lake.water": {
+   "anchor": "water_centre",
+   "cells": [
+    2.0,
+    2.0
+   ],
+   "class": "terrain",
+   "kit_id": "lake.water",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "level_m": -0.35,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "water"
+    }
+   ],
+   "tris": 128
+  },
+  "lake.water__large": {
+   "anchor": "water_centre",
+   "cells": [
+    4.0,
+    4.0
+   ],
+   "class": "terrain",
+   "kit_id": "lake.water",
+   "preset": "large",
+   "sockets": [
+    {
+     "facing": "up",
+     "level_m": -0.35,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "water"
+    }
+   ],
+   "tris": 512
+  },
+  "lake.water__open": {
+   "anchor": "water_centre",
+   "cells": [
+    12.0,
+    12.0
+   ],
+   "class": "terrain",
+   "kit_id": "lake.water",
+   "preset": "open",
+   "sockets": [
+    {
+     "facing": "up",
+     "level_m": -0.35,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "water"
+    }
+   ],
+   "tris": 128
+  },
+  "lake.water__pond": {
+   "anchor": "water_centre",
+   "cells": [
+    4.0,
+    4.0
+   ],
+   "class": "terrain",
+   "kit_id": "lake.water",
+   "preset": "pond",
+   "sockets": [
+    {
+     "facing": "up",
+     "level_m": -0.35,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "water"
+    }
+   ],
+   "tris": 128
+  },
+  "lake.water__vast": {
+   "anchor": "water_centre",
+   "cells": [
+    10.0,
+    10.0
+   ],
+   "class": "terrain",
+   "kit_id": "lake.water",
+   "preset": "vast",
+   "sockets": [
+    {
+     "facing": "up",
+     "level_m": -0.35,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "water"
+    }
+   ],
+   "tris": 128
+  },
+  "lake.waterfall": {
+   "anchor": "pool_centre",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "lake.waterfall",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "water"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      -1.5,
+      0.0
+     ],
+     "type": "cliff_edge"
+    }
+   ],
+   "tris": 340
+  },
+  "tmpl.altar": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tmpl.altar",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "offer",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 356
+  },
+  "tmpl.altar__cold": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tmpl.altar",
+   "preset": "cold",
+   "sockets": [
+    {
+     "facing": "up",
+     "interact": "offer",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 308
+  },
+  "tmpl.boss_door": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "tmpl.boss_door",
+   "preset": null,
+   "sockets": [
+    {
+     "boss": true,
+     "covers_m": [
+      4.9,
+      6.35
+     ],
+     "facing": "s",
+     "fits": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "state": "closed",
+     "type": "door"
+    }
+   ],
+   "tris": 440
+  },
+  "tmpl.boss_door__open": {
+   "anchor": "door_anchor",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "tmpl.boss_door",
+   "preset": "open",
+   "sockets": [
+    {
+     "boss": true,
+     "covers_m": [
+      4.9,
+      6.35
+     ],
+     "facing": "s",
+     "fits": "dgn.doorway",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "state": "open",
+     "type": "door"
+    }
+   ],
+   "tris": 258
+  },
+  "tmpl.column": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "tmpl.column",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 1.35,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "pillar"
+    }
+   ],
+   "tris": 324
+  },
+  "tmpl.column__broken": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "tmpl.column",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 1.35,
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "pillar"
+    }
+   ],
+   "tris": 316
+  },
+  "tmpl.dais": {
+   "anchor": "free",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "tmpl.dais",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "height_m": 0.75,
+     "position": [
+      0.0,
+      0.0,
+      -0.75
+     ],
+     "type": "walk_top"
+    }
+   ],
+   "tris": 144
+  },
+  "tmpl.dais__large": {
+   "anchor": "free",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "structure",
+   "kit_id": "tmpl.dais",
+   "preset": "large",
+   "sockets": [
+    {
+     "facing": "up",
+     "height_m": 0.75,
+     "position": [
+      0.0,
+      0.0,
+      -0.75
+     ],
+     "type": "walk_top"
+    }
+   ],
+   "tris": 144
+  },
+  "tmpl.floor": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "tmpl.floor",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    }
+   ],
+   "tris": 130
+  },
+  "tmpl.floor__single": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "shell",
+   "kit_id": "tmpl.floor",
+   "preset": "single",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "floor"
+    }
+   ],
+   "tris": 74
+  },
+  "tmpl.obelisk": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "tmpl.obelisk",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "prop"
+    }
+   ],
+   "tris": 176
+  },
+  "tmpl.relief": {
+   "anchor": "wall_face",
+   "cells": null,
+   "class": "arch",
+   "kit_id": "tmpl.relief",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "wall",
+     "position": [
+      0.0,
+      0.0,
+      0.0
+     ],
+     "type": "mount"
+    }
+   ],
+   "tris": 164
+  },
+  "tmpl.wall": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "shell",
+   "kit_id": "tmpl.wall",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.5
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 356
+  },
+  "tmpl.wall__plain": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    0
+   ],
+   "class": "shell",
+   "kit_id": "tmpl.wall",
+   "preset": "plain",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      0.5
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 48
+  }
+ }
+}

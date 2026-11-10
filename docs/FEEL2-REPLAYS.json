@@ -1,0 +1,3186 @@
+{
+  "ok": true,
+  "bots": [
+    {
+      "game": "thaw",
+      "ok": true,
+      "ticks": 7725,
+      "paths": [
+        {
+          "ending": "quiet_night",
+          "passed": true
+        },
+        {
+          "ending": "thaw",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "stuck": [],
+      "unreachable": []
+    },
+    {
+      "game": "reedland_relay",
+      "ok": true,
+      "ticks": 2729,
+      "paths": [
+        {
+          "challenge": "gate_trial",
+          "passed": true,
+          "ticks": 524
+        },
+        {
+          "challenge": "relay_trial",
+          "passed": true,
+          "ticks": 570
+        },
+        {
+          "ending": "home",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "stuck": [],
+      "unreachable": []
+    },
+    {
+      "game": "reedland_combat",
+      "ok": true,
+      "ticks": 927,
+      "paths": [
+        {
+          "challenge": "gate_trial",
+          "passed": true,
+          "ticks": 559
+        },
+        {
+          "ending": "home",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "stuck": [],
+      "unreachable": []
+    },
+    {
+      "game": "puzzle_hall",
+      "ok": true,
+      "ticks": 2276,
+      "paths": [
+        {
+          "ending": "dawn",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "stuck": [],
+      "unreachable": []
+    },
+    {
+      "game": "city_arena_test",
+      "ok": true,
+      "ticks": 4043,
+      "paths": [
+        {
+          "challenge": "district_sweep",
+          "passed": true,
+          "ticks": 2317
+        },
+        {
+          "challenge": "boss_fight",
+          "passed": true,
+          "ticks": 1074
+        },
+        {
+          "ending": "home",
+          "passed": true
+        }
+      ],
+      "failures": [],
+      "stuck": [],
+      "unreachable": []
+    }
+  ],
+  "movies": 6,
+  "cold_strict_runs": 12,
+  "rates": [
+    {
+      "game": "thaw",
+      "movie": "winning-0.h64movie.json",
+      "fps": 30,
+      "ok": true,
+      "ticks": 3859,
+      "hashes": 65
+    },
+    {
+      "game": "thaw",
+      "movie": "winning-0.h64movie.json",
+      "fps": 144,
+      "ok": true,
+      "ticks": 3859,
+      "hashes": 65
+    },
+    {
+      "game": "thaw",
+      "movie": "winning-1.h64movie.json",
+      "fps": 30,
+      "ok": true,
+      "ticks": 3861,
+      "hashes": 65
+    },
+    {
+      "game": "thaw",
+      "movie": "winning-1.h64movie.json",
+      "fps": 144,
+      "ok": true,
+      "ticks": 3861,
+      "hashes": 65
+    },
+    {
+      "game": "reedland_relay",
+      "movie": "modules.h64movie.json",
+      "fps": 30,
+      "ok": true,
+      "ticks": 2728,
+      "hashes": 46
+    },
+    {
+      "game": "reedland_relay",
+      "movie": "modules.h64movie.json",
+      "fps": 144,
+      "ok": true,
+      "ticks": 2728,
+      "hashes": 46
+    },
+    {
+      "game": "reedland_combat",
+      "movie": "modules.h64movie.json",
+      "fps": 30,
+      "ok": true,
+      "ticks": 926,
+      "hashes": 16
+    },
+    {
+      "game": "reedland_combat",
+      "movie": "modules.h64movie.json",
+      "fps": 144,
+      "ok": true,
+      "ticks": 926,
+      "hashes": 16
+    },
+    {
+      "game": "puzzle_hall",
+      "movie": "modules.h64movie.json",
+      "fps": 30,
+      "ok": true,
+      "ticks": 2270,
+      "hashes": 38
+    },
+    {
+      "game": "puzzle_hall",
+      "movie": "modules.h64movie.json",
+      "fps": 144,
+      "ok": true,
+      "ticks": 2270,
+      "hashes": 38
+    },
+    {
+      "game": "city_arena_test",
+      "movie": "modules.h64movie.json",
+      "fps": 30,
+      "ok": true,
+      "ticks": 4042,
+      "hashes": 68
+    },
+    {
+      "game": "city_arena_test",
+      "movie": "modules.h64movie.json",
+      "fps": 144,
+      "ok": true,
+      "ticks": 4042,
+      "hashes": 68
+    }
+  ],
+  "repins": [
+    {
+      "game": "thaw",
+      "movie": "winning-0.h64movie.json",
+      "path": "evidence/feel2/replay-resume-01/bots/thaw/winning-0.h64movie.json",
+      "sha256": "6a3bcf52bc8270b67feb92dec641c92b50b938915b5106e58dbb17dc4c0e63fe",
+      "ticks": 3859,
+      "checkpoints": 65,
+      "predecessor": "evidence/feel2/solids/inherited-bots-final/thaw/winning-0.h64movie.json",
+      "predecessor_sha256": "0b8f5edac9219d78180ea9c689afd3c302c804f4f5f06b108ba389f2ce545c34",
+      "frames_unchanged": false,
+      "changed_checkpoints": [
+        {
+          "tick": 60,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 120,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 180,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 240,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 300,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 360,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 420,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 480,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 540,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 600,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 660,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 720,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 780,
+          "fields": [
+            "actions",
+            "menu_open",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 840,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 900,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 960,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1020,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1080,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1140,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1200,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1260,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1320,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1380,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1440,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1500,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1560,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1620,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1680,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1740,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1800,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1860,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1920,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1980,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2040,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2100,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2160,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2220,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2280,
+          "fields": [
+            "actions",
+            "menu_index",
+            "menu_open",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2340,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2400,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2460,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2520,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2580,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2640,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2700,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2760,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2820,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2880,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2940,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3000,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3060,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3120,
+          "fields": [
+            "actions",
+            "menu_index",
+            "menu_open",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3180,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3240,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3300,
+          "fields": [
+            "actions",
+            "menu_index",
+            "menu_open",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3360,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3420,
+          "fields": [
+            "actions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3480,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3540,
+          "fields": [
+            "actions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3600,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 3660,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 3720,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 3780,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 3840,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 3859,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        }
+      ],
+      "why": "Deliberate final FEEL2 pin: production solid-aware route and safe entry, deterministic doorway input lock, flat-floor floor_snap adhesion and modern presentation-only orbit input snapshot shape. Predecessor is earlier FEEL2 evidence, not an invented historical LIVEFIX file."
+    },
+    {
+      "game": "thaw",
+      "movie": "winning-1.h64movie.json",
+      "path": "evidence/feel2/replay-resume-01/bots/thaw/winning-1.h64movie.json",
+      "sha256": "eb09493063b3f90112516723987e651ebb84a94efcb3b8f7ab2d65ed9f187828",
+      "ticks": 3861,
+      "checkpoints": 65,
+      "predecessor": "evidence/feel2/solids/inherited-bots-final/thaw/winning-1.h64movie.json",
+      "predecessor_sha256": "32d8efc868e078345606a48945f298cdbf3696ff84e6ea21edc5e67e096b0775",
+      "frames_unchanged": false,
+      "changed_checkpoints": [
+        {
+          "tick": 60,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 120,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 180,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 240,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 300,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 360,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 420,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 480,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 540,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 600,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 660,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 720,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 780,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_open",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 840,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 900,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 960,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1020,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1080,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1140,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1200,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1260,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1320,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1380,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1440,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1500,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1560,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1620,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1680,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1740,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1800,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1860,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1920,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 1980,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2040,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2100,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 2160,
+          "fields": [
+            "actions",
+            "belt",
+            "player"
+          ]
+        },
+        {
+          "tick": 2220,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2280,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "menu_open",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2340,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2400,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2460,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2520,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2580,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2640,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2700,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2760,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2820,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2880,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2940,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3000,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3060,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3120,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "menu_open",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3180,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3240,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3300,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "menu_open",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3360,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3420,
+          "fields": [
+            "actions",
+            "belt",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3480,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3540,
+          "fields": [
+            "actions",
+            "belt",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3600,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 3660,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 3720,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 3780,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 3840,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 3861,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        }
+      ],
+      "why": "Deliberate final FEEL2 pin: production solid-aware route and safe entry, deterministic doorway input lock, flat-floor floor_snap adhesion and modern presentation-only orbit input snapshot shape. Predecessor is earlier FEEL2 evidence, not an invented historical LIVEFIX file."
+    },
+    {
+      "game": "reedland_relay",
+      "movie": "modules.h64movie.json",
+      "path": "evidence/feel2/replay-resume-01/bots/reedland_relay/modules.h64movie.json",
+      "sha256": "772df61d4055c876f15273db027a22f326b8456bd1a66c6b08ab21c9f8420939",
+      "ticks": 2728,
+      "checkpoints": 46,
+      "predecessor": "evidence/feel2/solids/inherited-bots-final/reedland_relay/modules.h64movie.json",
+      "predecessor_sha256": "d129782e089fb67496cc4c4b237e2bd6f0b0bc3c41fd6b11724bf11a2340a371",
+      "frames_unchanged": false,
+      "changed_checkpoints": [
+        {
+          "tick": 60,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 120,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 180,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 240,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 300,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 360,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 420,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 480,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 540,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 600,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 660,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 720,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 780,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 840,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 900,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 960,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1020,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1080,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1140,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1200,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1260,
+          "fields": [
+            "actions",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 1320,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1380,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1440,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1500,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1560,
+          "fields": [
+            "actions",
+            "extensions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 1620,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1680,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1740,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1800,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1860,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1920,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1980,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2040,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2100,
+          "fields": [
+            "actions",
+            "extensions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2160,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2220,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2280,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2340,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2400,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2460,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2520,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2580,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2640,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2700,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2728,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        }
+      ],
+      "why": "Deliberate final FEEL2 pin: production solid-aware route and safe entry, deterministic doorway input lock, flat-floor floor_snap adhesion and modern presentation-only orbit input snapshot shape. Predecessor is earlier FEEL2 evidence, not an invented historical LIVEFIX file."
+    },
+    {
+      "game": "reedland_combat",
+      "movie": "modules.h64movie.json",
+      "path": "evidence/feel2/replay-resume-01/bots/reedland_combat/modules.h64movie.json",
+      "sha256": "4e7ef22f058da7c9c309f073497c190f9cb63143d78ec899d6b5befec7dfb0d4",
+      "ticks": 926,
+      "checkpoints": 16,
+      "predecessor": "evidence/feel2/solids/inherited-bots-final/reedland_combat/modules.h64movie.json",
+      "predecessor_sha256": "c264f6cb812a9bb69b79af85c76d9e1a34b30762abdd3616875d55dbaf0b2a64",
+      "frames_unchanged": false,
+      "changed_checkpoints": [
+        {
+          "tick": 60,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 120,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 180,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 240,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 300,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 360,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 420,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 480,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 540,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 600,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 660,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 720,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 780,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 840,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 900,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 926,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        }
+      ],
+      "why": "Deliberate final FEEL2 pin: production solid-aware route and safe entry, deterministic doorway input lock, flat-floor floor_snap adhesion and modern presentation-only orbit input snapshot shape. Predecessor is earlier FEEL2 evidence, not an invented historical LIVEFIX file."
+    },
+    {
+      "game": "puzzle_hall",
+      "movie": "modules.h64movie.json",
+      "path": "evidence/feel2/replay-resume-01/bots/puzzle_hall/modules.h64movie.json",
+      "sha256": "067cdfe75250b16a4a7dbbdb77767f3df6fd9cb0168e186e4f2b722b7d6ebb9b",
+      "ticks": 2270,
+      "checkpoints": 38,
+      "predecessor": "evidence/feel2/solids/inherited-bots-final/puzzle_hall/modules.h64movie.json",
+      "predecessor_sha256": "4a0b41c35a1e04f448f9760a21cc69c08d349d4f299764907ff123c72aba9d5c",
+      "frames_unchanged": true,
+      "changed_checkpoints": [
+        {
+          "tick": 60,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 120,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 180,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 240,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 300,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 360,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 420,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 480,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 540,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 600,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 660,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 720,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 780,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 840,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 900,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 960,
+          "fields": [
+            "actions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1020,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1080,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1140,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1200,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1260,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1320,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1380,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1440,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1500,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1560,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1620,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1680,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1740,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1800,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1860,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1920,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 1980,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 2040,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 2100,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 2160,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 2220,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 2270,
+          "fields": [
+            "actions"
+          ]
+        }
+      ],
+      "why": "Deliberate final FEEL2 pin: production solid-aware route and safe entry, deterministic doorway input lock, flat-floor floor_snap adhesion and modern presentation-only orbit input snapshot shape. Predecessor is earlier FEEL2 evidence, not an invented historical LIVEFIX file."
+    },
+    {
+      "game": "city_arena_test",
+      "movie": "modules.h64movie.json",
+      "path": "evidence/feel2/replay-resume-01/bots/city_arena_test/modules.h64movie.json",
+      "sha256": "78a937ab2175adbc2374e0454c454fcfaebdde3771becbafed51ece28630ae67",
+      "ticks": 4042,
+      "checkpoints": 68,
+      "predecessor": "evidence/feel2/solids/inherited-bots-final/city_arena_test/modules.h64movie.json",
+      "predecessor_sha256": "656f7b5911a6b7dcc3ae3ceeec0d67a931263f9ebc0274b20efe0153adcaea19",
+      "frames_unchanged": false,
+      "changed_checkpoints": [
+        {
+          "tick": 60,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 120,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 180,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 240,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 300,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 360,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 420,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 480,
+          "fields": [
+            "actions"
+          ]
+        },
+        {
+          "tick": 540,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 600,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 660,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 720,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 780,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 840,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 900,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 960,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1020,
+          "fields": [
+            "actions",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 1080,
+          "fields": [
+            "actions",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 1140,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1200,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1260,
+          "fields": [
+            "actions",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 1320,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1380,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1440,
+          "fields": [
+            "actions",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 1500,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1560,
+          "fields": [
+            "actions",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 1620,
+          "fields": [
+            "actions",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 1680,
+          "fields": [
+            "actions",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 1740,
+          "fields": [
+            "actions",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 1800,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1860,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1920,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 1980,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2040,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2100,
+          "fields": [
+            "actions",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 2160,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2220,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2280,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2340,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2400,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2460,
+          "fields": [
+            "actions",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2520,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2580,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 2640,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2700,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 2760,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 2820,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 2880,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 2940,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 3000,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 3060,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 3120,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 3180,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 3240,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 3300,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 3360,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 3420,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 3480,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 3540,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 3600,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player"
+          ]
+        },
+        {
+          "tick": 3660,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3720,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 3780,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3840,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "menu_index",
+            "player",
+            "story"
+          ]
+        },
+        {
+          "tick": 3900,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "player"
+          ]
+        },
+        {
+          "tick": 3960,
+          "fields": [
+            "actions",
+            "checkpoint",
+            "extensions",
+            "menu_index",
+            "menu_open",
+            "player"
+          ]
+        },
+        {
+          "tick": 4020,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        },
+        {
+          "tick": 4042,
+          "fields": [
+            "actions",
+            "belt",
+            "camera",
+            "checkpoint",
+            "extensions",
+            "focus_id",
+            "inventory",
+            "menu_index",
+            "menu_open",
+            "page_index",
+            "player",
+            "story",
+            "target_id"
+          ]
+        }
+      ],
+      "why": "Deliberate final FEEL2 pin: production solid-aware route and safe entry, deterministic doorway input lock, flat-floor floor_snap adhesion and modern presentation-only orbit input snapshot shape. Predecessor is earlier FEEL2 evidence, not an invented historical LIVEFIX file."
+    }
+  ],
+  "floor_regression": {
+    "input_fixture": "tests/fixtures/feel2_floor_rate_input.json",
+    "ticks": 1120,
+    "frames_unchanged": true,
+    "movie": "evidence/feel2/replay-resume-01/floor-regression/floor.h64movie.json",
+    "sha256": "5e1cd8ab46befb7be4d4e1d6ce58e65392df77c871c35106922ca5ca306b1fa1",
+    "runs": [
+      {
+        "fps": 30,
+        "ok": true,
+        "result": {
+          "hashes": [
+            {
+              "hash": "b7aed4e2612b73ab9a29d0645ea2289f64caec3f694346f5e189b57ec152b079",
+              "tick": 60
+            },
+            {
+              "hash": "87b9231ba7ce6bed225124f9a0b1fb4ec170692745ba4ae0c240e9dbc95c44a4",
+              "tick": 120
+            },
+            {
+              "hash": "c92b0ad0f6a46d922f9eb1fcc0949fb41ed5bc56cb9143fb82df594bd33dc4b6",
+              "tick": 180
+            },
+            {
+              "hash": "687e5074ad73fbc1a49c33cf1b18ec1f7827a03a64ff81b462d5de76fa53d816",
+              "tick": 240
+            },
+            {
+              "hash": "3d398eba6ef17f3ff38826ba3d22dfdbd5c71d76bc2281ed6ab57a4485d74014",
+              "tick": 300
+            },
+            {
+              "hash": "b5f45c170ceca42568fc4533c5d5934111c19ed9d32856523088662ff270ae50",
+              "tick": 360
+            },
+            {
+              "hash": "d72c6eed6959156c81d21519cb33adc8fddfefd78163814640a0217462f59ed4",
+              "tick": 420
+            },
+            {
+              "hash": "1524d965cb21c993c6721c1c92b89c8a3591e1c00336c3b1090ec7168d0e26c4",
+              "tick": 480
+            },
+            {
+              "hash": "c2fd4d086f47755fdb92734fb289bc42b5f3af7d40f7b37aec12b342ec4e37c5",
+              "tick": 540
+            },
+            {
+              "hash": "ce4df4e500f20f996c548eae6953322a37bcec3ec911dce5f3223bad7b7879b6",
+              "tick": 600
+            },
+            {
+              "hash": "71d324ecfbf243cec555ee859676bca8773e403942a35e3b2c8b9e9b6f2fd19f",
+              "tick": 660
+            },
+            {
+              "hash": "d80195e2492df940f489a9509463c99391bbc6ae230c7f861a1394a7676e314e",
+              "tick": 720
+            },
+            {
+              "hash": "f52ed10fed19de925ccd1b9e38855cfb7dd75c0191b96eb4a580b397627dabf8",
+              "tick": 780
+            },
+            {
+              "hash": "5e2f8810a1caa6cd93954a7c9e520e4340198b65ce1a1db761c160e4d8187cc4",
+              "tick": 840
+            },
+            {
+              "hash": "fcd1952e4fe0a2c7e450564ed8375df85e7dfc7fa49f776591a4cc88b7045605",
+              "tick": 900
+            },
+            {
+              "hash": "9cc34544e57a09823608b7e44eafe4fcd838c37fd1bfe51aac0b7ff2b590f11b",
+              "tick": 960
+            },
+            {
+              "hash": "cbd23c542f32bbcbfbaf2a9184529cf0762d5e76918a0f44fcbe89d856afe514",
+              "tick": 1020
+            },
+            {
+              "hash": "b8f0cc44086ac9c4a05d297eb5b1a06e6fdf983f3310d0166a9961fc1a9954e9",
+              "tick": 1080
+            },
+            {
+              "hash": "02ff8df2ea077a789a6ffc8132e7b6697c157fc02c890508bc02f8d6a1a3557d",
+              "tick": 1120
+            }
+          ],
+          "ok": true,
+          "ticks": 1120
+        }
+      },
+      {
+        "fps": 60,
+        "ok": true,
+        "result": {
+          "hashes": [
+            {
+              "hash": "b7aed4e2612b73ab9a29d0645ea2289f64caec3f694346f5e189b57ec152b079",
+              "tick": 60
+            },
+            {
+              "hash": "87b9231ba7ce6bed225124f9a0b1fb4ec170692745ba4ae0c240e9dbc95c44a4",
+              "tick": 120
+            },
+            {
+              "hash": "c92b0ad0f6a46d922f9eb1fcc0949fb41ed5bc56cb9143fb82df594bd33dc4b6",
+              "tick": 180
+            },
+            {
+              "hash": "687e5074ad73fbc1a49c33cf1b18ec1f7827a03a64ff81b462d5de76fa53d816",
+              "tick": 240
+            },
+            {
+              "hash": "3d398eba6ef17f3ff38826ba3d22dfdbd5c71d76bc2281ed6ab57a4485d74014",
+              "tick": 300
+            },
+            {
+              "hash": "b5f45c170ceca42568fc4533c5d5934111c19ed9d32856523088662ff270ae50",
+              "tick": 360
+            },
+            {
+              "hash": "d72c6eed6959156c81d21519cb33adc8fddfefd78163814640a0217462f59ed4",
+              "tick": 420
+            },
+            {
+              "hash": "1524d965cb21c993c6721c1c92b89c8a3591e1c00336c3b1090ec7168d0e26c4",
+              "tick": 480
+            },
+            {
+              "hash": "c2fd4d086f47755fdb92734fb289bc42b5f3af7d40f7b37aec12b342ec4e37c5",
+              "tick": 540
+            },
+            {
+              "hash": "ce4df4e500f20f996c548eae6953322a37bcec3ec911dce5f3223bad7b7879b6",
+              "tick": 600
+            },
+            {
+              "hash": "71d324ecfbf243cec555ee859676bca8773e403942a35e3b2c8b9e9b6f2fd19f",
+              "tick": 660
+            },
+            {
+              "hash": "d80195e2492df940f489a9509463c99391bbc6ae230c7f861a1394a7676e314e",
+              "tick": 720
+            },
+            {
+              "hash": "f52ed10fed19de925ccd1b9e38855cfb7dd75c0191b96eb4a580b397627dabf8",
+              "tick": 780
+            },
+            {
+              "hash": "5e2f8810a1caa6cd93954a7c9e520e4340198b65ce1a1db761c160e4d8187cc4",
+              "tick": 840
+            },
+            {
+              "hash": "fcd1952e4fe0a2c7e450564ed8375df85e7dfc7fa49f776591a4cc88b7045605",
+              "tick": 900
+            },
+            {
+              "hash": "9cc34544e57a09823608b7e44eafe4fcd838c37fd1bfe51aac0b7ff2b590f11b",
+              "tick": 960
+            },
+            {
+              "hash": "cbd23c542f32bbcbfbaf2a9184529cf0762d5e76918a0f44fcbe89d856afe514",
+              "tick": 1020
+            },
+            {
+              "hash": "b8f0cc44086ac9c4a05d297eb5b1a06e6fdf983f3310d0166a9961fc1a9954e9",
+              "tick": 1080
+            },
+            {
+              "hash": "02ff8df2ea077a789a6ffc8132e7b6697c157fc02c890508bc02f8d6a1a3557d",
+              "tick": 1120
+            }
+          ],
+          "ok": true,
+          "ticks": 1120
+        }
+      },
+      {
+        "fps": 144,
+        "ok": true,
+        "result": {
+          "hashes": [
+            {
+              "hash": "b7aed4e2612b73ab9a29d0645ea2289f64caec3f694346f5e189b57ec152b079",
+              "tick": 60
+            },
+            {
+              "hash": "87b9231ba7ce6bed225124f9a0b1fb4ec170692745ba4ae0c240e9dbc95c44a4",
+              "tick": 120
+            },
+            {
+              "hash": "c92b0ad0f6a46d922f9eb1fcc0949fb41ed5bc56cb9143fb82df594bd33dc4b6",
+              "tick": 180
+            },
+            {
+              "hash": "687e5074ad73fbc1a49c33cf1b18ec1f7827a03a64ff81b462d5de76fa53d816",
+              "tick": 240
+            },
+            {
+              "hash": "3d398eba6ef17f3ff38826ba3d22dfdbd5c71d76bc2281ed6ab57a4485d74014",
+              "tick": 300
+            },
+            {
+              "hash": "b5f45c170ceca42568fc4533c5d5934111c19ed9d32856523088662ff270ae50",
+              "tick": 360
+            },
+            {
+              "hash": "d72c6eed6959156c81d21519cb33adc8fddfefd78163814640a0217462f59ed4",
+              "tick": 420
+            },
+            {
+              "hash": "1524d965cb21c993c6721c1c92b89c8a3591e1c00336c3b1090ec7168d0e26c4",
+              "tick": 480
+            },
+            {
+              "hash": "c2fd4d086f47755fdb92734fb289bc42b5f3af7d40f7b37aec12b342ec4e37c5",
+              "tick": 540
+            },
+            {
+              "hash": "ce4df4e500f20f996c548eae6953322a37bcec3ec911dce5f3223bad7b7879b6",
+              "tick": 600
+            },
+            {
+              "hash": "71d324ecfbf243cec555ee859676bca8773e403942a35e3b2c8b9e9b6f2fd19f",
+              "tick": 660
+            },
+            {
+              "hash": "d80195e2492df940f489a9509463c99391bbc6ae230c7f861a1394a7676e314e",
+              "tick": 720
+            },
+            {
+              "hash": "f52ed10fed19de925ccd1b9e38855cfb7dd75c0191b96eb4a580b397627dabf8",
+              "tick": 780
+            },
+            {
+              "hash": "5e2f8810a1caa6cd93954a7c9e520e4340198b65ce1a1db761c160e4d8187cc4",
+              "tick": 840
+            },
+            {
+              "hash": "fcd1952e4fe0a2c7e450564ed8375df85e7dfc7fa49f776591a4cc88b7045605",
+              "tick": 900
+            },
+            {
+              "hash": "9cc34544e57a09823608b7e44eafe4fcd838c37fd1bfe51aac0b7ff2b590f11b",
+              "tick": 960
+            },
+            {
+              "hash": "cbd23c542f32bbcbfbaf2a9184529cf0762d5e76918a0f44fcbe89d856afe514",
+              "tick": 1020
+            },
+            {
+              "hash": "b8f0cc44086ac9c4a05d297eb5b1a06e6fdf983f3310d0166a9961fc1a9954e9",
+              "tick": 1080
+            },
+            {
+              "hash": "02ff8df2ea077a789a6ffc8132e7b6697c157fc02c890508bc02f8d6a1a3557d",
+              "tick": 1120
+            }
+          ],
+          "ok": true,
+          "ticks": 1120
+        }
+      }
+    ],
+    "why": "Exact input witness that failed at first native flat-floor recovery divergence1031; flat support uses floor_snap rather than a diagonal downward ground-pull sweep. No expected hash was rounded or waived."
+  },
+  "legacy": {
+    "source": "evidence/feel2/run/legacy-controls-movie.json",
+    "source_sha256": "f8b3afe37002b436041c581a1a6f69945f4d2347cecf20db79652f647280e6e7",
+    "original_bytes_unchanged": true,
+    "old_cross_result": {
+      "actual": "df55d6c10cee025047c1a0291491a2c29b0d47a5a24dac52dff22de7bd1c902a",
+      "actual_fields": {
+        "player": {
+          "actual": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "basis": [
+            [
+              0.7748650312423706,
+              0.0,
+              -0.6321266889572144
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.6321266889572144,
+              0.0,
+              0.7748650312423706
+            ]
+          ],
+          "desired": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "last_input": [
+            0.0,
+            0.0
+          ],
+          "latched": false,
+          "latched_basis": [
+            [
+              1.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              1.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "position": [
+            1.0119999647140503,
+            0.0009999999310821295,
+            4.414999961853027
+          ],
+          "velocity": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "yaw": 3.665191411972046
+        }
+      },
+      "expected": "5fefcfba7814b08618b674ee4e3050c3dcf523fbe6ce9b2bfff32b92cb50e780",
+      "ok": false,
+      "reason": "first divergent state checkpoint",
+      "tick": 240
+    },
+    "repinned": "evidence/feel2/replay-resume-01/legacy/legacy-controls-feel2.h64movie.json",
+    "sha256": "9ff445c75f48ef3a3711671706d21ab91f2b3b363b4eb983e80aaf9e34655fc6",
+    "frames_unchanged": true,
+    "ticks": 240,
+    "old_hashes": [
+      "3ddb0f43797d3b0f00e9b75cc5a7033a73c78aa49a0f6db1cb3e06734c4f8de6",
+      "8ad12cb8c614859893adb2fbc2479914c71a67e7838a0adfc82fce318436d671",
+      "100df6872fc7d851a19ff755f7c447363a8f5d72aa913da84b07f1c1ed013ae7",
+      "5fefcfba7814b08618b674ee4e3050c3dcf523fbe6ce9b2bfff32b92cb50e780"
+    ],
+    "new_hashes": [
+      "3ddb0f43797d3b0f00e9b75cc5a7033a73c78aa49a0f6db1cb3e06734c4f8de6",
+      "8ad12cb8c614859893adb2fbc2479914c71a67e7838a0adfc82fce318436d671",
+      "100df6872fc7d851a19ff755f7c447363a8f5d72aa913da84b07f1c1ed013ae7",
+      "df55d6c10cee025047c1a0291491a2c29b0d47a5a24dac52dff22de7bd1c902a"
+    ],
+    "strict_playbacks": 2,
+    "why": "Pre-FEEL2 7edc26fd controls fixture keeps every original action frame/ID; portal entry/input-lock and collision-era contextual positions are deliberately re-pinned. Old expected hashes were first compared unchanged; production build guard remains strict."
+  },
+  "scope": "headless production bots and strict source/export-project fixtures; no human play/balance or native OS input claim"
+}

@@ -1,0 +1,2547 @@
+{
+	"cases": [
+		{
+			"mode": "auto",
+			"profile": {
+				"bindings": {
+					"action_menu": [
+						{
+							"key": 4194306
+						},
+						{
+							"button": 3
+						}
+					],
+					"camera_cycle": [
+						{
+							"key": 67
+						}
+					],
+					"camera_down": [
+						{
+							"key": 75
+						},
+						{
+							"axis": 3,
+							"sign": 1
+						}
+					],
+					"camera_left": [
+						{
+							"key": 74
+						},
+						{
+							"axis": 2,
+							"sign": -1
+						}
+					],
+					"camera_right": [
+						{
+							"key": 76
+						},
+						{
+							"axis": 2,
+							"sign": 1
+						}
+					],
+					"camera_up": [
+						{
+							"key": 73
+						},
+						{
+							"axis": 3,
+							"sign": -1
+						}
+					],
+					"dev_input": [
+						{
+							"key": 4194333
+						}
+					],
+					"dev_pause": [
+						{
+							"key": 80
+						}
+					],
+					"dev_perf": [
+						{
+							"key": 4194334
+						}
+					],
+					"dev_record": [
+						{
+							"key": 4194335
+						}
+					],
+					"dev_slow": [
+						{
+							"key": 4194337
+						}
+					],
+					"dev_step": [
+						{
+							"key": 46
+						}
+					],
+					"dev_toggle": [
+						{
+							"alt": true,
+							"ctrl": true,
+							"key": 4194332
+						}
+					],
+					"dodge": [
+						{
+							"key": 32
+						},
+						{
+							"button": 10
+						}
+					],
+					"focus": [
+						{
+							"key": 90
+						},
+						{
+							"axis": 4,
+							"sign": 1
+						}
+					],
+					"inventory": [
+						{
+							"key": 73
+						},
+						{
+							"button": 11
+						}
+					],
+					"menu": [
+						{
+							"key": 4194305
+						},
+						{
+							"button": 6
+						}
+					],
+					"move_down": [
+						{
+							"key": 83
+						},
+						{
+							"key": 4194322
+						},
+						{
+							"axis": 1,
+							"sign": 1
+						}
+					],
+					"move_left": [
+						{
+							"key": 65
+						},
+						{
+							"key": 4194319
+						},
+						{
+							"axis": 0,
+							"sign": -1
+						}
+					],
+					"move_right": [
+						{
+							"key": 68
+						},
+						{
+							"key": 4194321
+						},
+						{
+							"axis": 0,
+							"sign": 1
+						}
+					],
+					"move_up": [
+						{
+							"key": 87
+						},
+						{
+							"key": 4194320
+						},
+						{
+							"axis": 1,
+							"sign": -1
+						}
+					],
+					"primary": [
+						{
+							"key": 69
+						},
+						{
+							"button": 0
+						}
+					],
+					"quick_load": [
+						{
+							"key": 4194340
+						},
+						{
+							"button": 9,
+							"with": 4
+						}
+					],
+					"quick_save": [
+						{
+							"key": 4194336
+						},
+						{
+							"button": 10,
+							"with": 4
+						}
+					],
+					"reset": [
+						{
+							"key": 82
+						},
+						{
+							"button": 4
+						}
+					],
+					"screenshot": [
+						{
+							"key": 4194343
+						}
+					],
+					"secondary": [
+						{
+							"key": 81
+						},
+						{
+							"key": 4194308
+						},
+						{
+							"button": 1
+						}
+					],
+					"walk": [
+						{
+							"key": 4194325
+						}
+					]
+				},
+				"options": {
+					"focus_mode": "hold",
+					"opposite_key_rule": "last_wins",
+					"reduced_motion": false,
+					"run_mode": "auto"
+				},
+				"preset": "left",
+				"tuning": {
+					"accel_mps2": 12.0,
+					"action_buffer_s": 0.1,
+					"bounds_margin_m": 0.4,
+					"brake_mps2": 18.0,
+					"camera_hysteresis_m": 0.75,
+					"capsule_height_m": 1.4,
+					"capsule_radius_m": 0.26,
+					"checkpoint_icon_ticks": 90.0,
+					"coyote_s": 0.1,
+					"dead_zone_pad": 0.18,
+					"floor_snap_m": 0.15,
+					"focus_acquire_m": 2.2,
+					"focus_release_m": 2.6,
+					"focus_speed_mps": 1.2,
+					"gravity_mps2": 9.8,
+					"ground_pull_mps": 0.5,
+					"hold_to_retry_s": 0.6,
+					"interaction_height_m": 1.8,
+					"latch_direction_rad": 0.6,
+					"latch_release_magnitude": 0.15,
+					"magnitude_curve_power": 1.5,
+					"outer_saturation": 0.95,
+					"position_quantum_m": 0.0001,
+					"prompt_fade_after_uses": 3.0,
+					"prompt_fade_ticks": 24.0,
+					"prompt_idle_ticks": 1800.0,
+					"run_speed_mps": 3.2,
+					"safe_margin_m": 0.001,
+					"slope_max_deg": 40.0,
+					"step_height_m": 0.18,
+					"stick_ramp_down_s": 0.1,
+					"stick_ramp_up_s": 0.22,
+					"still_speed_mps": 0.05,
+					"turn_moving_deg_s": 720.0,
+					"turn_still_deg_s": 1080.0,
+					"walk_modifier_cap": 0.35,
+					"walk_speed_mps": 1.1,
+					"walk_stride_mps": 1.1
+				},
+				"version": 1
+			},
+			"steps": [
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "26516ce3cfb52f2cdc6c714cc31d9e8646d10b0da935807fcf84be9e353ec8e2"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "6e60aa4d2dd530f820f2023bba1dd6ab3f981cd148c1228f12cc56e70034305f"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "0f4b4362221109d04697f5b65bc7cb4590bd2e1d445192cc7193a661b2222bae"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "1657cd704bba81435a5160f985b8b56531158b2e67ba41cc7035503970961fc7"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "45c969e21c40536a6489550f437ea23fda61c1761bc15487d349aa2c85b526a7"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "93499d26d5caee427d85a60fb4137097c3f66f78fcfcc2e84cd283f04594f302"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "a28507e02093ea68afbf8a5de57bdfe8deb609b68cb470af1176136cdc186061"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "155543da4736f1e9b662011c9e2b5290b0afbadf4e580c0237529886f414ce74"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "fe61a3416dbaf2ab179c48f4d52d931b6fcd2e11e4aa78d99078035743a67f07"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "82b874fa0ef06eb9a4fb41a8eb43cb7730be3fce480d04d8094af2f57d354366"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "2962c7acc7870a83cc848a7e56bed554fab7a2ea9e290105faebd423783374fb"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "3028d4cfd076ea7f134ada540729b85628877f595d77c1fdc9f5c3189f8bfc03"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "de9f69a3437c76a33ec15185e2e7030ec32677e5be4ac92ed8d95cdbc1e01c5f"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "33a278451bb82a9b17aba5b875281516fe024f0a72d7b1beabdfa284e2129456"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "c184a059d0d5df7531ecbe6ad47d91259e4c5f6427f51dc8fb0dc9100f01bbbe"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "80a280eb8a1dd5d33ad77c5ee73f710cabbcd7ad601ed8aed839d32672978a67"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up",
+							"walk"
+						]
+					},
+					"hash": "a45f6ff69ca69f1eafcf2776e86820e9c11e1ea48a068afac8e63ba6a3d10919"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up",
+							"walk"
+						]
+					},
+					"hash": "d5e4c41daf1d67d81ceea4d7d6c304e3dc17185507d0e83e6aff0afd73efa7f8"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "b448b34d3014bb3da0d4f26d7b14952eb0e66111dc3b2139fc5670b28bdc6d23"
+				},
+				{
+					"frame": {
+						"digital": []
+					},
+					"hash": "6e50b80552695ad1197787f4bef78a2bb0309e5317f669eafb9c17e791178103"
+				},
+				{
+					"frame": {
+						"digital": [
+							"walk"
+						]
+					},
+					"hash": "ac604d815f80ff3684375dfb93e42b56adb5a59d3a4111e4fadbec71ff24b5a5"
+				},
+				{
+					"frame": {
+						"digital": []
+					},
+					"hash": "dbbb002edfefb9104fbd0f15f9177c5a449a79a7380e2fe949b66f13aa89b983"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_left",
+							"move_right"
+						]
+					},
+					"hash": "e924b104194ef91a071bbc246993df5d38b1b6437d3d065d03d7283558b44ddb"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_left"
+						]
+					},
+					"hash": "1cd00856905ac93e98e4e4e11737b5d6389434637e873ed7ddf6ff0ea81c3ac8"
+				},
+				{
+					"frame": {
+						"digital": [
+							"focus",
+							"primary"
+						]
+					},
+					"hash": "9cf9ff483b746603294e732f56548e74184d87262c37045a5a470e3dfbc560c4"
+				},
+				{
+					"frame": {
+						"digital": []
+					},
+					"hash": "cb20af2634fdcc9de0e3755792a43da71b00c35c3ba7b1dcf31e838d01000b0a"
+				},
+				{
+					"frame": {
+						"digital": [
+							"focus"
+						]
+					},
+					"hash": "9450a44804377ec47ad8232b806ee0baab5f446f211a2f1d5bffb55163f9ad90"
+				},
+				{
+					"frame": {
+						"analog": [
+							0.5,
+							0
+						]
+					},
+					"hash": "56ccae2b32016b9013bd74a6614b02dd04fa35ddebc0c16b55bc17c746a2b3e2"
+				},
+				{
+					"frame": {
+						"analog": [
+							0.95,
+							0
+						],
+						"buttons": [
+							"walk"
+						]
+					},
+					"hash": "346e2276ac9fdbed29de44e19aa0eb7290c2c47e89478ddadda82f40b119d70c"
+				},
+				{
+					"context": "pause",
+					"frame": {
+						"digital": [
+							"move_up",
+							"walk"
+						]
+					},
+					"hash": "9a5603aee3afd06b78e8adaef1f73b56571fba7ac5a76e6ec8bbd5d30e02e729"
+				},
+				{
+					"frame": {
+
+					},
+					"hash": "9d8745edb63141f289c377ffbff5face202537da5733b23594a164cc13b88029"
+				},
+				{
+					"context": "gameplay",
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "9092755d58f218f6a11b4a0bab86f09a8a21c5a5578a06a3fa4a12d334e02151"
+				},
+				{
+					"frame": {
+
+					},
+					"hash": "9de5205bf6b607e28f7c98b01e6cced50fa3fbb1f1ea6f6ee0aa8f7713eaca5d"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "ca080e785b58f76d90d903a5a5d2bf713a6b6f225f88c796576c57eae73f4895"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "c6ef9a2140bebf98ed68c0bbda475859093f2ff8ed08cd0e8d48cc3fa8aee703"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "b72f82b4348b273799d52fbe52a5cbb940e62e42109a6bd05894f03a33c97d65"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "cda31b794426c9839102c5984ae2b5dd4771833f2368a795f7c21478f5e38220"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "1578a6c1c9738bd19731093eae4b3dd773e03b7a90374a87877031d4e8854a13"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "77a20ad56fc5ba1fa4b1c9c64171d7cf792fde0aebdaa7215b4f03eed16e09da"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "6aa7e4f72c484b4278061c0a59e6b33b1c4fab4f7fdb9629b47e38b1f0184a9b"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "c1d6d9fa3885a6cb4d5d0f59db2dcc3625469c931604977904c502a4780678bf"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "ce550f0c57f77ca00317d3743b24243b85ca8e2c7837e2ec9a60710621e1427e"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "b71760f8e749a2e45f5468a5b1be138c247bdbd82915728d25e897bacd3f47f5"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "deaea93ea1350ccf5273b142d9729f5eb92677d889ef2e1e000472f9c0bbb109"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "05d6669ab28bba785d6c502c05f8ebfc88da255e37125eca35acd63ec6a20ae4"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "b4eb4d94bae010ac75f744cf1669cd4ad90b8169285ec026c195005a2b535561"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "92e7ff8dbec72811646ad776a80542e1afb7a85ee04557df344282f70cec07a5"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "eb9dabd77e81f7186477566906fb92d6d9ff8f3f9f24bf7528a2e56764316924"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "681fead91f8e29a37d5d532a2337f56193d9d426fd5f93d4bb71bbe555543110"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e16449521a5122e965e7af37379e4984d6a1ae16ffe58020df1eaf356bb9973d"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "45d4351875f33fbde6bba10bc1908cd98adb61446c845f9372dcc5beaf98df95"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "1c575b0892bd0ae72efa439fb037509b9817388507d68634cb8c517782e2c1cd"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "3759bfed9f3cdd18871f94878b484a21dbe7e67986c68400a23c745626e4920f"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e90d4d90e5b2f29eae48a552465eabb764c7da4139a58b68f0ab6ae37c363b1e"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "13507be4dc37c4ff7639a3a5a18b46bd93bb926b6f5b81600cc56e2cbe334142"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "df12db27f9ebfc8bbf4da60fac78dd8610744c4f505803b55f7fbe82137023f9"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "ddaa9e8b55c3177512af64f60068d4f8bfdd7a5169b781459b23d4a3a1964090"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "9661764830f20b5d918905dcdfc57b35f2713c70629757ed8e3779bd341ae6ab"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e1d062fa3913be7bc40117b70fcf3a7094e723f78ccfc1240498f9dbd70107de"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e45eee573144baf79fc0396e6f4e579b14f2c35bbb603524f79646e2b6048d9f"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "f3abf633b0c57139ad96278c13e26b1e861aa81089c43ebac92b092c992951ac"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "049a7f474e4949dd9a01b1f9e30b0fdac728445289771160c3dce201b464b989"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "974d136b52a2ab3508cd4a1d9d12ec0d7568aa8786f2f473b303f17db1404e9c"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e276423bfab478036dc896a5e38e7ca985fda8b65c4a5c41d059373017cd0f6e"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "4dae759b8e50cf90dc41b26c3eb16cff4628cf63c9e38080123f99391c48f676"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "1b001e99de6303ff83e816ae8aa6bdaa1e97b9182daed7a06ec8916cdfad4a89"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "1447093fcb91406b966aed8fa4b729dda754778d09c473118ad3e1e17abaa3cb"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "a2673f929cecc6cd5922b116cf88342e3ffd5482d93d1ba6c3b70f6b57909994"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "b7821ea5b0d3ca0c4c567c8348e952f26bf9db616f919d69a7a73de728ce8c9e"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "18eef6accd2f00d6ea20efdf27757f2000f803078bc4bf23128bd9b1be6b2e98"
+				},
+				{
+					"frame": {
+
+					},
+					"hash": "d4ccb26dd1f550ef733881b623fb055df2119ad65d6fbc508709a491fe460022"
+				}
+			]
+		},
+		{
+			"mode": "hold",
+			"profile": {
+				"bindings": {
+					"action_menu": [
+						{
+							"key": 4194306
+						},
+						{
+							"button": 3
+						}
+					],
+					"camera_cycle": [
+						{
+							"key": 67
+						}
+					],
+					"camera_down": [
+						{
+							"key": 75
+						},
+						{
+							"axis": 3,
+							"sign": 1
+						}
+					],
+					"camera_left": [
+						{
+							"key": 74
+						},
+						{
+							"axis": 2,
+							"sign": -1
+						}
+					],
+					"camera_right": [
+						{
+							"key": 76
+						},
+						{
+							"axis": 2,
+							"sign": 1
+						}
+					],
+					"camera_up": [
+						{
+							"key": 73
+						},
+						{
+							"axis": 3,
+							"sign": -1
+						}
+					],
+					"dev_input": [
+						{
+							"key": 4194333
+						}
+					],
+					"dev_pause": [
+						{
+							"key": 80
+						}
+					],
+					"dev_perf": [
+						{
+							"key": 4194334
+						}
+					],
+					"dev_record": [
+						{
+							"key": 4194335
+						}
+					],
+					"dev_slow": [
+						{
+							"key": 4194337
+						}
+					],
+					"dev_step": [
+						{
+							"key": 46
+						}
+					],
+					"dev_toggle": [
+						{
+							"alt": true,
+							"ctrl": true,
+							"key": 4194332
+						}
+					],
+					"dodge": [
+						{
+							"key": 32
+						},
+						{
+							"button": 10
+						}
+					],
+					"focus": [
+						{
+							"key": 90
+						},
+						{
+							"axis": 4,
+							"sign": 1
+						}
+					],
+					"inventory": [
+						{
+							"key": 73
+						},
+						{
+							"button": 11
+						}
+					],
+					"menu": [
+						{
+							"key": 4194305
+						},
+						{
+							"button": 6
+						}
+					],
+					"move_down": [
+						{
+							"key": 83
+						},
+						{
+							"key": 4194322
+						},
+						{
+							"axis": 1,
+							"sign": 1
+						}
+					],
+					"move_left": [
+						{
+							"key": 65
+						},
+						{
+							"key": 4194319
+						},
+						{
+							"axis": 0,
+							"sign": -1
+						}
+					],
+					"move_right": [
+						{
+							"key": 68
+						},
+						{
+							"key": 4194321
+						},
+						{
+							"axis": 0,
+							"sign": 1
+						}
+					],
+					"move_up": [
+						{
+							"key": 87
+						},
+						{
+							"key": 4194320
+						},
+						{
+							"axis": 1,
+							"sign": -1
+						}
+					],
+					"primary": [
+						{
+							"key": 69
+						},
+						{
+							"button": 0
+						}
+					],
+					"quick_load": [
+						{
+							"key": 4194340
+						},
+						{
+							"button": 9,
+							"with": 4
+						}
+					],
+					"quick_save": [
+						{
+							"key": 4194336
+						},
+						{
+							"button": 10,
+							"with": 4
+						}
+					],
+					"reset": [
+						{
+							"key": 82
+						},
+						{
+							"button": 4
+						}
+					],
+					"screenshot": [
+						{
+							"key": 4194343
+						}
+					],
+					"secondary": [
+						{
+							"key": 81
+						},
+						{
+							"key": 4194308
+						},
+						{
+							"button": 1
+						}
+					],
+					"walk": [
+						{
+							"key": 4194325
+						}
+					]
+				},
+				"options": {
+					"focus_mode": "hold",
+					"opposite_key_rule": "last_wins",
+					"reduced_motion": false,
+					"run_mode": "hold"
+				},
+				"preset": "left",
+				"tuning": {
+					"accel_mps2": 12.0,
+					"action_buffer_s": 0.1,
+					"bounds_margin_m": 0.4,
+					"brake_mps2": 18.0,
+					"camera_hysteresis_m": 0.75,
+					"capsule_height_m": 1.4,
+					"capsule_radius_m": 0.26,
+					"checkpoint_icon_ticks": 90.0,
+					"coyote_s": 0.1,
+					"dead_zone_pad": 0.18,
+					"floor_snap_m": 0.15,
+					"focus_acquire_m": 2.2,
+					"focus_release_m": 2.6,
+					"focus_speed_mps": 1.2,
+					"gravity_mps2": 9.8,
+					"ground_pull_mps": 0.5,
+					"hold_to_retry_s": 0.6,
+					"interaction_height_m": 1.8,
+					"latch_direction_rad": 0.6,
+					"latch_release_magnitude": 0.15,
+					"magnitude_curve_power": 1.5,
+					"outer_saturation": 0.95,
+					"position_quantum_m": 0.0001,
+					"prompt_fade_after_uses": 3.0,
+					"prompt_fade_ticks": 24.0,
+					"prompt_idle_ticks": 1800.0,
+					"run_speed_mps": 3.2,
+					"safe_margin_m": 0.001,
+					"slope_max_deg": 40.0,
+					"step_height_m": 0.18,
+					"stick_ramp_down_s": 0.1,
+					"stick_ramp_up_s": 0.22,
+					"still_speed_mps": 0.05,
+					"turn_moving_deg_s": 720.0,
+					"turn_still_deg_s": 1080.0,
+					"walk_modifier_cap": 0.35,
+					"walk_speed_mps": 1.1,
+					"walk_stride_mps": 1.1
+				},
+				"version": 1
+			},
+			"steps": [
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "8478c1162eb51ee3fa5c865fb1e37462b2c1ebd58b5368ac7073d4412fe7fae6"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "8c9322f620884154876fdab8182bde9e2902703b7973a04689fed26a52a7b30b"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "96d212a476c8f4c114c48b8913987187964977f593fdd8d2488c482e74801462"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "fb8276b8d9bb2d302991521ad1da5837d4cf632f6c9fba153c3e5e54000f2699"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "33db064bbdf02fc6be54400da56b363b0ef5c0a4fc625d52ed0ec13aa0873268"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "8944dd3f3c34ecb1fc5b5e1c887de8dc6b5caad2d90f7f09bceef9b39c40d741"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "85100b4760873c280ae41320ca4dfc58bf06e23bf337bd13825a493d17e463c7"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "6abf7c24881ac5b1712f52c587fb862257ec9bfd798ffd08e94424cb6fd8cfd0"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "d11ee6caf454f7780216dcb902a45e61a015c6398e28325dd1aa286f0c161f82"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "82fcc9979cb448471a24a5ea4beee2cc28dc185c4636c9fa42a534875f036c3a"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "3f6f8934bfafaa6e6e0a1311322e3ab750d77f5456d867d58c46ee8bbbcb6b00"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "64da52fc17fc4d27001be56f3f70fa744b0ba214e537ab56f5089465bee2c98c"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "b4644cb9bef5d2af8ca69eb3f89bf261c13b3afc77895828f560e897b8646765"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "72dd9a009970636411ae182f03fffbf4ed383f48d82601936c089eac7ef7ce4f"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "b695d5b3e8224e3d42c837fe7f7b011e895dd543806c84094b0e9b3f8996ef1d"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "2b19ea1f5518533a02c9bdecf1f1f4b41f771c2b083aa2bb5ba163aa3c48809a"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up",
+							"walk"
+						]
+					},
+					"hash": "b33d7299154e58f7d7e7e3b7da6cca2d31f241c4dcf8497e0ef7dede2c93557a"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up",
+							"walk"
+						]
+					},
+					"hash": "f0ae3937b26934a686916d76090636813c56ab61a0fb3cfb16a816f7f59241ca"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "6b6618a55ed8fb7450f6e8a0ad2b9049e7de2abaa7b6a56e4b210b655e2da2fd"
+				},
+				{
+					"frame": {
+						"digital": []
+					},
+					"hash": "05df4ffe12def0cd4c818058a42d3e5d52a3ea171da1cb2ca62641a2dff5da41"
+				},
+				{
+					"frame": {
+						"digital": [
+							"walk"
+						]
+					},
+					"hash": "2d887c8bd88c2e15f24a63f758813054b02015c1d1a1524e434b2a6c79a23eec"
+				},
+				{
+					"frame": {
+						"digital": []
+					},
+					"hash": "1444c59fde73b38279d7d243380b4281a87c723c4dc53ce8afa2aae4d3986d09"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_left",
+							"move_right"
+						]
+					},
+					"hash": "dc3f861f85c0930cbd2a47be97c32636e45bf97bee0af78fda641992646801b3"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_left"
+						]
+					},
+					"hash": "c34b8d2e76214fce7649655c3e66638a8214bb11e44934091083abb6038adafd"
+				},
+				{
+					"frame": {
+						"digital": [
+							"focus",
+							"primary"
+						]
+					},
+					"hash": "406c24c651f57e390a22123922e2e9abfa7f3986ca60cc571b7f9a3de046ab43"
+				},
+				{
+					"frame": {
+						"digital": []
+					},
+					"hash": "a952afea5d97fe1d24442a45ee3c3611cc99c942d0c4d252dcb744dff31814a2"
+				},
+				{
+					"frame": {
+						"digital": [
+							"focus"
+						]
+					},
+					"hash": "36377352354498580019b8a578bbba73a2ab4c6a533769d7c0c7c9c31f4f7617"
+				},
+				{
+					"frame": {
+						"analog": [
+							0.5,
+							0
+						]
+					},
+					"hash": "437c2aab6fb5ee7de9ace7a484a4213178871e9d8c59db02573133abdbf83b5b"
+				},
+				{
+					"frame": {
+						"analog": [
+							0.95,
+							0
+						],
+						"buttons": [
+							"walk"
+						]
+					},
+					"hash": "ad1b47ed692bae156103ae22cf5eb293857e77e6d50566233813607efa23e2d8"
+				},
+				{
+					"context": "pause",
+					"frame": {
+						"digital": [
+							"move_up",
+							"walk"
+						]
+					},
+					"hash": "a38c1b733104a4be40efd0188975d09cbc9a7b29c6fdd5b35234163cd623cd5f"
+				},
+				{
+					"frame": {
+
+					},
+					"hash": "9d8745edb63141f289c377ffbff5face202537da5733b23594a164cc13b88029"
+				},
+				{
+					"context": "gameplay",
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "ba7ed43118892d0205397a0f401f626a13ed3a3642ad9ba3788924e779e8d097"
+				},
+				{
+					"frame": {
+
+					},
+					"hash": "3976fdd504182c45d5c2e6480247c87925c2fef480b9641a34f22fb5836d7571"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "4c581c59c857ff92d275a2ab192a1f239ab8d3f0acda7f03c5877f71d87f3cb4"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "d79188f75d5f075479db53568f1353a6bc9ce4685753627dadcb323bbfb0e840"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "cb20a770d3650f1e000f9e84a76f9801f1d7195dfd14d0454426c7b649ad4d7e"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e08c9f3b710e3307e31286c743ab230e392325ebf50809c59cfd409b152ec55d"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "5cbc96d89d5325510495e64c6dae8bbea0ba1f97ac750723a201ee987ca91fec"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "f2bf0a50a151f1ca2358dedeaaed604c075ebdfe04738627c01c098a58cf3e81"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "3ba805a00c4cbcd86ff7e94f85821829804292746d5b8d366d3a2bf2ca992051"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "1bc842944e1b7db08ae53f8fa48646f766806ff9a37833b43f179a59e052c8f1"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "aaf4c4f5efe68e0f2333b3e470502b3049c4fd21a665214a237129672e85d7d8"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "adab0df99c1edd6b4b2fb1b5df98b06307ea212fb1d38ad05050bfd43b995724"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e59aa5d4d5de093855330e482b892e8a65d6f5ad90c1a8c8a118826718262055"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "8c03d05b2745ba32bb116e0c61be1a21a6e72d5662f1a2c445f0a8e805ffbb49"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "f03062518cad68d1897a0dbd5ed898ed256972302c90410b2c8b9019c06d85cb"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "6062412ecb6ccec22671a41cee7a7c0e638537d93d098e8f28fb77a631926444"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "80458b9ca0c3800a293f1697aecd0e9fca6112146bd1a8311ea3645f0f3de322"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "92a664342a6962dc9d6cdc21d8d6b2bf994e2339f53ae6cab8455f09df2fcfd2"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "deeac533c439d64eb28c2682808c91f955359adad5deda47ae1ff7f783814ad3"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "b8ab05d4b207ad2974ac4ab432d5f87d7636c8d7c23b89f9f76b83668628ba14"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "dfaf28f65a82990b5761ae75be4d36b6b344bcb5dda19470d31fcec2fa533460"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "7a7b9fd636b66deadad6f60290370a618bdbdb92fd64ca4413b2a0cea82a9aec"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "aab5e22d7978167cc161c25033cbafa63580dd3aca888e79a7e8e2274133b43b"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "7f7034e23aa814769b984bcb9e34720642d9abb2d3652c9e59db6300e5c91a27"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "0d614737a1e8e4e273d7ee5349785d5979952bd8ac58c3b629c165e171c27f7d"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "d93224fe6dd6196b928cb075f76c36e58a37dfcf7bedff4ada8476e739e634c6"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "bac2f46f18b664b94fe8688e073d9d10d2e21c703f11ecf168c8e51dee28c80f"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "aa76c89996b3938482051d8f9bb9c52f8fb5eba36a019bacd427f0cf0d54459d"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "8deb8fb79e02ca17cabd2fcac0bc2ca9704c226c982061f408c5f55bddcc5685"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "c5c4cbf619c2a84b397f3d298c37102457689497a0414a2a76e09f80f58dcfa1"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "9e09cd76694fcfaa4c9b4764b1ddcacb21b46927913515d667e0ff931ede422b"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "013a13b9f618f1323abf73ab1657982e95df84290e8510663f721603637dd711"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "2f61c701549065a806ccbc1b1c2e2895ca7168fb09fe7d638b7d8cd4963685ee"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "66a957e72a893dd47bbfb806956fc5ae0f24c52728b1b452604ed5f14762be56"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "a1aa1d487227637169b06acd0920b7cc38e88a05c7979a8f3ef9bf7a0d11eff5"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "6fc8d487af58435ef250a050b19d35bb6847204401df0dba73e5eaadc900f9e6"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "c50217f28dc398a86900dff4addf0b50d306cacad448236fdf0647f0237c20b8"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "fe2db06c8f6858e97053f98bc01e6ce8b0cae7b34b27f544eee95a6a0419f6a6"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "da6be4463a00cd088e87dc36566842d044f40ce5b66af5b3e10b3bd6a8dcb866"
+				},
+				{
+					"frame": {
+
+					},
+					"hash": "db27b51347f91bd16aa4a19addf5a21c7fba380974b143a5d3e2d41b9a97de02"
+				}
+			]
+		},
+		{
+			"mode": "toggle",
+			"profile": {
+				"bindings": {
+					"action_menu": [
+						{
+							"key": 4194306
+						},
+						{
+							"button": 3
+						}
+					],
+					"camera_cycle": [
+						{
+							"key": 67
+						}
+					],
+					"camera_down": [
+						{
+							"key": 75
+						},
+						{
+							"axis": 3,
+							"sign": 1
+						}
+					],
+					"camera_left": [
+						{
+							"key": 74
+						},
+						{
+							"axis": 2,
+							"sign": -1
+						}
+					],
+					"camera_right": [
+						{
+							"key": 76
+						},
+						{
+							"axis": 2,
+							"sign": 1
+						}
+					],
+					"camera_up": [
+						{
+							"key": 73
+						},
+						{
+							"axis": 3,
+							"sign": -1
+						}
+					],
+					"dev_input": [
+						{
+							"key": 4194333
+						}
+					],
+					"dev_pause": [
+						{
+							"key": 80
+						}
+					],
+					"dev_perf": [
+						{
+							"key": 4194334
+						}
+					],
+					"dev_record": [
+						{
+							"key": 4194335
+						}
+					],
+					"dev_slow": [
+						{
+							"key": 4194337
+						}
+					],
+					"dev_step": [
+						{
+							"key": 46
+						}
+					],
+					"dev_toggle": [
+						{
+							"alt": true,
+							"ctrl": true,
+							"key": 4194332
+						}
+					],
+					"dodge": [
+						{
+							"key": 32
+						},
+						{
+							"button": 10
+						}
+					],
+					"focus": [
+						{
+							"key": 90
+						},
+						{
+							"axis": 4,
+							"sign": 1
+						}
+					],
+					"inventory": [
+						{
+							"key": 73
+						},
+						{
+							"button": 11
+						}
+					],
+					"menu": [
+						{
+							"key": 4194305
+						},
+						{
+							"button": 6
+						}
+					],
+					"move_down": [
+						{
+							"key": 83
+						},
+						{
+							"key": 4194322
+						},
+						{
+							"axis": 1,
+							"sign": 1
+						}
+					],
+					"move_left": [
+						{
+							"key": 65
+						},
+						{
+							"key": 4194319
+						},
+						{
+							"axis": 0,
+							"sign": -1
+						}
+					],
+					"move_right": [
+						{
+							"key": 68
+						},
+						{
+							"key": 4194321
+						},
+						{
+							"axis": 0,
+							"sign": 1
+						}
+					],
+					"move_up": [
+						{
+							"key": 87
+						},
+						{
+							"key": 4194320
+						},
+						{
+							"axis": 1,
+							"sign": -1
+						}
+					],
+					"primary": [
+						{
+							"key": 69
+						},
+						{
+							"button": 0
+						}
+					],
+					"quick_load": [
+						{
+							"key": 4194340
+						},
+						{
+							"button": 9,
+							"with": 4
+						}
+					],
+					"quick_save": [
+						{
+							"key": 4194336
+						},
+						{
+							"button": 10,
+							"with": 4
+						}
+					],
+					"reset": [
+						{
+							"key": 82
+						},
+						{
+							"button": 4
+						}
+					],
+					"screenshot": [
+						{
+							"key": 4194343
+						}
+					],
+					"secondary": [
+						{
+							"key": 81
+						},
+						{
+							"key": 4194308
+						},
+						{
+							"button": 1
+						}
+					],
+					"walk": [
+						{
+							"key": 4194325
+						}
+					]
+				},
+				"options": {
+					"focus_mode": "hold",
+					"opposite_key_rule": "last_wins",
+					"reduced_motion": false,
+					"run_mode": "toggle"
+				},
+				"preset": "left",
+				"tuning": {
+					"accel_mps2": 12.0,
+					"action_buffer_s": 0.1,
+					"bounds_margin_m": 0.4,
+					"brake_mps2": 18.0,
+					"camera_hysteresis_m": 0.75,
+					"capsule_height_m": 1.4,
+					"capsule_radius_m": 0.26,
+					"checkpoint_icon_ticks": 90.0,
+					"coyote_s": 0.1,
+					"dead_zone_pad": 0.18,
+					"floor_snap_m": 0.15,
+					"focus_acquire_m": 2.2,
+					"focus_release_m": 2.6,
+					"focus_speed_mps": 1.2,
+					"gravity_mps2": 9.8,
+					"ground_pull_mps": 0.5,
+					"hold_to_retry_s": 0.6,
+					"interaction_height_m": 1.8,
+					"latch_direction_rad": 0.6,
+					"latch_release_magnitude": 0.15,
+					"magnitude_curve_power": 1.5,
+					"outer_saturation": 0.95,
+					"position_quantum_m": 0.0001,
+					"prompt_fade_after_uses": 3.0,
+					"prompt_fade_ticks": 24.0,
+					"prompt_idle_ticks": 1800.0,
+					"run_speed_mps": 3.2,
+					"safe_margin_m": 0.001,
+					"slope_max_deg": 40.0,
+					"step_height_m": 0.18,
+					"stick_ramp_down_s": 0.1,
+					"stick_ramp_up_s": 0.22,
+					"still_speed_mps": 0.05,
+					"turn_moving_deg_s": 720.0,
+					"turn_still_deg_s": 1080.0,
+					"walk_modifier_cap": 0.35,
+					"walk_speed_mps": 1.1,
+					"walk_stride_mps": 1.1
+				},
+				"version": 1
+			},
+			"steps": [
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "26516ce3cfb52f2cdc6c714cc31d9e8646d10b0da935807fcf84be9e353ec8e2"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "6e60aa4d2dd530f820f2023bba1dd6ab3f981cd148c1228f12cc56e70034305f"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "0f4b4362221109d04697f5b65bc7cb4590bd2e1d445192cc7193a661b2222bae"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "1657cd704bba81435a5160f985b8b56531158b2e67ba41cc7035503970961fc7"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "45c969e21c40536a6489550f437ea23fda61c1761bc15487d349aa2c85b526a7"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "93499d26d5caee427d85a60fb4137097c3f66f78fcfcc2e84cd283f04594f302"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "a28507e02093ea68afbf8a5de57bdfe8deb609b68cb470af1176136cdc186061"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "155543da4736f1e9b662011c9e2b5290b0afbadf4e580c0237529886f414ce74"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "fe61a3416dbaf2ab179c48f4d52d931b6fcd2e11e4aa78d99078035743a67f07"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "82b874fa0ef06eb9a4fb41a8eb43cb7730be3fce480d04d8094af2f57d354366"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "2962c7acc7870a83cc848a7e56bed554fab7a2ea9e290105faebd423783374fb"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "3028d4cfd076ea7f134ada540729b85628877f595d77c1fdc9f5c3189f8bfc03"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "de9f69a3437c76a33ec15185e2e7030ec32677e5be4ac92ed8d95cdbc1e01c5f"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "33a278451bb82a9b17aba5b875281516fe024f0a72d7b1beabdfa284e2129456"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "c184a059d0d5df7531ecbe6ad47d91259e4c5f6427f51dc8fb0dc9100f01bbbe"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "80a280eb8a1dd5d33ad77c5ee73f710cabbcd7ad601ed8aed839d32672978a67"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up",
+							"walk"
+						]
+					},
+					"hash": "a45f6ff69ca69f1eafcf2776e86820e9c11e1ea48a068afac8e63ba6a3d10919"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up",
+							"walk"
+						]
+					},
+					"hash": "d5e4c41daf1d67d81ceea4d7d6c304e3dc17185507d0e83e6aff0afd73efa7f8"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "6aa45129686f0f153684fef09394365c00c1ffb2b9517af4ff08c3cbe1de72c4"
+				},
+				{
+					"frame": {
+						"digital": []
+					},
+					"hash": "05df4ffe12def0cd4c818058a42d3e5d52a3ea171da1cb2ca62641a2dff5da41"
+				},
+				{
+					"frame": {
+						"digital": [
+							"walk"
+						]
+					},
+					"hash": "2d887c8bd88c2e15f24a63f758813054b02015c1d1a1524e434b2a6c79a23eec"
+				},
+				{
+					"frame": {
+						"digital": []
+					},
+					"hash": "dbbb002edfefb9104fbd0f15f9177c5a449a79a7380e2fe949b66f13aa89b983"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_left",
+							"move_right"
+						]
+					},
+					"hash": "e924b104194ef91a071bbc246993df5d38b1b6437d3d065d03d7283558b44ddb"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_left"
+						]
+					},
+					"hash": "1cd00856905ac93e98e4e4e11737b5d6389434637e873ed7ddf6ff0ea81c3ac8"
+				},
+				{
+					"frame": {
+						"digital": [
+							"focus",
+							"primary"
+						]
+					},
+					"hash": "9cf9ff483b746603294e732f56548e74184d87262c37045a5a470e3dfbc560c4"
+				},
+				{
+					"frame": {
+						"digital": []
+					},
+					"hash": "cb20af2634fdcc9de0e3755792a43da71b00c35c3ba7b1dcf31e838d01000b0a"
+				},
+				{
+					"frame": {
+						"digital": [
+							"focus"
+						]
+					},
+					"hash": "9450a44804377ec47ad8232b806ee0baab5f446f211a2f1d5bffb55163f9ad90"
+				},
+				{
+					"frame": {
+						"analog": [
+							0.5,
+							0
+						]
+					},
+					"hash": "56ccae2b32016b9013bd74a6614b02dd04fa35ddebc0c16b55bc17c746a2b3e2"
+				},
+				{
+					"frame": {
+						"analog": [
+							0.95,
+							0
+						],
+						"buttons": [
+							"walk"
+						]
+					},
+					"hash": "346e2276ac9fdbed29de44e19aa0eb7290c2c47e89478ddadda82f40b119d70c"
+				},
+				{
+					"context": "pause",
+					"frame": {
+						"digital": [
+							"move_up",
+							"walk"
+						]
+					},
+					"hash": "9a5603aee3afd06b78e8adaef1f73b56571fba7ac5a76e6ec8bbd5d30e02e729"
+				},
+				{
+					"frame": {
+
+					},
+					"hash": "9d8745edb63141f289c377ffbff5face202537da5733b23594a164cc13b88029"
+				},
+				{
+					"context": "gameplay",
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "9092755d58f218f6a11b4a0bab86f09a8a21c5a5578a06a3fa4a12d334e02151"
+				},
+				{
+					"frame": {
+
+					},
+					"hash": "9de5205bf6b607e28f7c98b01e6cced50fa3fbb1f1ea6f6ee0aa8f7713eaca5d"
+				},
+				{
+					"frame": {
+						"digital": [
+							"move_up"
+						]
+					},
+					"hash": "ca080e785b58f76d90d903a5a5d2bf713a6b6f225f88c796576c57eae73f4895"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "c6ef9a2140bebf98ed68c0bbda475859093f2ff8ed08cd0e8d48cc3fa8aee703"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "b72f82b4348b273799d52fbe52a5cbb940e62e42109a6bd05894f03a33c97d65"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "cda31b794426c9839102c5984ae2b5dd4771833f2368a795f7c21478f5e38220"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "1578a6c1c9738bd19731093eae4b3dd773e03b7a90374a87877031d4e8854a13"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "77a20ad56fc5ba1fa4b1c9c64171d7cf792fde0aebdaa7215b4f03eed16e09da"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "6aa7e4f72c484b4278061c0a59e6b33b1c4fab4f7fdb9629b47e38b1f0184a9b"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "c1d6d9fa3885a6cb4d5d0f59db2dcc3625469c931604977904c502a4780678bf"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "ce550f0c57f77ca00317d3743b24243b85ca8e2c7837e2ec9a60710621e1427e"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "b71760f8e749a2e45f5468a5b1be138c247bdbd82915728d25e897bacd3f47f5"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "deaea93ea1350ccf5273b142d9729f5eb92677d889ef2e1e000472f9c0bbb109"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "05d6669ab28bba785d6c502c05f8ebfc88da255e37125eca35acd63ec6a20ae4"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "b4eb4d94bae010ac75f744cf1669cd4ad90b8169285ec026c195005a2b535561"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "92e7ff8dbec72811646ad776a80542e1afb7a85ee04557df344282f70cec07a5"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "eb9dabd77e81f7186477566906fb92d6d9ff8f3f9f24bf7528a2e56764316924"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "681fead91f8e29a37d5d532a2337f56193d9d426fd5f93d4bb71bbe555543110"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e16449521a5122e965e7af37379e4984d6a1ae16ffe58020df1eaf356bb9973d"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "45d4351875f33fbde6bba10bc1908cd98adb61446c845f9372dcc5beaf98df95"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "1c575b0892bd0ae72efa439fb037509b9817388507d68634cb8c517782e2c1cd"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "3759bfed9f3cdd18871f94878b484a21dbe7e67986c68400a23c745626e4920f"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e90d4d90e5b2f29eae48a552465eabb764c7da4139a58b68f0ab6ae37c363b1e"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "13507be4dc37c4ff7639a3a5a18b46bd93bb926b6f5b81600cc56e2cbe334142"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "df12db27f9ebfc8bbf4da60fac78dd8610744c4f505803b55f7fbe82137023f9"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "ddaa9e8b55c3177512af64f60068d4f8bfdd7a5169b781459b23d4a3a1964090"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "9661764830f20b5d918905dcdfc57b35f2713c70629757ed8e3779bd341ae6ab"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e1d062fa3913be7bc40117b70fcf3a7094e723f78ccfc1240498f9dbd70107de"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e45eee573144baf79fc0396e6f4e579b14f2c35bbb603524f79646e2b6048d9f"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "f3abf633b0c57139ad96278c13e26b1e861aa81089c43ebac92b092c992951ac"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "049a7f474e4949dd9a01b1f9e30b0fdac728445289771160c3dce201b464b989"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "974d136b52a2ab3508cd4a1d9d12ec0d7568aa8786f2f473b303f17db1404e9c"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "e276423bfab478036dc896a5e38e7ca985fda8b65c4a5c41d059373017cd0f6e"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "4dae759b8e50cf90dc41b26c3eb16cff4628cf63c9e38080123f99391c48f676"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "1b001e99de6303ff83e816ae8aa6bdaa1e97b9182daed7a06ec8916cdfad4a89"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "1447093fcb91406b966aed8fa4b729dda754778d09c473118ad3e1e17abaa3cb"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "a2673f929cecc6cd5922b116cf88342e3ffd5482d93d1ba6c3b70f6b57909994"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "b7821ea5b0d3ca0c4c567c8348e952f26bf9db616f919d69a7a73de728ce8c9e"
+				},
+				{
+					"frame": {
+						"digital": [
+							"reset"
+						]
+					},
+					"hash": "18eef6accd2f00d6ea20efdf27757f2000f803078bc4bf23128bd9b1be6b2e98"
+				},
+				{
+					"frame": {
+
+					},
+					"hash": "d4ccb26dd1f550ef733881b623fb055df2119ad65d6fbc508709a491fe460022"
+				}
+			]
+		}
+	],
+	"scope": "actual pre-FEEL2 actions.gd snapshot digests; full legacy movie profiles",
+	"source_commit": "7edc26fd"
+}

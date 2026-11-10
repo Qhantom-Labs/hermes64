@@ -1,0 +1,3599 @@
+{
+ "anchors": {
+  "cell_block_centre": "origin on the centre of a cell block at floor level (rooms, bridge, hangar, ceilings)",
+  "cell_centre": "origin on one cell's centre at floor level (corridors, deck tiles, lifts)",
+  "cell_edge": "origin on a cell boundary midpoint at floor level (bulkhead frames across a corridor)",
+  "door_anchor": "origin on the room.gd door anchor: 0.4 m in from the room edge = 0.6 m behind the inner face",
+  "free": "footprint-centred free prop (any position on the floor)",
+  "terrain_tile": "origin on an 8 m terrain tile centre; edges typed ground(level) / ramp / cliff / trail",
+  "viewer": "sky backdrop centred on the viewer (look.backdrop or a far region piece)",
+  "wall_face": "back on a wall's inner face at floor level (vents, wall terminals, lockers); back_m = back offset"
+ },
+ "connectors": [
+  {
+   "a": "corridor",
+   "b": "corridor",
+   "rule": "facing sockets on the same cell edge; width 3.0 m"
+  },
+  {
+   "a": "door",
+   "b": "stn.doorway",
+   "rule": "a door socket takes exactly one stn.doorway frame (room.gd places it from the room's door data via the arch.door binding); stn.airlock may add its leaves as an insert"
+  },
+  {
+   "a": "window",
+   "b": "stn.viewport",
+   "rule": "a window cut takes the stn.viewport of the same kind"
+  },
+  {
+   "a": "wall",
+   "b": "tech.vent|tech.terminal__wall|tech.locker",
+   "rule": "wall-face props on wall sockets, back on the wall face (back_m)"
+  },
+  {
+   "a": "terrain_edge",
+   "b": "terrain_edge",
+   "rule": "neighbouring tiles share an edge with the same type and level (ramps: same from/to, trails on both sides)"
+  }
+ ],
+ "format": 1,
+ "grid": {
+  "cell_m": 4.0,
+  "corridor_clear_m": 3.0,
+  "corridor_height_m": 3.2,
+  "door_anchor_behind_face_m": 0.6,
+  "door_anchor_from_room_edge_m": 0.4,
+  "doorway_m": [
+   2.0,
+   2.6
+  ],
+  "front": "glTF +Z (south)",
+  "note": "room plot = cells x 4 m + 0.5 m apron each side; door.position for side cell i = 4*i + 2; terrain tiles 8 m on the region plot",
+  "room_apron_m": 0.5,
+  "room_height_m": 4.0,
+  "terrain_tile_m": 8.0,
+  "up": "glTF +Y",
+  "wall_inset_m": 0.5,
+  "yaw_steps_deg": 90
+ },
+ "pieces": {
+  "alien.arch": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "alien.arch",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 212
+  },
+  "alien.boulder": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "alien.boulder",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 64
+  },
+  "alien.boulder__big": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "alien.boulder",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "big",
+   "sockets": [],
+   "tris": 64
+  },
+  "alien.boulder__slab": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "alien.boulder",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "slab",
+   "sockets": [],
+   "tris": 64
+  },
+  "alien.bulb": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.bulb",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 248
+  },
+  "alien.bulb__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.bulb",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "tall",
+   "sockets": [],
+   "tris": 248
+  },
+  "alien.cap_tree": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.cap_tree",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 134
+  },
+  "alien.cap_tree__triple": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.cap_tree",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "triple",
+   "sockets": [],
+   "tris": 258
+  },
+  "alien.cap_tree__young": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.cap_tree",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "young",
+   "sockets": [],
+   "tris": 134
+  },
+  "alien.crystal": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.crystal",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 168
+  },
+  "alien.crystal__small": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.crystal",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "small",
+   "sockets": [],
+   "tris": 120
+  },
+  "alien.crystal__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.crystal",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "tall",
+   "sockets": [],
+   "tris": 192
+  },
+  "alien.frond": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.frond",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 204
+  },
+  "alien.frond__low": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.frond",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "low",
+   "sockets": [],
+   "tris": 176
+  },
+  "alien.geode": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "alien.geode",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 240
+  },
+  "alien.grass": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.grass",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 168
+  },
+  "alien.rock_spire": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "alien.rock_spire",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 122
+  },
+  "alien.rock_spire__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "alien.rock_spire",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "tall",
+   "sockets": [],
+   "tris": 150
+  },
+  "alien.spire": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "alien.spire",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 162
+  },
+  "alien.spire__short": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "alien.spire",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "short",
+   "sockets": [],
+   "tris": 138
+  },
+  "alien.tendril": {
+   "anchor": "free",
+   "cells": null,
+   "class": "flora",
+   "kit_id": "alien.tendril",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 180
+  },
+  "planet.crater": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.crater",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 318
+  },
+  "planet.dune": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.dune",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 398
+  },
+  "planet.ground": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.ground",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 222
+  },
+  "planet.ground__dirt": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.ground",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "dirt",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 222
+  },
+  "planet.ground__field": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.ground",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "field",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 222
+  },
+  "planet.ground__high": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 6.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 6.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 6.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 6.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.ground",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "high",
+   "sockets": [
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      6.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      6.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      6.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      6.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 222
+  },
+  "planet.ground__plateau": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 2.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 2.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 2.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 2.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.ground",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "plateau",
+   "sockets": [
+    {
+     "edge": {
+      "level": 2.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      2.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 2.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      2.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 2.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      2.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 2.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      2.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 222
+  },
+  "planet.ground__rough": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.ground",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "rough",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 222
+  },
+  "planet.mesa": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "planet.mesa",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 68
+  },
+  "planet.pad": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.pad",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 406
+  },
+  "planet.ridge": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "from": 0.0,
+     "to": 6.0,
+     "type": "cliff"
+    },
+    "n": {
+     "level": 6.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "from": 0.0,
+     "to": 6.0,
+     "type": "cliff"
+    }
+   },
+   "kit_id": "planet.ridge",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 6.0,
+      "type": "cliff"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      6.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 6.0,
+      "type": "cliff"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 244
+  },
+  "planet.rise": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "from": 0.0,
+     "to": 2.0,
+     "type": "ramp"
+    },
+    "n": {
+     "level": 2.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "from": 0.0,
+     "to": 2.0,
+     "type": "ramp"
+    }
+   },
+   "kit_id": "planet.rise",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 2.0,
+      "type": "ramp"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 2.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      2.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 2.0,
+      "type": "ramp"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 222
+  },
+  "planet.rise__steep": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "from": 0.0,
+     "to": 6.0,
+     "type": "ramp"
+    },
+    "n": {
+     "level": 6.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "w": {
+     "from": 0.0,
+     "to": 6.0,
+     "type": "ramp"
+    }
+   },
+   "kit_id": "planet.rise",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "steep",
+   "sockets": [
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 6.0,
+      "type": "ramp"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 6.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      6.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "from": 0.0,
+      "to": 6.0,
+      "type": "ramp"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 222
+  },
+  "planet.trail": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "trail": 2.4,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "trail": 2.4,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.trail",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "trail": 2.4,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "trail": 2.4,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 430
+  },
+  "planet.trail__bend": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "trail": 2.4,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "trail": 2.4,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.trail",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "bend",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "trail": 2.4,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "trail": 2.4,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 430
+  },
+  "planet.trail__end": {
+   "anchor": "terrain_tile",
+   "cells": null,
+   "class": "terrain",
+   "edges": {
+    "e": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "n": {
+     "level": 0.0,
+     "type": "ground"
+    },
+    "s": {
+     "level": 0.0,
+     "trail": 2.4,
+     "type": "ground"
+    },
+    "w": {
+     "level": 0.0,
+     "type": "ground"
+    }
+   },
+   "kit_id": "planet.trail",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "end",
+   "sockets": [
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "e",
+     "position": [
+      4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "trail": 2.4,
+      "type": "ground"
+     },
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      4.0
+     ],
+     "type": "terrain_edge"
+    },
+    {
+     "edge": {
+      "level": 0.0,
+      "type": "ground"
+     },
+     "facing": "w",
+     "position": [
+      -4.0,
+      0.0,
+      -0.0
+     ],
+     "type": "terrain_edge"
+    }
+   ],
+   "tris": 430
+  },
+  "ship.drone": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "ship.drone",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 132
+  },
+  "ship.drone__lifter": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "ship.drone",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "lifter",
+   "sockets": [],
+   "tris": 148
+  },
+  "ship.escape_pod": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "ship.escape_pod",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 252
+  },
+  "ship.escape_pod__crashed": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "ship.escape_pod",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "crashed",
+   "sockets": [],
+   "tris": 252
+  },
+  "ship.escape_pod__open": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "ship.escape_pod",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "open",
+   "sockets": [],
+   "tris": 280
+  },
+  "ship.hauler": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "ship.hauler",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 500
+  },
+  "ship.hauler__empty": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "ship.hauler",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "empty",
+   "sockets": [],
+   "tris": 356
+  },
+  "ship.rover": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "ship.rover",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 420
+  },
+  "ship.rover__scout": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "ship.rover",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "scout",
+   "sockets": [],
+   "tris": 320
+  },
+  "ship.shuttle": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "ship.shuttle",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 404
+  },
+  "ship.shuttle__cargo": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "ship.shuttle",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "cargo",
+   "sockets": [],
+   "tris": 464
+  },
+  "ship.shuttle__level": {
+   "anchor": "free",
+   "cells": null,
+   "class": "vehicle",
+   "kit_id": "ship.shuttle",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "level",
+   "sockets": [],
+   "tris": 404
+  },
+  "skyx.horizon": {
+   "anchor": "viewer",
+   "cells": null,
+   "class": "sky",
+   "kit_id": "skyx.horizon",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 60
+  },
+  "skyx.horizon__dunes": {
+   "anchor": "viewer",
+   "cells": null,
+   "class": "sky",
+   "kit_id": "skyx.horizon",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "dunes",
+   "sockets": [],
+   "tris": 60
+  },
+  "skyx.horizon__spires": {
+   "anchor": "viewer",
+   "cells": null,
+   "class": "sky",
+   "kit_id": "skyx.horizon",
+   "packs": [
+    "alien_world"
+   ],
+   "preset": "spires",
+   "sockets": [],
+   "tris": 60
+  },
+  "skyx.nebula": {
+   "anchor": "viewer",
+   "cells": null,
+   "class": "sky",
+   "kit_id": "skyx.nebula",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 12
+  },
+  "skyx.planet": {
+   "anchor": "viewer",
+   "cells": null,
+   "class": "sky",
+   "kit_id": "skyx.planet",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 100
+  },
+  "skyx.planet__moon": {
+   "anchor": "viewer",
+   "cells": null,
+   "class": "sky",
+   "kit_id": "skyx.planet",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "moon",
+   "sockets": [],
+   "tris": 100
+  },
+  "skyx.planet__ringed": {
+   "anchor": "viewer",
+   "cells": null,
+   "class": "sky",
+   "kit_id": "skyx.planet",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "ringed",
+   "sockets": [],
+   "tris": 120
+  },
+  "skyx.starfield": {
+   "anchor": "viewer",
+   "cells": null,
+   "class": "sky",
+   "kit_id": "skyx.starfield",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 84
+  },
+  "skyx.starfield__cylinder": {
+   "anchor": "viewer",
+   "cells": null,
+   "class": "sky",
+   "kit_id": "skyx.starfield",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "cylinder",
+   "sockets": [],
+   "tris": 48
+  },
+  "stn.airlock": {
+   "anchor": "door_anchor",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "stn.airlock",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 264
+  },
+  "stn.airlock__open": {
+   "anchor": "door_anchor",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "stn.airlock",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "open",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 168
+  },
+  "stn.bridge": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "height_m": 4.0,
+   "kit_id": "stn.bridge",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      6.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 630
+  },
+  "stn.bulkhead": {
+   "anchor": "cell_edge",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "stn.bulkhead",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 232
+  },
+  "stn.ceiling": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "height_m": 4.0,
+   "kit_id": "stn.ceiling",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 174
+  },
+  "stn.ceiling__c2x2": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "height_m": 4.0,
+   "kit_id": "stn.ceiling",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "c2x2",
+   "sockets": [],
+   "tris": 80
+  },
+  "stn.ceiling__c2x3": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    3
+   ],
+   "class": "shell",
+   "height_m": 4.0,
+   "kit_id": "stn.ceiling",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "c2x3",
+   "sockets": [],
+   "tris": 120
+  },
+  "stn.ceiling__hangar": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    4
+   ],
+   "class": "shell",
+   "height_m": 7.0,
+   "kit_id": "stn.ceiling",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "hangar",
+   "sockets": [],
+   "tris": 296
+  },
+  "stn.corridor": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.corridor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 216
+  },
+  "stn.corridor__corner": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.corridor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "corner",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 146
+  },
+  "stn.corridor__cross": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.corridor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "cross",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 128
+  },
+  "stn.corridor__end": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.corridor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "end",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 244
+  },
+  "stn.corridor__end_door": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.corridor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "end_door",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.1
+     ],
+     "side": "n",
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 246
+  },
+  "stn.corridor__plain": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.corridor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "plain",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 124
+  },
+  "stn.corridor__tee": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.corridor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "tee",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -2.0
+     ],
+     "side": "n",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "corridor",
+     "width_m": 3.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      2.0
+     ],
+     "side": "s",
+     "type": "corridor",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 126
+  },
+  "stn.doorway": {
+   "anchor": "door_anchor",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "stn.doorway",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 130
+  },
+  "stn.doorway__lit": {
+   "anchor": "door_anchor",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "stn.doorway",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "lit",
+   "sockets": [
+    {
+     "facing": "s",
+     "height_m": 2.6,
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 130
+  },
+  "stn.floor": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.floor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 268
+  },
+  "stn.floor__grate": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.floor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "grate",
+   "sockets": [],
+   "tris": 92
+  },
+  "stn.floor__pad": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.floor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "pad",
+   "sockets": [],
+   "tris": 276
+  },
+  "stn.floor__plain": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.floor",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "plain",
+   "sockets": [],
+   "tris": 44
+  },
+  "stn.hangar": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    4,
+    4
+   ],
+   "class": "shell",
+   "height_m": 7.0,
+   "kit_id": "stn.hangar",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      -2.0,
+      0.0,
+      8.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "n",
+     "height_m": 5.4,
+     "position": [
+      0.0,
+      0.0,
+      -7.5
+     ],
+     "type": "hangar_mouth",
+     "width_m": 10.0
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -6.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      2.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "s",
+     "position": [
+      6.0,
+      0.0,
+      7.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      7.5,
+      0.0,
+      -6.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      7.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      7.5,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "e",
+     "position": [
+      7.5,
+      0.0,
+      6.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -7.5,
+      0.0,
+      -6.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -7.5,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -7.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 3,
+     "facing": "w",
+     "position": [
+      -7.5,
+      0.0,
+      6.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 1090
+  },
+  "stn.lift": {
+   "anchor": "cell_centre",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.lift",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 436
+  },
+  "stn.room": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "height_m": 4.0,
+   "kit_id": "stn.room",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      6.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "position": [
+      4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 732
+  },
+  "stn.room__airlock_2x2": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "height_m": 4.0,
+   "kit_id": "stn.room",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "airlock_2x2",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -4.1,
+      0.0,
+      -2.0
+     ],
+     "side": "w",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "position": [
+      4.1,
+      0.0,
+      2.0
+     ],
+     "side": "e",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "kind": "port",
+     "position": [
+      2.0,
+      0.0,
+      -4.1
+     ],
+     "side": "n",
+     "type": "window"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -2.0,
+      0.0,
+      -3.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -2.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      2.0,
+      0.0,
+      3.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      3.5,
+      0.0,
+      -2.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -3.5,
+      0.0,
+      2.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 488
+  },
+  "stn.room__deck_3x3": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "height_m": 4.0,
+   "kit_id": "stn.room",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "deck_3x3",
+   "sockets": [
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      6.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -6.1
+     ],
+     "side": "n",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "kind": "band",
+     "position": [
+      6.1,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "kind": "band",
+     "position": [
+      -6.1,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "window"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      -4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "n",
+     "position": [
+      4.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "s",
+     "position": [
+      4.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      5.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -5.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 888
+  },
+  "stn.room__quarters_2x3": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    2,
+    3
+   ],
+   "class": "shell",
+   "height_m": 4.0,
+   "kit_id": "stn.room",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "quarters_2x3",
+   "sockets": [
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      -2.0,
+      0.0,
+      6.1
+     ],
+     "side": "s",
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "cell": 1,
+     "facing": "e",
+     "kind": "tall",
+     "position": [
+      4.1,
+      0.0,
+      -0.0
+     ],
+     "side": "e",
+     "type": "window"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "kind": "port",
+     "position": [
+      -2.0,
+      0.0,
+      -6.1
+     ],
+     "side": "n",
+     "type": "window"
+    },
+    {
+     "cell": 1,
+     "facing": "n",
+     "position": [
+      2.0,
+      0.0,
+      -5.5
+     ],
+     "side": "n",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "s",
+     "position": [
+      2.0,
+      0.0,
+      5.5
+     ],
+     "side": "s",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "e",
+     "position": [
+      3.5,
+      0.0,
+      -4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "e",
+     "position": [
+      3.5,
+      0.0,
+      4.0
+     ],
+     "side": "e",
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "w",
+     "position": [
+      -3.5,
+      0.0,
+      -4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 1,
+     "facing": "w",
+     "position": [
+      -3.5,
+      0.0,
+      -0.0
+     ],
+     "side": "w",
+     "type": "wall"
+    },
+    {
+     "cell": 2,
+     "facing": "w",
+     "position": [
+      -3.5,
+      0.0,
+      4.0
+     ],
+     "side": "w",
+     "type": "wall"
+    }
+   ],
+   "tris": 768
+  },
+  "stn.stairs": {
+   "anchor": "free",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.stairs",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 204
+  },
+  "stn.stairs__dais": {
+   "anchor": "free",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.stairs",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "dais",
+   "sockets": [],
+   "tris": 320
+  },
+  "stn.stairs__ramp": {
+   "anchor": "free",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "stn.stairs",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "ramp",
+   "sockets": [],
+   "tris": 176
+  },
+  "stn.viewport": {
+   "anchor": "door_anchor",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "stn.viewport",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "kind": "band",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "window"
+    }
+   ],
+   "tris": 110
+  },
+  "stn.viewport__port": {
+   "anchor": "door_anchor",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "stn.viewport",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "port",
+   "sockets": [
+    {
+     "facing": "s",
+     "kind": "port",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "window"
+    }
+   ],
+   "tris": 110
+  },
+  "stn.viewport__tall": {
+   "anchor": "door_anchor",
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "stn.viewport",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "s",
+     "kind": "tall",
+     "position": [
+      0.0,
+      0.0,
+      -0.0
+     ],
+     "type": "window"
+    }
+   ],
+   "tris": 110
+  },
+  "tech.cables": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "tech.cables",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 436
+  },
+  "tech.cables__hang": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "tech.cables",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "hang",
+   "sockets": [],
+   "tris": 432
+  },
+  "tech.charge_pod": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tech.charge_pod",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 362
+  },
+  "tech.console": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "tech.console",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 152
+  },
+  "tech.console__pillar": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "tech.console",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "pillar",
+   "sockets": [],
+   "tris": 140
+  },
+  "tech.console__tall": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "tech.console",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "tall",
+   "sockets": [],
+   "tris": 188
+  },
+  "tech.crate": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tech.crate",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 220
+  },
+  "tech.crate__large": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tech.crate",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "large",
+   "sockets": [],
+   "tris": 220
+  },
+  "tech.crate__long": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tech.crate",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "long",
+   "sockets": [],
+   "tris": 156
+  },
+  "tech.crate__stack": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tech.crate",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "stack",
+   "sockets": [],
+   "tris": 376
+  },
+  "tech.cryo_pod": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tech.cryo_pod",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 388
+  },
+  "tech.cryo_pod__open": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tech.cryo_pod",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "open",
+   "sockets": [],
+   "tris": 388
+  },
+  "tech.holo_table": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "tech.holo_table",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 262
+  },
+  "tech.locker": {
+   "anchor": "wall_face",
+   "back_m": 0.2924,
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "tech.locker",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 280
+  },
+  "tech.locker__single": {
+   "anchor": "wall_face",
+   "back_m": 0.2924,
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "tech.locker",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "single",
+   "sockets": [],
+   "tris": 104
+  },
+  "tech.reactor": {
+   "anchor": "free",
+   "cells": null,
+   "class": "structure",
+   "kit_id": "tech.reactor",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 460
+  },
+  "tech.seat": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "tech.seat",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 268
+  },
+  "tech.tank": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tech.tank",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 360
+  },
+  "tech.tank__horizontal": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "tech.tank",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "horizontal",
+   "sockets": [],
+   "tris": 336
+  },
+  "tech.terminal": {
+   "anchor": "free",
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "tech.terminal",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 104
+  },
+  "tech.terminal__wall": {
+   "anchor": "wall_face",
+   "back_m": 0.15,
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "tech.terminal",
+   "packs": [
+    "alien_world",
+    "space_station"
+   ],
+   "preset": "wall",
+   "sockets": [],
+   "tris": 40
+  },
+  "tech.vent": {
+   "anchor": "wall_face",
+   "back_m": 0.04,
+   "cells": null,
+   "class": "prop",
+   "kit_id": "tech.vent",
+   "packs": [
+    "space_station"
+   ],
+   "preset": null,
+   "sockets": [],
+   "tris": 108
+  },
+  "tech.vent__floor": {
+   "anchor": "free",
+   "cells": null,
+   "class": "prop",
+   "kit_id": "tech.vent",
+   "packs": [
+    "space_station"
+   ],
+   "preset": "floor",
+   "sockets": [],
+   "tris": 108
+  }
+ }
+}

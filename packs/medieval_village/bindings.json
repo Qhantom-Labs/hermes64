@@ -1,0 +1,1383 @@
+{
+ "assets": {
+  "arch.door": {
+   "alias_of": "vlg.doorway",
+   "glb": "kits/library/medieval_village/assets/vlg.doorway.glb",
+   "kit_id": "vlg.doorway",
+   "preset": null,
+   "sha256": "1cddddc070c6d28afce21458912a9729c02986e0f573329139c7bb62bb0a21d5"
+  },
+  "cst.banner": {
+   "glb": "kits/library/medieval_village/assets/cst.banner.glb",
+   "kit_id": "cst.banner",
+   "preset": null,
+   "sha256": "7caa9878d3d798f05258cf21a1ea739ff78c46710bfd248ef05329a242fd3fdc"
+  },
+  "cst.banner__cross": {
+   "glb": "kits/library/medieval_village/presets/cst.banner__cross.glb",
+   "kit_id": "cst.banner",
+   "preset": "cross",
+   "sha256": "bae014e5043f7e7437136ec42c30a2320c80c2e206171be7fd4e10556b6d083c"
+  },
+  "cst.banner__pale": {
+   "glb": "kits/library/medieval_village/presets/cst.banner__pale.glb",
+   "kit_id": "cst.banner",
+   "preset": "pale",
+   "sha256": "a6512d908c771a436b7dfaa7218e43f079c43bfd9e0fee067669f83354e8981d"
+  },
+  "cst.banner__roundel": {
+   "glb": "kits/library/medieval_village/presets/cst.banner__roundel.glb",
+   "kit_id": "cst.banner",
+   "preset": "roundel",
+   "sha256": "c3bf01da61679cbec437df2c74e86d0bc16f9ae58210d02f7069d6d32ccf3bd6"
+  },
+  "cst.battlement": {
+   "glb": "kits/library/medieval_village/assets/cst.battlement.glb",
+   "kit_id": "cst.battlement",
+   "preset": null,
+   "sha256": "d4cf425f08aefc790dc5fee2bfbd653f8366de08dca7f8fb5d2e49eb223b1c68"
+  },
+  "cst.battlement__machicolated": {
+   "glb": "kits/library/medieval_village/presets/cst.battlement__machicolated.glb",
+   "kit_id": "cst.battlement",
+   "preset": "machicolated",
+   "sha256": "08da2b00407227b3f92e8d5126439845614bbd28e506d0e0c3501b07ccaebcc2"
+  },
+  "cst.brazier": {
+   "glb": "kits/library/medieval_village/assets/cst.brazier.glb",
+   "kit_id": "cst.brazier",
+   "preset": null,
+   "sha256": "59176b5d3f84250cd0a2b672378bda387028527eb5c7fe79a0b9e97d06e8993e"
+  },
+  "cst.carpet": {
+   "glb": "kits/library/medieval_village/assets/cst.carpet.glb",
+   "kit_id": "cst.carpet",
+   "preset": null,
+   "sha256": "b6433aaefdb48e8daebc12ab55d6aad5125c940ee5d4b041f970c1471f3508e7"
+  },
+  "cst.carpet__short": {
+   "glb": "kits/library/medieval_village/presets/cst.carpet__short.glb",
+   "kit_id": "cst.carpet",
+   "preset": "short",
+   "sha256": "1918874d66da4fe5bbee6c8a07d429c4e66d1512dd4d8d0d5c72714462f02f32"
+  },
+  "cst.ceiling": {
+   "glb": "kits/library/medieval_village/assets/cst.ceiling.glb",
+   "kit_id": "cst.ceiling",
+   "preset": null,
+   "sha256": "d17351d423227eb810ac62c464a09ad0ff26a7eb59c8b00c8cb2fc922accb26c"
+  },
+  "cst.ceiling__throne": {
+   "glb": "kits/library/medieval_village/presets/cst.ceiling__throne.glb",
+   "kit_id": "cst.ceiling",
+   "preset": "throne",
+   "sha256": "626eef3463541796e2d96e0db51d3ae5d59a8fc8dc3ddfe18fcfb10c300fd60e"
+  },
+  "cst.ceiling__vault": {
+   "glb": "kits/library/medieval_village/presets/cst.ceiling__vault.glb",
+   "kit_id": "cst.ceiling",
+   "preset": "vault",
+   "sha256": "d086536c40faa92c8906be743457428d943bfe824755253f6a7e5bd09c2daf4a"
+  },
+  "cst.cell": {
+   "glb": "kits/library/medieval_village/assets/cst.cell.glb",
+   "kit_id": "cst.cell",
+   "preset": null,
+   "sha256": "40b9a00b511eb4a658b79178b2333ae0334de96de7d9204ebb5705b20934b6b5"
+  },
+  "cst.cell__open": {
+   "glb": "kits/library/medieval_village/presets/cst.cell__open.glb",
+   "kit_id": "cst.cell",
+   "preset": "open",
+   "sha256": "95e99399d621466e4325a30973c110baf160bb0d99e87e0dd0999d4d597150c5"
+  },
+  "cst.chandelier": {
+   "glb": "kits/library/medieval_village/assets/cst.chandelier.glb",
+   "kit_id": "cst.chandelier",
+   "preset": null,
+   "sha256": "6b547dc51272bfd13617a76d95ec3b8fa5d6db6c6211f4be8164c4c2a1301c6b"
+  },
+  "cst.curtain": {
+   "glb": "kits/library/medieval_village/assets/cst.curtain.glb",
+   "kit_id": "cst.curtain",
+   "preset": null,
+   "sha256": "15c4bd80f5160eeb1f4f2a72d444b108b22fe08631761739fdd420a5ab81301c"
+  },
+  "cst.curtain__broken": {
+   "glb": "kits/library/medieval_village/presets/cst.curtain__broken.glb",
+   "kit_id": "cst.curtain",
+   "preset": "broken",
+   "sha256": "70f46c6d995abbd64b1d3609bc778b9a8d4a7eac3f17ff37afcba13596c632b5"
+  },
+  "cst.curtain__slits": {
+   "glb": "kits/library/medieval_village/presets/cst.curtain__slits.glb",
+   "kit_id": "cst.curtain",
+   "preset": "slits",
+   "sha256": "d8a9ba3d9b591cbf44199cd2a860630fe073196c9ea180c2b4e95d39173aa339"
+  },
+  "cst.curtain__stair": {
+   "glb": "kits/library/medieval_village/presets/cst.curtain__stair.glb",
+   "kit_id": "cst.curtain",
+   "preset": "stair",
+   "sha256": "ad91cc0f685e984cc4be37bae1615ebd4befd64295a3f7f97006032159668763"
+  },
+  "cst.dais": {
+   "glb": "kits/library/medieval_village/assets/cst.dais.glb",
+   "kit_id": "cst.dais",
+   "preset": null,
+   "sha256": "cd3d431e1b494bed145a8ba2d6c5cbbe97f87ae49746be5bf855a327b6c5ef15"
+  },
+  "cst.dais__wide": {
+   "glb": "kits/library/medieval_village/presets/cst.dais__wide.glb",
+   "kit_id": "cst.dais",
+   "preset": "wide",
+   "sha256": "cdd6be96a94d91ad7f7648018cb7747cdb584a48f51276f009a1a05a5005da08"
+  },
+  "cst.drawbridge": {
+   "glb": "kits/library/medieval_village/assets/cst.drawbridge.glb",
+   "kit_id": "cst.drawbridge",
+   "preset": null,
+   "sha256": "82532fede81352783bbccbaf959a7d04bda007228418a8e75b44c7001c10db53"
+  },
+  "cst.drawbridge__raised": {
+   "glb": "kits/library/medieval_village/presets/cst.drawbridge__raised.glb",
+   "kit_id": "cst.drawbridge",
+   "preset": "raised",
+   "sha256": "50f610877a21f0b08e36a1f5235317df53483381fda8d9708a47cea14371dcfa"
+  },
+  "cst.gatehouse": {
+   "glb": "kits/library/medieval_village/assets/cst.gatehouse.glb",
+   "kit_id": "cst.gatehouse",
+   "preset": null,
+   "sha256": "21fd0818c4f78ebe948a16f5e525ed47322917b9075e6c388ab3c9b73f10cd2e"
+  },
+  "cst.gatehouse__crenellated": {
+   "glb": "kits/library/medieval_village/presets/cst.gatehouse__crenellated.glb",
+   "kit_id": "cst.gatehouse",
+   "preset": "crenellated",
+   "sha256": "108a5799df9efd32589c90f3b9655b4ee71c109945ee3218295aad6fbba9234b"
+  },
+  "cst.gatehouse__deep": {
+   "glb": "kits/library/medieval_village/presets/cst.gatehouse__deep.glb",
+   "kit_id": "cst.gatehouse",
+   "preset": "deep",
+   "sha256": "929e15e51192728c9aff9eb3c3a41196d5030d4821a13f2dd90180c81b833eca"
+  },
+  "cst.hall": {
+   "glb": "kits/library/medieval_village/assets/cst.hall.glb",
+   "kit_id": "cst.hall",
+   "preset": null,
+   "sha256": "e3d3baae40d2ae57574a4ddcab34b8ba6ce1925d571e3d0c37f03f97d225d158"
+  },
+  "cst.hall__dungeon": {
+   "glb": "kits/library/medieval_village/presets/cst.hall__dungeon.glb",
+   "kit_id": "cst.hall",
+   "preset": "dungeon",
+   "sha256": "1f94d645e1033601d32678d5f4cbf280f0689c92e5d510036ef301638cc89002"
+  },
+  "cst.hall__great": {
+   "glb": "kits/library/medieval_village/presets/cst.hall__great.glb",
+   "kit_id": "cst.hall",
+   "preset": "great",
+   "sha256": "f7d676cf9b6846f06062c5e658832d476d777d1a121e3a4b0523fa6b5d0c6141"
+  },
+  "cst.hall__throne": {
+   "glb": "kits/library/medieval_village/presets/cst.hall__throne.glb",
+   "kit_id": "cst.hall",
+   "preset": "throne",
+   "sha256": "818c8a04f6963176fc7a76b66b22909990b4098180797d65e939e41e5a43ff38"
+  },
+  "cst.keep": {
+   "glb": "kits/library/medieval_village/assets/cst.keep.glb",
+   "kit_id": "cst.keep",
+   "preset": null,
+   "sha256": "dc5c5fb9edf94761593ec9cb435616b4ae273d7a68a5f57008a62ddc69565007"
+  },
+  "cst.keep__crenellated": {
+   "glb": "kits/library/medieval_village/presets/cst.keep__crenellated.glb",
+   "kit_id": "cst.keep",
+   "preset": "crenellated",
+   "sha256": "352e2fc8235c0965b7212886c315545fb3e35f7b3e3608c95d73685623e07055"
+  },
+  "cst.pillar": {
+   "glb": "kits/library/medieval_village/assets/cst.pillar.glb",
+   "kit_id": "cst.pillar",
+   "preset": null,
+   "sha256": "79a118491ed949f03ae7faae224cdb10b878c870a42d3460df94ad2e5f9fa197"
+  },
+  "cst.pillar__clustered": {
+   "glb": "kits/library/medieval_village/presets/cst.pillar__clustered.glb",
+   "kit_id": "cst.pillar",
+   "preset": "clustered",
+   "sha256": "63ac1e3b9d25a7063d1c30b1196eac657a2726ae7087348f958bc1b000e16b4f"
+  },
+  "cst.pillar__square": {
+   "glb": "kits/library/medieval_village/presets/cst.pillar__square.glb",
+   "kit_id": "cst.pillar",
+   "preset": "square",
+   "sha256": "477ed974ebbc20c84c94f9ba5cf021d064a460805f4ad3d4da7248e26ae2c4f3"
+  },
+  "cst.portcullis": {
+   "glb": "kits/library/medieval_village/assets/cst.portcullis.glb",
+   "kit_id": "cst.portcullis",
+   "preset": null,
+   "sha256": "0cdf1adc54a8cb2bf7a11086b89f08123eaf6f5495ffc1f75b14c68545ac39b0"
+  },
+  "cst.portcullis__raised": {
+   "glb": "kits/library/medieval_village/presets/cst.portcullis__raised.glb",
+   "kit_id": "cst.portcullis",
+   "preset": "raised",
+   "sha256": "37a8ba967c0b20aeb6fb21033b79fa9b5f3b66197d038aec008e48f684c10078"
+  },
+  "cst.sconce": {
+   "glb": "kits/library/medieval_village/assets/cst.sconce.glb",
+   "kit_id": "cst.sconce",
+   "preset": null,
+   "sha256": "6875dfb6cef14478b15b3e8bda8b3a32f002c2b0c1b220caf206c23dd9fca33f"
+  },
+  "cst.sconce__unlit": {
+   "glb": "kits/library/medieval_village/presets/cst.sconce__unlit.glb",
+   "kit_id": "cst.sconce",
+   "preset": "unlit",
+   "sha256": "27398e6a50add74157b76d1d4a8ebef90b49e0535de57ce4dccaf7ac621f7c7c"
+  },
+  "cst.spiral_stair": {
+   "glb": "kits/library/medieval_village/assets/cst.spiral_stair.glb",
+   "kit_id": "cst.spiral_stair",
+   "preset": null,
+   "sha256": "82cab1e1d393ee2ebd8884bbff352eda63f489ce05f30e9900d1f844073508ad"
+  },
+  "cst.spiral_stair__tall": {
+   "glb": "kits/library/medieval_village/presets/cst.spiral_stair__tall.glb",
+   "kit_id": "cst.spiral_stair",
+   "preset": "tall",
+   "sha256": "e945e883a3ee409acd657b1dea37e44b9bd8cd619394623b1d954ca881894b98"
+  },
+  "cst.throne": {
+   "glb": "kits/library/medieval_village/assets/cst.throne.glb",
+   "kit_id": "cst.throne",
+   "preset": null,
+   "sha256": "8622a6d46dec3e10627f0518b7e41a83c7078708bb0b450a2f8d34dc20c2907c"
+  },
+  "cst.throne__canopy": {
+   "glb": "kits/library/medieval_village/presets/cst.throne__canopy.glb",
+   "kit_id": "cst.throne",
+   "preset": "canopy",
+   "sha256": "dc0996ffc38a6ae17c90f0b267ac7c13902b237e29f2cf6b941d27e1f9401e5c"
+  },
+  "cst.tower_round": {
+   "glb": "kits/library/medieval_village/assets/cst.tower_round.glb",
+   "kit_id": "cst.tower_round",
+   "preset": null,
+   "sha256": "70fbb3b1921c0bdee9cd3bcef4f5679c5f7ca079111f3dd83873afadf1d97dfc"
+  },
+  "cst.tower_round__crenellated": {
+   "glb": "kits/library/medieval_village/presets/cst.tower_round__crenellated.glb",
+   "kit_id": "cst.tower_round",
+   "preset": "crenellated",
+   "sha256": "70fbb3b1921c0bdee9cd3bcef4f5679c5f7ca079111f3dd83873afadf1d97dfc"
+  },
+  "cst.tower_round__door": {
+   "glb": "kits/library/medieval_village/presets/cst.tower_round__door.glb",
+   "kit_id": "cst.tower_round",
+   "preset": "door",
+   "sha256": "49fd97416275d1645625366ba4467ae5bc09744470d2023f1a35810c3f0fd51d"
+  },
+  "cst.tower_round__roofed": {
+   "glb": "kits/library/medieval_village/presets/cst.tower_round__roofed.glb",
+   "kit_id": "cst.tower_round",
+   "preset": "roofed",
+   "sha256": "2395a7367a81d7012f2ce90e1dfaf5af4b49a2932c9aa6c3e4644b03c6fa4c97"
+  },
+  "cst.tower_square": {
+   "glb": "kits/library/medieval_village/assets/cst.tower_square.glb",
+   "kit_id": "cst.tower_square",
+   "preset": null,
+   "sha256": "2d7488011763cc6d4968107ae548581947707ed7c65ee134edaa917323aa6ae6"
+  },
+  "cst.tower_square__roofed": {
+   "glb": "kits/library/medieval_village/presets/cst.tower_square__roofed.glb",
+   "kit_id": "cst.tower_square",
+   "preset": "roofed",
+   "sha256": "a6b5a0c81f35243836857075793269afd07b4d6aa7ff08f1c09f38f8e0481e7c"
+  },
+  "mnat.bush": {
+   "glb": "kits/library/medieval_village/assets/mnat.bush.glb",
+   "kit_id": "mnat.bush",
+   "preset": null,
+   "sha256": "5509c5374fbbb9d6f76a91974020cce33a92604095fd11e14f6fc1a3a5fe9add"
+  },
+  "mnat.bush__berry": {
+   "glb": "kits/library/medieval_village/presets/mnat.bush__berry.glb",
+   "kit_id": "mnat.bush",
+   "preset": "berry",
+   "sha256": "e7d9f083ee64618eb7cb6f73c146120ac50ded09832ad22880a46a341b5f8d3c"
+  },
+  "mnat.bush__bramble": {
+   "glb": "kits/library/medieval_village/presets/mnat.bush__bramble.glb",
+   "kit_id": "mnat.bush",
+   "preset": "bramble",
+   "sha256": "a182cab8be92f092c055f54fcba5981b3ba2c6ca8afc3c1b14682d864c59a9e9"
+  },
+  "mnat.bush__flowering": {
+   "glb": "kits/library/medieval_village/presets/mnat.bush__flowering.glb",
+   "kit_id": "mnat.bush",
+   "preset": "flowering",
+   "sha256": "0e90816eb27edda0f0118f8fb64d289e2f26e26e6105bd77a13eb7bb3d5670f1"
+  },
+  "mnat.dead_tree": {
+   "glb": "kits/library/medieval_village/assets/mnat.dead_tree.glb",
+   "kit_id": "mnat.dead_tree",
+   "preset": null,
+   "sha256": "292a63c8154454027d9a26c1243bc7361f10e20cd7ef4bab5d0ba7a7a15858e4"
+  },
+  "mnat.dead_tree__snowy": {
+   "glb": "kits/library/medieval_village/presets/mnat.dead_tree__snowy.glb",
+   "kit_id": "mnat.dead_tree",
+   "preset": "snowy",
+   "sha256": "e21e9435fdb12ff286d7eb761737bbeb31df7bac8c066bd4c1cf40f162cec9ea"
+  },
+  "mnat.field": {
+   "glb": "kits/library/medieval_village/assets/mnat.field.glb",
+   "kit_id": "mnat.field",
+   "preset": null,
+   "sha256": "d830b9fd8adb52ddd500f834a2a465d9a576d9b6ca92f1c4b278f032af737baa"
+  },
+  "mnat.field__cabbage": {
+   "glb": "kits/library/medieval_village/presets/mnat.field__cabbage.glb",
+   "kit_id": "mnat.field",
+   "preset": "cabbage",
+   "sha256": "40a212c6ed9c81a6fa19208bb57a936f76e0c228f2e163f4c337507b84c55953"
+  },
+  "mnat.field__ploughed": {
+   "glb": "kits/library/medieval_village/presets/mnat.field__ploughed.glb",
+   "kit_id": "mnat.field",
+   "preset": "ploughed",
+   "sha256": "689cc87a4586d62ba9d5a85c2fa669d3ee02f73a06e09f3bb3146434acf2661a"
+  },
+  "mnat.field__vines": {
+   "glb": "kits/library/medieval_village/presets/mnat.field__vines.glb",
+   "kit_id": "mnat.field",
+   "preset": "vines",
+   "sha256": "e5d47d3eb42a8167807a3c6263d2a74aac74ca7fb72133aecf10909e6ff2203c"
+  },
+  "mnat.flowers": {
+   "glb": "kits/library/medieval_village/assets/mnat.flowers.glb",
+   "kit_id": "mnat.flowers",
+   "preset": null,
+   "sha256": "5408b442c60ee29ad28358ef43e21aeef2e0ac579c8b6bb87ad2724deb95afb6"
+  },
+  "mnat.flowers__mushrooms": {
+   "glb": "kits/library/medieval_village/presets/mnat.flowers__mushrooms.glb",
+   "kit_id": "mnat.flowers",
+   "preset": "mushrooms",
+   "sha256": "060ed2efe3e97c6ccf9ded606c3f29ac4312fd19f37fd761cfdd00bdf240defc"
+  },
+  "mnat.flowers__reeds": {
+   "glb": "kits/library/medieval_village/presets/mnat.flowers__reeds.glb",
+   "kit_id": "mnat.flowers",
+   "preset": "reeds",
+   "sha256": "aefed07c28e30a72c74ed2d6cb1cbe96f63b1adef5de68eff633fb584716cda9"
+  },
+  "mnat.flowers__tufts": {
+   "glb": "kits/library/medieval_village/presets/mnat.flowers__tufts.glb",
+   "kit_id": "mnat.flowers",
+   "preset": "tufts",
+   "sha256": "b45ba0983e028d7cf1894a494f81e99b80ed2bf7971eea2f0b27e439d5530684"
+  },
+  "mnat.hedgerow": {
+   "glb": "kits/library/medieval_village/assets/mnat.hedgerow.glb",
+   "kit_id": "mnat.hedgerow",
+   "preset": null,
+   "sha256": "c8416e50eedb19dbe6b550c10881e59d536faa8c0b049ee091fc032e7ef61cd6"
+  },
+  "mnat.hedgerow__corner": {
+   "glb": "kits/library/medieval_village/presets/mnat.hedgerow__corner.glb",
+   "kit_id": "mnat.hedgerow",
+   "preset": "corner",
+   "sha256": "c6c28935166cc2b5b969394907d75f5c0939dba697f46caa4722f4b25ad5b07f"
+  },
+  "mnat.hedgerow__gap": {
+   "glb": "kits/library/medieval_village/presets/mnat.hedgerow__gap.glb",
+   "kit_id": "mnat.hedgerow",
+   "preset": "gap",
+   "sha256": "5072db5379cfa1a7b157d7db99cf5ced2e60331a74cf2706903f18d0c0c7e1f5"
+  },
+  "mnat.oak": {
+   "glb": "kits/library/medieval_village/assets/mnat.oak.glb",
+   "kit_id": "mnat.oak",
+   "preset": null,
+   "sha256": "4dfff02a2b692a452e7416b2e7243f46b69777d56c00b551d1f10af2f9d9bab8"
+  },
+  "mnat.oak__old": {
+   "glb": "kits/library/medieval_village/presets/mnat.oak__old.glb",
+   "kit_id": "mnat.oak",
+   "preset": "old",
+   "sha256": "26445055f860a2d773f4043dd3b74537193dccc9e2c3ef22d145c1e10338dcf3"
+  },
+  "mnat.oak__young": {
+   "glb": "kits/library/medieval_village/presets/mnat.oak__young.glb",
+   "kit_id": "mnat.oak",
+   "preset": "young",
+   "sha256": "5003efdbec442d511bf9d06a6523259f3d86cb663ca69ce234d11c1c05a17f61"
+  },
+  "mnat.orchard": {
+   "glb": "kits/library/medieval_village/assets/mnat.orchard.glb",
+   "kit_id": "mnat.orchard",
+   "preset": null,
+   "sha256": "a5efab27262f102d9d335f350baa4d1c54df3a9dacdfa3a93d23f3de982a20fe"
+  },
+  "mnat.orchard__bare": {
+   "glb": "kits/library/medieval_village/presets/mnat.orchard__bare.glb",
+   "kit_id": "mnat.orchard",
+   "preset": "bare",
+   "sha256": "ea4de3217fbb25ae51ad964b00e1554cf401133edf8e634886ba5ea9ddca9297"
+  },
+  "mnat.orchard__blossom": {
+   "glb": "kits/library/medieval_village/presets/mnat.orchard__blossom.glb",
+   "kit_id": "mnat.orchard",
+   "preset": "blossom",
+   "sha256": "3f834af58d3cb1c456c0c2a2c230fa66d483282bbb944e9bd02bf821346bdd72"
+  },
+  "mnat.orchard__pear": {
+   "glb": "kits/library/medieval_village/presets/mnat.orchard__pear.glb",
+   "kit_id": "mnat.orchard",
+   "preset": "pear",
+   "sha256": "ef97f87357358d06dd1aff62175d429567c7296b85890b241ce2517fe1e868fa"
+  },
+  "mnat.pine": {
+   "glb": "kits/library/medieval_village/assets/mnat.pine.glb",
+   "kit_id": "mnat.pine",
+   "preset": null,
+   "sha256": "68b38741cacf0f4f6a04d584da39e811ea6c97b71d3099e654c9a9e7448eab89"
+  },
+  "mnat.pine__short": {
+   "glb": "kits/library/medieval_village/presets/mnat.pine__short.glb",
+   "kit_id": "mnat.pine",
+   "preset": "short",
+   "sha256": "7416003fecc8816c8f863d843af181f7d252a0b3d07e72b86ff82f357036aa36"
+  },
+  "mnat.pine__snowy": {
+   "glb": "kits/library/medieval_village/presets/mnat.pine__snowy.glb",
+   "kit_id": "mnat.pine",
+   "preset": "snowy",
+   "sha256": "56cde181c511449690b1bba2319d53f52a9b2f6cc9e657a296771fc2ffaf68a1"
+  },
+  "mnat.rock": {
+   "glb": "kits/library/medieval_village/assets/mnat.rock.glb",
+   "kit_id": "mnat.rock",
+   "preset": null,
+   "sha256": "29c6c1c1d2557a976a279844f5cc027a9850675eb42203c5fb7cbd5f05d7bd4b"
+  },
+  "mnat.rock__cluster": {
+   "glb": "kits/library/medieval_village/presets/mnat.rock__cluster.glb",
+   "kit_id": "mnat.rock",
+   "preset": "cluster",
+   "sha256": "d577da638216bbb0257767c11487f8da141b7c3e63309af1272c313ac210c575"
+  },
+  "mnat.rock__outcrop": {
+   "glb": "kits/library/medieval_village/presets/mnat.rock__outcrop.glb",
+   "kit_id": "mnat.rock",
+   "preset": "outcrop",
+   "sha256": "23dc01fce467b059185dcb6386db2fbb04d851a1640683d237403dc2e1faee5b"
+  },
+  "mnat.rock__standing": {
+   "glb": "kits/library/medieval_village/presets/mnat.rock__standing.glb",
+   "kit_id": "mnat.rock",
+   "preset": "standing",
+   "sha256": "657fba98fc50a60c94a7d2b8cc0207d4467c040b50be6ba171c0122747475f71"
+  },
+  "mnat.stump": {
+   "glb": "kits/library/medieval_village/assets/mnat.stump.glb",
+   "kit_id": "mnat.stump",
+   "preset": null,
+   "sha256": "ae1d4ae4002a82695d8d832e3861e650c772dd4bdca478b0f316844275e44c2c"
+  },
+  "mnat.stump__log": {
+   "glb": "kits/library/medieval_village/presets/mnat.stump__log.glb",
+   "kit_id": "mnat.stump",
+   "preset": "log",
+   "sha256": "909e6ddcab049f091c23769c45fb272915a8ce77cb26faeec5dcb3bc310a6e4b"
+  },
+  "mnat.stump__mossy_log": {
+   "glb": "kits/library/medieval_village/presets/mnat.stump__mossy_log.glb",
+   "kit_id": "mnat.stump",
+   "preset": "mossy_log",
+   "sha256": "d3aed35504639d0d231ab5e082c47ab13c222fba4059f72d9132cbb1eab8abdf"
+  },
+  "mprop.anvil": {
+   "glb": "kits/library/medieval_village/assets/mprop.anvil.glb",
+   "kit_id": "mprop.anvil",
+   "preset": null,
+   "sha256": "0109d20021bced89242fb4cbe3378190ea6ba6e1e7ceaedb44b8c0a75f3fcf1b"
+  },
+  "mprop.anvil__bare": {
+   "glb": "kits/library/medieval_village/presets/mprop.anvil__bare.glb",
+   "kit_id": "mprop.anvil",
+   "preset": "bare",
+   "sha256": "90714e290dc32f43b35f7a4af0f15844f562ff8a000a03d9046674691948f978"
+  },
+  "mprop.barrel": {
+   "glb": "kits/library/medieval_village/assets/mprop.barrel.glb",
+   "kit_id": "mprop.barrel",
+   "preset": null,
+   "sha256": "db441af18547c6cece3092d50cc45c032481a9a0c24364072c3947749576dfc4"
+  },
+  "mprop.barrel__keg": {
+   "glb": "kits/library/medieval_village/presets/mprop.barrel__keg.glb",
+   "kit_id": "mprop.barrel",
+   "preset": "keg",
+   "sha256": "f8b1150221073955cb989450772e49faf64c50ec4c006e786ea2a18e9151cd6a"
+  },
+  "mprop.barrel__lying": {
+   "glb": "kits/library/medieval_village/presets/mprop.barrel__lying.glb",
+   "kit_id": "mprop.barrel",
+   "preset": "lying",
+   "sha256": "403c8297ab4f79a82a82bdf42472517f82f3db040748c686297bac0ae4124ee0"
+  },
+  "mprop.barrel__water": {
+   "glb": "kits/library/medieval_village/presets/mprop.barrel__water.glb",
+   "kit_id": "mprop.barrel",
+   "preset": "water",
+   "sha256": "fc26e29325ff948315266565e7ff097aaf8b412273111ab4b134bf6191e7d080"
+  },
+  "mprop.basket": {
+   "glb": "kits/library/medieval_village/assets/mprop.basket.glb",
+   "kit_id": "mprop.basket",
+   "preset": null,
+   "sha256": "0ad224479c3593ae71f13d3c25e9eab322fbe5515d9dc5663daa4a5d433a3c57"
+  },
+  "mprop.basket__bread": {
+   "glb": "kits/library/medieval_village/presets/mprop.basket__bread.glb",
+   "kit_id": "mprop.basket",
+   "preset": "bread",
+   "sha256": "25a6c4e5676ea762fc6ed169a35b42d124496b398b094e6261bad276afa0c128"
+  },
+  "mprop.basket__empty": {
+   "glb": "kits/library/medieval_village/presets/mprop.basket__empty.glb",
+   "kit_id": "mprop.basket",
+   "preset": "empty",
+   "sha256": "3aa93efa34d57f33ef3a709d324c4d74fc29aa2c908de1b04245a7844ad1076b"
+  },
+  "mprop.basket__wool": {
+   "glb": "kits/library/medieval_village/presets/mprop.basket__wool.glb",
+   "kit_id": "mprop.basket",
+   "preset": "wool",
+   "sha256": "7f7c0f1248193e45c88231b8ed9511fe5a0c986739f7375f8be052096cae86c1"
+  },
+  "mprop.bed": {
+   "glb": "kits/library/medieval_village/assets/mprop.bed.glb",
+   "kit_id": "mprop.bed",
+   "preset": null,
+   "sha256": "325c735e59e7e68455c434bf54abd3bdeb4244e7875d248d010992c14d6a7115"
+  },
+  "mprop.bed__fourposter": {
+   "glb": "kits/library/medieval_village/presets/mprop.bed__fourposter.glb",
+   "kit_id": "mprop.bed",
+   "preset": "fourposter",
+   "sha256": "34187aa7e4803c1e9106139cdd0307985268fa68f029e00925ddc4e81a0fcc37"
+  },
+  "mprop.bench": {
+   "glb": "kits/library/medieval_village/assets/mprop.bench.glb",
+   "kit_id": "mprop.bench",
+   "preset": null,
+   "sha256": "c52a8b692af4514939f6b156f8f1bd1f7e2b7116f0971a63a1dda2e7c68da938"
+  },
+  "mprop.bench__settle": {
+   "glb": "kits/library/medieval_village/presets/mprop.bench__settle.glb",
+   "kit_id": "mprop.bench",
+   "preset": "settle",
+   "sha256": "fff23978e60e63d80347ecdd5423ca835cd5408437d0da1d9e4946ddce599d28"
+  },
+  "mprop.bench__stool": {
+   "glb": "kits/library/medieval_village/presets/mprop.bench__stool.glb",
+   "kit_id": "mprop.bench",
+   "preset": "stool",
+   "sha256": "a388d74ad4cf98176d248b4ea3a8c461a1f2f33974f021efaec285e6acab5426"
+  },
+  "mprop.bucket": {
+   "glb": "kits/library/medieval_village/assets/mprop.bucket.glb",
+   "kit_id": "mprop.bucket",
+   "preset": null,
+   "sha256": "9a32e4328b32bbaca12d4bf5826e02943182fe3e69efc421ceb04cbd1dfe408a"
+  },
+  "mprop.bucket__empty": {
+   "glb": "kits/library/medieval_village/presets/mprop.bucket__empty.glb",
+   "kit_id": "mprop.bucket",
+   "preset": "empty",
+   "sha256": "90bbf665a0c626d1c9d7d632c2f748ca11ad59be89fae6c9916ee3a266434e68"
+  },
+  "mprop.cart": {
+   "glb": "kits/library/medieval_village/assets/mprop.cart.glb",
+   "kit_id": "mprop.cart",
+   "preset": null,
+   "sha256": "3c0af771f22d2e691e38e6a19e257bf515200a6dc629d11a3dd8cdb57e8e5458"
+  },
+  "mprop.cart__barrels": {
+   "glb": "kits/library/medieval_village/presets/mprop.cart__barrels.glb",
+   "kit_id": "mprop.cart",
+   "preset": "barrels",
+   "sha256": "f346fa0aad0aa51ff6e3ae9c76b598171b4291fe9d0bba9b832f17ac6a120a66"
+  },
+  "mprop.cart__empty": {
+   "glb": "kits/library/medieval_village/presets/mprop.cart__empty.glb",
+   "kit_id": "mprop.cart",
+   "preset": "empty",
+   "sha256": "e53580a7a66517cb27890ddd6023c5d43eb5e7663beb021d213adbca8427e398"
+  },
+  "mprop.cart__sacks": {
+   "glb": "kits/library/medieval_village/presets/mprop.cart__sacks.glb",
+   "kit_id": "mprop.cart",
+   "preset": "sacks",
+   "sha256": "b01de648b934eb857391c8b4c31abc298e6068108ce6eb8f5935f31ee75093df"
+  },
+  "mprop.cauldron": {
+   "glb": "kits/library/medieval_village/assets/mprop.cauldron.glb",
+   "kit_id": "mprop.cauldron",
+   "preset": null,
+   "sha256": "7e6be223c728e090e1df3d9b04bcc3e2d86f50e7bca61479fa68da7d1fb02de4"
+  },
+  "mprop.cauldron__cold": {
+   "glb": "kits/library/medieval_village/presets/mprop.cauldron__cold.glb",
+   "kit_id": "mprop.cauldron",
+   "preset": "cold",
+   "sha256": "1c55e6e06c5f5da9c31ae02617678e48415a7adb08a33936bda64526dd5f15d9"
+  },
+  "mprop.chest": {
+   "glb": "kits/library/medieval_village/assets/mprop.chest.glb",
+   "kit_id": "mprop.chest",
+   "preset": null,
+   "sha256": "a7c311bbded5075525d012e99508acc0af13c9d0638f7025e907c3b61ade714e"
+  },
+  "mprop.chest__open": {
+   "glb": "kits/library/medieval_village/presets/mprop.chest__open.glb",
+   "kit_id": "mprop.chest",
+   "preset": "open",
+   "sha256": "eec1f97b98fa71011e3402bd89fe269675b081b4679332e3c9369731485fa1c9"
+  },
+  "mprop.chest__plain": {
+   "glb": "kits/library/medieval_village/presets/mprop.chest__plain.glb",
+   "kit_id": "mprop.chest",
+   "preset": "plain",
+   "sha256": "ba8a578ef75989c2ebb0cb7ad7fa918e44318c929fa77270da4d6edb837fd3a8"
+  },
+  "mprop.crate": {
+   "glb": "kits/library/medieval_village/assets/mprop.crate.glb",
+   "kit_id": "mprop.crate",
+   "preset": null,
+   "sha256": "729b218346fcf843fe27b7ef65e1e01bb34da49678b6286abf7859d7c7c534dc"
+  },
+  "mprop.crate__slatted": {
+   "glb": "kits/library/medieval_village/presets/mprop.crate__slatted.glb",
+   "kit_id": "mprop.crate",
+   "preset": "slatted",
+   "sha256": "7b2d13771a6cd1757a76d2e54206aef64e731c5666cafa428b4b47f6e0e08ed3"
+  },
+  "mprop.crate__small": {
+   "glb": "kits/library/medieval_village/presets/mprop.crate__small.glb",
+   "kit_id": "mprop.crate",
+   "preset": "small",
+   "sha256": "5579ed75e4a88e01955af670ab953a4153b9c159e5aad6784f223e3937d1fb0a"
+  },
+  "mprop.grindstone": {
+   "glb": "kits/library/medieval_village/assets/mprop.grindstone.glb",
+   "kit_id": "mprop.grindstone",
+   "preset": null,
+   "sha256": "4aa5a2af59e3f0736e3aacf25a295532b1e4198e6942d23fd44d09a7165223e3"
+  },
+  "mprop.hay": {
+   "glb": "kits/library/medieval_village/assets/mprop.hay.glb",
+   "kit_id": "mprop.hay",
+   "preset": null,
+   "sha256": "cf82bedecb179601369d68d251d3bd0b23496cfee37c747ac5b4c2722c4e9c16"
+  },
+  "mprop.hay__rick": {
+   "glb": "kits/library/medieval_village/presets/mprop.hay__rick.glb",
+   "kit_id": "mprop.hay",
+   "preset": "rick",
+   "sha256": "2287233ac5531a7710d89b78db745e0c38e16f01113720166361c0f9b8a7faf5"
+  },
+  "mprop.hay__stack": {
+   "glb": "kits/library/medieval_village/presets/mprop.hay__stack.glb",
+   "kit_id": "mprop.hay",
+   "preset": "stack",
+   "sha256": "65058b346a62ab24f170d007c4544aff1127c6b20b7d25d8357f9e673ac301e7"
+  },
+  "mprop.lantern": {
+   "glb": "kits/library/medieval_village/assets/mprop.lantern.glb",
+   "kit_id": "mprop.lantern",
+   "preset": null,
+   "sha256": "aa9d43e64601410da62a48171db5293697d5869a2b83c5037166d3d8c5c1fd34"
+  },
+  "mprop.lantern__plain": {
+   "glb": "kits/library/medieval_village/presets/mprop.lantern__plain.glb",
+   "kit_id": "mprop.lantern",
+   "preset": "plain",
+   "sha256": "b76a30a3bdbc41ba5911b8162196e4bc350d273eb82a38de19ffb04e9e800b61"
+  },
+  "mprop.lantern_hung": {
+   "glb": "kits/library/medieval_village/assets/mprop.lantern_hung.glb",
+   "kit_id": "mprop.lantern_hung",
+   "preset": null,
+   "sha256": "7e131138e6603b57559069068dfd20ad57d742d6c11630913b46a3e18906397c"
+  },
+  "mprop.lantern_hung__hanging": {
+   "glb": "kits/library/medieval_village/presets/mprop.lantern_hung__hanging.glb",
+   "kit_id": "mprop.lantern_hung",
+   "preset": "hanging",
+   "sha256": "b6126a0ee2528dbaf51c62cca2e905dc589c3e262037b52576f2f7d1d869666c"
+  },
+  "mprop.sack": {
+   "glb": "kits/library/medieval_village/assets/mprop.sack.glb",
+   "kit_id": "mprop.sack",
+   "preset": null,
+   "sha256": "d2360eadf162e6fa96606798124b8a88c5d1ede9c2c05ba74de0d558c631c43c"
+  },
+  "mprop.sack__open": {
+   "glb": "kits/library/medieval_village/presets/mprop.sack__open.glb",
+   "kit_id": "mprop.sack",
+   "preset": "open",
+   "sha256": "1b328fdcec062fd6c7631b649f04497b2cc9b67827a0af5734085f939e42d56d"
+  },
+  "mprop.sack__pile": {
+   "glb": "kits/library/medieval_village/presets/mprop.sack__pile.glb",
+   "kit_id": "mprop.sack",
+   "preset": "pile",
+   "sha256": "907c633b0b81b25822205fd56718dcc772d02ee96801df04ad8a98223494e46d"
+  },
+  "mprop.shelf": {
+   "glb": "kits/library/medieval_village/assets/mprop.shelf.glb",
+   "kit_id": "mprop.shelf",
+   "preset": null,
+   "sha256": "df44bbd7516ab4ed244a770046909de98bdc977b737cad1924586f33a21099cc"
+  },
+  "mprop.shelf__books": {
+   "glb": "kits/library/medieval_village/presets/mprop.shelf__books.glb",
+   "kit_id": "mprop.shelf",
+   "preset": "books",
+   "sha256": "871bcf032104066388b1e7cec749553ee22d1874e74a88bd6dd3f7b159c17bfd"
+  },
+  "mprop.shelf__empty": {
+   "glb": "kits/library/medieval_village/presets/mprop.shelf__empty.glb",
+   "kit_id": "mprop.shelf",
+   "preset": "empty",
+   "sha256": "b7d7f3a2485d4514837c4f92b3839d8a74aba6e94228842fadee4756aebb05e6"
+  },
+  "mprop.shield": {
+   "glb": "kits/library/medieval_village/assets/mprop.shield.glb",
+   "kit_id": "mprop.shield",
+   "preset": null,
+   "sha256": "dcbdf61b9a6af45a58c2c2200790c4457db9850516db623d3e698cac9fe51579"
+  },
+  "mprop.shield__chevron": {
+   "glb": "kits/library/medieval_village/presets/mprop.shield__chevron.glb",
+   "kit_id": "mprop.shield",
+   "preset": "chevron",
+   "sha256": "fbd76ea90a39e5ad145dc227e0d4e2493ffbaa7e00efc176ba68b067d44f0e72"
+  },
+  "mprop.shield__round": {
+   "glb": "kits/library/medieval_village/presets/mprop.shield__round.glb",
+   "kit_id": "mprop.shield",
+   "preset": "round",
+   "sha256": "7d54c710125a18573c13d9de8a575d64943555bb1321aecad40b27735646511b"
+  },
+  "mprop.signpost": {
+   "glb": "kits/library/medieval_village/assets/mprop.signpost.glb",
+   "kit_id": "mprop.signpost",
+   "preset": null,
+   "sha256": "2eea92902a7cf035f886395037949f979bfb6ef447fb504afd835e8de2fe32e4"
+  },
+  "mprop.signpost__hanging": {
+   "glb": "kits/library/medieval_village/presets/mprop.signpost__hanging.glb",
+   "kit_id": "mprop.signpost",
+   "preset": "hanging",
+   "sha256": "678d93e36ed3a073583b385017b1de12df53b9c0588fef23a5030589e70c1e9e"
+  },
+  "mprop.signpost__notice": {
+   "glb": "kits/library/medieval_village/presets/mprop.signpost__notice.glb",
+   "kit_id": "mprop.signpost",
+   "preset": "notice",
+   "sha256": "7479b6ad1a1a7905ab2d4b0f6a5ef53dffae26427fda9bbcfbbde288c1403d01"
+  },
+  "mprop.table": {
+   "glb": "kits/library/medieval_village/assets/mprop.table.glb",
+   "kit_id": "mprop.table",
+   "preset": null,
+   "sha256": "e00b4b411431fd564e96779a64c405541d2ed3c415dcf313fb1726451113c94d"
+  },
+  "mprop.table__feast": {
+   "glb": "kits/library/medieval_village/presets/mprop.table__feast.glb",
+   "kit_id": "mprop.table",
+   "preset": "feast",
+   "sha256": "fdc491ad388eba57c1603c12aced98e0cee1e0e3201a3d14ac424cb1b8291650"
+  },
+  "mprop.table__round": {
+   "glb": "kits/library/medieval_village/presets/mprop.table__round.glb",
+   "kit_id": "mprop.table",
+   "preset": "round",
+   "sha256": "f9f0dc4eabb916b074430a1047bbb9adadaae974182fc5f2c9d64d1162f41c1b"
+  },
+  "mprop.tableware": {
+   "glb": "kits/library/medieval_village/assets/mprop.tableware.glb",
+   "kit_id": "mprop.tableware",
+   "preset": null,
+   "sha256": "9e60f1139a11b26e8291f0d668a87b22c2c1f09bc1184f1869768a940a01a3bb"
+  },
+  "mprop.tableware__candles": {
+   "glb": "kits/library/medieval_village/presets/mprop.tableware__candles.glb",
+   "kit_id": "mprop.tableware",
+   "preset": "candles",
+   "sha256": "0026e20a1fd8eb15275c42b755a1e466da273df1c578bf815ad8e85df560705a"
+  },
+  "mprop.tableware__drinks": {
+   "glb": "kits/library/medieval_village/presets/mprop.tableware__drinks.glb",
+   "kit_id": "mprop.tableware",
+   "preset": "drinks",
+   "sha256": "5f0ac637173753de02ce7491bfded239d438298a68bfdb8d8767d4b8730cc2cb"
+  },
+  "mprop.trough": {
+   "glb": "kits/library/medieval_village/assets/mprop.trough.glb",
+   "kit_id": "mprop.trough",
+   "preset": null,
+   "sha256": "7d90e637830e238d6c9e42cda4073eac443c9a0d1fa02149b36d2cffb5f52879"
+  },
+  "mprop.trough__feed": {
+   "glb": "kits/library/medieval_village/presets/mprop.trough__feed.glb",
+   "kit_id": "mprop.trough",
+   "preset": "feed",
+   "sha256": "631ca3e28d97be5312a315114d85445b87cf045d6ee838a50fc72af75452122e"
+  },
+  "mprop.weapon_rack": {
+   "glb": "kits/library/medieval_village/assets/mprop.weapon_rack.glb",
+   "kit_id": "mprop.weapon_rack",
+   "preset": null,
+   "sha256": "9f25660662951377e8298ecbf3b41d07b093f4b4fa1108ccd805acdb5e7f488c"
+  },
+  "mprop.weapon_rack__shields": {
+   "glb": "kits/library/medieval_village/presets/mprop.weapon_rack__shields.glb",
+   "kit_id": "mprop.weapon_rack",
+   "preset": "shields",
+   "sha256": "987155b324bd6fe980a24b8ea282d52702b20c22d793aa52f6c16cdc60be28dd"
+  },
+  "mprop.weapon_rack__swords": {
+   "glb": "kits/library/medieval_village/presets/mprop.weapon_rack__swords.glb",
+   "kit_id": "mprop.weapon_rack",
+   "preset": "swords",
+   "sha256": "6ee721c5d78e603267469b9872bf0d961e017dac343d0c5d55924bf6fe70b864"
+  },
+  "mprop.woodpile": {
+   "glb": "kits/library/medieval_village/assets/mprop.woodpile.glb",
+   "kit_id": "mprop.woodpile",
+   "preset": null,
+   "sha256": "b2525f1716562f5a11f20e53332d911942af1fc61ab4dd08590e7bfdc981d372"
+  },
+  "mprop.woodpile__block": {
+   "glb": "kits/library/medieval_village/presets/mprop.woodpile__block.glb",
+   "kit_id": "mprop.woodpile",
+   "preset": "block",
+   "sha256": "c7272370897658d56443a6590bf16a8a44d81570f838a8e4c2043ee781aba96e"
+  },
+  "mter.backdrop": {
+   "glb": "kits/library/medieval_village/assets/mter.backdrop.glb",
+   "kit_id": "mter.backdrop",
+   "preset": null,
+   "sha256": "c779dc2a79713bed3b4984a8f0ea9a00a86ced99841bc72816fd20509593a2d2"
+  },
+  "mter.backdrop__hills": {
+   "glb": "kits/library/medieval_village/presets/mter.backdrop__hills.glb",
+   "kit_id": "mter.backdrop",
+   "preset": "hills",
+   "sha256": "7bf7969618caa8cd3e5afc02df3abd5b9cd4af45a378b589877b180a9a53d315"
+  },
+  "mter.backdrop__mountains": {
+   "glb": "kits/library/medieval_village/presets/mter.backdrop__mountains.glb",
+   "kit_id": "mter.backdrop",
+   "preset": "mountains",
+   "sha256": "8c7e0b9d5d571a0a6d12fdeb32fe335cbcffe3c4578dd13b2ffb0b81f3df7cdf"
+  },
+  "mter.bank": {
+   "glb": "kits/library/medieval_village/assets/mter.bank.glb",
+   "kit_id": "mter.bank",
+   "preset": null,
+   "sha256": "0248c57d7c41909a450a7d5c9b43ee4bd5a657c61aae1db5d5ac1b8d26ccafe0"
+  },
+  "mter.bank__rock": {
+   "glb": "kits/library/medieval_village/presets/mter.bank__rock.glb",
+   "kit_id": "mter.bank",
+   "preset": "rock",
+   "sha256": "11e6bca495204d448afadc7adef34e1e77e502fda4fa6cb0b285c7f0261f8902"
+  },
+  "mter.bank__wall": {
+   "glb": "kits/library/medieval_village/presets/mter.bank__wall.glb",
+   "kit_id": "mter.bank",
+   "preset": "wall",
+   "sha256": "3f6dc2e5fdc3cba9b33d0d3bee491448e38383f3788f5203bd0b1e5efa7b811f"
+  },
+  "mter.ground": {
+   "glb": "kits/library/medieval_village/assets/mter.ground.glb",
+   "kit_id": "mter.ground",
+   "preset": null,
+   "sha256": "c3233074c025c542b96b33ebf9209e5678d6a3f79f42b7ce3b92a2bc96852642"
+  },
+  "mter.ground__cobble": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__cobble.glb",
+   "kit_id": "mter.ground",
+   "preset": "cobble",
+   "sha256": "4a6f49b465eb456fbf3f9fe3371bd7cea60623ed1858103fef6532bae7fce44b"
+  },
+  "mter.ground__dirt": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__dirt.glb",
+   "kit_id": "mter.ground",
+   "preset": "dirt",
+   "sha256": "16ccb60cbc811ff228fa79064603a62e2071acb927b889534a324d124a687c2d"
+  },
+  "mter.ground__field_edge": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__field_edge.glb",
+   "kit_id": "mter.ground",
+   "preset": "field_edge",
+   "sha256": "551fca8e908772a6566055e8878e54c04c37599452a8ccf516a004d7dc982083"
+  },
+  "mter.ground__meadow_3": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__meadow_3.glb",
+   "kit_id": "mter.ground",
+   "preset": "meadow_3",
+   "sha256": "a2249fba8aeb9c8a5562108df84e932524eb14400296a108f98e4f27d85f5c94"
+  },
+  "mter.ground__meadow_4": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__meadow_4.glb",
+   "kit_id": "mter.ground",
+   "preset": "meadow_4",
+   "sha256": "6f09c06abce38df3ca0502d711a66cdd358f0de3f99536d4e2a4f96dcc7282e9"
+  },
+  "mter.ground__meadow_far": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__meadow_far.glb",
+   "kit_id": "mter.ground",
+   "preset": "meadow_far",
+   "sha256": "1957ead66b7e04492b335cc88b793e1b9aea87ecaf3bcd78a922d4557eef1c9c"
+  },
+  "mter.ground__path": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__path.glb",
+   "kit_id": "mter.ground",
+   "preset": "path",
+   "sha256": "98d63d17477386e50b87556651deb4a464124e49072331f1d7e051b3b81bb4a6"
+  },
+  "mter.ground__path_corner": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__path_corner.glb",
+   "kit_id": "mter.ground",
+   "preset": "path_corner",
+   "sha256": "090df8802e40f47f5abfd30909ea84bb00c2fde2cf6dc5cc472b028ec846a0eb"
+  },
+  "mter.ground__path_cross": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__path_cross.glb",
+   "kit_id": "mter.ground",
+   "preset": "path_cross",
+   "sha256": "6c996144743d29a7ea2a5ab96a6e0c697d0f41a547a54b25d1da61b6292fab11"
+  },
+  "mter.ground__path_end": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__path_end.glb",
+   "kit_id": "mter.ground",
+   "preset": "path_end",
+   "sha256": "4b5bd463602a76f761b85a8899376250a3331b04641f41927f4e06a090bfff1d"
+  },
+  "mter.ground__path_tee": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__path_tee.glb",
+   "kit_id": "mter.ground",
+   "preset": "path_tee",
+   "sha256": "f4f6b7f47b7774388bd989a2fe895dac4e51a0adc526b12e0f1d439278f2df9b"
+  },
+  "mter.ground__plaza": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__plaza.glb",
+   "kit_id": "mter.ground",
+   "preset": "plaza",
+   "sha256": "f25138ae2ef24bcebd27f634437f1588c91c737e1b5df243df89028e870de50f"
+  },
+  "mter.ground__plaza_4": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__plaza_4.glb",
+   "kit_id": "mter.ground",
+   "preset": "plaza_4",
+   "sha256": "03fb9f11e61e4fed33625d8bcc5d8054f927530ff381bf336931f466e68a71f2"
+  },
+  "mter.ground__snow": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__snow.glb",
+   "kit_id": "mter.ground",
+   "preset": "snow",
+   "sha256": "0c6e5f10449bef6b35a5e9841ca90e756b77bf41fee92ab65580bfeb997223d3"
+  },
+  "mter.ground__snow_4": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__snow_4.glb",
+   "kit_id": "mter.ground",
+   "preset": "snow_4",
+   "sha256": "dd7705c28e236373f7dae09cff8a17fba2fb2481143f1ef615390a817505aa82"
+  },
+  "mter.ground__snow_far": {
+   "glb": "kits/library/medieval_village/presets/mter.ground__snow_far.glb",
+   "kit_id": "mter.ground",
+   "preset": "snow_far",
+   "sha256": "cb1fbc7c8ba3516688b5de22f79d70759bfb46da827fbe79b853c415a14499c9"
+  },
+  "mter.hill": {
+   "glb": "kits/library/medieval_village/assets/mter.hill.glb",
+   "kit_id": "mter.hill",
+   "preset": null,
+   "sha256": "e785d679ececed4534549be6bfbd75711ab71237db7d152c08932e11d4526307"
+  },
+  "mter.hill__big": {
+   "glb": "kits/library/medieval_village/presets/mter.hill__big.glb",
+   "kit_id": "mter.hill",
+   "preset": "big",
+   "sha256": "df377c16f49a89bee84c2a1a037f46cc82e69add06a3559b18f8d158b8011a5a"
+  },
+  "mter.hill__low": {
+   "glb": "kits/library/medieval_village/presets/mter.hill__low.glb",
+   "kit_id": "mter.hill",
+   "preset": "low",
+   "sha256": "748f1e1e8372484a8816e2a1a89cc7e6487efc0f5eced0ed38ab6a947e2c89fe"
+  },
+  "mter.water": {
+   "glb": "kits/library/medieval_village/assets/mter.water.glb",
+   "kit_id": "mter.water",
+   "preset": null,
+   "sha256": "6dc253cb5614e13993f4dddc0a609e663dcabde362e45a73179d9978f4fcd113"
+  },
+  "mter.water__moat": {
+   "glb": "kits/library/medieval_village/presets/mter.water__moat.glb",
+   "kit_id": "mter.water",
+   "preset": "moat",
+   "sha256": "8fb5c5394f99d868dd311b5f2bd21f5732d76598db43a478531fa98deb0dbdc7"
+  },
+  "mter.water__pond": {
+   "glb": "kits/library/medieval_village/presets/mter.water__pond.glb",
+   "kit_id": "mter.water",
+   "preset": "pond",
+   "sha256": "31ecda53851f0df0026fa3eae794b47aca4e0b3a6d7d8bde4ae516a48f939514"
+  },
+  "sky.backdrop": {
+   "glb": "kits/library/medieval_village/assets/sky.backdrop.glb",
+   "kit_id": "sky.backdrop",
+   "preset": null,
+   "sha256": "ba4c381d08deeeaac9386804626ac03da9d776f86d9f5988937c345e473843ac"
+  },
+  "vlg.bridge": {
+   "glb": "kits/library/medieval_village/assets/vlg.bridge.glb",
+   "kit_id": "vlg.bridge",
+   "preset": null,
+   "sha256": "ca868ee97ee85f0c8acdd52ef7af282477ac5b888c17265c194ef965777c361d"
+  },
+  "vlg.bridge__timber": {
+   "glb": "kits/library/medieval_village/presets/vlg.bridge__timber.glb",
+   "kit_id": "vlg.bridge",
+   "preset": "timber",
+   "sha256": "ced994b078b3fad99d21e01308f42a253ea06e885420549591f18fb608e52738"
+  },
+  "vlg.ceiling": {
+   "glb": "kits/library/medieval_village/assets/vlg.ceiling.glb",
+   "kit_id": "vlg.ceiling",
+   "preset": null,
+   "sha256": "c1b4c163458d31ec31543eecd204360309bf6d19f3e0aae43f69cf5d7d9190a3"
+  },
+  "vlg.ceiling__small": {
+   "glb": "kits/library/medieval_village/presets/vlg.ceiling__small.glb",
+   "kit_id": "vlg.ceiling",
+   "preset": "small",
+   "sha256": "184f008e24dd916cb941fc124b5a2314daa157ae652d72e97036ea4ade72ea6e"
+  },
+  "vlg.chapel": {
+   "glb": "kits/library/medieval_village/assets/vlg.chapel.glb",
+   "kit_id": "vlg.chapel",
+   "preset": null,
+   "sha256": "25de4f32cd5bc9e1e13219f7393626cf4883e2cc4940d68c4acd1353895312dd"
+  },
+  "vlg.chapel__doorway": {
+   "glb": "kits/library/medieval_village/presets/vlg.chapel__doorway.glb",
+   "kit_id": "vlg.chapel",
+   "preset": "doorway",
+   "sha256": "05d3c3b1c42df2d180fc6dad64a4956d542540f543d10cb60272353780f2b8f7"
+  },
+  "vlg.chapel__plain": {
+   "glb": "kits/library/medieval_village/presets/vlg.chapel__plain.glb",
+   "kit_id": "vlg.chapel",
+   "preset": "plain",
+   "sha256": "928a4883cac57503ad0c30ae1971bf93a8daddc4d2bfc6ad92f2005360c8c740"
+  },
+  "vlg.cottage": {
+   "glb": "kits/library/medieval_village/assets/vlg.cottage.glb",
+   "kit_id": "vlg.cottage",
+   "preset": null,
+   "sha256": "b07a7a45715c4ed5f67bd82051d8c22348ba590e41892a143ea75e0033c6185b"
+  },
+  "vlg.cottage__doorway": {
+   "glb": "kits/library/medieval_village/presets/vlg.cottage__doorway.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "doorway",
+   "sha256": "e2e789f4ff4475a0eafbadbc674f64bf756a05cf349fc47575e0f32bd1c9a034"
+  },
+  "vlg.cottage__longhouse": {
+   "glb": "kits/library/medieval_village/presets/vlg.cottage__longhouse.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "longhouse",
+   "sha256": "ec9c4af9bc8c6bed1cd8207eb0c8eedb7cc13bb47a07092a4fe50de2fa51ab00"
+  },
+  "vlg.cottage__small": {
+   "glb": "kits/library/medieval_village/presets/vlg.cottage__small.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "small",
+   "sha256": "c4b1bd731c81e394c18c12ba39c5a7f17b38d74da0ed16fac8b2897c3f7b5132"
+  },
+  "vlg.cottage__stone": {
+   "glb": "kits/library/medieval_village/presets/vlg.cottage__stone.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "stone",
+   "sha256": "af07ada0804eb4175a1a027da9dc90feb198b32fbbf617818d416461c15f797f"
+  },
+  "vlg.cottage__stone_doorway": {
+   "glb": "kits/library/medieval_village/presets/vlg.cottage__stone_doorway.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "stone_doorway",
+   "sha256": "fa53e3e3b33b0c6bee4e92dc135894821020c338a69a962048d233ed892b1eff"
+  },
+  "vlg.cottage__townhouse": {
+   "glb": "kits/library/medieval_village/presets/vlg.cottage__townhouse.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "townhouse",
+   "sha256": "4008551353c4d0b9b000fe3e24b269b4be742358364986e471fc861543466685"
+  },
+  "vlg.doorway": {
+   "glb": "kits/library/medieval_village/assets/vlg.doorway.glb",
+   "kit_id": "vlg.doorway",
+   "preset": null,
+   "sha256": "1cddddc070c6d28afce21458912a9729c02986e0f573329139c7bb62bb0a21d5"
+  },
+  "vlg.doorway__ajar": {
+   "glb": "kits/library/medieval_village/presets/vlg.doorway__ajar.glb",
+   "kit_id": "vlg.doorway",
+   "preset": "ajar",
+   "sha256": "2e3a129135b4be74f532b3281e55302a92b888c5d711c7af66c2133b366fb52d"
+  },
+  "vlg.fence": {
+   "glb": "kits/library/medieval_village/assets/vlg.fence.glb",
+   "kit_id": "vlg.fence",
+   "preset": null,
+   "sha256": "7449fe2c16dd2bd17bb8aa92940228d6fb50ce5a263e4523e5dfb2e10c91c8fa"
+  },
+  "vlg.fence__drystone": {
+   "glb": "kits/library/medieval_village/presets/vlg.fence__drystone.glb",
+   "kit_id": "vlg.fence",
+   "preset": "drystone",
+   "sha256": "6204c0f9f324fe434456eb44d5367d088769b9f39dc101908181ec662c9ba83c"
+  },
+  "vlg.fence__gate": {
+   "glb": "kits/library/medieval_village/presets/vlg.fence__gate.glb",
+   "kit_id": "vlg.fence",
+   "preset": "gate",
+   "sha256": "0300f4ce47eb4a3109c7722ad353b3bae3b49d2812b7920fe51dc4a0d666ec43"
+  },
+  "vlg.fence__rail": {
+   "glb": "kits/library/medieval_village/presets/vlg.fence__rail.glb",
+   "kit_id": "vlg.fence",
+   "preset": "rail",
+   "sha256": "9ad5abc4e598372b9d144e0c9956e9a8b13b4eecf423467fcd1697013ea97ceb"
+  },
+  "vlg.gatehouse": {
+   "glb": "kits/library/medieval_village/assets/vlg.gatehouse.glb",
+   "kit_id": "vlg.gatehouse",
+   "preset": null,
+   "sha256": "870b1febcb5d43e5ae33e9b3e57aea5906fbba36d1603c82ce77bd5dcee79e6d"
+  },
+  "vlg.gatehouse__open": {
+   "glb": "kits/library/medieval_village/presets/vlg.gatehouse__open.glb",
+   "kit_id": "vlg.gatehouse",
+   "preset": "open",
+   "sha256": "480a0f1a8803982472ca11e8df27814ddedb575c88f99a06bd1872265b601e72"
+  },
+  "vlg.hearth": {
+   "glb": "kits/library/medieval_village/assets/vlg.hearth.glb",
+   "kit_id": "vlg.hearth",
+   "preset": null,
+   "sha256": "164b1056c0b347544e11d5234b533b04115f17c49dc66543631a12bd1e60527f"
+  },
+  "vlg.hearth__cold": {
+   "glb": "kits/library/medieval_village/presets/vlg.hearth__cold.glb",
+   "kit_id": "vlg.hearth",
+   "preset": "cold",
+   "sha256": "c6771e5931d1a0086bda78906fee3a29c662119daefc25d627e7730807bfd0f1"
+  },
+  "vlg.mill": {
+   "glb": "kits/library/medieval_village/assets/vlg.mill.glb",
+   "kit_id": "vlg.mill",
+   "preset": null,
+   "sha256": "a80482945fb0f92ff1b90338ad16517f533021b42ec97767c25354d6fd48586a"
+  },
+  "vlg.mill__turned": {
+   "glb": "kits/library/medieval_village/presets/vlg.mill__turned.glb",
+   "kit_id": "vlg.mill",
+   "preset": "turned",
+   "sha256": "1fb12cf8a53168793191703ace5871f5640222f85275d672ad2a82ac46422b0f"
+  },
+  "vlg.mill__watermill": {
+   "glb": "kits/library/medieval_village/presets/vlg.mill__watermill.glb",
+   "kit_id": "vlg.mill",
+   "preset": "watermill",
+   "sha256": "a4e837b96ef707adb2257717c550a4abe3dee9f27abcc04313808580d1e52361"
+  },
+  "vlg.room": {
+   "glb": "kits/library/medieval_village/assets/vlg.room.glb",
+   "kit_id": "vlg.room",
+   "preset": null,
+   "sha256": "dd66f149b08913ac5972b481ca6d3ef81a0ddf7ad5e8fdede184d9d37a56016a"
+  },
+  "vlg.room__cottage": {
+   "glb": "kits/library/medieval_village/presets/vlg.room__cottage.glb",
+   "kit_id": "vlg.room",
+   "preset": "cottage",
+   "sha256": "2cdf9912b4ef98b2310e48eeef51d4e0fc50d488494896a4faf903a71d14eb7c"
+  },
+  "vlg.room__taproom": {
+   "glb": "kits/library/medieval_village/presets/vlg.room__taproom.glb",
+   "kit_id": "vlg.room",
+   "preset": "taproom",
+   "sha256": "4912d2f7103650e16fe8cbc4da9c293f67c581f724d6470135168c03011f19c8"
+  },
+  "vlg.smithy": {
+   "glb": "kits/library/medieval_village/assets/vlg.smithy.glb",
+   "kit_id": "vlg.smithy",
+   "preset": null,
+   "sha256": "e9ccb63a8f83a6539f87874ea17b4d081c46b85a174ec5e7afecd604628f3715"
+  },
+  "vlg.smithy__doorway": {
+   "glb": "kits/library/medieval_village/presets/vlg.smithy__doorway.glb",
+   "kit_id": "vlg.smithy",
+   "preset": "doorway",
+   "sha256": "abfb5e477ea3447257a1afd699d82c367395d26c8875786b45fcd9111a068a5d"
+  },
+  "vlg.smithy__thatch": {
+   "glb": "kits/library/medieval_village/presets/vlg.smithy__thatch.glb",
+   "kit_id": "vlg.smithy",
+   "preset": "thatch",
+   "sha256": "619e327a1a209c9b73f497fdbc499d3e425c45e712584e5058e44f6538b44894"
+  },
+  "vlg.stairs": {
+   "glb": "kits/library/medieval_village/assets/vlg.stairs.glb",
+   "kit_id": "vlg.stairs",
+   "preset": null,
+   "sha256": "5f2b9783e425b31e5f06e352bfa5e81274e45b90ca0941e1d9a7395684b7bc69"
+  },
+  "vlg.stairs__tall": {
+   "glb": "kits/library/medieval_village/presets/vlg.stairs__tall.glb",
+   "kit_id": "vlg.stairs",
+   "preset": "tall",
+   "sha256": "22c4da2355d9ad4bae2f3b36c2a917f386d56dfe7553e4966085b62143407692"
+  },
+  "vlg.stairs__timber": {
+   "glb": "kits/library/medieval_village/presets/vlg.stairs__timber.glb",
+   "kit_id": "vlg.stairs",
+   "preset": "timber",
+   "sha256": "6635721a17e8a6ccf398b6b7e98ff2e39671b5ef201e95ae0a297faf5aaeee82"
+  },
+  "vlg.stall": {
+   "glb": "kits/library/medieval_village/assets/vlg.stall.glb",
+   "kit_id": "vlg.stall",
+   "preset": null,
+   "sha256": "8174ce90680c91683093c8068330b53d2d82271f6fa27095ad31e1b256a99ee4"
+  },
+  "vlg.stall__bread": {
+   "glb": "kits/library/medieval_village/presets/vlg.stall__bread.glb",
+   "kit_id": "vlg.stall",
+   "preset": "bread",
+   "sha256": "8c008eae37532c5462ece56684182b320b8baf1b8a02badb384395f117cb85aa"
+  },
+  "vlg.stall__cloth": {
+   "glb": "kits/library/medieval_village/presets/vlg.stall__cloth.glb",
+   "kit_id": "vlg.stall",
+   "preset": "cloth",
+   "sha256": "969082d9f83e8a5ebb3da02e88f706672e541f2ecaafd3da0e7b0972aeb9211e"
+  },
+  "vlg.stall__empty": {
+   "glb": "kits/library/medieval_village/presets/vlg.stall__empty.glb",
+   "kit_id": "vlg.stall",
+   "preset": "empty",
+   "sha256": "300e5dd40601ecb7c6e2eecfa51ceb75f62ef0d3c87b3a1c75b1ae5be779876f"
+  },
+  "vlg.stall__pottery": {
+   "glb": "kits/library/medieval_village/presets/vlg.stall__pottery.glb",
+   "kit_id": "vlg.stall",
+   "preset": "pottery",
+   "sha256": "4af1f7b656099d37180b56bc60dd5896e9ef8f59200af8e8bc3e226af7775dba"
+  },
+  "vlg.tavern": {
+   "glb": "kits/library/medieval_village/assets/vlg.tavern.glb",
+   "kit_id": "vlg.tavern",
+   "preset": null,
+   "sha256": "d8dd6badcfb9042219934ed53c4fde449f4dcbd1c57721e07420a04494a8a59d"
+  },
+  "vlg.tavern__doorway": {
+   "glb": "kits/library/medieval_village/presets/vlg.tavern__doorway.glb",
+   "kit_id": "vlg.tavern",
+   "preset": "doorway",
+   "sha256": "d838866b218af56199ad12a7376914279f094b96583f08e8239ada1f06714f04"
+  },
+  "vlg.tavern__thatch": {
+   "glb": "kits/library/medieval_village/presets/vlg.tavern__thatch.glb",
+   "kit_id": "vlg.tavern",
+   "preset": "thatch",
+   "sha256": "e6ff628cdbd91fd28a1455d6281e40e809313718dad77b42721ae7dc4e17f698"
+  },
+  "vlg.wall": {
+   "glb": "kits/library/medieval_village/assets/vlg.wall.glb",
+   "kit_id": "vlg.wall",
+   "preset": null,
+   "sha256": "3aada2ccdfbfe2f156f6f1810cd4a7158a21b0f0eeee07a5deffef9c5875e083"
+  },
+  "vlg.wall__corner": {
+   "glb": "kits/library/medieval_village/presets/vlg.wall__corner.glb",
+   "kit_id": "vlg.wall",
+   "preset": "corner",
+   "sha256": "a53ccd524a1c9c6bf0218d146611f6d541a9d5e105e810ea565f4c5e769886f9"
+  },
+  "vlg.wall__end": {
+   "glb": "kits/library/medieval_village/presets/vlg.wall__end.glb",
+   "kit_id": "vlg.wall",
+   "preset": "end",
+   "sha256": "a043d25e09d79d7b8c554aa2f050b373848bf9264e6c2f80d43d60d9c0323a0a"
+  },
+  "vlg.wall__palisade": {
+   "glb": "kits/library/medieval_village/presets/vlg.wall__palisade.glb",
+   "kit_id": "vlg.wall",
+   "preset": "palisade",
+   "sha256": "7829708c6ef9eef46bc4bf825c98d7f355e23a76a246349f4d3edf11f3d90e1b"
+  },
+  "vlg.wall__palisade_corner": {
+   "glb": "kits/library/medieval_village/presets/vlg.wall__palisade_corner.glb",
+   "kit_id": "vlg.wall",
+   "preset": "palisade_corner",
+   "sha256": "6575db803c0e6dc17a4d016dc8ca3d2e434d1368364fd756f2f4dce60389135e"
+  },
+  "vlg.wall__postern": {
+   "glb": "kits/library/medieval_village/presets/vlg.wall__postern.glb",
+   "kit_id": "vlg.wall",
+   "preset": "postern",
+   "sha256": "21917c001836d537c1799466d99ded685551c37ae55192c18bb03a9cfe296041"
+  },
+  "vlg.well": {
+   "glb": "kits/library/medieval_village/assets/vlg.well.glb",
+   "kit_id": "vlg.well",
+   "preset": null,
+   "sha256": "348bae085db66ec0a34fc467cdd4e94285e26e5e3e66cb75977835c500d8927e"
+  },
+  "vlg.well__open": {
+   "glb": "kits/library/medieval_village/presets/vlg.well__open.glb",
+   "kit_id": "vlg.well",
+   "preset": "open",
+   "sha256": "3b80f3f6c8ad9ecd086d95801f7841fc83f6edfa217331f45ed00ef6d2b5f82c"
+  },
+  "vlg.well__slate": {
+   "glb": "kits/library/medieval_village/presets/vlg.well__slate.glb",
+   "kit_id": "vlg.well",
+   "preset": "slate",
+   "sha256": "05cd73aba6df355ec20ca57aac2ad9d59ea77468e7a6bc1fd04d6e9c3f5487dc"
+  }
+ },
+ "format": 1,
+ "kit_pack": "medieval_village",
+ "note": "MEDIEVALKIT bindings: kit defaults (<kit_id>), pack presets (<kit_id>__<preset>), aliases the runtime places by name (arch.door -> vlg.doorway). Every row hash-pinned; regenerate with tools/medievalkit_library.py bindings.",
+ "pack": "medieval_village"
+}

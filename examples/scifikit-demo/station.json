@@ -1,0 +1,1229 @@
+{
+  "characters": [
+    {
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "id": "pilot",
+      "name": "Ade",
+      "params": {
+        "colour": "#aebce6",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "arrival"
+        ],
+        "suit": {
+          "accessories": [
+            "blank_name_tab"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#879aca",
+          "sweater_wear": "fresh",
+          "trouser_colour": "#33486d",
+          "trouser_volume": 1.0,
+          "trouser_wear": "fresh",
+          "vest_colour": "#aebce6",
+          "vest_pattern": "wide_wave"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "role": "pilot",
+      "role_profiles": {
+        "pilot": {
+          "colour": "#aebce6",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "arrival"
+          ],
+          "suit": {
+            "accessories": [
+              "blank_name_tab"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#879aca",
+            "sweater_wear": "fresh",
+            "trouser_colour": "#33486d",
+            "trouser_volume": 1.0,
+            "trouser_wear": "fresh",
+            "vest_colour": "#aebce6",
+            "vest_pattern": "wide_wave"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "oriel",
+      "name": "Oriel",
+      "params": {
+        "colour": "#514958",
+        "costume": "buttoned_storm_coat",
+        "voice_tags": [
+          "withholding",
+          "accusatory"
+        ]
+      },
+      "role": "captain",
+      "role_profiles": {
+        "captain": {
+          "colour": "#514958",
+          "costume": "buttoned_storm_coat",
+          "voice_tags": [
+            "withholding",
+            "accusatory"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "id": "tamsin",
+      "name": "Tamsin",
+      "params": {
+        "colour": "#8cace4",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "helper"
+        ],
+        "suit": {
+          "accessories": [
+            "three_screen_pin"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#415fad",
+          "sweater_wear": "polished_knees",
+          "trouser_colour": "#263e79",
+          "trouser_volume": 1.1,
+          "trouser_wear": "polished_knees",
+          "vest_colour": "#8cace4",
+          "vest_pattern": "parallel_wave"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "role": "engineer",
+      "role_profiles": {
+        "engineer": {
+          "colour": "#8cace4",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "helper"
+          ],
+          "suit": {
+            "accessories": [
+              "three_screen_pin"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#415fad",
+            "sweater_wear": "polished_knees",
+            "trouser_colour": "#263e79",
+            "trouser_volume": 1.1,
+            "trouser_wear": "polished_knees",
+            "vest_colour": "#8cace4",
+            "vest_pattern": "parallel_wave"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        }
+      }
+    }
+  ],
+  "collectible_groups": [],
+  "collectibles": [],
+  "contract_version": "1.2.0",
+  "description": "SCIFIKIT demo built only from the station architecture, tech props and ship kits: the bridge, the spine corridor, the airlock and the hangar bay of an orbital relay. Original names and designs.",
+  "dialogues": [],
+  "endings": [
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "goal"
+        }
+      ],
+      "id": "launch",
+      "text": "The Wren slips out of the hangar mouth and the planet fills the canopy."
+    }
+  ],
+  "flags": [
+    {
+      "description": "Oriel has given the pilot the run to Corva",
+      "id": "briefed",
+      "initial": false
+    },
+    {
+      "description": "Airlock Seven has cycled; the outer door is open",
+      "id": "airlock_cycled",
+      "initial": false
+    },
+    {
+      "description": "Boarded the shuttle Wren",
+      "id": "goal",
+      "initial": false
+    }
+  ],
+  "gameplay": {
+    "api_version": "1.0.0",
+    "modules": [
+      {
+        "config": {
+          "max_health": 6
+        },
+        "entities": {
+          "abilities": [
+            {
+              "id": "suit_lamp",
+              "name": "Suit lamp",
+              "requires": []
+            }
+          ]
+        },
+        "id": "abilities",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "entry_cost": "none",
+          "failure_progress": "unchanged",
+          "max_active": 1
+        },
+        "entities": {
+          "challenges": [],
+          "checkpoints": [
+            {
+              "id": "bridge_safe",
+              "position_m": [
+                6.5,
+                0,
+                11.0
+              ],
+              "room": "bridge"
+            },
+            {
+              "id": "corridor_safe",
+              "position_m": [
+                2.5,
+                0,
+                14.0
+              ],
+              "room": "corridor"
+            },
+            {
+              "id": "airlock_safe",
+              "position_m": [
+                4.5,
+                0,
+                7.0
+              ],
+              "room": "airlock"
+            },
+            {
+              "id": "hangar_safe",
+              "position_m": [
+                8.5,
+                0,
+                15.0
+              ],
+              "room": "hangar"
+            }
+          ]
+        },
+        "id": "challenge",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "fast_travel": false,
+          "load_policy": "one_region"
+        },
+        "entities": {
+          "links": [
+            {
+              "a": {
+                "door": "to_corridor",
+                "region": "bridge"
+              },
+              "b": {
+                "door": "to_bridge",
+                "region": "corridor"
+              },
+              "id": "bridge__corridor"
+            },
+            {
+              "a": {
+                "door": "to_airlock",
+                "region": "corridor"
+              },
+              "b": {
+                "door": "to_corridor",
+                "region": "airlock"
+              },
+              "id": "corridor__airlock"
+            },
+            {
+              "a": {
+                "door": "to_hangar",
+                "region": "airlock"
+              },
+              "b": {
+                "door": "to_airlock",
+                "region": "hangar"
+              },
+              "id": "airlock__hangar"
+            }
+          ],
+          "regions": [
+            {
+              "checkpoint": "bridge_safe",
+              "id": "bridge",
+              "landmarks": [
+                {
+                  "id": "bridge_frame",
+                  "name": "The bridge frame",
+                  "position_m": [
+                    0.7,
+                    0,
+                    10.5
+                  ]
+                }
+              ],
+              "room": "bridge"
+            },
+            {
+              "checkpoint": "corridor_safe",
+              "id": "corridor",
+              "landmarks": [
+                {
+                  "id": "bulkhead",
+                  "name": "The bulkhead frame",
+                  "position_m": [
+                    0.7,
+                    0,
+                    8.5
+                  ]
+                }
+              ],
+              "room": "corridor"
+            },
+            {
+              "checkpoint": "airlock_safe",
+              "id": "airlock",
+              "landmarks": [
+                {
+                  "id": "porthole",
+                  "name": "The porthole wall",
+                  "position_m": [
+                    2.5,
+                    0,
+                    0.7
+                  ]
+                }
+              ],
+              "room": "airlock"
+            },
+            {
+              "checkpoint": "hangar_safe",
+              "id": "hangar",
+              "landmarks": [
+                {
+                  "id": "hangar_wall",
+                  "name": "The hangar wall",
+                  "position_m": [
+                    16.75,
+                    0,
+                    8.5
+                  ]
+                }
+              ],
+              "room": "hangar"
+            }
+          ]
+        },
+        "id": "regions",
+        "version": "1.0.0"
+      }
+    ],
+    "seed": 7,
+    "verification_policy": "conditional"
+  },
+  "id": "tessera_relay_demo",
+  "interactions": [
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "briefed",
+          "value": true
+        },
+        {
+          "unlock": "suit_lamp"
+        }
+      ],
+      "id": "talk_oriel",
+      "kind": "talk",
+      "label": "Talk to Oriel",
+      "room": "bridge",
+      "target": "oriel",
+      "text": "Oriel keeps her eyes on the planet. \"Corva's beacon went quiet an hour ago. Take the Wren down, find out why, and come back up before the dusk storm.\""
+    },
+    {
+      "conditions": [],
+      "effects": [],
+      "id": "read_nav",
+      "kind": "examine",
+      "label": "Check the nav console",
+      "room": "bridge",
+      "target": "nav_console",
+      "text": "A slow orange trace marks the descent window over the mesa plain."
+    },
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "briefed"
+        }
+      ],
+      "effects": [
+        {
+          "flag": "airlock_cycled",
+          "value": true
+        }
+      ],
+      "id": "cycle_airlock",
+      "kind": "use",
+      "label": "Cycle the airlock",
+      "room": "airlock",
+      "target": "cycle_panel",
+      "text": "Amber lamps turn, the air thins with a hiss, and the outer door slides open."
+    },
+    {
+      "conditions": [],
+      "effects": [],
+      "id": "talk_tamsin",
+      "kind": "talk",
+      "label": "Talk to Tamsin",
+      "room": "hangar",
+      "target": "tamsin",
+      "text": "Tamsin pats the Wren's wing pod. \"Fuelled, checked, and grumpy. Just like you.\""
+    },
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "briefed"
+        }
+      ],
+      "effects": [
+        {
+          "flag": "goal",
+          "value": true
+        }
+      ],
+      "id": "board",
+      "kind": "use",
+      "label": "Board the Wren",
+      "room": "hangar",
+      "target": "shuttle_hatch",
+      "text": "The hatch seals. The hangar lights slide past the canopy as the Wren drifts toward the stars."
+    }
+  ],
+  "items": [],
+  "metadata": {
+    "presentation": {
+      "convention": "hermes64-presentation/1",
+      "rooms": {
+        "airlock": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                7.2,
+                1.4,
+                2.6
+              ],
+              "position": [
+                1.6,
+                3.0,
+                7.6
+              ]
+            }
+          ],
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "airlock",
+          "pieces": [
+            {
+              "asset": "stn.room__airlock_2x2",
+              "kind": "shell",
+              "position": [
+                4.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "stn.ceiling__c2x2",
+              "kind": "shell",
+              "position": [
+                4.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "stn.airlock",
+              "asset_when_set": "stn.airlock__open",
+              "flag": "airlock_cycled",
+              "kind": "insert",
+              "note": "door insert on to_hangar",
+              "position": [
+                8.6,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "stn.viewport__port",
+              "kind": "window",
+              "mounted": true,
+              "position": [
+                6.5,
+                0.0,
+                0.4
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tech.locker",
+              "mounted": true,
+              "position": [
+                6.5,
+                0.0,
+                8.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "tech.terminal__wall",
+              "mounted": true,
+              "position": [
+                2.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.0
+        },
+        "bridge": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                5.2,
+                1.5,
+                2.2
+              ],
+              "position": [
+                10.4,
+                3.1,
+                11.6
+              ]
+            }
+          ],
+          "characters": {
+            "oriel": {
+              "position": [
+                8.8,
+                0,
+                7.6
+              ],
+              "yaw": 200
+            }
+          },
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "bridge",
+          "pieces": [
+            {
+              "asset": "stn.bridge",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tech.console__tall",
+              "position": [
+                6.5,
+                0.0,
+                3.4
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tech.console",
+              "position": [
+                3.3,
+                0.0,
+                4.3
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 30.0
+            },
+            {
+              "asset": "tech.console",
+              "position": [
+                9.7,
+                0.0,
+                4.3
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": -30.0
+            },
+            {
+              "asset": "tech.seat",
+              "position": [
+                6.5,
+                0.0,
+                5.9
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "tech.holo_table",
+              "kind": "landmark",
+              "position": [
+                3.6,
+                0.0,
+                8.8
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.0
+        },
+        "corridor": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                2.5,
+                1.3,
+                14.0
+              ],
+              "position": [
+                2.5,
+                2.5,
+                1.6
+              ]
+            }
+          ],
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "corridor",
+          "pieces": [
+            {
+              "asset": "stn.corridor__end_door",
+              "kind": "shell",
+              "position": [
+                2.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "stn.corridor",
+              "kind": "shell",
+              "position": [
+                2.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "stn.bulkhead",
+              "kind": "wall",
+              "position": [
+                2.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "stn.corridor__tee",
+              "kind": "shell",
+              "position": [
+                2.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "stn.corridor__end",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "tech.crate__stack",
+              "position": [
+                7.4,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "stn.corridor__end_door",
+              "kind": "shell",
+              "position": [
+                2.5,
+                0.0,
+                14.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 180.0
+            }
+          ],
+          "wall_height": 3.2
+        },
+        "hangar": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                6.0,
+                1.6,
+                4.0
+              ],
+              "position": [
+                13.6,
+                4.2,
+                15.6
+              ]
+            }
+          ],
+          "characters": {
+            "tamsin": {
+              "position": [
+                5.4,
+                0,
+                12.2
+              ],
+              "yaw": 150
+            }
+          },
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "hangar",
+          "pieces": [
+            {
+              "asset": "stn.hangar",
+              "kind": "shell",
+              "position": [
+                8.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "stn.ceiling__hangar",
+              "kind": "shell",
+              "position": [
+                8.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "ship.shuttle",
+              "kind": "landmark",
+              "position": [
+                8.5,
+                0.0,
+                7.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tech.crate__stack",
+              "position": [
+                2.6,
+                0.0,
+                13.6
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 15.0
+            },
+            {
+              "asset": "tech.charge_pod",
+              "position": [
+                15.0,
+                0.0,
+                13.0
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "tech.tank",
+              "position": [
+                2.3,
+                0.0,
+                4.2
+              ],
+              "scale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 7.0
+        }
+      },
+      "rotation_order": "YXZ",
+      "rotation_units": "degrees"
+    },
+    "protagonist": "pilot",
+    "scifikit_note": "Built only from SCIFIKIT kits (kits/core/gen_scifikit_*.py) by data: tools/scifikit_rooms.py snaps every piece to the STATION GRID / TERRAIN GRID and checks the socket manifest kits/library/scifikit-sockets.json. Generated by tools/scifikit_demo.py.",
+    "style_pack": "space_station"
+  },
+  "quests": [],
+  "rooms": [
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            5.2,
+            1.5,
+            2.2
+          ],
+          "position": [
+            10.4,
+            3.1,
+            11.6
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilot",
+        "oriel"
+      ],
+      "description": "The bridge of Tessera Relay. Consoles hum under the long window, and the violet planet turns slowly beyond the glass.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_corridor",
+          "label": "Walk aft to the spine corridor",
+          "position": 6,
+          "to_door": "to_bridge",
+          "to_room": "corridor",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        13,
+        13
+      ],
+      "id": "bridge",
+      "kit_refs": [],
+      "name": "The Bridge",
+      "props": [
+        {
+          "asset": "tech.console__pillar",
+          "id": "nav_console",
+          "position": [
+            10.6,
+            0,
+            9.2
+          ],
+          "rotation": [
+            0,
+            -90.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            2.5,
+            1.3,
+            14.0
+          ],
+          "position": [
+            2.5,
+            2.5,
+            1.6
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilot"
+      ],
+      "description": "The spine corridor: white plating, a cyan light band and a bulkhead frame halfway along.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_bridge",
+          "label": "Forward to the bridge",
+          "position": 2,
+          "to_door": "to_corridor",
+          "to_room": "bridge",
+          "wall": "north"
+        },
+        {
+          "conditions": [],
+          "id": "to_airlock",
+          "label": "Aft to the airlock",
+          "position": 2,
+          "to_door": "to_corridor",
+          "to_room": "airlock",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        5,
+        17
+      ],
+      "id": "corridor",
+      "kit_refs": [],
+      "name": "Spine Corridor",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            7.2,
+            1.4,
+            2.6
+          ],
+          "position": [
+            1.6,
+            3.0,
+            7.6
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilot"
+      ],
+      "description": "Airlock Seven. Suit lockers along the wall, a porthole onto the stars and an outer door sealed behind hazard stripes.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_corridor",
+          "label": "Back to the corridor",
+          "position": 2,
+          "to_door": "to_airlock",
+          "to_room": "corridor",
+          "wall": "west"
+        },
+        {
+          "conditions": [
+            {
+              "equals": true,
+              "flag": "airlock_cycled"
+            }
+          ],
+          "id": "to_hangar",
+          "label": "Through the outer door",
+          "position": 6,
+          "to_door": "to_airlock",
+          "to_room": "hangar",
+          "wall": "east"
+        }
+      ],
+      "grid_size": [
+        9,
+        9
+      ],
+      "id": "airlock",
+      "kit_refs": [],
+      "name": "Airlock Seven",
+      "props": [
+        {
+          "asset": "tech.terminal",
+          "id": "cycle_panel",
+          "position": [
+            6.3,
+            0,
+            2.9
+          ],
+          "rotation": [
+            0,
+            -40.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            6.0,
+            1.6,
+            4.0
+          ],
+          "position": [
+            13.6,
+            4.2,
+            15.6
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilot",
+        "tamsin"
+      ],
+      "description": "The hangar bay. The shuttle Wren sits on the landing ring, and beyond the open mouth the stars wait.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_airlock",
+          "label": "Back into the airlock",
+          "position": 6,
+          "to_door": "to_hangar",
+          "to_room": "airlock",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        17,
+        17
+      ],
+      "id": "hangar",
+      "kit_refs": [],
+      "name": "Hangar Bay",
+      "props": [
+        {
+          "asset": "tech.terminal",
+          "id": "shuttle_hatch",
+          "position": [
+            11.6,
+            0,
+            11.2
+          ],
+          "rotation": [
+            0,
+            -30.0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "start": {
+    "collected": [],
+    "dialogue": {},
+    "flags": {
+      "airlock_cycled": false,
+      "briefed": false,
+      "goal": false
+    },
+    "inventory": [],
+    "location": "bridge",
+    "modules": {
+      "abilities": [],
+      "active": "",
+      "checkpoint": "bridge_safe",
+      "completed": [],
+      "discovered": [
+        "bridge"
+      ],
+      "failed": ""
+    },
+    "tide": {
+      "state": "clear",
+      "tick": 0
+    }
+  },
+  "tide": {
+    "id": "day",
+    "states": [
+      {
+        "duration": 1,
+        "id": "clear",
+        "label": "Shift"
+      }
+    ],
+    "wait_label": "Wait",
+    "wait_text": "The station hums."
+  },
+  "title": "Tessera Relay"
+}

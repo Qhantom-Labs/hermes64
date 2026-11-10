@@ -1,0 +1,19 @@
+{
+  "schema_version":"2.0.0",
+  "characters":{
+    "narrator":{"pitch":180,"rate":18,"timbre":0.30,"formant":850,"breath":0.025,"robot":0,"flutter":7,"vibrato":0.015},
+    "elder":{"pitch":116,"rate":12,"timbre":0.25,"formant":660,"breath":0.06,"robot":0,"flutter":5,"vibrato":0.045},
+    "child":{"pitch":310,"rate":23,"timbre":0.45,"formant":1300,"breath":0.02,"robot":0,"flutter":11,"vibrato":0.025},
+    "robot":{"pitch":205,"rate":20,"timbre":0.6,"formant":1100,"breath":0,"robot":0.95,"flutter":25,"vibrato":0},
+    "hooded-faceless":{"pitch":143,"rate":15,"timbre":0.13,"formant":450,"breath":0.09,"robot":0.15,"flutter":6,"vibrato":0.012},
+    "creature":{"pitch":92,"rate":14,"timbre":0.75,"formant":720,"breath":0.1,"robot":0.1,"flutter":18,"vibrato":0.07}
+  },
+  "emotions":{
+    "neutral":{"pitch":1,"rate":1,"glide":0.025,"timbre":1},
+    "curious":{"pitch":1.12,"rate":0.93,"glide":0.23,"timbre":1.08},
+    "happy":{"pitch":1.18,"rate":1.17,"glide":0.15,"timbre":1.12},
+    "sad":{"pitch":0.88,"rate":0.78,"glide":-0.18,"timbre":0.75},
+    "angry":{"pitch":0.95,"rate":1.28,"glide":-0.12,"timbre":1.25},
+    "afraid":{"pitch":1.22,"rate":1.10,"glide":0.08,"timbre":0.9}
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "hermes64",
+  "label": "Hermes64 Studio",
+  "description": "Backend routes for the Hermes64 Studio desktop tab: local catalogue, covers, explicit play/launch. No web-dashboard tab.",
+  "version": "0.1.0",
+  "tab": {"path": "/hermes64", "hidden": true},
+  "api": "plugin_api.py"
+}

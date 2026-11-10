@@ -1,0 +1,107 @@
+{
+ "description": "Ocarina-era alien world: a violet-to-peach sky with rose cloud banks and a slow aurora, ochre regolith, violet basalt strata, cyan crystal growths, teal stalks with coral caps and spore lights, and a small landing site in grey gear with amber accents. Data only; SCIFIKIT kit families (alien./planet./skyx./ship.) from the shared Hermes64 core.",
+ "format": 1,
+ "id": "alien_world",
+ "kit_pack_id": "alien_world",
+ "lighting": {
+  "ambient_colour": "#E88A7A",
+  "fog_colour": "#F6C79A",
+  "fog_enabled": true,
+  "fog_end": 48.0,
+  "fog_start": 8.0
+ },
+ "materials": [
+  {
+   "colour": "#A8703C",
+   "id": "regolith",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#55486A",
+   "id": "basalt",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#58DCD0",
+   "id": "crystal",
+   "kind": "glass_env"
+  },
+  {
+   "colour": "#3E9488",
+   "id": "flora",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#E46A5A",
+   "id": "bloom",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#D8F070",
+   "id": "spore",
+   "kind": "emissive"
+  },
+  {
+   "colour": "#9AA2B2",
+   "id": "gear",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#B24F78",
+   "id": "sky",
+   "kind": "baked_unlit"
+  }
+ ],
+ "name": "Alien World",
+ "palette": [
+  "#07050C",
+  "#1C1030",
+  "#3A1F55",
+  "#6A2F72",
+  "#B24F78",
+  "#E88A7A",
+  "#F6C79A",
+  "#2E1C16",
+  "#4E2E1E",
+  "#7A4A2A",
+  "#A8703C",
+  "#D0A060",
+  "#1E1828",
+  "#352C42",
+  "#55486A",
+  "#7E6E90",
+  "#0C3E4C",
+  "#188C96",
+  "#58DCD0",
+  "#CAFFF2",
+  "#13323E",
+  "#24606A",
+  "#3E9488",
+  "#8A2C5E",
+  "#E46A5A",
+  "#D8F070",
+  "#2C303A",
+  "#5C6474",
+  "#9AA2B2",
+  "#E2E6EC",
+  "#E89A3A"
+ ],
+ "presets": [
+  {
+   "asset_id": "nature.rock",
+   "id": "rock",
+   "params_json": "{}"
+  }
+ ],
+ "sound_palette": {
+  "ambient": "audio/stock/wav/core.nature.wind.breeze.wav",
+  "interact": "audio/wav/ui.select.wav"
+ },
+ "thresholds": {
+  "character_tris": 700,
+  "kit_tris": 1500,
+  "prop_tris": 150,
+  "room_tris": 6000,
+  "texture_px": 128
+ }
+}

@@ -1,0 +1,1582 @@
+{
+ "id": "polar_pod",
+ "version": "3.0.0",
+ "note": "Retro-futurist polar pod habitat (Thaw showcase). Near-monochrome cobalt/navy/periwinkle/pearl with chrome-silver highlights and sparing warm accents. Data only; built from the Hermes64 core.",
+ "palette": [
+  "#04050c",
+  "#0a1030",
+  "#121c4c",
+  "#1b2a6e",
+  "#26398f",
+  "#3149b0",
+  "#3f5dd0",
+  "#5674e6",
+  "#7088f0",
+  "#8e9ff5",
+  "#a9b5f8",
+  "#c3cbfb",
+  "#d9defd",
+  "#ebeefe",
+  "#ffffff",
+  "#2b3150",
+  "#4a5378",
+  "#727ca3",
+  "#a3abcd",
+  "#1a1c2b",
+  "#2c2f45",
+  "#44486a",
+  "#0f1018",
+  "#b8d4ff",
+  "#e2f0ff",
+  "#43b4ff",
+  "#9fe6ff",
+  "#f2a65a",
+  "#ffd9a0",
+  "#c8553d",
+  "#8a3a6b",
+  "#e8c547"
+ ],
+ "palette_names": [
+  "void",
+  "navy_0",
+  "navy_1",
+  "navy_2",
+  "cobalt_0",
+  "cobalt_1",
+  "cobalt_2",
+  "peri_0",
+  "peri_1",
+  "peri_2",
+  "lilac_0",
+  "lilac_1",
+  "pearl_0",
+  "pearl_1",
+  "white",
+  "chrome_0",
+  "chrome_1",
+  "chrome_2",
+  "chrome_3",
+  "wool_0",
+  "wool_1",
+  "wool_2",
+  "knit_0",
+  "ice_0",
+  "ice_1",
+  "screen_0",
+  "screen_1",
+  "glow_0",
+  "glow_1",
+  "ember",
+  "berry",
+  "gold"
+ ],
+ "ramps": {
+  "cobalt": [
+   "navy_1",
+   "navy_2",
+   "cobalt_0",
+   "cobalt_1",
+   "cobalt_2",
+   "peri_0",
+   "peri_1",
+   "peri_2"
+  ],
+  "pearl": [
+   "peri_2",
+   "lilac_0",
+   "lilac_1",
+   "pearl_0",
+   "pearl_1",
+   "white"
+  ],
+  "chrome": [
+   "chrome_0",
+   "chrome_1",
+   "chrome_2",
+   "chrome_3",
+   "pearl_1"
+  ],
+  "wool": [
+   "knit_0",
+   "wool_0",
+   "wool_1",
+   "wool_2"
+  ],
+  "warm": [
+   "ember",
+   "glow_0",
+   "glow_1"
+  ]
+ },
+ "light_ramp": [
+  "navy_1",
+  "navy_2",
+  "cobalt_0",
+  "cobalt_1",
+  "cobalt_2",
+  "peri_0",
+  "peri_1",
+  "peri_2",
+  "lilac_0",
+  "lilac_1",
+  "pearl_0",
+  "pearl_1",
+  "white"
+ ],
+ "light_rig": {
+  "key_dir": [
+   0.3,
+   -0.45,
+   0.85
+  ],
+  "ambient": 0.46,
+  "key": 0.42,
+  "sky": 0.16,
+  "ground": 0.14,
+  "ao": 0.28,
+  "ao_height": 0.45,
+  "gamma": 1.0
+ },
+ "fog": {
+  "color": "navy_2",
+  "start": 8.0,
+  "end": 42.0,
+  "interior": {
+   "color": "cobalt_0",
+   "start": 6.0,
+   "end": 24.0
+  }
+ },
+ "env_maps": {
+  "env_chrome": {
+   "gen": "env",
+   "size": 128,
+   "stops": [
+    "navy_1",
+    "cobalt_0",
+    "cobalt_2",
+    "peri_1",
+    "lilac_0",
+    "pearl_1",
+    "white"
+   ],
+   "edge": "cobalt_0",
+   "glint": "white",
+   "glints": [
+    [
+     0.34,
+     0.24,
+     0.06
+    ],
+    [
+     0.64,
+     0.3,
+     0.035
+    ],
+    [
+     0.5,
+     0.14,
+     0.025
+    ]
+   ],
+   "bands": [
+    [
+     0.56,
+     0.025,
+     "navy_1"
+    ]
+   ]
+  },
+  "env_glass": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "void",
+    "navy_0",
+    "navy_1",
+    "cobalt_0",
+    "cobalt_1"
+   ],
+   "edge": "navy_0",
+   "glint": "white",
+   "glints": [
+    [
+     0.33,
+     0.27,
+     0.07
+    ]
+   ]
+  }
+ },
+ "materials": {
+  "wall": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "gloss",
+    "size": 16,
+    "ramp": [
+     "lilac_1",
+     "pearl_0",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "wall_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "gloss",
+    "size": 16,
+    "ramp": [
+     "peri_2",
+     "lilac_0",
+     "lilac_1"
+    ]
+   }
+  },
+  "floor": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "gloss",
+    "size": 32,
+    "ramp": [
+     "lilac_0",
+     "lilac_1",
+     "pearl_0",
+     "pearl_1"
+    ],
+    "glints": 0.02
+   }
+  },
+  "ceiling": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "gloss",
+    "size": 16,
+    "ramp": [
+     "pearl_0",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "trim": {
+   "kind": "chrome_env",
+   "tint": "chrome_3",
+   "env": "env_chrome"
+  },
+  "frame": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "gloss",
+    "size": 16,
+    "ramp": [
+     "lilac_1",
+     "pearl_0",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "door": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "panel",
+    "size": 32,
+    "panels": 1,
+    "ramp": [
+     "peri_2",
+     "lilac_0",
+     "lilac_1",
+     "pearl_0"
+    ]
+   }
+  },
+  "glass": {
+   "kind": "glass_env",
+   "tint": "peri_1",
+   "env": "env_glass"
+  },
+  "view": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "scene",
+    "width": 128,
+    "height": 64,
+    "sky": [
+     "navy_0",
+     "navy_1",
+     "navy_2",
+     "cobalt_0"
+    ],
+    "stars": {
+     "count": 70,
+     "color": "white",
+     "min_v": 0.5
+    },
+    "layers": [
+     {
+      "kind": "domes",
+      "base": 0.34,
+      "height": 0.16,
+      "count": 9,
+      "ramp": [
+       "cobalt_1",
+       "peri_1",
+       "lilac_1"
+      ],
+      "lights": {
+       "color": "glow_1",
+       "count": 9
+      }
+     },
+     {
+      "kind": "trees",
+      "base": 0.3,
+      "height": 0.2,
+      "count": 5,
+      "color": "navy_2"
+     }
+    ],
+    "ground": {
+     "ramp": [
+      "cobalt_2",
+      "peri_1",
+      "lilac_0",
+      "lilac_1",
+      "pearl_0"
+     ],
+     "height": 0.36
+    }
+   }
+  },
+  "roof": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "snow",
+    "size": 32,
+    "ramp": [
+     "lilac_1",
+     "pearl_0",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "step": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "gloss",
+    "size": 16,
+    "ramp": [
+     "lilac_0",
+     "lilac_1",
+     "pearl_0"
+    ]
+   }
+  },
+  "rail": {
+   "kind": "chrome_env",
+   "tint": "chrome_3",
+   "env": "env_chrome"
+  },
+  "post": {
+   "kind": "chrome_env",
+   "tint": "chrome_2",
+   "env": "env_chrome"
+  },
+  "stone": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "blocks",
+    "size": 32,
+    "rows": 3,
+    "cols": 2,
+    "ramp": [
+     "peri_2",
+     "lilac_0",
+     "lilac_1",
+     "pearl_0"
+    ]
+   }
+  },
+  "metal": {
+   "kind": "chrome_env",
+   "tint": "chrome_2",
+   "env": "env_chrome"
+  },
+  "chrome": {
+   "kind": "chrome_env",
+   "tint": "chrome_3",
+   "env": "env_chrome"
+  },
+  "body": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "gloss",
+    "size": 16,
+    "ramp": [
+     "lilac_1",
+     "pearl_0",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "body_alt": {
+   "kind": "chrome_env",
+   "tint": "chrome_3",
+   "env": "env_chrome"
+  },
+  "cushion": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "quilt_diamond",
+    "size": 32,
+    "cells": 2,
+    "ramp": [
+     "cobalt_2",
+     "peri_0",
+     "peri_1",
+     "peri_2",
+     "lilac_0"
+    ]
+   }
+  },
+  "fabric": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "fabric",
+    "size": 16,
+    "ramp": [
+     "cobalt_1",
+     "cobalt_2",
+     "peri_0"
+    ]
+   }
+  },
+  "knit": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "knit",
+    "size": 32,
+    "cols": 6,
+    "rows": 6,
+    "ramp": [
+     "cobalt_0",
+     "cobalt_1",
+     "cobalt_2",
+     "peri_0",
+     "peri_1"
+    ]
+   }
+  },
+  "fur": {
+   "kind": "baked_unlit",
+   "tile_m": 0.8,
+   "texture": {
+    "gen": "fur",
+    "size": 32,
+    "ramp": [
+     "lilac_0",
+     "lilac_1",
+     "pearl_0",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "quilt": {
+   "kind": "baked_unlit",
+   "tile_m": 0.5,
+   "texture": {
+    "gen": "quilt_wave",
+    "size": 32,
+    "channels": 3,
+    "ramp": [
+     "peri_0",
+     "peri_1",
+     "peri_2",
+     "lilac_0",
+     "lilac_1"
+    ]
+   }
+  },
+  "screen": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "screen",
+    "size": 32,
+    "ramp": [
+     "navy_1",
+     "cobalt_1",
+     "screen_0",
+     "screen_1"
+    ],
+    "dither": false
+   }
+  },
+  "light": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "glow",
+    "size": 16,
+    "ramp": [
+     "lilac_0",
+     "lilac_1",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "orb": {
+   "kind": "glass_env",
+   "tint": "cobalt_1",
+   "env": "env_glass"
+  },
+  "wood": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "gloss",
+    "size": 16,
+    "ramp": [
+     "peri_2",
+     "lilac_0",
+     "lilac_1"
+    ]
+   }
+  },
+  "paper": {
+   "kind": "baked_unlit",
+   "tile_m": 0.3,
+   "texture": {
+    "gen": "paper",
+    "size": 32,
+    "ramp": [
+     "navy_2",
+     "lilac_1",
+     "pearl_0",
+     "pearl_1"
+    ]
+   }
+  },
+  "book": {
+   "kind": "baked_unlit",
+   "tile_m": 0.4,
+   "texture": {
+    "gen": "spines",
+    "size": 32,
+    "ramp": [
+     "navy_1",
+     "cobalt_1",
+     "peri_0",
+     "peri_2",
+     "lilac_1"
+    ]
+   }
+  },
+  "leather": {
+   "kind": "baked_unlit",
+   "tile_m": 0.5,
+   "texture": {
+    "gen": "leather",
+    "size": 32,
+    "ramp": [
+     "navy_2",
+     "cobalt_0",
+     "cobalt_1",
+     "cobalt_2"
+    ]
+   }
+  },
+  "rope": {
+   "kind": "baked_unlit",
+   "tile_m": 0.3,
+   "texture": {
+    "gen": "rope",
+    "size": 16,
+    "ramp": [
+     "chrome_1",
+     "chrome_2",
+     "chrome_3"
+    ]
+   }
+  },
+  "fire": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "fire",
+    "size": 16,
+    "ramp": [
+     "ember",
+     "glow_0",
+     "glow_1",
+     "white"
+    ]
+   }
+  },
+  "grass": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "snow",
+    "size": 32,
+    "ramp": [
+     "peri_2",
+     "lilac_1",
+     "pearl_0",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "snow": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "snow",
+    "size": 32,
+    "ramp": [
+     "peri_2",
+     "lilac_1",
+     "pearl_0",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "sand": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "sand",
+    "size": 32,
+    "ripples": 4,
+    "ramp": [
+     "lilac_0",
+     "lilac_1",
+     "pearl_0",
+     "pearl_1"
+    ]
+   }
+  },
+  "rock": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "rock",
+    "size": 32,
+    "ramp": [
+     "navy_2",
+     "cobalt_0",
+     "cobalt_1",
+     "peri_0"
+    ]
+   }
+  },
+  "dirt": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "dirt",
+    "size": 32,
+    "ramp": [
+     "cobalt_0",
+     "cobalt_1",
+     "peri_0"
+    ]
+   }
+  },
+  "water": {
+   "kind": "water",
+   "tile_m": 3.0,
+   "scroll": [
+    0.03,
+    0.01
+   ],
+   "texture": {
+    "gen": "water",
+    "size": 32,
+    "ramp": [
+     "navy_1",
+     "navy_2",
+     "cobalt_0",
+     "cobalt_1"
+    ]
+   }
+  },
+  "ice": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "ice",
+    "size": 32,
+    "ramp": [
+     "peri_2",
+     "ice_0",
+     "ice_1",
+     "white"
+    ]
+   }
+  },
+  "bark": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "bark",
+    "size": 16,
+    "ramp": [
+     "navy_1",
+     "navy_2",
+     "cobalt_0",
+     "cobalt_1"
+    ]
+   }
+  },
+  "foliage": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "leaves",
+    "size": 32,
+    "ramp": [
+     "cobalt_2",
+     "peri_1",
+     "lilac_0",
+     "lilac_1",
+     "pearl_1"
+    ]
+   }
+  },
+  "cap": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "snow",
+    "size": 16,
+    "ramp": [
+     "lilac_1",
+     "pearl_0",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "flower": {
+   "kind": "baked_unlit",
+   "tile_m": 0.5,
+   "texture": {
+    "gen": "ice",
+    "size": 16,
+    "ramp": [
+     "ice_0",
+     "ice_1",
+     "white"
+    ]
+   }
+  },
+  "hull": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "gloss",
+    "size": 16,
+    "ramp": [
+     "lilac_1",
+     "pearl_0",
+     "pearl_1",
+     "white"
+    ]
+   }
+  },
+  "hull_alt": {
+   "kind": "chrome_env",
+   "tint": "chrome_3",
+   "env": "env_chrome"
+  },
+  "band": {
+   "kind": "glass_env",
+   "tint": "navy_0",
+   "env": "env_glass"
+  },
+  "sky": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "scene",
+    "width": 128,
+    "height": 64,
+    "sky": [
+     "navy_0",
+     "navy_1",
+     "navy_2",
+     "cobalt_0"
+    ],
+    "stars": {
+     "count": 90,
+     "color": "white",
+     "min_v": 0.35
+    },
+    "layers": [
+     {
+      "kind": "mountains",
+      "base": 0.18,
+      "height": 0.12,
+      "count": 7,
+      "color": "navy_2"
+     }
+    ]
+   }
+  },
+  "particle": {
+   "kind": "card_alpha",
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "white"
+    ],
+    "alpha": "flake"
+   }
+  },
+  "skin": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "glow_1"
+    ]
+   }
+  },
+  "face": {
+   "kind": "face_atlas"
+  },
+  "headwear": {
+   "kind": "baked_unlit"
+  },
+  "opening": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "void"
+    ]
+   }
+  },
+  "costume": {
+   "kind": "baked_unlit"
+  },
+  "coat": {
+   "kind": "baked_unlit"
+  }
+ },
+ "kit_presets": {},
+ "fixtures": {},
+ "cast": {},
+ "validator_thresholds": {
+  "tri_limits": {},
+  "stretch": [
+   0.45,
+   1.8
+  ],
+  "visdiff_min": 0.015,
+  "people_pairwise_min": 0.02
+ },
+ "colors": {
+  "fog_ext": "#1b2a6e",
+  "fog_int": "#26398f",
+  "amb_ext": "#121c4c",
+  "sun_ext": "#7088f0",
+  "amb_int": "#26398f",
+  "sun_int": "#8e9ff5",
+  "lamp": "#ffd9a0",
+  "lamp_dim": "#f2a65a",
+  "window_light": "#c3cbfb"
+ },
+ "ui": {
+  "ink": "#04050c",
+  "fill": "#0a1030d6",
+  "frame": "#a3abcd",
+  "text": "#ebeefe",
+  "dim": "#8e9ff5",
+  "accent": "#ffd9a0"
+ },
+ "character_env": {
+  "stops": [
+   "chrome_0",
+   "chrome_1",
+   "chrome_2",
+   "chrome_3",
+   "pearl_1",
+   "white"
+  ]
+ },
+ "character_defaults": {
+  "head_mode": "faceless",
+  "headwear": "hood",
+  "skin": "glow_1",
+  "headwear_color": "pearl_0",
+  "top_color": "chrome_3",
+  "vest_color": "chrome_2",
+  "vest_trim_color": "glow_0",
+  "mantle_color": "chrome_3",
+  "skirt_color": "wool_0",
+  "bottom_color": "navy_1",
+  "glove_color": "pearl_0",
+  "boot_color": "knit_0",
+  "belt_color": "wool_1",
+  "armband_color": "glow_0"
+ },
+ "animal_defaults": {
+  "coat_color_1": "wool_0",
+  "coat_color_2": "pearl_1",
+  "coat_color_3": "glow_0",
+  "eye_color": "gold"
+ },
+ "character_cast": [
+  {
+   "id": "new_arrival",
+   "params": {
+    "head_mode": "faceless",
+    "headwear": "hood",
+    "skin": "glow_1",
+    "headwear_color": "pearl_0",
+    "top_color": "chrome_3",
+    "vest_color": "chrome_1",
+    "vest_trim_color": "glow_0",
+    "mantle_color": "chrome_3",
+    "skirt_color": "wool_0",
+    "bottom_color": "navy_1",
+    "glove_color": "pearl_0",
+    "boot_color": "knit_0",
+    "belt_color": "wool_1",
+    "armband_color": "glow_0",
+    "height": 1.62,
+    "build": 1,
+    "head_size": 1,
+    "trouser_volume": 1,
+    "vest": "quilted_wave",
+    "wear": 0.0,
+    "acc_back": "none",
+    "acc_belt": "pouch",
+    "patch": false,
+    "hood_tilt": 0.35
+   },
+   "study_only": false,
+   "stance": "duffel",
+   "props": [
+    "duffel"
+   ]
+  },
+  {
+   "id": "tavi",
+   "params": {
+    "head_mode": "faceless",
+    "headwear": "hood",
+    "skin": "glow_1",
+    "headwear_color": "pearl_0",
+    "top_color": "chrome_3",
+    "vest_color": "wool_2",
+    "vest_trim_color": "berry",
+    "mantle_color": "chrome_3",
+    "skirt_color": "wool_0",
+    "bottom_color": "navy_1",
+    "glove_color": "pearl_0",
+    "boot_color": "knit_0",
+    "belt_color": "wool_1",
+    "armband_color": "glow_0",
+    "height": 1.5,
+    "build": 0.95,
+    "head_size": 1.1,
+    "trouser_volume": 1.2,
+    "vest": "quilted_diamond",
+    "wear": 0.1111111111111111,
+    "acc_back": "none",
+    "acc_belt": "flask",
+    "patch": true,
+    "hood_tilt": -0.55
+   },
+   "study_only": false,
+   "stance": "hold_mug",
+   "props": [
+    "mug"
+   ]
+  },
+  {
+   "id": "neri",
+   "params": {
+    "head_mode": "faceless",
+    "headwear": "hood",
+    "skin": "glow_1",
+    "headwear_color": "pearl_0",
+    "top_color": "chrome_3",
+    "vest_color": "chrome_1",
+    "vest_trim_color": "screen_0",
+    "mantle_color": "chrome_3",
+    "skirt_color": "wool_0",
+    "bottom_color": "navy_1",
+    "glove_color": "pearl_0",
+    "boot_color": "knit_0",
+    "belt_color": "wool_1",
+    "armband_color": "glow_0",
+    "height": 1.78,
+    "build": 0.85,
+    "head_size": 0.92,
+    "trouser_volume": 0.9,
+    "vest": "quilted_wave",
+    "wear": 0.2222222222222222,
+    "acc_back": "pack",
+    "acc_belt": "pouch",
+    "patch": false,
+    "hood_tilt": 0.8
+   },
+   "study_only": false,
+   "stance": "lantern_up",
+   "props": [
+    "lantern"
+   ]
+  },
+  {
+   "id": "sol",
+   "params": {
+    "head_mode": "faceless",
+    "headwear": "hood",
+    "skin": "glow_1",
+    "headwear_color": "pearl_0",
+    "top_color": "chrome_3",
+    "vest_color": "wool_2",
+    "vest_trim_color": "gold",
+    "mantle_color": "chrome_3",
+    "skirt_color": "wool_0",
+    "bottom_color": "navy_1",
+    "glove_color": "pearl_0",
+    "boot_color": "knit_0",
+    "belt_color": "wool_1",
+    "armband_color": "glow_0",
+    "height": 1.57,
+    "build": 1.25,
+    "head_size": 1.05,
+    "trouser_volume": 1.3,
+    "vest": "quilted_wave",
+    "wear": 0.3333333333333333,
+    "acc_back": "none",
+    "acc_belt": "flask",
+    "patch": true,
+    "hood_tilt": -0.25
+   },
+   "study_only": false,
+   "stance": "satchel",
+   "props": [
+    "satchel"
+   ]
+  },
+  {
+   "id": "ivo",
+   "params": {
+    "head_mode": "faceless",
+    "headwear": "hood",
+    "skin": "glow_1",
+    "headwear_color": "pearl_0",
+    "top_color": "chrome_3",
+    "vest_color": "chrome_2",
+    "vest_trim_color": "cobalt_2",
+    "mantle_color": "chrome_3",
+    "skirt_color": "wool_0",
+    "bottom_color": "navy_1",
+    "glove_color": "pearl_0",
+    "boot_color": "knit_0",
+    "belt_color": "wool_1",
+    "armband_color": "glow_0",
+    "height": 1.85,
+    "build": 1.05,
+    "head_size": 0.9,
+    "trouser_volume": 1,
+    "vest": "quilted_diamond",
+    "wear": 0.4444444444444444,
+    "acc_back": "pack",
+    "acc_belt": "pouch",
+    "patch": false,
+    "hood_tilt": 0.15
+   },
+   "study_only": false,
+   "stance": "confident",
+   "props": [
+    "cane"
+   ]
+  },
+  {
+   "id": "luma",
+   "params": {
+    "head_mode": "faceless",
+    "headwear": "hood",
+    "skin": "glow_1",
+    "headwear_color": "pearl_0",
+    "top_color": "chrome_3",
+    "vest_color": "chrome_1",
+    "vest_trim_color": "peri_1",
+    "mantle_color": "chrome_3",
+    "skirt_color": "wool_0",
+    "bottom_color": "navy_1",
+    "glove_color": "pearl_0",
+    "boot_color": "knit_0",
+    "belt_color": "wool_1",
+    "armband_color": "glow_0",
+    "height": 1.55,
+    "build": 1.18,
+    "head_size": 1.12,
+    "trouser_volume": 1.4,
+    "vest": "quilted_wave",
+    "wear": 0.5555555555555556,
+    "acc_back": "none",
+    "acc_belt": "flask",
+    "patch": true,
+    "hood_tilt": -0.85
+   },
+   "study_only": false,
+   "stance": "reading",
+   "props": [
+    "book"
+   ]
+  },
+  {
+   "id": "study_07",
+   "params": {
+    "head_mode": "faceless",
+    "headwear": "hood",
+    "skin": "glow_1",
+    "headwear_color": "pearl_0",
+    "top_color": "chrome_3",
+    "vest_color": "wool_2",
+    "vest_trim_color": "ember",
+    "mantle_color": "chrome_3",
+    "skirt_color": "wool_0",
+    "bottom_color": "navy_1",
+    "glove_color": "pearl_0",
+    "boot_color": "knit_0",
+    "belt_color": "wool_1",
+    "armband_color": "glow_0",
+    "height": 1.7,
+    "build": 0.9,
+    "head_size": 1,
+    "trouser_volume": 1.2,
+    "vest": "quilted_wave",
+    "wear": 0.6666666666666666,
+    "acc_back": "none",
+    "acc_belt": "pouch",
+    "patch": false,
+    "hood_tilt": 0.6
+   },
+   "study_only": true,
+   "stance": "tablet",
+   "props": [
+    "datapad"
+   ]
+  },
+  {
+   "id": "study_08",
+   "params": {
+    "head_mode": "faceless",
+    "headwear": "hood",
+    "skin": "glow_1",
+    "headwear_color": "pearl_0",
+    "top_color": "chrome_3",
+    "vest_color": "chrome_1",
+    "vest_trim_color": "lilac_1",
+    "mantle_color": "chrome_3",
+    "skirt_color": "wool_0",
+    "bottom_color": "navy_1",
+    "glove_color": "pearl_0",
+    "boot_color": "knit_0",
+    "belt_color": "wool_1",
+    "armband_color": "glow_0",
+    "height": 1.42,
+    "build": 1.1,
+    "head_size": 1.17,
+    "trouser_volume": 0.95,
+    "vest": "quilted_diamond",
+    "wear": 0.7777777777777778,
+    "acc_back": "none",
+    "acc_belt": "flask",
+    "patch": true,
+    "hood_tilt": -0.4
+   },
+   "study_only": true,
+   "stance": "thinking",
+   "props": [
+    "thermos"
+   ]
+  }
+ ],
+ "animal_cast": [
+  {
+   "id": "cat_tuxedo",
+   "params": {
+    "coat_color_1": "wool_0",
+    "coat_color_2": "pearl_1",
+    "coat_color_3": "glow_0",
+    "eye_color": "gold",
+    "coat_pattern": "tuxedo"
+   }
+  },
+  {
+   "id": "cat_tabby",
+   "params": {
+    "coat_color_1": "glow_0",
+    "coat_color_2": "wool_0",
+    "coat_color_3": "glow_0",
+    "eye_color": "gold",
+    "coat_pattern": "tabby"
+   }
+  },
+  {
+   "id": "cat_calico",
+   "params": {
+    "coat_color_1": "pearl_1",
+    "coat_color_2": "wool_0",
+    "coat_color_3": "glow_0",
+    "eye_color": "gold",
+    "coat_pattern": "calico"
+   }
+  },
+  {
+   "id": "cat_black",
+   "params": {
+    "coat_color_1": "wool_0",
+    "coat_color_2": "wool_0",
+    "coat_color_3": "glow_0",
+    "eye_color": "gold",
+    "coat_pattern": "solid"
+   }
+  },
+  {
+   "id": "cat_white",
+   "params": {
+    "coat_color_1": "pearl_1",
+    "coat_color_2": "pearl_1",
+    "coat_color_3": "glow_0",
+    "eye_color": "gold",
+    "coat_pattern": "solid"
+   }
+  },
+  {
+   "id": "dog_saddle",
+   "params": {
+    "coat_color_1": "wool_0",
+    "coat_color_2": "pearl_1",
+    "coat_color_3": "glow_0",
+    "eye_color": "gold",
+    "species": "dog",
+    "coat_pattern": "saddle",
+    "ear_shape": "floppy"
+   }
+  }
+ ],
+ "face_defaults": {
+  "skin": "glow_1",
+  "hair_color": "wool_0",
+  "eye_color": "cobalt_1",
+  "brow_color": "wool_0",
+  "lip_color": "ember",
+  "top_color": "chrome_3",
+  "garment_color": "chrome_2",
+  "trim_color": "pearl_0",
+  "accent_color": "glow_0",
+  "bottom_color": "wool_1",
+  "boot_color": "wool_0",
+  "glove_color": "knit_0",
+  "belt_color": "wool_0",
+  "collar_color": "chrome_3",
+  "extra_color": "pearl_1",
+  "extra_color_2": "ember"
+ },
+ "char_ramps": {
+  "grey": [
+   "knit_0",
+   "wool_0",
+   "wool_1",
+   "wool_2",
+   "chrome_1",
+   "chrome_2",
+   "chrome_3",
+   "pearl_1",
+   "white"
+  ],
+  "gold": [
+   "ember",
+   "glow_0",
+   "gold"
+  ],
+  "skin_warm": [
+   "navy_1",
+   "berry",
+   "ember",
+   "glow_0",
+   "glow_1",
+   "pearl_1"
+  ]
+ },
+ "eye_white": "pearl_0",
+ "face_line": "navy_0",
+ "teeth": "pearl_1",
+ "sole": "knit_0",
+ "blush": "glow_0",
+ "prop_colors": {
+  "body": "chrome_2",
+  "dark": "wool_0",
+  "light": "pearl_1",
+  "metal": "chrome_1",
+  "glass": "glow_1",
+  "accent": "glow_0",
+  "cloth": "wool_2",
+  "wood": "chrome_1"
+ },
+ "face_cast": [
+  {
+   "id": "pp_engineer",
+   "stance": "thinking",
+   "props": [
+    "thermos"
+   ],
+   "params": {
+    "head_mode": "face",
+    "height": 1.76,
+    "build": 1.12,
+    "age": "adult",
+    "jaw": 1.12,
+    "chin": 0.4,
+    "nose": 1.15,
+    "hair": "beanie",
+    "hair_color": "wool_2",
+    "accent_color": "glow_0",
+    "garment": "coverall",
+    "garment_color": "chrome_2",
+    "top_color": "chrome_2",
+    "bottom_color": "chrome_2",
+    "collar": "high",
+    "collar_color": "chrome_2",
+    "cargo": true,
+    "boots": "heavy",
+    "boot_color": "wool_0",
+    "hands": "gloves",
+    "glove_color": "knit_0",
+    "belt": true,
+    "belt_color": "wool_0",
+    "beard": "stubble",
+    "brows": "heavy",
+    "brow_tilt": 0.55,
+    "eye_shape": "narrow",
+    "eye_color": "cobalt_1",
+    "skin": "glow_1",
+    "lip_color": "ember",
+    "trim_color": "chrome_3",
+    "wear": 0.6,
+    "patch": false,
+    "face_length": 0.6,
+    "brow_ridge": 0.85,
+    "nose_shape": "broad",
+    "eye_spacing": -0.35,
+    "eye_tilt": -0.2,
+    "brow_height": -0.6,
+    "brow_gap": -0.4,
+    "mouth_width": 0.2
+   }
+  },
+  {
+   "id": "pp_medic",
+   "stance": "hold_mug",
+   "props": [
+    "mug"
+   ],
+   "params": {
+    "head_mode": "face",
+    "height": 1.63,
+    "build": 0.95,
+    "age": "adult",
+    "jaw": 0.95,
+    "cheek": 1.05,
+    "nose": 0.9,
+    "hair": "curls",
+    "hair_color": "wool_0",
+    "hair_volume": 1.2,
+    "garment": "parka",
+    "puff": 1.25,
+    "garment_color": "pearl_0",
+    "collar": "ruff",
+    "collar_color": "pearl_1",
+    "top_color": "chrome_3",
+    "bottom_color": "wool_1",
+    "boots": "cuffed",
+    "boot_color": "wool_1",
+    "hands": "bare",
+    "belt": false,
+    "brows": "straight",
+    "brow_tilt": 0.2,
+    "eye_shape": "round",
+    "eye_color": "navy_1",
+    "lashes": true,
+    "skin": "glow_0",
+    "brow_color": "knit_0",
+    "lip_color": "berry",
+    "trim_color": "chrome_2",
+    "accent_color": "glow_0",
+    "wear": 0.2,
+    "face_length": -0.35,
+    "eye_spacing": 0.55,
+    "eye_tilt": -0.05,
+    "brow_height": -0.3,
+    "brow_gap": 0.3,
+    "nose_shape": "button",
+    "mouth": "neutral",
+    "mouth_width": 0.3,
+    "mole": true
+   }
+  },
+  {
+   "id": "pp_kid",
+   "stance": "eager",
+   "props": [],
+   "params": {
+    "head_mode": "face",
+    "height": 1.18,
+    "build": 0.95,
+    "age": "child",
+    "head_size": 1.05,
+    "hair": "ponytail",
+    "hair_color": "glow_0",
+    "freckles": true,
+    "garment": "sweater",
+    "top_pattern": "stripes",
+    "garment_color": "cobalt_1",
+    "top_color": "cobalt_1",
+    "accent_color": "pearl_1",
+    "collar": "scarf",
+    "collar_color": "berry",
+    "bottom_color": "wool_1",
+    "trouser_volume": 1.1,
+    "boots": "heavy",
+    "boot_color": "chrome_1",
+    "hands": "gloves",
+    "glove_color": "berry",
+    "brows": "arched",
+    "brow_tilt": 0.1,
+    "eye_shape": "round",
+    "eye_color": "cobalt_2",
+    "skin": "glow_1",
+    "brow_color": "ember",
+    "lip_color": "ember",
+    "trim_color": "pearl_1",
+    "wear": 0.4,
+    "face_length": -0.8,
+    "eye_spacing": 0.7,
+    "eye_tilt": 0.1,
+    "brow_height": 0.3,
+    "nose_shape": "button",
+    "mouth_width": -0.35
+   }
+  },
+  {
+   "id": "pp_elder",
+   "stance": "behind_back",
+   "props": [],
+   "params": {
+    "head_mode": "face",
+    "height": 1.68,
+    "build": 1.0,
+    "age": "elder",
+    "jaw": 1.05,
+    "nose": 1.3,
+    "hair": "crop",
+    "hair_color": "chrome_3",
+    "garment": "parka",
+    "puff": 1.1,
+    "garment_color": "wool_2",
+    "collar": "hood_down",
+    "collar_color": "wool_2",
+    "trim_color": "pearl_1",
+    "top_color": "chrome_2",
+    "bottom_color": "wool_1",
+    "boots": "boots",
+    "boot_color": "wool_0",
+    "hands": "gloves",
+    "glove_color": "wool_0",
+    "belt": false,
+    "beard": "moustache",
+    "brows": "heavy",
+    "brow_color": "pearl_1",
+    "brow_tilt": 0.45,
+    "wrinkles": 0.9,
+    "scar": true,
+    "eye_shape": "narrow",
+    "eye_color": "chrome_1",
+    "skin": "glow_1",
+    "lip_color": "ember",
+    "accent_color": "glow_0",
+    "wear": 0.5,
+    "face_length": 0.75,
+    "brow_ridge": 0.5,
+    "nose_shape": "hooked",
+    "eye_spacing": 0.1,
+    "eye_tilt": -0.7,
+    "brow_height": 0.35,
+    "brow_gap": 0.6,
+    "mouth": "thin",
+    "mouth_width": 0.35,
+    "cheek": 0.9
+   }
+  }
+ ],
+ "skin_ramps": {
+  "glow_1": [
+   "navy_1",
+   "ember",
+   "glow_0",
+   "glow_1",
+   "pearl_1"
+  ],
+  "glow_0+chrome_3": [
+   "navy_0",
+   "ember+chrome_1",
+   "glow_0+chrome_2",
+   "glow_0+chrome_3",
+   "glow_1+chrome_3"
+  ],
+  "ember+wool_2": [
+   "void",
+   "wool_1",
+   "ember+wool_1",
+   "ember+wool_2",
+   "ember+chrome_1"
+  ],
+  "ember": [
+   "void",
+   "wool_1",
+   "berry",
+   "ember",
+   "glow_0"
+  ],
+  "glow_0": [
+   "navy_0",
+   "berry",
+   "ember",
+   "glow_0",
+   "glow_1"
+  ]
+ }
+}

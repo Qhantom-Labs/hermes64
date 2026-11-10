@@ -1,0 +1,948 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "arenas": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "label": {
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string"
+          },
+          "room": {
+            "maxLength": 48,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "type": "string"
+          },
+          "waves": {
+            "items": {
+              "items": {
+                "additionalProperties": false,
+                "properties": {
+                  "count": {
+                    "maximum": 24,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "robot": {
+                    "maxLength": 48,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]*$",
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "robot",
+                  "count"
+                ],
+                "type": "object"
+              },
+              "maxItems": 16,
+              "minItems": 1,
+              "type": "array"
+            },
+            "maxItems": 8,
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "room",
+          "label",
+          "waves"
+        ],
+        "type": "object"
+      },
+      "maxItems": 14,
+      "minItems": 0,
+      "type": "array"
+    },
+    "audio": {
+      "additionalProperties": false,
+      "properties": {
+        "cues": {
+          "additionalProperties": {
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_.-]*$",
+            "type": "string"
+          },
+          "maxProperties": 64,
+          "propertyNames": {
+            "pattern": "^[a-z0-9][a-z0-9_.:-]{0,63}$"
+          },
+          "type": "object"
+        },
+        "mix": {
+          "additionalProperties": false,
+          "properties": {
+            "crossfade_s": {
+              "maximum": 10,
+              "minimum": 0,
+              "type": "number"
+            },
+            "music_db": {
+              "maximum": 6,
+              "minimum": -60,
+              "type": "number"
+            },
+            "sfx_db": {
+              "maximum": 6,
+              "minimum": -60,
+              "type": "number"
+            },
+            "voice_db": {
+              "maximum": 6,
+              "minimum": -60,
+              "type": "number"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "music": {
+          "additionalProperties": false,
+          "properties": {
+            "boss": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-z][a-z0-9_.-]*$",
+              "type": "string"
+            },
+            "default": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-z][a-z0-9_.-]*$",
+              "type": "string"
+            },
+            "events": {
+              "additionalProperties": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$",
+                "type": "string"
+              },
+              "maxProperties": 64,
+              "propertyNames": {
+                "pattern": "^[a-z0-9][a-z0-9_.:-]{0,63}$"
+              },
+              "type": "object"
+            },
+            "menu": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-z][a-z0-9_.-]*$",
+              "type": "string"
+            },
+            "results": {
+              "maxLength": 64,
+              "minLength": 1,
+              "pattern": "^[a-z][a-z0-9_.-]*$",
+              "type": "string"
+            },
+            "scenes": {
+              "additionalProperties": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$",
+                "type": "string"
+              },
+              "maxProperties": 64,
+              "propertyNames": {
+                "pattern": "^[a-z0-9][a-z0-9_.:-]{0,63}$"
+              },
+              "type": "object"
+            },
+            "waves": {
+              "additionalProperties": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$",
+                "type": "string"
+              },
+              "maxProperties": 64,
+              "propertyNames": {
+                "pattern": "^[a-z0-9][a-z0-9_.:-]{0,63}$"
+              },
+              "type": "object"
+            }
+          },
+          "required": [],
+          "type": "object"
+        },
+        "voice": {
+          "additionalProperties": {
+            "additionalProperties": false,
+            "properties": {
+              "asset": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$",
+                "type": "string"
+              },
+              "on_action": {
+                "maxLength": 128,
+                "minLength": 1,
+                "type": "string"
+              },
+              "on_event": {
+                "maxLength": 48,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]*$",
+                "type": "string"
+              },
+              "on_scene": {
+                "maxLength": 48,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]*$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "asset"
+            ],
+            "type": "object"
+          },
+          "maxProperties": 64,
+          "propertyNames": {
+            "pattern": "^[a-z0-9][a-z0-9_.:-]{0,63}$"
+          },
+          "type": "object"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "bosses": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "maxLength": 48,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "type": "string"
+          },
+          "max_health": {
+            "maximum": 64,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "name": {
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string"
+          },
+          "patterns": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "active_ticks": {
+                  "maximum": 600,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "count": {
+                  "maximum": 8,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "cue": {
+                  "maxLength": 64,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_.-]*$",
+                  "type": "string"
+                },
+                "damage": {
+                  "maximum": 64,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "deflectable": {
+                  "type": "boolean"
+                },
+                "id": {
+                  "maxLength": 48,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]*$",
+                  "type": "string"
+                },
+                "kind": {
+                  "enum": [
+                    "bump",
+                    "slam",
+                    "shot",
+                    "surge"
+                  ]
+                },
+                "recovery_ticks": {
+                  "maximum": 600,
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "size_m": {
+                  "maximum": 10,
+                  "minimum": 0.1,
+                  "type": "number"
+                },
+                "speed_mps": {
+                  "maximum": 20,
+                  "minimum": 0.1,
+                  "type": "number"
+                },
+                "windup_ticks": {
+                  "maximum": 600,
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "id",
+                "kind",
+                "windup_ticks",
+                "active_ticks",
+                "recovery_ticks",
+                "damage",
+                "speed_mps",
+                "size_m",
+                "count",
+                "deflectable",
+                "cue"
+              ],
+              "type": "object"
+            },
+            "maxItems": 8,
+            "minItems": 1,
+            "type": "array"
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object"
+      },
+      "maxItems": 3,
+      "minItems": 0,
+      "type": "array"
+    },
+    "finale": {
+      "additionalProperties": false,
+      "properties": {
+        "attack_budget": {
+          "additionalProperties": false,
+          "properties": {
+            "count": {
+              "maximum": 3,
+              "minimum": 1,
+              "type": "integer"
+            },
+            "gap_ticks": {
+              "maximum": 600,
+              "minimum": 0,
+              "type": "integer"
+            }
+          },
+          "required": [
+            "count",
+            "gap_ticks"
+          ],
+          "type": "object"
+        },
+        "bosses": {
+          "items": {
+            "maxLength": 48,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "type": "string"
+          },
+          "maxItems": 3,
+          "minItems": 1,
+          "type": "array"
+        },
+        "room": {
+          "maxLength": 48,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "room",
+        "bosses"
+      ],
+      "type": "object"
+    },
+    "format": {
+      "const": "hermes64-premise/1"
+    },
+    "goal": {
+      "additionalProperties": false,
+      "properties": {
+        "ending": {
+          "maxLength": 2000,
+          "minLength": 1,
+          "type": "string"
+        },
+        "label": {
+          "maxLength": 80,
+          "minLength": 1,
+          "type": "string"
+        },
+        "text": {
+          "maxLength": 1000,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "label",
+        "text",
+        "ending"
+      ],
+      "type": "object"
+    },
+    "hero": {
+      "additionalProperties": false,
+      "properties": {
+        "binding": {
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_.-]*$",
+          "type": "string"
+        },
+        "id": {
+          "maxLength": 48,
+          "minLength": 1,
+          "pattern": "^[a-z][a-z0-9_]*$",
+          "type": "string"
+        },
+        "name": {
+          "maxLength": 80,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "type": "object"
+    },
+    "id": {
+      "maxLength": 64,
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9_-]*$",
+      "type": "string"
+    },
+    "moveset": {
+      "enum": [
+        "brawler_v1"
+      ]
+    },
+    "npcs": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "anchor": {
+            "enum": [
+              "captive",
+              "interact"
+            ]
+          },
+          "binding": {
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_.-]*$",
+            "type": "string"
+          },
+          "clip": {
+            "maxLength": 48,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "type": "string"
+          },
+          "id": {
+            "maxLength": 48,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "type": "string"
+          },
+          "name": {
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string"
+          },
+          "room": {
+            "maxLength": 48,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "room",
+          "anchor"
+        ],
+        "type": "object"
+      },
+      "maxItems": 8,
+      "minItems": 0,
+      "type": "array"
+    },
+    "results": {
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "title": {
+          "maxLength": 120,
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "robots": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "base": {
+            "enum": [
+              "walker",
+              "brute",
+              "drone"
+            ]
+          },
+          "damage": {
+            "maximum": 64,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "id": {
+            "maxLength": 48,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "type": "string"
+          },
+          "max_health": {
+            "maximum": 64,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "name": {
+            "maxLength": 80,
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "base"
+        ],
+        "type": "object"
+      },
+      "maxItems": 12,
+      "minItems": 0,
+      "type": "array"
+    },
+    "rooms": {
+      "additionalProperties": false,
+      "properties": {
+        "order": {
+          "items": {
+            "maxLength": 48,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_]*$",
+            "type": "string"
+          },
+          "maxItems": 16,
+          "minItems": 3,
+          "type": "array"
+        }
+      },
+      "required": [
+        "order"
+      ],
+      "type": "object"
+    },
+    "run": {
+      "additionalProperties": false,
+      "properties": {
+        "clock": {
+          "enum": [
+            "first_control_to_last_challenge"
+          ]
+        },
+        "death_penalty_ticks": {
+          "maximum": 36000,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "hit_invulnerability_ticks": {
+          "maximum": 600,
+          "minimum": 18,
+          "type": "integer"
+        },
+        "max_health": {
+          "maximum": 64,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "pause_clock_in_cutscene": {
+          "const": true
+        },
+        "reset_encounter_on_death": {
+          "const": true
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "scenes": {
+      "additionalProperties": false,
+      "properties": {
+        "ending": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "actors": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "clip": {
+                      "maxLength": 48,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]*$",
+                      "type": "string"
+                    },
+                    "id": {
+                      "maxLength": 48,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]*$",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "clip"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 8,
+                "minItems": 0,
+                "type": "array"
+              },
+              "camera": {
+                "maxLength": 48,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]*$",
+                "type": "string"
+              },
+              "hold_ticks": {
+                "maximum": 3600,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "line": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "maxLength": 48,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]*$",
+                    "type": "string"
+                  },
+                  "speaker": {
+                    "maxLength": 80,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "text": {
+                    "maxLength": 240,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "speaker",
+                  "text"
+                ],
+                "type": "object"
+              },
+              "room": {
+                "maxLength": 48,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]*$",
+                "type": "string"
+              },
+              "voice": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "room",
+              "camera",
+              "hold_ticks"
+            ],
+            "type": "object"
+          },
+          "maxItems": 16,
+          "minItems": 0,
+          "type": "array"
+        },
+        "opening": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "actors": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "clip": {
+                      "maxLength": 48,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]*$",
+                      "type": "string"
+                    },
+                    "id": {
+                      "maxLength": 48,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]*$",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "clip"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 8,
+                "minItems": 0,
+                "type": "array"
+              },
+              "camera": {
+                "maxLength": 48,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]*$",
+                "type": "string"
+              },
+              "hold_ticks": {
+                "maximum": 3600,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "line": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "maxLength": 48,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]*$",
+                    "type": "string"
+                  },
+                  "speaker": {
+                    "maxLength": 80,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "text": {
+                    "maxLength": 240,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "speaker",
+                  "text"
+                ],
+                "type": "object"
+              },
+              "room": {
+                "maxLength": 48,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]*$",
+                "type": "string"
+              },
+              "voice": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "room",
+              "camera",
+              "hold_ticks"
+            ],
+            "type": "object"
+          },
+          "maxItems": 16,
+          "minItems": 0,
+          "type": "array"
+        },
+        "pre_finale": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "actors": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "clip": {
+                      "maxLength": 48,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]*$",
+                      "type": "string"
+                    },
+                    "id": {
+                      "maxLength": 48,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]*$",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "clip"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 8,
+                "minItems": 0,
+                "type": "array"
+              },
+              "camera": {
+                "maxLength": 48,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]*$",
+                "type": "string"
+              },
+              "hold_ticks": {
+                "maximum": 3600,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "line": {
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "maxLength": 48,
+                    "minLength": 1,
+                    "pattern": "^[a-z][a-z0-9_]*$",
+                    "type": "string"
+                  },
+                  "speaker": {
+                    "maxLength": 80,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  "text": {
+                    "maxLength": 240,
+                    "minLength": 1,
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "id",
+                  "speaker",
+                  "text"
+                ],
+                "type": "object"
+              },
+              "room": {
+                "maxLength": 48,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]*$",
+                "type": "string"
+              },
+              "voice": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_.-]*$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "room",
+              "camera",
+              "hold_ticks"
+            ],
+            "type": "object"
+          },
+          "maxItems": 16,
+          "minItems": 0,
+          "type": "array"
+        }
+      },
+      "required": [],
+      "type": "object"
+    },
+    "style": {
+      "maxLength": 48,
+      "minLength": 1,
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "type": "string"
+    },
+    "template": {
+      "enum": [
+        "two_room_collect_v1",
+        "arena_run_v1"
+      ]
+    },
+    "textures": {
+      "additionalProperties": {
+        "maxLength": 64,
+        "minLength": 1,
+        "pattern": "^[a-z][a-z0-9_.-]*$",
+        "type": "string"
+      },
+      "maxProperties": 64,
+      "propertyNames": {
+        "pattern": "^[a-z0-9][a-z0-9_.:-]{0,63}$"
+      },
+      "type": "object"
+    },
+    "title": {
+      "maxLength": 120,
+      "minLength": 1,
+      "type": "string"
+    },
+    "weather": {
+      "additionalProperties": {
+        "enum": [
+          "rain",
+          "none"
+        ]
+      },
+      "maxProperties": 64,
+      "propertyNames": {
+        "pattern": "^[a-z0-9][a-z0-9_.:-]{0,63}$"
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "format",
+    "id",
+    "title",
+    "template",
+    "style"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,130 @@
+{
+ "colors": [
+  "#110e1a",
+  "#2b2a40",
+  "#4a4d68",
+  "#7a7f96",
+  "#4b2c1e",
+  "#7d4b2f",
+  "#a96d43",
+  "#cc9459",
+  "#e3b778",
+  "#f4dcaa",
+  "#4f4a5a",
+  "#7d7782",
+  "#aaa29f",
+  "#e9dfcf",
+  "#6e4a14",
+  "#b98a2c",
+  "#f3d36e",
+  "#1d3f94",
+  "#3569c4",
+  "#6a9fe0",
+  "#a9cdef",
+  "#e4dccb",
+  "#1d3a20",
+  "#31612c",
+  "#5d8f36",
+  "#a0bd4f",
+  "#08303c",
+  "#1f8c8a",
+  "#86d4c6",
+  "#93300f",
+  "#e2731f",
+  "#ffd884"
+ ],
+ "light_ramp": [
+  1,
+  2,
+  3,
+  11,
+  12,
+  8,
+  13
+ ],
+ "names": [
+  "void",
+  "shade_0",
+  "shade_1",
+  "shade_2",
+  "sand_0",
+  "sand_1",
+  "sand_2",
+  "sand_3",
+  "sand_4",
+  "sand_5",
+  "carve_0",
+  "carve_1",
+  "carve_2",
+  "carve_3",
+  "gold_0",
+  "gold_1",
+  "gold_2",
+  "sky_0",
+  "sky_1",
+  "sky_2",
+  "sky_3",
+  "haze",
+  "leaf_0",
+  "leaf_1",
+  "leaf_2",
+  "leaf_3",
+  "water_0",
+  "water_1",
+  "water_2",
+  "fire_0",
+  "fire_1",
+  "fire_2"
+ ],
+ "pack_id": "ancient_ruins",
+ "roles": {
+  "carved_stone": [
+   "carve_0",
+   "carve_1",
+   "carve_2",
+   "carve_3"
+  ],
+  "deep_sky": [
+   "sky_0",
+   "sky_1",
+   "sky_2",
+   "sky_3",
+   "haze"
+  ],
+  "fire": [
+   "fire_0",
+   "fire_1",
+   "fire_2"
+  ],
+  "gold_leaf": [
+   "gold_0",
+   "gold_1",
+   "gold_2"
+  ],
+  "oasis_water": [
+   "water_0",
+   "water_1",
+   "water_2"
+  ],
+  "sandstone": [
+   "sand_0",
+   "sand_1",
+   "sand_2",
+   "sand_3",
+   "sand_4",
+   "sand_5"
+  ],
+  "shadow_indigo": [
+   "void",
+   "shade_0",
+   "shade_1",
+   "shade_2"
+  ],
+  "vegetation": [
+   "leaf_0",
+   "leaf_1",
+   "leaf_2",
+   "leaf_3"
+  ]
+ }
+}

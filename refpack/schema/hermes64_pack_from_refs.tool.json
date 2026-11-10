@@ -1,0 +1,58 @@
+{
+ "name": "hermes64_pack_from_refs",
+ "version": "1.0.0",
+ "description": "Draft a Hermes64 THEME PACK (KITS 3.1.0 pack.json + lane-audio 1.1 audio.json) from 1-8 reference images plus structured reference notes. Measures palette/contrast/haze using Python and numpy (JPEG additionally needs Pillow), chooses existing kit presets, validates and builds with Python, and writes a lounge proof with existing Godot or an explicitly labelled lower-fidelity software preview. Blender is not required. Never copies reference pixels into distributable pack assets, calls a model or network, or marks a pack approved. Writes only <project_dir>/packs/<pack_id>/. This descriptor is staged for Main; not a registered Hermes tool in this lane.",
+ "parameters": {
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["reference_paths", "notes", "pack_id", "project_dir"],
+  "properties": {
+   "reference_paths": {
+    "type": "array", "minItems": 1, "maxItems": 8, "items": {"type": "string"},
+    "description": "PNG or JPEG files (<= 64 MiB each, <= 256 MiB total, <= 16384 px per side, <= 64 MP). Order matters: notes.references[].index refers to this list."
+   },
+   "notes": {
+    "type": ["object", "string"],
+    "description": "reference_notes JSON (schema hermes64.reference_notes 1.0, refpack/schema/reference_notes.schema.json) as an object or a path to a JSON file (<= 256 KiB). Filled by the agent after viewing the images (see SKILL-refpack.md)."
+   },
+   "pack_id": {
+    "type": "string", "pattern": "^[a-z][a-z0-9_]{2,39}$",
+    "description": "New pack id. Shipped/core ids (polar_pod, forest_village, harbor_dusk, n64_v0, core, default) are refused."
+   },
+   "project_dir": {
+    "type": "string",
+    "description": "Existing project directory. Output goes to <realpath(project_dir)>/packs/<pack_id>/; an existing pack dir is reused only if it is a previous refpack draft."
+   },
+   "read_root": {
+    "type": ["string", "null"], "default": null,
+    "description": "Optional directory every reference must resolve inside (symlinks may not escape). Without it, a symlink may not leave its own folder."
+   },
+   "render_proof": {"type": "boolean", "default": true, "description": "Build + render the lounge proof (validation always runs). Existing Godot is preferred; absent Godot uses a labelled lower-fidelity software preview, never visual approval."},
+   "ref_thumbnails": {"type": "boolean", "default": true, "description": "Put downscaled reference thumbnails on the private proof sheet."},
+   "mode": {"type": "string", "enum": ["albedo", "measured"], "default": "albedo",
+            "description": "albedo = undo the baked light when deriving texture colours (default; better in the round-trip test); measured = use the measured colours as-is."},
+   "proof_res": {"type": "array", "items": {"type": "integer", "minimum": 64, "maximum": 1024}, "minItems": 2, "maxItems": 2, "default": [400, 300]},
+   "timeout_s": {"type": "integer", "minimum": 30, "maximum": 3600, "default": 900, "description": "Proof stage timeout; the measure stage has its own 180 s bound."}
+  }
+ },
+ "returns": {
+  "type": "object",
+  "required": ["ok", "status", "pack_dir", "validation_report", "proof_sheet", "errors", "warnings", "hashes"],
+  "properties": {
+   "ok": {"type": "boolean", "description": "true only if every validator passed (status draft)."},
+   "status": {"type": "string", "enum": ["draft", "invalid", "rejected"],
+              "description": "draft = valid, awaiting human review; invalid = drafted but a validator failed (files kept); rejected = bad input, nothing left behind. There is no approved status."},
+   "pack_dir": {"type": ["string", "null"]},
+   "pack_json": {"type": ["string", "null"]},
+   "audio_json": {"type": ["string", "null"]},
+   "provenance": {"type": ["string", "null"], "description": "PROVENANCE.json: reference sha256s, notes hash, library/catalog hashes, output hashes, draft_unapproved."},
+   "validation_report": {"type": ["string", "null"], "description": "validation.json: lane-kits validate_pack_dict, registry resolution, room build + per-asset checks, audio palette check, refpack checks, style-match numbers."},
+   "proof_sheet": {"type": ["string", "null"], "description": "proof/proof_sheet.png: reference thumbnails | proof renders | palette, light ramp, fog."},
+   "validation": {"type": "object"},
+   "errors": {"type": "array", "items": {"type": "string"}},
+   "warnings": {"type": "array", "items": {"type": "string"}},
+   "hashes": {"type": "object", "description": "sha256 of pack.json, audio.json and the measurements."},
+   "timings": {"type": "object"}
+  }
+ }
+}

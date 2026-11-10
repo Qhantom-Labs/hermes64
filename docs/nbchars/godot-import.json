@@ -1,0 +1,169 @@
+{
+ "files": {
+  "cameo_visor/cameo_visor_01.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "dasher16_v1/clips.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "forest_village/cairn_dasher.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "forest_village/cat_black.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "forest_village/cat_calico.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "forest_village/cat_tabby.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "forest_village/cat_tuxedo.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "forest_village/cat_white.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "forest_village/dog_saddle.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "forest_village/fv_elder.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "forest_village/fv_scribe.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "forest_village/fv_smith.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "forest_village/fv_warden.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "forest_village/reed_warden.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "human16_v1/clips.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "human16_v1/mannequin.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/cairn_dasher.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "polar_pod/cat_black.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "polar_pod/cat_calico.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "polar_pod/cat_tabby.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "polar_pod/cat_tuxedo.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "polar_pod/cat_white.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "polar_pod/dog_saddle.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "polar_pod/ivo.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/luma.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/neri.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/new_arrival.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/pp_elder.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/pp_engineer.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/pp_kid.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/pp_medic.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/reed_warden.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "polar_pod/sol.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/study_07.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/study_08.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "polar_pod/tavi.glb": {
+   "clips": 13,
+   "playing": 13
+  },
+  "quad16_v1/clips.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "quad16_v1/mannequin.glb": {
+   "clips": 7,
+   "playing": 7
+  },
+  "warden15_v1/clips.glb": {
+   "clips": 7,
+   "playing": 7
+  }
+ },
+ "godot": "4.6.2-stable",
+ "note": "runtime GLTFDocument import (no editor cache), headless; python-exported files from the parity run + rig-kit mannequins and clip packs",
+ "ok": true,
+ "summary": {
+  "clips_expected": 381,
+  "clips_playing": 381,
+  "files": 39,
+  "files_reported": 39
+ }
+}

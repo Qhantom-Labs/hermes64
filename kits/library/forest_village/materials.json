@@ -1,0 +1,399 @@
+{
+ "mat_forest_village_band": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "band",
+  "texture_gen": "stripes",
+  "tile_m": 0.75
+ },
+ "mat_forest_village_bark": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "bark",
+  "texture_gen": "bark",
+  "tile_m": 0.75
+ },
+ "mat_forest_village_body": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "body",
+  "texture_gen": "grain",
+  "tile_m": 1.5
+ },
+ "mat_forest_village_body_alt": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "body_alt",
+  "texture_gen": "grain",
+  "tile_m": 1.5
+ },
+ "mat_forest_village_book": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "book",
+  "texture_gen": "spines",
+  "tile_m": 0.4
+ },
+ "mat_forest_village_cap": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "cap",
+  "texture_gen": "grass",
+  "tile_m": 1.5
+ },
+ "mat_forest_village_ceiling": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "ceiling",
+  "texture_gen": "planks",
+  "tile_m": 2.0
+ },
+ "mat_forest_village_chrome": {
+  "env": "env_iron",
+  "kind": "chrome_env",
+  "pack": "forest_village",
+  "role": "chrome",
+  "tint": "stone_3"
+ },
+ "mat_forest_village_cliff": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "cliff",
+  "texture_gen": "streaks",
+  "tile_m": 4.0
+ },
+ "mat_forest_village_coat": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "coat"
+ },
+ "mat_forest_village_costume": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "costume"
+ },
+ "mat_forest_village_cushion": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "cushion",
+  "texture_gen": "fabric",
+  "tile_m": 0.6
+ },
+ "mat_forest_village_dirt": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "dirt",
+  "texture_gen": "dirt",
+  "tile_m": 3.0
+ },
+ "mat_forest_village_door": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "door",
+  "texture_gen": "planks",
+  "tile_m": 2.0
+ },
+ "mat_forest_village_fabric": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "fabric",
+  "texture_gen": "checks",
+  "tile_m": 0.3
+ },
+ "mat_forest_village_face": {
+  "kind": "face_atlas",
+  "pack": "forest_village",
+  "role": "face"
+ },
+ "mat_forest_village_field": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "field",
+  "texture_gen": "blotch",
+  "tile_m": 6.0
+ },
+ "mat_forest_village_fire": {
+  "kind": "emissive",
+  "pack": "forest_village",
+  "role": "fire",
+  "texture_gen": "fire"
+ },
+ "mat_forest_village_floor": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "floor",
+  "texture_gen": "planks",
+  "tile_m": 2.0
+ },
+ "mat_forest_village_flower": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "flower",
+  "texture_gen": "leaves",
+  "tile_m": 0.75
+ },
+ "mat_forest_village_foliage": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "foliage",
+  "texture_gen": "leaves",
+  "tile_m": 1.5
+ },
+ "mat_forest_village_frame": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "frame",
+  "texture_gen": "grain",
+  "tile_m": 1.0
+ },
+ "mat_forest_village_fur": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "fur",
+  "texture_gen": "fur",
+  "tile_m": 0.6
+ },
+ "mat_forest_village_glass": {
+  "env": "env_glass",
+  "kind": "glass_env",
+  "pack": "forest_village",
+  "role": "glass",
+  "tint": "sky_1"
+ },
+ "mat_forest_village_grass": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "grass",
+  "texture_gen": "grass",
+  "tile_m": 3.0
+ },
+ "mat_forest_village_headwear": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "headwear"
+ },
+ "mat_forest_village_hull": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "hull",
+  "texture_gen": "planks",
+  "tile_m": 1.5
+ },
+ "mat_forest_village_hull_alt": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "hull_alt",
+  "texture_gen": "grain",
+  "tile_m": 0.75
+ },
+ "mat_forest_village_ice": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "ice",
+  "texture_gen": "ice",
+  "tile_m": 3.0
+ },
+ "mat_forest_village_knit": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "knit",
+  "texture_gen": "knit",
+  "tile_m": 0.6
+ },
+ "mat_forest_village_leather": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "leather",
+  "texture_gen": "leather",
+  "tile_m": 0.6
+ },
+ "mat_forest_village_light": {
+  "kind": "emissive",
+  "pack": "forest_village",
+  "role": "light",
+  "texture_gen": "glow"
+ },
+ "mat_forest_village_metal": {
+  "env": "env_iron",
+  "kind": "chrome_env",
+  "pack": "forest_village",
+  "role": "metal",
+  "tint": "stone_2"
+ },
+ "mat_forest_village_opening": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "opening",
+  "texture_gen": "flat",
+  "tile_m": 1.0
+ },
+ "mat_forest_village_orb": {
+  "env": "env_glass",
+  "kind": "glass_env",
+  "pack": "forest_village",
+  "role": "orb",
+  "tint": "leaf_2"
+ },
+ "mat_forest_village_paper": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "paper",
+  "texture_gen": "paper",
+  "tile_m": 0.4
+ },
+ "mat_forest_village_particle": {
+  "kind": "card_alpha",
+  "pack": "forest_village",
+  "role": "particle",
+  "texture_gen": "flat"
+ },
+ "mat_forest_village_path": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "path",
+  "texture_gen": "blotch",
+  "tile_m": 3.0
+ },
+ "mat_forest_village_post": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "post",
+  "texture_gen": "bark",
+  "tile_m": 0.75
+ },
+ "mat_forest_village_quilt": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "quilt",
+  "texture_gen": "quilt_diamond",
+  "tile_m": 0.6
+ },
+ "mat_forest_village_rail": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "rail",
+  "texture_gen": "grain",
+  "tile_m": 0.75
+ },
+ "mat_forest_village_rock": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "rock",
+  "texture_gen": "rock",
+  "tile_m": 2.0
+ },
+ "mat_forest_village_roof": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "roof",
+  "texture_gen": "thatch",
+  "tile_m": 2.0
+ },
+ "mat_forest_village_rope": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "rope",
+  "texture_gen": "rope",
+  "tile_m": 0.3
+ },
+ "mat_forest_village_sand": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "sand",
+  "texture_gen": "sand",
+  "tile_m": 3.0
+ },
+ "mat_forest_village_screen": {
+  "kind": "emissive",
+  "pack": "forest_village",
+  "role": "screen",
+  "texture_gen": "paper"
+ },
+ "mat_forest_village_skin": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "skin",
+  "texture_gen": "flat",
+  "tile_m": 1.0
+ },
+ "mat_forest_village_sky": {
+  "kind": "view_plane",
+  "pack": "forest_village",
+  "role": "sky",
+  "texture_gen": "scene"
+ },
+ "mat_forest_village_snow": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "snow",
+  "texture_gen": "snow",
+  "tile_m": 3.0
+ },
+ "mat_forest_village_step": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "step",
+  "texture_gen": "blocks",
+  "tile_m": 2.0
+ },
+ "mat_forest_village_stone": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "stone",
+  "texture_gen": "blocks",
+  "tile_m": 2.0
+ },
+ "mat_forest_village_trim": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "trim",
+  "texture_gen": "grain",
+  "tile_m": 1.0
+ },
+ "mat_forest_village_view": {
+  "kind": "view_plane",
+  "pack": "forest_village",
+  "role": "view",
+  "texture_gen": "scene"
+ },
+ "mat_forest_village_vista": {
+  "kind": "view_plane",
+  "pack": "forest_village",
+  "role": "vista",
+  "texture_gen": "vgrad"
+ },
+ "mat_forest_village_vista_far": {
+  "kind": "view_plane",
+  "pack": "forest_village",
+  "role": "vista_far",
+  "texture_gen": "vgrad"
+ },
+ "mat_forest_village_wall": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "wall",
+  "texture_gen": "plaster",
+  "tile_m": 2.0
+ },
+ "mat_forest_village_wall_alt": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "wall_alt",
+  "texture_gen": "planks",
+  "tile_m": 2.0
+ },
+ "mat_forest_village_water": {
+  "kind": "water",
+  "pack": "forest_village",
+  "role": "water",
+  "texture_gen": "water",
+  "tile_m": 3.0
+ },
+ "mat_forest_village_wood": {
+  "kind": "baked_unlit",
+  "pack": "forest_village",
+  "role": "wood",
+  "texture_gen": "grain",
+  "tile_m": 1.5
+ }
+}

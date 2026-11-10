@@ -1,0 +1,4421 @@
+{
+ "anchors": {
+  "cell_block_centre": "origin on the centre of a cell block at floor level (ground tiles, floors, courts, pyramids)",
+  "cell_centre": "origin on one cell's centre at floor level (stairs, slopes, causeways)",
+  "cell_edge": "origin on a cell boundary line at floor level (walls straddle it; cliffs stand on it facing south)",
+  "corner": "origin on a cell corner at floor level (piers)",
+  "door_anchor": "origin on the room.gd door anchor: 0.4 m in from the room edge = 0.1 m inside the wall centre line",
+  "free": "footprint-centred free prop (statues, columns, obelisks, altars, nature)",
+  "wall_face": "origin on a wall's face at floor level (banners, vines)"
+ },
+ "connectors": [
+  {
+   "a": "edge",
+   "b": "edge",
+   "rule": "walls, ramparts and cliffs meet end to end on cell boundaries"
+  },
+  {
+   "a": "ground_edge",
+   "b": "ground_edge",
+   "rule": "ground tiles meet edge to edge on the datum (edges stay at y = 0)"
+  },
+  {
+   "a": "corner",
+   "b": "ruin.pier",
+   "rule": "a pier covers the joint where two walls meet on a cell corner"
+  },
+  {
+   "a": "door",
+   "b": "ruin.gate",
+   "rule": "a door socket takes exactly one ruin.gate frame (room.gd places it from the room's door data via the arch.door binding); ruin.gate__sealed is the closed state"
+  },
+  {
+   "a": "stair_bottom",
+   "b": "edge",
+   "rule": "a stair flight's foot on a cell edge at the lower level, its top on the far edge"
+  },
+  {
+   "a": "stair_foot",
+   "b": "stair_bottom",
+   "rule": "a pyramid's stair foot meets the approach paving"
+  },
+  {
+   "a": "slope_foot",
+   "b": "slope_crest",
+   "rule": "slopes chain terrace levels cell by cell"
+  },
+  {
+   "a": "wall",
+   "b": "relic.banner|wild.vines",
+   "rule": "wall-face props hang on wall sockets"
+  },
+  {
+   "a": "shore",
+   "b": "land.ground",
+   "rule": "the oasis bank rim lies on the ground datum (water at -0.25 m)"
+  },
+  {
+   "a": "terrace_edge",
+   "b": "slope_crest",
+   "rule": "a terrace top edge takes a land.slope crest or a stair top on the grid"
+  },
+  {
+   "a": "wash",
+   "b": "wash",
+   "rule": "dry-wash channels meet on the north/south tile edges (same depth, centred)"
+  }
+ ],
+ "format": 1,
+ "grid": {
+  "cell_m": 4.0,
+  "door_anchor_from_room_edge_m": 0.4,
+  "doorway_clear_m": [
+   2.0,
+   3.0
+  ],
+  "doorway_cut_m": [
+   2.8,
+   3.6
+  ],
+  "front": "glTF +Z (south)",
+  "name": "RUIN GRID",
+  "note": "room plot = cells x 4 m + 0.5 m apron each side; door.position for side cell i = 4*i + 2; its world-space side-cell midpoint is 4*i + 2.5 after the runtime adds 0.5 m (the door anchor 0.4 m in from the room edge lies inside the 1 m wall)",
+  "pyramid_tier_m": 2.0,
+  "room_apron_m": 0.5,
+  "stair_rise_m": 0.25,
+  "stair_run_m": 0.4,
+  "storey_m": 4.5,
+  "up": "glTF +Y",
+  "wall_inset_m": 0.5,
+  "wall_thickness_m": 1.0,
+  "yaw_steps_deg": 90
+ },
+ "pieces": {
+  "land.causeway": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    3.4,
+    4.0,
+    0.76
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "land.causeway",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0.6,
+      2.0
+     ],
+     "type": "edge",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0.6,
+      -2.0
+     ],
+     "type": "edge",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 68
+  },
+  "land.causeway__broken": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    3.4,
+    4.0,
+    0.7018
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "land.causeway",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0.6,
+      2.0
+     ],
+     "type": "edge",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0.6,
+      -2.0
+     ],
+     "type": "edge",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 220
+  },
+  "land.causeway__end": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    3.4,
+    5.3,
+    0.76
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "land.causeway",
+   "preset": "end",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0.6,
+      2.0
+     ],
+     "type": "edge",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0.6,
+      -2.0
+     ],
+     "type": "edge",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 100
+  },
+  "land.causeway__steps": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    3.4,
+    4.81,
+    0.76
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "land.causeway",
+   "preset": "steps",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0.6,
+      2.0
+     ],
+     "type": "edge",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0.6,
+      -2.0
+     ],
+     "type": "edge",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 156
+  },
+  "land.cliff": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    8.0,
+    4.8452,
+    6.0
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "land.cliff",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    }
+   ],
+   "tris": 64
+  },
+  "land.cliff__corner": {
+   "anchor": "corner",
+   "bbox_size_m": [
+    4.0,
+    5.6521,
+    6.0
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "land.cliff",
+   "preset": "corner",
+   "sockets": [],
+   "tris": 78
+  },
+  "land.cliff__end": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    8.3615,
+    5.1028,
+    6.0
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "land.cliff",
+   "preset": "end",
+   "sockets": [],
+   "tris": 88
+  },
+  "land.cliff__low": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    8.0,
+    4.8452,
+    3.0
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "land.cliff",
+   "preset": "low",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    }
+   ],
+   "tris": 64
+  },
+  "land.cliff__pillar": {
+   "anchor": "free",
+   "bbox_size_m": [
+    5.4172,
+    6.2944,
+    9.0
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "land.cliff",
+   "preset": "pillar",
+   "sockets": [],
+   "tris": 68
+  },
+  "land.ground": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    8.0,
+    8.0,
+    0.179
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      4.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -4.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 32
+  },
+  "land.ground__court": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    8.0,
+    8.0,
+    0.0
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": "court",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      4.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -4.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 8
+  },
+  "land.ground__jungle": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    8.0,
+    8.0,
+    0.2256
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": "jungle",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      4.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -4.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 32
+  },
+  "land.ground__jungle_1": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    4.0,
+    4.0,
+    0.0319
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": "jungle_1",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      2.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -2.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 8
+  },
+  "land.ground__jungle_4": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    16.0,
+    16.0,
+    0.2969
+   ],
+   "cells": [
+    4,
+    4
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": "jungle_4",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -8.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      8.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      8.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -8.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 128
+  },
+  "land.ground__jungle_far": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    16.0,
+    16.0,
+    0.0967
+   ],
+   "cells": [
+    4,
+    4
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": "jungle_far",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -8.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      8.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      8.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -8.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 32
+  },
+  "land.ground__paved": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    8.0,
+    8.0,
+    0.0436
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": "paved",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      4.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -4.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 8
+  },
+  "land.ground__paved_1": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    4.0,
+    4.0,
+    0.0
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": "paved_1",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      2.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -2.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 2
+  },
+  "land.ground__sand_1": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    4.0,
+    4.0,
+    0.0378
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": "sand_1",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      2.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -2.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 8
+  },
+  "land.ground__sand_4": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    16.0,
+    16.0,
+    0.3196
+   ],
+   "cells": [
+    4,
+    4
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": "sand_4",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -8.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      8.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      8.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -8.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 128
+  },
+  "land.ground__sand_far": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    16.0,
+    16.0,
+    0.1029
+   ],
+   "cells": [
+    4,
+    4
+   ],
+   "class": "terrain",
+   "kit_id": "land.ground",
+   "preset": "sand_far",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -8.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      8.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      8.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -8.0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 32
+  },
+  "land.sky": {
+   "anchor": null,
+   "bbox_size_m": [
+    790.9488,
+    790.9488,
+    460.0
+   ],
+   "cells": null,
+   "class": "sky",
+   "kit_id": "land.sky",
+   "preset": null,
+   "sockets": [],
+   "tris": 84
+  },
+  "land.sky__canopy": {
+   "anchor": null,
+   "bbox_size_m": [
+    790.9488,
+    790.9488,
+    460.0
+   ],
+   "cells": null,
+   "class": "sky",
+   "kit_id": "land.sky",
+   "preset": "canopy",
+   "sockets": [],
+   "tris": 116
+  },
+  "land.sky__dunes": {
+   "anchor": null,
+   "bbox_size_m": [
+    790.9488,
+    790.9488,
+    460.0
+   ],
+   "cells": null,
+   "class": "sky",
+   "kit_id": "land.sky",
+   "preset": "dunes",
+   "sockets": [],
+   "tris": 116
+  },
+  "land.sky__mesas": {
+   "anchor": null,
+   "bbox_size_m": [
+    790.9488,
+    790.9488,
+    460.0
+   ],
+   "cells": null,
+   "class": "sky",
+   "kit_id": "land.sky",
+   "preset": "mesas",
+   "sockets": [],
+   "tris": 116
+  },
+  "land.skyline": {
+   "anchor": null,
+   "bbox_size_m": [
+    60.0,
+    0.0,
+    19.0
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "land.skyline",
+   "preset": null,
+   "sockets": [],
+   "tris": 40
+  },
+  "land.skyline__canopy": {
+   "anchor": null,
+   "bbox_size_m": [
+    60.0,
+    0.0,
+    19.0
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "land.skyline",
+   "preset": "canopy",
+   "sockets": [],
+   "tris": 23
+  },
+  "land.skyline__mesas": {
+   "anchor": null,
+   "bbox_size_m": [
+    60.0,
+    0.0,
+    19.0
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "land.skyline",
+   "preset": "mesas",
+   "sockets": [],
+   "tris": 14
+  },
+  "land.slope": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    4.0,
+    4.0,
+    2.0
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "land.slope",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      2.0
+     ],
+     "type": "slope_foot",
+     "width_m": 4.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      2.0,
+      -2.0
+     ],
+     "type": "slope_crest",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 28
+  },
+  "land.slope__earth": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    4.0,
+    4.0,
+    2.0
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "land.slope",
+   "preset": "earth",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      2.0
+     ],
+     "type": "slope_foot",
+     "width_m": 4.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      2.0,
+      -2.0
+     ],
+     "type": "slope_crest",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 28
+  },
+  "land.slope__low": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    4.0,
+    4.0,
+    1.0
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "land.slope",
+   "preset": "low",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      2.0
+     ],
+     "type": "slope_foot",
+     "width_m": 4.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      1.0,
+      -2.0
+     ],
+     "type": "slope_crest",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 28
+  },
+  "land.terrace": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    8.8,
+    8.837,
+    2.15
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "land.terrace",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      2.0,
+      4.0
+     ],
+     "type": "terrace_edge",
+     "width_m": 8.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      2.0,
+      -4.0
+     ],
+     "type": "terrace_edge",
+     "width_m": 8.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      2.0,
+      0
+     ],
+     "type": "terrace_edge",
+     "width_m": 8.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      2.0,
+      0
+     ],
+     "type": "terrace_edge",
+     "width_m": 8.0
+    }
+   ],
+   "tris": 92
+  },
+  "land.terrace__high": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    12.8,
+    12.8761,
+    3.65
+   ],
+   "cells": [
+    3,
+    3
+   ],
+   "class": "terrain",
+   "kit_id": "land.terrace",
+   "preset": "high",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      3.5,
+      6.0
+     ],
+     "type": "terrace_edge",
+     "width_m": 12.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      3.5,
+      -6.0
+     ],
+     "type": "terrace_edge",
+     "width_m": 12.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -6.0,
+      3.5,
+      0
+     ],
+     "type": "terrace_edge",
+     "width_m": 12.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      6.0,
+      3.5,
+      0
+     ],
+     "type": "terrace_edge",
+     "width_m": 12.0
+    }
+   ],
+   "tris": 140
+  },
+  "land.terrace__jungle": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    8.8,
+    8.8,
+    2.15
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "land.terrace",
+   "preset": "jungle",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      2.0,
+      4.0
+     ],
+     "type": "terrace_edge",
+     "width_m": 8.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      2.0,
+      -4.0
+     ],
+     "type": "terrace_edge",
+     "width_m": 8.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      2.0,
+      0
+     ],
+     "type": "terrace_edge",
+     "width_m": 8.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      2.0,
+      0
+     ],
+     "type": "terrace_edge",
+     "width_m": 8.0
+    }
+   ],
+   "tris": 92
+  },
+  "land.terrace__low": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    4.8078,
+    4.837,
+    1.15
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "land.terrace",
+   "preset": "low",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      1.0,
+      2.0
+     ],
+     "type": "terrace_edge",
+     "width_m": 4.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      1.0,
+      -2.0
+     ],
+     "type": "terrace_edge",
+     "width_m": 4.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      1.0,
+      0
+     ],
+     "type": "terrace_edge",
+     "width_m": 4.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      1.0,
+      0
+     ],
+     "type": "terrace_edge",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 44
+  },
+  "land.wash": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    8.0,
+    8.0,
+    0.45
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "land.wash",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      -0.45,
+      4.0
+     ],
+     "type": "wash",
+     "width_m": 2.3
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      -0.45,
+      -4.0
+     ],
+     "type": "wash",
+     "width_m": 2.3
+    },
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 184
+  },
+  "land.wash__jungle": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    8.0,
+    8.0,
+    0.45
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "land.wash",
+   "preset": "jungle",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      -0.45,
+      4.0
+     ],
+     "type": "wash",
+     "width_m": 2.3
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      -0.45,
+      -4.0
+     ],
+     "type": "wash",
+     "width_m": 2.3
+    },
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 184
+  },
+  "land.wash__narrow": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    4.0,
+    4.0,
+    0.3
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "terrain",
+   "kit_id": "land.wash",
+   "preset": "narrow",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      -0.3,
+      2.0
+     ],
+     "type": "wash",
+     "width_m": 2.3
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      -0.3,
+      -2.0
+     ],
+     "type": "wash",
+     "width_m": 2.3
+    },
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    }
+   ],
+   "tris": 76
+  },
+  "relic.altar": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.2,
+    1.4,
+    1.44
+   ],
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "relic.altar",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      1.2,
+      0
+     ],
+     "type": "focus"
+    }
+   ],
+   "tris": 232
+  },
+  "relic.altar__fire": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.2,
+    1.4,
+    1.98
+   ],
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "relic.altar",
+   "preset": "fire",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      1.2,
+      0
+     ],
+     "type": "focus"
+    }
+   ],
+   "tris": 256
+  },
+  "relic.altar__sun": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.2,
+    1.4,
+    2.75
+   ],
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "relic.altar",
+   "preset": "sun",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      1.2,
+      0
+     ],
+     "type": "focus"
+    }
+   ],
+   "tris": 344
+  },
+  "relic.banner": {
+   "anchor": "wall_face",
+   "bbox_size_m": null,
+   "cells": null,
+   "class": "soft",
+   "kit_id": "relic.banner",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 120
+  },
+  "relic.banner__short": {
+   "anchor": "wall_face",
+   "bbox_size_m": null,
+   "cells": null,
+   "class": "soft",
+   "kit_id": "relic.banner",
+   "preset": "short",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 120
+  },
+  "relic.brazier": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.9311,
+    0.9454,
+    1.8696
+   ],
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "relic.brazier",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "light"
+    }
+   ],
+   "tris": 212
+  },
+  "relic.brazier__pedestal": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.9311,
+    0.9454,
+    1.82
+   ],
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "relic.brazier",
+   "preset": "pedestal",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "light"
+    }
+   ],
+   "tris": 216
+  },
+  "relic.brazier__pit": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.3578,
+    1.3787,
+    0.95
+   ],
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "relic.brazier",
+   "preset": "pit",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "light"
+    }
+   ],
+   "tris": 152
+  },
+  "relic.brazier__unlit": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.9311,
+    0.9454,
+    1.3096
+   ],
+   "cells": null,
+   "class": "furniture",
+   "kit_id": "relic.brazier",
+   "preset": "unlit",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "light"
+    }
+   ],
+   "tris": 164
+  },
+  "relic.coffer": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.96,
+    0.66,
+    0.67
+   ],
+   "cells": null,
+   "class": "prop",
+   "kit_id": "relic.coffer",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.6
+     ],
+     "type": "use"
+    }
+   ],
+   "tris": 116
+  },
+  "relic.coffer__open": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.96,
+    0.8734,
+    0.6286
+   ],
+   "cells": null,
+   "class": "prop",
+   "kit_id": "relic.coffer",
+   "preset": "open",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.6
+     ],
+     "type": "use"
+    }
+   ],
+   "tris": 128
+  },
+  "relic.dial": {
+   "anchor": "free",
+   "bbox_size_m": [
+    4.8,
+    4.8,
+    2.4
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "relic.dial",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0.5,
+      0
+     ],
+     "type": "puzzle"
+    }
+   ],
+   "tris": 222
+  },
+  "relic.dial__ruined": {
+   "anchor": "free",
+   "bbox_size_m": [
+    4.8217,
+    5.3993,
+    2.4
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "relic.dial",
+   "preset": "ruined",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0.5,
+      0
+     ],
+     "type": "puzzle"
+    }
+   ],
+   "tris": 222
+  },
+  "relic.plate": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.2,
+    1.2,
+    0.08
+   ],
+   "cells": null,
+   "class": "prop",
+   "kit_id": "relic.plate",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "plate"
+    }
+   ],
+   "tris": 44
+  },
+  "relic.plate__glyph": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.2,
+    1.2,
+    0.08
+   ],
+   "cells": null,
+   "class": "prop",
+   "kit_id": "relic.plate",
+   "preset": "glyph",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "plate"
+    }
+   ],
+   "tris": 44
+  },
+  "relic.plate__pressed": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.2,
+    1.2,
+    0.05
+   ],
+   "cells": null,
+   "class": "prop",
+   "kit_id": "relic.plate",
+   "preset": "pressed",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "plate"
+    }
+   ],
+   "tris": 44
+  },
+  "relic.sarcophagus": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.8,
+    1.5,
+    1.485
+   ],
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "relic.sarcophagus",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      1.1
+     ],
+     "type": "use"
+    }
+   ],
+   "tris": 168
+  },
+  "relic.sarcophagus__broken": {
+   "anchor": "free",
+   "bbox_size_m": [
+    3.5049,
+    2.95,
+    1.155
+   ],
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "relic.sarcophagus",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      1.1
+     ],
+     "type": "use"
+    }
+   ],
+   "tris": 212
+  },
+  "relic.sarcophagus__open": {
+   "anchor": "free",
+   "bbox_size_m": [
+    3.3932,
+    2.2555,
+    1.505
+   ],
+   "cells": null,
+   "class": "furniture_large",
+   "kit_id": "relic.sarcophagus",
+   "preset": "open",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      1.1
+     ],
+     "type": "use"
+    }
+   ],
+   "tris": 180
+  },
+  "relic.statue": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.5,
+    1.3,
+    3.63
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "relic.statue",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "landmark"
+    }
+   ],
+   "tris": 442
+  },
+  "relic.statue__buried": {
+   "anchor": "free",
+   "bbox_size_m": [
+    5.2465,
+    4.0968,
+    3.8407
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "relic.statue",
+   "preset": "buried",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "landmark"
+    }
+   ],
+   "tris": 246
+  },
+  "relic.statue__guardian": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.3,
+    2.6,
+    2.842
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "relic.statue",
+   "preset": "guardian",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "landmark"
+    }
+   ],
+   "tris": 418
+  },
+  "relic.statue__idol": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.8,
+    0.8,
+    1.8675
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "relic.statue",
+   "preset": "idol",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "landmark"
+    }
+   ],
+   "tris": 246
+  },
+  "relic.tablet": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.5,
+    0.8,
+    2.6231
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "relic.tablet",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.6
+     ],
+     "type": "read"
+    }
+   ],
+   "tris": 84
+  },
+  "relic.tablet__awakened": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.5,
+    0.8,
+    2.6231
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "relic.tablet",
+   "preset": "awakened",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.6
+     ],
+     "type": "read"
+    }
+   ],
+   "tris": 84
+  },
+  "relic.tablet__fallen": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.9622,
+    1.8274,
+    1.02
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "relic.tablet",
+   "preset": "fallen",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.6
+     ],
+     "type": "read"
+    }
+   ],
+   "tris": 112
+  },
+  "relic.tablet__tablet": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.1,
+    0.5943,
+    1.3381
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "relic.tablet",
+   "preset": "tablet",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.6
+     ],
+     "type": "read"
+    }
+   ],
+   "tris": 56
+  },
+  "relic.urn": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.684,
+    0.684,
+    0.9
+   ],
+   "cells": null,
+   "class": "prop",
+   "kit_id": "relic.urn",
+   "preset": null,
+   "sockets": [],
+   "tris": 96
+  },
+  "relic.urn__amphora": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.5486,
+    0.546,
+    0.95
+   ],
+   "cells": null,
+   "class": "prop",
+   "kit_id": "relic.urn",
+   "preset": "amphora",
+   "sockets": [],
+   "tris": 140
+  },
+  "relic.urn__bowl": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.5819,
+    0.5909,
+    0.24
+   ],
+   "cells": null,
+   "class": "prop",
+   "kit_id": "relic.urn",
+   "preset": "bowl",
+   "sockets": [],
+   "tris": 72
+  },
+  "relic.urn__broken": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.9207,
+    0.684,
+    0.738
+   ],
+   "cells": null,
+   "class": "prop",
+   "kit_id": "relic.urn",
+   "preset": "broken",
+   "sockets": [],
+   "tris": 108
+  },
+  "ruin.arch": {
+   "anchor": "free",
+   "bbox_size_m": [
+    5.3,
+    1.4,
+    5.55
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.arch",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "passage",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 388
+  },
+  "ruin.arch__broken": {
+   "anchor": "free",
+   "bbox_size_m": [
+    6.1215,
+    2.7391,
+    4.6926
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.arch",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "passage",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 300
+  },
+  "ruin.arch__corbel": {
+   "anchor": "free",
+   "bbox_size_m": [
+    5.3,
+    1.4,
+    5.7
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.arch",
+   "preset": "corbel",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "passage",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 348
+  },
+  "ruin.column": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.5,
+    1.5,
+    5.0
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.column",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 1.5,
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "pillar"
+    }
+   ],
+   "tris": 244
+  },
+  "ruin.column__broken": {
+   "anchor": "free",
+   "bbox_size_m": [
+    3.4103,
+    1.9654,
+    2.3069
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.column",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 1.5,
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "pillar"
+    }
+   ],
+   "tris": 184
+  },
+  "ruin.column__fallen": {
+   "anchor": "free",
+   "bbox_size_m": [
+    7.306,
+    2.6151,
+    0.8735
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.column",
+   "preset": "fallen",
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 1.5,
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "pillar"
+    }
+   ],
+   "tris": 188
+  },
+  "ruin.column__stump": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.0269,
+    1.8147,
+    1.276
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.column",
+   "preset": "stump",
+   "sockets": [
+    {
+     "facing": "up",
+     "footprint_m": 1.5,
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "pillar"
+    }
+   ],
+   "tris": 156
+  },
+  "ruin.court": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    13.2,
+    13.2,
+    1.5
+   ],
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "ruin.court",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      3.3
+     ],
+     "type": "entrance",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 104
+  },
+  "ruin.court__closed": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    13.2,
+    13.2,
+    1.5
+   ],
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "ruin.court",
+   "preset": "closed",
+   "sockets": [],
+   "tris": 72
+  },
+  "ruin.court__cross": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    13.2,
+    13.2,
+    1.5
+   ],
+   "cells": [
+    3,
+    3
+   ],
+   "class": "shell",
+   "kit_id": "ruin.court",
+   "preset": "cross",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      3.3
+     ],
+     "type": "entrance",
+     "width_m": 4.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -3.3
+     ],
+     "type": "entrance",
+     "width_m": 4.0
+    },
+    {
+     "facing": "e",
+     "position": [
+      3.3,
+      0,
+      0
+     ],
+     "type": "entrance",
+     "width_m": 4.0
+    },
+    {
+     "facing": "w",
+     "position": [
+      -3.3,
+      0,
+      0
+     ],
+     "type": "entrance",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 200
+  },
+  "ruin.court__small": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    9.2,
+    9.2,
+    1.0
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "shell",
+   "kit_id": "ruin.court",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      2.2
+     ],
+     "type": "entrance",
+     "width_m": 4.0
+    }
+   ],
+   "tris": 80
+  },
+  "ruin.floor": {
+   "anchor": "cell_centre",
+   "bbox_size_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "ruin.floor",
+   "preset": null,
+   "sockets": [],
+   "tris": 56
+  },
+  "ruin.floor__block": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": null,
+   "cells": [
+    2,
+    2
+   ],
+   "class": "arch",
+   "kit_id": "ruin.floor",
+   "preset": "block",
+   "sockets": [],
+   "tris": 56
+  },
+  "ruin.floor__ceiling": {
+   "anchor": "cell_centre",
+   "bbox_size_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "ruin.floor",
+   "preset": "ceiling",
+   "sockets": [],
+   "tris": 100
+  },
+  "ruin.floor__cracked": {
+   "anchor": "cell_centre",
+   "bbox_size_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "ruin.floor",
+   "preset": "cracked",
+   "sockets": [],
+   "tris": 232
+  },
+  "ruin.floor__inlay": {
+   "anchor": "cell_centre",
+   "bbox_size_m": null,
+   "cells": [
+    1,
+    1
+   ],
+   "class": "arch",
+   "kit_id": "ruin.floor",
+   "preset": "inlay",
+   "sockets": [],
+   "tris": 68
+  },
+  "ruin.gate": {
+   "anchor": "door_anchor",
+   "bbox_size_m": null,
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.gate",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "cut",
+     "position": [
+      0,
+      0,
+      0.1
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 130
+  },
+  "ruin.gate__pylon": {
+   "anchor": "door_anchor",
+   "bbox_size_m": null,
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.gate",
+   "preset": "pylon",
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "cut",
+     "position": [
+      0,
+      0,
+      0.1
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 430
+  },
+  "ruin.gate__sealed": {
+   "anchor": "door_anchor",
+   "bbox_size_m": null,
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.gate",
+   "preset": "sealed",
+   "sockets": [
+    {
+     "facing": "s",
+     "fits": "cut",
+     "position": [
+      0,
+      0,
+      0.1
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 140
+  },
+  "ruin.obelisk": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.9,
+    1.9,
+    7.6
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.obelisk",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "landmark"
+    }
+   ],
+   "tris": 158
+  },
+  "ruin.obelisk__broken": {
+   "anchor": "free",
+   "bbox_size_m": [
+    5.5663,
+    2.7104,
+    3.36
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.obelisk",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "landmark"
+    }
+   ],
+   "tris": 202
+  },
+  "ruin.obelisk__short": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.9,
+    1.9,
+    3.0
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.obelisk",
+   "preset": "short",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "landmark"
+    }
+   ],
+   "tris": 158
+  },
+  "ruin.pier": {
+   "anchor": "corner",
+   "bbox_size_m": [
+    1.6,
+    1.6,
+    5.0
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.pier",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "corner"
+    }
+   ],
+   "tris": 132
+  },
+  "ruin.pier__broken": {
+   "anchor": "corner",
+   "bbox_size_m": [
+    2.3042,
+    2.1161,
+    2.4307
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.pier",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "corner"
+    }
+   ],
+   "tris": 116
+  },
+  "ruin.pier__low": {
+   "anchor": "corner",
+   "bbox_size_m": [
+    1.6,
+    1.6,
+    1.6
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.pier",
+   "preset": "low",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "corner"
+    }
+   ],
+   "tris": 132
+  },
+  "ruin.pyramid": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    11.7277,
+    11.85,
+    10.4779
+   ],
+   "cells": [
+    3,
+    3
+   ],
+   "class": "building",
+   "kit_id": "ruin.pyramid",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      6.0
+     ],
+     "type": "stair_foot",
+     "width_m": 3.2
+    },
+    {
+     "facing": "up",
+     "position": [
+      0,
+      6.0,
+      0
+     ],
+     "type": "summit"
+    }
+   ],
+   "tris": 768
+  },
+  "ruin.pyramid__altar": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    11.7277,
+    11.85,
+    5.1579
+   ],
+   "cells": [
+    3,
+    3
+   ],
+   "class": "building",
+   "kit_id": "ruin.pyramid",
+   "preset": "altar",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      6.0
+     ],
+     "type": "stair_foot",
+     "width_m": 3.2
+    },
+    {
+     "facing": "up",
+     "position": [
+      0,
+      4.0,
+      0
+     ],
+     "type": "summit"
+    }
+   ],
+   "tris": 552
+  },
+  "ruin.pyramid__great": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    19.5,
+    19.85,
+    12.4448
+   ],
+   "cells": [
+    5,
+    5
+   ],
+   "class": "building",
+   "kit_id": "ruin.pyramid",
+   "preset": "great",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      10.0
+     ],
+     "type": "stair_foot",
+     "width_m": 3.2
+    },
+    {
+     "facing": "up",
+     "position": [
+      0,
+      8.0,
+      0
+     ],
+     "type": "summit"
+    }
+   ],
+   "tris": 876
+  },
+  "ruin.pyramid__tier": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    7.5,
+    7.5,
+    2.0
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "building",
+   "kit_id": "ruin.pyramid",
+   "preset": "tier",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      4.0
+     ],
+     "type": "stair_foot",
+     "width_m": 3.2
+    },
+    {
+     "facing": "up",
+     "position": [
+      0,
+      2.0,
+      0
+     ],
+     "type": "summit"
+    }
+   ],
+   "tris": 88
+  },
+  "ruin.rampart": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    4.0,
+    2.3,
+    4.4
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.rampart",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    }
+   ],
+   "tris": 116
+  },
+  "ruin.rampart__broken": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    4.0,
+    2.8246,
+    4.4
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.rampart",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    }
+   ],
+   "tris": 356
+  },
+  "ruin.rampart__corner": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    3.05,
+    3.05,
+    4.4
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.rampart",
+   "preset": "corner",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    }
+   ],
+   "tris": 128
+  },
+  "ruin.rampart__tower": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    4.6,
+    4.3749,
+    5.65
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.rampart",
+   "preset": "tower",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    }
+   ],
+   "tris": 272
+  },
+  "ruin.rubble": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.2972,
+    2.0766,
+    0.971
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.rubble",
+   "preset": null,
+   "sockets": [],
+   "tris": 172
+  },
+  "ruin.rubble__drift": {
+   "anchor": "free",
+   "bbox_size_m": [
+    4.6553,
+    3.5453,
+    0.7602
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.rubble",
+   "preset": "drift",
+   "sockets": [],
+   "tris": 142
+  },
+  "ruin.rubble__drums": {
+   "anchor": "free",
+   "bbox_size_m": [
+    3.0264,
+    1.9175,
+    1.59
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.rubble",
+   "preset": "drums",
+   "sockets": [],
+   "tris": 112
+  },
+  "ruin.rubble__large": {
+   "anchor": "free",
+   "bbox_size_m": [
+    4.1264,
+    3.3974,
+    0.9647
+   ],
+   "cells": null,
+   "class": "structure",
+   "kit_id": "ruin.rubble",
+   "preset": "large",
+   "sockets": [],
+   "tris": 388
+  },
+  "ruin.stairs": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    4.0203,
+    4.0125,
+    2.35
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "ruin.stairs",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      1.6
+     ],
+     "type": "stair_bottom",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      2.0,
+      -1.6
+     ],
+     "type": "stair_top",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 184
+  },
+  "ruin.stairs__low": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    4.0203,
+    2.4125,
+    1.35
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "ruin.stairs",
+   "preset": "low",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.8
+     ],
+     "type": "stair_bottom",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      1.0,
+      -0.8
+     ],
+     "type": "stair_top",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 152
+  },
+  "ruin.stairs__ruined": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    4.9171,
+    4.0125,
+    2.3952
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "ruin.stairs",
+   "preset": "ruined",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      1.6
+     ],
+     "type": "stair_bottom",
+     "width_m": 3.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      2.0,
+      -1.6
+     ],
+     "type": "stair_top",
+     "width_m": 3.0
+    }
+   ],
+   "tris": 236
+  },
+  "ruin.stairs__wide": {
+   "anchor": "cell_centre",
+   "bbox_size_m": [
+    8.0203,
+    4.0125,
+    2.35
+   ],
+   "cells": [
+    1,
+    1
+   ],
+   "class": "structure",
+   "kit_id": "ruin.stairs",
+   "preset": "wide",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      1.6
+     ],
+     "type": "stair_bottom",
+     "width_m": 7.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      2.0,
+      -1.6
+     ],
+     "type": "stair_top",
+     "width_m": 7.0
+    }
+   ],
+   "tris": 184
+  },
+  "ruin.wall": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    4.0,
+    1.24,
+    4.5
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.wall",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.5
+     ],
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -0.5
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 100
+  },
+  "ruin.wall__broken": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    4.0,
+    2.2127,
+    3.9398
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.wall",
+   "preset": "broken",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.5
+     ],
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -0.5
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 212
+  },
+  "ruin.wall__door": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    4.0,
+    1.24,
+    4.5
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.wall",
+   "preset": "door",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.5
+     ],
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -0.5
+     ],
+     "type": "wall"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -0.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 204
+  },
+  "ruin.wall__half": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    2.0,
+    1.24,
+    4.5
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.wall",
+   "preset": "half",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -1.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      1.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.5
+     ],
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -0.5
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 100
+  },
+  "ruin.wall__low": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    4.0,
+    1.2,
+    1.32
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.wall",
+   "preset": "low",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.5
+     ],
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -0.5
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 100
+  },
+  "ruin.wall__relief": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    4.0,
+    1.24,
+    4.5
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.wall",
+   "preset": "relief",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.5
+     ],
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -0.5
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 124
+  },
+  "ruin.wall__window": {
+   "anchor": "cell_edge",
+   "bbox_size_m": [
+    4.0,
+    1.24,
+    4.5
+   ],
+   "cells": null,
+   "class": "arch",
+   "kit_id": "ruin.wall",
+   "preset": "window",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      2.0,
+      0,
+      0
+     ],
+     "type": "edge"
+    },
+    {
+     "cell": 0,
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0.5
+     ],
+     "type": "wall"
+    },
+    {
+     "cell": 0,
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -0.5
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 120
+  },
+  "wild.dune": {
+   "anchor": "free",
+   "bbox_size_m": [
+    9.0266,
+    8.8854,
+    1.5
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wild.dune",
+   "preset": null,
+   "sockets": [],
+   "tris": 94
+  },
+  "wild.dune__crescent": {
+   "anchor": "free",
+   "bbox_size_m": [
+    9.7844,
+    10.0759,
+    2.4
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wild.dune",
+   "preset": "crescent",
+   "sockets": [],
+   "tris": 94
+  },
+  "wild.dune__ridge": {
+   "anchor": "free",
+   "bbox_size_m": [
+    16.9334,
+    3.9999,
+    1.5
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wild.dune",
+   "preset": "ridge",
+   "sockets": [],
+   "tris": 94
+  },
+  "wild.dune__small": {
+   "anchor": "free",
+   "bbox_size_m": [
+    4.0118,
+    3.9491,
+    1.0
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wild.dune",
+   "preset": "small",
+   "sockets": [],
+   "tris": 94
+  },
+  "wild.fern": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.2808,
+    2.3008,
+    0.7228
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.fern",
+   "preset": null,
+   "sockets": [],
+   "tris": 136
+  },
+  "wild.fern__small": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.3666,
+    1.3785,
+    0.4478
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.fern",
+   "preset": "small",
+   "sockets": [],
+   "tris": 136
+  },
+  "wild.fern__spray": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.5644,
+    1.6153,
+    1.548
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.fern",
+   "preset": "spray",
+   "sockets": [],
+   "tris": 104
+  },
+  "wild.log": {
+   "anchor": "free",
+   "bbox_size_m": [
+    4.0721,
+    1.3872,
+    1.2019
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.log",
+   "preset": null,
+   "sockets": [],
+   "tris": 72
+  },
+  "wild.log__roots": {
+   "anchor": "free",
+   "bbox_size_m": [
+    3.9972,
+    4.0448,
+    0.6198
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.log",
+   "preset": "roots",
+   "sockets": [],
+   "tris": 184
+  },
+  "wild.log__stump": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.1786,
+    1.2089,
+    0.95
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.log",
+   "preset": "stump",
+   "sockets": [],
+   "tris": 112
+  },
+  "wild.oasis": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    12.0,
+    12.0,
+    1.5568
+   ],
+   "cells": [
+    3,
+    3
+   ],
+   "class": "terrain",
+   "kit_id": "wild.oasis",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -6.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      6.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      6.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -6.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      3.772
+     ],
+     "type": "shore"
+    },
+    {
+     "facing": "up",
+     "position": [
+      0,
+      -0.25,
+      0
+     ],
+     "type": "water"
+    }
+   ],
+   "tris": 352
+  },
+  "wild.oasis__jungle": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    12.0,
+    12.0,
+    1.4621
+   ],
+   "cells": [
+    3,
+    3
+   ],
+   "class": "terrain",
+   "kit_id": "wild.oasis",
+   "preset": "jungle",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -6.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      6.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      6.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -6.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      3.772
+     ],
+     "type": "shore"
+    },
+    {
+     "facing": "up",
+     "position": [
+      0,
+      -0.25,
+      0
+     ],
+     "type": "water"
+    }
+   ],
+   "tris": 346
+  },
+  "wild.oasis__small": {
+   "anchor": "cell_block_centre",
+   "bbox_size_m": [
+    8.0,
+    8.0,
+    1.5568
+   ],
+   "cells": [
+    2,
+    2
+   ],
+   "class": "terrain",
+   "kit_id": "wild.oasis",
+   "preset": "small",
+   "sockets": [
+    {
+     "facing": "w",
+     "position": [
+      -4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "e",
+     "position": [
+      4.0,
+      0,
+      0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      4.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "n",
+     "position": [
+      0,
+      0,
+      -4.0
+     ],
+     "type": "ground_edge"
+    },
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      2.296
+     ],
+     "type": "shore"
+    },
+    {
+     "facing": "up",
+     "position": [
+      0,
+      -0.25,
+      0
+     ],
+     "type": "water"
+    }
+   ],
+   "tris": 352
+  },
+  "wild.palm": {
+   "anchor": "free",
+   "bbox_size_m": [
+    4.757,
+    4.4838,
+    6.5362
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.palm",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "plant"
+    }
+   ],
+   "tris": 188
+  },
+  "wild.palm__leaning": {
+   "anchor": "free",
+   "bbox_size_m": [
+    5.0227,
+    4.4874,
+    6.6142
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.palm",
+   "preset": "leaning",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "plant"
+    }
+   ],
+   "tris": 188
+  },
+  "wild.palm__twin": {
+   "anchor": "free",
+   "bbox_size_m": [
+    5.8616,
+    5.113,
+    6.5602
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.palm",
+   "preset": "twin",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "plant"
+    }
+   ],
+   "tris": 296
+  },
+  "wild.palm__young": {
+   "anchor": "free",
+   "bbox_size_m": [
+    3.4875,
+    3.3051,
+    3.4289
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.palm",
+   "preset": "young",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "plant"
+    }
+   ],
+   "tris": 172
+  },
+  "wild.reeds": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.6181,
+    0.674,
+    1.0263
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.reeds",
+   "preset": null,
+   "sockets": [],
+   "tris": 14
+  },
+  "wild.reeds__grass": {
+   "anchor": "free",
+   "bbox_size_m": [
+    0.4579,
+    0.5618,
+    0.5478
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.reeds",
+   "preset": "grass",
+   "sockets": [],
+   "tris": 18
+  },
+  "wild.reeds__papyrus": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.7101,
+    1.4669,
+    1.873
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.reeds",
+   "preset": "papyrus",
+   "sockets": [],
+   "tris": 130
+  },
+  "wild.rock": {
+   "anchor": "free",
+   "bbox_size_m": [
+    1.6979,
+    1.4228,
+    1.2974
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wild.rock",
+   "preset": null,
+   "sockets": [],
+   "tris": 42
+  },
+  "wild.rock__cluster": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.8392,
+    1.7398,
+    1.0561
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wild.rock",
+   "preset": "cluster",
+   "sockets": [],
+   "tris": 72
+  },
+  "wild.rock__pillar": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.6455,
+    2.1152,
+    4.5275
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wild.rock",
+   "preset": "pillar",
+   "sockets": [],
+   "tris": 90
+  },
+  "wild.rock__slab": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.9824,
+    2.3327,
+    0.9594
+   ],
+   "cells": null,
+   "class": "terrain",
+   "kit_id": "wild.rock",
+   "preset": "slab",
+   "sockets": [],
+   "tris": 64
+  },
+  "wild.shrub": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.0347,
+    1.2319,
+    0.9489
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.shrub",
+   "preset": null,
+   "sockets": [],
+   "tris": 144
+  },
+  "wild.shrub__broadleaf": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.6458,
+    2.6904,
+    0.8768
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.shrub",
+   "preset": "broadleaf",
+   "sockets": [],
+   "tris": 132
+  },
+  "wild.shrub__flowering": {
+   "anchor": "free",
+   "bbox_size_m": [
+    2.1268,
+    1.4156,
+    0.9747
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.shrub",
+   "preset": "flowering",
+   "sockets": [],
+   "tris": 194
+  },
+  "wild.tree": {
+   "anchor": "free",
+   "bbox_size_m": [
+    6.903,
+    5.5072,
+    9.3644
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.tree",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "plant"
+    }
+   ],
+   "tris": 242
+  },
+  "wild.tree__strangler": {
+   "anchor": "free",
+   "bbox_size_m": [
+    5.6619,
+    5.0309,
+    9.4265
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.tree",
+   "preset": "strangler",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "plant"
+    }
+   ],
+   "tris": 276
+  },
+  "wild.tree__tall": {
+   "anchor": "free",
+   "bbox_size_m": [
+    5.8479,
+    3.9739,
+    10.8381
+   ],
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.tree",
+   "preset": "tall",
+   "sockets": [
+    {
+     "facing": "up",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "plant"
+    }
+   ],
+   "tris": 242
+  },
+  "wild.vines": {
+   "anchor": "wall_face",
+   "bbox_size_m": null,
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.vines",
+   "preset": null,
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 46
+  },
+  "wild.vines__narrow": {
+   "anchor": "wall_face",
+   "bbox_size_m": null,
+   "cells": null,
+   "class": "flora",
+   "kit_id": "wild.vines",
+   "preset": "narrow",
+   "sockets": [
+    {
+     "facing": "s",
+     "position": [
+      0,
+      0,
+      0
+     ],
+     "type": "wall"
+    }
+   ],
+   "tris": 38
+  }
+ }
+}

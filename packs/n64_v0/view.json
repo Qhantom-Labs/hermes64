@@ -1,0 +1,425 @@
+{
+  "fog": {
+    "color": "#4A2F18",
+    "far": 20.0,
+    "near": 6.0
+  },
+  "kit_pack_id": "forest_village",
+  "light_rig": {
+    "ambient": 0.5,
+    "ao": 0.32,
+    "ao_height": 0.4,
+    "gamma": 1.0,
+    "ground": 0.02,
+    "key": 0.48,
+    "key_dir": [
+      0.55,
+      -0.45,
+      0.7
+    ],
+    "sky": 0.1
+  },
+  "look": {
+    "backdrop": {
+      "asset": "sky.backdrop",
+      "interiors": false,
+      "scale": 0.1,
+      "y": -1.0
+    },
+    "emitters": {
+      "arch.window": {
+        "color": "#fff0d0",
+        "intensity": 0.7,
+        "offset": [
+          0,
+          1.4,
+          0.6
+        ],
+        "pool": [
+          2.4,
+          0.26
+        ],
+        "pool_color": "#fff0d0",
+        "radius": 4.0
+      },
+      "furn.hearth": {
+        "color": "#ffb060",
+        "halo": [
+          0.9,
+          0.55
+        ],
+        "halo_color": "#ffa040",
+        "halo_mode": "mix",
+        "halo_softness": 0.9,
+        "intensity": 0.9,
+        "offset": [
+          0,
+          0.5,
+          0.3
+        ],
+        "pool": [
+          2.6,
+          0.26
+        ],
+        "pool_color": "#ffc27a",
+        "radius": 4.5
+      },
+      "furn.lamp": {
+        "color": "#ffd9a0",
+        "intensity": 0.8,
+        "offset": [
+          0,
+          1.3,
+          0
+        ],
+        "pool": [
+          2.4,
+          0.24
+        ],
+        "pool_color": "#ffd9a0",
+        "radius": 4.0
+      }
+    },
+    "exterior": {
+      "backdrop_scale": 0.25,
+      "camera": {
+        "back": 2.0,
+        "fov": 60,
+        "height": 3.2,
+        "target_frac": 0.45,
+        "target_y": 2.6
+      },
+      "clusters": [
+        {
+          "asset": "nature.rock",
+          "at": [
+            0.22,
+            0.72
+          ],
+          "count": 6,
+          "scale": [
+            0.3,
+            0.7
+          ],
+          "spread": 1.5
+        }
+      ],
+      "framing": [
+        {
+          "asset": "nature.rock",
+          "distance": 4.2,
+          "scale": [
+            2.2,
+            2.0,
+            2.2
+          ],
+          "shade": 0.45,
+          "side": -1.0
+        },
+        {
+          "asset": "nature.tree",
+          "distance": 6.0,
+          "scale": 1.0,
+          "shade": 0.55,
+          "side": 1.0
+        }
+      ],
+      "landmark": {
+        "asset": "arch.tower",
+        "crest_frac": 1.0,
+        "distance": 34.0,
+        "height_frac": 0.3,
+        "scale": 1.0,
+        "side": 0.2
+      },
+      "particles": {
+        "area": [
+          30,
+          8,
+          30
+        ],
+        "color": "#ecd9a8",
+        "count": 120,
+        "drift": 0.4,
+        "size": 0.05,
+        "speed": 0.12
+      },
+      "rhythm": {
+        "asset": "prop/path_marker",
+        "max": 6,
+        "offset": 1.3,
+        "scale": 0.9,
+        "spacing": 3.0
+      },
+      "supersede": [
+        "sky.backdrop",
+        "terrain.patch"
+      ],
+      "vegetation": {
+        "asset": "nature.bush",
+        "count": 8,
+        "scale": [
+          0.7,
+          1.1
+        ],
+        "shade": 0.75
+      },
+      "vista": {
+        "above_terraces": true,
+        "asset": "terrain.vista",
+        "scale": [
+          1.0,
+          2.4,
+          1.0
+        ],
+        "y": 0.0
+      }
+    },
+    "materials": {
+      "cliff": {
+        "gloss": 0.0
+      },
+      "glass": {
+        "lit": 0.25
+      },
+      "sky": {
+        "fog_scale": 0.0,
+        "lit": 0.0
+      },
+      "vista": {
+        "fog_scale": 0.65,
+        "lit": 0.0
+      },
+      "vista_far": {
+        "fog_scale": 0.8,
+        "lit": 0.0
+      }
+    },
+    "note": "Look block: exterior (exterior_day) and interior (interior_warm) profiles under the shared N64 look convention (kits/core/n64_look.json); warm practicals (hearth, lamp, window) are pack emitters.",
+    "profiles": {
+      "exterior": {
+        "ambient": [
+          "#6e4724",
+          0.55
+        ],
+        "background": "#e2d4ae",
+        "bake_desaturate": 0.4,
+        "environment": "exterior_day",
+        "fill": [
+          "#355f9c",
+          0.28
+        ],
+        "fill_dir": [
+          0.6,
+          0.3,
+          -0.4
+        ],
+        "fog": {
+          "color": "#e2d4ae",
+          "far": 46.0,
+          "max": 0.85,
+          "near": 8.0
+        },
+        "grade": {
+          "contrast": 1.08,
+          "exposure": 1.0,
+          "gain": "#ffffff",
+          "gamma": 1.0,
+          "lift": "#120d08",
+          "saturation": 1.0
+        },
+        "ground": [
+          "#2b1b0e",
+          0.1
+        ],
+        "key": [
+          "#ecd9a8",
+          0.5
+        ],
+        "key_dir": [
+          -0.6,
+          0.35,
+          0.5
+        ],
+        "sky": [
+          "#9cc4ec",
+          0.18
+        ]
+      },
+      "interior": {
+        "actors": {
+          "kicker": [
+            "#ffe2b0",
+            0.18
+          ],
+          "kicker_up": 0.7,
+          "note": "characters share the world rig; a modest warm kicker keeps silhouettes readable against dark timber"
+        },
+        "ambient": [
+          "#8a6440",
+          0.5
+        ],
+        "background": "#1a110a",
+        "bake_desaturate": 0.4,
+        "chrome": {
+          "gamma": 1.25,
+          "hot": 0.2,
+          "hot_from": 0.94,
+          "note": "painted sphere-map metal/glass (N64 convention)",
+          "rim": 0.0
+        },
+        "environment": "interior_warm",
+        "fill": [
+          "#5b74a8",
+          0.16
+        ],
+        "fill_dir": [
+          -0.6,
+          0.25,
+          -0.5
+        ],
+        "fog": {
+          "color": "#1a110a",
+          "far": 34.0,
+          "max": 0.35,
+          "near": 10.0
+        },
+        "grade": {
+          "contrast": 1.1,
+          "exposure": 1.0,
+          "gain": "#ffffff",
+          "gamma": 0.96,
+          "lift": "#0b0704",
+          "saturation": 1.0
+        },
+        "ground": [
+          "#3a2614",
+          0.16
+        ],
+        "key": [
+          "#f4dcae",
+          0.5
+        ],
+        "key_dir": [
+          0.4,
+          0.78,
+          0.45
+        ],
+        "room": {
+          "base_ao": 0.3,
+          "base_height": 0.5,
+          "floor_lift": 0.12,
+          "note": "cottage value structure: rafters fall into shadow, wall bases in contact shadow, the floor centre catches the lamp",
+          "top_dark": 0.18,
+          "top_from": 1.0,
+          "top_to": 2.8
+        },
+        "sky": [
+          "#e8d2a8",
+          0.14
+        ]
+      }
+    }
+  },
+  "pack_id": "n64_v0",
+  "palette": {
+    "body": "#2F4F1D",
+    "boots": "#120D08",
+    "collectible": "#C4D77A",
+    "door": "#FFF8E8",
+    "floor": "#B08348",
+    "head": "#96B84C",
+    "prop": "#2F4F1D",
+    "ui_bg": "#120D08",
+    "ui_text": "#96B84C",
+    "void": "#120D08",
+    "wall": "#FFF8E8"
+  },
+  "palette_colors": [
+    "#120D08",
+    "#2B1B0E",
+    "#4A2F18",
+    "#6E4724",
+    "#8F6334",
+    "#B08348",
+    "#D0A868",
+    "#ECD9A8",
+    "#FFF8E8",
+    "#1D3315",
+    "#2F4F1D",
+    "#487028",
+    "#6A9234",
+    "#96B84C",
+    "#C4D77A",
+    "#3A3833",
+    "#5D5850",
+    "#868074",
+    "#B2AB9B",
+    "#355F9C",
+    "#5E8FCE",
+    "#9CC4EC",
+    "#A8862F",
+    "#D8B95C",
+    "#8E3A24",
+    "#C25A2C",
+    "#F3CFA6",
+    "#D9A06E",
+    "#A7693F",
+    "#6B4127",
+    "#7A2F4F",
+    "#2F6F6A"
+  ],
+  "style_gate": {
+    "accent_hues": [
+      [
+        38.0,
+        58.0
+      ]
+    ],
+    "accent_sat_min": 0.55,
+    "note": "Warm-earth pack: browns/cream are base colours here, so the accent budget measures only the saturated lamp/straw golds."
+  },
+  "ui": {
+    "accent": "#f2d58a",
+    "dim": "#a3acb8",
+    "fill": "#0b0d12d6",
+    "frame": "#bdb19c",
+    "ink": "#0b0d12",
+    "text": "#e8e0cc"
+  },
+  "yards": {
+    "by_kit_ref": {},
+    "default": {
+      "bowl": 0.6,
+      "cap_role": "cap",
+      "cliff_role": "cliff",
+      "exit_width": 2.4,
+      "floor_rings": 2,
+      "ground_role": "dirt",
+      "jag": 0.5,
+      "path_role": "path",
+      "path_width": 1.6,
+      "plan": "rounded_rect",
+      "pond_role": "water",
+      "ponds": [
+        {
+          "rx": 1.9,
+          "ry": 1.2,
+          "thickness": 0.1,
+          "x": 0.26,
+          "y": 0.22
+        }
+      ],
+      "ridge_height": 5.5,
+      "ridge_run": 5.0,
+      "segments": 24,
+      "terrace_rise": 0.6,
+      "terrace_run": 2.6,
+      "terraces": 1,
+      "tread_role": "field",
+      "view_gap": 0.75,
+      "view_gap_width": 90.0
+    },
+    "note": "Exterior yards (adventure_maker/yards.py -> kit terrain.yard per exterior room). Secondary demo pack: exterior only."
+  }
+}

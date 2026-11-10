@@ -1,0 +1,78 @@
+{
+  "fog": {
+    "color": "#4A2F18",
+    "far": 20.0,
+    "near": 6.0
+  },
+  "kit_pack_id": "forest_village",
+  "light_rig": {
+    "ambient": 0.5,
+    "ao": 0.32,
+    "ao_height": 0.4,
+    "gamma": 1.0,
+    "ground": 0.02,
+    "key": 0.48,
+    "key_dir": [
+      0.55,
+      -0.45,
+      0.7
+    ],
+    "sky": 0.1
+  },
+  "pack_id": "forest_village",
+  "palette": {
+    "body": "#2F4F1D",
+    "boots": "#120D08",
+    "collectible": "#C4D77A",
+    "door": "#FFF8E8",
+    "floor": "#B08348",
+    "head": "#96B84C",
+    "prop": "#2F4F1D",
+    "ui_bg": "#120D08",
+    "ui_text": "#96B84C",
+    "void": "#120D08",
+    "wall": "#FFF8E8"
+  },
+  "palette_colors": [
+    "#120D08",
+    "#2B1B0E",
+    "#4A2F18",
+    "#6E4724",
+    "#8F6334",
+    "#B08348",
+    "#D0A868",
+    "#ECD9A8",
+    "#FFF8E8",
+    "#1D3315",
+    "#2F4F1D",
+    "#487028",
+    "#6A9234",
+    "#96B84C",
+    "#C4D77A",
+    "#3A3833",
+    "#5D5850",
+    "#868074",
+    "#B2AB9B",
+    "#355F9C",
+    "#5E8FCE",
+    "#9CC4EC",
+    "#A8862F",
+    "#D8B95C",
+    "#8E3A24",
+    "#C25A2C",
+    "#F3CFA6",
+    "#D9A06E",
+    "#A7693F",
+    "#6B4127",
+    "#7A2F4F",
+    "#2F6F6A"
+  ],
+  "ui": {
+    "accent": "#f2d58a",
+    "dim": "#a3acb8",
+    "fill": "#0b0d12d6",
+    "frame": "#bdb19c",
+    "ink": "#0b0d12",
+    "text": "#e8e0cc"
+  }
+}

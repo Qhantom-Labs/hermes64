@@ -1,0 +1,405 @@
+{
+ "coordinates": "glTF: pos [x, y(up), z]; rot_y_deg about +Y; shell floor centre = origin",
+ "layout_id": "lounge",
+ "layout_version": "3.1.0",
+ "pack": "polar_pod",
+ "pack_version": "3.1.0",
+ "pieces": [
+  {
+   "generator": "arch.room_shell",
+   "glb": "polar_pod/rooms/lounge/shell.glb",
+   "params": {
+    "ceiling": "dome",
+    "ceiling_rise": 1.4,
+    "ceiling_role": "ceiling",
+    "cove": 0.35,
+    "depth": 6.0,
+    "floor_role": "floor",
+    "height": 3.0,
+    "openings": [
+     {
+      "height": 2.1,
+      "kind": "door",
+      "offset": 0.0,
+      "shape": "arch",
+      "sill": 0.0,
+      "wall": "s",
+      "width": 1.1
+     },
+     {
+      "height": 1.2,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "rounded_rect",
+      "sill": 0.9,
+      "wall": "n",
+      "width": 2.4
+     },
+     {
+      "height": 0.9,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "round",
+      "sill": 1.1,
+      "wall": "e",
+      "width": 0.9
+     }
+    ],
+    "plan": "rect",
+    "trim": true,
+    "wall_role": "wall",
+    "wall_segments": 28,
+    "width": 7.0
+   },
+   "pos": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "preset": "default",
+   "rot_y_deg": 0.0,
+   "sha256": "bab86c843a81d780a3799a90fb6baefa1609c7890ba6f463198832e7be46c1b3",
+   "slot": "shell",
+   "tris": 233
+  },
+  {
+   "generator": "arch.door",
+   "glb": "polar_pod/rooms/lounge/door_main.glb",
+   "opening": 0,
+   "params": {
+    "frame_depth": 0.3,
+    "frame_role": "chrome",
+    "frame_width": 0.12,
+    "height": 2.1,
+    "leaf": "porthole",
+    "leaf_role": "body",
+    "open_angle": 0.0,
+    "shape": "arch",
+    "width": 1.1
+   },
+   "pos": [
+    0.0,
+    0.0,
+    3.0
+   ],
+   "preset": "default",
+   "rot_y_deg": 180.0,
+   "sha256": "312c2cb8ffc270dacd5d5b9d2a7a2cebc7efca9e0bb5d163da7172a88e5fb4ab",
+   "slot": "door_main",
+   "tris": 148
+  },
+  {
+   "generator": "arch.window",
+   "glb": "polar_pod/rooms/lounge/window_main.glb",
+   "opening": 1,
+   "params": {
+    "frame_depth": 0.3,
+    "frame_role": "frame",
+    "frame_style": "molded",
+    "frame_width": 0.15,
+    "glass": false,
+    "height": 1.2,
+    "ledge": false,
+    "mullions_x": 0,
+    "mullions_z": 0,
+    "shape": "rounded_rect",
+    "shutters": false,
+    "sill": 0.9,
+    "view_card": true,
+    "width": 2.4
+   },
+   "pos": [
+    0.0,
+    0.0,
+    -3.0
+   ],
+   "preset": "rounded_molded",
+   "rot_y_deg": 0.0,
+   "sha256": "4727265f6c755926228eed5793843c4014578f908c838c5fe6ccbb197e21a4e4",
+   "slot": "window_main",
+   "tris": 194
+  },
+  {
+   "generator": "arch.window",
+   "glb": "polar_pod/rooms/lounge/window_side.glb",
+   "opening": 2,
+   "params": {
+    "frame_depth": 0.25,
+    "frame_role": "chrome",
+    "frame_style": "molded",
+    "frame_width": 0.1,
+    "glass": false,
+    "height": 0.9,
+    "ledge": false,
+    "mullions_x": 0,
+    "mullions_z": 0,
+    "shape": "round",
+    "shutters": false,
+    "sill": 1.1,
+    "view_card": true,
+    "width": 0.9
+   },
+   "pos": [
+    3.5,
+    0.0,
+    -0.0
+   ],
+   "preset": "porthole",
+   "rot_y_deg": 270.0,
+   "sha256": "8a5aead74d8fbb4311d3a76f469a8d24516bee48783883348e872f6d6b04fff9",
+   "slot": "window_side",
+   "tris": 170
+  },
+  {
+   "generator": "furn.pod",
+   "glb": "polar_pod/rooms/lounge/seat_lounge.glb",
+   "params": {
+    "canopy": false,
+    "cushion": true,
+    "cushion_role": "quilt",
+    "depth": 0.9,
+    "feet": 2,
+    "foot_role": "chrome",
+    "height": 0.8,
+    "kind": "chaise",
+    "lobes": 3,
+    "orb": true,
+    "port_role": "chrome",
+    "portholes": 2,
+    "shell_role": "body",
+    "table": true,
+    "throw_role": "fur",
+    "width": 2.1
+   },
+   "pos": [
+    -1.7,
+    0.0,
+    -1.5
+   ],
+   "preset": "chaise",
+   "rot_y_deg": 15.0,
+   "sha256": "589fda26a5e47afe3055f029eac67e4478f2477c9f7e9f104dfa08de6d0db434",
+   "slot": "seat_lounge",
+   "tris": 388
+  },
+  {
+   "generator": "furn.pod",
+   "glb": "polar_pod/rooms/lounge/seat_chair.glb",
+   "params": {
+    "canopy": false,
+    "cushion": true,
+    "cushion_role": "quilt",
+    "depth": 1.2,
+    "feet": 1,
+    "foot_role": "chrome",
+    "height": 0.8,
+    "kind": "bowl",
+    "lobes": 3,
+    "orb": true,
+    "port_role": "chrome",
+    "portholes": 0,
+    "shell_role": "body",
+    "table": true,
+    "throw_role": "fur",
+    "width": 1.3
+   },
+   "pos": [
+    1.9,
+    0.0,
+    -1.3
+   ],
+   "preset": "default",
+   "rot_y_deg": -35.0,
+   "sha256": "feaeb65fe6bfaa6e9e75218a65276ace8010f9aabe551141fc4e6ff4a30ba0c1",
+   "slot": "seat_chair",
+   "tris": 388
+  },
+  {
+   "generator": "furn.table",
+   "glb": "polar_pod/rooms/lounge/table_low.glb",
+   "params": {
+    "base_role": "body",
+    "depth": 1.1,
+    "height": 0.36,
+    "leg_radius": 0.035,
+    "legs": "tulip",
+    "ornament": "sphere",
+    "top_role": "body",
+    "top_shape": "round",
+    "top_thickness": 0.04,
+    "width": 1.1
+   },
+   "pos": [
+    0.1,
+    0.0,
+    -0.5
+   ],
+   "preset": "disc_orb",
+   "rot_y_deg": 0.0,
+   "sha256": "a037b448cd30d4e4473253a591648908a3419c832617815c5180c8c3daf05d38",
+   "slot": "table_low",
+   "tris": 260
+  },
+  {
+   "generator": "furn.rug",
+   "glb": "polar_pod/rooms/lounge/rug.glb",
+   "params": {
+    "depth": 1.6,
+    "fringe": false,
+    "rug_role": "fur",
+    "shape": "oval",
+    "thickness": 0.02,
+    "width": 2.4
+   },
+   "pos": [
+    0.1,
+    0.0,
+    -0.5
+   ],
+   "preset": "default",
+   "rot_y_deg": 0.0,
+   "sha256": "266bbb7e456e09c1458f71ac74b4a3113ea839144ca1f8fd46ccc3cb82e9240c",
+   "slot": "rug",
+   "tris": 68
+  },
+  {
+   "generator": "furn.lamp",
+   "glb": "polar_pod/rooms/lounge/lamp_floor.glb",
+   "params": {
+    "base": "disc",
+    "height": 1.6,
+    "kind": "floor",
+    "shade": "sphere",
+    "shade_size": 0.4,
+    "stand_role": "chrome"
+   },
+   "pos": [
+    2.9,
+    0.0,
+    -2.5
+   ],
+   "preset": "default",
+   "rot_y_deg": -40.0,
+   "sha256": "5588b839046bffd5f85579f4ac3c12f369d9a4d13ec81f9686cad6cbdd0a42f1",
+   "slot": "lamp_floor",
+   "tris": 188
+  },
+  {
+   "generator": "furn.console",
+   "glb": "polar_pod/rooms/lounge/console.glb",
+   "params": {
+    "body_role": "body",
+    "height": 0.76,
+    "joystick": false,
+    "keyboard": true,
+    "kind": "desk",
+    "leg_role": "chrome",
+    "screens": 3,
+    "wavy": 0.8,
+    "width": 2.3
+   },
+   "pos": [
+    2.75,
+    0.0,
+    1.55
+   ],
+   "preset": "desk_triple_crt",
+   "rot_y_deg": -90.0,
+   "sha256": "6f7791548662154d289d627e836ee02a6b4dd32d19ba33b7e076412712833a10",
+   "slot": "console",
+   "tris": 388
+  },
+  {
+   "generator": "furn.shelf",
+   "glb": "polar_pod/rooms/lounge/shelf.glb",
+   "params": {
+    "books": 0.4,
+    "depth": 0.35,
+    "frame_role": "body",
+    "height": 1.8,
+    "kind": "open_rack",
+    "shelves": 4,
+    "width": 1.0
+   },
+   "pos": [
+    -3.25,
+    0.0,
+    1.3
+   ],
+   "preset": "default",
+   "rot_y_deg": 90.0,
+   "sha256": "5cfece2ecbe4060cd54ef942a26fca93ab224c72118fa47ebdc633675c1f28fd",
+   "slot": "shelf",
+   "tris": 144
+  },
+  {
+   "generator": "soft.pillow",
+   "glb": "polar_pod/rooms/lounge/cat_bed.glb",
+   "params": {
+    "piping": false,
+    "role": "fur",
+    "shape": "floor_cushion",
+    "size": 0.6,
+    "thickness": 0.14,
+    "tuft": true
+   },
+   "pos": [
+    -2.3,
+    0.0,
+    0.6
+   ],
+   "preset": "cat_bed",
+   "rot_y_deg": 0.0,
+   "sha256": "9c5910faed5f7af5704af00e42e81095e545779acc01da427144b706ae721bd2",
+   "slot": "cat_bed",
+   "tris": 132
+  },
+  {
+   "generator": "nature.bush",
+   "glb": "polar_pod/rooms/lounge/plant.glb",
+   "params": {
+    "cap": false,
+    "flatness": 0.3,
+    "flowers": 2,
+    "lobes": 3,
+    "size": 0.6
+   },
+   "pos": [
+    -3.0,
+    0.0,
+    -2.5
+   ],
+   "preset": "indoor",
+   "rot_y_deg": 0.0,
+   "sha256": "efdb1894eaafa0ab03bca602b6d8814f6dcf431f7d1953304a2bffef2649093f",
+   "slot": "plant",
+   "tris": 124
+  },
+  {
+   "generator": "furn.container",
+   "glb": "polar_pod/rooms/lounge/container.glb",
+   "params": {
+    "band_role": "chrome",
+    "bands": 2,
+    "body_role": "body",
+    "depth": 0.6,
+    "height": 0.6,
+    "kind": "capsule",
+    "lid_open": 0.0,
+    "width": 0.6
+   },
+   "pos": [
+    -1.6,
+    0.0,
+    2.55
+   ],
+   "preset": "default",
+   "rot_y_deg": 0.0,
+   "sha256": "b076456a1459b1d1afd847dea3e60751a7c3a7b2eac2dcf8a99f9346440c2f18",
+   "slot": "container",
+   "tris": 288
+  }
+ ],
+ "problems": [],
+ "room_tris": 3113
+}

@@ -1,0 +1,132 @@
+{
+ "colors": [
+  "#0b120f",
+  "#18231f",
+  "#2c3b36",
+  "#4e605a",
+  "#2a2c24",
+  "#474a3c",
+  "#686b58",
+  "#8d8e78",
+  "#b2b098",
+  "#d6d2b6",
+  "#1e3517",
+  "#355a20",
+  "#5c832c",
+  "#93b346",
+  "#13271a",
+  "#22432b",
+  "#3b6a3a",
+  "#6c9c4e",
+  "#33241a",
+  "#5a4130",
+  "#87694a",
+  "#6a4a16",
+  "#b48a30",
+  "#eed27a",
+  "#3b6f86",
+  "#6fa1aa",
+  "#a7c9bf",
+  "#c9dccb",
+  "#163f3a",
+  "#2f7566",
+  "#e0752a",
+  "#ffd27e"
+ ],
+ "light_ramp": [
+  1,
+  2,
+  3,
+  6,
+  7,
+  8,
+  9
+ ],
+ "names": [
+  "void",
+  "shade_0",
+  "shade_1",
+  "shade_2",
+  "mstone_0",
+  "mstone_1",
+  "mstone_2",
+  "mstone_3",
+  "mstone_4",
+  "mstone_5",
+  "moss_0",
+  "moss_1",
+  "moss_2",
+  "moss_3",
+  "leaf_0",
+  "leaf_1",
+  "leaf_2",
+  "leaf_3",
+  "earth_0",
+  "earth_1",
+  "earth_2",
+  "gold_0",
+  "gold_1",
+  "gold_2",
+  "sky_0",
+  "sky_1",
+  "sky_2",
+  "haze",
+  "water_0",
+  "water_1",
+  "fire_1",
+  "fire_2"
+ ],
+ "pack_id": "jungle_temple",
+ "roles": {
+  "earth": [
+   "earth_0",
+   "earth_1",
+   "earth_2"
+  ],
+  "fire": [
+   "fire_1",
+   "fire_2"
+  ],
+  "gold_leaf": [
+   "gold_0",
+   "gold_1",
+   "gold_2"
+  ],
+  "humid_sky": [
+   "sky_0",
+   "sky_1",
+   "sky_2",
+   "haze"
+  ],
+  "jungle_water": [
+   "water_0",
+   "water_1"
+  ],
+  "moss": [
+   "moss_0",
+   "moss_1",
+   "moss_2",
+   "moss_3"
+  ],
+  "mossy_stone": [
+   "mstone_0",
+   "mstone_1",
+   "mstone_2",
+   "mstone_3",
+   "mstone_4",
+   "mstone_5"
+  ],
+  "shadow_green": [
+   "void",
+   "shade_0",
+   "shade_1",
+   "shade_2"
+  ],
+  "vines_leaves": [
+   "leaf_0",
+   "leaf_1",
+   "leaf_2",
+   "leaf_3"
+  ]
+ }
+}

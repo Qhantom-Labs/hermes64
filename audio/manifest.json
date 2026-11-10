@@ -1,0 +1,1117 @@
+{
+  "assets": [
+    {
+      "bytes": 352844,
+      "dc": -2.6988334396258504e-08,
+      "duration": 8.0,
+      "file": "wav/ambience.habitat.wav",
+      "frames": 176400,
+      "id": "ambience.habitat",
+      "kind": "ambience",
+      "loop": true,
+      "params": {
+        "bits": 14,
+        "duration": 8.0,
+        "gain": 0.18,
+        "lowpass_hz": 800.0,
+        "rate_divisor": 1,
+        "scene": "habitat",
+        "seed": 1633787463
+      },
+      "peak": 0.17999267578125,
+      "review_flags": [
+        "unheard: noise/hiss balance needs quiet-level review"
+      ],
+      "rms": 0.08260496642373327,
+      "seam": {
+        "energy_ratio_min": 0.35,
+        "head_rms_ratio": 0.9683528763964668,
+        "jump": 0.000335693359375,
+        "jump_limit": 0.003,
+        "slope_limit": 0.003,
+        "slope_mismatch": 0.00030517578125,
+        "tail_rms_ratio": 0.9875936386153183,
+        "window_frames": 441
+      },
+      "sha256": "9635412167144a99252950f78aa6e609f5a2958aa04d97efaa0d71435140c63b",
+      "synth": "ambience"
+    },
+    {
+      "bytes": 352844,
+      "dc": 1.8165225074404764e-08,
+      "duration": 8.0,
+      "file": "wav/ambience.outside.wav",
+      "frames": 176400,
+      "id": "ambience.outside",
+      "kind": "ambience",
+      "loop": true,
+      "params": {
+        "bits": 14,
+        "duration": 8.0,
+        "gain": 0.18,
+        "lowpass_hz": 800.0,
+        "rate_divisor": 1,
+        "scene": "outside",
+        "seed": 1456884791
+      },
+      "peak": 0.17999267578125,
+      "review_flags": [
+        "unheard: noise/hiss balance needs quiet-level review"
+      ],
+      "rms": 0.0431025019383415,
+      "seam": {
+        "energy_ratio_min": 0.35,
+        "head_rms_ratio": 1.4837951776023577,
+        "jump": 0.002105712890625,
+        "jump_limit": 0.003,
+        "slope_limit": 0.003,
+        "slope_mismatch": 0.000579833984375,
+        "tail_rms_ratio": 1.3850528940081708,
+        "window_frames": 441
+      },
+      "sha256": "f4625c7d3c1c5f44512f5f78cfc468b1f63e91a41e9cecc4475384a29da1e9ad",
+      "synth": "ambience"
+    },
+    {
+      "bytes": 352844,
+      "dc": 2.941036440617914e-08,
+      "duration": 8.0,
+      "file": "wav/ambience.storm.wav",
+      "frames": 176400,
+      "id": "ambience.storm",
+      "kind": "ambience",
+      "loop": true,
+      "params": {
+        "bits": 14,
+        "duration": 8.0,
+        "gain": 0.18,
+        "lowpass_hz": 800.0,
+        "rate_divisor": 1,
+        "scene": "storm",
+        "seed": 2174093105
+      },
+      "peak": 0.17999267578125,
+      "review_flags": [
+        "unheard: noise/hiss balance needs quiet-level review"
+      ],
+      "rms": 0.038990267530715425,
+      "seam": {
+        "energy_ratio_min": 0.35,
+        "head_rms_ratio": 1.4322795961909576,
+        "jump": 0.00177001953125,
+        "jump_limit": 0.003,
+        "slope_limit": 0.003,
+        "slope_mismatch": 0.000396728515625,
+        "tail_rms_ratio": 1.0981761328971114,
+        "window_frames": 441
+      },
+      "sha256": "2b2dcad5eaaba19d23e170a62f0421492adcb7c879afea9410bfcf62d6c5e6de",
+      "synth": "ambience"
+    },
+    {
+      "bytes": 15478,
+      "dc": 0.0,
+      "duration": 0.34997732426303857,
+      "file": "wav/cat.chirp.01.wav",
+      "frames": 7717,
+      "id": "cat.chirp.01",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.35,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "mode": "chirp",
+        "pitch": 490.0,
+        "rate_divisor": 1,
+        "roughness": 0.135,
+        "seed": 471220703
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: synthetic cat identity/roughness unverified"
+      ],
+      "rms": 0.12236643903397657,
+      "seam": null,
+      "sha256": "eb1909624ac84d7f086102aad8f2dbda7c297e93ef7d932c574e308dc7df7283",
+      "synth": "cat"
+    },
+    {
+      "bytes": 19008,
+      "dc": 1.3839441672379245e-07,
+      "duration": 0.43002267573696146,
+      "file": "wav/cat.chirp.02.wav",
+      "frames": 9482,
+      "id": "cat.chirp.02",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.43,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "mode": "chirp",
+        "pitch": 527.0,
+        "rate_divisor": 1,
+        "roughness": 0.17,
+        "seed": 3521146886
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: synthetic cat identity/roughness unverified"
+      ],
+      "rms": 0.11939370294934881,
+      "seam": null,
+      "sha256": "4b5405ba6ea9fab9ea97404b298a37b46a163b0de1bb42945146775339669ced",
+      "synth": "cat"
+    },
+    {
+      "bytes": 35324,
+      "dc": -6.747083599064626e-08,
+      "duration": 0.8,
+      "file": "wav/cat.meow.01.wav",
+      "frames": 17640,
+      "id": "cat.meow.01",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.8,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "mode": "meow",
+        "pitch": 360.0,
+        "rate_divisor": 1,
+        "roughness": 0.135,
+        "seed": 2468486540
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: synthetic cat identity/roughness unverified"
+      ],
+      "rms": 0.1416327759246981,
+      "seam": null,
+      "sha256": "cfdfc330b25c6d433a53c0a5a41482f38df0d725faa98651da7a5fd8fc28f232",
+      "synth": "cat"
+    },
+    {
+      "bytes": 38852,
+      "dc": 6.605536390692641e-08,
+      "duration": 0.88,
+      "file": "wav/cat.meow.02.wav",
+      "frames": 19404,
+      "id": "cat.meow.02",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.88,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "mode": "meow",
+        "pitch": 397.0,
+        "rate_divisor": 1,
+        "roughness": 0.17,
+        "seed": 3645728772
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: synthetic cat identity/roughness unverified"
+      ],
+      "rms": 0.13853502089087702,
+      "seam": null,
+      "sha256": "158dbedcab76021f6d5688033aa1a68dee4306626edf3dfa3ce4c84fb9eda956",
+      "synth": "cat"
+    },
+    {
+      "bytes": 79424,
+      "dc": 1.2994383227828168e-07,
+      "duration": 1.8,
+      "file": "wav/cat.purr.01.wav",
+      "frames": 39690,
+      "id": "cat.purr.01",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 1.8,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "mode": "purr",
+        "pitch": 390.0,
+        "rate_divisor": 1,
+        "roughness": 0.135,
+        "seed": 563537569
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: synthetic cat identity/roughness unverified"
+      ],
+      "rms": 0.07148919898490273,
+      "seam": null,
+      "sha256": "e1d977ad87e5655115744552265fe0f995e6fa8b192f3708d40793da230fe929",
+      "synth": "cat"
+    },
+    {
+      "bytes": 82952,
+      "dc": -1.0600982414242293e-07,
+      "duration": 1.88,
+      "file": "wav/cat.purr.02.wav",
+      "frames": 41454,
+      "id": "cat.purr.02",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 1.8800000000000001,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "mode": "purr",
+        "pitch": 427.0,
+        "rate_divisor": 1,
+        "roughness": 0.17,
+        "seed": 4134911367
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: synthetic cat identity/roughness unverified"
+      ],
+      "rms": 0.068563692044418,
+      "seam": null,
+      "sha256": "77331c83d139dbb61a5c6c768c40abdfb063f35052d8615fa1349461c8fcb33f",
+      "synth": "cat"
+    },
+    {
+      "bytes": 4454,
+      "dc": -3.321641156462585e-07,
+      "duration": 0.1,
+      "file": "wav/dialogue.airy.wav",
+      "frames": 2205,
+      "id": "dialogue.airy",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "breath": 0.14,
+        "brightness": 0.22,
+        "duration": 0.1,
+        "formant": 1500.0,
+        "gain": 0.23,
+        "lowpass_hz": 2800.0,
+        "pitch": 255.0,
+        "rate_divisor": 1,
+        "seed": 2608349479
+      },
+      "peak": 0.22998046875,
+      "review_flags": [
+        "unheard: rapid repetition may feel sharp; throttle in runtime"
+      ],
+      "rms": 0.10299103956074863,
+      "seam": null,
+      "sha256": "b413bb7974f18a162636ed8cc6760731cb668c1c240fa672f4d9161498cea299",
+      "synth": "dialogue"
+    },
+    {
+      "bytes": 4454,
+      "dc": 1.3840171485260771e-07,
+      "duration": 0.1,
+      "file": "wav/dialogue.bright.wav",
+      "frames": 2205,
+      "id": "dialogue.bright",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "breath": 0.012,
+        "brightness": 0.6,
+        "duration": 0.1,
+        "formant": 1200.0,
+        "gain": 0.23,
+        "lowpass_hz": 2800.0,
+        "pitch": 210.0,
+        "rate_divisor": 1,
+        "seed": 4014115435
+      },
+      "peak": 0.22998046875,
+      "review_flags": [
+        "unheard: rapid repetition may feel sharp; throttle in runtime"
+      ],
+      "rms": 0.1106108775417751,
+      "seam": null,
+      "sha256": "23b51d7539a9a949256cd104479d67f2bc7b9a2b342ccc739c7041f8aa826fb3",
+      "synth": "dialogue"
+    },
+    {
+      "bytes": 4454,
+      "dc": -6.920085742630386e-08,
+      "duration": 0.1,
+      "file": "wav/dialogue.low.wav",
+      "frames": 2205,
+      "id": "dialogue.low",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "breath": 0.015,
+        "brightness": 0.18,
+        "duration": 0.1,
+        "formant": 550.0,
+        "gain": 0.23,
+        "lowpass_hz": 2800.0,
+        "pitch": 125.0,
+        "rate_divisor": 1,
+        "seed": 511907883
+      },
+      "peak": 0.22998046875,
+      "review_flags": [
+        "unheard: rapid repetition may feel sharp; throttle in runtime"
+      ],
+      "rms": 0.1124514763331952,
+      "seam": null,
+      "sha256": "b71e6c48fb6cfdb623fc2fadd4103745414b75ecc8719e9e7e6937dcf3cee3a0",
+      "synth": "dialogue"
+    },
+    {
+      "bytes": 4454,
+      "dc": 1.1072137188208617e-07,
+      "duration": 0.1,
+      "file": "wav/dialogue.mid.wav",
+      "frames": 2205,
+      "id": "dialogue.mid",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "breath": 0.025,
+        "brightness": 0.35,
+        "duration": 0.1,
+        "formant": 850.0,
+        "gain": 0.23,
+        "lowpass_hz": 2800.0,
+        "pitch": 165.0,
+        "rate_divisor": 1,
+        "seed": 409931907
+      },
+      "peak": 0.22998046875,
+      "review_flags": [
+        "unheard: rapid repetition may feel sharp; throttle in runtime"
+      ],
+      "rms": 0.11384635486167251,
+      "seam": null,
+      "sha256": "2353349c0c682c3b5545432def45d8e833b6beb02a69bca001af39cba95eaed2",
+      "synth": "dialogue"
+    },
+    {
+      "bytes": 10628,
+      "dc": -1.153347623771731e-08,
+      "duration": 0.24,
+      "file": "wav/footstep.floor.01.wav",
+      "frames": 5292,
+      "id": "footstep.floor.01",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.24,
+        "gain": 0.36,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 1737065884,
+        "surface": "floor",
+        "weight": 0.9299999999999999
+      },
+      "peak": 0.3599853515625,
+      "review_flags": [
+        "unheard: noise/hiss balance needs quiet-level review"
+      ],
+      "rms": 0.07149373464726003,
+      "seam": null,
+      "sha256": "a4b9bca12f3d8d4e5a20cedf0b74c03424d4bb61a00c9550d015ea315ff8e730",
+      "synth": "footstep"
+    },
+    {
+      "bytes": 10628,
+      "dc": -7.496759554516251e-08,
+      "duration": 0.24,
+      "file": "wav/footstep.floor.02.wav",
+      "frames": 5292,
+      "id": "footstep.floor.02",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.24,
+        "gain": 0.36,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 3201529757,
+        "surface": "floor",
+        "weight": 1.01
+      },
+      "peak": 0.3599853515625,
+      "review_flags": [
+        "unheard: noise/hiss balance needs quiet-level review"
+      ],
+      "rms": 0.08982826919859235,
+      "seam": null,
+      "sha256": "43e7e2640784af0b532b80779a766f59e32eacebce20efaa3033338a3ba69d70",
+      "synth": "footstep"
+    },
+    {
+      "bytes": 10628,
+      "dc": 1.7300214356575964e-07,
+      "duration": 0.24,
+      "file": "wav/footstep.floor.03.wav",
+      "frames": 5292,
+      "id": "footstep.floor.03",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.24,
+        "gain": 0.36,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 4091499353,
+        "surface": "floor",
+        "weight": 1.0899999999999999
+      },
+      "peak": 0.3599853515625,
+      "review_flags": [
+        "unheard: noise/hiss balance needs quiet-level review"
+      ],
+      "rms": 0.07713937342082047,
+      "seam": null,
+      "sha256": "6e55a34db05728cfef958251124c62f37b23dede5fadee1e21f6e1dd85543a50",
+      "synth": "footstep"
+    },
+    {
+      "bytes": 14156,
+      "dc": -1.7300214356575964e-08,
+      "duration": 0.32,
+      "file": "wav/footstep.snow.01.wav",
+      "frames": 7056,
+      "id": "footstep.snow.01",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.32,
+        "gain": 0.36,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 3934895789,
+        "surface": "snow",
+        "weight": 0.9299999999999999
+      },
+      "peak": 0.3599853515625,
+      "review_flags": [
+        "unheard: noise/hiss balance needs quiet-level review"
+      ],
+      "rms": 0.0597202094438757,
+      "seam": null,
+      "sha256": "e3f38990d98df2811813067f958bf51b944c9e4dc06e7440321f284614691e27",
+      "synth": "footstep"
+    },
+    {
+      "bytes": 14156,
+      "dc": -2.2057773304634354e-07,
+      "duration": 0.32,
+      "file": "wav/footstep.snow.02.wav",
+      "frames": 7056,
+      "id": "footstep.snow.02",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.32,
+        "gain": 0.36,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 1423037223,
+        "surface": "snow",
+        "weight": 1.01
+      },
+      "peak": 0.3599853515625,
+      "review_flags": [
+        "unheard: noise/hiss balance needs quiet-level review"
+      ],
+      "rms": 0.05951053009342595,
+      "seam": null,
+      "sha256": "35bdce4dfe3e3eba0eda86368e002e3e9033e6a884932fde386e24759042aa40",
+      "synth": "footstep"
+    },
+    {
+      "bytes": 14156,
+      "dc": -1.2975160767431974e-07,
+      "duration": 0.32,
+      "file": "wav/footstep.snow.03.wav",
+      "frames": 7056,
+      "id": "footstep.snow.03",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.32,
+        "gain": 0.36,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 2638731215,
+        "surface": "snow",
+        "weight": 1.0899999999999999
+      },
+      "peak": 0.3599853515625,
+      "review_flags": [
+        "unheard: noise/hiss balance needs quiet-level review"
+      ],
+      "rms": 0.07588803098365174,
+      "seam": null,
+      "sha256": "4a3ed69a8e51d66aa0f7bddc53135330c1e4697d0e2d51655ee3c8b587ba46e5",
+      "synth": "footstep"
+    },
+    {
+      "bytes": 52964,
+      "dc": -8.880776703042328e-08,
+      "duration": 1.2,
+      "file": "wav/hatch.open.wav",
+      "frames": 26460,
+      "id": "hatch.open",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 1.2,
+        "gain": 0.36,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 201463232,
+        "weight": 1.0
+      },
+      "peak": 0.3599853515625,
+      "review_flags": [],
+      "rms": 0.07260620695878517,
+      "seam": null,
+      "sha256": "c723ced74bf7d6d3939a1be8490fc9627d43d2d5d01e5dfddcfd57992374af11",
+      "synth": "hatch"
+    },
+    {
+      "bytes": 15478,
+      "dc": -6.722804562977841e-08,
+      "duration": 0.34997732426303857,
+      "file": "wav/keycard.accept.wav",
+      "frames": 7717,
+      "id": "keycard.accept",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 0.35,
+        "gain": 0.22,
+        "lowpass_hz": 2800.0,
+        "pitch": 740.0,
+        "rate_divisor": 1,
+        "seed": 1199327715
+      },
+      "peak": 0.220001220703125,
+      "review_flags": [],
+      "rms": 0.06544285970865699,
+      "seam": null,
+      "sha256": "911f2b153c49cbff07f0de733eb8364bd759fb02c0cb34cf829839e413f41add",
+      "synth": "keycard"
+    },
+    {
+      "bytes": 1058444,
+      "dc": -1.0956802425831443e-09,
+      "duration": 24.0,
+      "file": "wav/music.explore.wav",
+      "frames": 529200,
+      "id": "music.explore",
+      "kind": "music",
+      "loop": true,
+      "params": {
+        "bits": 12,
+        "duration": 24.0,
+        "gain": 0.26,
+        "lowpass_hz": 2600.0,
+        "mood": "explore",
+        "rate_divisor": 2,
+        "seed": 2242668425
+      },
+      "peak": 0.259979248046875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.07879342754879064,
+      "seam": {
+        "energy_ratio_min": 0.35,
+        "head_rms_ratio": 1.0982186419915865,
+        "jump": 0.001922607421875,
+        "jump_limit": 0.003,
+        "slope_limit": 0.003,
+        "slope_mismatch": 0.002105712890625,
+        "tail_rms_ratio": 1.1114737030041117,
+        "window_frames": 441
+      },
+      "sha256": "beb35b7a68814018a213fd0ace015e1f1c6edc2985f51c7250e79d0b56c843bc",
+      "synth": "music"
+    },
+    {
+      "bytes": 1058444,
+      "dc": -1.1937147906037415e-08,
+      "duration": 24.0,
+      "file": "wav/music.hub.wav",
+      "frames": 529200,
+      "id": "music.hub",
+      "kind": "music",
+      "loop": true,
+      "params": {
+        "bits": 12,
+        "duration": 24.0,
+        "gain": 0.26,
+        "lowpass_hz": 2600.0,
+        "mood": "hub",
+        "rate_divisor": 2,
+        "seed": 1924738006
+      },
+      "peak": 0.259979248046875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.08247328029768843,
+      "seam": {
+        "energy_ratio_min": 0.35,
+        "head_rms_ratio": 1.1364034535428702,
+        "jump": 0.002288818359375,
+        "jump_limit": 0.003,
+        "slope_limit": 0.003,
+        "slope_mismatch": 0.002471923828125,
+        "tail_rms_ratio": 0.8751968089902638,
+        "window_frames": 441
+      },
+      "sha256": "7a8eb383cb5743fc1eaa56bd91ea4cf8f06b0fe40f6292a5eafa0cf8d5f5b586",
+      "synth": "music"
+    },
+    {
+      "bytes": 88244,
+      "dc": 2.0760257227891156e-09,
+      "duration": 2.0,
+      "file": "wav/pod.hum.wav",
+      "frames": 44100,
+      "id": "pod.hum",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 2.0,
+        "gain": 0.19,
+        "lowpass_hz": 850.0,
+        "pitch": 54.0,
+        "rate_divisor": 1,
+        "seed": 3087360444
+      },
+      "peak": 0.19000244140625,
+      "review_flags": [],
+      "rms": 0.11280767741327574,
+      "seam": null,
+      "sha256": "e53f99de039fbb3c1b9f008886d92fd603b0eecca96d516600eaff4e89bdfd78",
+      "synth": "hum"
+    },
+    {
+      "bytes": 154394,
+      "dc": -1.2258437601230969e-08,
+      "duration": 3.5,
+      "file": "wav/saucer.pass.wav",
+      "frames": 77175,
+      "id": "saucer.pass",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 3.5,
+        "gain": 0.29,
+        "lowpass_hz": 2800.0,
+        "pitch": 170.0,
+        "rate_divisor": 1,
+        "seed": 2971156988
+      },
+      "peak": 0.28997802734375,
+      "review_flags": [
+        "unheard: resonant sweep may be too prominent"
+      ],
+      "rms": 0.10640794415123367,
+      "seam": null,
+      "sha256": "2b3d20af1d02e11ff9f705c86c297495e05bad296c4d1cff7d59626693896667",
+      "synth": "saucer"
+    },
+    {
+      "bytes": 79424,
+      "dc": -4.382720970332578e-08,
+      "duration": 1.8,
+      "file": "wav/save.tone.wav",
+      "frames": 39690,
+      "id": "save.tone",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 1.8,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "pitch": 392.0,
+        "rate_divisor": 1,
+        "seed": 3053050413
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.06901614433630858,
+      "seam": null,
+      "sha256": "57c068f013155f670d6db1b715d3cf257c7deafaec48930de7bc441d25b74a90",
+      "synth": "save"
+    },
+    {
+      "bytes": 57374,
+      "dc": 1.703405721262864e-08,
+      "duration": 1.3,
+      "file": "wav/sphere.pickup.01.wav",
+      "frames": 28665,
+      "id": "sphere.pickup.01",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "base_hz": 440.0,
+        "bits": 14,
+        "collected": 1,
+        "duration": 1.3,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 3328745569
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.06265713287537347,
+      "seam": null,
+      "sha256": "0ccd2ea30d418b92bdbd0aec988e4b0abaa8a02c64074df99555d997afadcaab",
+      "synth": "sphere"
+    },
+    {
+      "bytes": 57374,
+      "dc": -2.6615714394732252e-08,
+      "duration": 1.3,
+      "file": "wav/sphere.pickup.02.wav",
+      "frames": 28665,
+      "id": "sphere.pickup.02",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "base_hz": 440.0,
+        "bits": 14,
+        "collected": 2,
+        "duration": 1.3,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 2861450462
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.07053632298510118,
+      "seam": null,
+      "sha256": "15e4831142fb610d29517d4a5559d1883c73e8ab324d62029aacbc98bea2c14d",
+      "synth": "sphere"
+    },
+    {
+      "bytes": 57374,
+      "dc": -3.406811442525728e-08,
+      "duration": 1.3,
+      "file": "wav/sphere.pickup.03.wav",
+      "frames": 28665,
+      "id": "sphere.pickup.03",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "base_hz": 440.0,
+        "bits": 14,
+        "collected": 3,
+        "duration": 1.3,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 4275701405
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.07044898522530871,
+      "seam": null,
+      "sha256": "ce16df1fb42296fbddca7d225504b72eee6787534cbedefcef948f462a9f90ad",
+      "synth": "sphere"
+    },
+    {
+      "bytes": 57374,
+      "dc": 8.942880036630037e-08,
+      "duration": 1.3,
+      "file": "wav/sphere.pickup.04.wav",
+      "frames": 28665,
+      "id": "sphere.pickup.04",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "base_hz": 440.0,
+        "bits": 14,
+        "collected": 4,
+        "duration": 1.3,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 3429873603
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.0751712188541447,
+      "seam": null,
+      "sha256": "d7bfebd37ef00d43b34077b359bd1dc2ffa58d45d4344a9540b856f7c28a7e87",
+      "synth": "sphere"
+    },
+    {
+      "bytes": 57374,
+      "dc": -2.448645724315367e-08,
+      "duration": 1.3,
+      "file": "wav/sphere.pickup.05.wav",
+      "frames": 28665,
+      "id": "sphere.pickup.05",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "base_hz": 440.0,
+        "bits": 14,
+        "collected": 5,
+        "duration": 1.3,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 3031611140
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.06799001250944771,
+      "seam": null,
+      "sha256": "efadf5c25a55eefc1f532432cec7f0d3cb2cab9e2c336c5768b6aff037cff130",
+      "synth": "sphere"
+    },
+    {
+      "bytes": 57374,
+      "dc": 1.0859211473050759e-07,
+      "duration": 1.3,
+      "file": "wav/sphere.pickup.06.wav",
+      "frames": 28665,
+      "id": "sphere.pickup.06",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "base_hz": 440.0,
+        "bits": 14,
+        "collected": 6,
+        "duration": 1.3,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 487603689
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.07142724631596534,
+      "seam": null,
+      "sha256": "c15bd5997fb118291a09bf6e724b95e986bd2182d9fca52ac51cdab12e9dc66b",
+      "synth": "sphere"
+    },
+    {
+      "bytes": 57374,
+      "dc": 1.703405721262864e-08,
+      "duration": 1.3,
+      "file": "wav/sphere.pickup.07.wav",
+      "frames": 28665,
+      "id": "sphere.pickup.07",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "base_hz": 440.0,
+        "bits": 14,
+        "collected": 7,
+        "duration": 1.3,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 2429193927
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.06083096706330014,
+      "seam": null,
+      "sha256": "684a52bb65658391ef46c724b32f6a35e9b9e83d76fe7cac8b5dfe6601ab9445",
+      "synth": "sphere"
+    },
+    {
+      "bytes": 57374,
+      "dc": -1.490480006105006e-08,
+      "duration": 1.3,
+      "file": "wav/sphere.pickup.08.wav",
+      "frames": 28665,
+      "id": "sphere.pickup.08",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "base_hz": 440.0,
+        "bits": 14,
+        "collected": 8,
+        "duration": 1.3,
+        "gain": 0.3,
+        "lowpass_hz": 2800.0,
+        "rate_divisor": 1,
+        "seed": 4137602380
+      },
+      "peak": 0.29998779296875,
+      "review_flags": [
+        "unheard: bell/glass partials may ring or fatigue"
+      ],
+      "rms": 0.07902814146727707,
+      "seam": null,
+      "sha256": "d9510607dee2d6b17650e2bd018d73344177bbd3196e9e975c6b0aa523d42cdc",
+      "synth": "sphere"
+    },
+    {
+      "bytes": 123524,
+      "dc": 8.60067799441205e-08,
+      "duration": 2.8,
+      "file": "wav/storm.gust.wav",
+      "frames": 61740,
+      "id": "storm.gust",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "bits": 14,
+        "duration": 2.8,
+        "gain": 0.29,
+        "lowpass_hz": 1700.0,
+        "rate_divisor": 1,
+        "seed": 1182751463,
+        "strength": 0.7
+      },
+      "peak": 0.28997802734375,
+      "review_flags": [
+        "unheard: noise/hiss balance needs quiet-level review"
+      ],
+      "rms": 0.05060363778748643,
+      "seam": null,
+      "sha256": "35fea41a1b33a7826baa7fa7f52019154d0ae06b0258e169ab2f426aef485432",
+      "synth": "gust"
+    },
+    {
+      "bytes": 5776,
+      "dc": 3.5138872230460575e-07,
+      "duration": 0.12997732426303854,
+      "file": "wav/ui.back.wav",
+      "frames": 2866,
+      "id": "ui.back",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "action": "back",
+        "bits": 14,
+        "duration": 0.13,
+        "gain": 0.22,
+        "lowpass_hz": 2800.0,
+        "pitch": 530.0,
+        "rate_divisor": 1,
+        "seed": 2102223569
+      },
+      "peak": 0.220001220703125,
+      "review_flags": [
+        "unheard: rapid repetition may feel sharp; throttle in runtime"
+      ],
+      "rms": 0.1007798635212997,
+      "seam": null,
+      "sha256": "2211e2760a976432af3b64eafc7649fa5f0e1440fe6809a7e8aa6da24db1681e",
+      "synth": "ui"
+    },
+    {
+      "bytes": 4012,
+      "dc": -2.1534581338205645e-07,
+      "duration": 0.08997732426303855,
+      "file": "wav/ui.move.wav",
+      "frames": 1984,
+      "id": "ui.move",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "action": "move",
+        "bits": 14,
+        "duration": 0.09,
+        "gain": 0.22,
+        "lowpass_hz": 2800.0,
+        "pitch": 560.0,
+        "rate_divisor": 1,
+        "seed": 3709123165
+      },
+      "peak": 0.220001220703125,
+      "review_flags": [
+        "unheard: rapid repetition may feel sharp; throttle in runtime"
+      ],
+      "rms": 0.100702225452928,
+      "seam": null,
+      "sha256": "18a89a5141a5dc8fb1ad94d00e36c01059400622fccaf34cd03a50ffd2d11742",
+      "synth": "ui"
+    },
+    {
+      "bytes": 7100,
+      "dc": -2.2490278663548753e-07,
+      "duration": 0.16,
+      "file": "wav/ui.select.wav",
+      "frames": 3528,
+      "id": "ui.select",
+      "kind": "sfx",
+      "loop": false,
+      "params": {
+        "action": "select",
+        "bits": 14,
+        "duration": 0.16,
+        "gain": 0.22,
+        "lowpass_hz": 2800.0,
+        "pitch": 660.0,
+        "rate_divisor": 1,
+        "seed": 746569084
+      },
+      "peak": 0.220001220703125,
+      "review_flags": [
+        "unheard: rapid repetition may feel sharp; throttle in runtime"
+      ],
+      "rms": 0.10049271434065628,
+      "seam": null,
+      "sha256": "fcdd9e1d5bc4f7f81426ca8bcd20ded4587a4fd59aad4a68b17024744171a4cf",
+      "synth": "ui"
+    }
+  ],
+  "channels": 1,
+  "generator_version": "1.0.0",
+  "kit": "thaw",
+  "sample_rate": 22050,
+  "sample_width": 2,
+  "schema_version": 1,
+  "seed": 73021
+}

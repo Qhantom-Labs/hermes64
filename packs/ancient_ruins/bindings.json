@@ -1,0 +1,910 @@
+{
+ "assets": {
+  "arch.door": {
+   "alias_of": "ruin.gate",
+   "glb": "kits/library/ancient_ruins/assets/ruin.gate.glb",
+   "kit_id": "ruin.gate",
+   "preset": null,
+   "sha256": "25aded10aeff00a756a44883462cf4cc517506a30c66de7d65c3a578b46f0ad2"
+  },
+  "land.causeway": {
+   "glb": "kits/library/ancient_ruins/assets/land.causeway.glb",
+   "kit_id": "land.causeway",
+   "preset": null,
+   "sha256": "e91f0134ecfd9d0cab97a643402a284cb29be5c0618632be98689bc44ca255e3"
+  },
+  "land.causeway__broken": {
+   "glb": "kits/library/ancient_ruins/presets/land.causeway__broken.glb",
+   "kit_id": "land.causeway",
+   "preset": "broken",
+   "sha256": "692a7ed415c676def45ef7a852f5a82f803ba85597090b4569f21f1a034e7e5c"
+  },
+  "land.causeway__end": {
+   "glb": "kits/library/ancient_ruins/presets/land.causeway__end.glb",
+   "kit_id": "land.causeway",
+   "preset": "end",
+   "sha256": "d7302be073233e6c681b7c348a6e98e1dd932b6802a8bf3644037fcb9607c456"
+  },
+  "land.causeway__steps": {
+   "glb": "kits/library/ancient_ruins/presets/land.causeway__steps.glb",
+   "kit_id": "land.causeway",
+   "preset": "steps",
+   "sha256": "bc5c85e31dfc14e9bbbe70fc704ec048096911bd01ad04c72468efd3f72fa2d6"
+  },
+  "land.cliff": {
+   "glb": "kits/library/ancient_ruins/assets/land.cliff.glb",
+   "kit_id": "land.cliff",
+   "preset": null,
+   "sha256": "caf66d1288603f80c7c57e935ffb8c15089a59c73a772ef0bbc4106829326db6"
+  },
+  "land.cliff__corner": {
+   "glb": "kits/library/ancient_ruins/presets/land.cliff__corner.glb",
+   "kit_id": "land.cliff",
+   "preset": "corner",
+   "sha256": "d9c95bd0cd566f7fceceb23345c4de0ccb6ad8d264ad080cb5ef6b60ccf3a3fb"
+  },
+  "land.cliff__end": {
+   "glb": "kits/library/ancient_ruins/presets/land.cliff__end.glb",
+   "kit_id": "land.cliff",
+   "preset": "end",
+   "sha256": "c4f10ef6c7e611f19f54eae7a4d38301fa2475730b96efe667025cd70d29423c"
+  },
+  "land.cliff__low": {
+   "glb": "kits/library/ancient_ruins/presets/land.cliff__low.glb",
+   "kit_id": "land.cliff",
+   "preset": "low",
+   "sha256": "74d38cd7e2ac8340c37ce01541ad892a5e496059ccd64e8aeec9efc042594a8e"
+  },
+  "land.cliff__pillar": {
+   "glb": "kits/library/ancient_ruins/presets/land.cliff__pillar.glb",
+   "kit_id": "land.cliff",
+   "preset": "pillar",
+   "sha256": "19b99acf5cf39edc1cd4d823f4a0ff3416c74e9d1df18062a4744a97408ce8e2"
+  },
+  "land.ground": {
+   "glb": "kits/library/ancient_ruins/assets/land.ground.glb",
+   "kit_id": "land.ground",
+   "preset": null,
+   "sha256": "71d31d7c97e5d813cea8e5f187d2ecd3513d0bfe46d8df34deeeda520e506c68"
+  },
+  "land.ground__court": {
+   "glb": "kits/library/ancient_ruins/presets/land.ground__court.glb",
+   "kit_id": "land.ground",
+   "preset": "court",
+   "sha256": "e92716121bb3a0b55ce11afeacb019896c81165f31fb4e0e0126281b1f07ac31"
+  },
+  "land.ground__jungle": {
+   "glb": "kits/library/ancient_ruins/presets/land.ground__jungle.glb",
+   "kit_id": "land.ground",
+   "preset": "jungle",
+   "sha256": "072373ae01536729f448348356d63596da9ff4b02f2080d8b9b8f128f3714655"
+  },
+  "land.ground__jungle_1": {
+   "glb": "kits/library/ancient_ruins/presets/land.ground__jungle_1.glb",
+   "kit_id": "land.ground",
+   "preset": "jungle_1",
+   "sha256": "23a80083d983f85f3b1691b604f00cb18c697b4cfdb8ef4eaa6a421ae1302493"
+  },
+  "land.ground__jungle_4": {
+   "glb": "kits/library/ancient_ruins/presets/land.ground__jungle_4.glb",
+   "kit_id": "land.ground",
+   "preset": "jungle_4",
+   "sha256": "ea0c7ab19dbbaf43529e9b9a1626461062130ad091e19897a774b26323f38aa9"
+  },
+  "land.ground__jungle_far": {
+   "glb": "kits/library/ancient_ruins/presets/land.ground__jungle_far.glb",
+   "kit_id": "land.ground",
+   "preset": "jungle_far",
+   "sha256": "025c9e818f58b90779be05881cbfc1810f5419fe7b92d701313fc06657d37fa4"
+  },
+  "land.ground__paved": {
+   "glb": "kits/library/ancient_ruins/presets/land.ground__paved.glb",
+   "kit_id": "land.ground",
+   "preset": "paved",
+   "sha256": "e53e1a9a688dfb6a2a5d1ae28c83e7e26e797699ef369cf979db3890efe1c4c9"
+  },
+  "land.ground__paved_1": {
+   "glb": "kits/library/ancient_ruins/presets/land.ground__paved_1.glb",
+   "kit_id": "land.ground",
+   "preset": "paved_1",
+   "sha256": "87245e48b56a8d3fd27aa5fade4bfe77df8190f7de56e5bb8e262227942c8b79"
+  },
+  "land.ground__sand_1": {
+   "glb": "kits/library/ancient_ruins/presets/land.ground__sand_1.glb",
+   "kit_id": "land.ground",
+   "preset": "sand_1",
+   "sha256": "9f38b0422e65623131494f08b5392ca868b005857cc674ac5084a1a85aa9bb11"
+  },
+  "land.ground__sand_4": {
+   "glb": "kits/library/ancient_ruins/presets/land.ground__sand_4.glb",
+   "kit_id": "land.ground",
+   "preset": "sand_4",
+   "sha256": "a35b77f8cb3c70ce8f456cdba80f78dc7791199bb069f377240adb9f2ae4b3d0"
+  },
+  "land.ground__sand_far": {
+   "glb": "kits/library/ancient_ruins/presets/land.ground__sand_far.glb",
+   "kit_id": "land.ground",
+   "preset": "sand_far",
+   "sha256": "80feb2b0d5113b8f28a8a059ce695dac1969b5c0c1af1e8e3705f2cbc9366fdc"
+  },
+  "land.sky": {
+   "glb": "kits/library/ancient_ruins/assets/land.sky.glb",
+   "kit_id": "land.sky",
+   "preset": null,
+   "sha256": "5e841843b0058236f3cd189a1bfb410766211c986b5bf09bf6dc602c5a2f7ac6"
+  },
+  "land.sky__canopy": {
+   "glb": "kits/library/ancient_ruins/presets/land.sky__canopy.glb",
+   "kit_id": "land.sky",
+   "preset": "canopy",
+   "sha256": "aefa57251e30e5eb1b7b2a89d53c97279e54f0118fa47efee284ed47b830aeb6"
+  },
+  "land.sky__dunes": {
+   "glb": "kits/library/ancient_ruins/presets/land.sky__dunes.glb",
+   "kit_id": "land.sky",
+   "preset": "dunes",
+   "sha256": "d03ec2f2a02fe87b6697f144415e1c18f61aa57191be10d7f0b9fe00b72888a7"
+  },
+  "land.sky__mesas": {
+   "glb": "kits/library/ancient_ruins/presets/land.sky__mesas.glb",
+   "kit_id": "land.sky",
+   "preset": "mesas",
+   "sha256": "96c12b6e748572f678754adf4135a0edd257c14d9ed371e15a995db826d79144"
+  },
+  "land.skyline": {
+   "glb": "kits/library/ancient_ruins/assets/land.skyline.glb",
+   "kit_id": "land.skyline",
+   "preset": null,
+   "sha256": "7886c4999e44a09372974dd4e291a0d144a07634a23cdd8608be606375d35a17"
+  },
+  "land.skyline__canopy": {
+   "glb": "kits/library/ancient_ruins/presets/land.skyline__canopy.glb",
+   "kit_id": "land.skyline",
+   "preset": "canopy",
+   "sha256": "9b453432bf13360069efea97b58980b572cddcd1439eae5a2427edb0a92d2c16"
+  },
+  "land.skyline__mesas": {
+   "glb": "kits/library/ancient_ruins/presets/land.skyline__mesas.glb",
+   "kit_id": "land.skyline",
+   "preset": "mesas",
+   "sha256": "b4236d1f9545fbf11c02d28bfdebe5e7b3d0a5ea7eed1e27931bc12013482cae"
+  },
+  "land.slope": {
+   "glb": "kits/library/ancient_ruins/assets/land.slope.glb",
+   "kit_id": "land.slope",
+   "preset": null,
+   "sha256": "916e1b840e3e3663c3268ac284158b8baac86f61d0c6006f7f868a14401269e0"
+  },
+  "land.slope__earth": {
+   "glb": "kits/library/ancient_ruins/presets/land.slope__earth.glb",
+   "kit_id": "land.slope",
+   "preset": "earth",
+   "sha256": "0eceabe8e34c9a463dbc56fe165cff8da5c2dbdb7963904eb41e51e5749b73ed"
+  },
+  "land.slope__low": {
+   "glb": "kits/library/ancient_ruins/presets/land.slope__low.glb",
+   "kit_id": "land.slope",
+   "preset": "low",
+   "sha256": "58914293f7db775339460c0b38a993e9c0b871ef36bffadb03b1a1a59595da38"
+  },
+  "land.terrace": {
+   "glb": "kits/library/ancient_ruins/assets/land.terrace.glb",
+   "kit_id": "land.terrace",
+   "preset": null,
+   "sha256": "f6bd77f1d6af7f26d4d8899cd68940b1e22bced12072d5092944c07dd4bf3b5c"
+  },
+  "land.terrace__high": {
+   "glb": "kits/library/ancient_ruins/presets/land.terrace__high.glb",
+   "kit_id": "land.terrace",
+   "preset": "high",
+   "sha256": "863a93ca0919dc2230d2b14d4188c7329cdeecf8d28c55b04c5f9aa07f601154"
+  },
+  "land.terrace__jungle": {
+   "glb": "kits/library/ancient_ruins/presets/land.terrace__jungle.glb",
+   "kit_id": "land.terrace",
+   "preset": "jungle",
+   "sha256": "f486b19eb96184e3329a121f570909148a96a1686dc8251767b2ac1a3646300b"
+  },
+  "land.terrace__low": {
+   "glb": "kits/library/ancient_ruins/presets/land.terrace__low.glb",
+   "kit_id": "land.terrace",
+   "preset": "low",
+   "sha256": "9284de879d56055a7999e17aa54a02205ef1f98d2aed8d799e29111b28428fca"
+  },
+  "land.wash": {
+   "glb": "kits/library/ancient_ruins/assets/land.wash.glb",
+   "kit_id": "land.wash",
+   "preset": null,
+   "sha256": "08b4f1b50e5cad06ee5d6d608e6bddfb839dd98334f00cf7426abf0243bd84dc"
+  },
+  "land.wash__jungle": {
+   "glb": "kits/library/ancient_ruins/presets/land.wash__jungle.glb",
+   "kit_id": "land.wash",
+   "preset": "jungle",
+   "sha256": "944bdbd7e9acade33af866eb31ab262fae75b55c7eb00cef233d90ae731234fc"
+  },
+  "land.wash__narrow": {
+   "glb": "kits/library/ancient_ruins/presets/land.wash__narrow.glb",
+   "kit_id": "land.wash",
+   "preset": "narrow",
+   "sha256": "7e2340be50c886614410f895217b7593f3c96bf7a0d7af37a419354a33d8ab01"
+  },
+  "relic.altar": {
+   "glb": "kits/library/ancient_ruins/assets/relic.altar.glb",
+   "kit_id": "relic.altar",
+   "preset": null,
+   "sha256": "af57d0c0786f74e157b71522d8c2d92a5597201809fb3d7379ccbbc9cad37b4e"
+  },
+  "relic.altar__fire": {
+   "glb": "kits/library/ancient_ruins/presets/relic.altar__fire.glb",
+   "kit_id": "relic.altar",
+   "preset": "fire",
+   "sha256": "fc815d0295bf669d07030f4d7ce0ed5f32a8f5f52cd2545b4f6009ee4499eff9"
+  },
+  "relic.altar__sun": {
+   "glb": "kits/library/ancient_ruins/presets/relic.altar__sun.glb",
+   "kit_id": "relic.altar",
+   "preset": "sun",
+   "sha256": "38022dcc542cf9fdf438fc8d2f13dafffd64add8f7ea8cfa074c55de2eb47f00"
+  },
+  "relic.banner": {
+   "glb": "kits/library/ancient_ruins/assets/relic.banner.glb",
+   "kit_id": "relic.banner",
+   "preset": null,
+   "sha256": "0c53267dbac99d80eedc933c30d0f3bd9c4206f660748c0440bd5d5af0f28490"
+  },
+  "relic.banner__short": {
+   "glb": "kits/library/ancient_ruins/presets/relic.banner__short.glb",
+   "kit_id": "relic.banner",
+   "preset": "short",
+   "sha256": "e6a859171e3b074cefca9099cb782aa86e72cee5ef205fa82e83a3c3d82b3b0d"
+  },
+  "relic.brazier": {
+   "glb": "kits/library/ancient_ruins/assets/relic.brazier.glb",
+   "kit_id": "relic.brazier",
+   "preset": null,
+   "sha256": "dd725037894f9975d60309de9062764393a2e850985725deb1fe2e684efae581"
+  },
+  "relic.brazier__pedestal": {
+   "glb": "kits/library/ancient_ruins/presets/relic.brazier__pedestal.glb",
+   "kit_id": "relic.brazier",
+   "preset": "pedestal",
+   "sha256": "432e5a01636cda0af1affec1d12130b6f7cd6551894f3b3910c1b281a388a57a"
+  },
+  "relic.brazier__pit": {
+   "glb": "kits/library/ancient_ruins/presets/relic.brazier__pit.glb",
+   "kit_id": "relic.brazier",
+   "preset": "pit",
+   "sha256": "d793a3340bdcd3772a8abb88d616396915e79002a8357b9b02a6cb164f7eadd4"
+  },
+  "relic.brazier__unlit": {
+   "glb": "kits/library/ancient_ruins/presets/relic.brazier__unlit.glb",
+   "kit_id": "relic.brazier",
+   "preset": "unlit",
+   "sha256": "191b03f7365a6184eae5e3b80a36e3f4d6b732073f67b98cc640561230ddeac3"
+  },
+  "relic.coffer": {
+   "glb": "kits/library/ancient_ruins/assets/relic.coffer.glb",
+   "kit_id": "relic.coffer",
+   "preset": null,
+   "sha256": "b5d9d76b77cae87460c8f6ab5ac84d511a3ca44452fac2b0c7dc6ab4e8451fe6"
+  },
+  "relic.coffer__open": {
+   "glb": "kits/library/ancient_ruins/presets/relic.coffer__open.glb",
+   "kit_id": "relic.coffer",
+   "preset": "open",
+   "sha256": "73926d17d88b73b3d18cf6a18f328833698518bfccab980797ab790912ce60fa"
+  },
+  "relic.dial": {
+   "glb": "kits/library/ancient_ruins/assets/relic.dial.glb",
+   "kit_id": "relic.dial",
+   "preset": null,
+   "sha256": "d01065dd0bd979db394e902e711714a26a5a9b64538ff9f4b94ba53ee92ed02b"
+  },
+  "relic.dial__ruined": {
+   "glb": "kits/library/ancient_ruins/presets/relic.dial__ruined.glb",
+   "kit_id": "relic.dial",
+   "preset": "ruined",
+   "sha256": "f9803f4fcbe3d92010e9afb2460d22c2a66395f7942fd04dcb9babd0458704f8"
+  },
+  "relic.plate": {
+   "glb": "kits/library/ancient_ruins/assets/relic.plate.glb",
+   "kit_id": "relic.plate",
+   "preset": null,
+   "sha256": "e065a93e5b65c5129f496ca7abf696292891138f44b99f77fc1dc73c1b9fddf9"
+  },
+  "relic.plate__glyph": {
+   "glb": "kits/library/ancient_ruins/presets/relic.plate__glyph.glb",
+   "kit_id": "relic.plate",
+   "preset": "glyph",
+   "sha256": "e02a98a4d8b649f331eb4cf6e7f78843df10303aa5c03ca280aae4a3d4411a24"
+  },
+  "relic.plate__pressed": {
+   "glb": "kits/library/ancient_ruins/presets/relic.plate__pressed.glb",
+   "kit_id": "relic.plate",
+   "preset": "pressed",
+   "sha256": "9d154fee446385eec166953e69267bccf2dd3247ac6b351dc9887b546fc6c0da"
+  },
+  "relic.sarcophagus": {
+   "glb": "kits/library/ancient_ruins/assets/relic.sarcophagus.glb",
+   "kit_id": "relic.sarcophagus",
+   "preset": null,
+   "sha256": "5a51e837595f8f93cbc948537715467b51691be936c460c5ae8262bf337eaa40"
+  },
+  "relic.sarcophagus__broken": {
+   "glb": "kits/library/ancient_ruins/presets/relic.sarcophagus__broken.glb",
+   "kit_id": "relic.sarcophagus",
+   "preset": "broken",
+   "sha256": "92aad24b6e11d470defe7128d7583209add5f21ca821708e5cc57c825006df6a"
+  },
+  "relic.sarcophagus__open": {
+   "glb": "kits/library/ancient_ruins/presets/relic.sarcophagus__open.glb",
+   "kit_id": "relic.sarcophagus",
+   "preset": "open",
+   "sha256": "c6493a2925c0c0a822bcfd96eb8331142ed8a45ccc83646f0a0524725e7e7f76"
+  },
+  "relic.statue": {
+   "glb": "kits/library/ancient_ruins/assets/relic.statue.glb",
+   "kit_id": "relic.statue",
+   "preset": null,
+   "sha256": "4f4cd00766af026451386d2bcef9f7af682aa2689f1137745cdb9f4f94a89eb8"
+  },
+  "relic.statue__buried": {
+   "glb": "kits/library/ancient_ruins/presets/relic.statue__buried.glb",
+   "kit_id": "relic.statue",
+   "preset": "buried",
+   "sha256": "b680a91905b43fb4b04955fd6787da1a78599d960b5d2f033ced37d3e05b886d"
+  },
+  "relic.statue__guardian": {
+   "glb": "kits/library/ancient_ruins/presets/relic.statue__guardian.glb",
+   "kit_id": "relic.statue",
+   "preset": "guardian",
+   "sha256": "f00a5c0e874ce08328cca611b4bc98bfc2466931badc6254474e38734f5b3d58"
+  },
+  "relic.statue__idol": {
+   "glb": "kits/library/ancient_ruins/presets/relic.statue__idol.glb",
+   "kit_id": "relic.statue",
+   "preset": "idol",
+   "sha256": "63e546bd400352058e55f593dfc3b409feb21e539f2b66f0f42da1c18b0d0d45"
+  },
+  "relic.tablet": {
+   "glb": "kits/library/ancient_ruins/assets/relic.tablet.glb",
+   "kit_id": "relic.tablet",
+   "preset": null,
+   "sha256": "f3d25fcb2b44b75d3e07c2148dd988317bf945d763da411fb32566da32aacfa3"
+  },
+  "relic.tablet__awakened": {
+   "glb": "kits/library/ancient_ruins/presets/relic.tablet__awakened.glb",
+   "kit_id": "relic.tablet",
+   "preset": "awakened",
+   "sha256": "fa672ab2336e82cac485e0ebe13a5f91fac28ab23f1fcf257deb05144d98643e"
+  },
+  "relic.tablet__fallen": {
+   "glb": "kits/library/ancient_ruins/presets/relic.tablet__fallen.glb",
+   "kit_id": "relic.tablet",
+   "preset": "fallen",
+   "sha256": "0be33cbe01ec8efcfb7e7d40b718981e542afbcb354c453ff7e3afc3e20e8270"
+  },
+  "relic.tablet__tablet": {
+   "glb": "kits/library/ancient_ruins/presets/relic.tablet__tablet.glb",
+   "kit_id": "relic.tablet",
+   "preset": "tablet",
+   "sha256": "788bf70ea6e75065127a867f3faecb3efbc6543c8eaeccfcbb1682886c5ed6d7"
+  },
+  "relic.urn": {
+   "glb": "kits/library/ancient_ruins/assets/relic.urn.glb",
+   "kit_id": "relic.urn",
+   "preset": null,
+   "sha256": "faa984a737d89d098e4a0273c9bf178190cf142676472f7a43ce77d8574eeed9"
+  },
+  "relic.urn__amphora": {
+   "glb": "kits/library/ancient_ruins/presets/relic.urn__amphora.glb",
+   "kit_id": "relic.urn",
+   "preset": "amphora",
+   "sha256": "ecc26dd9747188749a927a7c57adb63932686624c69e9820a6ac961f86543b97"
+  },
+  "relic.urn__bowl": {
+   "glb": "kits/library/ancient_ruins/presets/relic.urn__bowl.glb",
+   "kit_id": "relic.urn",
+   "preset": "bowl",
+   "sha256": "b5ff75d61c77366c2c13f0a090d2c838d8fb4574300b7357cd8405d7d10552cf"
+  },
+  "relic.urn__broken": {
+   "glb": "kits/library/ancient_ruins/presets/relic.urn__broken.glb",
+   "kit_id": "relic.urn",
+   "preset": "broken",
+   "sha256": "147bc264a4f053573d9665204b284d6830b3d0c4f9034ae7634d090b135953e8"
+  },
+  "ruin.arch": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.arch.glb",
+   "kit_id": "ruin.arch",
+   "preset": null,
+   "sha256": "b22ee092ba078ef61bbb57375cecfdb91dd2d4a0f227d39d3eec11ac828a34cf"
+  },
+  "ruin.arch__broken": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.arch__broken.glb",
+   "kit_id": "ruin.arch",
+   "preset": "broken",
+   "sha256": "7e4ba8d36136c8d716ac20f6fffdea3272f2d2b4f2e4147c614bb1b88b8c8e5a"
+  },
+  "ruin.arch__corbel": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.arch__corbel.glb",
+   "kit_id": "ruin.arch",
+   "preset": "corbel",
+   "sha256": "50b795ffa6a541e91e82098e8d3861c0dec50deed72a602450b4e6885ddbc2d8"
+  },
+  "ruin.column": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.column.glb",
+   "kit_id": "ruin.column",
+   "preset": null,
+   "sha256": "348a261aadf7c1945d960e91c6718b554e11b0f7d3f571a873d36542e6acca1f"
+  },
+  "ruin.column__broken": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.column__broken.glb",
+   "kit_id": "ruin.column",
+   "preset": "broken",
+   "sha256": "0f991e8020f33da139a1929759395537fa4bc5fc5586d2637320b556cf4ecae6"
+  },
+  "ruin.column__fallen": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.column__fallen.glb",
+   "kit_id": "ruin.column",
+   "preset": "fallen",
+   "sha256": "a8950eae9cd2267bfdfcd395f40f31fce3b43fa5ca8d6a13c6378f1e20ae3977"
+  },
+  "ruin.column__stump": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.column__stump.glb",
+   "kit_id": "ruin.column",
+   "preset": "stump",
+   "sha256": "53c688c9bf4943b944d8eededf60205685e1337150da26853c47b60d620c6477"
+  },
+  "ruin.court": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.court.glb",
+   "kit_id": "ruin.court",
+   "preset": null,
+   "sha256": "56d2778103541e2f0f0333b57d1b539d05e64478f568ba0089d1f83086af4397"
+  },
+  "ruin.court__closed": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.court__closed.glb",
+   "kit_id": "ruin.court",
+   "preset": "closed",
+   "sha256": "41d7c0644fd14f976f7cdab3f4ea022b05b38637215a09c2f074965f08bbb1e7"
+  },
+  "ruin.court__cross": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.court__cross.glb",
+   "kit_id": "ruin.court",
+   "preset": "cross",
+   "sha256": "2db50827a2a4d40251c0caac407a55a0beb8bdd3e753cf29427e00180debefe7"
+  },
+  "ruin.court__small": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.court__small.glb",
+   "kit_id": "ruin.court",
+   "preset": "small",
+   "sha256": "86478fff0dee0d5241bfbd098e504b7f0ec0ad35c25441c3a5cd45462deb0ca8"
+  },
+  "ruin.floor": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.floor.glb",
+   "kit_id": "ruin.floor",
+   "preset": null,
+   "sha256": "e3bdb2e3bee2957c688688e5a48a1102b59b5a08fcc16439a81ba60245062c9c"
+  },
+  "ruin.floor__block": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.floor__block.glb",
+   "kit_id": "ruin.floor",
+   "preset": "block",
+   "sha256": "cd01aca1c1668a853db08707f29996dac74e23b6ff15d91c394a600ba97b6651"
+  },
+  "ruin.floor__ceiling": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.floor__ceiling.glb",
+   "kit_id": "ruin.floor",
+   "preset": "ceiling",
+   "sha256": "33c4251f9a91b856358179b5116f7c542319306950318fc9d9c2abc844520c05"
+  },
+  "ruin.floor__cracked": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.floor__cracked.glb",
+   "kit_id": "ruin.floor",
+   "preset": "cracked",
+   "sha256": "06d8c3055943befb5dc7d16f621b22e306d16131f27753f9c847d763d756ff17"
+  },
+  "ruin.floor__inlay": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.floor__inlay.glb",
+   "kit_id": "ruin.floor",
+   "preset": "inlay",
+   "sha256": "a8ac7b0a9b3b369ec06fce4f04ac1b9caf0c82d6cd2bbdddb91138ae7c67c734"
+  },
+  "ruin.gate": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.gate.glb",
+   "kit_id": "ruin.gate",
+   "preset": null,
+   "sha256": "25aded10aeff00a756a44883462cf4cc517506a30c66de7d65c3a578b46f0ad2"
+  },
+  "ruin.gate__pylon": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.gate__pylon.glb",
+   "kit_id": "ruin.gate",
+   "preset": "pylon",
+   "sha256": "95220fc97376efb0e98baf0067b113c7062fd39b5410277f21a40d18a8097371"
+  },
+  "ruin.gate__sealed": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.gate__sealed.glb",
+   "kit_id": "ruin.gate",
+   "preset": "sealed",
+   "sha256": "32e24abc542f9d471a58ecd35a43bd02b7cecb92edc11609476ee76c2fdf4dcc"
+  },
+  "ruin.obelisk": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.obelisk.glb",
+   "kit_id": "ruin.obelisk",
+   "preset": null,
+   "sha256": "10ee3adb6297793f2091e365209d7e14442610fe9e6eb5485b138dc8fb22f2a5"
+  },
+  "ruin.obelisk__broken": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.obelisk__broken.glb",
+   "kit_id": "ruin.obelisk",
+   "preset": "broken",
+   "sha256": "0195d8dda54b502bcd8183f180a711c11f46dee51f0e1db9a1b0ff617dd1cb86"
+  },
+  "ruin.obelisk__short": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.obelisk__short.glb",
+   "kit_id": "ruin.obelisk",
+   "preset": "short",
+   "sha256": "00914259414ac595c5f7444abc82b9bf1a1c87bff732df1df0acba71e4564b03"
+  },
+  "ruin.pier": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.pier.glb",
+   "kit_id": "ruin.pier",
+   "preset": null,
+   "sha256": "9683473eb22e5b533bb841f6a4182ea2d3341aacdd73e5e87c3c795d43271761"
+  },
+  "ruin.pier__broken": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.pier__broken.glb",
+   "kit_id": "ruin.pier",
+   "preset": "broken",
+   "sha256": "73eec97dd5e82cc292672d68d54de68becb086f46687f39e8496e5961deaa86b"
+  },
+  "ruin.pier__low": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.pier__low.glb",
+   "kit_id": "ruin.pier",
+   "preset": "low",
+   "sha256": "43a29b3c017ed7f998c57118a2ccf9b88dabe69306a37fa0db97e223b0b5453e"
+  },
+  "ruin.pyramid": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.pyramid.glb",
+   "kit_id": "ruin.pyramid",
+   "preset": null,
+   "sha256": "c77623215cc4c13efc8786c749b62a27774ca52cabd8b598b1dceaac02e833d2"
+  },
+  "ruin.pyramid__altar": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.pyramid__altar.glb",
+   "kit_id": "ruin.pyramid",
+   "preset": "altar",
+   "sha256": "cc93bcd19fe75cb9596ce75a81d3faee4caba37e8890ebdcd03d877de1a430fe"
+  },
+  "ruin.pyramid__great": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.pyramid__great.glb",
+   "kit_id": "ruin.pyramid",
+   "preset": "great",
+   "sha256": "05bbdf61a9ddd8421a1ee556c73b5ad57a340e382cee365847567778cf6d849c"
+  },
+  "ruin.pyramid__tier": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.pyramid__tier.glb",
+   "kit_id": "ruin.pyramid",
+   "preset": "tier",
+   "sha256": "945fef7587b060529146d59712a694fb8574d8239c0b757004497820001b7ec4"
+  },
+  "ruin.rampart": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.rampart.glb",
+   "kit_id": "ruin.rampart",
+   "preset": null,
+   "sha256": "896a55920a9d85877f9537731fb01c93c3732f06ab3f9952b62597ceeca2a29f"
+  },
+  "ruin.rampart__broken": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.rampart__broken.glb",
+   "kit_id": "ruin.rampart",
+   "preset": "broken",
+   "sha256": "80c3d8eaad7cb02b714510bbb95c17399da8b2afd351e5ec067b6458434abeb2"
+  },
+  "ruin.rampart__corner": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.rampart__corner.glb",
+   "kit_id": "ruin.rampart",
+   "preset": "corner",
+   "sha256": "1e5418fac892f35a14b5736c632a1bca2b446a79ce46a369a5e023fd708ab4ae"
+  },
+  "ruin.rampart__tower": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.rampart__tower.glb",
+   "kit_id": "ruin.rampart",
+   "preset": "tower",
+   "sha256": "6be5459f0143848d4b09a265d5bcddad862773290909900a0221094d9483cef8"
+  },
+  "ruin.rubble": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.rubble.glb",
+   "kit_id": "ruin.rubble",
+   "preset": null,
+   "sha256": "790c6e9598ac40e51f157a35bb1f287e7456c4df1fe64515edfb90be6989fb4e"
+  },
+  "ruin.rubble__drift": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.rubble__drift.glb",
+   "kit_id": "ruin.rubble",
+   "preset": "drift",
+   "sha256": "3e055584ffd204b89d9f74a7e75cd4b493b516269da03aa4f1164934f9387a62"
+  },
+  "ruin.rubble__drums": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.rubble__drums.glb",
+   "kit_id": "ruin.rubble",
+   "preset": "drums",
+   "sha256": "8638d9330a50a140f32b9a6f3e6c89b007a319ec5456d8ffa542a88006bc8fba"
+  },
+  "ruin.rubble__large": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.rubble__large.glb",
+   "kit_id": "ruin.rubble",
+   "preset": "large",
+   "sha256": "1a111951ae8b26fa9d49fa51b8361325098cf6bee82518e07fbc40100fadd0d1"
+  },
+  "ruin.stairs": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.stairs.glb",
+   "kit_id": "ruin.stairs",
+   "preset": null,
+   "sha256": "722b3843cccb506353a7e6c5a58d3640278198f15e05c0514bbc088a698e27e7"
+  },
+  "ruin.stairs__low": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.stairs__low.glb",
+   "kit_id": "ruin.stairs",
+   "preset": "low",
+   "sha256": "0604062e18d6121505e9eef22cd0bea80a22c6de7177878ac65e09e92ea58c07"
+  },
+  "ruin.stairs__ruined": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.stairs__ruined.glb",
+   "kit_id": "ruin.stairs",
+   "preset": "ruined",
+   "sha256": "2d1e4602c83c2d336d590bea91d24c4f56ec8bb7ac04f3734e4e7200a7a026fc"
+  },
+  "ruin.stairs__wide": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.stairs__wide.glb",
+   "kit_id": "ruin.stairs",
+   "preset": "wide",
+   "sha256": "41a35a9e7942804773a6b9f96c71e73dc19fba83bd0cfd9ba23ee3fe9465d9c7"
+  },
+  "ruin.wall": {
+   "glb": "kits/library/ancient_ruins/assets/ruin.wall.glb",
+   "kit_id": "ruin.wall",
+   "preset": null,
+   "sha256": "b91fd04b33c14bece8b5341744c102db41aa39abe0b8f35af9c053a3cc6874f1"
+  },
+  "ruin.wall__broken": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.wall__broken.glb",
+   "kit_id": "ruin.wall",
+   "preset": "broken",
+   "sha256": "46e9ea6a122e3746f06ffc4f240b981519eb40e89cedfb6382da22fa03aa50d7"
+  },
+  "ruin.wall__door": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.wall__door.glb",
+   "kit_id": "ruin.wall",
+   "preset": "door",
+   "sha256": "aadb03bf9fab4e5d5dd461a3ed0a53ea7e9ead754348e9d5a467a7b96353fe61"
+  },
+  "ruin.wall__half": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.wall__half.glb",
+   "kit_id": "ruin.wall",
+   "preset": "half",
+   "sha256": "cbf2ccf25bb1054c521867ea4548f3b8109a2557a3bf32757c6893a63179e564"
+  },
+  "ruin.wall__low": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.wall__low.glb",
+   "kit_id": "ruin.wall",
+   "preset": "low",
+   "sha256": "31b0ff8a861544a65489c25194ae9f14901f228a502dc7aed6d53942ec1ccffe"
+  },
+  "ruin.wall__relief": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.wall__relief.glb",
+   "kit_id": "ruin.wall",
+   "preset": "relief",
+   "sha256": "19e0c4c715397c22afacd18878643cc592aa7719abfe8a110818876ee9712d24"
+  },
+  "ruin.wall__window": {
+   "glb": "kits/library/ancient_ruins/presets/ruin.wall__window.glb",
+   "kit_id": "ruin.wall",
+   "preset": "window",
+   "sha256": "9e00843b84d51bcc9742ae125a6cb4d7a4a62e7b2efc491bd1f3a49658451e27"
+  },
+  "sky.backdrop": {
+   "alias_of": "land.sky__mesas",
+   "glb": "kits/library/ancient_ruins/presets/land.sky__mesas.glb",
+   "kit_id": "land.sky",
+   "preset": "mesas",
+   "sha256": "96c12b6e748572f678754adf4135a0edd257c14d9ed371e15a995db826d79144"
+  },
+  "wild.dune": {
+   "glb": "kits/library/ancient_ruins/assets/wild.dune.glb",
+   "kit_id": "wild.dune",
+   "preset": null,
+   "sha256": "d87474ab46ff5877519a57fda13a7438b6e94a15d5306379bcf20959d28e58a9"
+  },
+  "wild.dune__crescent": {
+   "glb": "kits/library/ancient_ruins/presets/wild.dune__crescent.glb",
+   "kit_id": "wild.dune",
+   "preset": "crescent",
+   "sha256": "fca730d9e7d87015d6b89a8ff09edc664e603cfa1f55d1c46424311b965f3589"
+  },
+  "wild.dune__ridge": {
+   "glb": "kits/library/ancient_ruins/presets/wild.dune__ridge.glb",
+   "kit_id": "wild.dune",
+   "preset": "ridge",
+   "sha256": "b8eb4b996561864a19625de170ff3413c667157ea65257f2ea64f1cb8099ac73"
+  },
+  "wild.dune__small": {
+   "glb": "kits/library/ancient_ruins/presets/wild.dune__small.glb",
+   "kit_id": "wild.dune",
+   "preset": "small",
+   "sha256": "3739a41a66ed80cd86a913b68b19f14b5617508dca8c0ceae5180d48e87a84a3"
+  },
+  "wild.fern": {
+   "glb": "kits/library/ancient_ruins/assets/wild.fern.glb",
+   "kit_id": "wild.fern",
+   "preset": null,
+   "sha256": "9fb71687801b05e8cfe623cdb27febcd1db083cb688a7f544ae92d08cd085825"
+  },
+  "wild.fern__small": {
+   "glb": "kits/library/ancient_ruins/presets/wild.fern__small.glb",
+   "kit_id": "wild.fern",
+   "preset": "small",
+   "sha256": "baa19bdf155699062227f47784ddde70d7d0409f780ce4a7d375e5958b18e39a"
+  },
+  "wild.fern__spray": {
+   "glb": "kits/library/ancient_ruins/presets/wild.fern__spray.glb",
+   "kit_id": "wild.fern",
+   "preset": "spray",
+   "sha256": "d4e125fda816b86d4f25f5855adfaa87880fa532cde95a514b18de80eedd2f9a"
+  },
+  "wild.log": {
+   "glb": "kits/library/ancient_ruins/assets/wild.log.glb",
+   "kit_id": "wild.log",
+   "preset": null,
+   "sha256": "c02362556e16f5f6c5d79abf6291e5c03207655c3207caf884258e66b6aba9b8"
+  },
+  "wild.log__roots": {
+   "glb": "kits/library/ancient_ruins/presets/wild.log__roots.glb",
+   "kit_id": "wild.log",
+   "preset": "roots",
+   "sha256": "c4e3af01eacb74fdd483e37bf6f62fe6798da049fdcc55f254fe64504819cea3"
+  },
+  "wild.log__stump": {
+   "glb": "kits/library/ancient_ruins/presets/wild.log__stump.glb",
+   "kit_id": "wild.log",
+   "preset": "stump",
+   "sha256": "c50bca8536c0f2eae7e4549d0bcf3d8ff86d4bf3faf51838099b9eb65027d65f"
+  },
+  "wild.oasis": {
+   "glb": "kits/library/ancient_ruins/assets/wild.oasis.glb",
+   "kit_id": "wild.oasis",
+   "preset": null,
+   "sha256": "960b23af3c3fa2a4e216835bb1351023fe0c3aa8b7377512994fe7c5b394f8aa"
+  },
+  "wild.oasis__jungle": {
+   "glb": "kits/library/ancient_ruins/presets/wild.oasis__jungle.glb",
+   "kit_id": "wild.oasis",
+   "preset": "jungle",
+   "sha256": "4f1e85c33b0ac143af620a7de2a4589844f2e3de2860c6427d29e61c515f38e2"
+  },
+  "wild.oasis__small": {
+   "glb": "kits/library/ancient_ruins/presets/wild.oasis__small.glb",
+   "kit_id": "wild.oasis",
+   "preset": "small",
+   "sha256": "62a7185ba8c9ad87be326ca00d4474dc22937163b206d2d5dd8ea1b746dc7728"
+  },
+  "wild.palm": {
+   "glb": "kits/library/ancient_ruins/assets/wild.palm.glb",
+   "kit_id": "wild.palm",
+   "preset": null,
+   "sha256": "688195e9f4f2e37ba3b5eb7dcd588c9c76117db80f54dfb03d8e252db428f186"
+  },
+  "wild.palm__leaning": {
+   "glb": "kits/library/ancient_ruins/presets/wild.palm__leaning.glb",
+   "kit_id": "wild.palm",
+   "preset": "leaning",
+   "sha256": "57c50d9ba3bb653702efa5b214df979221c3629351136c96f4a1debe4ae8500f"
+  },
+  "wild.palm__twin": {
+   "glb": "kits/library/ancient_ruins/presets/wild.palm__twin.glb",
+   "kit_id": "wild.palm",
+   "preset": "twin",
+   "sha256": "82b74016524b462da3d1750bb0e6898b0ce3a473b8fbd0a739f6d78513978679"
+  },
+  "wild.palm__young": {
+   "glb": "kits/library/ancient_ruins/presets/wild.palm__young.glb",
+   "kit_id": "wild.palm",
+   "preset": "young",
+   "sha256": "d5c91892784f0467b7e769e0e0dcbb26efe10b4ba934250036738c26ee76a06c"
+  },
+  "wild.reeds": {
+   "glb": "kits/library/ancient_ruins/assets/wild.reeds.glb",
+   "kit_id": "wild.reeds",
+   "preset": null,
+   "sha256": "a0dd88f2289e8e9c52201b58c99aa8e0786a51e3c9adfa838e6014d6dc157b25"
+  },
+  "wild.reeds__grass": {
+   "glb": "kits/library/ancient_ruins/presets/wild.reeds__grass.glb",
+   "kit_id": "wild.reeds",
+   "preset": "grass",
+   "sha256": "c0841f64ba7ab6df24dbb90f9037e49ab029a9c478403370c7e6bd526857d4a1"
+  },
+  "wild.reeds__papyrus": {
+   "glb": "kits/library/ancient_ruins/presets/wild.reeds__papyrus.glb",
+   "kit_id": "wild.reeds",
+   "preset": "papyrus",
+   "sha256": "2a832478e5da25a931512dbcf9f10bac41eea2f2cd39150174b448d12f32e1d7"
+  },
+  "wild.rock": {
+   "glb": "kits/library/ancient_ruins/assets/wild.rock.glb",
+   "kit_id": "wild.rock",
+   "preset": null,
+   "sha256": "5bfed03e4667b933204e2d6e79a7d7b4cda3c60779e7a2dac3d4b23be69afbff"
+  },
+  "wild.rock__cluster": {
+   "glb": "kits/library/ancient_ruins/presets/wild.rock__cluster.glb",
+   "kit_id": "wild.rock",
+   "preset": "cluster",
+   "sha256": "4ac331f6f2359ba02b3b368617c5f81a838d00a57e847979cbf6baacdb55a391"
+  },
+  "wild.rock__pillar": {
+   "glb": "kits/library/ancient_ruins/presets/wild.rock__pillar.glb",
+   "kit_id": "wild.rock",
+   "preset": "pillar",
+   "sha256": "9da6971f1d55377dd0a67c97dd16aabe66ca2ecd1e34db776288ada390e2d8cf"
+  },
+  "wild.rock__slab": {
+   "glb": "kits/library/ancient_ruins/presets/wild.rock__slab.glb",
+   "kit_id": "wild.rock",
+   "preset": "slab",
+   "sha256": "37067d504d290b6cf57900e92e741761ad89289b47e143a10717ac61c3d877e9"
+  },
+  "wild.shrub": {
+   "glb": "kits/library/ancient_ruins/assets/wild.shrub.glb",
+   "kit_id": "wild.shrub",
+   "preset": null,
+   "sha256": "fd1bf77f350ffef4603eb2fb690ae393018d87d6c3596fe2e5ad82f7deca000b"
+  },
+  "wild.shrub__broadleaf": {
+   "glb": "kits/library/ancient_ruins/presets/wild.shrub__broadleaf.glb",
+   "kit_id": "wild.shrub",
+   "preset": "broadleaf",
+   "sha256": "dbd3516420f7787b606fca015ae1f1c451fc63ec0eb4e306ee7896bbe4087348"
+  },
+  "wild.shrub__flowering": {
+   "glb": "kits/library/ancient_ruins/presets/wild.shrub__flowering.glb",
+   "kit_id": "wild.shrub",
+   "preset": "flowering",
+   "sha256": "b4945c1b389f1fa458df1a570bc133477fc68653307c90d38553a73a105f0211"
+  },
+  "wild.tree": {
+   "glb": "kits/library/ancient_ruins/assets/wild.tree.glb",
+   "kit_id": "wild.tree",
+   "preset": null,
+   "sha256": "fdeef14ba7716c57649ad64da15b2abd1b3af116ca931a11e51e99dfa1bcc7d7"
+  },
+  "wild.tree__strangler": {
+   "glb": "kits/library/ancient_ruins/presets/wild.tree__strangler.glb",
+   "kit_id": "wild.tree",
+   "preset": "strangler",
+   "sha256": "9a89fd5266adc104520fb2d7ae8a6c3f71fa432233985117483eb1029f0a7ea7"
+  },
+  "wild.tree__tall": {
+   "glb": "kits/library/ancient_ruins/presets/wild.tree__tall.glb",
+   "kit_id": "wild.tree",
+   "preset": "tall",
+   "sha256": "5bc424344243df59b42bae59852b0c2a0b8b467bf2eaf336b4d9ebb7629d8db6"
+  },
+  "wild.vines": {
+   "glb": "kits/library/ancient_ruins/assets/wild.vines.glb",
+   "kit_id": "wild.vines",
+   "preset": null,
+   "sha256": "dbae7092670795510472c03eeb9afe59a8439a91a46c2a34f0f9778f5407d982"
+  },
+  "wild.vines__narrow": {
+   "glb": "kits/library/ancient_ruins/presets/wild.vines__narrow.glb",
+   "kit_id": "wild.vines",
+   "preset": "narrow",
+   "sha256": "51112b861ec438da155a2ff1a22bbe524731cd762db2ed03286f3311c7e28257"
+  }
+ },
+ "format": 1,
+ "kit_pack": "ancient_ruins",
+ "note": "ANCIENTKIT bindings: kit defaults (<kit_id>), presets (<kit_id>__<preset>) and the names the runtime places by itself (arch.door -> ruin.gate frame, sky.backdrop -> land.sky set). Every row hash-pinned; regenerate with tools/ancientkit_library.py bindings.",
+ "pack": "ancient_ruins"
+}

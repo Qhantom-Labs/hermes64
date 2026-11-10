@@ -1,0 +1,92 @@
+{
+  "contract_version": "1.0.0", "id": "last_light", "title": "The Last Light",
+  "description": "Three years after her father vanished on the night the lighthouse failed, Mara returns to a coast that has kept his room but not his explanation.",
+  "metadata": {"protagonist": "mara", "target_minutes": 10, "style_pack": "n64_v0", "logbook_pages": ["page_one", "page_two", "page_three", "page_four"], "pacing_note": "Ten minutes is an authoring target, not measured playtime."},
+  "start": {"location": "fog_street", "inventory": [], "flags": {"clue": false, "page_one": false, "page_two": false, "page_three": false, "page_four": false, "lamp_lit": false, "departed": false, "figure_seen": false}, "dialogue": {"ferry_words": ""}, "tide": {"state": "low", "tick": 0}},
+  "rooms": [
+    {"id": "fog_street", "name": "Fog Street", "description": "The street ends where the sea begins pretending to be road. Mara has been gone three years. Someone has kept the windows washed.", "grid_size": [12, 10], "kit_refs": ["kit/cobble", "kit/pier", "kit/fence"],
+      "doors": [
+        {"id": "boathouse_path", "wall": "east", "position": 5, "to_room": "boathouse", "to_door": "street_door", "label": "Cross the exposed causeway", "conditions": [{"tide": "low"}]},
+        {"id": "cottage_path", "wall": "north", "position": 7, "to_room": "keepers_cottage", "to_door": "street_door", "label": "Climb to the keeper's cottage", "conditions": []}
+      ], "cameras": [{"id": "street_wide", "position": [6, 8, 16], "look_at": [6, 1, 5]}], "props": [
+        {"id": "ferry_bell", "asset": "prop/bell", "position": [8, 1, 7], "rotation": [0, 0, 0]},
+        {"id": "mooring", "asset": "kit/boat", "position": [10, 0, 7], "rotation": [0, 90, 0]}
+      ], "character_ids": ["mara", "ferryman"]},
+    {"id": "boathouse", "name": "Boathouse", "description": "A boat hangs above the dark water on straps stiff with salt. Beneath it, a clockwork tooth clicks whenever the tide touches the piles.", "grid_size": [8, 8], "kit_refs": ["kit/timber_wall", "kit/pier", "kit/roof"],
+      "doors": [{"id": "street_door", "wall": "west", "position": 4, "to_room": "fog_street", "to_door": "boathouse_path", "label": "Return across the causeway", "conditions": [{"tide": "low"}]}],
+      "cameras": [{"id": "boat_wide", "position": [10, 6, 10], "look_at": [4, 1, 4]}], "props": [
+        {"id": "oil_tin", "asset": "prop/oil", "position": [2, 1, 3], "rotation": [0, 0, 0]},
+        {"id": "gear_box", "asset": "prop/clockwork_gear", "position": [6, 1, 3], "rotation": [0, 0, 0]},
+        {"id": "log_leaf", "asset": "prop/logbook", "position": [4, 1, 6], "rotation": [0, 0, 0]}
+      ], "character_ids": []},
+    {"id": "keepers_cottage", "name": "Keeper's Cottage", "description": "Her father's coat still bends at the elbows. The room smells of cold tea and lens polish, neither strong enough to account for the years.", "grid_size": [10, 8], "kit_refs": ["kit/plaster_wall", "kit/floor", "kit/stairs"],
+      "doors": [
+        {"id": "street_door", "wall": "south", "position": 5, "to_room": "fog_street", "to_door": "cottage_path", "label": "Go down to the street", "conditions": []},
+        {"id": "lamp_stair", "wall": "north", "position": 7, "to_room": "lamp_room", "to_door": "cottage_stair", "label": "Open the stair's salt-swollen latch", "conditions": [{"flag": "clue", "equals": true}]}
+      ], "cameras": [{"id": "cottage_wide", "position": [13, 7, 12], "look_at": [5, 1, 4]}], "props": [
+        {"id": "logbook", "asset": "prop/logbook", "position": [3, 1, 3], "rotation": [0, 0, 0]},
+        {"id": "crystal_case", "asset": "prop/lens_crystal", "position": [7, 1, 4], "rotation": [0, 0, 0]}
+      ], "character_ids": []},
+    {"id": "lamp_room", "name": "Lamp Room", "description": "The empty lens cradle faces the sea. A fine stripe of daylight lies where the beam used to turn. Far out, a boat's horn asks a question of the fog.", "grid_size": [8, 8], "kit_refs": ["kit/stone_wall", "kit/floor", "kit/window_frame"],
+      "doors": [{"id": "cottage_stair", "wall": "south", "position": 3, "to_room": "keepers_cottage", "to_door": "lamp_stair", "label": "Descend to the cottage", "conditions": []}],
+      "cameras": [{"id": "lamp_wide", "position": [11, 8, 11], "look_at": [4, 2, 4]}], "props": [
+        {"id": "lamp", "asset": "prop/lighthouse_lamp", "position": [4, 1, 4], "rotation": [0, 0, 0]},
+        {"id": "last_leaf", "asset": "prop/logbook", "position": [2, 1, 5], "rotation": [0, 0, 0]}
+      ], "character_ids": []}
+  ],
+  "characters": [
+    {"id": "mara", "name": "Mara", "role": "returning_daughter", "body_id": "human_base_v1", "base_rig_id": "human_16", "params": {"costume": "travel_coat", "colour": "#8d6a58", "voice_tags": ["quiet", "measured"]}, "role_profiles": {"returning_daughter": {"costume": "travel_coat", "colour": "#8d6a58", "voice_tags": ["quiet", "measured"]}}},
+    {"id": "ferryman", "name": "The Ferryman", "role": "clue_giver", "body_id": "human_base_v1", "base_rig_id": "human_16", "params": {"costume": "oilskin", "colour": "#a89a64", "voice_tags": ["weathered", "restrained"]}, "role_profiles": {"clue_giver": {"costume": "oilskin", "colour": "#a89a64", "voice_tags": ["weathered", "restrained"]}, "antagonist": {"costume": "buttoned_storm_coat", "colour": "#514958", "voice_tags": ["withholding", "accusatory"]}}}
+  ],
+  "items": [
+    {"id": "oil", "name": "Sealed lamp oil", "description": "A thumbprint in the wax. The oil inside has outlasted its keeper.", "asset": "prop/oil"},
+    {"id": "clockwork_gear", "name": "Clockwork gear", "description": "One tooth is bright where the mechanism stopped under load.", "asset": "prop/clockwork_gear"},
+    {"id": "lens_crystal", "name": "Lens crystal", "description": "Wrapped in a sleeve cut from Mara's childhood coat. It scatters the grey into small, stubborn colours.", "asset": "prop/lens_crystal"}
+  ],
+  "flags": [
+    {"id": "clue", "initial": false, "description": "The ferryman explained how to lift the stair latch."},
+    {"id": "page_one", "initial": false, "description": "Read logbook page one."},
+    {"id": "page_two", "initial": false, "description": "Read logbook page two."},
+    {"id": "page_three", "initial": false, "description": "Read logbook page three."},
+    {"id": "page_four", "initial": false, "description": "Read logbook page four."},
+    {"id": "lamp_lit", "initial": false, "description": "Mara relit the lamp."},
+    {"id": "departed", "initial": false, "description": "Mara chose to leave the light dark."},
+    {"id": "figure_seen", "initial": false, "description": "The first beam sweep revealed a figure on the rocks; its identity remains unknown."}
+  ],
+  "interactions": [
+    {"id": "talk_ferryman", "room": "fog_street", "kind": "talk", "target": "ferryman", "label": "Speak to the ferryman", "text": "He holds the rope as if the boat might leave without him.", "conditions": [], "effects": [{"dialogue": "ferry_words", "node": "greeting"}]},
+    {"id": "take_oil", "room": "boathouse", "kind": "take", "target": "oil", "label": "Take the sealed oil", "text": "The tin leaves a dry circle in the damp wood.", "conditions": [{"item": "oil", "present": false}], "effects": [{"give": "oil"}]},
+    {"id": "take_gear", "room": "boathouse", "kind": "take", "target": "clockwork_gear", "label": "Take the clockwork gear", "text": "The little clicking stops. The water keeps its own time.", "conditions": [{"item": "clockwork_gear", "present": false}], "effects": [{"give": "clockwork_gear"}]},
+    {"id": "take_crystal", "room": "keepers_cottage", "kind": "take", "target": "lens_crystal", "label": "Unwrap the lens crystal", "text": "She recognises the sleeve before the crystal. He had saved the blue cuff.", "conditions": [{"item": "lens_crystal", "present": false}], "effects": [{"give": "lens_crystal"}]},
+    {"id": "read_page_one", "room": "keepers_cottage", "kind": "examine", "target": "logbook", "label": "Read logbook: first page", "text": "LOGBOOK 1 / Three winters earlier. 'Mara writes that the city has light all night. I am glad of that. I would not have her count darkness for a living. Replaced the lower bearing. Sent her the money I said I had spent on a coat.'", "conditions": [], "effects": [{"flag": "page_one", "value": true}]},
+    {"id": "read_page_two", "room": "keepers_cottage", "kind": "examine", "target": "logbook", "label": "Read logbook: second page", "text": "LOGBOOK 2 / The week before. 'The turn is catching. Spare gear in the boathouse, oil beside it. I wrapped the lens in her old sleeve. There are proper cloths for this. None of them seemed clean enough.'", "conditions": [{"flag": "page_one", "equals": true}], "effects": [{"flag": "page_two", "value": true}]},
+    {"id": "read_page_three", "room": "boathouse", "kind": "examine", "target": "log_leaf", "label": "Read the loose logbook page", "text": "LOGBOOK 3 / The last afternoon. 'Low water gives us the causeway. High water takes it back. Wait rather than try your footing. If the stair sticks, lift the latch before you pull. I have told the ferryman. He says he remembers everything I owe him.'", "conditions": [], "effects": [{"flag": "page_three", "value": true}]},
+    {"id": "read_page_four", "room": "lamp_room", "kind": "examine", "target": "last_leaf", "label": "Read logbook: final page", "text": "LOGBOOK 4 / No date. 'The light failed at eleven. A horn beyond the reef. I could not leave them to it. If you come back, Mara, you do not owe this place your life.' Below that, a smear where his hand crossed wet ink. Nothing about whether he returned.", "conditions": [{"flag": "page_one", "equals": true}, {"flag": "page_two", "equals": true}, {"flag": "page_three", "equals": true}], "effects": [{"flag": "page_four", "value": true}]},
+    {"id": "relight_lamp", "room": "lamp_room", "kind": "use", "target": "lamp", "label": "Fit gear and crystal; fill and light the lamp", "text": "The gear accepts the handle. Oil climbs the wick. Mara settles the crystal and strikes a match. At the first turn of the beam, a figure stands on the rocks. On the second, there is only spray.", "conditions": [{"item": "oil", "present": true}, {"item": "clockwork_gear", "present": true}, {"item": "lens_crystal", "present": true}, {"flag": "clue", "equals": true}, {"flag": "page_four", "equals": true}], "effects": [{"flag": "lamp_lit", "value": true}, {"flag": "figure_seen", "value": true}]},
+    {"id": "leave_dark", "room": "fog_street", "kind": "use", "target": "mooring", "label": "Leave the lighthouse dark", "text": "Mara unties the shore rope. She will not turn an unanswered letter into a duty. Behind her, the tower keeps its shape in the fog.", "conditions": [{"flag": "page_four", "equals": true}, {"flag": "clue", "equals": true}], "effects": [{"flag": "departed", "value": true}]}
+  ],
+  "dialogues": [{"id": "ferry_words", "character": "ferryman", "start_node": "greeting", "nodes": [
+    {"id": "greeting", "text": "'Three years,' the ferryman says. 'You counted them away. We counted them here.' He does not offer to take her bag.", "conditions": [{"role": "ferryman", "equals": "clue_giver"}], "choices": [
+      {"id": "father", "text": "Did you see my father that night?", "conditions": [], "effects": [], "next": "night"},
+      {"id": "stair", "text": "I need to reach the lamp.", "conditions": [], "effects": [{"flag": "clue", "value": true}], "next": "latch"},
+      {"id": "goodbye", "text": "Not yet. I need to look around.", "conditions": [], "effects": [], "next": ""}
+    ]},
+    {"id": "night", "text": "'I saw his lamp go down the steps. After that, the fog. People make a story out of the part they cannot see.' He tightens a knot that is already tight.", "conditions": [], "choices": [
+      {"id": "help", "text": "Then tell me something you know.", "conditions": [], "effects": [{"flag": "clue", "value": true}], "next": "latch"},
+      {"id": "back", "text": "I am not asking you to invent him for me.", "conditions": [], "effects": [], "next": "greeting"}
+    ]},
+    {"id": "latch", "text": "'Lift the stair latch before you pull. He never fixed it. Thought a person ought to learn the door.' A boat sounds beyond the reef. 'You can mend a lamp. Do not confuse that with bringing anyone back.'", "conditions": [], "choices": [
+      {"id": "remember", "text": "I know the difference. I think.", "conditions": [], "effects": [], "next": ""}
+    ]}
+  ]}],
+  "tide": {"id": "harbour_tide", "states": [{"id": "low", "label": "Low tide: the causeway is exposed", "duration": 2}, {"id": "high", "label": "High tide: the causeway is submerged", "duration": 2}], "wait_label": "Wait for the water", "wait_text": "Water works at the piles. Mara lets it finish its sentence."},
+  "quests": [
+    {"id": "hear_ferryman", "title": "A door remembered", "description": "Learn how to open the stair from the ferryman.", "conditions": [{"role": "ferryman", "equals": "clue_giver"}, {"flag": "clue", "equals": true}]},
+    {"id": "read_logbook", "title": "Four pages, not an answer", "description": "Read all four surviving logbook pages.", "conditions": [{"flag": "page_one", "equals": true}, {"flag": "page_two", "equals": true}, {"flag": "page_three", "equals": true}, {"flag": "page_four", "equals": true}]},
+    {"id": "repair_ready", "title": "What can be mended", "description": "Find oil, a clockwork gear and the lens crystal.", "conditions": [{"item": "oil", "present": true}, {"item": "clockwork_gear", "present": true}, {"item": "lens_crystal", "present": true}]}
+  ],
+  "endings": [
+    {"id": "relight", "conditions": [{"flag": "lamp_lit", "equals": true}, {"flag": "figure_seen", "equals": true}], "text": "The boat answers with one low note, and passes safely beyond the reef. Mara watches the beam complete another circle. The rocks are empty. She has not found her father. She has lit a lamp. For tonight, she allows these to be different things."},
+    {"id": "leave_dark", "conditions": [{"flag": "departed", "equals": true}], "text": "The ferry noses out along the inner channel. Beyond the reef, the other boat's horn fades; Mara cannot tell whether it has turned away. The light stays dark. At the bend, she looks back once, not to make a promise, only to know what she is leaving."}
+  ]
+}

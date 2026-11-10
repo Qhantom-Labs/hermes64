@@ -1,0 +1,33 @@
+{
+  "id": "shared_glow",
+  "conditions": [
+    {
+      "group": "cats_found",
+      "at_least": 12
+    },
+    {
+      "flag": "window_revealed",
+      "equals": true
+    }
+  ],
+  "text": "With the whole small procession gathered, you suggest a third setting: a gentle pool of warmth at every seat, with the central lamp still low enough to leave the stars visible. Neri finds the control. Luma fills the cups. The cats distribute themselves without consulting the plan. Nobody minds.",
+  "trigger": {
+    "id": "share_glow",
+    "room": "conversation_pit",
+    "kind": "use",
+    "target": "sphere_table",
+    "label": "Share a small glow at every seat",
+    "text": "You ask for enough light to see one another's work without erasing the night outside.",
+    "conditions": [
+      {
+        "group": "cats_found",
+        "at_least": 12
+      },
+      {
+        "flag": "window_revealed",
+        "equals": true
+      }
+    ],
+    "effects": []
+  }
+}

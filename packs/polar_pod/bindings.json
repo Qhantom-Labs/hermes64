@@ -1,0 +1,686 @@
+{
+  "assets": {
+    "arch.bridge": {
+      "glb": "kits/library/polar_pod/assets/arch.bridge.glb",
+      "kit_id": "arch.bridge",
+      "preset": null,
+      "sha256": "053a376f759b060ae7c455cc1260c45924107850d7c94dfeff51aa3edf95d37d"
+    },
+    "arch.ceiling_module": {
+      "glb": "kits/library/polar_pod/assets/arch.ceiling_module.glb",
+      "kit_id": "arch.ceiling_module",
+      "preset": null,
+      "sha256": "421a0857a6273d6e6507e50d0f657bcc6c5ca89c2aa3c0b92ffc2b558d23dfa9"
+    },
+    "arch.column": {
+      "glb": "kits/library/polar_pod/assets/arch.column.glb",
+      "kit_id": "arch.column",
+      "preset": null,
+      "sha256": "e0640134dfffb57ca6618387d2d51b782b1f34b6d36e76893bf2fa6a7d075c3b"
+    },
+    "arch.corridor": {
+      "glb": "kits/library/polar_pod/assets/arch.corridor.glb",
+      "kit_id": "arch.corridor",
+      "preset": null,
+      "sha256": "03b399ae133434aa70eb5e05adb57d8bfe1ef18800f67a1396a61270c0121f02"
+    },
+    "arch.door": {
+      "glb": "kits/library/polar_pod/assets/arch.door.glb",
+      "kit_id": "arch.door",
+      "preset": null,
+      "sha256": "145860e348bff4eb26600c50de4c451169dc51de4675a995a0b69c40c97d6d92"
+    },
+    "arch.floor_module": {
+      "glb": "kits/library/polar_pod/assets/arch.floor_module.glb",
+      "kit_id": "arch.floor_module",
+      "preset": null,
+      "sha256": "266e9a1737dcffab772fc89b913e1115cc129e52c88fbaea0b117eb5677e72a9"
+    },
+    "arch.house": {
+      "glb": "kits/library/polar_pod/assets/arch.house.glb",
+      "kit_id": "arch.house",
+      "preset": null,
+      "sha256": "bc3e7caa42a9c1ccbc3e5d69b8cdf55fa4c87b2a0732e9e8f1727ebdbf84a727"
+    },
+    "arch.pier": {
+      "glb": "kits/library/polar_pod/assets/arch.pier.glb",
+      "kit_id": "arch.pier",
+      "preset": null,
+      "sha256": "3e5c523b1bad0ddc42887a1b413205a207a7572d263400cc804f3aa721f38cf4"
+    },
+    "arch.railing": {
+      "glb": "kits/library/polar_pod/assets/arch.railing.glb",
+      "kit_id": "arch.railing",
+      "preset": null,
+      "sha256": "53c83ec4be1fa2398fd2ea150a139de78be44c54bcfacfc0ca026a82bfceb98c"
+    },
+    "arch.roof": {
+      "glb": "kits/library/polar_pod/assets/arch.roof.glb",
+      "kit_id": "arch.roof",
+      "preset": null,
+      "sha256": "48da3ebe98d2b973e8ccca5d8b6805554a24cd8d2e4e66e1f00b387836cb11cc"
+    },
+    "arch.room_shell": {
+      "glb": "kits/library/polar_pod/assets/arch.room_shell.glb",
+      "kit_id": "arch.room_shell",
+      "preset": null,
+      "sha256": "faa51cdcd32b9a0ba42833ee5f19db568e952bd94e3c0084676f38ef67a21251"
+    },
+    "arch.stairs": {
+      "glb": "kits/library/polar_pod/assets/arch.stairs.glb",
+      "kit_id": "arch.stairs",
+      "preset": null,
+      "sha256": "70964f528d318efebd51fd5429006d256c265a18a346eb2727890a7815ad8e6b"
+    },
+    "arch.tower": {
+      "fidelity": "pack look asset (ROOMLOOK exterior composition)",
+      "glb": "kits/library/polar_pod/assets/arch.tower.glb",
+      "kit_id": "arch.tower",
+      "preset": null,
+      "sha256": "1587f5c970410e0fd65c1f2c4b8b9f899a973dbd64aec72261f4c4e536e4c96d"
+    },
+    "arch.wall_module": {
+      "glb": "kits/library/polar_pod/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "a66f1d841d965855a5b55b4009d0d6754a0a45ee7e41a7582e72ea08c3db51a4"
+    },
+    "arch.window": {
+      "glb": "kits/library/polar_pod/assets/arch.window.glb",
+      "kit_id": "arch.window",
+      "preset": null,
+      "sha256": "92b06f8c228d950949e57b12b83aa92cf583e004472fdb022b8455dd79f5d78b"
+    },
+    "furn.bed": {
+      "glb": "kits/library/polar_pod/assets/furn.bed.glb",
+      "kit_id": "furn.bed",
+      "preset": null,
+      "sha256": "37b0f57e241f51ecd5ffe77dc57a4c11f9a127e777ca79d04d8423786834a3a6"
+    },
+    "furn.bench": {
+      "glb": "kits/library/polar_pod/assets/furn.bench.glb",
+      "kit_id": "furn.bench",
+      "preset": null,
+      "sha256": "b015b81df3e91d9a13ebffa29e3602761a5f55f2ccf6c6fcf1db197a4b7372db"
+    },
+    "furn.chair": {
+      "glb": "kits/library/polar_pod/assets/furn.chair.glb",
+      "kit_id": "furn.chair",
+      "preset": null,
+      "sha256": "c02b9f978d7a8f5dbe4d924ae32c1fe55991a84d0e28918bd106a268ccea4bfd"
+    },
+    "furn.console": {
+      "glb": "kits/library/polar_pod/assets/furn.console.glb",
+      "kit_id": "furn.console",
+      "preset": null,
+      "sha256": "67e8efac5f1176c782d90997ea5d2e0cf4173a34fd0d50c9b4a4805741e84a1e"
+    },
+    "furn.container": {
+      "glb": "kits/library/polar_pod/assets/furn.container.glb",
+      "kit_id": "furn.container",
+      "preset": null,
+      "sha256": "fdd618788c9bd5ff04f04a6b14cf3829b7ee0f95ab3fd345e49c6e77ce34bdca"
+    },
+    "furn.hearth": {
+      "glb": "kits/library/polar_pod/assets/furn.hearth.glb",
+      "kit_id": "furn.hearth",
+      "preset": null,
+      "sha256": "8a67ec858a692ac75133ece5530f9daac318e10644192691795a4e5297c07c5a"
+    },
+    "furn.lamp": {
+      "glb": "kits/library/polar_pod/assets/furn.lamp.glb",
+      "kit_id": "furn.lamp",
+      "preset": null,
+      "sha256": "7c01483e0daa533f5865aca46be9be88fc7d213b9a304ecff1d65cbd21fdf4ab"
+    },
+    "furn.pod": {
+      "glb": "kits/library/polar_pod/assets/furn.pod.glb",
+      "kit_id": "furn.pod",
+      "preset": null,
+      "sha256": "3c7010901aae1fb314a055bd0410ae52de676223c67d4c06811be566dad01e86"
+    },
+    "furn.rug": {
+      "glb": "kits/library/polar_pod/assets/furn.rug.glb",
+      "kit_id": "furn.rug",
+      "preset": null,
+      "sha256": "31342c8399389de37b34412bdac0fb51f1d75bf8b1983c6e871ae19451b82199"
+    },
+    "furn.shelf": {
+      "glb": "kits/library/polar_pod/assets/furn.shelf.glb",
+      "kit_id": "furn.shelf",
+      "preset": null,
+      "sha256": "fda43fe6f3514a6cf5044f6a3811b84351289bb6f046f65522fbe381ba4599b3"
+    },
+    "furn.table": {
+      "glb": "kits/library/polar_pod/assets/furn.table.glb",
+      "kit_id": "furn.table",
+      "preset": null,
+      "sha256": "2fa165b57178c1accb9d303c86ccaa1e642f9654a67ff841f23b463e625e6de4"
+    },
+    "fx.particles": {
+      "glb": "kits/library/polar_pod/assets/fx.particles.glb",
+      "kit_id": "fx.particles",
+      "preset": null,
+      "sha256": "6c69c7566c78a3220655118ff76d093dc6cfe8f5d0e9b57a9fb343e8f4bbbd06"
+    },
+    "kit/blob_bench": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/furn.bench.glb",
+      "kit_id": "furn.bench",
+      "preset": null,
+      "sha256": "b015b81df3e91d9a13ebffa29e3602761a5f55f2ccf6c6fcf1db197a4b7372db"
+    },
+    "kit/blob_desk": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/presets/furn.console__desk_triple_crt.glb",
+      "kit_id": "furn.console",
+      "preset": "desk_triple_crt",
+      "sha256": "8d6feeb65e2f24b53f76f7e946ca911998679123f60747dcc3d5bce213d0b8ff"
+    },
+    "kit/boat": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/vehicle.boat.glb",
+      "kit_id": "vehicle.boat",
+      "preset": null,
+      "sha256": "90a7273bbb611d048d2b48e269c711d5692abe99035210f60702d2fc9054dfe3"
+    },
+    "kit/chrome_chaise": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/presets/furn.pod__chaise.glb",
+      "kit_id": "furn.pod",
+      "preset": "chaise",
+      "sha256": "6d5f02dfcb9b7740dfe575a21c945fbde206d83b9fb74258bd27e4933361cee3"
+    },
+    "kit/cobble": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.floor_module.glb",
+      "kit_id": "arch.floor_module",
+      "preset": null,
+      "sha256": "266e9a1737dcffab772fc89b913e1115cc129e52c88fbaea0b117eb5677e72a9"
+    },
+    "kit/curved_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "a66f1d841d965855a5b55b4009d0d6754a0a45ee7e41a7582e72ea08c3db51a4"
+    },
+    "kit/disc_table": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/presets/furn.table__disc_orb.glb",
+      "kit_id": "furn.table",
+      "preset": "disc_orb",
+      "sha256": "2010121efa0acefc0331556c03f045cbf1637c0bbf092e29b024a3e163636edd"
+    },
+    "kit/fence": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.railing.glb",
+      "kit_id": "arch.railing",
+      "preset": null,
+      "sha256": "53c83ec4be1fa2398fd2ea150a139de78be44c54bcfacfc0ca026a82bfceb98c"
+    },
+    "kit/floor": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.floor_module.glb",
+      "kit_id": "arch.floor_module",
+      "preset": null,
+      "sha256": "266e9a1737dcffab772fc89b913e1115cc129e52c88fbaea0b117eb5677e72a9"
+    },
+    "kit/flower_table": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/presets/furn.table__flower_table.glb",
+      "kit_id": "furn.table",
+      "preset": "flower_table",
+      "sha256": "be5f0d87af3d38270839fe386a1b83f8f4b694c1f4a08324e75c7e5e6b4c57c5"
+    },
+    "kit/gloss_floor": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.floor_module.glb",
+      "kit_id": "arch.floor_module",
+      "preset": null,
+      "sha256": "266e9a1737dcffab772fc89b913e1115cc129e52c88fbaea0b117eb5677e72a9"
+    },
+    "kit/glowing_dome": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.house.glb",
+      "kit_id": "arch.house",
+      "preset": null,
+      "sha256": "bc3e7caa42a9c1ccbc3e5d69b8cdf55fa4c87b2a0732e9e8f1727ebdbf84a727"
+    },
+    "kit/heated_path": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.floor_module.glb",
+      "kit_id": "arch.floor_module",
+      "preset": null,
+      "sha256": "266e9a1737dcffab772fc89b913e1115cc129e52c88fbaea0b117eb5677e72a9"
+    },
+    "kit/molded_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "a66f1d841d965855a5b55b4009d0d6754a0a45ee7e41a7582e72ea08c3db51a4"
+    },
+    "kit/organic_column": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.column.glb",
+      "kit_id": "arch.column",
+      "preset": null,
+      "sha256": "e0640134dfffb57ca6618387d2d51b782b1f34b6d36e76893bf2fa6a7d075c3b"
+    },
+    "kit/oval_window": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.window.glb",
+      "kit_id": "arch.window",
+      "preset": null,
+      "sha256": "92b06f8c228d950949e57b12b83aa92cf583e004472fdb022b8455dd79f5d78b"
+    },
+    "kit/panoramic_window": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/presets/arch.window__panorama.glb",
+      "kit_id": "arch.window",
+      "preset": "panorama",
+      "sha256": "2d0dceff7620daf33fa34062d8609e8fdcec3e4b98b11309fc8b5d5f95930d9b"
+    },
+    "kit/path_markers": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.sign.glb",
+      "kit_id": "prop.sign",
+      "preset": null,
+      "sha256": "b37c01b4279e0b9005696eab6757eb7050adec94d38315ef4b43c5dc33def384"
+    },
+    "kit/pier": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.pier.glb",
+      "kit_id": "arch.pier",
+      "preset": null,
+      "sha256": "3e5c523b1bad0ddc42887a1b413205a207a7572d263400cc804f3aa721f38cf4"
+    },
+    "kit/plaster_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "a66f1d841d965855a5b55b4009d0d6754a0a45ee7e41a7582e72ea08c3db51a4"
+    },
+    "kit/pod_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "a66f1d841d965855a5b55b4009d0d6754a0a45ee7e41a7582e72ea08c3db51a4"
+    },
+    "kit/quilt_chair": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/furn.chair.glb",
+      "kit_id": "furn.chair",
+      "preset": null,
+      "sha256": "c02b9f978d7a8f5dbe4d924ae32c1fe55991a84d0e28918bd106a268ccea4bfd"
+    },
+    "kit/railing": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.railing.glb",
+      "kit_id": "arch.railing",
+      "preset": null,
+      "sha256": "53c83ec4be1fa2398fd2ea150a139de78be44c54bcfacfc0ca026a82bfceb98c"
+    },
+    "kit/roof": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.roof.glb",
+      "kit_id": "arch.roof",
+      "preset": null,
+      "sha256": "48da3ebe98d2b973e8ccca5d8b6805554a24cd8d2e4e66e1f00b387836cb11cc"
+    },
+    "kit/round_window": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/presets/arch.window__porthole.glb",
+      "kit_id": "arch.window",
+      "preset": "porthole",
+      "sha256": "ee35d730c8204811465fb1be1279db95149206e074653a6cb139b17ef3ab1180"
+    },
+    "kit/rounded_hatch": {
+      "fidelity": "explicit kit interpretation; low-poly (8-segment) hatch for room triangle budgets with real actors",
+      "glb": "kits/library/polar_pod/presets/arch.door__hatch_lo.glb",
+      "kit_id": "arch.door",
+      "preset": "hatch_lo",
+      "sha256": "b8fa64f229f110db53d14786fe554f7d8c4ed6f10004ce0f91a806ec5c1a138f"
+    },
+    "kit/sleeping_pods": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/furn.bed.glb",
+      "kit_id": "furn.bed",
+      "preset": null,
+      "sha256": "37b0f57e241f51ecd5ffe77dc57a4c11f9a127e777ca79d04d8423786834a3a6"
+    },
+    "kit/small_fountain": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/furn.table.glb",
+      "kit_id": "furn.table",
+      "preset": null,
+      "sha256": "2fa165b57178c1accb9d303c86ccaa1e642f9654a67ff841f23b463e625e6de4"
+    },
+    "kit/snow_patch": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/terrain.patch.glb",
+      "kit_id": "terrain.patch",
+      "preset": null,
+      "sha256": "09caef4ecfed6c9ccf78734d292e7fc2892ee64e97bba8b9e2b830f4b59c81e9"
+    },
+    "kit/snow_rocks": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/nature.rock.glb",
+      "kit_id": "nature.rock",
+      "preset": null,
+      "sha256": "6248a6b79823a68c9243609c2679c5260d7282fc62976e2e2dd03480669f0fa5"
+    },
+    "kit/stairs": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.stairs.glb",
+      "kit_id": "arch.stairs",
+      "preset": null,
+      "sha256": "70964f528d318efebd51fd5429006d256c265a18a346eb2727890a7815ad8e6b"
+    },
+    "kit/stone_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "a66f1d841d965855a5b55b4009d0d6754a0a45ee7e41a7582e72ea08c3db51a4"
+    },
+    "kit/sunken_lounge": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/presets/furn.pod__conversation_pit.glb",
+      "kit_id": "furn.pod",
+      "preset": "conversation_pit",
+      "sha256": "613097df210e9a9967afc5bf67a26243542204e2b5b09384fe6788623988b938"
+    },
+    "kit/timber_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "a66f1d841d965855a5b55b4009d0d6754a0a45ee7e41a7582e72ea08c3db51a4"
+    },
+    "kit/warm_pipe": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.column.glb",
+      "kit_id": "arch.column",
+      "preset": null,
+      "sha256": "e0640134dfffb57ca6618387d2d51b782b1f34b6d36e76893bf2fa6a7d075c3b"
+    },
+    "kit/window_frame": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/arch.window.glb",
+      "kit_id": "arch.window",
+      "preset": null,
+      "sha256": "92b06f8c228d950949e57b12b83aa92cf583e004472fdb022b8455dd79f5d78b"
+    },
+    "look/crystal_tree": {
+      "fidelity": "pack look asset (ROOMLOOK exterior composition)",
+      "glb": "kits/library/polar_pod/presets/nature.tree__crystal.glb",
+      "kit_id": "nature.tree",
+      "preset": "crystal",
+      "sha256": "d028fbfe1c35f4558c2f7e4f84d057978d932b9c8ab0b2061704199a52bd8b55"
+    },
+    "look/frosted_tree": {
+      "fidelity": "pack look asset (ROOMLOOK exterior composition)",
+      "glb": "kits/library/polar_pod/presets/nature.tree__frosted.glb",
+      "kit_id": "nature.tree",
+      "preset": "frosted",
+      "sha256": "87094ffbb2a7a413fe2528dba22bf0614886e3a1178ec86ca9d8f144f495a26e"
+    },
+    "look/plinth": {
+      "fidelity": "ROOMLOOK support plinth (low-poly molded pedestal for props that need a surface)",
+      "glb": "kits/library/polar_pod/presets/furn.table__plinth.glb",
+      "kit_id": "furn.table",
+      "preset": "plinth",
+      "sha256": "028a06370c2e90062b67ee8038403a9d34910e750730f228bb6d40e408c95f51"
+    },
+    "nature.bush": {
+      "glb": "kits/library/polar_pod/assets/nature.bush.glb",
+      "kit_id": "nature.bush",
+      "preset": null,
+      "sha256": "91b77faf921de4ef7f4919af215bdf176799ba6cae733688064079e79385fe05"
+    },
+    "nature.grass_tuft": {
+      "glb": "kits/library/polar_pod/assets/nature.grass_tuft.glb",
+      "kit_id": "nature.grass_tuft",
+      "preset": null,
+      "sha256": "82cfd7ff7dbb6f9e026e3cbdf640f0d25b4b3711422379d9a042459a75ca69c6"
+    },
+    "nature.rock": {
+      "glb": "kits/library/polar_pod/assets/nature.rock.glb",
+      "kit_id": "nature.rock",
+      "preset": null,
+      "sha256": "6248a6b79823a68c9243609c2679c5260d7282fc62976e2e2dd03480669f0fa5"
+    },
+    "nature.tree": {
+      "glb": "kits/library/polar_pod/assets/nature.tree.glb",
+      "kit_id": "nature.tree",
+      "preset": null,
+      "sha256": "a1e84044edc20822cad0dc67c0c1466e06b4560f4bd570b4a39351abce2b495a"
+    },
+    "prop.book": {
+      "glb": "kits/library/polar_pod/assets/prop.book.glb",
+      "kit_id": "prop.book",
+      "preset": null,
+      "sha256": "5a6efab27a15f3deddda0e737cf5e1d3c621439e42583e2b65cc0923243164d0"
+    },
+    "prop.device": {
+      "glb": "kits/library/polar_pod/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "e10e45593251ece170ed91e32c1c34ab0a3189c54253a5f752e7d0f325b53492"
+    },
+    "prop.key": {
+      "glb": "kits/library/polar_pod/assets/prop.key.glb",
+      "kit_id": "prop.key",
+      "preset": null,
+      "sha256": "eb070e39199540055e6cc4d879a831abeb003c34b56065ce6bc821759d6b596d"
+    },
+    "prop.sign": {
+      "glb": "kits/library/polar_pod/assets/prop.sign.glb",
+      "kit_id": "prop.sign",
+      "preset": null,
+      "sha256": "b37c01b4279e0b9005696eab6757eb7050adec94d38315ef4b43c5dc33def384"
+    },
+    "prop.tool": {
+      "glb": "kits/library/polar_pod/assets/prop.tool.glb",
+      "kit_id": "prop.tool",
+      "preset": null,
+      "sha256": "09f3ba05caa4772ffdb46b56fe7f4dae8b679c25949e7b01a39e070dfcf0ffa1"
+    },
+    "prop.vessel": {
+      "glb": "kits/library/polar_pod/assets/prop.vessel.glb",
+      "kit_id": "prop.vessel",
+      "preset": null,
+      "sha256": "85a8664e3574562ab4685451a2a7eea73944722f7657ccc98fa8b05f31c60fea"
+    },
+    "prop/bell": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "e10e45593251ece170ed91e32c1c34ab0a3189c54253a5f752e7d0f325b53492"
+    },
+    "prop/blue_glass_sphere": {
+      "derived_from": "kits/library/polar_pod/presets/furn.table__disc_orb.glb",
+      "fidelity": "isolated original KITS orb mesh",
+      "glb": "kits/derived/blue_glass_sphere.glb",
+      "sha256": "82e301c0820fc9fab5c425b447788603c31370be2927149084260a59d12be11d",
+      "source_sha256": "723334b8d13feefe51b7b29555a646cd3e74dba3b164d9e1bd4f5d960c14c0d6"
+    },
+    "prop/central_lamp": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/furn.lamp.glb",
+      "kit_id": "furn.lamp",
+      "preset": null,
+      "sha256": "7c01483e0daa533f5865aca46be9be88fc7d213b9a304ecff1d65cbd21fdf4ab"
+    },
+    "prop/clockwork_gear": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.tool.glb",
+      "kit_id": "prop.tool",
+      "preset": null,
+      "sha256": "09f3ba05caa4772ffdb46b56fe7f4dae8b679c25949e7b01a39e070dfcf0ffa1"
+    },
+    "prop/crt_screen": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "e10e45593251ece170ed91e32c1c34ab0a3189c54253a5f752e7d0f325b53492"
+    },
+    "prop/dome_card": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.key.glb",
+      "kit_id": "prop.key",
+      "preset": null,
+      "sha256": "eb070e39199540055e6cc4d879a831abeb003c34b56065ce6bc821759d6b596d"
+    },
+    "prop/habitat_card": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.key.glb",
+      "kit_id": "prop.key",
+      "preset": null,
+      "sha256": "eb070e39199540055e6cc4d879a831abeb003c34b56065ce6bc821759d6b596d"
+    },
+    "prop/headphones": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.tool.glb",
+      "kit_id": "prop.tool",
+      "preset": null,
+      "sha256": "09f3ba05caa4772ffdb46b56fe7f4dae8b679c25949e7b01a39e070dfcf0ffa1"
+    },
+    "prop/keycard_cache": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/furn.container.glb",
+      "kit_id": "furn.container",
+      "preset": null,
+      "sha256": "fdd618788c9bd5ff04f04a6b14cf3829b7ee0f95ab3fd345e49c6e77ce34bdca"
+    },
+    "prop/keycard_reader": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "e10e45593251ece170ed91e32c1c34ab0a3189c54253a5f752e7d0f325b53492"
+    },
+    "prop/knit_throw": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/soft.blanket.glb",
+      "kit_id": "soft.blanket",
+      "preset": null,
+      "sha256": "301321ede7ae610cfa57bde041f181ef6fce54a374890738ded08dd60e44d581"
+    },
+    "prop/lens_crystal": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "e10e45593251ece170ed91e32c1c34ab0a3189c54253a5f752e7d0f325b53492"
+    },
+    "prop/lighthouse_lamp": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/furn.lamp.glb",
+      "kit_id": "furn.lamp",
+      "preset": null,
+      "sha256": "7c01483e0daa533f5865aca46be9be88fc7d213b9a304ecff1d65cbd21fdf4ab"
+    },
+    "prop/logbook": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.book.glb",
+      "kit_id": "prop.book",
+      "preset": null,
+      "sha256": "5a6efab27a15f3deddda0e737cf5e1d3c621439e42583e2b65cc0923243164d0"
+    },
+    "prop/oil": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.vessel.glb",
+      "kit_id": "prop.vessel",
+      "preset": null,
+      "sha256": "85a8664e3574562ab4685451a2a7eea73944722f7657ccc98fa8b05f31c60fea"
+    },
+    "prop/path_marker": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.sign.glb",
+      "kit_id": "prop.sign",
+      "preset": null,
+      "sha256": "b37c01b4279e0b9005696eab6757eb7050adec94d38315ef4b43c5dc33def384"
+    },
+    "prop/steaming_mug": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.vessel.glb",
+      "kit_id": "prop.vessel",
+      "preset": null,
+      "sha256": "85a8664e3574562ab4685451a2a7eea73944722f7657ccc98fa8b05f31c60fea"
+    },
+    "prop/storm_panel": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "e10e45593251ece170ed91e32c1c34ab0a3189c54253a5f752e7d0f325b53492"
+    },
+    "prop/thermos": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/polar_pod/assets/prop.vessel.glb",
+      "kit_id": "prop.vessel",
+      "preset": null,
+      "sha256": "85a8664e3574562ab4685451a2a7eea73944722f7657ccc98fa8b05f31c60fea"
+    },
+    "sky.backdrop": {
+      "glb": "kits/library/polar_pod/assets/sky.backdrop.glb",
+      "kit_id": "sky.backdrop",
+      "preset": null,
+      "sha256": "a4c1c9a02ed3b24223d9f44117b4267140364cff4256d9d08510b3474706aee1"
+    },
+    "soft.blanket": {
+      "glb": "kits/library/polar_pod/assets/soft.blanket.glb",
+      "kit_id": "soft.blanket",
+      "preset": null,
+      "sha256": "301321ede7ae610cfa57bde041f181ef6fce54a374890738ded08dd60e44d581"
+    },
+    "soft.pillow": {
+      "glb": "kits/library/polar_pod/assets/soft.pillow.glb",
+      "kit_id": "soft.pillow",
+      "preset": null,
+      "sha256": "efcfba02dbf12491d6db40108b9446a0672a9ea0e69ee1b535e1cb9801e6ee6b"
+    },
+    "terrain.patch": {
+      "glb": "kits/library/polar_pod/assets/terrain.patch.glb",
+      "kit_id": "terrain.patch",
+      "preset": null,
+      "sha256": "09caef4ecfed6c9ccf78734d292e7fc2892ee64e97bba8b9e2b830f4b59c81e9"
+    },
+    "terrain.vista": {
+      "fidelity": "pack look asset (ROOMLOOK exterior composition)",
+      "glb": "kits/library/polar_pod/assets/terrain.vista.glb",
+      "kit_id": "terrain.vista",
+      "preset": null,
+      "sha256": "9933c390f080bbbfbd3a486c9ea1443406e93e7a85fea27fa51cc2bc57a03c7e"
+    },
+    "terrain.water": {
+      "glb": "kits/library/polar_pod/assets/terrain.water.glb",
+      "kit_id": "terrain.water",
+      "preset": null,
+      "sha256": "4723fc5f73b3b36321f8dc4b38d599dd006c8c773b7a6a33f0a9148974dfbc26"
+    },
+    "vehicle.boat": {
+      "glb": "kits/library/polar_pod/assets/vehicle.boat.glb",
+      "kit_id": "vehicle.boat",
+      "preset": null,
+      "sha256": "90a7273bbb611d048d2b48e269c711d5692abe99035210f60702d2fc9054dfe3"
+    },
+    "vehicle.craft": {
+      "glb": "kits/library/polar_pod/assets/vehicle.craft.glb",
+      "kit_id": "vehicle.craft",
+      "preset": null,
+      "sha256": "e7416b52aed58ecf9a1d2511795efaa6f261efc2c1afe9c15f491a1b299acee7"
+    }
+  },
+  "format": 1,
+  "kit_pack": "polar_pod",
+  "note": "All semantic mappings explicit; approximate hero props disclosed.",
+  "pack": "polar_pod"
+}

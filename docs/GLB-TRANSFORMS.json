@@ -1,0 +1,1361 @@
+[
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.bridge.glb",
+    "sha256": "62e3086b389acfca435f96ad8ee6b575942b3c4f1166b5b6414d38b8e0cb55ca",
+    "source_sha256": "aa43adb48dd69c4e6bceb8a5baeaca0aae34eab7b4793dd5c1bace69d35ff515",
+    "tri_count": 384,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.ceiling_module.glb",
+    "sha256": "481b2ffd9a8a6bd826bdcc222a86427d379ca1b22c652a9b7063ad76234566c6",
+    "source_sha256": "0dca819ddda9b89cd69fc1a473352402f897e2d0b12ccb1ae7ebab64569c68a3",
+    "tri_count": 36,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.column.glb",
+    "sha256": "35482575abe27d32ae812e9d57641b4e282763a533a5b93a7e5199db87eb4434",
+    "source_sha256": "187a7921b28af7661beead04ec527916a8d78e961d5ab96c1fd66c43569578a7",
+    "tri_count": 156,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.corridor.glb",
+    "sha256": "61318bbbeea80982265f75d7f4d955b8043ad6f05eef840a0aecb5d466bff81e",
+    "source_sha256": "90073dae5717e4678993b32ff2a0d749620d921af273a986d95021147e614ddf",
+    "tri_count": 108,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.door.glb",
+    "sha256": "ba9cb1b4cb64e2e86099c6dcbb03cbdfa0f3a0519a2606e60c58176ab1bf7211",
+    "source_sha256": "1f4444cd5b17d2080517d7f0e15960dfe8e374c82ea4f606427999fa845f4deb",
+    "tri_count": 148,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.floor_module.glb",
+    "sha256": "f3e332b1cc984d7e6ee7dde020305e22073b787563afda9eec2bb0331d1f03d0",
+    "source_sha256": "0e317e1801f3809cc10320768d8141f7b1ab789e32f13e6120ac8b19f80492f7",
+    "tri_count": 12,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.house.glb",
+    "sha256": "a0b4b075bd82e7fc2ebf86bfff70c09ed351d6664ba9bc5e95962ad92174a97f",
+    "source_sha256": "da662a82becc6ac691c23e55c3c48be7335f6c998e6a27992d80306349c3ea5e",
+    "tri_count": 200,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.pier.glb",
+    "sha256": "75360d8bafea81ef50982a0d6756d914b98cb42ce23134d678275c50dd218a69",
+    "source_sha256": "2a0eb3d0fe7798d93c1b5e639d8ebd5ee1734eda9c23622dabadcc64d64d0d6e",
+    "tri_count": 272,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.railing.glb",
+    "sha256": "5694ba5cf4edb8addfc0d062cfd5ca848eb11b4021e965fc38931a243138efee",
+    "source_sha256": "b2d5af9e5cb7b12154a64e464e94bb59ec4bea2cce434faf99232f372f9489f8",
+    "tri_count": 180,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.roof.glb",
+    "sha256": "a65bc1bffd3ec8454d1edc8b0d574ff90939cc422c3b0c0be559b5476096dd24",
+    "source_sha256": "80b0f5591bdf3178e7ae59d8994ca83c2a92e95086d233a97335715a2dc04a6d",
+    "tri_count": 20,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.room_shell.glb",
+    "sha256": "afa56ad6f1ea36533ea3361eaa195a7c3dd10a15c07fe79b53dc1bb35015f832",
+    "source_sha256": "af825acc6cb8bd5141d8a183d5b4a329c4853cdf4743fb3e027e6f0246ad1f62",
+    "tri_count": 149,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.stairs.glb",
+    "sha256": "bffc4a14e0d2bfb1a3998ee7e0127dd803f700ead2b38d5548b21b75325e82fc",
+    "source_sha256": "1a2ce93f6ba7262a20f5eb2bc5d17503971850c57c0010f43f898c0f43511c62",
+    "tri_count": 204,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.tower.glb",
+    "sha256": "b83dcc783ced492e3c7ba3a0353bb5eeaa4ed5f848878b6eb1e4fa202c63c811",
+    "source_sha256": "e0363ee03807abd357e84b5c3a36a7d8bae00a63e83ba0bf1ccc6d4a4aeecd4c",
+    "tri_count": 688,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.wall_module.glb",
+    "sha256": "fc9bfa3d65d10400a6c22b8877b6ea9e8724073acf292ca66e486705cb6acff6",
+    "source_sha256": "a30814e88f6b4c789ba1569de52276446f002e6966c90f1931fcba163e16f7be",
+    "tri_count": 12,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/arch.window.glb",
+    "sha256": "c3882cdbe44154b3285fa5fb79753c3b1b1d760fe243870ca117893953f78d52",
+    "source_sha256": "dfbb0d5b0e605b3e8faf1f0d651e6cfbd2f7010ef251a08040f79198afbd4faf",
+    "tri_count": 106,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.bed.glb",
+    "sha256": "59db07ff74cf016a86045082dfa34e484396a7e7e6c36900850df7f19a5abd66",
+    "source_sha256": "80e2de6aab0246babace7a4890d17c11b0048c2c99fb5b2fbc44bdf83b0e903c",
+    "tri_count": 240,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.bench.glb",
+    "sha256": "65cf1cad06bb59270ebb39cef904dfec0d4c80b13354d72f3e7cf2b2fc858738",
+    "source_sha256": "b5d45d4252772b611ab619c7b5e93be158844f607fd619c5d9720be84b5320fc",
+    "tri_count": 236,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.chair.glb",
+    "sha256": "acdecb4d249830514f617907f03320d6860c31d25ed75bc4bd6aa5f2f8472c98",
+    "source_sha256": "5dfc29f274a3c62ead1b9a13a36d935c11b1277537f034f80826b11d2634ac41",
+    "tri_count": 72,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.console.glb",
+    "sha256": "1bf44fbbe74063f5763caabeede65945b788562ca4dc173dde1ff91c126ba76c",
+    "source_sha256": "f17ed2602c7be63328030fce2dc683d1dfee93e07c3bd93fef4f6e8662babd53",
+    "tri_count": 124,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.container.glb",
+    "sha256": "8b78617fac688badd6d84949ad0947f0b1908df554c3e7a8a49e8b4b7d308756",
+    "source_sha256": "3812df33eeb74ae93b3a36f23af8c2842c9b00f92b7b8fdce4c67f6b1b1e69e0",
+    "tri_count": 220,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.hearth.glb",
+    "sha256": "b468449265e8a2741afbf953ea25c80035f6a0720cbbe5fbc49b89a86a530b32",
+    "source_sha256": "dfc917b4bbfda47df600745a5a63ae6abf732c5ee78c1140eba717b648c20b46",
+    "tri_count": 124,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.lamp.glb",
+    "sha256": "edade6cab01bd53e8da277871ab37bd3dbf0b8401745cae43e35aa1fb55b1e88",
+    "source_sha256": "d198260eba17a651e38353bf4b819b0615513301ed25082b8da52a8ab671ae87",
+    "tri_count": 132,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.pod.glb",
+    "sha256": "7f367b2bfd26d5d0915d9728d730aaf84d994c3b5f0db868ac5f488599836009",
+    "source_sha256": "07e62dc54a24eb9636a046da578ac64579ce5d17aa7f6325bafc4234c91543e4",
+    "tri_count": 336,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.rug.glb",
+    "sha256": "c14690825cc8cb94a7ada4fae053e8e302ba3dc4ae442add44aaa4c40e787341",
+    "source_sha256": "64f54bbff5337d2e60558eadd0e6eaa160e2826b78e1eae8af9c2c7d0f814660",
+    "tri_count": 36,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.shelf.glb",
+    "sha256": "cbe2b2bdc127c4d0eceefaa70693e74c03ded1f7dd4dfaf4d11eb8f2ef336f06",
+    "source_sha256": "14e86cba41805234cf357e1145dbf1f48912b19bcf5d66a018641177ab21956e",
+    "tri_count": 240,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/furn.table.glb",
+    "sha256": "908b35c8cb25ea8a1b54299fc0d0c92de1f20a8cac65231d0f7060293ab6e68b",
+    "source_sha256": "ed469ddc7b99e4c7e628d4045f5225f759774438da61209463b0183e8c4abad7",
+    "tri_count": 72,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/fx.particles.glb",
+    "sha256": "0638e5f5023e792e2470d560d6c309af02572162dcde6da1a04c430abb299cea",
+    "source_sha256": "8fd320ade1a75732e0c50fab1f43f7a13809d47862e39a8cc64efc6470feb498",
+    "tri_count": 6,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/nature.bush.glb",
+    "sha256": "4e033b3d9e168d643c1bea741979f3d70a9d93516dac8322ad54de9c7a22050d",
+    "source_sha256": "067aa5492b352796c423ad09d554204b416176985e9cc12fc2bfa845701f0866",
+    "tri_count": 132,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/nature.grass_tuft.glb",
+    "sha256": "9a4868132b2778d540c3e6e4c6b1827cbee104edca90f5629600ef32561df8ac",
+    "source_sha256": "00a386ff9e2453f29e29909b7f1ccd18ab89270ea7e788d60c936bb26258750e",
+    "tri_count": 28,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/nature.rock.glb",
+    "sha256": "7afb7c30007072ed87c173a18bf3f7a62d9943f0dc4021e4f7bbbd3daa79d9e9",
+    "source_sha256": "06b67ba2dc3ef0eb87f1882cca3a79767f116f0406adc28f4e52cc656b99043c",
+    "tri_count": 64,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/nature.tree.glb",
+    "sha256": "ff2a5a68a6780ebb27c1109bb970cc47101bc696b0707a35446b312e991c6ebe",
+    "source_sha256": "a0734831fb4b22e50529be44491e6a7c02ef95cc8cb5b3834d59bb54308f5c13",
+    "tri_count": 170,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/prop.book.glb",
+    "sha256": "772c24f4c398f8a785d5002dbecd6787c6e91bd1f5719e16b30393ba7d717a08",
+    "source_sha256": "34f50ca6dddb53f22a9d3adb3721047d2cf51fc4929adb7fe57f68a815097149",
+    "tri_count": 24,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/prop.device.glb",
+    "sha256": "8843eb16cf441cb5841b81f9321967f0274549743de10880ca5ee59f435842a2",
+    "source_sha256": "569899b3d8ecfa089fa290c65736450f42c6cb078a805ca38d6677ed2fd483e5",
+    "tri_count": 142,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/prop.key.glb",
+    "sha256": "ca4bcefa1dd2b6304bf919616054f6cce981da6f62bcbfa6d5409ad4b6117954",
+    "source_sha256": "b2b2099bdff6517f783541e06ee4532edc05323d63dcf5fa9f7de6a48730d492",
+    "tri_count": 136,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/prop.sign.glb",
+    "sha256": "ccf751b2c4cc5784316aa71b13c13632c7eb32ddf38a004a017c6db57d8c8530",
+    "source_sha256": "961ec411ac7fd7b95cda28cbad88cadc640182082eedc1fb4978fb439eb59ffc",
+    "tri_count": 84,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/prop.tool.glb",
+    "sha256": "ef1a30ea338ef557754cfb19df857c9883fc9abd0576a70fdd7ae552d3397415",
+    "source_sha256": "71490e45b576b2b53cba82d4110fd9ee6a06b0b1ed66d5a416fa2a4661c42673",
+    "tri_count": 32,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/prop.vessel.glb",
+    "sha256": "4995d767a042a937240160689b0b9ab6f9c14fc261161bc30a85f3457aa73b62",
+    "source_sha256": "fad507ac566ec1b7d75b0cbcbbbe4ca47c211c2ae768d2d6182fa3bc355d3414",
+    "tri_count": 128,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/sky.backdrop.glb",
+    "sha256": "249a262cbcc1d54640dc6777050a6d61712722658ad374558c46b9900b65fc76",
+    "source_sha256": "f539551db3d5d1b114d02d1ac11fe1903645980a6e4d3f5d582435df1311390e",
+    "tri_count": 84,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/soft.blanket.glb",
+    "sha256": "05cc0db4922954bbe4b9b8789049fd3c7a665581d4d8f8e0d6ce0bee2ad72468",
+    "source_sha256": "eef534cb5ca46588fdab3ad47ebc45b79c8dbd177ed703734af7480c9290e763",
+    "tri_count": 126,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/soft.pillow.glb",
+    "sha256": "9933a9b1cee1b3cb0eeb1fb8445b66af36ebbfd447d91fc78adf72127e375f1b",
+    "source_sha256": "4977c6bb6e3fc373c3377252dc2396a765e363e6d5bd4c43d08c1b996790621a",
+    "tri_count": 112,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/terrain.patch.glb",
+    "sha256": "17e0c826dab89ef33e0e9201de9f3a2f1e886e599f334139abd26231356eeda0",
+    "source_sha256": "b39fe8331bc4a4665230ed0009c2a4a87f3168f538538ebfc12b3bd437b0f792",
+    "tri_count": 318,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/terrain.vista.glb",
+    "sha256": "bc9db37b6cf20da79fc4a419bbd968388f733d1eff749bcee37106f5d6f88ae4",
+    "source_sha256": "c5dd2ca0d591d5ab520d22c5d835e45a85882d8ca89caf5dd56e23060cacda8c",
+    "tri_count": 192,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/terrain.water.glb",
+    "sha256": "15e84cedf9d332990308afbc6057c84e6dadbeacb65f9db456f7140ded4129b7",
+    "source_sha256": "866f4c00eae23cb3b8f52330f5872b0e9c7820035533a226cd0db691a7a31ede",
+    "tri_count": 222,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/terrain.yard.glb",
+    "sha256": "0da4b0c51b4cbbb4380751c5f17b69886e932ac45d29c70f97309cf9a64a422d",
+    "source_sha256": "cc7df9d09281f45e6945617f4750bc4ee9f58ee7528bb2ce6b194dbe2e7d75ca",
+    "tri_count": 478,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/vehicle.boat.glb",
+    "sha256": "5c5d543de8741ea1345e90244230705b4243ab65c19a0156dffa6d06075b064e",
+    "source_sha256": "fc574a23aa904316e8c9c900f4e3c683ae0a5b9af26f43bdd79ac1780e059fbb",
+    "tri_count": 320,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/assets/vehicle.craft.glb",
+    "sha256": "4bfdc433e7e2dee79a9312c91083be12c5d45b807988f2df857de8cec3cc69d1",
+    "source_sha256": "57d9ff3597721ba242744b77586a5d4a9e15716defc950f5590e6fb37ae69d14",
+    "tri_count": 356,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/presets/arch.house__round_cottage.glb",
+    "sha256": "d8809c07f30d6f6ea9a724a00004f72689aa521def52b13bf79e33dbfb5fcef9",
+    "source_sha256": "437baba160667ee350027db5284fd99984022630f5b1a667d7d650646fe40d2d",
+    "tri_count": 308,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/presets/arch.window__arched.glb",
+    "sha256": "00450018a0adac758799ad855b3e35fa4e5c80c56717fc052418397835c59324",
+    "source_sha256": "0e4a6d816975cd8df2fc4b26b1e232922e70c840d0f17864273a0c552857f650",
+    "tri_count": 178,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/presets/furn.chair__stool.glb",
+    "sha256": "cffc5cb05530d227c39f406ccbe21ff9ee36169865708b3fdb507f9f4a29070f",
+    "source_sha256": "84709df69732c9289d8b5e0895f83ba2e1e5a3820282557a6bf9e2937874dad1",
+    "tri_count": 124,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/presets/furn.container__chest.glb",
+    "sha256": "8c47f40fc73089e987925b25bf9b7e92ed7a23594fec167940dd7fd1f233bb8a",
+    "source_sha256": "8e22bde74ddf1789dee763dde5bcba67cf4e071dd705995a230bc5acce37afed",
+    "tri_count": 60,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/presets/furn.container__crate.glb",
+    "sha256": "3d54df97b124478c41224c59b278bbc6dcf09ad0b6931053266f4de6ef98f295",
+    "source_sha256": "7bd8a2c900736047649fda7a6c41cf5f626848dafaec1c0ce553bda254604d21",
+    "tri_count": 84,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/presets/furn.table__round_stone.glb",
+    "sha256": "05732f3e1d67d41060d96dc8be820e61c97812d7cf0fd59e90b82bd70a7e6af8",
+    "source_sha256": "f6fa216a6100d8ab0645753671ae342da48905fce58271053540e1a5d1221870",
+    "tri_count": 160,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/presets/nature.tree__birch.glb",
+    "sha256": "2e870b4c617289af92582682c43dadc6ac9ab0cd3c173dde7aee05022e99b2d4",
+    "source_sha256": "9e3aeb1a80ccfc7035e11c20812358ae48dc6ce11e3aab4372ea8eebfc7e1e6b",
+    "tri_count": 162,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/presets/soft.pillow__cat_bed.glb",
+    "sha256": "b85e844878a7dd12ae4a36104f5280fd91eb73f7127115bbbe2b2f23ffa5c1f9",
+    "source_sha256": "4765e48a732239dd2624628b741fecca37fedc656c945dbee5804cb802b4052b",
+    "tri_count": 112,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/cat_bed.glb",
+    "sha256": "4f8359254cfb727d9727a9334d96394f299bb9f85b0137186a61e2617fd816c4",
+    "source_sha256": "28c8590d9a7e00f2530ff6e5aa0c53257827c09e1fdd54fd5ec802245bf70a7c",
+    "tri_count": 112,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/console.glb",
+    "sha256": "1b068be6541d6df457df109c93bc05b395ac060567511db6ca02d002282616da",
+    "source_sha256": "c1b792610a0b1adc92920b461975a77785356d7497be82f4b1f024ddde210f7f",
+    "tri_count": 124,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/container.glb",
+    "sha256": "8642d6c81416fcc55b14f16e8fa502f3e20bd45ff988e5c309b51691cfdcc0e8",
+    "source_sha256": "3d8adb2668cb1cff2462dc8f33275a420e006f9bd736d66ba7064483fa85a7cc",
+    "tri_count": 220,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/door_main.glb",
+    "sha256": "2917a0c02b2550011f2620d702d38a2d93632b19240f270e39bf29bb995445f0",
+    "source_sha256": "c6fc620213a96ac18073e7f99caa1e4b5f1d691af223f53efb2279b9ba607caa",
+    "tri_count": 148,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/lamp_floor.glb",
+    "sha256": "e537383ec1ef70bc1e3b6f23ac6170dea26b1ed19e5114298ac45d78a83dd649",
+    "source_sha256": "d23885bd27cc2a902980b54ca5cc4d88be30a0b2d052955f7aa280f1a83243d3",
+    "tri_count": 132,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/plant.glb",
+    "sha256": "524391153f5ba3748dcd78c062bf114f99433b9662e18692fd76321f0844bb7c",
+    "source_sha256": "a23e5388c07fa4df22d95765ff0a9af77b666c7e9d732b4115ea20d10427a52f",
+    "tri_count": 132,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/rug.glb",
+    "sha256": "d43a299c4b2931597125f8d58f046a472e6572d77c24bea7557f12238838cd0b",
+    "source_sha256": "515f56aa6f3de74c1820aaf5ee4088a4421984c25b4efda65644a4e11c694bdb",
+    "tri_count": 36,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/seat_chair.glb",
+    "sha256": "87ce150f669909ccef59f466f7d96899e0b4fdfea26639070d6e7d18813b3284",
+    "source_sha256": "0359f04dd10afcb42379ea93d5fea484c0a6a22f13025f7b4cb6e4e08e4bcc5f",
+    "tri_count": 72,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/seat_lounge.glb",
+    "sha256": "10b00f1fb49cd927f6358783a52cf973a9b439913d981705caebdeefc5901168",
+    "source_sha256": "85543df1f11cf9152a0a14f73a0c492a503423763d6bac98ed9e726c7511a29e",
+    "tri_count": 236,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/shelf.glb",
+    "sha256": "4a6a170d0008f11a617b62d568980dc32d74c64eb3a1d7b796d656e4da77b46b",
+    "source_sha256": "c171ac17ac76069bea9b97cc3294b27cf772d347d684ea4738a660fc23074ee9",
+    "tri_count": 240,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/shell.glb",
+    "sha256": "1f4b803f9f560365c316156e93cb78b7433be2336e658225f60fe703aa68f738",
+    "source_sha256": "ce2673a5f3e900e35164da3dce49d5e59a8413a0dcfbb390fc8847b82c3c27e2",
+    "tri_count": 229,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/table_low.glb",
+    "sha256": "7ccd667194e0d2e2b8c1e7fc0a96e52ffc17d7c301eea2e73947041f700fc1db",
+    "source_sha256": "a40bd7e8cae9c4b8dadeb3024219cb1f022a84d8e4d3c55285b8232f479265b9",
+    "tri_count": 160,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/window_main.glb",
+    "sha256": "27d06faf2a0d071e1f50fd3b36e5cbc2e778585ce34f4e64dd5b9c652ea28dd0",
+    "source_sha256": "b07abb2642820aca6159e8ab59b66cda08aab73e8d2da5af494e7b948d2ee7a9",
+    "tri_count": 250,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/forest_village/rooms/lounge/window_side.glb",
+    "sha256": "f141f77c007f800c86f7b9f9577d6142185c5fbd52f1b6aeeb546db1355f7330",
+    "source_sha256": "3958db91f4b36ea7f8b7cf03430b4ea2d5b475ef3424e0811528ca140ff95b22",
+    "tri_count": 226,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.bridge.glb",
+    "sha256": "053a376f759b060ae7c455cc1260c45924107850d7c94dfeff51aa3edf95d37d",
+    "source_sha256": "db107742382f8a02f9c3808352165677a461c0c43c48be0ceb4818d5deddc80a",
+    "tri_count": 384,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.ceiling_module.glb",
+    "sha256": "421a0857a6273d6e6507e50d0f657bcc6c5ca89c2aa3c0b92ffc2b558d23dfa9",
+    "source_sha256": "0779c84a1e373df4dcb989a12e3a40f9f1cc3b25c2e20fdfd5ca09962807af8e",
+    "tri_count": 108,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.column.glb",
+    "sha256": "e0640134dfffb57ca6618387d2d51b782b1f34b6d36e76893bf2fa6a7d075c3b",
+    "source_sha256": "e3f889789fbcdadf709eee1fd6a1935dfbbe2ad70e45e7aa49d82da909ed4c8d",
+    "tri_count": 120,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.corridor.glb",
+    "sha256": "03b399ae133434aa70eb5e05adb57d8bfe1ef18800f67a1396a61270c0121f02",
+    "source_sha256": "58403dc05581d045ce17f7c1081a11614babb90764d12b3de4441ef4232bb1e3",
+    "tri_count": 108,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.door.glb",
+    "sha256": "145860e348bff4eb26600c50de4c451169dc51de4675a995a0b69c40c97d6d92",
+    "source_sha256": "796dbf7c5da94bddcf7c006fdf3d46f7735ed79faa9b7e21bba7bcc4824d1e7e",
+    "tri_count": 200,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.floor_module.glb",
+    "sha256": "266e9a1737dcffab772fc89b913e1115cc129e52c88fbaea0b117eb5677e72a9",
+    "source_sha256": "cc7054efe08b4299111479b866fc2816296a95471f416f8069cfc912519314ed",
+    "tri_count": 96,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.house.glb",
+    "sha256": "bc3e7caa42a9c1ccbc3e5d69b8cdf55fa4c87b2a0732e9e8f1727ebdbf84a727",
+    "source_sha256": "872e58528f98af2373a7e7a9976fcaae6a04bfefed3ac88875010292c6eb0d00",
+    "tri_count": 456,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.pier.glb",
+    "sha256": "3e5c523b1bad0ddc42887a1b413205a207a7572d263400cc804f3aa721f38cf4",
+    "source_sha256": "62888ab065e788ee4f602c79ed47636471bd1c5d435f91a610e4f482f49f8217",
+    "tri_count": 200,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.railing.glb",
+    "sha256": "53c83ec4be1fa2398fd2ea150a139de78be44c54bcfacfc0ca026a82bfceb98c",
+    "source_sha256": "2f70f7c061a5ed724a129137a5bfadc9f50a925f772e5e1614e2fbf118d99f4d",
+    "tri_count": 176,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.roof.glb",
+    "sha256": "48da3ebe98d2b973e8ccca5d8b6805554a24cd8d2e4e66e1f00b387836cb11cc",
+    "source_sha256": "8a40104a45ee23d9fd368009d21bed29b01786f959f857c07120ee64bd2ddadd",
+    "tri_count": 96,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.room_shell.glb",
+    "sha256": "faa51cdcd32b9a0ba42833ee5f19db568e952bd94e3c0084676f38ef67a21251",
+    "source_sha256": "6d54b0c53cd66eee2812e2be8d89259f066aa3c25a480084876b23c850846c7d",
+    "tri_count": 1442,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.stairs.glb",
+    "sha256": "70964f528d318efebd51fd5429006d256c265a18a346eb2727890a7815ad8e6b",
+    "source_sha256": "cbe63535d858023522743967c9fa098072c3323f4ece5e237acda69906989f45",
+    "tri_count": 272,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.tower.glb",
+    "sha256": "1587f5c970410e0fd65c1f2c4b8b9f899a973dbd64aec72261f4c4e536e4c96d",
+    "source_sha256": "b4afb8ea08164b817667b6b1eca93da04782d4063b6a9ea017e5b12713655c6c",
+    "tri_count": 760,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.wall_module.glb",
+    "sha256": "a66f1d841d965855a5b55b4009d0d6754a0a45ee7e41a7582e72ea08c3db51a4",
+    "source_sha256": "c7681241c0cc33fb0ff12545cd5be25fe6d2aef9473b4687d45e8a94e2607ded",
+    "tri_count": 92,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/arch.window.glb",
+    "sha256": "92b06f8c228d950949e57b12b83aa92cf583e004472fdb022b8455dd79f5d78b",
+    "source_sha256": "782e624bb33f108db4a7964cec3411a67915a81ffbdaae45e0f40bf926262ae3",
+    "tri_count": 170,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.bed.glb",
+    "sha256": "37b0f57e241f51ecd5ffe77dc57a4c11f9a127e777ca79d04d8423786834a3a6",
+    "source_sha256": "0d22172ab0fd50b2d7cb64d1302a77175663bff6f8294010245c817dfdde00db",
+    "tri_count": 300,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.bench.glb",
+    "sha256": "b015b81df3e91d9a13ebffa29e3602761a5f55f2ccf6c6fcf1db197a4b7372db",
+    "source_sha256": "4dbf071ba8f2cc72c73eb7f0cb32c5b881a39542b883b0c62bccbc86f3add16d",
+    "tri_count": 328,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.chair.glb",
+    "sha256": "c02b9f978d7a8f5dbe4d924ae32c1fe55991a84d0e28918bd106a268ccea4bfd",
+    "source_sha256": "39c25be8ba6b3c4d41c8565f1087c40527cf233d9612bbdc3e8847fff04f061b",
+    "tri_count": 300,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.console.glb",
+    "sha256": "67e8efac5f1176c782d90997ea5d2e0cf4173a34fd0d50c9b4a4805741e84a1e",
+    "source_sha256": "90bfa945341a661de14c3f5d97417c0254f67758e9745939ddee53b87572d66b",
+    "tri_count": 292,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.container.glb",
+    "sha256": "fdd618788c9bd5ff04f04a6b14cf3829b7ee0f95ab3fd345e49c6e77ce34bdca",
+    "source_sha256": "32ad20a4cade84a27a0898db2a72ff5cf699c134c1a87420cb0a5b1aedc3aa25",
+    "tri_count": 288,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.hearth.glb",
+    "sha256": "8a67ec858a692ac75133ece5530f9daac318e10644192691795a4e5297c07c5a",
+    "source_sha256": "c44e884d086f7cba65e1dd2ad3cf54c8b42d896a026177b70e66db4ea8342299",
+    "tri_count": 224,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.lamp.glb",
+    "sha256": "7c01483e0daa533f5865aca46be9be88fc7d213b9a304ecff1d65cbd21fdf4ab",
+    "source_sha256": "da255dab81fa22b3adeec15ff1999108ad7b927a2024ee0a9b0ee2355e0232a5",
+    "tri_count": 188,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.pod.glb",
+    "sha256": "3c7010901aae1fb314a055bd0410ae52de676223c67d4c06811be566dad01e86",
+    "source_sha256": "78722fe9e61ada5f2757158e1f51ae39decef95cf0d0922b555b698fffd5b5ce",
+    "tri_count": 388,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.rug.glb",
+    "sha256": "31342c8399389de37b34412bdac0fb51f1d75bf8b1983c6e871ae19451b82199",
+    "source_sha256": "13558ddb7d7739c67c7cdcaa8d1ee7731e10058865a4a5bc47eeb5409e28793d",
+    "tri_count": 68,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.shelf.glb",
+    "sha256": "fda43fe6f3514a6cf5044f6a3811b84351289bb6f046f65522fbe381ba4599b3",
+    "source_sha256": "5c3588adaf5ce8c6bd2a5e5360b6466a7b777b43feb35144dd27f1f10830cde3",
+    "tri_count": 144,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/furn.table.glb",
+    "sha256": "2fa165b57178c1accb9d303c86ccaa1e642f9654a67ff841f23b463e625e6de4",
+    "source_sha256": "86184b7b5684f97f2a782c6e464dda9f84e4f5b84d83d2398cbedecce01d95e1",
+    "tri_count": 180,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/fx.particles.glb",
+    "sha256": "6c69c7566c78a3220655118ff76d093dc6cfe8f5d0e9b57a9fb343e8f4bbbd06",
+    "source_sha256": "881c03408cd737071e43cbc4d314443da31fdd092b38eaefc58cb2a902e3cefe",
+    "tri_count": 12,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/nature.bush.glb",
+    "sha256": "91b77faf921de4ef7f4919af215bdf176799ba6cae733688064079e79385fe05",
+    "source_sha256": "6bcb731b8d360faab92506d4ed9fc735c977252b1c882b68b7c3b0589f78d897",
+    "tri_count": 138,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/nature.grass_tuft.glb",
+    "sha256": "82cfd7ff7dbb6f9e026e3cbdf640f0d25b4b3711422379d9a042459a75ca69c6",
+    "source_sha256": "7a01361d77436cf9ed42ab1e7b0971056934bd0b782ecd96649018ef9444ca5a",
+    "tri_count": 28,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/nature.rock.glb",
+    "sha256": "6248a6b79823a68c9243609c2679c5260d7282fc62976e2e2dd03480669f0fa5",
+    "source_sha256": "668ad04f761ca66e95a80f266f6c81b924b7ff3e9448b9650295925783ecedce",
+    "tri_count": 74,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/nature.tree.glb",
+    "sha256": "a1e84044edc20822cad0dc67c0c1466e06b4560f4bd570b4a39351abce2b495a",
+    "source_sha256": "9dcb2d77245e33329efd77dcab13dfabe55912b53dc405aba09b468aa28ae0c3",
+    "tri_count": 140,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/prop.book.glb",
+    "sha256": "5a6efab27a15f3deddda0e737cf5e1d3c621439e42583e2b65cc0923243164d0",
+    "source_sha256": "01e75052100f4738e3cb9c9853097e7a5a31f194296eea6842af6d11c3a75216",
+    "tri_count": 24,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/prop.device.glb",
+    "sha256": "e10e45593251ece170ed91e32c1c34ab0a3189c54253a5f752e7d0f325b53492",
+    "source_sha256": "2e626d84d620ebc49c0640429b70d6b1731b60449aa387f8912d5c8b55ac4e8f",
+    "tri_count": 112,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/prop.key.glb",
+    "sha256": "eb070e39199540055e6cc4d879a831abeb003c34b56065ce6bc821759d6b596d",
+    "source_sha256": "5415a8ed9d1c3fdafb194351ca27b88f77439bd9ae6d7fa99cb0efbddb3c9e93",
+    "tri_count": 72,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/prop.sign.glb",
+    "sha256": "b37c01b4279e0b9005696eab6757eb7050adec94d38315ef4b43c5dc33def384",
+    "source_sha256": "10fee62ffbd6c93a25d8bb847e3ec6491220a138b9c8279b01ef7b99f7a2af1a",
+    "tri_count": 68,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/prop.tool.glb",
+    "sha256": "09f3ba05caa4772ffdb46b56fe7f4dae8b679c25949e7b01a39e070dfcf0ffa1",
+    "source_sha256": "6943b28ca7bd5875f132a768017a7300ab0ce35e76875447b8b07a9675d71e47",
+    "tri_count": 60,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/prop.vessel.glb",
+    "sha256": "85a8664e3574562ab4685451a2a7eea73944722f7657ccc98fa8b05f31c60fea",
+    "source_sha256": "3b437352c3e5fc54eb3f2c77ef8c7b54d506520673c13b6dd59f1dc780ade776",
+    "tri_count": 84,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/sky.backdrop.glb",
+    "sha256": "a4c1c9a02ed3b24223d9f44117b4267140364cff4256d9d08510b3474706aee1",
+    "source_sha256": "51e67ea186611ef4d1597b0b815732d0356a4f1d344d75721ec9531b1b02ddeb",
+    "tri_count": 84,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/soft.blanket.glb",
+    "sha256": "301321ede7ae610cfa57bde041f181ef6fce54a374890738ded08dd60e44d581",
+    "source_sha256": "461af68b24332e532addc13f6e45caa8198f698fd081988750e0d5bb6f7990e1",
+    "tri_count": 104,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/soft.pillow.glb",
+    "sha256": "efcfba02dbf12491d6db40108b9446a0672a9ea0e69ee1b535e1cb9801e6ee6b",
+    "source_sha256": "b05e713255cf85f6ef9e16abffcdae9f9a173ff4f6deddf3c32ea694990545c2",
+    "tri_count": 132,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/terrain.patch.glb",
+    "sha256": "09caef4ecfed6c9ccf78734d292e7fc2892ee64e97bba8b9e2b830f4b59c81e9",
+    "source_sha256": "cc2d6535f0d02bdbf9064a4878ae9a820da1a69d7f3d727e7a89b90bbdfa319c",
+    "tri_count": 318,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/terrain.vista.glb",
+    "sha256": "9933c390f080bbbfbd3a486c9ea1443406e93e7a85fea27fa51cc2bc57a03c7e",
+    "source_sha256": "7f0a5a4651b3f80ff72ce392f244dd0870c482f72b419cec8ed3d9143abd4181",
+    "tri_count": 192,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/terrain.water.glb",
+    "sha256": "4723fc5f73b3b36321f8dc4b38d599dd006c8c773b7a6a33f0a9148974dfbc26",
+    "source_sha256": "6d196bbacbafa6539d13458942626c8dffd5d22643ff6dedd97c400e9d4a358e",
+    "tri_count": 222,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/terrain.yard.glb",
+    "sha256": "23030df3de5ace8f31cb23c4e33c58fb77eff2d53610a704e54aa8ae4240818c",
+    "source_sha256": "07429a006bf66b0d6c1e12effd1c4c16a9844be543ca840f86e35be823318755",
+    "tri_count": 554,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/vehicle.boat.glb",
+    "sha256": "90a7273bbb611d048d2b48e269c711d5692abe99035210f60702d2fc9054dfe3",
+    "source_sha256": "46e4b90e5092a3e2bf17d278b923803bf0dc90ae895e92a87f771e6b669b336c",
+    "tri_count": 488,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/assets/vehicle.craft.glb",
+    "sha256": "e7416b52aed58ecf9a1d2511795efaa6f261efc2c1afe9c15f491a1b299acee7",
+    "source_sha256": "0532043a9bacbbad872f910c2c2558ada7d2cfe1857750785b9c2f9fd1637fa4",
+    "tri_count": 360,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/arch.door__hatch_lo.glb",
+    "sha256": "b8fa64f229f110db53d14786fe554f7d8c4ed6f10004ce0f91a806ec5c1a138f",
+    "source_sha256": "8d285ad2ba5beff19704d213d18c748a802e2a85e4583929ba230953298350d3",
+    "tri_count": 120,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/arch.door__oval_open.glb",
+    "sha256": "be2eb89741310c59e08e11edb85128e2854bd02c15801fd9b379bbd8ceebcab5",
+    "source_sha256": "29b6d8f07f55b35210645fc6cd30e7292bb88b711b6e22eaa824902b71e27ce4",
+    "tri_count": 164,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/arch.room_shell__oval_lounge.glb",
+    "sha256": "90c87c9163f50ca0203480c31207f1397f90297e4326cbf4417d02370b9de1fd",
+    "source_sha256": "38836876e4f9efcd7cadf35856965dae6d4e15dc396a7763a9b1039710846b0c",
+    "tri_count": 1482,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/arch.window__panorama.glb",
+    "sha256": "2d0dceff7620daf33fa34062d8609e8fdcec3e4b98b11309fc8b5d5f95930d9b",
+    "source_sha256": "77a6ed7aac57b101d35a50974c9f2d97387e66fc609102ae3a47e75ed66f9a9b",
+    "tri_count": 194,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/arch.window__porthole.glb",
+    "sha256": "ee35d730c8204811465fb1be1279db95149206e074653a6cb139b17ef3ab1180",
+    "source_sha256": "30c0aeea96f0a989dbb7930f3cf39c2a52231362b1e1042d5192c57c09ad8ec2",
+    "tri_count": 170,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/arch.window__rounded_molded.glb",
+    "sha256": "88fc579ee16250ebe76494eaedfb79bdb0893d4d43ebb53d669cd50588c1c21e",
+    "source_sha256": "b79733fcdf1c400f661489a2e5a89742d0e454128dc7634624ff82e077b0989f",
+    "tri_count": 194,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.bench__chrome_legs.glb",
+    "sha256": "e655e99559ac07c7c6579ea0b86c0f3f06b512c6819be594db55fe8bb8540a8c",
+    "source_sha256": "15d5fbb92b12e9366cac76f72f62d490749ccf98c0ec46b9749a8960b106635a",
+    "tri_count": 346,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.console__desk_triple_crt.glb",
+    "sha256": "8d6feeb65e2f24b53f76f7e946ca911998679123f60747dcc3d5bce213d0b8ff",
+    "source_sha256": "6378c31ceeda45e681dbe396bd27223d78cdfd28c81ac82bf9b3e9387bdb9925",
+    "tri_count": 388,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.console__terminal.glb",
+    "sha256": "862364b282a57308450e9c1e7a667769b8f080f5956af57c128628e9ffcf0cde",
+    "source_sha256": "892dcbb1a29e3ebb3363c9da11518bd952e2fcf8b918928d772beea041592d1b",
+    "tri_count": 144,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.lamp__globe.glb",
+    "sha256": "96e1eee564ec4adfd1bea59e2ecc6e7c67cf9fde971122a88375d4345ae42718",
+    "source_sha256": "eac0038d9b0711baed9f26a5858df6e4b36b06804c1de4527da2dc4292270568",
+    "tri_count": 188,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.pod__bowl_portholes.glb",
+    "sha256": "f4532d1dd9c6a8b459f6c4c76d526c61003d9c027c08e4f36accafd5ce219a14",
+    "source_sha256": "a9b4f0e6f9fd638374f7384dfa8587983b88dfa8a1cdbf5a95145e4dfe6ac2ef",
+    "tri_count": 394,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.pod__chaise.glb",
+    "sha256": "6d5f02dfcb9b7740dfe575a21c945fbde206d83b9fb74258bd27e4933361cee3",
+    "source_sha256": "8145e0958962cbd57045e8283af529f92ce3b161361cedc25d683dabc63f4f92",
+    "tri_count": 388,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.pod__chaise_visor.glb",
+    "sha256": "c633ca06342be1d5ae41eb96769d0d74b1333b4fdf980dfb280f97cab6278225",
+    "source_sha256": "b6c7eb341a67430cc0fc5fb4ed35742548218a9d2ba36111e5c30a427393547e",
+    "tri_count": 388,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.pod__conversation_pit.glb",
+    "sha256": "613097df210e9a9967afc5bf67a26243542204e2b5b09384fe6788623988b938",
+    "source_sha256": "4dbef8693dd2d98240ba583e618d068e2406dc47a13c19ea75cc93dfdb24e563",
+    "tri_count": 380,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.pod__egg.glb",
+    "sha256": "21fedc89ac9c8de0075b0d76085c00bfd9bb5cec718f079280ec29d83cd8dc74",
+    "source_sha256": "1d96825b9378efd45dc5e2d81bc6d6083d0947f358288b1f715246420c7043d1",
+    "tri_count": 336,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.table__disc_orb.glb",
+    "sha256": "2010121efa0acefc0331556c03f045cbf1637c0bbf092e29b024a3e163636edd",
+    "source_sha256": "83d923a68db14af3daaab4bda3c664b4c595d3338ef7670436bc93b08f3e4df2",
+    "tri_count": 260,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.table__flower_table.glb",
+    "sha256": "be5f0d87af3d38270839fe386a1b83f8f4b694c1f4a08324e75c7e5e6b4c57c5",
+    "source_sha256": "3f03315d91419f7d24ab621968b1173fd243934629cbd7725e430192acfcee8f",
+    "tri_count": 224,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/furn.table__plinth.glb",
+    "sha256": "028a06370c2e90062b67ee8038403a9d34910e750730f228bb6d40e408c95f51",
+    "source_sha256": "1f192610e40a1bd23b2a1e3459db4d49415b803be06c9260685de534b94c5283",
+    "tri_count": 56,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/nature.bush__indoor.glb",
+    "sha256": "b083a560f63949c085f202de1b6e932aceac10bf76a7fe9a58a5f190191a7d5d",
+    "source_sha256": "71180199370804b22e594e26ef99d8ac6da931ac374865350844e0b98db02eab",
+    "tri_count": 124,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/nature.tree__crystal.glb",
+    "sha256": "d028fbfe1c35f4558c2f7e4f84d057978d932b9c8ab0b2061704199a52bd8b55",
+    "source_sha256": "303b4638795346a66844f27d27aa3e78529b587b85390cc268d56df2f5bef0d3",
+    "tri_count": 256,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/nature.tree__frosted.glb",
+    "sha256": "87094ffbb2a7a413fe2528dba22bf0614886e3a1178ec86ca9d8f144f495a26e",
+    "source_sha256": "1fd7f4e93f6644e1d14335d98cea1b14c15cbf3704ed62546516b8261f5294ed",
+    "tri_count": 172,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/soft.pillow__cat_bed.glb",
+    "sha256": "e9ac04fda63a380662eaacc1b561bbae07b8703f56a27f01719c94b94bd237b5",
+    "source_sha256": "fa012b724ccedaa794249e8545205ca05f04124a28f34a1d32c6171924f97b6d",
+    "tri_count": 132,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/presets/vehicle.craft__snow_sled.glb",
+    "sha256": "6b4a9239b11fd6e62ccb3bf255ad7c276a4d57e6d030e389a58be90118b74380",
+    "source_sha256": "1650109b77ca8f70bebcb902a92eb1c3bf1ebe9bab40d8e3263e816e4e17dc8c",
+    "tri_count": 188,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/cat_bed.glb",
+    "sha256": "829c563ed1e0f7f2cbeb8b78d505276adb5335f1df420ac205bbec960bbf9236",
+    "source_sha256": "9c5910faed5f7af5704af00e42e81095e545779acc01da427144b706ae721bd2",
+    "tri_count": 132,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/console.glb",
+    "sha256": "7d0c95c3acff4d36f0ecaecf0d10e82bfc154cb52c0859d2ac5548dfb8e33189",
+    "source_sha256": "6f7791548662154d289d627e836ee02a6b4dd32d19ba33b7e076412712833a10",
+    "tri_count": 388,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/container.glb",
+    "sha256": "f9c9f90f423480283839bfbfeff70ebb5b23de14caab11b0e8b637a4c369b52a",
+    "source_sha256": "b076456a1459b1d1afd847dea3e60751a7c3a7b2eac2dcf8a99f9346440c2f18",
+    "tri_count": 288,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/door_main.glb",
+    "sha256": "7ff7934803b11b4cee5929c1d48de3a8df52ab617e06ba9a91fb880aa531b1d3",
+    "source_sha256": "312c2cb8ffc270dacd5d5b9d2a7a2cebc7efca9e0bb5d163da7172a88e5fb4ab",
+    "tri_count": 148,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/lamp_floor.glb",
+    "sha256": "c3bcf8ecc9b0619f1b2dfa749f34392edf4eb48c3623fd43ce58e816edad3b7a",
+    "source_sha256": "5588b839046bffd5f85579f4ac3c12f369d9a4d13ec81f9686cad6cbdd0a42f1",
+    "tri_count": 188,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/plant.glb",
+    "sha256": "54cbd8c2922dfaecb3d1a764bac5a995f934276e0a550d7db9c7605ae37979cb",
+    "source_sha256": "efdb1894eaafa0ab03bca602b6d8814f6dcf431f7d1953304a2bffef2649093f",
+    "tri_count": 124,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/rug.glb",
+    "sha256": "f556f1a0e1e2f8a933ea30ee0d91dc0379619a89f2467ea2f7a4e5a6c7dfb07c",
+    "source_sha256": "266bbb7e456e09c1458f71ac74b4a3113ea839144ca1f8fd46ccc3cb82e9240c",
+    "tri_count": 68,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/seat_chair.glb",
+    "sha256": "8d8e6529263369e49da93d33d2f819f99f0ec7fc1cc65e176139b8363fab0157",
+    "source_sha256": "feaeb65fe6bfaa6e9e75218a65276ace8010f9aabe551141fc4e6ff4a30ba0c1",
+    "tri_count": 388,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/seat_lounge.glb",
+    "sha256": "634fa4e4f7ee2a480cbe770ba1a946d91a38c0867a3c83401892c7f556a927da",
+    "source_sha256": "589fda26a5e47afe3055f029eac67e4478f2477c9f7e9f104dfa08de6d0db434",
+    "tri_count": 388,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/shelf.glb",
+    "sha256": "451eb55841385032573c062b1a7f88687bed4912376eb3acaf5e4b985caa5e7e",
+    "source_sha256": "5cfece2ecbe4060cd54ef942a26fca93ab224c72118fa47ebdc633675c1f28fd",
+    "tri_count": 144,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/shell.glb",
+    "sha256": "2f838ddcd2d4ea31cdda8ddd07bba3c92202e49d8487c0bb7a9e569f2988e7de",
+    "source_sha256": "bab86c843a81d780a3799a90fb6baefa1609c7890ba6f463198832e7be46c1b3",
+    "tri_count": 233,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/table_low.glb",
+    "sha256": "723334b8d13feefe51b7b29555a646cd3e74dba3b164d9e1bd4f5d960c14c0d6",
+    "source_sha256": "a037b448cd30d4e4473253a591648908a3419c832617815c5180c8c3daf05d38",
+    "tri_count": 260,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/window_main.glb",
+    "sha256": "0d3212694dd025cb29c447d82df53bfb836196cbd7b98b4026e9334b0c99d588",
+    "source_sha256": "4727265f6c755926228eed5793843c4014578f908c838c5fe6ccbb197e21a4e4",
+    "tri_count": 194,
+    "vertex_color_encoding": "srgb8"
+  },
+  {
+    "animations": [],
+    "bone_names": [],
+    "path": "kits/library/polar_pod/rooms/lounge/window_side.glb",
+    "sha256": "f37b06028743c9748153f0b5b9858a329f6b49daf6c70815fce6aa9cf928cbb1",
+    "source_sha256": "8a5aead74d8fbb4311d3a76f469a8d24516bee48783883348e872f6d6b04fff9",
+    "tri_count": 170,
+    "vertex_color_encoding": "srgb8"
+  }
+]

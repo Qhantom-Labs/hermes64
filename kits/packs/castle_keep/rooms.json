@@ -1,0 +1,2473 @@
+{
+  "format": "hermes64-pack-rooms/1",
+  "pack": "castle_keep",
+  "rooms": [
+    {
+      "anchors": {
+        "arena": {
+          "max": [
+            16,
+            4,
+            15
+          ],
+          "min": [
+            1,
+            0,
+            2
+          ]
+        },
+        "boss": [
+          [
+            4,
+            0,
+            5
+          ],
+          [
+            8,
+            0,
+            5
+          ],
+          [
+            12,
+            0,
+            5
+          ]
+        ],
+        "captive": [
+          14,
+          0,
+          1.5
+        ],
+        "checkpoint": [
+          6.5,
+          0,
+          13
+        ],
+        "hero_start": [
+          6.5,
+          0,
+          14
+        ],
+        "interact": [
+          14,
+          0,
+          1.5
+        ],
+        "spawns": [
+          [
+            4,
+            0,
+            5
+          ],
+          [
+            8,
+            0,
+            5
+          ],
+          [
+            12,
+            0,
+            5
+          ],
+          [
+            4,
+            0,
+            8
+          ],
+          [
+            8,
+            0,
+            8
+          ],
+          [
+            12,
+            0,
+            8
+          ],
+          [
+            4,
+            0,
+            11
+          ],
+          [
+            12,
+            0,
+            11
+          ]
+        ]
+      },
+      "id": "gatehouse",
+      "presentation": {
+        "camera": "game",
+        "cameras": [
+          {
+            "fov": 60,
+            "id": "game",
+            "look_at": [
+              8.5,
+              0.8,
+              8.5
+            ],
+            "position": [
+              15,
+              6,
+              19
+            ]
+          }
+        ],
+        "exterior": true,
+        "floor": "",
+        "kit_shell": true,
+        "look_profile": "castle",
+        "pieces": [
+          {
+            "asset": "mter.ground__plaza_4",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall__postern",
+            "kind": "wall",
+            "position": [
+              6.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.pine",
+            "position": [
+              -7.0,
+              0.0,
+              5.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.backdrop__mountains",
+            "kind": "backdrop",
+            "position": [
+              8.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              0.2,
+              0.2,
+              0.2
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.pine",
+            "position": [
+              21.0,
+              0.0,
+              5.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.rock__cluster",
+            "position": [
+              21.0,
+              0.0,
+              15.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "cst.keep__crenellated",
+            "kind": "landmark",
+            "position": [
+              8.5,
+              0.0,
+              -26.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              2.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              10.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              14.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              2.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              10.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              14.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          }
+        ],
+        "wall_height": 4.5
+      },
+      "roles": [
+        "opening"
+      ],
+      "room": {
+        "cameras": [
+          {
+            "id": "game",
+            "look_at": [
+              8.5,
+              0.8,
+              8.5
+            ],
+            "position": [
+              15,
+              6,
+              19
+            ]
+          }
+        ],
+        "character_ids": [
+          "hero"
+        ],
+        "description": "A cobbled keep courtyard, its wide fighting floor framed by stone posterns and watchtowers.",
+        "doors": [
+          {
+            "conditions": [],
+            "id": "forward",
+            "label": "Enter the keep",
+            "position": 6,
+            "to_door": "back",
+            "to_room": "outer_court",
+            "wall": "north"
+          }
+        ],
+        "grid_size": [
+          17,
+          17
+        ],
+        "id": "gatehouse",
+        "kit_refs": [],
+        "name": "Keep Gatehouse",
+        "props": []
+      },
+      "slot_pieces": {},
+      "tri_estimate": 3412
+    },
+    {
+      "anchors": {
+        "arena": {
+          "max": [
+            16,
+            4,
+            15
+          ],
+          "min": [
+            1,
+            0,
+            2
+          ]
+        },
+        "boss": [
+          [
+            4,
+            0,
+            5
+          ],
+          [
+            8,
+            0,
+            5
+          ],
+          [
+            12,
+            0,
+            5
+          ]
+        ],
+        "captive": [
+          14,
+          0,
+          1.5
+        ],
+        "checkpoint": [
+          6.5,
+          0,
+          13
+        ],
+        "hero_start": [
+          6.5,
+          0,
+          14
+        ],
+        "interact": [
+          14,
+          0,
+          1.5
+        ],
+        "spawns": [
+          [
+            4,
+            0,
+            5
+          ],
+          [
+            8,
+            0,
+            5
+          ],
+          [
+            12,
+            0,
+            5
+          ],
+          [
+            4,
+            0,
+            8
+          ],
+          [
+            8,
+            0,
+            8
+          ],
+          [
+            12,
+            0,
+            8
+          ],
+          [
+            4,
+            0,
+            11
+          ],
+          [
+            12,
+            0,
+            11
+          ]
+        ]
+      },
+      "id": "outer_court",
+      "presentation": {
+        "camera": "game",
+        "cameras": [
+          {
+            "fov": 60,
+            "id": "game",
+            "look_at": [
+              8.5,
+              0.8,
+              8.5
+            ],
+            "position": [
+              15,
+              6,
+              19
+            ]
+          }
+        ],
+        "exterior": true,
+        "floor": "",
+        "kit_shell": true,
+        "look_profile": "castle",
+        "pieces": [
+          {
+            "asset": "mter.ground__plaza_4",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall__postern",
+            "kind": "wall",
+            "position": [
+              6.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall__postern",
+            "kind": "wall",
+            "position": [
+              6.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "mnat.pine",
+            "position": [
+              -7.0,
+              0.0,
+              7.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.backdrop__mountains",
+            "kind": "backdrop",
+            "position": [
+              8.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              0.2,
+              0.2,
+              0.2
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.pine",
+            "position": [
+              21.0,
+              0.0,
+              5.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.rock__cluster",
+            "position": [
+              21.0,
+              0.0,
+              15.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "cst.keep__crenellated",
+            "kind": "landmark",
+            "position": [
+              8.5,
+              0.0,
+              -26.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              2.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              10.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              14.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              2.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              10.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              14.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          }
+        ],
+        "wall_height": 4.5
+      },
+      "roles": [
+        "arena"
+      ],
+      "room": {
+        "cameras": [
+          {
+            "id": "game",
+            "look_at": [
+              8.5,
+              0.8,
+              8.5
+            ],
+            "position": [
+              15,
+              6,
+              19
+            ]
+          }
+        ],
+        "character_ids": [
+          "hero"
+        ],
+        "description": "A cobbled keep courtyard, its wide fighting floor framed by stone posterns and watchtowers.",
+        "doors": [
+          {
+            "conditions": [],
+            "id": "back",
+            "label": "Back to the gatehouse",
+            "position": 6,
+            "to_door": "forward",
+            "to_room": "gatehouse",
+            "wall": "south"
+          },
+          {
+            "conditions": [],
+            "id": "forward",
+            "label": "On to the banners",
+            "position": 6,
+            "to_door": "back",
+            "to_room": "banner_court",
+            "wall": "north"
+          }
+        ],
+        "grid_size": [
+          17,
+          17
+        ],
+        "id": "outer_court",
+        "kit_refs": [],
+        "name": "Outer Court",
+        "props": []
+      },
+      "slot_pieces": {},
+      "tri_estimate": 3684
+    },
+    {
+      "anchors": {
+        "arena": {
+          "max": [
+            16,
+            4,
+            15
+          ],
+          "min": [
+            1,
+            0,
+            2
+          ]
+        },
+        "boss": [
+          [
+            4,
+            0,
+            5
+          ],
+          [
+            8,
+            0,
+            5
+          ],
+          [
+            12,
+            0,
+            5
+          ]
+        ],
+        "captive": [
+          14,
+          0,
+          1.5
+        ],
+        "checkpoint": [
+          6.5,
+          0,
+          13
+        ],
+        "hero_start": [
+          6.5,
+          0,
+          14
+        ],
+        "interact": [
+          14,
+          0,
+          1.5
+        ],
+        "spawns": [
+          [
+            4,
+            0,
+            5
+          ],
+          [
+            8,
+            0,
+            5
+          ],
+          [
+            12,
+            0,
+            5
+          ],
+          [
+            4,
+            0,
+            8
+          ],
+          [
+            8,
+            0,
+            8
+          ],
+          [
+            12,
+            0,
+            8
+          ],
+          [
+            4,
+            0,
+            11
+          ],
+          [
+            12,
+            0,
+            11
+          ]
+        ]
+      },
+      "id": "banner_court",
+      "presentation": {
+        "camera": "game",
+        "cameras": [
+          {
+            "fov": 60,
+            "id": "game",
+            "look_at": [
+              8.5,
+              0.8,
+              8.5
+            ],
+            "position": [
+              15,
+              6,
+              19
+            ]
+          }
+        ],
+        "exterior": true,
+        "floor": "",
+        "kit_shell": true,
+        "look_profile": "castle",
+        "pieces": [
+          {
+            "asset": "mter.ground__plaza_4",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall__postern",
+            "kind": "wall",
+            "position": [
+              6.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall__postern",
+            "kind": "wall",
+            "position": [
+              6.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "mnat.pine",
+            "position": [
+              24.0,
+              0.0,
+              7.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.backdrop__mountains",
+            "kind": "backdrop",
+            "position": [
+              8.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              0.2,
+              0.2,
+              0.2
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.pine",
+            "position": [
+              21.0,
+              0.0,
+              5.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.rock__cluster",
+            "position": [
+              21.0,
+              0.0,
+              15.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "cst.keep__crenellated",
+            "kind": "landmark",
+            "position": [
+              8.5,
+              0.0,
+              -26.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              2.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              10.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              14.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              2.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              10.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              14.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          }
+        ],
+        "wall_height": 4.5
+      },
+      "roles": [
+        "arena"
+      ],
+      "room": {
+        "cameras": [
+          {
+            "id": "game",
+            "look_at": [
+              8.5,
+              0.8,
+              8.5
+            ],
+            "position": [
+              15,
+              6,
+              19
+            ]
+          }
+        ],
+        "character_ids": [
+          "hero"
+        ],
+        "description": "A cobbled keep courtyard, its wide fighting floor framed by stone posterns and watchtowers.",
+        "doors": [
+          {
+            "conditions": [],
+            "id": "back",
+            "label": "Back to the outer court",
+            "position": 6,
+            "to_door": "forward",
+            "to_room": "outer_court",
+            "wall": "south"
+          },
+          {
+            "conditions": [],
+            "id": "forward",
+            "label": "On to the inner court",
+            "position": 6,
+            "to_door": "back",
+            "to_room": "inner_court",
+            "wall": "north"
+          }
+        ],
+        "grid_size": [
+          17,
+          17
+        ],
+        "id": "banner_court",
+        "kit_refs": [],
+        "name": "Banner Court",
+        "props": []
+      },
+      "slot_pieces": {},
+      "tri_estimate": 3684
+    },
+    {
+      "anchors": {
+        "arena": {
+          "max": [
+            16,
+            4,
+            15
+          ],
+          "min": [
+            1,
+            0,
+            2
+          ]
+        },
+        "boss": [
+          [
+            4,
+            0,
+            5
+          ],
+          [
+            8,
+            0,
+            5
+          ],
+          [
+            12,
+            0,
+            5
+          ]
+        ],
+        "captive": [
+          14,
+          0,
+          1.5
+        ],
+        "checkpoint": [
+          6.5,
+          0,
+          13
+        ],
+        "hero_start": [
+          6.5,
+          0,
+          14
+        ],
+        "interact": [
+          14,
+          0,
+          1.5
+        ],
+        "spawns": [
+          [
+            4,
+            0,
+            5
+          ],
+          [
+            8,
+            0,
+            5
+          ],
+          [
+            12,
+            0,
+            5
+          ],
+          [
+            4,
+            0,
+            8
+          ],
+          [
+            8,
+            0,
+            8
+          ],
+          [
+            12,
+            0,
+            8
+          ],
+          [
+            4,
+            0,
+            11
+          ],
+          [
+            12,
+            0,
+            11
+          ]
+        ]
+      },
+      "id": "inner_court",
+      "presentation": {
+        "camera": "game",
+        "cameras": [
+          {
+            "fov": 60,
+            "id": "game",
+            "look_at": [
+              8.5,
+              0.8,
+              8.5
+            ],
+            "position": [
+              15,
+              6,
+              19
+            ]
+          }
+        ],
+        "exterior": true,
+        "floor": "",
+        "kit_shell": true,
+        "look_profile": "castle",
+        "pieces": [
+          {
+            "asset": "mter.ground__plaza_4",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall__postern",
+            "kind": "wall",
+            "position": [
+              6.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall__postern",
+            "kind": "wall",
+            "position": [
+              6.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "mnat.pine",
+            "position": [
+              -7.0,
+              0.0,
+              -4.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.backdrop__mountains",
+            "kind": "backdrop",
+            "position": [
+              8.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              0.2,
+              0.2,
+              0.2
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.pine",
+            "position": [
+              21.0,
+              0.0,
+              5.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.rock__cluster",
+            "position": [
+              21.0,
+              0.0,
+              15.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "cst.keep__crenellated",
+            "kind": "landmark",
+            "position": [
+              8.5,
+              0.0,
+              -26.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              2.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              10.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              14.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              2.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              10.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              14.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          }
+        ],
+        "wall_height": 4.5
+      },
+      "roles": [
+        "arena"
+      ],
+      "room": {
+        "cameras": [
+          {
+            "id": "game",
+            "look_at": [
+              8.5,
+              0.8,
+              8.5
+            ],
+            "position": [
+              15,
+              6,
+              19
+            ]
+          }
+        ],
+        "character_ids": [
+          "hero"
+        ],
+        "description": "A cobbled keep courtyard, its wide fighting floor framed by stone posterns and watchtowers.",
+        "doors": [
+          {
+            "conditions": [],
+            "id": "back",
+            "label": "Back to the banner court",
+            "position": 6,
+            "to_door": "forward",
+            "to_room": "banner_court",
+            "wall": "south"
+          },
+          {
+            "conditions": [],
+            "id": "forward",
+            "label": "On to the crown court",
+            "position": 6,
+            "to_door": "back",
+            "to_room": "crown_court",
+            "wall": "north"
+          }
+        ],
+        "grid_size": [
+          17,
+          17
+        ],
+        "id": "inner_court",
+        "kit_refs": [],
+        "name": "Inner Court",
+        "props": []
+      },
+      "slot_pieces": {},
+      "tri_estimate": 3684
+    },
+    {
+      "anchors": {
+        "arena": {
+          "max": [
+            16,
+            4,
+            15
+          ],
+          "min": [
+            1,
+            0,
+            2
+          ]
+        },
+        "boss": [
+          [
+            4,
+            0,
+            5
+          ],
+          [
+            8,
+            0,
+            5
+          ],
+          [
+            12,
+            0,
+            5
+          ]
+        ],
+        "captive": [
+          14,
+          0,
+          1.5
+        ],
+        "checkpoint": [
+          6.5,
+          0,
+          13
+        ],
+        "hero_start": [
+          6.5,
+          0,
+          14
+        ],
+        "interact": [
+          14,
+          0,
+          1.5
+        ],
+        "spawns": [
+          [
+            4,
+            0,
+            5
+          ],
+          [
+            8,
+            0,
+            5
+          ],
+          [
+            12,
+            0,
+            5
+          ],
+          [
+            4,
+            0,
+            8
+          ],
+          [
+            8,
+            0,
+            8
+          ],
+          [
+            12,
+            0,
+            8
+          ],
+          [
+            4,
+            0,
+            11
+          ],
+          [
+            12,
+            0,
+            11
+          ]
+        ]
+      },
+      "id": "crown_court",
+      "presentation": {
+        "camera": "game",
+        "cameras": [
+          {
+            "fov": 60,
+            "id": "game",
+            "look_at": [
+              8.5,
+              0.8,
+              8.5
+            ],
+            "position": [
+              15,
+              6,
+              19
+            ]
+          }
+        ],
+        "exterior": true,
+        "floor": "",
+        "kit_shell": true,
+        "look_profile": "castle",
+        "pieces": [
+          {
+            "asset": "mter.ground__plaza_4",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall__postern",
+            "kind": "wall",
+            "position": [
+              6.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "mnat.pine",
+            "position": [
+              8.5,
+              0.0,
+              -7.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              -7.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              -7.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              8.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.ground__meadow_far",
+            "kind": "floor",
+            "position": [
+              24.5,
+              0.0,
+              24.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mter.backdrop__mountains",
+            "kind": "backdrop",
+            "position": [
+              8.5,
+              0.0,
+              8.5
+            ],
+            "scale": [
+              0.2,
+              0.2,
+              0.2
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.pine",
+            "position": [
+              21.0,
+              0.0,
+              5.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "mnat.rock__cluster",
+            "position": [
+              21.0,
+              0.0,
+              15.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "cst.keep__crenellated",
+            "kind": "landmark",
+            "position": [
+              8.5,
+              0.0,
+              -26.0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              2.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              10.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              14.5,
+              0.0,
+              0.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 0.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              2.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              10.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          },
+          {
+            "asset": "vlg.wall",
+            "kind": "wall",
+            "position": [
+              14.5,
+              0.0,
+              16.5
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ],
+            "yaw": 180.0
+          }
+        ],
+        "wall_height": 4.5
+      },
+      "roles": [
+        "finale"
+      ],
+      "room": {
+        "cameras": [
+          {
+            "id": "game",
+            "look_at": [
+              8.5,
+              0.8,
+              8.5
+            ],
+            "position": [
+              15,
+              6,
+              19
+            ]
+          }
+        ],
+        "character_ids": [
+          "hero"
+        ],
+        "description": "A cobbled keep courtyard, its wide fighting floor framed by stone posterns and watchtowers.",
+        "doors": [
+          {
+            "conditions": [],
+            "id": "back",
+            "label": "Back to the inner court",
+            "position": 6,
+            "to_door": "forward",
+            "to_room": "inner_court",
+            "wall": "south"
+          }
+        ],
+        "grid_size": [
+          17,
+          17
+        ],
+        "id": "crown_court",
+        "kit_refs": [],
+        "name": "Crown Court",
+        "props": []
+      },
+      "slot_pieces": {},
+      "tri_estimate": 3412
+    }
+  ]
+}

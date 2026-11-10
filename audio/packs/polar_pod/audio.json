@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.1",
+  "id": "polar_pod",
+  "description": "Chrome, glass, molded rooms and wind. Bindings preserve the approved Thaw WAVs.",
+  "bindings": {
+    "walk_inside": {"ids": ["footstep.floor.01", "footstep.floor.02", "footstep.floor.03"], "gain": 0.65},
+    "walk_outside": {"ids": ["footstep.snow.01", "footstep.snow.02", "footstep.snow.03"], "gain": 0.65},
+    "door": {"ids": ["hatch.open"], "gain": 0.6},
+    "pickup": {"ids": ["sphere.pickup.01", "sphere.pickup.02", "sphere.pickup.03", "sphere.pickup.04", "sphere.pickup.05", "sphere.pickup.06", "sphere.pickup.07", "sphere.pickup.08"], "gain": 0.55},
+    "resident": {"ids": ["dialogue.mid", "dialogue.airy", "core.dialogue.robotic"], "gain": 0.35},
+    "pet": {"ids": ["cat.meow.01", "cat.purr.01", "cat.chirp.01"], "gain": 0.55},
+    "room_ambience": {"ids": ["ambience.habitat"], "gain": 0.28},
+    "outside_ambience": {"ids": ["ambience.outside"], "gain": 0.28},
+    "storm": {"ids": ["ambience.storm"], "gain": 0.28},
+    "room_music": {"ids": ["music.hub", "core.music.night"], "gain": 0.35},
+    "explore_music": {"ids": ["music.explore"], "gain": 0.35},
+    "lab_build": {"ids": ["core.craft.weld.short", "core.craft.assemble.snap"], "gain": 0.5}
+  },
+  "presets": {
+    "chrome_latch": {"asset": "core.door.metal.close", "params": {"seed": 901, "pitch": 175, "creak": 0.08, "noise": 0.18, "gain": 0.25}},
+    "glass_discovery": {"asset": "core.magic.chime", "params": {"seed": 902, "pitch": 530, "shine": 0.16, "gain": 0.24}},
+    "vent_bed": {"asset": "core.machine.fan.run", "params": {"seed": 903, "noise": 0.6, "pitch": 66, "gain": 0.16}}
+  }
+}

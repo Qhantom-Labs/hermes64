@@ -1,0 +1,33 @@
+{
+ "note": "lane-combat-art palette-role bindings for the polar pack (names from packs/polar_pod/pack.json palette). Unbound roles fall back by luminance/hue intent (core/roles.py).",
+ "roles": {
+  "accent": "ember",
+  "band": "berry",
+  "burr": "cobalt_0",
+  "burr_tip": "ice_1",
+  "core_glow": "glow_1",
+  "crest": "ice_0",
+  "crest_tip": "glow_0",
+  "eye": "void",
+  "eye_glow": "glow_1",
+  "hide": "wool_1",
+  "hide_dark": "knit_0",
+  "hoof": "knit_0",
+  "leg": "wool_0",
+  "lichen": "peri_1",
+  "mane": "lilac_1",
+  "mask": "pearl_0",
+  "metal": "pearl_0",
+  "metal_dark": "chrome_1",
+  "plate": "chrome_2",
+  "stone": "chrome_3",
+  "stone_dark": "chrome_1",
+  "weave": "chrome_1",
+  "weave_dark": "wool_0",
+  "weave_light": "chrome_3",
+  "wing": "peri_0",
+  "wood": "chrome_2",
+  "wood_dark": "chrome_1",
+  "wrap": "berry"
+ }
+}

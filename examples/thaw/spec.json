@@ -1,0 +1,2663 @@
+{
+  "contract_version": "1.1.0",
+  "id": "thaw",
+  "title": "Thaw",
+  "description": "A new arrival explores a polar pod habitat during the long night, collects shared memories and a procession of cats, and helps the residents choose how their room will glow.",
+  "metadata": {
+    "protagonist": "new_arrival",
+    "style_pack": "polar_pod",
+    "tone": "cozy mystery, exploration and collecting; no loneliness",
+    "collectible_prop_ids": {
+      "cat_purl": "cat_purl",
+      "cat_button": "cat_button",
+      "cat_mica": "cat_mica",
+      "cat_thread": "cat_thread",
+      "cat_echo": "cat_echo",
+      "cat_spool": "cat_spool",
+      "cat_pebble": "cat_pebble",
+      "cat_comet": "cat_comet",
+      "cat_patch": "cat_patch",
+      "cat_drift": "cat_drift",
+      "cat_cinder": "cat_cinder",
+      "cat_nori": "cat_nori",
+      "sphere_01": "sphere_01",
+      "sphere_02": "sphere_02",
+      "sphere_03": "sphere_03",
+      "sphere_04": "sphere_04",
+      "sphere_05": "sphere_05",
+      "sphere_06": "sphere_06",
+      "sphere_07": "sphere_07",
+      "sphere_08": "sphere_08"
+    },
+    "screen_targets": [
+      "screen_status",
+      "screen_routes",
+      "screen_archive"
+    ]
+  },
+  "start": {
+    "location": "pod_bay",
+    "inventory": [],
+    "flags": {
+      "lamp_relit": false,
+      "quiet_chosen": false,
+      "window_revealed": false
+    },
+    "dialogue": {
+      "vignette_purl": "",
+      "vignette_button": "",
+      "vignette_mica": "",
+      "vignette_thread": "",
+      "vignette_echo": "",
+      "vignette_spool": "",
+      "vignette_pebble": "",
+      "vignette_comet": "",
+      "vignette_patch": "",
+      "vignette_drift": "",
+      "vignette_cinder": "",
+      "vignette_nori": "",
+      "neri_words": "",
+      "window_review": ""
+    },
+    "tide": {
+      "state": "clear",
+      "tick": 0
+    },
+    "collected": []
+  },
+  "rooms": [
+    {
+      "id": "pod_bay",
+      "name": "Pod Bay",
+      "description": "You arrive in the middle of the long night. Tavi lifts a silver-gloved hand from a nest of blankets. Your pod already has a mug hook, and someone has put the welcome note where a cat cannot sit on it. The central warmth lamp has gone dim. The pod heaters have not.",
+      "grid_size": [
+        14,
+        12
+      ],
+      "kit_refs": [
+        "kit/pod_wall",
+        "kit/oval_window",
+        "kit/gloss_floor"
+      ],
+      "doors": [
+        {
+          "id": "workstation_hatch",
+          "wall": "east",
+          "position": 4,
+          "to_room": "workstation",
+          "to_door": "bay_hatch",
+          "label": "Go to Workstation",
+          "conditions": []
+        },
+        {
+          "id": "pit_arch",
+          "wall": "north",
+          "position": 5,
+          "to_room": "conversation_pit",
+          "to_door": "bay_arch",
+          "label": "Go to Conversation Pit",
+          "conditions": []
+        },
+        {
+          "id": "corridor_hatch",
+          "wall": "west",
+          "position": 4,
+          "to_room": "curved_corridor",
+          "to_door": "bay_hatch",
+          "label": "Go to Curved Corridor",
+          "conditions": [
+            {
+              "item": "habitat_card",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "cameras": [
+        {
+          "id": "pod_bay_wide",
+          "position": [
+            17,
+            11,
+            18
+          ],
+          "look_at": [
+            7.0,
+            1.2,
+            6.0
+          ]
+        }
+      ],
+      "props": [
+        {
+          "id": "pod_cluster",
+          "asset": "kit/sleeping_pods",
+          "position": [
+            4,
+            0,
+            4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "quilt_chaise",
+          "asset": "kit/chrome_chaise",
+          "position": [
+            10,
+            0,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "warmth_lamp",
+          "asset": "prop/central_lamp",
+          "position": [
+            7,
+            0,
+            7
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "welcome_mug",
+          "asset": "prop/steaming_mug",
+          "position": [
+            5,
+            1,
+            8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "fountain",
+          "asset": "kit/small_fountain",
+          "position": [
+            11,
+            0,
+            9
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_purl",
+          "asset": "cat/silver_tabby",
+          "position": [
+            2,
+            0.4,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_button",
+          "asset": "cat/black_tuxedo",
+          "position": [
+            4,
+            0.4,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_mica",
+          "asset": "cat/blue_solid",
+          "position": [
+            6,
+            0.4,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_thread",
+          "asset": "cat/cream_point",
+          "position": [
+            2,
+            0.4,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "sphere_01",
+          "asset": "prop/blue_glass_sphere",
+          "position": [
+            5,
+            0.8,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "sphere_02",
+          "asset": "prop/blue_glass_sphere",
+          "position": [
+            7,
+            0.8,
+            2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "character_ids": [
+        "new_arrival",
+        "tavi",
+        "cat_purl",
+        "cat_button",
+        "cat_mica",
+        "cat_thread"
+      ]
+    },
+    {
+      "id": "workstation",
+      "name": "Workstation",
+      "description": "Three blue screens are pressed into a desk as if the desk grew around them. A quilted chair swivels half a turn when you enter. Neri is identifiable by the wave-stitched vest and the little three-screen pin, not by anything inside the silver hood.",
+      "grid_size": [
+        10,
+        8
+      ],
+      "kit_refs": [
+        "kit/molded_wall",
+        "kit/gloss_floor"
+      ],
+      "doors": [
+        {
+          "id": "bay_hatch",
+          "wall": "west",
+          "position": 3,
+          "to_room": "pod_bay",
+          "to_door": "workstation_hatch",
+          "label": "Return to Pod Bay",
+          "conditions": []
+        }
+      ],
+      "cameras": [
+        {
+          "id": "workstation_wide",
+          "position": [
+            13,
+            8,
+            12
+          ],
+          "look_at": [
+            5.0,
+            1.2,
+            4.0
+          ]
+        }
+      ],
+      "props": [
+        {
+          "id": "blob_desk",
+          "asset": "kit/blob_desk",
+          "position": [
+            5,
+            0,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "screen_status",
+          "asset": "prop/crt_screen",
+          "position": [
+            3,
+            1.5,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "screen_routes",
+          "asset": "prop/crt_screen",
+          "position": [
+            5,
+            1.5,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "screen_archive",
+          "asset": "prop/crt_screen",
+          "position": [
+            7,
+            1.5,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "quilt_chair",
+          "asset": "kit/quilt_chair",
+          "position": [
+            5,
+            0,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "headphones",
+          "asset": "prop/headphones",
+          "position": [
+            8,
+            1,
+            4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "habitat_card",
+          "asset": "prop/habitat_card",
+          "position": [
+            4,
+            1.1,
+            4
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_echo",
+          "asset": "cat/black_solid",
+          "position": [
+            4,
+            0.4,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_spool",
+          "asset": "cat/ginger_tabby",
+          "position": [
+            6,
+            0.4,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "sphere_03",
+          "asset": "prop/blue_glass_sphere",
+          "position": [
+            3,
+            0.8,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "sphere_04",
+          "asset": "prop/blue_glass_sphere",
+          "position": [
+            5,
+            0.8,
+            2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "character_ids": [
+        "neri",
+        "cat_echo",
+        "cat_spool"
+      ]
+    },
+    {
+      "id": "conversation_pit",
+      "name": "Conversation Pit",
+      "description": "A round lounge sinks into the floor like a bowl pressed into snow. Pearl pillows face a low disc table. Beyond the panoramic glass, the dark shape of a crystalline tree waits between lit dome roofs. Sol pats a space on the bench for you.",
+      "grid_size": [
+        12,
+        12
+      ],
+      "kit_refs": [
+        "kit/sunken_lounge",
+        "kit/panoramic_window",
+        "kit/gloss_floor"
+      ],
+      "doors": [
+        {
+          "id": "bay_arch",
+          "wall": "south",
+          "position": 5,
+          "to_room": "pod_bay",
+          "to_door": "pit_arch",
+          "label": "Return to Pod Bay",
+          "conditions": []
+        }
+      ],
+      "cameras": [
+        {
+          "id": "conversation_pit_wide",
+          "position": [
+            16,
+            10,
+            16
+          ],
+          "look_at": [
+            6.0,
+            1.2,
+            6.0
+          ]
+        }
+      ],
+      "props": [
+        {
+          "id": "sphere_table",
+          "asset": "kit/disc_table",
+          "position": [
+            6,
+            -0.4,
+            6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "panoramic_glass",
+          "asset": "kit/panoramic_window",
+          "position": [
+            6,
+            2,
+            1
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "fur_throws",
+          "asset": "prop/knit_throw",
+          "position": [
+            3,
+            0,
+            7
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "branch_column",
+          "asset": "kit/organic_column",
+          "position": [
+            10,
+            0,
+            8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_pebble",
+          "asset": "cat/calico",
+          "position": [
+            2,
+            0.4,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_comet",
+          "asset": "cat/white_solid",
+          "position": [
+            4,
+            0.4,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "sphere_05",
+          "asset": "prop/blue_glass_sphere",
+          "position": [
+            7,
+            0.8,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "character_ids": [
+        "sol",
+        "cat_pebble",
+        "cat_comet"
+      ]
+    },
+    {
+      "id": "curved_corridor",
+      "name": "Curved Corridor",
+      "description": "The corridor bends gently enough that its far end feels like another room. Ivo has hung mittens beside the hatch in order of size. The whiteout indicator clicks patiently. Nobody expects you to hurry through weather.",
+      "grid_size": [
+        14,
+        6
+      ],
+      "kit_refs": [
+        "kit/curved_wall",
+        "kit/rounded_hatch",
+        "kit/railing"
+      ],
+      "doors": [
+        {
+          "id": "bay_hatch",
+          "wall": "east",
+          "position": 2,
+          "to_room": "pod_bay",
+          "to_door": "corridor_hatch",
+          "label": "Return to Pod Bay",
+          "conditions": []
+        },
+        {
+          "id": "snow_hatch",
+          "wall": "north",
+          "position": 9,
+          "to_room": "snow_field",
+          "to_door": "habitat_hatch",
+          "label": "Go to Snow Field",
+          "conditions": [
+            {
+              "tide": "clear"
+            }
+          ]
+        }
+      ],
+      "cameras": [
+        {
+          "id": "curved_corridor_wide",
+          "position": [
+            16,
+            7,
+            10
+          ],
+          "look_at": [
+            7.0,
+            1.2,
+            3.0
+          ]
+        }
+      ],
+      "props": [
+        {
+          "id": "card_reader",
+          "asset": "prop/keycard_reader",
+          "position": [
+            12,
+            1.2,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "storm_indicator",
+          "asset": "prop/storm_panel",
+          "position": [
+            9,
+            1,
+            1
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "mitten_rail",
+          "asset": "kit/railing",
+          "position": [
+            6,
+            1,
+            2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_patch",
+          "asset": "cat/tortoiseshell",
+          "position": [
+            6,
+            0.4,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "sphere_06",
+          "asset": "prop/blue_glass_sphere",
+          "position": [
+            3,
+            0.8,
+            2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "character_ids": [
+        "ivo",
+        "cat_patch"
+      ]
+    },
+    {
+      "id": "snow_field",
+      "name": "Snow Field",
+      "description": "Snow catches the habitat light in small blue hollows. A warmed runnel joins the hatches, and a cat has found every inch of it. During a whiteout you wait by a lit marker; when it clears, the domes return exactly where everyone said they would be.",
+      "grid_size": [
+        16,
+        14
+      ],
+      "kit_refs": [
+        "kit/snow_patch",
+        "kit/snow_rocks",
+        "kit/path_markers"
+      ],
+      "doors": [
+        {
+          "id": "habitat_hatch",
+          "wall": "south",
+          "position": 8,
+          "to_room": "curved_corridor",
+          "to_door": "snow_hatch",
+          "label": "Return to Curved Corridor",
+          "conditions": [
+            {
+              "tide": "clear"
+            }
+          ]
+        },
+        {
+          "id": "dome_hatch",
+          "wall": "east",
+          "position": 7,
+          "to_room": "dome_shelter",
+          "to_door": "snow_hatch",
+          "label": "Go to Dome Shelter",
+          "conditions": [
+            {
+              "item": "dome_card",
+              "present": true
+            },
+            {
+              "tide": "clear"
+            }
+          ]
+        }
+      ],
+      "cameras": [
+        {
+          "id": "snow_field_wide",
+          "position": [
+            20,
+            12,
+            20
+          ],
+          "look_at": [
+            8.0,
+            1.2,
+            7.0
+          ]
+        }
+      ],
+      "props": [
+        {
+          "id": "heated_cache",
+          "asset": "prop/keycard_cache",
+          "position": [
+            8,
+            0.5,
+            6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "warm_runnel",
+          "asset": "kit/heated_path",
+          "position": [
+            8,
+            0,
+            8
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "blue_marker",
+          "asset": "prop/path_marker",
+          "position": [
+            12,
+            1,
+            7
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "dome_card",
+          "asset": "prop/dome_card",
+          "position": [
+            8,
+            0.6,
+            6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_drift",
+          "asset": "cat/brown_mackerel",
+          "position": [
+            2,
+            0.4,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "sphere_07",
+          "asset": "prop/blue_glass_sphere",
+          "position": [
+            5,
+            0.8,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "character_ids": [
+        "cat_drift"
+      ]
+    },
+    {
+      "id": "dome_shelter",
+      "name": "Dome Shelter",
+      "description": "The dome glows through its own frost. Luma has balanced a thermos on a flower-foot table and left enough cups for visitors. Under the clear floor a warm pipe curls towards the garden. The room makes a very small, satisfied ticking sound.",
+      "grid_size": [
+        10,
+        10
+      ],
+      "kit_refs": [
+        "kit/glowing_dome",
+        "kit/round_window",
+        "kit/gloss_floor"
+      ],
+      "doors": [
+        {
+          "id": "snow_hatch",
+          "wall": "west",
+          "position": 5,
+          "to_room": "snow_field",
+          "to_door": "dome_hatch",
+          "label": "Return to Snow Field",
+          "conditions": [
+            {
+              "tide": "clear"
+            }
+          ]
+        }
+      ],
+      "cameras": [
+        {
+          "id": "dome_shelter_wide",
+          "position": [
+            13,
+            9,
+            14
+          ],
+          "look_at": [
+            5.0,
+            1.2,
+            5.0
+          ]
+        }
+      ],
+      "props": [
+        {
+          "id": "flower_table",
+          "asset": "kit/flower_table",
+          "position": [
+            5,
+            0,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "thermos",
+          "asset": "prop/thermos",
+          "position": [
+            5,
+            1,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "garden_pipe",
+          "asset": "kit/warm_pipe",
+          "position": [
+            7,
+            0,
+            6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "chrome_sofa",
+          "asset": "kit/blob_bench",
+          "position": [
+            3,
+            0,
+            6
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_cinder",
+          "asset": "cat/smoky_longhair",
+          "position": [
+            4,
+            0.4,
+            3
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "cat_nori",
+          "asset": "cat/spotted_cream",
+          "position": [
+            6,
+            0.4,
+            5
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "id": "sphere_08",
+          "asset": "prop/blue_glass_sphere",
+          "position": [
+            7,
+            0.8,
+            2
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "character_ids": [
+        "luma",
+        "cat_cinder",
+        "cat_nori"
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "id": "new_arrival",
+      "name": "New Arrival",
+      "params": {
+        "colour": "#aebce6",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "arrival"
+        ],
+        "suit": {
+          "accessories": [
+            "blank_name_tab"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#879aca",
+          "sweater_wear": "fresh",
+          "trouser_colour": "#33486d",
+          "trouser_volume": 1.0,
+          "trouser_wear": "fresh",
+          "vest_colour": "#aebce6",
+          "vest_pattern": "wide_wave"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "role": "arrival",
+      "role_profiles": {
+        "arrival": {
+          "colour": "#aebce6",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "arrival"
+          ],
+          "suit": {
+            "accessories": [
+              "blank_name_tab"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#879aca",
+            "sweater_wear": "fresh",
+            "trouser_colour": "#33486d",
+            "trouser_volume": 1.0,
+            "trouser_wear": "fresh",
+            "vest_colour": "#aebce6",
+            "vest_pattern": "wide_wave"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "id": "tavi",
+      "name": "Tavi",
+      "params": {
+        "colour": "#b1c1ed",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "host"
+        ],
+        "suit": {
+          "accessories": [
+            "mug_clip"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#677cbb",
+          "sweater_wear": "mended_cuffs",
+          "trouser_colour": "#293c69",
+          "trouser_volume": 1.2,
+          "trouser_wear": "mended_cuffs",
+          "vest_colour": "#b1c1ed",
+          "vest_pattern": "small_diamond"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "role": "host",
+      "role_profiles": {
+        "host": {
+          "colour": "#b1c1ed",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "host"
+          ],
+          "suit": {
+            "accessories": [
+              "mug_clip"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#677cbb",
+            "sweater_wear": "mended_cuffs",
+            "trouser_colour": "#293c69",
+            "trouser_volume": 1.2,
+            "trouser_wear": "mended_cuffs",
+            "vest_colour": "#b1c1ed",
+            "vest_pattern": "small_diamond"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "id": "neri",
+      "name": "Neri",
+      "params": {
+        "colour": "#8cace4",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "helper"
+        ],
+        "suit": {
+          "accessories": [
+            "three_screen_pin"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#415fad",
+          "sweater_wear": "polished_knees",
+          "trouser_colour": "#263e79",
+          "trouser_volume": 1.1,
+          "trouser_wear": "polished_knees",
+          "vest_colour": "#8cace4",
+          "vest_pattern": "parallel_wave"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "role": "helper",
+      "role_profiles": {
+        "helper": {
+          "colour": "#8cace4",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "helper"
+          ],
+          "suit": {
+            "accessories": [
+              "three_screen_pin"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#415fad",
+            "sweater_wear": "polished_knees",
+            "trouser_colour": "#263e79",
+            "trouser_volume": 1.1,
+            "trouser_wear": "polished_knees",
+            "vest_colour": "#8cace4",
+            "vest_pattern": "parallel_wave"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        },
+        "saboteur": {
+          "colour": "#4d5d9e",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "withholding",
+            "saboteur"
+          ],
+          "suit": {
+            "accessories": [
+              "reversed_screen_pin",
+              "label_roll"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#415fad",
+            "sweater_wear": "ink_marks",
+            "trouser_colour": "#263e79",
+            "trouser_volume": 1.1,
+            "trouser_wear": "polished_knees",
+            "vest_colour": "#4d5d9e",
+            "vest_pattern": "offset_wave"
+          },
+          "voice_tags": [
+            "dry",
+            "playful"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "id": "sol",
+      "name": "Sol",
+      "params": {
+        "colour": "#c0c9e2",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "gardener"
+        ],
+        "suit": {
+          "accessories": [
+            "seed_packet"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#8d8bbc",
+          "sweater_wear": "darned_hem",
+          "trouser_colour": "#41527c",
+          "trouser_volume": 1.3,
+          "trouser_wear": "darned_hem",
+          "vest_colour": "#c0c9e2",
+          "vest_pattern": "radial_quilt"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "role": "gardener",
+      "role_profiles": {
+        "gardener": {
+          "colour": "#c0c9e2",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "gardener"
+          ],
+          "suit": {
+            "accessories": [
+              "seed_packet"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#8d8bbc",
+            "sweater_wear": "darned_hem",
+            "trouser_colour": "#41527c",
+            "trouser_volume": 1.3,
+            "trouser_wear": "darned_hem",
+            "vest_colour": "#c0c9e2",
+            "vest_pattern": "radial_quilt"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "id": "ivo",
+      "name": "Ivo",
+      "params": {
+        "colour": "#6b8eca",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "pathkeeper"
+        ],
+        "suit": {
+          "accessories": [
+            "hatch_wheel_badge"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#879aca",
+          "sweater_wear": "salt_stitching",
+          "trouser_colour": "#25365c",
+          "trouser_volume": 1.0,
+          "trouser_wear": "salt_stitching",
+          "vest_colour": "#6b8eca",
+          "vest_pattern": "chevron_quilt"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "role": "pathkeeper",
+      "role_profiles": {
+        "pathkeeper": {
+          "colour": "#6b8eca",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "pathkeeper"
+          ],
+          "suit": {
+            "accessories": [
+              "hatch_wheel_badge"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#879aca",
+            "sweater_wear": "salt_stitching",
+            "trouser_colour": "#25365c",
+            "trouser_volume": 1.0,
+            "trouser_wear": "salt_stitching",
+            "vest_colour": "#6b8eca",
+            "vest_pattern": "chevron_quilt"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "id": "luma",
+      "name": "Luma",
+      "params": {
+        "colour": "#d3d7df",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "dome_keeper"
+        ],
+        "suit": {
+          "accessories": [
+            "tiny_thermos"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#5374b1",
+          "sweater_wear": "softened_seams",
+          "trouser_colour": "#596596",
+          "trouser_volume": 1.4,
+          "trouser_wear": "softened_seams",
+          "vest_colour": "#d3d7df",
+          "vest_pattern": "square_quilt"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "role": "dome_keeper",
+      "role_profiles": {
+        "dome_keeper": {
+          "colour": "#d3d7df",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "dome_keeper"
+          ],
+          "suit": {
+            "accessories": [
+              "tiny_thermos"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#5374b1",
+            "sweater_wear": "softened_seams",
+            "trouser_colour": "#596596",
+            "trouser_volume": 1.4,
+            "trouser_wear": "softened_seams",
+            "vest_colour": "#d3d7df",
+            "vest_pattern": "square_quilt"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_purl",
+      "name": "Purl",
+      "params": {
+        "coat": "silver_tabby",
+        "colour": "#9caecb",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "silver_tabby",
+          "colour": "#9caecb",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_button",
+      "name": "Button",
+      "params": {
+        "coat": "black_tuxedo",
+        "colour": "#273247",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "black_tuxedo",
+          "colour": "#273247",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_mica",
+      "name": "Mica",
+      "params": {
+        "coat": "blue_solid",
+        "colour": "#6d83ac",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "blue_solid",
+          "colour": "#6d83ac",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_thread",
+      "name": "Thread",
+      "params": {
+        "coat": "cream_point",
+        "colour": "#d5d4cc",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "cream_point",
+          "colour": "#d5d4cc",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_echo",
+      "name": "Echo",
+      "params": {
+        "coat": "black_solid",
+        "colour": "#1c283f",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "black_solid",
+          "colour": "#1c283f",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_spool",
+      "name": "Spool",
+      "params": {
+        "coat": "ginger_tabby",
+        "colour": "#ad947c",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "ginger_tabby",
+          "colour": "#ad947c",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_pebble",
+      "name": "Pebble",
+      "params": {
+        "coat": "calico",
+        "colour": "#a8a3bb",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "calico",
+          "colour": "#a8a3bb",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_comet",
+      "name": "Comet",
+      "params": {
+        "coat": "white_solid",
+        "colour": "#e0e5ee",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "white_solid",
+          "colour": "#e0e5ee",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_patch",
+      "name": "Patch",
+      "params": {
+        "coat": "tortoiseshell",
+        "colour": "#6c6380",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "tortoiseshell",
+          "colour": "#6c6380",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_drift",
+      "name": "Drift",
+      "params": {
+        "coat": "brown_mackerel",
+        "colour": "#89919c",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "brown_mackerel",
+          "colour": "#89919c",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_cinder",
+      "name": "Cinder",
+      "params": {
+        "coat": "smoky_longhair",
+        "colour": "#596d90",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "smoky_longhair",
+          "colour": "#596d90",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "id": "cat_nori",
+      "name": "Nori",
+      "params": {
+        "coat": "spotted_cream",
+        "colour": "#b9c8d8",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "role": "cat",
+      "role_profiles": {
+        "cat": {
+          "coat": "spotted_cream",
+          "colour": "#b9c8d8",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        }
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "habitat_card",
+      "name": "Habitat keycard",
+      "description": "A cobalt card with a knitted loop.",
+      "asset": "prop/habitat_card"
+    },
+    {
+      "id": "dome_card",
+      "name": "Dome keycard",
+      "description": "A pearl card marked VISITORS TOO.",
+      "asset": "prop/dome_card"
+    }
+  ],
+  "flags": [
+    {
+      "id": "lamp_relit",
+      "initial": false,
+      "description": "The new arrival chose the brighter warmth lamp."
+    },
+    {
+      "id": "quiet_chosen",
+      "initial": false,
+      "description": "The group chose to keep the quiet blue night."
+    },
+    {
+      "id": "window_revealed",
+      "initial": false,
+      "description": "The complete sphere archive revealed the warmth transfer on the panoramic glass."
+    }
+  ],
+  "interactions": [
+    {
+      "id": "read_status",
+      "room": "workstation",
+      "kind": "examine",
+      "target": "screen_status",
+      "label": "Read screen 1: warmth system",
+      "text": "HABITAT COMFORT: NORMAL\nCENTRAL LAMP: LOW\nTRANSFER: GARDEN BUFFER\nHUMAN OVERRIDE: CONFIRMED\nA dimmer event, not a failed heater.",
+      "conditions": [],
+      "effects": []
+    },
+    {
+      "id": "read_routes",
+      "room": "workstation",
+      "kind": "examine",
+      "target": "screen_routes",
+      "label": "Read screen 2: route and storm",
+      "text": "ROUTE: BAY > CARD HATCH > SNOW > DOME\nThe habitat card is beside this screen. A dome card waits in the heated field cache. CLEAR opens the outside path; WHITEOUT closes it. WAIT advances the forecast. The clear window always returns.",
+      "conditions": [],
+      "effects": []
+    },
+    {
+      "id": "read_archive",
+      "room": "workstation",
+      "kind": "examine",
+      "target": "screen_archive",
+      "label": "Read screen 3: glass archive",
+      "text": "EIGHT BLUE SPHERES / EIGHT VOICES\nPlace all eight in the conversation-pit disc table. The panoramic glass will reconstruct the warmth transfer. Twelve resident cats also carry twelve household stories. Their company is welcome, not a payment for an answer.",
+      "conditions": [],
+      "effects": []
+    },
+    {
+      "id": "take_habitat_card",
+      "room": "workstation",
+      "kind": "take",
+      "target": "habitat_card",
+      "label": "Take the habitat keycard",
+      "text": "The card has a knitted loop so a mitten can hold it.",
+      "conditions": [
+        {
+          "item": "habitat_card",
+          "present": false
+        }
+      ],
+      "effects": [
+        {
+          "give": "habitat_card"
+        }
+      ]
+    },
+    {
+      "id": "take_dome_card",
+      "room": "snow_field",
+      "kind": "take",
+      "target": "dome_card",
+      "label": "Take the dome keycard from the warm cache",
+      "text": "The cache opens easily. Its note says VISITORS TOO.",
+      "conditions": [
+        {
+          "item": "dome_card",
+          "present": false
+        },
+        {
+          "tide": "clear"
+        }
+      ],
+      "effects": [
+        {
+          "give": "dome_card"
+        }
+      ]
+    },
+    {
+      "id": "talk_neri",
+      "room": "workstation",
+      "kind": "talk",
+      "target": "neri",
+      "label": "Ask Neri about the dim lamp",
+      "text": "Neri slides the biscuit tin within reach.",
+      "conditions": [],
+      "effects": [
+        {
+          "dialogue": "neri_words",
+          "node": "greeting"
+        }
+      ]
+    },
+    {
+      "id": "place_spheres",
+      "room": "conversation_pit",
+      "kind": "use",
+      "target": "sphere_table",
+      "label": "Place all eight spheres on the disc table",
+      "text": "You lay the eight blue memories in their hollows. The panoramic glass begins to join them.",
+      "conditions": [
+        {
+          "group": "spheres_found",
+          "at_least": 8
+        }
+      ],
+      "effects": [
+        {
+          "flag": "window_revealed",
+          "value": true
+        },
+        {
+          "dialogue": "window_review",
+          "node": "reveal"
+        }
+      ]
+    },
+    {
+      "id": "watch_forecast",
+      "room": "curved_corridor",
+      "kind": "examine",
+      "target": "storm_indicator",
+      "label": "Read the hatch forecast",
+      "text": "CLEAR and WHITEOUT alternate. You can wait safely on either side. Keycards are not consumed, and the path does not close forever.",
+      "conditions": [],
+      "effects": []
+    }
+  ],
+  "dialogues": [
+    {
+      "id": "vignette_purl",
+      "character": "cat_purl",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Purl unfolds from the knit blanket. Tavi once spent an entire evening teaching a new arrival how to darn a cuff, then admitted the first neat row had been sewn by Ivo. Purl attended both lessons and ate neither piece of wool.",
+          "conditions": [
+            {
+              "collected": "cat_purl"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_button",
+      "character": "cat_button",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Button offers one white paw. The tiny buttons on Tavi's mug strap were gifts from every resident. There is one empty loop left, deliberately. Tavi says you may bring any button you like; it need not match.",
+          "conditions": [
+            {
+              "collected": "cat_button"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_mica",
+      "character": "cat_mica",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Mica has a blue-grey coat and the air of someone inspecting a newly made bed. Sol once made a pillow for every pod from the same roll of pearl cloth. Mica tested them in no particular order. Nobody called that a waste of time.",
+          "conditions": [
+            {
+              "collected": "cat_mica"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_thread",
+      "character": "cat_thread",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Thread squeezes out from behind a cushion. Ivo repaired the corridor mittens with silver thread so the mends would be easy to find. The residents started asking for visible patches. Useful things, they decided, could keep a record of being useful.",
+          "conditions": [
+            {
+              "collected": "cat_thread"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_echo",
+      "character": "cat_echo",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Echo steps off a warm keyboard. Neri tried to teach the archive a polite greeting. For a week every screen said PLEASE HAVE A BISCUIT. The bug was fixed. The biscuit tin stayed.",
+          "conditions": [
+            {
+              "collected": "cat_echo"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_spool",
+      "character": "cat_spool",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Spool has wound a loose label around one orange paw. Neri labels everything twice: once with what it is, once with who taught them to use it. The chair says CHAIR / SOL. You suspect there is a story there.",
+          "conditions": [
+            {
+              "collected": "cat_spool"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_pebble",
+      "character": "cat_pebble",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Pebble rises from the deepest part of the lounge. Sol calls the pit the place where unfinished ideas are allowed to sit down. The table has eight hollows because eight people once tried to explain one ordinary afternoon at once.",
+          "conditions": [
+            {
+              "collected": "cat_pebble"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_comet",
+      "character": "cat_comet",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Comet is white except for the shadow it casts on the pearl pillow. Luma knitted the long throw with the last row left open. Anyone waiting for the weather can add a few stitches. It is now much too long, which everyone treats as good news.",
+          "conditions": [
+            {
+              "collected": "cat_comet"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_patch",
+      "character": "cat_patch",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Patch sits below the mittens like a very small attendant. Ivo used to check every visitor's boots twice. Then a child asked who checked Ivo's boots. Now there is a low mirror by the hatch, and checking is something people do for one another.",
+          "conditions": [
+            {
+              "collected": "cat_patch"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_drift",
+      "character": "cat_drift",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Drift comes along the warmed runnel, tail upright. Luma put tiny blue marks beside the route after discovering that the shortest path to the dome was not the path people liked walking. This one passes the star window. There was room to choose.",
+          "conditions": [
+            {
+              "collected": "cat_drift"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_cinder",
+      "character": "cat_cinder",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Cinder lifts a smoky head from a coil of warm pipe. The dome's first thermos was too small for a gathering. Luma kept it anyway. It now holds the first cup, which is always poured for whoever has just arrived.",
+          "conditions": [
+            {
+              "collected": "cat_cinder"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "vignette_nori",
+      "character": "cat_nori",
+      "start_node": "memory",
+      "nodes": [
+        {
+          "id": "memory",
+          "text": "Nori has small dark spots like the start of a map. Sol and Luma planted the crystalline garden together, arguing cheerfully about spacing. They left a clear patch at its centre. Not an absence, Luma says. A place for the next suggestion.",
+          "conditions": [
+            {
+              "collected": "cat_nori"
+            }
+          ],
+          "choices": [
+            {
+              "id": "come_along",
+              "text": "Come along. There is room for you.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "neri_words",
+      "character": "neri",
+      "start_node": "greeting",
+      "nodes": [
+        {
+          "id": "greeting",
+          "text": "Neri taps the three-screen pin. \"The lamp has not failed. Eight blue spheres will give you eight parts of the decision. Bring them to the disc table. I could tell you my version now, but you have just arrived. You deserve the other versions too.\"",
+          "role_text": {
+            "helper": "Neri taps the three-screen pin. \"The lamp has not failed. Eight blue spheres will give you eight parts of the decision. Bring them to the disc table. I could tell you my version now, but you have just arrived. You deserve the other versions too.\"",
+            "saboteur": "Neri turns the reversed pin upright. \"I moved the archive labels. Yes, on purpose. I wanted everyone to walk the route instead of accepting my tidy explanation. It was meddling, not a repair. The pods stayed warm. Take the labels back; the decision is yours, not my little puzzle's.\""
+          },
+          "conditions": [
+            {
+              "role": "neri",
+              "equals": "helper"
+            }
+          ],
+          "choices": [
+            {
+              "id": "read",
+              "text": "I will read the screens and bring the others' memories.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "window_review",
+      "character": "sol",
+      "start_node": "reveal",
+      "nodes": [
+        {
+          "id": "reveal",
+          "text": "The eight spheres fit the table's hollows with eight small clicks. Lines of blue light join across the panoramic glass: the habitat, the warmed path, the dome, the crystalline garden. The lamp was deliberately dimmed to charge the garden buffer. Every pod remained warm. The branches have settled now; the stored heat can return to the central lamp. Sol places a mug beside your hand. \"We made the first choice together. You have brought the whole picture back. What would you like the room to feel like tonight?\"",
+          "conditions": [
+            {
+              "group": "spheres_found",
+              "at_least": 8
+            }
+          ],
+          "choices": [
+            {
+              "id": "relight",
+              "text": "Relight the warmth lamp. Let the room thaw into gold.",
+              "conditions": [],
+              "effects": [
+                {
+                  "flag": "lamp_relit",
+                  "value": true
+                }
+              ],
+              "next": ""
+            },
+            {
+              "id": "quiet",
+              "text": "Keep the quiet blue night a little longer.",
+              "conditions": [],
+              "effects": [
+                {
+                  "flag": "quiet_chosen",
+                  "value": true
+                }
+              ],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "tide": {
+    "id": "storm_clock",
+    "states": [
+      {
+        "id": "clear",
+        "label": "Clear window: outside path open",
+        "duration": 2
+      },
+      {
+        "id": "whiteout",
+        "label": "Whiteout: wait by the warm markers",
+        "duration": 2
+      }
+    ],
+    "wait_label": "Wait for the next weather tick",
+    "wait_text": "A mitten warms the mug. The weather is allowed to take its time."
+  },
+  "collectible_groups": [
+    {
+      "id": "cats_found",
+      "name": "Cats in the procession",
+      "kind": "cats",
+      "required": 12
+    },
+    {
+      "id": "spheres_found",
+      "name": "Blue glass memories",
+      "kind": "spheres",
+      "required": 8
+    }
+  ],
+  "collectibles": [
+    {
+      "id": "cat_purl",
+      "group": "cats_found",
+      "room": "pod_bay",
+      "name": "Purl",
+      "label": "Greet Purl",
+      "text": "Purl joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/silver_tabby",
+      "character": "cat_purl",
+      "dialogue": "vignette_purl",
+      "follower_flag": "follows_purl",
+      "conditions": []
+    },
+    {
+      "id": "cat_button",
+      "group": "cats_found",
+      "room": "pod_bay",
+      "name": "Button",
+      "label": "Greet Button",
+      "text": "Button joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/black_tuxedo",
+      "character": "cat_button",
+      "dialogue": "vignette_button",
+      "follower_flag": "follows_button",
+      "conditions": []
+    },
+    {
+      "id": "cat_mica",
+      "group": "cats_found",
+      "room": "pod_bay",
+      "name": "Mica",
+      "label": "Greet Mica",
+      "text": "Mica joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/blue_solid",
+      "character": "cat_mica",
+      "dialogue": "vignette_mica",
+      "follower_flag": "follows_mica",
+      "conditions": []
+    },
+    {
+      "id": "cat_thread",
+      "group": "cats_found",
+      "room": "pod_bay",
+      "name": "Thread",
+      "label": "Greet Thread",
+      "text": "Thread joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/cream_point",
+      "character": "cat_thread",
+      "dialogue": "vignette_thread",
+      "follower_flag": "follows_thread",
+      "conditions": []
+    },
+    {
+      "id": "cat_echo",
+      "group": "cats_found",
+      "room": "workstation",
+      "name": "Echo",
+      "label": "Greet Echo",
+      "text": "Echo joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/black_solid",
+      "character": "cat_echo",
+      "dialogue": "vignette_echo",
+      "follower_flag": "follows_echo",
+      "conditions": []
+    },
+    {
+      "id": "cat_spool",
+      "group": "cats_found",
+      "room": "workstation",
+      "name": "Spool",
+      "label": "Greet Spool",
+      "text": "Spool joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/ginger_tabby",
+      "character": "cat_spool",
+      "dialogue": "vignette_spool",
+      "follower_flag": "follows_spool",
+      "conditions": []
+    },
+    {
+      "id": "cat_pebble",
+      "group": "cats_found",
+      "room": "conversation_pit",
+      "name": "Pebble",
+      "label": "Greet Pebble",
+      "text": "Pebble joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/calico",
+      "character": "cat_pebble",
+      "dialogue": "vignette_pebble",
+      "follower_flag": "follows_pebble",
+      "conditions": []
+    },
+    {
+      "id": "cat_comet",
+      "group": "cats_found",
+      "room": "conversation_pit",
+      "name": "Comet",
+      "label": "Greet Comet",
+      "text": "Comet joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/white_solid",
+      "character": "cat_comet",
+      "dialogue": "vignette_comet",
+      "follower_flag": "follows_comet",
+      "conditions": []
+    },
+    {
+      "id": "cat_patch",
+      "group": "cats_found",
+      "room": "curved_corridor",
+      "name": "Patch",
+      "label": "Greet Patch",
+      "text": "Patch joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/tortoiseshell",
+      "character": "cat_patch",
+      "dialogue": "vignette_patch",
+      "follower_flag": "follows_patch",
+      "conditions": []
+    },
+    {
+      "id": "cat_drift",
+      "group": "cats_found",
+      "room": "snow_field",
+      "name": "Drift",
+      "label": "Greet Drift",
+      "text": "Drift joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/brown_mackerel",
+      "character": "cat_drift",
+      "dialogue": "vignette_drift",
+      "follower_flag": "follows_drift",
+      "conditions": [
+        {
+          "tide": "clear"
+        }
+      ]
+    },
+    {
+      "id": "cat_cinder",
+      "group": "cats_found",
+      "room": "dome_shelter",
+      "name": "Cinder",
+      "label": "Greet Cinder",
+      "text": "Cinder joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/smoky_longhair",
+      "character": "cat_cinder",
+      "dialogue": "vignette_cinder",
+      "follower_flag": "follows_cinder",
+      "conditions": []
+    },
+    {
+      "id": "cat_nori",
+      "group": "cats_found",
+      "room": "dome_shelter",
+      "name": "Nori",
+      "label": "Greet Nori",
+      "text": "Nori joins the little procession. A familiar detail brings a resident story to mind.",
+      "asset": "cat/spotted_cream",
+      "character": "cat_nori",
+      "dialogue": "vignette_nori",
+      "follower_flag": "follows_nori",
+      "conditions": []
+    },
+    {
+      "id": "sphere_01",
+      "group": "spheres_found",
+      "room": "pod_bay",
+      "name": "The mug hook",
+      "label": "Collect blue sphere: The mug hook",
+      "text": "Tavi: We can turn the big lamp down for a while. The pods have their own heat. I would rather dim a light than rush the new garden. Somebody put the kettle on.",
+      "asset": "prop/blue_glass_sphere",
+      "character": "",
+      "dialogue": "",
+      "follower_flag": "",
+      "conditions": []
+    },
+    {
+      "id": "sphere_02",
+      "group": "spheres_found",
+      "room": "pod_bay",
+      "name": "The quilt edge",
+      "label": "Collect blue sphere: The quilt edge",
+      "text": "Ivo: I checked every pod heater before the transfer. All normal. The lamp is the room's warm-looking heart, not its only source of warmth. That distinction matters when a light changes.",
+      "asset": "prop/blue_glass_sphere",
+      "character": "",
+      "dialogue": "",
+      "follower_flag": "",
+      "conditions": []
+    },
+    {
+      "id": "sphere_03",
+      "group": "spheres_found",
+      "room": "workstation",
+      "name": "The first screen",
+      "label": "Collect blue sphere: The first screen",
+      "text": "Neri: The buffer route was signed by all of us. I put the record in the glass archive. Then I put the index somewhere sensible. Which was, apparently, not the same as somewhere obvious.",
+      "asset": "prop/blue_glass_sphere",
+      "character": "",
+      "dialogue": "",
+      "follower_flag": "",
+      "conditions": []
+    },
+    {
+      "id": "sphere_04",
+      "group": "spheres_found",
+      "room": "workstation",
+      "name": "The foil wrapper",
+      "label": "Collect blue sphere: The foil wrapper",
+      "text": "Tavi: We broke for biscuits halfway through the decision. Nothing was on fire. The cats got the empty wrapper, which is why the archive calls this meeting CRINKLE.",
+      "asset": "prop/blue_glass_sphere",
+      "character": "",
+      "dialogue": "",
+      "follower_flag": "",
+      "conditions": []
+    },
+    {
+      "id": "sphere_05",
+      "group": "spheres_found",
+      "room": "conversation_pit",
+      "name": "The empty hollow",
+      "label": "Collect blue sphere: The empty hollow",
+      "text": "Sol: The garden takes stored warmth while its new branches settle. The panoramic glass can show the route under the snow. Eight memories together make the picture. One memory makes an opinion.",
+      "asset": "prop/blue_glass_sphere",
+      "character": "",
+      "dialogue": "",
+      "follower_flag": "",
+      "conditions": []
+    },
+    {
+      "id": "sphere_06",
+      "group": "spheres_found",
+      "room": "curved_corridor",
+      "name": "The blue mitten",
+      "label": "Collect blue sphere: The blue mitten",
+      "text": "Ivo: The outside hatch follows the clear windows between whiteouts. It will open again. The storm does not spend your keycard. Please do not test that with a sprint.",
+      "asset": "prop/blue_glass_sphere",
+      "character": "",
+      "dialogue": "",
+      "follower_flag": "",
+      "conditions": []
+    },
+    {
+      "id": "sphere_07",
+      "group": "spheres_found",
+      "room": "snow_field",
+      "name": "The warm runnel",
+      "label": "Collect blue sphere: The warm runnel",
+      "text": "Luma: I ran a small branch of the warm pipe along the cat route. The dome, the pods and the garden share the buffer. Nobody has been left cold for the sake of a pretty tree.",
+      "asset": "prop/blue_glass_sphere",
+      "character": "",
+      "dialogue": "",
+      "follower_flag": "",
+      "conditions": []
+    },
+    {
+      "id": "sphere_08",
+      "group": "spheres_found",
+      "room": "dome_shelter",
+      "name": "The first cup",
+      "label": "Collect blue sphere: The first cup",
+      "text": "Sol: Once the garden has settled, we can brighten the central lamp. Or leave the room soft for this long night. The important thing is that the next arrival gets to understand the choice, not simply inherit it.",
+      "asset": "prop/blue_glass_sphere",
+      "character": "",
+      "dialogue": "",
+      "follower_flag": "",
+      "conditions": []
+    }
+  ],
+  "quests": [
+    {
+      "id": "ask_neri",
+      "title": "A useful introduction",
+      "description": "Follow up Neri's route clue by taking the habitat card.",
+      "conditions": [
+        {
+          "role": "neri",
+          "equals": "helper"
+        },
+        {
+          "item": "habitat_card",
+          "present": true
+        }
+      ]
+    },
+    {
+      "id": "cat_company",
+      "title": "A small procession",
+      "description": "Meet all twelve cats and their resident vignettes.",
+      "conditions": [
+        {
+          "group": "cats_found",
+          "at_least": 12
+        }
+      ]
+    },
+    {
+      "id": "whole_picture",
+      "title": "Eight voices",
+      "description": "Gather all eight spheres, including the ones outside.",
+      "conditions": [
+        {
+          "group": "spheres_found",
+          "at_least": 8
+        }
+      ]
+    },
+    {
+      "id": "window_story",
+      "title": "What the window knows",
+      "description": "Place the spheres and see the complete warmth route.",
+      "conditions": [
+        {
+          "flag": "window_revealed",
+          "equals": true
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "id": "thaw",
+      "conditions": [
+        {
+          "flag": "lamp_relit",
+          "equals": true
+        }
+      ],
+      "text": "The warmth lamp opens into a small gold sun. Frost loosens at the panoramic glass, revealing the garden in clean blue lines. Tavi raises a mug; Ivo moves a cushion so another person can sit. You arrived during the long night. By the time the kettle clicks, you have helped decide what this part of it will be like."
+    },
+    {
+      "id": "quiet_night",
+      "conditions": [
+        {
+          "flag": "quiet_chosen",
+          "equals": true
+        }
+      ],
+      "text": "The lamp keeps its low glow. Outside, the garden shines softly under the stars; inside, the pods remain warm. Sol pulls the long unfinished throw across the lounge and passes you a knitting needle. The quiet is not an empty room. It is a room full of people who have agreed not to fill every moment with noise."
+    }
+  ]
+}

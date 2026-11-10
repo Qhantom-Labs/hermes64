@@ -1,0 +1,128 @@
+{
+ "colors": [
+  "#04050b",
+  "#0a0f22",
+  "#141d3c",
+  "#23305a",
+  "#3c4252",
+  "#5f6676",
+  "#8a92a2",
+  "#b3bac6",
+  "#d5dae2",
+  "#eef1f4",
+  "#262b36",
+  "#3f4656",
+  "#626b7e",
+  "#8c96aa",
+  "#1e2229",
+  "#30353f",
+  "#0d4656",
+  "#178ca4",
+  "#52d2e4",
+  "#c4f4f8",
+  "#5c2c10",
+  "#b5621e",
+  "#eea33c",
+  "#ffd98c",
+  "#5e1420",
+  "#b83236",
+  "#2a1c48",
+  "#57388a",
+  "#9c78cc",
+  "#2f7a4a",
+  "#8ee09a"
+ ],
+ "light_ramp": [
+  2,
+  11,
+  12,
+  6,
+  7,
+  8
+ ],
+ "names": [
+  "void",
+  "space_0",
+  "space_1",
+  "space_2",
+  "hull_0",
+  "hull_1",
+  "hull_2",
+  "hull_3",
+  "hull_4",
+  "hull_5",
+  "steel_0",
+  "steel_1",
+  "steel_2",
+  "steel_3",
+  "deck_0",
+  "deck_1",
+  "neon_0",
+  "neon_1",
+  "neon_2",
+  "neon_3",
+  "amber_0",
+  "amber_1",
+  "amber_2",
+  "amber_3",
+  "red_0",
+  "red_1",
+  "planet_0",
+  "planet_1",
+  "planet_2",
+  "green_0",
+  "green_1"
+ ],
+ "pack_id": "space_station",
+ "roles": {
+  "alert_red": [
+   "red_0",
+   "red_1"
+  ],
+  "deck": [
+   "deck_0",
+   "deck_1"
+  ],
+  "hull_white": [
+   "hull_0",
+   "hull_1",
+   "hull_2",
+   "hull_3",
+   "hull_4",
+   "hull_5"
+  ],
+  "neon_accent": [
+   "neon_0",
+   "neon_1",
+   "neon_2",
+   "neon_3"
+  ],
+  "planet_view": [
+   "planet_0",
+   "planet_1",
+   "planet_2"
+  ],
+  "space_void": [
+   "void",
+   "space_0",
+   "space_1",
+   "space_2"
+  ],
+  "status_green": [
+   "green_0",
+   "green_1"
+  ],
+  "steel": [
+   "steel_0",
+   "steel_1",
+   "steel_2",
+   "steel_3"
+  ],
+  "warning_amber": [
+   "amber_0",
+   "amber_1",
+   "amber_2",
+   "amber_3"
+  ]
+ }
+}

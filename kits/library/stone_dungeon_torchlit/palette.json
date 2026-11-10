@@ -1,0 +1,134 @@
+{
+ "colors": [
+  "#06070f",
+  "#0e1429",
+  "#172139",
+  "#27344f",
+  "#383a42",
+  "#50525a",
+  "#736c69",
+  "#978e89",
+  "#bab0a3",
+  "#d9cfbd",
+  "#26321d",
+  "#3d4c27",
+  "#5c6c34",
+  "#828f47",
+  "#28303d",
+  "#41505f",
+  "#5c2913",
+  "#a34b19",
+  "#e28c2d",
+  "#ffcb6a",
+  "#1c5958",
+  "#39a296",
+  "#90e2cd",
+  "#353a45",
+  "#5b6170",
+  "#0e293a",
+  "#1e4e62",
+  "#3f8796",
+  "#2c1b12",
+  "#50311f",
+  "#7b5434",
+  "#8a2a31"
+ ],
+ "light_ramp": [
+  14,
+  15,
+  6,
+  7,
+  8,
+  9,
+  19
+ ],
+ "names": [
+  "void",
+  "shadow_0",
+  "shadow_1",
+  "shadow_2",
+  "stone_0",
+  "stone_1",
+  "stone_2",
+  "stone_3",
+  "stone_4",
+  "stone_5",
+  "moss_0",
+  "moss_1",
+  "moss_2",
+  "moss_3",
+  "wet_0",
+  "wet_1",
+  "amber_0",
+  "amber_1",
+  "amber_2",
+  "amber_3",
+  "rune_0",
+  "rune_1",
+  "rune_2",
+  "iron_0",
+  "iron_1",
+  "water_0",
+  "water_1",
+  "water_2",
+  "wood_0",
+  "wood_1",
+  "wood_2",
+  "cloth_0"
+ ],
+ "pack_id": "stone_dungeon_torchlit",
+ "roles": {
+  "cloth": [
+   "cloth_0"
+  ],
+  "cut_stone": [
+   "stone_0",
+   "stone_1",
+   "stone_2",
+   "stone_3",
+   "stone_4",
+   "stone_5"
+  ],
+  "iron": [
+   "iron_0",
+   "iron_1"
+  ],
+  "mossy_stone": [
+   "moss_0",
+   "moss_1",
+   "moss_2",
+   "moss_3"
+  ],
+  "rune_accent": [
+   "rune_0",
+   "rune_1",
+   "rune_2"
+  ],
+  "shadow_indigo": [
+   "void",
+   "shadow_0",
+   "shadow_1",
+   "shadow_2"
+  ],
+  "timber": [
+   "wood_0",
+   "wood_1",
+   "wood_2"
+  ],
+  "torchlight_amber": [
+   "amber_0",
+   "amber_1",
+   "amber_2",
+   "amber_3"
+  ],
+  "water": [
+   "water_0",
+   "water_1",
+   "water_2"
+  ],
+  "wet_stone": [
+   "wet_0",
+   "wet_1"
+  ]
+ }
+}

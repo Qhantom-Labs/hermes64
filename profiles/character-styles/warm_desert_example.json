@@ -1,0 +1,13 @@
+{
+ "schema_version": "1.0.0",
+ "id": "warm_desert_example",
+ "description": "Character lock for the warm_desert_example profile: the n64_base derivation and roles over the desert palette anchors; head range from the profile (1.0-1.1).",
+ "extends": "n64_base",
+ "source": {"kind": "profile", "profile": {"id": "warm_desert_example", "version": "1.0.0", "path": "examples/warm_desert/profile.json"}},
+ "proportions": {
+  "height": {"child": [1.05, 1.30], "teen": [1.35, 1.70], "adult": [1.50, 1.90], "elder": [1.45, 1.85], "masked": [1.40, 1.90]},
+  "head": [1.0, 1.1], "shoulders": [0.95, 1.05], "waist": [0.0, 0.5], "legs": [0.85, 1.30],
+  "robot_height": {"walker": [1.00, 1.30], "brute": [1.70, 2.30], "floater": [1.00, 1.40]},
+  "boss_scale": [1.0, 1.15]
+ }
+}

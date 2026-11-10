@@ -1,0 +1,2204 @@
+{
+  "characters": [
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "drifter",
+      "name": "Wren",
+      "params": {
+        "colour": "#8d6a58",
+        "costume": "travel_coat",
+        "voice_tags": [
+          "quiet",
+          "measured"
+        ]
+      },
+      "role": "courier",
+      "role_profiles": {
+        "courier": {
+          "colour": "#8d6a58",
+          "costume": "travel_coat",
+          "voice_tags": [
+            "quiet",
+            "measured"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "odile",
+      "name": "Odile",
+      "params": {
+        "colour": "#514958",
+        "costume": "buttoned_storm_coat",
+        "voice_tags": [
+          "withholding",
+          "accusatory"
+        ]
+      },
+      "role": "barkeep",
+      "role_profiles": {
+        "barkeep": {
+          "colour": "#514958",
+          "costume": "buttoned_storm_coat",
+          "voice_tags": [
+            "withholding",
+            "accusatory"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "silas",
+      "name": "Silas",
+      "params": {
+        "colour": "#a89a64",
+        "costume": "oilskin",
+        "voice_tags": [
+          "weathered",
+          "restrained"
+        ]
+      },
+      "role": "prospector",
+      "role_profiles": {
+        "prospector": {
+          "colour": "#a89a64",
+          "costume": "oilskin",
+          "voice_tags": [
+            "weathered",
+            "restrained"
+          ]
+        }
+      }
+    }
+  ],
+  "collectible_groups": [],
+  "collectibles": [],
+  "contract_version": "1.2.0",
+  "description": "WESTERNKIT demo built only from the frontier town, rail, mine, props, nature and sky kits: a main street, the saloon, the depot, a canyon pass and a mine drift. Original names and designs.",
+  "dialogues": [],
+  "endings": [
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "goal"
+        }
+      ],
+      "id": "claim_marker",
+      "text": "The claim marker still stands in the rock. Silas's name, and under it, his father's."
+    }
+  ],
+  "flags": [
+    {
+      "description": "Odile has the letter",
+      "id": "letter_delivered",
+      "initial": false
+    },
+    {
+      "description": "Silas lent his miner's lamp",
+      "id": "lamp_lent",
+      "initial": false
+    },
+    {
+      "description": "Found the old claim marker in the Lucky Nine",
+      "id": "goal",
+      "initial": false
+    }
+  ],
+  "gameplay": {
+    "api_version": "1.0.0",
+    "modules": [
+      {
+        "config": {
+          "max_health": 6
+        },
+        "entities": {
+          "abilities": [
+            {
+              "id": "lamp",
+              "name": "Miner's lamp",
+              "requires": []
+            }
+          ]
+        },
+        "id": "abilities",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "entry_cost": "none",
+          "failure_progress": "unchanged",
+          "max_active": 1
+        },
+        "entities": {
+          "challenges": [],
+          "checkpoints": [
+            {
+              "id": "main_street_safe",
+              "position_m": [
+                10.5,
+                0,
+                8.5
+              ],
+              "room": "main_street"
+            },
+            {
+              "id": "saloon_safe",
+              "position_m": [
+                6.5,
+                0,
+                11.0
+              ],
+              "room": "saloon"
+            },
+            {
+              "id": "rail_yard_safe",
+              "position_m": [
+                3.0,
+                0,
+                10.5
+              ],
+              "room": "rail_yard"
+            },
+            {
+              "id": "canyon_pass_safe",
+              "position_m": [
+                16.0,
+                0,
+                8.5
+              ],
+              "room": "canyon_pass"
+            },
+            {
+              "id": "mine_safe",
+              "position_m": [
+                6.5,
+                0,
+                11.6
+              ],
+              "room": "mine"
+            }
+          ]
+        },
+        "id": "challenge",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "fast_travel": false,
+          "load_policy": "one_region"
+        },
+        "entities": {
+          "links": [
+            {
+              "a": {
+                "door": "to_saloon",
+                "region": "main_street"
+              },
+              "b": {
+                "door": "to_street",
+                "region": "saloon"
+              },
+              "id": "main_street__saloon"
+            },
+            {
+              "a": {
+                "door": "west_road",
+                "region": "main_street"
+              },
+              "b": {
+                "door": "town_road",
+                "region": "canyon_pass"
+              },
+              "id": "main_street__canyon_pass"
+            },
+            {
+              "a": {
+                "door": "east_road",
+                "region": "main_street"
+              },
+              "b": {
+                "door": "town_road",
+                "region": "rail_yard"
+              },
+              "id": "main_street__rail_yard"
+            },
+            {
+              "a": {
+                "door": "to_mine",
+                "region": "canyon_pass"
+              },
+              "b": {
+                "door": "to_canyon",
+                "region": "mine"
+              },
+              "id": "canyon_pass__mine"
+            }
+          ],
+          "regions": [
+            {
+              "checkpoint": "main_street_safe",
+              "id": "main_street",
+              "landmarks": [
+                {
+                  "id": "copper_bell",
+                  "name": "The Copper Bell saloon",
+                  "position_m": [
+                    2.2,
+                    0,
+                    0.12
+                  ]
+                }
+              ],
+              "room": "main_street"
+            },
+            {
+              "checkpoint": "saloon_safe",
+              "id": "saloon",
+              "landmarks": [
+                {
+                  "id": "long_bar",
+                  "name": "The long bar",
+                  "position_m": [
+                    10.6,
+                    0,
+                    0.15
+                  ]
+                }
+              ],
+              "room": "saloon"
+            },
+            {
+              "checkpoint": "rail_yard_safe",
+              "id": "rail_yard",
+              "landmarks": [
+                {
+                  "id": "depot",
+                  "name": "Redwater Depot",
+                  "position_m": [
+                    8.0,
+                    0,
+                    0.12
+                  ]
+                }
+              ],
+              "room": "rail_yard"
+            },
+            {
+              "checkpoint": "canyon_pass_safe",
+              "id": "canyon_pass",
+              "landmarks": [
+                {
+                  "id": "stone_arch",
+                  "name": "The stone arch (west end of the pass)",
+                  "position_m": [
+                    6.5,
+                    0,
+                    0.12
+                  ]
+                }
+              ],
+              "room": "canyon_pass"
+            },
+            {
+              "checkpoint": "mine_safe",
+              "id": "mine",
+              "landmarks": [
+                {
+                  "id": "ore_cart",
+                  "name": "The ore cart",
+                  "position_m": [
+                    4.3,
+                    0,
+                    6.0
+                  ]
+                }
+              ],
+              "room": "mine"
+            }
+          ]
+        },
+        "id": "regions",
+        "version": "1.0.0"
+      }
+    ],
+    "seed": 7,
+    "verification_policy": "conditional"
+  },
+  "id": "redwater_demo",
+  "interactions": [
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "letter_delivered",
+          "value": true
+        }
+      ],
+      "id": "talk_odile",
+      "kind": "talk",
+      "label": "Hand Odile the letter",
+      "room": "saloon",
+      "target": "odile",
+      "text": "Odile reads it twice, folds it into her apron and pours you a glass of water you did not ask for. \"Silas is out at the Lucky Nine. Tell him his brother wrote.\""
+    },
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "letter_delivered"
+        }
+      ],
+      "effects": [
+        {
+          "flag": "lamp_lent",
+          "value": true
+        },
+        {
+          "unlock": "lamp"
+        }
+      ],
+      "id": "talk_silas",
+      "kind": "talk",
+      "label": "Talk to Silas",
+      "room": "canyon_pass",
+      "target": "silas",
+      "text": "Silas hears the news without a word, then unhooks his lamp. \"Marker's at the end of the east heading. Mind the cart.\""
+    },
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "lamp_lent"
+        }
+      ],
+      "effects": [
+        {
+          "flag": "goal",
+          "value": true
+        }
+      ],
+      "id": "find_marker",
+      "kind": "use",
+      "label": "Look past the ore cart",
+      "room": "mine",
+      "target": "ore_cart",
+      "text": "Behind the cart, a rusted claim marker is wedged into the rock."
+    }
+  ],
+  "items": [],
+  "metadata": {
+    "presentation": {
+      "convention": "hermes64-presentation/1",
+      "rooms": {
+        "canyon_pass": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                0.0,
+                3.4,
+                8.2
+              ],
+              "position": [
+                19.4,
+                2.6,
+                9.8
+              ]
+            }
+          ],
+          "characters": {
+            "silas": {
+              "position": [
+                10.6,
+                0,
+                3.9
+              ],
+              "yaw": 160
+            }
+          },
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "canyon",
+          "pieces": [
+            {
+              "asset": "wland.riverbed__canyon",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wland.canyon_wall__end_w",
+              "kind": "wall",
+              "position": [
+                4.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wmine.portal__canyon",
+              "kind": "landmark",
+              "position": [
+                12.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wland.canyon_wall__end",
+              "kind": "wall",
+              "position": [
+                20.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wland.canyon_wall__end",
+              "kind": "wall",
+              "position": [
+                4.5,
+                0.0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wland.canyon_wall__tall",
+              "kind": "wall",
+              "position": [
+                12.5,
+                0.0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wland.canyon_wall__end_w",
+              "kind": "wall",
+              "position": [
+                20.5,
+                0.0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wtown.fence__gateway",
+              "kind": "wall",
+              "position": [
+                20.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "wland.arch",
+              "kind": "landmark",
+              "position": [
+                -9.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wprop.cactus",
+              "position": [
+                3.6,
+                0.0,
+                13.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 40.0
+            },
+            {
+              "asset": "wprop.cactus__organ",
+              "position": [
+                18.4,
+                0.0,
+                3.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wland.boulder",
+              "position": [
+                7.4,
+                0.0,
+                3.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 70.0
+            },
+            {
+              "asset": "wland.scrub",
+              "position": [
+                2.2,
+                0.0,
+                4.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wland.scrub__big",
+              "position": [
+                15.4,
+                0.0,
+                13.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wland.scrub",
+              "position": [
+                11.2,
+                0.0,
+                12.9
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 120.0
+            },
+            {
+              "asset": "wland.dead_tree",
+              "position": [
+                19.2,
+                0.0,
+                14.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 200.0
+            },
+            {
+              "asset": "wprop.skull",
+              "position": [
+                6.4,
+                0.0,
+                11.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 25.0
+            },
+            {
+              "asset": "wmine.cart__tipped",
+              "position": [
+                15.8,
+                0.0,
+                2.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 70.0
+            },
+            {
+              "asset": "wsky.mesas__canyon",
+              "kind": "vista",
+              "position": [
+                10.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wland.mesa__far",
+              "kind": "vista",
+              "position": [
+                -34.0,
+                0.0,
+                4.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 80.0
+            }
+          ],
+          "wall_height": 4.2
+        },
+        "main_street": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                0.0,
+                2.4,
+                7.6
+              ],
+              "position": [
+                20.2,
+                3.0,
+                9.4
+              ]
+            }
+          ],
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "street",
+          "pieces": [
+            {
+              "asset": "wland.ground__main",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wtown.saloon__entry",
+              "kind": "landmark",
+              "position": [
+                4.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wtown.store",
+              "kind": "wall",
+              "position": [
+                12.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wtown.porch__wide",
+              "kind": "wall",
+              "position": [
+                12.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wtown.facade__c_arched",
+              "kind": "wall",
+              "position": [
+                18.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wtown.boardwalk__end_w",
+              "kind": "floor",
+              "position": [
+                2.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wtown.boardwalk",
+              "kind": "floor",
+              "position": [
+                6.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wtown.boardwalk",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wtown.boardwalk",
+              "kind": "floor",
+              "position": [
+                14.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wtown.boardwalk__end_e",
+              "kind": "floor",
+              "position": [
+                18.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wtown.sheriff",
+              "kind": "wall",
+              "position": [
+                4.5,
+                0.0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wtown.bank",
+              "kind": "wall",
+              "position": [
+                12.5,
+                0.0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wtown.boardwalk__end_e",
+              "kind": "floor",
+              "position": [
+                2.5,
+                0.0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wtown.boardwalk__end_w",
+              "kind": "floor",
+              "position": [
+                6.5,
+                0.0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wtown.fence__gateway",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wtown.fence__gateway",
+              "kind": "wall",
+              "position": [
+                20.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "wtown.water_tower",
+              "kind": "landmark",
+              "position": [
+                18.6,
+                0.0,
+                19.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 20.0
+            },
+            {
+              "asset": "wtown.hitching_post",
+              "position": [
+                6.5,
+                0.0,
+                3.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.barrel",
+              "position": [
+                8.9,
+                0.3,
+                2.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.lantern__post",
+              "position": [
+                2.2,
+                0.0,
+                3.1
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wsky.mesas__town",
+              "kind": "vista",
+              "position": [
+                10.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wland.butte",
+              "kind": "vista",
+              "position": [
+                -27.0,
+                0.0,
+                10.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.2
+        },
+        "mine": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                6.5,
+                1.3,
+                12.0
+              ],
+              "position": [
+                6.5,
+                2.1,
+                2.4
+              ]
+            }
+          ],
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "mine",
+          "pieces": [
+            {
+              "asset": "wmine.tunnel__mouth",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wmine.tunnel__track",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wmine.tunnel__tee",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wmine.tunnel__end",
+              "kind": "shell",
+              "position": [
+                2.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wmine.tunnel__end",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "wmine.cart",
+              "position": [
+                6.5,
+                0.0,
+                6.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wmine.rubble",
+              "position": [
+                1.6,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wmine.ore_pile",
+              "position": [
+                11.3,
+                0.0,
+                1.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wmine.ladder",
+              "position": [
+                11.6,
+                0.0,
+                3.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "wprop.lantern",
+              "mounted": true,
+              "position": [
+                6.5,
+                2.55,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.lantern",
+              "mounted": true,
+              "position": [
+                6.5,
+                2.55,
+                9.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.crate__powder",
+              "position": [
+                9.4,
+                0.0,
+                1.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 15.0
+            },
+            {
+              "asset": "wprop.lantern__wall",
+              "mounted": true,
+              "position": [
+                6.5,
+                2.0,
+                1.27
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.lantern__wall",
+              "mounted": true,
+              "position": [
+                5.27,
+                2.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            }
+          ],
+          "wall_height": 3.2
+        },
+        "rail_yard": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                9.0,
+                2.0,
+                4.6
+              ],
+              "position": [
+                20.8,
+                2.9,
+                12.4
+              ]
+            }
+          ],
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "street",
+          "pieces": [
+            {
+              "asset": "wland.ground__yard",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wrail.station",
+              "kind": "landmark",
+              "position": [
+                10.5,
+                0.0,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wrail.platform__end_e",
+              "kind": "floor",
+              "position": [
+                6.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wrail.platform",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wrail.platform__end_w",
+              "kind": "floor",
+              "position": [
+                14.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wrail.track__bumper",
+              "kind": "floor",
+              "position": [
+                2.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wrail.track",
+              "kind": "floor",
+              "position": [
+                6.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wrail.track",
+              "kind": "floor",
+              "position": [
+                10.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wrail.track",
+              "kind": "floor",
+              "position": [
+                14.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wrail.track",
+              "kind": "floor",
+              "position": [
+                18.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wrail.locomotive",
+              "kind": "landmark",
+              "position": [
+                12.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wrail.signal",
+              "position": [
+                17.6,
+                0.0,
+                4.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "wtown.water_tower__tall",
+              "position": [
+                5.0,
+                0.0,
+                10.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -15.0
+            },
+            {
+              "asset": "wtown.fence__gateway",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wprop.crate",
+              "position": [
+                7.2,
+                0.75,
+                3.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 10.0
+            },
+            {
+              "asset": "wprop.crate__small",
+              "position": [
+                7.9,
+                0.75,
+                3.3
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -20.0
+            },
+            {
+              "asset": "wprop.sacks",
+              "position": [
+                14.2,
+                0.75,
+                3.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wsky.mesas__town",
+              "kind": "vista",
+              "position": [
+                10.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wland.mesa__far",
+              "kind": "vista",
+              "position": [
+                -22.0,
+                0.0,
+                -22.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 30.0
+            }
+          ],
+          "wall_height": 4.2
+        },
+        "saloon": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                7.0,
+                1.7,
+                3.0
+              ],
+              "position": [
+                14.6,
+                3.6,
+                11.4
+              ]
+            }
+          ],
+          "characters": {
+            "odile": {
+              "position": [
+                10.6,
+                0,
+                1.75
+              ],
+              "yaw": 180
+            }
+          },
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "saloon",
+          "pieces": [
+            {
+              "asset": "wtown.room__saloon",
+              "kind": "shell",
+              "position": [
+                8.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wtown.gallery",
+              "kind": "wall",
+              "position": [
+                0.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wtown.stairs__gallery",
+              "position": [
+                4.8,
+                0.0,
+                1.3
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "wprop.bar",
+              "position": [
+                10.6,
+                0.0,
+                2.7
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.bar__back_bar",
+              "position": [
+                10.6,
+                0.0,
+                0.92
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.piano",
+              "position": [
+                15.9,
+                0.0,
+                6.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "wprop.table",
+              "position": [
+                6.4,
+                0.0,
+                7.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.table__card",
+              "position": [
+                10.6,
+                0.0,
+                8.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.chair",
+              "position": [
+                5.4,
+                0.0,
+                8.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 130.0
+            },
+            {
+              "asset": "wprop.chair",
+              "position": [
+                7.4,
+                0.0,
+                6.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -50.0
+            },
+            {
+              "asset": "wprop.chair__stool",
+              "position": [
+                9.6,
+                0.0,
+                3.7
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.chair__stool",
+              "position": [
+                11.6,
+                0.0,
+                3.7
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.stove",
+              "position": [
+                4.2,
+                0.0,
+                10.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.lantern",
+              "mounted": true,
+              "position": [
+                6.4,
+                2.7,
+                7.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.lantern",
+              "mounted": true,
+              "position": [
+                10.6,
+                2.7,
+                8.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.lantern__wall",
+              "mounted": true,
+              "position": [
+                14.5,
+                2.15,
+                0.89
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "wprop.lantern__wall",
+              "mounted": true,
+              "position": [
+                16.11,
+                2.15,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "wprop.lantern__wall",
+              "mounted": true,
+              "position": [
+                2.5,
+                2.15,
+                12.11
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "wprop.lantern__wall",
+              "mounted": true,
+              "position": [
+                10.5,
+                2.15,
+                12.11
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            }
+          ],
+          "wall_height": 6.4
+        }
+      },
+      "rotation_order": "YXZ",
+      "rotation_units": "degrees"
+    },
+    "protagonist": "drifter",
+    "style_pack": "frontier_town",
+    "westernkit_note": "Built only from WESTERNKIT kits (kits/core/gen_westernkit_*.py) by data: tools/westernkit_rooms.py snaps every piece to the FRONTIER GRID and checks the socket manifest kits/library/westernkit-sockets.json. Generated by tools/westernkit_demo.py."
+  },
+  "quests": [],
+  "rooms": [
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            0.0,
+            2.4,
+            7.6
+          ],
+          "position": [
+            20.2,
+            3.0,
+            9.4
+          ]
+        }
+      ],
+      "character_ids": [
+        "drifter"
+      ],
+      "description": "Redwater's one street: sun-bleached false fronts, a boardwalk, the Copper Bell saloon with its batwing doors, and the water tower standing over the rooftops.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_saloon",
+          "label": "Push through the batwing doors",
+          "position": 4,
+          "to_door": "to_street",
+          "to_room": "saloon",
+          "wall": "north"
+        },
+        {
+          "conditions": [],
+          "id": "west_road",
+          "label": "Take the west road to the canyon",
+          "position": 8,
+          "to_door": "town_road",
+          "to_room": "canyon_pass",
+          "wall": "west"
+        },
+        {
+          "conditions": [],
+          "id": "east_road",
+          "label": "Walk out to the rail yard",
+          "position": 8,
+          "to_door": "town_road",
+          "to_room": "rail_yard",
+          "wall": "east"
+        }
+      ],
+      "grid_size": [
+        21,
+        17
+      ],
+      "id": "main_street",
+      "kit_refs": [],
+      "name": "Redwater Main Street",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            7.0,
+            1.7,
+            3.0
+          ],
+          "position": [
+            14.6,
+            3.6,
+            11.4
+          ]
+        }
+      ],
+      "character_ids": [
+        "drifter",
+        "odile"
+      ],
+      "description": "The Copper Bell. A long bar under a mirrored back bar, a gallery on the west wall, a piano nobody plays, and Odile polishing the same glass she polished yesterday.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_street",
+          "label": "Back out to the street",
+          "position": 6,
+          "to_door": "to_saloon",
+          "to_room": "main_street",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        17,
+        13
+      ],
+      "id": "saloon",
+      "kit_refs": [],
+      "name": "The Copper Bell",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            9.0,
+            2.0,
+            4.6
+          ],
+          "position": [
+            20.8,
+            2.9,
+            12.4
+          ]
+        }
+      ],
+      "character_ids": [
+        "drifter"
+      ],
+      "description": "The depot at the east end of town. A locomotive ticks as it cools beside the platform; the line runs out east toward the far mesas.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "town_road",
+          "label": "Walk back into town",
+          "position": 10,
+          "to_door": "east_road",
+          "to_room": "main_street",
+          "wall": "west"
+        }
+      ],
+      "grid_size": [
+        21,
+        13
+      ],
+      "id": "rail_yard",
+      "kit_refs": [],
+      "name": "Redwater Depot",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            0.0,
+            3.4,
+            8.2
+          ],
+          "position": [
+            19.4,
+            2.6,
+            9.8
+          ]
+        }
+      ],
+      "character_ids": [
+        "drifter",
+        "silas"
+      ],
+      "description": "Sidewinder Pass. Red walls lean in over a dry wash, a stone arch stands across the far end, and the old Lucky Nine drift opens in the north wall.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "town_road",
+          "label": "Follow the road back to town",
+          "position": 8,
+          "to_door": "west_road",
+          "to_room": "main_street",
+          "wall": "east"
+        },
+        {
+          "conditions": [],
+          "id": "to_mine",
+          "label": "Duck into the Lucky Nine drift",
+          "position": 12,
+          "to_door": "to_canyon",
+          "to_room": "mine",
+          "wall": "north"
+        }
+      ],
+      "grid_size": [
+        21,
+        17
+      ],
+      "id": "canyon_pass",
+      "kit_refs": [],
+      "name": "Sidewinder Pass",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            6.5,
+            1.3,
+            12.0
+          ],
+          "position": [
+            6.5,
+            2.1,
+            2.4
+          ]
+        }
+      ],
+      "character_ids": [
+        "drifter"
+      ],
+      "description": "The Lucky Nine drift. Timber sets hold up the rock every two paces; a cart waits on the narrow track, and the west heading ends in a fall of loose stone.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_canyon",
+          "label": "Back out into the daylight",
+          "position": 6,
+          "to_door": "to_mine",
+          "to_room": "canyon_pass",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        13,
+        13
+      ],
+      "id": "mine",
+      "kit_refs": [],
+      "name": "The Lucky Nine",
+      "props": []
+    }
+  ],
+  "start": {
+    "collected": [],
+    "dialogue": {},
+    "flags": {
+      "goal": false,
+      "lamp_lent": false,
+      "letter_delivered": false
+    },
+    "inventory": [],
+    "location": "main_street",
+    "modules": {
+      "abilities": [],
+      "active": "",
+      "checkpoint": "main_street_safe",
+      "completed": [],
+      "discovered": [
+        "main_street"
+      ],
+      "failed": ""
+    },
+    "tide": {
+      "state": "clear",
+      "tick": 0
+    }
+  },
+  "tide": {
+    "id": "day",
+    "states": [
+      {
+        "duration": 1,
+        "id": "clear",
+        "label": "Afternoon"
+      }
+    ],
+    "wait_label": "Wait",
+    "wait_text": "A dry wind pushes dust down the street."
+  },
+  "title": "Redwater"
+}

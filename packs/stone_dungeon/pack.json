@@ -1,0 +1,108 @@
+{
+ "description": "Ocarina-era stone dungeon, caves, temple and dark lake: painted cut and mossy stone, wet cave rock, iron, timber, jade rune accents, torchlight amber, shadow-indigo fog. Data only; DUNGEONKIT kit families (dgn./dprop./cave./tmpl./lake.) from the shared Hermes64 core.",
+ "format": 1,
+ "id": "stone_dungeon",
+ "kit_pack_id": "stone_dungeon",
+ "lighting": {
+  "ambient_colour": "#978E89",
+  "fog_colour": "#27344F",
+  "fog_enabled": true,
+  "fog_end": 30.0,
+  "fog_start": 9.0
+ },
+ "materials": [
+  {
+   "colour": "#978E89",
+   "id": "cut_stone",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#5C6C34",
+   "id": "mossy_stone",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#41505F",
+   "id": "wet_stone",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#FFCB6A",
+   "id": "torchlight",
+   "kind": "emissive"
+  },
+  {
+   "colour": "#39A296",
+   "id": "rune",
+   "kind": "emissive"
+  },
+  {
+   "colour": "#5B6170",
+   "id": "iron",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#1E4E62",
+   "id": "water",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#172139",
+   "id": "shadow",
+   "kind": "baked_unlit"
+  }
+ ],
+ "name": "Stone Dungeon",
+ "palette": [
+  "#06070F",
+  "#0E1429",
+  "#172139",
+  "#27344F",
+  "#383A42",
+  "#50525A",
+  "#736C69",
+  "#978E89",
+  "#BAB0A3",
+  "#D9CFBD",
+  "#26321D",
+  "#3D4C27",
+  "#5C6C34",
+  "#828F47",
+  "#28303D",
+  "#41505F",
+  "#5C2913",
+  "#A34B19",
+  "#E28C2D",
+  "#FFCB6A",
+  "#1C5958",
+  "#39A296",
+  "#90E2CD",
+  "#353A45",
+  "#5B6170",
+  "#0E293A",
+  "#1E4E62",
+  "#3F8796",
+  "#2C1B12",
+  "#50311F",
+  "#7B5434",
+  "#8A2A31"
+ ],
+ "presets": [
+  {
+   "asset_id": "furn.lamp",
+   "id": "brazier",
+   "params_json": "{}"
+  }
+ ],
+ "sound_palette": {
+  "ambient": "audio/stock/wav/core.nature.cave.drip.wav",
+  "interact": "audio/wav/ui.select.wav"
+ },
+ "thresholds": {
+  "character_tris": 700,
+  "kit_tris": 1500,
+  "prop_tris": 150,
+  "room_tris": 6000,
+  "texture_px": 128
+ }
+}

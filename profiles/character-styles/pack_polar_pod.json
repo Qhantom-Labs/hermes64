@@ -1,0 +1,45 @@
+{
+ "schema_version": "1.0.0",
+ "id": "pack_polar_pod",
+ "description": "Character lock for the legacy polar_pod palette pack (Thaw showcase) that today's runtime renders. Roles bind to the pack's own hand-tuned palette names; proportion ranges are the approved cast's spread (characters/manifest.json).",
+ "extends": null,
+ "source": {"kind": "legacy_pack", "pack": "polar_pod"},
+ "roles": {
+  "skin_light": "glow_1", "skin_fair": "glow_0+chrome_3", "skin_mid": "glow_0", "skin_tan": "ember", "skin_deep": "ember+wool_2",
+  "hair_black": "knit_0", "hair_brown": "wool_2", "hair_auburn": "ember", "hair_blond": "glow_0", "hair_grey": "chrome_3",
+  "hair_white": "pearl_1", "hair_dyed": "screen_0",
+  "eye_dark": "navy_1", "eye_brown": "wool_2", "eye_cool": "cobalt_1", "eye_light": "screen_0",
+  "cloth_light": "pearl_0", "cloth_pale": "lilac_1", "cloth_mid": "chrome_2", "cloth_dark": "wool_1", "cloth_deep": "navy_1",
+  "cloth_warm": "ember", "cloth_cool": "cobalt_1", "cloth_muted": "chrome_1", "cloth_accent": "glow_0", "cloth_bright": "screen_0",
+  "trim_light": "pearl_1", "trim_dark": "wool_0", "trim_accent": "gold",
+  "leather": "wool_2", "leather_dark": "knit_0",
+  "metal_light": "chrome_3", "metal_mid": "chrome_2", "metal_dark": "chrome_0",
+  "glow": "glow_1",
+  "shell": "chrome_2", "shell_light": "pearl_0", "shell_alt": "cobalt_2", "shell_dark": "chrome_0", "joint": "knit_0",
+  "lens": "glow_1", "visor": "navy_0", "warning": "glow_0", "emblem": "gold",
+  "coat_dark": "wool_0", "coat_mid": "chrome_1", "coat_light": "pearl_1", "coat_warm": "glow_0", "eye_glow": "gold",
+  "lip": "ember"
+ },
+ "proportions": {
+  "height": {"child": [1.00, 1.30], "teen": [1.35, 1.70], "adult": [1.42, 1.92], "elder": [1.45, 1.85], "masked": [1.40, 1.90]},
+  "head": [0.88, 1.18], "shoulders": [0.85, 1.28], "waist": [0.0, 0.6], "legs": [0.80, 1.40],
+  "robot_height": {"walker": [1.00, 1.30], "brute": [1.70, 2.30], "floater": [1.00, 1.40]},
+  "boss_scale": [1.0, 1.15]
+ },
+ "texture": {"wear": [0.0, 0.8], "patterns": ["pattern.fabric", "pattern.knit", "pattern.stripes", "pattern.checks", "pattern.quilted", "pattern.plain"]},
+ "face": {"styles": ["painted_atlas", "faceless", "visor"],
+          "presets": ["face.calm", "face.stern", "face.weathered", "face.sharp", "face.scarred", "face.gentle", "face.bright", "face.round", "face.freckled", "face.elder_kind"],
+          "expressions": ["neutral", "blink", "talk_a", "talk_b", "smile", "worried", "surprised", "sleepy"]},
+ "bodies": ["body.person", "body.person_masked", "body.robot_walker", "body.robot_brute", "body.robot_floater", "body.creature_dasher", "body.creature_warden", "body.animal_cat", "body.animal_dog"],
+ "parts_denied": [],
+ "budgets": {"humanoid_body_lt": 700, "creature_body_lt": 500, "prop_le": 200, "actor_total_le": 900},
+ "defaults": {
+  "skin": "skin_light", "hair": "hair_brown", "eyes": "eye_cool", "top": "cloth_mid", "garment": "cloth_mid", "trim": "trim_light",
+  "accent": "cloth_accent", "legs": "cloth_dark", "boots": "leather_dark", "gloves": "leather", "belt": "trim_dark",
+  "collar": "cloth_mid", "extra": "trim_light", "extra2": "cloth_warm",
+  "hood": "cloth_light", "vest": "cloth_muted", "cape": "metal_light", "skirt": "trim_dark", "armband": "cloth_accent",
+  "shell": "shell", "shell_light": "shell_light", "shell_alt": "shell_alt", "dark": "shell_dark", "joint": "joint", "lens": "lens",
+  "visor": "visor", "emblem": "emblem",
+  "coat": "coat_dark", "coat2": "coat_light", "coat3": "coat_warm"
+ }
+}

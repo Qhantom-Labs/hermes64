@@ -1,0 +1,134 @@
+{
+ "colors": [
+  "#0e0f1d",
+  "#1e2442",
+  "#383e60",
+  "#60648a",
+  "#1f4592",
+  "#3c72c6",
+  "#80abde",
+  "#cadced",
+  "#6b4629",
+  "#97693c",
+  "#c08f4e",
+  "#d8b476",
+  "#e9d3a2",
+  "#3b2618",
+  "#67482f",
+  "#957657",
+  "#bfa785",
+  "#4d2521",
+  "#7e3b28",
+  "#a95534",
+  "#c97a52",
+  "#dfa274",
+  "#3e4b30",
+  "#69764a",
+  "#9ca273",
+  "#963b2e",
+  "#3f8a87",
+  "#b6631f",
+  "#f1c776",
+  "#3a3b43",
+  "#85878d",
+  "#f2e8d0"
+ ],
+ "light_ramp": [
+  1,
+  2,
+  4,
+  6,
+  7,
+  31,
+  28
+ ],
+ "names": [
+  "void",
+  "shade_0",
+  "shade_1",
+  "shade_2",
+  "sky_0",
+  "sky_1",
+  "sky_2",
+  "sky_3",
+  "dust_0",
+  "dust_1",
+  "dust_2",
+  "dust_3",
+  "dust_4",
+  "wood_0",
+  "wood_1",
+  "wood_2",
+  "wood_3",
+  "rock_0",
+  "rock_1",
+  "rock_2",
+  "rock_3",
+  "rock_4",
+  "sage_0",
+  "sage_1",
+  "sage_2",
+  "paint_red",
+  "paint_teal",
+  "lamp_0",
+  "lamp_1",
+  "iron_0",
+  "iron_1",
+  "bone"
+ ],
+ "pack_id": "frontier_town_night",
+ "roles": {
+  "bone_white": [
+   "bone"
+  ],
+  "desert_sky": [
+   "sky_0",
+   "sky_1",
+   "sky_2",
+   "sky_3"
+  ],
+  "dusty_ochre": [
+   "dust_0",
+   "dust_1",
+   "dust_2",
+   "dust_3",
+   "dust_4"
+  ],
+  "lamplight": [
+   "lamp_0",
+   "lamp_1"
+  ],
+  "paint_trim": [
+   "paint_red",
+   "paint_teal"
+  ],
+  "red_rock": [
+   "rock_0",
+   "rock_1",
+   "rock_2",
+   "rock_3",
+   "rock_4"
+  ],
+  "sage_scrub": [
+   "sage_0",
+   "sage_1",
+   "sage_2"
+  ],
+  "shadow_violet": [
+   "void",
+   "shade_0",
+   "shade_1",
+   "shade_2"
+  ],
+  "sunbleached_wood": [
+   "wood_0",
+   "wood_1",
+   "wood_2",
+   "wood_3"
+  ],
+  "tin_iron": [
+   "iron_0",
+   "iron_1"
+  ]
+ }
+}

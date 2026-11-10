@@ -1,0 +1,3750 @@
+{
+ "files": [
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 2,
+     "max_abs": 4.756450653076172e-05
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 2.9243528842926025e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/new_arrival.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[7]/rotation[0] (float 2.05e-08)",
+    "/nodes[7]/rotation[1] (float 1.4e-09)",
+    "/nodes[7]/rotation[2] (float 1.49e-08)",
+    "/nodes[7]/rotation[3] (float 5.96e-08)",
+    "/nodes[7]/scale[1] (float 5.96e-08)",
+    "/nodes[7]/translation[0] (float 9.31e-09)"
+   ],
+   "notes": [
+    "NORMAL 2/4 identical (max 4.8e-05)",
+    "anim_rotation 0/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 2.9e-07)",
+    "JSON float noise at 6 values"
+   ],
+   "oracle_sha256": "c9acb9be1f5741c4e4323d7e9ad843fa5690e0bb4deb2ec215d2fe02cd67af03",
+   "python_sha256": "79c2fad5a4409181c9396f10b29312ae73d1bff5126bbe4b0326be1aa538ba3e",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.001986,
+    "edge_ratio": [
+     0.5531,
+     1.4004
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 5.768162178759302e-07,
+    "mean_m": 6.133187425966505e-08,
+    "vertices": 666,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 1,
+     "max_abs": 7.519125938415527e-05
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 3.8137659430503845e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/tavi.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[7]/rotation[0] (float 2.98e-08)",
+    "/nodes[7]/rotation[1] (float 7.45e-09)",
+    "/nodes[7]/rotation[2] (float 2.98e-08)",
+    "/nodes[7]/rotation[3] (float 5.96e-08)",
+    "/nodes[7]/translation[0] (float 7.45e-09)",
+    "/nodes[7]/translation[1] (float 4.47e-08)",
+    "/nodes[7]/translation[2] (float 9.31e-10)"
+   ],
+   "notes": [
+    "NORMAL 1/4 identical (max 7.5e-05)",
+    "anim_rotation 0/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 3.8e-07)",
+    "JSON float noise at 7 values"
+   ],
+   "oracle_sha256": "be7accc1c123372c7c8bda1659b711846464423863a4cd9b52cb7816d92737c2",
+   "python_sha256": "8a6c4eb1f83a7a4f19c3aaa83e9d922a74a822966af4174674412e963e5bb4a6",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.001761,
+    "edge_ratio": [
+     0.5531,
+     1.4118
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 5.665703469580212e-07,
+    "mean_m": 5.9418292403303875e-08,
+    "vertices": 680,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 2,
+     "max_abs": 9.943544864654541e-05
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 2.086162567138672e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 2.682209014892578e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/neri.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[7]/rotation[0] (float 5.96e-08)",
+    "/nodes[7]/rotation[1] (float 2.24e-08)",
+    "/nodes[7]/rotation[2] (float 4.47e-08)",
+    "/nodes[7]/scale[1] (float 5.96e-08)",
+    "/nodes[7]/scale[2] (float 1.19e-07)",
+    "/nodes[7]/translation[0] (float 7.45e-09)",
+    "/nodes[7]/translation[1] (float 1.49e-08)",
+    "/nodes[7]/translation[2] (float 1.51e-09)"
+   ],
+   "notes": [
+    "NORMAL 2/4 identical (max 9.9e-05)",
+    "anim_rotation 0/208 identical (max 2.1e-07)",
+    "anim_translation 0/13 identical (max 2.7e-07)",
+    "JSON float noise at 8 values"
+   ],
+   "oracle_sha256": "a8d0bd219d226f5495dc0524c591d7d55c62e250264064985d7a1929c96999f0",
+   "python_sha256": "da55107b450265f10ed0f322dec4b010ffe5c1849ced4667126fc21fe7f8d275",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.001683,
+    "edge_ratio": [
+     0.5531,
+     1.4004
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 4.843820270479952e-07,
+    "mean_m": 6.596802367321186e-08,
+    "vertices": 720,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 2,
+     "max_abs": 5.1975250244140625e-05
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 3.986060619354248e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/sol.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[19]/rotation[0] (float 3.77e-08)",
+    "/nodes[19]/translation[1] (float 4.47e-08)"
+   ],
+   "notes": [
+    "NORMAL 2/4 identical (max 5.2e-05)",
+    "anim_rotation 0/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 4.0e-07)",
+    "JSON float noise at 2 values"
+   ],
+   "oracle_sha256": "49b8d95034e44b5da95d94068e87c46b094068cce0779cfab1dffc8007bf0793",
+   "python_sha256": "ab20b57dd626f6639dca1ab16c3801c5d8c61c6090b42b955d8eb55b3717634f",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.002832,
+    "edge_ratio": [
+     0.5531,
+     1.4447
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 5.876403608102787e-07,
+    "mean_m": 5.528874752425516e-08,
+    "vertices": 656,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 3,
+     "max_abs": 5.960464477539063e-08
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.4901161193847656e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 4.731118679046631e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/ivo.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[7]/rotation[0] (float 4.19e-08)",
+    "/nodes[7]/rotation[1] (float 7.45e-09)",
+    "/nodes[7]/rotation[2] (float 7.45e-09)",
+    "/nodes[7]/scale[0] (float 1.19e-07)",
+    "/nodes[7]/scale[1] (float 5.96e-08)",
+    "/nodes[7]/translation[0] (float 1.3e-08)",
+    "/nodes[7]/translation[1] (float 7.45e-09)",
+    "/nodes[7]/translation[2] (float 1.86e-09)"
+   ],
+   "notes": [
+    "NORMAL 3/4 identical (max 6.0e-08)",
+    "anim_rotation 0/208 identical (max 1.5e-07)",
+    "anim_translation 0/13 identical (max 4.7e-07)",
+    "JSON float noise at 8 values"
+   ],
+   "oracle_sha256": "ced5ee5b449a30a021bbb8bd6b482068e322dd2c2e1c6c95658728f72137250e",
+   "python_sha256": "20c9abf3f0195ba7943bd21598cd7df0fd7fbf95ea78f71b64ccb4605f1087c7",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.002365,
+    "edge_ratio": [
+     0.5531,
+     1.4004
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 9.929969596310734e-07,
+    "mean_m": 6.927153701262647e-08,
+    "vertices": 663,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 2,
+     "max_abs": 8.159875869750977e-05
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 2.384185791015625e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 2.477318048477173e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/luma.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[7]/rotation[1] (float 5.96e-08)",
+    "/nodes[7]/rotation[2] (float 5.96e-08)",
+    "/nodes[7]/scale[0] (float 5.96e-08)",
+    "/nodes[7]/scale[1] (float 1.19e-07)",
+    "/nodes[7]/scale[2] (float 5.96e-08)",
+    "/nodes[7]/translation[0] (float 2.79e-09)",
+    "/nodes[7]/translation[1] (float 4.47e-08)"
+   ],
+   "notes": [
+    "NORMAL 2/4 identical (max 8.2e-05)",
+    "anim_rotation 0/208 identical (max 2.4e-07)",
+    "anim_translation 0/13 identical (max 2.5e-07)",
+    "JSON float noise at 7 values"
+   ],
+   "oracle_sha256": "5a0130cf5f3405ea1f85dd51da53636590e55819b5c2c78348bb42c99e1c01fa",
+   "python_sha256": "6c4f358e489e77a3362b8cdfaed2f4656995aaf4b1b79fc01c380f92116b7786",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.002192,
+    "edge_ratio": [
+     0.5531,
+     1.4781
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 4.366643399034387e-07,
+    "mean_m": 5.827705611060376e-08,
+    "vertices": 644,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 3,
+     "max_abs": 5.960464477539063e-08
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 9,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 3.4086406230926514e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/study_07.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[7]/rotation[1] (float 2.98e-08)",
+    "/nodes[7]/rotation[3] (float 5.96e-08)",
+    "/nodes[7]/translation[0] (float 2.05e-08)",
+    "/nodes[7]/translation[2] (float 3.73e-09)"
+   ],
+   "notes": [
+    "NORMAL 3/4 identical (max 6.0e-08)",
+    "anim_rotation 9/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 3.4e-07)",
+    "JSON float noise at 4 values"
+   ],
+   "oracle_sha256": "f6541597f4aaad6c04ace12a8af26915607ac57a843b6b536860dbe83d225788",
+   "python_sha256": "a0d99e13b9a4d6665e1a713ee1d9485fbeb4f600ef3dfb745aa2517b34ec0406",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.00178,
+    "edge_ratio": [
+     0.5531,
+     1.4118
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 5.456891874596386e-07,
+    "mean_m": 6.390576285793085e-08,
+    "vertices": 652,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 2,
+     "max_abs": 6.961822509765625e-05
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 1.8067657947540283e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/study_08.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[3]/rotation[0] (float 2.24e-08)",
+    "/nodes[3]/rotation[1] (float 1.86e-08)",
+    "/nodes[3]/rotation[2] (float 2.98e-08)",
+    "/nodes[3]/rotation[3] (float 5.96e-08)",
+    "/nodes[3]/scale[1] (float 1.19e-07)",
+    "/nodes[3]/scale[2] (float 5.96e-08)",
+    "/nodes[3]/translation[0] (float 3.73e-09)",
+    "/nodes[3]/translation[1] (float 2.98e-08)",
+    "/nodes[3]/translation[2] (float 1.86e-09)"
+   ],
+   "notes": [
+    "NORMAL 2/4 identical (max 7.0e-05)",
+    "anim_rotation 0/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 1.8e-07)",
+    "JSON float noise at 9 values"
+   ],
+   "oracle_sha256": "acad0174da185fd52333c60fce479ef71a6b5ba3112a43dc2a18e757bbc9e885",
+   "python_sha256": "84cf29e32f77c98e11b305ca8797aa6a832461d7c778bb5b017fbcd3cc67198c",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.00189,
+    "edge_ratio": [
+     0.5531,
+     1.4004
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 3.5474440847278167e-07,
+    "mean_m": 5.186913832898716e-08,
+    "vertices": 665,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 1,
+     "max_abs": 8.64565372467041e-05
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 2.5331974029541016e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/pp_engineer.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[3]/rotation[0] (float 5.96e-08)",
+    "/nodes[3]/rotation[1] (float 1.49e-08)",
+    "/nodes[3]/rotation[2] (float 2.98e-08)",
+    "/nodes[3]/scale[1] (float 1.19e-07)",
+    "/nodes[3]/scale[2] (float 5.96e-08)",
+    "/nodes[3]/translation[0] (float 1.86e-08)",
+    "/nodes[3]/translation[1] (float 1.49e-08)"
+   ],
+   "notes": [
+    "NORMAL 1/4 identical (max 8.6e-05)",
+    "anim_rotation 0/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 2.5e-07)",
+    "JSON float noise at 7 values"
+   ],
+   "oracle_sha256": "0b63c5b59aee760fe324a68e6917f50193e45f86cf24b69869872e262a3318c2",
+   "python_sha256": "84ebf320757d1807a092f5ec2c7aed4937911b448a1029e1bdd3caf929f212eb",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.001591,
+    "edge_ratio": [
+     0.46,
+     1.6361
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 4.6948534902891915e-07,
+    "mean_m": 6.755946309890073e-08,
+    "vertices": 560,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 1,
+     "max_abs": 0.00010009109973907471
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 2.905726432800293e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/pp_medic.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[7]/rotation[0] (float 2.98e-08)",
+    "/nodes[7]/rotation[1] (float 1.3e-08)",
+    "/nodes[7]/rotation[2] (float 2.98e-08)",
+    "/nodes[7]/rotation[3] (float 5.96e-08)",
+    "/nodes[7]/translation[0] (float 2.24e-08)",
+    "/nodes[7]/translation[2] (float 1.86e-09)"
+   ],
+   "notes": [
+    "NORMAL 1/4 identical (max 1.0e-04)",
+    "anim_rotation 0/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 2.9e-07)",
+    "JSON float noise at 6 values"
+   ],
+   "oracle_sha256": "463883637f909c160a01276b405ec1445154dd55e3d65ce99d0d0de18e2127b6",
+   "python_sha256": "08bd811e28d6077b8227b323246331cc2afd9a45293060f0529560962805c325",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.000711,
+    "edge_ratio": [
+     0.4603,
+     1.6125
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 4.86940648895033e-07,
+    "mean_m": 6.481516851725479e-08,
+    "vertices": 575,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 9.892880916595459e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.4901161193847656e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 3.5762786865234375e-07
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/pp_kid.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 9.9e-05)",
+    "anim_rotation 0/208 identical (max 1.5e-07)",
+    "anim_translation 0/13 identical (max 3.6e-07)"
+   ],
+   "oracle_sha256": "8a2d20207b167e30487165073c98f962c3ad21b0a5057d7a737d4c12d9bbd3ba",
+   "python_sha256": "ed09657a0b91c99610c73677793d0bae88ab8c53b24d25e26c8de187d9998b18",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.001578,
+    "edge_ratio": [
+     0.4606,
+     1.5825
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 4.817514517722234e-07,
+    "mean_m": 3.937648071837174e-08,
+    "vertices": 519,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 1,
+     "max_abs": 9.796023368835449e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 3.3527612686157227e-07
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/pp_elder.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 1/3 identical (max 9.8e-05)",
+    "anim_rotation 0/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 3.4e-07)"
+   ],
+   "oracle_sha256": "46a91617ab97312b798260b0ebe0211820dfba9467c1bbfec3ab58e94d7325f5",
+   "python_sha256": "0d7b6455c39c0e4012d46424943a472e25d4ca0bd808d994047439a0d06c5fde",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.001348,
+    "edge_ratio": [
+     0.4601,
+     1.6211
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 5.304050369494541e-07,
+    "mean_m": 6.282918256035499e-08,
+    "vertices": 519,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 0,
+     "max_abs": 0.00010042265057563782
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 4.3120235204696655e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "forest_village/fv_warden.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[19]/rotation[0] (float 3.77e-08)",
+    "/nodes[19]/translation[1] (float 7.45e-09)"
+   ],
+   "notes": [
+    "NORMAL 0/4 identical (max 1.0e-04)",
+    "anim_rotation 0/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 4.3e-07)",
+    "JSON float noise at 2 values"
+   ],
+   "oracle_sha256": "568a9e41e0a5e1f14f0d1e8d8bedb28878afeae55d290e4c47a7ce7306818e6d",
+   "python_sha256": "72b8760c2e9c329a01c50e2c97e09e376e224b5ff85e5515e969a54fb0b979d8",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.00087,
+    "edge_ratio": [
+     0.4601,
+     1.5567
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 5.987696428576666e-07,
+    "mean_m": 5.885034273901045e-08,
+    "vertices": 551,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.4901161193847656e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 3.725290298461914e-07
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "forest_village/fv_smith.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "anim_rotation 0/208 identical (max 1.5e-07)",
+    "anim_translation 0/13 identical (max 3.7e-07)"
+   ],
+   "oracle_sha256": "7b52c0714c89c93d6a3ec2afeecbf68a89c64ed090a480475a6c128c27d5df82",
+   "python_sha256": "c4c456a2ce34676b525d0bc53b851ea2b7cdcc3357c69332606c3030a9102f71",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.001406,
+    "edge_ratio": [
+     0.46,
+     1.6184
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 5.899757884861067e-07,
+    "mean_m": 7.374263617944109e-08,
+    "vertices": 519,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 1,
+     "max_abs": 0.00010000122711062431
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 3.427267074584961e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "forest_village/fv_elder.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[7]/rotation[0] (float 5.96e-08)",
+    "/nodes[7]/rotation[2] (float 7.45e-09)",
+    "/nodes[7]/rotation[3] (float 5.96e-08)",
+    "/nodes[7]/scale[2] (float 5.96e-08)",
+    "/nodes[7]/translation[0] (float 1.3e-08)",
+    "/nodes[7]/translation[1] (float 2.24e-08)",
+    "/nodes[7]/translation[2] (float 1.86e-09)"
+   ],
+   "notes": [
+    "NORMAL 1/4 identical (max 1.0e-04)",
+    "anim_rotation 0/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 3.4e-07)",
+    "JSON float noise at 7 values"
+   ],
+   "oracle_sha256": "043b48eb0994b7810909af9741639bb224d6927ea842f9523edc08efa7eb17ed",
+   "python_sha256": "e9605d8478315c678a03381b1c8bfab1e5a1955c50a52a3c50b0481336161bfb",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.00071,
+    "edge_ratio": [
+     0.4601,
+     1.5983
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 5.795088644170442e-07,
+    "mean_m": 6.182325968395349e-08,
+    "vertices": 558,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 4,
+     "identical": 1,
+     "max_abs": 8.222460746765137e-05
+    },
+    "POSITION": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 208,
+     "identical": 0,
+     "max_abs": 1.7881393432617188e-07
+    },
+    "anim_time": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 13,
+     "identical": 0,
+     "max_abs": 2.7567148208618164e-07
+    },
+    "indices": {
+     "count": 4,
+     "identical": 4,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "forest_village/fv_scribe.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 4,
+    "identical": 4
+   },
+   "json_diffs": [
+    "/nodes[7]/rotation[0] (float 5.96e-08)",
+    "/nodes[7]/rotation[1] (float 8.94e-08)",
+    "/nodes[7]/rotation[2] (float 1.19e-07)",
+    "/nodes[7]/scale[0] (float 1.19e-07)",
+    "/nodes[7]/scale[1] (float 5.96e-08)",
+    "/nodes[7]/scale[2] (float 5.96e-08)",
+    "/nodes[7]/translation[0] (float 1.49e-08)",
+    "/nodes[7]/translation[2] (float 1.86e-09)"
+   ],
+   "notes": [
+    "NORMAL 1/4 identical (max 8.2e-05)",
+    "anim_rotation 0/208 identical (max 1.8e-07)",
+    "anim_translation 0/13 identical (max 2.8e-07)",
+    "JSON float noise at 8 values"
+   ],
+   "oracle_sha256": "622fae8343cef09b876f0c9f08c962425afb3bac83f8b8cf262b05fe11175542",
+   "python_sha256": "27b2079bc4cfeac921bb42f1c3917bd5cac00d573fa79b178bdc66e9f1239773",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.000775,
+    "edge_ratio": [
+     0.4601,
+     1.5941
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 209,
+    "max_m": 4.755879091993529e-07,
+    "mean_m": 6.043482608656416e-08,
+    "vertices": 539,
+    "worst_at": [
+     "roll",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 0.00012814998626708984
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 1.4901161193847656e-07
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 0,
+     "max_abs": 1.685693860054016e-07
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "cameo_visor/cameo_visor_01.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 1.3e-04)",
+    "anim_rotation 0/112 identical (max 1.5e-07)",
+    "anim_translation 0/7 identical (max 1.7e-07)"
+   ],
+   "oracle_sha256": "3df7030d6a4c4a9460def532a3779b43be1aedee39f242a2637d1f826e2c2f87",
+   "python_sha256": "0af874662e4b9376ba89fe18e2e25b9c72d92ab911cb2d9900339c9d398bf709",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.002841,
+    "edge_ratio": [
+     0.7204,
+     1.5438
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 3.405088660855106e-07,
+    "mean_m": 6.384048566743178e-08,
+    "vertices": 611,
+    "worst_at": [
+     "run",
+     3
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 6.753206253051758e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 2.2351741790771484e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/cat_tuxedo.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 6.8e-05)",
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 2.2e-08)"
+   ],
+   "oracle_sha256": "d0c6cdf0e56a6c6d7b969c8f9242b4fb09cf13490c953981cd2b271db9d8742c",
+   "python_sha256": "b161a94c19b64b8909cf2fa6a9a6cb5331849614b38c0c0c88c89aeb7b8f2c45",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6354,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 7.505233154417465e-08,
+    "mean_m": 9.741671676494467e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 6.753206253051758e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 2.2351741790771484e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/cat_tabby.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 6.8e-05)",
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 2.2e-08)"
+   ],
+   "oracle_sha256": "ac359b3347e6a3fc44ad4aa2f84a7a9fdb27d41a2773b811cc8e4b20ec1c7e2c",
+   "python_sha256": "02da066622ebf3049d086bbfed9517f2e604d2e1ba0e0b3b03f54277c28171f8",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6354,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 7.505233154417465e-08,
+    "mean_m": 9.741671676494467e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 6.753206253051758e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 2.2351741790771484e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/cat_calico.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 6.8e-05)",
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 2.2e-08)"
+   ],
+   "oracle_sha256": "bb69f916a3d78c0868c6bf87abe05a94af702947ea726dcfa5fed88e4ccca9a1",
+   "python_sha256": "f33efd4b614352cfd131f4ed33524cf8e0da398dc29b86481e2ca6bcceea307c",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6354,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 7.505233154417465e-08,
+    "mean_m": 9.741671676494467e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 6.753206253051758e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 2.2351741790771484e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/cat_black.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 6.8e-05)",
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 2.2e-08)"
+   ],
+   "oracle_sha256": "3b21d757415026815ef894e83c52143177a3ff2563746d4f9a18287045724073",
+   "python_sha256": "a8d5c7dba754157958c942e85980f868b0830224b7393a573d5d9c59055680a1",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6354,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 7.505233154417465e-08,
+    "mean_m": 9.741671676494467e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 6.753206253051758e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 2.2351741790771484e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/cat_white.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 6.8e-05)",
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 2.2e-08)"
+   ],
+   "oracle_sha256": "0cdc1d8d951c382c581a81536c09744c5fdd882649b15a3ad9c076ef2bfc2e75",
+   "python_sha256": "8a8d8a01831675d93fd86e78f35d5e492d16d4c244c96d45629b4c5a8ae4e3e5",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6354,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 7.505233154417465e-08,
+    "mean_m": 9.741671676494467e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 1.0244548320770264e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "polar_pod/dog_saddle.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 1.0e-08)"
+   ],
+   "oracle_sha256": "01f5c6bec4f5a27ce0bf7fcc0d77afae75ba727af3a89cae04db03203719a1af",
+   "python_sha256": "38f0856707dc828eff0512a466a3abed3f5a9dd255be550ecefc230e85d5468e",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6251,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 6.834444584957907e-08,
+    "mean_m": 8.103576563941195e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 6.753206253051758e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 2.2351741790771484e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "forest_village/cat_tuxedo.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 6.8e-05)",
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 2.2e-08)"
+   ],
+   "oracle_sha256": "364481bf316b01c99ec1f913803cc072d9c1e0f96f7bfdfd15a64e6f6e3cf13a",
+   "python_sha256": "c984e2bb6842728fbe6dd8af2d3427461f40bee829d5b6f4475a1ffadc0fb20b",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6354,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 7.505233154417465e-08,
+    "mean_m": 9.741671676494467e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 6.753206253051758e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 2.2351741790771484e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "forest_village/cat_tabby.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 6.8e-05)",
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 2.2e-08)"
+   ],
+   "oracle_sha256": "b7e9df3469897b9001dee8cf12ab409403265af4024df676f4b26498f32fc44b",
+   "python_sha256": "90351df6393d75e6c0307b7d5264c7824dd91de6f75743be6ee50f41e45adbc6",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6354,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 7.505233154417465e-08,
+    "mean_m": 9.741671676494467e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 6.753206253051758e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 2.2351741790771484e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "forest_village/cat_calico.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 6.8e-05)",
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 2.2e-08)"
+   ],
+   "oracle_sha256": "ffa2ae985e56b017f81b69913dd0077bd98d512c4d402658476e28ec998c5ee0",
+   "python_sha256": "788fe93138c49a3fdc38969b742ba5e13c8656ca73dc531c2d7d052ad63b6f58",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6354,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 7.505233154417465e-08,
+    "mean_m": 9.741671676494467e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 6.753206253051758e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 2.2351741790771484e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "forest_village/cat_black.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 6.8e-05)",
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 2.2e-08)"
+   ],
+   "oracle_sha256": "6c1984bbef2104e68ff20c8deae7cdba792daf8bf1f3abc7ae3ec9b74dffbd7d",
+   "python_sha256": "0fbeef6e7b9af9acd65a3421e8b1569dd6da7c0e7634c70d44a7be122dc9de3d",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6354,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 7.505233154417465e-08,
+    "mean_m": 9.741671676494467e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 2,
+     "max_abs": 6.753206253051758e-05
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 2.2351741790771484e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "forest_village/cat_white.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 2/3 identical (max 6.8e-05)",
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 2.2e-08)"
+   ],
+   "oracle_sha256": "ee9e62e9bebcb6ef5cb5a5ef4448c10b45bb0b87c2b42b26090ca76a0fd9170a",
+   "python_sha256": "de242286e1e14c90aee5b75fd535164751cd038cf8f8882c33665d05477ec0ef",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6354,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 7.505233154417465e-08,
+    "mean_m": 9.741671676494467e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "POSITION": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 112,
+     "identical": 0,
+     "max_abs": 8.940696716308594e-08
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 2,
+     "max_abs": 1.0244548320770264e-08
+    },
+    "indices": {
+     "count": 3,
+     "identical": 3,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "forest_village/dog_saddle.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 3,
+    "identical": 3
+   },
+   "json_diffs": [],
+   "notes": [
+    "anim_rotation 0/112 identical (max 8.9e-08)",
+    "anim_translation 2/7 identical (max 1.0e-08)"
+   ],
+   "oracle_sha256": "399e657c67a03fc85b1adbbcd7920596fe1d54ecc2fc8233b6f85f02bae45f39",
+   "python_sha256": "41b9700c9292cb6d4450d38c0f0a6af4d83ada8c07734b3e9253bb709237206b",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.6251,
+     1.3493
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "quad16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 6.834444584957907e-08,
+    "mean_m": 8.103576563941195e-09,
+    "vertices": 303,
+    "worst_at": [
+     "sleep_curled",
+     0
+    ]
+   },
+   "type": "character",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 2,
+     "identical": 1,
+     "max_abs": 7.2479248046875e-05
+    },
+    "POSITION": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 105,
+     "identical": 0,
+     "max_abs": 1.1920928955078125e-07
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 7,
+     "max_abs": 0.0
+    },
+    "indices": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "enemies/polar_pod/cairn_dasher.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 2,
+    "identical": 2
+   },
+   "json_diffs": [
+    "/nodes[6]/rotation[0] (float 3.77e-08)",
+    "/nodes[6]/translation[1] (float 1.86e-08)",
+    "/nodes[9]/rotation[0] (float 3.77e-08)",
+    "/nodes[9]/translation[1] (float 1.86e-08)",
+    "/nodes[9]/translation[2] (float 1.12e-08)"
+   ],
+   "notes": [
+    "NORMAL 1/2 identical (max 7.2e-05)",
+    "anim_rotation 0/105 identical (max 1.2e-07)",
+    "JSON float noise at 5 values"
+   ],
+   "oracle_sha256": "cc9c37f13841d5e76a2601d1ca97ea5e33b3c30ddb319564d9b55dd00027c2e6",
+   "python_sha256": "17c45ca4a7bc464f4f45e1b6a41a81e5bca169699c7222d0af7fd1e9b2c81676",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.000149,
+    "edge_ratio": [
+     0.7675,
+     1.3415
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "dasher16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 2.616741930314743e-07,
+    "mean_m": 4.083755725640642e-08,
+    "vertices": 494,
+    "worst_at": [
+     "death",
+     9
+    ]
+   },
+   "type": "enemy",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 2,
+     "identical": 1,
+     "max_abs": 9.641051292419434e-05
+    },
+    "POSITION": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 98,
+     "identical": 0,
+     "max_abs": 1.1920928955078125e-07
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 7,
+     "max_abs": 0.0
+    },
+    "indices": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "enemies/polar_pod/reed_warden.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 2,
+    "identical": 2
+   },
+   "json_diffs": [
+    "/nodes[0]/rotation[0] (float 3.77e-08)",
+    "/nodes[0]/translation[1] (float 1.49e-08)",
+    "/nodes[0]/translation[2] (float 3.73e-09)",
+    "/nodes[14]/rotation[0] (float 3.77e-08)"
+   ],
+   "notes": [
+    "NORMAL 1/2 identical (max 9.6e-05)",
+    "anim_rotation 0/98 identical (max 1.2e-07)",
+    "JSON float noise at 4 values"
+   ],
+   "oracle_sha256": "88e15e737ee2fc17a221e6d330b05014718265ca9a68a9e9f4c619e4085af221",
+   "python_sha256": "6a5dd9801239305db5fea74d47623de45e91c235ec1a7e764f9723181670c119",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.5263,
+     1.4079
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "warden15_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 1.6684536545439123e-07,
+    "mean_m": 1.7919902893365176e-08,
+    "vertices": 491,
+    "worst_at": [
+     "attack",
+     3
+    ]
+   },
+   "type": "enemy",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 2,
+     "identical": 1,
+     "max_abs": 7.2479248046875e-05
+    },
+    "POSITION": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 105,
+     "identical": 0,
+     "max_abs": 1.1920928955078125e-07
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 7,
+     "max_abs": 0.0
+    },
+    "indices": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "enemies/forest_village/cairn_dasher.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 2,
+    "identical": 2
+   },
+   "json_diffs": [
+    "/nodes[6]/rotation[0] (float 3.77e-08)",
+    "/nodes[6]/translation[1] (float 1.86e-08)",
+    "/nodes[9]/rotation[0] (float 3.77e-08)",
+    "/nodes[9]/translation[1] (float 1.86e-08)",
+    "/nodes[9]/translation[2] (float 1.12e-08)"
+   ],
+   "notes": [
+    "NORMAL 1/2 identical (max 7.2e-05)",
+    "anim_rotation 0/105 identical (max 1.2e-07)",
+    "JSON float noise at 5 values"
+   ],
+   "oracle_sha256": "c06af43cca71204f0dbe543a785fece423871937294500e578ad7bf60ca8a37b",
+   "python_sha256": "72688a10c7d0d335115e181715636dddf3cf44fa0498e51f8dce6b5f446c3de9",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.000149,
+    "edge_ratio": [
+     0.7675,
+     1.3415
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "dasher16_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 2.616741930314743e-07,
+    "mean_m": 4.083755725640642e-08,
+    "vertices": 494,
+    "worst_at": [
+     "death",
+     9
+    ]
+   },
+   "type": "enemy",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "IBM": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "JOINTS_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 2,
+     "identical": 1,
+     "max_abs": 9.641051292419434e-05
+    },
+    "POSITION": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "WEIGHTS_0": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    },
+    "anim_rotation": {
+     "count": 98,
+     "identical": 0,
+     "max_abs": 1.1920928955078125e-07
+    },
+    "anim_time": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "anim_translation": {
+     "count": 7,
+     "identical": 7,
+     "max_abs": 0.0
+    },
+    "indices": {
+     "count": 2,
+     "identical": 2,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "enemies/forest_village/reed_warden.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 2,
+    "identical": 2
+   },
+   "json_diffs": [
+    "/nodes[0]/rotation[0] (float 3.77e-08)",
+    "/nodes[0]/translation[1] (float 1.49e-08)",
+    "/nodes[0]/translation[2] (float 3.73e-09)",
+    "/nodes[14]/rotation[0] (float 3.77e-08)"
+   ],
+   "notes": [
+    "NORMAL 1/2 identical (max 9.6e-05)",
+    "anim_rotation 0/98 identical (max 1.2e-07)",
+    "JSON float noise at 4 values"
+   ],
+   "oracle_sha256": "4c4635a47becd709e2e253b82e9b9c5fa939b3057d903575f5ba071db5683a3c",
+   "python_sha256": "3f492f2588552fa928b9bec5dc34ce5a0f859f8eb15d7e4fe5fb48da0d6a4b74",
+   "reasons": [],
+   "rigkit": {
+    "connectivity_max_gap_m": 0.0,
+    "edge_ratio": [
+     0.5263,
+     1.4079
+    ],
+    "errors": [],
+    "ok": true,
+    "rig": "warden15_v1@1.0.0"
+   },
+   "skinned": {
+    "comparable": true,
+    "keys": 113,
+    "max_m": 1.6684536545439123e-07,
+    "mean_m": 1.7919902893365176e-08,
+    "vertices": 491,
+    "worst_at": [
+     "attack",
+     3
+    ]
+   },
+   "type": "enemy",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 1,
+     "identical": 0,
+     "max_abs": 5.960464477539063e-08
+    },
+    "POSITION": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "indices": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "props/polar_pod/trail_staff.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 1,
+    "identical": 1
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 0/1 identical (max 6.0e-08)"
+   ],
+   "oracle_sha256": "4cfa5e8febd73ec777613f82e3e8ef803b2f5128ba284c770d4f0056d4cccf4a",
+   "python_sha256": "d5a0167b0e3de97d87f1cde273bf29ab041a1e22d7c4ef1dc5e73199d4f3030e",
+   "reasons": [],
+   "rigkit": null,
+   "skinned": {
+    "comparable": true,
+    "keys": 1,
+    "max_m": 0.0,
+    "mean_m": 0.0,
+    "vertices": 124,
+    "worst_at": null
+   },
+   "type": "prop",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 1,
+     "identical": 0,
+     "max_abs": 5.960464477539063e-08
+    },
+    "POSITION": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "indices": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "props/polar_pod/reed_burr.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 1,
+    "identical": 1
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 0/1 identical (max 6.0e-08)"
+   ],
+   "oracle_sha256": "0a8b362ddc6bb1b7444c8ae2c44b2be730bd7f1b02bc6fdc80ab74467dff537f",
+   "python_sha256": "0fb1235d9413f2fedcfd0a5f9604a2fe8b3a9328df86e1cfa07fda1fe53d391d",
+   "reasons": [],
+   "rigkit": null,
+   "skinned": {
+    "comparable": true,
+    "keys": 1,
+    "max_m": 0.0,
+    "mean_m": 0.0,
+    "vertices": 126,
+    "worst_at": null
+   },
+   "type": "prop",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 1,
+     "identical": 0,
+     "max_abs": 5.960464477539063e-08
+    },
+    "POSITION": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "indices": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "props/forest_village/trail_staff.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 1,
+    "identical": 1
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 0/1 identical (max 6.0e-08)"
+   ],
+   "oracle_sha256": "21f6d40e0b3954858eaf896b396526f92f3d1a35cc65bb5baa2fbccd5c9f7231",
+   "python_sha256": "fc4283f2c2e5a920b64ff8ff5c23b8626dc484bb93d6787e2349b9764ad1b685",
+   "reasons": [],
+   "rigkit": null,
+   "skinned": {
+    "comparable": true,
+    "keys": 1,
+    "max_m": 0.0,
+    "mean_m": 0.0,
+    "vertices": 124,
+    "worst_at": null
+   },
+   "type": "prop",
+   "verdict": "equivalent-within-tolerance"
+  },
+  {
+   "accessors": {
+    "COLOR_0": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "NORMAL": {
+     "count": 1,
+     "identical": 0,
+     "max_abs": 5.960464477539063e-08
+    },
+    "POSITION": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "TEXCOORD_0": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    },
+    "indices": {
+     "count": 1,
+     "identical": 1,
+     "max_abs": 0.0
+    }
+   },
+   "deterministic": true,
+   "file": "props/forest_village/reed_burr.glb",
+   "glb_validate": {
+    "errors": [],
+    "ok": true,
+    "warnings": 0
+   },
+   "images": {
+    "count": 1,
+    "identical": 1
+   },
+   "json_diffs": [],
+   "notes": [
+    "NORMAL 0/1 identical (max 6.0e-08)"
+   ],
+   "oracle_sha256": "252fb098f2da094fb044a5c887244d43ff33358a9dee60f11b833453c934906d",
+   "python_sha256": "8ee6ddb37fc73033832d39f284b9a59734f6ac3eec56383149853d915723e7d7",
+   "reasons": [],
+   "rigkit": null,
+   "skinned": {
+    "comparable": true,
+    "keys": 1,
+    "max_m": 0.0,
+    "mean_m": 0.0,
+    "vertices": 126,
+    "worst_at": null
+   },
+   "type": "prop",
+   "verdict": "equivalent-within-tolerance"
+  }
+ ],
+ "schema": "hermes64-nbchars-parity/1",
+ "summary": {
+  "deterministic": true,
+  "environment": {
+   "hypot_compat": true,
+   "numpy": "2.0.2",
+   "python": "3.9.6",
+   "reference": "CPython 3.13 (Blender 5.2.1 bundled interpreter)",
+   "sum_compat": true,
+   "zlib": "1.2.12",
+   "zlib_runtime": "1.2.12"
+  },
+  "files": 37,
+  "glb_validate_ok": true,
+  "max_skinned_error_m": 9.929969596310734e-07,
+  "rigkit_ok": true,
+  "seconds": 325.6,
+  "verdict": "PASS",
+  "verdicts": {
+   "equivalent-within-tolerance": 37
+  }
+ }
+}

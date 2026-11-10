@@ -1,0 +1,107 @@
+{
+ "description": "Ocarina-era space station: clean white hull plating, steel trims and hex decks, cyan neon light bands, warning-amber hazard lips, dark viewports onto painted star fields with a violet planet, deep-space blue fog. Data only; SCIFIKIT kit families (stn./tech./ship./skyx.) from the shared Hermes64 core.",
+ "format": 1,
+ "id": "space_station",
+ "kit_pack_id": "space_station",
+ "lighting": {
+  "ambient_colour": "#B3BAC6",
+  "fog_colour": "#23305A",
+  "fog_enabled": true,
+  "fog_end": 34.0,
+  "fog_start": 10.0
+ },
+ "materials": [
+  {
+   "colour": "#D5DAE2",
+   "id": "hull_white",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#626B7E",
+   "id": "steel",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#30353F",
+   "id": "deck",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#52D2E4",
+   "id": "neon",
+   "kind": "emissive"
+  },
+  {
+   "colour": "#EEA33C",
+   "id": "warning",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#178CA4",
+   "id": "screen",
+   "kind": "emissive"
+  },
+  {
+   "colour": "#C4F4F8",
+   "id": "viewport",
+   "kind": "glass_env"
+  },
+  {
+   "colour": "#141D3C",
+   "id": "space",
+   "kind": "baked_unlit"
+  }
+ ],
+ "name": "Space Station",
+ "palette": [
+  "#04050B",
+  "#0A0F22",
+  "#141D3C",
+  "#23305A",
+  "#3C4252",
+  "#5F6676",
+  "#8A92A2",
+  "#B3BAC6",
+  "#D5DAE2",
+  "#EEF1F4",
+  "#262B36",
+  "#3F4656",
+  "#626B7E",
+  "#8C96AA",
+  "#1E2229",
+  "#30353F",
+  "#0D4656",
+  "#178CA4",
+  "#52D2E4",
+  "#C4F4F8",
+  "#5C2C10",
+  "#B5621E",
+  "#EEA33C",
+  "#FFD98C",
+  "#5E1420",
+  "#B83236",
+  "#2A1C48",
+  "#57388A",
+  "#9C78CC",
+  "#2F7A4A",
+  "#8EE09A"
+ ],
+ "presets": [
+  {
+   "asset_id": "furn.console",
+   "id": "console",
+   "params_json": "{}"
+  }
+ ],
+ "sound_palette": {
+  "ambient": "audio/stock/wav/core.nature.wind.breeze.wav",
+  "interact": "audio/wav/ui.select.wav"
+ },
+ "thresholds": {
+  "character_tris": 700,
+  "kit_tris": 1500,
+  "prop_tris": 150,
+  "room_tris": 6000,
+  "texture_px": 128
+ }
+}

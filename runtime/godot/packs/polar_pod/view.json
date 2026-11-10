@@ -1,0 +1,8 @@
+{
+  "id": "polar_pod",
+  "description": "Cobalt/pearl primitive presentation preset; real polar kits not integrated",
+  "palette": {"floor": "#6175a8", "wall": "#8999d1", "prop": "#b3bae8", "door": "#59c7d9", "collectible": "#73a6ff", "body": "#7a8abf", "boots": "#2e3861", "head": "#ccd9ff", "void": "#04050f", "follower": "#b3bfe0", "ui_bg": "#090b1f", "ui_text": "#dbe3ff"},
+  "fog": {"color": "#0e1230", "near": 6, "far": 28},
+  "head_styles": {"silver_faceless": {"color": "#ccd9ff", "void": true}},
+  "coat_colors": {"black_tuxedo": "#575d7f", "blue_solid": "#939ccc", "silver_tabby": "#c1c8e9", "cream_point": "#c9bcb5", "white_solid": "#e3e7f4", "calico": "#b5a5a0", "ginger_tabby": "#ba9078", "black_solid": "#3c415c", "tortoiseshell": "#8b7d8c", "brown_mackerel": "#9c8d86", "smoky_longhair": "#7f89b2", "spotted_cream": "#cec4b7"}
+}

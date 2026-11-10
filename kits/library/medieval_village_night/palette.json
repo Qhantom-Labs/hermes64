@@ -1,0 +1,135 @@
+{
+ "colors": [
+  "#1a130e",
+  "#332921",
+  "#4f3f35",
+  "#74604e",
+  "#9c856a",
+  "#a89a80",
+  "#d4c7a7",
+  "#dcdcd2",
+  "#80602a",
+  "#b38e3f",
+  "#dbb862",
+  "#46474d",
+  "#66686d",
+  "#8b8a86",
+  "#b0aca0",
+  "#b8bcc4",
+  "#3a455b",
+  "#5e6c89",
+  "#8c472d",
+  "#b86a45",
+  "#16302e",
+  "#22433f",
+  "#355f55",
+  "#4f7f68",
+  "#7fa08a",
+  "#0f1a37",
+  "#2b3e6d",
+  "#6c2327",
+  "#a83730",
+  "#2c487e",
+  "#d6a842",
+  "#ffc45e"
+ ],
+ "light_ramp": [
+  0,
+  25,
+  16,
+  17,
+  13,
+  14,
+  7,
+  31
+ ],
+ "names": [
+  "ink",
+  "umber",
+  "oak_0",
+  "oak_1",
+  "oak_2",
+  "daub_0",
+  "daub_1",
+  "daub_2",
+  "straw_0",
+  "straw_1",
+  "straw_2",
+  "stone_0",
+  "stone_1",
+  "stone_2",
+  "stone_3",
+  "stone_4",
+  "slate_0",
+  "slate_1",
+  "clay_0",
+  "clay_1",
+  "leaf_0",
+  "leaf_1",
+  "leaf_2",
+  "leaf_3",
+  "leaf_4",
+  "sky_0",
+  "sky_1",
+  "red_0",
+  "red_1",
+  "blue_0",
+  "gold_0",
+  "lamp"
+ ],
+ "pack_id": "medieval_village_night",
+ "roles": {
+  "foliage": [
+   "leaf_0",
+   "leaf_1",
+   "leaf_2",
+   "leaf_3",
+   "leaf_4"
+  ],
+  "heraldry": [
+   "red_0",
+   "red_1",
+   "blue_0",
+   "gold_0"
+  ],
+  "lantern": [
+   "lamp"
+  ],
+  "roof": [
+   "slate_0",
+   "slate_1",
+   "clay_0",
+   "clay_1"
+  ],
+  "shadow": [
+   "ink",
+   "umber"
+  ],
+  "sky": [
+   "sky_0",
+   "sky_1"
+  ],
+  "stone": [
+   "stone_0",
+   "stone_1",
+   "stone_2",
+   "stone_3",
+   "stone_4"
+  ],
+  "thatch": [
+   "straw_0",
+   "straw_1",
+   "straw_2"
+  ],
+  "timber": [
+   "oak_0",
+   "oak_1",
+   "oak_2"
+  ],
+  "whitewash": [
+   "daub_0",
+   "daub_1",
+   "daub_2"
+  ]
+ }
+}

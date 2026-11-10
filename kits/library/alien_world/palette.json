@@ -1,0 +1,125 @@
+{
+ "colors": [
+  "#07050c",
+  "#1c1030",
+  "#3a1f55",
+  "#6a2f72",
+  "#b24f78",
+  "#e88a7a",
+  "#f6c79a",
+  "#2e1c16",
+  "#4e2e1e",
+  "#7a4a2a",
+  "#a8703c",
+  "#d0a060",
+  "#1e1828",
+  "#352c42",
+  "#55486a",
+  "#7e6e90",
+  "#0c3e4c",
+  "#188c96",
+  "#58dcd0",
+  "#cafff2",
+  "#13323e",
+  "#24606a",
+  "#3e9488",
+  "#8a2c5e",
+  "#e46a5a",
+  "#d8f070",
+  "#2c303a",
+  "#5c6474",
+  "#9aa2b2",
+  "#e2e6ec",
+  "#e89a3a"
+ ],
+ "light_ramp": [
+  13,
+  14,
+  9,
+  10,
+  5,
+  6,
+  29
+ ],
+ "names": [
+  "void",
+  "sky_0",
+  "sky_1",
+  "sky_2",
+  "sky_3",
+  "sky_4",
+  "sky_5",
+  "soil_0",
+  "soil_1",
+  "soil_2",
+  "soil_3",
+  "soil_4",
+  "rock_0",
+  "rock_1",
+  "rock_2",
+  "rock_3",
+  "cry_0",
+  "cry_1",
+  "cry_2",
+  "cry_3",
+  "flo_0",
+  "flo_1",
+  "flo_2",
+  "bloom_0",
+  "bloom_1",
+  "spore",
+  "gear_0",
+  "gear_1",
+  "gear_2",
+  "gear_3",
+  "gear_acc"
+ ],
+ "pack_id": "alien_world",
+ "roles": {
+  "alien_sky": [
+   "void",
+   "sky_0",
+   "sky_1",
+   "sky_2",
+   "sky_3",
+   "sky_4",
+   "sky_5"
+  ],
+  "basalt": [
+   "rock_0",
+   "rock_1",
+   "rock_2",
+   "rock_3"
+  ],
+  "bloom": [
+   "bloom_0",
+   "bloom_1",
+   "spore"
+  ],
+  "crystal": [
+   "cry_0",
+   "cry_1",
+   "cry_2",
+   "cry_3"
+  ],
+  "flora": [
+   "flo_0",
+   "flo_1",
+   "flo_2"
+  ],
+  "gear": [
+   "gear_0",
+   "gear_1",
+   "gear_2",
+   "gear_3",
+   "gear_acc"
+  ],
+  "regolith": [
+   "soil_0",
+   "soil_1",
+   "soil_2",
+   "soil_3",
+   "soil_4"
+  ]
+ }
+}

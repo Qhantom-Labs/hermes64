@@ -1,0 +1,96 @@
+{
+ "_note": "Notes vocabulary -> lane-audio catalog tag queries (catalog v1.1 tags, read-only). Each binding is a list of tag queries tried in order; the first query that matches >= 1 asset wins. A query = {category, tags (all required), prefer (score +1 each), max}.",
+ "floor_from_material": {
+  "timber": "wood", "polished_wood": "wood", "stone": "stone", "cobble": "stone", "marble": "stone", "tile": "stone",
+  "concrete": "stone", "brick": "stone", "adobe": "stone", "chrome": "metal", "brushed_metal": "metal", "iron": "metal",
+  "rusted_iron": "metal", "brass": "metal", "glossy_plastic": "floor", "knit": "carpet", "fur": "carpet", "cloth": "carpet",
+  "canvas": "carpet", "quilted_vinyl": "carpet", "leather": "carpet", "sand": "sand", "snow": "snow", "ice": "snow",
+  "dirt": "mud", "mud": "mud", "grass": "grass", "moss": "grass", "foliage": "grass", "rock": "gravel", "water": "water",
+  "coral": "gravel", "crystal": "stone", "glass": "floor", "plaster": "stone", "thatch": "wood", "rope": "wood",
+  "paper": "carpet", "neon": "floor", "screens": "floor"
+ },
+ "footsteps": {
+  "floor": [{"category": "footsteps", "tags": ["floor"], "max": 3}],
+  "snow": [{"category": "footsteps", "tags": ["snow"], "max": 3}],
+  "wood": [{"category": "footsteps", "tags": ["wood"], "max": 3}],
+  "stone": [{"category": "footsteps", "tags": ["stone"], "max": 3}],
+  "metal": [{"category": "footsteps", "tags": ["metal"], "max": 3}],
+  "carpet": [{"category": "footsteps", "tags": ["carpet"], "max": 3}],
+  "sand": [{"category": "footsteps", "tags": ["sand"], "max": 3}],
+  "grass": [{"category": "footsteps", "tags": ["grass"], "max": 3}],
+  "gravel": [{"category": "footsteps", "tags": ["gravel"], "max": 3}],
+  "mud": [{"category": "footsteps", "tags": ["mud"], "max": 3}],
+  "water": [{"category": "footsteps", "tags": ["water"], "max": 3}]
+ },
+ "door": {
+  "metal": [{"category": "mechanisms", "tags": ["door", "metal"], "max": 2}],
+  "hatch": [{"category": "mechanisms", "tags": ["hatch", "open"], "prefer": ["dylan-approved-wave1"], "max": 1}],
+  "wood": [{"category": "mechanisms", "tags": ["door", "wood"], "max": 2}],
+  "gate": [{"category": "mechanisms", "tags": ["gate", "creak"], "max": 2}]
+ },
+ "pickup": {
+  "sphere": [{"category": "rewards", "tags": ["sphere", "pickup"], "max": 8}],
+  "organic": [{"category": "rewards", "tags": ["resource", "organic"], "max": 1}],
+  "metal": [{"category": "rewards", "tags": ["resource", "metal"], "max": 1}],
+  "coin": [{"category": "rewards", "tags": ["coin"], "max": 2}],
+  "generic": [{"category": "rewards", "tags": ["pickup"], "prefer": ["small", "medium", "large"], "max": 3}]
+ },
+ "voices_from_mood": {
+  "futuristic": ["airy", "robotic"], "clean": ["airy", "bright"], "cold": ["airy", "low"], "rustic": ["elder", "rounded"],
+  "cozy": ["calm", "rounded"], "warm": ["calm", "rounded"], "eerie": ["whisper", "low"], "mysterious": ["whisper", "calm"],
+  "tense": ["gruff", "low"], "gritty": ["gruff", "low"], "harsh": ["gruff", "nasal"], "playful": ["bright", "tiny"],
+  "festive": ["bright", "child"], "ancient": ["elder", "whisper"], "sacred": ["calm", "elder"], "serene": ["calm", "airy"],
+  "lonely": ["low", "airy"], "melancholic": ["low", "calm"], "hopeful": ["bright", "calm"], "wild": ["gruff", "rounded"],
+  "bleak": ["low", "gruff"], "dreamy": ["airy", "whisper"], "lush": ["rounded", "bright"], "quiet": ["calm", "whisper"]
+ },
+ "voice_query": {"category": "dialogue", "tags": ["nonverbal"], "max": 1},
+ "creatures": {
+  "cat": [{"category": "creatures", "tags": ["cat"], "prefer": ["dylan-approved-wave1"], "max": 3}],
+  "dog": [{"category": "creatures", "tags": ["dog"], "max": 2}],
+  "bird": [{"category": "creatures", "tags": ["bird"], "max": 2}],
+  "frog": [{"category": "creatures", "tags": ["frog"], "max": 2}],
+  "owl": [{"category": "creatures", "tags": ["owl"], "max": 2}],
+  "horse": [{"category": "creatures", "tags": ["horse"], "max": 2}],
+  "monster": [{"category": "creatures", "tags": ["monster"], "max": 2}]
+ },
+ "ambience": {
+  "habitat": [{"category": "weather", "tags": ["ambience", "habitat"], "max": 1}],
+  "fire": [{"category": "weather", "tags": ["fire"], "max": 1}],
+  "machines": [{"category": "machines", "tags": ["hum", "low"], "max": 1}],
+  "hum": [{"category": "machines", "tags": ["hum"], "prefer": ["low"], "max": 1}],
+  "fan": [{"category": "machines", "tags": ["fan"], "max": 1}],
+  "generator": [{"category": "machines", "tags": ["generator"], "max": 1}],
+  "cave_drip": [{"category": "weather", "tags": ["cave", "drip"], "max": 1}],
+  "rain": [{"category": "weather", "tags": ["rain"], "prefer": ["roof"], "max": 1}],
+  "wind": [{"category": "weather", "tags": ["wind"], "prefer": ["breeze"], "max": 1}],
+  "snow": [{"category": "weather", "tags": ["ambience", "outside"], "max": 1}, {"category": "weather", "tags": ["snow"], "max": 1}],
+  "storm": [{"category": "weather", "tags": ["ambience", "storm"], "max": 1}],
+  "forest": [{"category": "weather", "tags": ["forest"], "max": 1}],
+  "birds": [{"category": "weather", "tags": ["forest"], "max": 1}],
+  "insects": [{"category": "weather", "tags": ["insects"], "max": 1}],
+  "waves": [{"category": "weather", "tags": ["waves"], "max": 1}],
+  "river": [{"category": "weather", "tags": ["river"], "max": 1}],
+  "silence": [{"category": "machines", "tags": ["hum", "low"], "max": 1}]
+ },
+ "interior_ambience": ["habitat", "fire", "machines", "hum", "fan", "generator", "cave_drip", "silence"],
+ "music": {
+  "cozy": [{"category": "music", "tags": ["cozy_hub"], "max": 1}],
+  "explore": [{"category": "music", "tags": ["explore"], "max": 1}],
+  "night": [{"category": "music", "tags": ["night"], "max": 1}],
+  "tense": [{"category": "music", "tags": ["tense"], "max": 1}],
+  "ruins": [{"category": "music", "tags": ["ruins"], "max": 1}],
+  "harbor": [{"category": "music", "tags": ["harbor"], "max": 1}],
+  "forest_day": [{"category": "music", "tags": ["forest_day"], "max": 1}],
+  "credits": [{"category": "music", "tags": ["credits"], "max": 1}]
+ },
+ "music_from_mood": {
+  "cozy": "cozy", "warm": "cozy", "serene": "cozy", "playful": "cozy", "festive": "cozy", "hopeful": "cozy", "clean": "cozy",
+  "eerie": "tense", "tense": "tense", "harsh": "tense", "gritty": "tense", "mysterious": "ruins", "ancient": "ruins",
+  "sacred": "ruins", "bleak": "night", "lonely": "night", "melancholic": "night", "cold": "night", "quiet": "night",
+  "dreamy": "night", "wild": "forest_day", "lush": "forest_day", "rustic": "forest_day", "futuristic": "explore"
+ },
+ "craft": {
+  "industrial": [{"category": "craft", "tags": ["weld", "short"], "max": 1}, {"category": "craft", "tags": ["assemble", "snap"], "max": 1}],
+  "rustic": [{"category": "craft", "tags": ["saw", "short"], "max": 1}, {"category": "craft", "tags": ["hammer", "light"], "max": 1}]
+ }
+}

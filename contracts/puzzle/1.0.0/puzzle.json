@@ -1,0 +1,743 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "config": {
+      "additionalProperties": false,
+      "properties": {
+        "block_weight": {
+          "const": 2
+        },
+        "cell_m": {
+          "const": 1
+        },
+        "player_weight": {
+          "const": 1
+        },
+        "reset_action": {
+          "const": "reset"
+        },
+        "step_ticks": {
+          "maximum": 120,
+          "minimum": 12,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "cell_m",
+        "player_weight",
+        "block_weight",
+        "step_ticks",
+        "reset_action"
+      ],
+      "type": "object"
+    },
+    "entities": {
+      "additionalProperties": false,
+      "properties": {
+        "puzzles": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "elements": {
+                "items": {
+                  "oneOf": [
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "cell": {
+                          "items": {
+                            "maximum": 15,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "type": "array"
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "switch"
+                        },
+                        "mode": {
+                          "enum": [
+                            "toggle",
+                            "latch"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cell",
+                        "mode"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "cell": {
+                          "items": {
+                            "maximum": 15,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "type": "array"
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "plate"
+                        },
+                        "mode": {
+                          "enum": [
+                            "momentary",
+                            "latch"
+                          ]
+                        },
+                        "weight": {
+                          "maximum": 2,
+                          "minimum": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cell",
+                        "weight",
+                        "mode"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "cell": {
+                          "items": {
+                            "maximum": 15,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "type": "array"
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "torch"
+                        },
+                        "order": {
+                          "maximum": 8,
+                          "minimum": 0,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cell",
+                        "order"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "accepts": {
+                          "items": {
+                            "maxLength": 64,
+                            "minLength": 1,
+                            "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                            "type": "string"
+                          },
+                          "maxItems": 8,
+                          "minItems": 1,
+                          "type": "array",
+                          "uniqueItems": true
+                        },
+                        "cell": {
+                          "items": {
+                            "maximum": 15,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "type": "array"
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "lock"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cell",
+                        "accepts"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "cell": {
+                          "items": {
+                            "maximum": 15,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "type": "array"
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "item": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "key"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cell",
+                        "item"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "cell": {
+                          "items": {
+                            "maximum": 15,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "type": "array"
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "block"
+                        },
+                        "pull": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cell",
+                        "pull"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "cells": {
+                          "items": {
+                            "items": {
+                              "maximum": 15,
+                              "minimum": 0,
+                              "type": "integer"
+                            },
+                            "maxItems": 2,
+                            "minItems": 2,
+                            "type": "array"
+                          },
+                          "maxItems": 8,
+                          "minItems": 1,
+                          "type": "array",
+                          "uniqueItems": true
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "bridge"
+                        },
+                        "mode": {
+                          "enum": [
+                            "momentary",
+                            "latch"
+                          ]
+                        },
+                        "when": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "at_least": {
+                              "maximum": 8,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "invert": {
+                              "type": "boolean"
+                            },
+                            "of": {
+                              "items": {
+                                "maxLength": 48,
+                                "minLength": 1,
+                                "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "maxItems": 8,
+                              "minItems": 1,
+                              "type": "array",
+                              "uniqueItems": true
+                            }
+                          },
+                          "required": [
+                            "of",
+                            "at_least",
+                            "invert"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cells",
+                        "when",
+                        "mode"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "cell": {
+                          "items": {
+                            "maximum": 15,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "type": "array"
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "door"
+                        },
+                        "when": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "at_least": {
+                              "maximum": 8,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "invert": {
+                              "type": "boolean"
+                            },
+                            "of": {
+                              "items": {
+                                "maxLength": 48,
+                                "minLength": 1,
+                                "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "maxItems": 8,
+                              "minItems": 1,
+                              "type": "array",
+                              "uniqueItems": true
+                            }
+                          },
+                          "required": [
+                            "of",
+                            "at_least",
+                            "invert"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cell",
+                        "when"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "cell": {
+                          "items": {
+                            "maximum": 15,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "type": "array"
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "timed_gate"
+                        },
+                        "open_ticks": {
+                          "maximum": 3600,
+                          "minimum": 60,
+                          "type": "integer"
+                        },
+                        "when": {
+                          "additionalProperties": false,
+                          "properties": {
+                            "at_least": {
+                              "maximum": 8,
+                              "minimum": 1,
+                              "type": "integer"
+                            },
+                            "invert": {
+                              "type": "boolean"
+                            },
+                            "of": {
+                              "items": {
+                                "maxLength": 48,
+                                "minLength": 1,
+                                "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                                "type": "string"
+                              },
+                              "maxItems": 8,
+                              "minItems": 1,
+                              "type": "array",
+                              "uniqueItems": true
+                            }
+                          },
+                          "required": [
+                            "of",
+                            "at_least",
+                            "invert"
+                          ],
+                          "type": "object"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cell",
+                        "when",
+                        "open_ticks"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "cell": {
+                          "items": {
+                            "maximum": 15,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "type": "array"
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "orb"
+                        },
+                        "reach": {
+                          "maximum": 8,
+                          "minimum": 1,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cell",
+                        "reach"
+                      ],
+                      "type": "object"
+                    },
+                    {
+                      "additionalProperties": false,
+                      "properties": {
+                        "cell": {
+                          "items": {
+                            "maximum": 15,
+                            "minimum": 0,
+                            "type": "integer"
+                          },
+                          "maxItems": 2,
+                          "minItems": 2,
+                          "type": "array"
+                        },
+                        "dir": {
+                          "enum": [
+                            "n",
+                            "e",
+                            "s",
+                            "w"
+                          ]
+                        },
+                        "id": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "kind": {
+                          "const": "shutter"
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "kind",
+                        "cell",
+                        "dir"
+                      ],
+                      "type": "object"
+                    }
+                  ]
+                },
+                "maxItems": 32,
+                "minItems": 1,
+                "type": "array"
+              },
+              "goal": {
+                "additionalProperties": false,
+                "properties": {
+                  "opens": {
+                    "items": {
+                      "maxLength": 48,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                      "type": "string"
+                    },
+                    "maxItems": 8,
+                    "minItems": 0,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "rewards": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "items": {
+                        "items": {
+                          "maxLength": 64,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                          "type": "string"
+                        },
+                        "maxItems": 32,
+                        "minItems": 0,
+                        "type": "array",
+                        "uniqueItems": true
+                      }
+                    },
+                    "required": [
+                      "items"
+                    ],
+                    "type": "object"
+                  },
+                  "when": {
+                    "additionalProperties": false,
+                    "properties": {
+                      "at_least": {
+                        "maximum": 8,
+                        "minimum": 1,
+                        "type": "integer"
+                      },
+                      "invert": {
+                        "type": "boolean"
+                      },
+                      "of": {
+                        "items": {
+                          "maxLength": 48,
+                          "minLength": 1,
+                          "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                          "type": "string"
+                        },
+                        "maxItems": 8,
+                        "minItems": 1,
+                        "type": "array",
+                        "uniqueItems": true
+                      }
+                    },
+                    "required": [
+                      "of",
+                      "at_least",
+                      "invert"
+                    ],
+                    "type": "object"
+                  }
+                },
+                "required": [
+                  "when",
+                  "opens",
+                  "rewards"
+                ],
+                "type": "object"
+              },
+              "hint": {
+                "items": {
+                  "maxLength": 48,
+                  "minLength": 1,
+                  "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                  "type": "string"
+                },
+                "maxItems": 16,
+                "minItems": 0,
+                "type": "array",
+                "uniqueItems": true
+              },
+              "id": {
+                "maxLength": 48,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]{0,47}$",
+                "type": "string"
+              },
+              "layout": {
+                "items": {
+                  "maxLength": 16,
+                  "minLength": 3,
+                  "pattern": "^[.#_]{3,16}$",
+                  "type": "string"
+                },
+                "maxItems": 16,
+                "minItems": 3,
+                "type": "array"
+              },
+              "max_states": {
+                "maximum": 200000,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "name": {
+                "maxLength": 256,
+                "minLength": 1,
+                "type": "string"
+              },
+              "persistence": {
+                "enum": [
+                  "reset_on_leave",
+                  "persistent"
+                ]
+              },
+              "reset": {
+                "enum": [
+                  "hold",
+                  "none"
+                ]
+              },
+              "room": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                "type": "string"
+              },
+              "start": {
+                "items": {
+                  "maximum": 15,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "maxItems": 2,
+                "minItems": 2,
+                "type": "array"
+              }
+            },
+            "required": [
+              "id",
+              "room",
+              "name",
+              "layout",
+              "start",
+              "persistence",
+              "reset",
+              "elements",
+              "goal",
+              "hint",
+              "max_states"
+            ],
+            "type": "object"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "puzzles"
+      ],
+      "type": "object"
+    },
+    "id": {
+      "const": "puzzle"
+    },
+    "version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "config",
+    "entities"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,1318 @@
+{
+ "api_version": "1.0.0",
+ "enemies": [
+  {
+   "brief": "A small porter robot with pincers and an antenna",
+   "bytes": 176676,
+   "clip_set": "robot",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "attack_slam": 6,
+     "attack_sweep": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_forest_village_robot_55abcda5bb_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robots/forest_village/robot_porter.glb",
+   "height_m": 1.208,
+   "hover": false,
+   "id": "robot_porter",
+   "lock": "pack_forest_village",
+   "pack": "forest_village",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "0e039b061cf00f6e9bb351f0f12a5806fa720951d778fbe1f4cd7041dff38bb6",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1@1.0.0",
+   "robot_body": "body.robot_walker",
+   "sha256": "a17bc4d1dfd6653f5b992b470d1fca0726ee0feb25c46630ef33a46e8911fcb9",
+   "template": "walker_patrol_v1",
+   "tris_attachments": 0,
+   "tris_body": 450,
+   "tris_glb": 450
+  },
+  {
+   "brief": "A tall heavy security robot with fists and vents",
+   "bytes": 177920,
+   "clip_set": "robot",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "attack_slam": 6,
+     "attack_sweep": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_forest_village_robot_521ca66df3_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robots/forest_village/robot_sentry.glb",
+   "height_m": 1.926,
+   "hover": false,
+   "id": "robot_sentry",
+   "lock": "pack_forest_village",
+   "pack": "forest_village",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "9695b3be10d49bc91baf6c69bbaeff63958f2fdde2b27840f585179fd8940724",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1@1.0.0",
+   "robot_body": "body.robot_brute",
+   "sha256": "25d560c3926537c851e08eb06b831e628ec13063997be967d9670d216db74f46",
+   "template": "brute_slam_v1",
+   "tris_attachments": 0,
+   "tris_body": 460,
+   "tris_glb": 460
+  },
+  {
+   "brief": "A hovering surveillance drone with ear pods",
+   "bytes": 176088,
+   "clip_set": "robot",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "attack_slam": 6,
+     "attack_sweep": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_forest_village_robot_419b11ef70_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robots/forest_village/robot_drone.glb",
+   "height_m": 1.1721,
+   "hover": true,
+   "id": "robot_drone",
+   "lock": "pack_forest_village",
+   "pack": "forest_village",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "519b9bc95ab41bc15382b7c254a60f1dc7be06a4bb34bf35685a859c261eb519",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1@1.0.0",
+   "robot_body": "body.robot_floater",
+   "sha256": "fed462d35100b8d35cf78f0714f05c7a09c1faa2cde281f81125f3b01ff73dbf",
+   "template": "hover_drone_v1",
+   "tris_attachments": 0,
+   "tris_body": 456,
+   "tris_glb": 456
+  },
+  {
+   "brief": "A huge robot foreman boss with pauldrons and fists",
+   "bytes": 198932,
+   "clip_set": "robot_boss",
+   "clips": [
+    "attack",
+    "attack_slam",
+    "attack_sweep",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "attack_slam": 6,
+     "attack_sweep": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_forest_village_robot_6f780120c0_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robots/forest_village/robot_foreman.glb",
+   "height_m": 2.1571,
+   "hover": false,
+   "id": "robot_foreman",
+   "lock": "pack_forest_village",
+   "pack": "forest_village",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "attack_slam": {
+     "hit_window": {
+      "end_s": 0.533333,
+      "frames": [
+       5,
+       7
+      ],
+      "start_s": 0.333333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       5,
+       7
+      ],
+      "rise": [
+       1,
+       4
+      ],
+      "settle": [
+       8,
+       15
+      ]
+     }
+    },
+    "attack_sweep": {
+     "hit_window": {
+      "end_s": 0.533333,
+      "frames": [
+       4,
+       7
+      ],
+      "start_s": 0.266667
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       4,
+       7
+      ],
+      "settle": [
+       8,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "d2b694291236bb0b29b2cdef4d4b8a3b91485cd6d2455bc961c3013bc337f683",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1@1.0.0",
+   "robot_body": "body.robot_brute",
+   "sha256": "7bdfcc2a98672b564109ef4913d13332b225bde7344efe9d7c41494cfcffcecf",
+   "template": "boss_phases_v1",
+   "tris_attachments": 56,
+   "tris_body": 494,
+   "tris_glb": 570
+  },
+  {
+   "brief": "A small porter robot with pincers and an antenna",
+   "bytes": 176976,
+   "clip_set": "robot",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "attack_slam": 6,
+     "attack_sweep": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_polar_pod_robot_8f8966756a_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robots/polar_pod/robot_porter.glb",
+   "height_m": 1.208,
+   "hover": false,
+   "id": "robot_porter",
+   "lock": "pack_polar_pod",
+   "pack": "polar_pod",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "0e039b061cf00f6e9bb351f0f12a5806fa720951d778fbe1f4cd7041dff38bb6",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1@1.0.0",
+   "robot_body": "body.robot_walker",
+   "sha256": "28a31d50d7829c7cee7e757fdc3af0ed653456f0f7ac43b353e00ad04cf059ca",
+   "template": "walker_patrol_v1",
+   "tris_attachments": 0,
+   "tris_body": 450,
+   "tris_glb": 450
+  },
+  {
+   "brief": "A tall heavy security robot with fists and vents",
+   "bytes": 178780,
+   "clip_set": "robot",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "attack_slam": 6,
+     "attack_sweep": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_polar_pod_robot_6d607e3b9f_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robots/polar_pod/robot_sentry.glb",
+   "height_m": 1.926,
+   "hover": false,
+   "id": "robot_sentry",
+   "lock": "pack_polar_pod",
+   "pack": "polar_pod",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "9695b3be10d49bc91baf6c69bbaeff63958f2fdde2b27840f585179fd8940724",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1@1.0.0",
+   "robot_body": "body.robot_brute",
+   "sha256": "ed0e04db3614e3f7a9d8073100bfedb64e44eef0cafee9f878736fdd6d8429ac",
+   "template": "brute_slam_v1",
+   "tris_attachments": 0,
+   "tris_body": 460,
+   "tris_glb": 460
+  },
+  {
+   "brief": "A hovering surveillance drone with ear pods",
+   "bytes": 176580,
+   "clip_set": "robot",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "attack_slam": 6,
+     "attack_sweep": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_polar_pod_robot_88bd61ff68_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robots/polar_pod/robot_drone.glb",
+   "height_m": 1.1721,
+   "hover": true,
+   "id": "robot_drone",
+   "lock": "pack_polar_pod",
+   "pack": "polar_pod",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "519b9bc95ab41bc15382b7c254a60f1dc7be06a4bb34bf35685a859c261eb519",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1@1.0.0",
+   "robot_body": "body.robot_floater",
+   "sha256": "4b7705175023a0785a4b49044cb3c04714657e90582bcc2ed1ae2c911bfc032e",
+   "template": "hover_drone_v1",
+   "tris_attachments": 0,
+   "tris_body": 456,
+   "tris_glb": 456
+  },
+  {
+   "brief": "A huge robot foreman boss with pauldrons and fists",
+   "bytes": 199648,
+   "clip_set": "robot_boss",
+   "clips": [
+    "attack",
+    "attack_slam",
+    "attack_sweep",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "attack_slam": 6,
+     "attack_sweep": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_polar_pod_robot_f53df51d04_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robots/polar_pod/robot_foreman.glb",
+   "height_m": 2.1571,
+   "hover": false,
+   "id": "robot_foreman",
+   "lock": "pack_polar_pod",
+   "pack": "polar_pod",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "attack_slam": {
+     "hit_window": {
+      "end_s": 0.533333,
+      "frames": [
+       5,
+       7
+      ],
+      "start_s": 0.333333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       5,
+       7
+      ],
+      "rise": [
+       1,
+       4
+      ],
+      "settle": [
+       8,
+       15
+      ]
+     }
+    },
+    "attack_sweep": {
+     "hit_window": {
+      "end_s": 0.533333,
+      "frames": [
+       4,
+       7
+      ],
+      "start_s": 0.266667
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       4,
+       7
+      ],
+      "settle": [
+       8,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "d2b694291236bb0b29b2cdef4d4b8a3b91485cd6d2455bc961c3013bc337f683",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1@1.0.0",
+   "robot_body": "body.robot_brute",
+   "sha256": "004c3ee79f15ba44d2317f1c9c00221f8378deb867dde071e640c2bdba90ec33",
+   "template": "boss_phases_v1",
+   "tris_attachments": 56,
+   "tris_body": 494,
+   "tris_glb": 570
+  }
+ ],
+ "generated_by": "python3 -B -m tools.merge5_robots stage <build>",
+ "note": "Character-system robot art for the gameplay API 1.1.0 robot templates (MERGE5). characters.integration.stage_combat merges these rows into combat.json for the game's kit pack and adds the template aliases, so the module host binds them before the modules/combat/robots.json stand-ins. Built by the production character pipeline (python exporter, every gate, determinism).",
+ "schema": "hermes64-combat-robot-art/1",
+ "templates": {
+  "boss_phases_v1": "robot_foreman",
+  "brute_slam_v1": "robot_sentry",
+  "hover_drone_v1": "robot_drone",
+  "walker_patrol_v1": "robot_porter"
+ }
+}

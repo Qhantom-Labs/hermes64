@@ -1,0 +1,20 @@
+--- a/adventure_maker/newgame.py
++++ b/adventure_maker/newgame.py
+@@ -30,7 +30,7 @@
+           'polar_pod': 'polar_pod'}
+ STYLE_NAMES = {'n64_v0': 'village', 'forest_village': 'forest', 'polar_pod': 'polar'}
+ # MERGE6: explicit genre ids only; preserve legacy aliases and automatic premise matching.
+-from .genre_kits import PACKS as GENRE_PACKS
++from .genre_kits import PACKS as GENRE_PACKS, AUTO_KEYWORDS as GENRE_AUTO_KEYWORDS
+ STYLES.update({pid: pid for pid in GENRE_PACKS})
+ STYLE_NAMES.update({pid: row['name'] for pid, row in GENRE_PACKS.items()})
+ STYLE_CHOICES = 'village, forest or polar; genre pack ids: ' + ', '.join(GENRE_PACKS)
+@@ -44,7 +44,7 @@
+                         'cottage', 'mill', 'orchard', 'mushroom', 'fox', 'deer', 'owl', 'grove', 'hollow', 'glade'}),
+     ('n64_v0', {'harbor', 'harbour', 'lighthouse', 'sea', 'ocean', 'boat', 'ship', 'ferry', 'pier', 'dock', 'port',
+                 'coast', 'island', 'fisher', 'fishing', 'lantern', 'storm', 'fog', 'tide', 'beach', 'bay', 'keeper'}),
+-)
++) + GENRE_AUTO_KEYWORDS  # L5: opt-in genre rows (genre_kits 'auto_words'), after legacy rows so ties keep legacy
+ DEFAULT_PACK = 'n64_v0'
+ # Public bundled cast (bindings.json character_id) for the player and the starter's inhabitant.
+ CAST = {'n64_v0': ('fv_scribe', 'fv_warden'), 'forest_village': ('fv_scribe', 'fv_warden'),

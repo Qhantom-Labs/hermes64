@@ -1,0 +1,2590 @@
+{
+  "characters": [
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "pilgrim",
+      "name": "Ilse",
+      "params": {
+        "colour": "#8d6a58",
+        "costume": "travel_coat",
+        "voice_tags": [
+          "quiet",
+          "measured"
+        ]
+      },
+      "role": "pilgrim",
+      "role_profiles": {
+        "pilgrim": {
+          "colour": "#8d6a58",
+          "costume": "travel_coat",
+          "voice_tags": [
+            "quiet",
+            "measured"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "maren",
+      "name": "Maren",
+      "params": {
+        "colour": "#a89a64",
+        "costume": "oilskin",
+        "voice_tags": [
+          "weathered",
+          "restrained"
+        ]
+      },
+      "role": "lamplighter",
+      "role_profiles": {
+        "lamplighter": {
+          "colour": "#a89a64",
+          "costume": "oilskin",
+          "voice_tags": [
+            "weathered",
+            "restrained"
+          ]
+        }
+      }
+    }
+  ],
+  "collectible_groups": [],
+  "collectibles": [],
+  "contract_version": "1.2.0",
+  "description": "DUNGEONKIT demo built only from the dungeon, props, cave, temple and lake kits: a lakeside approach and one dungeon floor (gatehall, passage, pit hall, key vault, the sealed door and the sanctum beyond). Original names and designs.",
+  "dialogues": [],
+  "endings": [
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "goal"
+        }
+      ],
+      "id": "sanctum_fire",
+      "text": "The sanctum fire takes your hand's warmth and gives it back. The way home is lit."
+    }
+  ],
+  "flags": [
+    {
+      "description": "The block sits on the plate; the vault gate is up",
+      "id": "gate_open",
+      "initial": false
+    },
+    {
+      "description": "The indigo key from the vault chest",
+      "id": "key_found",
+      "initial": false
+    },
+    {
+      "description": "The great door is unsealed",
+      "id": "boss_door_open",
+      "initial": false
+    },
+    {
+      "description": "Reached the sanctum fire",
+      "id": "goal",
+      "initial": false
+    }
+  ],
+  "gameplay": {
+    "api_version": "1.0.0",
+    "modules": [
+      {
+        "config": {
+          "max_health": 6
+        },
+        "entities": {
+          "abilities": [
+            {
+              "id": "lantern",
+              "name": "Lantern",
+              "requires": []
+            }
+          ]
+        },
+        "id": "abilities",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "entry_cost": "none",
+          "failure_progress": "unchanged",
+          "max_active": 1
+        },
+        "entities": {
+          "challenges": [],
+          "checkpoints": [
+            {
+              "id": "lakeside_safe",
+              "position_m": [
+                6.5,
+                0,
+                2.8
+              ],
+              "room": "lakeside"
+            },
+            {
+              "id": "gatehall_safe",
+              "position_m": [
+                6.5,
+                0,
+                11.0
+              ],
+              "room": "gatehall"
+            },
+            {
+              "id": "corridor_safe",
+              "position_m": [
+                8.5,
+                0,
+                3.0
+              ],
+              "room": "corridor"
+            },
+            {
+              "id": "pit_hall_safe",
+              "position_m": [
+                8.5,
+                0,
+                11.0
+              ],
+              "room": "pit_hall"
+            },
+            {
+              "id": "vault_safe",
+              "position_m": [
+                6.5,
+                0,
+                11.0
+              ],
+              "room": "vault"
+            },
+            {
+              "id": "boss_gate_safe",
+              "position_m": [
+                6.5,
+                0,
+                15.0
+              ],
+              "room": "boss_gate"
+            },
+            {
+              "id": "sanctum_safe",
+              "position_m": [
+                4.5,
+                0,
+                7.0
+              ],
+              "room": "sanctum"
+            }
+          ]
+        },
+        "id": "challenge",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "fast_travel": false,
+          "load_policy": "one_region"
+        },
+        "entities": {
+          "links": [
+            {
+              "a": {
+                "door": "to_dungeon",
+                "region": "lakeside"
+              },
+              "b": {
+                "door": "to_lake",
+                "region": "gatehall"
+              },
+              "id": "lakeside__gatehall"
+            },
+            {
+              "a": {
+                "door": "to_corridor",
+                "region": "gatehall"
+              },
+              "b": {
+                "door": "to_gatehall",
+                "region": "corridor"
+              },
+              "id": "gatehall__corridor"
+            },
+            {
+              "a": {
+                "door": "to_pit",
+                "region": "corridor"
+              },
+              "b": {
+                "door": "to_corridor",
+                "region": "pit_hall"
+              },
+              "id": "corridor__pit_hall"
+            },
+            {
+              "a": {
+                "door": "to_vault",
+                "region": "pit_hall"
+              },
+              "b": {
+                "door": "to_pit",
+                "region": "vault"
+              },
+              "id": "pit_hall__vault"
+            },
+            {
+              "a": {
+                "door": "to_boss",
+                "region": "vault"
+              },
+              "b": {
+                "door": "to_vault",
+                "region": "boss_gate"
+              },
+              "id": "vault__boss_gate"
+            },
+            {
+              "a": {
+                "door": "to_sanctum",
+                "region": "boss_gate"
+              },
+              "b": {
+                "door": "to_boss",
+                "region": "sanctum"
+              },
+              "id": "boss_gate__sanctum"
+            }
+          ],
+          "regions": [
+            {
+              "checkpoint": "lakeside_safe",
+              "id": "lakeside",
+              "landmarks": [
+                {
+                  "id": "waystone",
+                  "name": "The jade waystone",
+                  "position_m": [
+                    1.9,
+                    0,
+                    11.9
+                  ]
+                }
+              ],
+              "room": "lakeside"
+            },
+            {
+              "checkpoint": "gatehall_safe",
+              "id": "gatehall",
+              "landmarks": [
+                {
+                  "id": "gate_pillar",
+                  "name": "The ribbed pillars",
+                  "position_m": [
+                    4.5,
+                    0,
+                    4.5
+                  ]
+                }
+              ],
+              "room": "gatehall"
+            },
+            {
+              "checkpoint": "corridor_safe",
+              "id": "corridor",
+              "landmarks": [
+                {
+                  "id": "tee_pier",
+                  "name": "The passage pier",
+                  "position_m": [
+                    12.11,
+                    0,
+                    0.89
+                  ]
+                }
+              ],
+              "room": "corridor"
+            },
+            {
+              "checkpoint": "pit_hall_safe",
+              "id": "pit_hall",
+              "landmarks": [
+                {
+                  "id": "pit_pillar",
+                  "name": "The broken pillar",
+                  "position_m": [
+                    2.4,
+                    0,
+                    10.6
+                  ]
+                }
+              ],
+              "room": "pit_hall"
+            },
+            {
+              "checkpoint": "vault_safe",
+              "id": "vault",
+              "landmarks": [
+                {
+                  "id": "obelisk",
+                  "name": "The jade obelisk",
+                  "position_m": [
+                    2.6,
+                    0,
+                    2.6
+                  ]
+                }
+              ],
+              "room": "vault"
+            },
+            {
+              "checkpoint": "boss_gate_safe",
+              "id": "boss_gate",
+              "landmarks": [
+                {
+                  "id": "column",
+                  "name": "The first column",
+                  "position_m": [
+                    2.9,
+                    0,
+                    6.5
+                  ]
+                }
+              ],
+              "room": "boss_gate"
+            },
+            {
+              "checkpoint": "sanctum_safe",
+              "id": "sanctum",
+              "landmarks": [
+                {
+                  "id": "sanctum_column",
+                  "name": "The sanctum column",
+                  "position_m": [
+                    1.9,
+                    0,
+                    1.9
+                  ]
+                }
+              ],
+              "room": "sanctum"
+            }
+          ]
+        },
+        "id": "regions",
+        "version": "1.0.0"
+      }
+    ],
+    "seed": 7,
+    "verification_policy": "conditional"
+  },
+  "id": "drowned_gate_demo",
+  "interactions": [
+    {
+      "conditions": [],
+      "effects": [],
+      "id": "read_waystone",
+      "kind": "examine",
+      "label": "Read the waystone",
+      "room": "lakeside",
+      "target": "waystone",
+      "text": "Jade glyphs glow faintly under the moss: a door, a key, a fire. Someone has scratched a small boat beside them."
+    },
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "unlock": "lantern"
+        }
+      ],
+      "id": "talk_maren",
+      "kind": "talk",
+      "label": "Talk to Maren",
+      "room": "gatehall",
+      "target": "maren",
+      "text": "Maren trims a wick and hands you a spare lantern. \"The vault gate wants weight on its plate, not a key. The key is for the big door. Mind the pit.\""
+    },
+    {
+      "conditions": [],
+      "effects": [],
+      "id": "read_tablet",
+      "kind": "examine",
+      "label": "Read the rune tablet",
+      "room": "gatehall",
+      "target": "tablet",
+      "text": "Three glyphs, worn smooth: stone on stone, key in iron, fire at the end."
+    },
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "gate_open",
+          "value": true
+        }
+      ],
+      "id": "push_block",
+      "kind": "use",
+      "label": "Push the carved block",
+      "room": "vault",
+      "target": "block",
+      "text": "You set your shoulder to the block. It grinds onto the plate, and somewhere the gate rises."
+    },
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "key_found",
+          "value": true
+        }
+      ],
+      "id": "open_chest",
+      "kind": "use",
+      "label": "Open the chest",
+      "room": "vault",
+      "target": "chest",
+      "text": "Under a fold of oilcloth lies a heavy indigo key, cold as lake water."
+    },
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "key_found"
+        }
+      ],
+      "effects": [
+        {
+          "flag": "boss_door_open",
+          "value": true
+        }
+      ],
+      "id": "unlock_boss_door",
+      "kind": "use",
+      "label": "Turn the indigo key",
+      "room": "boss_gate",
+      "target": "unlock_boss_door",
+      "text": "The key turns. The sigil dims, the lock falls, and the great door breathes out."
+    },
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "goal",
+          "value": true
+        }
+      ],
+      "id": "touch_altar",
+      "kind": "use",
+      "label": "Warm your hands at the altar",
+      "room": "sanctum",
+      "target": "altar",
+      "text": "The old fire leans toward you as if it knew you would come."
+    }
+  ],
+  "items": [],
+  "metadata": {
+    "dungeonkit_note": "Built only from DUNGEONKIT kits (kits/core/gen_dungeon/dprops/cave/temple.py) by data: tools/dungeonkit_rooms.py snaps every piece to the DUNGEON GRID and checks the socket manifest kits/library/dungeonkit-sockets.json. Generated by tools/dungeonkit_demo.py.",
+    "presentation": {
+      "convention": "hermes64-presentation/1",
+      "rooms": {
+        "boss_gate": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                6.8,
+                3.0,
+                0.8
+              ],
+              "position": [
+                5.6,
+                3.6,
+                12.6
+              ]
+            }
+          ],
+          "exterior": false,
+          "floor": "",
+          "interactions": {
+            "unlock_boss_door": {
+              "position": [
+                6.5,
+                0,
+                2.2
+              ]
+            }
+          },
+          "kit_shell": true,
+          "look_profile": "dungeon",
+          "pieces": [
+            {
+              "asset": "dgn.room__boss_hall",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.ceiling__groin_3x4",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tmpl.floor__single",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tmpl.column",
+              "position": [
+                2.9,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tmpl.column",
+              "position": [
+                10.1,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.brazier__tall",
+              "position": [
+                3.9,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.brazier__tall",
+              "position": [
+                9.1,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tmpl.boss_door",
+              "asset_when_set": "tmpl.boss_door__open",
+              "flag": "boss_door_open",
+              "kind": "insert",
+              "note": "door insert on to_sanctum",
+              "position": [
+                6.5,
+                0.0,
+                0.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "tmpl.relief",
+              "mounted": true,
+              "position": [
+                2.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tmpl.relief",
+              "mounted": true,
+              "position": [
+                10.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "corridor": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                13.0,
+                1.3,
+                2.0
+              ],
+              "position": [
+                1.7,
+                3.3,
+                3.5
+              ]
+            }
+          ],
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "passage",
+          "pieces": [
+            {
+              "asset": "dgn.corridor__end_door_torch",
+              "kind": "shell",
+              "position": [
+                2.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "dgn.corridor__straight_torch",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "dgn.corridor__tee",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "dgn.corridor__end_wall_torch",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0.0,
+                -1.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.corridor__end_door_torch",
+              "kind": "shell",
+              "position": [
+                14.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dgn.rubble",
+              "position": [
+                10.5,
+                0.0,
+                -2.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 20.0
+            },
+            {
+              "asset": "dprop.breakable__crates",
+              "position": [
+                13.6,
+                0.0,
+                3.3
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 12.0
+            },
+            {
+              "asset": "dprop.cobweb",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "dprop.cobweb",
+              "mounted": true,
+              "position": [
+                16.0,
+                0.0,
+                4.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                6.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                10.5,
+                0.0,
+                -3.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "gatehall": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                8.2,
+                1.3,
+                3.6
+              ],
+              "position": [
+                2.6,
+                3.9,
+                11.6
+              ]
+            }
+          ],
+          "characters": {
+            "maren": {
+              "position": [
+                3.3,
+                0,
+                8.4
+              ],
+              "yaw": 125
+            }
+          },
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "dungeon",
+          "pieces": [
+            {
+              "asset": "dgn.room__entry",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.ceiling__groin_3x3",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.pillar__round",
+              "position": [
+                4.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.pillar__round",
+              "position": [
+                8.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.statue",
+              "position": [
+                10.9,
+                0.0,
+                4.3
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dprop.statue__shield",
+              "position": [
+                10.9,
+                0.0,
+                8.7
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dprop.breakable__urn",
+              "position": [
+                1.8,
+                0.0,
+                11.1
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 30.0
+            },
+            {
+              "asset": "dprop.cobweb",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "dprop.cobweb",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                2.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                10.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                2.5,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                10.5,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "dprop.banner",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dprop.banner__point",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "lakeside": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                -4.0,
+                2.4,
+                -3.0
+              ],
+              "position": [
+                12.2,
+                2.9,
+                12.6
+              ]
+            }
+          ],
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "lakeside",
+          "pieces": [
+            {
+              "asset": "lake.water__open",
+              "kind": "floor",
+              "position": [
+                -14.5,
+                -0.35,
+                -10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "lake.water__open",
+              "kind": "floor",
+              "position": [
+                33.5,
+                -0.35,
+                -6.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "lake.shore",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "lake.shore",
+              "kind": "shell",
+              "position": [
+                2.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "lake.shore",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "lake.shore__corner_out",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "lake.shore",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "lake.shore",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "cave.mouth",
+              "kind": "landmark",
+              "position": [
+                6.5,
+                0.0,
+                0.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cave.cliff",
+              "kind": "wall",
+              "position": [
+                14.5,
+                -0.6,
+                0.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cave.cliff__tall",
+              "kind": "wall",
+              "position": [
+                6.5,
+                -0.6,
+                -3.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cave.cliff__tall",
+              "kind": "wall",
+              "position": [
+                -21.5,
+                -0.6,
+                -19.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cave.cliff__tall",
+              "kind": "wall",
+              "position": [
+                -9.5,
+                -0.6,
+                -31.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cave.cliff__tall",
+              "kind": "wall",
+              "position": [
+                -35.5,
+                -0.6,
+                -5.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "lake.waterfall",
+              "kind": "landmark",
+              "position": [
+                -7.2,
+                -0.35,
+                -5.3
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 30.0
+            },
+            {
+              "asset": "lake.bridge",
+              "position": [
+                6.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "lake.dock",
+              "position": [
+                10.2,
+                0.0,
+                11.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "lake.reeds",
+              "position": [
+                3.0,
+                -0.35,
+                10.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "lake.reeds",
+              "position": [
+                9.6,
+                -0.35,
+                3.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 140.0
+            },
+            {
+              "asset": "lake.lilies",
+              "position": [
+                3.6,
+                -0.35,
+                6.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cave.boulder",
+              "position": [
+                1.4,
+                -0.35,
+                2.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "pit_hall": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                10.5,
+                0.0,
+                5.0
+              ],
+              "position": [
+                1.6,
+                3.9,
+                11.5
+              ]
+            }
+          ],
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "dungeon",
+          "pieces": [
+            {
+              "asset": "dgn.room__pit",
+              "kind": "shell",
+              "position": [
+                8.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.ceiling__flat_4x3",
+              "kind": "shell",
+              "position": [
+                8.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.pit__full",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.pit__full",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.bridge__two",
+              "position": [
+                8.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "dprop.brazier",
+              "position": [
+                3.3,
+                0.0,
+                4.7
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.pillar__broken",
+              "position": [
+                2.4,
+                0.0,
+                10.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 40.0
+            },
+            {
+              "asset": "dprop.cobweb",
+              "mounted": true,
+              "position": [
+                16.0,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                2.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                14.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                2.5,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                14.5,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "dprop.banner",
+              "mounted": true,
+              "position": [
+                6.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.banner",
+              "mounted": true,
+              "position": [
+                10.5,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "sanctum": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                3.0,
+                1.8,
+                1.8
+              ],
+              "position": [
+                7.5,
+                3.8,
+                7.5
+              ]
+            }
+          ],
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "dungeon",
+          "pieces": [
+            {
+              "asset": "dgn.room__shrine",
+              "kind": "shell",
+              "position": [
+                4.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.ceiling__groin_2x2",
+              "kind": "shell",
+              "position": [
+                4.5,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tmpl.column",
+              "position": [
+                1.9,
+                0.0,
+                1.9
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.crystal__tall",
+              "position": [
+                7.3,
+                0.0,
+                1.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 15.0
+            },
+            {
+              "asset": "dprop.statue",
+              "position": [
+                1.8,
+                0.0,
+                6.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                8.0,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "vault": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                9.0,
+                1.2,
+                3.5
+              ],
+              "position": [
+                1.6,
+                3.8,
+                11.4
+              ]
+            }
+          ],
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "dungeon",
+          "pieces": [
+            {
+              "asset": "dgn.room__antechamber",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.ceiling__groin_3x3",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.plate",
+              "asset_when_set": "dprop.plate__down",
+              "flag": "gate_open",
+              "position": [
+                6.5,
+                0.0,
+                4.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "tmpl.obelisk",
+              "position": [
+                2.6,
+                0.0,
+                2.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.crystal",
+              "position": [
+                10.6,
+                0.0,
+                2.3
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 30.0
+            },
+            {
+              "asset": "dprop.cobweb",
+              "mounted": true,
+              "position": [
+                1.0,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "dprop.cobweb",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                1.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dgn.door_locked__gate",
+              "asset_when_set": "dgn.door_locked__gate_open",
+              "flag": "gate_open",
+              "kind": "insert",
+              "note": "door insert on to_boss",
+              "position": [
+                6.5,
+                0.0,
+                0.4
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                2.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                12.0,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                2.5,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            },
+            {
+              "asset": "dprop.sconce",
+              "mounted": true,
+              "position": [
+                10.5,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180.0
+            }
+          ],
+          "wall_height": 4.5
+        }
+      },
+      "rotation_order": "YXZ",
+      "rotation_units": "degrees"
+    },
+    "protagonist": "pilgrim",
+    "style_pack": "stone_dungeon_torchlit"
+  },
+  "quests": [],
+  "rooms": [
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            -4.0,
+            2.4,
+            -3.0
+          ],
+          "position": [
+            12.2,
+            2.9,
+            12.6
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim"
+      ],
+      "description": "Stillwater at dusk. Stepping stones cross the dark lake to a gate cut into the cliff, and a thin waterfall talks to itself on the far side.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_dungeon",
+          "label": "Enter the drowned gate",
+          "position": 6,
+          "to_door": "to_lake",
+          "to_room": "gatehall",
+          "wall": "north"
+        }
+      ],
+      "grid_size": [
+        13,
+        13
+      ],
+      "id": "lakeside",
+      "kit_refs": [],
+      "name": "Stillwater Shore",
+      "props": [
+        {
+          "asset": "tmpl.obelisk",
+          "id": "waystone",
+          "position": [
+            1.9,
+            0,
+            11.9
+          ],
+          "rotation": [
+            0,
+            20.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            8.2,
+            1.3,
+            3.6
+          ],
+          "position": [
+            2.6,
+            3.9,
+            11.6
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim",
+        "maren"
+      ],
+      "description": "The gatehall. Six torches burn under a ribbed vault; two hooded guardians lean on their swords beside the inner door.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_lake",
+          "label": "Back out to the shore",
+          "position": 6,
+          "to_door": "to_dungeon",
+          "to_room": "lakeside",
+          "wall": "south"
+        },
+        {
+          "conditions": [],
+          "id": "to_corridor",
+          "label": "Take the east passage",
+          "position": 6,
+          "to_door": "to_gatehall",
+          "to_room": "corridor",
+          "wall": "east"
+        }
+      ],
+      "grid_size": [
+        13,
+        13
+      ],
+      "id": "gatehall",
+      "kit_refs": [],
+      "name": "The Gatehall",
+      "props": [
+        {
+          "asset": "dprop.tablet",
+          "id": "tablet",
+          "position": [
+            6.5,
+            0,
+            2.4
+          ],
+          "rotation": [
+            0,
+            0.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            13.0,
+            1.3,
+            2.0
+          ],
+          "position": [
+            1.7,
+            3.3,
+            3.5
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim"
+      ],
+      "description": "A narrow passage, a torch at each door and one midway, and a side branch choked with fallen stone.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_gatehall",
+          "label": "Back to the gatehall",
+          "position": 2,
+          "to_door": "to_corridor",
+          "to_room": "gatehall",
+          "wall": "west"
+        },
+        {
+          "conditions": [],
+          "id": "to_pit",
+          "label": "Go on east",
+          "position": 2,
+          "to_door": "to_corridor",
+          "to_room": "pit_hall",
+          "wall": "east"
+        }
+      ],
+      "grid_size": [
+        17,
+        5
+      ],
+      "id": "corridor",
+      "kit_refs": [],
+      "name": "The Long Passage",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            10.5,
+            0.0,
+            5.0
+          ],
+          "position": [
+            1.6,
+            3.9,
+            11.5
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim"
+      ],
+      "description": "A hall split by a black pit. A narrow slab bridge is the only way across.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_corridor",
+          "label": "Back to the passage",
+          "position": 6,
+          "to_door": "to_pit",
+          "to_room": "corridor",
+          "wall": "west"
+        },
+        {
+          "conditions": [],
+          "id": "to_vault",
+          "label": "Cross to the east door",
+          "position": 6,
+          "to_door": "to_pit",
+          "to_room": "vault",
+          "wall": "east"
+        }
+      ],
+      "grid_size": [
+        17,
+        13
+      ],
+      "id": "pit_hall",
+      "kit_refs": [],
+      "name": "The Pit Hall",
+      "props": [
+        {
+          "asset": "dprop.switch__lever",
+          "id": "lever",
+          "position": [
+            14.4,
+            0,
+            9.6
+          ],
+          "rotation": [
+            0,
+            -90.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            9.0,
+            1.2,
+            3.5
+          ],
+          "position": [
+            1.6,
+            3.8,
+            11.4
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim"
+      ],
+      "description": "A vault behind the pit. A carved block sits beside a pressure plate, and a barred gate guards the north door. An old chest waits under the jade obelisk's light.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_pit",
+          "label": "Back to the pit hall",
+          "position": 6,
+          "to_door": "to_vault",
+          "to_room": "pit_hall",
+          "wall": "west"
+        },
+        {
+          "conditions": [
+            {
+              "equals": true,
+              "flag": "gate_open"
+            }
+          ],
+          "id": "to_boss",
+          "label": "Through the gate",
+          "position": 6,
+          "to_door": "to_vault",
+          "to_room": "boss_gate",
+          "wall": "north"
+        }
+      ],
+      "grid_size": [
+        13,
+        13
+      ],
+      "id": "vault",
+      "kit_refs": [],
+      "name": "The Key Vault",
+      "props": [
+        {
+          "asset": "dprop.block",
+          "id": "block",
+          "position": [
+            4.6,
+            0,
+            6.9
+          ],
+          "rotation": [
+            0,
+            0.0,
+            0
+          ]
+        },
+        {
+          "asset": "dprop.chest__large",
+          "id": "chest",
+          "position": [
+            10.7,
+            0,
+            9.4
+          ],
+          "rotation": [
+            0,
+            -90.0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            6.8,
+            3.0,
+            0.8
+          ],
+          "position": [
+            5.6,
+            3.6,
+            12.6
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim"
+      ],
+      "description": "A long hall of carved columns. At its end a towering door, sealed with a sigil and a heavy iron lock, waits between two braziers.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_vault",
+          "label": "Back to the vault",
+          "position": 6,
+          "to_door": "to_boss",
+          "to_room": "vault",
+          "wall": "south"
+        },
+        {
+          "conditions": [
+            {
+              "equals": true,
+              "flag": "boss_door_open"
+            }
+          ],
+          "id": "to_sanctum",
+          "label": "Open the great door",
+          "position": 6,
+          "to_door": "to_boss",
+          "to_room": "sanctum",
+          "wall": "north"
+        }
+      ],
+      "grid_size": [
+        13,
+        17
+      ],
+      "id": "boss_gate",
+      "kit_refs": [],
+      "name": "The Sealed Door",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            3.0,
+            1.8,
+            1.8
+          ],
+          "position": [
+            7.5,
+            3.8,
+            7.5
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim"
+      ],
+      "description": "Beyond the great door a small sanctum keeps an old fire burning on its altar.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "to_boss",
+          "label": "Back to the great door",
+          "position": 6,
+          "to_door": "to_sanctum",
+          "to_room": "boss_gate",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        9,
+        9
+      ],
+      "id": "sanctum",
+      "kit_refs": [],
+      "name": "The Sanctum",
+      "props": [
+        {
+          "asset": "tmpl.altar",
+          "id": "altar",
+          "position": [
+            4.5,
+            0,
+            3.2
+          ],
+          "rotation": [
+            0,
+            0.0,
+            0
+          ]
+        }
+      ]
+    }
+  ],
+  "start": {
+    "collected": [],
+    "dialogue": {},
+    "flags": {
+      "boss_door_open": false,
+      "gate_open": false,
+      "goal": false,
+      "key_found": false
+    },
+    "inventory": [],
+    "location": "lakeside",
+    "modules": {
+      "abilities": [],
+      "active": "",
+      "checkpoint": "lakeside_safe",
+      "completed": [],
+      "discovered": [
+        "lakeside"
+      ],
+      "failed": ""
+    },
+    "tide": {
+      "state": "clear",
+      "tick": 0
+    }
+  },
+  "tide": {
+    "id": "day",
+    "states": [
+      {
+        "duration": 1,
+        "id": "clear",
+        "label": "Dusk"
+      }
+    ],
+    "wait_label": "Wait",
+    "wait_text": "Water drips somewhere in the dark."
+  },
+  "title": "The Drowned Gate"
+}

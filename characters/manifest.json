@@ -1,0 +1,6299 @@
+{
+  "characters": [
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 165012,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "83f2bf239dc054ac64b5bccbe38d46f995e09f9898eef40711dbf71ede6dca48",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_r_duffel"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.01728,
+            -0.07722,
+            0.01134
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.00",
+        "max_gap_m": 0.00199,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/new_arrival.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "566e19b8d6769f8d0ddccd1c78860fe30985db030bb6e3d3b460cf80c145eb48",
+      "glb": "characters/assets/polar_pod/new_arrival.glb",
+      "id": "new_arrival",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "masked",
+      "measured": {
+        "body_triangles": 684,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_bb83367a47_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_bb83367a47_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_bb83367a47_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "prop",
+            "texture": "tex_polar_pod_prop_duffel",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_r_duffel_mesh": 64
+        },
+        "total_triangles": 748
+      },
+      "mesh_vertices_glb": 666,
+      "pack": "polar_pod",
+      "params": {
+        "acc_back": "none",
+        "acc_belt": "pouch",
+        "acc_head": "none",
+        "armband": false,
+        "armband_color": "glow_0",
+        "belt_color": "wool_1",
+        "boot_color": "knit_0",
+        "boots": "heavy",
+        "bottom_color": "navy_1",
+        "build": 1,
+        "face": 0,
+        "glove_color": "pearl_0",
+        "hands": "gloves",
+        "head_mode": "faceless",
+        "head_size": 1,
+        "headwear": "hood",
+        "headwear_color": "pearl_0",
+        "headwear_finish": "sheen",
+        "height": 1.62,
+        "hood_tilt": 0.35,
+        "mantle": 0.6,
+        "mantle_color": "chrome_3",
+        "patch": false,
+        "skin": "glow_1",
+        "skirt": 0.0,
+        "skirt_color": "wool_0",
+        "top_color": "chrome_3",
+        "top_pattern": "knit",
+        "trouser_volume": 1,
+        "vest": "quilted_wave",
+        "vest_color": "chrome_1",
+        "vest_trim_color": "glow_0",
+        "wear": 0.0
+      },
+      "props": [
+        "duffel"
+      ],
+      "public_release": true,
+      "sha256": "c9acb9be1f5741c4e4323d7e9ad843fa5690e0bb4deb2ec215d2fe02cd67af03",
+      "skeleton": "human16_v1",
+      "stance": "duffel",
+      "topology": "human16_hood_v2",
+      "topology_sha256": "d8e4cf8932644b967df255577906ae13de8ecc3f7c457d69930c5d828ee71286",
+      "tris_body": 684,
+      "tris_body_glb": 684,
+      "tris_glb_total": 748,
+      "tris_props": {
+        "kit_acc_hand_r_duffel": 64
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 165548,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "2d909540a596fecb2237694255c0fe62422e207135e20cdd90296c37f1e70fd3",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_r_mug"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.0152,
+            -0.0715,
+            0.0105
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.75",
+        "max_gap_m": 0.00176,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/tavi.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "f77537a1a2393b3eac58240097c74a1ac4fbcfc2e2a8677c8eea90907f16ff78",
+      "glb": "characters/assets/polar_pod/tavi.glb",
+      "id": "tavi",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "masked",
+      "measured": {
+        "body_triangles": 684,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_a45b3c90a4_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_a45b3c90a4_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_a45b3c90a4_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "prop",
+            "texture": "tex_polar_pod_prop_mug",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_r_mug_mesh": 84
+        },
+        "total_triangles": 768
+      },
+      "mesh_vertices_glb": 680,
+      "pack": "polar_pod",
+      "params": {
+        "acc_back": "none",
+        "acc_belt": "flask",
+        "acc_head": "none",
+        "armband": false,
+        "armband_color": "glow_0",
+        "belt_color": "wool_1",
+        "boot_color": "knit_0",
+        "boots": "heavy",
+        "bottom_color": "navy_1",
+        "build": 0.95,
+        "face": 0,
+        "glove_color": "pearl_0",
+        "hands": "gloves",
+        "head_mode": "faceless",
+        "head_size": 1.1,
+        "headwear": "hood",
+        "headwear_color": "pearl_0",
+        "headwear_finish": "sheen",
+        "height": 1.5,
+        "hood_tilt": -0.55,
+        "mantle": 0.6,
+        "mantle_color": "chrome_3",
+        "patch": true,
+        "skin": "glow_1",
+        "skirt": 0.0,
+        "skirt_color": "wool_0",
+        "top_color": "chrome_3",
+        "top_pattern": "knit",
+        "trouser_volume": 1.2,
+        "vest": "quilted_diamond",
+        "vest_color": "wool_2",
+        "vest_trim_color": "berry",
+        "wear": 0.1111111111111111
+      },
+      "props": [
+        "mug"
+      ],
+      "public_release": true,
+      "sha256": "be7accc1c123372c7c8bda1659b711846464423863a4cd9b52cb7816d92737c2",
+      "skeleton": "human16_v1",
+      "stance": "hold_mug",
+      "topology": "human16_hood_v2",
+      "topology_sha256": "d8e4cf8932644b967df255577906ae13de8ecc3f7c457d69930c5d828ee71286",
+      "tris_body": 684,
+      "tris_body_glb": 684,
+      "tris_glb_total": 768,
+      "tris_props": {
+        "kit_acc_hand_r_mug": 84
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 167672,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "57c2e6327eb246caeceb6cd3a6b7cdb49661c81c5d938ed3c38716817dab8dbe",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_r_lantern"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.016139,
+            -0.084847,
+            0.01246
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.75",
+        "max_gap_m": 0.00168,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/neri.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "55c0b92ed6f830c7e2682ee4805f1cd93f330e7a21bae357fa68db90a9e75e0f",
+      "glb": "characters/assets/polar_pod/neri.glb",
+      "id": "neri",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "masked",
+      "measured": {
+        "body_triangles": 684,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_bfd3e15628_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_bfd3e15628_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_bfd3e15628_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "prop",
+            "texture": "tex_polar_pod_prop_lantern",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_r_lantern_mesh": 152
+        },
+        "total_triangles": 836
+      },
+      "mesh_vertices_glb": 720,
+      "pack": "polar_pod",
+      "params": {
+        "acc_back": "pack",
+        "acc_belt": "pouch",
+        "acc_head": "none",
+        "armband": false,
+        "armband_color": "glow_0",
+        "belt_color": "wool_1",
+        "boot_color": "knit_0",
+        "boots": "heavy",
+        "bottom_color": "navy_1",
+        "build": 0.85,
+        "face": 0,
+        "glove_color": "pearl_0",
+        "hands": "gloves",
+        "head_mode": "faceless",
+        "head_size": 0.92,
+        "headwear": "hood",
+        "headwear_color": "pearl_0",
+        "headwear_finish": "sheen",
+        "height": 1.78,
+        "hood_tilt": 0.8,
+        "mantle": 0.6,
+        "mantle_color": "chrome_3",
+        "patch": false,
+        "skin": "glow_1",
+        "skirt": 0.0,
+        "skirt_color": "wool_0",
+        "top_color": "chrome_3",
+        "top_pattern": "knit",
+        "trouser_volume": 0.9,
+        "vest": "quilted_wave",
+        "vest_color": "chrome_1",
+        "vest_trim_color": "screen_0",
+        "wear": 0.2222222222222222
+      },
+      "props": [
+        "lantern"
+      ],
+      "public_release": true,
+      "sha256": "a8d0bd219d226f5495dc0524c591d7d55c62e250264064985d7a1929c96999f0",
+      "skeleton": "human16_v1",
+      "stance": "lantern_up",
+      "topology": "human16_hood_v2",
+      "topology_sha256": "d8e4cf8932644b967df255577906ae13de8ecc3f7c457d69930c5d828ee71286",
+      "tris_body": 684,
+      "tris_body_glb": 684,
+      "tris_glb_total": 836,
+      "tris_props": {
+        "kit_acc_hand_r_lantern": 152
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 164212,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "b55e112780d52c6d878699e933c4f36f63a86f0df63f6a8a59375b4ebbc354e0",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_belt_satchel"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.020933,
+            -0.074837,
+            0.01099
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.00",
+        "max_gap_m": 0.00234,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/sol.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "14cb6df871783c0e4a2c4730689dceb06aea20c59cb4de933927ef0930ba76db",
+      "glb": "characters/assets/polar_pod/sol.glb",
+      "id": "sol",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "masked",
+      "measured": {
+        "body_triangles": 684,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_a259162514_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_a259162514_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_a259162514_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "prop",
+            "texture": "tex_polar_pod_prop_satchel",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_belt_satchel_mesh": 48
+        },
+        "total_triangles": 732
+      },
+      "mesh_vertices_glb": 656,
+      "pack": "polar_pod",
+      "params": {
+        "acc_back": "none",
+        "acc_belt": "flask",
+        "acc_head": "none",
+        "armband": false,
+        "armband_color": "glow_0",
+        "belt_color": "wool_1",
+        "boot_color": "knit_0",
+        "boots": "heavy",
+        "bottom_color": "navy_1",
+        "build": 1.25,
+        "face": 0,
+        "glove_color": "pearl_0",
+        "hands": "gloves",
+        "head_mode": "faceless",
+        "head_size": 1.05,
+        "headwear": "hood",
+        "headwear_color": "pearl_0",
+        "headwear_finish": "sheen",
+        "height": 1.57,
+        "hood_tilt": -0.25,
+        "mantle": 0.6,
+        "mantle_color": "chrome_3",
+        "patch": true,
+        "skin": "glow_1",
+        "skirt": 0.0,
+        "skirt_color": "wool_0",
+        "top_color": "chrome_3",
+        "top_pattern": "knit",
+        "trouser_volume": 1.3,
+        "vest": "quilted_wave",
+        "vest_color": "wool_2",
+        "vest_trim_color": "gold",
+        "wear": 0.3333333333333333
+      },
+      "props": [
+        "satchel"
+      ],
+      "public_release": true,
+      "sha256": "49b8d95034e44b5da95d94068e87c46b094068cce0779cfab1dffc8007bf0793",
+      "skeleton": "human16_v1",
+      "stance": "satchel",
+      "topology": "human16_hood_v2",
+      "topology_sha256": "d8e4cf8932644b967df255577906ae13de8ecc3f7c457d69930c5d828ee71286",
+      "tris_body": 684,
+      "tris_body_glb": 684,
+      "tris_glb_total": 732,
+      "tris_props": {
+        "kit_acc_belt_satchel": 48
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 164764,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "6a78ebd039f43013615943bc77c56fd65a065c05a76f6a8b1f6a59a25192a6c4",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_r_cane"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.02072,
+            -0.088183,
+            0.01295
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.00",
+        "max_gap_m": 0.00237,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/ivo.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "5ea941e3c613422e687af87985921f8f782a948a80946df4faf224f8f17fee1f",
+      "glb": "characters/assets/polar_pod/ivo.glb",
+      "id": "ivo",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "masked",
+      "measured": {
+        "body_triangles": 684,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_ddb4b7006e_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_ddb4b7006e_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_ddb4b7006e_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "prop",
+            "texture": "tex_polar_pod_prop_cane",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_r_cane_mesh": 58
+        },
+        "total_triangles": 742
+      },
+      "mesh_vertices_glb": 663,
+      "pack": "polar_pod",
+      "params": {
+        "acc_back": "pack",
+        "acc_belt": "pouch",
+        "acc_head": "none",
+        "armband": false,
+        "armband_color": "glow_0",
+        "belt_color": "wool_1",
+        "boot_color": "knit_0",
+        "boots": "heavy",
+        "bottom_color": "navy_1",
+        "build": 1.05,
+        "face": 0,
+        "glove_color": "pearl_0",
+        "hands": "gloves",
+        "head_mode": "faceless",
+        "head_size": 0.9,
+        "headwear": "hood",
+        "headwear_color": "pearl_0",
+        "headwear_finish": "sheen",
+        "height": 1.85,
+        "hood_tilt": 0.15,
+        "mantle": 0.6,
+        "mantle_color": "chrome_3",
+        "patch": false,
+        "skin": "glow_1",
+        "skirt": 0.0,
+        "skirt_color": "wool_0",
+        "top_color": "chrome_3",
+        "top_pattern": "knit",
+        "trouser_volume": 1,
+        "vest": "quilted_diamond",
+        "vest_color": "chrome_2",
+        "vest_trim_color": "cobalt_2",
+        "wear": 0.4444444444444444
+      },
+      "props": [
+        "cane"
+      ],
+      "public_release": true,
+      "sha256": "ced5ee5b449a30a021bbb8bd6b482068e322dd2c2e1c6c95658728f72137250e",
+      "skeleton": "human16_v1",
+      "stance": "confident",
+      "topology": "human16_hood_v2",
+      "topology_sha256": "d8e4cf8932644b967df255577906ae13de8ecc3f7c457d69930c5d828ee71286",
+      "tris_body": 684,
+      "tris_body_glb": 684,
+      "tris_glb_total": 742,
+      "tris_props": {
+        "kit_acc_hand_r_cane": 58
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 163896,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "86869ce3acbdea4f086ac1033d92470be44c6394c84e504ab0a5d97f702e25fe",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_r_book"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.019509,
+            -0.073883,
+            0.01085
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.75",
+        "max_gap_m": 0.00219,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/luma.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "823612c1727215dc7c51d8ede884ce959309acf69a5d71d402cf5847f6ad044b",
+      "glb": "characters/assets/polar_pod/luma.glb",
+      "id": "luma",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "masked",
+      "measured": {
+        "body_triangles": 684,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_0c4fc4787c_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_0c4fc4787c_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_0c4fc4787c_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "prop",
+            "texture": "tex_polar_pod_prop_book",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_r_book_mesh": 24
+        },
+        "total_triangles": 708
+      },
+      "mesh_vertices_glb": 644,
+      "pack": "polar_pod",
+      "params": {
+        "acc_back": "none",
+        "acc_belt": "flask",
+        "acc_head": "none",
+        "armband": false,
+        "armband_color": "glow_0",
+        "belt_color": "wool_1",
+        "boot_color": "knit_0",
+        "boots": "heavy",
+        "bottom_color": "navy_1",
+        "build": 1.18,
+        "face": 0,
+        "glove_color": "pearl_0",
+        "hands": "gloves",
+        "head_mode": "faceless",
+        "head_size": 1.12,
+        "headwear": "hood",
+        "headwear_color": "pearl_0",
+        "headwear_finish": "sheen",
+        "height": 1.55,
+        "hood_tilt": -0.85,
+        "mantle": 0.6,
+        "mantle_color": "chrome_3",
+        "patch": true,
+        "skin": "glow_1",
+        "skirt": 0.0,
+        "skirt_color": "wool_0",
+        "top_color": "chrome_3",
+        "top_pattern": "knit",
+        "trouser_volume": 1.4,
+        "vest": "quilted_wave",
+        "vest_color": "chrome_1",
+        "vest_trim_color": "peri_1",
+        "wear": 0.5555555555555556
+      },
+      "props": [
+        "book"
+      ],
+      "public_release": true,
+      "sha256": "5a0130cf5f3405ea1f85dd51da53636590e55819b5c2c78348bb42c99e1c01fa",
+      "skeleton": "human16_v1",
+      "stance": "reading",
+      "topology": "human16_hood_v2",
+      "topology_sha256": "d8e4cf8932644b967df255577906ae13de8ecc3f7c457d69930c5d828ee71286",
+      "tris_body": 684,
+      "tris_body_glb": 684,
+      "tris_glb_total": 708,
+      "tris_props": {
+        "kit_acc_hand_r_book": 24
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 164120,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "5f712e1e47b53ed4b0577617767228c58a6b66ce58378a9f6c8c6856b5a877a4",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_r_datapad"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.01632,
+            -0.081033,
+            0.0119
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.00",
+        "max_gap_m": 0.00178,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/study_07.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "2514be0bf4d929d0b3a48e26241b912e192b5d58449ab4d9b73c88271858b62e",
+      "glb": "characters/assets/polar_pod/study_07.glb",
+      "id": "study_07",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "masked",
+      "measured": {
+        "body_triangles": 684,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_2b3214c05d_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_2b3214c05d_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_2b3214c05d_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "prop",
+            "texture": "tex_polar_pod_prop_datapad",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_r_datapad_mesh": 40
+        },
+        "total_triangles": 724
+      },
+      "mesh_vertices_glb": 652,
+      "pack": "polar_pod",
+      "params": {
+        "acc_back": "none",
+        "acc_belt": "pouch",
+        "acc_head": "none",
+        "armband": false,
+        "armband_color": "glow_0",
+        "belt_color": "wool_1",
+        "boot_color": "knit_0",
+        "boots": "heavy",
+        "bottom_color": "navy_1",
+        "build": 0.9,
+        "face": 0,
+        "glove_color": "pearl_0",
+        "hands": "gloves",
+        "head_mode": "faceless",
+        "head_size": 1,
+        "headwear": "hood",
+        "headwear_color": "pearl_0",
+        "headwear_finish": "sheen",
+        "height": 1.7,
+        "hood_tilt": 0.6,
+        "mantle": 0.6,
+        "mantle_color": "chrome_3",
+        "patch": false,
+        "skin": "glow_1",
+        "skirt": 0.0,
+        "skirt_color": "wool_0",
+        "top_color": "chrome_3",
+        "top_pattern": "knit",
+        "trouser_volume": 1.2,
+        "vest": "quilted_wave",
+        "vest_color": "wool_2",
+        "vest_trim_color": "ember",
+        "wear": 0.6666666666666666
+      },
+      "props": [
+        "datapad"
+      ],
+      "public_release": true,
+      "sha256": "f6541597f4aaad6c04ace12a8af26915607ac57a843b6b536860dbe83d225788",
+      "skeleton": "human16_v1",
+      "stance": "tablet",
+      "topology": "human16_hood_v2",
+      "topology_sha256": "d8e4cf8932644b967df255577906ae13de8ecc3f7c457d69930c5d828ee71286",
+      "tris_body": 684,
+      "tris_body_glb": 684,
+      "tris_glb_total": 724,
+      "tris_props": {
+        "kit_acc_hand_r_datapad": 40
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 165124,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "ba246c6bd326131f9b05cb89df6558ae7271197f7e69a115a4aea6021831e508",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_l_thermos"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.016661,
+            -0.067687,
+            0.00994
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.00",
+        "max_gap_m": 0.00189,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/study_08.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8f6feb2c26c75de4308c06a7ea9310f7abeebddc63f75b8f642e08b23f0c53f0",
+      "glb": "characters/assets/polar_pod/study_08.glb",
+      "id": "study_08",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "masked",
+      "measured": {
+        "body_triangles": 684,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_8584f8c6dd_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_8584f8c6dd_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_8584f8c6dd_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "prop",
+            "texture": "tex_polar_pod_prop_thermos",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_l_thermos_mesh": 64
+        },
+        "total_triangles": 748
+      },
+      "mesh_vertices_glb": 665,
+      "pack": "polar_pod",
+      "params": {
+        "acc_back": "none",
+        "acc_belt": "flask",
+        "acc_head": "none",
+        "armband": false,
+        "armband_color": "glow_0",
+        "belt_color": "wool_1",
+        "boot_color": "knit_0",
+        "boots": "heavy",
+        "bottom_color": "navy_1",
+        "build": 1.1,
+        "face": 0,
+        "glove_color": "pearl_0",
+        "hands": "gloves",
+        "head_mode": "faceless",
+        "head_size": 1.17,
+        "headwear": "hood",
+        "headwear_color": "pearl_0",
+        "headwear_finish": "sheen",
+        "height": 1.42,
+        "hood_tilt": -0.4,
+        "mantle": 0.6,
+        "mantle_color": "chrome_3",
+        "patch": true,
+        "skin": "glow_1",
+        "skirt": 0.0,
+        "skirt_color": "wool_0",
+        "top_color": "chrome_3",
+        "top_pattern": "knit",
+        "trouser_volume": 0.95,
+        "vest": "quilted_diamond",
+        "vest_color": "chrome_1",
+        "vest_trim_color": "lilac_1",
+        "wear": 0.7777777777777778
+      },
+      "props": [
+        "thermos"
+      ],
+      "public_release": true,
+      "sha256": "acad0174da185fd52333c60fce479ef71a6b5ba3112a43dc2a18e757bbc9e885",
+      "skeleton": "human16_v1",
+      "stance": "thinking",
+      "topology": "human16_hood_v2",
+      "topology_sha256": "d8e4cf8932644b967df255577906ae13de8ecc3f7c457d69930c5d828ee71286",
+      "tris_body": 684,
+      "tris_body_glb": 684,
+      "tris_glb_total": 748,
+      "tris_props": {
+        "kit_acc_hand_l_thermos": 64
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 159072,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "291f57d021199cb02cd49e7b15cd659ab613a97fdf1acadccabbaebc8f67fda6",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_l_thermos"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.021026,
+            -0.081521,
+            0.01056
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.75",
+        "max_gap_m": 0.00159,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/pp_engineer.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "c2f19afd71ad706e70b0498fee5cb389962b9b4e387ca3187884fc93fb55f825",
+      "glb": "characters/assets/polar_pod/pp_engineer.glb",
+      "id": "pp_engineer",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "face",
+      "measured": {
+        "body_triangles": 696,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_bb1f08706f_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_bb1f08706f_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_bb1f08706f_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "prop",
+            "texture": "tex_polar_pod_prop_thermos",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_l_thermos_mesh": 64
+        },
+        "total_triangles": 760
+      },
+      "mesh_vertices_glb": 560,
+      "pack": "polar_pod",
+      "params": {
+        "accent_color": "glow_0",
+        "age": "adult",
+        "beard": "stubble",
+        "belly": 0.0,
+        "belt": true,
+        "belt_color": "wool_0",
+        "boot_color": "wool_0",
+        "boots": "heavy",
+        "bottom_color": "chrome_2",
+        "brow_color": "wool_0",
+        "brow_gap": -0.4,
+        "brow_height": -0.6,
+        "brow_ridge": 0.85,
+        "brow_tilt": 0.55,
+        "brows": "heavy",
+        "build": 1.12,
+        "buttons": false,
+        "cargo": true,
+        "cheek": 1.0,
+        "chevrons": false,
+        "chin": 0.4,
+        "collar": "high",
+        "collar_color": "chrome_2",
+        "ear": 1.0,
+        "ear_point": 0.0,
+        "expression": 0,
+        "extra_color": "pearl_1",
+        "extra_color_2": "ember",
+        "eye_color": "cobalt_1",
+        "eye_shape": "narrow",
+        "eye_spacing": -0.35,
+        "eye_tilt": -0.2,
+        "face_length": 0.6,
+        "freckles": false,
+        "garment": "coverall",
+        "garment_color": "chrome_2",
+        "gaze": 0.0,
+        "glove_color": "knit_0",
+        "hair": "beanie",
+        "hair_color": "wool_2",
+        "hair_volume": 1.0,
+        "hands": "gloves",
+        "head_mode": "face",
+        "head_size": 1.0,
+        "height": 1.76,
+        "hem": 0.0,
+        "jaw": 1.12,
+        "lashes": false,
+        "leaf_tufts": false,
+        "lip_color": "ember",
+        "mole": false,
+        "mouth": "neutral",
+        "mouth_width": 0.2,
+        "nose": 1.15,
+        "nose_shape": "broad",
+        "part": 0.0,
+        "patch": false,
+        "puff": 1.0,
+        "scar": false,
+        "skin": "glow_1",
+        "sleeves": "long",
+        "star_back": false,
+        "strap": "none",
+        "top_color": "chrome_2",
+        "top_pattern": "fabric",
+        "trim_color": "chrome_3",
+        "trouser_volume": 1.0,
+        "visor": false,
+        "wear": 0.6,
+        "wrinkles": 0.0,
+        "zip": false
+      },
+      "props": [
+        "thermos"
+      ],
+      "public_release": true,
+      "sha256": "0b63c5b59aee760fe324a68e6917f50193e45f86cf24b69869872e262a3318c2",
+      "skeleton": "human16_v1",
+      "stance": "thinking",
+      "topology": "human16_face_v3",
+      "topology_sha256": "df0121875099c8e9549e4c44b3cfb69ea9968c035c0951fbe12f60147d78ea55",
+      "tris_body": 696,
+      "tris_body_glb": 696,
+      "tris_glb_total": 760,
+      "tris_props": {
+        "kit_acc_hand_l_thermos": 64
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 160444,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "5dd3979b26d944e4dbfab7f69132c044a546a69bf28ee8f7d6828ec4164d81a5",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_r_mug"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.016517,
+            -0.0755,
+            0.00978
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.75",
+        "max_gap_m": 0.00071,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/pp_medic.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "9bec9ee1a6554c9bbdc4bf78c06b14adcb1d1e5128456677db44080299f48ae1",
+      "glb": "characters/assets/polar_pod/pp_medic.glb",
+      "id": "pp_medic",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "face",
+      "measured": {
+        "body_triangles": 696,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_622c9ea828_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_622c9ea828_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_622c9ea828_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "prop",
+            "texture": "tex_polar_pod_prop_mug",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_r_mug_mesh": 84
+        },
+        "total_triangles": 780
+      },
+      "mesh_vertices_glb": 575,
+      "pack": "polar_pod",
+      "params": {
+        "accent_color": "glow_0",
+        "age": "adult",
+        "beard": "none",
+        "belly": 0.0,
+        "belt": false,
+        "belt_color": "wool_0",
+        "boot_color": "wool_1",
+        "boots": "cuffed",
+        "bottom_color": "wool_1",
+        "brow_color": "knit_0",
+        "brow_gap": 0.3,
+        "brow_height": -0.3,
+        "brow_ridge": 0.0,
+        "brow_tilt": 0.2,
+        "brows": "straight",
+        "build": 0.95,
+        "buttons": false,
+        "cargo": false,
+        "cheek": 1.05,
+        "chevrons": false,
+        "chin": 0.0,
+        "collar": "ruff",
+        "collar_color": "pearl_1",
+        "ear": 1.0,
+        "ear_point": 0.0,
+        "expression": 0,
+        "extra_color": "pearl_1",
+        "extra_color_2": "ember",
+        "eye_color": "navy_1",
+        "eye_shape": "round",
+        "eye_spacing": 0.55,
+        "eye_tilt": -0.05,
+        "face_length": -0.35,
+        "freckles": false,
+        "garment": "parka",
+        "garment_color": "pearl_0",
+        "gaze": 0.0,
+        "glove_color": "knit_0",
+        "hair": "curls",
+        "hair_color": "wool_0",
+        "hair_volume": 1.2,
+        "hands": "bare",
+        "head_mode": "face",
+        "head_size": 1.0,
+        "height": 1.63,
+        "hem": 0.0,
+        "jaw": 0.95,
+        "lashes": true,
+        "leaf_tufts": false,
+        "lip_color": "berry",
+        "mole": true,
+        "mouth": "neutral",
+        "mouth_width": 0.3,
+        "nose": 0.9,
+        "nose_shape": "button",
+        "part": 0.0,
+        "patch": false,
+        "puff": 1.25,
+        "scar": false,
+        "skin": "glow_0",
+        "sleeves": "long",
+        "star_back": false,
+        "strap": "none",
+        "top_color": "chrome_3",
+        "top_pattern": "fabric",
+        "trim_color": "chrome_2",
+        "trouser_volume": 1.0,
+        "visor": false,
+        "wear": 0.2,
+        "wrinkles": 0.0,
+        "zip": false
+      },
+      "props": [
+        "mug"
+      ],
+      "public_release": true,
+      "sha256": "463883637f909c160a01276b405ec1445154dd55e3d65ce99d0d0de18e2127b6",
+      "skeleton": "human16_v1",
+      "stance": "hold_mug",
+      "topology": "human16_face_v3",
+      "topology_sha256": "df0121875099c8e9549e4c44b3cfb69ea9968c035c0951fbe12f60147d78ea55",
+      "tris_body": 696,
+      "tris_body_glb": 696,
+      "tris_glb_total": 780,
+      "tris_props": {
+        "kit_acc_hand_r_mug": 84
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 155228,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "e146a8483ab5ca26b46f8d6010fa0cd47bc2da4accea07c6b30f96fa35966580",
+        "stance_props_hidden_in_combat": [],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.010044,
+            -0.047097,
+            0.00708
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.00",
+        "max_gap_m": 0.00075,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/pp_kid.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "9332c97ec77b747e0f0e57dcdf9e138bee387caed81f1824c5f7c252ebc47656",
+      "glb": "characters/assets/polar_pod/pp_kid.glb",
+      "id": "pp_kid",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "face",
+      "measured": {
+        "body_triangles": 696,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_f5d149dc28_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_f5d149dc28_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_f5d149dc28_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 696
+      },
+      "mesh_vertices_glb": 519,
+      "pack": "polar_pod",
+      "params": {
+        "accent_color": "pearl_1",
+        "age": "child",
+        "beard": "none",
+        "belly": 0.0,
+        "belt": true,
+        "belt_color": "wool_0",
+        "boot_color": "chrome_1",
+        "boots": "heavy",
+        "bottom_color": "wool_1",
+        "brow_color": "ember",
+        "brow_gap": 0.0,
+        "brow_height": 0.3,
+        "brow_ridge": 0.0,
+        "brow_tilt": 0.1,
+        "brows": "arched",
+        "build": 0.95,
+        "buttons": false,
+        "cargo": false,
+        "cheek": 1.0,
+        "chevrons": false,
+        "chin": 0.0,
+        "collar": "scarf",
+        "collar_color": "berry",
+        "ear": 1.0,
+        "ear_point": 0.0,
+        "expression": 0,
+        "extra_color": "pearl_1",
+        "extra_color_2": "ember",
+        "eye_color": "cobalt_2",
+        "eye_shape": "round",
+        "eye_spacing": 0.7,
+        "eye_tilt": 0.1,
+        "face_length": -0.8,
+        "freckles": true,
+        "garment": "sweater",
+        "garment_color": "cobalt_1",
+        "gaze": 0.0,
+        "glove_color": "berry",
+        "hair": "ponytail",
+        "hair_color": "glow_0",
+        "hair_volume": 1.0,
+        "hands": "gloves",
+        "head_mode": "face",
+        "head_size": 1.05,
+        "height": 1.18,
+        "hem": 0.0,
+        "jaw": 1.0,
+        "lashes": false,
+        "leaf_tufts": false,
+        "lip_color": "ember",
+        "mole": false,
+        "mouth": "neutral",
+        "mouth_width": -0.35,
+        "nose": 1.0,
+        "nose_shape": "button",
+        "part": 0.0,
+        "patch": false,
+        "puff": 1.0,
+        "scar": false,
+        "skin": "glow_1",
+        "sleeves": "long",
+        "star_back": false,
+        "strap": "none",
+        "top_color": "cobalt_1",
+        "top_pattern": "stripes",
+        "trim_color": "pearl_1",
+        "trouser_volume": 1.1,
+        "visor": false,
+        "wear": 0.4,
+        "wrinkles": 0.0,
+        "zip": false
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "8a2d20207b167e30487165073c98f962c3ad21b0a5057d7a737d4c12d9bbd3ba",
+      "skeleton": "human16_v1",
+      "stance": "eager",
+      "topology": "human16_face_v3",
+      "topology_sha256": "df0121875099c8e9549e4c44b3cfb69ea9968c035c0951fbe12f60147d78ea55",
+      "tris_body": 696,
+      "tris_body_glb": 696,
+      "tris_glb_total": 696,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 155348,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "d945ae5727b5320d414d8089a9e345adf0acc4add0cc332c22048d4e1b997ca2",
+        "stance_props_hidden_in_combat": [],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.017382,
+            -0.075332,
+            0.01008
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.00",
+        "max_gap_m": 0.00135,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/pp_elder.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "badf58624a5f15ccba88052b15435966a9d4ec5ef2c18512b4da2686ad19f2a5",
+      "glb": "characters/assets/polar_pod/pp_elder.glb",
+      "id": "pp_elder",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "face",
+      "measured": {
+        "body_triangles": 696,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "costume",
+            "texture": "tex_5140eeda40_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_5140eeda40_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_5140eeda40_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 696
+      },
+      "mesh_vertices_glb": 519,
+      "pack": "polar_pod",
+      "params": {
+        "accent_color": "glow_0",
+        "age": "elder",
+        "beard": "moustache",
+        "belly": 0.0,
+        "belt": false,
+        "belt_color": "wool_0",
+        "boot_color": "wool_0",
+        "boots": "boots",
+        "bottom_color": "wool_1",
+        "brow_color": "pearl_1",
+        "brow_gap": 0.6,
+        "brow_height": 0.35,
+        "brow_ridge": 0.5,
+        "brow_tilt": 0.45,
+        "brows": "heavy",
+        "build": 1.0,
+        "buttons": false,
+        "cargo": false,
+        "cheek": 0.9,
+        "chevrons": false,
+        "chin": 0.0,
+        "collar": "hood_down",
+        "collar_color": "wool_2",
+        "ear": 1.0,
+        "ear_point": 0.0,
+        "expression": 0,
+        "extra_color": "pearl_1",
+        "extra_color_2": "ember",
+        "eye_color": "chrome_1",
+        "eye_shape": "narrow",
+        "eye_spacing": 0.1,
+        "eye_tilt": -0.7,
+        "face_length": 0.75,
+        "freckles": false,
+        "garment": "parka",
+        "garment_color": "wool_2",
+        "gaze": 0.0,
+        "glove_color": "wool_0",
+        "hair": "crop",
+        "hair_color": "chrome_3",
+        "hair_volume": 1.0,
+        "hands": "gloves",
+        "head_mode": "face",
+        "head_size": 1.0,
+        "height": 1.68,
+        "hem": 0.0,
+        "jaw": 1.05,
+        "lashes": false,
+        "leaf_tufts": false,
+        "lip_color": "ember",
+        "mole": false,
+        "mouth": "thin",
+        "mouth_width": 0.35,
+        "nose": 1.3,
+        "nose_shape": "hooked",
+        "part": 0.0,
+        "patch": false,
+        "puff": 1.1,
+        "scar": true,
+        "skin": "glow_1",
+        "sleeves": "long",
+        "star_back": false,
+        "strap": "none",
+        "top_color": "chrome_2",
+        "top_pattern": "fabric",
+        "trim_color": "pearl_1",
+        "trouser_volume": 1.0,
+        "visor": false,
+        "wear": 0.5,
+        "wrinkles": 0.9,
+        "zip": false
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "46a91617ab97312b798260b0ebe0211820dfba9467c1bbfec3ab58e94d7325f5",
+      "skeleton": "human16_v1",
+      "stance": "behind_back",
+      "topology": "human16_face_v3",
+      "topology_sha256": "df0121875099c8e9549e4c44b3cfb69ea9968c035c0951fbe12f60147d78ea55",
+      "tris_body": 696,
+      "tris_body_glb": 696,
+      "tris_glb_total": 696,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 159028,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "4d6cd00884996794430ee11c73d83c3ad9fbe75160b136853fa7b8f646d661a9",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_belt_satchel"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.014136,
+            -0.065043,
+            0.009
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.00",
+        "max_gap_m": 0.00057,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "forest_village/fv_warden.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "352efe2b8c98d0220ea195a8552afe1a3afff38ddd62acc25e7a64c32702348a",
+      "glb": "characters/assets/forest_village/fv_warden.glb",
+      "id": "fv_warden",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "face",
+      "measured": {
+        "body_triangles": 696,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "costume",
+            "texture": "tex_f188ce94fa_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "forest_village",
+            "role": "face",
+            "texture": "tex_f188ce94fa_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "headwear",
+            "texture": "tex_f188ce94fa_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "prop",
+            "texture": "tex_forest_village_prop_satchel",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_belt_satchel_mesh": 48
+        },
+        "total_triangles": 744
+      },
+      "mesh_vertices_glb": 551,
+      "pack": "forest_village",
+      "params": {
+        "accent_color": "straw_0",
+        "age": "teen",
+        "beard": "none",
+        "belly": 0.0,
+        "belt": true,
+        "belt_color": "umber_0",
+        "boot_color": "umber_2",
+        "boots": "cuffed",
+        "bottom_color": "umber_1",
+        "brow_color": "umber_1",
+        "brow_gap": -0.2,
+        "brow_height": -0.25,
+        "brow_ridge": 0.2,
+        "brow_tilt": 0.6,
+        "brows": "heavy",
+        "build": 0.95,
+        "buttons": false,
+        "cargo": false,
+        "cheek": 1.08,
+        "chevrons": false,
+        "chin": 0.3,
+        "collar": "flat",
+        "collar_color": "straw_1",
+        "ear": 1.0,
+        "ear_point": 0.0,
+        "expression": 0,
+        "extra_color": "white",
+        "extra_color_2": "brick",
+        "eye_color": "leaf_2",
+        "eye_shape": "narrow",
+        "eye_spacing": -0.1,
+        "eye_tilt": 0.55,
+        "face_length": 0.15,
+        "freckles": false,
+        "garment": "tunic",
+        "garment_color": "teal",
+        "gaze": -0.35,
+        "glove_color": "umber_2",
+        "hair": "swept",
+        "hair_color": "rust",
+        "hair_volume": 1.15,
+        "hands": "bare",
+        "head_mode": "face",
+        "head_size": 1.0,
+        "height": 1.5,
+        "hem": 0.4,
+        "jaw": 0.97,
+        "lashes": false,
+        "leaf_tufts": false,
+        "lip_color": "skin_2",
+        "mole": false,
+        "mouth": "neutral",
+        "mouth_width": -0.15,
+        "nose": 1.0,
+        "nose_shape": "straight",
+        "part": 1.0,
+        "patch": false,
+        "puff": 1.0,
+        "scar": false,
+        "skin": "skin_0",
+        "sleeves": "short",
+        "star_back": false,
+        "strap": "satchel",
+        "top_color": "cream",
+        "top_pattern": "fabric",
+        "trim_color": "straw_1",
+        "trouser_volume": 0.82,
+        "visor": false,
+        "wear": 0.3,
+        "wrinkles": 0.0,
+        "zip": false
+      },
+      "props": [
+        "satchel"
+      ],
+      "public_release": true,
+      "sha256": "568a9e41e0a5e1f14f0d1e8d8bedb28878afeae55d290e4c47a7ce7306818e6d",
+      "skeleton": "human16_v1",
+      "stance": "satchel",
+      "topology": "human16_face_v3",
+      "topology_sha256": "df0121875099c8e9549e4c44b3cfb69ea9968c035c0951fbe12f60147d78ea55",
+      "tris_body": 696,
+      "tris_body_glb": 696,
+      "tris_glb_total": 744,
+      "tris_props": {
+        "kit_acc_belt_satchel": 48
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 155956,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "a9781555507b32d96b7c68857cb713b4e05ea9fab7e7721ff940b779eeb0686a",
+        "stance_props_hidden_in_combat": [],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.024576,
+            -0.083374,
+            0.0108
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.00",
+        "max_gap_m": 0.00141,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "forest_village/fv_smith.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "08d197f13f77041d5acf8b94510da1463c9d4997fac6ad0425b377f26bea857e",
+      "glb": "characters/assets/forest_village/fv_smith.glb",
+      "id": "fv_smith",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "face",
+      "measured": {
+        "body_triangles": 696,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "costume",
+            "texture": "tex_a9a0665216_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "forest_village",
+            "role": "face",
+            "texture": "tex_a9a0665216_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "headwear",
+            "texture": "tex_a9a0665216_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 696
+      },
+      "mesh_vertices_glb": 519,
+      "pack": "forest_village",
+      "params": {
+        "accent_color": "stone_2",
+        "age": "adult",
+        "beard": "full",
+        "belly": 0.4,
+        "belt": false,
+        "belt_color": "umber_0",
+        "boot_color": "umber_0",
+        "boots": "heavy",
+        "bottom_color": "umber_1",
+        "brow_color": "ink",
+        "brow_gap": -0.6,
+        "brow_height": -0.85,
+        "brow_ridge": 1.0,
+        "brow_tilt": 0.75,
+        "brows": "heavy",
+        "build": 1.28,
+        "buttons": false,
+        "cargo": false,
+        "cheek": 1.05,
+        "chevrons": false,
+        "chin": 0.6,
+        "collar": "none",
+        "collar_color": "straw_1",
+        "ear": 1.1,
+        "ear_point": 0.0,
+        "expression": 0,
+        "extra_color": "white",
+        "extra_color_2": "brick",
+        "eye_color": "umber_2",
+        "eye_shape": "narrow",
+        "eye_spacing": -0.45,
+        "eye_tilt": -0.15,
+        "face_length": -0.45,
+        "freckles": false,
+        "garment": "apron",
+        "garment_color": "umber_2",
+        "gaze": 0.0,
+        "glove_color": "umber_2",
+        "hair": "bald",
+        "hair_color": "ink",
+        "hair_volume": 1.0,
+        "hands": "bare",
+        "head_mode": "face",
+        "head_size": 1.0,
+        "height": 1.8,
+        "hem": 0.0,
+        "jaw": 1.18,
+        "lashes": false,
+        "leaf_tufts": false,
+        "lip_color": "skin_3",
+        "mole": false,
+        "mouth": "neutral",
+        "mouth_width": 0.3,
+        "nose": 1.3,
+        "nose_shape": "broad",
+        "part": 0.0,
+        "patch": false,
+        "puff": 1.0,
+        "scar": true,
+        "skin": "skin_2",
+        "sleeves": "rolled",
+        "star_back": false,
+        "strap": "none",
+        "top_color": "stone_3",
+        "top_pattern": "fabric",
+        "trim_color": "umber_0",
+        "trouser_volume": 1.15,
+        "visor": false,
+        "wear": 0.7,
+        "wrinkles": 0.0,
+        "zip": false
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "7b52c0714c89c93d6a3ec2afeecbf68a89c64ed090a480475a6c128c27d5df82",
+      "skeleton": "human16_v1",
+      "stance": "arms_crossed",
+      "topology": "human16_face_v3",
+      "topology_sha256": "df0121875099c8e9549e4c44b3cfb69ea9968c035c0951fbe12f60147d78ea55",
+      "tris_body": 696,
+      "tris_body_glb": 696,
+      "tris_glb_total": 696,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 159476,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "5d6de6958e2a2cce9522e3cffeb3908af5ad42b18badbabe63e64332736b55db",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_r_cane"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.014941,
+            -0.068158,
+            0.00912
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.75",
+        "max_gap_m": 0.00071,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "forest_village/fv_elder.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "9b0e364a6f6e861f8cef7581d6b5102ed5931f69daf69c1579af049edd4695fb",
+      "glb": "characters/assets/forest_village/fv_elder.glb",
+      "id": "fv_elder",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "face",
+      "measured": {
+        "body_triangles": 696,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "costume",
+            "texture": "tex_abd7b2346a_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "forest_village",
+            "role": "face",
+            "texture": "tex_abd7b2346a_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "headwear",
+            "texture": "tex_abd7b2346a_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "prop",
+            "texture": "tex_forest_village_prop_cane",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_r_cane_mesh": 58
+        },
+        "total_triangles": 754
+      },
+      "mesh_vertices_glb": 558,
+      "pack": "forest_village",
+      "params": {
+        "accent_color": "brick",
+        "age": "elder",
+        "beard": "none",
+        "belly": 0.0,
+        "belt": true,
+        "belt_color": "umber_0",
+        "boot_color": "umber_1",
+        "boots": "shoes",
+        "bottom_color": "leaf_0",
+        "brow_color": "stone_2",
+        "brow_gap": 0.5,
+        "brow_height": 0.6,
+        "brow_ridge": 0.0,
+        "brow_tilt": 0.1,
+        "brows": "thin",
+        "build": 0.95,
+        "buttons": false,
+        "cargo": false,
+        "cheek": 0.95,
+        "chevrons": false,
+        "chin": 0.0,
+        "collar": "shawl",
+        "collar_color": "berry",
+        "ear": 1.0,
+        "ear_point": 0.0,
+        "expression": 0,
+        "extra_color": "white",
+        "extra_color_2": "brick",
+        "eye_color": "sky_0",
+        "eye_shape": "narrow",
+        "eye_spacing": 0.25,
+        "eye_tilt": -0.45,
+        "face_length": 0.5,
+        "freckles": false,
+        "garment": "robe",
+        "garment_color": "leaf_1",
+        "gaze": 0.0,
+        "glove_color": "umber_2",
+        "hair": "bun",
+        "hair_color": "stone_3",
+        "hair_volume": 1.0,
+        "hands": "bare",
+        "head_mode": "face",
+        "head_size": 1.0,
+        "height": 1.52,
+        "hem": 0.92,
+        "jaw": 0.92,
+        "lashes": false,
+        "leaf_tufts": false,
+        "lip_color": "brick",
+        "mole": true,
+        "mouth": "thin",
+        "mouth_width": -0.2,
+        "nose": 1.1,
+        "nose_shape": "straight",
+        "part": 1.0,
+        "patch": false,
+        "puff": 1.0,
+        "scar": false,
+        "skin": "skin_1",
+        "sleeves": "long",
+        "star_back": false,
+        "strap": "none",
+        "top_color": "cream",
+        "top_pattern": "fabric",
+        "trim_color": "straw_1",
+        "trouser_volume": 0.8,
+        "visor": false,
+        "wear": 0.4,
+        "wrinkles": 0.85,
+        "zip": false
+      },
+      "props": [
+        "cane"
+      ],
+      "public_release": true,
+      "sha256": "043b48eb0994b7810909af9741639bb224d6927ea842f9523edc08efa7eb17ed",
+      "skeleton": "human16_v1",
+      "stance": "stoop_cane",
+      "topology": "human16_face_v3",
+      "topology_sha256": "df0121875099c8e9549e4c44b3cfb69ea9968c035c0951fbe12f60147d78ea55",
+      "tris_body": 696,
+      "tris_body_glb": 696,
+      "tris_glb_total": 754,
+      "tris_props": {
+        "kit_acc_hand_r_cane": 58
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<700",
+        "prop_each": "<=200"
+      },
+      "bytes": 158640,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "combat": {
+        "audit": "core/glb.GLB.audit(kind='human', n_clips=13) re-run on the published bytes",
+        "change": "additive: 6 combat animations appended (keyframes appended to the BIN chunk; accessors, bufferViews and animations appended to the JSON). Every published-r21 BIN byte and every existing JSON object is kept (core/graft.verify); mesh, skin, textures and the 7 shared clips are byte-identical.",
+        "clips": [
+          "idle_combat",
+          "swing",
+          "hurt",
+          "death",
+          "roll",
+          "block"
+        ],
+        "combat_clip_keys": {
+          "block": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "death": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "hurt": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "idle_combat": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "roll": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          },
+          "swing": {
+            "channels": 17,
+            "interpolation": [
+              "STEP"
+            ],
+            "keys": 16
+          }
+        },
+        "combatant": true,
+        "gate": "r21 mesh gate (geometry unchanged: tris/vertices equal) + lane-combat-art checks A-K on every key of every combat clip (reports/checks-round4.json)",
+        "published_r21_sha256": "39eb0dcfcaabca60e778350eab9893b40d3c31854defd0365a39dd4b8bea1564",
+        "stance_props_hidden_in_combat": [
+          "kit_acc_hand_r_book"
+        ],
+        "weapon": "trail_staff",
+        "weapon_grip": {
+          "joint": "hand_r",
+          "rotation_xyzw": [
+            0.8660254,
+            0.0,
+            0.0,
+            0.5
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "translation": [
+            -0.01629,
+            -0.076889,
+            0.00996
+          ],
+          "weapon_axis": "+Y (glTF) = shaft toward the tip; origin = grip centre"
+        }
+      },
+      "connectivity": {
+        "max_at": "wrist_l talk@0.25",
+        "max_gap_m": 0.00077,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "forest_village/fv_scribe.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "c1efc9f62899e23b098b82c2a14cebd7f069b57a9fd75f723a0638d79c0503f0",
+      "glb": "characters/assets/forest_village/fv_scribe.glb",
+      "id": "fv_scribe",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "kind": "face",
+      "measured": {
+        "body_triangles": 696,
+        "clips": [
+          "block",
+          "carry",
+          "death",
+          "hurt",
+          "idle",
+          "idle_combat",
+          "interact",
+          "roll",
+          "run",
+          "sit",
+          "swing",
+          "talk",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "pelvis",
+          "spine",
+          "head",
+          "upper_arm_l",
+          "forearm_l",
+          "hand_l",
+          "upper_arm_r",
+          "forearm_r",
+          "hand_r",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "costume",
+            "texture": "tex_896ff3d55e_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "cols": 4,
+              "rows": 2
+            },
+            "kind": "face_atlas",
+            "pack": "forest_village",
+            "role": "face",
+            "texture": "tex_896ff3d55e_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "headwear",
+            "texture": "tex_896ff3d55e_hair",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "prop",
+            "texture": "tex_forest_village_prop_book",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {
+          "kit_acc_hand_r_book_mesh": 24
+        },
+        "total_triangles": 720
+      },
+      "mesh_vertices_glb": 539,
+      "pack": "forest_village",
+      "params": {
+        "accent_color": "straw_1",
+        "age": "adult",
+        "beard": "none",
+        "belly": 0.0,
+        "belt": true,
+        "belt_color": "umber_0",
+        "boot_color": "umber_1",
+        "boots": "boots",
+        "bottom_color": "stone_1",
+        "brow_color": "ink",
+        "brow_gap": -0.1,
+        "brow_height": 0.25,
+        "brow_ridge": 0.0,
+        "brow_tilt": 0.25,
+        "brows": "thin",
+        "build": 0.92,
+        "buttons": true,
+        "cargo": false,
+        "cheek": 1.12,
+        "chevrons": false,
+        "chin": 0.0,
+        "collar": "flat",
+        "collar_color": "cream",
+        "ear": 1.0,
+        "ear_point": 0.0,
+        "expression": 0,
+        "extra_color": "white",
+        "extra_color_2": "brick",
+        "eye_color": "umber_2",
+        "eye_shape": "narrow",
+        "eye_spacing": -0.25,
+        "eye_tilt": 0.6,
+        "face_length": 0.25,
+        "freckles": false,
+        "garment": "vest",
+        "garment_color": "brick",
+        "gaze": 0.0,
+        "glove_color": "umber_2",
+        "hair": "long",
+        "hair_color": "ink",
+        "hair_volume": 1.0,
+        "hands": "bare",
+        "head_mode": "face",
+        "head_size": 1.0,
+        "height": 1.66,
+        "hem": 0.0,
+        "jaw": 0.93,
+        "lashes": true,
+        "leaf_tufts": false,
+        "lip_color": "brick",
+        "mole": false,
+        "mouth": "full",
+        "mouth_width": 0.25,
+        "nose": 0.95,
+        "nose_shape": "straight",
+        "part": -0.6,
+        "patch": false,
+        "puff": 1.0,
+        "scar": false,
+        "skin": "skin_3",
+        "sleeves": "long",
+        "star_back": false,
+        "strap": "none",
+        "top_color": "cream",
+        "top_pattern": "fabric",
+        "trim_color": "straw_0",
+        "trouser_volume": 1.0,
+        "visor": false,
+        "wear": 0.2,
+        "wrinkles": 0.0,
+        "zip": false
+      },
+      "props": [
+        "book"
+      ],
+      "public_release": true,
+      "sha256": "622fae8343cef09b876f0c9f08c962425afb3bac83f8b8cf262b05fe11175542",
+      "skeleton": "human16_v1",
+      "stance": "reading",
+      "topology": "human16_face_v3",
+      "topology_sha256": "df0121875099c8e9549e4c44b3cfb69ea9968c035c0951fbe12f60147d78ea55",
+      "tris_body": 696,
+      "tris_body_glb": 696,
+      "tris_glb_total": 720,
+      "tris_props": {
+        "kit_acc_hand_r_book": 24
+      }
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 85380,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/cat_tuxedo.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8dbc113d30a4e5bf2fdf6d8f511df702cbdbef3fcf6760bfe34fadc09f02b457",
+      "glb": "characters/assets/polar_pod/cat_tuxedo.glb",
+      "id": "cat_tuxedo",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "coat",
+            "texture": "tex_18ac208a62_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_18ac208a62_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_18ac208a62_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "polar_pod",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "wool_0",
+        "coat_color_2": "pearl_1",
+        "coat_color_3": "glow_0",
+        "coat_pattern": "tuxedo",
+        "ear_shape": "pointed",
+        "eye_color": "gold",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "cat",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "d0c6cdf0e56a6c6d7b969c8f9242b4fb09cf13490c953981cd2b271db9d8742c",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 85388,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/cat_tabby.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8dbc113d30a4e5bf2fdf6d8f511df702cbdbef3fcf6760bfe34fadc09f02b457",
+      "glb": "characters/assets/polar_pod/cat_tabby.glb",
+      "id": "cat_tabby",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "coat",
+            "texture": "tex_a6ada160e1_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_a6ada160e1_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_a6ada160e1_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "polar_pod",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "glow_0",
+        "coat_color_2": "wool_0",
+        "coat_color_3": "glow_0",
+        "coat_pattern": "tabby",
+        "ear_shape": "pointed",
+        "eye_color": "gold",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "cat",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "ac359b3347e6a3fc44ad4aa2f84a7a9fdb27d41a2773b811cc8e4b20ec1c7e2c",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 86224,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/cat_calico.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8dbc113d30a4e5bf2fdf6d8f511df702cbdbef3fcf6760bfe34fadc09f02b457",
+      "glb": "characters/assets/polar_pod/cat_calico.glb",
+      "id": "cat_calico",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "coat",
+            "texture": "tex_b74fe915b6_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_b74fe915b6_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_b74fe915b6_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "polar_pod",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "pearl_1",
+        "coat_color_2": "wool_0",
+        "coat_color_3": "glow_0",
+        "coat_pattern": "calico",
+        "ear_shape": "pointed",
+        "eye_color": "gold",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "cat",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "bb69f916a3d78c0868c6bf87abe05a94af702947ea726dcfa5fed88e4ccca9a1",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 85228,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/cat_black.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8dbc113d30a4e5bf2fdf6d8f511df702cbdbef3fcf6760bfe34fadc09f02b457",
+      "glb": "characters/assets/polar_pod/cat_black.glb",
+      "id": "cat_black",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "coat",
+            "texture": "tex_77459ff2fb_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_77459ff2fb_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_77459ff2fb_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "polar_pod",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "wool_0",
+        "coat_color_2": "wool_0",
+        "coat_color_3": "glow_0",
+        "coat_pattern": "solid",
+        "ear_shape": "pointed",
+        "eye_color": "gold",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "cat",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "3b21d757415026815ef894e83c52143177a3ff2563746d4f9a18287045724073",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 86128,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/cat_white.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8dbc113d30a4e5bf2fdf6d8f511df702cbdbef3fcf6760bfe34fadc09f02b457",
+      "glb": "characters/assets/polar_pod/cat_white.glb",
+      "id": "cat_white",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "coat",
+            "texture": "tex_4cb8e70442_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_4cb8e70442_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_4cb8e70442_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "polar_pod",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "pearl_1",
+        "coat_color_2": "pearl_1",
+        "coat_color_3": "glow_0",
+        "coat_pattern": "solid",
+        "ear_shape": "pointed",
+        "eye_color": "gold",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "cat",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "0cdc1d8d951c382c581a81536c09744c5fdd882649b15a3ad9c076ef2bfc2e75",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 85412,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "polar_pod/dog_saddle.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "6194b401c6329a052d0fbe8d78e0fbe4d2fb415f2323f094f92cfeadc71d211c",
+      "glb": "characters/assets/polar_pod/dog_saddle.glb",
+      "id": "dog_saddle",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "coat",
+            "texture": "tex_d5d3d9c95a_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "polar_pod",
+            "role": "face",
+            "texture": "tex_d5d3d9c95a_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "polar_pod",
+            "role": "headwear",
+            "texture": "tex_d5d3d9c95a_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "polar_pod",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "wool_0",
+        "coat_color_2": "pearl_1",
+        "coat_color_3": "glow_0",
+        "coat_pattern": "saddle",
+        "ear_shape": "floppy",
+        "eye_color": "gold",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "dog",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "01f5c6bec4f5a27ce0bf7fcc0d77afae75ba727af3a89cae04db03203719a1af",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 85416,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "forest_village/cat_tuxedo.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8dbc113d30a4e5bf2fdf6d8f511df702cbdbef3fcf6760bfe34fadc09f02b457",
+      "glb": "characters/assets/forest_village/cat_tuxedo.glb",
+      "id": "cat_tuxedo",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "coat",
+            "texture": "tex_940b3be669_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "forest_village",
+            "role": "face",
+            "texture": "tex_940b3be669_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "headwear",
+            "texture": "tex_940b3be669_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "forest_village",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "umber_1",
+        "coat_color_2": "cream",
+        "coat_color_3": "rust",
+        "coat_pattern": "tuxedo",
+        "ear_shape": "pointed",
+        "eye_color": "leaf_3",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "cat",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "364481bf316b01c99ec1f913803cc072d9c1e0f96f7bfdfd15a64e6f6e3cf13a",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 85548,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "forest_village/cat_tabby.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8dbc113d30a4e5bf2fdf6d8f511df702cbdbef3fcf6760bfe34fadc09f02b457",
+      "glb": "characters/assets/forest_village/cat_tabby.glb",
+      "id": "cat_tabby",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "coat",
+            "texture": "tex_0bf0abec9d_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "forest_village",
+            "role": "face",
+            "texture": "tex_0bf0abec9d_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "headwear",
+            "texture": "tex_0bf0abec9d_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "forest_village",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "rust",
+        "coat_color_2": "umber_1",
+        "coat_color_3": "rust",
+        "coat_pattern": "tabby",
+        "ear_shape": "pointed",
+        "eye_color": "leaf_3",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "cat",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "b7e9df3469897b9001dee8cf12ab409403265af4024df676f4b26498f32fc44b",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 86184,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "forest_village/cat_calico.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8dbc113d30a4e5bf2fdf6d8f511df702cbdbef3fcf6760bfe34fadc09f02b457",
+      "glb": "characters/assets/forest_village/cat_calico.glb",
+      "id": "cat_calico",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "coat",
+            "texture": "tex_7e2c2a0a1e_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "forest_village",
+            "role": "face",
+            "texture": "tex_7e2c2a0a1e_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "headwear",
+            "texture": "tex_7e2c2a0a1e_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "forest_village",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "cream",
+        "coat_color_2": "umber_1",
+        "coat_color_3": "rust",
+        "coat_pattern": "calico",
+        "ear_shape": "pointed",
+        "eye_color": "leaf_3",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "cat",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "ffa2ae985e56b017f81b69913dd0077bd98d512c4d402658476e28ec998c5ee0",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 85280,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "forest_village/cat_black.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8dbc113d30a4e5bf2fdf6d8f511df702cbdbef3fcf6760bfe34fadc09f02b457",
+      "glb": "characters/assets/forest_village/cat_black.glb",
+      "id": "cat_black",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "coat",
+            "texture": "tex_c57770bb28_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "forest_village",
+            "role": "face",
+            "texture": "tex_c57770bb28_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "headwear",
+            "texture": "tex_c57770bb28_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "forest_village",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "umber_1",
+        "coat_color_2": "umber_1",
+        "coat_color_3": "rust",
+        "coat_pattern": "solid",
+        "ear_shape": "pointed",
+        "eye_color": "leaf_3",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "cat",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "6c1984bbef2104e68ff20c8deae7cdba792daf8bf1f3abc7ae3ec9b74dffbd7d",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 86032,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "forest_village/cat_white.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "8dbc113d30a4e5bf2fdf6d8f511df702cbdbef3fcf6760bfe34fadc09f02b457",
+      "glb": "characters/assets/forest_village/cat_white.glb",
+      "id": "cat_white",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "coat",
+            "texture": "tex_0baa21f643_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "forest_village",
+            "role": "face",
+            "texture": "tex_0baa21f643_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "headwear",
+            "texture": "tex_0baa21f643_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "forest_village",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "cream",
+        "coat_color_2": "cream",
+        "coat_color_3": "rust",
+        "coat_pattern": "solid",
+        "ear_shape": "pointed",
+        "eye_color": "leaf_3",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "cat",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "ee9e62e9bebcb6ef5cb5a5ef4448c10b45bb0b87c2b42b26090ca76a0fd9170a",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    },
+    {
+      "audit_errors": [],
+      "audit_pass": true,
+      "budget": {
+        "body": "<=300",
+        "prop_each": "<=200"
+      },
+      "bytes": 85424,
+      "clip_interpolation": [
+        "STEP"
+      ],
+      "clips": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "connectivity": {
+        "max_at": "neck_body rest",
+        "max_gap_m": 0.0,
+        "pass": true,
+        "tol_m": 0.003
+      },
+      "file": "forest_village/dog_saddle.glb",
+      "gate_errors": [],
+      "gate_pass": true,
+      "geometry_sha256": "6194b401c6329a052d0fbe8d78e0fbe4d2fb415f2323f094f92cfeadc71d211c",
+      "glb": "characters/assets/forest_village/dog_saddle.glb",
+      "id": "dog_saddle",
+      "internal_only": false,
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "kind": "animal",
+      "measured": {
+        "body_triangles": 300,
+        "clips": [
+          "idle",
+          "loaf",
+          "run",
+          "sit",
+          "sleep_curled",
+          "stretch",
+          "walk"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail_1",
+          "tail_2",
+          "tail_3"
+        ],
+        "materials": [
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "coat",
+            "texture": "tex_56aeee5550_cloth",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "atlas": {
+              "cell": 0,
+              "clip_cells": {
+                "sleep_curled": 1
+              },
+              "cols": 2,
+              "rows": 1
+            },
+            "kind": "face_atlas",
+            "pack": "forest_village",
+            "role": "face",
+            "texture": "tex_56aeee5550_face",
+            "vertex_color_encoding": "linear_gltf"
+          },
+          {
+            "kind": "baked_unlit",
+            "pack": "forest_village",
+            "role": "headwear",
+            "texture": "tex_56aeee5550_hair",
+            "vertex_color_encoding": "linear_gltf"
+          }
+        ],
+        "prop_triangles": {},
+        "total_triangles": 300
+      },
+      "mesh_vertices_glb": 303,
+      "pack": "forest_village",
+      "params": {
+        "antlers": false,
+        "chubby": 1.0,
+        "coat_color_1": "umber_1",
+        "coat_color_2": "cream",
+        "coat_color_3": "rust",
+        "coat_pattern": "saddle",
+        "ear_shape": "floppy",
+        "eye_color": "leaf_3",
+        "leg_length": 1.0,
+        "size": 1.0,
+        "snout_length": 1.0,
+        "species": "dog",
+        "tail_length": 1.0
+      },
+      "props": [],
+      "public_release": true,
+      "sha256": "399e657c67a03fc85b1adbbcd7920596fe1d54ecc2fc8233b6f85f02bae45f39",
+      "skeleton": "quad16_v1",
+      "stance": "neutral",
+      "topology": "quad16_v1",
+      "topology_sha256": "dabdca707e73b562f2e2d442596125ef7aadc3629b634f1b9ae6558df9431463",
+      "tris_body": 300,
+      "tris_body_glb": 300,
+      "tris_glb_total": 300,
+      "tris_props": {}
+    }
+  ],
+  "count": 28,
+  "schema": "hermes64-characters/1",
+  "source_export": "published",
+  "source_manifest_sha256": "4705f007608ea8c467a368a221cfd1d75a8b356d05664de4d17eb65bc3f729ed"
+}

@@ -1,0 +1,17 @@
+{
+  "api_version": "1.0.0",
+  "schema": "hermes64-combat-robots/1",
+  "note": "Robot stand-in seam (presentation only, never read by the simulation). Until the character-system robot GLBs merge (MERGE4 stages them into characters/combat/manifest.json), a robot template with no art of its own is shown with an existing enemy model: combat.json enemies[archetype id] first, then combat.json templates[fsm.template] (the manifest's own alias; robot rows win here as soon as they land), then this table. scale multiplies the model; lift_m raises the visual (hover drone floats over its contact shadow). See docs/ROBOTS-BOSS.md.",
+  "standins": {
+    "walker_patrol_v1": {"model": "reed_warden", "scale": 0.95, "lift_m": 0.0},
+    "brute_slam_v1": {"model": "cairn_dasher", "scale": 1.45, "lift_m": 0.0},
+    "hover_drone_v1": {"model": "reed_warden", "scale": 0.78, "lift_m": 0.6},
+    "boss_phases_v1": {"model": "cairn_dasher", "scale": 1.9, "lift_m": 0.0}
+  },
+  "charsys_targets": {
+    "walker_patrol_v1": "walker (small round walker)",
+    "brute_slam_v1": "brute (tall brute)",
+    "hover_drone_v1": "hover (floater)",
+    "boss_phases_v1": "boss (leader)"
+  }
+}

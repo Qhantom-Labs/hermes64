@@ -1,0 +1,1967 @@
+{
+ "id": "canyon_mesa",
+ "version": "1.0.0",
+ "note": "Ocarina-era frontier: painted timber, ochre dust, red rock, sage scrub, tin and lamplight. CANYON: red-rock strata, red sand and sage scrub under a deep blue sky, warm dust haze. Data only; WESTERNKIT kit families (wtown./wrail./wmine./wprop./wland./wsky.) built from the shared Hermes64 core.",
+ "palette": [
+  "#0e0f1d",
+  "#1e2442",
+  "#383e60",
+  "#60648a",
+  "#1f4592",
+  "#3c72c6",
+  "#80abde",
+  "#cadced",
+  "#6b4629",
+  "#97693c",
+  "#c08f4e",
+  "#d8b476",
+  "#e9d3a2",
+  "#3b2618",
+  "#67482f",
+  "#957657",
+  "#bfa785",
+  "#4d2521",
+  "#7e3b28",
+  "#a95534",
+  "#c97a52",
+  "#dfa274",
+  "#3e4b30",
+  "#69764a",
+  "#9ca273",
+  "#963b2e",
+  "#3f8a87",
+  "#b6631f",
+  "#f1c776",
+  "#3a3b43",
+  "#85878d",
+  "#f2e8d0"
+ ],
+ "palette_names": [
+  "void",
+  "shade_0",
+  "shade_1",
+  "shade_2",
+  "sky_0",
+  "sky_1",
+  "sky_2",
+  "sky_3",
+  "dust_0",
+  "dust_1",
+  "dust_2",
+  "dust_3",
+  "dust_4",
+  "wood_0",
+  "wood_1",
+  "wood_2",
+  "wood_3",
+  "rock_0",
+  "rock_1",
+  "rock_2",
+  "rock_3",
+  "rock_4",
+  "sage_0",
+  "sage_1",
+  "sage_2",
+  "paint_red",
+  "paint_teal",
+  "lamp_0",
+  "lamp_1",
+  "iron_0",
+  "iron_1",
+  "bone"
+ ],
+ "palette_roles": {
+  "shadow_violet": [
+   "void",
+   "shade_0",
+   "shade_1",
+   "shade_2"
+  ],
+  "desert_sky": [
+   "sky_0",
+   "sky_1",
+   "sky_2",
+   "sky_3"
+  ],
+  "dusty_ochre": [
+   "dust_0",
+   "dust_1",
+   "dust_2",
+   "dust_3",
+   "dust_4"
+  ],
+  "sunbleached_wood": [
+   "wood_0",
+   "wood_1",
+   "wood_2",
+   "wood_3"
+  ],
+  "red_rock": [
+   "rock_0",
+   "rock_1",
+   "rock_2",
+   "rock_3",
+   "rock_4"
+  ],
+  "sage_scrub": [
+   "sage_0",
+   "sage_1",
+   "sage_2"
+  ],
+  "paint_trim": [
+   "paint_red",
+   "paint_teal"
+  ],
+  "lamplight": [
+   "lamp_0",
+   "lamp_1"
+  ],
+  "tin_iron": [
+   "iron_0",
+   "iron_1"
+  ],
+  "bone_white": [
+   "bone"
+  ]
+ },
+ "ramps": {
+  "wood": [
+   "wood_0",
+   "wood_1",
+   "wood_2",
+   "wood_3"
+  ],
+  "dust": [
+   "dust_0",
+   "dust_1",
+   "dust_2",
+   "dust_3",
+   "dust_4"
+  ],
+  "rock": [
+   "rock_0",
+   "rock_1",
+   "rock_2",
+   "rock_3",
+   "rock_4"
+  ],
+  "sky": [
+   "sky_0",
+   "sky_1",
+   "sky_2",
+   "sky_3"
+  ],
+  "sage": [
+   "sage_0",
+   "sage_1",
+   "sage_2"
+  ],
+  "shadow": [
+   "void",
+   "shade_0",
+   "shade_1",
+   "shade_2"
+  ]
+ },
+ "light_ramp": [
+  "shade_1",
+  "shade_2",
+  "sky_2",
+  "wood_3",
+  "dust_4",
+  "bone"
+ ],
+ "light_rig": {
+  "key_dir": [
+   0.25,
+   -0.35,
+   0.9
+  ],
+  "ambient": 0.48,
+  "key": 0.44,
+  "sky": 0.12,
+  "ground": 0.06,
+  "ao": 0.22,
+  "ao_height": 0.5,
+  "gamma": 1.0,
+  "ao_occlusion": 0.26,
+  "ao_reach": 1.0
+ },
+ "fog": {
+  "color": "dust_4",
+  "start": 14.0,
+  "end": 60.0,
+  "interior": {
+   "color": "wood_0",
+   "start": 8.0,
+   "end": 30.0
+  }
+ },
+ "env_maps": {
+  "env_brass": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "wood_0",
+    "lamp_0",
+    "dust_2",
+    "lamp_1",
+    "bone"
+   ],
+   "edge": "wood_0",
+   "glint": "bone",
+   "glints": [
+    [
+     0.36,
+     0.26,
+     0.05
+    ]
+   ]
+  },
+  "env_glass": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "shade_1",
+    "sky_1",
+    "sky_2",
+    "sky_3",
+    "bone"
+   ],
+   "edge": "shade_1",
+   "glint": "bone",
+   "glints": [
+    [
+     0.33,
+     0.27,
+     0.06
+    ]
+   ]
+  },
+  "env_lamp": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "lamp_0",
+    "lamp_1",
+    "dust_4",
+    "bone"
+   ],
+   "edge": "lamp_0",
+   "glint": "bone",
+   "glints": [
+    [
+     0.4,
+     0.3,
+     0.07
+    ]
+   ]
+  }
+ },
+ "materials": {
+  "wall": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "wk_clapboard",
+    "size": 64,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3",
+     "bone"
+    ],
+    "boards": 14,
+    "weather": 0.3,
+    "joints": 0.35,
+    "body_lo": 0.2,
+    "body_hi": 0.9
+   }
+  },
+  "wall_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "wk_battens",
+    "size": 64,
+    "ramp": [
+     "wood_0",
+     "wood_2",
+     "rock_1",
+     "paint_red",
+     "rock_2"
+    ],
+    "boards": 8,
+    "wear": 0.3,
+    "batten": 0.25
+   }
+  },
+  "trim": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "grain",
+    "size": 32,
+    "ramp": [
+     "wood_2",
+     "wood_3",
+     "dust_4",
+     "bone"
+    ],
+    "rings": 3,
+    "contrast": 0.6,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "frame": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "grain",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3"
+    ],
+    "rings": 4,
+    "contrast": 0.8,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "floor": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "wk_deck",
+    "size": 64,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3"
+    ],
+    "planks": 8,
+    "wear": 0.3,
+    "seam_step": 1,
+    "dither": 0.6
+   }
+  },
+  "ceiling": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "wk_deck",
+    "size": 32,
+    "ramp": [
+     "void",
+     "wood_0",
+     "wood_1",
+     "rock_0"
+    ],
+    "planks": 6,
+    "body_hi": 0.7
+   }
+  },
+  "roof": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "wk_shingle",
+    "size": 64,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3"
+    ],
+    "rows": 14,
+    "cols": 6
+   }
+  },
+  "door": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "wk_door",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3"
+    ],
+    "boards": 4
+   }
+  },
+  "step": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "wk_deck",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3",
+     "dust_4"
+    ],
+    "planks": 6,
+    "wear": 0.4
+   }
+  },
+  "stone": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "wk_brick",
+    "size": 64,
+    "ramp": [
+     "dust_0",
+     "dust_1",
+     "dust_2",
+     "dust_3",
+     "dust_4"
+    ],
+    "rows": 10,
+    "cols": 4
+   }
+  },
+  "rock": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "wk_strata",
+    "size": 64,
+    "ramp": [
+     "rock_0",
+     "rock_1",
+     "rock_2",
+     "rock_3",
+     "rock_4",
+     "dust_4"
+    ],
+    "beds": 6,
+    "varnish": 0.3
+   }
+  },
+  "cliff": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "wk_strata",
+    "size": 64,
+    "ramp": [
+     "rock_0",
+     "rock_1",
+     "rock_2",
+     "rock_3",
+     "rock_4"
+    ],
+    "beds": 8,
+    "varnish": 0.35,
+    "joints": 3
+   }
+  },
+  "sand": {
+   "kind": "baked_unlit",
+   "tile_m": 6.0,
+   "texture": {
+    "gen": "wk_desert",
+    "size": 64,
+    "ramp": [
+     "rock_2",
+     "rock_3",
+     "dust_3",
+     "dust_4"
+    ],
+    "pebbles": 0.35,
+    "contrast": 0.7
+   }
+  },
+  "path": {
+   "kind": "baked_unlit",
+   "tile_m": 6.0,
+   "texture": {
+    "gen": "wk_desert",
+    "size": 64,
+    "ramp": [
+     "rock_1",
+     "rock_2",
+     "rock_3",
+     "dust_3"
+    ],
+    "ruts": 0.22,
+    "pebbles": 0.2,
+    "contrast": 0.6
+   }
+  },
+  "dirt": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "wk_desert",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "iron_0",
+     "wood_1",
+     "wood_2"
+    ],
+    "contrast": 0.7,
+    "pebbles": 0.3
+   }
+  },
+  "field": {
+   "kind": "baked_unlit",
+   "tile_m": 6.0,
+   "texture": {
+    "gen": "wk_desert",
+    "size": 64,
+    "ramp": [
+     "rock_2",
+     "rock_3",
+     "rock_4",
+     "dust_4"
+    ],
+    "contrast": 0.75
+   }
+  },
+  "grass": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "thatch",
+    "size": 32,
+    "ramp": [
+     "dust_1",
+     "sage_1",
+     "dust_2",
+     "dust_3"
+    ],
+    "rows": 3
+   }
+  },
+  "cap": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "wk_ribs",
+    "size": 32,
+    "ramp": [
+     "sage_0",
+     "sage_1",
+     "sage_2",
+     "dust_3"
+    ],
+    "ribs": 8,
+    "areole": 5
+   }
+  },
+  "snow": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "blotch",
+    "size": 32,
+    "ramp": [
+     "dust_3",
+     "dust_4",
+     "bone"
+    ],
+    "contrast": 0.6,
+    "fine": 0.03
+   }
+  },
+  "ice": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "wk_wheel",
+    "size": 32,
+    "ramp": [
+     "void",
+     "iron_0",
+     "wood_1",
+     "wood_2",
+     "wood_3",
+     "iron_1"
+    ],
+    "spokes": 10
+   }
+  },
+  "water": {
+   "kind": "water",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "ripple",
+    "size": 32,
+    "ramp": [
+     "shade_1",
+     "sky_1",
+     "paint_teal",
+     "sky_2",
+     "sky_3"
+    ],
+    "bands": 6,
+    "crest": 0.2,
+    "dash": 0.35,
+    "pool": 0.5
+   },
+   "scroll": [
+    0.02,
+    0.01
+   ]
+  },
+  "body": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "grain",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "rock_0",
+     "wood_1",
+     "rock_1"
+    ],
+    "rings": 5,
+    "contrast": 0.7,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "body_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "wk_battens",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3",
+     "dust_4"
+    ],
+    "boards": 4,
+    "batten": 0.12,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "hull": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "wk_battens",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "paint_teal",
+     "sage_2",
+     "dust_4"
+    ],
+    "boards": 5,
+    "wear": 0.35,
+    "batten": 0.1,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "hull_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "wk_tin",
+    "size": 32,
+    "ramp": [
+     "iron_0",
+     "iron_1",
+     "sky_3",
+     "rock_1",
+     "rock_2"
+    ],
+    "segments": [
+     3,
+     2
+    ],
+    "period": 4,
+    "rust": 0.35,
+    "dither": 0.35,
+    "soften": 1
+   },
+   "double_sided": true
+  },
+  "wood": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "grain",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3"
+    ],
+    "rings": 6,
+    "contrast": 0.85,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "bark": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "bark",
+    "size": 16,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3"
+    ],
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "foliage": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "wk_sage",
+    "size": 32,
+    "ramp": [
+     "sage_0",
+     "sage_1",
+     "sage_2",
+     "dust_3"
+    ],
+    "cells": 40,
+    "gap": 0.016,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "flower": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "leaves",
+    "size": 16,
+    "ramp": [
+     "paint_red",
+     "rock_3",
+     "lamp_1"
+    ],
+    "cells": 6,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "post": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "grain",
+    "size": 16,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3"
+    ],
+    "rings": 3,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "rail": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "grain",
+    "size": 16,
+    "ramp": [
+     "wood_1",
+     "wood_2",
+     "wood_3",
+     "bone"
+    ],
+    "rings": 3,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "band": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "stripes",
+    "size": 16,
+    "ramp": [
+     "dust_4",
+     "paint_red"
+    ],
+    "count": 4,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "fabric": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fabric",
+    "size": 32,
+    "ramp": [
+     "wood_3",
+     "dust_4",
+     "bone"
+    ],
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "cushion": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fabric",
+    "size": 32,
+    "ramp": [
+     "sage_0",
+     "sage_1",
+     "sage_2"
+    ],
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "knit": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "wk_signboard",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "wood_2",
+     "wood_3",
+     "dust_4",
+     "bone"
+    ],
+    "boards": 3,
+    "flake": 0.12,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "fur": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fur",
+    "size": 32,
+    "ramp": [
+     "wood_1",
+     "dust_1",
+     "dust_3"
+    ],
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "quilt": {
+   "kind": "baked_unlit",
+   "tile_m": 1.2,
+   "texture": {
+    "gen": "wk_wallpaper",
+    "size": 64,
+    "ramp": [
+     "wood_1",
+     "wood_2",
+     "wood_3",
+     "dust_4"
+    ],
+    "stripes": 1,
+    "soot": 0.15,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "leather": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "leather",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "wood_1",
+     "rock_1"
+    ],
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "rope": {
+   "kind": "baked_unlit",
+   "tile_m": 0.3,
+   "texture": {
+    "gen": "rope",
+    "size": 16,
+    "ramp": [
+     "wood_1",
+     "wood_3",
+     "dust_3"
+    ],
+    "twists": 3,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "paper": {
+   "kind": "baked_unlit",
+   "tile_m": 0.4,
+   "texture": {
+    "gen": "wk_poster",
+    "size": 32,
+    "ramp": [
+     "wood_1",
+     "wood_3",
+     "dust_4",
+     "bone"
+    ]
+   }
+  },
+  "book": {
+   "kind": "baked_unlit",
+   "tile_m": 0.4,
+   "texture": {
+    "gen": "wk_shelves",
+    "size": 32,
+    "ramp": [
+     "void",
+     "wood_0",
+     "wood_1",
+     "sage_0",
+     "rock_1",
+     "lamp_0",
+     "sky_3"
+    ],
+    "segments": [
+     3,
+     4
+    ],
+    "shelves": 2
+   }
+  },
+  "metal": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "ironwork",
+    "size": 32,
+    "ramp": [
+     "void",
+     "iron_0",
+     "iron_1",
+     "sky_3"
+    ],
+    "rivets": 3,
+    "dither": 0.35,
+    "soften": 1
+   }
+  },
+  "chrome": {
+   "kind": "chrome_env",
+   "tint": "lamp_1",
+   "env": "env_brass"
+  },
+  "glass": {
+   "kind": "glass_env",
+   "tint": "sky_3",
+   "env": "env_glass"
+  },
+  "orb": {
+   "kind": "glass_env",
+   "tint": "lamp_1",
+   "env": "env_lamp"
+  },
+  "screen": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "wk_window",
+    "size": 32,
+    "ramp": [
+     "wood_0",
+     "shade_0",
+     "shade_1",
+     "shade_2",
+     "sky_2"
+    ],
+    "cols": 2,
+    "rows": 3,
+    "curtain": 0.0
+   }
+  },
+  "light": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "glow",
+    "size": 16,
+    "ramp": [
+     "lamp_1",
+     "bone",
+     "bone"
+    ],
+    "falloff": 0.7
+   }
+  },
+  "fire": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "ember",
+    "size": 16,
+    "ramp": [
+     "rock_1",
+     "lamp_0",
+     "lamp_1",
+     "bone"
+    ]
+   }
+  },
+  "view": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "wk_sky",
+    "size": 64,
+    "ramp": [
+     "rock_3",
+     "rock_4",
+     "sky_1",
+     "sky_2",
+     "sky_3",
+     "dust_4"
+    ],
+    "mesa": 2,
+    "v_horizon": 0.3,
+    "gamma": 0.7,
+    "buttes": 3,
+    "mesa_h": 0.22,
+    "haze": 0.08,
+    "dither": false
+   }
+  },
+  "sky": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "scene",
+    "width": 128,
+    "height": 64,
+    "sky": [
+     "dust_4",
+     "sky_3",
+     "sky_2",
+     "sky_1",
+     "sky_0"
+    ],
+    "sky_range": [
+     0.1,
+     0.65
+    ],
+    "sky_gamma": 0.8,
+    "dither": false,
+    "layers": [
+     {
+      "kind": "clouds",
+      "base": 0.2,
+      "height": 0.16,
+      "stretch": 6,
+      "cover": 0.62,
+      "color": "bone",
+      "shade": "sky_2"
+     },
+     {
+      "kind": "haze",
+      "base": 0.0,
+      "height": 0.32,
+      "color": "dust_4"
+     }
+    ]
+   }
+  },
+  "vista": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "vgrad",
+    "size": 32,
+    "ramp": [
+     "rock_2",
+     "rock_3",
+     "rock_4"
+    ],
+    "strength": 0.7,
+    "noise": 0.1,
+    "up": true
+   }
+  },
+  "vista_far": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "vgrad",
+    "size": 32,
+    "ramp": [
+     "sky_2",
+     "sky_3",
+     "dust_4"
+    ],
+    "strength": 0.5,
+    "noise": 0.1,
+    "up": true
+   }
+  },
+  "particle": {
+   "kind": "card_alpha",
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "dust_4"
+    ],
+    "alpha": "disc"
+   }
+  },
+  "skin": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "dust_3"
+    ]
+   }
+  },
+  "face": {
+   "kind": "face_atlas"
+  },
+  "headwear": {
+   "kind": "baked_unlit"
+  },
+  "opening": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "void"
+    ]
+   }
+  },
+  "costume": {
+   "kind": "baked_unlit"
+  },
+  "coat": {
+   "kind": "baked_unlit"
+  }
+ },
+ "kit_presets": {
+  "wtown.saloon": {
+   "entry": {
+    "entry": "socket"
+   },
+   "arched": {
+    "shape": "arched",
+    "span": 3,
+    "door_at": -1
+   },
+   "plain": {
+    "shape": "square",
+    "balcony": false
+   }
+  },
+  "wtown.store": {
+   "entry": {
+    "entry": "socket",
+    "door_at": 1
+   },
+   "battens": {
+    "wall_role": "hull",
+    "shape": "gabled",
+    "span": 2
+   },
+   "narrow": {
+    "span": 1,
+    "shape": "stepped",
+    "porch": false
+   },
+   "brick": {
+    "wall_role": "stone",
+    "shape": "tall",
+    "span": 3
+   }
+  },
+  "wtown.bank": {
+   "entry": {
+    "entry": "socket",
+    "door_at": 1
+   },
+   "wide": {
+    "span": 3
+   }
+  },
+  "wtown.sheriff": {
+   "entry": {
+    "entry": "socket"
+   },
+   "office": {
+    "span": 1
+   }
+  },
+  "wtown.stable": {
+   "barn": {
+    "lean_to": false,
+    "span": 2
+   },
+   "wide": {
+    "span": 3
+   }
+  },
+  "wtown.hotel": {
+   "entry": {
+    "entry": "socket",
+    "door_at": 1
+   },
+   "grand": {
+    "span": 3,
+    "depth": 12.0
+   }
+  },
+  "wtown.church": {
+   "wide": {
+    "span": 3,
+    "depth": 14.0
+   }
+  },
+  "wtown.facade": {
+   "a_square": {
+    "shape": "square",
+    "wall_role": "wall"
+   },
+   "b_stepped": {
+    "shape": "stepped",
+    "wall_role": "hull",
+    "porch": true
+   },
+   "c_arched": {
+    "shape": "arched",
+    "wall_role": "wall_alt",
+    "awning": true
+   },
+   "d_gabled": {
+    "shape": "gabled",
+    "wall_role": "body_alt",
+    "porch": true
+   },
+   "e_pediment": {
+    "shape": "pediment",
+    "wall_role": "trim",
+    "span": 2,
+    "awning": true
+   },
+   "f_tall": {
+    "shape": "tall",
+    "wall_role": "wall",
+    "storeys": 2,
+    "span": 2
+   },
+   "g_brick": {
+    "shape": "square",
+    "wall_role": "stone",
+    "storeys": 2,
+    "span": 2,
+    "porch": true
+   },
+   "entry": {
+    "shape": "stepped",
+    "wall_role": "hull",
+    "entry": "socket",
+    "porch": true
+   }
+  },
+  "wtown.shack": {
+   "shingle": {
+    "tin_roof": false,
+    "porch": false,
+    "size": 3.4
+   }
+  },
+  "wtown.water_tower": {
+   "tall": {
+    "height": 7.5,
+    "spout": false
+   }
+  },
+  "wtown.boardwalk": {
+   "end_w": {
+    "kind": "end_w"
+   },
+   "end_e": {
+    "kind": "end_e"
+   },
+   "steps": {
+    "kind": "steps"
+   },
+   "ends": {
+    "kind": "ends"
+   }
+  },
+  "wtown.porch": {
+   "canvas": {
+    "role": "band"
+   },
+   "tin": {
+    "role": "hull_alt",
+    "span": 2
+   },
+   "wide": {
+    "span": 2
+   }
+  },
+  "wtown.balcony": {
+   "wide": {
+    "span": 2
+   }
+  },
+  "wtown.hitching_post": {
+   "double": {
+    "bays": 2
+   }
+  },
+  "wtown.stairs": {
+   "short": {
+    "rise": 1.6,
+    "rail": false
+   },
+   "gallery": {
+    "rise": 3.0
+   }
+  },
+  "wtown.doorway": {
+   "gate": {
+    "style": "gate"
+   }
+  },
+  "wtown.fence": {
+   "picket": {
+    "kind": "picket"
+   },
+   "gateway": {
+    "kind": "gateway"
+   },
+   "broken": {
+    "kind": "broken"
+   }
+  },
+  "wtown.gallery": {
+   "west_stair": {
+    "stair_gap": "w"
+   },
+   "long": {
+    "span": 4
+   }
+  },
+  "wtown.room": {
+   "saloon": {
+    "cells_x": 4,
+    "cells_y": 3,
+    "height": 6.4,
+    "doors": [
+     {
+      "side": "s",
+      "cell": 1
+     }
+    ],
+    "windows": [
+     {
+      "side": "s",
+      "cell": 3
+     },
+     {
+      "side": "n",
+      "cell": 1
+     },
+     {
+      "side": "n",
+      "cell": 2,
+      "level": 1
+     },
+     {
+      "side": "n",
+      "cell": 3,
+      "level": 1
+     }
+    ],
+    "lamps": [
+     {
+      "side": "e",
+      "cell": 0
+     },
+     {
+      "side": "s",
+      "cell": 0
+     },
+     {
+      "side": "s",
+      "cell": 2
+     },
+     {
+      "side": "n",
+      "cell": 3
+     }
+    ],
+    "ceiling": "beams"
+   },
+   "store": {
+    "cells_x": 3,
+    "cells_y": 2,
+    "height": 4.2,
+    "doors": [
+     {
+      "side": "s",
+      "cell": 1
+     }
+    ],
+    "windows": [
+     {
+      "side": "s",
+      "cell": 0
+     }
+    ],
+    "lamps": [
+     {
+      "side": "n",
+      "cell": 1
+     }
+    ],
+    "ceiling": "beams"
+   },
+   "office": {
+    "cells_x": 2,
+    "cells_y": 2,
+    "height": 3.8,
+    "doors": [
+     {
+      "side": "s",
+      "cell": 0
+     }
+    ],
+    "windows": [
+     {
+      "side": "e",
+      "cell": 0
+     }
+    ],
+    "lamps": [
+     {
+      "side": "w",
+      "cell": 1
+     }
+    ],
+    "ceiling": "flat"
+   }
+  },
+  "wrail.track": {
+   "curve": {
+    "kind": "curve"
+   },
+   "bumper": {
+    "kind": "bumper"
+   },
+   "crossing": {
+    "kind": "crossing"
+   }
+  },
+  "wrail.platform": {
+   "end_w": {
+    "kind": "end_w"
+   },
+   "end_e": {
+    "kind": "end_e"
+   }
+  },
+  "wrail.station": {
+   "entry": {
+    "entry": "socket"
+   },
+   "small": {
+    "span": 2
+   }
+  },
+  "wrail.trestle": {
+   "end": {
+    "kind": "end"
+   },
+   "tall": {
+    "height": 7.0
+   },
+   "low": {
+    "height": 2.4
+   }
+  },
+  "wrail.signal": {
+   "clear": {
+    "arm": "clear"
+   }
+  },
+  "wrail.car": {
+   "flatcar": {
+    "kind": "flatcar"
+   },
+   "caboose": {
+    "kind": "caboose"
+   }
+  },
+  "wrail.locomotive": {
+   "straight_stack": {
+    "stack": "straight"
+   }
+  },
+  "wrail.handcar": {
+   "pumped": {
+    "pumped": 0.8
+   }
+  },
+  "wmine.tunnel": {
+   "corner": {
+    "kind": "corner"
+   },
+   "tee": {
+    "kind": "tee"
+   },
+   "cross": {
+    "kind": "cross"
+   },
+   "end": {
+    "kind": "end"
+   },
+   "track": {
+    "kind": "straight",
+    "track": true
+   },
+   "end_door": {
+    "kind": "end_door"
+   },
+   "mouth": {
+    "kind": "end_door",
+    "daylight": true
+   }
+  },
+  "wmine.track": {
+   "corner": {
+    "kind": "corner"
+   },
+   "end": {
+    "kind": "end"
+   }
+  },
+  "wmine.portal": {
+   "bare": {
+    "sign": false,
+    "width": 8.0,
+    "height": 6.0
+   },
+   "canyon": {
+    "width": 8.0,
+    "height": 9.0
+   }
+  },
+  "wmine.cart": {
+   "empty": {
+    "load": false
+   },
+   "tipped": {
+    "load": false,
+    "tipped": true
+   }
+  },
+  "wmine.headframe": {
+   "tall": {
+    "height": 10.0
+   }
+  },
+  "wmine.ore_pile": {
+   "big": {
+    "size": 2.6,
+    "count": 8
+   }
+  },
+  "wmine.ladder": {
+   "tall": {
+    "height": 4.2
+   }
+  },
+  "wmine.shaft": {
+   "small": {
+    "size": 1.8,
+    "ladder": false
+   }
+  },
+  "wprop.barrel": {
+   "keg": {
+    "kind": "keg"
+   },
+   "water": {
+    "kind": "water"
+   },
+   "powder": {
+    "kind": "powder"
+   },
+   "tipped": {
+    "kind": "tipped"
+   }
+  },
+  "wprop.crate": {
+   "slats": {
+    "kind": "slats"
+   },
+   "long": {
+    "kind": "long"
+   },
+   "powder": {
+    "kind": "powder",
+    "size": 0.5
+   },
+   "small": {
+    "size": 0.45
+   }
+  },
+  "wprop.sacks": {
+   "one": {
+    "count": 1
+   }
+  },
+  "wprop.hay": {
+   "stack": {
+    "kind": "stack"
+   }
+  },
+  "wprop.cactus": {
+   "organ": {
+    "kind": "organ",
+    "height": 2.4
+   },
+   "prickly": {
+    "kind": "prickly",
+    "height": 1.2
+   },
+   "barrel": {
+    "kind": "barrel",
+    "height": 0.6
+   },
+   "tall": {
+    "kind": "saguaro",
+    "height": 4.6
+   }
+  },
+  "wprop.wagon": {
+   "buckboard": {
+    "kind": "buckboard"
+   },
+   "broken": {
+    "kind": "broken"
+   }
+  },
+  "wprop.table": {
+   "square": {
+    "kind": "square"
+   },
+   "card": {
+    "kind": "card"
+   },
+   "long": {
+    "kind": "long"
+   }
+  },
+  "wprop.chair": {
+   "stool": {
+    "kind": "stool"
+   },
+   "rocking": {
+    "kind": "rocking"
+   },
+   "bench": {
+    "kind": "bench"
+   }
+  },
+  "wprop.bar": {
+   "back_bar": {
+    "kind": "back_bar"
+   },
+   "short": {
+    "length": 2.4
+   }
+  },
+  "wprop.wanted_board": {
+   "wall": {
+    "kind": "wall",
+    "posters": 2
+   }
+  },
+  "wprop.tombstone": {
+   "cross": {
+    "kind": "cross"
+   },
+   "board": {
+    "kind": "board"
+   },
+   "cairn": {
+    "kind": "cairn"
+   }
+  },
+  "wprop.lantern": {
+   "wall": {
+    "kind": "wall"
+   },
+   "post": {
+    "kind": "post"
+   },
+   "table": {
+    "kind": "table"
+   }
+  },
+  "wprop.bucket": {
+   "spittoon": {
+    "kind": "spittoon"
+   },
+   "basin": {
+    "kind": "basin"
+   }
+  },
+  "wprop.wheel": {
+   "flat": {
+    "lean": false
+   }
+  },
+  "wprop.well": {
+   "open": {
+    "roof": false
+   }
+  },
+  "wprop.campfire": {
+   "cold": {
+    "lit": false
+   }
+  },
+  "wprop.signpost": {
+   "two": {
+    "arrows": 2
+   }
+  },
+  "wland.canyon_wall": {
+   "corner": {
+    "kind": "corner"
+   },
+   "end": {
+    "kind": "end"
+   },
+   "end_w": {
+    "kind": "end_w"
+   },
+   "tall": {
+    "height": 14.0,
+    "ledges": 4
+   },
+   "low": {
+    "height": 6.0,
+    "ledges": 2
+   }
+  },
+  "wland.mesa": {
+   "small": {
+    "width": 14.0,
+    "height": 7.0
+   },
+   "far": {
+    "width": 36.0,
+    "height": 15.0
+   }
+  },
+  "wland.butte": {
+   "slim": {
+    "width": 4.5,
+    "height": 18.0
+   }
+  },
+  "wland.arch": {
+   "small": {
+    "span": 6.0,
+    "height": 5.0,
+    "thickness": 1.6
+   }
+  },
+  "wland.hoodoo": {
+   "single": {
+    "count": 1,
+    "height": 4.0
+   }
+  },
+  "wland.boulder": {
+   "big": {
+    "size": 2.0,
+    "count": 2
+   },
+   "small": {
+    "size": 0.6,
+    "count": 3
+   }
+  },
+  "wland.ledge": {
+   "low": {
+    "height": 1.0
+   },
+   "high": {
+    "height": 3.2,
+    "width": 10.0
+   }
+  },
+  "wland.riverbed": {
+   "bend": {
+    "kind": "bend"
+   },
+   "canyon": {
+    "size": 32.0,
+    "stones": 8
+   }
+  },
+  "wland.ground": {
+   "dunes": {
+    "kind": "dunes"
+   },
+   "ruts": {
+    "kind": "ruts"
+   },
+   "street": {
+    "kind": "ruts",
+    "size": 16.0,
+    "relief": 0.1
+   },
+   "plaza": {
+    "kind": "ruts",
+    "size": 24.0,
+    "relief": 0.08
+   },
+   "desert": {
+    "kind": "flat",
+    "size": 24.0,
+    "relief": 0.3
+   },
+   "main": {
+    "kind": "ruts",
+    "size": 48.0,
+    "relief": 0.05,
+    "road_w": 8.0
+   },
+   "yard": {
+    "kind": "ruts",
+    "size": 48.0,
+    "relief": 0.05,
+    "road_w": 4.0
+   }
+  },
+  "wland.scrub": {
+   "big": {
+    "size": 1.4,
+    "clumps": 5
+   }
+  },
+  "wland.yucca": {
+   "no_stalk": {
+    "stalk": false
+   }
+  },
+  "wland.dead_tree": {
+   "small": {
+    "height": 2.6,
+    "branches": 3
+   }
+  },
+  "wland.grass": {
+   "tall": {
+    "height": 0.8,
+    "blades": 16
+   }
+  },
+  "wland.palm": {
+   "tall": {
+    "height": 8.0
+   }
+  },
+  "wland.oasis": {
+   "big": {
+    "size": 11.0,
+    "palms": 3
+   }
+  },
+  "wsky.mesas": {
+   "near": {
+    "radius": 90.0,
+    "height": 0.14
+   },
+   "town": {
+    "radius": 48.0,
+    "height": 0.22
+   },
+   "canyon": {
+    "radius": 52.0,
+    "height": 0.22
+   }
+  }
+ },
+ "fixtures": {},
+ "cast": {
+  "_note": "characters are supplied by lane-characters; WESTERNKIT builds environment pieces only"
+ },
+ "validator_thresholds": {
+  "tri_limits": {},
+  "stretch": [
+   0.45,
+   1.8
+  ],
+  "visdiff_min": 0.015,
+  "people_pairwise_min": 0.02
+ },
+ "colors": {
+  "fog_ext": "#e9d3a2",
+  "fog_int": "#3b2618",
+  "amb_ext": "#e9d3a2",
+  "sun_ext": "#f2e8d0",
+  "amb_int": "#bfa785",
+  "sun_int": "#f1c776",
+  "lamp": "#f1c776",
+  "lamp_dim": "#b6631f",
+  "window_light": "#80abde"
+ },
+ "ui": {
+  "ink": "#3b2618",
+  "fill": "#1e2442d9",
+  "frame": "#bfa785",
+  "text": "#f2e8d0",
+  "dim": "#957657",
+  "accent": "#3f8a87"
+ }
+}

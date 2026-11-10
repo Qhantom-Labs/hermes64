@@ -1,0 +1,1383 @@
+{
+ "assets": {
+  "arch.door": {
+   "alias_of": "vlg.doorway",
+   "glb": "kits/library/castle_keep/assets/vlg.doorway.glb",
+   "kit_id": "vlg.doorway",
+   "preset": null,
+   "sha256": "2f7261c810796ffc25e0b2aa91aa67dc18e5aca1e6668433d53cba72719328cc"
+  },
+  "cst.banner": {
+   "glb": "kits/library/castle_keep/assets/cst.banner.glb",
+   "kit_id": "cst.banner",
+   "preset": null,
+   "sha256": "7c9799064b346c64980aed3c6bba353274323cdd9bf7c2e2a0d81f5fda8c3205"
+  },
+  "cst.banner__cross": {
+   "glb": "kits/library/castle_keep/presets/cst.banner__cross.glb",
+   "kit_id": "cst.banner",
+   "preset": "cross",
+   "sha256": "cc8569f8e18f7ca5a0f04c241e9f2daf7e01ff671003adb06efae3866c505a54"
+  },
+  "cst.banner__pale": {
+   "glb": "kits/library/castle_keep/presets/cst.banner__pale.glb",
+   "kit_id": "cst.banner",
+   "preset": "pale",
+   "sha256": "aea96018cfac1fb2fc528aba95253d5182b7c6999e0b308c8caa2a09e6157714"
+  },
+  "cst.banner__roundel": {
+   "glb": "kits/library/castle_keep/presets/cst.banner__roundel.glb",
+   "kit_id": "cst.banner",
+   "preset": "roundel",
+   "sha256": "922edab688d3d40e076a5d4c071fae08e0c3b46c7d9bf1da2e099483fcb2c068"
+  },
+  "cst.battlement": {
+   "glb": "kits/library/castle_keep/assets/cst.battlement.glb",
+   "kit_id": "cst.battlement",
+   "preset": null,
+   "sha256": "71120ae7761b6cba5fb27405cb78c605476bfd50b5a8c5853c5e2d0ab5b1862e"
+  },
+  "cst.battlement__machicolated": {
+   "glb": "kits/library/castle_keep/presets/cst.battlement__machicolated.glb",
+   "kit_id": "cst.battlement",
+   "preset": "machicolated",
+   "sha256": "edd93bbe2f2f7e88d1d93d828f3708bb70b607986fa4f6764f5731c2af59e977"
+  },
+  "cst.brazier": {
+   "glb": "kits/library/castle_keep/assets/cst.brazier.glb",
+   "kit_id": "cst.brazier",
+   "preset": null,
+   "sha256": "89fd3cb494731b13f66ea9d1c2d8c25ef69aee118dd80c2c2784d3104c9c8ffe"
+  },
+  "cst.carpet": {
+   "glb": "kits/library/castle_keep/assets/cst.carpet.glb",
+   "kit_id": "cst.carpet",
+   "preset": null,
+   "sha256": "d091639ae38ac0fd94fa9c9041bea877aa61c027613c45038ac85a555d83c6bc"
+  },
+  "cst.carpet__short": {
+   "glb": "kits/library/castle_keep/presets/cst.carpet__short.glb",
+   "kit_id": "cst.carpet",
+   "preset": "short",
+   "sha256": "c9ecad9a5e08cd4b5ba6397e58d093ff4a74aae371b3e8e57ebbd69a0fb9d088"
+  },
+  "cst.ceiling": {
+   "glb": "kits/library/castle_keep/assets/cst.ceiling.glb",
+   "kit_id": "cst.ceiling",
+   "preset": null,
+   "sha256": "723f86f71751ea1149844ef9c182a02907f5b06100854391cdcefb752913d13c"
+  },
+  "cst.ceiling__throne": {
+   "glb": "kits/library/castle_keep/presets/cst.ceiling__throne.glb",
+   "kit_id": "cst.ceiling",
+   "preset": "throne",
+   "sha256": "74a3b3bef89eea84017a3a9b00a07395274268106c8148eebc2a634a5793f313"
+  },
+  "cst.ceiling__vault": {
+   "glb": "kits/library/castle_keep/presets/cst.ceiling__vault.glb",
+   "kit_id": "cst.ceiling",
+   "preset": "vault",
+   "sha256": "9c0f880f1a97060a32a75d3d32d75e7a6b57bdd7d9ec8dd71e0f0b9ca7b896e2"
+  },
+  "cst.cell": {
+   "glb": "kits/library/castle_keep/assets/cst.cell.glb",
+   "kit_id": "cst.cell",
+   "preset": null,
+   "sha256": "a2d5fe36320bc30a008262be698e728b9c5eaac5b6899addf0f75b258693b803"
+  },
+  "cst.cell__open": {
+   "glb": "kits/library/castle_keep/presets/cst.cell__open.glb",
+   "kit_id": "cst.cell",
+   "preset": "open",
+   "sha256": "d454881b8fae2363a3cfd1b714f0bd86c2222e56a7231320a3525d44346979aa"
+  },
+  "cst.chandelier": {
+   "glb": "kits/library/castle_keep/assets/cst.chandelier.glb",
+   "kit_id": "cst.chandelier",
+   "preset": null,
+   "sha256": "e31469e85a94eb47de810fcd8b7a1453c29ed01b570fab0c9ed902f1cd0ac571"
+  },
+  "cst.curtain": {
+   "glb": "kits/library/castle_keep/assets/cst.curtain.glb",
+   "kit_id": "cst.curtain",
+   "preset": null,
+   "sha256": "c628ba0b73f63e7063df0dcbc88891e5a905f243a197d4402281ec2f827481fa"
+  },
+  "cst.curtain__broken": {
+   "glb": "kits/library/castle_keep/presets/cst.curtain__broken.glb",
+   "kit_id": "cst.curtain",
+   "preset": "broken",
+   "sha256": "10dc3c6da5831471efa705c06328216f903d8ed921b8b755b57b893797984538"
+  },
+  "cst.curtain__slits": {
+   "glb": "kits/library/castle_keep/presets/cst.curtain__slits.glb",
+   "kit_id": "cst.curtain",
+   "preset": "slits",
+   "sha256": "a5cb2f536a0e066333c6bed74cf5420d3786ada13a313871ee72b4a83c153f6b"
+  },
+  "cst.curtain__stair": {
+   "glb": "kits/library/castle_keep/presets/cst.curtain__stair.glb",
+   "kit_id": "cst.curtain",
+   "preset": "stair",
+   "sha256": "8e1b332118fd28b5f0d360eaee8b4a41d40495f668ef273e23fc5bf369b18eeb"
+  },
+  "cst.dais": {
+   "glb": "kits/library/castle_keep/assets/cst.dais.glb",
+   "kit_id": "cst.dais",
+   "preset": null,
+   "sha256": "3c5dbbb35a460c28e620b953b72593a169f9cb84938ef58ef104c10964e360d8"
+  },
+  "cst.dais__wide": {
+   "glb": "kits/library/castle_keep/presets/cst.dais__wide.glb",
+   "kit_id": "cst.dais",
+   "preset": "wide",
+   "sha256": "d970b674b503fb34bc9c5fe5b29aca9e4847add5d758c01b9e778b095c7a502d"
+  },
+  "cst.drawbridge": {
+   "glb": "kits/library/castle_keep/assets/cst.drawbridge.glb",
+   "kit_id": "cst.drawbridge",
+   "preset": null,
+   "sha256": "e9f164df57d6b12db38e6e4148857af4e4e6dddf3d3fe39dca7c9646b6ea5dcd"
+  },
+  "cst.drawbridge__raised": {
+   "glb": "kits/library/castle_keep/presets/cst.drawbridge__raised.glb",
+   "kit_id": "cst.drawbridge",
+   "preset": "raised",
+   "sha256": "564cc73c1c5b525cf877333376db12d42ffe45ba281030adeef44eec5bc263c4"
+  },
+  "cst.gatehouse": {
+   "glb": "kits/library/castle_keep/assets/cst.gatehouse.glb",
+   "kit_id": "cst.gatehouse",
+   "preset": null,
+   "sha256": "cc39bc01e4c834f14723cbd15aec12835b745349d3186fb2074bff0cd1ac4424"
+  },
+  "cst.gatehouse__crenellated": {
+   "glb": "kits/library/castle_keep/presets/cst.gatehouse__crenellated.glb",
+   "kit_id": "cst.gatehouse",
+   "preset": "crenellated",
+   "sha256": "32f0d6d1e6f135dc1712c5b31676f8ca9f75c2fb750be4a9be63fd959eb90324"
+  },
+  "cst.gatehouse__deep": {
+   "glb": "kits/library/castle_keep/presets/cst.gatehouse__deep.glb",
+   "kit_id": "cst.gatehouse",
+   "preset": "deep",
+   "sha256": "8fc62c2edab7d5f3299bb245aad0b16fcc66e3526fa922b2ecb13a1a0d540334"
+  },
+  "cst.hall": {
+   "glb": "kits/library/castle_keep/assets/cst.hall.glb",
+   "kit_id": "cst.hall",
+   "preset": null,
+   "sha256": "e50d4d6e5f1135bb0d55cd905e7f4643d9a95d1926c87014f8cc11bb6fad9707"
+  },
+  "cst.hall__dungeon": {
+   "glb": "kits/library/castle_keep/presets/cst.hall__dungeon.glb",
+   "kit_id": "cst.hall",
+   "preset": "dungeon",
+   "sha256": "6c3798cabf1e375d6a1e7d956235ac98134b18af1bc936b8a259729e51d1a5bc"
+  },
+  "cst.hall__great": {
+   "glb": "kits/library/castle_keep/presets/cst.hall__great.glb",
+   "kit_id": "cst.hall",
+   "preset": "great",
+   "sha256": "4e4fc0d1cb4e1ec24f451b42d193ddf612b8cbbe2d87919b156b5905b82cdb20"
+  },
+  "cst.hall__throne": {
+   "glb": "kits/library/castle_keep/presets/cst.hall__throne.glb",
+   "kit_id": "cst.hall",
+   "preset": "throne",
+   "sha256": "5d6605d796910179b8b2717497bb5c972b3b990844c15dedb486df8a2d371032"
+  },
+  "cst.keep": {
+   "glb": "kits/library/castle_keep/assets/cst.keep.glb",
+   "kit_id": "cst.keep",
+   "preset": null,
+   "sha256": "81ca2fa79ccad4e1436ca66ef36bc37dadda8372c677929c931e79f5dade61ca"
+  },
+  "cst.keep__crenellated": {
+   "glb": "kits/library/castle_keep/presets/cst.keep__crenellated.glb",
+   "kit_id": "cst.keep",
+   "preset": "crenellated",
+   "sha256": "b86da3f47d252fef37bd9920fc829cda357b88983137cfd9b8d7a7c2ada090c7"
+  },
+  "cst.pillar": {
+   "glb": "kits/library/castle_keep/assets/cst.pillar.glb",
+   "kit_id": "cst.pillar",
+   "preset": null,
+   "sha256": "f3e0b7c81d7d9ae20ec11db5a54bee28d727034b847421cda3d3601ec99dcbbe"
+  },
+  "cst.pillar__clustered": {
+   "glb": "kits/library/castle_keep/presets/cst.pillar__clustered.glb",
+   "kit_id": "cst.pillar",
+   "preset": "clustered",
+   "sha256": "64acee23fb8157abd036a876995ba18d7a15c62483bdcbce8a10227536c06b53"
+  },
+  "cst.pillar__square": {
+   "glb": "kits/library/castle_keep/presets/cst.pillar__square.glb",
+   "kit_id": "cst.pillar",
+   "preset": "square",
+   "sha256": "3716feecfa032f264d72704b1395addecd30415293dbf654b04dff2feb879038"
+  },
+  "cst.portcullis": {
+   "glb": "kits/library/castle_keep/assets/cst.portcullis.glb",
+   "kit_id": "cst.portcullis",
+   "preset": null,
+   "sha256": "caf4a3ecbfb78dedeb462330a64389d77b4559fff1bc06b294bbf91c18a83220"
+  },
+  "cst.portcullis__raised": {
+   "glb": "kits/library/castle_keep/presets/cst.portcullis__raised.glb",
+   "kit_id": "cst.portcullis",
+   "preset": "raised",
+   "sha256": "c254956c554a95cb73b2fcc3e62a439637a47bb41c99e0b8e9217da2ad0f94e7"
+  },
+  "cst.sconce": {
+   "glb": "kits/library/castle_keep/assets/cst.sconce.glb",
+   "kit_id": "cst.sconce",
+   "preset": null,
+   "sha256": "ed0b9c2305043d36a6274a0e614be6ff3b11d743502ad191ee1074302e3855d9"
+  },
+  "cst.sconce__unlit": {
+   "glb": "kits/library/castle_keep/presets/cst.sconce__unlit.glb",
+   "kit_id": "cst.sconce",
+   "preset": "unlit",
+   "sha256": "7582940e74084daa0efcc72b33b3ce9dad3bb3ecbfeb308033b4911ed058ccea"
+  },
+  "cst.spiral_stair": {
+   "glb": "kits/library/castle_keep/assets/cst.spiral_stair.glb",
+   "kit_id": "cst.spiral_stair",
+   "preset": null,
+   "sha256": "a435d53f994098dee3dfdbc59017781d53da403249cb4be6fca87981966726a6"
+  },
+  "cst.spiral_stair__tall": {
+   "glb": "kits/library/castle_keep/presets/cst.spiral_stair__tall.glb",
+   "kit_id": "cst.spiral_stair",
+   "preset": "tall",
+   "sha256": "f193b592b2681b9da89d32fab1e871a595e2aabec94ab76b9581ee3a6f8ba1e5"
+  },
+  "cst.throne": {
+   "glb": "kits/library/castle_keep/assets/cst.throne.glb",
+   "kit_id": "cst.throne",
+   "preset": null,
+   "sha256": "fb7896f31a94298e7a259fa6a9cfba49e775265278cca2ea3074df5c375429fd"
+  },
+  "cst.throne__canopy": {
+   "glb": "kits/library/castle_keep/presets/cst.throne__canopy.glb",
+   "kit_id": "cst.throne",
+   "preset": "canopy",
+   "sha256": "8d5dd2cae8051f10c0fc2072638b841a341afccb1192e0da1dcdc69a34317e56"
+  },
+  "cst.tower_round": {
+   "glb": "kits/library/castle_keep/assets/cst.tower_round.glb",
+   "kit_id": "cst.tower_round",
+   "preset": null,
+   "sha256": "10bc3afa955171d5d1d674330466cc541e3bf4a0afc470d10b83cc4244742fb3"
+  },
+  "cst.tower_round__crenellated": {
+   "glb": "kits/library/castle_keep/presets/cst.tower_round__crenellated.glb",
+   "kit_id": "cst.tower_round",
+   "preset": "crenellated",
+   "sha256": "10bc3afa955171d5d1d674330466cc541e3bf4a0afc470d10b83cc4244742fb3"
+  },
+  "cst.tower_round__door": {
+   "glb": "kits/library/castle_keep/presets/cst.tower_round__door.glb",
+   "kit_id": "cst.tower_round",
+   "preset": "door",
+   "sha256": "1b1a17ebc445ab9efb8e4ed79ec544d7694941f3013214a71e855efa2c1bb196"
+  },
+  "cst.tower_round__roofed": {
+   "glb": "kits/library/castle_keep/presets/cst.tower_round__roofed.glb",
+   "kit_id": "cst.tower_round",
+   "preset": "roofed",
+   "sha256": "4524a7e1a68d7c506bb5e55157ac7cbc728c45985bfe7da52199b0bc9fe46fe7"
+  },
+  "cst.tower_square": {
+   "glb": "kits/library/castle_keep/assets/cst.tower_square.glb",
+   "kit_id": "cst.tower_square",
+   "preset": null,
+   "sha256": "20f213517bdc8ce6dc164f282fb233ccd51c2fbda55885d6c4ada22cd08f860d"
+  },
+  "cst.tower_square__roofed": {
+   "glb": "kits/library/castle_keep/presets/cst.tower_square__roofed.glb",
+   "kit_id": "cst.tower_square",
+   "preset": "roofed",
+   "sha256": "be8463ec28feac244841b49081f77517861811b4390916187c9148edc217eb21"
+  },
+  "mnat.bush": {
+   "glb": "kits/library/castle_keep/assets/mnat.bush.glb",
+   "kit_id": "mnat.bush",
+   "preset": null,
+   "sha256": "1b9b798bf0b3e3f08cb92eb713fec68964a0197c0132abfbe87d7784d4e29f9a"
+  },
+  "mnat.bush__berry": {
+   "glb": "kits/library/castle_keep/presets/mnat.bush__berry.glb",
+   "kit_id": "mnat.bush",
+   "preset": "berry",
+   "sha256": "4ada93a869e31dd005c76112e50a8564367958c869bec53f305ad303cc3b1df0"
+  },
+  "mnat.bush__bramble": {
+   "glb": "kits/library/castle_keep/presets/mnat.bush__bramble.glb",
+   "kit_id": "mnat.bush",
+   "preset": "bramble",
+   "sha256": "73ad25f63a3babf38288da0cf34e711fee32a0a078ff837c8f59633f9f05fb5c"
+  },
+  "mnat.bush__flowering": {
+   "glb": "kits/library/castle_keep/presets/mnat.bush__flowering.glb",
+   "kit_id": "mnat.bush",
+   "preset": "flowering",
+   "sha256": "2057e1e288ff0dc71926e2033c852a07f59cd038c94c894630e7b25056f60453"
+  },
+  "mnat.dead_tree": {
+   "glb": "kits/library/castle_keep/assets/mnat.dead_tree.glb",
+   "kit_id": "mnat.dead_tree",
+   "preset": null,
+   "sha256": "41651946bf02f7a319c097095551788f5ed55490cbb097db266ffc93d7aec3ca"
+  },
+  "mnat.dead_tree__snowy": {
+   "glb": "kits/library/castle_keep/presets/mnat.dead_tree__snowy.glb",
+   "kit_id": "mnat.dead_tree",
+   "preset": "snowy",
+   "sha256": "af538a9cbc3cbf873ce99886738c507243af954501a1cfee3ae7a47c439ccb1c"
+  },
+  "mnat.field": {
+   "glb": "kits/library/castle_keep/assets/mnat.field.glb",
+   "kit_id": "mnat.field",
+   "preset": null,
+   "sha256": "17b4be3afd82873a19e10fa445ed711a684712eeb6ca415071b887892fde28f6"
+  },
+  "mnat.field__cabbage": {
+   "glb": "kits/library/castle_keep/presets/mnat.field__cabbage.glb",
+   "kit_id": "mnat.field",
+   "preset": "cabbage",
+   "sha256": "af991ffaa15310494fc49e8ffe0e2a626bc6608915a8b9484feed98f3011b050"
+  },
+  "mnat.field__ploughed": {
+   "glb": "kits/library/castle_keep/presets/mnat.field__ploughed.glb",
+   "kit_id": "mnat.field",
+   "preset": "ploughed",
+   "sha256": "85871198316e9c49a6f2ca9e746c6f9b45a88285ba51777d32095225f5638fd9"
+  },
+  "mnat.field__vines": {
+   "glb": "kits/library/castle_keep/presets/mnat.field__vines.glb",
+   "kit_id": "mnat.field",
+   "preset": "vines",
+   "sha256": "5d67d4ec7da56485bad165d050296c9f18777afd50d185f8fec5b7d4a843f72a"
+  },
+  "mnat.flowers": {
+   "glb": "kits/library/castle_keep/assets/mnat.flowers.glb",
+   "kit_id": "mnat.flowers",
+   "preset": null,
+   "sha256": "40498d9339d73bd842ae0cdf4bcf5ed650b81ccc04243b8cf08793c033554758"
+  },
+  "mnat.flowers__mushrooms": {
+   "glb": "kits/library/castle_keep/presets/mnat.flowers__mushrooms.glb",
+   "kit_id": "mnat.flowers",
+   "preset": "mushrooms",
+   "sha256": "5d6795d9c4e3e41a4b82778a80f1e465e43555cee63b93afe807c0c98ce3a299"
+  },
+  "mnat.flowers__reeds": {
+   "glb": "kits/library/castle_keep/presets/mnat.flowers__reeds.glb",
+   "kit_id": "mnat.flowers",
+   "preset": "reeds",
+   "sha256": "f1083d4d438144345ecc23bdce8c12a414a543998d49a24ab0b4640bddec703e"
+  },
+  "mnat.flowers__tufts": {
+   "glb": "kits/library/castle_keep/presets/mnat.flowers__tufts.glb",
+   "kit_id": "mnat.flowers",
+   "preset": "tufts",
+   "sha256": "db07cf1c66223160642e9f5e8647779e759cfb71433ed12d53b9ef5fecb4a50b"
+  },
+  "mnat.hedgerow": {
+   "glb": "kits/library/castle_keep/assets/mnat.hedgerow.glb",
+   "kit_id": "mnat.hedgerow",
+   "preset": null,
+   "sha256": "1114219e1fcd880130591a296ff05211ca86caca278be665a35c43b5c531872d"
+  },
+  "mnat.hedgerow__corner": {
+   "glb": "kits/library/castle_keep/presets/mnat.hedgerow__corner.glb",
+   "kit_id": "mnat.hedgerow",
+   "preset": "corner",
+   "sha256": "60f5be5c786bcba32cfb3b272abd7e8a6b2e9ca50720f5b3a47afa795d44f13b"
+  },
+  "mnat.hedgerow__gap": {
+   "glb": "kits/library/castle_keep/presets/mnat.hedgerow__gap.glb",
+   "kit_id": "mnat.hedgerow",
+   "preset": "gap",
+   "sha256": "c312da75b6c2ecbbd68e92cae77f65b0c20695c0188932257eda7173dc44df3d"
+  },
+  "mnat.oak": {
+   "glb": "kits/library/castle_keep/assets/mnat.oak.glb",
+   "kit_id": "mnat.oak",
+   "preset": null,
+   "sha256": "eecbe653b1e892b7223fa63a15c97fe73496455396b72cfb08ba1534c7be1eb9"
+  },
+  "mnat.oak__old": {
+   "glb": "kits/library/castle_keep/presets/mnat.oak__old.glb",
+   "kit_id": "mnat.oak",
+   "preset": "old",
+   "sha256": "32873383752718c84cec38a2c45735e7162b9fd9d4cd460d60e0ce5f4699e910"
+  },
+  "mnat.oak__young": {
+   "glb": "kits/library/castle_keep/presets/mnat.oak__young.glb",
+   "kit_id": "mnat.oak",
+   "preset": "young",
+   "sha256": "4799bd69cdc4a0666775d717d283073459da2fe9e25d2aa3c304eaaf38352995"
+  },
+  "mnat.orchard": {
+   "glb": "kits/library/castle_keep/assets/mnat.orchard.glb",
+   "kit_id": "mnat.orchard",
+   "preset": null,
+   "sha256": "d9946060d86b24bab2987144cc703a78349094978fcfba7462431aba1dd47d5d"
+  },
+  "mnat.orchard__bare": {
+   "glb": "kits/library/castle_keep/presets/mnat.orchard__bare.glb",
+   "kit_id": "mnat.orchard",
+   "preset": "bare",
+   "sha256": "4351750c9fdefe4bd22481968758554ba2fb2b41b504ef03b5cac489725ca075"
+  },
+  "mnat.orchard__blossom": {
+   "glb": "kits/library/castle_keep/presets/mnat.orchard__blossom.glb",
+   "kit_id": "mnat.orchard",
+   "preset": "blossom",
+   "sha256": "2eb03a55ca0b7cd8a71b1c1e9b8fb71597ff9433ea397e61fb4c0e6411108f73"
+  },
+  "mnat.orchard__pear": {
+   "glb": "kits/library/castle_keep/presets/mnat.orchard__pear.glb",
+   "kit_id": "mnat.orchard",
+   "preset": "pear",
+   "sha256": "4ab18fde623120cce49f6d623f2e265bf8eaf6efbc98ed721b3a8f3141531190"
+  },
+  "mnat.pine": {
+   "glb": "kits/library/castle_keep/assets/mnat.pine.glb",
+   "kit_id": "mnat.pine",
+   "preset": null,
+   "sha256": "0ba3db167a1302d441fb53fca0ac581b66063627dbdd9a25e459ae111f2fb62d"
+  },
+  "mnat.pine__short": {
+   "glb": "kits/library/castle_keep/presets/mnat.pine__short.glb",
+   "kit_id": "mnat.pine",
+   "preset": "short",
+   "sha256": "3c5f8cf0214db16236c41fcdd891a88acb469764fc5330bb3e58ee158f90c67f"
+  },
+  "mnat.pine__snowy": {
+   "glb": "kits/library/castle_keep/presets/mnat.pine__snowy.glb",
+   "kit_id": "mnat.pine",
+   "preset": "snowy",
+   "sha256": "ead82db22e3343a6ab1b493f7d08a1a10d78fede49e1b30927be0adedd3d3a66"
+  },
+  "mnat.rock": {
+   "glb": "kits/library/castle_keep/assets/mnat.rock.glb",
+   "kit_id": "mnat.rock",
+   "preset": null,
+   "sha256": "de99ddddd4b259af031e8f17bdd16496a238c431eb84fa6bfc4e441b0faf2818"
+  },
+  "mnat.rock__cluster": {
+   "glb": "kits/library/castle_keep/presets/mnat.rock__cluster.glb",
+   "kit_id": "mnat.rock",
+   "preset": "cluster",
+   "sha256": "65bf720d601216ac59d45beade9b27931a1dab9a546f2198bf66e93cb88e2cf3"
+  },
+  "mnat.rock__outcrop": {
+   "glb": "kits/library/castle_keep/presets/mnat.rock__outcrop.glb",
+   "kit_id": "mnat.rock",
+   "preset": "outcrop",
+   "sha256": "8d14f83607667e4611c37a1446c0dd1357063dcdbc2c88bb8cc85552c416638d"
+  },
+  "mnat.rock__standing": {
+   "glb": "kits/library/castle_keep/presets/mnat.rock__standing.glb",
+   "kit_id": "mnat.rock",
+   "preset": "standing",
+   "sha256": "7a4c698d03145eae4a79fdd60b7d7841bfc452f8842e926cbea857f2f8352cf1"
+  },
+  "mnat.stump": {
+   "glb": "kits/library/castle_keep/assets/mnat.stump.glb",
+   "kit_id": "mnat.stump",
+   "preset": null,
+   "sha256": "a15e445b8760107a7fbfbfe11bffc3a27bf12d24a112a24168b9aa55755ef49a"
+  },
+  "mnat.stump__log": {
+   "glb": "kits/library/castle_keep/presets/mnat.stump__log.glb",
+   "kit_id": "mnat.stump",
+   "preset": "log",
+   "sha256": "be24bf1eb073365bce052e7d59dd15714d93c6dd02d5a20082bfaace56ea1b8a"
+  },
+  "mnat.stump__mossy_log": {
+   "glb": "kits/library/castle_keep/presets/mnat.stump__mossy_log.glb",
+   "kit_id": "mnat.stump",
+   "preset": "mossy_log",
+   "sha256": "cb072466af2b18c452752e45593f9b65b393bd2c2f2a0d5e7cfcc8bb1b8e16cb"
+  },
+  "mprop.anvil": {
+   "glb": "kits/library/castle_keep/assets/mprop.anvil.glb",
+   "kit_id": "mprop.anvil",
+   "preset": null,
+   "sha256": "5f061d4f3f72c813aee03cddf595660483daa7794ed01ffb1c8718a096b346c8"
+  },
+  "mprop.anvil__bare": {
+   "glb": "kits/library/castle_keep/presets/mprop.anvil__bare.glb",
+   "kit_id": "mprop.anvil",
+   "preset": "bare",
+   "sha256": "7c3f05e777d11b16cf0e76f5dd3fa5ee475140470acad2982770cb2d34bdc58a"
+  },
+  "mprop.barrel": {
+   "glb": "kits/library/castle_keep/assets/mprop.barrel.glb",
+   "kit_id": "mprop.barrel",
+   "preset": null,
+   "sha256": "011753c4340eecc9efa1f61b79b339d5cb266255a13e475cc507b92016bb64e8"
+  },
+  "mprop.barrel__keg": {
+   "glb": "kits/library/castle_keep/presets/mprop.barrel__keg.glb",
+   "kit_id": "mprop.barrel",
+   "preset": "keg",
+   "sha256": "8bc2c3f241d8322988948e9203c69c97cf9283e4c41ce07d654698472cdfcf60"
+  },
+  "mprop.barrel__lying": {
+   "glb": "kits/library/castle_keep/presets/mprop.barrel__lying.glb",
+   "kit_id": "mprop.barrel",
+   "preset": "lying",
+   "sha256": "6e0b11b952e81387785d34787715a490654f3cdfa589d81ddf588cdebda05430"
+  },
+  "mprop.barrel__water": {
+   "glb": "kits/library/castle_keep/presets/mprop.barrel__water.glb",
+   "kit_id": "mprop.barrel",
+   "preset": "water",
+   "sha256": "77af4146abb3a76ee2c0789e4c83c47b90b05a9ab6bb52c7c1967602284570cb"
+  },
+  "mprop.basket": {
+   "glb": "kits/library/castle_keep/assets/mprop.basket.glb",
+   "kit_id": "mprop.basket",
+   "preset": null,
+   "sha256": "0d56b7f15027a1444163bf860894680cc6b75ecf05f0c49af81eb2636fed9e85"
+  },
+  "mprop.basket__bread": {
+   "glb": "kits/library/castle_keep/presets/mprop.basket__bread.glb",
+   "kit_id": "mprop.basket",
+   "preset": "bread",
+   "sha256": "f397e5e96a5abe5aab719bc6979654b5fedd9a0e36d3633e1472ce9c1a779506"
+  },
+  "mprop.basket__empty": {
+   "glb": "kits/library/castle_keep/presets/mprop.basket__empty.glb",
+   "kit_id": "mprop.basket",
+   "preset": "empty",
+   "sha256": "ff63c4d2f98faccb0ff01060a15edccf400d09acd4b5e19aafea54efad06109a"
+  },
+  "mprop.basket__wool": {
+   "glb": "kits/library/castle_keep/presets/mprop.basket__wool.glb",
+   "kit_id": "mprop.basket",
+   "preset": "wool",
+   "sha256": "7fee8fea340eda6586cb617d06435992cb39c8e82a11f06034633dfc9353ebab"
+  },
+  "mprop.bed": {
+   "glb": "kits/library/castle_keep/assets/mprop.bed.glb",
+   "kit_id": "mprop.bed",
+   "preset": null,
+   "sha256": "dd43dbeee9a4c7840df4db47f1e5423228bd4f76061721c2e31b52587573ca6c"
+  },
+  "mprop.bed__fourposter": {
+   "glb": "kits/library/castle_keep/presets/mprop.bed__fourposter.glb",
+   "kit_id": "mprop.bed",
+   "preset": "fourposter",
+   "sha256": "aeaf997b0f0c51779169094b98f0cf3f3be1327bcd47e0cbf92e7c82504b8c7a"
+  },
+  "mprop.bench": {
+   "glb": "kits/library/castle_keep/assets/mprop.bench.glb",
+   "kit_id": "mprop.bench",
+   "preset": null,
+   "sha256": "2bb684e9a2cf691028b99c7b37808c495127bde85d5669fe3739b8af956a14a8"
+  },
+  "mprop.bench__settle": {
+   "glb": "kits/library/castle_keep/presets/mprop.bench__settle.glb",
+   "kit_id": "mprop.bench",
+   "preset": "settle",
+   "sha256": "8fe5b83f825b4b3fd10c6a6c38358416eb216906b89436cf42abc37d0e3a5439"
+  },
+  "mprop.bench__stool": {
+   "glb": "kits/library/castle_keep/presets/mprop.bench__stool.glb",
+   "kit_id": "mprop.bench",
+   "preset": "stool",
+   "sha256": "36ef9857730d0fc45aad3868c141270d3ee6a75107990db60cf059c46bd6d36a"
+  },
+  "mprop.bucket": {
+   "glb": "kits/library/castle_keep/assets/mprop.bucket.glb",
+   "kit_id": "mprop.bucket",
+   "preset": null,
+   "sha256": "bfc005b9726a19546884b5df82fcb8ad00c5acb88b011c938caf61874e161b9c"
+  },
+  "mprop.bucket__empty": {
+   "glb": "kits/library/castle_keep/presets/mprop.bucket__empty.glb",
+   "kit_id": "mprop.bucket",
+   "preset": "empty",
+   "sha256": "abfb5661239f5fbb31a70e567f233fa1d1998c28ec5ead42fe76659345ed6ee7"
+  },
+  "mprop.cart": {
+   "glb": "kits/library/castle_keep/assets/mprop.cart.glb",
+   "kit_id": "mprop.cart",
+   "preset": null,
+   "sha256": "1e9b72e03be48856301c675b50d81edf14d29bab1dfb97a680f2a5c501c41783"
+  },
+  "mprop.cart__barrels": {
+   "glb": "kits/library/castle_keep/presets/mprop.cart__barrels.glb",
+   "kit_id": "mprop.cart",
+   "preset": "barrels",
+   "sha256": "bb5b266bb9079a0a718c899ef0a2bf8e0619b6d71d4b1590e7371fdfea934313"
+  },
+  "mprop.cart__empty": {
+   "glb": "kits/library/castle_keep/presets/mprop.cart__empty.glb",
+   "kit_id": "mprop.cart",
+   "preset": "empty",
+   "sha256": "c7989be25724f45ca6be77c5d7c65bca920d17128175a24de9e3019552ebf4fb"
+  },
+  "mprop.cart__sacks": {
+   "glb": "kits/library/castle_keep/presets/mprop.cart__sacks.glb",
+   "kit_id": "mprop.cart",
+   "preset": "sacks",
+   "sha256": "aa1777852b2443394b735d36c988329c2413399f3914372a02dc5944b5be0cd5"
+  },
+  "mprop.cauldron": {
+   "glb": "kits/library/castle_keep/assets/mprop.cauldron.glb",
+   "kit_id": "mprop.cauldron",
+   "preset": null,
+   "sha256": "3720a0780965e3db13798f5b6f8635c31ae724da5c939535a7989a95228d3347"
+  },
+  "mprop.cauldron__cold": {
+   "glb": "kits/library/castle_keep/presets/mprop.cauldron__cold.glb",
+   "kit_id": "mprop.cauldron",
+   "preset": "cold",
+   "sha256": "7f1ca53a3dadb6b58f689bd22d2cad44f63172759dc1be702b3d0ae78f1f0d70"
+  },
+  "mprop.chest": {
+   "glb": "kits/library/castle_keep/assets/mprop.chest.glb",
+   "kit_id": "mprop.chest",
+   "preset": null,
+   "sha256": "7d4fb4b17d8a931b66eed8506f024bf5706edbb0e76822914ec9fa0225797f83"
+  },
+  "mprop.chest__open": {
+   "glb": "kits/library/castle_keep/presets/mprop.chest__open.glb",
+   "kit_id": "mprop.chest",
+   "preset": "open",
+   "sha256": "a3f0dfecd6c420bc7f7ac107f585eab777a95bb20b7ff369cf7df65383ac55bf"
+  },
+  "mprop.chest__plain": {
+   "glb": "kits/library/castle_keep/presets/mprop.chest__plain.glb",
+   "kit_id": "mprop.chest",
+   "preset": "plain",
+   "sha256": "e9fba797636c3a58a59f3b5600fbfe5f940267767e6524cbd9ec6e2af4298020"
+  },
+  "mprop.crate": {
+   "glb": "kits/library/castle_keep/assets/mprop.crate.glb",
+   "kit_id": "mprop.crate",
+   "preset": null,
+   "sha256": "8b4bb4638ce08e9b0e7a995b7e700675b272a940f19aad083ac5cf1a0860f750"
+  },
+  "mprop.crate__slatted": {
+   "glb": "kits/library/castle_keep/presets/mprop.crate__slatted.glb",
+   "kit_id": "mprop.crate",
+   "preset": "slatted",
+   "sha256": "73600210b62b3b6ce88495e167f863d53af54a4f90a2d9b91f852aaa945bae8f"
+  },
+  "mprop.crate__small": {
+   "glb": "kits/library/castle_keep/presets/mprop.crate__small.glb",
+   "kit_id": "mprop.crate",
+   "preset": "small",
+   "sha256": "ec8ea7597f4e9dd6283f24bdf618e5af5e4f7d3addb21a44d46961cf5681bab4"
+  },
+  "mprop.grindstone": {
+   "glb": "kits/library/castle_keep/assets/mprop.grindstone.glb",
+   "kit_id": "mprop.grindstone",
+   "preset": null,
+   "sha256": "7266dfddf28ae8a52b48b86e40167d12e63c1d443f3fab7dc6bee57471a4c388"
+  },
+  "mprop.hay": {
+   "glb": "kits/library/castle_keep/assets/mprop.hay.glb",
+   "kit_id": "mprop.hay",
+   "preset": null,
+   "sha256": "d3fc05e82608606e0a1a5e52c8017350514c4fdb37250ffe60e41fdd527d724e"
+  },
+  "mprop.hay__rick": {
+   "glb": "kits/library/castle_keep/presets/mprop.hay__rick.glb",
+   "kit_id": "mprop.hay",
+   "preset": "rick",
+   "sha256": "99f5233eddd3559b056997f560ec86cf541b84ffcc04b80436b568da930c80b7"
+  },
+  "mprop.hay__stack": {
+   "glb": "kits/library/castle_keep/presets/mprop.hay__stack.glb",
+   "kit_id": "mprop.hay",
+   "preset": "stack",
+   "sha256": "08617631c0572ee0db5a2f5cb3cf0e6cae4269e36674f08c75ffdf26addf27af"
+  },
+  "mprop.lantern": {
+   "glb": "kits/library/castle_keep/assets/mprop.lantern.glb",
+   "kit_id": "mprop.lantern",
+   "preset": null,
+   "sha256": "8aaea6e950fca39f6d651cadb2691821b49fa0605fdca63fc02bf75897e27b81"
+  },
+  "mprop.lantern__plain": {
+   "glb": "kits/library/castle_keep/presets/mprop.lantern__plain.glb",
+   "kit_id": "mprop.lantern",
+   "preset": "plain",
+   "sha256": "ec0623363a5cecf25644e995db1927cca2bb96080f481f8e059a2389125e38f6"
+  },
+  "mprop.lantern_hung": {
+   "glb": "kits/library/castle_keep/assets/mprop.lantern_hung.glb",
+   "kit_id": "mprop.lantern_hung",
+   "preset": null,
+   "sha256": "f89f0294bbb939e4e2cda1d38b5e839ca66e200b4123badb7343a8d2920a956f"
+  },
+  "mprop.lantern_hung__hanging": {
+   "glb": "kits/library/castle_keep/presets/mprop.lantern_hung__hanging.glb",
+   "kit_id": "mprop.lantern_hung",
+   "preset": "hanging",
+   "sha256": "640f8b215be3cf4484eb48cdee6bbeba58b7320421d9d41a6866b089c80e2f33"
+  },
+  "mprop.sack": {
+   "glb": "kits/library/castle_keep/assets/mprop.sack.glb",
+   "kit_id": "mprop.sack",
+   "preset": null,
+   "sha256": "cce6518e6495428ab565abc713da356a6facf5f1911be5619921167f92e852c6"
+  },
+  "mprop.sack__open": {
+   "glb": "kits/library/castle_keep/presets/mprop.sack__open.glb",
+   "kit_id": "mprop.sack",
+   "preset": "open",
+   "sha256": "937cec0ff27023297bf10ef5524a66585fadaac91152457b5679aa620afc8ed5"
+  },
+  "mprop.sack__pile": {
+   "glb": "kits/library/castle_keep/presets/mprop.sack__pile.glb",
+   "kit_id": "mprop.sack",
+   "preset": "pile",
+   "sha256": "7becfe6d8254ff30dce028925b4c5519036f7af97e358b36978dbe6967e0af07"
+  },
+  "mprop.shelf": {
+   "glb": "kits/library/castle_keep/assets/mprop.shelf.glb",
+   "kit_id": "mprop.shelf",
+   "preset": null,
+   "sha256": "1d5e2c42499821d805bebdc3f2a28d600c9d451dd543f448525f21541dd8b789"
+  },
+  "mprop.shelf__books": {
+   "glb": "kits/library/castle_keep/presets/mprop.shelf__books.glb",
+   "kit_id": "mprop.shelf",
+   "preset": "books",
+   "sha256": "895bb647f0e9e7d259a915744f56d328e23e38c7cafdcc2d22d14d20bf016581"
+  },
+  "mprop.shelf__empty": {
+   "glb": "kits/library/castle_keep/presets/mprop.shelf__empty.glb",
+   "kit_id": "mprop.shelf",
+   "preset": "empty",
+   "sha256": "1e84e5deafb62072042da95ebfde32b3646b30ad2ea80a26df5ff2fc68d9468f"
+  },
+  "mprop.shield": {
+   "glb": "kits/library/castle_keep/assets/mprop.shield.glb",
+   "kit_id": "mprop.shield",
+   "preset": null,
+   "sha256": "b79299a6cb308915a881f298604bb981eea39ed8b338b93a9d025da72253b574"
+  },
+  "mprop.shield__chevron": {
+   "glb": "kits/library/castle_keep/presets/mprop.shield__chevron.glb",
+   "kit_id": "mprop.shield",
+   "preset": "chevron",
+   "sha256": "7d7b5d5376cb397a50481ecde3bf27b456b864afe1261b4046c08c8adeb1697f"
+  },
+  "mprop.shield__round": {
+   "glb": "kits/library/castle_keep/presets/mprop.shield__round.glb",
+   "kit_id": "mprop.shield",
+   "preset": "round",
+   "sha256": "1352e3a49e8693e6d92b0410f9c3ef6ace73146d0d0bfa86e0c655abb549d015"
+  },
+  "mprop.signpost": {
+   "glb": "kits/library/castle_keep/assets/mprop.signpost.glb",
+   "kit_id": "mprop.signpost",
+   "preset": null,
+   "sha256": "60e6d341aff013c00e5e86df4595dbefa962f10d49c1b8e9a0d629570a52a7be"
+  },
+  "mprop.signpost__hanging": {
+   "glb": "kits/library/castle_keep/presets/mprop.signpost__hanging.glb",
+   "kit_id": "mprop.signpost",
+   "preset": "hanging",
+   "sha256": "ded888c0047f57d5dad561773495e22aa4186295a5496a9bb237616f30f11c85"
+  },
+  "mprop.signpost__notice": {
+   "glb": "kits/library/castle_keep/presets/mprop.signpost__notice.glb",
+   "kit_id": "mprop.signpost",
+   "preset": "notice",
+   "sha256": "b6a51d2424690a16be236b3dbe8c8a1b1e8031d046cb989a3bf744b7f8ea5c54"
+  },
+  "mprop.table": {
+   "glb": "kits/library/castle_keep/assets/mprop.table.glb",
+   "kit_id": "mprop.table",
+   "preset": null,
+   "sha256": "9027e59483715efdf7c72bb25b50512e05c65ee045b3670fa1b5ab3b4151cbd4"
+  },
+  "mprop.table__feast": {
+   "glb": "kits/library/castle_keep/presets/mprop.table__feast.glb",
+   "kit_id": "mprop.table",
+   "preset": "feast",
+   "sha256": "81a2fbe006b6fef19869d9d1a48d355e95e9857aa45acb5584ae8a87c4588785"
+  },
+  "mprop.table__round": {
+   "glb": "kits/library/castle_keep/presets/mprop.table__round.glb",
+   "kit_id": "mprop.table",
+   "preset": "round",
+   "sha256": "879e9fc74195acaa0a2887807e27d77a0bbf2592bb2e2cf60557d991f4308ce9"
+  },
+  "mprop.tableware": {
+   "glb": "kits/library/castle_keep/assets/mprop.tableware.glb",
+   "kit_id": "mprop.tableware",
+   "preset": null,
+   "sha256": "3033f4c7521ed67c2c80c076a663635841f1056dce492413a02a7ee51e223ea6"
+  },
+  "mprop.tableware__candles": {
+   "glb": "kits/library/castle_keep/presets/mprop.tableware__candles.glb",
+   "kit_id": "mprop.tableware",
+   "preset": "candles",
+   "sha256": "e1a1ef295ca611f7c5fc9714a097e2daaee31d54998761db5a6e8ea8880a2210"
+  },
+  "mprop.tableware__drinks": {
+   "glb": "kits/library/castle_keep/presets/mprop.tableware__drinks.glb",
+   "kit_id": "mprop.tableware",
+   "preset": "drinks",
+   "sha256": "c76dbb1d7ad19be58c598669f6e2aa5723e5ea7c47c0bb0552ec2ba306d888f6"
+  },
+  "mprop.trough": {
+   "glb": "kits/library/castle_keep/assets/mprop.trough.glb",
+   "kit_id": "mprop.trough",
+   "preset": null,
+   "sha256": "8f2adef6f7d3b30ce99ab6e292450936e82327744d134b136cf878cd4b56f029"
+  },
+  "mprop.trough__feed": {
+   "glb": "kits/library/castle_keep/presets/mprop.trough__feed.glb",
+   "kit_id": "mprop.trough",
+   "preset": "feed",
+   "sha256": "c10173aa7b6da373b0a6362dfb853ae2810861342b0b02f773ec9c34d950df77"
+  },
+  "mprop.weapon_rack": {
+   "glb": "kits/library/castle_keep/assets/mprop.weapon_rack.glb",
+   "kit_id": "mprop.weapon_rack",
+   "preset": null,
+   "sha256": "ac773e9375e4981a10c4b70314f84678a522617e3d57609f832254997007ac68"
+  },
+  "mprop.weapon_rack__shields": {
+   "glb": "kits/library/castle_keep/presets/mprop.weapon_rack__shields.glb",
+   "kit_id": "mprop.weapon_rack",
+   "preset": "shields",
+   "sha256": "c176ae26f52458f5afe1b0322e46469dc1184795387a375ffba62d2d39067b2c"
+  },
+  "mprop.weapon_rack__swords": {
+   "glb": "kits/library/castle_keep/presets/mprop.weapon_rack__swords.glb",
+   "kit_id": "mprop.weapon_rack",
+   "preset": "swords",
+   "sha256": "4bbe26715d97da5f91ca6b7d52d910359f3b904459c4a5f59bf67782d47056bc"
+  },
+  "mprop.woodpile": {
+   "glb": "kits/library/castle_keep/assets/mprop.woodpile.glb",
+   "kit_id": "mprop.woodpile",
+   "preset": null,
+   "sha256": "27559d398f28926ddd7a4f1c947bf280ef579dabb028569a65478df64a4428a3"
+  },
+  "mprop.woodpile__block": {
+   "glb": "kits/library/castle_keep/presets/mprop.woodpile__block.glb",
+   "kit_id": "mprop.woodpile",
+   "preset": "block",
+   "sha256": "f8a24c3a0f2c3d146c3894b154856d6a53c156d1cd7d929952b413145462517d"
+  },
+  "mter.backdrop": {
+   "glb": "kits/library/castle_keep/assets/mter.backdrop.glb",
+   "kit_id": "mter.backdrop",
+   "preset": null,
+   "sha256": "9a32b09fc8d646e6b6d8e67897642760103b9ec212a449ace94a5b7faf301496"
+  },
+  "mter.backdrop__hills": {
+   "glb": "kits/library/castle_keep/presets/mter.backdrop__hills.glb",
+   "kit_id": "mter.backdrop",
+   "preset": "hills",
+   "sha256": "8281680bcdb1abca6b2bcef7b7883313ca28a520d53295ce9877ec43e20c7731"
+  },
+  "mter.backdrop__mountains": {
+   "glb": "kits/library/castle_keep/presets/mter.backdrop__mountains.glb",
+   "kit_id": "mter.backdrop",
+   "preset": "mountains",
+   "sha256": "37915c3bcebde2e592ec7afc5bfaf3d831496d1c6b07bd5065d005795ee056c7"
+  },
+  "mter.bank": {
+   "glb": "kits/library/castle_keep/assets/mter.bank.glb",
+   "kit_id": "mter.bank",
+   "preset": null,
+   "sha256": "ac2d6ad1a795b6f111fca3ba4402543eba833a2ff94c4bd85f06467908eace31"
+  },
+  "mter.bank__rock": {
+   "glb": "kits/library/castle_keep/presets/mter.bank__rock.glb",
+   "kit_id": "mter.bank",
+   "preset": "rock",
+   "sha256": "3792f36c542c28329a963d9fff429ebf2aa604d8fa954f178ba36b9d02974ac3"
+  },
+  "mter.bank__wall": {
+   "glb": "kits/library/castle_keep/presets/mter.bank__wall.glb",
+   "kit_id": "mter.bank",
+   "preset": "wall",
+   "sha256": "03fac9ce9464c346b56dcb0230d6b6a77cdad31b4faa6205d9eb0481f8c98c1b"
+  },
+  "mter.ground": {
+   "glb": "kits/library/castle_keep/assets/mter.ground.glb",
+   "kit_id": "mter.ground",
+   "preset": null,
+   "sha256": "af4a5cad139fa1cc1fd4b783d4167ffa23012bdaea34b61101b515329bae2b34"
+  },
+  "mter.ground__cobble": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__cobble.glb",
+   "kit_id": "mter.ground",
+   "preset": "cobble",
+   "sha256": "17a0554140bff021b79d90aea69578cb550a1dfcf97c52afcd5d33fff9644475"
+  },
+  "mter.ground__dirt": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__dirt.glb",
+   "kit_id": "mter.ground",
+   "preset": "dirt",
+   "sha256": "01363327e20a683c67abf3013fe454b1ba64b4d30fe508510802b7d1417e4cbc"
+  },
+  "mter.ground__field_edge": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__field_edge.glb",
+   "kit_id": "mter.ground",
+   "preset": "field_edge",
+   "sha256": "9a2474c0d0e48ce5ca2ff35a115a634e252701ca6cb180cb0735ddba3005e32a"
+  },
+  "mter.ground__meadow_3": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__meadow_3.glb",
+   "kit_id": "mter.ground",
+   "preset": "meadow_3",
+   "sha256": "7450051ee4e2f8b70a8ec4bbc9cbc130535863e9dc1fa6f7d160601553668f8a"
+  },
+  "mter.ground__meadow_4": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__meadow_4.glb",
+   "kit_id": "mter.ground",
+   "preset": "meadow_4",
+   "sha256": "161e7b16d3737c64bc8a5e8a13e9ba8a7995459e85a8751640ca464425989347"
+  },
+  "mter.ground__meadow_far": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__meadow_far.glb",
+   "kit_id": "mter.ground",
+   "preset": "meadow_far",
+   "sha256": "81761cdbe7cd9e916bded1f251bb2481fa4bcadc866571bd11750fb1a51fd5f0"
+  },
+  "mter.ground__path": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__path.glb",
+   "kit_id": "mter.ground",
+   "preset": "path",
+   "sha256": "6b1b2b05ca6914d6c8c11e4f26d92553b8be0087c6c1d766040c84b4cbab8801"
+  },
+  "mter.ground__path_corner": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__path_corner.glb",
+   "kit_id": "mter.ground",
+   "preset": "path_corner",
+   "sha256": "a8900c52ec506e28a6fda411f67d290a3bf23ef7668af1cd0b2bd53ae895be39"
+  },
+  "mter.ground__path_cross": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__path_cross.glb",
+   "kit_id": "mter.ground",
+   "preset": "path_cross",
+   "sha256": "82cba2c43afdfbd46df0b5cbfc8efcd16faa9d66a8e1ac0c08c19473c6fa7a7a"
+  },
+  "mter.ground__path_end": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__path_end.glb",
+   "kit_id": "mter.ground",
+   "preset": "path_end",
+   "sha256": "0a234397b7adbe2b372aa9a049207c891d87eed7a553b5cf1ee83944908a3adf"
+  },
+  "mter.ground__path_tee": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__path_tee.glb",
+   "kit_id": "mter.ground",
+   "preset": "path_tee",
+   "sha256": "290f68eac87319bd5e15546a132f69d153ea5d13fedfc274703ab251f80159fa"
+  },
+  "mter.ground__plaza": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__plaza.glb",
+   "kit_id": "mter.ground",
+   "preset": "plaza",
+   "sha256": "5b77b246337fd90829330d6d44920ad814a7a3808efd2299add488adbf3249f2"
+  },
+  "mter.ground__plaza_4": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__plaza_4.glb",
+   "kit_id": "mter.ground",
+   "preset": "plaza_4",
+   "sha256": "f016cfbd8e22e4f8a4c01e59d0519395c6ad5101ea927c7016097ebba0a5aeab"
+  },
+  "mter.ground__snow": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__snow.glb",
+   "kit_id": "mter.ground",
+   "preset": "snow",
+   "sha256": "2a54a465cb5399a482dbe75868b22548b2d32f1794d11872de103ab561509bfe"
+  },
+  "mter.ground__snow_4": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__snow_4.glb",
+   "kit_id": "mter.ground",
+   "preset": "snow_4",
+   "sha256": "4470759cb0c025cb12023560e8db70fbc904df7c54e604c4888c7c339f87bc45"
+  },
+  "mter.ground__snow_far": {
+   "glb": "kits/library/castle_keep/presets/mter.ground__snow_far.glb",
+   "kit_id": "mter.ground",
+   "preset": "snow_far",
+   "sha256": "ac0e2611d4ed20e6499ce6442715febc4a8e6aecf694774daf2ce63b4e92fbde"
+  },
+  "mter.hill": {
+   "glb": "kits/library/castle_keep/assets/mter.hill.glb",
+   "kit_id": "mter.hill",
+   "preset": null,
+   "sha256": "ec8543fc68c1396d1e4ed54a6eafb605619b0a768a31ee1fc0f1dda212428901"
+  },
+  "mter.hill__big": {
+   "glb": "kits/library/castle_keep/presets/mter.hill__big.glb",
+   "kit_id": "mter.hill",
+   "preset": "big",
+   "sha256": "7be4cb50019ff7d5b96f691fc1386d4ebd10d1c6509e17626cf340cec535a039"
+  },
+  "mter.hill__low": {
+   "glb": "kits/library/castle_keep/presets/mter.hill__low.glb",
+   "kit_id": "mter.hill",
+   "preset": "low",
+   "sha256": "cdf0cc2d18acaf567e6a90fbfcfd6791c68a2b68c91abf1d5bad7fa1ddf9ca4d"
+  },
+  "mter.water": {
+   "glb": "kits/library/castle_keep/assets/mter.water.glb",
+   "kit_id": "mter.water",
+   "preset": null,
+   "sha256": "db3fd11e0a33fc6f49d9a2662da6b93e560e173a4b559cd30acae56b73b9654b"
+  },
+  "mter.water__moat": {
+   "glb": "kits/library/castle_keep/presets/mter.water__moat.glb",
+   "kit_id": "mter.water",
+   "preset": "moat",
+   "sha256": "89711630abf2c552c92f0407c8d3e920d20dd6e5380522cd6e101d8b7a62e503"
+  },
+  "mter.water__pond": {
+   "glb": "kits/library/castle_keep/presets/mter.water__pond.glb",
+   "kit_id": "mter.water",
+   "preset": "pond",
+   "sha256": "215b345833296a43980e77979c3dfa50d9843413bf502d27ef52e4ac413dd817"
+  },
+  "sky.backdrop": {
+   "glb": "kits/library/castle_keep/assets/sky.backdrop.glb",
+   "kit_id": "sky.backdrop",
+   "preset": null,
+   "sha256": "98f9a7253eb2fb34ea0d7b4cb7296ef93c686a094bdc8394f6857151dae3f19c"
+  },
+  "vlg.bridge": {
+   "glb": "kits/library/castle_keep/assets/vlg.bridge.glb",
+   "kit_id": "vlg.bridge",
+   "preset": null,
+   "sha256": "d104134a80e7f304c5c4604f0a0f6523d54c8f09407f19e791628c9ddb75090f"
+  },
+  "vlg.bridge__timber": {
+   "glb": "kits/library/castle_keep/presets/vlg.bridge__timber.glb",
+   "kit_id": "vlg.bridge",
+   "preset": "timber",
+   "sha256": "ec337caa1f52466b2334fbe354afbc73c286c31484d2c06e513bf08c49773416"
+  },
+  "vlg.ceiling": {
+   "glb": "kits/library/castle_keep/assets/vlg.ceiling.glb",
+   "kit_id": "vlg.ceiling",
+   "preset": null,
+   "sha256": "cc6beade002ab53b0c0f67604779ac1a6ccf18d7822b50c3c493cd379e6e8036"
+  },
+  "vlg.ceiling__small": {
+   "glb": "kits/library/castle_keep/presets/vlg.ceiling__small.glb",
+   "kit_id": "vlg.ceiling",
+   "preset": "small",
+   "sha256": "051ea8f51feb16ccc16b44da290f5b5fd6e6f3be01242ffa5f20be0adfeac32a"
+  },
+  "vlg.chapel": {
+   "glb": "kits/library/castle_keep/assets/vlg.chapel.glb",
+   "kit_id": "vlg.chapel",
+   "preset": null,
+   "sha256": "b7c09223ed139b79d09fe8746bad04a7e5a83556c69396cd3c7eb8926939de0a"
+  },
+  "vlg.chapel__doorway": {
+   "glb": "kits/library/castle_keep/presets/vlg.chapel__doorway.glb",
+   "kit_id": "vlg.chapel",
+   "preset": "doorway",
+   "sha256": "8139d51390d8cfe063e52d561f946fa2fc556ecd395dbfd64197e90cf1a339d8"
+  },
+  "vlg.chapel__plain": {
+   "glb": "kits/library/castle_keep/presets/vlg.chapel__plain.glb",
+   "kit_id": "vlg.chapel",
+   "preset": "plain",
+   "sha256": "4da1b071782ef71c2ad200a40952be5f6ef1860213974bfd4ba61dba6d3e6ee2"
+  },
+  "vlg.cottage": {
+   "glb": "kits/library/castle_keep/assets/vlg.cottage.glb",
+   "kit_id": "vlg.cottage",
+   "preset": null,
+   "sha256": "973c3f644ae740ebe20f3313bb8a89a27c2eb36449571b9e9035b15aff8b304f"
+  },
+  "vlg.cottage__doorway": {
+   "glb": "kits/library/castle_keep/presets/vlg.cottage__doorway.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "doorway",
+   "sha256": "3fa7076a4512d9016dd6d5918c4c805c83a46e26e74952aa7ac6d32f5bbf4928"
+  },
+  "vlg.cottage__longhouse": {
+   "glb": "kits/library/castle_keep/presets/vlg.cottage__longhouse.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "longhouse",
+   "sha256": "5e9427310a915fb58fc05795cbd27aff70e090f2b5dc128b6c78a3b17c3f71c7"
+  },
+  "vlg.cottage__small": {
+   "glb": "kits/library/castle_keep/presets/vlg.cottage__small.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "small",
+   "sha256": "6caed230be56417ca604749304c18d0484089fd6252ff94ca7a2b06e8a194baa"
+  },
+  "vlg.cottage__stone": {
+   "glb": "kits/library/castle_keep/presets/vlg.cottage__stone.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "stone",
+   "sha256": "34f8af258c118da2b4a2698aace320295564b87920eab52ce4d0123809ecfd58"
+  },
+  "vlg.cottage__stone_doorway": {
+   "glb": "kits/library/castle_keep/presets/vlg.cottage__stone_doorway.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "stone_doorway",
+   "sha256": "98ba13f895756eb024374f822f3735de06885dfcb463426987e96015a3fd44ef"
+  },
+  "vlg.cottage__townhouse": {
+   "glb": "kits/library/castle_keep/presets/vlg.cottage__townhouse.glb",
+   "kit_id": "vlg.cottage",
+   "preset": "townhouse",
+   "sha256": "c2c6f4e8f47b85e86572cc193839c2547beddd124ea9651a91bcf71d268956c1"
+  },
+  "vlg.doorway": {
+   "glb": "kits/library/castle_keep/assets/vlg.doorway.glb",
+   "kit_id": "vlg.doorway",
+   "preset": null,
+   "sha256": "2f7261c810796ffc25e0b2aa91aa67dc18e5aca1e6668433d53cba72719328cc"
+  },
+  "vlg.doorway__ajar": {
+   "glb": "kits/library/castle_keep/presets/vlg.doorway__ajar.glb",
+   "kit_id": "vlg.doorway",
+   "preset": "ajar",
+   "sha256": "898b3c4def44c0bc61e74961f7f656c1d5c28ee97c92a4c88c477f6785ba56d6"
+  },
+  "vlg.fence": {
+   "glb": "kits/library/castle_keep/assets/vlg.fence.glb",
+   "kit_id": "vlg.fence",
+   "preset": null,
+   "sha256": "99d694b20a965418667dc691282e1590b00ffc062bcfe6022bbda5b81bc29375"
+  },
+  "vlg.fence__drystone": {
+   "glb": "kits/library/castle_keep/presets/vlg.fence__drystone.glb",
+   "kit_id": "vlg.fence",
+   "preset": "drystone",
+   "sha256": "96844f672537896ea44ac4461984466edf5182cca32501c7fdf1e259264b8970"
+  },
+  "vlg.fence__gate": {
+   "glb": "kits/library/castle_keep/presets/vlg.fence__gate.glb",
+   "kit_id": "vlg.fence",
+   "preset": "gate",
+   "sha256": "65a39d60840c2d505a1f1a26c98e99229bad5b1efeb0c672f54844c136b35303"
+  },
+  "vlg.fence__rail": {
+   "glb": "kits/library/castle_keep/presets/vlg.fence__rail.glb",
+   "kit_id": "vlg.fence",
+   "preset": "rail",
+   "sha256": "54e821f9a9e2cc9656a24bfbaae719ea708d93a181775dab61a8768077380f58"
+  },
+  "vlg.gatehouse": {
+   "glb": "kits/library/castle_keep/assets/vlg.gatehouse.glb",
+   "kit_id": "vlg.gatehouse",
+   "preset": null,
+   "sha256": "1234928712d752da7c1bc7752b285ed923a3fb88d5bdfc964a942b10b4b522bd"
+  },
+  "vlg.gatehouse__open": {
+   "glb": "kits/library/castle_keep/presets/vlg.gatehouse__open.glb",
+   "kit_id": "vlg.gatehouse",
+   "preset": "open",
+   "sha256": "c1390e6b9cfcfb268d0a44fabea24fa94ebd4e51b946342c29c203d782ebe1e2"
+  },
+  "vlg.hearth": {
+   "glb": "kits/library/castle_keep/assets/vlg.hearth.glb",
+   "kit_id": "vlg.hearth",
+   "preset": null,
+   "sha256": "aabb32df6f49d160f0aa5febd12bd156872c6b983213ec7811eecdfeb7ed741a"
+  },
+  "vlg.hearth__cold": {
+   "glb": "kits/library/castle_keep/presets/vlg.hearth__cold.glb",
+   "kit_id": "vlg.hearth",
+   "preset": "cold",
+   "sha256": "e778621ab65160a0c79948bfd2bb8c5c5242f3562582329fc32eaeae8db474ed"
+  },
+  "vlg.mill": {
+   "glb": "kits/library/castle_keep/assets/vlg.mill.glb",
+   "kit_id": "vlg.mill",
+   "preset": null,
+   "sha256": "0a09a252cc7bb04881baf7ace1c22f063e5d4211c324e8aace213f76518ba4a8"
+  },
+  "vlg.mill__turned": {
+   "glb": "kits/library/castle_keep/presets/vlg.mill__turned.glb",
+   "kit_id": "vlg.mill",
+   "preset": "turned",
+   "sha256": "8de3f71b8ca9f0ede1b1d77e2a71b304aee0007207b485be478ee553af7b5f80"
+  },
+  "vlg.mill__watermill": {
+   "glb": "kits/library/castle_keep/presets/vlg.mill__watermill.glb",
+   "kit_id": "vlg.mill",
+   "preset": "watermill",
+   "sha256": "5bd2e04842a801406a23cc4a35082599413240098a81c3b0276c4cdcdc53572f"
+  },
+  "vlg.room": {
+   "glb": "kits/library/castle_keep/assets/vlg.room.glb",
+   "kit_id": "vlg.room",
+   "preset": null,
+   "sha256": "e201b6ad4a63be2100147bcb053af299b0e49fad49d33402c43aed0d1f159a56"
+  },
+  "vlg.room__cottage": {
+   "glb": "kits/library/castle_keep/presets/vlg.room__cottage.glb",
+   "kit_id": "vlg.room",
+   "preset": "cottage",
+   "sha256": "ea85140ac4db06bb00116c689ff2ef0d232e1f9a89dc33a58d70a471aa34d657"
+  },
+  "vlg.room__taproom": {
+   "glb": "kits/library/castle_keep/presets/vlg.room__taproom.glb",
+   "kit_id": "vlg.room",
+   "preset": "taproom",
+   "sha256": "01d1f665fd751d65675bb2d36b38f2787bd0cac0b75da312d537d525e7b6dfc3"
+  },
+  "vlg.smithy": {
+   "glb": "kits/library/castle_keep/assets/vlg.smithy.glb",
+   "kit_id": "vlg.smithy",
+   "preset": null,
+   "sha256": "8248b3ff8423f42c26c1db62c35db2b98c59e1b5f7f5e472e20130954f30d9d8"
+  },
+  "vlg.smithy__doorway": {
+   "glb": "kits/library/castle_keep/presets/vlg.smithy__doorway.glb",
+   "kit_id": "vlg.smithy",
+   "preset": "doorway",
+   "sha256": "24deb3b5e5e710df29386bbc94a51995c208dbe34d2c66e888fdfd6290746414"
+  },
+  "vlg.smithy__thatch": {
+   "glb": "kits/library/castle_keep/presets/vlg.smithy__thatch.glb",
+   "kit_id": "vlg.smithy",
+   "preset": "thatch",
+   "sha256": "327d322339f6d898c9388abbfab5efb135125493b77dd9620868e61e8b698c80"
+  },
+  "vlg.stairs": {
+   "glb": "kits/library/castle_keep/assets/vlg.stairs.glb",
+   "kit_id": "vlg.stairs",
+   "preset": null,
+   "sha256": "5acb1d1516de3ae9ad13293584df81aed9ea3a1b454f8179f4055e9e690f6303"
+  },
+  "vlg.stairs__tall": {
+   "glb": "kits/library/castle_keep/presets/vlg.stairs__tall.glb",
+   "kit_id": "vlg.stairs",
+   "preset": "tall",
+   "sha256": "bf452ad5e10d266fee247eaefa758990638ea1705a54a1c34af71869dcb8b22b"
+  },
+  "vlg.stairs__timber": {
+   "glb": "kits/library/castle_keep/presets/vlg.stairs__timber.glb",
+   "kit_id": "vlg.stairs",
+   "preset": "timber",
+   "sha256": "8a7f8511ac1410226156e6de9ad206c957d8f316657131114e658ac59bbbd7c1"
+  },
+  "vlg.stall": {
+   "glb": "kits/library/castle_keep/assets/vlg.stall.glb",
+   "kit_id": "vlg.stall",
+   "preset": null,
+   "sha256": "4a4be8b2f8c8b7c9950f0638bd20571d7a9b22a6c6f106ca52d1b1d4ffa0878d"
+  },
+  "vlg.stall__bread": {
+   "glb": "kits/library/castle_keep/presets/vlg.stall__bread.glb",
+   "kit_id": "vlg.stall",
+   "preset": "bread",
+   "sha256": "72aed16619ad78bb1a8993d3c0d2f656f1fcb4ce8b6abd5d68c38039824bebbd"
+  },
+  "vlg.stall__cloth": {
+   "glb": "kits/library/castle_keep/presets/vlg.stall__cloth.glb",
+   "kit_id": "vlg.stall",
+   "preset": "cloth",
+   "sha256": "af84ea44d44c6118d81b72ea3d74e3346594288abeaf0f997bb62e9e607eee62"
+  },
+  "vlg.stall__empty": {
+   "glb": "kits/library/castle_keep/presets/vlg.stall__empty.glb",
+   "kit_id": "vlg.stall",
+   "preset": "empty",
+   "sha256": "fe76d620e86a825caa39ac52245303fb983ffb5b8748b99b06598b5a98803ab7"
+  },
+  "vlg.stall__pottery": {
+   "glb": "kits/library/castle_keep/presets/vlg.stall__pottery.glb",
+   "kit_id": "vlg.stall",
+   "preset": "pottery",
+   "sha256": "2aab1e64997ce51e2a657edaabe39f95c2c6df4806b40af48e35aca58293f455"
+  },
+  "vlg.tavern": {
+   "glb": "kits/library/castle_keep/assets/vlg.tavern.glb",
+   "kit_id": "vlg.tavern",
+   "preset": null,
+   "sha256": "13ceab9e70bb208b5620b34e0e7873484ea33172711ada8cc44cf467612ef1d8"
+  },
+  "vlg.tavern__doorway": {
+   "glb": "kits/library/castle_keep/presets/vlg.tavern__doorway.glb",
+   "kit_id": "vlg.tavern",
+   "preset": "doorway",
+   "sha256": "6ef2c0b8d6f81e4dd37cb5109d22d21e456d0042670f880f75fadaeab25da4e9"
+  },
+  "vlg.tavern__thatch": {
+   "glb": "kits/library/castle_keep/presets/vlg.tavern__thatch.glb",
+   "kit_id": "vlg.tavern",
+   "preset": "thatch",
+   "sha256": "5aeac56c2051d26f3b89579a85dc971231f110fd69b3bfdb29491893c6749b22"
+  },
+  "vlg.wall": {
+   "glb": "kits/library/castle_keep/assets/vlg.wall.glb",
+   "kit_id": "vlg.wall",
+   "preset": null,
+   "sha256": "5d47ddec4940e79bb26a7c56456e096c50806bd3511db9ff1dba8f44572f06f2"
+  },
+  "vlg.wall__corner": {
+   "glb": "kits/library/castle_keep/presets/vlg.wall__corner.glb",
+   "kit_id": "vlg.wall",
+   "preset": "corner",
+   "sha256": "68b679e7c4d1355fec4f7ab530135339adb5060a8400295b4ff020edde09d47b"
+  },
+  "vlg.wall__end": {
+   "glb": "kits/library/castle_keep/presets/vlg.wall__end.glb",
+   "kit_id": "vlg.wall",
+   "preset": "end",
+   "sha256": "d16d0471cd297d690f9b37482bb46c98d37e36cf89be350305fd1c17265b90bc"
+  },
+  "vlg.wall__palisade": {
+   "glb": "kits/library/castle_keep/presets/vlg.wall__palisade.glb",
+   "kit_id": "vlg.wall",
+   "preset": "palisade",
+   "sha256": "4d604a1d9e391cff75085d02fdb95abf3cf7b317c5b1cb419ecf17f40fcb6d82"
+  },
+  "vlg.wall__palisade_corner": {
+   "glb": "kits/library/castle_keep/presets/vlg.wall__palisade_corner.glb",
+   "kit_id": "vlg.wall",
+   "preset": "palisade_corner",
+   "sha256": "2bca1146ee4d455caf7c83347f6993dab7c1f0cd35c79831f223d0a977e09e4c"
+  },
+  "vlg.wall__postern": {
+   "glb": "kits/library/castle_keep/presets/vlg.wall__postern.glb",
+   "kit_id": "vlg.wall",
+   "preset": "postern",
+   "sha256": "2f3f09569413b72f894c4fcb5aa02d1664be36d6310ec8af4a14689a4037acb0"
+  },
+  "vlg.well": {
+   "glb": "kits/library/castle_keep/assets/vlg.well.glb",
+   "kit_id": "vlg.well",
+   "preset": null,
+   "sha256": "128a994634350e5fef5bf8e6cf66d3c15b06e57f01eae72f1d8c0547734abab0"
+  },
+  "vlg.well__open": {
+   "glb": "kits/library/castle_keep/presets/vlg.well__open.glb",
+   "kit_id": "vlg.well",
+   "preset": "open",
+   "sha256": "5f8035f3c8fd2eaab172e13cae0e779ad39576f4585dcd36fc2c0491898486e7"
+  },
+  "vlg.well__slate": {
+   "glb": "kits/library/castle_keep/presets/vlg.well__slate.glb",
+   "kit_id": "vlg.well",
+   "preset": "slate",
+   "sha256": "9231e7ef1ae973125ce8e3d851988a2d72054ac06f469f5b7b484e55c68281bf"
+  }
+ },
+ "format": 1,
+ "kit_pack": "castle_keep",
+ "note": "MEDIEVALKIT bindings: kit defaults (<kit_id>), pack presets (<kit_id>__<preset>), aliases the runtime places by name (arch.door -> vlg.doorway). Every row hash-pinned; regenerate with tools/medievalkit_library.py bindings.",
+ "pack": "castle_keep"
+}

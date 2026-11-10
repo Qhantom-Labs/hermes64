@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hermes64:project-cover:1.0.0",
+  "title": "Optional project.json `cover` field 1.0.0",
+  "description": "Pointer from a portable project manifest to its adopted staged cover. Added by adventure_maker/project_cover.py (a new module) so contracts/project/1.0.0.json and project_model.py stay unchanged: manifests without `cover` are byte-identical and validate exactly as before. All paths are confined portable project-relative paths.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "scene", "scene_sha256", "box", "studio_art", "title_position"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "scene": {"$ref": "#/$defs/path"},
+    "scene_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "box": {"$ref": "#/$defs/path"},
+    "box_1x": {"$ref": "#/$defs/path"},
+    "banner": {"$ref": "#/$defs/path"},
+    "square": {"$ref": "#/$defs/path"},
+    "card_alpha": {"$ref": "#/$defs/path"},
+    "studio_art": {"$ref": "#/$defs/path"},
+    "title_position": {"enum": ["top", "bottom"]}
+  },
+  "$defs": {
+    "path": {"type": "string", "maxLength": 240, "pattern": "^[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*$"}
+  }
+}

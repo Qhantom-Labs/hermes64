@@ -1,0 +1,910 @@
+{
+ "assets": {
+  "arch.door": {
+   "alias_of": "ruin.gate",
+   "glb": "kits/library/jungle_temple/assets/ruin.gate.glb",
+   "kit_id": "ruin.gate",
+   "preset": null,
+   "sha256": "56518d340457e6736ab770da58370f488fea0ae412016d038b9d59b0db1a9bfb"
+  },
+  "land.causeway": {
+   "glb": "kits/library/jungle_temple/assets/land.causeway.glb",
+   "kit_id": "land.causeway",
+   "preset": null,
+   "sha256": "e8f158a4ecac48f6e32c719a687afc8e120c7d81c8491d2470691d776114b3f6"
+  },
+  "land.causeway__broken": {
+   "glb": "kits/library/jungle_temple/presets/land.causeway__broken.glb",
+   "kit_id": "land.causeway",
+   "preset": "broken",
+   "sha256": "ee592774d7a650bb419ccfb958ce9d037238de759d8dc848a48197471f530bab"
+  },
+  "land.causeway__end": {
+   "glb": "kits/library/jungle_temple/presets/land.causeway__end.glb",
+   "kit_id": "land.causeway",
+   "preset": "end",
+   "sha256": "22cc6d6312eb3de4c7936a423b4010f733ef6a2ef1447bb940fc3c5bd2305ac1"
+  },
+  "land.causeway__steps": {
+   "glb": "kits/library/jungle_temple/presets/land.causeway__steps.glb",
+   "kit_id": "land.causeway",
+   "preset": "steps",
+   "sha256": "17887e36603d047f1327af1ec932ae4ae118d4bbb41cdb85ba47d088301889e4"
+  },
+  "land.cliff": {
+   "glb": "kits/library/jungle_temple/assets/land.cliff.glb",
+   "kit_id": "land.cliff",
+   "preset": null,
+   "sha256": "f6795bb8e8668b3c7f7aa870ca5684a313f918faae4b63e184244b8abe96a498"
+  },
+  "land.cliff__corner": {
+   "glb": "kits/library/jungle_temple/presets/land.cliff__corner.glb",
+   "kit_id": "land.cliff",
+   "preset": "corner",
+   "sha256": "42981c75c126140de8d68240bda29094752675ebfc4f08d8de3efbe905a7e887"
+  },
+  "land.cliff__end": {
+   "glb": "kits/library/jungle_temple/presets/land.cliff__end.glb",
+   "kit_id": "land.cliff",
+   "preset": "end",
+   "sha256": "1382a4ff6ab1ac4e6d801c836ebb1faf7d381cd3d9d15a7791cee08416bea647"
+  },
+  "land.cliff__low": {
+   "glb": "kits/library/jungle_temple/presets/land.cliff__low.glb",
+   "kit_id": "land.cliff",
+   "preset": "low",
+   "sha256": "38327e6605d3ee0d6adde8bafd44b1e9de4d9fc724d62012d52c5b679a16bab2"
+  },
+  "land.cliff__pillar": {
+   "glb": "kits/library/jungle_temple/presets/land.cliff__pillar.glb",
+   "kit_id": "land.cliff",
+   "preset": "pillar",
+   "sha256": "3c2b8541a94db891d607c835fa50468185a868326a4302d1425787d06c667cd2"
+  },
+  "land.ground": {
+   "glb": "kits/library/jungle_temple/assets/land.ground.glb",
+   "kit_id": "land.ground",
+   "preset": null,
+   "sha256": "c3ccc51ec6b2bac905e9125a60a3cab6ac5a664130b86016c5615b42d7e7ea18"
+  },
+  "land.ground__court": {
+   "glb": "kits/library/jungle_temple/presets/land.ground__court.glb",
+   "kit_id": "land.ground",
+   "preset": "court",
+   "sha256": "0fe4d36303c4bcd26b785835d8ab8875fbc36376bb0dbd336f4fc5819a8cba62"
+  },
+  "land.ground__jungle": {
+   "glb": "kits/library/jungle_temple/presets/land.ground__jungle.glb",
+   "kit_id": "land.ground",
+   "preset": "jungle",
+   "sha256": "2d8da07615ec4ae4bf369d6aa62cfed03808abf38735da0de818c1ae04fbde99"
+  },
+  "land.ground__jungle_1": {
+   "glb": "kits/library/jungle_temple/presets/land.ground__jungle_1.glb",
+   "kit_id": "land.ground",
+   "preset": "jungle_1",
+   "sha256": "804972f40a70a6e96007444b710405d3436c8b2c17362692a63a9a37738ea764"
+  },
+  "land.ground__jungle_4": {
+   "glb": "kits/library/jungle_temple/presets/land.ground__jungle_4.glb",
+   "kit_id": "land.ground",
+   "preset": "jungle_4",
+   "sha256": "3d55e5e5539e22b936526066c45ea6db48c8e0e4721f2c7269d16c6b3faa011d"
+  },
+  "land.ground__jungle_far": {
+   "glb": "kits/library/jungle_temple/presets/land.ground__jungle_far.glb",
+   "kit_id": "land.ground",
+   "preset": "jungle_far",
+   "sha256": "da962ff79be83f6499e6a8818a1c633839c31e54a5b2fe62c649758a19ba5bf7"
+  },
+  "land.ground__paved": {
+   "glb": "kits/library/jungle_temple/presets/land.ground__paved.glb",
+   "kit_id": "land.ground",
+   "preset": "paved",
+   "sha256": "880984673e1e8a84bb75777adeaa05faaade67968aac4749b4eaead09bb69b4a"
+  },
+  "land.ground__paved_1": {
+   "glb": "kits/library/jungle_temple/presets/land.ground__paved_1.glb",
+   "kit_id": "land.ground",
+   "preset": "paved_1",
+   "sha256": "e222a59ad9bcf1800469873a4ce723d6834cda32f993b1cd67de03deff80efd7"
+  },
+  "land.ground__sand_1": {
+   "glb": "kits/library/jungle_temple/presets/land.ground__sand_1.glb",
+   "kit_id": "land.ground",
+   "preset": "sand_1",
+   "sha256": "8c6c5c1fcd048ff7f4130cf6f6b416bb8ef7cdfe20d2487ffbe5ba0b641a8201"
+  },
+  "land.ground__sand_4": {
+   "glb": "kits/library/jungle_temple/presets/land.ground__sand_4.glb",
+   "kit_id": "land.ground",
+   "preset": "sand_4",
+   "sha256": "b8fb843a161dd540dc470e6f1cc22d1e1fcfdba6e4cfe8d1820fc347a6ca7c24"
+  },
+  "land.ground__sand_far": {
+   "glb": "kits/library/jungle_temple/presets/land.ground__sand_far.glb",
+   "kit_id": "land.ground",
+   "preset": "sand_far",
+   "sha256": "aabe05ac74c445408d045b0f9daf38cd873bfeb5b4cb108524c85ffb5d9b3e13"
+  },
+  "land.sky": {
+   "glb": "kits/library/jungle_temple/assets/land.sky.glb",
+   "kit_id": "land.sky",
+   "preset": null,
+   "sha256": "cbbcb8bfe61b4c242004ecc4399a2f91ce7f2bb36afa9cdab14dab0acb052034"
+  },
+  "land.sky__canopy": {
+   "glb": "kits/library/jungle_temple/presets/land.sky__canopy.glb",
+   "kit_id": "land.sky",
+   "preset": "canopy",
+   "sha256": "2e42fbd25d8a79ab503b046e35cb3571ffa0d2d45df711726f78c67d50e90383"
+  },
+  "land.sky__dunes": {
+   "glb": "kits/library/jungle_temple/presets/land.sky__dunes.glb",
+   "kit_id": "land.sky",
+   "preset": "dunes",
+   "sha256": "2d3b437a9936e9d64927d012ef7d32a9d308dfac8e6709b9fe1a0a2ade5d0b4a"
+  },
+  "land.sky__mesas": {
+   "glb": "kits/library/jungle_temple/presets/land.sky__mesas.glb",
+   "kit_id": "land.sky",
+   "preset": "mesas",
+   "sha256": "dab425dbf7ceb78a72ef74637fddaecc8f2aa5b839504aa2c21991a779e8e5ad"
+  },
+  "land.skyline": {
+   "glb": "kits/library/jungle_temple/assets/land.skyline.glb",
+   "kit_id": "land.skyline",
+   "preset": null,
+   "sha256": "cb3d7199c7601cf0fd15903f0c34fe83c4231c5cbd17780f91de62621a15209b"
+  },
+  "land.skyline__canopy": {
+   "glb": "kits/library/jungle_temple/presets/land.skyline__canopy.glb",
+   "kit_id": "land.skyline",
+   "preset": "canopy",
+   "sha256": "7e4a55692937cd11a141348d205b23307faacc931e9bfa7ed7b93ba6bbaef809"
+  },
+  "land.skyline__mesas": {
+   "glb": "kits/library/jungle_temple/presets/land.skyline__mesas.glb",
+   "kit_id": "land.skyline",
+   "preset": "mesas",
+   "sha256": "6eeff4ed7eba80a8f0aa7ad8c761148390ea7eba476336184d1c357b9d3debbd"
+  },
+  "land.slope": {
+   "glb": "kits/library/jungle_temple/assets/land.slope.glb",
+   "kit_id": "land.slope",
+   "preset": null,
+   "sha256": "dc5925c845f34c363baad6b29b356a506d017997bdc668f54ee46ad043a57ede"
+  },
+  "land.slope__earth": {
+   "glb": "kits/library/jungle_temple/presets/land.slope__earth.glb",
+   "kit_id": "land.slope",
+   "preset": "earth",
+   "sha256": "f457ce7f6f7b735bc4a3ce81b2cbcc090a2343fd3122ed28b36725a294b6edba"
+  },
+  "land.slope__low": {
+   "glb": "kits/library/jungle_temple/presets/land.slope__low.glb",
+   "kit_id": "land.slope",
+   "preset": "low",
+   "sha256": "a481156505f83dfd00c1c94d8fa7fe08b09be27dcae0b102c04d2c088cf122fd"
+  },
+  "land.terrace": {
+   "glb": "kits/library/jungle_temple/assets/land.terrace.glb",
+   "kit_id": "land.terrace",
+   "preset": null,
+   "sha256": "9e96b863d624005ccac7fe18319fce00aae9510e1217460242521c869c5af35f"
+  },
+  "land.terrace__high": {
+   "glb": "kits/library/jungle_temple/presets/land.terrace__high.glb",
+   "kit_id": "land.terrace",
+   "preset": "high",
+   "sha256": "94459077255af29464bfd305282dc0ddb0d57bae199b56f377354fbe75b99397"
+  },
+  "land.terrace__jungle": {
+   "glb": "kits/library/jungle_temple/presets/land.terrace__jungle.glb",
+   "kit_id": "land.terrace",
+   "preset": "jungle",
+   "sha256": "92237a6964d3a9f0c8bf27d9a29b6e67b3600d2e8163ba27948b36ca96c08506"
+  },
+  "land.terrace__low": {
+   "glb": "kits/library/jungle_temple/presets/land.terrace__low.glb",
+   "kit_id": "land.terrace",
+   "preset": "low",
+   "sha256": "cc405f0fa1becb30faf4f2ff4c9afe5d5ef0e3ecabde5859dc691ed3aba00827"
+  },
+  "land.wash": {
+   "glb": "kits/library/jungle_temple/assets/land.wash.glb",
+   "kit_id": "land.wash",
+   "preset": null,
+   "sha256": "dd109b7c5a8560740bff7f9fd9062f7c1ce9d6617b89e94ff490c4817a982460"
+  },
+  "land.wash__jungle": {
+   "glb": "kits/library/jungle_temple/presets/land.wash__jungle.glb",
+   "kit_id": "land.wash",
+   "preset": "jungle",
+   "sha256": "f9d58b6985e1ff9a3ae3b38748dda122ea1a5af6928d4f086400e89630c2be1e"
+  },
+  "land.wash__narrow": {
+   "glb": "kits/library/jungle_temple/presets/land.wash__narrow.glb",
+   "kit_id": "land.wash",
+   "preset": "narrow",
+   "sha256": "6207898a675c3bd61de1e25c1e64613646e4f9f9862877688bf4df96a9371ec0"
+  },
+  "relic.altar": {
+   "glb": "kits/library/jungle_temple/assets/relic.altar.glb",
+   "kit_id": "relic.altar",
+   "preset": null,
+   "sha256": "d144df4b38c6183f4ea161544eea3b11225edc389a5a1511e9039fb482c38b7e"
+  },
+  "relic.altar__fire": {
+   "glb": "kits/library/jungle_temple/presets/relic.altar__fire.glb",
+   "kit_id": "relic.altar",
+   "preset": "fire",
+   "sha256": "eefaf68e01bf6deb3d24a9b76ab5b5d15c4ac881246ec47331accd230116061a"
+  },
+  "relic.altar__sun": {
+   "glb": "kits/library/jungle_temple/presets/relic.altar__sun.glb",
+   "kit_id": "relic.altar",
+   "preset": "sun",
+   "sha256": "f3af2172b7a2d4ecf19c268b32f1edeada4426b6304ac05eb9976c41362fac05"
+  },
+  "relic.banner": {
+   "glb": "kits/library/jungle_temple/assets/relic.banner.glb",
+   "kit_id": "relic.banner",
+   "preset": null,
+   "sha256": "a75dc2f2dd64817e51e17dca93c731c193c6cb5f7bb598b830bc01173b7dbaa8"
+  },
+  "relic.banner__short": {
+   "glb": "kits/library/jungle_temple/presets/relic.banner__short.glb",
+   "kit_id": "relic.banner",
+   "preset": "short",
+   "sha256": "d0d645e8cc9906cf9556d2719ff1a00f0d17ff9c405a70f003086682095a5c38"
+  },
+  "relic.brazier": {
+   "glb": "kits/library/jungle_temple/assets/relic.brazier.glb",
+   "kit_id": "relic.brazier",
+   "preset": null,
+   "sha256": "fdbdabe22fe7776cdc9e1ef35c6fbe6d9528795b639e55ec615b3a8c3b3cd236"
+  },
+  "relic.brazier__pedestal": {
+   "glb": "kits/library/jungle_temple/presets/relic.brazier__pedestal.glb",
+   "kit_id": "relic.brazier",
+   "preset": "pedestal",
+   "sha256": "ba9cf4748bba5104616493c4897f0a85def61f6051a1854f117e818f471538d8"
+  },
+  "relic.brazier__pit": {
+   "glb": "kits/library/jungle_temple/presets/relic.brazier__pit.glb",
+   "kit_id": "relic.brazier",
+   "preset": "pit",
+   "sha256": "e6b009c4dab638bf0f2e7b64647540a2d481fd750b4b488a37ffc9aa68611287"
+  },
+  "relic.brazier__unlit": {
+   "glb": "kits/library/jungle_temple/presets/relic.brazier__unlit.glb",
+   "kit_id": "relic.brazier",
+   "preset": "unlit",
+   "sha256": "7331dc25fc2715855bb5d2e67bc08d85bb89b3eddf7ec032fbf438cfe6879e37"
+  },
+  "relic.coffer": {
+   "glb": "kits/library/jungle_temple/assets/relic.coffer.glb",
+   "kit_id": "relic.coffer",
+   "preset": null,
+   "sha256": "b8d58377a57da1337335968dba8e3549ae9f0ddced2ce56ba54bcabe22b02f5b"
+  },
+  "relic.coffer__open": {
+   "glb": "kits/library/jungle_temple/presets/relic.coffer__open.glb",
+   "kit_id": "relic.coffer",
+   "preset": "open",
+   "sha256": "01a9f6e1c381fae2e8e11cd319f03b5321267db6d7cc0d96da324f750ba3154f"
+  },
+  "relic.dial": {
+   "glb": "kits/library/jungle_temple/assets/relic.dial.glb",
+   "kit_id": "relic.dial",
+   "preset": null,
+   "sha256": "c645ab68b22ddb3c670ba7077b275065b9dce6af79504eea005865090920b339"
+  },
+  "relic.dial__ruined": {
+   "glb": "kits/library/jungle_temple/presets/relic.dial__ruined.glb",
+   "kit_id": "relic.dial",
+   "preset": "ruined",
+   "sha256": "b9a544d61b575af4876c4c7e4788a791ae962085ae635d9361693b87d886e187"
+  },
+  "relic.plate": {
+   "glb": "kits/library/jungle_temple/assets/relic.plate.glb",
+   "kit_id": "relic.plate",
+   "preset": null,
+   "sha256": "981f1b6b7a478de92e1a180e3fa381955edf9435848e76eb9d0e0f7e7c70a882"
+  },
+  "relic.plate__glyph": {
+   "glb": "kits/library/jungle_temple/presets/relic.plate__glyph.glb",
+   "kit_id": "relic.plate",
+   "preset": "glyph",
+   "sha256": "dd1ade531e55241bd3298a39d126b8759f90b5f977ef598d8cd7c5a9e1f6ecae"
+  },
+  "relic.plate__pressed": {
+   "glb": "kits/library/jungle_temple/presets/relic.plate__pressed.glb",
+   "kit_id": "relic.plate",
+   "preset": "pressed",
+   "sha256": "81e9fdf93fb433e85e91da3864ac51303ff8d5aae6f74c735332fad7232e3bbb"
+  },
+  "relic.sarcophagus": {
+   "glb": "kits/library/jungle_temple/assets/relic.sarcophagus.glb",
+   "kit_id": "relic.sarcophagus",
+   "preset": null,
+   "sha256": "56f08ef06c396d764a06e8d1945d57e2cc7323a4a8362466f918ecc9920b1873"
+  },
+  "relic.sarcophagus__broken": {
+   "glb": "kits/library/jungle_temple/presets/relic.sarcophagus__broken.glb",
+   "kit_id": "relic.sarcophagus",
+   "preset": "broken",
+   "sha256": "20f825db2f56a9b326469d7bf45632338610d18a26464f081640897d13a98e1f"
+  },
+  "relic.sarcophagus__open": {
+   "glb": "kits/library/jungle_temple/presets/relic.sarcophagus__open.glb",
+   "kit_id": "relic.sarcophagus",
+   "preset": "open",
+   "sha256": "c12ddc2e1947b40f1d5ac39878853abd4a891c8709da56cc0d2e1523392e2362"
+  },
+  "relic.statue": {
+   "glb": "kits/library/jungle_temple/assets/relic.statue.glb",
+   "kit_id": "relic.statue",
+   "preset": null,
+   "sha256": "c3c616f7d5ab61944d7d6726234bad31bc86a614d3e4247e1d5077be2593a785"
+  },
+  "relic.statue__buried": {
+   "glb": "kits/library/jungle_temple/presets/relic.statue__buried.glb",
+   "kit_id": "relic.statue",
+   "preset": "buried",
+   "sha256": "8d4d0be06c114ce6d277079ee36acab4d0544e2da6c3b728321c877e90523373"
+  },
+  "relic.statue__guardian": {
+   "glb": "kits/library/jungle_temple/presets/relic.statue__guardian.glb",
+   "kit_id": "relic.statue",
+   "preset": "guardian",
+   "sha256": "c3b837e6827a0ee136cdd06b13a146cbfcb43e2cc909dbb3b6a6aa3ac3c9d918"
+  },
+  "relic.statue__idol": {
+   "glb": "kits/library/jungle_temple/presets/relic.statue__idol.glb",
+   "kit_id": "relic.statue",
+   "preset": "idol",
+   "sha256": "3e50422ff8be3aa879fc645e15d32f9b529f33e285d77d49aa1b6609e44cba51"
+  },
+  "relic.tablet": {
+   "glb": "kits/library/jungle_temple/assets/relic.tablet.glb",
+   "kit_id": "relic.tablet",
+   "preset": null,
+   "sha256": "2ee894aaf854a95f32def6cc8f3940f03ade20406d9ffa3921a07f8a50c7c7df"
+  },
+  "relic.tablet__awakened": {
+   "glb": "kits/library/jungle_temple/presets/relic.tablet__awakened.glb",
+   "kit_id": "relic.tablet",
+   "preset": "awakened",
+   "sha256": "0e070cb7bcc5fef6a5c08facff14e55ee409bfeddb96d5b7c1ff9da9b9517467"
+  },
+  "relic.tablet__fallen": {
+   "glb": "kits/library/jungle_temple/presets/relic.tablet__fallen.glb",
+   "kit_id": "relic.tablet",
+   "preset": "fallen",
+   "sha256": "46cca3a2ef5b4f513b31680bc75a0c7ef61253ccef640711318a00c9f614aa68"
+  },
+  "relic.tablet__tablet": {
+   "glb": "kits/library/jungle_temple/presets/relic.tablet__tablet.glb",
+   "kit_id": "relic.tablet",
+   "preset": "tablet",
+   "sha256": "f2bb1674151acca07396e790e4e2389be0a505987d37a1eed954ba6c6d097962"
+  },
+  "relic.urn": {
+   "glb": "kits/library/jungle_temple/assets/relic.urn.glb",
+   "kit_id": "relic.urn",
+   "preset": null,
+   "sha256": "99498d306e1204295286b97bfa366720a82ce50478bb24850eaa6b8c2d27685c"
+  },
+  "relic.urn__amphora": {
+   "glb": "kits/library/jungle_temple/presets/relic.urn__amphora.glb",
+   "kit_id": "relic.urn",
+   "preset": "amphora",
+   "sha256": "0a6e7423110f0852580f467fff08bf7d18e397fc9a83162e792bc2524ea28c0c"
+  },
+  "relic.urn__bowl": {
+   "glb": "kits/library/jungle_temple/presets/relic.urn__bowl.glb",
+   "kit_id": "relic.urn",
+   "preset": "bowl",
+   "sha256": "d6642c5d6c46344e8643b81b820ef99b478a369ca0a61d31f9a8907bb90c9189"
+  },
+  "relic.urn__broken": {
+   "glb": "kits/library/jungle_temple/presets/relic.urn__broken.glb",
+   "kit_id": "relic.urn",
+   "preset": "broken",
+   "sha256": "1778240f442d9f358f681efeaf7aa68536c2fe6de2c40b94babc85d0b61f0ea2"
+  },
+  "ruin.arch": {
+   "glb": "kits/library/jungle_temple/assets/ruin.arch.glb",
+   "kit_id": "ruin.arch",
+   "preset": null,
+   "sha256": "c6f7ed2fed2d8c0cb449d682a49a9464fd2ed56f0efd5b05d39dda6f9d27723a"
+  },
+  "ruin.arch__broken": {
+   "glb": "kits/library/jungle_temple/presets/ruin.arch__broken.glb",
+   "kit_id": "ruin.arch",
+   "preset": "broken",
+   "sha256": "b2d5917a6b985666fcbc1bfaabf75948b2cd21ab42e8e860705dc65352b800f7"
+  },
+  "ruin.arch__corbel": {
+   "glb": "kits/library/jungle_temple/presets/ruin.arch__corbel.glb",
+   "kit_id": "ruin.arch",
+   "preset": "corbel",
+   "sha256": "4f038539b1f5da28c066b6052a7589f7ab25f3e217169b6eac28a7034d1e0fae"
+  },
+  "ruin.column": {
+   "glb": "kits/library/jungle_temple/assets/ruin.column.glb",
+   "kit_id": "ruin.column",
+   "preset": null,
+   "sha256": "9144baea99f94b04654e2deb6a3ff52b0aec76424beb6ab9d0a081b476a21780"
+  },
+  "ruin.column__broken": {
+   "glb": "kits/library/jungle_temple/presets/ruin.column__broken.glb",
+   "kit_id": "ruin.column",
+   "preset": "broken",
+   "sha256": "436ab4d64fe6021eb34eb092634f8bf0e9ff0f87a9d09f414b891334d82a10e0"
+  },
+  "ruin.column__fallen": {
+   "glb": "kits/library/jungle_temple/presets/ruin.column__fallen.glb",
+   "kit_id": "ruin.column",
+   "preset": "fallen",
+   "sha256": "e5ff15adbffc5949dccf24544ebe1e132e67a8b6ef5a044a6484a021e5745b9b"
+  },
+  "ruin.column__stump": {
+   "glb": "kits/library/jungle_temple/presets/ruin.column__stump.glb",
+   "kit_id": "ruin.column",
+   "preset": "stump",
+   "sha256": "c94f47f507b17c5cfa0d8326d64a89f3092cc2cac899b5fbf1409a233b8d17cf"
+  },
+  "ruin.court": {
+   "glb": "kits/library/jungle_temple/assets/ruin.court.glb",
+   "kit_id": "ruin.court",
+   "preset": null,
+   "sha256": "cf54096eb03180cf011959f4b7b0def6eb37c3b67803dfa82f53e428b1c0522d"
+  },
+  "ruin.court__closed": {
+   "glb": "kits/library/jungle_temple/presets/ruin.court__closed.glb",
+   "kit_id": "ruin.court",
+   "preset": "closed",
+   "sha256": "dcf8c7fd9c8d8fb5bb64f06b5466a2a4c7efcd5d7848a38c9c2cd2e2c5d4a3f2"
+  },
+  "ruin.court__cross": {
+   "glb": "kits/library/jungle_temple/presets/ruin.court__cross.glb",
+   "kit_id": "ruin.court",
+   "preset": "cross",
+   "sha256": "67a8351e75e9d112ec2812d79e3e05a0fe551672fe2605d46b16747b5416c3a9"
+  },
+  "ruin.court__small": {
+   "glb": "kits/library/jungle_temple/presets/ruin.court__small.glb",
+   "kit_id": "ruin.court",
+   "preset": "small",
+   "sha256": "2294a6ce5cbdec53ba1529c0d9677b7c3643d09e09e63f26cb558a5b3dbe07c2"
+  },
+  "ruin.floor": {
+   "glb": "kits/library/jungle_temple/assets/ruin.floor.glb",
+   "kit_id": "ruin.floor",
+   "preset": null,
+   "sha256": "173935dc3587ac9a6c83335f08003170406b2d3fe423b3c103ad07a4b831f700"
+  },
+  "ruin.floor__block": {
+   "glb": "kits/library/jungle_temple/presets/ruin.floor__block.glb",
+   "kit_id": "ruin.floor",
+   "preset": "block",
+   "sha256": "729d58d637eecbdfde1eea006d6b97b99b75b683b94b96668965dd716d2ea040"
+  },
+  "ruin.floor__ceiling": {
+   "glb": "kits/library/jungle_temple/presets/ruin.floor__ceiling.glb",
+   "kit_id": "ruin.floor",
+   "preset": "ceiling",
+   "sha256": "d82d10d897e4a6e9647276225a210e8488ae7ad4d3cc99c3171d51832699defa"
+  },
+  "ruin.floor__cracked": {
+   "glb": "kits/library/jungle_temple/presets/ruin.floor__cracked.glb",
+   "kit_id": "ruin.floor",
+   "preset": "cracked",
+   "sha256": "e9a84a41900ff81b46f794b83e9941a071bb749c63f58d23c0cdcdbb73e8456c"
+  },
+  "ruin.floor__inlay": {
+   "glb": "kits/library/jungle_temple/presets/ruin.floor__inlay.glb",
+   "kit_id": "ruin.floor",
+   "preset": "inlay",
+   "sha256": "5b598d5a8474d2b4007adf6b19b55c3bb44a5d7321bd581ea049b38b21356e22"
+  },
+  "ruin.gate": {
+   "glb": "kits/library/jungle_temple/assets/ruin.gate.glb",
+   "kit_id": "ruin.gate",
+   "preset": null,
+   "sha256": "56518d340457e6736ab770da58370f488fea0ae412016d038b9d59b0db1a9bfb"
+  },
+  "ruin.gate__pylon": {
+   "glb": "kits/library/jungle_temple/presets/ruin.gate__pylon.glb",
+   "kit_id": "ruin.gate",
+   "preset": "pylon",
+   "sha256": "e246eb71401c39225ccfb257c4b8a60702eb984f5e152960d79524b1228877c8"
+  },
+  "ruin.gate__sealed": {
+   "glb": "kits/library/jungle_temple/presets/ruin.gate__sealed.glb",
+   "kit_id": "ruin.gate",
+   "preset": "sealed",
+   "sha256": "57c0d0d55361987ebe69d09570d39af5cff333b75cc6a79b985a0ef3dab5198f"
+  },
+  "ruin.obelisk": {
+   "glb": "kits/library/jungle_temple/assets/ruin.obelisk.glb",
+   "kit_id": "ruin.obelisk",
+   "preset": null,
+   "sha256": "3e73a8507f23bdfe5e2f9082108ce63a7b49e369734ea4311652005290b8875d"
+  },
+  "ruin.obelisk__broken": {
+   "glb": "kits/library/jungle_temple/presets/ruin.obelisk__broken.glb",
+   "kit_id": "ruin.obelisk",
+   "preset": "broken",
+   "sha256": "56a8f896f21322a9a1a66897a1d7189d6e8d6baed52ebd1d3d7a70ea3e7356e8"
+  },
+  "ruin.obelisk__short": {
+   "glb": "kits/library/jungle_temple/presets/ruin.obelisk__short.glb",
+   "kit_id": "ruin.obelisk",
+   "preset": "short",
+   "sha256": "f32460bfa0b87e746588d02112828332916e09a4978ff96ccacac0518a5a29fc"
+  },
+  "ruin.pier": {
+   "glb": "kits/library/jungle_temple/assets/ruin.pier.glb",
+   "kit_id": "ruin.pier",
+   "preset": null,
+   "sha256": "c61f4042264441b7c3d3b46fe37a0f5deba4ad3b9e38b06396bee9ece6ae3f1b"
+  },
+  "ruin.pier__broken": {
+   "glb": "kits/library/jungle_temple/presets/ruin.pier__broken.glb",
+   "kit_id": "ruin.pier",
+   "preset": "broken",
+   "sha256": "58a9803c47b8ed159d24ec6999c12a76dbff4152db9a0f9077bfe1ee0f3589d8"
+  },
+  "ruin.pier__low": {
+   "glb": "kits/library/jungle_temple/presets/ruin.pier__low.glb",
+   "kit_id": "ruin.pier",
+   "preset": "low",
+   "sha256": "4507d50abc99f53b5ddc883343fd649317af43c3c95a03a0b363b3a6df0678d2"
+  },
+  "ruin.pyramid": {
+   "glb": "kits/library/jungle_temple/assets/ruin.pyramid.glb",
+   "kit_id": "ruin.pyramid",
+   "preset": null,
+   "sha256": "d43bc9ada547d732b7a1e3d86db7bc031cff2900810b54ccc0ae8acb0224590f"
+  },
+  "ruin.pyramid__altar": {
+   "glb": "kits/library/jungle_temple/presets/ruin.pyramid__altar.glb",
+   "kit_id": "ruin.pyramid",
+   "preset": "altar",
+   "sha256": "2acdcb0d0f0216fb2cc9cc67650f9f2a7a0c9bffb63a23a91c6e6b80819ce490"
+  },
+  "ruin.pyramid__great": {
+   "glb": "kits/library/jungle_temple/presets/ruin.pyramid__great.glb",
+   "kit_id": "ruin.pyramid",
+   "preset": "great",
+   "sha256": "c64c2780d54eb4e29763b660ce6063ae00204f16f6489967b8e2cbcc608dc72f"
+  },
+  "ruin.pyramid__tier": {
+   "glb": "kits/library/jungle_temple/presets/ruin.pyramid__tier.glb",
+   "kit_id": "ruin.pyramid",
+   "preset": "tier",
+   "sha256": "d9355fb85de6e3caf880b2b69305e8f11f3ed85ab82d47aab273033b6544d520"
+  },
+  "ruin.rampart": {
+   "glb": "kits/library/jungle_temple/assets/ruin.rampart.glb",
+   "kit_id": "ruin.rampart",
+   "preset": null,
+   "sha256": "3a37a51266c245afb29aeacb16a1145cd470741783e7077811540a21a04f34dc"
+  },
+  "ruin.rampart__broken": {
+   "glb": "kits/library/jungle_temple/presets/ruin.rampart__broken.glb",
+   "kit_id": "ruin.rampart",
+   "preset": "broken",
+   "sha256": "68d1ae49e19b40490fa0189ee609e420c75b7e64c74fc6bc3d35a8fdff798b62"
+  },
+  "ruin.rampart__corner": {
+   "glb": "kits/library/jungle_temple/presets/ruin.rampart__corner.glb",
+   "kit_id": "ruin.rampart",
+   "preset": "corner",
+   "sha256": "884b94c195792a45839205af683c78994a4ce20c04fbbc52487cc876d343a671"
+  },
+  "ruin.rampart__tower": {
+   "glb": "kits/library/jungle_temple/presets/ruin.rampart__tower.glb",
+   "kit_id": "ruin.rampart",
+   "preset": "tower",
+   "sha256": "50efe6f2158cf627dbe094ec275a1c736162a63e9088a41ad2a5b7e19737357e"
+  },
+  "ruin.rubble": {
+   "glb": "kits/library/jungle_temple/assets/ruin.rubble.glb",
+   "kit_id": "ruin.rubble",
+   "preset": null,
+   "sha256": "b2d2eb9b2072e68e05d076f13557be534a791d1de02f1d3f0cf90acec9846617"
+  },
+  "ruin.rubble__drift": {
+   "glb": "kits/library/jungle_temple/presets/ruin.rubble__drift.glb",
+   "kit_id": "ruin.rubble",
+   "preset": "drift",
+   "sha256": "3130e15ac38a5306d1732d855913c2142a5aee2be4648edc99b2449f305272eb"
+  },
+  "ruin.rubble__drums": {
+   "glb": "kits/library/jungle_temple/presets/ruin.rubble__drums.glb",
+   "kit_id": "ruin.rubble",
+   "preset": "drums",
+   "sha256": "2f69099399fb472f73395d3ead18005d4d4244298393ca79c6db4d9ca5e990d1"
+  },
+  "ruin.rubble__large": {
+   "glb": "kits/library/jungle_temple/presets/ruin.rubble__large.glb",
+   "kit_id": "ruin.rubble",
+   "preset": "large",
+   "sha256": "e497f89be7490a60bfba5eea623454034ee58b2d6c1fbf0b013318a1626b99ee"
+  },
+  "ruin.stairs": {
+   "glb": "kits/library/jungle_temple/assets/ruin.stairs.glb",
+   "kit_id": "ruin.stairs",
+   "preset": null,
+   "sha256": "e891833e5592b2f06b66a9801e0248d300279c4ce73a61f5e0f896969c327ff4"
+  },
+  "ruin.stairs__low": {
+   "glb": "kits/library/jungle_temple/presets/ruin.stairs__low.glb",
+   "kit_id": "ruin.stairs",
+   "preset": "low",
+   "sha256": "dbaa71fdb616513b2a8e7211655f5cd4c2362069834fdef8971b971e9b4164d7"
+  },
+  "ruin.stairs__ruined": {
+   "glb": "kits/library/jungle_temple/presets/ruin.stairs__ruined.glb",
+   "kit_id": "ruin.stairs",
+   "preset": "ruined",
+   "sha256": "6fc1dec401aca51fb502d296569d8d67633debb44b52a68921eff1958a4653b4"
+  },
+  "ruin.stairs__wide": {
+   "glb": "kits/library/jungle_temple/presets/ruin.stairs__wide.glb",
+   "kit_id": "ruin.stairs",
+   "preset": "wide",
+   "sha256": "5fa9cb5c8e94277e86f6d405e7080eb2a2b13b353bf7e394c5b3a21d5f3c3bb5"
+  },
+  "ruin.wall": {
+   "glb": "kits/library/jungle_temple/assets/ruin.wall.glb",
+   "kit_id": "ruin.wall",
+   "preset": null,
+   "sha256": "3a2c817e7b788f70078778b215905bee108fce4e7f663086b0134967f128b27f"
+  },
+  "ruin.wall__broken": {
+   "glb": "kits/library/jungle_temple/presets/ruin.wall__broken.glb",
+   "kit_id": "ruin.wall",
+   "preset": "broken",
+   "sha256": "1ef89d679435d7134b807859d8c0550e7859aeec39ab57b4eed6a8d1d4c77c9e"
+  },
+  "ruin.wall__door": {
+   "glb": "kits/library/jungle_temple/presets/ruin.wall__door.glb",
+   "kit_id": "ruin.wall",
+   "preset": "door",
+   "sha256": "cb05286300948dff9249cd30589fab3c2196e5708a0799cefe0141c2a971645d"
+  },
+  "ruin.wall__half": {
+   "glb": "kits/library/jungle_temple/presets/ruin.wall__half.glb",
+   "kit_id": "ruin.wall",
+   "preset": "half",
+   "sha256": "21492b26eb14cb99456bf4e26f75693ba001cef11dc1aa79e8b94a3e5dc2f83d"
+  },
+  "ruin.wall__low": {
+   "glb": "kits/library/jungle_temple/presets/ruin.wall__low.glb",
+   "kit_id": "ruin.wall",
+   "preset": "low",
+   "sha256": "6edf5e65bb5e5f2bac437c1f4b09eb7221a54bf3b92b798c0378a1797cb58e4d"
+  },
+  "ruin.wall__relief": {
+   "glb": "kits/library/jungle_temple/presets/ruin.wall__relief.glb",
+   "kit_id": "ruin.wall",
+   "preset": "relief",
+   "sha256": "98463fccf3f3c2d80b8e1c8ba4a5c0017a60a79a46a768bc2f7990530576bc1e"
+  },
+  "ruin.wall__window": {
+   "glb": "kits/library/jungle_temple/presets/ruin.wall__window.glb",
+   "kit_id": "ruin.wall",
+   "preset": "window",
+   "sha256": "6ac364986b4c3a8a3a473cf13494955715991ae978a3ba891b5b68b76d8bafb9"
+  },
+  "sky.backdrop": {
+   "alias_of": "land.sky__canopy",
+   "glb": "kits/library/jungle_temple/presets/land.sky__canopy.glb",
+   "kit_id": "land.sky",
+   "preset": "canopy",
+   "sha256": "2e42fbd25d8a79ab503b046e35cb3571ffa0d2d45df711726f78c67d50e90383"
+  },
+  "wild.dune": {
+   "glb": "kits/library/jungle_temple/assets/wild.dune.glb",
+   "kit_id": "wild.dune",
+   "preset": null,
+   "sha256": "8601d2124ed480e17efa2b366cce66a2dd8570ba7bf719a74e80a61686eafc82"
+  },
+  "wild.dune__crescent": {
+   "glb": "kits/library/jungle_temple/presets/wild.dune__crescent.glb",
+   "kit_id": "wild.dune",
+   "preset": "crescent",
+   "sha256": "ffe99603531e5242413de24dbcf88748281d7a66c6c01d1dfa0aad82bc501cfe"
+  },
+  "wild.dune__ridge": {
+   "glb": "kits/library/jungle_temple/presets/wild.dune__ridge.glb",
+   "kit_id": "wild.dune",
+   "preset": "ridge",
+   "sha256": "2618cabbe97a20e8695a8e19f6ec6eca1ad376c0cbf072908bcedd9a760a1410"
+  },
+  "wild.dune__small": {
+   "glb": "kits/library/jungle_temple/presets/wild.dune__small.glb",
+   "kit_id": "wild.dune",
+   "preset": "small",
+   "sha256": "1ab6f8cc4425d1bba2e49d203bf2656fcd18a27b6ccbc717d108dc0318759e82"
+  },
+  "wild.fern": {
+   "glb": "kits/library/jungle_temple/assets/wild.fern.glb",
+   "kit_id": "wild.fern",
+   "preset": null,
+   "sha256": "3a4e7ff89bb5371063e92de708165889a747e322fcc4016a4ca18f77e15ba39a"
+  },
+  "wild.fern__small": {
+   "glb": "kits/library/jungle_temple/presets/wild.fern__small.glb",
+   "kit_id": "wild.fern",
+   "preset": "small",
+   "sha256": "f1d2655a9c636f6e3963539c2c5e2eeb827b16d54498016d8dda05402a49f7bf"
+  },
+  "wild.fern__spray": {
+   "glb": "kits/library/jungle_temple/presets/wild.fern__spray.glb",
+   "kit_id": "wild.fern",
+   "preset": "spray",
+   "sha256": "0d3af37f3ea0c79f5e21fbbc94713dd1def097ba649256944318f79658d32edd"
+  },
+  "wild.log": {
+   "glb": "kits/library/jungle_temple/assets/wild.log.glb",
+   "kit_id": "wild.log",
+   "preset": null,
+   "sha256": "1c9744effc6fcbff9296a9f85be37c797bd0f80b0a04ee2e7a4f83998690895e"
+  },
+  "wild.log__roots": {
+   "glb": "kits/library/jungle_temple/presets/wild.log__roots.glb",
+   "kit_id": "wild.log",
+   "preset": "roots",
+   "sha256": "b27231e2fda497b8781f19073fcda0c7013a2fac25d1c54f5ecc31b3fce85183"
+  },
+  "wild.log__stump": {
+   "glb": "kits/library/jungle_temple/presets/wild.log__stump.glb",
+   "kit_id": "wild.log",
+   "preset": "stump",
+   "sha256": "ec16ea296eb3320156afdceb75adcd75a14459ebde2aef67c6c67aed7be4f004"
+  },
+  "wild.oasis": {
+   "glb": "kits/library/jungle_temple/assets/wild.oasis.glb",
+   "kit_id": "wild.oasis",
+   "preset": null,
+   "sha256": "d916fb51788d7b5a7b14eda3cfb5f3605f7b48ab1a23252e134617061e599d12"
+  },
+  "wild.oasis__jungle": {
+   "glb": "kits/library/jungle_temple/presets/wild.oasis__jungle.glb",
+   "kit_id": "wild.oasis",
+   "preset": "jungle",
+   "sha256": "0306e1839cbd202a8b8b38e57a7bcd839be1d0a29a271955bfcc196ca7670e97"
+  },
+  "wild.oasis__small": {
+   "glb": "kits/library/jungle_temple/presets/wild.oasis__small.glb",
+   "kit_id": "wild.oasis",
+   "preset": "small",
+   "sha256": "0c58b8e9ddfae13b9123232c7b54381d88333302450ce33e822e41ac450b0342"
+  },
+  "wild.palm": {
+   "glb": "kits/library/jungle_temple/assets/wild.palm.glb",
+   "kit_id": "wild.palm",
+   "preset": null,
+   "sha256": "81b60ea62fcc26952e802e2e6ed1a1cf9360905780e05ac12befcf216aa1d2ef"
+  },
+  "wild.palm__leaning": {
+   "glb": "kits/library/jungle_temple/presets/wild.palm__leaning.glb",
+   "kit_id": "wild.palm",
+   "preset": "leaning",
+   "sha256": "e7e49a8db2bef4fc92300694916a14716c8587d31f139fa06e6bac4e624b68bd"
+  },
+  "wild.palm__twin": {
+   "glb": "kits/library/jungle_temple/presets/wild.palm__twin.glb",
+   "kit_id": "wild.palm",
+   "preset": "twin",
+   "sha256": "8918ef0214818ab700d671ff6b28501435f54d1e4b6b0c6186be0cc9a261bbb4"
+  },
+  "wild.palm__young": {
+   "glb": "kits/library/jungle_temple/presets/wild.palm__young.glb",
+   "kit_id": "wild.palm",
+   "preset": "young",
+   "sha256": "68dc2b60b7377c848f9ef0e5174ec03a6de234cdcb02401ef9c3fe5def8c2445"
+  },
+  "wild.reeds": {
+   "glb": "kits/library/jungle_temple/assets/wild.reeds.glb",
+   "kit_id": "wild.reeds",
+   "preset": null,
+   "sha256": "d1f8cbabbaa9f1b9fbb9afa0f4fdb6f7df7abe0155a8766d523136518fff7145"
+  },
+  "wild.reeds__grass": {
+   "glb": "kits/library/jungle_temple/presets/wild.reeds__grass.glb",
+   "kit_id": "wild.reeds",
+   "preset": "grass",
+   "sha256": "5957e763a8f1744932cb3a5b6528526890ad97aa201f5fd1400d81c068d8871f"
+  },
+  "wild.reeds__papyrus": {
+   "glb": "kits/library/jungle_temple/presets/wild.reeds__papyrus.glb",
+   "kit_id": "wild.reeds",
+   "preset": "papyrus",
+   "sha256": "867f2d63148d3e0b2260360cc382685efbf14bba70e5efd40f3737af47737e5d"
+  },
+  "wild.rock": {
+   "glb": "kits/library/jungle_temple/assets/wild.rock.glb",
+   "kit_id": "wild.rock",
+   "preset": null,
+   "sha256": "72187b9f020e3c639a3969ae748541c0ae15602e4ea744055bd766269a24be3e"
+  },
+  "wild.rock__cluster": {
+   "glb": "kits/library/jungle_temple/presets/wild.rock__cluster.glb",
+   "kit_id": "wild.rock",
+   "preset": "cluster",
+   "sha256": "405161284df9fdb9dbabd8514cc57fcaaf59f444cb50d20284899c6f273f47e7"
+  },
+  "wild.rock__pillar": {
+   "glb": "kits/library/jungle_temple/presets/wild.rock__pillar.glb",
+   "kit_id": "wild.rock",
+   "preset": "pillar",
+   "sha256": "ed136cacc18bc8ee8ebf99ca1054a5b72f0319040ec207bdc7732fadf3bd4e8d"
+  },
+  "wild.rock__slab": {
+   "glb": "kits/library/jungle_temple/presets/wild.rock__slab.glb",
+   "kit_id": "wild.rock",
+   "preset": "slab",
+   "sha256": "eabeb4d178a9b189464d1886fd9ba4bc1a347b3896558a8bd2ba9e3120808213"
+  },
+  "wild.shrub": {
+   "glb": "kits/library/jungle_temple/assets/wild.shrub.glb",
+   "kit_id": "wild.shrub",
+   "preset": null,
+   "sha256": "6871986c46ef0af5485bcfcdf316a9dd3ccb9091a84512604fcc9060fd2cc158"
+  },
+  "wild.shrub__broadleaf": {
+   "glb": "kits/library/jungle_temple/presets/wild.shrub__broadleaf.glb",
+   "kit_id": "wild.shrub",
+   "preset": "broadleaf",
+   "sha256": "d5b6416cbfeabca1d0df9bd8b01c9b476908e80b27c9339f53d254516d3fa524"
+  },
+  "wild.shrub__flowering": {
+   "glb": "kits/library/jungle_temple/presets/wild.shrub__flowering.glb",
+   "kit_id": "wild.shrub",
+   "preset": "flowering",
+   "sha256": "0a62af7e34cb154d167a133d4f6d87b6e58c1f15e1443e5aad73c75e5ec387dd"
+  },
+  "wild.tree": {
+   "glb": "kits/library/jungle_temple/assets/wild.tree.glb",
+   "kit_id": "wild.tree",
+   "preset": null,
+   "sha256": "f6dbba9e69155d535e22d4e40e7a2f085def9f7aa708bd624520a15aeda794c8"
+  },
+  "wild.tree__strangler": {
+   "glb": "kits/library/jungle_temple/presets/wild.tree__strangler.glb",
+   "kit_id": "wild.tree",
+   "preset": "strangler",
+   "sha256": "9d7e38d25ab5a78018cfc557c9743a610944e76430a964f999d82c28b8bf01bb"
+  },
+  "wild.tree__tall": {
+   "glb": "kits/library/jungle_temple/presets/wild.tree__tall.glb",
+   "kit_id": "wild.tree",
+   "preset": "tall",
+   "sha256": "7879889d75bffc95959bb73695c1a65cc90566cd6dad1840e5f1ccaaddd24d7a"
+  },
+  "wild.vines": {
+   "glb": "kits/library/jungle_temple/assets/wild.vines.glb",
+   "kit_id": "wild.vines",
+   "preset": null,
+   "sha256": "870ab6bfc3dfcd66c995c804c47f7ef8bdd3e7378198efaa99859ee9a3e30286"
+  },
+  "wild.vines__narrow": {
+   "glb": "kits/library/jungle_temple/presets/wild.vines__narrow.glb",
+   "kit_id": "wild.vines",
+   "preset": "narrow",
+   "sha256": "df56ee922c645287f61be4c8e64ee3f8ffc50a67f87bcafdfd9e50995785c92f"
+  }
+ },
+ "format": 1,
+ "kit_pack": "jungle_temple",
+ "note": "ANCIENTKIT bindings: kit defaults (<kit_id>), presets (<kit_id>__<preset>) and the names the runtime places by itself (arch.door -> ruin.gate frame, sky.backdrop -> land.sky set). Every row hash-pinned; regenerate with tools/ancientkit_library.py bindings.",
+ "pack": "jungle_temple"
+}

@@ -1,0 +1,786 @@
+{
+ "audio": {
+  "ambient": "audio/stock/wav/core.nature.cave.drip.wav",
+  "lakeside": "audio/stock/wav/core.nature.night.insects.wav",
+  "note": "pointers only (existing stock sounds); the style pack sound_palette carries ambient + interact",
+  "steps_water": "audio/stock/wav/core.footstep.water.01.wav",
+  "torch": "audio/stock/wav/core.nature.fire.crackle.wav",
+  "ui": "audio/wav/ui.select.wav",
+  "wind": "audio/stock/wav/core.nature.wind.breeze.wav"
+ },
+ "fog": {
+  "color": "#27344F",
+  "far": 30.0,
+  "near": 9.0
+ },
+ "kit_pack_id": "stone_dungeon",
+ "light_rig": {
+  "ambient": 0.5,
+  "ao": 0.3,
+  "ao_height": 0.6,
+  "gamma": 1.0,
+  "ground": 0.0,
+  "key": 0.32,
+  "key_dir": [
+   0.35,
+   -0.5,
+   0.8
+  ],
+  "sky": 0.14
+ },
+ "look": {
+  "backdrop": {
+   "asset": "sky.backdrop",
+   "interiors": false,
+   "note": "painted dusk dome for the lakeside; dungeon interiors show the void colour, never a sky",
+   "scale": 0.2,
+   "y": -1.0
+  },
+  "ceiling": {
+   "note": "ceiling/void handling: kit ceilings (dgn.ceiling, cave.ceiling) are one-sided facing down, so cameras above a room see in (N64 cutaway); everything beyond the fog and above open tops is the void colour (profile background = palette void), never a sky."
+  },
+  "emitters": {
+   "dprop.brazier": {
+    "color": "#d9cfbd",
+    "halo": [
+     1.1,
+     0.6
+    ],
+    "halo_color": "#d9cfbd",
+    "intensity": 1.1,
+    "offset": [
+     0.0,
+     1.35,
+     0.0
+    ],
+    "pool": [
+     3.4,
+     0.22
+    ],
+    "pool_color": "#e28c2d",
+    "radius": 6.5
+   },
+   "dprop.crystal": {
+    "color": "#90e2cd",
+    "intensity": 0.45,
+    "offset": [
+     0.0,
+     0.8,
+     0.0
+    ],
+    "radius": 3.0
+   },
+   "dprop.sconce": {
+    "color": "#d9cfbd",
+    "halo": [
+     0.95,
+     0.6
+    ],
+    "halo_color": "#d9cfbd",
+    "intensity": 1.0,
+    "offset": [
+     0.0,
+     2.4,
+     0.38
+    ],
+    "pool": [
+     3.0,
+     0.2
+    ],
+    "pool_color": "#e28c2d",
+    "radius": 5.5
+   },
+   "dprop.switch": {
+    "color": "#90e2cd",
+    "intensity": 0.3,
+    "offset": [
+     0.0,
+     1.33,
+     0.0
+    ],
+    "radius": 2.0
+   },
+   "dprop.tablet": {
+    "color": "#39a296",
+    "intensity": 0.3,
+    "offset": [
+     0.0,
+     1.0,
+     0.3
+    ],
+    "radius": 2.5
+   },
+   "tmpl.altar": {
+    "color": "#d9cfbd",
+    "halo": [
+     1.1,
+     0.55
+    ],
+    "halo_color": "#d9cfbd",
+    "intensity": 0.6,
+    "offset": [
+     0.0,
+     1.95,
+     0.0
+    ],
+    "radius": 4.5
+   },
+   "tmpl.obelisk": {
+    "color": "#39a296",
+    "intensity": 0.35,
+    "offset": [
+     0.0,
+     2.0,
+     0.0
+    ],
+    "radius": 3.0
+   }
+  },
+  "materials": {
+   "chrome": {
+    "tint": "#978e89"
+   },
+   "cliff": {
+    "gloss": 0.0
+   },
+   "fire": {
+    "emission": 0.15,
+    "lit": 0.0
+   },
+   "floor": {
+    "gloss": 0.0,
+    "note": "matte stone (N64 convention: no per-pixel glints)"
+   },
+   "frame": {
+    "gloss": 0.0
+   },
+   "glass": {
+    "tint": "#90e2cd"
+   },
+   "light": {
+    "emission": 0.15,
+    "lit": 0.0
+   },
+   "orb": {
+    "tint": "#90e2cd"
+   },
+   "rock": {
+    "gloss": 0.0
+   },
+   "screen": {
+    "emission": 0.1,
+    "lit": 0.0
+   },
+   "stone": {
+    "gloss": 0.0
+   },
+   "trim": {
+    "gloss": 0.0
+   },
+   "wall": {
+    "gloss": 0.0
+   },
+   "water": {
+    "gloss": 0.0
+   }
+  },
+  "note": "stone_dungeon room look (theme-agnostic runtime reads it). Terms are [colour, strength]; directions point towards the light in Godot world space (y up). Kit rooms set presentation look_profile per room (dungeon / cave / lakeside / underwater) and kit_shell: true.",
+  "profiles": {
+   "cave": {
+    "actors": {
+     "kicker": [
+      "#bab0a3",
+      0.22
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps characters readable against dark stone"
+    },
+    "ambient": [
+     "#978e89",
+     0.55
+    ],
+    "background": "#06070f",
+    "bake_desaturate": 0.25,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_cool",
+    "fill": [
+     "#5b6170",
+     0.16
+    ],
+    "fill_dir": [
+     -0.6,
+     0.25,
+     -0.5
+    ],
+    "fog": {
+     "color": "#27344f",
+     "far": 24.0,
+     "max": 0.95,
+     "near": 7.0
+    },
+    "grade": {
+     "contrast": 1.1,
+     "exposure": 1.2,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#3d4c27",
+     0.16
+    ],
+    "key": [
+     "#bab0a3",
+     0.45
+    ],
+    "key_dir": [
+     0.3,
+     0.86,
+     0.4
+    ],
+    "note": "cave interior: darker, mossy ground bounce, closer fog among the rock",
+    "room": {
+     "base_ao": 0.26,
+     "base_height": 0.5,
+     "floor_lift": 0.3,
+     "note": "value structure: lit floor, wall bases in contact shadow, vaults dimming gently (still readable)",
+     "top_dark": 0.16,
+     "top_from": 3.2,
+     "top_to": 6.2
+    },
+    "sky": [
+     "#978e89",
+     0.16
+    ]
+   },
+   "dungeon": {
+    "actors": {
+     "kicker": [
+      "#bab0a3",
+      0.22
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps characters readable against dark stone"
+    },
+    "ambient": [
+     "#978e89",
+     0.55
+    ],
+    "background": "#06070f",
+    "bake_desaturate": 0.25,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_cool",
+    "fill": [
+     "#5b6170",
+     0.16
+    ],
+    "fill_dir": [
+     -0.6,
+     0.25,
+     -0.5
+    ],
+    "fog": {
+     "color": "#27344f",
+     "far": 30.0,
+     "max": 0.92,
+     "near": 9.0
+    },
+    "grade": {
+     "contrast": 1.1,
+     "exposure": 1.2,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#28303d",
+     0.14
+    ],
+    "key": [
+     "#d9cfbd",
+     0.52
+    ],
+    "key_dir": [
+     0.3,
+     0.86,
+     0.4
+    ],
+    "note": "Ocarina-era dungeon interior: warm-grey ambient, a stone-white key from above so floors and carvings read, blue-grey shade (baked wet/iron steps) and a dark slate fog swallowing the far end of a long hall, ceilings falling gently into shadow; the warm light comes from the torches (emitters + painted pools). Cool terms are blue (green >= red), never violet: warm stone mixed with violet turns magenta.",
+    "room": {
+     "base_ao": 0.26,
+     "base_height": 0.5,
+     "floor_lift": 0.3,
+     "note": "value structure: lit floor, wall bases in contact shadow, vaults dimming gently (still readable)",
+     "top_dark": 0.16,
+     "top_from": 3.2,
+     "top_to": 6.2
+    },
+    "sky": [
+     "#978e89",
+     0.16
+    ]
+   },
+   "exterior": {
+    "actors": {
+     "kicker": [
+      "#ffcb6a",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#978e89",
+     0.5
+    ],
+    "background": "#1e4e62",
+    "bake_desaturate": 0.3,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#3f8796",
+     0.18
+    ],
+    "fill_dir": [
+     0.6,
+     0.3,
+     0.5
+    ],
+    "fog": {
+     "color": "#978e89",
+     "far": 44.0,
+     "max": 0.9,
+     "near": 11.0
+    },
+    "grade": {
+     "contrast": 1.08,
+     "exposure": 1.04,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#3d4c27",
+     0.14
+    ],
+    "key": [
+     "#d9cfbd",
+     0.42
+    ],
+    "key_dir": [
+     -0.55,
+     0.42,
+     -0.6
+    ],
+    "note": "lakeside dusk exterior: a low amber sun, warm-grey haze that IS the sky's horizon band (fog tinted to the horizon), slate shadows; the water reads by its painted ripples, slow scroll and vertex wobble.",
+    "sky": [
+     "#bab0a3",
+     0.18
+    ]
+   },
+   "interior": {
+    "actors": {
+     "kicker": [
+      "#bab0a3",
+      0.22
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps characters readable against dark stone"
+    },
+    "ambient": [
+     "#978e89",
+     0.55
+    ],
+    "background": "#06070f",
+    "bake_desaturate": 0.25,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_cool",
+    "fill": [
+     "#5b6170",
+     0.16
+    ],
+    "fill_dir": [
+     -0.6,
+     0.25,
+     -0.5
+    ],
+    "fog": {
+     "color": "#27344f",
+     "far": 30.0,
+     "max": 0.92,
+     "near": 9.0
+    },
+    "grade": {
+     "contrast": 1.1,
+     "exposure": 1.2,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#28303d",
+     0.14
+    ],
+    "key": [
+     "#d9cfbd",
+     0.52
+    ],
+    "key_dir": [
+     0.3,
+     0.86,
+     0.4
+    ],
+    "note": "Ocarina-era dungeon interior: warm-grey ambient, a stone-white key from above so floors and carvings read, blue-grey shade (baked wet/iron steps) and a dark slate fog swallowing the far end of a long hall, ceilings falling gently into shadow; the warm light comes from the torches (emitters + painted pools). Cool terms are blue (green >= red), never violet: warm stone mixed with violet turns magenta.",
+    "room": {
+     "base_ao": 0.26,
+     "base_height": 0.5,
+     "floor_lift": 0.3,
+     "note": "value structure: lit floor, wall bases in contact shadow, vaults dimming gently (still readable)",
+     "top_dark": 0.16,
+     "top_from": 3.2,
+     "top_to": 6.2
+    },
+    "sky": [
+     "#978e89",
+     0.16
+    ]
+   },
+   "lakeside": {
+    "actors": {
+     "kicker": [
+      "#ffcb6a",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#978e89",
+     0.5
+    ],
+    "background": "#1e4e62",
+    "bake_desaturate": 0.3,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#3f8796",
+     0.18
+    ],
+    "fill_dir": [
+     0.6,
+     0.3,
+     0.5
+    ],
+    "fog": {
+     "color": "#978e89",
+     "far": 44.0,
+     "max": 0.9,
+     "near": 11.0
+    },
+    "grade": {
+     "contrast": 1.08,
+     "exposure": 1.04,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#3d4c27",
+     0.14
+    ],
+    "key": [
+     "#d9cfbd",
+     0.42
+    ],
+    "key_dir": [
+     -0.55,
+     0.42,
+     -0.6
+    ],
+    "note": "lakeside dusk exterior: a low amber sun, warm-grey haze that IS the sky's horizon band (fog tinted to the horizon), slate shadows; the water reads by its painted ripples, slow scroll and vertex wobble.",
+    "sky": [
+     "#bab0a3",
+     0.18
+    ]
+   },
+   "passage": {
+    "actors": {
+     "kicker": [
+      "#bab0a3",
+      0.22
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps characters readable against dark stone"
+    },
+    "ambient": [
+     "#978e89",
+     0.55
+    ],
+    "background": "#06070f",
+    "bake_desaturate": 0.25,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_cool",
+    "fill": [
+     "#5b6170",
+     0.16
+    ],
+    "fill_dir": [
+     -0.6,
+     0.25,
+     -0.5
+    ],
+    "fog": {
+     "color": "#27344f",
+     "far": 30.0,
+     "max": 0.92,
+     "near": 9.0
+    },
+    "grade": {
+     "contrast": 1.1,
+     "exposure": 1.34,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.92
+    },
+    "ground": [
+     "#28303d",
+     0.14
+    ],
+    "key": [
+     "#d9cfbd",
+     0.52
+    ],
+    "key_dir": [
+     0.3,
+     0.86,
+     0.4
+    ],
+    "note": "narrow passage: same rig and ranges, a brighter room grade and a gentler vault falloff",
+    "room": {
+     "base_ao": 0.26,
+     "base_height": 0.5,
+     "floor_lift": 0.45,
+     "note": "value structure: lit floor, wall bases in contact shadow, vaults dimming gently (still readable)",
+     "top_dark": 0.1,
+     "top_from": 3.2,
+     "top_to": 6.2
+    },
+    "sky": [
+     "#978e89",
+     0.16
+    ]
+   },
+   "underwater": {
+    "actors": {
+     "kicker": [
+      "#ffcb6a",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#1e4e62",
+     0.55
+    ],
+    "background": "#1e4e62",
+    "bake_desaturate": 0.3,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_cool",
+    "fill": [
+     "#3f8796",
+     0.18
+    ],
+    "fill_dir": [
+     0.6,
+     0.3,
+     0.5
+    ],
+    "fog": {
+     "color": "#1e4e62",
+     "far": 16.0,
+     "max": 1.0,
+     "near": 4.0
+    },
+    "grade": {
+     "contrast": 1.05,
+     "exposure": 1.0,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#0e293a",
+     "saturation": 0.9
+    },
+    "ground": [
+     "#3d4c27",
+     0.14
+    ],
+    "key": [
+     "#3f8796",
+     0.2
+    ],
+    "key_dir": [
+     -0.55,
+     0.42,
+     -0.6
+    ],
+    "note": "under the lake surface: everything sinks into a deep teal fog tint (the N64 underwater trick)",
+    "sky": [
+     "#3f8796",
+     0.2
+    ]
+   }
+  },
+  "shadows": {
+   "color": "#06070f",
+   "kinds": [
+    "prop",
+    "piece",
+    "collectible",
+    "dressing"
+   ],
+   "max": 3.0,
+   "max_lift": 0.08,
+   "min": 0.4,
+   "note": "N64-era blob shadows under floor-standing props",
+   "scale": 1.3,
+   "strength": 0.6
+  },
+  "view_fog_scale": 0.15
+ },
+ "pack_id": "stone_dungeon",
+ "palette": {
+  "body": "#978e89",
+  "boots": "#06070f",
+  "collectible": "#ffcb6a",
+  "door": "#50311f",
+  "floor": "#50525a",
+  "head": "#bab0a3",
+  "prop": "#736c69",
+  "ui_bg": "#06070f",
+  "ui_text": "#d9cfbd",
+  "void": "#06070f",
+  "wall": "#736c69"
+ },
+ "palette_colors": [
+  "#06070F",
+  "#0E1429",
+  "#172139",
+  "#27344F",
+  "#383A42",
+  "#50525A",
+  "#736C69",
+  "#978E89",
+  "#BAB0A3",
+  "#D9CFBD",
+  "#26321D",
+  "#3D4C27",
+  "#5C6C34",
+  "#828F47",
+  "#28303D",
+  "#41505F",
+  "#5C2913",
+  "#A34B19",
+  "#E28C2D",
+  "#FFCB6A",
+  "#1C5958",
+  "#39A296",
+  "#90E2CD",
+  "#353A45",
+  "#5B6170",
+  "#0E293A",
+  "#1E4E62",
+  "#3F8796",
+  "#2C1B12",
+  "#50311F",
+  "#7B5434",
+  "#8A2A31"
+ ],
+ "style_gate": {
+  "accent_fraction_max": 0.15,
+  "accent_hues": [
+   [
+    15.0,
+    55.0
+   ]
+  ],
+  "accent_rooms_min_fraction": 0.5,
+  "accent_sat_min": 0.45,
+  "black_point_max": 0.12,
+  "camera_inside_interior": true,
+  "contrast_range_min": 0.38,
+  "edge_density_max": 0.42,
+  "edge_density_min": 0.07,
+  "edge_threshold": 0.07,
+  "flat_fraction_max": 0.4,
+  "flat_std": 0.006,
+  "floating_max": 0,
+  "fog_near_dist": 0.07,
+  "fog_swallowed_max": 0.2,
+  "mean_luma_max": 0.6,
+  "mean_luma_min": 0.12,
+  "note": "stone_dungeon thresholds, calibrated in the real runtime (docs/DUNGEONKIT-RESULT.md): core defaults or stricter everywhere except two documented, measured deviations - white_point_min 0.52 (the palette has no pure white by design and unlit surfaces render at the convention's 0.88 level, so a frame's brightest 0.5% are torch flames; measured 0.56-0.98 on the demo) and contrast_range_min 0.38 (measured 0.40-0.76; polar uses 0.40). accent = saturated torch amber (sat >= 0.45, hue 15-55): warm-grey cut stone under torchlight is the base material, not an accent. Known-bad controls (tools/dungeonkit_controls.py) all fail this set; never loosened to pass a round.",
+  "palette_adherence_min": 0.9,
+  "palette_hue_tol_deg": 20.0,
+  "uncut_doors_max": 0,
+  "void_fraction_max_exterior": 0.3,
+  "void_fraction_max_interior": 0.01,
+  "white_point_min": 0.52
+ },
+ "ui": {
+  "accent": "#e28c2d",
+  "dim": "#736c69",
+  "fill": "#0e1429d9",
+  "frame": "#978e89",
+  "ink": "#06070f",
+  "note": "dark indigo panels, warm-stone text, torchlight-amber accent; keyboard prompts only, no text-bubble clutter",
+  "text": "#d9cfbd"
+ }
+}

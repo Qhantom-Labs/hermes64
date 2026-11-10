@@ -1,0 +1,178 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hermes64:cover:1.0.0",
+  "title": "Hermes64 staged cover scene 1.0.0",
+  "description": "A small staged diorama built from a game's own kits, cast bindings and style palette, rendered by runtime/godot/cover and finished by adventure_maker/cover_finish.py. Structural subset only; adventure_maker/cover_scene.py adds the context checks (kit refs from the style's binding table, cast ids from the project's cast bindings, palette membership, N64-convention light ranges, camera geometry). Strings never carry paths, URLs or code: every reference is an identifier resolved through a fixed table.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "kind", "id", "revision", "parent", "seed", "game", "style", "mood", "sky", "light", "fog", "ground", "hero", "props", "cast", "particles", "camera", "title", "finish"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "kind": {"const": "hermes64.cover_scene"},
+    "id": {"$ref": "#/$defs/id"},
+    "revision": {"type": "integer", "minimum": 1, "maximum": 9999},
+    "parent": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/id"}]},
+    "seed": {"type": "integer", "minimum": 0, "maximum": 2147483647},
+    "game": {
+      "type": "object", "additionalProperties": false, "required": ["id", "title"],
+      "properties": {"id": {"$ref": "#/$defs/id"}, "title": {"$ref": "#/$defs/title_text"}}
+    },
+    "style": {
+      "type": "object", "additionalProperties": false, "required": ["id", "source", "kit_pack", "label", "band", "remap"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "source": {"enum": ["pack", "profile"]},
+        "kit_pack": {"enum": ["polar_pod", "forest_village"]},
+        "label": {"$ref": "#/$defs/label_text"},
+        "band": {"$ref": "#/$defs/color"},
+        "remap": {"type": "boolean"}
+      }
+    },
+    "mood": {"enum": ["night", "dusk", "day", "dawn", "interior"]},
+    "sky": {
+      "type": "object", "additionalProperties": false,
+      "required": ["zenith", "horizon", "glow", "glow_strength", "glow_azimuth_deg", "glow_elevation_deg", "stars", "aurora", "aurora_strength", "clouds", "cloud_color"],
+      "properties": {
+        "zenith": {"$ref": "#/$defs/color"},
+        "horizon": {"$ref": "#/$defs/color"},
+        "glow": {"$ref": "#/$defs/color"},
+        "glow_strength": {"type": "number", "minimum": 0, "maximum": 0.9},
+        "glow_azimuth_deg": {"type": "number", "minimum": -180, "maximum": 180},
+        "glow_elevation_deg": {"type": "number", "minimum": -10, "maximum": 60},
+        "stars": {"type": "integer", "minimum": 0, "maximum": 400},
+        "aurora": {"$ref": "#/$defs/color"},
+        "aurora_strength": {"type": "number", "minimum": 0, "maximum": 0.8},
+        "clouds": {"type": "number", "minimum": 0, "maximum": 1},
+        "cloud_color": {"$ref": "#/$defs/color"},
+        "exposure": {"type": "number", "minimum": 0.3, "maximum": 1.0, "description": "painted-sky and fog brightness (moonlight); hues stay palette colours; default 1"}
+      }
+    },
+    "light": {
+      "type": "object", "additionalProperties": false,
+      "required": ["key", "key_energy", "key_azimuth_deg", "key_elevation_deg", "ambient", "ambient_energy", "fill", "fill_energy", "sky_bounce", "ground_bounce", "kicker", "kicker_energy", "lamps"],
+      "properties": {
+        "key": {"$ref": "#/$defs/color"},
+        "key_energy": {"type": "number", "minimum": 0, "maximum": 1},
+        "key_azimuth_deg": {"type": "number", "minimum": -180, "maximum": 180},
+        "key_elevation_deg": {"type": "number", "minimum": 5, "maximum": 85},
+        "ambient": {"$ref": "#/$defs/color"},
+        "ambient_energy": {"type": "number", "minimum": 0, "maximum": 1},
+        "fill": {"$ref": "#/$defs/color"},
+        "fill_energy": {"type": "number", "minimum": 0, "maximum": 1},
+        "sky_bounce": {"type": "number", "minimum": 0, "maximum": 0.4},
+        "ground_bounce": {"type": "number", "minimum": 0, "maximum": 0.4},
+        "kicker": {"$ref": "#/$defs/color"},
+        "kicker_energy": {"type": "number", "minimum": 0, "maximum": 0.22},
+        "lamps": {"type": "array", "maxItems": 4, "items": {"$ref": "#/$defs/lamp"}}
+      }
+    },
+    "fog": {
+      "type": "object", "additionalProperties": false, "required": ["color", "near_m", "far_m", "density"],
+      "properties": {
+        "color": {"$ref": "#/$defs/color"},
+        "near_m": {"type": "number", "minimum": 0, "maximum": 60},
+        "far_m": {"type": "number", "minimum": 4, "maximum": 160},
+        "density": {"type": "number", "minimum": 0, "maximum": 0.95}
+      }
+    },
+    "ground": {
+      "type": "object", "additionalProperties": false, "required": ["preset", "radius_m", "vista", "vista_scale"],
+      "properties": {
+        "preset": {"enum": ["snowfield", "ice", "meadow", "dunes", "cobbles", "earth", "stone", "deck"]},
+        "radius_m": {"type": "number", "minimum": 6, "maximum": 60},
+        "vista": {"type": "boolean"},
+        "vista_scale": {"type": "number", "minimum": 0.5, "maximum": 3}
+      }
+    },
+    "hero": {"type": "array", "minItems": 1, "maxItems": 4, "items": {"$ref": "#/$defs/placement"}},
+    "props": {"type": "array", "maxItems": 24, "items": {"$ref": "#/$defs/placement"}},
+    "cast": {"type": "array", "maxItems": 3, "items": {"$ref": "#/$defs/actor"}},
+    "particles": {
+      "type": "object", "additionalProperties": false, "required": ["kind", "count", "color", "size_m", "area"],
+      "properties": {
+        "kind": {"enum": ["none", "snow", "fireflies", "dust", "embers", "petals"]},
+        "count": {"type": "integer", "minimum": 0, "maximum": 400},
+        "color": {"$ref": "#/$defs/color"},
+        "size_m": {"type": "number", "minimum": 0.02, "maximum": 0.25},
+        "area": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "minimum": 1, "maximum": 60}}
+      }
+    },
+    "camera": {
+      "type": "object", "additionalProperties": false,
+      "required": ["framing", "focal_mm", "target", "distance_m", "azimuth_deg", "elevation_deg", "roll_deg"],
+      "properties": {
+        "framing": {"enum": ["poster", "banner", "square"]},
+        "focal_mm": {"type": "number", "minimum": 18, "maximum": 85},
+        "target": {"$ref": "#/$defs/vec3"},
+        "distance_m": {"type": "number", "minimum": 2, "maximum": 45},
+        "azimuth_deg": {"type": "number", "minimum": -180, "maximum": 180},
+        "elevation_deg": {"type": "number", "minimum": -12, "maximum": 65},
+        "roll_deg": {"type": "number", "minimum": -8, "maximum": 8}
+      }
+    },
+    "title": {
+      "type": "object", "additionalProperties": false,
+      "required": ["text", "subtitle", "placement", "letter", "size", "fill", "fill2", "outline", "shadow"],
+      "properties": {
+        "text": {"$ref": "#/$defs/title_text"},
+        "subtitle": {"oneOf": [{"type": "string", "maxLength": 0}, {"$ref": "#/$defs/label_text"}]},
+        "placement": {"enum": ["top", "bottom"]},
+        "letter": {"enum": ["block", "wedge", "tall"]},
+        "size": {"enum": ["m", "l", "xl"]},
+        "fill": {"$ref": "#/$defs/color"},
+        "fill2": {"$ref": "#/$defs/color"},
+        "outline": {"$ref": "#/$defs/color"},
+        "shadow": {"$ref": "#/$defs/color"}
+      }
+    },
+    "finish": {
+      "type": "object", "additionalProperties": false, "required": ["vignette", "contrast", "saturation", "lift", "band_edge", "mark"],
+      "properties": {
+        "vignette": {"type": "number", "minimum": 0, "maximum": 0.35},
+        "contrast": {"type": "number", "minimum": 0.9, "maximum": 1.25},
+        "saturation": {"type": "number", "minimum": 0.85, "maximum": 1.3},
+        "lift": {"type": "number", "minimum": 0, "maximum": 0.12},
+        "band_edge": {"enum": ["bottom", "left", "right", "top", "none"]},
+        "mark": {"type": "boolean"}
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9_-]{0,47}$"},
+    "kit": {"type": "string", "maxLength": 64, "pattern": "^[a-z][a-z0-9_]*(?:[./][a-z0-9_]+){0,3}$"},
+    "color": {"type": "string", "pattern": "^#[0-9a-f]{6}$"},
+    "vec3": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"type": "number", "minimum": -60, "maximum": 60}},
+    "title_text": {"type": "string", "minLength": 1, "maxLength": 28, "pattern": "^[A-Za-z0-9][A-Za-z0-9 .,'!?&:-]*$"},
+    "label_text": {"type": "string", "minLength": 1, "maxLength": 32, "pattern": "^[A-Za-z0-9][A-Za-z0-9 .,'!?&:-]*$"},
+    "placement": {
+      "type": "object", "additionalProperties": false, "required": ["kit", "at", "yaw", "scale"],
+      "properties": {
+        "kit": {"$ref": "#/$defs/kit"},
+        "at": {"$ref": "#/$defs/vec3"},
+        "yaw": {"type": "number", "minimum": -360, "maximum": 360},
+        "scale": {"type": "number", "minimum": 0.2, "maximum": 4}
+      }
+    },
+    "actor": {
+      "type": "object", "additionalProperties": false, "required": ["id", "clip", "frame", "at", "yaw", "scale"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "clip": {"type": "string", "pattern": "^[a-z][a-z_]{0,23}$"},
+        "frame": {"type": "integer", "minimum": 0, "maximum": 47},
+        "at": {"$ref": "#/$defs/vec3"},
+        "yaw": {"type": "number", "minimum": -360, "maximum": 360},
+        "scale": {"type": "number", "minimum": 0.8, "maximum": 1.25}
+      }
+    },
+    "lamp": {
+      "type": "object", "additionalProperties": false, "required": ["at", "color", "energy", "radius_m", "halo"],
+      "properties": {
+        "at": {"$ref": "#/$defs/vec3"},
+        "color": {"$ref": "#/$defs/color"},
+        "energy": {"type": "number", "minimum": 0, "maximum": 1.2},
+        "radius_m": {"type": "number", "minimum": 0.5, "maximum": 12},
+        "halo": {"type": "number", "minimum": 0, "maximum": 0.85}
+      }
+    }
+  }
+}

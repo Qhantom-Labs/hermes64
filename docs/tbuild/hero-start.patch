@@ -1,0 +1,6 @@
+--- a/runtime/godot/view/presenter.gd
++++ b/runtime/godot/view/presenter.gd
+@@ -372,0 +373,3 @@
++	var authored_start: Array = room_root.presentation.get("player_start", [])
++	if authored_start.size() == 3:
++		player.position = Room.vector(authored_start) + Vector3.UP * 0.1

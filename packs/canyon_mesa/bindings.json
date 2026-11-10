@@ -1,0 +1,1389 @@
+{
+ "assets": {
+  "arch.door": {
+   "alias_of": "wtown.doorway",
+   "glb": "kits/library/canyon_mesa/assets/wtown.doorway.glb",
+   "kit_id": "wtown.doorway",
+   "preset": null,
+   "sha256": "89f564b552b5e49332bc5ad5d1acddfb38b0c8ea42ebded0acaa5c5eaeb3554b"
+  },
+  "wland.arch": {
+   "glb": "kits/library/canyon_mesa/assets/wland.arch.glb",
+   "kit_id": "wland.arch",
+   "preset": null,
+   "sha256": "00c4d6c8dde55e21b2860362e33a0c48c687535597bd81f6f45061dfec2d8428"
+  },
+  "wland.arch__small": {
+   "glb": "kits/library/canyon_mesa/presets/wland.arch__small.glb",
+   "kit_id": "wland.arch",
+   "preset": "small",
+   "sha256": "507f5e84ce4c5b20aa82f42a5b3c95857a7971ab8cef2649c2ca5ad8ae8074e5"
+  },
+  "wland.boulder": {
+   "glb": "kits/library/canyon_mesa/assets/wland.boulder.glb",
+   "kit_id": "wland.boulder",
+   "preset": null,
+   "sha256": "e32d7bd7e4fcdf6e42ef3d3bc7da4849ff837f48c0d85e39e8e5a58b0d0fed43"
+  },
+  "wland.boulder__big": {
+   "glb": "kits/library/canyon_mesa/presets/wland.boulder__big.glb",
+   "kit_id": "wland.boulder",
+   "preset": "big",
+   "sha256": "c8725b82c6eb8a61a703e84bdfee1ff2a99690a22ddebf3f90f8c908fe720e5f"
+  },
+  "wland.boulder__small": {
+   "glb": "kits/library/canyon_mesa/presets/wland.boulder__small.glb",
+   "kit_id": "wland.boulder",
+   "preset": "small",
+   "sha256": "d8a6eab31137eb7dce02376d111d51237f03d5a1d550dda1df6a1fa706be4bcb"
+  },
+  "wland.butte": {
+   "glb": "kits/library/canyon_mesa/assets/wland.butte.glb",
+   "kit_id": "wland.butte",
+   "preset": null,
+   "sha256": "60d5af45d5950c701b2eb999fd6da58a70c4f84733b79c875afd28c13b5f258f"
+  },
+  "wland.butte__slim": {
+   "glb": "kits/library/canyon_mesa/presets/wland.butte__slim.glb",
+   "kit_id": "wland.butte",
+   "preset": "slim",
+   "sha256": "adc750d1cae604793298993f29f969fe20b8c784871a30fcf7a494942df64bbb"
+  },
+  "wland.canyon_wall": {
+   "glb": "kits/library/canyon_mesa/assets/wland.canyon_wall.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": null,
+   "sha256": "cf51554de12423c87ae1c4d9a043fe15d081c39443ff9981e0abf1b01284016d"
+  },
+  "wland.canyon_wall__corner": {
+   "glb": "kits/library/canyon_mesa/presets/wland.canyon_wall__corner.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": "corner",
+   "sha256": "c73afff190d6661963995c1e1c3331803fc090c1ccaa5204b5f0f9883ea0b7b5"
+  },
+  "wland.canyon_wall__end": {
+   "glb": "kits/library/canyon_mesa/presets/wland.canyon_wall__end.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": "end",
+   "sha256": "0243e7e6847d664d599786683acaa3baf0d210d6f602e4714ce6b7d366b0a4bd"
+  },
+  "wland.canyon_wall__end_w": {
+   "glb": "kits/library/canyon_mesa/presets/wland.canyon_wall__end_w.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": "end_w",
+   "sha256": "3b99668c5ef96f48a48db66dd1d6437a904c4f525417182236a3113f69b7455e"
+  },
+  "wland.canyon_wall__low": {
+   "glb": "kits/library/canyon_mesa/presets/wland.canyon_wall__low.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": "low",
+   "sha256": "575c2e00ecc760cc7d2ee986bde1404ce9b784d392954900c7ef77bdf53e7b5a"
+  },
+  "wland.canyon_wall__tall": {
+   "glb": "kits/library/canyon_mesa/presets/wland.canyon_wall__tall.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": "tall",
+   "sha256": "84162afda20b9ac829cc7e8c3bce98cf115d94458188fcf7b3d9baebfc5f0b18"
+  },
+  "wland.dead_tree": {
+   "glb": "kits/library/canyon_mesa/assets/wland.dead_tree.glb",
+   "kit_id": "wland.dead_tree",
+   "preset": null,
+   "sha256": "d5d8aed58bdcf4c463140488582a77b6ca472dbc762de06ee6b7b572f676f156"
+  },
+  "wland.dead_tree__small": {
+   "glb": "kits/library/canyon_mesa/presets/wland.dead_tree__small.glb",
+   "kit_id": "wland.dead_tree",
+   "preset": "small",
+   "sha256": "f77cfd6f517baacdc7d7397d4a13de8725675c0f90659420895af39e2e269549"
+  },
+  "wland.grass": {
+   "glb": "kits/library/canyon_mesa/assets/wland.grass.glb",
+   "kit_id": "wland.grass",
+   "preset": null,
+   "sha256": "4109c3a366105e848c4305a0c713d469d86d5689f3d451f5a101bbc8021c567b"
+  },
+  "wland.grass__tall": {
+   "glb": "kits/library/canyon_mesa/presets/wland.grass__tall.glb",
+   "kit_id": "wland.grass",
+   "preset": "tall",
+   "sha256": "85bf0ba470032c698ab93da1ef0c0ebad0e02ed1ef741d83a2d7621cc52d3ba6"
+  },
+  "wland.ground": {
+   "glb": "kits/library/canyon_mesa/assets/wland.ground.glb",
+   "kit_id": "wland.ground",
+   "preset": null,
+   "sha256": "f5053a88626333c3d283d6dd77e3e36bd2e967bb34814ed793d09689e619707a"
+  },
+  "wland.ground__desert": {
+   "glb": "kits/library/canyon_mesa/presets/wland.ground__desert.glb",
+   "kit_id": "wland.ground",
+   "preset": "desert",
+   "sha256": "819f4984b0d215513659773733bcd750a04609757e58000185416ddf54a4afe8"
+  },
+  "wland.ground__dunes": {
+   "glb": "kits/library/canyon_mesa/presets/wland.ground__dunes.glb",
+   "kit_id": "wland.ground",
+   "preset": "dunes",
+   "sha256": "f0a5549e0bfbc0a2c45a7ec55abeb7181377c0d2f73366fb9a4d794efba07684"
+  },
+  "wland.ground__main": {
+   "glb": "kits/library/canyon_mesa/presets/wland.ground__main.glb",
+   "kit_id": "wland.ground",
+   "preset": "main",
+   "sha256": "916e04981d18b4b7b8ea132e3102ba27bfb4573ebd9cd8a197287021ef432730"
+  },
+  "wland.ground__plaza": {
+   "glb": "kits/library/canyon_mesa/presets/wland.ground__plaza.glb",
+   "kit_id": "wland.ground",
+   "preset": "plaza",
+   "sha256": "808842496d425f406aaebdb798deae4c0b58af21cf4f42e24b93d871a33c3453"
+  },
+  "wland.ground__ruts": {
+   "glb": "kits/library/canyon_mesa/presets/wland.ground__ruts.glb",
+   "kit_id": "wland.ground",
+   "preset": "ruts",
+   "sha256": "0114cefc126c870ad157ebaf8ddfe876b7fc4d8cb1bf82160d0a3c4a4100f275"
+  },
+  "wland.ground__street": {
+   "glb": "kits/library/canyon_mesa/presets/wland.ground__street.glb",
+   "kit_id": "wland.ground",
+   "preset": "street",
+   "sha256": "884cba53b3e0c73ae57c0aa0d6838d2f1351bd760c8d21538482126ffade73f4"
+  },
+  "wland.ground__yard": {
+   "glb": "kits/library/canyon_mesa/presets/wland.ground__yard.glb",
+   "kit_id": "wland.ground",
+   "preset": "yard",
+   "sha256": "d10d2ea5aba6816e6a5239f179fdd6f445b16062f475d26070f3f66516fe5c47"
+  },
+  "wland.hoodoo": {
+   "glb": "kits/library/canyon_mesa/assets/wland.hoodoo.glb",
+   "kit_id": "wland.hoodoo",
+   "preset": null,
+   "sha256": "41892d0cb179931cc57495b65e481fe977abb0da6ab35a4ffe70ce2a6f12ca2e"
+  },
+  "wland.hoodoo__single": {
+   "glb": "kits/library/canyon_mesa/presets/wland.hoodoo__single.glb",
+   "kit_id": "wland.hoodoo",
+   "preset": "single",
+   "sha256": "7395208ceb0698d0cce292e6de6db3f73cbd77e5a7eb7224f339e0c19945fdf4"
+  },
+  "wland.ledge": {
+   "glb": "kits/library/canyon_mesa/assets/wland.ledge.glb",
+   "kit_id": "wland.ledge",
+   "preset": null,
+   "sha256": "c12387fdd6dd3421abaec36ef051c6be321bbbce15b12ceb3a44eeb846685a71"
+  },
+  "wland.ledge__high": {
+   "glb": "kits/library/canyon_mesa/presets/wland.ledge__high.glb",
+   "kit_id": "wland.ledge",
+   "preset": "high",
+   "sha256": "270f44005351139d1b2e34af7d76f15b989555c25b0ed5f31942123998da29cd"
+  },
+  "wland.ledge__low": {
+   "glb": "kits/library/canyon_mesa/presets/wland.ledge__low.glb",
+   "kit_id": "wland.ledge",
+   "preset": "low",
+   "sha256": "a45c22adadd4ad4b259fce2a2b2054f358cb4e3ab231ba5dafe7688b1b154549"
+  },
+  "wland.mesa": {
+   "glb": "kits/library/canyon_mesa/assets/wland.mesa.glb",
+   "kit_id": "wland.mesa",
+   "preset": null,
+   "sha256": "1fa948bfa516d6666c7ff01e9ea60a78bbd952a8a675497a48209c77ab980d84"
+  },
+  "wland.mesa__far": {
+   "glb": "kits/library/canyon_mesa/presets/wland.mesa__far.glb",
+   "kit_id": "wland.mesa",
+   "preset": "far",
+   "sha256": "dc7fb9f65fce2ba5fdb0b479649b15347388a6a91cde067bd90939fc812a16cf"
+  },
+  "wland.mesa__small": {
+   "glb": "kits/library/canyon_mesa/presets/wland.mesa__small.glb",
+   "kit_id": "wland.mesa",
+   "preset": "small",
+   "sha256": "4bee40f19cb33f57b142d128263578011eccd97c610870c6bc6178d27cf47e10"
+  },
+  "wland.oasis": {
+   "glb": "kits/library/canyon_mesa/assets/wland.oasis.glb",
+   "kit_id": "wland.oasis",
+   "preset": null,
+   "sha256": "0f55afbeb76fe73b7420da0f833bb937634870ab808d64f4f7a6212062cd7640"
+  },
+  "wland.oasis__big": {
+   "glb": "kits/library/canyon_mesa/presets/wland.oasis__big.glb",
+   "kit_id": "wland.oasis",
+   "preset": "big",
+   "sha256": "b630d6e24aa5093ffa8e61f20cfb51b3f81d268b406cd5bdc33ba69e5aba312b"
+  },
+  "wland.palm": {
+   "glb": "kits/library/canyon_mesa/assets/wland.palm.glb",
+   "kit_id": "wland.palm",
+   "preset": null,
+   "sha256": "581911141846f2e0e075f1477e10120860547ee985383cf22cbfb1eb29bf1fbe"
+  },
+  "wland.palm__tall": {
+   "glb": "kits/library/canyon_mesa/presets/wland.palm__tall.glb",
+   "kit_id": "wland.palm",
+   "preset": "tall",
+   "sha256": "2073efcf149fa8881093716ee12f535afc5ee726422800f8638b42e4fb7d5a7e"
+  },
+  "wland.riverbed": {
+   "glb": "kits/library/canyon_mesa/assets/wland.riverbed.glb",
+   "kit_id": "wland.riverbed",
+   "preset": null,
+   "sha256": "e03632ee9f9d5237ee8abca4171665dde3468d98e55c8baad30266060f47179d"
+  },
+  "wland.riverbed__bend": {
+   "glb": "kits/library/canyon_mesa/presets/wland.riverbed__bend.glb",
+   "kit_id": "wland.riverbed",
+   "preset": "bend",
+   "sha256": "c11753a364f0be18ed2a755e770b198e9ca9e51f63f8c8e1135c745af8228904"
+  },
+  "wland.riverbed__canyon": {
+   "glb": "kits/library/canyon_mesa/presets/wland.riverbed__canyon.glb",
+   "kit_id": "wland.riverbed",
+   "preset": "canyon",
+   "sha256": "93cc1d6c72d53f327b0d5a84af2466029f3be0cd3a3533be38ceff2f6f230c08"
+  },
+  "wland.scrub": {
+   "glb": "kits/library/canyon_mesa/assets/wland.scrub.glb",
+   "kit_id": "wland.scrub",
+   "preset": null,
+   "sha256": "c34613d7201b1a15f3c78e28029068a4b7df9d1f7ae27ea55f4979a8e05444e5"
+  },
+  "wland.scrub__big": {
+   "glb": "kits/library/canyon_mesa/presets/wland.scrub__big.glb",
+   "kit_id": "wland.scrub",
+   "preset": "big",
+   "sha256": "003fc2d4aa302db9891a43981f0b91212b3a137b3e86f28c8225d1d5fb4afed1"
+  },
+  "wland.slope": {
+   "glb": "kits/library/canyon_mesa/assets/wland.slope.glb",
+   "kit_id": "wland.slope",
+   "preset": null,
+   "sha256": "1047c5b7e7cd796e6251b90210c705f2bf72aafa7bfa102b199a2a69a1a62c55"
+  },
+  "wland.yucca": {
+   "glb": "kits/library/canyon_mesa/assets/wland.yucca.glb",
+   "kit_id": "wland.yucca",
+   "preset": null,
+   "sha256": "c61088be3788e8219981c279b346f7a8f5589e28a8cdf837bdc48736476842d3"
+  },
+  "wland.yucca__no_stalk": {
+   "glb": "kits/library/canyon_mesa/presets/wland.yucca__no_stalk.glb",
+   "kit_id": "wland.yucca",
+   "preset": "no_stalk",
+   "sha256": "75d58374823d2e87b98ac1164987cebcd812c5a33f442873b2d999d4a73bf3f8"
+  },
+  "wmine.cart": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.cart.glb",
+   "kit_id": "wmine.cart",
+   "preset": null,
+   "sha256": "e7f29c6ff13a478fd06e42d760b14a34533a91ed5430b4effcad999dbac254ec"
+  },
+  "wmine.cart__empty": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.cart__empty.glb",
+   "kit_id": "wmine.cart",
+   "preset": "empty",
+   "sha256": "6cce81b33bd7df28dd5396e30a38a0c2f02b0eca847aa5db016b442865d8241c"
+  },
+  "wmine.cart__tipped": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.cart__tipped.glb",
+   "kit_id": "wmine.cart",
+   "preset": "tipped",
+   "sha256": "0a751056d3cac0758d8b63137cd7d6640f8e1869e5c6bb466a7ed45ce4def027"
+  },
+  "wmine.headframe": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.headframe.glb",
+   "kit_id": "wmine.headframe",
+   "preset": null,
+   "sha256": "46399fcf433d066ec92281a262f2cce0b6612a4c1774618fe68e701d8f04f947"
+  },
+  "wmine.headframe__tall": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.headframe__tall.glb",
+   "kit_id": "wmine.headframe",
+   "preset": "tall",
+   "sha256": "4516beaaddce76d8227b0d24ea9b58196c511533718c00ac1225d6bd44c3abf2"
+  },
+  "wmine.ladder": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.ladder.glb",
+   "kit_id": "wmine.ladder",
+   "preset": null,
+   "sha256": "1a5d0997283b540cadcdfb5a625dce3e4c2cfc38a79f9f26512dae6b47082d2b"
+  },
+  "wmine.ladder__tall": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.ladder__tall.glb",
+   "kit_id": "wmine.ladder",
+   "preset": "tall",
+   "sha256": "681c547c5220f9c7aa6dd2db1e248e20578d0e9e4aa9fd3aff6d8a89041b9e13"
+  },
+  "wmine.ore_bin": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.ore_bin.glb",
+   "kit_id": "wmine.ore_bin",
+   "preset": null,
+   "sha256": "95b0f9606ac8e8cf421c8facdd3e2b74bdce78972f3e873a64a8deb817a725d5"
+  },
+  "wmine.ore_pile": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.ore_pile.glb",
+   "kit_id": "wmine.ore_pile",
+   "preset": null,
+   "sha256": "9bcb404ca060d93c8141451f7a33984e4c52f750131cd2c6e6be1fad2bdf0f26"
+  },
+  "wmine.ore_pile__big": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.ore_pile__big.glb",
+   "kit_id": "wmine.ore_pile",
+   "preset": "big",
+   "sha256": "5d318b6d85586a5bed992fba66950b038338f009156e235c7adf1cf1a473c08d"
+  },
+  "wmine.portal": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.portal.glb",
+   "kit_id": "wmine.portal",
+   "preset": null,
+   "sha256": "09fd4d7ac59f0c1b1d9d5ff3899aa1c68499d542a26a873a8847a2b32e078ef3"
+  },
+  "wmine.portal__bare": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.portal__bare.glb",
+   "kit_id": "wmine.portal",
+   "preset": "bare",
+   "sha256": "fc21ae9d672672af045653d23e44cc7ebe41133caae8ed537ea32df36b8d36e6"
+  },
+  "wmine.portal__canyon": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.portal__canyon.glb",
+   "kit_id": "wmine.portal",
+   "preset": "canyon",
+   "sha256": "9de1fdadb3be3718c9ccbcc32ddc00ad177f2aca9ff9e648367465bdf632f2a7"
+  },
+  "wmine.rubble": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.rubble.glb",
+   "kit_id": "wmine.rubble",
+   "preset": null,
+   "sha256": "a8cef09fb9796cb9b5213a993ee22d67ca267e74cd89f4e612eb6b9c642450d4"
+  },
+  "wmine.shaft": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.shaft.glb",
+   "kit_id": "wmine.shaft",
+   "preset": null,
+   "sha256": "8cda728f576a57720a50cdb894fb75e92e9d354d92187276b5f689d4286ec528"
+  },
+  "wmine.shaft__small": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.shaft__small.glb",
+   "kit_id": "wmine.shaft",
+   "preset": "small",
+   "sha256": "32c0693543e6040bd173b88d04fe7b8c03df5975d4e3bc1cc7d0813a18b0115d"
+  },
+  "wmine.timber_set": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.timber_set.glb",
+   "kit_id": "wmine.timber_set",
+   "preset": null,
+   "sha256": "551d6e16a4be2608bf5e16893f13d45e621cee3774738214199a05287fa4c4ff"
+  },
+  "wmine.track": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.track.glb",
+   "kit_id": "wmine.track",
+   "preset": null,
+   "sha256": "599d25b1c71fb02765d38c3bc41097e168d1fcfc7071511fe7cf6d27dbea1ed7"
+  },
+  "wmine.track__corner": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.track__corner.glb",
+   "kit_id": "wmine.track",
+   "preset": "corner",
+   "sha256": "bd06449debc5c8f903f47af9f8971c102d46721713ec9033adf6ecabefff05de"
+  },
+  "wmine.track__end": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.track__end.glb",
+   "kit_id": "wmine.track",
+   "preset": "end",
+   "sha256": "f9de6df195aeea698dd43fa0af700148d60082ff72e5e2100816141eaf4c9444"
+  },
+  "wmine.tunnel": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.tunnel.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": null,
+   "sha256": "bad60abb26113d82d68adbd7ffa7f8561bea3fa8a192cb392da98b1b39c8ef4f"
+  },
+  "wmine.tunnel__corner": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.tunnel__corner.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "corner",
+   "sha256": "8ad1ff446fda28d561b83ac42f10f4021e0ffa5a1727520e46beaa6f2ce82449"
+  },
+  "wmine.tunnel__cross": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.tunnel__cross.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "cross",
+   "sha256": "d25bd78987f4adc1a5fc7e29a9ee6e81de538c2e6247a4e8cc25441558a15161"
+  },
+  "wmine.tunnel__end": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.tunnel__end.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "end",
+   "sha256": "8f543b85cbdd7a72d0dfe266fdc3003a533903f4c8dd58e833b5e5984663ada9"
+  },
+  "wmine.tunnel__end_door": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.tunnel__end_door.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "end_door",
+   "sha256": "1a626b27d5e8251b5596e86be66e1798c723f75794487ce3161161dae6f4c4a3"
+  },
+  "wmine.tunnel__mouth": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.tunnel__mouth.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "mouth",
+   "sha256": "dfa999f50bcb62951e1faf428010c72a1c90633df544011c82cf96918a30d4b5"
+  },
+  "wmine.tunnel__tee": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.tunnel__tee.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "tee",
+   "sha256": "0a7ef09d6fb196157b4a2e697d8d99d77505972e21c5dc1110ad29e1f7509a2a"
+  },
+  "wmine.tunnel__track": {
+   "glb": "kits/library/canyon_mesa/presets/wmine.tunnel__track.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "track",
+   "sha256": "9ac7c15dc69b4f81c938996bb84a82cbd97811a48a1878bbccc6f74224fe6b0c"
+  },
+  "wmine.windlass": {
+   "glb": "kits/library/canyon_mesa/assets/wmine.windlass.glb",
+   "kit_id": "wmine.windlass",
+   "preset": null,
+   "sha256": "fc164fc6a198bc05af283080ccf4eb8b880c3ece689209ae8e8ac2ddbba7d5ad"
+  },
+  "wprop.bar": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.bar.glb",
+   "kit_id": "wprop.bar",
+   "preset": null,
+   "sha256": "25fd8ac4aa5bf70cbe166fe3244ebc82da996cdb5e42d9b198fbac5a033f0688"
+  },
+  "wprop.bar__back_bar": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.bar__back_bar.glb",
+   "kit_id": "wprop.bar",
+   "preset": "back_bar",
+   "sha256": "bd504acbcbc5dc3f70f7dcd2f502879649d111790aad13f3367c9e8068ece1c5"
+  },
+  "wprop.bar__short": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.bar__short.glb",
+   "kit_id": "wprop.bar",
+   "preset": "short",
+   "sha256": "3b52f35029f34829d409677069aac500b07a8c2f6a694b9632613ef26a90267d"
+  },
+  "wprop.barrel": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.barrel.glb",
+   "kit_id": "wprop.barrel",
+   "preset": null,
+   "sha256": "2dcbb9ad19ec1db751fc6f4aa4d7db8b22ac9f4f570d7f7d5b7767f7d2fe6db6"
+  },
+  "wprop.barrel__keg": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.barrel__keg.glb",
+   "kit_id": "wprop.barrel",
+   "preset": "keg",
+   "sha256": "1abe1db2377cbdcc8dbcfb21897da8be8e1f206ece278e8802f4e3e8ea838241"
+  },
+  "wprop.barrel__powder": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.barrel__powder.glb",
+   "kit_id": "wprop.barrel",
+   "preset": "powder",
+   "sha256": "1f757125b8bb295e9f3903cc1e809650c6844faf64cf1c461934b4a49682531c"
+  },
+  "wprop.barrel__tipped": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.barrel__tipped.glb",
+   "kit_id": "wprop.barrel",
+   "preset": "tipped",
+   "sha256": "f4053a3d56d9e8f2c5c3c3aca14a60934609d8934cbdc338ed54c20985c0d6a7"
+  },
+  "wprop.barrel__water": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.barrel__water.glb",
+   "kit_id": "wprop.barrel",
+   "preset": "water",
+   "sha256": "23fd05f11500ca99c405ed83b32219fc017190921159e596f532d78fce697d7b"
+  },
+  "wprop.bottles": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.bottles.glb",
+   "kit_id": "wprop.bottles",
+   "preset": null,
+   "sha256": "c4d5616e1b2d0d1d6cca20587cc93a1103c4590c92f2e5a45f66024c63e3f680"
+  },
+  "wprop.bucket": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.bucket.glb",
+   "kit_id": "wprop.bucket",
+   "preset": null,
+   "sha256": "d7c73a12545e47bf201b04e649385485f8ad2325bcb2684cf10903c1a464b112"
+  },
+  "wprop.bucket__basin": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.bucket__basin.glb",
+   "kit_id": "wprop.bucket",
+   "preset": "basin",
+   "sha256": "c192843126012bec21689611e4bbfa1643b8d803b137c3fc107db8857bb3a623"
+  },
+  "wprop.bucket__spittoon": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.bucket__spittoon.glb",
+   "kit_id": "wprop.bucket",
+   "preset": "spittoon",
+   "sha256": "c5be957b205423a3fcd4266ae2f85eda43d83ed42b796465b6ab024e40c97f71"
+  },
+  "wprop.cactus": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.cactus.glb",
+   "kit_id": "wprop.cactus",
+   "preset": null,
+   "sha256": "ed72a4759351125df11c6f3b8e021f7ef41b6a7445341ed0115efacc8a45ca0a"
+  },
+  "wprop.cactus__barrel": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.cactus__barrel.glb",
+   "kit_id": "wprop.cactus",
+   "preset": "barrel",
+   "sha256": "7c2d2522781e7f734bd786de033d99f19c1f5e1151f955c6abfebfeeb8049a66"
+  },
+  "wprop.cactus__organ": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.cactus__organ.glb",
+   "kit_id": "wprop.cactus",
+   "preset": "organ",
+   "sha256": "565db0d0862e21678b45d52d937ef1a034776d48347368ffbc3b95040bf2ba2d"
+  },
+  "wprop.cactus__prickly": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.cactus__prickly.glb",
+   "kit_id": "wprop.cactus",
+   "preset": "prickly",
+   "sha256": "a44d0b4ada2b566e0e3918ab92da3917d1cd293e497a40b9eb61ef3ae962748f"
+  },
+  "wprop.cactus__tall": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.cactus__tall.glb",
+   "kit_id": "wprop.cactus",
+   "preset": "tall",
+   "sha256": "6786c8cea89f037a916bca90546c2e5dd6ec49a8164950796d255011b3a82813"
+  },
+  "wprop.campfire": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.campfire.glb",
+   "kit_id": "wprop.campfire",
+   "preset": null,
+   "sha256": "71c21449ff58add5c403b140df6f8953fb68235125fd981f7cb835035113b30f"
+  },
+  "wprop.campfire__cold": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.campfire__cold.glb",
+   "kit_id": "wprop.campfire",
+   "preset": "cold",
+   "sha256": "d88796b5efee0cd798a22a8f7bc1014f42faff8d81d36e0ea2f1b8ea25649ceb"
+  },
+  "wprop.chair": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.chair.glb",
+   "kit_id": "wprop.chair",
+   "preset": null,
+   "sha256": "ecd8b14e19e1185a4a295144ab40757a728380b89d55b591a7b4942968e577d9"
+  },
+  "wprop.chair__bench": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.chair__bench.glb",
+   "kit_id": "wprop.chair",
+   "preset": "bench",
+   "sha256": "c2f5e3971f9cbf4be5d569f71739677fdaf5358ed083f986a0391d1fb95fb414"
+  },
+  "wprop.chair__rocking": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.chair__rocking.glb",
+   "kit_id": "wprop.chair",
+   "preset": "rocking",
+   "sha256": "fc2dc183b7c1fb0ce6fbd39486fbacc93365a2c6a12da605b7c5d7e8104939ad"
+  },
+  "wprop.chair__stool": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.chair__stool.glb",
+   "kit_id": "wprop.chair",
+   "preset": "stool",
+   "sha256": "ba73892261c4aebca9cdbd28f55dd5bff78c35e5dc0479ada853915efca20916"
+  },
+  "wprop.crate": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.crate.glb",
+   "kit_id": "wprop.crate",
+   "preset": null,
+   "sha256": "5f408991fd2d88cdde39984b707752ecef2cb4c39c5aeefe10b3a9926739aab0"
+  },
+  "wprop.crate__long": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.crate__long.glb",
+   "kit_id": "wprop.crate",
+   "preset": "long",
+   "sha256": "470f431b7d6a3396e3978ee68231de028f66aaa1efed7cbef7af705827b52a9d"
+  },
+  "wprop.crate__powder": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.crate__powder.glb",
+   "kit_id": "wprop.crate",
+   "preset": "powder",
+   "sha256": "c0235fc27950408cfefafb555acbac42a8ac5204ebb338959e852160c98872e7"
+  },
+  "wprop.crate__slats": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.crate__slats.glb",
+   "kit_id": "wprop.crate",
+   "preset": "slats",
+   "sha256": "5332e219f0926350e8a89ee2ac0800ceca7d55fd703cc14346027c67f04fdc0e"
+  },
+  "wprop.crate__small": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.crate__small.glb",
+   "kit_id": "wprop.crate",
+   "preset": "small",
+   "sha256": "c3b3164979210d5034c0fe9b56b080bdc07ff93e24cd3c0f4be386fb51f7a369"
+  },
+  "wprop.hay": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.hay.glb",
+   "kit_id": "wprop.hay",
+   "preset": null,
+   "sha256": "8b8ac952008ae15ffb5f6fd30a0e0d875d8b53bb182fdd2e6d3d3eaf833349d7"
+  },
+  "wprop.hay__stack": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.hay__stack.glb",
+   "kit_id": "wprop.hay",
+   "preset": "stack",
+   "sha256": "cd83982e516fb07347ab0819aba4e30e5fba2d52dc9c26a80992c910f69b913b"
+  },
+  "wprop.lantern": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.lantern.glb",
+   "kit_id": "wprop.lantern",
+   "preset": null,
+   "sha256": "69126a56991e99d9e45aeced9a5aa199eb824cb38964e979c38fe60a06d0fbe2"
+  },
+  "wprop.lantern__post": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.lantern__post.glb",
+   "kit_id": "wprop.lantern",
+   "preset": "post",
+   "sha256": "75957cc888c258f162ccbc843af73a5b4568cc094031f22b93753e8f07863d4b"
+  },
+  "wprop.lantern__table": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.lantern__table.glb",
+   "kit_id": "wprop.lantern",
+   "preset": "table",
+   "sha256": "20b06b7fb24e0aebb458a680a79c2b10b561d6e8e70ed07f2a5e79b0a0435611"
+  },
+  "wprop.lantern__wall": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.lantern__wall.glb",
+   "kit_id": "wprop.lantern",
+   "preset": "wall",
+   "sha256": "04b560e5b49398f590e27e367e0c0afc07a40f4e88db1274be456b571e487510"
+  },
+  "wprop.piano": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.piano.glb",
+   "kit_id": "wprop.piano",
+   "preset": null,
+   "sha256": "9c8d132abc21a74762740305add8f2a838e6b9e7c8344fc1082645b0c9283617"
+  },
+  "wprop.sacks": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.sacks.glb",
+   "kit_id": "wprop.sacks",
+   "preset": null,
+   "sha256": "a4fc031515e374c07a8614f0579aad35b02f944afa7ef26d98f6012709798d78"
+  },
+  "wprop.sacks__one": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.sacks__one.glb",
+   "kit_id": "wprop.sacks",
+   "preset": "one",
+   "sha256": "b21de71fdece461437dc48e70262853ca4d498684d795551932367d70453dd35"
+  },
+  "wprop.saloon_doors": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.saloon_doors.glb",
+   "kit_id": "wprop.saloon_doors",
+   "preset": null,
+   "sha256": "064ed67e309de4a9707379977f300176a5d45f67f35a78930b3d6a21cec69d8c"
+  },
+  "wprop.signpost": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.signpost.glb",
+   "kit_id": "wprop.signpost",
+   "preset": null,
+   "sha256": "df7f48b3bcfbb62cd5c99dd81006216530f46daa988af98232086e395e7d5e4a"
+  },
+  "wprop.signpost__two": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.signpost__two.glb",
+   "kit_id": "wprop.signpost",
+   "preset": "two",
+   "sha256": "b8758bb93c8c89e30e6eb9a555485c1c054d1e87128ee6cdea2f53783d3a644b"
+  },
+  "wprop.skull": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.skull.glb",
+   "kit_id": "wprop.skull",
+   "preset": null,
+   "sha256": "248f5bf8f3dee548b4b9ed5741e618bcabb802253e3e705505b9c47d8aaeda0d"
+  },
+  "wprop.stove": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.stove.glb",
+   "kit_id": "wprop.stove",
+   "preset": null,
+   "sha256": "7b02eef13c98cb992e353db18ee896fb814d83ed17ba3f1625f16446d42a8fe1"
+  },
+  "wprop.table": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.table.glb",
+   "kit_id": "wprop.table",
+   "preset": null,
+   "sha256": "148783b34ec465c62517cf6d433762182ce73470f2cded00027e669c8baf00d4"
+  },
+  "wprop.table__card": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.table__card.glb",
+   "kit_id": "wprop.table",
+   "preset": "card",
+   "sha256": "aced9cd699137c681db3a1d38c0f0136e7fdc8213e030af7f4cecc12351d4119"
+  },
+  "wprop.table__long": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.table__long.glb",
+   "kit_id": "wprop.table",
+   "preset": "long",
+   "sha256": "1ae1afb6da67230952d6fa60e74da30890b4cf3d2ab5626eaf92907798d3b582"
+  },
+  "wprop.table__square": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.table__square.glb",
+   "kit_id": "wprop.table",
+   "preset": "square",
+   "sha256": "6aec1f8407bcc371acc4ad1cfb967130af68e026cf697513f792c152262416cc"
+  },
+  "wprop.tombstone": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.tombstone.glb",
+   "kit_id": "wprop.tombstone",
+   "preset": null,
+   "sha256": "663382936291bbf779aef826bb931fb3507a9f2a68f0f982a1449652893864ea"
+  },
+  "wprop.tombstone__board": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.tombstone__board.glb",
+   "kit_id": "wprop.tombstone",
+   "preset": "board",
+   "sha256": "6be4da95f3879daeb38f3f2b44d952c384d6fa3e55ab6bbf4e57756fe9b1d1a3"
+  },
+  "wprop.tombstone__cairn": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.tombstone__cairn.glb",
+   "kit_id": "wprop.tombstone",
+   "preset": "cairn",
+   "sha256": "210eb4a0fc051dae310c767dae9caaa583f3204a4e5002d3b8889a312e3b2820"
+  },
+  "wprop.tombstone__cross": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.tombstone__cross.glb",
+   "kit_id": "wprop.tombstone",
+   "preset": "cross",
+   "sha256": "858a85f934a5d341298be59511a00ce391eb5404b6de00667cbe170f757d8d4b"
+  },
+  "wprop.trough": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.trough.glb",
+   "kit_id": "wprop.trough",
+   "preset": null,
+   "sha256": "b46511ea02795bf2c73948d92e2a5ca11c13c591097570255f89756b75604bb1"
+  },
+  "wprop.wagon": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.wagon.glb",
+   "kit_id": "wprop.wagon",
+   "preset": null,
+   "sha256": "b962bf3f0844604091329a9a84c5c0b2c6995647cb57a1567b2fb37d658f05a4"
+  },
+  "wprop.wagon__broken": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.wagon__broken.glb",
+   "kit_id": "wprop.wagon",
+   "preset": "broken",
+   "sha256": "d2d5926f7e6cc0baf866f64d6987b483f531152ca83f73c206a30b9ad2c8216a"
+  },
+  "wprop.wagon__buckboard": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.wagon__buckboard.glb",
+   "kit_id": "wprop.wagon",
+   "preset": "buckboard",
+   "sha256": "63952721a551144946ab79ae9ed07188fd9142a42efee8045b71ddea86de6050"
+  },
+  "wprop.wanted_board": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.wanted_board.glb",
+   "kit_id": "wprop.wanted_board",
+   "preset": null,
+   "sha256": "87f0bbb68075b9c08bfac6e60623f1f58a7aec92643a3447f0aa0a66e1d9b54e"
+  },
+  "wprop.wanted_board__wall": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.wanted_board__wall.glb",
+   "kit_id": "wprop.wanted_board",
+   "preset": "wall",
+   "sha256": "37477eda3753f06fd0f48c56a4dc24c7c9e69ea3025056586acd578cf9409a1d"
+  },
+  "wprop.well": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.well.glb",
+   "kit_id": "wprop.well",
+   "preset": null,
+   "sha256": "2286294e3ebaa9c6f405b5e315fe285bca0362b25a4146357451f95efdb2d161"
+  },
+  "wprop.well__open": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.well__open.glb",
+   "kit_id": "wprop.well",
+   "preset": "open",
+   "sha256": "d418f8a82a5ae95cad0eddfe9f7df4db578309141e1ace6d858ab65a0d171dda"
+  },
+  "wprop.wheel": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.wheel.glb",
+   "kit_id": "wprop.wheel",
+   "preset": null,
+   "sha256": "9b5252b31c7fa7f45964ac63111d7eefbb61b90c7f6c4aedec5e8c3d35329d5e"
+  },
+  "wprop.wheel__flat": {
+   "glb": "kits/library/canyon_mesa/presets/wprop.wheel__flat.glb",
+   "kit_id": "wprop.wheel",
+   "preset": "flat",
+   "sha256": "af60d264c89b89d601af349ef324e3892d62f76a5f8ae04e5437838fd8bd0439"
+  },
+  "wprop.windmill": {
+   "glb": "kits/library/canyon_mesa/assets/wprop.windmill.glb",
+   "kit_id": "wprop.windmill",
+   "preset": null,
+   "sha256": "fd43eb08424404cfe96c572af92087097fa4f7e1e6c1751c4c5339efedbc85a8"
+  },
+  "wrail.car": {
+   "glb": "kits/library/canyon_mesa/assets/wrail.car.glb",
+   "kit_id": "wrail.car",
+   "preset": null,
+   "sha256": "eaded93bf88afb951e718440282012325c23d48c1f5f83f2787ff9815aeb6780"
+  },
+  "wrail.car__caboose": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.car__caboose.glb",
+   "kit_id": "wrail.car",
+   "preset": "caboose",
+   "sha256": "0c96cd8d819a838ee72f6cbeec5cde3db9741abdfa7733505e42a18cef9a5172"
+  },
+  "wrail.car__flatcar": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.car__flatcar.glb",
+   "kit_id": "wrail.car",
+   "preset": "flatcar",
+   "sha256": "68ab3f3d323b4037200dac4aaa1b468b92831e7c2a5f7c7f7e737bce657d4515"
+  },
+  "wrail.handcar": {
+   "glb": "kits/library/canyon_mesa/assets/wrail.handcar.glb",
+   "kit_id": "wrail.handcar",
+   "preset": null,
+   "sha256": "6b46ef6c6123efb7289179c11a0c8d638805dc2a6c98474d65697d6faaa4566b"
+  },
+  "wrail.handcar__pumped": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.handcar__pumped.glb",
+   "kit_id": "wrail.handcar",
+   "preset": "pumped",
+   "sha256": "0d70b0743a67d79a3a2ccb60ce28f15e30427d5e6efbce7408feee4e2ba62f77"
+  },
+  "wrail.locomotive": {
+   "glb": "kits/library/canyon_mesa/assets/wrail.locomotive.glb",
+   "kit_id": "wrail.locomotive",
+   "preset": null,
+   "sha256": "ed1510c18a6b9849ba46d1628f875e6bb55ab0b9512e67ea415d4362af9e462a"
+  },
+  "wrail.locomotive__straight_stack": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.locomotive__straight_stack.glb",
+   "kit_id": "wrail.locomotive",
+   "preset": "straight_stack",
+   "sha256": "9da081c50a324a1ef8a1125e0deff84adcbc53ddb3bcc43b92ccfe8aa0697e93"
+  },
+  "wrail.platform": {
+   "glb": "kits/library/canyon_mesa/assets/wrail.platform.glb",
+   "kit_id": "wrail.platform",
+   "preset": null,
+   "sha256": "b13f1fdbd97809eaa20cdca7fb66daf17cb5020e69fc6bcd84fed9d25c67954e"
+  },
+  "wrail.platform__end_e": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.platform__end_e.glb",
+   "kit_id": "wrail.platform",
+   "preset": "end_e",
+   "sha256": "9e271f6781b361fe37a13f7f657ce94507f2a8da070ec5a9a5fe4e167b1d8a41"
+  },
+  "wrail.platform__end_w": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.platform__end_w.glb",
+   "kit_id": "wrail.platform",
+   "preset": "end_w",
+   "sha256": "722f59160c1eeab4eaf1f4ae67500e768d673ba3f4162a0a76a0330b2e8681da"
+  },
+  "wrail.signal": {
+   "glb": "kits/library/canyon_mesa/assets/wrail.signal.glb",
+   "kit_id": "wrail.signal",
+   "preset": null,
+   "sha256": "21b292078ff3e5f254e0712f99fb138c02ce94f669724e2f85903ee44d06cddd"
+  },
+  "wrail.signal__clear": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.signal__clear.glb",
+   "kit_id": "wrail.signal",
+   "preset": "clear",
+   "sha256": "6a1d60d844f915f3e22cc978e755f9d7c032917bb3c69b253c48a5fd9213e15a"
+  },
+  "wrail.station": {
+   "glb": "kits/library/canyon_mesa/assets/wrail.station.glb",
+   "kit_id": "wrail.station",
+   "preset": null,
+   "sha256": "a6783161a74ef7fdef2d460d3011e88a11d82e0daba8eae6000caa730635e941"
+  },
+  "wrail.station__entry": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.station__entry.glb",
+   "kit_id": "wrail.station",
+   "preset": "entry",
+   "sha256": "711ca48879f26fda0e64d74e2951658940d725aae315e8e65b3ca739fe2cebb8"
+  },
+  "wrail.station__small": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.station__small.glb",
+   "kit_id": "wrail.station",
+   "preset": "small",
+   "sha256": "24237e27cef5d894a06dc39ab31041fbe6303a45f9eb308f1bbaa1bf16f8d6fc"
+  },
+  "wrail.track": {
+   "glb": "kits/library/canyon_mesa/assets/wrail.track.glb",
+   "kit_id": "wrail.track",
+   "preset": null,
+   "sha256": "8e91c17e461349a276c1f9a7e6566b34c2e9bcc4bc3a778f90900b403450bdfa"
+  },
+  "wrail.track__bumper": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.track__bumper.glb",
+   "kit_id": "wrail.track",
+   "preset": "bumper",
+   "sha256": "2789d623dfd7a24f9368395bb054c2ceaaeb60a1dcaa59dea6bfe9b242e167d5"
+  },
+  "wrail.track__crossing": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.track__crossing.glb",
+   "kit_id": "wrail.track",
+   "preset": "crossing",
+   "sha256": "e589aa9af5fb3b829ba18e00364b1db0ebba2ab41e72fe57a526797fa7ccc8be"
+  },
+  "wrail.track__curve": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.track__curve.glb",
+   "kit_id": "wrail.track",
+   "preset": "curve",
+   "sha256": "0e161701db9a81b4b1d005ddf979f28e483f58194c5ee097dec0fb1c549600ff"
+  },
+  "wrail.trestle": {
+   "glb": "kits/library/canyon_mesa/assets/wrail.trestle.glb",
+   "kit_id": "wrail.trestle",
+   "preset": null,
+   "sha256": "c95ed89c0db4dd593176b43ce91bc5c51db134b1afbc5a67f6b450e562045ac3"
+  },
+  "wrail.trestle__end": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.trestle__end.glb",
+   "kit_id": "wrail.trestle",
+   "preset": "end",
+   "sha256": "c3a53c222e0d4458f168f50869dc3e2dc45b62e8a03573ae53aa63c08c9a7b30"
+  },
+  "wrail.trestle__low": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.trestle__low.glb",
+   "kit_id": "wrail.trestle",
+   "preset": "low",
+   "sha256": "d21b23fe205d90ed640a0fffc8fafe4473359454b98aa814d96d3f2413807ad2"
+  },
+  "wrail.trestle__tall": {
+   "glb": "kits/library/canyon_mesa/presets/wrail.trestle__tall.glb",
+   "kit_id": "wrail.trestle",
+   "preset": "tall",
+   "sha256": "5398a79ac6193c4e38c35d9707f66b05989e39c11e3c012a1a1b075a1414f707"
+  },
+  "wsky.dome": {
+   "glb": "kits/library/canyon_mesa/assets/wsky.dome.glb",
+   "kit_id": "wsky.dome",
+   "preset": null,
+   "sha256": "8fc9f834b480fdfaf58949afdaf29a4f5e7ed5dff0aa13a37896951c3610f170"
+  },
+  "wsky.mesas": {
+   "glb": "kits/library/canyon_mesa/assets/wsky.mesas.glb",
+   "kit_id": "wsky.mesas",
+   "preset": null,
+   "sha256": "b4d814f6182dfd672c48e6e1b9f3b5e28107ecd4223d46ffc65d92fd1957432a"
+  },
+  "wsky.mesas__canyon": {
+   "glb": "kits/library/canyon_mesa/presets/wsky.mesas__canyon.glb",
+   "kit_id": "wsky.mesas",
+   "preset": "canyon",
+   "sha256": "f4caeed17f4825cf706d0d9b32a05659ba050d5651a01ce5c3ef6910e19b621c"
+  },
+  "wsky.mesas__near": {
+   "glb": "kits/library/canyon_mesa/presets/wsky.mesas__near.glb",
+   "kit_id": "wsky.mesas",
+   "preset": "near",
+   "sha256": "bdfb8fd68c4ff50dd42ba11afcd830306082422034e352f9214794344893e6d1"
+  },
+  "wsky.mesas__town": {
+   "glb": "kits/library/canyon_mesa/presets/wsky.mesas__town.glb",
+   "kit_id": "wsky.mesas",
+   "preset": "town",
+   "sha256": "6e2be651e37df4c8034dc318af40594de82121a1d52199f351f8d28e7aea5efc"
+  },
+  "wsky.sun": {
+   "glb": "kits/library/canyon_mesa/assets/wsky.sun.glb",
+   "kit_id": "wsky.sun",
+   "preset": null,
+   "sha256": "54df33fd7d196df11ebba6750c276720bbda624b8ae9870da3341f8130719d19"
+  },
+  "wtown.balcony": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.balcony.glb",
+   "kit_id": "wtown.balcony",
+   "preset": null,
+   "sha256": "5a8733e946977ec40acadc7de929305d22ab62c5e8b8682c80fdb56aad77b843"
+  },
+  "wtown.balcony__wide": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.balcony__wide.glb",
+   "kit_id": "wtown.balcony",
+   "preset": "wide",
+   "sha256": "8c3ac3dff4e8764b0c4cf401fef628d91f9b2b5a943b255c28ff6638995bb48a"
+  },
+  "wtown.bank": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.bank.glb",
+   "kit_id": "wtown.bank",
+   "preset": null,
+   "sha256": "f8bd4ac90ed563600c09de95572004c8f31e2f284f50a65344f88d6ec9cd6094"
+  },
+  "wtown.bank__entry": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.bank__entry.glb",
+   "kit_id": "wtown.bank",
+   "preset": "entry",
+   "sha256": "aa3adab77f8108bbe5190a2b27cb0fde1ed28cb4555742b2ef11932e6507ad31"
+  },
+  "wtown.bank__wide": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.bank__wide.glb",
+   "kit_id": "wtown.bank",
+   "preset": "wide",
+   "sha256": "62102060f34f16657a52e05022cb6d13cca184f189055cd195cf460edae8aafc"
+  },
+  "wtown.boardwalk": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.boardwalk.glb",
+   "kit_id": "wtown.boardwalk",
+   "preset": null,
+   "sha256": "a999b6c96b3529886dc79c611bf40473a53feb8623086e6793b0f5a0a316848f"
+  },
+  "wtown.boardwalk__end_e": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.boardwalk__end_e.glb",
+   "kit_id": "wtown.boardwalk",
+   "preset": "end_e",
+   "sha256": "09f09d3b62a592392515b1957ab7dfd08774c808c700dc6516590b4a471116dc"
+  },
+  "wtown.boardwalk__end_w": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.boardwalk__end_w.glb",
+   "kit_id": "wtown.boardwalk",
+   "preset": "end_w",
+   "sha256": "5b9c77d40356f5f0f3a1a5dc7e33ae7557c3d31d55fbea93739cae6ebf4cbf73"
+  },
+  "wtown.boardwalk__ends": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.boardwalk__ends.glb",
+   "kit_id": "wtown.boardwalk",
+   "preset": "ends",
+   "sha256": "59e85ef74fb4d3f641b00b8145e0361d74d6b2440ce007387f8381c718d92876"
+  },
+  "wtown.boardwalk__steps": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.boardwalk__steps.glb",
+   "kit_id": "wtown.boardwalk",
+   "preset": "steps",
+   "sha256": "a130c4dc0380000c9d77ae5454e33b0ee6bbeb970d53b868c8c8af0f5b5b9cba"
+  },
+  "wtown.church": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.church.glb",
+   "kit_id": "wtown.church",
+   "preset": null,
+   "sha256": "3410e68944dc62e1d8626a5b834e7689c590a30a5e61623d9b765c414f9d20a3"
+  },
+  "wtown.church__wide": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.church__wide.glb",
+   "kit_id": "wtown.church",
+   "preset": "wide",
+   "sha256": "baf45f746f2cbadfbf0f9a0de77980e6f542cdc0be94cb8aac65fdd6330acb40"
+  },
+  "wtown.doorway": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.doorway.glb",
+   "kit_id": "wtown.doorway",
+   "preset": null,
+   "sha256": "89f564b552b5e49332bc5ad5d1acddfb38b0c8ea42ebded0acaa5c5eaeb3554b"
+  },
+  "wtown.doorway__gate": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.doorway__gate.glb",
+   "kit_id": "wtown.doorway",
+   "preset": "gate",
+   "sha256": "0e730eed1122d437e580844c03aacc76dfbfcc8cb1ed4f9e428bb1563d8af920"
+  },
+  "wtown.facade": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.facade.glb",
+   "kit_id": "wtown.facade",
+   "preset": null,
+   "sha256": "62d4928da9610a2bf0ebf6bf0d8498013fc297d0ee785b038b9b40cd57a5c148"
+  },
+  "wtown.facade__a_square": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.facade__a_square.glb",
+   "kit_id": "wtown.facade",
+   "preset": "a_square",
+   "sha256": "62d4928da9610a2bf0ebf6bf0d8498013fc297d0ee785b038b9b40cd57a5c148"
+  },
+  "wtown.facade__b_stepped": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.facade__b_stepped.glb",
+   "kit_id": "wtown.facade",
+   "preset": "b_stepped",
+   "sha256": "de95bbef754845694625f5edbc7f7fe08cec90439b977a1a380b2d2e39e074d2"
+  },
+  "wtown.facade__c_arched": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.facade__c_arched.glb",
+   "kit_id": "wtown.facade",
+   "preset": "c_arched",
+   "sha256": "b5889cd1b561ae43a95ace676d6939f47291c620e9cb94d378fb5ecd776f2648"
+  },
+  "wtown.facade__d_gabled": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.facade__d_gabled.glb",
+   "kit_id": "wtown.facade",
+   "preset": "d_gabled",
+   "sha256": "a8725f6e2d8725fd32e9d12f4f0ce05d4c40ac03a1a3030f4d23fe19d4067232"
+  },
+  "wtown.facade__e_pediment": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.facade__e_pediment.glb",
+   "kit_id": "wtown.facade",
+   "preset": "e_pediment",
+   "sha256": "08d2d3a056be30a43a7a30f09fac0c700777e26340a6b53389504bf345e2f6ea"
+  },
+  "wtown.facade__entry": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.facade__entry.glb",
+   "kit_id": "wtown.facade",
+   "preset": "entry",
+   "sha256": "1c6e1756e53ae755a80b9b633cdd9280a77137e6e9efd2cf19566bf602049a5b"
+  },
+  "wtown.facade__f_tall": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.facade__f_tall.glb",
+   "kit_id": "wtown.facade",
+   "preset": "f_tall",
+   "sha256": "69188a8d90e48e04306c00f6546dcd101621b74ca467efe8501dbf331a1b74db"
+  },
+  "wtown.facade__g_brick": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.facade__g_brick.glb",
+   "kit_id": "wtown.facade",
+   "preset": "g_brick",
+   "sha256": "b27f8b936e272f81c9e99b8b9739953034a05629f456479f3e1b614a50081ad9"
+  },
+  "wtown.fence": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.fence.glb",
+   "kit_id": "wtown.fence",
+   "preset": null,
+   "sha256": "52f4353f7a29865f1c26ee71eda552a5e6fefb0055e8fedbd99f940a8503d435"
+  },
+  "wtown.fence__broken": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.fence__broken.glb",
+   "kit_id": "wtown.fence",
+   "preset": "broken",
+   "sha256": "4a4ef2fbea50759f8c5b49e723c1d46ec686619332b86cdbb02e16f858ed3b68"
+  },
+  "wtown.fence__gateway": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.fence__gateway.glb",
+   "kit_id": "wtown.fence",
+   "preset": "gateway",
+   "sha256": "c81bc78553f0afb88cfe100463f89e58647874fd65f983b480fceb98a7661a8f"
+  },
+  "wtown.fence__picket": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.fence__picket.glb",
+   "kit_id": "wtown.fence",
+   "preset": "picket",
+   "sha256": "09eed028160e7f707bb1f6e44fd7dfe45edd37c7368852ecead0bc26d449277d"
+  },
+  "wtown.gallery": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.gallery.glb",
+   "kit_id": "wtown.gallery",
+   "preset": null,
+   "sha256": "fb42e7d0ba3618b7d59a0b14148cae3ef95a7bb23ede2d68a611aadfc3a270fa"
+  },
+  "wtown.gallery__long": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.gallery__long.glb",
+   "kit_id": "wtown.gallery",
+   "preset": "long",
+   "sha256": "c6f1949891eb738acb5dbdcb8eeab5087ac0fc30c052b80f583745a84fd709bb"
+  },
+  "wtown.gallery__west_stair": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.gallery__west_stair.glb",
+   "kit_id": "wtown.gallery",
+   "preset": "west_stair",
+   "sha256": "e6f74de26c1806b6b07251a652dac32aa4140ac6b693650e17b2687d74f33eb3"
+  },
+  "wtown.hitching_post": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.hitching_post.glb",
+   "kit_id": "wtown.hitching_post",
+   "preset": null,
+   "sha256": "d0cd19dff7bc3a25eb96d1e4603b603ec1d09cda4b11d605a6b73b2b26eb71fd"
+  },
+  "wtown.hitching_post__double": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.hitching_post__double.glb",
+   "kit_id": "wtown.hitching_post",
+   "preset": "double",
+   "sha256": "b280d5f20eff9f54cccad5a2747ebb16f49aaa55ecbc80be750458a6f548a523"
+  },
+  "wtown.hotel": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.hotel.glb",
+   "kit_id": "wtown.hotel",
+   "preset": null,
+   "sha256": "bd41a350185246cda54cf614c93a6c245c25232a8e59532b2a69ee2b28d14f22"
+  },
+  "wtown.hotel__entry": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.hotel__entry.glb",
+   "kit_id": "wtown.hotel",
+   "preset": "entry",
+   "sha256": "da1b7a85e6ece0818d9327d95122ab5f1c243c0b69f1890d92d1dfb88eaa8c50"
+  },
+  "wtown.hotel__grand": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.hotel__grand.glb",
+   "kit_id": "wtown.hotel",
+   "preset": "grand",
+   "sha256": "01e231b8bd556f6ab507563b979134d9ceb82eca0026ee70d114e2674a4782c3"
+  },
+  "wtown.porch": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.porch.glb",
+   "kit_id": "wtown.porch",
+   "preset": null,
+   "sha256": "760568bf261a478f9f3a8ec1e886135a1979e9eefcdf82aa2ad99d80d615b29c"
+  },
+  "wtown.porch__canvas": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.porch__canvas.glb",
+   "kit_id": "wtown.porch",
+   "preset": "canvas",
+   "sha256": "5238c138cba33b0a0aad276a902f5271b52218e5390b0cdd289392b0e59526d8"
+  },
+  "wtown.porch__tin": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.porch__tin.glb",
+   "kit_id": "wtown.porch",
+   "preset": "tin",
+   "sha256": "a3a6588848a2294823ca7f358680d2529a0d1c1c4417362ef9eca3bc5f299706"
+  },
+  "wtown.porch__wide": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.porch__wide.glb",
+   "kit_id": "wtown.porch",
+   "preset": "wide",
+   "sha256": "409d20978834390bc81426bc2f9cb90f3e68c49b34999511553af0197a25952d"
+  },
+  "wtown.room": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.room.glb",
+   "kit_id": "wtown.room",
+   "preset": null,
+   "sha256": "1b2cc8cdbe2761e58d15df6c472529f1cb2bb02d8e13a3627880796d7ad65b60"
+  },
+  "wtown.room__office": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.room__office.glb",
+   "kit_id": "wtown.room",
+   "preset": "office",
+   "sha256": "7762b52189bbf17d10845aeba390b32ef9d11575b132863078094d030eb9ff5d"
+  },
+  "wtown.room__saloon": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.room__saloon.glb",
+   "kit_id": "wtown.room",
+   "preset": "saloon",
+   "sha256": "a8bcd4413f45e588add5072f71d35c3198861c595a8f493a134126920022c0a3"
+  },
+  "wtown.room__store": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.room__store.glb",
+   "kit_id": "wtown.room",
+   "preset": "store",
+   "sha256": "0aa760f1d7425ddd95d07e1c675a6fb7c7055bf84181c11491ffda0b9718814a"
+  },
+  "wtown.saloon": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.saloon.glb",
+   "kit_id": "wtown.saloon",
+   "preset": null,
+   "sha256": "a87a02bb48059d5359b6b9db9d2d2149814d602d88ecc48d37c29925ecb8d906"
+  },
+  "wtown.saloon__arched": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.saloon__arched.glb",
+   "kit_id": "wtown.saloon",
+   "preset": "arched",
+   "sha256": "48fab361ca3d1835e18fc5b031340aacb7384deaff64de14236131a9faadad5d"
+  },
+  "wtown.saloon__entry": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.saloon__entry.glb",
+   "kit_id": "wtown.saloon",
+   "preset": "entry",
+   "sha256": "bd5a12f5f2ae6ab5ef991bb10a2b94e87a34001973ba8fccb486bb717bab207b"
+  },
+  "wtown.saloon__plain": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.saloon__plain.glb",
+   "kit_id": "wtown.saloon",
+   "preset": "plain",
+   "sha256": "f3400c5623006aac48a1f8425075047c3ec4854c35c386a8fd7429933cadcf77"
+  },
+  "wtown.shack": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.shack.glb",
+   "kit_id": "wtown.shack",
+   "preset": null,
+   "sha256": "535fbc7c58d684839cc927241366c2077b81ee1bec64572d79e50bd3e6958cc2"
+  },
+  "wtown.shack__shingle": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.shack__shingle.glb",
+   "kit_id": "wtown.shack",
+   "preset": "shingle",
+   "sha256": "f90a522cf6b4d37de589bf2bb63c1b671f77f7bc0f82e173c03fe46ff209ba46"
+  },
+  "wtown.sheriff": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.sheriff.glb",
+   "kit_id": "wtown.sheriff",
+   "preset": null,
+   "sha256": "a40c882095f937f09e8284941d28676e79a1b2565aac2f0a7d2a2ffe3ea5fbc1"
+  },
+  "wtown.sheriff__entry": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.sheriff__entry.glb",
+   "kit_id": "wtown.sheriff",
+   "preset": "entry",
+   "sha256": "7fb5aa449cc8db056d17ddabe0be19ce63b13606b92ec84286e5b388213333f1"
+  },
+  "wtown.sheriff__office": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.sheriff__office.glb",
+   "kit_id": "wtown.sheriff",
+   "preset": "office",
+   "sha256": "fe362648dadc2bdbe3713c38de3e784d17a51f9e524476ffe2791ddf879201be"
+  },
+  "wtown.stable": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.stable.glb",
+   "kit_id": "wtown.stable",
+   "preset": null,
+   "sha256": "3ea2d2668741e26caeef8026672330f660d6bf0b6d4022238fdf9f3e3af52690"
+  },
+  "wtown.stable__barn": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.stable__barn.glb",
+   "kit_id": "wtown.stable",
+   "preset": "barn",
+   "sha256": "e59b7aa468f63afcc9cf0aa32a5624afb17db0e8218d982d74658619d775e21b"
+  },
+  "wtown.stable__wide": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.stable__wide.glb",
+   "kit_id": "wtown.stable",
+   "preset": "wide",
+   "sha256": "273b8d018522c85e8badd5dab5c9d3a709a984c750dc2f7e06e6f50c0496740b"
+  },
+  "wtown.stairs": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.stairs.glb",
+   "kit_id": "wtown.stairs",
+   "preset": null,
+   "sha256": "7895c66c486888d21c0c6bbfc28f1c6c02ab621232121d80bfb1e32d708fcf65"
+  },
+  "wtown.stairs__gallery": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.stairs__gallery.glb",
+   "kit_id": "wtown.stairs",
+   "preset": "gallery",
+   "sha256": "f2263e12384c98e50057bc568af6f9904b52be70f4557b86d9be2bb151f34218"
+  },
+  "wtown.stairs__short": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.stairs__short.glb",
+   "kit_id": "wtown.stairs",
+   "preset": "short",
+   "sha256": "e98badf2a91a3b644c7f5136b9660dff0341b55ed5e487cd5cea332458ab1b54"
+  },
+  "wtown.store": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.store.glb",
+   "kit_id": "wtown.store",
+   "preset": null,
+   "sha256": "f0c4e95b16caaf03c4ce900194fb6e507530a9185d7765b2599b65e3bf47515c"
+  },
+  "wtown.store__battens": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.store__battens.glb",
+   "kit_id": "wtown.store",
+   "preset": "battens",
+   "sha256": "e3989193dffb47051673d9d42e68dd7d1d1c3a9ce73dae3eae6f1d9dfe219e44"
+  },
+  "wtown.store__brick": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.store__brick.glb",
+   "kit_id": "wtown.store",
+   "preset": "brick",
+   "sha256": "7356ede86cd67fd7a5b46ed25ca2237fa0bac2d97299e5f99aee4650abbc6490"
+  },
+  "wtown.store__entry": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.store__entry.glb",
+   "kit_id": "wtown.store",
+   "preset": "entry",
+   "sha256": "54e69b6b89af3f989214408ce2fc428244aa2e19741a468a866306ebc19fcd4d"
+  },
+  "wtown.store__narrow": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.store__narrow.glb",
+   "kit_id": "wtown.store",
+   "preset": "narrow",
+   "sha256": "48102b547773e51ea6329347b36ab0bde85bfadad109693fa09dc5d86efc97b5"
+  },
+  "wtown.water_tower": {
+   "glb": "kits/library/canyon_mesa/assets/wtown.water_tower.glb",
+   "kit_id": "wtown.water_tower",
+   "preset": null,
+   "sha256": "d4849cc5a9e5c15462fe79e0329583847c329240af06e308f9cece77325d9b2b"
+  },
+  "wtown.water_tower__tall": {
+   "glb": "kits/library/canyon_mesa/presets/wtown.water_tower__tall.glb",
+   "kit_id": "wtown.water_tower",
+   "preset": "tall",
+   "sha256": "d59c5a1da9360c94be76d9f21642745ffec588ed62a8ec24749dfcf9f4f2ca0a"
+  }
+ },
+ "format": 1,
+ "kit_pack": "canyon_mesa",
+ "note": "WESTERNKIT bindings: kit defaults (<kit_id>), pack presets (<kit_id>__<preset>), aliases the runtime places by name (arch.door -> wtown.doorway timber frame). Every row hash-pinned; regenerate with tools/westernkit_library.py bindings.",
+ "pack": "canyon_mesa"
+}

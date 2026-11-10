@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.1",
+  "id": "forest_village",
+  "description": "Leaves, wood, birds and water; exactly the same core generators as polar_pod.",
+  "bindings": {
+    "walk_inside": {"ids": ["core.footstep.wood.01", "core.footstep.wood.02", "core.footstep.wood.03"], "gain": 0.65},
+    "walk_outside": {"ids": ["core.footstep.grass.01", "core.footstep.grass.02", "core.footstep.grass.03"], "gain": 0.65},
+    "door": {"ids": ["core.door.wood.open", "core.door.wood.close"], "gain": 0.6},
+    "pickup": {"ids": ["core.reward.resource.organic"], "gain": 0.55},
+    "resident": {"ids": ["core.dialogue.elder", "core.dialogue.child", "core.dialogue.rounded"], "gain": 0.35},
+    "wildlife": {"ids": ["core.creature.bird.tweet", "core.creature.frog.croak", "core.creature.owl.hoot"], "gain": 0.4},
+    "room_ambience": {"ids": ["core.nature.fire.crackle"], "gain": 0.25},
+    "outside_ambience": {"ids": ["core.nature.forest.day"], "gain": 0.28},
+    "river": {"ids": ["core.nature.river.flow"], "gain": 0.28},
+    "rain": {"ids": ["core.nature.rain.leaves"], "gain": 0.25},
+    "room_music": {"ids": ["core.music.forest_day"], "gain": 0.35},
+    "night_music": {"ids": ["core.music.night"], "gain": 0.3},
+    "lab_build": {"ids": ["core.craft.saw.short", "core.craft.hammer.light"], "gain": 0.5}
+  },
+  "presets": {
+    "leaf_step": {"asset": "core.footstep.grass.01", "params": {"seed": 1001, "grit": 0.8, "texture_hz": 1700, "gain": 0.25}},
+    "wood_chest": {"asset": "core.chest.open", "params": {"seed": 1002, "pitch": 115, "creak": 0.5, "gain": 0.25}},
+    "distant_bird": {"asset": "core.creature.bird.tweet", "params": {"seed": 1003, "pitch": 780, "lowpass_hz": 1800, "gain": 0.18}}
+  }
+}

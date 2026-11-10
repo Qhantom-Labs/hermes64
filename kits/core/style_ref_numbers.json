@@ -1,0 +1,280 @@
+{
+ "format": "hermes64-style-ref-numbers/1",
+ "groups": {
+  "brand": {
+   "fingerprint": "b880a0a225c7aad77ddcaf68ffe4707b69d7723a68d8e2f321468a761f03e9ae",
+   "hue_hist_30deg_oklab": [
+    0.0059,
+    0.0219,
+    0.3604,
+    0.001,
+    0.0046,
+    0.0005,
+    0.0001,
+    0.0016,
+    0.0716,
+    0.4971,
+    0.0312,
+    0.0041
+   ],
+   "images_failed": 0,
+   "images_measured": 3,
+   "stats": {
+    "L_mean": {
+     "median": 0.1406,
+     "p10": 0.1284,
+     "p90": 0.4474
+    },
+    "L_p5": {
+     "median": 0.0,
+     "p10": 0.0,
+     "p90": 0.0
+    },
+    "L_p95": {
+     "median": 0.5632,
+     "p10": 0.5211,
+     "p90": 0.9102
+    },
+    "accent_cluster_share": {
+     "median": 0.0389,
+     "p10": 0.0078,
+     "p90": 0.0515
+    },
+    "chroma_mean": {
+     "median": 0.0224,
+     "p10": 0.0045,
+     "p90": 0.023
+    },
+    "chroma_p90": {
+     "median": 0.0811,
+     "p10": 0.0162,
+     "p90": 0.0889
+    },
+    "clusters": {
+     "median": 23.0,
+     "p10": 20.6,
+     "p90": 23.8
+    },
+    "colourfulness": {
+     "median": 0.1114,
+     "p10": 0.0223,
+     "p90": 0.1226
+    },
+    "contrast_p95_p5": {
+     "median": 0.5632,
+     "p10": 0.5211,
+     "p90": 0.9102
+    },
+    "edges": {
+     "median": 0.0122,
+     "p10": 0.0031,
+     "p90": 0.1577
+    },
+    "flat": {
+     "median": 0.4824,
+     "p10": 0.4688,
+     "p90": 0.6052
+    },
+    "gradient_L_top_minus_bottom": {
+     "median": -0.0947,
+     "p10": -0.1041,
+     "p90": 0.1289
+    },
+    "ground_darkening_mid_minus_bottom": {
+     "median": 0.1524,
+     "p10": 0.0708,
+     "p90": 0.1702
+    },
+    "rms_contrast": {
+     "median": 0.2036,
+     "p10": 0.1878,
+     "p90": 0.4099
+    }
+   }
+  },
+  "character": {
+   "fingerprint": "3a1f1067aecb4a9831404fc6e4ecbb6d894e60828e886851608f0f031c5c9050",
+   "hue_hist_30deg_oklab": [
+    0.0244,
+    0.048,
+    0.1842,
+    0.2663,
+    0.2547,
+    0.0063,
+    0.0032,
+    0.0034,
+    0.0491,
+    0.1282,
+    0.0151,
+    0.0171
+   ],
+   "images_failed": 0,
+   "images_measured": 5,
+   "stats": {
+    "L_mean": {
+     "median": 0.4734,
+     "p10": 0.3595,
+     "p90": 0.7349
+    },
+    "L_p5": {
+     "median": 0.2037,
+     "p10": 0.1108,
+     "p90": 0.3745
+    },
+    "L_p95": {
+     "median": 0.7639,
+     "p10": 0.6709,
+     "p90": 0.9777
+    },
+    "accent_cluster_share": {
+     "median": 0.0457,
+     "p10": 0.0118,
+     "p90": 0.1487
+    },
+    "chroma_mean": {
+     "median": 0.0466,
+     "p10": 0.0334,
+     "p90": 0.0565
+    },
+    "chroma_p90": {
+     "median": 0.0925,
+     "p10": 0.0827,
+     "p90": 0.1124
+    },
+    "clusters": {
+     "median": 24.0,
+     "p10": 21.4,
+     "p90": 24.0
+    },
+    "colourfulness": {
+     "median": 0.1738,
+     "p10": 0.1313,
+     "p90": 0.2002
+    },
+    "contrast_p95_p5": {
+     "median": 0.567,
+     "p10": 0.415,
+     "p90": 0.7614
+    },
+    "edges": {
+     "median": 0.0091,
+     "p10": 0.0007,
+     "p90": 0.0563
+    },
+    "flat": {
+     "median": 0.4441,
+     "p10": 0.2472,
+     "p90": 0.669
+    },
+    "gradient_L_top_minus_bottom": {
+     "median": 0.0002,
+     "p10": -0.1367,
+     "p90": 0.0297
+    },
+    "ground_darkening_mid_minus_bottom": {
+     "median": 0.0731,
+     "p10": -0.0253,
+     "p90": 0.1008
+    },
+    "rms_contrast": {
+     "median": 0.1609,
+     "p10": 0.1204,
+     "p90": 0.2819
+    }
+   }
+  },
+  "env": {
+   "fingerprint": "3bac5861bc1453c5758dcea10d1f6895d3ec00bda469a5e7addf99c56decefaf",
+   "hue_hist_30deg_oklab": [
+    0.0406,
+    0.1007,
+    0.141,
+    0.2688,
+    0.1007,
+    0.0085,
+    0.0157,
+    0.0063,
+    0.0534,
+    0.2586,
+    0.0027,
+    0.003
+   ],
+   "images_failed": 0,
+   "images_measured": 14,
+   "stats": {
+    "L_mean": {
+     "median": 0.5288,
+     "p10": 0.3162,
+     "p90": 0.5829
+    },
+    "L_p5": {
+     "median": 0.2331,
+     "p10": 0.1052,
+     "p90": 0.3857
+    },
+    "L_p95": {
+     "median": 0.7449,
+     "p10": 0.5287,
+     "p90": 0.8492
+    },
+    "accent_cluster_share": {
+     "median": 0.0405,
+     "p10": 0.0,
+     "p90": 0.3559
+    },
+    "chroma_mean": {
+     "median": 0.057,
+     "p10": 0.0322,
+     "p90": 0.0782
+    },
+    "chroma_p90": {
+     "median": 0.0877,
+     "p10": 0.0595,
+     "p90": 0.1794
+    },
+    "clusters": {
+     "median": 22.5,
+     "p10": 20.3,
+     "p90": 24.0
+    },
+    "colourfulness": {
+     "median": 0.1533,
+     "p10": 0.1091,
+     "p90": 0.3083
+    },
+    "contrast_p95_p5": {
+     "median": 0.4609,
+     "p10": 0.3057,
+     "p90": 0.6227
+    },
+    "edges": {
+     "median": 0.0323,
+     "p10": 0.0027,
+     "p90": 0.1023
+    },
+    "flat": {
+     "median": 0.268,
+     "p10": 0.1142,
+     "p90": 0.4346
+    },
+    "gradient_L_top_minus_bottom": {
+     "median": 0.0999,
+     "p10": -0.1004,
+     "p90": 0.2552
+    },
+    "ground_darkening_mid_minus_bottom": {
+     "median": 0.0158,
+     "p10": -0.1167,
+     "p90": 0.0957
+    },
+    "rms_contrast": {
+     "median": 0.1472,
+     "p10": 0.0976,
+     "p90": 0.1803
+    }
+   }
+  }
+ },
+ "method": "refpack/measure_np.py measure() per image (OKLab, analysis max side 160), then p10/median/p90 per group; accent share = coverage of clusters with OKLab chroma >= 0.10",
+ "rule": "aggregate image statistics only; no file names, paths, pixels or images from the private study references (study only; never copy, trace, bake or name)"
+}

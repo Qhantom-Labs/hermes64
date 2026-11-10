@@ -1,0 +1,7 @@
+{
+ "schema_version": "1.0.0",
+ "id": "polar_pod_example",
+ "description": "Character lock for the polar_pod_example profile: the n64_base derivation and roles over the polar palette anchors.",
+ "extends": "n64_base",
+ "source": {"kind": "profile", "profile": {"id": "polar_pod_example", "version": "1.0.0", "path": "examples/polar_pod/profile.json"}}
+}

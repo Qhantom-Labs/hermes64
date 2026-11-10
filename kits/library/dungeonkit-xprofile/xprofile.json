@@ -1,0 +1,118 @@
+{
+ "builds": [
+  {
+   "glb": "kits/library/dungeonkit-xprofile/polar_pod/lake.bed.glb",
+   "id": "lake.bed",
+   "pack": "polar_pod",
+   "sha256": "d80721ec7783d65687f2830c668ce370ad846a14e83a5096e19787f27e471427",
+   "tris": 434
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/polar_pod/lake.bridge.glb",
+   "id": "lake.bridge",
+   "pack": "polar_pod",
+   "sha256": "6ff60b0eea2cb0e433fa368f215c71bf900a29a0b3b7ec815e2e0d833bbdd10c",
+   "tris": 392
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/polar_pod/lake.dock.glb",
+   "id": "lake.dock",
+   "pack": "polar_pod",
+   "sha256": "f1f9629304562adfeac6042160ff08bef1695e0669e67f3a1e9fa7633c1845a1",
+   "tris": 400
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/polar_pod/lake.lilies.glb",
+   "id": "lake.lilies",
+   "pack": "polar_pod",
+   "sha256": "887392bae0122f2fd0e8fc68af1ee088af79b7beb40474d28750e60afd72870d",
+   "tris": 264
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/polar_pod/lake.reeds.glb",
+   "id": "lake.reeds",
+   "pack": "polar_pod",
+   "sha256": "d435a55dbe4e122f8fd529698d246c525befb7d6353475ec64aa77e18258e710",
+   "tris": 268
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/polar_pod/lake.shore.glb",
+   "id": "lake.shore",
+   "pack": "polar_pod",
+   "sha256": "11199cda7ca23767ae11c6285b747544254b2b5f612bd987d938d4038761b71a",
+   "tris": 224
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/polar_pod/lake.water.glb",
+   "id": "lake.water",
+   "pack": "polar_pod",
+   "sha256": "de7db2ec5a8b2c8310fb8d8ff62afd62faf3f80769693db8982ffd8f3de83e3e",
+   "tris": 128
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/polar_pod/lake.waterfall.glb",
+   "id": "lake.waterfall",
+   "pack": "polar_pod",
+   "sha256": "580bd7dc35c3dbd824110c73ba3c0dd584fed125650453607ecd58f35924dcf6",
+   "tris": 340
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/forest_village/lake.bed.glb",
+   "id": "lake.bed",
+   "pack": "forest_village",
+   "sha256": "1c03852c63151ae5e0cd673bb3408913cc73455b6522bcec892b1da09d0a856b",
+   "tris": 434
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/forest_village/lake.bridge.glb",
+   "id": "lake.bridge",
+   "pack": "forest_village",
+   "sha256": "a65f2640bdba597d5e0f67a2df611d300490cf82d4ec5f2273e7d265d80d6923",
+   "tris": 392
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/forest_village/lake.dock.glb",
+   "id": "lake.dock",
+   "pack": "forest_village",
+   "sha256": "98b7b46f10d43bad8f5526fcb7a72994f20c66e407174458e9d4345c0180afd2",
+   "tris": 400
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/forest_village/lake.lilies.glb",
+   "id": "lake.lilies",
+   "pack": "forest_village",
+   "sha256": "7cda5a34bd595fff01586573009cc35d3febacf5e59ccadfc0bdf1b243e15727",
+   "tris": 264
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/forest_village/lake.reeds.glb",
+   "id": "lake.reeds",
+   "pack": "forest_village",
+   "sha256": "45c5e0d0e643a6ff93ec993011c3c10a932faf02f1d0252814360975ccda941c",
+   "tris": 268
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/forest_village/lake.shore.glb",
+   "id": "lake.shore",
+   "pack": "forest_village",
+   "sha256": "15c01be6a88de60dbd39f31e412ba1b9a3522d0c82f127598921d29407ba64f1",
+   "tris": 224
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/forest_village/lake.water.glb",
+   "id": "lake.water",
+   "pack": "forest_village",
+   "sha256": "72a91e126a60173f601c2a87cf61d0131ddbd80c7aa5c879caa6489def0a0b80",
+   "tris": 128
+  },
+  {
+   "glb": "kits/library/dungeonkit-xprofile/forest_village/lake.waterfall.glb",
+   "id": "lake.waterfall",
+   "pack": "forest_village",
+   "sha256": "42076430e5bc9f2f93898d311f5b57783e59fd3f94c8386f095841f3ec7a4cdf",
+   "tris": 340
+  }
+ ],
+ "format": 1,
+ "note": "DUNGEONKIT lake kit built with other style profiles' kit packs (same generators, roles only)"
+}

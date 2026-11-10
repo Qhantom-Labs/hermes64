@@ -1,0 +1,145 @@
+{
+  "applied": false,
+  "reason": "New module source implementation fingerprint; legacy source specs untouched. Integrator approval required by lane ownership.",
+  "files": [
+    {
+      "path": "examples/gameplay-combat-arena/game.json",
+      "before_sha256": "fd9c726895448e818e088e0c2ed2101c227144e0d85a4c1d964b2036572dc0a1",
+      "proposed_sha256": "21163575c67f2bfa7468449fb94912663383ef1da5e7a7a717b119d40dc8ae47",
+      "changed_paths": [
+        "/game_hash",
+        "/module_contract/implementation_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-combat-arena/proof.json",
+      "before_sha256": "753742b9482d936fb0c6583d69a7fc2a13df605d49bda0ee94d7c991d7c388e7",
+      "proposed_sha256": "2dd3b462917c94d318641815e83bbf8adc3a57aff64e114f40c21f568d313fee",
+      "changed_paths": [
+        "/game_hash",
+        "/model_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-combat-arena/save.json",
+      "before_sha256": "5f3eb9ec93d3aadb184dffdbed4dac4e9ebcce5b9e926f5f992bcbf85cd4d346",
+      "proposed_sha256": "26fff5044321aabab40f59104b435c2ccef4b84a0fdf104dd4603e443b2403bc",
+      "changed_paths": [
+        "/game_hash",
+        "/module_contract_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-mixed/game.json",
+      "before_sha256": "e93894871acf7801e1d5ce1c02126dc996de2ba162c6ffad41b0c9bf22fc9ca6",
+      "proposed_sha256": "f10cac3550f18d87904bf7fda027ef83b699d711115cc6ec148b39133d8aaac1",
+      "changed_paths": [
+        "/game_hash",
+        "/module_contract/implementation_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-mixed/proof.json",
+      "before_sha256": "e08626f325d582bec2933fbd9d9e8ea37b065406f5c27e7eb480a204bc2e0cef",
+      "proposed_sha256": "d8368b426cbefe6a74c97081d79576db3d4bb69ec9856c48e01aabeda678f5ea",
+      "changed_paths": [
+        "/game_hash",
+        "/model_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-mixed/save.json",
+      "before_sha256": "1381e1d7359a6ef7577a823c90c0862b5ba030e9c9ec23494543d921a3a7ff84",
+      "proposed_sha256": "b10858a73b20618baee25b9353f681c636a4fc70f13b48d5807d80f0d7850010",
+      "changed_paths": [
+        "/game_hash",
+        "/module_contract_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-outdoor-regions/game.json",
+      "before_sha256": "da39c0aa3029f917743c62f03097aea2de275d2a9079f597e98c26dd4f2b6c81",
+      "proposed_sha256": "17afc7ce2cb44166ff83f6483c4902d3603ac09ad87364c4ce45ea17ce1e2367",
+      "changed_paths": [
+        "/game_hash",
+        "/module_contract/implementation_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-outdoor-regions/proof.json",
+      "before_sha256": "1563ef77af6d2323020aad83e19e631b0f0891e28c559308b76223eebf59cc43",
+      "proposed_sha256": "4a1004eb996f89c9251ffab79e3ba61da5b970a449f4b51d8952d50458e7eb25",
+      "changed_paths": [
+        "/game_hash",
+        "/model_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-outdoor-regions/save.json",
+      "before_sha256": "b0e278b0345fb35079134822484a035beeaf8dc65a95f6e7024f327d70c1f426",
+      "proposed_sha256": "ea66fa75dcad150f4d79f564c5d9184804e6b322cddd7233f73995f3b2d7d8ad",
+      "changed_paths": [
+        "/game_hash",
+        "/module_contract_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-timed-course/game.json",
+      "before_sha256": "8aef13cce383dd6a2dc8ad8c9e1c410babf0ca56b88b037f81f4983999c93063",
+      "proposed_sha256": "d98b6dfdce732773eadd00ad6c3f907482ebb139d4e98474a3d58d2620a184eb",
+      "changed_paths": [
+        "/game_hash",
+        "/module_contract/implementation_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-timed-course/proof.json",
+      "before_sha256": "94c1bbdfedf6c2e6a831de863fc6491136018799256a26d7c6b0106fb4657f9e",
+      "proposed_sha256": "dec922e6b7541b6f1710b8b8a824710c79c0d36e96bdafbbff8d38a37fe5efc3",
+      "changed_paths": [
+        "/game_hash",
+        "/model_hash"
+      ]
+    },
+    {
+      "path": "examples/gameplay-timed-course/save.json",
+      "before_sha256": "7790ba2c59bff447244a955d5c6ae4bb1fdaa3699d42710e54de8d67deb83b01",
+      "proposed_sha256": "a5e222328843110ec6105a36f0120119d6a714b167daf7714351a5752cf84545",
+      "changed_paths": [
+        "/game_hash",
+        "/module_contract_hash"
+      ]
+    },
+    {
+      "path": "examples/puzzle_hall/game.json",
+      "before_sha256": "25551f511cd4a6c940a3cbea8b04983411b8d2b62bd8a0576b97b1589d1f619b",
+      "proposed_sha256": "096234468e3e0c32d3bdc164604ba73c6c98d70266cabb3d6dd9c66e3cd3586a",
+      "changed_paths": [
+        "/game_hash",
+        "/lowered/game_hash",
+        "/module_contract/implementation_hash",
+        "/puzzle_contract/implementation_hash"
+      ]
+    },
+    {
+      "path": "examples/puzzle_hall/proof.json",
+      "before_sha256": "139b36177aa9dec94ceb53f4793bf6236722a2b77cef996e9ed277ee9b55048c",
+      "proposed_sha256": "2abad401265084405a22fb6333878a9cb2fb98ae19dbb4f1835faf7281b8417f",
+      "changed_paths": [
+        "/game_hash",
+        "/lowered_game_hash",
+        "/model_hash"
+      ]
+    },
+    {
+      "path": "examples/puzzle_hall/save.json",
+      "before_sha256": "7d5a19a8b47654eddc8cbcf2f5a5c1a7eaec4e030be0e1b8cad276a4ce04cd34",
+      "proposed_sha256": "f88f66ed07bfffcf56b08edc59c76896ef158c669aa7858c9b236c3ad16544b3",
+      "changed_paths": [
+        "/game_hash",
+        "/module_contract_hash",
+        "/puzzle_contract_hash"
+      ]
+    }
+  ]
+}

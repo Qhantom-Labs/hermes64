@@ -1,0 +1,8 @@
+{
+  "id": "ruins_harbor",
+  "description": "Warm clay/verdigris primitive presentation preset; not a complete authored theme kit",
+  "palette": {"floor": "#805b39", "wall": "#bf9f72", "prop": "#bfa16b", "door": "#7fba9b", "collectible": "#ffd47a", "body": "#9f7857", "boots": "#3c322a", "head": "#c9a17b", "void": "#211d19", "follower": "#c2a787", "ui_bg": "#1c1711", "ui_text": "#f3dfbd"},
+  "fog": {"color": "#35291f", "near": 8, "far": 32},
+  "head_styles": {"canvas_hood": {"color": "#bcaa80", "void": false}},
+  "coat_colors": {}
+}

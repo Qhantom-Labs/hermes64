@@ -1,0 +1,6671 @@
+{
+ "contract": "KITS 3.1.0",
+ "defaults": {
+  "arch.bridge": [
+   "forest_village:arch.bridge:default",
+   "polar_pod:arch.bridge:default"
+  ],
+  "arch.ceiling_module": [
+   "forest_village:arch.ceiling_module:default",
+   "polar_pod:arch.ceiling_module:default"
+  ],
+  "arch.column": [
+   "forest_village:arch.column:default",
+   "polar_pod:arch.column:default"
+  ],
+  "arch.corridor": [
+   "forest_village:arch.corridor:default",
+   "polar_pod:arch.corridor:default"
+  ],
+  "arch.door": [
+   "forest_village:arch.door:default",
+   "polar_pod:arch.door:default",
+   "variant:arch.door:arch_planks",
+   "variant:arch.door:rect_panel"
+  ],
+  "arch.floor_module": [
+   "forest_village:arch.floor_module:default",
+   "polar_pod:arch.floor_module:default"
+  ],
+  "arch.house": [
+   "forest_village:arch.house:default",
+   "polar_pod:arch.house:default"
+  ],
+  "arch.pier": [
+   "forest_village:arch.pier:default",
+   "polar_pod:arch.pier:default"
+  ],
+  "arch.railing": [
+   "forest_village:arch.railing:default",
+   "polar_pod:arch.railing:default"
+  ],
+  "arch.roof": [
+   "forest_village:arch.roof:default",
+   "polar_pod:arch.roof:default"
+  ],
+  "arch.room_shell": [
+   "forest_village:arch.room_shell:default",
+   "polar_pod:arch.room_shell:default",
+   "variant:arch.room_shell:rect_flat",
+   "variant:arch.room_shell:rect_gable_plain",
+   "variant:arch.room_shell:rounded_dome"
+  ],
+  "arch.stairs": [
+   "forest_village:arch.stairs:default",
+   "polar_pod:arch.stairs:default"
+  ],
+  "arch.wall_module": [
+   "forest_village:arch.wall_module:default",
+   "polar_pod:arch.wall_module:default"
+  ],
+  "arch.window": [
+   "forest_village:arch.window:default",
+   "polar_pod:arch.window:default",
+   "variant:arch.window:arch_ledge",
+   "variant:arch.window:rect_flat"
+  ],
+  "furn.bed": [
+   "forest_village:furn.bed:default",
+   "polar_pod:furn.bed:default"
+  ],
+  "furn.bench": [
+   "forest_village:furn.bench:default",
+   "polar_pod:furn.bench:default"
+  ],
+  "furn.chair": [
+   "forest_village:furn.chair:default",
+   "polar_pod:furn.chair:default"
+  ],
+  "furn.console": [
+   "forest_village:furn.console:default",
+   "polar_pod:furn.console:default"
+  ],
+  "furn.container": [
+   "forest_village:furn.container:default",
+   "polar_pod:furn.container:default"
+  ],
+  "furn.hearth": [
+   "forest_village:furn.hearth:default",
+   "polar_pod:furn.hearth:default"
+  ],
+  "furn.lamp": [
+   "forest_village:furn.lamp:default",
+   "polar_pod:furn.lamp:default"
+  ],
+  "furn.pod": [
+   "forest_village:furn.pod:default",
+   "polar_pod:furn.pod:default"
+  ],
+  "furn.rug": [
+   "forest_village:furn.rug:default",
+   "polar_pod:furn.rug:default"
+  ],
+  "furn.shelf": [
+   "forest_village:furn.shelf:default",
+   "polar_pod:furn.shelf:default"
+  ],
+  "furn.table": [
+   "forest_village:furn.table:default",
+   "polar_pod:furn.table:default",
+   "variant:furn.table:rect_four"
+  ],
+  "fx.particles": [
+   "forest_village:fx.particles:default",
+   "polar_pod:fx.particles:default"
+  ],
+  "nature.bush": [
+   "forest_village:nature.bush:default",
+   "polar_pod:nature.bush:default"
+  ],
+  "nature.rock": [
+   "forest_village:nature.rock:default",
+   "polar_pod:nature.rock:default"
+  ],
+  "nature.tree": [
+   "forest_village:nature.tree:default",
+   "polar_pod:nature.tree:default"
+  ],
+  "prop.book": [
+   "forest_village:prop.book:default",
+   "polar_pod:prop.book:default"
+  ],
+  "prop.device": [
+   "forest_village:prop.device:default",
+   "polar_pod:prop.device:default"
+  ],
+  "prop.key": [
+   "forest_village:prop.key:default",
+   "polar_pod:prop.key:default"
+  ],
+  "prop.sign": [
+   "forest_village:prop.sign:default",
+   "polar_pod:prop.sign:default"
+  ],
+  "prop.tool": [
+   "forest_village:prop.tool:default",
+   "polar_pod:prop.tool:default"
+  ],
+  "prop.vessel": [
+   "forest_village:prop.vessel:default",
+   "polar_pod:prop.vessel:default"
+  ],
+  "sky.backdrop": [
+   "variant:sky.backdrop:dome"
+  ],
+  "soft.blanket": [
+   "forest_village:soft.blanket:default",
+   "polar_pod:soft.blanket:default"
+  ],
+  "soft.pillow": [
+   "forest_village:soft.pillow:default",
+   "polar_pod:soft.pillow:default"
+  ],
+  "terrain.patch": [
+   "forest_village:terrain.patch:default",
+   "polar_pod:terrain.patch:default"
+  ],
+  "terrain.water": [
+   "forest_village:terrain.water:default",
+   "polar_pod:terrain.water:default"
+  ],
+  "vehicle.boat": [
+   "forest_village:vehicle.boat:default",
+   "polar_pod:vehicle.boat:default"
+  ],
+  "vehicle.craft": [
+   "forest_village:vehicle.craft:default",
+   "polar_pod:vehicle.craft:default"
+  ]
+ },
+ "entries": {
+  "forest_village:arch.bridge:default": {
+   "class": "architecture",
+   "generator": "arch.bridge",
+   "is_default": true,
+   "params": {
+    "deck_role": "stone",
+    "kind": "arched",
+    "rail_role": "stone",
+    "railing": true,
+    "rise": 1.0,
+    "segments": 8,
+    "span": 6.0,
+    "width": 1.6
+   },
+   "preset": "default",
+   "role_area": {
+    "stone": 58.6979
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "castle",
+    "ornate",
+    "rounded",
+    "stone",
+    "village"
+   ]
+  },
+  "forest_village:arch.ceiling_module:default": {
+   "class": "architecture",
+   "generator": "arch.ceiling_module",
+   "is_default": true,
+   "params": {
+    "depth": 2.0,
+    "rise": 0.4,
+    "role": "wood",
+    "shape": "rect",
+    "style": "beams",
+    "thickness": 0.1,
+    "width": 2.0
+   },
+   "preset": "default",
+   "role_area": {
+    "trim": 2.272,
+    "wood": 8.8
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:arch.column:default": {
+   "class": "architecture",
+   "generator": "arch.column",
+   "is_default": true,
+   "params": {
+    "base": true,
+    "capital": true,
+    "flare": 0.5,
+    "height": 3.0,
+    "radius": 0.2,
+    "role": "stone",
+    "shape": "round"
+   },
+   "preset": "default",
+   "role_area": {
+    "stone": 5.3748
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "castle",
+    "ornate",
+    "rounded",
+    "ruins",
+    "stone",
+    "temple"
+   ]
+  },
+  "forest_village:arch.corridor:default": {
+   "class": "architecture",
+   "generator": "arch.corridor",
+   "is_default": true,
+   "params": {
+    "curve_deg": 0.0,
+    "floor_role": "stone",
+    "height": 2.5,
+    "length": 4.0,
+    "section": "arch",
+    "segments": 6,
+    "wall_role": "stone",
+    "width": 1.6
+   },
+   "preset": "default",
+   "role_area": {
+    "stone": 29.9387
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "castle",
+    "cave",
+    "ornate",
+    "ruins",
+    "stone",
+    "temple"
+   ]
+  },
+  "forest_village:arch.door:default": {
+   "class": "openings",
+   "generator": "arch.door",
+   "is_default": true,
+   "params": {
+    "frame_depth": 0.2,
+    "frame_role": "wood",
+    "frame_width": 0.1,
+    "height": 2.1,
+    "leaf": "planks",
+    "leaf_role": "wood",
+    "open_angle": 0.0,
+    "shape": "round_top",
+    "width": 1.0
+   },
+   "preset": "default",
+   "role_area": {
+    "wood": 7.5377
+   },
+   "slots": [
+    "door_main"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "forest",
+    "rounded",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:arch.floor_module:default": {
+   "class": "architecture",
+   "generator": "arch.floor_module",
+   "is_default": true,
+   "params": {
+    "bevel": false,
+    "depth": 2.0,
+    "role": "wood",
+    "shape": "rect",
+    "thickness": 0.1,
+    "width": 2.0
+   },
+   "preset": "default",
+   "role_area": {
+    "wood": 8.8
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:arch.house:default": {
+   "class": "architecture",
+   "generator": "arch.house",
+   "is_default": true,
+   "params": {
+    "beams": true,
+    "chimney": true,
+    "depth": 4.0,
+    "door_side": "s",
+    "foundation": true,
+    "lit_windows": true,
+    "overhang": 0.35,
+    "plan": "rect",
+    "roof": "gable",
+    "roof_pitch": 35.0,
+    "roof_role": "roof",
+    "wall_height": 2.8,
+    "wall_role": "wall",
+    "width": 5.0,
+    "window_shape": "rect",
+    "windows": 2
+   },
+   "preset": "default",
+   "role_area": {
+    "door": 4.72,
+    "frame": 9.7298,
+    "light": 3.1536,
+    "roof": 65.9212,
+    "stone": 54.5126,
+    "trim": 11.3456,
+    "wall": 85.9
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "angular",
+    "boxy",
+    "forest",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:arch.house:round_cottage": {
+   "class": "architecture",
+   "generator": "arch.house",
+   "is_default": false,
+   "params": {
+    "beams": false,
+    "chimney": false,
+    "depth": 5.0,
+    "door_side": "s",
+    "foundation": true,
+    "lit_windows": true,
+    "overhang": 0.35,
+    "plan": "round",
+    "roof": "cone",
+    "roof_pitch": 35.0,
+    "roof_role": "roof",
+    "wall_height": 2.8,
+    "wall_role": "stone",
+    "width": 5.0,
+    "window_shape": "round",
+    "windows": 2
+   },
+   "preset": "round_cottage",
+   "role_area": {
+    "door": 4.72,
+    "frame": 8.2385,
+    "light": 2.0036,
+    "roof": 58.1535,
+    "stone": 124.0026
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "rounded",
+    "rustic",
+    "stone",
+    "village"
+   ]
+  },
+  "forest_village:arch.pier:default": {
+   "class": "architecture",
+   "generator": "arch.pier",
+   "is_default": true,
+   "params": {
+    "deck_height": 1.0,
+    "deck_role": "wood",
+    "end_posts": true,
+    "ladder": true,
+    "length": 6.0,
+    "pile_role": "wood",
+    "pile_spacing": 2.0,
+    "planks": true,
+    "width": 2.0
+   },
+   "preset": "default",
+   "role_area": {
+    "wood": 31.0363
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "coast",
+    "harbor",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:arch.railing:default": {
+   "class": "architecture",
+   "generator": "arch.railing",
+   "is_default": true,
+   "params": {
+    "arc_deg": 90.0,
+    "height": 1.0,
+    "infill": "picket",
+    "length": 3.0,
+    "path": "straight",
+    "post_shape": "round",
+    "post_spacing": 1.2,
+    "radius": 3.0,
+    "rails": 2,
+    "role": "wood"
+   },
+   "preset": "default",
+   "role_area": {
+    "wood": 2.9168
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:arch.roof:default": {
+   "class": "architecture",
+   "generator": "arch.roof",
+   "is_default": true,
+   "params": {
+    "depth": 3.0,
+    "kind": "gable",
+    "overhang": 0.3,
+    "pitch": 35.0,
+    "role": "roof",
+    "thickness": 0.15,
+    "width": 4.0
+   },
+   "preset": "default",
+   "role_area": {
+    "roof": 40.7688
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "angular",
+    "rustic",
+    "thatch",
+    "village"
+   ]
+  },
+  "forest_village:arch.room_shell:default": {
+   "class": "architecture",
+   "generator": "arch.room_shell",
+   "is_default": true,
+   "params": {
+    "ceiling": "gable",
+    "ceiling_rise": 1.2,
+    "ceiling_role": "wood",
+    "cove": 0.0,
+    "depth": 6.0,
+    "floor_role": "wood",
+    "height": 3.0,
+    "openings": [
+     {
+      "height": 2.1,
+      "kind": "door",
+      "offset": 0.0,
+      "shape": "arch",
+      "sill": 0.0,
+      "wall": "s",
+      "width": 1.1
+     },
+     {
+      "height": 1.2,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "rect",
+      "sill": 0.9,
+      "wall": "n",
+      "width": 1.6
+     },
+     {
+      "height": 1.0,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "rect",
+      "sill": 1.0,
+      "wall": "e",
+      "width": 0.9
+     }
+    ],
+    "plan": "rect",
+    "trim": true,
+    "wall_role": "wall",
+    "wall_segments": 24,
+    "width": 7.0
+   },
+   "preset": "default",
+   "role_area": {
+    "trim": 5.3857,
+    "wall": 79.6616,
+    "wood": 87.2354
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "chunky",
+    "forest",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:arch.stairs:default": {
+   "class": "architecture",
+   "generator": "arch.stairs",
+   "is_default": true,
+   "params": {
+    "kind": "straight",
+    "rail_role": "wood",
+    "railing": "right",
+    "rise": 0.18,
+    "role": "wood",
+    "run": 0.28,
+    "steps": 10,
+    "stringer": "solid",
+    "width": 1.0
+   },
+   "preset": "default",
+   "role_area": {
+    "wood": 32.2353
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:arch.wall_module:default": {
+   "class": "architecture",
+   "generator": "arch.wall_module",
+   "is_default": true,
+   "params": {
+    "height": 2.8,
+    "length": 2.0,
+    "opening": "none",
+    "opening_height": 1.2,
+    "opening_shape": "rect",
+    "opening_sill": 0.9,
+    "opening_width": 1.0,
+    "role": "wall",
+    "thickness": 0.2,
+    "top": "flat"
+   },
+   "preset": "default",
+   "role_area": {
+    "wall": 13.12
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "rustic",
+    "village"
+   ]
+  },
+  "forest_village:arch.window:arched": {
+   "class": "openings",
+   "generator": "arch.window",
+   "is_default": false,
+   "params": {
+    "frame_depth": 0.18,
+    "frame_role": "stone",
+    "frame_style": "flat",
+    "frame_width": 0.08,
+    "glass": true,
+    "height": 1.0,
+    "ledge": true,
+    "mullions_x": 1,
+    "mullions_z": 1,
+    "shape": "arch",
+    "shutters": true,
+    "sill": 0.9,
+    "view_card": true,
+    "width": 1.2
+   },
+   "preset": "arched",
+   "role_area": {
+    "glass": 2.0585,
+    "stone": 3.1507,
+    "view": 5.2736,
+    "wood": 2.7936
+   },
+   "slots": [
+    "window_side"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "castle",
+    "ornate",
+    "rounded",
+    "rustic",
+    "stone",
+    "temple",
+    "village"
+   ]
+  },
+  "forest_village:arch.window:default": {
+   "class": "openings",
+   "generator": "arch.window",
+   "is_default": true,
+   "params": {
+    "frame_depth": 0.18,
+    "frame_role": "wood",
+    "frame_style": "flat",
+    "frame_width": 0.08,
+    "glass": true,
+    "height": 1.0,
+    "ledge": true,
+    "mullions_x": 1,
+    "mullions_z": 1,
+    "shape": "rect",
+    "shutters": true,
+    "sill": 0.9,
+    "view_card": true,
+    "width": 1.2
+   },
+   "preset": "default",
+   "role_area": {
+    "glass": 2.4045,
+    "view": 5.2736,
+    "wood": 6.2232
+   },
+   "slots": [
+    "window_main"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "forest",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:furn.bed:default": {
+   "class": "furniture",
+   "generator": "furn.bed",
+   "is_default": true,
+   "params": {
+    "blanket": true,
+    "blanket_role": "quilt",
+    "frame_role": "wood",
+    "headboard": "high",
+    "height": 0.45,
+    "kind": "box",
+    "length": 2.0,
+    "mattress_role": "fabric",
+    "pillow_role": "fabric",
+    "pillows": 2,
+    "width": 1.4
+   },
+   "preset": "default",
+   "role_area": {
+    "fabric": 6.0596,
+    "quilt": 4.6646,
+    "wood": 11.2846
+   },
+   "slots": [
+    "bed"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "chunky",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:furn.bench:default": {
+   "class": "seating",
+   "generator": "furn.bench",
+   "is_default": true,
+   "params": {
+    "body_role": "wood",
+    "curl": 0.2,
+    "curl_height": 1.0,
+    "depth": 0.6,
+    "leg_role": "wood",
+    "legs": 4,
+    "length": 2.2,
+    "orb": false,
+    "seat_height": 0.42,
+    "side_table": false,
+    "thickness": 0.12,
+    "throw": true,
+    "throw_role": "fabric"
+   },
+   "preset": "default",
+   "role_area": {
+    "fabric": 1.6905,
+    "wood": 3.6904
+   },
+   "slots": [
+    "seat_bench",
+    "seat_lounge"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "chunky",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:furn.chair:default": {
+   "class": "seating",
+   "generator": "furn.chair",
+   "is_default": true,
+   "params": {
+    "back_height": 0.5,
+    "cushion": false,
+    "cushion_role": "cushion",
+    "depth": 0.46,
+    "frame_role": "wood",
+    "kind": "chair",
+    "legs": "four",
+    "seat_height": 0.45,
+    "seat_role": "wood",
+    "seat_shape": "rect",
+    "width": 0.46
+   },
+   "preset": "default",
+   "role_area": {
+    "wood": 1.3695
+   },
+   "slots": [
+    "seat_chair"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:furn.chair:stool": {
+   "class": "seating",
+   "generator": "furn.chair",
+   "is_default": false,
+   "params": {
+    "back_height": 0.0,
+    "cushion": false,
+    "cushion_role": "cushion",
+    "depth": 0.46,
+    "frame_role": "wood",
+    "kind": "stool",
+    "legs": "four",
+    "seat_height": 0.45,
+    "seat_role": "wood",
+    "seat_shape": "round",
+    "width": 0.46
+   },
+   "preset": "stool",
+   "role_area": {
+    "wood": 0.6154
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "chunky",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:furn.console:default": {
+   "class": "furniture",
+   "generator": "furn.console",
+   "is_default": true,
+   "params": {
+    "body_role": "wood",
+    "height": 1.2,
+    "joystick": false,
+    "keyboard": false,
+    "kind": "lectern",
+    "leg_role": "chrome",
+    "screens": 0,
+    "wavy": 0.6,
+    "width": 0.9
+   },
+   "preset": "default",
+   "role_area": {
+    "wood": 1.4021
+   },
+   "slots": [
+    "console"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "castle",
+    "ornate",
+    "rustic",
+    "temple",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:furn.container:chest": {
+   "class": "furniture",
+   "generator": "furn.container",
+   "is_default": false,
+   "params": {
+    "band_role": "metal",
+    "bands": 2,
+    "body_role": "wood",
+    "depth": 0.6,
+    "height": 0.6,
+    "kind": "chest",
+    "lid_open": 0.0,
+    "width": 0.6
+   },
+   "preset": "chest",
+   "role_area": {
+    "metal": 1.1022,
+    "wood": 2.6647
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "castle",
+    "ornate",
+    "rustic",
+    "timber"
+   ]
+  },
+  "forest_village:furn.container:crate": {
+   "class": "furniture",
+   "generator": "furn.container",
+   "is_default": false,
+   "params": {
+    "band_role": "wood",
+    "bands": 2,
+    "body_role": "wood",
+    "depth": 0.6,
+    "height": 0.6,
+    "kind": "crate",
+    "lid_open": 0.0,
+    "width": 0.6
+   },
+   "preset": "crate",
+   "role_area": {
+    "wood": 4.4496
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "harbor",
+    "industrial",
+    "mine",
+    "rustic",
+    "timber"
+   ]
+  },
+  "forest_village:furn.container:default": {
+   "class": "furniture",
+   "generator": "furn.container",
+   "is_default": true,
+   "params": {
+    "band_role": "metal",
+    "bands": 2,
+    "body_role": "wood",
+    "depth": 0.6,
+    "height": 0.6,
+    "kind": "barrel",
+    "lid_open": 0.0,
+    "width": 0.6
+   },
+   "preset": "default",
+   "role_area": {
+    "metal": 0.4447,
+    "wood": 1.4217
+   },
+   "slots": [
+    "container"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "harbor",
+    "rounded",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:furn.hearth:default": {
+   "class": "furniture",
+   "generator": "furn.hearth",
+   "is_default": true,
+   "params": {
+    "body_role": "stone",
+    "depth": 0.6,
+    "fire": true,
+    "height": 1.1,
+    "kind": "fireplace",
+    "width": 1.2
+   },
+   "preset": "default",
+   "role_area": {
+    "fire": 0.4101,
+    "stone": 8.7157,
+    "wood": 0.2166
+   },
+   "slots": [
+    "hearth"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "castle",
+    "rustic",
+    "stone",
+    "village"
+   ]
+  },
+  "forest_village:furn.lamp:default": {
+   "class": "furniture",
+   "generator": "furn.lamp",
+   "is_default": true,
+   "params": {
+    "base": "disc",
+    "height": 0.5,
+    "kind": "lantern",
+    "shade": "cone",
+    "shade_size": 0.35,
+    "stand_role": "metal"
+   },
+   "preset": "default",
+   "role_area": {
+    "light": 0.4414,
+    "metal": 0.6268
+   },
+   "slots": [
+    "lamp_floor"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "harbor",
+    "iron",
+    "mine",
+    "rustic",
+    "village"
+   ]
+  },
+  "forest_village:furn.pod:default": {
+   "class": "seating",
+   "generator": "furn.pod",
+   "is_default": true,
+   "params": {
+    "canopy": false,
+    "cushion": true,
+    "cushion_role": "fabric",
+    "depth": 0.95,
+    "feet": 0,
+    "foot_role": "wood",
+    "height": 1.3,
+    "kind": "egg",
+    "lobes": 0,
+    "orb": true,
+    "port_role": "glass",
+    "portholes": 0,
+    "shell_role": "wood",
+    "table": true,
+    "throw_role": "fur",
+    "width": 1.0
+   },
+   "preset": "default",
+   "role_area": {
+    "fabric": 0.6984,
+    "wood": 4.1932
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "organic",
+    "rounded",
+    "rustic",
+    "timber"
+   ]
+  },
+  "forest_village:furn.rug:default": {
+   "class": "furniture",
+   "generator": "furn.rug",
+   "is_default": true,
+   "params": {
+    "depth": 1.4,
+    "fringe": true,
+    "rug_role": "fabric",
+    "shape": "rect",
+    "thickness": 0.02,
+    "width": 2.0
+   },
+   "preset": "default",
+   "role_area": {
+    "fabric": 5.736,
+    "rope": 0.4379
+   },
+   "slots": [
+    "rug",
+    "seat_pit"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "cloth",
+    "rustic",
+    "village"
+   ]
+  },
+  "forest_village:furn.shelf:default": {
+   "class": "furniture",
+   "generator": "furn.shelf",
+   "is_default": true,
+   "params": {
+    "books": 0.8,
+    "depth": 0.35,
+    "frame_role": "wood",
+    "height": 1.8,
+    "kind": "bookshelf",
+    "shelves": 4,
+    "width": 1.0
+   },
+   "preset": "default",
+   "role_area": {
+    "book": 5.0395,
+    "wood": 9.7614
+   },
+   "slots": [
+    "shelf"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "castle",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:furn.table:default": {
+   "class": "furniture",
+   "generator": "furn.table",
+   "is_default": true,
+   "params": {
+    "base_role": "wood",
+    "depth": 0.8,
+    "height": 0.75,
+    "leg_radius": 0.035,
+    "legs": "trestle",
+    "ornament": "none",
+    "top_role": "wood",
+    "top_shape": "rect",
+    "top_thickness": 0.05,
+    "width": 1.2
+   },
+   "preset": "default",
+   "role_area": {
+    "wood": 4.6192
+   },
+   "slots": [
+    "table_main"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "chunky",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:furn.table:round_stone": {
+   "class": "furniture",
+   "generator": "furn.table",
+   "is_default": false,
+   "params": {
+    "base_role": "wood",
+    "depth": 1.0,
+    "height": 0.75,
+    "leg_radius": 0.035,
+    "legs": "pedestal",
+    "ornament": "none",
+    "top_role": "stone",
+    "top_shape": "round",
+    "top_thickness": 0.05,
+    "width": 1.0
+   },
+   "preset": "round_stone",
+   "role_area": {
+    "stone": 1.6868,
+    "wood": 0.8383
+   },
+   "slots": [
+    "table_low"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "chunky",
+    "rounded",
+    "rustic",
+    "stone",
+    "village"
+   ]
+  },
+  "forest_village:fx.particles:default": {
+   "class": "nature",
+   "generator": "fx.particles",
+   "is_default": true,
+   "params": {
+    "area": 4.0,
+    "gravity": -0.3,
+    "lifetime": 4.0,
+    "rate": 20.0,
+    "shape": "leaf",
+    "size": 0.08,
+    "spread_deg": 25.0,
+    "velocity": 0.6
+   },
+   "preset": "default",
+   "role_area": {
+    "particle": 0.002
+   },
+   "slots": [
+    "weather"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "forest",
+    "jungle",
+    "organic",
+    "village"
+   ]
+  },
+  "forest_village:nature.bush:default": {
+   "class": "nature",
+   "generator": "nature.bush",
+   "is_default": true,
+   "params": {
+    "cap": false,
+    "flatness": 0.3,
+    "flowers": 3,
+    "lobes": 3,
+    "size": 0.8
+   },
+   "preset": "default",
+   "role_area": {
+    "flower": 0.029,
+    "foliage": 1.8912
+   },
+   "slots": [
+    "plant"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "forest",
+    "organic",
+    "plains",
+    "village"
+   ]
+  },
+  "forest_village:nature.rock:default": {
+   "class": "nature",
+   "generator": "nature.rock",
+   "is_default": true,
+   "params": {
+    "cap": false,
+    "count": 1,
+    "flatness": 0.3,
+    "role": "rock",
+    "roughness": 0.4,
+    "size": 1.0
+   },
+   "preset": "default",
+   "role_area": {
+    "rock": 2.5959
+   },
+   "slots": [
+    "rock"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "forest",
+    "mountain",
+    "plains",
+    "rock",
+    "village"
+   ]
+  },
+  "forest_village:nature.tree:birch": {
+   "class": "nature",
+   "generator": "nature.tree",
+   "is_default": false,
+   "params": {
+    "branches": 4,
+    "canopy": 1.0,
+    "cap": false,
+    "height": 5.0,
+    "kind": "birch",
+    "lean": 4.0,
+    "lobes": 3,
+    "trunk_radius": 0.18
+   },
+   "preset": "birch",
+   "role_area": {
+    "bark": 2.8224,
+    "foliage": 24.026
+   },
+   "slots": [],
+   "source": "forest_village",
+   "tags": [
+    "forest",
+    "mountain",
+    "organic"
+   ]
+  },
+  "forest_village:nature.tree:default": {
+   "class": "nature",
+   "generator": "nature.tree",
+   "is_default": true,
+   "params": {
+    "branches": 4,
+    "canopy": 1.0,
+    "cap": false,
+    "height": 5.0,
+    "kind": "broadleaf",
+    "lean": 4.0,
+    "lobes": 3,
+    "trunk_radius": 0.18
+   },
+   "preset": "default",
+   "role_area": {
+    "bark": 2.4689,
+    "foliage": 42.7129
+   },
+   "slots": [
+    "tree"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "forest",
+    "organic",
+    "plains",
+    "village"
+   ]
+  },
+  "forest_village:prop.book:default": {
+   "class": "props",
+   "generator": "prop.book",
+   "is_default": true,
+   "params": {
+    "count": 3,
+    "cover_role": "leather",
+    "height": 0.23,
+    "kind": "closed",
+    "thickness": 0.04,
+    "width": 0.16
+   },
+   "preset": "default",
+   "role_area": {
+    "leather": 0.1048,
+    "paper": 0.0887
+   },
+   "slots": [
+    "book"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "castle",
+    "leather",
+    "rustic",
+    "village"
+   ]
+  },
+  "forest_village:prop.device:default": {
+   "class": "props",
+   "generator": "prop.device",
+   "is_default": true,
+   "params": {
+    "body_role": "metal",
+    "kind": "lantern",
+    "screen_on": true,
+    "size": 0.25
+   },
+   "preset": "default",
+   "role_area": {
+    "light": 0.058,
+    "metal": 0.1049
+   },
+   "slots": [
+    "device",
+    "lamp_table"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "harbor",
+    "iron",
+    "mine",
+    "rustic",
+    "village"
+   ]
+  },
+  "forest_village:prop.key:default": {
+   "class": "props",
+   "generator": "prop.key",
+   "is_default": true,
+   "params": {
+    "kind": "skeleton",
+    "length": 0.08,
+    "role": "metal"
+   },
+   "preset": "default",
+   "role_area": {
+    "metal": 0.0038
+   },
+   "slots": [
+    "key"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "castle",
+    "iron",
+    "ornate",
+    "rustic"
+   ]
+  },
+  "forest_village:prop.sign:default": {
+   "class": "props",
+   "generator": "prop.sign",
+   "is_default": true,
+   "params": {
+    "board_role": "wood",
+    "board_shape": "rect",
+    "height": 0.3,
+    "kind": "hanging",
+    "post_height": 0.9,
+    "text_lines": 2,
+    "text_role": "paper",
+    "width": 0.6
+   },
+   "preset": "default",
+   "role_area": {
+    "metal": 0.0342,
+    "paper": 0.0636,
+    "post": 0.661,
+    "wood": 0.432
+   },
+   "slots": [
+    "sign_main"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:prop.tool:default": {
+   "class": "props",
+   "generator": "prop.tool",
+   "is_default": true,
+   "params": {
+    "handle_role": "wood",
+    "head_role": "metal",
+    "kind": "axe",
+    "length": 0.4
+   },
+   "preset": "default",
+   "role_area": {
+    "metal": 0.0187,
+    "wood": 0.0232
+   },
+   "slots": [
+    "tool"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "forest",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:prop.vessel:default": {
+   "class": "props",
+   "generator": "prop.vessel",
+   "is_default": true,
+   "params": {
+    "contents": false,
+    "handle": true,
+    "height": 0.12,
+    "kind": "jar",
+    "lid": false,
+    "role": "stone",
+    "width": 0.09
+   },
+   "preset": "default",
+   "role_area": {
+    "stone": 0.0706
+   },
+   "slots": [
+    "vessel"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "rounded",
+    "rustic",
+    "stone",
+    "village"
+   ]
+  },
+  "forest_village:soft.blanket:default": {
+   "class": "furniture",
+   "generator": "soft.blanket",
+   "is_default": true,
+   "params": {
+    "depth": 1.8,
+    "folds": 3,
+    "fringe": true,
+    "kind": "spread",
+    "role": "quilt",
+    "thickness": 0.03,
+    "waves": 0.03,
+    "width": 1.4
+   },
+   "preset": "default",
+   "role_area": {
+    "quilt": 5.2335,
+    "rope": 0.0368
+   },
+   "slots": [
+    "blanket"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "cloth",
+    "rustic",
+    "village"
+   ]
+  },
+  "forest_village:soft.pillow:cat_bed": {
+   "class": "furniture",
+   "generator": "soft.pillow",
+   "is_default": false,
+   "params": {
+    "piping": true,
+    "role": "knit",
+    "shape": "floor_cushion",
+    "size": 0.6,
+    "thickness": 0.14,
+    "tuft": false
+   },
+   "preset": "cat_bed",
+   "role_area": {
+    "knit": 0.6384,
+    "trim": 0.1088
+   },
+   "slots": [
+    "cat_bed"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "knit",
+    "rounded",
+    "village"
+   ]
+  },
+  "forest_village:soft.pillow:default": {
+   "class": "furniture",
+   "generator": "soft.pillow",
+   "is_default": true,
+   "params": {
+    "piping": true,
+    "role": "fabric",
+    "shape": "square",
+    "size": 0.45,
+    "thickness": 0.15,
+    "tuft": false
+   },
+   "preset": "default",
+   "role_area": {
+    "fabric": 0.4048,
+    "trim": 0.0468
+   },
+   "slots": [
+    "pillow"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "cloth",
+    "rustic",
+    "village"
+   ]
+  },
+  "forest_village:terrain.patch:default": {
+   "class": "nature",
+   "generator": "terrain.patch",
+   "is_default": true,
+   "params": {
+    "amplitude": 0.6,
+    "depth": 0.5,
+    "edge_falloff": 0.5,
+    "feature": "mounds",
+    "resolution": 10,
+    "roughness": 0.5,
+    "size_x": 12.0,
+    "size_y": 12.0,
+    "surface": "grass"
+   },
+   "preset": "default",
+   "role_area": {
+    "dirt": 178.4709,
+    "grass": 145.3239
+   },
+   "slots": [
+    "ground"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "forest",
+    "grass",
+    "organic",
+    "plains",
+    "village"
+   ]
+  },
+  "forest_village:terrain.water:default": {
+   "class": "nature",
+   "generator": "terrain.water",
+   "is_default": true,
+   "params": {
+    "depth": 0.1,
+    "resolution": 8,
+    "shape": "rect",
+    "size_x": 10.0,
+    "size_y": 10.0,
+    "surface": "water",
+    "waves": 0.05
+   },
+   "preset": "default",
+   "role_area": {
+    "water": 205.1875
+   },
+   "slots": [
+    "water"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "coast",
+    "forest",
+    "harbor",
+    "jungle",
+    "ocean",
+    "plains",
+    "swamp",
+    "underwater",
+    "village"
+   ]
+  },
+  "forest_village:vehicle.boat:default": {
+   "class": "vehicles",
+   "generator": "vehicle.boat",
+   "is_default": true,
+   "params": {
+    "beam": 1.3,
+    "cabin": false,
+    "depth": 0.55,
+    "hull_role": "wood",
+    "kind": "rowboat",
+    "length": 3.6,
+    "oars": true,
+    "sail_role": "fabric",
+    "seats": 2,
+    "sheer": 0.15,
+    "trim_role": "wood"
+   },
+   "preset": "default",
+   "role_area": {
+    "wood": 14.9759
+   },
+   "slots": [
+    "boat"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "coast",
+    "harbor",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "forest_village:vehicle.craft:default": {
+   "class": "vehicles",
+   "generator": "vehicle.craft",
+   "is_default": true,
+   "params": {
+    "body_height": 0.6,
+    "body_role": "wood",
+    "canopy": "hoop",
+    "cargo": 0,
+    "handle": true,
+    "kind": "cart",
+    "length": 2.2,
+    "lights": true,
+    "trim_role": "metal",
+    "wheel_radius": 0.35,
+    "width": 1.2
+   },
+   "preset": "default",
+   "role_area": {
+    "fabric": 1.6858,
+    "light": 0.0944,
+    "metal": 3.7449,
+    "wood": 12.6464
+   },
+   "slots": [
+    "vehicle_main"
+   ],
+   "source": "forest_village",
+   "tags": [
+    "boxy",
+    "rustic",
+    "timber",
+    "village"
+   ]
+  },
+  "polar_pod:arch.bridge:default": {
+   "class": "architecture",
+   "generator": "arch.bridge",
+   "is_default": true,
+   "params": {
+    "deck_role": "metal",
+    "kind": "arched",
+    "rail_role": "rail",
+    "railing": true,
+    "rise": 1.0,
+    "segments": 8,
+    "span": 6.0,
+    "width": 1.6
+   },
+   "preset": "default",
+   "role_area": {
+    "metal": 56.4028,
+    "rail": 2.2951
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "industrial",
+    "sleek"
+   ]
+  },
+  "polar_pod:arch.ceiling_module:default": {
+   "class": "architecture",
+   "generator": "arch.ceiling_module",
+   "is_default": true,
+   "params": {
+    "depth": 3.0,
+    "rise": 0.6,
+    "role": "ceiling",
+    "shape": "round",
+    "style": "dome",
+    "thickness": 0.1,
+    "width": 3.0
+   },
+   "preset": "default",
+   "role_area": {
+    "ceiling": 27.0984
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "rounded"
+   ]
+  },
+  "polar_pod:arch.column:default": {
+   "class": "architecture",
+   "generator": "arch.column",
+   "is_default": true,
+   "params": {
+    "base": true,
+    "capital": true,
+    "flare": 0.8,
+    "height": 3.0,
+    "radius": 0.25,
+    "role": "body",
+    "shape": "organic"
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 10.6233
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "molded",
+    "organic",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:arch.corridor:default": {
+   "class": "architecture",
+   "generator": "arch.corridor",
+   "is_default": true,
+   "params": {
+    "curve_deg": 30.0,
+    "floor_role": "floor",
+    "height": 2.3,
+    "length": 5.0,
+    "section": "round",
+    "segments": 6,
+    "wall_role": "wall",
+    "width": 1.8
+   },
+   "preset": "default",
+   "role_area": {
+    "floor": 8.9886,
+    "wall": 27.9607
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "rounded",
+    "sleek",
+    "space"
+   ]
+  },
+  "polar_pod:arch.door:default": {
+   "class": "openings",
+   "generator": "arch.door",
+   "is_default": true,
+   "params": {
+    "frame_depth": 0.3,
+    "frame_role": "chrome",
+    "frame_width": 0.12,
+    "height": 1.9,
+    "leaf": "porthole",
+    "leaf_role": "body",
+    "open_angle": 0.0,
+    "shape": "hatch",
+    "width": 1.0
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 2.9814,
+    "chrome": 4.14,
+    "glass": 0.259
+   },
+   "slots": [
+    "door_main"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "habitat",
+    "industrial",
+    "lab",
+    "rounded",
+    "sleek",
+    "space"
+   ]
+  },
+  "polar_pod:arch.door:oval_open": {
+   "class": "openings",
+   "generator": "arch.door",
+   "is_default": false,
+   "params": {
+    "frame_depth": 0.3,
+    "frame_role": "frame",
+    "frame_width": 0.12,
+    "height": 2.0,
+    "leaf": "slab",
+    "leaf_role": "body",
+    "open_angle": 70.0,
+    "shape": "oval",
+    "width": 1.1
+   },
+   "preset": "oval_open",
+   "role_area": {
+    "body": 3.443,
+    "frame": 4.3961
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "organic",
+    "rounded"
+   ]
+  },
+  "polar_pod:arch.floor_module:default": {
+   "class": "architecture",
+   "generator": "arch.floor_module",
+   "is_default": true,
+   "params": {
+    "bevel": true,
+    "depth": 3.0,
+    "role": "floor",
+    "shape": "round",
+    "thickness": 0.1,
+    "width": 3.0
+   },
+   "preset": "default",
+   "role_area": {
+    "floor": 14.4134
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "rounded"
+   ]
+  },
+  "polar_pod:arch.house:default": {
+   "class": "architecture",
+   "generator": "arch.house",
+   "is_default": true,
+   "params": {
+    "beams": false,
+    "chimney": false,
+    "depth": 6.0,
+    "door_side": "s",
+    "foundation": true,
+    "lit_windows": true,
+    "overhang": 0.15,
+    "plan": "round",
+    "roof": "dome",
+    "roof_pitch": 35.0,
+    "roof_role": "snow",
+    "wall_height": 2.4,
+    "wall_role": "body",
+    "width": 6.0,
+    "window_shape": "oval",
+    "windows": 3
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 95.3731,
+    "door": 4.0928,
+    "frame": 8.8745,
+    "light": 2.9917,
+    "snow": 72.8544,
+    "stone": 64.2602
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "polar",
+    "rounded"
+   ]
+  },
+  "polar_pod:arch.pier:default": {
+   "class": "architecture",
+   "generator": "arch.pier",
+   "is_default": true,
+   "params": {
+    "deck_height": 1.0,
+    "deck_role": "metal",
+    "end_posts": true,
+    "ladder": true,
+    "length": 6.0,
+    "pile_role": "post",
+    "pile_spacing": 2.0,
+    "planks": false,
+    "width": 2.0
+   },
+   "preset": "default",
+   "role_area": {
+    "metal": 25.92,
+    "post": 5.3694
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "harbor",
+    "industrial",
+    "sleek"
+   ]
+  },
+  "polar_pod:arch.railing:default": {
+   "class": "architecture",
+   "generator": "arch.railing",
+   "is_default": true,
+   "params": {
+    "arc_deg": 120.0,
+    "height": 1.0,
+    "infill": "panels",
+    "length": 3.0,
+    "path": "arc",
+    "post_shape": "round",
+    "post_spacing": 1.2,
+    "radius": 2.5,
+    "rails": 1,
+    "role": "chrome"
+   },
+   "preset": "default",
+   "role_area": {
+    "chrome": 1.5413,
+    "glass": 7.0286
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "habitat",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:arch.roof:default": {
+   "class": "architecture",
+   "generator": "arch.roof",
+   "is_default": true,
+   "params": {
+    "depth": 3.0,
+    "kind": "dome",
+    "overhang": 0.3,
+    "pitch": 35.0,
+    "role": "snow",
+    "thickness": 0.15,
+    "width": 4.0
+   },
+   "preset": "default",
+   "role_area": {
+    "snow": 31.6921
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "polar",
+    "rounded",
+    "snow"
+   ]
+  },
+  "polar_pod:arch.room_shell:default": {
+   "class": "architecture",
+   "generator": "arch.room_shell",
+   "is_default": true,
+   "params": {
+    "ceiling": "dome",
+    "ceiling_rise": 1.4,
+    "ceiling_role": "ceiling",
+    "cove": 0.35,
+    "depth": 7.0,
+    "floor_role": "floor",
+    "height": 3.0,
+    "openings": [
+     {
+      "height": 2.0,
+      "kind": "door",
+      "offset": 0.0,
+      "shape": "oval",
+      "sill": 0.0,
+      "wall": "s",
+      "width": 1.1
+     },
+     {
+      "height": 1.2,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "rounded_rect",
+      "sill": 0.9,
+      "wall": "n",
+      "width": 2.6
+     },
+     {
+      "height": 0.8,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "round",
+      "sill": 1.1,
+      "wall": "e",
+      "width": 0.8
+     }
+    ],
+    "plan": "round",
+    "trim": true,
+    "wall_role": "wall",
+    "wall_segments": 28,
+    "width": 7.0
+   },
+   "preset": "default",
+   "role_area": {
+    "ceiling": 44.3051,
+    "floor": 33.39,
+    "wall": 80.9315
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "polar",
+    "rounded",
+    "sleek",
+    "space"
+   ]
+  },
+  "polar_pod:arch.room_shell:oval_lounge": {
+   "class": "architecture",
+   "generator": "arch.room_shell",
+   "is_default": false,
+   "params": {
+    "ceiling": "dome",
+    "ceiling_rise": 1.2,
+    "ceiling_role": "ceiling",
+    "cove": 0.35,
+    "depth": 7.0,
+    "floor_role": "floor",
+    "height": 3.2,
+    "openings": [
+     {
+      "height": 2.0,
+      "kind": "door",
+      "offset": 0.0,
+      "shape": "oval",
+      "sill": 0.0,
+      "wall": "s",
+      "width": 1.1
+     },
+     {
+      "height": 1.3,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "rounded_rect",
+      "sill": 0.8,
+      "wall": "n",
+      "width": 3.6
+     }
+    ],
+    "plan": "oval",
+    "trim": true,
+    "wall_role": "wall",
+    "wall_segments": 32,
+    "width": 10.0
+   },
+   "preset": "oval_lounge",
+   "role_area": {
+    "ceiling": 41.9467,
+    "floor": 33.39,
+    "wall": 80.9315
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "organic",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:arch.stairs:default": {
+   "class": "architecture",
+   "generator": "arch.stairs",
+   "is_default": true,
+   "params": {
+    "kind": "spiral",
+    "rail_role": "chrome",
+    "railing": "right",
+    "rise": 0.18,
+    "role": "step",
+    "run": 0.28,
+    "steps": 12,
+    "stringer": "solid",
+    "width": 1.0
+   },
+   "preset": "default",
+   "role_area": {
+    "chrome": 1.2878,
+    "metal": 1.8889,
+    "step": 7.6932
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "habitat",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:arch.wall_module:default": {
+   "class": "architecture",
+   "generator": "arch.wall_module",
+   "is_default": true,
+   "params": {
+    "height": 2.8,
+    "length": 2.0,
+    "opening": "window",
+    "opening_height": 0.8,
+    "opening_shape": "oval",
+    "opening_sill": 1.0,
+    "opening_width": 1.2,
+    "role": "wall",
+    "thickness": 0.2,
+    "top": "rounded"
+   },
+   "preset": "default",
+   "role_area": {
+    "wall": 13.2254
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "rounded"
+   ]
+  },
+  "polar_pod:arch.window:default": {
+   "class": "openings",
+   "generator": "arch.window",
+   "is_default": true,
+   "params": {
+    "frame_depth": 0.3,
+    "frame_role": "frame",
+    "frame_style": "molded",
+    "frame_width": 0.16,
+    "glass": false,
+    "height": 1.0,
+    "ledge": false,
+    "mullions_x": 0,
+    "mullions_z": 0,
+    "shape": "oval",
+    "shutters": false,
+    "sill": 0.95,
+    "view_card": true,
+    "width": 1.6
+   },
+   "preset": "default",
+   "role_area": {
+    "frame": 4.4595,
+    "view": 6.9264
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "organic",
+    "rounded"
+   ]
+  },
+  "polar_pod:arch.window:panorama": {
+   "class": "openings",
+   "generator": "arch.window",
+   "is_default": false,
+   "params": {
+    "frame_depth": 0.35,
+    "frame_role": "frame",
+    "frame_style": "molded",
+    "frame_width": 0.2,
+    "glass": false,
+    "height": 1.3,
+    "ledge": false,
+    "mullions_x": 0,
+    "mullions_z": 0,
+    "shape": "rounded_rect",
+    "shutters": false,
+    "sill": 0.8,
+    "view_card": true,
+    "width": 3.2
+   },
+   "preset": "panorama",
+   "role_area": {
+    "frame": 10.2027,
+    "view": 12.48
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:arch.window:porthole": {
+   "class": "openings",
+   "generator": "arch.window",
+   "is_default": false,
+   "params": {
+    "frame_depth": 0.25,
+    "frame_role": "chrome",
+    "frame_style": "molded",
+    "frame_width": 0.1,
+    "glass": false,
+    "height": 0.7,
+    "ledge": false,
+    "mullions_x": 0,
+    "mullions_z": 0,
+    "shape": "round",
+    "shutters": false,
+    "sill": 1.1,
+    "view_card": true,
+    "width": 0.7
+   },
+   "preset": "porthole",
+   "role_area": {
+    "chrome": 1.889,
+    "view": 3.78
+   },
+   "slots": [
+    "window_side"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "habitat",
+    "harbor",
+    "industrial",
+    "ocean",
+    "rounded",
+    "underwater"
+   ]
+  },
+  "polar_pod:arch.window:rounded_molded": {
+   "class": "openings",
+   "generator": "arch.window",
+   "is_default": false,
+   "params": {
+    "frame_depth": 0.3,
+    "frame_role": "frame",
+    "frame_style": "molded",
+    "frame_width": 0.15,
+    "glass": false,
+    "height": 1.0,
+    "ledge": false,
+    "mullions_x": 0,
+    "mullions_z": 0,
+    "shape": "rounded_rect",
+    "shutters": false,
+    "sill": 0.9,
+    "view_card": true,
+    "width": 1.4
+   },
+   "preset": "rounded_molded",
+   "role_area": {
+    "frame": 4.4903,
+    "view": 6.38
+   },
+   "slots": [
+    "window_main"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "polar",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.bed:default": {
+   "class": "furniture",
+   "generator": "furn.bed",
+   "is_default": true,
+   "params": {
+    "blanket": true,
+    "blanket_role": "knit",
+    "frame_role": "body",
+    "headboard": "curved",
+    "height": 0.45,
+    "kind": "pod",
+    "length": 2.0,
+    "mattress_role": "quilt",
+    "pillow_role": "cushion",
+    "pillows": 2,
+    "width": 1.4
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 5.9229,
+    "cushion": 0.4917,
+    "knit": 4.6646,
+    "quilt": 5.5678
+   },
+   "slots": [
+    "bed"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "knit",
+    "molded",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.bench:chrome_legs": {
+   "class": "seating",
+   "generator": "furn.bench",
+   "is_default": false,
+   "params": {
+    "body_role": "body",
+    "curl": 0.8,
+    "curl_height": 1.3,
+    "depth": 0.62,
+    "leg_role": "chrome",
+    "legs": 4,
+    "length": 2.3,
+    "orb": true,
+    "seat_height": 0.42,
+    "side_table": true,
+    "thickness": 0.16,
+    "throw": true,
+    "throw_role": "knit"
+   },
+   "preset": "chrome_legs",
+   "role_area": {
+    "body": 4.7979,
+    "chrome": 0.3469,
+    "glass": 0.2053,
+    "knit": 1.6104,
+    "orb": 0.2049
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "knit",
+    "molded",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.bench:default": {
+   "class": "seating",
+   "generator": "furn.bench",
+   "is_default": true,
+   "params": {
+    "body_role": "chrome",
+    "curl": 0.8,
+    "curl_height": 1.3,
+    "depth": 0.62,
+    "leg_role": "chrome",
+    "legs": 0,
+    "length": 2.3,
+    "orb": true,
+    "seat_height": 0.42,
+    "side_table": false,
+    "thickness": 0.18,
+    "throw": true,
+    "throw_role": "fur"
+   },
+   "preset": "default",
+   "role_area": {
+    "chrome": 7.4832,
+    "fur": 1.6104,
+    "orb": 0.2049
+   },
+   "slots": [
+    "seat_bench"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "fur",
+    "molded",
+    "organic",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.chair:default": {
+   "class": "seating",
+   "generator": "furn.chair",
+   "is_default": true,
+   "params": {
+    "back_height": 0.4,
+    "cushion": true,
+    "cushion_role": "quilt",
+    "depth": 0.7,
+    "frame_role": "chrome",
+    "kind": "armchair",
+    "legs": "pedestal",
+    "seat_height": 0.45,
+    "seat_role": "body",
+    "seat_shape": "round",
+    "width": 0.75
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 2.3792,
+    "chrome": 0.6144,
+    "quilt": 1.1798
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "molded",
+    "quilted_vinyl",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.console:default": {
+   "class": "furniture",
+   "generator": "furn.console",
+   "is_default": true,
+   "params": {
+    "body_role": "body",
+    "height": 1.15,
+    "joystick": true,
+    "keyboard": false,
+    "kind": "mushroom",
+    "leg_role": "chrome",
+    "screens": 2,
+    "wavy": 0.6,
+    "width": 0.9
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 2.6158,
+    "metal": 0.0072,
+    "orb": 0.0083,
+    "screen": 0.5381
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "rounded",
+    "screens",
+    "sleek",
+    "space"
+   ]
+  },
+  "polar_pod:furn.console:desk_triple_crt": {
+   "class": "furniture",
+   "generator": "furn.console",
+   "is_default": false,
+   "params": {
+    "body_role": "body",
+    "height": 0.76,
+    "joystick": false,
+    "keyboard": true,
+    "kind": "desk",
+    "leg_role": "chrome",
+    "screens": 3,
+    "wavy": 0.8,
+    "width": 2.3
+   },
+   "preset": "desk_triple_crt",
+   "role_area": {
+    "body": 4.7998,
+    "chrome": 0.3894,
+    "metal": 0.165,
+    "screen": 0.7553
+   },
+   "slots": [
+    "console"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "lab",
+    "molded",
+    "organic",
+    "rounded",
+    "screens"
+   ]
+  },
+  "polar_pod:furn.console:terminal": {
+   "class": "furniture",
+   "generator": "furn.console",
+   "is_default": false,
+   "params": {
+    "body_role": "body",
+    "height": 1.3,
+    "joystick": true,
+    "keyboard": true,
+    "kind": "terminal",
+    "leg_role": "chrome",
+    "screens": 1,
+    "wavy": 0.6,
+    "width": 0.8
+   },
+   "preset": "terminal",
+   "role_area": {
+    "body": 3.026,
+    "metal": 0.1392,
+    "screen": 0.2562
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "boxy",
+    "habitat",
+    "industrial",
+    "lab",
+    "screens",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.container:default": {
+   "class": "furniture",
+   "generator": "furn.container",
+   "is_default": true,
+   "params": {
+    "band_role": "chrome",
+    "bands": 2,
+    "body_role": "body",
+    "depth": 0.6,
+    "height": 0.6,
+    "kind": "capsule",
+    "lid_open": 0.0,
+    "width": 0.6
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 1.4437,
+    "chrome": 0.6325
+   },
+   "slots": [
+    "container"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "lab",
+    "molded",
+    "rounded",
+    "sleek",
+    "space"
+   ]
+  },
+  "polar_pod:furn.hearth:default": {
+   "class": "furniture",
+   "generator": "furn.hearth",
+   "is_default": true,
+   "params": {
+    "body_role": "body",
+    "depth": 0.8,
+    "fire": true,
+    "height": 1.1,
+    "kind": "heater",
+    "width": 0.8
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 3.3811,
+    "fire": 0.9333
+   },
+   "slots": [
+    "hearth"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.lamp:default": {
+   "class": "furniture",
+   "generator": "furn.lamp",
+   "is_default": true,
+   "params": {
+    "base": "disc",
+    "height": 1.6,
+    "kind": "floor",
+    "shade": "sphere",
+    "shade_size": 0.4,
+    "stand_role": "chrome"
+   },
+   "preset": "default",
+   "role_area": {
+    "chrome": 0.4413,
+    "light": 0.4741
+   },
+   "slots": [
+    "lamp_floor"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.lamp:globe": {
+   "class": "furniture",
+   "generator": "furn.lamp",
+   "is_default": false,
+   "params": {
+    "base": "disc",
+    "height": 0.5,
+    "kind": "sphere",
+    "shade": "sphere",
+    "shade_size": 0.4,
+    "stand_role": "chrome"
+   },
+   "preset": "globe",
+   "role_area": {
+    "chrome": 0.3423,
+    "light": 0.4741
+   },
+   "slots": [
+    "lamp_table"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "glass",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.pod:bowl_portholes": {
+   "class": "seating",
+   "generator": "furn.pod",
+   "is_default": false,
+   "params": {
+    "canopy": false,
+    "cushion": true,
+    "cushion_role": "quilt",
+    "depth": 1.3,
+    "feet": 1,
+    "foot_role": "chrome",
+    "height": 0.85,
+    "kind": "bowl",
+    "lobes": 2,
+    "orb": true,
+    "port_role": "chrome",
+    "portholes": 3,
+    "shell_role": "body",
+    "table": true,
+    "throw_role": "fur",
+    "width": 1.45
+   },
+   "preset": "bowl_portholes",
+   "role_area": {
+    "body": 4.367,
+    "chrome": 0.6947,
+    "quilt": 1.4975
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "habitat",
+    "molded",
+    "rounded"
+   ]
+  },
+  "polar_pod:furn.pod:chaise": {
+   "class": "seating",
+   "generator": "furn.pod",
+   "is_default": false,
+   "params": {
+    "canopy": false,
+    "cushion": true,
+    "cushion_role": "quilt",
+    "depth": 0.9,
+    "feet": 2,
+    "foot_role": "chrome",
+    "height": 0.8,
+    "kind": "chaise",
+    "lobes": 3,
+    "orb": true,
+    "port_role": "chrome",
+    "portholes": 2,
+    "shell_role": "body",
+    "table": true,
+    "throw_role": "fur",
+    "width": 2.1
+   },
+   "preset": "chaise",
+   "role_area": {
+    "body": 4.7356,
+    "chrome": 0.8362,
+    "quilt": 2.0047
+   },
+   "slots": [
+    "seat_lounge"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "organic",
+    "polar",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.pod:chaise_visor": {
+   "class": "seating",
+   "generator": "furn.pod",
+   "is_default": false,
+   "params": {
+    "canopy": true,
+    "cushion": true,
+    "cushion_role": "quilt",
+    "depth": 0.9,
+    "feet": 1,
+    "foot_role": "chrome",
+    "height": 0.8,
+    "kind": "chaise",
+    "lobes": 3,
+    "orb": true,
+    "port_role": "glass",
+    "portholes": 0,
+    "shell_role": "body",
+    "table": true,
+    "throw_role": "fur",
+    "width": 2.1
+   },
+   "preset": "chaise_visor",
+   "role_area": {
+    "body": 4.8567,
+    "chrome": 0.3668,
+    "glass": 0.6857,
+    "quilt": 1.9948
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "sleek",
+    "space"
+   ]
+  },
+  "polar_pod:furn.pod:conversation_pit": {
+   "class": "seating",
+   "generator": "furn.pod",
+   "is_default": false,
+   "params": {
+    "canopy": false,
+    "cushion": true,
+    "cushion_role": "cushion",
+    "depth": 3.2,
+    "feet": 1,
+    "foot_role": "chrome",
+    "height": 0.7,
+    "kind": "lounge_pit",
+    "lobes": 0,
+    "orb": true,
+    "port_role": "chrome",
+    "portholes": 0,
+    "shell_role": "body",
+    "table": true,
+    "throw_role": "fur",
+    "width": 3.2
+   },
+   "preset": "conversation_pit",
+   "role_area": {
+    "body": 15.0797,
+    "cushion": 4.6542,
+    "fur": 3.4358,
+    "orb": 0.1847
+   },
+   "slots": [
+    "seat_pit"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "fur",
+    "habitat",
+    "molded",
+    "organic",
+    "rounded"
+   ]
+  },
+  "polar_pod:furn.pod:default": {
+   "class": "seating",
+   "generator": "furn.pod",
+   "is_default": true,
+   "params": {
+    "canopy": false,
+    "cushion": true,
+    "cushion_role": "quilt",
+    "depth": 1.2,
+    "feet": 1,
+    "foot_role": "chrome",
+    "height": 0.8,
+    "kind": "bowl",
+    "lobes": 3,
+    "orb": true,
+    "port_role": "chrome",
+    "portholes": 0,
+    "shell_role": "body",
+    "table": true,
+    "throw_role": "fur",
+    "width": 1.3
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 3.6737,
+    "chrome": 0.427,
+    "quilt": 1.505
+   },
+   "slots": [
+    "seat_chair"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "molded",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.pod:egg": {
+   "class": "seating",
+   "generator": "furn.pod",
+   "is_default": false,
+   "params": {
+    "canopy": false,
+    "cushion": true,
+    "cushion_role": "knit",
+    "depth": 1.0,
+    "feet": 1,
+    "foot_role": "chrome",
+    "height": 1.35,
+    "kind": "egg",
+    "lobes": 0,
+    "orb": true,
+    "port_role": "chrome",
+    "portholes": 0,
+    "shell_role": "body",
+    "table": true,
+    "throw_role": "fur",
+    "width": 1.1
+   },
+   "preset": "egg",
+   "role_area": {
+    "body": 4.3694,
+    "chrome": 0.357,
+    "knit": 0.7996
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "knit",
+    "molded",
+    "organic",
+    "rounded"
+   ]
+  },
+  "polar_pod:furn.rug:default": {
+   "class": "furniture",
+   "generator": "furn.rug",
+   "is_default": true,
+   "params": {
+    "depth": 1.6,
+    "fringe": false,
+    "rug_role": "fur",
+    "shape": "oval",
+    "thickness": 0.02,
+    "width": 2.4
+   },
+   "preset": "default",
+   "role_area": {
+    "fur": 6.0364
+   },
+   "slots": [
+    "rug"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "fur",
+    "habitat",
+    "polar",
+    "rounded"
+   ]
+  },
+  "polar_pod:furn.shelf:default": {
+   "class": "furniture",
+   "generator": "furn.shelf",
+   "is_default": true,
+   "params": {
+    "books": 0.4,
+    "depth": 0.35,
+    "frame_role": "body",
+    "height": 1.8,
+    "kind": "open_rack",
+    "shelves": 4,
+    "width": 1.0
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 4.564,
+    "book": 1.1017
+   },
+   "slots": [
+    "shelf"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "industrial",
+    "lab",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.table:default": {
+   "class": "furniture",
+   "generator": "furn.table",
+   "is_default": true,
+   "params": {
+    "base_role": "chrome",
+    "depth": 0.9,
+    "height": 0.72,
+    "leg_radius": 0.035,
+    "legs": "tulip",
+    "ornament": "none",
+    "top_role": "body",
+    "top_shape": "round",
+    "top_thickness": 0.05,
+    "width": 0.9
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 1.3804,
+    "chrome": 0.8411
+   },
+   "slots": [
+    "table_main"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "chrome",
+    "molded",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.table:disc_orb": {
+   "class": "furniture",
+   "generator": "furn.table",
+   "is_default": false,
+   "params": {
+    "base_role": "body",
+    "depth": 1.1,
+    "height": 0.36,
+    "leg_radius": 0.035,
+    "legs": "tulip",
+    "ornament": "sphere",
+    "top_role": "body",
+    "top_shape": "round",
+    "top_thickness": 0.04,
+    "width": 1.1
+   },
+   "preset": "disc_orb",
+   "role_area": {
+    "body": 2.9561,
+    "orb": 0.2008
+   },
+   "slots": [
+    "table_low"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "glass",
+    "molded",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:furn.table:flower_table": {
+   "class": "furniture",
+   "generator": "furn.table",
+   "is_default": false,
+   "params": {
+    "base_role": "chrome",
+    "depth": 1.0,
+    "height": 0.45,
+    "leg_radius": 0.035,
+    "legs": "pedestal",
+    "ornament": "vase",
+    "top_role": "body",
+    "top_shape": "flower",
+    "top_thickness": 0.05,
+    "width": 1.0
+   },
+   "preset": "flower_table",
+   "role_area": {
+    "body": 1.3637,
+    "chrome": 0.754,
+    "glass": 0.1487
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "molded",
+    "organic",
+    "ornate",
+    "rounded"
+   ]
+  },
+  "polar_pod:fx.particles:default": {
+   "class": "nature",
+   "generator": "fx.particles",
+   "is_default": true,
+   "params": {
+    "area": 4.0,
+    "gravity": -0.3,
+    "lifetime": 4.0,
+    "rate": 20.0,
+    "shape": "flake",
+    "size": 0.08,
+    "spread_deg": 25.0,
+    "velocity": 0.6
+   },
+   "preset": "default",
+   "role_area": {
+    "particle": 0.0022
+   },
+   "slots": [
+    "weather"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "mountain",
+    "polar",
+    "snow"
+   ]
+  },
+  "polar_pod:nature.bush:default": {
+   "class": "nature",
+   "generator": "nature.bush",
+   "is_default": true,
+   "params": {
+    "cap": true,
+    "flatness": 0.3,
+    "flowers": 0,
+    "lobes": 3,
+    "size": 0.8
+   },
+   "preset": "default",
+   "role_area": {
+    "cap": 0.6291,
+    "foliage": 1.8912
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "organic",
+    "polar",
+    "snow"
+   ]
+  },
+  "polar_pod:nature.bush:indoor": {
+   "class": "nature",
+   "generator": "nature.bush",
+   "is_default": false,
+   "params": {
+    "cap": false,
+    "flatness": 0.3,
+    "flowers": 2,
+    "lobes": 3,
+    "size": 0.6
+   },
+   "preset": "indoor",
+   "role_area": {
+    "flower": 0.0109,
+    "foliage": 1.0638
+   },
+   "slots": [
+    "plant"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "lab",
+    "organic",
+    "rounded"
+   ]
+  },
+  "polar_pod:nature.rock:default": {
+   "class": "nature",
+   "generator": "nature.rock",
+   "is_default": true,
+   "params": {
+    "cap": true,
+    "count": 1,
+    "flatness": 0.3,
+    "role": "ice",
+    "roughness": 0.4,
+    "size": 1.0
+   },
+   "preset": "default",
+   "role_area": {
+    "cap": 0.4981,
+    "ice": 2.5959
+   },
+   "slots": [
+    "rock"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "ice",
+    "polar",
+    "snow"
+   ]
+  },
+  "polar_pod:nature.tree:default": {
+   "class": "nature",
+   "generator": "nature.tree",
+   "is_default": true,
+   "params": {
+    "branches": 4,
+    "canopy": 1.0,
+    "cap": true,
+    "height": 5.0,
+    "kind": "conifer",
+    "lean": 4.0,
+    "lobes": 3,
+    "trunk_radius": 0.18
+   },
+   "preset": "default",
+   "role_area": {
+    "bark": 1.4205,
+    "cap": 11.8322,
+    "foliage": 27.6783
+   },
+   "slots": [
+    "tree"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "mountain",
+    "organic",
+    "polar",
+    "snow"
+   ]
+  },
+  "polar_pod:prop.book:default": {
+   "class": "props",
+   "generator": "prop.book",
+   "is_default": true,
+   "params": {
+    "count": 3,
+    "cover_role": "body",
+    "height": 0.23,
+    "kind": "closed",
+    "thickness": 0.04,
+    "width": 0.16
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 0.1048,
+    "paper": 0.0887
+   },
+   "slots": [
+    "book"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "sleek"
+   ]
+  },
+  "polar_pod:prop.device:default": {
+   "class": "props",
+   "generator": "prop.device",
+   "is_default": true,
+   "params": {
+    "body_role": "body",
+    "kind": "radio",
+    "screen_on": true,
+    "size": 0.25
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 0.1306,
+    "metal": 0.0083,
+    "screen": 0.0124
+   },
+   "slots": [
+    "device"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "boxy",
+    "habitat",
+    "industrial",
+    "lab"
+   ]
+  },
+  "polar_pod:prop.key:default": {
+   "class": "props",
+   "generator": "prop.key",
+   "is_default": true,
+   "params": {
+    "kind": "card",
+    "length": 0.08,
+    "role": "chrome"
+   },
+   "preset": "default",
+   "role_area": {
+    "band": 0.001,
+    "chrome": 0.0082
+   },
+   "slots": [
+    "key"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "industrial",
+    "lab",
+    "sleek",
+    "space"
+   ]
+  },
+  "polar_pod:prop.sign:default": {
+   "class": "props",
+   "generator": "prop.sign",
+   "is_default": true,
+   "params": {
+    "board_role": "screen",
+    "board_shape": "oval",
+    "height": 0.35,
+    "kind": "plaque",
+    "post_height": 1.2,
+    "text_lines": 2,
+    "text_role": "light",
+    "width": 0.6
+   },
+   "preset": "default",
+   "role_area": {
+    "light": 0.0574,
+    "screen": 0.375
+   },
+   "slots": [
+    "sign_main"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "lab",
+    "rounded",
+    "screens",
+    "sleek"
+   ]
+  },
+  "polar_pod:prop.tool:default": {
+   "class": "props",
+   "generator": "prop.tool",
+   "is_default": true,
+   "params": {
+    "handle_role": "body",
+    "head_role": "chrome",
+    "kind": "flashlight",
+    "length": 0.4
+   },
+   "preset": "default",
+   "role_area": {
+    "chrome": 0.0548,
+    "light": 0.0028
+   },
+   "slots": [
+    "tool"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "industrial",
+    "lab",
+    "sleek"
+   ]
+  },
+  "polar_pod:prop.vessel:default": {
+   "class": "props",
+   "generator": "prop.vessel",
+   "is_default": true,
+   "params": {
+    "contents": false,
+    "handle": true,
+    "height": 0.12,
+    "kind": "cup",
+    "lid": false,
+    "role": "body",
+    "width": 0.09
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 0.0567
+   },
+   "slots": [
+    "vessel"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:soft.blanket:default": {
+   "class": "furniture",
+   "generator": "soft.blanket",
+   "is_default": true,
+   "params": {
+    "depth": 1.8,
+    "folds": 3,
+    "fringe": false,
+    "kind": "folded",
+    "role": "knit",
+    "thickness": 0.03,
+    "waves": 0.03,
+    "width": 1.4
+   },
+   "preset": "default",
+   "role_area": {
+    "knit": 1.1853
+   },
+   "slots": [
+    "blanket"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "knit",
+    "rounded"
+   ]
+  },
+  "polar_pod:soft.pillow:cat_bed": {
+   "class": "furniture",
+   "generator": "soft.pillow",
+   "is_default": false,
+   "params": {
+    "piping": false,
+    "role": "fur",
+    "shape": "floor_cushion",
+    "size": 0.6,
+    "thickness": 0.14,
+    "tuft": true
+   },
+   "preset": "cat_bed",
+   "role_area": {
+    "fur": 0.7476,
+    "trim": 0.0054
+   },
+   "slots": [
+    "cat_bed"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "fur",
+    "habitat",
+    "rounded"
+   ]
+  },
+  "polar_pod:soft.pillow:default": {
+   "class": "furniture",
+   "generator": "soft.pillow",
+   "is_default": true,
+   "params": {
+    "piping": false,
+    "role": "quilt",
+    "shape": "round",
+    "size": 0.45,
+    "thickness": 0.15,
+    "tuft": true
+   },
+   "preset": "default",
+   "role_area": {
+    "quilt": 0.4025,
+    "trim": 0.0037
+   },
+   "slots": [
+    "pillow"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "molded",
+    "quilted_vinyl",
+    "rounded"
+   ]
+  },
+  "polar_pod:terrain.patch:default": {
+   "class": "nature",
+   "generator": "terrain.patch",
+   "is_default": true,
+   "params": {
+    "amplitude": 0.6,
+    "depth": 0.5,
+    "edge_falloff": 0.5,
+    "feature": "drifts",
+    "resolution": 10,
+    "roughness": 0.5,
+    "size_x": 12.0,
+    "size_y": 12.0,
+    "surface": "snow"
+   },
+   "preset": "default",
+   "role_area": {
+    "rock": 184.4329,
+    "snow": 145.5914
+   },
+   "slots": [
+    "ground"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "mountain",
+    "polar",
+    "snow"
+   ]
+  },
+  "polar_pod:terrain.water:default": {
+   "class": "nature",
+   "generator": "terrain.water",
+   "is_default": true,
+   "params": {
+    "depth": 0.1,
+    "resolution": 8,
+    "shape": "rect",
+    "size_x": 10.0,
+    "size_y": 10.0,
+    "surface": "ice",
+    "waves": 0.05
+   },
+   "preset": "default",
+   "role_area": {
+    "ice": 205.1875
+   },
+   "slots": [
+    "water"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "ice",
+    "polar"
+   ]
+  },
+  "polar_pod:vehicle.boat:default": {
+   "class": "vehicles",
+   "generator": "vehicle.boat",
+   "is_default": true,
+   "params": {
+    "beam": 1.3,
+    "cabin": true,
+    "depth": 0.55,
+    "hull_role": "body",
+    "kind": "skiff",
+    "length": 3.6,
+    "oars": true,
+    "sail_role": "fabric",
+    "seats": 2,
+    "sheer": 0.15,
+    "trim_role": "chrome"
+   },
+   "preset": "default",
+   "role_area": {
+    "body": 17.4746,
+    "chrome": 1.4013,
+    "glass": 1.0448,
+    "metal": 0.615,
+    "wood": 0.6706
+   },
+   "slots": [
+    "boat"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "harbor",
+    "polar",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "polar_pod:vehicle.craft:default": {
+   "class": "vehicles",
+   "generator": "vehicle.craft",
+   "is_default": true,
+   "params": {
+    "body_height": 1.1,
+    "body_role": "body",
+    "canopy": "dome",
+    "cargo": 0,
+    "handle": true,
+    "kind": "saucer",
+    "length": 2.4,
+    "lights": true,
+    "trim_role": "chrome",
+    "wheel_radius": 0.35,
+    "width": 2.4
+   },
+   "preset": "default",
+   "role_area": {
+    "band": 1.6545,
+    "body": 6.0562,
+    "chrome": 0.3019,
+    "glass": 2.0301,
+    "light": 2.1731
+   },
+   "slots": [
+    "vehicle_main"
+   ],
+   "source": "polar_pod",
+   "tags": [
+    "habitat",
+    "rounded",
+    "sleek",
+    "space"
+   ]
+  },
+  "polar_pod:vehicle.craft:snow_sled": {
+   "class": "vehicles",
+   "generator": "vehicle.craft",
+   "is_default": false,
+   "params": {
+    "body_height": 1.1,
+    "body_role": "body",
+    "canopy": "none",
+    "cargo": 0,
+    "handle": true,
+    "kind": "sled",
+    "length": 2.4,
+    "lights": true,
+    "trim_role": "chrome",
+    "wheel_radius": 0.35,
+    "width": 2.4
+   },
+   "preset": "snow_sled",
+   "role_area": {
+    "body": 15.983,
+    "chrome": 1.0116,
+    "light": 0.0944
+   },
+   "slots": [],
+   "source": "polar_pod",
+   "tags": [
+    "polar",
+    "sleek",
+    "snow"
+   ]
+  },
+  "variant:arch.door:arch_planks": {
+   "class": "openings",
+   "generator": "arch.door",
+   "is_default": true,
+   "params": {
+    "frame_depth": 0.2,
+    "frame_role": "frame",
+    "frame_width": 0.1,
+    "height": 2.1,
+    "leaf": "planks",
+    "leaf_role": "door",
+    "open_angle": 0.0,
+    "shape": "arch",
+    "width": 1.0
+   },
+   "preset": "arch_planks",
+   "role_area": {
+    "door": 4.5071,
+    "frame": 3.0306
+   },
+   "slots": [
+    "door_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "castle",
+    "desert",
+    "ornate",
+    "rounded",
+    "ruins",
+    "rustic",
+    "temple"
+   ]
+  },
+  "variant:arch.door:gothic": {
+   "class": "openings",
+   "generator": "arch.door",
+   "is_default": false,
+   "params": {
+    "frame_depth": 0.2,
+    "frame_role": "stone",
+    "frame_width": 0.1,
+    "height": 2.1,
+    "leaf": "planks",
+    "leaf_role": "door",
+    "open_angle": 0.0,
+    "shape": "gothic",
+    "width": 1.0
+   },
+   "preset": "gothic",
+   "role_area": {
+    "door": 4.2099,
+    "stone": 2.8627
+   },
+   "slots": [
+    "door_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "castle",
+    "ornate",
+    "ruins",
+    "temple"
+   ]
+  },
+  "variant:arch.door:hatch_slab": {
+   "class": "openings",
+   "generator": "arch.door",
+   "is_default": false,
+   "params": {
+    "frame_depth": 0.3,
+    "frame_role": "metal",
+    "frame_width": 0.14,
+    "height": 2.1,
+    "leaf": "slab",
+    "leaf_role": "metal",
+    "open_angle": 0.0,
+    "shape": "hatch",
+    "width": 1.0
+   },
+   "preset": "hatch_slab",
+   "role_area": {
+    "metal": 7.9747
+   },
+   "slots": [
+    "door_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "chunky",
+    "industrial",
+    "mine",
+    "ocean",
+    "rounded",
+    "space",
+    "underwater"
+   ]
+  },
+  "variant:arch.door:rect_panel": {
+   "class": "openings",
+   "generator": "arch.door",
+   "is_default": true,
+   "params": {
+    "frame_depth": 0.2,
+    "frame_role": "frame",
+    "frame_width": 0.1,
+    "height": 2.1,
+    "leaf": "panel",
+    "leaf_role": "door",
+    "open_angle": 0.0,
+    "shape": "rect",
+    "width": 1.0
+   },
+   "preset": "rect_panel",
+   "role_area": {
+    "door": 5.5541,
+    "frame": 3.28
+   },
+   "slots": [
+    "door_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "boxy",
+    "city",
+    "industrial",
+    "lab",
+    "mine"
+   ]
+  },
+  "variant:arch.room_shell:rect_flat": {
+   "class": "architecture",
+   "generator": "arch.room_shell",
+   "is_default": true,
+   "params": {
+    "ceiling": "flat",
+    "ceiling_rise": 0.8,
+    "ceiling_role": "ceiling",
+    "cove": 0.0,
+    "depth": 5.0,
+    "floor_role": "floor",
+    "height": 2.8,
+    "openings": [
+     {
+      "height": 2.1,
+      "kind": "door",
+      "offset": 0.0,
+      "shape": "rect",
+      "sill": 0.0,
+      "wall": "s",
+      "width": 1.0
+     },
+     {
+      "height": 1.2,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "rect",
+      "sill": 0.9,
+      "wall": "n",
+      "width": 1.6
+     }
+    ],
+    "plan": "rect",
+    "trim": true,
+    "wall_role": "wall",
+    "wall_segments": 24,
+    "width": 6.0
+   },
+   "preset": "rect_flat",
+   "role_area": {
+    "ceiling": 42.0,
+    "floor": 42.0,
+    "trim": 5.3857,
+    "wall": 72.4616
+   },
+   "slots": [],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "boxy",
+    "castle",
+    "cave",
+    "chunky",
+    "city",
+    "industrial",
+    "lab",
+    "mine"
+   ]
+  },
+  "variant:arch.room_shell:rect_gable_plain": {
+   "class": "architecture",
+   "generator": "arch.room_shell",
+   "is_default": true,
+   "params": {
+    "ceiling": "gable",
+    "ceiling_rise": 1.0,
+    "ceiling_role": "ceiling",
+    "cove": 0.0,
+    "depth": 5.0,
+    "floor_role": "floor",
+    "height": 2.8,
+    "openings": [
+     {
+      "height": 2.1,
+      "kind": "door",
+      "offset": 0.0,
+      "shape": "rect",
+      "sill": 0.0,
+      "wall": "s",
+      "width": 1.0
+     },
+     {
+      "height": 1.2,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "rect",
+      "sill": 0.9,
+      "wall": "n",
+      "width": 1.6
+     }
+    ],
+    "plan": "rect",
+    "trim": false,
+    "wall_role": "wall",
+    "wall_segments": 24,
+    "width": 6.0
+   },
+   "preset": "rect_gable_plain",
+   "role_area": {
+    "ceiling": 44.2719,
+    "floor": 42.0,
+    "wall": 78.4616
+   },
+   "slots": [],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "boxy",
+    "coast",
+    "harbor",
+    "rustic",
+    "village"
+   ]
+  },
+  "variant:arch.room_shell:rounded_dome": {
+   "class": "architecture",
+   "generator": "arch.room_shell",
+   "is_default": true,
+   "params": {
+    "ceiling": "dome",
+    "ceiling_rise": 1.0,
+    "ceiling_role": "ceiling",
+    "cove": 0.3,
+    "depth": 5.0,
+    "floor_role": "floor",
+    "height": 2.8,
+    "openings": [
+     {
+      "height": 2.1,
+      "kind": "door",
+      "offset": 0.0,
+      "shape": "rect",
+      "sill": 0.0,
+      "wall": "s",
+      "width": 1.0
+     },
+     {
+      "height": 1.2,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "rect",
+      "sill": 0.9,
+      "wall": "n",
+      "width": 1.6
+     }
+    ],
+    "plan": "rounded_rect",
+    "trim": false,
+    "wall_role": "wall",
+    "wall_segments": 24,
+    "width": 6.0
+   },
+   "preset": "rounded_dome",
+   "role_area": {
+    "ceiling": 40.9488,
+    "floor": 34.56,
+    "wall": 79.8672
+   },
+   "slots": [],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "chunky",
+    "coast",
+    "desert",
+    "organic",
+    "rounded",
+    "temple",
+    "underwater"
+   ]
+  },
+  "variant:arch.window:arch_ledge": {
+   "class": "openings",
+   "generator": "arch.window",
+   "is_default": true,
+   "params": {
+    "frame_depth": 0.18,
+    "frame_role": "frame",
+    "frame_style": "flat",
+    "frame_width": 0.08,
+    "glass": false,
+    "height": 1.0,
+    "ledge": true,
+    "mullions_x": 0,
+    "mullions_z": 0,
+    "shape": "arch",
+    "shutters": false,
+    "sill": 0.9,
+    "view_card": true,
+    "width": 1.2
+   },
+   "preset": "arch_ledge",
+   "role_area": {
+    "frame": 2.7367,
+    "view": 5.2736
+   },
+   "slots": [
+    "window_main",
+    "window_side"
+   ],
+   "source": "variant",
+   "tags": [
+    "chunky",
+    "desert",
+    "ornate",
+    "rounded",
+    "rustic",
+    "temple"
+   ]
+  },
+  "variant:arch.window:gothic": {
+   "class": "openings",
+   "generator": "arch.window",
+   "is_default": false,
+   "params": {
+    "frame_depth": 0.18,
+    "frame_role": "stone",
+    "frame_style": "molded",
+    "frame_width": 0.08,
+    "glass": false,
+    "height": 1.0,
+    "ledge": true,
+    "mullions_x": 0,
+    "mullions_z": 0,
+    "shape": "gothic",
+    "shutters": false,
+    "sill": 0.9,
+    "view_card": true,
+    "width": 1.2
+   },
+   "preset": "gothic",
+   "role_area": {
+    "stone": 2.8498,
+    "view": 5.2736
+   },
+   "slots": [
+    "window_main",
+    "window_side"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "castle",
+    "ornate",
+    "ruins",
+    "temple"
+   ]
+  },
+  "variant:arch.window:rect_flat": {
+   "class": "openings",
+   "generator": "arch.window",
+   "is_default": true,
+   "params": {
+    "frame_depth": 0.18,
+    "frame_role": "frame",
+    "frame_style": "flat",
+    "frame_width": 0.08,
+    "glass": false,
+    "height": 1.0,
+    "ledge": false,
+    "mullions_x": 0,
+    "mullions_z": 0,
+    "shape": "rect",
+    "shutters": false,
+    "sill": 0.9,
+    "view_card": true,
+    "width": 1.2
+   },
+   "preset": "rect_flat",
+   "role_area": {
+    "frame": 2.4544,
+    "view": 5.2736
+   },
+   "slots": [
+    "window_main",
+    "window_side"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "boxy",
+    "city",
+    "industrial",
+    "lab",
+    "mine",
+    "sleek"
+   ]
+  },
+  "variant:arch.window:round_flat": {
+   "class": "openings",
+   "generator": "arch.window",
+   "is_default": false,
+   "params": {
+    "frame_depth": 0.18,
+    "frame_role": "metal",
+    "frame_style": "flat",
+    "frame_width": 0.12,
+    "glass": false,
+    "height": 1.0,
+    "ledge": false,
+    "mullions_x": 0,
+    "mullions_z": 0,
+    "shape": "round",
+    "shutters": false,
+    "sill": 0.9,
+    "view_card": true,
+    "width": 1.2
+   },
+   "preset": "round_flat",
+   "role_area": {
+    "metal": 2.0725,
+    "view": 5.2216
+   },
+   "slots": [
+    "window_main",
+    "window_side"
+   ],
+   "source": "variant",
+   "tags": [
+    "chunky",
+    "harbor",
+    "industrial",
+    "mine",
+    "ocean",
+    "rounded",
+    "underwater"
+   ]
+  },
+  "variant:furn.bed:cot": {
+   "class": "furniture",
+   "generator": "furn.bed",
+   "is_default": false,
+   "params": {
+    "blanket": true,
+    "blanket_role": "fabric",
+    "frame_role": "metal",
+    "headboard": "none",
+    "height": 0.45,
+    "kind": "cot",
+    "length": 2.0,
+    "mattress_role": "fabric",
+    "pillow_role": "fabric",
+    "pillows": 2,
+    "width": 1.4
+   },
+   "preset": "cot",
+   "role_area": {
+    "fabric": 10.7242,
+    "metal": 6.16
+   },
+   "slots": [
+    "bed"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "harbor",
+    "industrial",
+    "lab",
+    "mine"
+   ]
+  },
+  "variant:furn.bed:nook": {
+   "class": "furniture",
+   "generator": "furn.bed",
+   "is_default": false,
+   "params": {
+    "blanket": true,
+    "blanket_role": "fabric",
+    "frame_role": "body",
+    "headboard": "high",
+    "height": 0.45,
+    "kind": "nook",
+    "length": 2.0,
+    "mattress_role": "cushion",
+    "pillow_role": "cushion",
+    "pillows": 2,
+    "width": 1.4
+   },
+   "preset": "nook",
+   "role_area": {
+    "body": 40.6805,
+    "cushion": 6.0596,
+    "fabric": 4.6646
+   },
+   "slots": [
+    "bed"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "chunky",
+    "desert",
+    "organic",
+    "rounded"
+   ]
+  },
+  "variant:furn.bench:stone_curl": {
+   "class": "seating",
+   "generator": "furn.bench",
+   "is_default": false,
+   "params": {
+    "body_role": "stone",
+    "curl": 0.45,
+    "curl_height": 1.1,
+    "depth": 0.6,
+    "leg_role": "body",
+    "legs": 0,
+    "length": 2.2,
+    "orb": false,
+    "seat_height": 0.42,
+    "side_table": false,
+    "thickness": 0.12,
+    "throw": true,
+    "throw_role": "fabric"
+   },
+   "preset": "stone_curl",
+   "role_area": {
+    "fabric": 1.6128,
+    "stone": 6.3576
+   },
+   "slots": [
+    "seat_lounge",
+    "seat_bench"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "chunky",
+    "desert",
+    "organic",
+    "rounded",
+    "stone",
+    "temple"
+   ]
+  },
+  "variant:furn.bench:straight": {
+   "class": "seating",
+   "generator": "furn.bench",
+   "is_default": false,
+   "params": {
+    "body_role": "wood",
+    "curl": 0.0,
+    "curl_height": 0.9,
+    "depth": 0.6,
+    "leg_role": "metal",
+    "legs": 4,
+    "length": 2.2,
+    "orb": false,
+    "seat_height": 0.42,
+    "side_table": false,
+    "thickness": 0.1,
+    "throw": false,
+    "throw_role": "fur"
+   },
+   "preset": "straight",
+   "role_area": {
+    "metal": 0.2019,
+    "wood": 3.2137
+   },
+   "slots": [
+    "seat_lounge",
+    "seat_bench"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "boxy",
+    "city",
+    "harbor",
+    "industrial",
+    "mine"
+   ]
+  },
+  "variant:furn.chair:armchair_four": {
+   "class": "seating",
+   "generator": "furn.chair",
+   "is_default": false,
+   "params": {
+    "back_height": 0.5,
+    "cushion": true,
+    "cushion_role": "cushion",
+    "depth": 0.7,
+    "frame_role": "wood",
+    "kind": "armchair",
+    "legs": "four",
+    "seat_height": 0.45,
+    "seat_role": "body",
+    "seat_shape": "rect",
+    "width": 0.8
+   },
+   "preset": "armchair_four",
+   "role_area": {
+    "body": 3.0568,
+    "cushion": 1.4555,
+    "wood": 0.3041
+   },
+   "slots": [
+    "seat_chair"
+   ],
+   "source": "variant",
+   "tags": [
+    "boxy",
+    "castle",
+    "chunky",
+    "desert",
+    "ornate"
+   ]
+  },
+  "variant:furn.chair:bench_four": {
+   "class": "seating",
+   "generator": "furn.chair",
+   "is_default": false,
+   "params": {
+    "back_height": 0.0,
+    "cushion": false,
+    "cushion_role": "cushion",
+    "depth": 0.46,
+    "frame_role": "wood",
+    "kind": "bench",
+    "legs": "four",
+    "seat_height": 0.45,
+    "seat_role": "wood",
+    "seat_shape": "rect",
+    "width": 1.2
+   },
+   "preset": "bench_four",
+   "role_area": {
+    "wood": 1.5741
+   },
+   "slots": [
+    "seat_chair"
+   ],
+   "source": "variant",
+   "tags": [
+    "boxy",
+    "chunky",
+    "desert",
+    "harbor",
+    "mine",
+    "rustic"
+   ]
+  },
+  "variant:furn.chair:chair_sled": {
+   "class": "seating",
+   "generator": "furn.chair",
+   "is_default": false,
+   "params": {
+    "back_height": 0.45,
+    "cushion": true,
+    "cushion_role": "leather",
+    "depth": 0.46,
+    "frame_role": "metal",
+    "kind": "chair",
+    "legs": "sled",
+    "seat_height": 0.45,
+    "seat_role": "body",
+    "seat_shape": "rect",
+    "width": 0.46
+   },
+   "preset": "chair_sled",
+   "role_area": {
+    "body": 1.0167,
+    "leather": 0.6473,
+    "metal": 0.3077
+   },
+   "slots": [
+    "seat_chair"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "city",
+    "industrial",
+    "lab",
+    "sleek"
+   ]
+  },
+  "variant:furn.chair:stool_pedestal": {
+   "class": "seating",
+   "generator": "furn.chair",
+   "is_default": false,
+   "params": {
+    "back_height": 0.0,
+    "cushion": false,
+    "cushion_role": "cushion",
+    "depth": 0.46,
+    "frame_role": "metal",
+    "kind": "stool",
+    "legs": "pedestal",
+    "seat_height": 0.45,
+    "seat_role": "body",
+    "seat_shape": "round",
+    "width": 0.46
+   },
+   "preset": "stool_pedestal",
+   "role_area": {
+    "body": 0.3888,
+    "metal": 0.3236
+   },
+   "slots": [
+    "seat_chair"
+   ],
+   "source": "variant",
+   "tags": [
+    "city",
+    "industrial",
+    "lab",
+    "rounded",
+    "sleek"
+   ]
+  },
+  "variant:furn.console:lectern_stone": {
+   "class": "furniture",
+   "generator": "furn.console",
+   "is_default": false,
+   "params": {
+    "body_role": "stone",
+    "height": 1.2,
+    "joystick": false,
+    "keyboard": false,
+    "kind": "lectern",
+    "leg_role": "chrome",
+    "screens": 0,
+    "wavy": 0.6,
+    "width": 0.9
+   },
+   "preset": "lectern_stone",
+   "role_area": {
+    "stone": 1.4021
+   },
+   "slots": [
+    "console"
+   ],
+   "source": "variant",
+   "tags": [
+    "castle",
+    "desert",
+    "ornate",
+    "ruins",
+    "stone",
+    "temple"
+   ]
+  },
+  "variant:furn.console:terminal_plain": {
+   "class": "furniture",
+   "generator": "furn.console",
+   "is_default": false,
+   "params": {
+    "body_role": "metal",
+    "height": 1.3,
+    "joystick": false,
+    "keyboard": true,
+    "kind": "terminal",
+    "leg_role": "chrome",
+    "screens": 1,
+    "wavy": 0.6,
+    "width": 0.8
+   },
+   "preset": "terminal_plain",
+   "role_area": {
+    "metal": 3.1652,
+    "screen": 0.2562
+   },
+   "slots": [
+    "console"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "boxy",
+    "city",
+    "industrial",
+    "lab",
+    "mine",
+    "screens"
+   ]
+  },
+  "variant:furn.container:barrel_iron": {
+   "class": "furniture",
+   "generator": "furn.container",
+   "is_default": false,
+   "params": {
+    "band_role": "trim",
+    "bands": 2,
+    "body_role": "metal",
+    "depth": 0.6,
+    "height": 0.6,
+    "kind": "barrel",
+    "lid_open": 0.0,
+    "width": 0.6
+   },
+   "preset": "barrel_iron",
+   "role_area": {
+    "metal": 1.4217,
+    "trim": 0.4447
+   },
+   "slots": [
+    "container"
+   ],
+   "source": "variant",
+   "tags": [
+    "harbor",
+    "industrial",
+    "iron",
+    "mine",
+    "rounded"
+   ]
+  },
+  "variant:furn.container:basket": {
+   "class": "furniture",
+   "generator": "furn.container",
+   "is_default": false,
+   "params": {
+    "band_role": "rope",
+    "bands": 2,
+    "body_role": "wood",
+    "depth": 0.6,
+    "height": 0.6,
+    "kind": "basket",
+    "lid_open": 0.0,
+    "width": 0.6
+   },
+   "preset": "basket",
+   "role_area": {
+    "rope": 2.3934
+   },
+   "slots": [
+    "container"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "desert",
+    "jungle",
+    "organic",
+    "rounded",
+    "rustic"
+   ]
+  },
+  "variant:furn.container:locker": {
+   "class": "furniture",
+   "generator": "furn.container",
+   "is_default": false,
+   "params": {
+    "band_role": "trim",
+    "bands": 2,
+    "body_role": "metal",
+    "depth": 0.5,
+    "height": 1.6,
+    "kind": "locker",
+    "lid_open": 0.0,
+    "width": 0.6
+   },
+   "preset": "locker",
+   "role_area": {
+    "metal": 4.1332,
+    "trim": 1.4296
+   },
+   "slots": [
+    "container"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "boxy",
+    "city",
+    "industrial",
+    "iron",
+    "lab",
+    "mine"
+   ]
+  },
+  "variant:furn.hearth:brazier": {
+   "class": "furniture",
+   "generator": "furn.hearth",
+   "is_default": false,
+   "params": {
+    "body_role": "metal",
+    "depth": 0.6,
+    "fire": true,
+    "height": 1.1,
+    "kind": "brazier",
+    "width": 1.2
+   },
+   "preset": "brazier",
+   "role_area": {
+    "fire": 0.2555,
+    "metal": 1.136
+   },
+   "slots": [
+    "hearth"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "desert",
+    "ornate",
+    "ruins",
+    "rustic",
+    "temple"
+   ]
+  },
+  "variant:furn.hearth:stove": {
+   "class": "furniture",
+   "generator": "furn.hearth",
+   "is_default": false,
+   "params": {
+    "body_role": "metal",
+    "depth": 0.6,
+    "fire": true,
+    "height": 1.1,
+    "kind": "stove",
+    "width": 1.2
+   },
+   "preset": "stove",
+   "role_area": {
+    "fire": 0.156,
+    "metal": 2.7787
+   },
+   "slots": [
+    "hearth"
+   ],
+   "source": "variant",
+   "tags": [
+    "boxy",
+    "harbor",
+    "industrial",
+    "mine"
+   ]
+  },
+  "variant:furn.lamp:floor_cone_tripod": {
+   "class": "furniture",
+   "generator": "furn.lamp",
+   "is_default": false,
+   "params": {
+    "base": "tripod",
+    "height": 1.6,
+    "kind": "floor",
+    "shade": "cone",
+    "shade_size": 0.4,
+    "stand_role": "metal"
+   },
+   "preset": "floor_cone_tripod",
+   "role_area": {
+    "light": 0.6335,
+    "metal": 0.2165
+   },
+   "slots": [
+    "lamp_floor"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "city",
+    "industrial",
+    "lab",
+    "sleek"
+   ]
+  },
+  "variant:furn.lamp:hanging_dome": {
+   "class": "furniture",
+   "generator": "furn.lamp",
+   "is_default": false,
+   "params": {
+    "base": "disc",
+    "height": 0.9,
+    "kind": "hanging",
+    "shade": "dome",
+    "shade_size": 0.4,
+    "stand_role": "metal"
+   },
+   "preset": "hanging_dome",
+   "role_area": {
+    "light": 0.4539,
+    "metal": 0.1026
+   },
+   "slots": [
+    "lamp_floor"
+   ],
+   "source": "variant",
+   "tags": [
+    "city",
+    "harbor",
+    "industrial",
+    "mine",
+    "rounded"
+   ]
+  },
+  "variant:furn.lamp:lantern_floor": {
+   "class": "furniture",
+   "generator": "furn.lamp",
+   "is_default": false,
+   "params": {
+    "base": "disc",
+    "height": 0.55,
+    "kind": "lantern",
+    "shade": "cone",
+    "shade_size": 0.35,
+    "stand_role": "metal"
+   },
+   "preset": "lantern_floor",
+   "role_area": {
+    "light": 0.4848,
+    "metal": 0.646
+   },
+   "slots": [
+    "lamp_floor",
+    "lamp_table"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "chunky",
+    "desert",
+    "harbor",
+    "industrial",
+    "mine",
+    "rustic"
+   ]
+  },
+  "variant:furn.lamp:table_drum": {
+   "class": "furniture",
+   "generator": "furn.lamp",
+   "is_default": false,
+   "params": {
+    "base": "disc",
+    "height": 0.5,
+    "kind": "table",
+    "shade": "drum",
+    "shade_size": 0.3,
+    "stand_role": "wood"
+   },
+   "preset": "table_drum",
+   "role_area": {
+    "light": 0.3546,
+    "wood": 0.2161
+   },
+   "slots": [
+    "lamp_table"
+   ],
+   "source": "variant",
+   "tags": [
+    "boxy",
+    "city",
+    "desert",
+    "rustic",
+    "village"
+   ]
+  },
+  "variant:furn.pod:bowl_plain": {
+   "class": "seating",
+   "generator": "furn.pod",
+   "is_default": false,
+   "params": {
+    "canopy": false,
+    "cushion": true,
+    "cushion_role": "cushion",
+    "depth": 1.2,
+    "feet": 1,
+    "foot_role": "body",
+    "height": 0.75,
+    "kind": "bowl",
+    "lobes": 0,
+    "orb": true,
+    "port_role": "band",
+    "portholes": 0,
+    "shell_role": "body",
+    "table": true,
+    "throw_role": "fur",
+    "width": 1.3
+   },
+   "preset": "bowl_plain",
+   "role_area": {
+    "body": 4.001,
+    "cushion": 0.7409
+   },
+   "slots": [
+    "seat_chair",
+    "seat_lounge"
+   ],
+   "source": "variant",
+   "tags": [
+    "chunky",
+    "desert",
+    "organic",
+    "rounded",
+    "underwater"
+   ]
+  },
+  "variant:furn.rug:rect_plain": {
+   "class": "furniture",
+   "generator": "furn.rug",
+   "is_default": false,
+   "params": {
+    "depth": 1.5,
+    "fringe": false,
+    "rug_role": "fabric",
+    "shape": "rect",
+    "thickness": 0.02,
+    "width": 2.2
+   },
+   "preset": "rect_plain",
+   "role_area": {
+    "fabric": 6.748
+   },
+   "slots": [
+    "rug",
+    "seat_pit"
+   ],
+   "source": "variant",
+   "tags": [
+    "boxy",
+    "city",
+    "industrial",
+    "lab",
+    "sleek"
+   ]
+  },
+  "variant:furn.rug:round_fringe": {
+   "class": "furniture",
+   "generator": "furn.rug",
+   "is_default": false,
+   "params": {
+    "depth": 2.2,
+    "fringe": true,
+    "rug_role": "fabric",
+    "shape": "round",
+    "thickness": 0.02,
+    "width": 2.2
+   },
+   "preset": "round_fringe",
+   "role_area": {
+    "fabric": 7.5867
+   },
+   "slots": [
+    "rug",
+    "seat_pit"
+   ],
+   "source": "variant",
+   "tags": [
+    "desert",
+    "ornate",
+    "rounded",
+    "rustic"
+   ]
+  },
+  "variant:furn.shelf:bookshelf_stone": {
+   "class": "furniture",
+   "generator": "furn.shelf",
+   "is_default": false,
+   "params": {
+    "books": 0.7,
+    "depth": 0.35,
+    "frame_role": "stone",
+    "height": 1.8,
+    "kind": "bookshelf",
+    "shelves": 4,
+    "width": 1.0
+   },
+   "preset": "bookshelf_stone",
+   "role_area": {
+    "book": 4.1976,
+    "stone": 9.7614
+   },
+   "slots": [
+    "shelf"
+   ],
+   "source": "variant",
+   "tags": [
+    "castle",
+    "chunky",
+    "desert",
+    "ornate",
+    "temple"
+   ]
+  },
+  "variant:furn.shelf:cabinet": {
+   "class": "furniture",
+   "generator": "furn.shelf",
+   "is_default": false,
+   "params": {
+    "books": 0.6,
+    "depth": 0.35,
+    "frame_role": "body",
+    "height": 1.8,
+    "kind": "cabinet",
+    "shelves": 4,
+    "width": 1.0
+   },
+   "preset": "cabinet",
+   "role_area": {
+    "body": 13.2398,
+    "metal": 0.018
+   },
+   "slots": [
+    "shelf"
+   ],
+   "source": "variant",
+   "tags": [
+    "boxy",
+    "city",
+    "industrial",
+    "lab"
+   ]
+  },
+  "variant:furn.shelf:open_rack_metal": {
+   "class": "furniture",
+   "generator": "furn.shelf",
+   "is_default": false,
+   "params": {
+    "books": 0.3,
+    "depth": 0.35,
+    "frame_role": "metal",
+    "height": 1.8,
+    "kind": "open_rack",
+    "shelves": 4,
+    "width": 1.0
+   },
+   "preset": "open_rack_metal",
+   "role_area": {
+    "book": 1.1017,
+    "metal": 4.564
+   },
+   "slots": [
+    "shelf"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "harbor",
+    "industrial",
+    "iron",
+    "mine"
+   ]
+  },
+  "variant:furn.table:oval_trestle": {
+   "class": "furniture",
+   "generator": "furn.table",
+   "is_default": false,
+   "params": {
+    "base_role": "wood",
+    "depth": 0.8,
+    "height": 0.75,
+    "leg_radius": 0.035,
+    "legs": "trestle",
+    "ornament": "none",
+    "top_role": "wood",
+    "top_shape": "oval",
+    "top_thickness": 0.05,
+    "width": 1.2
+   },
+   "preset": "oval_trestle",
+   "role_area": {
+    "wood": 4.1263
+   },
+   "slots": [
+    "table_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "jungle",
+    "organic",
+    "rounded",
+    "rustic"
+   ]
+  },
+  "variant:furn.table:rect_four": {
+   "class": "furniture",
+   "generator": "furn.table",
+   "is_default": true,
+   "params": {
+    "base_role": "metal",
+    "depth": 0.8,
+    "height": 0.75,
+    "leg_radius": 0.035,
+    "legs": "four",
+    "ornament": "none",
+    "top_role": "body",
+    "top_shape": "rect",
+    "top_thickness": 0.05,
+    "width": 1.2
+   },
+   "preset": "rect_four",
+   "role_area": {
+    "body": 2.12,
+    "metal": 0.8344
+   },
+   "slots": [
+    "table_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "boxy",
+    "city",
+    "industrial",
+    "lab",
+    "mine"
+   ]
+  },
+  "variant:furn.table:rect_four_low": {
+   "class": "furniture",
+   "generator": "furn.table",
+   "is_default": false,
+   "params": {
+    "base_role": "metal",
+    "depth": 0.7,
+    "height": 0.42,
+    "leg_radius": 0.035,
+    "legs": "four",
+    "ornament": "none",
+    "top_role": "metal",
+    "top_shape": "rect",
+    "top_thickness": 0.05,
+    "width": 1.1
+   },
+   "preset": "rect_four_low",
+   "role_area": {
+    "metal": 2.1848
+   },
+   "slots": [
+    "table_low"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "boxy",
+    "city",
+    "industrial",
+    "iron",
+    "lab",
+    "mine"
+   ]
+  },
+  "variant:furn.table:round_pedestal_low": {
+   "class": "furniture",
+   "generator": "furn.table",
+   "is_default": false,
+   "params": {
+    "base_role": "body",
+    "depth": 1.0,
+    "height": 0.45,
+    "leg_radius": 0.035,
+    "legs": "pedestal",
+    "ornament": "none",
+    "top_role": "stone",
+    "top_shape": "round",
+    "top_thickness": 0.05,
+    "width": 1.0
+   },
+   "preset": "round_pedestal_low",
+   "role_area": {
+    "body": 0.754,
+    "stone": 1.6868
+   },
+   "slots": [
+    "table_low",
+    "table_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "chunky",
+    "desert",
+    "harbor",
+    "ocean",
+    "rounded",
+    "stone",
+    "temple"
+   ]
+  },
+  "variant:fx.particles:disc": {
+   "class": "nature",
+   "generator": "fx.particles",
+   "is_default": false,
+   "params": {
+    "area": 4.0,
+    "gravity": -0.3,
+    "lifetime": 4.0,
+    "rate": 20.0,
+    "shape": "disc",
+    "size": 0.08,
+    "spread_deg": 25.0,
+    "velocity": 0.6
+   },
+   "preset": "disc",
+   "role_area": {
+    "particle": 0.0045
+   },
+   "slots": [
+    "weather"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "harbor",
+    "ocean",
+    "underwater"
+   ]
+  },
+  "variant:fx.particles:puff": {
+   "class": "nature",
+   "generator": "fx.particles",
+   "is_default": false,
+   "params": {
+    "area": 4.0,
+    "gravity": -0.3,
+    "lifetime": 4.0,
+    "rate": 20.0,
+    "shape": "puff",
+    "size": 0.08,
+    "spread_deg": 25.0,
+    "velocity": 0.6
+   },
+   "preset": "puff",
+   "role_area": {
+    "particle": 0.0031
+   },
+   "slots": [
+    "weather"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "desert",
+    "mine",
+    "ruins",
+    "swamp"
+   ]
+  },
+  "variant:fx.particles:spark": {
+   "class": "nature",
+   "generator": "fx.particles",
+   "is_default": false,
+   "params": {
+    "area": 4.0,
+    "gravity": -0.3,
+    "lifetime": 4.0,
+    "rate": 20.0,
+    "shape": "spark",
+    "size": 0.08,
+    "spread_deg": 25.0,
+    "velocity": 0.6
+   },
+   "preset": "spark",
+   "role_area": {
+    "particle": 0.0008
+   },
+   "slots": [
+    "weather"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "industrial",
+    "lab",
+    "mine"
+   ]
+  },
+  "variant:nature.bush:plain": {
+   "class": "nature",
+   "generator": "nature.bush",
+   "is_default": false,
+   "params": {
+    "cap": false,
+    "flatness": 0.3,
+    "flowers": 0,
+    "lobes": 3,
+    "size": 0.8
+   },
+   "preset": "plain",
+   "role_area": {
+    "foliage": 1.8912
+   },
+   "slots": [
+    "plant"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "desert",
+    "jungle",
+    "organic",
+    "plains"
+   ]
+  },
+  "variant:nature.rock:rock": {
+   "class": "nature",
+   "generator": "nature.rock",
+   "is_default": false,
+   "params": {
+    "cap": false,
+    "count": 1,
+    "flatness": 0.3,
+    "role": "rock",
+    "roughness": 0.4,
+    "size": 1.0
+   },
+   "preset": "rock",
+   "role_area": {
+    "rock": 2.5959
+   },
+   "slots": [
+    "rock"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "coast",
+    "desert",
+    "mine",
+    "mountain",
+    "ocean",
+    "rock",
+    "ruins"
+   ]
+  },
+  "variant:nature.tree:bare": {
+   "class": "nature",
+   "generator": "nature.tree",
+   "is_default": false,
+   "params": {
+    "branches": 4,
+    "canopy": 1.0,
+    "cap": false,
+    "height": 4.0,
+    "kind": "bare",
+    "lean": 4.0,
+    "lobes": 3,
+    "trunk_radius": 0.18
+   },
+   "preset": "bare",
+   "role_area": {
+    "bark": 4.0713
+   },
+   "slots": [
+    "tree"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "cave",
+    "mine",
+    "ruins",
+    "swamp"
+   ]
+  },
+  "variant:nature.tree:conifer": {
+   "class": "nature",
+   "generator": "nature.tree",
+   "is_default": false,
+   "params": {
+    "branches": 4,
+    "canopy": 1.0,
+    "cap": false,
+    "height": 5.0,
+    "kind": "conifer",
+    "lean": 4.0,
+    "lobes": 3,
+    "trunk_radius": 0.18
+   },
+   "preset": "conifer",
+   "role_area": {
+    "bark": 1.4205,
+    "foliage": 27.6783
+   },
+   "slots": [
+    "tree"
+   ],
+   "source": "variant",
+   "tags": [
+    "forest",
+    "mountain",
+    "organic"
+   ]
+  },
+  "variant:nature.tree:palm": {
+   "class": "nature",
+   "generator": "nature.tree",
+   "is_default": false,
+   "params": {
+    "branches": 4,
+    "canopy": 1.0,
+    "cap": false,
+    "height": 5.0,
+    "kind": "palm",
+    "lean": 4.0,
+    "lobes": 3,
+    "trunk_radius": 0.18
+   },
+   "preset": "palm",
+   "role_area": {
+    "bark": 4.0211,
+    "foliage": 6.9305
+   },
+   "slots": [
+    "tree"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "desert",
+    "jungle",
+    "ocean",
+    "organic"
+   ]
+  },
+  "variant:prop.book:stack": {
+   "class": "props",
+   "generator": "prop.book",
+   "is_default": false,
+   "params": {
+    "count": 3,
+    "cover_role": "leather",
+    "height": 0.23,
+    "kind": "stack",
+    "thickness": 0.04,
+    "width": 0.16
+   },
+   "preset": "stack",
+   "role_area": {
+    "leather": 0.3078,
+    "paper": 0.2613
+   },
+   "slots": [
+    "book"
+   ],
+   "source": "variant",
+   "tags": [
+    "castle",
+    "ornate",
+    "rustic",
+    "temple"
+   ]
+  },
+  "variant:prop.device:beacon": {
+   "class": "props",
+   "generator": "prop.device",
+   "is_default": false,
+   "params": {
+    "body_role": "metal",
+    "kind": "beacon",
+    "screen_on": true,
+    "size": 0.25
+   },
+   "preset": "beacon",
+   "role_area": {
+    "light": 0.0135,
+    "metal": 0.0536
+   },
+   "slots": [
+    "device",
+    "lamp_table"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "harbor",
+    "industrial",
+    "ocean",
+    "space"
+   ]
+  },
+  "variant:prop.device:clock": {
+   "class": "props",
+   "generator": "prop.device",
+   "is_default": false,
+   "params": {
+    "body_role": "wood",
+    "kind": "clock",
+    "screen_on": true,
+    "size": 0.25
+   },
+   "preset": "clock",
+   "role_area": {
+    "paper": 0.0727,
+    "trim": 0.0035,
+    "wood": 0.1242
+   },
+   "slots": [
+    "device"
+   ],
+   "source": "variant",
+   "tags": [
+    "castle",
+    "ornate",
+    "village"
+   ]
+  },
+  "variant:prop.device:tablet": {
+   "class": "props",
+   "generator": "prop.device",
+   "is_default": false,
+   "params": {
+    "body_role": "body",
+    "kind": "tablet",
+    "screen_on": true,
+    "size": 0.25
+   },
+   "preset": "tablet",
+   "role_area": {
+    "body": 0.0999,
+    "screen": 0.0721
+   },
+   "slots": [
+    "device"
+   ],
+   "source": "variant",
+   "tags": [
+    "city",
+    "lab",
+    "screens",
+    "sleek"
+   ]
+  },
+  "variant:prop.key:classic": {
+   "class": "props",
+   "generator": "prop.key",
+   "is_default": false,
+   "params": {
+    "kind": "classic",
+    "length": 0.08,
+    "role": "metal"
+   },
+   "preset": "classic",
+   "role_area": {
+    "metal": 0.0029
+   },
+   "slots": [
+    "key"
+   ],
+   "source": "variant",
+   "tags": [
+    "iron",
+    "ornate",
+    "rustic"
+   ]
+  },
+  "variant:prop.key:crystal": {
+   "class": "props",
+   "generator": "prop.key",
+   "is_default": false,
+   "params": {
+    "kind": "crystal",
+    "length": 0.08,
+    "role": "metal"
+   },
+   "preset": "crystal",
+   "role_area": {
+    "metal": 0.0051
+   },
+   "slots": [
+    "key"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "crystal",
+    "ornate",
+    "temple"
+   ]
+  },
+  "variant:prop.sign:arrow_metal": {
+   "class": "props",
+   "generator": "prop.sign",
+   "is_default": false,
+   "params": {
+    "board_role": "metal",
+    "board_shape": "rect",
+    "height": 0.3,
+    "kind": "arrow",
+    "post_height": 1.1,
+    "text_lines": 2,
+    "text_role": "light",
+    "width": 0.6
+   },
+   "preset": "arrow_metal",
+   "role_area": {
+    "light": 0.0636,
+    "metal": 0.3998,
+    "post": 0.3934
+   },
+   "slots": [
+    "sign_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "angular",
+    "city",
+    "industrial",
+    "mine"
+   ]
+  },
+  "variant:prop.sign:post_rect": {
+   "class": "props",
+   "generator": "prop.sign",
+   "is_default": false,
+   "params": {
+    "board_role": "wood",
+    "board_shape": "rect",
+    "height": 0.35,
+    "kind": "post",
+    "post_height": 1.2,
+    "text_lines": 2,
+    "text_role": "paper",
+    "width": 0.6
+   },
+   "preset": "post_rect",
+   "role_area": {
+    "paper": 0.0714,
+    "post": 0.434,
+    "wood": 0.496
+   },
+   "slots": [
+    "sign_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "boxy",
+    "coast",
+    "desert",
+    "mine",
+    "rustic"
+   ]
+  },
+  "variant:prop.tool:fishing_rod": {
+   "class": "props",
+   "generator": "prop.tool",
+   "is_default": false,
+   "params": {
+    "handle_role": "wood",
+    "head_role": "metal",
+    "kind": "fishing_rod",
+    "length": 0.4
+   },
+   "preset": "fishing_rod",
+   "role_area": {
+    "metal": 0.0037,
+    "wood": 0.0146
+   },
+   "slots": [
+    "tool"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "harbor",
+    "ocean"
+   ]
+  },
+  "variant:prop.tool:pick": {
+   "class": "props",
+   "generator": "prop.tool",
+   "is_default": false,
+   "params": {
+    "handle_role": "wood",
+    "head_role": "metal",
+    "kind": "pick",
+    "length": 0.4
+   },
+   "preset": "pick",
+   "role_area": {
+    "metal": 0.0138,
+    "wood": 0.0232
+   },
+   "slots": [
+    "tool"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "industrial",
+    "mine"
+   ]
+  },
+  "variant:prop.tool:shovel": {
+   "class": "props",
+   "generator": "prop.tool",
+   "is_default": false,
+   "params": {
+    "handle_role": "wood",
+    "head_role": "metal",
+    "kind": "shovel",
+    "length": 0.4
+   },
+   "preset": "shovel",
+   "role_area": {
+    "metal": 0.0289,
+    "wood": 0.0232
+   },
+   "slots": [
+    "tool"
+   ],
+   "source": "variant",
+   "tags": [
+    "desert",
+    "mine",
+    "village"
+   ]
+  },
+  "variant:prop.tool:wrench": {
+   "class": "props",
+   "generator": "prop.tool",
+   "is_default": false,
+   "params": {
+    "handle_role": "wood",
+    "head_role": "metal",
+    "kind": "wrench",
+    "length": 0.4
+   },
+   "preset": "wrench",
+   "role_area": {
+    "metal": 0.0432
+   },
+   "slots": [
+    "tool"
+   ],
+   "source": "variant",
+   "tags": [
+    "harbor",
+    "industrial",
+    "lab"
+   ]
+  },
+  "variant:prop.vessel:bottle": {
+   "class": "props",
+   "generator": "prop.vessel",
+   "is_default": false,
+   "params": {
+    "contents": false,
+    "handle": true,
+    "height": 0.12,
+    "kind": "bottle",
+    "lid": false,
+    "role": "glass",
+    "width": 0.09
+   },
+   "preset": "bottle",
+   "role_area": {
+    "glass": 0.0338
+   },
+   "slots": [
+    "vessel"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "glass",
+    "harbor",
+    "ocean"
+   ]
+  },
+  "variant:prop.vessel:kettle": {
+   "class": "props",
+   "generator": "prop.vessel",
+   "is_default": false,
+   "params": {
+    "contents": false,
+    "handle": true,
+    "height": 0.12,
+    "kind": "kettle",
+    "lid": false,
+    "role": "metal",
+    "width": 0.09
+   },
+   "preset": "kettle",
+   "role_area": {
+    "metal": 0.0364
+   },
+   "slots": [
+    "vessel"
+   ],
+   "source": "variant",
+   "tags": [
+    "industrial",
+    "iron",
+    "mine"
+   ]
+  },
+  "variant:prop.vessel:pot": {
+   "class": "props",
+   "generator": "prop.vessel",
+   "is_default": false,
+   "params": {
+    "contents": false,
+    "handle": true,
+    "height": 0.12,
+    "kind": "pot",
+    "lid": false,
+    "role": "stone",
+    "width": 0.09
+   },
+   "preset": "pot",
+   "role_area": {
+    "stone": 0.0689
+   },
+   "slots": [
+    "vessel"
+   ],
+   "source": "variant",
+   "tags": [
+    "chunky",
+    "desert",
+    "rustic",
+    "village"
+   ]
+  },
+  "variant:sky.backdrop:dome": {
+   "class": "nature",
+   "generator": "sky.backdrop",
+   "is_default": true,
+   "params": {
+    "below_horizon": 0.15,
+    "kind": "dome",
+    "radius": 400.0,
+    "rings": 4,
+    "segments": 12
+   },
+   "preset": "dome",
+   "role_area": {
+    "sky": 1105497.5286
+   },
+   "slots": [
+    "sky"
+   ],
+   "source": "variant",
+   "tags": []
+  },
+  "variant:soft.blanket:rolled": {
+   "class": "furniture",
+   "generator": "soft.blanket",
+   "is_default": false,
+   "params": {
+    "depth": 1.8,
+    "folds": 3,
+    "fringe": false,
+    "kind": "rolled",
+    "role": "fabric",
+    "thickness": 0.03,
+    "waves": 0.03,
+    "width": 1.4
+   },
+   "preset": "rolled",
+   "role_area": {
+    "fabric": 2.4057,
+    "rope": 0.1761
+   },
+   "slots": [
+    "blanket"
+   ],
+   "source": "variant",
+   "tags": [
+    "desert",
+    "mine",
+    "rustic"
+   ]
+  },
+  "variant:soft.pillow:bolster": {
+   "class": "furniture",
+   "generator": "soft.pillow",
+   "is_default": false,
+   "params": {
+    "piping": true,
+    "role": "fabric",
+    "shape": "bolster",
+    "size": 0.45,
+    "thickness": 0.15,
+    "tuft": false
+   },
+   "preset": "bolster",
+   "role_area": {
+    "fabric": 0.2126,
+    "trim": 0.0179
+   },
+   "slots": [
+    "pillow"
+   ],
+   "source": "variant",
+   "tags": [
+    "desert",
+    "ornate",
+    "rounded"
+   ]
+  },
+  "variant:terrain.patch:dirt_crater": {
+   "class": "nature",
+   "generator": "terrain.patch",
+   "is_default": false,
+   "params": {
+    "amplitude": 0.6,
+    "depth": 0.5,
+    "edge_falloff": 0.5,
+    "feature": "crater",
+    "resolution": 10,
+    "roughness": 0.5,
+    "size_x": 12.0,
+    "size_y": 12.0,
+    "surface": "dirt"
+   },
+   "preset": "dirt_crater",
+   "role_area": {
+    "dirt": 339.4964
+   },
+   "slots": [
+    "ground"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "dirt",
+    "mine",
+    "swamp"
+   ]
+  },
+  "variant:terrain.patch:floor_flat": {
+   "class": "nature",
+   "generator": "terrain.patch",
+   "is_default": false,
+   "params": {
+    "amplitude": 0.6,
+    "depth": 0.5,
+    "edge_falloff": 0.5,
+    "feature": "none",
+    "resolution": 10,
+    "roughness": 0.5,
+    "size_x": 12.0,
+    "size_y": 12.0,
+    "surface": "floor"
+   },
+   "preset": "floor_flat",
+   "role_area": {
+    "dirt": 180.2639,
+    "floor": 144.7766
+   },
+   "slots": [
+    "ground"
+   ],
+   "source": "variant",
+   "tags": [
+    "city",
+    "habitat",
+    "lab",
+    "space"
+   ]
+  },
+  "variant:terrain.patch:rock_ridge": {
+   "class": "nature",
+   "generator": "terrain.patch",
+   "is_default": false,
+   "params": {
+    "amplitude": 0.6,
+    "depth": 0.5,
+    "edge_falloff": 0.5,
+    "feature": "ridge",
+    "resolution": 10,
+    "roughness": 0.5,
+    "size_x": 12.0,
+    "size_y": 12.0,
+    "surface": "rock"
+   },
+   "preset": "rock_ridge",
+   "role_area": {
+    "rock": 327.7837
+   },
+   "slots": [
+    "ground"
+   ],
+   "source": "variant",
+   "tags": [
+    "cave",
+    "mine",
+    "mountain",
+    "rock",
+    "ruins"
+   ]
+  },
+  "variant:terrain.patch:sand_mounds": {
+   "class": "nature",
+   "generator": "terrain.patch",
+   "is_default": false,
+   "params": {
+    "amplitude": 0.6,
+    "depth": 0.5,
+    "edge_falloff": 0.5,
+    "feature": "mounds",
+    "resolution": 10,
+    "roughness": 0.5,
+    "size_x": 12.0,
+    "size_y": 12.0,
+    "surface": "sand"
+   },
+   "preset": "sand_mounds",
+   "role_area": {
+    "dirt": 178.4709,
+    "sand": 145.3239
+   },
+   "slots": [
+    "ground"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "desert",
+    "ocean",
+    "sand"
+   ]
+  },
+  "variant:vehicle.boat:raft": {
+   "class": "vehicles",
+   "generator": "vehicle.boat",
+   "is_default": false,
+   "params": {
+    "beam": 1.3,
+    "cabin": false,
+    "depth": 0.55,
+    "hull_role": "wood",
+    "kind": "raft",
+    "length": 3.6,
+    "oars": true,
+    "sail_role": "fabric",
+    "seats": 2,
+    "sheer": 0.15,
+    "trim_role": "wood"
+   },
+   "preset": "raft",
+   "role_area": {
+    "wood": 14.9531
+   },
+   "slots": [
+    "boat"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "jungle",
+    "rustic",
+    "swamp"
+   ]
+  },
+  "variant:vehicle.boat:sailboat": {
+   "class": "vehicles",
+   "generator": "vehicle.boat",
+   "is_default": false,
+   "params": {
+    "beam": 1.3,
+    "cabin": false,
+    "depth": 0.55,
+    "hull_role": "hull",
+    "kind": "sailboat",
+    "length": 3.6,
+    "oars": true,
+    "sail_role": "fabric",
+    "seats": 2,
+    "sheer": 0.15,
+    "trim_role": "trim"
+   },
+   "preset": "sailboat",
+   "role_area": {
+    "fabric": 5.295,
+    "hull": 12.904,
+    "trim": 2.9963
+   },
+   "slots": [
+    "boat"
+   ],
+   "source": "variant",
+   "tags": [
+    "coast",
+    "harbor",
+    "ocean",
+    "organic"
+   ]
+  },
+  "variant:vehicle.craft:hover": {
+   "class": "vehicles",
+   "generator": "vehicle.craft",
+   "is_default": false,
+   "params": {
+    "body_height": 0.6,
+    "body_role": "body",
+    "canopy": "none",
+    "cargo": 0,
+    "handle": true,
+    "kind": "hover",
+    "length": 2.2,
+    "lights": true,
+    "trim_role": "metal",
+    "wheel_radius": 0.35,
+    "width": 1.2
+   },
+   "preset": "hover",
+   "role_area": {
+    "body": 6.3199,
+    "light": 0.0944,
+    "metal": 5.2532
+   },
+   "slots": [
+    "vehicle_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "city",
+    "lab",
+    "sleek",
+    "space"
+   ]
+  },
+  "variant:vehicle.craft:rover": {
+   "class": "vehicles",
+   "generator": "vehicle.craft",
+   "is_default": false,
+   "params": {
+    "body_height": 0.6,
+    "body_role": "metal",
+    "canopy": "none",
+    "cargo": 0,
+    "handle": true,
+    "kind": "rover",
+    "length": 2.2,
+    "lights": true,
+    "trim_role": "trim",
+    "wheel_radius": 0.35,
+    "width": 1.2
+   },
+   "preset": "rover",
+   "role_area": {
+    "light": 0.0944,
+    "metal": 11.8401,
+    "trim": 0.8464
+   },
+   "slots": [
+    "vehicle_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "boxy",
+    "desert",
+    "industrial",
+    "mine",
+    "space"
+   ]
+  },
+  "variant:vehicle.craft:wagon": {
+   "class": "vehicles",
+   "generator": "vehicle.craft",
+   "is_default": false,
+   "params": {
+    "body_height": 0.6,
+    "body_role": "wood",
+    "canopy": "none",
+    "cargo": 0,
+    "handle": true,
+    "kind": "wagon",
+    "length": 2.2,
+    "lights": true,
+    "trim_role": "metal",
+    "wheel_radius": 0.35,
+    "width": 1.2
+   },
+   "preset": "wagon",
+   "role_area": {
+    "light": 0.0944,
+    "metal": 5.2029,
+    "wood": 12.6464
+   },
+   "slots": [
+    "vehicle_main"
+   ],
+   "source": "variant",
+   "tags": [
+    "boxy",
+    "desert",
+    "mine",
+    "rustic",
+    "village"
+   ]
+  }
+ },
+ "generator_class": {
+  "arch.bridge": "architecture",
+  "arch.ceiling_module": "architecture",
+  "arch.column": "architecture",
+  "arch.corridor": "architecture",
+  "arch.door": "openings",
+  "arch.floor_module": "architecture",
+  "arch.house": "architecture",
+  "arch.pier": "architecture",
+  "arch.railing": "architecture",
+  "arch.roof": "architecture",
+  "arch.room_shell": "architecture",
+  "arch.stairs": "architecture",
+  "arch.wall_module": "architecture",
+  "arch.window": "openings",
+  "furn.bed": "furniture",
+  "furn.bench": "seating",
+  "furn.chair": "seating",
+  "furn.console": "furniture",
+  "furn.container": "furniture",
+  "furn.hearth": "furniture",
+  "furn.lamp": "furniture",
+  "furn.pod": "seating",
+  "furn.rug": "furniture",
+  "furn.shelf": "furniture",
+  "furn.table": "furniture",
+  "fx.particles": "nature",
+  "nature.bush": "nature",
+  "nature.grass_tuft": "nature",
+  "nature.rock": "nature",
+  "nature.tree": "nature",
+  "prop.book": "props",
+  "prop.device": "props",
+  "prop.key": "props",
+  "prop.sign": "props",
+  "prop.tool": "props",
+  "prop.vessel": "props",
+  "sky.backdrop": "nature",
+  "soft.blanket": "furniture",
+  "soft.pillow": "furniture",
+  "terrain.patch": "nature",
+  "terrain.water": "nature",
+  "vehicle.boat": "vehicles",
+  "vehicle.craft": "vehicles"
+ },
+ "layout_shell_params": {
+  "depth": 6.0,
+  "height": 3.0,
+  "openings": [
+   {
+    "height": 2.1,
+    "kind": "door",
+    "offset": 0.0,
+    "shape": "arch",
+    "sill": 0.0,
+    "wall": "s",
+    "width": 1.1
+   },
+   {
+    "height": 1.2,
+    "kind": "window",
+    "offset": 0.0,
+    "shape": "rounded_rect",
+    "sill": 0.9,
+    "wall": "n",
+    "width": 2.4
+   },
+   {
+    "height": 0.9,
+    "kind": "window",
+    "offset": 0.0,
+    "shape": "round",
+    "sill": 1.1,
+    "wall": "e",
+    "width": 0.9
+   }
+  ],
+  "plan": "rect",
+  "width": 7.0
+ },
+ "schema": "hermes64.refpack.kit_library",
+ "slots": {
+  "bed": {
+   "candidates": [
+    "forest_village:furn.bed:default",
+    "polar_pod:furn.bed:default",
+    "variant:furn.bed:cot",
+    "variant:furn.bed:nook"
+   ],
+   "generators": [
+    "furn.bed"
+   ]
+  },
+  "blanket": {
+   "candidates": [
+    "forest_village:soft.blanket:default",
+    "polar_pod:soft.blanket:default",
+    "variant:soft.blanket:rolled"
+   ],
+   "generators": [
+    "soft.blanket"
+   ]
+  },
+  "boat": {
+   "candidates": [
+    "forest_village:vehicle.boat:default",
+    "polar_pod:vehicle.boat:default",
+    "variant:vehicle.boat:raft",
+    "variant:vehicle.boat:sailboat"
+   ],
+   "generators": [
+    "vehicle.boat"
+   ]
+  },
+  "book": {
+   "candidates": [
+    "forest_village:prop.book:default",
+    "polar_pod:prop.book:default",
+    "variant:prop.book:stack"
+   ],
+   "generators": [
+    "prop.book"
+   ]
+  },
+  "cat_bed": {
+   "candidates": [
+    "forest_village:soft.pillow:cat_bed",
+    "forest_village:soft.pillow:default",
+    "polar_pod:soft.pillow:cat_bed",
+    "polar_pod:soft.pillow:default"
+   ],
+   "generators": [
+    "soft.pillow"
+   ]
+  },
+  "console": {
+   "candidates": [
+    "forest_village:furn.console:default",
+    "polar_pod:furn.console:default",
+    "polar_pod:furn.console:desk_triple_crt",
+    "polar_pod:furn.console:terminal",
+    "variant:furn.console:lectern_stone",
+    "variant:furn.console:terminal_plain"
+   ],
+   "generators": [
+    "furn.console"
+   ]
+  },
+  "container": {
+   "candidates": [
+    "forest_village:furn.container:chest",
+    "forest_village:furn.container:crate",
+    "forest_village:furn.container:default",
+    "polar_pod:furn.container:default",
+    "variant:furn.container:barrel_iron",
+    "variant:furn.container:basket",
+    "variant:furn.container:locker"
+   ],
+   "generators": [
+    "furn.container"
+   ]
+  },
+  "device": {
+   "candidates": [
+    "forest_village:prop.device:default",
+    "polar_pod:prop.device:default",
+    "variant:prop.device:beacon",
+    "variant:prop.device:clock",
+    "variant:prop.device:tablet"
+   ],
+   "generators": [
+    "prop.device"
+   ]
+  },
+  "door_main": {
+   "candidates": [
+    "forest_village:arch.door:default",
+    "polar_pod:arch.door:default",
+    "polar_pod:arch.door:oval_open",
+    "variant:arch.door:arch_planks",
+    "variant:arch.door:gothic",
+    "variant:arch.door:hatch_slab",
+    "variant:arch.door:rect_panel"
+   ],
+   "generators": [
+    "arch.door"
+   ]
+  },
+  "ground": {
+   "candidates": [
+    "forest_village:terrain.patch:default",
+    "polar_pod:terrain.patch:default",
+    "variant:terrain.patch:dirt_crater",
+    "variant:terrain.patch:floor_flat",
+    "variant:terrain.patch:rock_ridge",
+    "variant:terrain.patch:sand_mounds"
+   ],
+   "generators": [
+    "terrain.patch"
+   ]
+  },
+  "hearth": {
+   "candidates": [
+    "forest_village:furn.hearth:default",
+    "polar_pod:furn.hearth:default",
+    "variant:furn.hearth:brazier",
+    "variant:furn.hearth:stove"
+   ],
+   "generators": [
+    "furn.hearth"
+   ]
+  },
+  "key": {
+   "candidates": [
+    "forest_village:prop.key:default",
+    "polar_pod:prop.key:default",
+    "variant:prop.key:classic",
+    "variant:prop.key:crystal"
+   ],
+   "generators": [
+    "prop.key"
+   ]
+  },
+  "lamp_floor": {
+   "candidates": [
+    "forest_village:furn.lamp:default",
+    "polar_pod:furn.lamp:default",
+    "polar_pod:furn.lamp:globe",
+    "variant:furn.lamp:floor_cone_tripod",
+    "variant:furn.lamp:hanging_dome",
+    "variant:furn.lamp:lantern_floor"
+   ],
+   "generators": [
+    "furn.lamp"
+   ]
+  },
+  "lamp_table": {
+   "candidates": [
+    "forest_village:furn.lamp:default",
+    "forest_village:prop.device:default",
+    "polar_pod:furn.lamp:default",
+    "polar_pod:furn.lamp:globe",
+    "polar_pod:prop.device:default",
+    "variant:furn.lamp:lantern_floor",
+    "variant:furn.lamp:table_drum",
+    "variant:prop.device:beacon"
+   ],
+   "generators": [
+    "furn.lamp",
+    "prop.device"
+   ]
+  },
+  "pillow": {
+   "candidates": [
+    "forest_village:soft.pillow:cat_bed",
+    "forest_village:soft.pillow:default",
+    "polar_pod:soft.pillow:cat_bed",
+    "polar_pod:soft.pillow:default",
+    "variant:soft.pillow:bolster"
+   ],
+   "generators": [
+    "soft.pillow"
+   ]
+  },
+  "plant": {
+   "candidates": [
+    "forest_village:nature.bush:default",
+    "polar_pod:nature.bush:default",
+    "polar_pod:nature.bush:indoor",
+    "variant:nature.bush:plain"
+   ],
+   "generators": [
+    "nature.bush"
+   ]
+  },
+  "rock": {
+   "candidates": [
+    "forest_village:nature.rock:default",
+    "polar_pod:nature.rock:default",
+    "variant:nature.rock:rock"
+   ],
+   "generators": [
+    "nature.rock"
+   ]
+  },
+  "rug": {
+   "candidates": [
+    "forest_village:furn.rug:default",
+    "polar_pod:furn.rug:default",
+    "variant:furn.rug:rect_plain",
+    "variant:furn.rug:round_fringe"
+   ],
+   "generators": [
+    "furn.rug"
+   ]
+  },
+  "seat_bench": {
+   "candidates": [
+    "forest_village:furn.bench:default",
+    "polar_pod:furn.bench:chrome_legs",
+    "polar_pod:furn.bench:default",
+    "variant:furn.bench:stone_curl",
+    "variant:furn.bench:straight"
+   ],
+   "generators": [
+    "furn.bench"
+   ]
+  },
+  "seat_chair": {
+   "candidates": [
+    "forest_village:furn.chair:default",
+    "forest_village:furn.chair:stool",
+    "forest_village:furn.pod:default",
+    "polar_pod:furn.chair:default",
+    "polar_pod:furn.pod:bowl_portholes",
+    "polar_pod:furn.pod:chaise",
+    "polar_pod:furn.pod:chaise_visor",
+    "polar_pod:furn.pod:conversation_pit",
+    "polar_pod:furn.pod:default",
+    "polar_pod:furn.pod:egg",
+    "variant:furn.chair:armchair_four",
+    "variant:furn.chair:bench_four",
+    "variant:furn.chair:chair_sled",
+    "variant:furn.chair:stool_pedestal",
+    "variant:furn.pod:bowl_plain"
+   ],
+   "generators": [
+    "furn.chair",
+    "furn.pod"
+   ]
+  },
+  "seat_lounge": {
+   "candidates": [
+    "forest_village:furn.bench:default",
+    "forest_village:furn.pod:default",
+    "polar_pod:furn.bench:chrome_legs",
+    "polar_pod:furn.bench:default",
+    "polar_pod:furn.pod:bowl_portholes",
+    "polar_pod:furn.pod:chaise",
+    "polar_pod:furn.pod:chaise_visor",
+    "polar_pod:furn.pod:conversation_pit",
+    "polar_pod:furn.pod:default",
+    "polar_pod:furn.pod:egg",
+    "variant:furn.bench:stone_curl",
+    "variant:furn.bench:straight",
+    "variant:furn.pod:bowl_plain"
+   ],
+   "generators": [
+    "furn.bench",
+    "furn.pod"
+   ]
+  },
+  "seat_pit": {
+   "candidates": [
+    "forest_village:furn.pod:default",
+    "forest_village:furn.rug:default",
+    "polar_pod:furn.pod:bowl_portholes",
+    "polar_pod:furn.pod:chaise",
+    "polar_pod:furn.pod:chaise_visor",
+    "polar_pod:furn.pod:conversation_pit",
+    "polar_pod:furn.pod:default",
+    "polar_pod:furn.pod:egg",
+    "polar_pod:furn.rug:default",
+    "variant:furn.rug:rect_plain",
+    "variant:furn.rug:round_fringe"
+   ],
+   "generators": [
+    "furn.pod",
+    "furn.rug"
+   ]
+  },
+  "shelf": {
+   "candidates": [
+    "forest_village:furn.shelf:default",
+    "polar_pod:furn.shelf:default",
+    "variant:furn.shelf:bookshelf_stone",
+    "variant:furn.shelf:cabinet",
+    "variant:furn.shelf:open_rack_metal"
+   ],
+   "generators": [
+    "furn.shelf"
+   ]
+  },
+  "sign_main": {
+   "candidates": [
+    "forest_village:prop.sign:default",
+    "polar_pod:prop.sign:default",
+    "variant:prop.sign:arrow_metal",
+    "variant:prop.sign:post_rect"
+   ],
+   "generators": [
+    "prop.sign"
+   ]
+  },
+  "sky": {
+   "candidates": [
+    "variant:sky.backdrop:dome"
+   ],
+   "generators": [
+    "sky.backdrop"
+   ]
+  },
+  "table_low": {
+   "candidates": [
+    "forest_village:furn.table:default",
+    "forest_village:furn.table:round_stone",
+    "polar_pod:furn.table:default",
+    "polar_pod:furn.table:disc_orb",
+    "polar_pod:furn.table:flower_table",
+    "variant:furn.table:rect_four_low",
+    "variant:furn.table:round_pedestal_low"
+   ],
+   "generators": [
+    "furn.table"
+   ]
+  },
+  "table_main": {
+   "candidates": [
+    "forest_village:furn.table:default",
+    "forest_village:furn.table:round_stone",
+    "polar_pod:furn.table:default",
+    "polar_pod:furn.table:disc_orb",
+    "polar_pod:furn.table:flower_table",
+    "variant:furn.table:oval_trestle",
+    "variant:furn.table:rect_four",
+    "variant:furn.table:round_pedestal_low"
+   ],
+   "generators": [
+    "furn.table"
+   ]
+  },
+  "tool": {
+   "candidates": [
+    "forest_village:prop.tool:default",
+    "polar_pod:prop.tool:default",
+    "variant:prop.tool:fishing_rod",
+    "variant:prop.tool:pick",
+    "variant:prop.tool:shovel",
+    "variant:prop.tool:wrench"
+   ],
+   "generators": [
+    "prop.tool"
+   ]
+  },
+  "tree": {
+   "candidates": [
+    "forest_village:nature.tree:birch",
+    "forest_village:nature.tree:default",
+    "polar_pod:nature.tree:default",
+    "variant:nature.tree:bare",
+    "variant:nature.tree:conifer",
+    "variant:nature.tree:palm"
+   ],
+   "generators": [
+    "nature.tree"
+   ]
+  },
+  "vehicle_main": {
+   "candidates": [
+    "forest_village:vehicle.craft:default",
+    "polar_pod:vehicle.craft:default",
+    "polar_pod:vehicle.craft:snow_sled",
+    "variant:vehicle.craft:hover",
+    "variant:vehicle.craft:rover",
+    "variant:vehicle.craft:wagon"
+   ],
+   "generators": [
+    "vehicle.craft"
+   ]
+  },
+  "vessel": {
+   "candidates": [
+    "forest_village:prop.vessel:default",
+    "polar_pod:prop.vessel:default",
+    "variant:prop.vessel:bottle",
+    "variant:prop.vessel:kettle",
+    "variant:prop.vessel:pot"
+   ],
+   "generators": [
+    "prop.vessel"
+   ]
+  },
+  "water": {
+   "candidates": [
+    "forest_village:terrain.water:default",
+    "polar_pod:terrain.water:default"
+   ],
+   "generators": [
+    "terrain.water"
+   ]
+  },
+  "weather": {
+   "candidates": [
+    "forest_village:fx.particles:default",
+    "polar_pod:fx.particles:default",
+    "variant:fx.particles:disc",
+    "variant:fx.particles:puff",
+    "variant:fx.particles:spark"
+   ],
+   "generators": [
+    "fx.particles"
+   ]
+  },
+  "window_main": {
+   "candidates": [
+    "forest_village:arch.window:arched",
+    "forest_village:arch.window:default",
+    "polar_pod:arch.window:default",
+    "polar_pod:arch.window:panorama",
+    "polar_pod:arch.window:porthole",
+    "polar_pod:arch.window:rounded_molded",
+    "variant:arch.window:arch_ledge",
+    "variant:arch.window:gothic",
+    "variant:arch.window:rect_flat",
+    "variant:arch.window:round_flat"
+   ],
+   "generators": [
+    "arch.window"
+   ]
+  },
+  "window_side": {
+   "candidates": [
+    "forest_village:arch.window:arched",
+    "forest_village:arch.window:default",
+    "polar_pod:arch.window:default",
+    "polar_pod:arch.window:panorama",
+    "polar_pod:arch.window:porthole",
+    "polar_pod:arch.window:rounded_molded",
+    "variant:arch.window:arch_ledge",
+    "variant:arch.window:gothic",
+    "variant:arch.window:rect_flat",
+    "variant:arch.window:round_flat"
+   ],
+   "generators": [
+    "arch.window"
+   ]
+  }
+ },
+ "source_fixtures": {
+  "forest_village": {
+   "bed": "forest_village:furn.bed:default",
+   "blanket": "forest_village:soft.blanket:default",
+   "boat": "forest_village:vehicle.boat:default",
+   "book": "forest_village:prop.book:default",
+   "cat_bed": "forest_village:soft.pillow:cat_bed",
+   "console": "forest_village:furn.console:default",
+   "container": "forest_village:furn.container:default",
+   "device": "forest_village:prop.device:default",
+   "door_main": "forest_village:arch.door:default",
+   "ground": "forest_village:terrain.patch:default",
+   "hearth": "forest_village:furn.hearth:default",
+   "key": "forest_village:prop.key:default",
+   "lamp_floor": "forest_village:furn.lamp:default",
+   "lamp_table": "forest_village:prop.device:default",
+   "pillow": "forest_village:soft.pillow:default",
+   "plant": "forest_village:nature.bush:default",
+   "rock": "forest_village:nature.rock:default",
+   "rug": "forest_village:furn.rug:default",
+   "seat_bench": "forest_village:furn.bench:default",
+   "seat_chair": "forest_village:furn.chair:default",
+   "seat_lounge": "forest_village:furn.bench:default",
+   "seat_pit": "forest_village:furn.rug:default",
+   "shelf": "forest_village:furn.shelf:default",
+   "sign_main": "forest_village:prop.sign:default",
+   "sky": "forest_village:sky.backdrop:default",
+   "table_low": "forest_village:furn.table:round_stone",
+   "table_main": "forest_village:furn.table:default",
+   "tool": "forest_village:prop.tool:default",
+   "tree": "forest_village:nature.tree:default",
+   "vehicle_main": "forest_village:vehicle.craft:default",
+   "vessel": "forest_village:prop.vessel:default",
+   "water": "forest_village:terrain.water:default",
+   "weather": "forest_village:fx.particles:default",
+   "window_main": "forest_village:arch.window:default",
+   "window_side": "forest_village:arch.window:arched"
+  },
+  "polar_pod": {
+   "bed": "polar_pod:furn.bed:default",
+   "blanket": "polar_pod:soft.blanket:default",
+   "boat": "polar_pod:vehicle.boat:default",
+   "book": "polar_pod:prop.book:default",
+   "cat_bed": "polar_pod:soft.pillow:cat_bed",
+   "console": "polar_pod:furn.console:desk_triple_crt",
+   "container": "polar_pod:furn.container:default",
+   "device": "polar_pod:prop.device:default",
+   "door_main": "polar_pod:arch.door:default",
+   "ground": "polar_pod:terrain.patch:default",
+   "hearth": "polar_pod:furn.hearth:default",
+   "key": "polar_pod:prop.key:default",
+   "lamp_floor": "polar_pod:furn.lamp:default",
+   "lamp_table": "polar_pod:furn.lamp:globe",
+   "pillow": "polar_pod:soft.pillow:default",
+   "plant": "polar_pod:nature.bush:indoor",
+   "rock": "polar_pod:nature.rock:default",
+   "rug": "polar_pod:furn.rug:default",
+   "seat_bench": "polar_pod:furn.bench:default",
+   "seat_chair": "polar_pod:furn.pod:default",
+   "seat_lounge": "polar_pod:furn.pod:chaise",
+   "seat_pit": "polar_pod:furn.pod:conversation_pit",
+   "shelf": "polar_pod:furn.shelf:default",
+   "sign_main": "polar_pod:prop.sign:default",
+   "sky": "polar_pod:sky.backdrop:default",
+   "table_low": "polar_pod:furn.table:disc_orb",
+   "table_main": "polar_pod:furn.table:default",
+   "tool": "polar_pod:prop.tool:default",
+   "tree": "polar_pod:nature.tree:default",
+   "vehicle_main": "polar_pod:vehicle.craft:default",
+   "vessel": "polar_pod:prop.vessel:default",
+   "water": "polar_pod:terrain.water:default",
+   "weather": "polar_pod:fx.particles:default",
+   "window_main": "polar_pod:arch.window:rounded_molded",
+   "window_side": "polar_pod:arch.window:porthole"
+  }
+ },
+ "sources": {
+  "forest_village": {
+   "pack_json": "packs/forest_village/pack.json",
+   "sha256": "693ff776110d0b82753030ea287efda49e9efc50e863aa31101b5a5f79dc78e7"
+  },
+  "polar_pod": {
+   "pack_json": "packs/polar_pod/pack.json",
+   "sha256": "02ecedc3535ac81c7bfa03bf2b2ff479e6db92c14d41015d161ea772cd913214"
+  }
+ },
+ "tags_sha256": "e0879f2a7f24826c0fd21d75e91bf38020658154ca86261c29eafb25eb2b1121",
+ "variants_sha256": "ffb598a6208634f3dd96b5c2b2119c4e8ff12e0cacffb91b8dc13db9ab99a3da",
+ "version": "1.0.0"
+}

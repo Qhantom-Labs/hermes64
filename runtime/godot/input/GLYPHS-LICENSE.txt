@@ -1,0 +1,13 @@
+Original controls glyphs / CC0 1.0 Universal
+
+The 5x5 geometric verb and tool glyph bitmaps in input/hud.gd were authored
+for Hermes64 in this controls lane. No downloaded icons, controller images,
+logos or traced game assets were used. The creator dedicates these glyph
+shapes to the public domain under CC0 1.0 Universal, waiving copyright and
+related rights to the fullest extent permitted by law. No warranty is made.
+
+SPDX-License-Identifier: CC0-1.0
+Legal text reference: https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+This dedication covers the glyph shapes only. Existing fonts, game assets
+and engine components retain their respective licenses and provenance.

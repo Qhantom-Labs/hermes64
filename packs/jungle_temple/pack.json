@@ -1,0 +1,118 @@
+{
+ "description": "Ocarina-era jungle temple: mossy carved stone, hanging vines, broad-leaf undergrowth and buttress-root trees, gold idols, a humid green haze. Original designs (invented figures, original glyph grammar). Data only; ANCIENTKIT kit families (ruin./relic./wild./land.) from the shared Hermes64 core.",
+ "format": 1,
+ "id": "jungle_temple",
+ "kit_pack_id": "jungle_temple",
+ "lighting": {
+  "ambient_colour": "#8D8E78",
+  "fog_colour": "#C9DCCB",
+  "fog_enabled": true,
+  "fog_end": 46.0,
+  "fog_start": 12.0
+ },
+ "materials": [
+  {
+   "colour": "#8D8E78",
+   "id": "temple_stone",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#5C832C",
+   "id": "moss",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#B2B098",
+   "id": "carved_stone",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#B48A30",
+   "id": "gold_leaf",
+   "kind": "chrome_env"
+  },
+  {
+   "colour": "#FFD27E",
+   "id": "flame",
+   "kind": "emissive"
+  },
+  {
+   "colour": "#3B6A3A",
+   "id": "foliage",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#2F7566",
+   "id": "water",
+   "kind": "baked_unlit"
+  },
+  {
+   "colour": "#2C3B36",
+   "id": "shade",
+   "kind": "baked_unlit"
+  }
+ ],
+ "name": "Jungle Temple",
+ "palette": [
+  "#0B120F",
+  "#18231F",
+  "#2C3B36",
+  "#4E605A",
+  "#2A2C24",
+  "#474A3C",
+  "#686B58",
+  "#8D8E78",
+  "#B2B098",
+  "#D6D2B6",
+  "#1E3517",
+  "#355A20",
+  "#5C832C",
+  "#93B346",
+  "#13271A",
+  "#22432B",
+  "#3B6A3A",
+  "#6C9C4E",
+  "#33241A",
+  "#5A4130",
+  "#87694A",
+  "#6A4A16",
+  "#B48A30",
+  "#EED27A",
+  "#3B6F86",
+  "#6FA1AA",
+  "#A7C9BF",
+  "#C9DCCB",
+  "#163F3A",
+  "#2F7566",
+  "#E0752A",
+  "#FFD27E"
+ ],
+ "presets": [
+  {
+   "asset_id": "prop.vessel",
+   "id": "vessel",
+   "params_json": "{}"
+  },
+  {
+   "asset_id": "furn.hearth",
+   "id": "hearth",
+   "params_json": "{}"
+  },
+  {
+   "asset_id": "arch.column",
+   "id": "column",
+   "params_json": "{}"
+  }
+ ],
+ "sound_palette": {
+  "ambient": "audio/stock/wav/core.nature.night.insects.wav",
+  "interact": "audio/wav/ui.select.wav"
+ },
+ "thresholds": {
+  "character_tris": 700,
+  "kit_tris": 1500,
+  "prop_tris": 150,
+  "room_tris": 6000,
+  "texture_px": 128
+ }
+}

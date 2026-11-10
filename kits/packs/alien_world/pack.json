@@ -1,0 +1,1376 @@
+{
+ "id": "alien_world",
+ "version": "1.0.0",
+ "note": "Ocarina-era alien world: a violet-to-peach sky with rose cloud banks and a slow aurora, ochre regolith, violet basalt strata, cyan crystal growths, teal stalks with coral caps and spore lights, and a small human landing site in grey gear with amber accents. Data only; SCIFIKIT kit families (alien./planet./skyx./ship.) from the shared Hermes64 core.",
+ "palette": [
+  "#07050c",
+  "#1c1030",
+  "#3a1f55",
+  "#6a2f72",
+  "#b24f78",
+  "#e88a7a",
+  "#f6c79a",
+  "#2e1c16",
+  "#4e2e1e",
+  "#7a4a2a",
+  "#a8703c",
+  "#d0a060",
+  "#1e1828",
+  "#352c42",
+  "#55486a",
+  "#7e6e90",
+  "#0c3e4c",
+  "#188c96",
+  "#58dcd0",
+  "#cafff2",
+  "#13323e",
+  "#24606a",
+  "#3e9488",
+  "#8a2c5e",
+  "#e46a5a",
+  "#d8f070",
+  "#2c303a",
+  "#5c6474",
+  "#9aa2b2",
+  "#e2e6ec",
+  "#e89a3a"
+ ],
+ "palette_names": [
+  "void",
+  "sky_0",
+  "sky_1",
+  "sky_2",
+  "sky_3",
+  "sky_4",
+  "sky_5",
+  "soil_0",
+  "soil_1",
+  "soil_2",
+  "soil_3",
+  "soil_4",
+  "rock_0",
+  "rock_1",
+  "rock_2",
+  "rock_3",
+  "cry_0",
+  "cry_1",
+  "cry_2",
+  "cry_3",
+  "flo_0",
+  "flo_1",
+  "flo_2",
+  "bloom_0",
+  "bloom_1",
+  "spore",
+  "gear_0",
+  "gear_1",
+  "gear_2",
+  "gear_3",
+  "gear_acc"
+ ],
+ "palette_roles": {
+  "alien_sky": [
+   "void",
+   "sky_0",
+   "sky_1",
+   "sky_2",
+   "sky_3",
+   "sky_4",
+   "sky_5"
+  ],
+  "regolith": [
+   "soil_0",
+   "soil_1",
+   "soil_2",
+   "soil_3",
+   "soil_4"
+  ],
+  "basalt": [
+   "rock_0",
+   "rock_1",
+   "rock_2",
+   "rock_3"
+  ],
+  "crystal": [
+   "cry_0",
+   "cry_1",
+   "cry_2",
+   "cry_3"
+  ],
+  "flora": [
+   "flo_0",
+   "flo_1",
+   "flo_2"
+  ],
+  "bloom": [
+   "bloom_0",
+   "bloom_1",
+   "spore"
+  ],
+  "gear": [
+   "gear_0",
+   "gear_1",
+   "gear_2",
+   "gear_3",
+   "gear_acc"
+  ]
+ },
+ "ramps": {
+  "sky": [
+   "void",
+   "sky_0",
+   "sky_1",
+   "sky_2",
+   "sky_3",
+   "sky_4",
+   "sky_5"
+  ],
+  "soil": [
+   "soil_0",
+   "soil_1",
+   "soil_2",
+   "soil_3",
+   "soil_4"
+  ],
+  "rock": [
+   "rock_0",
+   "rock_1",
+   "rock_2",
+   "rock_3"
+  ],
+  "crystal": [
+   "cry_0",
+   "cry_1",
+   "cry_2",
+   "cry_3"
+  ],
+  "flora": [
+   "flo_0",
+   "flo_1",
+   "flo_2"
+  ]
+ },
+ "light_ramp": [
+  "rock_1",
+  "rock_2",
+  "soil_2",
+  "soil_3",
+  "sky_4",
+  "sky_5",
+  "gear_3"
+ ],
+ "materials": {
+  "sand": {
+   "kind": "baked_unlit",
+   "tile_m": 6.0,
+   "texture": {
+    "gen": "regolith",
+    "size": 64,
+    "ramp": [
+     "soil_1",
+     "soil_2",
+     "soil_3",
+     "soil_4"
+    ],
+    "contrast": 0.85,
+    "ripple": 0.14
+   }
+  },
+  "dirt": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "regolith",
+    "size": 32,
+    "ramp": [
+     "soil_0",
+     "soil_1",
+     "soil_2"
+    ],
+    "contrast": 0.8
+   }
+  },
+  "path": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "regolith",
+    "size": 32,
+    "ramp": [
+     "soil_2",
+     "soil_3",
+     "soil_4"
+    ],
+    "contrast": 0.5,
+    "ripple": 0.2,
+    "pebbles": 0.006
+   }
+  },
+  "field": {
+   "kind": "baked_unlit",
+   "tile_m": 6.0,
+   "texture": {
+    "gen": "regolith",
+    "size": 64,
+    "ramp": [
+     "rock_1",
+     "soil_1",
+     "soil_2",
+     "soil_3"
+    ],
+    "contrast": 0.9,
+    "lattice": 3
+   }
+  },
+  "grass": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "organic",
+    "size": 32,
+    "ramp": [
+     "flo_0",
+     "flo_1",
+     "flo_2"
+    ],
+    "cells": 14,
+    "veins": true,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "rock": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "strata",
+    "size": 64,
+    "ramp": [
+     "rock_0",
+     "rock_1",
+     "rock_2",
+     "rock_3",
+     "soil_2"
+    ],
+    "layers": 5,
+    "wave": 0.35,
+    "streak": 0.16
+   }
+  },
+  "cliff": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "strata",
+    "size": 64,
+    "ramp": [
+     "rock_0",
+     "rock_1",
+     "rock_2",
+     "soil_1",
+     "soil_2"
+    ],
+    "layers": 6,
+    "wave": 0.45,
+    "streak": 0.2
+   }
+  },
+  "stone": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "strata",
+    "size": 64,
+    "ramp": [
+     "rock_0",
+     "rock_1",
+     "rock_2",
+     "rock_3"
+    ],
+    "layers": 3,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "ice": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "crystal",
+    "size": 16,
+    "ramp": [
+     "cry_0",
+     "cry_1",
+     "cry_2",
+     "cry_3"
+    ],
+    "cells": 7,
+    "edge": 0.03,
+    "dither": false,
+    "soften": 1
+   }
+  },
+  "light": {
+   "kind": "emissive",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "glow",
+    "size": 16,
+    "ramp": [
+     "cry_1",
+     "cry_2",
+     "cry_2",
+     "cry_3"
+    ],
+    "falloff": 0.55
+   }
+  },
+  "foliage": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "organic",
+    "size": 32,
+    "ramp": [
+     "flo_0",
+     "flo_1",
+     "flo_2",
+     "spore"
+    ],
+    "cells": 9,
+    "veins": true,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "bark": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "streaks",
+    "size": 32,
+    "ramp": [
+     "flo_0",
+     "flo_1",
+     "rock_2",
+     "flo_2"
+    ],
+    "columns": 4,
+    "strata": 2
+   }
+  },
+  "cap": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "organic",
+    "size": 16,
+    "ramp": [
+     "bloom_0",
+     "bloom_1",
+     "sky_4",
+     "spore"
+    ],
+    "cells": 8,
+    "spots": 0.06,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "flower": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "organic",
+    "size": 16,
+    "ramp": [
+     "bloom_0",
+     "bloom_1",
+     "sky_5"
+    ],
+    "cells": 6,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "orb": {
+   "kind": "glass_env",
+   "tint": "cry_2",
+   "env": "env_crystal"
+  },
+  "glass": {
+   "kind": "glass_env",
+   "tint": "cry_2",
+   "env": "env_crystal"
+  },
+  "chrome": {
+   "kind": "chrome_env",
+   "tint": "gear_2",
+   "env": "env_gear"
+  },
+  "water": {
+   "kind": "water",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "water",
+    "size": 32,
+    "ramp": [
+     "cry_0",
+     "cry_1",
+     "cry_2",
+     "cry_3"
+    ]
+   },
+   "scroll": [
+    0.015,
+    0.008
+   ]
+  },
+  "sky": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "scene",
+    "width": 128,
+    "height": 64,
+    "sky": [
+     "sky_5",
+     "sky_4",
+     "sky_3",
+     "sky_2",
+     "sky_1",
+     "sky_0"
+    ],
+    "sky_range": [
+     0.0,
+     0.62
+    ],
+    "sky_gamma": 0.85,
+    "stars": {
+     "count": 26,
+     "color": "sky_5",
+     "min_v": 0.72
+    },
+    "layers": [
+     {
+      "kind": "aurora",
+      "base": 0.5,
+      "height": 0.16,
+      "waves": 3,
+      "color": "sky_2",
+      "thickness": 1.3
+     },
+     {
+      "kind": "clouds",
+      "base": 0.16,
+      "height": 0.16,
+      "stretch": 7,
+      "cover": 0.62,
+      "color": "sky_3"
+     },
+     {
+      "kind": "haze",
+      "base": 0.0,
+      "height": 0.3,
+      "color": "sky_5"
+     }
+    ]
+   }
+  },
+  "view": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "starscape",
+    "size": 128,
+    "ramp": [
+     "void",
+     "sky_0",
+     "sky_1",
+     "sky_2",
+     "cry_0",
+     "cry_1",
+     "cry_2",
+     "sky_5"
+    ],
+    "space_steps": 4,
+    "stars": 90,
+    "nebula": 0.65,
+    "neb_v": 0.58,
+    "neb_w": 0.18,
+    "glow_v": 0.0,
+    "planet": true,
+    "planet_u": 0.3,
+    "planet_v": 0.42,
+    "planet_r": 0.16,
+    "dither": false
+   }
+  },
+  "vista": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "vgrad",
+    "size": 32,
+    "ramp": [
+     "sky_3",
+     "sky_4",
+     "sky_5"
+    ],
+    "strength": 0.6,
+    "noise": 0.12,
+    "up": true
+   }
+  },
+  "vista_far": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "planet",
+    "size": 64,
+    "ramp": [
+     "sky_3",
+     "sky_4",
+     "sky_5",
+     "gear_3"
+    ],
+    "bands": 6,
+    "band_amp": 0.16,
+    "swirl": 0.35,
+    "lit_u": 0.72
+   }
+  },
+  "screen": {
+   "kind": "emissive",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "screen",
+    "size": 32,
+    "ramp": [
+     "sky_0",
+     "cry_0",
+     "cry_1",
+     "cry_2",
+     "cry_3"
+    ],
+    "rows": 5
+   }
+  },
+  "fire": {
+   "kind": "emissive",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "fire",
+    "size": 16,
+    "ramp": [
+     "bloom_1",
+     "gear_acc",
+     "sky_5",
+     "gear_3"
+    ]
+   }
+  },
+  "opening": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "void"
+    ]
+   }
+  },
+  "particle": {
+   "kind": "card_alpha",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "spore"
+    ],
+    "alpha": "disc"
+   }
+  },
+  "wall": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "gear_1",
+     "gear_2",
+     "gear_3"
+    ],
+    "cols": 2,
+    "rows": 2,
+    "inset": 0.16
+   }
+  },
+  "wall_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_2",
+     "gear_3"
+    ],
+    "cols": 4,
+    "rows": 1,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "floor": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "hexplate",
+    "size": 64,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_2"
+    ],
+    "cols": 6,
+    "rows": 5
+   }
+  },
+  "ceiling": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_2"
+    ],
+    "cols": 2,
+    "rows": 2
+   }
+  },
+  "trim": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "brushed",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_2"
+    ],
+    "dither": 0.5
+   }
+  },
+  "frame": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_2",
+     "gear_3"
+    ],
+    "cols": 1,
+    "rows": 2,
+    "rivets": true,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "door": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "gear_1",
+     "gear_2",
+     "gear_3"
+    ],
+    "cols": 1,
+    "rows": 3,
+    "rivets": true,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "band": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "hazard",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_acc"
+    ],
+    "count": 4,
+    "dither": 0.5
+   }
+  },
+  "metal": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "brushed",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_2",
+     "gear_3"
+    ],
+    "dither": 0.5
+   }
+  },
+  "body": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "plating",
+    "size": 16,
+    "ramp": [
+     "gear_2",
+     "gear_3",
+     "gear_3"
+    ],
+    "cols": 1,
+    "rows": 2,
+    "inset": 0.14,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "body_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "plating",
+    "size": 16,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_2",
+     "gear_3"
+    ],
+    "cols": 2,
+    "rows": 1,
+    "rivets": true,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "hull": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "plating",
+    "size": 64,
+    "ramp": [
+     "gear_1",
+     "gear_2",
+     "gear_3",
+     "gear_3"
+    ],
+    "cols": 3,
+    "rows": 2,
+    "rivets": true
+   }
+  },
+  "hull_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "soil_2",
+     "gear_acc",
+     "sky_5"
+    ],
+    "cols": 2,
+    "rows": 1,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "step": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grille",
+    "size": 16,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_2"
+    ],
+    "slats": 6,
+    "dither": 0.5
+   }
+  },
+  "rail": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "brushed",
+    "size": 16,
+    "ramp": [
+     "gear_1",
+     "gear_2",
+     "gear_3"
+    ],
+    "dither": 0.5
+   }
+  },
+  "post": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "brushed",
+    "size": 16,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_2",
+     "gear_3"
+    ],
+    "dither": 0.5
+   }
+  },
+  "roof": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_2"
+    ],
+    "cols": 2,
+    "rows": 2,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "wood": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "streaks",
+    "size": 16,
+    "ramp": [
+     "soil_1",
+     "soil_2",
+     "soil_3"
+    ]
+   }
+  },
+  "rope": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "rope",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "gear_acc"
+    ],
+    "twists": 6
+   }
+  },
+  "cushion": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fabric",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "soil_2"
+    ]
+   }
+  },
+  "fabric": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fabric",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "soil_2"
+    ]
+   }
+  },
+  "knit": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "knit",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "soil_2"
+    ]
+   }
+  },
+  "fur": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fur",
+    "size": 32,
+    "ramp": [
+     "soil_1",
+     "soil_2",
+     "soil_3"
+    ]
+   }
+  },
+  "quilt": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "quilt_diamond",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "gear_1",
+     "soil_2"
+    ]
+   }
+  },
+  "leather": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "leather",
+    "size": 32,
+    "ramp": [
+     "soil_0",
+     "soil_1",
+     "soil_2"
+    ]
+   }
+  },
+  "paper": {
+   "kind": "baked_unlit",
+   "tile_m": 0.4,
+   "texture": {
+    "gen": "paper",
+    "size": 32,
+    "ramp": [
+     "gear_1",
+     "gear_2",
+     "gear_3"
+    ]
+   }
+  },
+  "book": {
+   "kind": "baked_unlit",
+   "tile_m": 0.4,
+   "texture": {
+    "gen": "spines",
+    "size": 32,
+    "ramp": [
+     "gear_0",
+     "cry_0",
+     "soil_2",
+     "gear_2"
+    ]
+   }
+  },
+  "snow": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "regolith",
+    "size": 32,
+    "ramp": [
+     "soil_3",
+     "soil_4",
+     "sky_5"
+    ],
+    "contrast": 0.5,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "skin": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "soil_4"
+    ]
+   }
+  },
+  "face": {
+   "kind": "face_atlas"
+  },
+  "headwear": {
+   "kind": "baked_unlit"
+  },
+  "costume": {
+   "kind": "baked_unlit"
+  },
+  "coat": {
+   "kind": "baked_unlit"
+  }
+ },
+ "light_rig": {
+  "key_dir": [
+   -0.45,
+   -0.35,
+   0.82
+  ],
+  "ambient": 0.5,
+  "key": 0.46,
+  "sky": 0.14,
+  "ground": 0.04,
+  "ao": 0.22,
+  "ao_height": 0.5,
+  "gamma": 1.0,
+  "vertex_ao": 0.3
+ },
+ "fog": {
+  "color": "sky_5",
+  "start": 8.0,
+  "end": 48.0,
+  "interior": {
+   "color": "rock_1",
+   "start": 9.0,
+   "end": 30.0
+  }
+ },
+ "env_maps": {
+  "env_gear": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "void",
+    "rock_1",
+    "gear_1",
+    "gear_2",
+    "sky_4",
+    "gear_3"
+   ],
+   "edge": "rock_1",
+   "glint": "gear_3",
+   "glints": [
+    [
+     0.36,
+     0.26,
+     0.05
+    ]
+   ]
+  },
+  "env_crystal": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "cry_0",
+    "cry_1",
+    "cry_2",
+    "cry_3",
+    "sky_5"
+   ],
+   "edge": "cry_0",
+   "glint": "cry_3",
+   "glints": [
+    [
+     0.33,
+     0.27,
+     0.07
+    ],
+    [
+     0.62,
+     0.66,
+     0.04
+    ]
+   ]
+  }
+ },
+ "kit_presets": {
+  "stn.corridor": {
+   "corner": {
+    "shape": "corner"
+   },
+   "tee": {
+    "shape": "tee"
+   },
+   "cross": {
+    "shape": "cross"
+   },
+   "end": {
+    "shape": "end"
+   },
+   "end_door": {
+    "shape": "end_door"
+   },
+   "plain": {
+    "rib": false
+   }
+  },
+  "stn.airlock": {
+   "open": {
+    "state": "open"
+   }
+  },
+  "stn.doorway": {
+   "lit": {
+    "beyond": "lit"
+   }
+  },
+  "stn.floor": {
+   "plain": {
+    "kind": "plain"
+   },
+   "grate": {
+    "kind": "grate"
+   },
+   "pad": {
+    "kind": "pad"
+   }
+  },
+  "stn.stairs": {
+   "ramp": {
+    "kind": "ramp"
+   },
+   "dais": {
+    "kind": "dais"
+   }
+  },
+  "tech.console": {
+   "tall": {
+    "style": "tall",
+    "screens": 3,
+    "width": 2.0
+   },
+   "pillar": {
+    "style": "pillar",
+    "screens": 1
+   }
+  },
+  "tech.crate": {
+   "large": {
+    "size": "large"
+   },
+   "long": {
+    "size": "long",
+    "band": false
+   },
+   "stack": {
+    "size": "stack"
+   }
+  },
+  "tech.tank": {
+   "horizontal": {
+    "orient": "horizontal",
+    "length": 2.6
+   }
+  },
+  "tech.cables": {
+   "hang": {
+    "mode": "hang",
+    "length": 6.0
+   }
+  },
+  "tech.terminal": {
+   "wall": {
+    "kind": "wall"
+   }
+  },
+  "ship.shuttle": {
+   "cargo": {
+    "gear": "pod"
+   },
+   "level": {
+    "wings": "level"
+   }
+  },
+  "ship.hauler": {
+   "empty": {
+    "pods": 0
+   }
+  },
+  "ship.rover": {
+   "scout": {
+    "wheels": "four",
+    "mast": false
+   }
+  },
+  "ship.escape_pod": {
+   "open": {
+    "state": "open"
+   },
+   "crashed": {
+    "landed": false
+   }
+  },
+  "ship.drone": {
+   "lifter": {
+    "cargo": true
+   }
+  },
+  "alien.crystal": {
+   "small": {
+    "count": 4,
+    "height": 0.9,
+    "spread": 0.4
+   },
+   "tall": {
+    "count": 7,
+    "height": 2.6,
+    "spread": 0.7
+   }
+  },
+  "alien.cap_tree": {
+   "triple": {
+    "caps": 3,
+    "height": 4.8
+   },
+   "young": {
+    "caps": 1,
+    "height": 2.2
+   }
+  },
+  "alien.bulb": {
+   "tall": {
+    "bulbs": 3,
+    "height": 2.0
+   }
+  },
+  "alien.frond": {
+   "low": {
+    "blades": 5,
+    "height": 1.0
+   }
+  },
+  "alien.boulder": {
+   "big": {
+    "size": "big"
+   },
+   "slab": {
+    "size": "slab"
+   }
+  },
+  "alien.rock_spire": {
+   "tall": {
+    "height": 6.5,
+    "tiers": 4
+   }
+  },
+  "alien.spire": {
+   "short": {
+    "height": 3.6,
+    "satellites": 2
+   }
+  },
+  "planet.ground": {
+   "dirt": {
+    "surface": "dirt"
+   },
+   "rough": {
+    "rough": 0.6,
+    "rocks": 2
+   },
+   "plateau": {
+    "level": "2"
+   },
+   "high": {
+    "level": "6"
+   },
+   "field": {
+    "surface": "field",
+    "rough": 0.45
+   }
+  },
+  "planet.rise": {
+   "steep": {
+    "to": "6"
+   }
+  },
+  "planet.trail": {
+   "bend": {
+    "shape": "bend"
+   },
+   "end": {
+    "shape": "end"
+   }
+  },
+  "skyx.planet": {
+   "ringed": {
+    "ring": true,
+    "size": 34.0,
+    "elevation": 0.3
+   },
+   "moon": {
+    "role": "vista_far",
+    "size": 14.0,
+    "elevation": 0.42,
+    "distance": 220.0
+   }
+  },
+  "skyx.horizon": {
+   "spires": {
+    "kind": "spires"
+   },
+   "dunes": {
+    "kind": "dunes",
+    "height": 0.08
+   }
+  }
+ },
+ "fixtures": {},
+ "cast": {
+  "_note": "characters are supplied by lane-characters; SCIFIKIT builds environment pieces only"
+ },
+ "validator_thresholds": {
+  "tri_limits": {},
+  "stretch": [
+   0.45,
+   1.8
+  ],
+  "visdiff_min": 0.015,
+  "people_pairwise_min": 0.02
+ },
+ "colors": {
+  "fog_ext": "#f6c79a",
+  "fog_int": "#352c42",
+  "amb_ext": "#e88a7a",
+  "sun_ext": "#f6c79a",
+  "amb_int": "#7e6e90",
+  "sun_int": "#f6c79a",
+  "lamp": "#cafff2",
+  "lamp_dim": "#188c96",
+  "window_light": "#e88a7a"
+ },
+ "ui": {
+  "ink": "#07050c",
+  "fill": "#1c1030d9",
+  "frame": "#7e6e90",
+  "text": "#f6c79a",
+  "dim": "#55486a",
+  "accent": "#58dcd0"
+ }
+}

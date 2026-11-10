@@ -1,0 +1,73 @@
+{
+  "description": "Retro-futurist polar pod habitat (Thaw showcase). Near-monochrome cobalt/navy/periwinkle/pearl with chrome-silver highlights and sparing warm accents. Data only; built from the Hermes64 core.",
+  "format": 1,
+  "id": "polar_pod",
+  "kit_pack_id": "polar_pod",
+  "lighting": {
+    "ambient_colour": "#7088F0",
+    "fog_colour": "#26398F",
+    "fog_enabled": true,
+    "fog_end": 24.0,
+    "fog_start": 6.0
+  },
+  "materials": [
+    {
+      "colour": "#3F5DD0",
+      "id": "surface",
+      "kind": "baked_unlit"
+    }
+  ],
+  "name": "Polar Pod",
+  "palette": [
+    "#04050C",
+    "#0A1030",
+    "#121C4C",
+    "#1B2A6E",
+    "#26398F",
+    "#3149B0",
+    "#3F5DD0",
+    "#5674E6",
+    "#7088F0",
+    "#8E9FF5",
+    "#A9B5F8",
+    "#C3CBFB",
+    "#D9DEFD",
+    "#EBEEFE",
+    "#FFFFFF",
+    "#2B3150",
+    "#4A5378",
+    "#727CA3",
+    "#A3ABCD",
+    "#1A1C2B",
+    "#2C2F45",
+    "#44486A",
+    "#0F1018",
+    "#B8D4FF",
+    "#E2F0FF",
+    "#43B4FF",
+    "#9FE6FF",
+    "#F2A65A",
+    "#FFD9A0",
+    "#C8553D",
+    "#8A3A6B",
+    "#E8C547"
+  ],
+  "presets": [
+    {
+      "asset_id": "furn.lamp",
+      "id": "lamp",
+      "params_json": "{}"
+    }
+  ],
+  "sound_palette": {
+    "ambient": "audio/wav/ambience.habitat.wav",
+    "interact": "audio/wav/ui.select.wav"
+  },
+  "thresholds": {
+    "character_tris": 700,
+    "kit_tris": 1500,
+    "prop_tris": 150,
+    "room_tris": 6000,
+    "texture_px": 128
+  }
+}

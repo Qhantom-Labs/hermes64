@@ -1,0 +1,1407 @@
+{
+ "id": "space_station",
+ "version": "1.0.0",
+ "note": "Ocarina-era space station: clean white hull plating, steel trims and grated decks, cyan neon light bands, warning-amber hazard lips and dark viewports onto painted star fields with a violet planet. Data only; SCIFIKIT kit families (stn./tech./ship./skyx.) from the shared Hermes64 core.",
+ "palette": [
+  "#04050b",
+  "#0a0f22",
+  "#141d3c",
+  "#23305a",
+  "#3c4252",
+  "#5f6676",
+  "#8a92a2",
+  "#b3bac6",
+  "#d5dae2",
+  "#eef1f4",
+  "#262b36",
+  "#3f4656",
+  "#626b7e",
+  "#8c96aa",
+  "#1e2229",
+  "#30353f",
+  "#0d4656",
+  "#178ca4",
+  "#52d2e4",
+  "#c4f4f8",
+  "#5c2c10",
+  "#b5621e",
+  "#eea33c",
+  "#ffd98c",
+  "#5e1420",
+  "#b83236",
+  "#2a1c48",
+  "#57388a",
+  "#9c78cc",
+  "#2f7a4a",
+  "#8ee09a"
+ ],
+ "palette_names": [
+  "void",
+  "space_0",
+  "space_1",
+  "space_2",
+  "hull_0",
+  "hull_1",
+  "hull_2",
+  "hull_3",
+  "hull_4",
+  "hull_5",
+  "steel_0",
+  "steel_1",
+  "steel_2",
+  "steel_3",
+  "deck_0",
+  "deck_1",
+  "neon_0",
+  "neon_1",
+  "neon_2",
+  "neon_3",
+  "amber_0",
+  "amber_1",
+  "amber_2",
+  "amber_3",
+  "red_0",
+  "red_1",
+  "planet_0",
+  "planet_1",
+  "planet_2",
+  "green_0",
+  "green_1"
+ ],
+ "palette_roles": {
+  "space_void": [
+   "void",
+   "space_0",
+   "space_1",
+   "space_2"
+  ],
+  "hull_white": [
+   "hull_0",
+   "hull_1",
+   "hull_2",
+   "hull_3",
+   "hull_4",
+   "hull_5"
+  ],
+  "steel": [
+   "steel_0",
+   "steel_1",
+   "steel_2",
+   "steel_3"
+  ],
+  "deck": [
+   "deck_0",
+   "deck_1"
+  ],
+  "neon_accent": [
+   "neon_0",
+   "neon_1",
+   "neon_2",
+   "neon_3"
+  ],
+  "warning_amber": [
+   "amber_0",
+   "amber_1",
+   "amber_2",
+   "amber_3"
+  ],
+  "alert_red": [
+   "red_0",
+   "red_1"
+  ],
+  "planet_view": [
+   "planet_0",
+   "planet_1",
+   "planet_2"
+  ],
+  "status_green": [
+   "green_0",
+   "green_1"
+  ]
+ },
+ "ramps": {
+  "hull": [
+   "hull_0",
+   "hull_1",
+   "hull_2",
+   "hull_3",
+   "hull_4",
+   "hull_5"
+  ],
+  "steel": [
+   "steel_0",
+   "steel_1",
+   "steel_2",
+   "steel_3"
+  ],
+  "neon": [
+   "neon_0",
+   "neon_1",
+   "neon_2",
+   "neon_3"
+  ],
+  "amber": [
+   "amber_0",
+   "amber_1",
+   "amber_2",
+   "amber_3"
+  ],
+  "space": [
+   "void",
+   "space_0",
+   "space_1",
+   "space_2"
+  ]
+ },
+ "light_ramp": [
+  "space_1",
+  "steel_1",
+  "steel_2",
+  "hull_2",
+  "hull_3",
+  "hull_4"
+ ],
+ "materials": {
+  "wall": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "hull_2",
+     "hull_3",
+     "hull_4",
+     "hull_5"
+    ],
+    "cols": 2,
+    "rows": 1,
+    "inset": 0.14,
+    "grad": 0.14,
+    "seam": 0.4,
+    "bevel": 0.06,
+    "mottle": 0.05,
+    "base": 0.74
+   }
+  },
+  "wall_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "steel_0",
+     "steel_1",
+     "steel_2",
+     "steel_3"
+    ],
+    "cols": 4,
+    "rows": 1,
+    "grad": 0.16,
+    "seam": 0.3,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "floor": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "hexplate",
+    "size": 64,
+    "ramp": [
+     "steel_1",
+     "steel_2",
+     "steel_3",
+     "hull_2",
+     "hull_3"
+    ],
+    "cols": 8,
+    "rows": 7,
+    "groove": 0.14,
+    "grad": 0.06,
+    "bevel": 0.04
+   }
+  },
+  "ceiling": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "steel_2",
+     "hull_1",
+     "hull_2",
+     "hull_3"
+    ],
+    "cols": 2,
+    "rows": 2,
+    "inset": 0.2,
+    "grad": 0.12
+   }
+  },
+  "trim": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "brushed",
+    "size": 32,
+    "ramp": [
+     "steel_1",
+     "steel_2",
+     "steel_3",
+     "hull_2"
+    ],
+    "grad": 0.24,
+    "streak": 0.2,
+    "dither": 0.5
+   }
+  },
+  "frame": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "steel_0",
+     "steel_1",
+     "steel_2",
+     "steel_3",
+     "hull_2"
+    ],
+    "cols": 1,
+    "rows": 2,
+    "grad": 0.25,
+    "rivets": true,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "door": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "hull_1",
+     "hull_2",
+     "hull_3",
+     "hull_4",
+     "hull_5"
+    ],
+    "cols": 1,
+    "rows": 3,
+    "inset": 0.12,
+    "grad": 0.18,
+    "rivets": true,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "band": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "hazard",
+    "size": 32,
+    "ramp": [
+     "deck_0",
+     "amber_1",
+     "amber_2"
+    ],
+    "count": 4,
+    "ratio": 0.5,
+    "wear": 0.1,
+    "dither": 0.5
+   }
+  },
+  "light": {
+   "kind": "emissive",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "lightstrip",
+    "size": 32,
+    "ramp": [
+     "neon_1",
+     "neon_2",
+     "neon_3",
+     "hull_5"
+    ],
+    "cells": 4,
+    "falloff": 0.5,
+    "dither": false
+   }
+  },
+  "screen": {
+   "kind": "emissive",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "screen",
+    "size": 32,
+    "ramp": [
+     "space_0",
+     "neon_0",
+     "neon_1",
+     "neon_2",
+     "green_1"
+    ],
+    "rows": 5
+   }
+  },
+  "opening": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "void"
+    ]
+   }
+  },
+  "view": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "starscape",
+    "size": 128,
+    "ramp": [
+     "void",
+     "space_0",
+     "space_1",
+     "space_2",
+     "planet_0",
+     "planet_1",
+     "planet_2",
+     "hull_5"
+    ],
+    "space_steps": 4,
+    "stars": 110,
+    "nebula": 0.6,
+    "neb_v": 0.62,
+    "neb_w": 0.16,
+    "glow_v": 0.1,
+    "planet": true,
+    "planet_u": 0.7,
+    "planet_v": 0.34,
+    "planet_r": 0.19,
+    "dither": false
+   }
+  },
+  "vista": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "planet",
+    "size": 64,
+    "ramp": [
+     "space_0",
+     "steel_0",
+     "steel_1",
+     "steel_2",
+     "steel_3",
+     "hull_3"
+    ],
+    "bands": 3,
+    "band_amp": 0.1,
+    "swirl": 0.2,
+    "lit_u": 0.3,
+    "craters": 10
+   }
+  },
+  "vista_far": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "planet",
+    "size": 64,
+    "ramp": [
+     "space_0",
+     "planet_0",
+     "planet_1",
+     "planet_2",
+     "hull_4"
+    ],
+    "bands": 7,
+    "band_amp": 0.26,
+    "swirl": 0.4,
+    "lit_u": 0.3
+   }
+  },
+  "sky": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "starscape",
+    "size": 128,
+    "ramp": [
+     "void",
+     "space_0",
+     "space_1",
+     "space_2",
+     "planet_0",
+     "planet_1",
+     "planet_2",
+     "hull_5"
+    ],
+    "space_steps": 4,
+    "stars": 110,
+    "nebula": 0.6,
+    "neb_v": 0.62,
+    "neb_w": 0.16,
+    "glow_v": 0.1,
+    "planet": true,
+    "planet_u": 0.7,
+    "planet_v": 0.34,
+    "planet_r": 0.19,
+    "dither": false
+   }
+  },
+  "glass": {
+   "kind": "glass_env",
+   "tint": "neon_2",
+   "env": "env_glass"
+  },
+  "orb": {
+   "kind": "glass_env",
+   "tint": "neon_3",
+   "env": "env_glass"
+  },
+  "chrome": {
+   "kind": "chrome_env",
+   "tint": "steel_3",
+   "env": "env_steel"
+  },
+  "metal": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "brushed",
+    "size": 32,
+    "ramp": [
+     "steel_0",
+     "steel_1",
+     "steel_2",
+     "steel_3"
+    ],
+    "grad": 0.22,
+    "streak": 0.22,
+    "dither": 0.5
+   }
+  },
+  "body": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "plating",
+    "size": 16,
+    "ramp": [
+     "hull_1",
+     "hull_2",
+     "hull_3",
+     "hull_4",
+     "hull_5"
+    ],
+    "cols": 1,
+    "rows": 2,
+    "inset": 0.14,
+    "grad": 0.2,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "body_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "plating",
+    "size": 16,
+    "ramp": [
+     "steel_0",
+     "steel_1",
+     "steel_2",
+     "steel_3",
+     "hull_2"
+    ],
+    "cols": 2,
+    "rows": 1,
+    "grad": 0.2,
+    "rivets": true,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "hull": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "plating",
+    "size": 64,
+    "ramp": [
+     "hull_0",
+     "hull_1",
+     "hull_2",
+     "hull_3",
+     "hull_4",
+     "hull_5"
+    ],
+    "cols": 3,
+    "rows": 2,
+    "grad": 0.16,
+    "seam": 0.45,
+    "rivets": true,
+    "mottle": 0.05,
+    "base": 0.8
+   }
+  },
+  "hull_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "amber_0",
+     "amber_1",
+     "amber_2",
+     "amber_3"
+    ],
+    "cols": 2,
+    "rows": 1,
+    "grad": 0.22,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "step": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grille",
+    "size": 16,
+    "ramp": [
+     "deck_0",
+     "deck_1",
+     "steel_1",
+     "steel_2"
+    ],
+    "slats": 6,
+    "gap": 0.35,
+    "dither": 0.5
+   }
+  },
+  "rail": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "brushed",
+    "size": 16,
+    "ramp": [
+     "steel_1",
+     "steel_2",
+     "steel_3",
+     "hull_3"
+    ],
+    "grad": 0.3,
+    "dither": 0.5
+   }
+  },
+  "post": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "brushed",
+    "size": 16,
+    "ramp": [
+     "steel_0",
+     "steel_1",
+     "steel_2",
+     "steel_3"
+    ],
+    "grad": 0.3,
+    "dither": 0.5
+   }
+  },
+  "roof": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "steel_0",
+     "steel_1",
+     "steel_2"
+    ],
+    "cols": 2,
+    "rows": 2,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "stone": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plating",
+    "size": 32,
+    "ramp": [
+     "deck_0",
+     "deck_1",
+     "steel_1",
+     "steel_2"
+    ],
+    "cols": 2,
+    "rows": 2,
+    "grad": 0.1,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "wood": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "grille",
+    "size": 16,
+    "ramp": [
+     "deck_1",
+     "steel_1",
+     "steel_2"
+    ],
+    "slats": 4,
+    "dither": 0.5
+   }
+  },
+  "rope": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "rope",
+    "size": 32,
+    "ramp": [
+     "deck_0",
+     "steel_0",
+     "steel_1"
+    ],
+    "twists": 6
+   }
+  },
+  "cushion": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fabric",
+    "size": 32,
+    "ramp": [
+     "space_1",
+     "space_2",
+     "steel_2"
+    ]
+   }
+  },
+  "fabric": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fabric",
+    "size": 32,
+    "ramp": [
+     "space_1",
+     "space_2",
+     "steel_2"
+    ]
+   }
+  },
+  "knit": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "knit",
+    "size": 32,
+    "ramp": [
+     "space_1",
+     "space_2",
+     "steel_2"
+    ]
+   }
+  },
+  "fur": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fur",
+    "size": 32,
+    "ramp": [
+     "steel_1",
+     "steel_2",
+     "steel_3"
+    ]
+   }
+  },
+  "quilt": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "quilt_diamond",
+    "size": 32,
+    "ramp": [
+     "space_1",
+     "space_2",
+     "steel_2"
+    ]
+   }
+  },
+  "leather": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "leather",
+    "size": 32,
+    "ramp": [
+     "deck_0",
+     "deck_1",
+     "steel_1"
+    ]
+   }
+  },
+  "paper": {
+   "kind": "baked_unlit",
+   "tile_m": 0.4,
+   "texture": {
+    "gen": "paper",
+    "size": 32,
+    "ramp": [
+     "steel_2",
+     "hull_3",
+     "hull_5"
+    ]
+   }
+  },
+  "book": {
+   "kind": "baked_unlit",
+   "tile_m": 0.4,
+   "texture": {
+    "gen": "spines",
+    "size": 32,
+    "ramp": [
+     "space_1",
+     "neon_0",
+     "amber_1",
+     "hull_3"
+    ]
+   }
+  },
+  "fire": {
+   "kind": "emissive",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "fire",
+    "size": 16,
+    "ramp": [
+     "amber_1",
+     "amber_2",
+     "amber_3",
+     "hull_5"
+    ]
+   }
+  },
+  "grass": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "blotch",
+    "size": 32,
+    "ramp": [
+     "green_0",
+     "steel_1",
+     "steel_2"
+    ],
+    "contrast": 0.6
+   }
+  },
+  "snow": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "blotch",
+    "size": 32,
+    "ramp": [
+     "hull_3",
+     "hull_4",
+     "hull_5"
+    ],
+    "contrast": 0.5
+   }
+  },
+  "sand": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "blotch",
+    "size": 32,
+    "ramp": [
+     "deck_1",
+     "steel_1",
+     "steel_2"
+    ],
+    "contrast": 0.6
+   }
+  },
+  "rock": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "blotch",
+    "size": 64,
+    "ramp": [
+     "deck_0",
+     "steel_0",
+     "steel_1",
+     "steel_2"
+    ],
+    "contrast": 0.8
+   }
+  },
+  "dirt": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "blotch",
+    "size": 32,
+    "ramp": [
+     "deck_0",
+     "deck_1",
+     "steel_1"
+    ],
+    "contrast": 0.6
+   }
+  },
+  "water": {
+   "kind": "water",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "water",
+    "size": 32,
+    "ramp": [
+     "space_1",
+     "neon_0",
+     "neon_1",
+     "neon_2"
+    ]
+   },
+   "scroll": [
+    0.02,
+    0.01
+   ]
+  },
+  "ice": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "ice",
+    "size": 16,
+    "ramp": [
+     "neon_1",
+     "neon_2",
+     "neon_3"
+    ]
+   }
+  },
+  "bark": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "brushed",
+    "size": 16,
+    "ramp": [
+     "steel_0",
+     "steel_1",
+     "steel_2",
+     "steel_3"
+    ],
+    "dither": 0.5
+   }
+  },
+  "foliage": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "blotch",
+    "size": 16,
+    "ramp": [
+     "green_0",
+     "neon_0",
+     "steel_1"
+    ],
+    "contrast": 0.6
+   }
+  },
+  "cap": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "plating",
+    "size": 16,
+    "ramp": [
+     "steel_1",
+     "steel_2",
+     "steel_3"
+    ],
+    "cols": 1,
+    "rows": 1,
+    "soften": 1,
+    "dither": 0.5
+   }
+  },
+  "flower": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "blotch",
+    "size": 16,
+    "ramp": [
+     "neon_1",
+     "neon_2",
+     "neon_3"
+    ],
+    "contrast": 0.5
+   }
+  },
+  "particle": {
+   "kind": "card_alpha",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "neon_3"
+    ],
+    "alpha": "disc"
+   }
+  },
+  "skin": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "hull_3"
+    ]
+   }
+  },
+  "face": {
+   "kind": "face_atlas"
+  },
+  "headwear": {
+   "kind": "baked_unlit"
+  },
+  "costume": {
+   "kind": "baked_unlit"
+  },
+  "coat": {
+   "kind": "baked_unlit"
+  },
+  "cliff": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "plating",
+    "size": 64,
+    "ramp": [
+     "steel_0",
+     "steel_1",
+     "steel_2"
+    ],
+    "cols": 1,
+    "rows": 2
+   }
+  },
+  "path": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "hexplate",
+    "size": 32,
+    "ramp": [
+     "deck_0",
+     "deck_1",
+     "steel_1",
+     "steel_2"
+    ],
+    "cols": 6,
+    "rows": 5
+   }
+  },
+  "field": {
+   "kind": "baked_unlit",
+   "tile_m": 6.0,
+   "texture": {
+    "gen": "blotch",
+    "size": 64,
+    "ramp": [
+     "deck_0",
+     "deck_1",
+     "steel_1"
+    ],
+    "contrast": 0.6
+   }
+  }
+ },
+ "light_rig": {
+  "key_dir": [
+   0.3,
+   -0.45,
+   0.84
+  ],
+  "ambient": 0.52,
+  "key": 0.42,
+  "sky": 0.14,
+  "ground": 0.04,
+  "ao": 0.26,
+  "ao_height": 0.5,
+  "gamma": 1.0,
+  "vertex_ao": 0.32
+ },
+ "fog": {
+  "color": "space_2",
+  "start": 10.0,
+  "end": 34.0,
+  "interior": {
+   "color": "space_2",
+   "start": 10.0,
+   "end": 34.0
+  }
+ },
+ "env_maps": {
+  "env_steel": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "void",
+    "space_1",
+    "steel_1",
+    "steel_2",
+    "steel_3",
+    "hull_4"
+   ],
+   "edge": "space_1",
+   "glint": "hull_5",
+   "glints": [
+    [
+     0.36,
+     0.26,
+     0.05
+    ]
+   ]
+  },
+  "env_glass": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "space_0",
+    "neon_0",
+    "neon_1",
+    "neon_2",
+    "neon_3"
+   ],
+   "edge": "neon_0",
+   "glint": "hull_5",
+   "glints": [
+    [
+     0.33,
+     0.27,
+     0.07
+    ],
+    [
+     0.62,
+     0.66,
+     0.04
+    ]
+   ]
+  }
+ },
+ "kit_presets": {
+  "stn.corridor": {
+   "corner": {
+    "shape": "corner"
+   },
+   "tee": {
+    "shape": "tee"
+   },
+   "cross": {
+    "shape": "cross"
+   },
+   "end": {
+    "shape": "end"
+   },
+   "end_door": {
+    "shape": "end_door"
+   },
+   "plain": {
+    "rib": false
+   }
+  },
+  "stn.airlock": {
+   "open": {
+    "state": "open"
+   }
+  },
+  "stn.doorway": {
+   "lit": {
+    "beyond": "lit"
+   }
+  },
+  "stn.room": {
+   "deck_3x3": {
+    "cells_x": 3,
+    "cells_y": 3,
+    "doors": [
+     {
+      "side": "s",
+      "cell": 1
+     },
+     {
+      "side": "n",
+      "cell": 1
+     }
+    ],
+    "windows": [
+     {
+      "side": "e",
+      "cell": 1,
+      "kind": "band"
+     },
+     {
+      "side": "w",
+      "cell": 1,
+      "kind": "band"
+     }
+    ]
+   },
+   "airlock_2x2": {
+    "cells_x": 2,
+    "cells_y": 2,
+    "doors": [
+     {
+      "side": "w",
+      "cell": 0
+     },
+     {
+      "side": "e",
+      "cell": 1
+     }
+    ],
+    "windows": [
+     {
+      "side": "n",
+      "cell": 1,
+      "kind": "port"
+     }
+    ]
+   },
+   "quarters_2x3": {
+    "cells_x": 2,
+    "cells_y": 3,
+    "doors": [
+     {
+      "side": "s",
+      "cell": 0
+     }
+    ],
+    "windows": [
+     {
+      "side": "e",
+      "cell": 1,
+      "kind": "tall"
+     },
+     {
+      "side": "n",
+      "cell": 0,
+      "kind": "port"
+     }
+    ]
+   }
+  },
+  "stn.ceiling": {
+   "c2x2": {
+    "cells_x": 2,
+    "cells_y": 2
+   },
+   "c2x3": {
+    "cells_x": 2,
+    "cells_y": 3
+   },
+   "hangar": {
+    "cells_x": 4,
+    "cells_y": 4,
+    "height": 7.0,
+    "lights": true
+   }
+  },
+  "stn.floor": {
+   "plain": {
+    "kind": "plain"
+   },
+   "grate": {
+    "kind": "grate"
+   },
+   "pad": {
+    "kind": "pad"
+   }
+  },
+  "stn.viewport": {
+   "port": {
+    "kind": "port"
+   },
+   "tall": {
+    "kind": "tall"
+   }
+  },
+  "stn.stairs": {
+   "ramp": {
+    "kind": "ramp"
+   },
+   "dais": {
+    "kind": "dais"
+   }
+  },
+  "tech.console": {
+   "tall": {
+    "style": "tall",
+    "screens": 3,
+    "width": 2.0
+   },
+   "pillar": {
+    "style": "pillar",
+    "screens": 1
+   }
+  },
+  "tech.cryo_pod": {
+   "open": {
+    "state": "open"
+   }
+  },
+  "tech.crate": {
+   "large": {
+    "size": "large"
+   },
+   "long": {
+    "size": "long",
+    "band": false
+   },
+   "stack": {
+    "size": "stack"
+   }
+  },
+  "tech.tank": {
+   "horizontal": {
+    "orient": "horizontal",
+    "length": 2.6
+   }
+  },
+  "tech.cables": {
+   "hang": {
+    "mode": "hang",
+    "length": 6.0
+   }
+  },
+  "tech.vent": {
+   "floor": {
+    "kind": "floor"
+   }
+  },
+  "tech.terminal": {
+   "wall": {
+    "kind": "wall"
+   }
+  },
+  "tech.locker": {
+   "single": {
+    "doors": 1
+   }
+  },
+  "ship.shuttle": {
+   "cargo": {
+    "gear": "pod"
+   },
+   "level": {
+    "wings": "level"
+   }
+  },
+  "ship.hauler": {
+   "empty": {
+    "pods": 0
+   }
+  },
+  "ship.rover": {
+   "scout": {
+    "wheels": "four",
+    "mast": false
+   }
+  },
+  "ship.escape_pod": {
+   "open": {
+    "state": "open"
+   },
+   "crashed": {
+    "landed": false
+   }
+  },
+  "ship.drone": {
+   "lifter": {
+    "cargo": true
+   }
+  },
+  "skyx.starfield": {
+   "cylinder": {
+    "kind": "cylinder"
+   }
+  },
+  "skyx.planet": {
+   "ringed": {
+    "ring": true,
+    "size": 70.0
+   },
+   "moon": {
+    "role": "vista",
+    "size": 12.0,
+    "elevation": 0.36,
+    "distance": 200.0
+   }
+  }
+ },
+ "fixtures": {},
+ "cast": {
+  "_note": "characters are supplied by lane-characters; SCIFIKIT builds environment pieces only"
+ },
+ "validator_thresholds": {
+  "tri_limits": {},
+  "stretch": [
+   0.45,
+   1.8
+  ],
+  "visdiff_min": 0.015,
+  "people_pairwise_min": 0.02
+ },
+ "colors": {
+  "fog_ext": "#23305a",
+  "fog_int": "#23305a",
+  "amb_ext": "#b3bac6",
+  "sun_ext": "#eef1f4",
+  "amb_int": "#b3bac6",
+  "sun_int": "#eef1f4",
+  "lamp": "#c4f4f8",
+  "lamp_dim": "#178ca4",
+  "window_light": "#9c78cc"
+ },
+ "ui": {
+  "ink": "#04050b",
+  "fill": "#0a0f22d9",
+  "frame": "#8c96aa",
+  "text": "#eef1f4",
+  "dim": "#626b7e",
+  "accent": "#52d2e4"
+ }
+}

@@ -1,0 +1,454 @@
+{
+ "schema": "hermes64-rig/1.0.0",
+ "id": "warden15_v1",
+ "version": "1.0.0",
+ "kind": "creature",
+ "conventions": {
+  "units": "metre",
+  "gltf_up": "+Y",
+  "gltf_forward": "+Z (the character faces +Z; Blender authoring: Z up, faces -Y)",
+  "left_side": "+X (bones *_l sit on +X)",
+  "handedness": "right-handed",
+  "rest_rotation": "identity on every joint; unit scale; translation-only offsets from the parent",
+  "blender_authoring": "every bone head at the joint, tail = head + (0, 0, 0.05), roll 0, export with +Y up, export_rest_position_armature",
+  "armature_node": "rig_warden15_v1",
+  "mesh_node": "kit_body",
+  "inverse_bind": "IBM[i] = inverse(world rest matrix of joint i) = translation(-rest_world_position[i])"
+ },
+ "bones": [
+  {
+   "name": "root",
+   "parent": null,
+   "index": 0,
+   "rest_translation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rest_world": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "body",
+   "parent": "root",
+   "index": 1,
+   "rest_translation": [
+    0.0,
+    0.316434,
+    0.0
+   ],
+   "rest_world": [
+    0.0,
+    0.316434,
+    0.0
+   ]
+  },
+  {
+   "name": "head",
+   "parent": "body",
+   "index": 2,
+   "rest_translation": [
+    0.0,
+    0.22,
+    0.03
+   ],
+   "rest_world": [
+    0.0,
+    0.536434,
+    0.03
+   ]
+  },
+  {
+   "name": "crest",
+   "parent": "head",
+   "index": 3,
+   "rest_translation": [
+    0.0,
+    0.105,
+    0.12
+   ],
+   "rest_world": [
+    0.0,
+    0.641434,
+    0.15
+   ]
+  },
+  {
+   "name": "crest_l",
+   "parent": "head",
+   "index": 4,
+   "rest_translation": [
+    0.118,
+    0.005,
+    0.12
+   ],
+   "rest_world": [
+    0.118,
+    0.541434,
+    0.15
+   ]
+  },
+  {
+   "name": "crest_r",
+   "parent": "head",
+   "index": 5,
+   "rest_translation": [
+    -0.118,
+    0.005,
+    0.12
+   ],
+   "rest_world": [
+    -0.118,
+    0.541434,
+    0.15
+   ]
+  },
+  {
+   "name": "tail",
+   "parent": "body",
+   "index": 6,
+   "rest_translation": [
+    0.0,
+    0.06,
+    -0.14
+   ],
+   "rest_world": [
+    0.0,
+    0.376434,
+    -0.14
+   ]
+  },
+  {
+   "name": "thigh_l",
+   "parent": "body",
+   "index": 7,
+   "rest_translation": [
+    0.075,
+    0.01,
+    -0.01
+   ],
+   "rest_world": [
+    0.075,
+    0.326434,
+    -0.01
+   ]
+  },
+  {
+   "name": "shin_l",
+   "parent": "thigh_l",
+   "index": 8,
+   "rest_translation": [
+    0.01,
+    -0.16,
+    0.035
+   ],
+   "rest_world": [
+    0.085,
+    0.166434,
+    0.025
+   ]
+  },
+  {
+   "name": "foot_l",
+   "parent": "shin_l",
+   "index": 9,
+   "rest_translation": [
+    0.005,
+    -0.136,
+    -0.02
+   ],
+   "rest_world": [
+    0.09,
+    0.030434,
+    0.005
+   ]
+  },
+  {
+   "name": "thigh_r",
+   "parent": "body",
+   "index": 10,
+   "rest_translation": [
+    -0.075,
+    0.01,
+    -0.01
+   ],
+   "rest_world": [
+    -0.075,
+    0.326434,
+    -0.01
+   ]
+  },
+  {
+   "name": "shin_r",
+   "parent": "thigh_r",
+   "index": 11,
+   "rest_translation": [
+    -0.01,
+    -0.16,
+    0.035
+   ],
+   "rest_world": [
+    -0.085,
+    0.166434,
+    0.025
+   ]
+  },
+  {
+   "name": "foot_r",
+   "parent": "shin_r",
+   "index": 12,
+   "rest_translation": [
+    -0.005,
+    -0.136,
+    -0.02
+   ],
+   "rest_world": [
+    -0.09,
+    0.030434,
+    0.005
+   ]
+  },
+  {
+   "name": "wing_l",
+   "parent": "body",
+   "index": 13,
+   "rest_translation": [
+    0.13,
+    0.18,
+    -0.03
+   ],
+   "rest_world": [
+    0.13,
+    0.496434,
+    -0.03
+   ]
+  },
+  {
+   "name": "wing_r",
+   "parent": "body",
+   "index": 14,
+   "rest_translation": [
+    -0.13,
+    0.18,
+    -0.03
+   ],
+   "rest_world": [
+    -0.13,
+    0.496434,
+    -0.03
+   ]
+  }
+ ],
+ "mirror_pairs": [
+  [
+   "crest_l",
+   "crest_r"
+  ],
+  [
+   "thigh_l",
+   "thigh_r"
+  ],
+  [
+   "shin_l",
+   "shin_r"
+  ],
+  [
+   "foot_l",
+   "foot_r"
+  ],
+  [
+   "wing_l",
+   "wing_r"
+  ]
+ ],
+ "skin": {
+  "max_influences": 4,
+  "weights_sum_tolerance": 0.001,
+  "joints_component": [
+   "UNSIGNED_BYTE",
+   "UNSIGNED_SHORT"
+  ],
+  "weights_component": "FLOAT",
+  "ibm_tolerance_m": 1e-05
+ },
+ "joint_limits": {
+  "root": {
+   "max_angle_deg": 10.0
+  },
+  "body": {
+   "max_angle_deg": 95.0
+  },
+  "head": {
+   "max_angle_deg": 40.0
+  },
+  "crest": {
+   "max_angle_deg": 120.0
+  },
+  "crest_l": {
+   "max_angle_deg": 105.0
+  },
+  "crest_r": {
+   "max_angle_deg": 105.0
+  },
+  "tail": {
+   "max_angle_deg": 70.0
+  },
+  "thigh_l": {
+   "max_angle_deg": 60.0
+  },
+  "shin_l": {
+   "max_angle_deg": 90.0
+  },
+  "foot_l": {
+   "max_angle_deg": 45.0
+  },
+  "thigh_r": {
+   "max_angle_deg": 60.0
+  },
+  "shin_r": {
+   "max_angle_deg": 90.0
+  },
+  "foot_r": {
+   "max_angle_deg": 45.0
+  },
+  "wing_l": {
+   "max_angle_deg": 85.0
+  },
+  "wing_r": {
+   "max_angle_deg": 85.0
+  }
+ },
+ "joint_limits_source": "envelope of every key of every clip of 2 Blender-published files + 10 deg, rounded up to 5 deg",
+ "proportions": {
+  "height_m": [
+   0.601,
+   0.94
+  ],
+  "segment_fraction_of_height": {
+   "body": [
+    0.3357,
+    0.5271
+   ],
+   "head": [
+    0.2353,
+    0.3702
+   ],
+   "crest": [
+    0.1687,
+    0.2661
+   ],
+   "crest_l": [
+    0.1782,
+    0.281
+   ],
+   "crest_r": [
+    0.1782,
+    0.281
+   ],
+   "tail": [
+    0.1611,
+    0.2543
+   ],
+   "thigh_l": [
+    0.0802,
+    0.1279
+   ],
+   "shin_l": [
+    0.1736,
+    0.2738
+   ],
+   "foot_l": [
+    0.1454,
+    0.2297
+   ],
+   "thigh_r": [
+    0.0802,
+    0.1279
+   ],
+   "shin_r": [
+    0.1736,
+    0.2738
+   ],
+   "foot_r": [
+    0.1454,
+    0.2297
+   ],
+   "wing_l": [
+    0.2374,
+    0.3735
+   ],
+   "wing_r": [
+    0.2374,
+    0.3735
+   ]
+  }
+ },
+ "proportions_source": "Blender-published files: segment length / rest mesh height, range x0.8 .. x1.25",
+ "reference_body": {
+  "generator": "core/enemies.build('reed_warden')",
+  "enemy_id": "reed_warden",
+  "topology": "reed_warden_v1",
+  "template": "melee_approach_v1"
+ },
+ "clips": {
+  "required": [
+   "idle",
+   "move",
+   "telegraph",
+   "attack",
+   "recover",
+   "hurt",
+   "death"
+  ],
+  "fps": 15,
+  "keys": 16,
+  "duration_s": 1.0,
+  "interpolation": "STEP",
+  "key_time": "key k at t = k / 15 s",
+  "channels": {
+   "rotation": "every joint except root",
+   "translation": [
+    "body"
+   ]
+  },
+  "root_motion": "root never animated; the body joint 'body' carries a vertical offset only",
+  "fsm_clip": {
+   "idle": "idle",
+   "approach": "move",
+   "telegraph": "telegraph",
+   "attack": "attack",
+   "recover": "recover",
+   "hurt": "hurt",
+   "dead": "death"
+  }
+ },
+ "sockets": [
+  {
+   "name": "attach_lob",
+   "bone": "crest"
+  },
+  {
+   "name": "attach_core",
+   "bone": "body"
+  }
+ ],
+ "budgets": {
+  "body_tris_lt": 500,
+  "prop_tris_le": 200
+ },
+ "seams": [],
+ "silhouette": {
+  "rest_height_m": [
+   0.601,
+   0.94
+  ],
+  "floor": "no_sink",
+  "floor_tolerance_m": 0.002,
+  "floor_note": "creatures hop/gallop: the body joint lifts the mesh; it must never sink below y=0",
+  "blowup_height_factor": 1.6,
+  "max_vertex_departure_m": 0.5
+ }
+}

@@ -1,0 +1,1711 @@
+{
+ "id": "forest_village",
+ "version": "3.1.0",
+ "note": "Warm N64-era woodland village: timber, plaster, thatch, stone, meadow greens, sky blue, lantern light. Face-atlas cast. Data only; built from the same Hermes64 core as polar_pod.",
+ "palette": [
+  "#120d08",
+  "#2b1b0e",
+  "#4a2f18",
+  "#6e4724",
+  "#8f6334",
+  "#b08348",
+  "#d0a868",
+  "#ecd9a8",
+  "#fff8e8",
+  "#1d3315",
+  "#2f4f1d",
+  "#487028",
+  "#6a9234",
+  "#96b84c",
+  "#c4d77a",
+  "#3a3833",
+  "#5d5850",
+  "#868074",
+  "#b2ab9b",
+  "#355f9c",
+  "#5e8fce",
+  "#9cc4ec",
+  "#a8862f",
+  "#d8b95c",
+  "#8e3a24",
+  "#c25a2c",
+  "#f3cfa6",
+  "#d9a06e",
+  "#a7693f",
+  "#6b4127",
+  "#7a2f4f",
+  "#2f6f6a"
+ ],
+ "palette_names": [
+  "ink",
+  "umber_0",
+  "umber_1",
+  "umber_2",
+  "wood_0",
+  "wood_1",
+  "wood_2",
+  "cream",
+  "white",
+  "leaf_0",
+  "leaf_1",
+  "leaf_2",
+  "leaf_3",
+  "leaf_4",
+  "leaf_5",
+  "stone_0",
+  "stone_1",
+  "stone_2",
+  "stone_3",
+  "sky_0",
+  "sky_1",
+  "sky_2",
+  "straw_0",
+  "straw_1",
+  "brick",
+  "rust",
+  "skin_0",
+  "skin_1",
+  "skin_2",
+  "skin_3",
+  "berry",
+  "teal"
+ ],
+ "ramps": {
+  "wood": [
+   "umber_0",
+   "umber_1",
+   "umber_2",
+   "wood_0",
+   "wood_1",
+   "wood_2"
+  ],
+  "leaf": [
+   "leaf_0",
+   "leaf_1",
+   "leaf_2",
+   "leaf_3",
+   "leaf_4",
+   "leaf_5"
+  ],
+  "stone": [
+   "stone_0",
+   "stone_1",
+   "stone_2",
+   "stone_3"
+  ],
+  "sky": [
+   "sky_0",
+   "sky_1",
+   "sky_2",
+   "white"
+  ],
+  "skin": [
+   "skin_0",
+   "skin_1",
+   "skin_2",
+   "skin_3"
+  ]
+ },
+ "light_ramp": [
+  "umber_0",
+  "stone_0",
+  "stone_1",
+  "stone_2",
+  "stone_3",
+  "cream",
+  "white"
+ ],
+ "light_rig": {
+  "key_dir": [
+   0.55,
+   -0.45,
+   0.7
+  ],
+  "ambient": 0.5,
+  "key": 0.48,
+  "sky": 0.1,
+  "ground": 0.02,
+  "ao": 0.32,
+  "ao_height": 0.4,
+  "gamma": 1.0
+ },
+ "fog": {
+  "color": "sky_2",
+  "start": 12.0,
+  "end": 70.0,
+  "interior": {
+   "color": "umber_1",
+   "start": 6.0,
+   "end": 20.0
+  }
+ },
+ "env_maps": {
+  "env_iron": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "ink",
+    "stone_0",
+    "stone_1",
+    "stone_2",
+    "stone_3",
+    "cream"
+   ],
+   "edge": "stone_0",
+   "glint": "white",
+   "glints": [
+    [
+     0.36,
+     0.26,
+     0.06
+    ]
+   ]
+  },
+  "env_glass": {
+   "gen": "env",
+   "size": 64,
+   "stops": [
+    "sky_1",
+    "sky_2",
+    "cream",
+    "white"
+   ],
+   "edge": "sky_1",
+   "glint": "white",
+   "glints": [
+    [
+     0.33,
+     0.27,
+     0.07
+    ]
+   ]
+  }
+ },
+ "materials": {
+  "wall": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "plaster",
+    "size": 32,
+    "ramp": [
+     "stone_3",
+     "cream",
+     "white"
+    ]
+   }
+  },
+  "wall_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "planks",
+    "size": 32,
+    "boards": 4,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "floor": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "planks",
+    "size": 32,
+    "boards": 5,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "ceiling": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "planks",
+    "size": 32,
+    "boards": 4,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "trim": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grain",
+    "size": 16,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2"
+    ]
+   }
+  },
+  "frame": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "grain",
+    "size": 16,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "door": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "planks",
+    "size": 32,
+    "boards": 4,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "glass": {
+   "kind": "glass_env",
+   "tint": "sky_1",
+   "env": "env_glass"
+  },
+  "view": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "scene",
+    "width": 128,
+    "height": 64,
+    "sky": [
+     "white",
+     "cream",
+     "sky_2"
+    ],
+    "layers": [
+     {
+      "kind": "mountains",
+      "base": 0.38,
+      "height": 0.16,
+      "count": 6,
+      "color": "sky_1"
+     },
+     {
+      "kind": "forest",
+      "base": 0.32,
+      "height": 0.2,
+      "count": 14,
+      "ramp": [
+       "leaf_0",
+       "leaf_1",
+       "leaf_2"
+      ]
+     },
+     {
+      "kind": "roofs",
+      "base": 0.3,
+      "height": 0.1,
+      "count": 4,
+      "color": "straw_0",
+      "lights": {
+       "color": "straw_1",
+       "count": 3
+      }
+     }
+    ],
+    "ground": {
+     "ramp": [
+      "leaf_1",
+      "leaf_2",
+      "leaf_3",
+      "leaf_4"
+     ],
+     "height": 0.32
+    },
+    "sky_range": [
+     0.3,
+     1.0
+    ],
+    "dither": false
+   }
+  },
+  "roof": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "thatch",
+    "size": 32,
+    "rows": 3,
+    "ramp": [
+     "umber_2",
+     "straw_0",
+     "straw_1",
+     "wood_2"
+    ]
+   }
+  },
+  "step": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "blocks",
+    "size": 32,
+    "rows": 2,
+    "cols": 2,
+    "ramp": [
+     "stone_1",
+     "stone_2",
+     "stone_3"
+    ]
+   }
+  },
+  "rail": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "grain",
+    "size": 16,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "post": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "bark",
+    "size": 16,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2"
+    ]
+   }
+  },
+  "stone": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "blocks",
+    "size": 32,
+    "rows": 4,
+    "cols": 2,
+    "ramp": [
+     "stone_0",
+     "stone_1",
+     "stone_2",
+     "stone_3"
+    ]
+   }
+  },
+  "metal": {
+   "kind": "chrome_env",
+   "tint": "stone_2",
+   "env": "env_iron"
+  },
+  "chrome": {
+   "kind": "chrome_env",
+   "tint": "stone_3",
+   "env": "env_iron"
+  },
+  "body": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "grain",
+    "size": 32,
+    "ramp": [
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "body_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "grain",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "cushion": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fabric",
+    "size": 32,
+    "ramp": [
+     "brick",
+     "rust",
+     "straw_1"
+    ]
+   }
+  },
+  "fabric": {
+   "kind": "baked_unlit",
+   "tile_m": 0.3,
+   "texture": {
+    "gen": "checks",
+    "size": 16,
+    "count": 2,
+    "ramp": [
+     "teal",
+     "sky_0",
+     "cream"
+    ]
+   }
+  },
+  "knit": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "knit",
+    "size": 32,
+    "cols": 6,
+    "rows": 6,
+    "ramp": [
+     "brick",
+     "rust",
+     "straw_0",
+     "straw_1"
+    ]
+   }
+  },
+  "fur": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "fur",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "quilt": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "quilt_diamond",
+    "size": 32,
+    "cells": 2,
+    "ramp": [
+     "brick",
+     "rust",
+     "wood_2",
+     "cream"
+    ]
+   }
+  },
+  "screen": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "paper",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "wood_2",
+     "cream",
+     "white"
+    ]
+   }
+  },
+  "light": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "glow",
+    "size": 16,
+    "ramp": [
+     "rust",
+     "straw_1",
+     "cream",
+     "white"
+    ]
+   }
+  },
+  "orb": {
+   "kind": "glass_env",
+   "tint": "leaf_2",
+   "env": "env_glass"
+  },
+  "wood": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "grain",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "paper": {
+   "kind": "baked_unlit",
+   "tile_m": 0.4,
+   "texture": {
+    "gen": "paper",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "wood_2",
+     "cream",
+     "white"
+    ]
+   }
+  },
+  "book": {
+   "kind": "baked_unlit",
+   "tile_m": 0.4,
+   "texture": {
+    "gen": "spines",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "brick",
+     "teal",
+     "berry",
+     "wood_1"
+    ]
+   }
+  },
+  "leather": {
+   "kind": "baked_unlit",
+   "tile_m": 0.6,
+   "texture": {
+    "gen": "leather",
+    "size": 32,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2"
+    ]
+   }
+  },
+  "rope": {
+   "kind": "baked_unlit",
+   "tile_m": 0.3,
+   "texture": {
+    "gen": "rope",
+    "size": 16,
+    "ramp": [
+     "straw_0",
+     "straw_1",
+     "wood_2"
+    ]
+   }
+  },
+  "fire": {
+   "kind": "emissive",
+   "texture": {
+    "gen": "fire",
+    "size": 16,
+    "ramp": [
+     "brick",
+     "rust",
+     "straw_1",
+     "white"
+    ]
+   }
+  },
+  "grass": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "grass",
+    "size": 32,
+    "ramp": [
+     "leaf_1",
+     "leaf_2",
+     "leaf_3",
+     "leaf_4"
+    ]
+   }
+  },
+  "snow": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "snow",
+    "size": 32,
+    "ramp": [
+     "stone_3",
+     "cream",
+     "white"
+    ]
+   }
+  },
+  "sand": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "sand",
+    "size": 32,
+    "ripples": 4,
+    "ramp": [
+     "wood_1",
+     "wood_2",
+     "cream"
+    ]
+   }
+  },
+  "rock": {
+   "kind": "baked_unlit",
+   "tile_m": 2.0,
+   "texture": {
+    "gen": "rock",
+    "size": 32,
+    "ramp": [
+     "stone_0",
+     "stone_1",
+     "stone_2",
+     "stone_3"
+    ]
+   }
+  },
+  "dirt": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "dirt",
+    "size": 32,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "water": {
+   "kind": "water",
+   "tile_m": 3.0,
+   "scroll": [
+    0.03,
+    0.01
+   ],
+   "texture": {
+    "gen": "water",
+    "size": 32,
+    "ramp": [
+     "teal",
+     "sky_0",
+     "sky_1",
+     "sky_2"
+    ]
+   }
+  },
+  "ice": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "ice",
+    "size": 32,
+    "ramp": [
+     "sky_1",
+     "sky_2",
+     "white"
+    ]
+   }
+  },
+  "bark": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "bark",
+    "size": 16,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2",
+     "wood_0"
+    ]
+   }
+  },
+  "foliage": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "leaves",
+    "size": 32,
+    "ramp": [
+     "leaf_0",
+     "leaf_1",
+     "leaf_2",
+     "leaf_3",
+     "leaf_4"
+    ]
+   }
+  },
+  "cap": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "grass",
+    "size": 16,
+    "ramp": [
+     "leaf_2",
+     "leaf_3",
+     "leaf_4"
+    ]
+   }
+  },
+  "flower": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "leaves",
+    "size": 16,
+    "cells": 6,
+    "ramp": [
+     "brick",
+     "rust",
+     "straw_1",
+     "cream"
+    ]
+   }
+  },
+  "hull": {
+   "kind": "baked_unlit",
+   "tile_m": 1.5,
+   "texture": {
+    "gen": "planks",
+    "size": 32,
+    "boards": 4,
+    "ramp": [
+     "umber_1",
+     "umber_2",
+     "wood_0",
+     "wood_1"
+    ]
+   }
+  },
+  "hull_alt": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "grain",
+    "size": 16,
+    "ramp": [
+     "umber_0",
+     "umber_1",
+     "umber_2"
+    ]
+   }
+  },
+  "band": {
+   "kind": "baked_unlit",
+   "tile_m": 0.75,
+   "texture": {
+    "gen": "stripes",
+    "size": 16,
+    "count": 2,
+    "ramp": [
+     "brick",
+     "cream"
+    ]
+   }
+  },
+  "sky": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "scene",
+    "width": 128,
+    "height": 64,
+    "sky": [
+     "cream",
+     "white",
+     "sky_2",
+     "sky_1",
+     "sky_0"
+    ],
+    "layers": [
+     {
+      "kind": "clouds",
+      "base": 0.14,
+      "height": 0.16,
+      "stretch": 5,
+      "cover": 0.58,
+      "color": "white",
+      "shade": "stone_3"
+     },
+     {
+      "kind": "haze",
+      "base": 0.0,
+      "height": 0.12,
+      "color": "cream"
+     }
+    ],
+    "sky_gamma": 0.8,
+    "dither": false,
+    "sky_range": [
+     0.07,
+     0.5
+    ]
+   }
+  },
+  "particle": {
+   "kind": "card_alpha",
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "straw_1"
+    ],
+    "alpha": "disc"
+   }
+  },
+  "skin": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "skin_1"
+    ]
+   }
+  },
+  "face": {
+   "kind": "face_atlas"
+  },
+  "headwear": {
+   "kind": "baked_unlit"
+  },
+  "opening": {
+   "kind": "baked_unlit",
+   "tile_m": 1.0,
+   "texture": {
+    "gen": "flat",
+    "size": 8,
+    "ramp": [
+     "ink"
+    ]
+   }
+  },
+  "costume": {
+   "kind": "baked_unlit"
+  },
+  "coat": {
+   "kind": "baked_unlit"
+  },
+  "cliff": {
+   "kind": "baked_unlit",
+   "tile_m": 4.0,
+   "texture": {
+    "gen": "streaks",
+    "size": 64,
+    "columns": 3,
+    "strata": 3,
+    "ramp": [
+     "stone_0",
+     "stone_1",
+     "stone_2",
+     "stone_3"
+    ],
+    "contrast": 1.35,
+    "crevice": 0.15
+   }
+  },
+  "path": {
+   "kind": "baked_unlit",
+   "tile_m": 3.0,
+   "texture": {
+    "gen": "blotch",
+    "size": 32,
+    "contrast": 0.6,
+    "fine": 0.05,
+    "ramp": [
+     "wood_1",
+     "wood_2",
+     "cream"
+    ]
+   }
+  },
+  "vista": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "vgrad",
+    "size": 32,
+    "strength": 0.6,
+    "noise": 0.12,
+    "up": true,
+    "ramp": [
+     "stone_2",
+     "stone_3",
+     "sky_2"
+    ]
+   }
+  },
+  "vista_far": {
+   "kind": "view_plane",
+   "texture": {
+    "gen": "vgrad",
+    "size": 32,
+    "strength": 0.5,
+    "noise": 0.1,
+    "up": true,
+    "ramp": [
+     "sky_1",
+     "sky_2",
+     "white"
+    ]
+   }
+  },
+  "field": {
+   "kind": "baked_unlit",
+   "tile_m": 6.0,
+   "texture": {
+    "gen": "blotch",
+    "size": 64,
+    "contrast": 0.85,
+    "fine": 0.05,
+    "ramp": [
+     "leaf_2",
+     "leaf_3",
+     "leaf_4"
+    ]
+   }
+  }
+ },
+ "kit_presets": {
+  "arch.room_shell": {
+   "default": {
+    "plan": "rect",
+    "width": 7.0,
+    "depth": 6.0,
+    "height": 3.0,
+    "cove": 0.0,
+    "ceiling": "gable",
+    "ceiling_rise": 1.2,
+    "trim": true,
+    "floor_role": "wood",
+    "wall_role": "wall",
+    "ceiling_role": "wood",
+    "openings": [
+     {
+      "wall": "s",
+      "offset": 0.0,
+      "width": 1.1,
+      "height": 2.1,
+      "sill": 0.0,
+      "kind": "door",
+      "shape": "arch"
+     },
+     {
+      "wall": "n",
+      "offset": 0.0,
+      "width": 1.6,
+      "height": 1.2,
+      "sill": 0.9,
+      "kind": "window",
+      "shape": "rect"
+     },
+     {
+      "wall": "e",
+      "offset": 0.0,
+      "width": 0.9,
+      "height": 1.0,
+      "sill": 1.0,
+      "kind": "window",
+      "shape": "rect"
+     }
+    ]
+   }
+  },
+  "arch.door": {
+   "default": {
+    "shape": "round_top",
+    "leaf": "planks",
+    "leaf_role": "wood",
+    "frame_role": "wood"
+   }
+  },
+  "arch.window": {
+   "default": {
+    "shape": "rect",
+    "mullions_x": 1,
+    "mullions_z": 1,
+    "shutters": true,
+    "ledge": true,
+    "frame_role": "wood"
+   },
+   "arched": {
+    "shape": "arch",
+    "mullions_x": 1,
+    "ledge": true,
+    "frame_role": "stone"
+   }
+  },
+  "arch.wall_module": {
+   "default": {
+    "role": "wall",
+    "top": "flat"
+   }
+  },
+  "arch.floor_module": {
+   "default": {
+    "role": "wood"
+   }
+  },
+  "arch.ceiling_module": {
+   "default": {
+    "style": "beams",
+    "role": "wood"
+   }
+  },
+  "arch.column": {
+   "default": {
+    "shape": "round",
+    "role": "stone"
+   }
+  },
+  "arch.corridor": {
+   "default": {
+    "section": "arch",
+    "wall_role": "stone",
+    "floor_role": "stone"
+   }
+  },
+  "arch.stairs": {
+   "default": {
+    "kind": "straight",
+    "role": "wood",
+    "rail_role": "wood"
+   }
+  },
+  "arch.railing": {
+   "default": {
+    "role": "wood",
+    "infill": "picket"
+   }
+  },
+  "arch.roof": {
+   "default": {
+    "kind": "gable",
+    "role": "roof"
+   }
+  },
+  "arch.house": {
+   "default": {
+    "plan": "rect",
+    "roof": "gable",
+    "beams": true,
+    "chimney": true,
+    "wall_role": "wall",
+    "roof_role": "roof",
+    "window_shape": "rect",
+    "windows": 2
+   },
+   "round_cottage": {
+    "plan": "round",
+    "roof": "cone",
+    "width": 5.0,
+    "depth": 5.0,
+    "wall_role": "stone",
+    "roof_role": "roof",
+    "window_shape": "round",
+    "windows": 2,
+    "chimney": false,
+    "beams": false
+   }
+  },
+  "arch.pier": {
+   "default": {
+    "deck_role": "wood",
+    "pile_role": "wood"
+   }
+  },
+  "arch.bridge": {
+   "default": {
+    "kind": "arched",
+    "deck_role": "stone",
+    "rail_role": "stone"
+   }
+  },
+  "furn.pod": {
+   "default": {
+    "kind": "egg",
+    "width": 1.0,
+    "depth": 0.95,
+    "height": 1.3,
+    "lobes": 0,
+    "cushion": true,
+    "feet": 0,
+    "shell_role": "wood",
+    "cushion_role": "fabric",
+    "foot_role": "wood",
+    "port_role": "glass"
+   }
+  },
+  "furn.bench": {
+   "default": {
+    "body_role": "wood",
+    "leg_role": "wood",
+    "throw_role": "fabric",
+    "curl": 0.2,
+    "curl_height": 1.0,
+    "orb": false
+   }
+  },
+  "furn.console": {
+   "default": {
+    "kind": "lectern",
+    "body_role": "wood",
+    "screens": 0,
+    "joystick": false
+   }
+  },
+  "furn.table": {
+   "default": {
+    "top_shape": "rect",
+    "legs": "trestle",
+    "top_role": "wood",
+    "base_role": "wood"
+   },
+   "round_stone": {
+    "top_shape": "round",
+    "legs": "pedestal",
+    "top_role": "stone",
+    "base_role": "wood",
+    "width": 1.0,
+    "depth": 1.0
+   }
+  },
+  "furn.chair": {
+   "default": {
+    "kind": "chair",
+    "legs": "four",
+    "frame_role": "wood",
+    "seat_role": "wood",
+    "back_height": 0.5,
+    "cushion": false
+   },
+   "stool": {
+    "kind": "stool",
+    "legs": "four",
+    "frame_role": "wood",
+    "seat_role": "wood",
+    "seat_shape": "round",
+    "back_height": 0.0
+   }
+  },
+  "furn.bed": {
+   "default": {
+    "kind": "box",
+    "headboard": "high",
+    "frame_role": "wood",
+    "blanket_role": "quilt",
+    "mattress_role": "fabric",
+    "pillow_role": "fabric"
+   }
+  },
+  "furn.lamp": {
+   "default": {
+    "kind": "lantern",
+    "height": 0.5,
+    "stand_role": "metal"
+   }
+  },
+  "furn.shelf": {
+   "default": {
+    "kind": "bookshelf",
+    "frame_role": "wood",
+    "books": 0.8
+   }
+  },
+  "furn.container": {
+   "default": {
+    "kind": "barrel",
+    "body_role": "wood",
+    "band_role": "metal"
+   },
+   "crate": {
+    "kind": "crate",
+    "body_role": "wood",
+    "band_role": "wood"
+   },
+   "chest": {
+    "kind": "chest",
+    "body_role": "wood",
+    "band_role": "metal"
+   }
+  },
+  "furn.rug": {
+   "default": {
+    "shape": "rect",
+    "rug_role": "fabric",
+    "fringe": true
+   }
+  },
+  "furn.hearth": {
+   "default": {
+    "kind": "fireplace",
+    "body_role": "stone"
+   }
+  },
+  "nature.tree": {
+   "default": {
+    "kind": "broadleaf"
+   },
+   "birch": {
+    "kind": "birch"
+   }
+  },
+  "nature.bush": {
+   "default": {
+    "flowers": 3
+   }
+  },
+  "nature.rock": {
+   "default": {
+    "role": "rock"
+   }
+  },
+  "terrain.patch": {
+   "default": {
+    "surface": "grass",
+    "feature": "mounds"
+   }
+  },
+  "terrain.water": {
+   "default": {
+    "surface": "water"
+   }
+  },
+  "vehicle.craft": {
+   "default": {
+    "kind": "cart",
+    "body_role": "wood",
+    "trim_role": "metal",
+    "canopy": "hoop"
+   }
+  },
+  "vehicle.boat": {
+   "default": {
+    "kind": "rowboat",
+    "hull_role": "wood",
+    "trim_role": "wood"
+   }
+  },
+  "prop.sign": {
+   "default": {
+    "kind": "hanging",
+    "board_role": "wood",
+    "text_role": "paper",
+    "post_height": 0.9,
+    "height": 0.3
+   }
+  },
+  "prop.device": {
+   "default": {
+    "kind": "lantern",
+    "body_role": "metal"
+   }
+  },
+  "prop.key": {
+   "default": {
+    "kind": "skeleton",
+    "role": "metal"
+   }
+  },
+  "prop.tool": {
+   "default": {
+    "kind": "axe"
+   }
+  },
+  "prop.vessel": {
+   "default": {
+    "kind": "jar",
+    "role": "stone"
+   }
+  },
+  "prop.book": {
+   "default": {
+    "cover_role": "leather"
+   }
+  },
+  "soft.pillow": {
+   "default": {
+    "shape": "square",
+    "role": "fabric",
+    "piping": true
+   },
+   "cat_bed": {
+    "shape": "floor_cushion",
+    "size": 0.6,
+    "thickness": 0.14,
+    "role": "knit"
+   }
+  },
+  "soft.blanket": {
+   "default": {
+    "kind": "spread",
+    "role": "quilt",
+    "fringe": true
+   }
+  },
+  "fx.particles": {
+   "default": {
+    "shape": "leaf"
+   }
+  },
+  "arch.tower": {
+   "default": {
+    "height": 15.0,
+    "radius": 1.7,
+    "taper": 0.68,
+    "bands": 3,
+    "gallery": true,
+    "lantern": true,
+    "cap": "cone",
+    "windows": 3,
+    "door": true,
+    "body_role": "wall",
+    "band_role": "band",
+    "cap_role": "metal",
+    "rail_role": "metal"
+   }
+  },
+  "terrain.vista": {
+   "default": {
+    "radius": 60.0,
+    "layers": 2,
+    "segments": 48,
+    "height": 0.12,
+    "jag": 0.4,
+    "kind": "hills",
+    "below": 0.08
+   }
+  },
+  "terrain.yard": {
+   "default": {
+    "plan": "rounded_rect",
+    "width": 12.0,
+    "depth": 10.0,
+    "terraces": 2,
+    "terrace_rise": 0.9,
+    "terrace_run": 3.0,
+    "ridge_height": 7.0,
+    "ridge_run": 5.0,
+    "jag": 0.3,
+    "exits": [
+     {
+      "wall": "s",
+      "offset": 0.0,
+      "width": 2.4
+     }
+    ],
+    "path_width": 1.6,
+    "ponds": [],
+    "ground_role": "field",
+    "tread_role": "field",
+    "cliff_role": "cliff",
+    "cap_role": "cap",
+    "path_role": "path",
+    "pond_role": "water",
+    "bowl": 0.7,
+    "view_gap": 0.5,
+    "view_gap_azimuth": 90.0
+   }
+  }
+ },
+ "fixtures": {
+  "door_main": {
+   "generator": "arch.door",
+   "preset": "default"
+  },
+  "window_main": {
+   "generator": "arch.window",
+   "preset": "default"
+  },
+  "window_side": {
+   "generator": "arch.window",
+   "preset": "arched"
+  },
+  "seat_lounge": {
+   "generator": "furn.bench",
+   "preset": "default"
+  },
+  "seat_chair": {
+   "generator": "furn.chair",
+   "preset": "default"
+  },
+  "seat_bench": {
+   "generator": "furn.bench",
+   "preset": "default"
+  },
+  "seat_pit": {
+   "generator": "furn.rug",
+   "preset": "default"
+  },
+  "table_main": {
+   "generator": "furn.table",
+   "preset": "default"
+  },
+  "table_low": {
+   "generator": "furn.table",
+   "preset": "round_stone"
+  },
+  "bed": {
+   "generator": "furn.bed",
+   "preset": "default"
+  },
+  "lamp_floor": {
+   "generator": "furn.lamp",
+   "preset": "default"
+  },
+  "lamp_table": {
+   "generator": "prop.device",
+   "preset": "default"
+  },
+  "shelf": {
+   "generator": "furn.shelf",
+   "preset": "default"
+  },
+  "rug": {
+   "generator": "furn.rug",
+   "preset": "default"
+  },
+  "console": {
+   "generator": "furn.console",
+   "preset": "default"
+  },
+  "container": {
+   "generator": "furn.container",
+   "preset": "default"
+  },
+  "hearth": {
+   "generator": "furn.hearth",
+   "preset": "default"
+  },
+  "cat_bed": {
+   "generator": "soft.pillow",
+   "preset": "cat_bed"
+  },
+  "pillow": {
+   "generator": "soft.pillow",
+   "preset": "default"
+  },
+  "blanket": {
+   "generator": "soft.blanket",
+   "preset": "default"
+  },
+  "plant": {
+   "generator": "nature.bush",
+   "preset": "default"
+  },
+  "sign_main": {
+   "generator": "prop.sign",
+   "preset": "default"
+  },
+  "book": {
+   "generator": "prop.book",
+   "preset": "default"
+  },
+  "vessel": {
+   "generator": "prop.vessel",
+   "preset": "default"
+  },
+  "key": {
+   "generator": "prop.key",
+   "preset": "default"
+  },
+  "tool": {
+   "generator": "prop.tool",
+   "preset": "default"
+  },
+  "device": {
+   "generator": "prop.device",
+   "preset": "default"
+  },
+  "vehicle_main": {
+   "generator": "vehicle.craft",
+   "preset": "default"
+  },
+  "boat": {
+   "generator": "vehicle.boat",
+   "preset": "default"
+  },
+  "tree": {
+   "generator": "nature.tree",
+   "preset": "default"
+  },
+  "rock": {
+   "generator": "nature.rock",
+   "preset": "default"
+  },
+  "ground": {
+   "generator": "terrain.patch",
+   "preset": "default"
+  },
+  "water": {
+   "generator": "terrain.water",
+   "preset": "default"
+  },
+  "sky": {
+   "generator": "sky.backdrop",
+   "preset": "default"
+  },
+  "weather": {
+   "generator": "fx.particles",
+   "preset": "default"
+  }
+ },
+ "cast": {
+  "_note": "References only (KITS 3.1.0): people and animals are built and published by lane-characters. Ids are copied from lane-characters/packs/forest_village/pack.json (character_cast / animal_cast) as read on 2026-11-07; this lane builds no character geometry and does not verify those assets.",
+  "study_face_01": {
+   "character_id": "study_face_01",
+   "kind": "person",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#character_cast",
+   "study_only": true
+  },
+  "study_face_02": {
+   "character_id": "study_face_02",
+   "kind": "person",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#character_cast",
+   "study_only": true
+  },
+  "study_face_03": {
+   "character_id": "study_face_03",
+   "kind": "person",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#character_cast",
+   "study_only": true
+  },
+  "study_face_04": {
+   "character_id": "study_face_04",
+   "kind": "person",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#character_cast",
+   "study_only": true
+  },
+  "study_face_05": {
+   "character_id": "study_face_05",
+   "kind": "person",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#character_cast",
+   "study_only": true
+  },
+  "study_face_06": {
+   "character_id": "study_face_06",
+   "kind": "person",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#character_cast",
+   "study_only": true
+  },
+  "study_face_07": {
+   "character_id": "study_face_07",
+   "kind": "person",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#character_cast",
+   "study_only": true
+  },
+  "study_face_08": {
+   "character_id": "study_face_08",
+   "kind": "person",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#character_cast",
+   "study_only": true
+  },
+  "cat_tuxedo": {
+   "character_id": "cat_tuxedo",
+   "kind": "animal",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#animal_cast",
+   "study_only": false
+  },
+  "cat_tabby": {
+   "character_id": "cat_tabby",
+   "kind": "animal",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#animal_cast",
+   "study_only": false
+  },
+  "cat_calico": {
+   "character_id": "cat_calico",
+   "kind": "animal",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#animal_cast",
+   "study_only": false
+  },
+  "cat_black": {
+   "character_id": "cat_black",
+   "kind": "animal",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#animal_cast",
+   "study_only": false
+  },
+  "cat_white": {
+   "character_id": "cat_white",
+   "kind": "animal",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#animal_cast",
+   "study_only": false
+  },
+  "dog_saddle": {
+   "character_id": "dog_saddle",
+   "kind": "animal",
+   "supplied_by": "lane-characters",
+   "source": "lane-characters/packs/forest_village/pack.json#animal_cast",
+   "study_only": false
+  }
+ },
+ "validator_thresholds": {
+  "tri_limits": {},
+  "stretch": [
+   0.45,
+   1.8
+  ],
+  "visdiff_min": 0.015,
+  "people_pairwise_min": 0.02
+ },
+ "colors": {
+  "fog_ext": "#9cc4ec",
+  "fog_int": "#4a2f18",
+  "amb_ext": "#5d5850",
+  "sun_ext": "#ecd9a8",
+  "amb_int": "#4a2f18",
+  "sun_int": "#d0a868",
+  "lamp": "#d8b95c",
+  "lamp_dim": "#c25a2c",
+  "window_light": "#ecd9a8"
+ },
+ "ui": {
+  "ink": "#120d08",
+  "fill": "#2b1b0ed6",
+  "frame": "#d0a868",
+  "text": "#fff8e8",
+  "dim": "#b2ab9b",
+  "accent": "#d8b95c"
+ }
+}

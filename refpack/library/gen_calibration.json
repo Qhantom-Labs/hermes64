@@ -1,0 +1,167 @@
+{
+ "_decision": "measured but not adopted: placing targets at the measured mean ramp position made the round trip worse (r9 vs r10, r13 vs r12: polar render dE00 9.23 -> 11.23, forest 8.30 -> 8.33); kept for future work",
+ "_note": "fractional ramp index of each generator's robust mean (0 = darkest step); measured by refpack/calibrate_gens.py from lane-kits core/texgen.py",
+ "enabled": false,
+ "gens": {
+  "bark/4": {
+   "mean_pos": 0.846,
+   "steps": 4
+  },
+  "blocks/3": {
+   "mean_pos": 0.995,
+   "steps": 3
+  },
+  "blocks/4": {
+   "mean_pos": 1.722,
+   "steps": 4
+  },
+  "checks/2": {
+   "mean_pos": 0.503,
+   "steps": 2
+  },
+  "cobbles/4": {
+   "mean_pos": 1.236,
+   "steps": 4
+  },
+  "dirt/3": {
+   "mean_pos": 0.995,
+   "steps": 3
+  },
+  "dirt/4": {
+   "mean_pos": 1.53,
+   "steps": 4
+  },
+  "fabric/3": {
+   "mean_pos": 0.995,
+   "steps": 3
+  },
+  "fabric/4": {
+   "mean_pos": 1.494,
+   "steps": 4
+  },
+  "fire/4": {
+   "mean_pos": 1.487,
+   "steps": 4
+  },
+  "fur/5": {
+   "mean_pos": 2.543,
+   "steps": 5
+  },
+  "gloss/4": {
+   "mean_pos": 1.644,
+   "steps": 4
+  },
+  "glow/4": {
+   "mean_pos": 1.527,
+   "steps": 4
+  },
+  "grain/4": {
+   "mean_pos": 1.441,
+   "steps": 4
+  },
+  "grass/3": {
+   "mean_pos": 0.995,
+   "steps": 3
+  },
+  "grass/4": {
+   "mean_pos": 1.527,
+   "steps": 4
+  },
+  "ice/4": {
+   "mean_pos": 2.0,
+   "steps": 4
+  },
+  "knit/5": {
+   "mean_pos": 2.09,
+   "steps": 5
+  },
+  "leather/4": {
+   "mean_pos": 0.998,
+   "steps": 4
+  },
+  "leaves/5": {
+   "mean_pos": 2.592,
+   "steps": 5
+  },
+  "noise/3": {
+   "mean_pos": 0.995,
+   "steps": 3
+  },
+  "panel/3": {
+   "mean_pos": 0.995,
+   "steps": 3
+  },
+  "panel/4": {
+   "mean_pos": 1.661,
+   "steps": 4
+  },
+  "paper/4": {
+   "mean_pos": 2.553,
+   "steps": 4
+  },
+  "planks/4": {
+   "mean_pos": 1.52,
+   "steps": 4
+  },
+  "plaster/3": {
+   "mean_pos": 0.995,
+   "steps": 3
+  },
+  "plaster/4": {
+   "mean_pos": 1.591,
+   "steps": 4
+  },
+  "quilt_diamond/3": {
+   "mean_pos": 1.382,
+   "steps": 3
+  },
+  "quilt_diamond/4": {
+   "mean_pos": 1.725,
+   "steps": 4
+  },
+  "quilt_diamond/5": {
+   "mean_pos": 2.53,
+   "steps": 5
+  },
+  "quilt_wave/5": {
+   "mean_pos": 3.304,
+   "steps": 5
+  },
+  "rock/4": {
+   "mean_pos": 1.515,
+   "steps": 4
+  },
+  "rope/3": {
+   "mean_pos": 2.005,
+   "steps": 3
+  },
+  "rope/4": {
+   "mean_pos": 2.432,
+   "steps": 4
+  },
+  "sand/4": {
+   "mean_pos": 1.503,
+   "steps": 4
+  },
+  "screen/4": {
+   "mean_pos": 0.498,
+   "steps": 4
+  },
+  "snow/5": {
+   "mean_pos": 2.719,
+   "steps": 5
+  },
+  "spines/4": {
+   "mean_pos": 0.964,
+   "steps": 4
+  },
+  "thatch/4": {
+   "mean_pos": 1.4,
+   "steps": 4
+  },
+  "water/4": {
+   "mean_pos": 1.505,
+   "steps": 4
+  }
+ }
+}

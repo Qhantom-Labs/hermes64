@@ -1,0 +1,9 @@
+{
+  "format": "hermes64-template-fallbacks/1",
+  "brief_genres": {
+    "fantasy": "castle_keep", "medieval": "castle_keep", "fairy-tale": "medieval_village_dusk",
+    "sci-fi": "space_station", "space": "space_station", "ancient": "ancient_ruins",
+    "jungle": "jungle_temple", "western": "frontier_town", "desert": "canyon_mesa",
+    "polar": "polar_pod", "cozy": "forest_village"
+  }
+}

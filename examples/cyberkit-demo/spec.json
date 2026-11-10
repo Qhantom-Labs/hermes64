@@ -1,0 +1,2131 @@
+{
+  "characters": [
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "pilgrim",
+      "name": "[Placeholder courier]",
+      "params": {
+        "colour": "#8d6a58",
+        "costume": "travel_coat",
+        "voice_tags": [
+          "quiet",
+          "measured"
+        ]
+      },
+      "role": "courier",
+      "role_profiles": {
+        "courier": {
+          "colour": "#8d6a58",
+          "costume": "travel_coat",
+          "voice_tags": [
+            "quiet",
+            "measured"
+          ]
+        }
+      }
+    },
+    {
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "id": "maren",
+      "name": "[Placeholder operator]",
+      "params": {
+        "colour": "#a89a64",
+        "costume": "oilskin",
+        "voice_tags": [
+          "weathered",
+          "restrained"
+        ]
+      },
+      "role": "courier",
+      "role_profiles": {
+        "courier": {
+          "colour": "#a89a64",
+          "costume": "oilskin",
+          "voice_tags": [
+            "weathered",
+            "restrained"
+          ]
+        }
+      }
+    }
+  ],
+  "collectible_groups": [],
+  "collectibles": [],
+  "contract_version": "1.2.0",
+  "description": "CYBERKIT four-region environment demo.",
+  "dialogues": [],
+  "endings": [
+    {
+      "conditions": [
+        {
+          "equals": true,
+          "flag": "goal"
+        }
+      ],
+      "id": "relay_complete",
+      "text": "The relay is connected."
+    }
+  ],
+  "flags": [
+    {
+      "description": "Inspected the transit console",
+      "id": "goal",
+      "initial": false
+    }
+  ],
+  "gameplay": {
+    "api_version": "1.0.0",
+    "modules": [
+      {
+        "config": {
+          "max_health": 6
+        },
+        "entities": {
+          "abilities": []
+        },
+        "id": "abilities",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "entry_cost": "none",
+          "failure_progress": "unchanged",
+          "max_active": 1
+        },
+        "entities": {
+          "challenges": [],
+          "checkpoints": [
+            {
+              "id": "canyon_safe",
+              "position_m": [
+                10.5,
+                0,
+                19
+              ],
+              "room": "canyon"
+            },
+            {
+              "id": "rooftop_safe",
+              "position_m": [
+                6.5,
+                0,
+                11
+              ],
+              "room": "rooftop"
+            },
+            {
+              "id": "club_safe",
+              "position_m": [
+                10.5,
+                0,
+                19
+              ],
+              "room": "club"
+            },
+            {
+              "id": "subway_safe",
+              "position_m": [
+                8.5,
+                0,
+                15
+              ],
+              "room": "subway"
+            }
+          ]
+        },
+        "id": "challenge",
+        "version": "1.0.0"
+      },
+      {
+        "config": {
+          "fast_travel": false,
+          "load_policy": "one_region"
+        },
+        "entities": {
+          "links": [
+            {
+              "a": {
+                "door": "north",
+                "region": "canyon"
+              },
+              "b": {
+                "door": "south",
+                "region": "rooftop"
+              },
+              "id": "canyon_link"
+            },
+            {
+              "a": {
+                "door": "north",
+                "region": "rooftop"
+              },
+              "b": {
+                "door": "south",
+                "region": "club"
+              },
+              "id": "rooftop_link"
+            },
+            {
+              "a": {
+                "door": "north",
+                "region": "club"
+              },
+              "b": {
+                "door": "south",
+                "region": "subway"
+              },
+              "id": "club_link"
+            },
+            {
+              "a": {
+                "door": "north",
+                "region": "subway"
+              },
+              "b": {
+                "door": "south",
+                "region": "canyon"
+              },
+              "id": "subway_link"
+            }
+          ],
+          "regions": [
+            {
+              "checkpoint": "canyon_safe",
+              "id": "canyon",
+              "landmarks": [
+                {
+                  "id": "relay",
+                  "name": "Structural relay",
+                  "position_m": [
+                    0.2,
+                    0,
+                    8.5
+                  ]
+                }
+              ],
+              "room": "canyon"
+            },
+            {
+              "checkpoint": "rooftop_safe",
+              "id": "rooftop",
+              "landmarks": [
+                {
+                  "id": "relay",
+                  "name": "Structural relay",
+                  "position_m": [
+                    2.8,
+                    0,
+                    3.0
+                  ]
+                }
+              ],
+              "room": "rooftop"
+            },
+            {
+              "checkpoint": "club_safe",
+              "id": "club",
+              "landmarks": [
+                {
+                  "id": "relay",
+                  "name": "Structural relay",
+                  "position_m": [
+                    0.6,
+                    0,
+                    3.0
+                  ]
+                }
+              ],
+              "room": "club"
+            },
+            {
+              "checkpoint": "subway_safe",
+              "id": "subway",
+              "landmarks": [
+                {
+                  "id": "relay",
+                  "name": "Structural relay",
+                  "position_m": [
+                    0.6,
+                    0,
+                    3.0
+                  ]
+                }
+              ],
+              "room": "subway"
+            }
+          ]
+        },
+        "id": "regions",
+        "version": "1.0.0"
+      }
+    ],
+    "seed": 7,
+    "verification_policy": "conditional"
+  },
+  "id": "cyberkit_demo",
+  "interactions": [
+    {
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "goal",
+          "value": true
+        }
+      ],
+      "id": "relay",
+      "kind": "examine",
+      "label": "Check the relay",
+      "room": "subway",
+      "target": "relay",
+      "text": "A clear signal."
+    }
+  ],
+  "items": [],
+  "metadata": {
+    "presentation": {
+      "convention": "hermes64-presentation/1",
+      "rooms": {
+        "canyon": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                9.6,
+                4.2,
+                -4
+              ],
+              "position": [
+                8.6,
+                2.9,
+                18.6
+              ]
+            }
+          ],
+          "characters": {
+            "maren": {
+              "position": [
+                11.5,
+                0,
+                11.0
+              ],
+              "yaw": 155
+            }
+          },
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "city",
+          "pieces": [
+            {
+              "asset": "cystreet.road__long",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0,
+                -17.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0
+            },
+            {
+              "asset": "cystreet.road__long",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0,
+                -5.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0
+            },
+            {
+              "asset": "cystreet.road__long",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0
+            },
+            {
+              "asset": "cystreet.road",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0
+            },
+            {
+              "asset": "cystreet.road__long",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0,
+                26.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0
+            },
+            {
+              "asset": "cystreet.road__long",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0,
+                38.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0
+            },
+            {
+              "asset": "cystreet.sidewalk__strip",
+              "kind": "shell",
+              "position": [
+                2.5,
+                0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cystreet.sidewalk__strip2",
+              "kind": "shell",
+              "position": [
+                2.5,
+                0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cystreet.sidewalk__strip",
+              "kind": "shell",
+              "position": [
+                18.5,
+                0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cystreet.sidewalk__strip2",
+              "kind": "shell",
+              "position": [
+                18.5,
+                0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cytower.facade__canyon",
+              "kind": "shell",
+              "position": [
+                0.5,
+                0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cytower.facade__canyon",
+              "kind": "shell",
+              "position": [
+                0.5,
+                0,
+                18.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cytower.facade__canyon",
+              "kind": "shell",
+              "position": [
+                20.5,
+                0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cytower.facade__canyon",
+              "kind": "shell",
+              "position": [
+                20.5,
+                0,
+                18.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cysky.near__tile",
+              "kind": "vista",
+              "position": [
+                -13.5,
+                0.0,
+                -17.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.near__tile",
+              "kind": "vista",
+              "position": [
+                10.5,
+                0.0,
+                -17.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.near__tile",
+              "kind": "vista",
+              "position": [
+                34.5,
+                0.0,
+                -17.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                -13.5,
+                0.0,
+                -35.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                10.5,
+                0.0,
+                -35.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                34.5,
+                0.0,
+                -35.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.stepped__tile",
+              "kind": "vista",
+              "position": [
+                34.5,
+                0.0,
+                44.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.stepped__tile",
+              "kind": "vista",
+              "position": [
+                10.5,
+                0.0,
+                44.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.stepped__tile",
+              "kind": "vista",
+              "position": [
+                -13.5,
+                0.0,
+                44.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                34.5,
+                0.0,
+                60.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                10.5,
+                0.0,
+                60.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                -13.5,
+                0.0,
+                60.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.needle__low",
+              "kind": "vista",
+              "position": [
+                -24.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysky.far",
+              "kind": "vista",
+              "position": [
+                -39.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysky.near__low",
+              "kind": "vista",
+              "position": [
+                45.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cysky.far",
+              "kind": "vista",
+              "position": [
+                60.5,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cysign.blade",
+              "kind": "landmark",
+              "mounted": true,
+              "position": [
+                1.1,
+                3.2,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysign.noodle",
+              "kind": "landmark",
+              "position": [
+                1.0,
+                0.0,
+                15.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cytower.arch__low",
+              "kind": "landmark",
+              "position": [
+                10.5,
+                0.0,
+                40.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysign.blade",
+              "kind": "landmark",
+              "mounted": true,
+              "position": [
+                19.9,
+                3.4,
+                9.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cytech.street_light",
+              "kind": "piece",
+              "position": [
+                1.0,
+                0.0,
+                5.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cytech.street_light",
+              "kind": "piece",
+              "position": [
+                20.0,
+                0.0,
+                16.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cytech.hovercar__taxi",
+              "kind": "piece",
+              "position": [
+                19.2,
+                0.0,
+                4.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cytech.puddle",
+              "kind": "piece",
+              "position": [
+                9.0,
+                0.0,
+                12.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cydress.bin",
+              "kind": "piece",
+              "position": [
+                19.6,
+                0.0,
+                18.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "club": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                11.5,
+                0.0,
+                9.5
+              ],
+              "position": [
+                2.4,
+                4.0,
+                19.2
+              ]
+            }
+          ],
+          "characters": {
+            "maren": {
+              "position": [
+                12.0,
+                0,
+                9.0
+              ],
+              "yaw": 200
+            }
+          },
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "arena",
+          "pieces": [
+            {
+              "asset": "cyroom.club__arena",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0
+            },
+            {
+              "asset": "cyroom.bar",
+              "kind": "piece",
+              "position": [
+                2.3,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cydress.cup",
+              "kind": "piece",
+              "mounted": true,
+              "position": [
+                2.4,
+                1.25,
+                9.8
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cyroom.booth",
+              "kind": "piece",
+              "position": [
+                18.2,
+                0.0,
+                4.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cyroom.booth",
+              "kind": "piece",
+              "position": [
+                18.2,
+                0.0,
+                16.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cyroom.sofa",
+              "kind": "piece",
+              "position": [
+                19.2,
+                0.0,
+                10.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cydress.speaker",
+              "kind": "piece",
+              "position": [
+                6.4,
+                0.0,
+                2.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cydress.speaker",
+              "kind": "piece",
+              "position": [
+                14.6,
+                0.0,
+                2.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cydress.speaker",
+              "kind": "piece",
+              "position": [
+                14.6,
+                0.0,
+                19.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cydress.speaker",
+              "kind": "piece",
+              "position": [
+                17.2,
+                0.0,
+                19.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysign.frame__magenta",
+              "kind": "piece",
+              "mounted": true,
+              "position": [
+                5.0,
+                2.2,
+                1.1
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysign.frame__amber",
+              "kind": "piece",
+              "mounted": true,
+              "position": [
+                16.0,
+                2.2,
+                1.1
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysign.tube",
+              "kind": "piece",
+              "mounted": true,
+              "position": [
+                1.1,
+                2.3,
+                6.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysign.tube",
+              "kind": "piece",
+              "mounted": true,
+              "position": [
+                19.9,
+                2.3,
+                14.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "rooftop": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                -8,
+                1.8,
+                -14
+              ],
+              "position": [
+                11.2,
+                2.8,
+                11.3
+              ]
+            }
+          ],
+          "characters": {
+            "maren": {
+              "position": [
+                10.0,
+                0,
+                9.0
+              ],
+              "yaw": 155
+            }
+          },
+          "exterior": true,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "rooftop",
+          "pieces": [
+            {
+              "asset": "cyroom.rooftop",
+              "kind": "shell",
+              "position": [
+                6.5,
+                0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0
+            },
+            {
+              "asset": "cytower.garden__small",
+              "kind": "piece",
+              "position": [
+                6.5,
+                0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0
+            },
+            {
+              "asset": "cysky.near__tile",
+              "kind": "vista",
+              "position": [
+                -17.5,
+                0.0,
+                -21.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.near__tile",
+              "kind": "vista",
+              "position": [
+                6.5,
+                0.0,
+                -21.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.near__tile",
+              "kind": "vista",
+              "position": [
+                30.5,
+                0.0,
+                -21.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                -17.5,
+                0.0,
+                -39.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                6.5,
+                0.0,
+                -39.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                30.5,
+                0.0,
+                -39.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.stepped__tile",
+              "kind": "vista",
+              "position": [
+                30.5,
+                0.0,
+                40.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.stepped__tile",
+              "kind": "vista",
+              "position": [
+                6.5,
+                0.0,
+                40.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.stepped__tile",
+              "kind": "vista",
+              "position": [
+                -17.5,
+                0.0,
+                40.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                30.5,
+                0.0,
+                56.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                6.5,
+                0.0,
+                56.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                -17.5,
+                0.0,
+                56.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cysky.needle__tile",
+              "kind": "vista",
+              "position": [
+                -28.5,
+                0.0,
+                30.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysky.needle__tile",
+              "kind": "vista",
+              "position": [
+                -28.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysky.needle__tile",
+              "kind": "vista",
+              "position": [
+                -28.5,
+                0.0,
+                -17.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                -43.5,
+                0.0,
+                30.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                -43.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                -43.5,
+                0.0,
+                -17.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysky.near__tile",
+              "kind": "vista",
+              "position": [
+                41.5,
+                0.0,
+                -17.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cysky.near__tile",
+              "kind": "vista",
+              "position": [
+                41.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cysky.near__tile",
+              "kind": "vista",
+              "position": [
+                41.5,
+                0.0,
+                30.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                56.5,
+                0.0,
+                -17.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                56.5,
+                0.0,
+                6.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cysky.far__tile",
+              "kind": "vista",
+              "position": [
+                56.5,
+                0.0,
+                30.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": -90
+            },
+            {
+              "asset": "cytech.vent",
+              "kind": "piece",
+              "position": [
+                10.4,
+                0.0,
+                3
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cydress.bench",
+              "kind": "piece",
+              "position": [
+                9.3,
+                0.0,
+                9.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cytech.drone",
+              "kind": "piece",
+              "mounted": true,
+              "position": [
+                9,
+                1.2,
+                5.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cydress.bench",
+              "kind": "piece",
+              "position": [
+                2.8,
+                0.0,
+                7.0
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.megatower",
+              "kind": "landmark",
+              "position": [
+                -8,
+                -10.0,
+                -16
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysky.hololine",
+              "kind": "piece",
+              "mounted": true,
+              "position": [
+                6.5,
+                12,
+                -14
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cytower.setback__halo",
+              "kind": "landmark",
+              "position": [
+                26,
+                -10.0,
+                -12
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cytower.wedge",
+              "kind": "landmark",
+              "position": [
+                -20,
+                -10.0,
+                24
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "cytower.drum__dome",
+              "kind": "landmark",
+              "position": [
+                24,
+                -10.0,
+                26
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        },
+        "subway": {
+          "camera": "game",
+          "cameras": [
+            {
+              "fov": 60,
+              "id": "game",
+              "look_at": [
+                16.0,
+                1.4,
+                5.0
+              ],
+              "position": [
+                3.0,
+                3.4,
+                15.8
+              ]
+            }
+          ],
+          "characters": {
+            "maren": {
+              "position": [
+                11.0,
+                0,
+                8.0
+              ],
+              "yaw": 200
+            }
+          },
+          "exterior": false,
+          "floor": "",
+          "kit_shell": true,
+          "look_profile": "arena",
+          "pieces": [
+            {
+              "asset": "cyroom.subway__arena",
+              "kind": "shell",
+              "position": [
+                10.5,
+                0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0
+            },
+            {
+              "asset": "cyroom.train__carriage",
+              "kind": "piece",
+              "position": [
+                18.65,
+                0.0,
+                8.5
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cyroom.locker",
+              "kind": "piece",
+              "position": [
+                1.6,
+                0.0,
+                4.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cytech.vending",
+              "kind": "piece",
+              "position": [
+                1.75,
+                0.0,
+                6.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cytech.terminal",
+              "kind": "piece",
+              "position": [
+                1.75,
+                0.0,
+                11.6
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cydress.bench",
+              "kind": "piece",
+              "position": [
+                1.75,
+                0.0,
+                14.2
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 90
+            },
+            {
+              "asset": "cysign.frame__amber",
+              "kind": "piece",
+              "mounted": true,
+              "position": [
+                4.0,
+                2.4,
+                1.1
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            },
+            {
+              "asset": "cysign.ticker",
+              "kind": "piece",
+              "mounted": true,
+              "position": [
+                13.5,
+                3.0,
+                1.1
+              ],
+              "scale": [
+                1,
+                1,
+                1
+              ],
+              "yaw": 0.0
+            }
+          ],
+          "wall_height": 4.5
+        }
+      },
+      "rotation_order": "YXZ",
+      "rotation_units": "degrees"
+    },
+    "protagonist": "pilgrim",
+    "style_pack": "neon_city_night"
+  },
+  "quests": [],
+  "rooms": [
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            9.6,
+            4.2,
+            -4
+          ],
+          "position": [
+            8.6,
+            2.9,
+            18.6
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim",
+        "maren"
+      ],
+      "description": "Lattice Lane. A kit-built quarter of an original neon city.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "north",
+          "label": "Continue to rooftop",
+          "position": 10,
+          "to_door": "south",
+          "to_room": "rooftop",
+          "wall": "north"
+        },
+        {
+          "conditions": [],
+          "id": "south",
+          "label": "Return to subway",
+          "position": 10,
+          "to_door": "north",
+          "to_room": "subway",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        21,
+        21
+      ],
+      "id": "canyon",
+      "kit_refs": [],
+      "name": "Lattice Lane",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            -8,
+            1.8,
+            -14
+          ],
+          "position": [
+            11.2,
+            2.8,
+            11.3
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim",
+        "maren"
+      ],
+      "description": "Relay Roof. A kit-built quarter of an original neon city.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "north",
+          "label": "Continue to club",
+          "position": 6,
+          "to_door": "south",
+          "to_room": "club",
+          "wall": "north"
+        },
+        {
+          "conditions": [],
+          "id": "south",
+          "label": "Return to canyon",
+          "position": 6,
+          "to_door": "north",
+          "to_room": "canyon",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        13,
+        13
+      ],
+      "id": "rooftop",
+      "kit_refs": [],
+      "name": "Relay Roof",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            11.5,
+            0.0,
+            9.5
+          ],
+          "position": [
+            2.4,
+            4.0,
+            19.2
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim",
+        "maren"
+      ],
+      "description": "The Violet Relay. A kit-built quarter of an original neon city.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "north",
+          "label": "Continue to subway",
+          "position": 10,
+          "to_door": "south",
+          "to_room": "subway",
+          "wall": "north"
+        },
+        {
+          "conditions": [],
+          "id": "south",
+          "label": "Return to rooftop",
+          "position": 10,
+          "to_door": "north",
+          "to_room": "rooftop",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        21,
+        21
+      ],
+      "id": "club",
+      "kit_refs": [],
+      "name": "The Violet Relay",
+      "props": []
+    },
+    {
+      "cameras": [
+        {
+          "id": "game",
+          "look_at": [
+            16.0,
+            1.4,
+            5.0
+          ],
+          "position": [
+            3.0,
+            3.4,
+            15.8
+          ]
+        }
+      ],
+      "character_ids": [
+        "pilgrim",
+        "maren"
+      ],
+      "description": "Lower Transit. A kit-built quarter of an original neon city.",
+      "doors": [
+        {
+          "conditions": [],
+          "id": "north",
+          "label": "Continue to canyon",
+          "position": 8,
+          "to_door": "south",
+          "to_room": "canyon",
+          "wall": "north"
+        },
+        {
+          "conditions": [],
+          "id": "south",
+          "label": "Return to club",
+          "position": 8,
+          "to_door": "north",
+          "to_room": "club",
+          "wall": "south"
+        }
+      ],
+      "grid_size": [
+        21,
+        17
+      ],
+      "id": "subway",
+      "kit_refs": [],
+      "name": "Lower Transit",
+      "props": []
+    }
+  ],
+  "start": {
+    "collected": [],
+    "dialogue": {},
+    "flags": {
+      "goal": false
+    },
+    "inventory": [],
+    "location": "canyon",
+    "modules": {
+      "abilities": [],
+      "active": "",
+      "checkpoint": "canyon_safe",
+      "completed": [],
+      "discovered": [
+        "canyon"
+      ],
+      "failed": ""
+    },
+    "tide": {
+      "state": "night",
+      "tick": 0
+    }
+  },
+  "tide": {
+    "id": "hours",
+    "states": [
+      {
+        "duration": 1,
+        "id": "night",
+        "label": "Night"
+      }
+    ],
+    "wait_label": "Wait",
+    "wait_text": "Rain on steel."
+  },
+  "title": "Night Relay"
+}

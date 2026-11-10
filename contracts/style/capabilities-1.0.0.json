@@ -1,0 +1,1161 @@
+{
+  "schema_version": "1.0.0",
+  "status": "contract_only_runtime_unbound",
+  "requirements": {
+    "renderer_api": "hermes64.render/1",
+    "generator_api": "hermes64.kits/1",
+    "character_api": "hermes64.characters/1",
+    "validator_api": "hermes64.validation/1"
+  },
+  "generators": {
+    "arch.room_shell": {
+      "version": "3.0.0",
+      "params_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "ceiling": {
+            "default": "flat",
+            "description": "",
+            "enum": [
+              "flat",
+              "dome",
+              "gable"
+            ],
+            "type": "string"
+          },
+          "ceiling_panel": {
+            "default": 0.0,
+            "description": "luminous ceiling panel (role 'light', chrome 'trim' bezel) at this fraction of the ceiling outline; dome: lit oculus",
+            "maximum": 0.7,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "ceiling_rise": {
+            "default": 0.8,
+            "description": "",
+            "maximum": 3.0,
+            "minimum": 0.2,
+            "type": "number"
+          },
+          "ceiling_role": {
+            "default": "ceiling",
+            "description": "",
+            "enum": [
+              "ceiling",
+              "wall",
+              "wood",
+              "stone",
+              "roof"
+            ],
+            "type": "string"
+          },
+          "cove": {
+            "default": 0.0,
+            "description": "radius of rounded floor/ceiling junctions",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "depth": {
+            "default": 5.0,
+            "description": "",
+            "maximum": 16.0,
+            "minimum": 2.5,
+            "type": "number"
+          },
+          "floor_rings": {
+            "default": 0,
+            "description": "concentric floor/ceiling rings (vertex density for per-vertex light); 0 = single polygon",
+            "maximum": 6,
+            "minimum": 0,
+            "type": "integer",
+            "x-lod": true
+          },
+          "floor_role": {
+            "default": "floor",
+            "description": "",
+            "enum": [
+              "floor",
+              "stone",
+              "wood",
+              "snow",
+              "dirt"
+            ],
+            "type": "string"
+          },
+          "height": {
+            "default": 2.8,
+            "description": "",
+            "maximum": 6.0,
+            "minimum": 2.2,
+            "type": "number"
+          },
+          "openings": {
+            "default": [
+              {
+                "height": 2.1,
+                "kind": "door",
+                "offset": 0.0,
+                "shape": "rect",
+                "sill": 0.0,
+                "wall": "s",
+                "width": 1.0
+              },
+              {
+                "height": 1.2,
+                "kind": "window",
+                "offset": 0.0,
+                "shape": "rect",
+                "sill": 0.9,
+                "wall": "n",
+                "width": 1.6
+              }
+            ],
+            "description": "",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "height": {
+                  "default": 1.2,
+                  "description": "",
+                  "maximum": 3.5,
+                  "minimum": 0.4,
+                  "type": "number"
+                },
+                "kind": {
+                  "default": "window",
+                  "description": "",
+                  "enum": [
+                    "window",
+                    "door"
+                  ],
+                  "type": "string"
+                },
+                "offset": {
+                  "default": 0.0,
+                  "description": "fraction along the wall",
+                  "maximum": 0.45,
+                  "minimum": -0.45,
+                  "type": "number"
+                },
+                "shape": {
+                  "default": "rect",
+                  "description": "",
+                  "enum": [
+                    "rect",
+                    "rounded_rect",
+                    "oval",
+                    "round",
+                    "arch",
+                    "gothic"
+                  ],
+                  "type": "string"
+                },
+                "sill": {
+                  "default": 0.9,
+                  "description": "",
+                  "maximum": 2.5,
+                  "minimum": 0.0,
+                  "type": "number"
+                },
+                "wall": {
+                  "default": "s",
+                  "description": "",
+                  "enum": [
+                    "n",
+                    "e",
+                    "s",
+                    "w"
+                  ],
+                  "type": "string"
+                },
+                "width": {
+                  "default": 1.0,
+                  "description": "",
+                  "maximum": 4.0,
+                  "minimum": 0.4,
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "maxItems": 8,
+            "type": "array"
+          },
+          "plan": {
+            "default": "rect",
+            "description": "",
+            "enum": [
+              "rect",
+              "rounded_rect",
+              "round",
+              "oval"
+            ],
+            "type": "string"
+          },
+          "trim": {
+            "default": true,
+            "description": "",
+            "type": "boolean"
+          },
+          "wall_role": {
+            "default": "wall",
+            "description": "",
+            "enum": [
+              "wall",
+              "wall_alt",
+              "wood",
+              "stone",
+              "metal",
+              "body",
+              "trim",
+              "frame"
+            ],
+            "type": "string"
+          },
+          "wall_segments": {
+            "default": 24,
+            "description": "",
+            "maximum": 40,
+            "minimum": 12,
+            "type": "integer",
+            "x-lod": true
+          },
+          "width": {
+            "default": 6.0,
+            "description": "",
+            "maximum": 16.0,
+            "minimum": 2.5,
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "defaults": {
+        "ceiling": "flat",
+        "ceiling_panel": 0.0,
+        "ceiling_rise": 0.8,
+        "ceiling_role": "ceiling",
+        "cove": 0.0,
+        "depth": 5.0,
+        "floor_rings": 0,
+        "floor_role": "floor",
+        "height": 2.8,
+        "openings": [
+          {
+            "height": 2.1,
+            "kind": "door",
+            "offset": 0.0,
+            "shape": "rect",
+            "sill": 0.0,
+            "wall": "s",
+            "width": 1.0
+          },
+          {
+            "height": 1.2,
+            "kind": "window",
+            "offset": 0.0,
+            "shape": "rect",
+            "sill": 0.9,
+            "wall": "n",
+            "width": 1.6
+          }
+        ],
+        "plan": "rect",
+        "trim": true,
+        "wall_role": "wall",
+        "wall_segments": 24,
+        "width": 6.0
+      },
+      "role_parameters": [
+        "ceiling_role",
+        "floor_role",
+        "wall_role"
+      ],
+      "static_roles": [
+        "trim",
+        "light"
+      ],
+      "presets": [
+        "default"
+      ],
+      "implementation_status": "adapter_pending"
+    },
+    "nature.bush": {
+      "version": "3.0.0",
+      "params_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "cap": {
+            "default": false,
+            "description": "",
+            "type": "boolean"
+          },
+          "flatness": {
+            "default": 0.3,
+            "description": "",
+            "maximum": 0.7,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "flowers": {
+            "default": 0,
+            "description": "",
+            "maximum": 6,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "lobes": {
+            "default": 3,
+            "description": "",
+            "maximum": 5,
+            "minimum": 1,
+            "type": "integer"
+          },
+          "size": {
+            "default": 0.8,
+            "description": "",
+            "maximum": 2.5,
+            "minimum": 0.2,
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "defaults": {
+        "cap": false,
+        "flatness": 0.3,
+        "flowers": 0,
+        "lobes": 3,
+        "size": 0.8
+      },
+      "role_parameters": [],
+      "static_roles": [
+        "foliage",
+        "cap",
+        "flower"
+      ],
+      "presets": [
+        "default"
+      ],
+      "implementation_status": "adapter_pending"
+    },
+    "prop.device": {
+      "version": "3.0.0",
+      "params_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "body_role": {
+            "default": "body",
+            "description": "",
+            "enum": [
+              "body",
+              "body_alt",
+              "metal",
+              "chrome",
+              "wood"
+            ],
+            "type": "string"
+          },
+          "kind": {
+            "default": "radio",
+            "description": "",
+            "enum": [
+              "radio",
+              "lantern",
+              "tablet",
+              "clock",
+              "beacon",
+              "camera"
+            ],
+            "type": "string"
+          },
+          "screen_on": {
+            "default": true,
+            "description": "",
+            "type": "boolean"
+          },
+          "size": {
+            "default": 0.25,
+            "description": "",
+            "maximum": 0.8,
+            "minimum": 0.08,
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "defaults": {
+        "body_role": "body",
+        "kind": "radio",
+        "screen_on": true,
+        "size": 0.25
+      },
+      "role_parameters": [
+        "body_role"
+      ],
+      "static_roles": [
+        "metal",
+        "screen",
+        "glass",
+        "light",
+        "paper",
+        "trim",
+        "orb"
+      ],
+      "presets": [
+        "default"
+      ],
+      "implementation_status": "adapter_pending"
+    },
+    "prop.sign": {
+      "version": "3.0.0",
+      "params_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "board_role": {
+            "default": "wood",
+            "description": "",
+            "enum": [
+              "wood",
+              "metal",
+              "paper",
+              "body",
+              "stone",
+              "screen"
+            ],
+            "type": "string"
+          },
+          "board_shape": {
+            "default": "rect",
+            "description": "",
+            "enum": [
+              "rect",
+              "rounded_rect",
+              "oval",
+              "arch"
+            ],
+            "type": "string"
+          },
+          "height": {
+            "default": 0.35,
+            "description": "",
+            "maximum": 1.0,
+            "minimum": 0.1,
+            "type": "number"
+          },
+          "kind": {
+            "default": "post",
+            "description": "",
+            "enum": [
+              "post",
+              "hanging",
+              "standing",
+              "plaque",
+              "arrow"
+            ],
+            "type": "string"
+          },
+          "post_height": {
+            "default": 1.2,
+            "description": "",
+            "maximum": 1.5,
+            "minimum": 0.5,
+            "type": "number"
+          },
+          "text_lines": {
+            "default": 2,
+            "description": "abstract glyph strips",
+            "maximum": 4,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "text_role": {
+            "default": "trim",
+            "description": "",
+            "enum": [
+              "trim",
+              "paper",
+              "light",
+              "metal",
+              "band"
+            ],
+            "type": "string"
+          },
+          "width": {
+            "default": 0.6,
+            "description": "",
+            "maximum": 1.4,
+            "minimum": 0.15,
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "defaults": {
+        "board_role": "wood",
+        "board_shape": "rect",
+        "height": 0.35,
+        "kind": "post",
+        "post_height": 1.2,
+        "text_lines": 2,
+        "text_role": "trim",
+        "width": 0.6
+      },
+      "role_parameters": [
+        "board_role",
+        "text_role"
+      ],
+      "static_roles": [
+        "post",
+        "metal"
+      ],
+      "presets": [
+        "default"
+      ],
+      "implementation_status": "adapter_pending"
+    },
+    "prop.vessel": {
+      "version": "3.0.0",
+      "params_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "contents": {
+            "default": false,
+            "description": "visible liquid/food surface (role water)",
+            "type": "boolean"
+          },
+          "handle": {
+            "default": true,
+            "description": "",
+            "type": "boolean"
+          },
+          "height": {
+            "default": 0.12,
+            "description": "",
+            "maximum": 1.0,
+            "minimum": 0.04,
+            "type": "number"
+          },
+          "kind": {
+            "default": "mug",
+            "description": "",
+            "enum": [
+              "mug",
+              "bowl",
+              "bottle",
+              "jar",
+              "vase",
+              "pot",
+              "kettle",
+              "cup"
+            ],
+            "type": "string"
+          },
+          "lid": {
+            "default": false,
+            "description": "",
+            "type": "boolean"
+          },
+          "role": {
+            "default": "body",
+            "description": "",
+            "enum": [
+              "body",
+              "body_alt",
+              "metal",
+              "chrome",
+              "glass",
+              "stone",
+              "wood",
+              "paper"
+            ],
+            "type": "string"
+          },
+          "width": {
+            "default": 0.09,
+            "description": "",
+            "maximum": 0.8,
+            "minimum": 0.03,
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "defaults": {
+        "contents": false,
+        "handle": true,
+        "height": 0.12,
+        "kind": "mug",
+        "lid": false,
+        "role": "body",
+        "width": 0.09
+      },
+      "role_parameters": [
+        "role"
+      ],
+      "static_roles": [
+        "water"
+      ],
+      "presets": [
+        "default"
+      ],
+      "implementation_status": "adapter_pending"
+    },
+    "sky.backdrop": {
+      "version": "3.0.0",
+      "params_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "below_horizon": {
+            "default": 0.15,
+            "description": "fraction of radius extending below the horizon",
+            "maximum": 0.5,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "kind": {
+            "default": "dome",
+            "description": "",
+            "enum": [
+              "dome",
+              "cylinder"
+            ],
+            "type": "string"
+          },
+          "radius": {
+            "default": 400.0,
+            "description": "placement scale (fit inside the camera far plane); invisible from the viewer",
+            "maximum": 1800.0,
+            "minimum": 20.0,
+            "type": "number",
+            "x-runtime": true
+          },
+          "rings": {
+            "default": 4,
+            "description": "",
+            "maximum": 4,
+            "minimum": 2,
+            "type": "integer",
+            "x-lod": true
+          },
+          "segments": {
+            "default": 12,
+            "description": "",
+            "maximum": 16,
+            "minimum": 8,
+            "type": "integer",
+            "x-lod": true
+          }
+        },
+        "type": "object"
+      },
+      "defaults": {
+        "below_horizon": 0.15,
+        "kind": "dome",
+        "radius": 400.0,
+        "rings": 4,
+        "segments": 12
+      },
+      "role_parameters": [],
+      "static_roles": [
+        "sky"
+      ],
+      "presets": [
+        "default"
+      ],
+      "implementation_status": "adapter_pending"
+    },
+    "terrain.yard": {
+      "version": "3.0.0",
+      "params_schema": {
+        "additionalProperties": false,
+        "properties": {
+          "bowl": {
+            "default": 0.0,
+            "description": "outer rings round off toward an ellipse (organic valley instead of a walled box)",
+            "maximum": 1.0,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "cap_role": {
+            "default": "cap",
+            "description": "",
+            "enum": [
+              "cap",
+              "snow",
+              "grass",
+              "rock",
+              "cliff"
+            ],
+            "type": "string"
+          },
+          "cliff_role": {
+            "default": "cliff",
+            "description": "",
+            "enum": [
+              "cliff",
+              "rock",
+              "stone",
+              "ice",
+              "snow"
+            ],
+            "type": "string"
+          },
+          "depth": {
+            "default": 10.0,
+            "description": "",
+            "maximum": 16.0,
+            "minimum": 4.0,
+            "type": "number"
+          },
+          "exits": {
+            "default": [],
+            "description": "",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "offset": {
+                  "default": 0.0,
+                  "description": "fraction along the wall",
+                  "maximum": 0.45,
+                  "minimum": -0.45,
+                  "type": "number"
+                },
+                "wall": {
+                  "default": "s",
+                  "description": "",
+                  "enum": [
+                    "n",
+                    "e",
+                    "s",
+                    "w"
+                  ],
+                  "type": "string"
+                },
+                "width": {
+                  "default": 2.0,
+                  "description": "",
+                  "maximum": 6.0,
+                  "minimum": 0.8,
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "maxItems": 6,
+            "type": "array"
+          },
+          "floor_rings": {
+            "default": 3,
+            "description": "",
+            "maximum": 6,
+            "minimum": 1,
+            "type": "integer",
+            "x-lod": true
+          },
+          "ground_role": {
+            "default": "grass",
+            "description": "",
+            "enum": [
+              "grass",
+              "snow",
+              "dirt",
+              "sand",
+              "rock",
+              "field"
+            ],
+            "type": "string"
+          },
+          "jag": {
+            "default": 0.35,
+            "description": "",
+            "maximum": 0.8,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "path_role": {
+            "default": "path",
+            "description": "",
+            "enum": [
+              "path",
+              "dirt",
+              "sand",
+              "snow",
+              "stone"
+            ],
+            "type": "string"
+          },
+          "path_width": {
+            "default": 1.4,
+            "description": "",
+            "maximum": 4.0,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "plan": {
+            "default": "rounded_rect",
+            "description": "",
+            "enum": [
+              "rect",
+              "rounded_rect",
+              "oval"
+            ],
+            "type": "string"
+          },
+          "pond_role": {
+            "default": "ice",
+            "description": "",
+            "enum": [
+              "ice",
+              "water"
+            ],
+            "type": "string"
+          },
+          "ponds": {
+            "default": [],
+            "description": "",
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "rx": {
+                  "default": 1.5,
+                  "description": "",
+                  "maximum": 8.0,
+                  "minimum": 0.4,
+                  "type": "number"
+                },
+                "ry": {
+                  "default": 1.0,
+                  "description": "",
+                  "maximum": 8.0,
+                  "minimum": 0.4,
+                  "type": "number"
+                },
+                "thickness": {
+                  "default": 0.12,
+                  "description": "",
+                  "maximum": 0.6,
+                  "minimum": 0.04,
+                  "type": "number"
+                },
+                "x": {
+                  "default": 0.0,
+                  "description": "fraction of width",
+                  "maximum": 0.45,
+                  "minimum": -0.45,
+                  "type": "number"
+                },
+                "y": {
+                  "default": 0.0,
+                  "description": "fraction of depth",
+                  "maximum": 0.45,
+                  "minimum": -0.45,
+                  "type": "number"
+                }
+              },
+              "type": "object"
+            },
+            "maxItems": 2,
+            "type": "array"
+          },
+          "ridge_height": {
+            "default": 7.0,
+            "description": "",
+            "maximum": 30.0,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "ridge_run": {
+            "default": 5.0,
+            "description": "",
+            "maximum": 20.0,
+            "minimum": 1.0,
+            "type": "number"
+          },
+          "segments": {
+            "default": 28,
+            "description": "",
+            "maximum": 40,
+            "minimum": 12,
+            "type": "integer",
+            "x-lod": true
+          },
+          "terrace_rise": {
+            "default": 0.8,
+            "description": "",
+            "maximum": 3.0,
+            "minimum": 0.2,
+            "type": "number"
+          },
+          "terrace_run": {
+            "default": 2.5,
+            "description": "",
+            "maximum": 8.0,
+            "minimum": 0.8,
+            "type": "number"
+          },
+          "terraces": {
+            "default": 2,
+            "description": "",
+            "maximum": 3,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "tread_role": {
+            "default": "grass",
+            "description": "",
+            "enum": [
+              "grass",
+              "snow",
+              "dirt",
+              "sand",
+              "rock",
+              "cap",
+              "field"
+            ],
+            "type": "string"
+          },
+          "view_gap": {
+            "default": 0.0,
+            "description": "fraction of ridge height removed at the view gap",
+            "maximum": 0.9,
+            "minimum": 0.0,
+            "type": "number"
+          },
+          "view_gap_azimuth": {
+            "default": -1.0,
+            "description": "azimuth of the fixed camera's view in the kit plane (deg; +x = 0, north/+y = 90; -1 = none): the ridge is lowered there so distant layers show",
+            "maximum": 360.0,
+            "minimum": -1.0,
+            "type": "number"
+          },
+          "view_gap_width": {
+            "default": 80.0,
+            "description": "full angular width of the lowered ridge (deg)",
+            "maximum": 180.0,
+            "minimum": 20.0,
+            "type": "number"
+          },
+          "width": {
+            "default": 12.0,
+            "description": "",
+            "maximum": 16.0,
+            "minimum": 4.0,
+            "type": "number"
+          }
+        },
+        "type": "object"
+      },
+      "defaults": {
+        "bowl": 0.0,
+        "cap_role": "cap",
+        "cliff_role": "cliff",
+        "depth": 10.0,
+        "exits": [],
+        "floor_rings": 3,
+        "ground_role": "grass",
+        "jag": 0.35,
+        "path_role": "path",
+        "path_width": 1.4,
+        "plan": "rounded_rect",
+        "pond_role": "ice",
+        "ponds": [],
+        "ridge_height": 7.0,
+        "ridge_run": 5.0,
+        "segments": 28,
+        "terrace_rise": 0.8,
+        "terrace_run": 2.5,
+        "terraces": 2,
+        "tread_role": "grass",
+        "view_gap": 0.0,
+        "view_gap_azimuth": -1.0,
+        "view_gap_width": 80.0,
+        "width": 12.0
+      },
+      "role_parameters": [
+        "cap_role",
+        "cliff_role",
+        "ground_role",
+        "path_role",
+        "pond_role",
+        "tread_role"
+      ],
+      "static_roles": [],
+      "presets": [
+        "default"
+      ],
+      "implementation_status": "adapter_pending"
+    }
+  },
+  "categories": {
+    "texture_generators": [
+      "flat",
+      "molded",
+      "plaster",
+      "sand",
+      "wood"
+    ],
+    "environment_generators": [
+      "env"
+    ],
+    "shadow_recipes": [
+      "core.blob"
+    ],
+    "camera_modes": [
+      "fixed"
+    ],
+    "shape_vocabulary": [
+      "rect",
+      "round",
+      "rounded_rect",
+      "oval",
+      "arch",
+      "stepped"
+    ],
+    "silhouette_checks": [
+      "core.non_degenerate"
+    ],
+    "families": [
+      "humanoid_face",
+      "humanoid_hood"
+    ],
+    "rigs": [
+      "human16_v1"
+    ],
+    "costume_recipes": [
+      "plain_tunic",
+      "hood_vest",
+      "woven_tunic"
+    ],
+    "face_styles": [
+      "painted_atlas",
+      "faceless"
+    ],
+    "hair_set": [
+      "short",
+      "braid",
+      "none"
+    ],
+    "animation_sets": [
+      "human16_step"
+    ],
+    "clip_ids": [
+      "idle",
+      "walk",
+      "interact",
+      "talk",
+      "carry",
+      "sit"
+    ],
+    "attachment_slots": [
+      "hand_l",
+      "hand_r"
+    ],
+    "pose_validators": [
+      "core.contact_pose"
+    ],
+    "fonts": [
+      "core.bitmap"
+    ],
+    "frames": [
+      "core.plain_frame",
+      "core.rounded_frame",
+      "core.stepped_frame"
+    ],
+    "icons": [
+      "core.verbs"
+    ],
+    "layouts": [
+      "core.adventure_320"
+    ],
+    "sound_sets": [
+      "core.original"
+    ],
+    "audio_tags": [
+      "neutral",
+      "soft",
+      "wind",
+      "electronic",
+      "wood"
+    ],
+    "climates": [
+      "temperate",
+      "polar",
+      "arid"
+    ],
+    "room_numeric": [
+      "light_energy_scale",
+      "fog_distance_scale"
+    ],
+    "known_bad_controls": [
+      "off_palette_texel",
+      "over_budget",
+      "missing_room_capture",
+      "invalid_pose"
+    ],
+    "golden_regions": [
+      "ground",
+      "sky",
+      "characters"
+    ]
+  },
+  "audio_generators": {
+    "core.noise": [
+      "room_air",
+      "filtered_wind",
+      "dry_wind"
+    ],
+    "core.tone": [
+      "soft_tick",
+      "electronic_tick",
+      "wood_tick"
+    ]
+  },
+  "validators": {
+    "core.style_metrics": {
+      "version": "1.0.0",
+      "metrics": [
+        "contrast_range",
+        "void_fraction",
+        "floating_count",
+        "fog_swallowed_fraction",
+        "palette_hue_adherence",
+        "accent_role_fraction"
+      ],
+      "scopes": [
+        "room",
+        "exterior"
+      ],
+      "absence_scopes": [
+        "exterior"
+      ]
+    }
+  },
+  "mandatory_metrics": [
+    "contrast_range",
+    "void_fraction",
+    "floating_count",
+    "fog_swallowed_fraction",
+    "palette_hue_adherence"
+  ],
+  "class_ceilings": {
+    "animal": 300,
+    "arch": 300,
+    "building": 900,
+    "character": 700,
+    "flora": 300,
+    "furniture": 300,
+    "furniture_large": 400,
+    "fx": 16,
+    "prop": 150,
+    "shell": 1500,
+    "sky": 128,
+    "soft": 150,
+    "structure": 500,
+    "terrain": 512,
+    "vehicle": 500
+  },
+  "source_manifest_sha256": "7dfd05a57a9212aa73b8848cd18dea1b477ab57f573c8a4a7f540acf2a8f0cee",
+  "note": "Frozen data-validation catalog only. No profile API implementation, generator execution, renderer readiness or aesthetic acceptance is asserted."
+}

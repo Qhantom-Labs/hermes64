@@ -1,0 +1,57 @@
+{
+  "format": 2,
+  "palettes": {
+    "neutral": {
+      "format":2,"id":"neutral","transform":{},
+      "bindings":{
+        "walk":{"ids":["h64.footstep.stone.walk"],"gain":0.6},
+        "run":{"ids":["h64.footstep.stone.run"],"gain":0.6},
+        "interact":{"ids":["h64.ui.confirm.soft"],"gain":0.5},
+        "pickup":{"ids":["h64.reward.key.quest"],"gain":0.5},
+        "ambient":{"ids":["h64.ambience.interior.lantern"],"gain":0.25},
+        "music":{"ids":["h64.music.village.hearth"],"gain":0.3}
+      }
+    },
+    "polar": {
+      "format":2,"id":"polar","transform":{"pitch_semitones":-1,"filter_hz":2300,"reverb_ms":92,"reverb_mix":0.2,"instruments":{"pad":"glass_pad","melody":"flute","arpeggio":"mallet"}},
+      "bindings":{
+        "walk":{"ids":["h64.footstep.snow.walk"],"gain":0.6},
+        "run":{"ids":["h64.footstep.snow.run"],"gain":0.6},
+        "interact":{"ids":["h64.ui.confirm.soft"],"gain":0.5},
+        "door":{"ids":["h64.hatch.airlock.seal"],"gain":0.5},
+        "ambient":{"ids":["h64.ambience.snow.drift"],"gain":0.25},
+        "music":{"ids":["h64.music.polar.twilight"],"gain":0.3}
+      }
+    },
+    "forest": {
+      "format":2,"id":"forest","transform":{"pitch_semitones":1,"filter_hz":2800,"reverb_ms":48,"reverb_mix":0.08,"instruments":{"pad":"strings","melody":"ocarina","arpeggio":"harp"}},
+      "bindings":{
+        "walk":{"ids":["h64.footstep.leaves.walk"],"gain":0.6},
+        "run":{"ids":["h64.footstep.grass.run"],"gain":0.6},
+        "interact":{"ids":["h64.ui.confirm.soft"],"gain":0.5},
+        "creature":{"ids":["h64.creature.bird.song"],"gain":0.4},
+        "ambient":{"ids":["h64.ambience.forest.canopy"],"gain":0.25},
+        "music":{"ids":["h64.music.forest.path"],"gain":0.3}
+      }
+    },
+    "desert": {
+      "format":2,"id":"desert","transform":{"pitch_semitones":-2,"filter_hz":1800,"reverb_ms":35,"reverb_mix":0.04,"instruments":{"pad":"strings","melody":"flute","arpeggio":"wood_mallet"}},
+      "bindings":{
+        "walk":{"ids":["h64.footstep.sand.walk"],"gain":0.6},
+        "run":{"ids":["h64.footstep.sand.run"],"gain":0.6},
+        "interact":{"ids":["h64.ui.confirm.soft"],"gain":0.5},
+        "mount":{"ids":["h64.movement.horse.hoof.dirt"],"gain":0.5},
+        "ambient":{"ids":["h64.ambience.desert.dunes"],"gain":0.25},
+        "music":{"ids":["h64.music.desert.caravan"],"gain":0.3}
+      }
+    }
+  },
+  "style_cues":{
+    "core.noise:room_air":{"id":"h64.ambience.interior.vent","transform":{"filter_hz":2100}},
+    "core.tone:soft_tick":{"id":"h64.ui.confirm.soft","transform":{"filter_hz":2100}},
+    "core.noise:filtered_wind":{"id":"h64.ambience.wind.ridge","transform":{"filter_hz":2300,"reverb_mix":0.2}},
+    "core.tone:electronic_tick":{"id":"h64.ui.menu.focus","transform":{"filter_hz":2300,"reverb_mix":0.2}},
+    "core.noise:dry_wind":{"id":"h64.ambience.desert.dunes","transform":{"filter_hz":1800,"reverb_mix":0.04}},
+    "core.tone:wood_tick":{"id":"h64.ui.menu.tab","transform":{"filter_hz":1800,"reverb_mix":0.04}}
+  }
+}

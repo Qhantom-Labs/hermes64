@@ -1,0 +1,455 @@
+{
+ "schema": "hermes64-rig/1.0.0",
+ "id": "dasher16_v1",
+ "version": "1.0.0",
+ "kind": "creature",
+ "conventions": {
+  "units": "metre",
+  "gltf_up": "+Y",
+  "gltf_forward": "+Z (the character faces +Z; Blender authoring: Z up, faces -Y)",
+  "left_side": "+X (bones *_l sit on +X)",
+  "handedness": "right-handed",
+  "rest_rotation": "identity on every joint; unit scale; translation-only offsets from the parent",
+  "blender_authoring": "every bone head at the joint, tail = head + (0, 0, 0.05), roll 0, export with +Y up, export_rest_position_armature",
+  "armature_node": "rig_dasher16_v1",
+  "mesh_node": "kit_body",
+  "inverse_bind": "IBM[i] = inverse(world rest matrix of joint i) = translation(-rest_world_position[i])"
+ },
+ "bones": [
+  {
+   "name": "root",
+   "parent": null,
+   "index": 0,
+   "rest_translation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rest_world": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "hips",
+   "parent": "root",
+   "index": 1,
+   "rest_translation": [
+    0.0,
+    0.58,
+    -0.26
+   ],
+   "rest_world": [
+    0.0,
+    0.58,
+    -0.26
+   ]
+  },
+  {
+   "name": "chest",
+   "parent": "hips",
+   "index": 2,
+   "rest_translation": [
+    0.0,
+    0.04,
+    0.46
+   ],
+   "rest_world": [
+    0.0,
+    0.62,
+    0.2
+   ]
+  },
+  {
+   "name": "cairn_low",
+   "parent": "chest",
+   "index": 3,
+   "rest_translation": [
+    0.0,
+    0.28,
+    -0.1
+   ],
+   "rest_world": [
+    0.0,
+    0.9,
+    0.1
+   ]
+  },
+  {
+   "name": "cairn_top",
+   "parent": "cairn_low",
+   "index": 4,
+   "rest_translation": [
+    -0.015,
+    0.185,
+    -0.03
+   ],
+   "rest_world": [
+    -0.015,
+    1.085,
+    0.07
+   ]
+  },
+  {
+   "name": "leg_fl",
+   "parent": "chest",
+   "index": 5,
+   "rest_translation": [
+    0.17,
+    -0.06,
+    0.1
+   ],
+   "rest_world": [
+    0.17,
+    0.56,
+    0.3
+   ]
+  },
+  {
+   "name": "paw_fl",
+   "parent": "leg_fl",
+   "index": 6,
+   "rest_translation": [
+    0.04,
+    -0.34,
+    0.01
+   ],
+   "rest_world": [
+    0.21,
+    0.22,
+    0.31
+   ]
+  },
+  {
+   "name": "leg_fr",
+   "parent": "chest",
+   "index": 7,
+   "rest_translation": [
+    -0.17,
+    -0.06,
+    0.1
+   ],
+   "rest_world": [
+    -0.17,
+    0.56,
+    0.3
+   ]
+  },
+  {
+   "name": "paw_fr",
+   "parent": "leg_fr",
+   "index": 8,
+   "rest_translation": [
+    -0.04,
+    -0.34,
+    0.01
+   ],
+   "rest_world": [
+    -0.21,
+    0.22,
+    0.31
+   ]
+  },
+  {
+   "name": "neck",
+   "parent": "chest",
+   "index": 9,
+   "rest_translation": [
+    0.0,
+    0.06,
+    0.22
+   ],
+   "rest_world": [
+    0.0,
+    0.68,
+    0.42
+   ]
+  },
+  {
+   "name": "head",
+   "parent": "neck",
+   "index": 10,
+   "rest_translation": [
+    0.0,
+    -0.1,
+    0.2
+   ],
+   "rest_world": [
+    0.0,
+    0.58,
+    0.62
+   ]
+  },
+  {
+   "name": "leg_bl",
+   "parent": "hips",
+   "index": 11,
+   "rest_translation": [
+    0.14,
+    -0.02,
+    0.0
+   ],
+   "rest_world": [
+    0.14,
+    0.56,
+    -0.26
+   ]
+  },
+  {
+   "name": "paw_bl",
+   "parent": "leg_bl",
+   "index": 12,
+   "rest_translation": [
+    0.06,
+    -0.34,
+    -0.04
+   ],
+   "rest_world": [
+    0.2,
+    0.22,
+    -0.3
+   ]
+  },
+  {
+   "name": "leg_br",
+   "parent": "hips",
+   "index": 13,
+   "rest_translation": [
+    -0.14,
+    -0.02,
+    0.0
+   ],
+   "rest_world": [
+    -0.14,
+    0.56,
+    -0.26
+   ]
+  },
+  {
+   "name": "paw_br",
+   "parent": "leg_br",
+   "index": 14,
+   "rest_translation": [
+    -0.06,
+    -0.34,
+    -0.04
+   ],
+   "rest_world": [
+    -0.2,
+    0.22,
+    -0.3
+   ]
+  },
+  {
+   "name": "tail",
+   "parent": "hips",
+   "index": 15,
+   "rest_translation": [
+    0.0,
+    0.06,
+    -0.18
+   ],
+   "rest_world": [
+    0.0,
+    0.64,
+    -0.44
+   ]
+  }
+ ],
+ "mirror_pairs": [],
+ "skin": {
+  "max_influences": 4,
+  "weights_sum_tolerance": 0.001,
+  "joints_component": [
+   "UNSIGNED_BYTE",
+   "UNSIGNED_SHORT"
+  ],
+  "weights_component": "FLOAT",
+  "ibm_tolerance_m": 1e-05
+ },
+ "joint_limits": {
+  "root": {
+   "max_angle_deg": 10.0
+  },
+  "hips": {
+   "max_angle_deg": 95.0
+  },
+  "chest": {
+   "max_angle_deg": 30.0
+  },
+  "cairn_low": {
+   "max_angle_deg": 25.0
+  },
+  "cairn_top": {
+   "max_angle_deg": 30.0
+  },
+  "leg_fl": {
+   "max_angle_deg": 55.0
+  },
+  "paw_fl": {
+   "max_angle_deg": 85.0
+  },
+  "leg_fr": {
+   "max_angle_deg": 55.0
+  },
+  "paw_fr": {
+   "max_angle_deg": 85.0
+  },
+  "neck": {
+   "max_angle_deg": 35.0
+  },
+  "head": {
+   "max_angle_deg": 35.0
+  },
+  "leg_bl": {
+   "max_angle_deg": 50.0
+  },
+  "paw_bl": {
+   "max_angle_deg": 55.0
+  },
+  "leg_br": {
+   "max_angle_deg": 45.0
+  },
+  "paw_br": {
+   "max_angle_deg": 55.0
+  },
+  "tail": {
+   "max_angle_deg": 70.0
+  }
+ },
+ "joint_limits_source": "envelope of every key of every clip of 2 Blender-published files + 10 deg, rounded up to 5 deg",
+ "proportions": {
+  "height_m": [
+   0.938,
+   1.466
+  ],
+  "segment_fraction_of_height": {
+   "hips": [
+    0.4326,
+    0.6784
+   ],
+   "chest": [
+    0.314,
+    0.4931
+   ],
+   "cairn_low": [
+    0.2018,
+    0.3179
+   ],
+   "cairn_top": [
+    0.1273,
+    0.2014
+   ],
+   "leg_fl": [
+    0.1396,
+    0.2207
+   ],
+   "paw_fl": [
+    0.2326,
+    0.366
+   ],
+   "leg_fr": [
+    0.1396,
+    0.2207
+   ],
+   "paw_fr": [
+    0.2326,
+    0.366
+   ],
+   "neck": [
+    0.1545,
+    0.244
+   ],
+   "head": [
+    0.1515,
+    0.2393
+   ],
+   "leg_bl": [
+    0.0955,
+    0.1517
+   ],
+   "paw_bl": [
+    0.2361,
+    0.3714
+   ],
+   "leg_br": [
+    0.0955,
+    0.1517
+   ],
+   "paw_br": [
+    0.2361,
+    0.3714
+   ],
+   "tail": [
+    0.1284,
+    0.2032
+   ]
+  }
+ },
+ "proportions_source": "Blender-published files: segment length / rest mesh height, range x0.8 .. x1.25",
+ "reference_body": {
+  "generator": "core/enemies.build('cairn_dasher')",
+  "enemy_id": "cairn_dasher",
+  "topology": "cairn_dasher_v1",
+  "template": "melee_dash_v1"
+ },
+ "clips": {
+  "required": [
+   "idle",
+   "move",
+   "telegraph",
+   "attack",
+   "recover",
+   "hurt",
+   "death"
+  ],
+  "fps": 15,
+  "keys": 16,
+  "duration_s": 1.0,
+  "interpolation": "STEP",
+  "key_time": "key k at t = k / 15 s",
+  "channels": {
+   "rotation": "every joint except root",
+   "translation": [
+    "hips"
+   ]
+  },
+  "root_motion": "root never animated; the body joint 'hips' carries a vertical offset only",
+  "fsm_clip": {
+   "idle": "idle",
+   "approach": "move",
+   "telegraph": "telegraph",
+   "attack": "attack",
+   "recover": "recover",
+   "hurt": "hurt",
+   "dead": "death"
+  }
+ },
+ "sockets": [
+  {
+   "name": "attach_ram",
+   "bone": "head"
+  },
+  {
+   "name": "attach_core",
+   "bone": "chest"
+  }
+ ],
+ "budgets": {
+  "body_tris_lt": 500,
+  "prop_tris_le": 200
+ },
+ "seams": [],
+ "silhouette": {
+  "rest_height_m": [
+   0.938,
+   1.466
+  ],
+  "floor": "no_sink",
+  "floor_tolerance_m": 0.002,
+  "floor_note": "creatures hop/gallop: the body joint lifts the mesh; it must never sink below y=0",
+  "blowup_height_factor": 1.6,
+  "max_vertex_departure_m": 0.5
+ }
+}

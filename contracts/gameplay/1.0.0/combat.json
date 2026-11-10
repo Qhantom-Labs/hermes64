@@ -1,0 +1,293 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "config": {
+      "additionalProperties": false,
+      "properties": {
+        "max_simultaneous": {
+          "maximum": 3,
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "max_simultaneous"
+      ],
+      "type": "object"
+    },
+    "entities": {
+      "additionalProperties": false,
+      "properties": {
+        "archetypes": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "aggro_range_m": {
+                "maximum": 64,
+                "minimum": 0.1,
+                "type": "number"
+              },
+              "attack": {
+                "additionalProperties": false,
+                "properties": {
+                  "active_ticks": {
+                    "maximum": 120,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "damage": {
+                    "maximum": 64,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "recovery_ticks": {
+                    "maximum": 600,
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  "windup_ticks": {
+                    "maximum": 600,
+                    "minimum": 1,
+                    "type": "integer"
+                  }
+                },
+                "required": [
+                  "windup_ticks",
+                  "active_ticks",
+                  "recovery_ticks",
+                  "damage"
+                ],
+                "type": "object"
+              },
+              "attack_range_m": {
+                "maximum": 8,
+                "minimum": 0.1,
+                "type": "number"
+              },
+              "fsm": {
+                "additionalProperties": false,
+                "properties": {
+                  "initial": {
+                    "enum": [
+                      "idle"
+                    ]
+                  },
+                  "states": {
+                    "items": {
+                      "enum": [
+                        "idle",
+                        "approach",
+                        "telegraph",
+                        "attack",
+                        "recover",
+                        "hurt",
+                        "dead"
+                      ]
+                    },
+                    "maxItems": 7,
+                    "minItems": 7,
+                    "type": "array",
+                    "uniqueItems": true
+                  },
+                  "template": {
+                    "enum": [
+                      "melee_approach_v1",
+                      "melee_dash_v1"
+                    ]
+                  }
+                },
+                "required": [
+                  "template",
+                  "initial",
+                  "states"
+                ],
+                "type": "object"
+              },
+              "id": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                "type": "string"
+              },
+              "leash_range_m": {
+                "maximum": 64,
+                "minimum": 0.1,
+                "type": "number"
+              },
+              "max_health": {
+                "maximum": 64,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "name": {
+                "maxLength": 256,
+                "minLength": 1,
+                "type": "string"
+              },
+              "speed_mps": {
+                "maximum": 20,
+                "minimum": 0.1,
+                "type": "number"
+              }
+            },
+            "required": [
+              "id",
+              "name",
+              "max_health",
+              "speed_mps",
+              "aggro_range_m",
+              "leash_range_m",
+              "attack_range_m",
+              "fsm",
+              "attack"
+            ],
+            "type": "object"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "type": "array"
+        },
+        "encounters": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "arena": {
+                "additionalProperties": false,
+                "properties": {
+                  "max": {
+                    "items": {
+                      "maximum": 1024,
+                      "minimum": -1024,
+                      "type": "number"
+                    },
+                    "maxItems": 3,
+                    "minItems": 3,
+                    "type": "array"
+                  },
+                  "min": {
+                    "items": {
+                      "maximum": 1024,
+                      "minimum": -1024,
+                      "type": "number"
+                    },
+                    "maxItems": 3,
+                    "minItems": 3,
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "min",
+                  "max"
+                ],
+                "type": "object"
+              },
+              "double_ko": {
+                "enum": [
+                  "failure"
+                ]
+              },
+              "id": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                "type": "string"
+              },
+              "lose": {
+                "enum": [
+                  "player_health_zero"
+                ]
+              },
+              "room": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                "type": "string"
+              },
+              "spawns": {
+                "items": {
+                  "additionalProperties": false,
+                  "properties": {
+                    "archetype": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "id": {
+                      "maxLength": 64,
+                      "minLength": 1,
+                      "pattern": "^[a-z][a-z0-9_]{0,63}$",
+                      "type": "string"
+                    },
+                    "position_m": {
+                      "items": {
+                        "maximum": 1024,
+                        "minimum": -1024,
+                        "type": "number"
+                      },
+                      "maxItems": 3,
+                      "minItems": 3,
+                      "type": "array"
+                    },
+                    "wave": {
+                      "maximum": 7,
+                      "minimum": 0,
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "archetype",
+                    "position_m",
+                    "wave"
+                  ],
+                  "type": "object"
+                },
+                "maxItems": 24,
+                "minItems": 1,
+                "type": "array"
+              },
+              "win": {
+                "enum": [
+                  "all_spawns_defeated"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "room",
+              "arena",
+              "spawns",
+              "win",
+              "lose",
+              "double_ko"
+            ],
+            "type": "object"
+          },
+          "maxItems": 16,
+          "minItems": 1,
+          "type": "array"
+        }
+      },
+      "required": [
+        "archetypes",
+        "encounters"
+      ],
+      "type": "object"
+    },
+    "id": {
+      "const": "combat"
+    },
+    "version": {
+      "const": "1.0.0"
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "config",
+    "entities"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,867 @@
+{
+ "assets": {
+  "arch.door": {
+   "alias_of": "dgn.doorway",
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.doorway.glb",
+   "kit_id": "dgn.doorway",
+   "preset": null,
+   "sha256": "bd57e65b9d8edf9fd738cc3336625aa01ab181729e97450de8cd89b00832a02f"
+  },
+  "cave.boulder": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/cave.boulder.glb",
+   "kit_id": "cave.boulder",
+   "preset": null,
+   "sha256": "4ce388ee806f7233b1a82864e7b5184ef0f6d0034bf0917c4fa81988cd2ee6a3"
+  },
+  "cave.boulder__big": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/cave.boulder__big.glb",
+   "kit_id": "cave.boulder",
+   "preset": "big",
+   "sha256": "048d74380fa80cfbd8c21e690c0b621bb20a479bb0b0864a7e8e8b3bfbaf431b"
+  },
+  "cave.ceiling": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/cave.ceiling.glb",
+   "kit_id": "cave.ceiling",
+   "preset": null,
+   "sha256": "d2cc3fbe06ed20ef12ee6f5e3ae15fcbf229022d30e643bd51efb07200556ffa"
+  },
+  "cave.cliff": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/cave.cliff.glb",
+   "kit_id": "cave.cliff",
+   "preset": null,
+   "sha256": "c32e0732f03b983876a63ed98f6fb67e49e8dccb988a63b3ea03a02aed1d9712"
+  },
+  "cave.cliff__tall": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/cave.cliff__tall.glb",
+   "kit_id": "cave.cliff",
+   "preset": "tall",
+   "sha256": "df563436c9bb62669b9df6af56eb3a384355c4ab1648c2ebbc3ec31ab1103a39"
+  },
+  "cave.floor": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/cave.floor.glb",
+   "kit_id": "cave.floor",
+   "preset": null,
+   "sha256": "358909636c67b1333dbd26c5ad746749089b9e81ab5a852200d2e0e7d5633e3e"
+  },
+  "cave.floor__puddle": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/cave.floor__puddle.glb",
+   "kit_id": "cave.floor",
+   "preset": "puddle",
+   "sha256": "747c29d440db849946b421679a1f68085ae9c1c8ff2b3508915f3d3b267e66b2"
+  },
+  "cave.ledge": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/cave.ledge.glb",
+   "kit_id": "cave.ledge",
+   "preset": null,
+   "sha256": "ee353c2ef7ab6da47658837cf4c04b57174badaf33b8a72685ebada567041b8e"
+  },
+  "cave.mouth": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/cave.mouth.glb",
+   "kit_id": "cave.mouth",
+   "preset": null,
+   "sha256": "7786a122d68caace06c8b89e4707b5f405d06fe426a5806ed94529f89ccd5da4"
+  },
+  "cave.spike": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/cave.spike.glb",
+   "kit_id": "cave.spike",
+   "preset": null,
+   "sha256": "fc0706c5a59216a300834ff3f37a68f33d4581e4e8de628b42116db248ced949"
+  },
+  "cave.spike__column": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/cave.spike__column.glb",
+   "kit_id": "cave.spike",
+   "preset": "column",
+   "sha256": "46812c9655ef526e98f45d2df78b9f1b1f133aa62419bd4c8b5a2d5d7268e3d9"
+  },
+  "cave.spike__stalactite": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/cave.spike__stalactite.glb",
+   "kit_id": "cave.spike",
+   "preset": "stalactite",
+   "sha256": "af95466874b8682130ec280cf0c158b960c894d18ab417d9ed7133d757764cb6"
+  },
+  "cave.wall": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/cave.wall.glb",
+   "kit_id": "cave.wall",
+   "preset": null,
+   "sha256": "60930e92cf12e2bc500d3af49359c49db4432c2842bd6a07c384542d42ff1f65"
+  },
+  "cave.wall__corner": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/cave.wall__corner.glb",
+   "kit_id": "cave.wall",
+   "preset": "corner",
+   "sha256": "3c67072ee61ee327be1018e4fd13e148b086f22d5574d9d3c932c5b3a21b01f8"
+  },
+  "dgn.bridge": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.bridge.glb",
+   "kit_id": "dgn.bridge",
+   "preset": null,
+   "sha256": "e25b86cc4e6baa5d0599d6ac7ecb9d0963b225376380740ca7fea5551d1237a1"
+  },
+  "dgn.bridge__one": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.bridge__one.glb",
+   "kit_id": "dgn.bridge",
+   "preset": "one",
+   "sha256": "e25b86cc4e6baa5d0599d6ac7ecb9d0963b225376380740ca7fea5551d1237a1"
+  },
+  "dgn.bridge__two": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.bridge__two.glb",
+   "kit_id": "dgn.bridge",
+   "preset": "two",
+   "sha256": "aa4688d420e0faaeb4179fb55359f774a0131ef46dd804f3fe22d5913d73c1c6"
+  },
+  "dgn.ceiling": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.ceiling.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": null,
+   "sha256": "bbb5f9dcec9f18b8c6302f988e78bf30d483c00eb1b32141e92300deb0f80f24"
+  },
+  "dgn.ceiling__flat_2x2": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.ceiling__flat_2x2.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": "flat_2x2",
+   "sha256": "517b70c9905a31cb1aa52d9b226ef17b7e4a3b60a27ce350821fc22cc69d0e32"
+  },
+  "dgn.ceiling__flat_2x3": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.ceiling__flat_2x3.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": "flat_2x3",
+   "sha256": "e96517e481e3d2287af3669e07f199bdba93d568395923c08fbbe74ac112ec50"
+  },
+  "dgn.ceiling__flat_3x3": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.ceiling__flat_3x3.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": "flat_3x3",
+   "sha256": "7535e91028b672501a07d31a02666e7424a021f862ca79d05449203403c5535c"
+  },
+  "dgn.ceiling__flat_4x3": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.ceiling__flat_4x3.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": "flat_4x3",
+   "sha256": "f9dd51e63a983674cc24f25ebededb28f1aa7079d213d41257e1d82ecac62a87"
+  },
+  "dgn.ceiling__groin": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.ceiling__groin.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": "groin",
+   "sha256": "31cb8aa74c43edbf8a4a98b329a01c45722037c94179052a791bac82ba36a128"
+  },
+  "dgn.ceiling__groin_2x2": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.ceiling__groin_2x2.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": "groin_2x2",
+   "sha256": "31cb8aa74c43edbf8a4a98b329a01c45722037c94179052a791bac82ba36a128"
+  },
+  "dgn.ceiling__groin_3x3": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.ceiling__groin_3x3.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": "groin_3x3",
+   "sha256": "9d72d79dd4f7f51e6ed8b6396bdae3126b9555f05d7343a26b67061caa596d2a"
+  },
+  "dgn.ceiling__groin_3x4": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.ceiling__groin_3x4.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": "groin_3x4",
+   "sha256": "9696c6eac710e2c26d7953d96188ce0ef524a8289dc042bc2e47c0df3dd152cb"
+  },
+  "dgn.ceiling__vault": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.ceiling__vault.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": "vault",
+   "sha256": "bbb5f9dcec9f18b8c6302f988e78bf30d483c00eb1b32141e92300deb0f80f24"
+  },
+  "dgn.ceiling__vault_1x3": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.ceiling__vault_1x3.glb",
+   "kit_id": "dgn.ceiling",
+   "preset": "vault_1x3",
+   "sha256": "5d633d14c70bff49362f0e4d7a852c191b50911754cd7cdaab21b91fce3a3a85"
+  },
+  "dgn.corridor": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.corridor.glb",
+   "kit_id": "dgn.corridor",
+   "preset": null,
+   "sha256": "75b8d411e5b66eb89cb4082fcda6e33794b9fc7c176839900fa4fac3bcac1d74"
+  },
+  "dgn.corridor__corner": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.corridor__corner.glb",
+   "kit_id": "dgn.corridor",
+   "preset": "corner",
+   "sha256": "e9cefd23b4488711396c9d4f29ceee7eccc680a07b740d831351377a98aedc51"
+  },
+  "dgn.corridor__cross": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.corridor__cross.glb",
+   "kit_id": "dgn.corridor",
+   "preset": "cross",
+   "sha256": "73f3fb2e1e2f78a0c4ef12472afcd6f56f2e4948577395443334196af0e65871"
+  },
+  "dgn.corridor__end_door": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.corridor__end_door.glb",
+   "kit_id": "dgn.corridor",
+   "preset": "end_door",
+   "sha256": "13c45f785442fb59619dbe6c17509a7726a392fdb97b7d06ef890cb97787f03a"
+  },
+  "dgn.corridor__end_door_torch": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.corridor__end_door_torch.glb",
+   "kit_id": "dgn.corridor",
+   "preset": "end_door_torch",
+   "sha256": "13c45f785442fb59619dbe6c17509a7726a392fdb97b7d06ef890cb97787f03a"
+  },
+  "dgn.corridor__end_wall": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.corridor__end_wall.glb",
+   "kit_id": "dgn.corridor",
+   "preset": "end_wall",
+   "sha256": "c68c3dac443f1a927a53342485b0a18124d97b8f3870674db42061d94521ca83"
+  },
+  "dgn.corridor__end_wall_torch": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.corridor__end_wall_torch.glb",
+   "kit_id": "dgn.corridor",
+   "preset": "end_wall_torch",
+   "sha256": "71c3b9e2cf77334cd8955cac4f2e1e0aca4a831b1282079836fd492bbca8dd5c"
+  },
+  "dgn.corridor__straight": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.corridor__straight.glb",
+   "kit_id": "dgn.corridor",
+   "preset": "straight",
+   "sha256": "75b8d411e5b66eb89cb4082fcda6e33794b9fc7c176839900fa4fac3bcac1d74"
+  },
+  "dgn.corridor__straight_torch": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.corridor__straight_torch.glb",
+   "kit_id": "dgn.corridor",
+   "preset": "straight_torch",
+   "sha256": "25a875926223b3e4a1c65eaea877c0a8fb6562759914cdcae7951bbc4abcb848"
+  },
+  "dgn.corridor__tee": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.corridor__tee.glb",
+   "kit_id": "dgn.corridor",
+   "preset": "tee",
+   "sha256": "4e283142821dd544ccb5220c62599f95d4e656e4990b5934c3992c1553f384cf"
+  },
+  "dgn.door_locked": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.door_locked.glb",
+   "kit_id": "dgn.door_locked",
+   "preset": null,
+   "sha256": "7393242a96d97efc857aad3b628813062b3ae79978ebb833ef3b4e8e0bc3077b"
+  },
+  "dgn.door_locked__gate": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.door_locked__gate.glb",
+   "kit_id": "dgn.door_locked",
+   "preset": "gate",
+   "sha256": "806372f81b3579407157da7fdda7e6fa4b9be5e2438c722586e7a6ec8dc7de56"
+  },
+  "dgn.door_locked__gate_open": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.door_locked__gate_open.glb",
+   "kit_id": "dgn.door_locked",
+   "preset": "gate_open",
+   "sha256": "faa0e62214ad0a8962f1d3baf8903b3b156e33ce152ac78ae6cecc09d38c3bed"
+  },
+  "dgn.door_locked__locked": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.door_locked__locked.glb",
+   "kit_id": "dgn.door_locked",
+   "preset": "locked",
+   "sha256": "7393242a96d97efc857aad3b628813062b3ae79978ebb833ef3b4e8e0bc3077b"
+  },
+  "dgn.door_locked__locked_open": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.door_locked__locked_open.glb",
+   "kit_id": "dgn.door_locked",
+   "preset": "locked_open",
+   "sha256": "17597652908b83bac9745af281402c8891c062c9923c904beda0630faa79b19e"
+  },
+  "dgn.doorway": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.doorway.glb",
+   "kit_id": "dgn.doorway",
+   "preset": null,
+   "sha256": "bd57e65b9d8edf9fd738cc3336625aa01ab181729e97450de8cd89b00832a02f"
+  },
+  "dgn.doorway__arch": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.doorway__arch.glb",
+   "kit_id": "dgn.doorway",
+   "preset": "arch",
+   "sha256": "8c79bc1f740c72ed0a61b3f8752e56e977ee69dfb853239347fb9e23776e0269"
+  },
+  "dgn.doorway__frame": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.doorway__frame.glb",
+   "kit_id": "dgn.doorway",
+   "preset": "frame",
+   "sha256": "bd57e65b9d8edf9fd738cc3336625aa01ab181729e97450de8cd89b00832a02f"
+  },
+  "dgn.floor": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.floor.glb",
+   "kit_id": "dgn.floor",
+   "preset": null,
+   "sha256": "530ada9ca95149d75bad558491411168c861c382ca76fbb598e250fa39d03c88"
+  },
+  "dgn.floor__border": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.floor__border.glb",
+   "kit_id": "dgn.floor",
+   "preset": "border",
+   "sha256": "1cdd3b92fbfe45985d8e1a3bea6e8a1518a4c72c5a0ad3b3bb2ce4a9d457d9b8"
+  },
+  "dgn.floor__cracked": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.floor__cracked.glb",
+   "kit_id": "dgn.floor",
+   "preset": "cracked",
+   "sha256": "3fd65de61c2257a80c56be38d03506a4455ecad3d7d80cd8933edf0b616e7b17"
+  },
+  "dgn.floor__grate": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.floor__grate.glb",
+   "kit_id": "dgn.floor",
+   "preset": "grate",
+   "sha256": "b0ba9ff57288c9f75b6cd816f47ef834fc0dfca6e87e7851ad1d3931f4a4939b"
+  },
+  "dgn.floor__plain": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.floor__plain.glb",
+   "kit_id": "dgn.floor",
+   "preset": "plain",
+   "sha256": "530ada9ca95149d75bad558491411168c861c382ca76fbb598e250fa39d03c88"
+  },
+  "dgn.pillar": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.pillar.glb",
+   "kit_id": "dgn.pillar",
+   "preset": null,
+   "sha256": "5529e46354f1dda22ba848671e61ad4db23de965af48a87aa70da6baa2ccad0f"
+  },
+  "dgn.pillar__broken": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.pillar__broken.glb",
+   "kit_id": "dgn.pillar",
+   "preset": "broken",
+   "sha256": "3bf8a888a755f467d4cec5ad3c9075cc6f86b23cbc9fb736c5e42416b6c9db77"
+  },
+  "dgn.pillar__round": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.pillar__round.glb",
+   "kit_id": "dgn.pillar",
+   "preset": "round",
+   "sha256": "de720054bb9b2326c35c9638544403ea023acfa4222c670e85b1fc897b6f2f3c"
+  },
+  "dgn.pillar__square": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.pillar__square.glb",
+   "kit_id": "dgn.pillar",
+   "preset": "square",
+   "sha256": "5529e46354f1dda22ba848671e61ad4db23de965af48a87aa70da6baa2ccad0f"
+  },
+  "dgn.pit": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.pit.glb",
+   "kit_id": "dgn.pit",
+   "preset": null,
+   "sha256": "efd2ac043ba0e0718ba94c8bfbdeedda8a16072d7a905d5fe75c86c1ea8e2828"
+  },
+  "dgn.pit__corner": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.pit__corner.glb",
+   "kit_id": "dgn.pit",
+   "preset": "corner",
+   "sha256": "d32ef72df53b07a6fe683d0290bbb3c8c549339d8aaed060e3d6d4d59fbbb074"
+  },
+  "dgn.pit__edge": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.pit__edge.glb",
+   "kit_id": "dgn.pit",
+   "preset": "edge",
+   "sha256": "291d0168c7c6ef561f5e2f5425debdbf0d9cc61b4b980ffc902b27c4a517d79f"
+  },
+  "dgn.pit__full": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.pit__full.glb",
+   "kit_id": "dgn.pit",
+   "preset": "full",
+   "sha256": "efd2ac043ba0e0718ba94c8bfbdeedda8a16072d7a905d5fe75c86c1ea8e2828"
+  },
+  "dgn.room": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.room.glb",
+   "kit_id": "dgn.room",
+   "preset": null,
+   "sha256": "0bdb0ae736d4584926b55b2f9b91caf32cfb5fb0e7680512bfa41ba876e64720"
+  },
+  "dgn.room__antechamber": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.room__antechamber.glb",
+   "kit_id": "dgn.room",
+   "preset": "antechamber",
+   "sha256": "4851b812ce0a2085a4e25bc589422dd2347ef636400084fbd7101d9e3050d7a4"
+  },
+  "dgn.room__boss_hall": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.room__boss_hall.glb",
+   "kit_id": "dgn.room",
+   "preset": "boss_hall",
+   "sha256": "a2527bcbd969fec0efd01cd29bbf829746f73adf0d8ae9988e3f55aca9585a39"
+  },
+  "dgn.room__entry": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.room__entry.glb",
+   "kit_id": "dgn.room",
+   "preset": "entry",
+   "sha256": "2eb9b6bf6aef5f2650a5cad18a570782c6de4316ea37112470ab27fd2648d9ca"
+  },
+  "dgn.room__hub": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.room__hub.glb",
+   "kit_id": "dgn.room",
+   "preset": "hub",
+   "sha256": "4c4ede07ed335d3e13e9d791486b583bb3059d3e5fee7374a7f9923640bb08d6"
+  },
+  "dgn.room__large": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.room__large.glb",
+   "kit_id": "dgn.room",
+   "preset": "large",
+   "sha256": "e9f3bfd541f36aa914bab3a76ec437b4cc04ebbdd760ad5d28e20279de59ac7e"
+  },
+  "dgn.room__medium": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.room__medium.glb",
+   "kit_id": "dgn.room",
+   "preset": "medium",
+   "sha256": "d7c5af2cb187ef1b4f0be17f24d2a67443fff3bae462a13cfacce165f66d575a"
+  },
+  "dgn.room__pit": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.room__pit.glb",
+   "kit_id": "dgn.room",
+   "preset": "pit",
+   "sha256": "eaa808cfc87e0b11f27ad8b971fc77b823c3fd8439db3125a7dfc6ffd32f7448"
+  },
+  "dgn.room__shrine": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.room__shrine.glb",
+   "kit_id": "dgn.room",
+   "preset": "shrine",
+   "sha256": "2d37b5ce62a871b0dc3eb331858ab67e28dd4fe6c16be6246e5d1ac169f7a166"
+  },
+  "dgn.room__small": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.room__small.glb",
+   "kit_id": "dgn.room",
+   "preset": "small",
+   "sha256": "0401254b19f8445d5c98e6463e71fbe0313e50698f445dcdbf2600eccdbd6bc6"
+  },
+  "dgn.rubble": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.rubble.glb",
+   "kit_id": "dgn.rubble",
+   "preset": null,
+   "sha256": "33fa3a7febc3df9e5392bfebf8a381ba68f6d482bc430c2c38236cb7b8075bf1"
+  },
+  "dgn.rubble__small": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.rubble__small.glb",
+   "kit_id": "dgn.rubble",
+   "preset": "small",
+   "sha256": "14359ca60b5ebfbbe20b7e8df4686d2e1358b244d655af360b78e71dd37c7b9c"
+  },
+  "dgn.stairs": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.stairs.glb",
+   "kit_id": "dgn.stairs",
+   "preset": null,
+   "sha256": "7cd463a39711176fc1c2fe4671445ed302d4ff50f43793a412c57aab4e362f61"
+  },
+  "dgn.stairs__down": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.stairs__down.glb",
+   "kit_id": "dgn.stairs",
+   "preset": "down",
+   "sha256": "c2b1d456d5d8d66a72de27104f8a2c3ddffe61c62e55f9367fcb9eb769108443"
+  },
+  "dgn.stairs__up": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.stairs__up.glb",
+   "kit_id": "dgn.stairs",
+   "preset": "up",
+   "sha256": "7cd463a39711176fc1c2fe4671445ed302d4ff50f43793a412c57aab4e362f61"
+  },
+  "dgn.wall": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dgn.wall.glb",
+   "kit_id": "dgn.wall",
+   "preset": null,
+   "sha256": "f315c4a677fdfa0e850f59861e309ce72a1cd74833662d52d2f0f4bac33c4aba"
+  },
+  "dgn.wall__alcove": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.wall__alcove.glb",
+   "kit_id": "dgn.wall",
+   "preset": "alcove",
+   "sha256": "976a15ea089295276508640d578b52269509b50fe9ca3f4f26c90f12acd1b67d"
+  },
+  "dgn.wall__door": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.wall__door.glb",
+   "kit_id": "dgn.wall",
+   "preset": "door",
+   "sha256": "5d6a3fab2c5c963e7d1b7439969fd6024b40bdf85f93b0070bd866bb5cfc942d"
+  },
+  "dgn.wall__end_piers": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.wall__end_piers.glb",
+   "kit_id": "dgn.wall",
+   "preset": "end_piers",
+   "sha256": "b1d9eec1b95cfac36b61549ec94cd0f67eb2f7d49a42f42809a857370f2fa48f"
+  },
+  "dgn.wall__relief": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.wall__relief.glb",
+   "kit_id": "dgn.wall",
+   "preset": "relief",
+   "sha256": "36a64f3cd0454a37ea4eac34e323f2f770ff492ebac1b3e81f4c9b8182433e56"
+  },
+  "dgn.wall__slit": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.wall__slit.glb",
+   "kit_id": "dgn.wall",
+   "preset": "slit",
+   "sha256": "95d1612518cba65e2388dc175f887436a930e67fb3e7bbb25c36aab1835ed184"
+  },
+  "dgn.wall__solid": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.wall__solid.glb",
+   "kit_id": "dgn.wall",
+   "preset": "solid",
+   "sha256": "f315c4a677fdfa0e850f59861e309ce72a1cd74833662d52d2f0f4bac33c4aba"
+  },
+  "dgn.wall__torch": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dgn.wall__torch.glb",
+   "kit_id": "dgn.wall",
+   "preset": "torch",
+   "sha256": "f2928b467c50b1ced7d48832b2714cc7305425d31ed07a3a5f2be88987644635"
+  },
+  "dprop.banner": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.banner.glb",
+   "kit_id": "dprop.banner",
+   "preset": null,
+   "sha256": "5cf6a63cccf9c75b6ee40fb8ea17aafab37e7f429bbf27f399b0dea52b510f6e"
+  },
+  "dprop.banner__point": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.banner__point.glb",
+   "kit_id": "dprop.banner",
+   "preset": "point",
+   "sha256": "dc62af04e296c15c2c1b99d8de31ece5860834aa894686cf516c9488131ec162"
+  },
+  "dprop.block": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.block.glb",
+   "kit_id": "dprop.block",
+   "preset": null,
+   "sha256": "fab874928c4a5bfeed0462eb121ee07a42bdffc4357b99c1fc24c27feb5f319c"
+  },
+  "dprop.block__eye": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.block__eye.glb",
+   "kit_id": "dprop.block",
+   "preset": "eye",
+   "sha256": "fab874928c4a5bfeed0462eb121ee07a42bdffc4357b99c1fc24c27feb5f319c"
+  },
+  "dprop.brazier": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.brazier.glb",
+   "kit_id": "dprop.brazier",
+   "preset": null,
+   "sha256": "63749bd17c668a0790cc63ad3dd18de7e7c48c13cc9846a83cac44d787aa53f5"
+  },
+  "dprop.brazier__tall": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.brazier__tall.glb",
+   "kit_id": "dprop.brazier",
+   "preset": "tall",
+   "sha256": "033ca6de6dc2ab0bfaf4c539a72ebc352bac49e252a6b9872c2aac459a3b568b"
+  },
+  "dprop.brazier__unlit": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.brazier__unlit.glb",
+   "kit_id": "dprop.brazier",
+   "preset": "unlit",
+   "sha256": "5a962d0c238660a6fb8b4ad0511e950e2db388386c5339a00056ce09a50dfb98"
+  },
+  "dprop.breakable": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.breakable.glb",
+   "kit_id": "dprop.breakable",
+   "preset": null,
+   "sha256": "5d3efcd1b90138c61983291abfce4644c81a497f6d49be528142df6962c0fc21"
+  },
+  "dprop.breakable__crates": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.breakable__crates.glb",
+   "kit_id": "dprop.breakable",
+   "preset": "crates",
+   "sha256": "c89aa3a9147f69f06ce93fd0dac050727f0313edba0687e3eb20bc1a62ca56f0"
+  },
+  "dprop.breakable__urn": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.breakable__urn.glb",
+   "kit_id": "dprop.breakable",
+   "preset": "urn",
+   "sha256": "d413dbd1f86e6e21e012d51dd286f3b9cc53ec62da3b486a76cffea042b6b3e4"
+  },
+  "dprop.chest": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.chest.glb",
+   "kit_id": "dprop.chest",
+   "preset": null,
+   "sha256": "542ff2afa466c848019e0acb93872339a267fc329e5588ab60aa2bd793b39aa5"
+  },
+  "dprop.chest__large": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.chest__large.glb",
+   "kit_id": "dprop.chest",
+   "preset": "large",
+   "sha256": "643a9ca8cdf8704e29f29188d533c9be6d3de77e15c143d52a458ab132c47139"
+  },
+  "dprop.chest__large_open": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.chest__large_open.glb",
+   "kit_id": "dprop.chest",
+   "preset": "large_open",
+   "sha256": "ed27e12233680b90200cbfa180f0c317eb19827405d8f4ee252fbedd1981ef36"
+  },
+  "dprop.chest__open": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.chest__open.glb",
+   "kit_id": "dprop.chest",
+   "preset": "open",
+   "sha256": "26df2af43ceef690eccf526fe50118839994a56f631ac12db59be0317ccc6b35"
+  },
+  "dprop.cobweb": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.cobweb.glb",
+   "kit_id": "dprop.cobweb",
+   "preset": null,
+   "sha256": "fd8bed6661eda2b8b05de288524ee503a8d6eb7a8e8759a4d874c652624a6d93"
+  },
+  "dprop.crystal": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.crystal.glb",
+   "kit_id": "dprop.crystal",
+   "preset": null,
+   "sha256": "d93dd186110aaf969b07b7f2ab28d429b8d82d573cdbdcfa2c4f340232790c0e"
+  },
+  "dprop.crystal__tall": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.crystal__tall.glb",
+   "kit_id": "dprop.crystal",
+   "preset": "tall",
+   "sha256": "bce66801da0f7245ea5200e9fbb0d0163ba33998a01443599b160a4fde854ec7"
+  },
+  "dprop.plate": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.plate.glb",
+   "kit_id": "dprop.plate",
+   "preset": null,
+   "sha256": "892b63653fe49b0c7e62be7344256a77b4822376c6cbab09dee1aade27817d94"
+  },
+  "dprop.plate__down": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.plate__down.glb",
+   "kit_id": "dprop.plate",
+   "preset": "down",
+   "sha256": "82831f84c913570a633911227e991f4d991aae0729a76c08847af4eb2032f132"
+  },
+  "dprop.sconce": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.sconce.glb",
+   "kit_id": "dprop.sconce",
+   "preset": null,
+   "sha256": "21a4d1c356841b8d9b42513f78ad71d7500935971c10eebeedbdd063e4e3d596"
+  },
+  "dprop.sconce__cage": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.sconce__cage.glb",
+   "kit_id": "dprop.sconce",
+   "preset": "cage",
+   "sha256": "d4083c6b1afe0840017ed1d96069f67d3bdebf9868b2f2e4be3d6266101bd9ce"
+  },
+  "dprop.sconce__unlit": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.sconce__unlit.glb",
+   "kit_id": "dprop.sconce",
+   "preset": "unlit",
+   "sha256": "cf2679c7a2579b31cbe7d2dda8622e39706afecc0490e8eeec93aaf5b1cf6cb1"
+  },
+  "dprop.statue": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.statue.glb",
+   "kit_id": "dprop.statue",
+   "preset": null,
+   "sha256": "0b297fa3a8df7770ed9dc06637afcb4ddcfa9543cf0b000295cf11f2ce9a6a93"
+  },
+  "dprop.statue__shield": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.statue__shield.glb",
+   "kit_id": "dprop.statue",
+   "preset": "shield",
+   "sha256": "0e749ab9ed683e080a9ad17b8db5f71d4f2c268fc0bbe573f1420e101d84dc93"
+  },
+  "dprop.switch": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.switch.glb",
+   "kit_id": "dprop.switch",
+   "preset": null,
+   "sha256": "50accd0b70943606a33816f3de880d517495aab801a50c690ed5ffeb1886bf38"
+  },
+  "dprop.switch__lever": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/dprop.switch__lever.glb",
+   "kit_id": "dprop.switch",
+   "preset": "lever",
+   "sha256": "3f9f21a42a46af1bc9f139d49c30289e25823aeff44f7cd0f33c6a8da2e5197f"
+  },
+  "dprop.tablet": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/dprop.tablet.glb",
+   "kit_id": "dprop.tablet",
+   "preset": null,
+   "sha256": "75bcd143210333795506e8ebefb7a855a727b06661956afeb5f778df67f61e2e"
+  },
+  "lake.bed": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/lake.bed.glb",
+   "kit_id": "lake.bed",
+   "preset": null,
+   "sha256": "090cab7be2a206aa72321228090b397e9906ffecc2174f4daa6081fb889ae53e"
+  },
+  "lake.bridge": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/lake.bridge.glb",
+   "kit_id": "lake.bridge",
+   "preset": null,
+   "sha256": "27443714fbf6f4197546b36971cceb4891167211ee5cc7c8668caa5677d6292f"
+  },
+  "lake.bridge__planks": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/lake.bridge__planks.glb",
+   "kit_id": "lake.bridge",
+   "preset": "planks",
+   "sha256": "99736f3cbefb64a37e191f544a60c397e3d33ad1b7695a51a7f124801f112d6a"
+  },
+  "lake.dock": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/lake.dock.glb",
+   "kit_id": "lake.dock",
+   "preset": null,
+   "sha256": "44988585df691d6e7a40093416ffa2214df8c130ba8808d8041b71ccf65628f5"
+  },
+  "lake.lilies": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/lake.lilies.glb",
+   "kit_id": "lake.lilies",
+   "preset": null,
+   "sha256": "08d224c7483a0408ffa832450d14dcc8031bd1bdc72b22b9673a956df893f44c"
+  },
+  "lake.reeds": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/lake.reeds.glb",
+   "kit_id": "lake.reeds",
+   "preset": null,
+   "sha256": "e632f2ce3c0683fe37c91ed9b76f8cd1b22de9caec4cbf2872627d968c0255cb"
+  },
+  "lake.shore": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/lake.shore.glb",
+   "kit_id": "lake.shore",
+   "preset": null,
+   "sha256": "8dbd368b2961fd48138a804482d0db7687855f22ff3a75db75339918e8c3bf07"
+  },
+  "lake.shore__corner_in": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/lake.shore__corner_in.glb",
+   "kit_id": "lake.shore",
+   "preset": "corner_in",
+   "sha256": "921ad0cd28f9fb99b750edd0cfb007c8d2ba1b7d095349fc1f9dbbbcb7c2a7ba"
+  },
+  "lake.shore__corner_out": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/lake.shore__corner_out.glb",
+   "kit_id": "lake.shore",
+   "preset": "corner_out",
+   "sha256": "45827657be777c31ed11ccbbcc3f99ece6b8055647140be328646b71d03342e3"
+  },
+  "lake.shore__land": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/lake.shore__land.glb",
+   "kit_id": "lake.shore",
+   "preset": "land",
+   "sha256": "7bb93413196dbfd5ac477188ea13cb05bccabfeabfac85d0ead6b62a8bf3eea2"
+  },
+  "lake.water": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/lake.water.glb",
+   "kit_id": "lake.water",
+   "preset": null,
+   "sha256": "ccaf149eadb717935792071d54f7b9cfdf592161ae760fc884ab694a57868806"
+  },
+  "lake.water__large": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/lake.water__large.glb",
+   "kit_id": "lake.water",
+   "preset": "large",
+   "sha256": "3a5f38e9b315277496097a124dbffda8344e8268eb611fc3cd43a849a122edf5"
+  },
+  "lake.water__open": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/lake.water__open.glb",
+   "kit_id": "lake.water",
+   "preset": "open",
+   "sha256": "84e96f92862b840d3ca03185e0ec75d707dee20b843edbbb8f8d517256018809"
+  },
+  "lake.water__pond": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/lake.water__pond.glb",
+   "kit_id": "lake.water",
+   "preset": "pond",
+   "sha256": "414f72927ccefb4c009af675e770e196d85d025b371a94debd7e573beb8c98f4"
+  },
+  "lake.water__vast": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/lake.water__vast.glb",
+   "kit_id": "lake.water",
+   "preset": "vast",
+   "sha256": "0802ed889ae3b8bf6a005f66258471a078f19ef26ab7a9efa5d1d9eaeea32158"
+  },
+  "lake.waterfall": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/lake.waterfall.glb",
+   "kit_id": "lake.waterfall",
+   "preset": null,
+   "sha256": "19f7c06a96a53aac26cb4b4daa4bc0d3971619de8ff6d1fd8df5dcd494fc31e9"
+  },
+  "nature.bush": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/nature.bush.glb",
+   "kit_id": "nature.bush",
+   "preset": null,
+   "sha256": "9094599598373ce09af3f61f8eb9eaa4b1dde5acc41776028f7777ad57615300"
+  },
+  "nature.tree": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/nature.tree.glb",
+   "kit_id": "nature.tree",
+   "preset": null,
+   "sha256": "c7942805fc88a4f0353a2ad4b805157eed28bdf46ba8a63c2d98d42fb6483764"
+  },
+  "sky.backdrop": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/sky.backdrop.glb",
+   "kit_id": "sky.backdrop",
+   "preset": null,
+   "sha256": "eefb1c79b1603244d52c3e53002f637f2b94ac7dcbf9ff0aa6aedf1d39048d51"
+  },
+  "tmpl.altar": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/tmpl.altar.glb",
+   "kit_id": "tmpl.altar",
+   "preset": null,
+   "sha256": "06a4b5faafd24ae41fa2e335151ca10797b0bc8f65bb605445ac01701b0ad40d"
+  },
+  "tmpl.altar__cold": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/tmpl.altar__cold.glb",
+   "kit_id": "tmpl.altar",
+   "preset": "cold",
+   "sha256": "118305ba1a8c728b6b666c53eb93f2e1162e1e6def3fad6122a037af72c60df9"
+  },
+  "tmpl.boss_door": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/tmpl.boss_door.glb",
+   "kit_id": "tmpl.boss_door",
+   "preset": null,
+   "sha256": "f9789cff118f6a1468652a8aa5459fec2419ed645297d65d93425b89ee2ebcff"
+  },
+  "tmpl.boss_door__open": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/tmpl.boss_door__open.glb",
+   "kit_id": "tmpl.boss_door",
+   "preset": "open",
+   "sha256": "df0bbc9ad744e27f2a77ff68fc195576e924c40b1b3667c19cc1b3114399399a"
+  },
+  "tmpl.column": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/tmpl.column.glb",
+   "kit_id": "tmpl.column",
+   "preset": null,
+   "sha256": "2447819c6b0d7f3b10ab630fc1b3ed02d4f9c405cfceab7e1405820717d4d858"
+  },
+  "tmpl.column__broken": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/tmpl.column__broken.glb",
+   "kit_id": "tmpl.column",
+   "preset": "broken",
+   "sha256": "2ea58199f2428967d468e650f83589563586f2b3dc768e661ba9be4fa7cff307"
+  },
+  "tmpl.dais": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/tmpl.dais.glb",
+   "kit_id": "tmpl.dais",
+   "preset": null,
+   "sha256": "b31d7e1eff8493e589d5ae12b37ec24e5ba7ddf384c994ee5aa81b8cd6926ad3"
+  },
+  "tmpl.dais__large": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/tmpl.dais__large.glb",
+   "kit_id": "tmpl.dais",
+   "preset": "large",
+   "sha256": "dca7602b5e9e6bf87ae736e8eb174be68bd91faaf915ec2452f07c3e8b52634d"
+  },
+  "tmpl.floor": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/tmpl.floor.glb",
+   "kit_id": "tmpl.floor",
+   "preset": null,
+   "sha256": "06548a1a71ebc6c749f582b09b60cd615c0f4fbf4eba323a6286adc8ae18b81c"
+  },
+  "tmpl.floor__single": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/tmpl.floor__single.glb",
+   "kit_id": "tmpl.floor",
+   "preset": "single",
+   "sha256": "a6fc104adbc8c9c0bc16cd26527b1295bfa729b96dc28a7b4e336b8e514eb1df"
+  },
+  "tmpl.obelisk": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/tmpl.obelisk.glb",
+   "kit_id": "tmpl.obelisk",
+   "preset": null,
+   "sha256": "12d898191db633222776553963cb7dee05f58bb03784b3c96865a0f1fb988372"
+  },
+  "tmpl.relief": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/tmpl.relief.glb",
+   "kit_id": "tmpl.relief",
+   "preset": null,
+   "sha256": "79d500c0b292efd06a68db4e85a03460a96db8fea3dfce721b423bb7ebf487e9"
+  },
+  "tmpl.wall": {
+   "glb": "kits/library/stone_dungeon_torchlit/assets/tmpl.wall.glb",
+   "kit_id": "tmpl.wall",
+   "preset": null,
+   "sha256": "bb00a065675143dbcd59ec522a0cf441ee74aa60d68d83ec9e7547e5e6b2d9a8"
+  },
+  "tmpl.wall__plain": {
+   "glb": "kits/library/stone_dungeon_torchlit/presets/tmpl.wall__plain.glb",
+   "kit_id": "tmpl.wall",
+   "preset": "plain",
+   "sha256": "df5d7efa9b138abcc5bbdf4f7c4d5d599cad71591b17ae3736509b1b04e10974"
+  }
+ },
+ "format": 1,
+ "kit_pack": "stone_dungeon_torchlit",
+ "note": "DUNGEONKIT bindings: kit defaults (<kit_id>), pack presets (<kit_id>__<preset>), aliases the runtime places by name (arch.door -> dgn.doorway frame). Every row hash-pinned; regenerate with tools/dungeonkit_library.py bindings.",
+ "pack": "stone_dungeon_torchlit"
+}

@@ -1,0 +1,23 @@
+{
+ "layout_id": "lounge",
+ "version": "3.1.0",
+ "note": "Theme-agnostic living room. Coordinates are glTF (x right, y up, z toward the south/door wall), metres, room floor centre = origin; rot_y_deg turns the fixture's front (+Z) about +Y. Slots are bound per pack in pack.json -> fixtures. Openings are filled automatically: door_main -> opening 0, window_main -> opening 1, window_side -> opening 2 (the module takes the opening's shape/size; the pack preset gives style).",
+ "shell": {"generator": "arch.room_shell",
+           "params": {"plan": "rect", "width": 7.0, "depth": 6.0, "height": 3.0,
+                      "openings": [{"wall": "s", "offset": 0.0, "width": 1.1, "height": 2.1, "sill": 0.0, "kind": "door", "shape": "arch"},
+                                   {"wall": "n", "offset": 0.0, "width": 2.4, "height": 1.2, "sill": 0.9, "kind": "window", "shape": "rounded_rect"},
+                                   {"wall": "e", "offset": 0.0, "width": 0.9, "height": 0.9, "sill": 1.1, "kind": "window", "shape": "round"}]}},
+ "openings": {"door_main": 0, "window_main": 1, "window_side": 2},
+ "fixtures": [
+  {"slot": "seat_lounge", "pos": [-1.7, 0.0, -1.5], "rot_y_deg": 15.0, "params": {}},
+  {"slot": "seat_chair", "pos": [1.9, 0.0, -1.3], "rot_y_deg": -35.0, "params": {}},
+  {"slot": "table_low", "pos": [0.1, 0.0, -0.5], "rot_y_deg": 0.0, "params": {}},
+  {"slot": "rug", "pos": [0.1, 0.0, -0.5], "rot_y_deg": 0.0, "params": {}},
+  {"slot": "lamp_floor", "pos": [2.9, 0.0, -2.5], "rot_y_deg": -40.0, "params": {}},
+  {"slot": "console", "pos": [2.75, 0.0, 1.55], "rot_y_deg": -90.0, "params": {}},
+  {"slot": "shelf", "pos": [-3.25, 0.0, 1.3], "rot_y_deg": 90.0, "params": {}},
+  {"slot": "cat_bed", "pos": [-2.3, 0.0, 0.6], "rot_y_deg": 0.0, "params": {}},
+  {"slot": "plant", "pos": [-3.0, 0.0, -2.5], "rot_y_deg": 0.0, "params": {}},
+  {"slot": "container", "pos": [-1.6, 0.0, 2.55], "rot_y_deg": 0.0, "params": {}}
+ ]
+}

@@ -1,0 +1,836 @@
+{
+ "assets": {
+  "arch.door": {
+   "alias_of": "cyroom.portal",
+   "glb": "kits/library/neon_dawn/assets/cyroom.portal.glb",
+   "kit_id": "cyroom.portal",
+   "preset": null,
+   "sha256": "556ea8cef99afb11494ac70f098dd1c69d40c086ec5c16517a65bf2658361201"
+  },
+  "cydress.ac": {
+   "glb": "kits/library/neon_dawn/assets/cydress.ac.glb",
+   "kit_id": "cydress.ac",
+   "preset": null,
+   "sha256": "1efdd23d65be34bc603f0a297a1126f2036db31af157674ae36d6ff43e139cf5"
+  },
+  "cydress.awning": {
+   "glb": "kits/library/neon_dawn/assets/cydress.awning.glb",
+   "kit_id": "cydress.awning",
+   "preset": null,
+   "sha256": "68909547e56b2f5edb28660853dd26424bddb48102aca4333dcdbc5c42eba68c"
+  },
+  "cydress.barrel": {
+   "glb": "kits/library/neon_dawn/assets/cydress.barrel.glb",
+   "kit_id": "cydress.barrel",
+   "preset": null,
+   "sha256": "136b183a22a012136524a8fbbdcaf3ad3d409e12b45380872dd41b7d4398a5d0"
+  },
+  "cydress.bench": {
+   "glb": "kits/library/neon_dawn/assets/cydress.bench.glb",
+   "kit_id": "cydress.bench",
+   "preset": null,
+   "sha256": "e813c8352808780c779b7bd92303b44e0bb3d22e154d5f1e9f1a6104fe2f179c"
+  },
+  "cydress.bin": {
+   "glb": "kits/library/neon_dawn/assets/cydress.bin.glb",
+   "kit_id": "cydress.bin",
+   "preset": null,
+   "sha256": "a4c8dfa396f8725ee2e70ad10ba79ace93948ac99153c1356bbd82977ff0364b"
+  },
+  "cydress.bollard": {
+   "glb": "kits/library/neon_dawn/assets/cydress.bollard.glb",
+   "kit_id": "cydress.bollard",
+   "preset": null,
+   "sha256": "8afa11c8e8c0bb753f5ea97224f4f1505e499bdc3072028c6ba9ee6198fda315"
+  },
+  "cydress.cart": {
+   "glb": "kits/library/neon_dawn/assets/cydress.cart.glb",
+   "kit_id": "cydress.cart",
+   "preset": null,
+   "sha256": "9d1b72e0b566379aeb930208aa944b4890e3f3ef35d4983eb9c3694083def0e3"
+  },
+  "cydress.crates": {
+   "glb": "kits/library/neon_dawn/assets/cydress.crates.glb",
+   "kit_id": "cydress.crates",
+   "preset": null,
+   "sha256": "85c6d222af92958055d1d36a6aeefb7dd21858ba82db85d9b59e327690ad3dec"
+  },
+  "cydress.cup": {
+   "glb": "kits/library/neon_dawn/assets/cydress.cup.glb",
+   "kit_id": "cydress.cup",
+   "preset": null,
+   "sha256": "3650f8112631869cae07a4715f0e7fc1cf062ace91b23581230ec18ecb5b831b"
+  },
+  "cydress.pipe_elbow": {
+   "glb": "kits/library/neon_dawn/assets/cydress.pipe_elbow.glb",
+   "kit_id": "cydress.pipe_elbow",
+   "preset": null,
+   "sha256": "5218dabbae7c641c728e3e0366909808ee145f96116c48d3b279acb2f8017fb5"
+  },
+  "cydress.shutter": {
+   "glb": "kits/library/neon_dawn/assets/cydress.shutter.glb",
+   "kit_id": "cydress.shutter",
+   "preset": null,
+   "sha256": "755c2523d3de2c2a241a54f0057a6d68558a8c9c361c1872481a7f4030c7a9d1"
+  },
+  "cydress.speaker": {
+   "glb": "kits/library/neon_dawn/assets/cydress.speaker.glb",
+   "kit_id": "cydress.speaker",
+   "preset": null,
+   "sha256": "c647713fb2ff79eeca59accc50968e4ab5a14637d7b14d6c4debcaab073ae976"
+  },
+  "cydress.traffic_signal": {
+   "glb": "kits/library/neon_dawn/assets/cydress.traffic_signal.glb",
+   "kit_id": "cydress.traffic_signal",
+   "preset": null,
+   "sha256": "f76bf7dd225dae82617f02ef4e565218b506528d1f0ea064cd4cbf7abe77af6c"
+  },
+  "cydress.water_tank": {
+   "glb": "kits/library/neon_dawn/assets/cydress.water_tank.glb",
+   "kit_id": "cydress.water_tank",
+   "preset": null,
+   "sha256": "a11d926bcf94ca41d36f58215242f81bea6e62509792d5f1d43ff0ce0d8b4e38"
+  },
+  "cyroom.apartment": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.apartment.glb",
+   "kit_id": "cyroom.apartment",
+   "preset": null,
+   "sha256": "7e05fb0dfcec5ab8fb6dfcc7096e793b9aaee15bb5c5655cd7679da2eccfe622"
+  },
+  "cyroom.bar": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.bar.glb",
+   "kit_id": "cyroom.bar",
+   "preset": null,
+   "sha256": "2cda83fb0282266328bd6ebe2596956deb70bf30eb4a97d57a27e600777478cd"
+  },
+  "cyroom.bed": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.bed.glb",
+   "kit_id": "cyroom.bed",
+   "preset": null,
+   "sha256": "5f2b6aad603e21aec59127ef2e4b5c800040a62835329da1cbba09e15053442d"
+  },
+  "cyroom.booth": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.booth.glb",
+   "kit_id": "cyroom.booth",
+   "preset": null,
+   "sha256": "fa5937f865a9c309cdc02a85cbb51030eab05fec92556d862d064255d34e2094"
+  },
+  "cyroom.canopy": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.canopy.glb",
+   "kit_id": "cyroom.canopy",
+   "preset": null,
+   "sha256": "98c76e3b7b504bda7ce7583bce921fd0c97c4efbd1cd0b762f5f230cabe1e3d3"
+  },
+  "cyroom.chair": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.chair.glb",
+   "kit_id": "cyroom.chair",
+   "preset": null,
+   "sha256": "87218aa1a1e4b41fba8ed71863b7a47ca1ded2943dd5ac781f4557aff70bc45d"
+  },
+  "cyroom.chair__captive": {
+   "glb": "kits/library/neon_dawn/presets/cyroom.chair__captive.glb",
+   "kit_id": "cyroom.chair",
+   "preset": "captive",
+   "sha256": "b7a35a0c5a6788380c25c80b951c205f89f5b7ae6f37aca050cce33bc08e033e"
+  },
+  "cyroom.club": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.club.glb",
+   "kit_id": "cyroom.club",
+   "preset": null,
+   "sha256": "6474a4f51751dd09b09bd15321b9c318bc98a902663c1b0896c6c1e453908b50"
+  },
+  "cyroom.club__arena": {
+   "glb": "kits/library/neon_dawn/presets/cyroom.club__arena.glb",
+   "kit_id": "cyroom.club",
+   "preset": "arena",
+   "sha256": "03e7fffc9873821852d0039a0cb8b64bb64dcb7f9d5748ff817b0e6ce81a28b3"
+  },
+  "cyroom.den": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.den.glb",
+   "kit_id": "cyroom.den",
+   "preset": null,
+   "sha256": "2f5b4607e619f4c230ac52f38bb04e691a90625da6c7bdf4303592905a67fe21"
+  },
+  "cyroom.desk": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.desk.glb",
+   "kit_id": "cyroom.desk",
+   "preset": null,
+   "sha256": "6faa246c6d365d696b9e2fede40d668ecb19b47fca7ce7b15bf6013408592c22"
+  },
+  "cyroom.desk__single": {
+   "glb": "kits/library/neon_dawn/presets/cyroom.desk__single.glb",
+   "kit_id": "cyroom.desk",
+   "preset": "single",
+   "sha256": "ae01e0c7c2ffbfdfd7a993a1ee33a249f11abf0f6734126f81a21d4db7fac02b"
+  },
+  "cyroom.lobby": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.lobby.glb",
+   "kit_id": "cyroom.lobby",
+   "preset": null,
+   "sha256": "1cc0e031176f905210c9d106e25aaecbf32d4d3cd761953bd7821831c1c59154"
+  },
+  "cyroom.locker": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.locker.glb",
+   "kit_id": "cyroom.locker",
+   "preset": null,
+   "sha256": "c840cb9de8d2bf474816abac1630ddf4dbfcd37da7b921d39e5e9d6c65142a68"
+  },
+  "cyroom.platform": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.platform.glb",
+   "kit_id": "cyroom.platform",
+   "preset": null,
+   "sha256": "35531971b88436b0dc506c7c376d349a4684dcada3030436f710fdeb373d70c3"
+  },
+  "cyroom.portal": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.portal.glb",
+   "kit_id": "cyroom.portal",
+   "preset": null,
+   "sha256": "556ea8cef99afb11494ac70f098dd1c69d40c086ec5c16517a65bf2658361201"
+  },
+  "cyroom.rooftop": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.rooftop.glb",
+   "kit_id": "cyroom.rooftop",
+   "preset": null,
+   "sha256": "7d5e6d93ec684ef2649c4fe8c43b8f988d921026a90c6ca6b9c246aef80ecdc9"
+  },
+  "cyroom.rooftop__tower": {
+   "glb": "kits/library/neon_dawn/presets/cyroom.rooftop__tower.glb",
+   "kit_id": "cyroom.rooftop",
+   "preset": "tower",
+   "sha256": "d18ffcbf57dffb285416d75a3f5a9d1335c5b07363ba3365de88b42ff1ec6e73"
+  },
+  "cyroom.server": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.server.glb",
+   "kit_id": "cyroom.server",
+   "preset": null,
+   "sha256": "7e05fb0dfcec5ab8fb6dfcc7096e793b9aaee15bb5c5655cd7679da2eccfe622"
+  },
+  "cyroom.server__arena": {
+   "glb": "kits/library/neon_dawn/presets/cyroom.server__arena.glb",
+   "kit_id": "cyroom.server",
+   "preset": "arena",
+   "sha256": "3d3deaaf0daa853cc7367abecb73f591b88c0abf60467db4ac4eb8932fbd5bc6"
+  },
+  "cyroom.sofa": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.sofa.glb",
+   "kit_id": "cyroom.sofa",
+   "preset": null,
+   "sha256": "041a1ac6421d61f590feba33a92a1e2ebe236d1bbcf900e8bb4c321d743e180a"
+  },
+  "cyroom.subway": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.subway.glb",
+   "kit_id": "cyroom.subway",
+   "preset": null,
+   "sha256": "770f5da4e546f5d856a23c662e7b5e67fa10fee5e8b2b4b02dda4e10acddd898"
+  },
+  "cyroom.subway__arena": {
+   "glb": "kits/library/neon_dawn/presets/cyroom.subway__arena.glb",
+   "kit_id": "cyroom.subway",
+   "preset": "arena",
+   "sha256": "ad3638cd37d6153a4130a3749b5009107c44865475c63610a816407add4d24de"
+  },
+  "cyroom.train": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.train.glb",
+   "kit_id": "cyroom.train",
+   "preset": null,
+   "sha256": "d63696037e3345feba227d8155cd80e2fe2b8c821809eb9932f297cb930e9db2"
+  },
+  "cyroom.train__carriage": {
+   "glb": "kits/library/neon_dawn/presets/cyroom.train__carriage.glb",
+   "kit_id": "cyroom.train",
+   "preset": "carriage",
+   "sha256": "4494d3b990083e423b904666d6358ab5b6ffd57a8b1e25aae6b17df57f538b26"
+  },
+  "cyroom.turnstile": {
+   "glb": "kits/library/neon_dawn/assets/cyroom.turnstile.glb",
+   "kit_id": "cyroom.turnstile",
+   "preset": null,
+   "sha256": "338042439c5dd7607ea2889cf504fae032623e738d1576e06efdebc3b2061c76"
+  },
+  "cysign.adpanel": {
+   "glb": "kits/library/neon_dawn/assets/cysign.adpanel.glb",
+   "kit_id": "cysign.adpanel",
+   "preset": null,
+   "sha256": "3172e0793f73fb597f53f7ec37f2f3a05e5f9839294b2280a405c076acd547c9"
+  },
+  "cysign.arcade": {
+   "glb": "kits/library/neon_dawn/assets/cysign.arcade.glb",
+   "kit_id": "cysign.arcade",
+   "preset": null,
+   "sha256": "d5445ace59bb95539b7b6831f0207764f16f753e2da334782b782048d3362f8b"
+  },
+  "cysign.banner": {
+   "glb": "kits/library/neon_dawn/assets/cysign.banner.glb",
+   "kit_id": "cysign.banner",
+   "preset": null,
+   "sha256": "f1a598992a3cdb91420fb2f90dc81953e6d8c7acc994bfd499104d5559e61fe5"
+  },
+  "cysign.billboard": {
+   "glb": "kits/library/neon_dawn/assets/cysign.billboard.glb",
+   "kit_id": "cysign.billboard",
+   "preset": null,
+   "sha256": "4acbaca2a54df6769aaba53f32e3b586825946862f8541d983a140ae9b750de4"
+  },
+  "cysign.blade": {
+   "glb": "kits/library/neon_dawn/assets/cysign.blade.glb",
+   "kit_id": "cysign.blade",
+   "preset": null,
+   "sha256": "62ac514d3a0f1c3eb93b883c08ad38b8098cdee28520e2a25a64d2eaad5159b8"
+  },
+  "cysign.clinic": {
+   "glb": "kits/library/neon_dawn/assets/cysign.clinic.glb",
+   "kit_id": "cysign.clinic",
+   "preset": null,
+   "sha256": "1daa8532bf3315c32a8ea7b1d3db5a2a145dc8cb2ec4e9db71d70501d580398c"
+  },
+  "cysign.frame": {
+   "glb": "kits/library/neon_dawn/assets/cysign.frame.glb",
+   "kit_id": "cysign.frame",
+   "preset": null,
+   "sha256": "bc3c7e82bca3bf955b1398b49af123756202b9c52f34e1bd8a83c39fb66048c7"
+  },
+  "cysign.frame__amber": {
+   "glb": "kits/library/neon_dawn/presets/cysign.frame__amber.glb",
+   "kit_id": "cysign.frame",
+   "preset": "amber",
+   "sha256": "f1d5fce66216f1b3ae53d58c8c3405a3da2c739dc107a7600cfbac8a89a7d6f8"
+  },
+  "cysign.frame__magenta": {
+   "glb": "kits/library/neon_dawn/presets/cysign.frame__magenta.glb",
+   "kit_id": "cysign.frame",
+   "preset": "magenta",
+   "sha256": "e7cb4578de2ea814f3af35343ca2cbd4b485159c2299492c0ff1cebbc0684228"
+  },
+  "cysign.holo": {
+   "glb": "kits/library/neon_dawn/assets/cysign.holo.glb",
+   "kit_id": "cysign.holo",
+   "preset": null,
+   "sha256": "71ca8fb3f7ff3f552b23a8760f2b15a5e19e1cc771f3ba4be532fbd9784fd5a1"
+  },
+  "cysign.hotel": {
+   "glb": "kits/library/neon_dawn/assets/cysign.hotel.glb",
+   "kit_id": "cysign.hotel",
+   "preset": null,
+   "sha256": "9974f7f60b3a0c6118f08d491f52324899b169d0dc52495fc163fe8754179690"
+  },
+  "cysign.noodle": {
+   "glb": "kits/library/neon_dawn/assets/cysign.noodle.glb",
+   "kit_id": "cysign.noodle",
+   "preset": null,
+   "sha256": "b2a90f2b38e249d6b03e3c042732d8d8789fc1df433ce463a5fed8260003934e"
+  },
+  "cysign.pawn": {
+   "glb": "kits/library/neon_dawn/assets/cysign.pawn.glb",
+   "kit_id": "cysign.pawn",
+   "preset": null,
+   "sha256": "b95bb2db3174640e329dedf9a63561e211533ebaa2dc80763aefd5508a1c4640"
+  },
+  "cysign.roof": {
+   "glb": "kits/library/neon_dawn/assets/cysign.roof.glb",
+   "kit_id": "cysign.roof",
+   "preset": null,
+   "sha256": "8d02b6e6ce0d3ad1634d5ad108c8070c2a367df82f4160c4f30b9cb0d083abfe"
+  },
+  "cysign.ticker": {
+   "glb": "kits/library/neon_dawn/assets/cysign.ticker.glb",
+   "kit_id": "cysign.ticker",
+   "preset": null,
+   "sha256": "a1c3482473c80920a6a0ca0de21d5e102a083cd4e0a1ef74517c2bbac8e88593"
+  },
+  "cysign.tube": {
+   "glb": "kits/library/neon_dawn/assets/cysign.tube.glb",
+   "kit_id": "cysign.tube",
+   "preset": null,
+   "sha256": "3044ea29d39506585eb17071b42f954c0d7e67216d46b0047f0788d517a1e879"
+  },
+  "cysky.airship": {
+   "glb": "kits/library/neon_dawn/assets/cysky.airship.glb",
+   "kit_id": "cysky.airship",
+   "preset": null,
+   "sha256": "b01c02b6036110620a5de955a1ddbafe9dea6158aa4edef2b5b8e372c1c72198"
+  },
+  "cysky.arch": {
+   "glb": "kits/library/neon_dawn/assets/cysky.arch.glb",
+   "kit_id": "cysky.arch",
+   "preset": null,
+   "sha256": "611f847c77dbc51c2da8b380b276992505c9a0653ebd1203c65bf979e7c416d8"
+  },
+  "cysky.cargo": {
+   "glb": "kits/library/neon_dawn/assets/cysky.cargo.glb",
+   "kit_id": "cysky.cargo",
+   "preset": null,
+   "sha256": "2545bcf41826e70c60e395e6fff702118325f6b1c4ce476b4113c3bfca31eea8"
+  },
+  "cysky.corner": {
+   "glb": "kits/library/neon_dawn/assets/cysky.corner.glb",
+   "kit_id": "cysky.corner",
+   "preset": null,
+   "sha256": "1224b6eebe5e014438893d5ac6288592d4dc6c69c5edd6269af2b78152290329"
+  },
+  "cysky.courier": {
+   "glb": "kits/library/neon_dawn/assets/cysky.courier.glb",
+   "kit_id": "cysky.courier",
+   "preset": null,
+   "sha256": "38ea9f762dbb2492345b3eef39c063d1cb0a7e545d9605aca33f1322dae9b00c"
+  },
+  "cysky.far": {
+   "glb": "kits/library/neon_dawn/assets/cysky.far.glb",
+   "kit_id": "cysky.far",
+   "preset": null,
+   "sha256": "df46ee2dc96ff97a6ead6ec92d2ab31000a3b5a49c12a8938126fb780ca3d333"
+  },
+  "cysky.far__tile": {
+   "glb": "kits/library/neon_dawn/presets/cysky.far__tile.glb",
+   "kit_id": "cysky.far",
+   "preset": "tile",
+   "sha256": "a643541c65c3f0cb0a5a3b9fbe2207f2d32f09bdeb52775295dd72328c98c82b"
+  },
+  "cysky.halocard": {
+   "glb": "kits/library/neon_dawn/assets/cysky.halocard.glb",
+   "kit_id": "cysky.halocard",
+   "preset": null,
+   "sha256": "d90c0c62334c5fba64ec19fa88df66b154d68a76b9a2af5a7d3d383ff683b8cb"
+  },
+  "cysky.hololine": {
+   "glb": "kits/library/neon_dawn/assets/cysky.hololine.glb",
+   "kit_id": "cysky.hololine",
+   "preset": null,
+   "sha256": "7ac78be52249d5572f5425efecf465676a728c0e71ddbc69b0f3cdaa2546f4b4"
+  },
+  "cysky.megatower": {
+   "glb": "kits/library/neon_dawn/assets/cysky.megatower.glb",
+   "kit_id": "cysky.megatower",
+   "preset": null,
+   "sha256": "cd8828688d8a45b4d1b9ec53a0fd8ecbfc604612f9c24fb27fd596cc52043296"
+  },
+  "cysky.near": {
+   "glb": "kits/library/neon_dawn/assets/cysky.near.glb",
+   "kit_id": "cysky.near",
+   "preset": null,
+   "sha256": "8ed9ad6f7b76b31e6f3bdea194d4e183226941d05978c1fda3bd75bac0b738e8"
+  },
+  "cysky.near__low": {
+   "glb": "kits/library/neon_dawn/presets/cysky.near__low.glb",
+   "kit_id": "cysky.near",
+   "preset": "low",
+   "sha256": "2545482778cc563d3047491c0c26ed61ff3ec7c8bea3021fc6b7e27b7ae9413a"
+  },
+  "cysky.near__tile": {
+   "glb": "kits/library/neon_dawn/presets/cysky.near__tile.glb",
+   "kit_id": "cysky.near",
+   "preset": "tile",
+   "sha256": "3d7acaf2395e48030c0f20d04f74ed17e41cdefddc9451216dc076c2ec6df6e6"
+  },
+  "cysky.needle": {
+   "glb": "kits/library/neon_dawn/assets/cysky.needle.glb",
+   "kit_id": "cysky.needle",
+   "preset": null,
+   "sha256": "ae3420112fd3101f62d4014f6bd9880b37abad12f212494ec5048e90126783bc"
+  },
+  "cysky.needle__low": {
+   "glb": "kits/library/neon_dawn/presets/cysky.needle__low.glb",
+   "kit_id": "cysky.needle",
+   "preset": "low",
+   "sha256": "6771e1a4dfd4003fadff2302cdbb84288b22f426343140f3f611a2557d248d31"
+  },
+  "cysky.needle__tile": {
+   "glb": "kits/library/neon_dawn/presets/cysky.needle__tile.glb",
+   "kit_id": "cysky.needle",
+   "preset": "tile",
+   "sha256": "a83a1afc34e2ba45e3eb92365c3f77a1de54120340155ca7954d159ddd1d1b61"
+  },
+  "cysky.network": {
+   "glb": "kits/library/neon_dawn/assets/cysky.network.glb",
+   "kit_id": "cysky.network",
+   "preset": null,
+   "sha256": "2f8db41a342ca04f0722fd5c609fb397f92b354cdb830cd73b71ffde721fd37e"
+  },
+  "cysky.shuttle": {
+   "glb": "kits/library/neon_dawn/assets/cysky.shuttle.glb",
+   "kit_id": "cysky.shuttle",
+   "preset": null,
+   "sha256": "3f62371f2187df0c51b54709e29d14d103613fd79d5a5ea33f422df60ed7b997"
+  },
+  "cysky.stepped": {
+   "glb": "kits/library/neon_dawn/assets/cysky.stepped.glb",
+   "kit_id": "cysky.stepped",
+   "preset": null,
+   "sha256": "5bac91ac0c2f22d544d4c19877cb95104a3b5f6b0cded3cb74c5e74e9282844a"
+  },
+  "cysky.stepped__low": {
+   "glb": "kits/library/neon_dawn/presets/cysky.stepped__low.glb",
+   "kit_id": "cysky.stepped",
+   "preset": "low",
+   "sha256": "ffebd813a8ce23151b29ad6a6fb34767df6750c51f767e2f42b58ec0d66e5ca2"
+  },
+  "cysky.stepped__tile": {
+   "glb": "kits/library/neon_dawn/presets/cysky.stepped__tile.glb",
+   "kit_id": "cysky.stepped",
+   "preset": "tile",
+   "sha256": "b41901364e68b25f712dcb19d003cce2c8364115139637685308621a6992b57e"
+  },
+  "cystreet.alley": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.alley.glb",
+   "kit_id": "cystreet.alley",
+   "preset": null,
+   "sha256": "5f5e2d6ee71308ff2adcbea36f9c923aaa606e54b7bcc3a5b5cc20ceb2edde83"
+  },
+  "cystreet.bridge": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.bridge.glb",
+   "kit_id": "cystreet.bridge",
+   "preset": null,
+   "sha256": "57719f89e90ff26a41c3e7fdf5a1d2e9e135bd7ebc9a3af2a8d5b473f22984ce"
+  },
+  "cystreet.corner": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.corner.glb",
+   "kit_id": "cystreet.corner",
+   "preset": null,
+   "sha256": "8b9f9ff23cedf3a83fd35a9376219d8c66d542a727aba19df1b646a055447932"
+  },
+  "cystreet.crossing": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.crossing.glb",
+   "kit_id": "cystreet.crossing",
+   "preset": null,
+   "sha256": "a976c78cd9a73772c45e3002aecd584c4ed4bfe8aa58040fe78b532c184ed6a4"
+  },
+  "cystreet.elevated": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.elevated.glb",
+   "kit_id": "cystreet.elevated",
+   "preset": null,
+   "sha256": "c00ecbe4f4c411a9f854dc22e18cb0283eb4eb7096ae770d10c1936cd278735e"
+  },
+  "cystreet.end": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.end.glb",
+   "kit_id": "cystreet.end",
+   "preset": null,
+   "sha256": "54ce650dbc201102b9952727166165f53286a64d82c60414e7ae7ca7c68bb24f"
+  },
+  "cystreet.metro": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.metro.glb",
+   "kit_id": "cystreet.metro",
+   "preset": null,
+   "sha256": "52f0b26ea3d4d763a15da7c0544a1671022cd5773f7f7c946d96e67731aad1f8"
+  },
+  "cystreet.plaza": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.plaza.glb",
+   "kit_id": "cystreet.plaza",
+   "preset": null,
+   "sha256": "c17e4469937f6302d8529f4f937da610f0a034a8e8a7d1cbd3137bddc1b8db72"
+  },
+  "cystreet.rail": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.rail.glb",
+   "kit_id": "cystreet.rail",
+   "preset": null,
+   "sha256": "53bad7cea0314e2a3dea9049f76555f783fd570f688b6b3074514c9f3ce035ec"
+  },
+  "cystreet.ramp": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.ramp.glb",
+   "kit_id": "cystreet.ramp",
+   "preset": null,
+   "sha256": "acd930780faacb5b855d62e8720f2db80acc944a50aaa4f2c9cb215c7bf164a4"
+  },
+  "cystreet.road": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.road.glb",
+   "kit_id": "cystreet.road",
+   "preset": null,
+   "sha256": "2c00965f1522f73adf7e1268baea25c1c9d81b73e6e16d7f09d13f5fe58ab554"
+  },
+  "cystreet.road__long": {
+   "glb": "kits/library/neon_dawn/presets/cystreet.road__long.glb",
+   "kit_id": "cystreet.road",
+   "preset": "long",
+   "sha256": "3ea6d1462c93a40ce1caa53d1aaf8f93a6ab09b8f0f24c887f93a18e96a54430"
+  },
+  "cystreet.road__short": {
+   "glb": "kits/library/neon_dawn/presets/cystreet.road__short.glb",
+   "kit_id": "cystreet.road",
+   "preset": "short",
+   "sha256": "5e0869d223d835427801d3fa78663a785867e6cf5314b126b8e24bf9e8da8f06"
+  },
+  "cystreet.sidewalk": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.sidewalk.glb",
+   "kit_id": "cystreet.sidewalk",
+   "preset": null,
+   "sha256": "d1a1129d47792f907c488a8ea73d2e64078e91485afd111140742285d1982636"
+  },
+  "cystreet.sidewalk__strip": {
+   "glb": "kits/library/neon_dawn/presets/cystreet.sidewalk__strip.glb",
+   "kit_id": "cystreet.sidewalk",
+   "preset": "strip",
+   "sha256": "407cb59f7406885e678033a0bd67f43870e797e91bd53235498d37a701c0f9c1"
+  },
+  "cystreet.sidewalk__strip2": {
+   "glb": "kits/library/neon_dawn/presets/cystreet.sidewalk__strip2.glb",
+   "kit_id": "cystreet.sidewalk",
+   "preset": "strip2",
+   "sha256": "d96fbdfc079cf09dbb02303d2f1f9942f510e95e067839fab0733536c7c66492"
+  },
+  "cystreet.stairs": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.stairs.glb",
+   "kit_id": "cystreet.stairs",
+   "preset": null,
+   "sha256": "5f4e0557d0ee865fc1752a82082b30645445755e0480d76a670ebe8e64393608"
+  },
+  "cystreet.tee": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.tee.glb",
+   "kit_id": "cystreet.tee",
+   "preset": null,
+   "sha256": "f90cca59559c356c23f642ed850b2695c72eb17f1a2c46157a8735ef978bc9d8"
+  },
+  "cystreet.walkway": {
+   "glb": "kits/library/neon_dawn/assets/cystreet.walkway.glb",
+   "kit_id": "cystreet.walkway",
+   "preset": null,
+   "sha256": "79f5e41f8ad33a8bf6e4b816d7d6c98810d85f6b52f110abfef1a28047fc05fa"
+  },
+  "cytech.antenna": {
+   "glb": "kits/library/neon_dawn/assets/cytech.antenna.glb",
+   "kit_id": "cytech.antenna",
+   "preset": null,
+   "sha256": "ca1889e825602a7dc84124031d57567543f38eee37ea35c06b4c16b7b74af394"
+  },
+  "cytech.barrier": {
+   "glb": "kits/library/neon_dawn/assets/cytech.barrier.glb",
+   "kit_id": "cytech.barrier",
+   "preset": null,
+   "sha256": "3a9b81554e6aa178fd3d109662ec3138bfc4efb93989e40dcb4278d8d0f0e5c8"
+  },
+  "cytech.bike": {
+   "glb": "kits/library/neon_dawn/assets/cytech.bike.glb",
+   "kit_id": "cytech.bike",
+   "preset": null,
+   "sha256": "29bcc8cf6be7b0b9b6fd8dfecd70d51b0da94b360b0215f223ca75f775051af7"
+  },
+  "cytech.cables": {
+   "glb": "kits/library/neon_dawn/assets/cytech.cables.glb",
+   "kit_id": "cytech.cables",
+   "preset": null,
+   "sha256": "3be452435d60ea3a29838fcc0fc39061cb2afaccbbcdb11baad39bc8e048e288"
+  },
+  "cytech.camera": {
+   "glb": "kits/library/neon_dawn/assets/cytech.camera.glb",
+   "kit_id": "cytech.camera",
+   "preset": null,
+   "sha256": "ba0dcd12df8f13057d0def7a5c0e113e5a93dcae3b6b042faf7da570ed98a137"
+  },
+  "cytech.charger": {
+   "glb": "kits/library/neon_dawn/assets/cytech.charger.glb",
+   "kit_id": "cytech.charger",
+   "preset": null,
+   "sha256": "5cb062c6f1f573962f948194f6424082daf929fc5b90e3cdeaaaa5e7f6227bdb"
+  },
+  "cytech.conduit": {
+   "glb": "kits/library/neon_dawn/assets/cytech.conduit.glb",
+   "kit_id": "cytech.conduit",
+   "preset": null,
+   "sha256": "8b032965c153dbc60a12f496f7bb5915b49ae7120e269a5bdd073706decf11d3"
+  },
+  "cytech.drone": {
+   "glb": "kits/library/neon_dawn/assets/cytech.drone.glb",
+   "kit_id": "cytech.drone",
+   "preset": null,
+   "sha256": "9af50918176c49dcd9901752a5b124e9087bae9e93a012c81f374f950657c82e"
+  },
+  "cytech.hovercar": {
+   "glb": "kits/library/neon_dawn/assets/cytech.hovercar.glb",
+   "kit_id": "cytech.hovercar",
+   "preset": null,
+   "sha256": "e2584f67874aaf2785768f32ebd1bf3e6efd6f00a2f88f77f0bf1cf319b25daf"
+  },
+  "cytech.hovercar__taxi": {
+   "glb": "kits/library/neon_dawn/presets/cytech.hovercar__taxi.glb",
+   "kit_id": "cytech.hovercar",
+   "preset": "taxi",
+   "sha256": "320d7a873a8469ec93bd7e303fc6c6138adc6138b040d388c3a0d2dfc2cadba9"
+  },
+  "cytech.hovercar__van": {
+   "glb": "kits/library/neon_dawn/presets/cytech.hovercar__van.glb",
+   "kit_id": "cytech.hovercar",
+   "preset": "van",
+   "sha256": "aeab44b878ce5c1ef6d8b544249f0e9484b3d4d077a8bd5b452bde5a81a18685"
+  },
+  "cytech.puddle": {
+   "glb": "kits/library/neon_dawn/assets/cytech.puddle.glb",
+   "kit_id": "cytech.puddle",
+   "preset": null,
+   "sha256": "dc22080b673d76e037a42f54270e7ed8b4fe5f1a96bbf04738c27a890f870f4b"
+  },
+  "cytech.rack": {
+   "glb": "kits/library/neon_dawn/assets/cytech.rack.glb",
+   "kit_id": "cytech.rack",
+   "preset": null,
+   "sha256": "8d0003a7749a6e3b2cd3164798467c6c0bc5598a8610f21e4508ab1ce0f0032f"
+  },
+  "cytech.rack__tall": {
+   "glb": "kits/library/neon_dawn/presets/cytech.rack__tall.glb",
+   "kit_id": "cytech.rack",
+   "preset": "tall",
+   "sha256": "429a5ea5a410a781a74753c86652a459e4163a7421155ba99fdcbde89a9b31b5"
+  },
+  "cytech.street_light": {
+   "glb": "kits/library/neon_dawn/assets/cytech.street_light.glb",
+   "kit_id": "cytech.street_light",
+   "preset": null,
+   "sha256": "e6fcc58d01c87c0982f052809ad7daab53d8d20d84debfc3afa99e7c19a14fb8"
+  },
+  "cytech.street_light__double": {
+   "glb": "kits/library/neon_dawn/presets/cytech.street_light__double.glb",
+   "kit_id": "cytech.street_light",
+   "preset": "double",
+   "sha256": "b2657151e937e944eddba8bf4d26c6aec5298fa36347032b7f7338c0bf9c1e42"
+  },
+  "cytech.terminal": {
+   "glb": "kits/library/neon_dawn/assets/cytech.terminal.glb",
+   "kit_id": "cytech.terminal",
+   "preset": null,
+   "sha256": "89c7df3ad931667fe59a86b0da39892d569d7f3dea790ee023c9c1d0ff47d8b1"
+  },
+  "cytech.utility": {
+   "glb": "kits/library/neon_dawn/assets/cytech.utility.glb",
+   "kit_id": "cytech.utility",
+   "preset": null,
+   "sha256": "54a0aa8f9b77dd76d4c7dde45f3ad3f7c8317972cfdcbb98230fe515c41a9323"
+  },
+  "cytech.vending": {
+   "glb": "kits/library/neon_dawn/assets/cytech.vending.glb",
+   "kit_id": "cytech.vending",
+   "preset": null,
+   "sha256": "c75ac06a8ee6c1f0d01a93ffd34415680b55beacf9a708304fa95889928b10da"
+  },
+  "cytech.vent": {
+   "glb": "kits/library/neon_dawn/assets/cytech.vent.glb",
+   "kit_id": "cytech.vent",
+   "preset": null,
+   "sha256": "e13c53efeaa9ee24891b1701f559c21a5be35fa2e762088a3a39e1e036033042"
+  },
+  "cytower.annex": {
+   "glb": "kits/library/neon_dawn/assets/cytower.annex.glb",
+   "kit_id": "cytower.annex",
+   "preset": null,
+   "sha256": "103809cd3545fdeaed481397bfbe0cc75e3b6e47ecb6e8a458e97b15336a3b8d"
+  },
+  "cytower.arch": {
+   "glb": "kits/library/neon_dawn/assets/cytower.arch.glb",
+   "kit_id": "cytower.arch",
+   "preset": null,
+   "sha256": "8daea8be8152e4f12f5615b65cbe99a737b298d29bf0d165e2220b19cffeecfe"
+  },
+  "cytower.arch__low": {
+   "glb": "kits/library/neon_dawn/presets/cytower.arch__low.glb",
+   "kit_id": "cytower.arch",
+   "preset": "low",
+   "sha256": "bdf0c7e8f631f8ec8e4ac19145bc8215e3f1b0c8ab9cb0baede2d6b0b60db507"
+  },
+  "cytower.balcony": {
+   "glb": "kits/library/neon_dawn/assets/cytower.balcony.glb",
+   "kit_id": "cytower.balcony",
+   "preset": null,
+   "sha256": "3085fa28d223db35059a5c35aee6a8a8a9af5d9940880da91c4c2e142b48d265"
+  },
+  "cytower.crown": {
+   "glb": "kits/library/neon_dawn/assets/cytower.crown.glb",
+   "kit_id": "cytower.crown",
+   "preset": null,
+   "sha256": "3ef9ae01fb809741b309523cc78ac71aae3f488763d4da544fede5df45bd51d2"
+  },
+  "cytower.drum": {
+   "glb": "kits/library/neon_dawn/assets/cytower.drum.glb",
+   "kit_id": "cytower.drum",
+   "preset": null,
+   "sha256": "89e4f916890d5befc0040fc47533a0c9a77eb5f4d0293d9433b83444aaff0ff0"
+  },
+  "cytower.drum__dome": {
+   "glb": "kits/library/neon_dawn/presets/cytower.drum__dome.glb",
+   "kit_id": "cytower.drum",
+   "preset": "dome",
+   "sha256": "f41e25f2d8877968ebadf5bfc512694a23ba4f271f3527b5061aa40bee8d1cf9"
+  },
+  "cytower.facade": {
+   "glb": "kits/library/neon_dawn/assets/cytower.facade.glb",
+   "kit_id": "cytower.facade",
+   "preset": null,
+   "sha256": "3d05fda8cdcbc9ff80f19979e332e2c5351a8876d847ada6db4049eecc19f957"
+  },
+  "cytower.facade__canyon": {
+   "glb": "kits/library/neon_dawn/presets/cytower.facade__canyon.glb",
+   "kit_id": "cytower.facade",
+   "preset": "canyon",
+   "sha256": "2eccbbc38981d8b351770cfcfcfd36993f4d9277db6cf401f1488a9a3bdcdfe1"
+  },
+  "cytower.facade__shops": {
+   "glb": "kits/library/neon_dawn/presets/cytower.facade__shops.glb",
+   "kit_id": "cytower.facade",
+   "preset": "shops",
+   "sha256": "579bc1c96309087e321ed8d6d31ebcec36441dfd98206e5c3d2a8cd0963153f4"
+  },
+  "cytower.garden": {
+   "glb": "kits/library/neon_dawn/assets/cytower.garden.glb",
+   "kit_id": "cytower.garden",
+   "preset": null,
+   "sha256": "90e41010ad19d0d7583b71998564c89cf9b8841da21ec502830d513d56ca215f"
+  },
+  "cytower.garden__small": {
+   "glb": "kits/library/neon_dawn/presets/cytower.garden__small.glb",
+   "kit_id": "cytower.garden",
+   "preset": "small",
+   "sha256": "6375f01c52ff4f44dfa9e520f9129ed311371a6325dd4f88507e07ed4767e077"
+  },
+  "cytower.needle": {
+   "glb": "kits/library/neon_dawn/assets/cytower.needle.glb",
+   "kit_id": "cytower.needle",
+   "preset": null,
+   "sha256": "6f0060aca8aa27e01cec74af815f2ddf237f60a619c1560c674943adc2e4d4bf"
+  },
+  "cytower.setback": {
+   "glb": "kits/library/neon_dawn/assets/cytower.setback.glb",
+   "kit_id": "cytower.setback",
+   "preset": null,
+   "sha256": "7437043fbd03f11e4ce0189f863e111e487b915104b0fbca54877b043935ac4e"
+  },
+  "cytower.setback__halo": {
+   "glb": "kits/library/neon_dawn/presets/cytower.setback__halo.glb",
+   "kit_id": "cytower.setback",
+   "preset": "halo",
+   "sha256": "9080d93002bce43e40d7bc164bc1103bb031ed93f48ad10680ef34fe803e2e75"
+  },
+  "cytower.skybridge": {
+   "glb": "kits/library/neon_dawn/assets/cytower.skybridge.glb",
+   "kit_id": "cytower.skybridge",
+   "preset": null,
+   "sha256": "44db51c7bbfdad52be164ed985306c878cb1aa24de529c9c05543b2eaea3a939"
+  },
+  "cytower.spire": {
+   "glb": "kits/library/neon_dawn/assets/cytower.spire.glb",
+   "kit_id": "cytower.spire",
+   "preset": null,
+   "sha256": "905632b71210af5de5e13ac266962b61fc8870da0fd5f863dfd3a2e7de4b3f76"
+  },
+  "cytower.stack": {
+   "glb": "kits/library/neon_dawn/assets/cytower.stack.glb",
+   "kit_id": "cytower.stack",
+   "preset": null,
+   "sha256": "caedec649076db5cd9bb68c34ca07b4d2957e1446edbfea75fbd80d87d420080"
+  },
+  "cytower.twin": {
+   "glb": "kits/library/neon_dawn/assets/cytower.twin.glb",
+   "kit_id": "cytower.twin",
+   "preset": null,
+   "sha256": "df44fb4bf72034512e5665110faddfc0fddb214fa0b3baa2ccdf49f4158457a4"
+  },
+  "cytower.wedge": {
+   "glb": "kits/library/neon_dawn/assets/cytower.wedge.glb",
+   "kit_id": "cytower.wedge",
+   "preset": null,
+   "sha256": "ffebffa6cc963c0e74235d1724b103241d2358221adc4f04720268ca7fd0f099"
+  },
+  "sky.backdrop": {
+   "glb": "kits/library/neon_dawn/assets/sky.backdrop.glb",
+   "kit_id": "sky.backdrop",
+   "preset": null,
+   "sha256": "2a4051f9ba51cf128b4dc6adddd80e4f045b83ebb5be297621005fad2704e56f"
+  }
+ },
+ "format": 1,
+ "kit_pack": "neon_dawn",
+ "pack": "neon_dawn"
+}

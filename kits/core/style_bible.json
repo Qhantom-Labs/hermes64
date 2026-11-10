@@ -1,0 +1,1456 @@
+{
+ "budgets": {
+  "project_pack_limits": {
+   "character_tris": 700,
+   "kit_tris": 1500,
+   "prop_tris": 150,
+   "room_tris": 6000,
+   "texture_px": 128
+  },
+  "source": [
+   "kits/core/packs.py:CORE_CLASSES",
+   "adventure_maker/packs.py:LIMITS",
+   "kits/validate/checks.py:TEX_LIMIT",
+   "kits/core/n64_look.json:texel_density",
+   "kits/packs/*/pack.json (texture sizes in use)"
+  ],
+  "texel_density": {
+   "classes": {
+    "architecture": {
+     "roles": [
+      "wall",
+      "wall_alt",
+      "floor",
+      "ceiling",
+      "stone",
+      "roof",
+      "door",
+      "step",
+      "frame",
+      "trim"
+     ],
+     "texels_per_m": 16
+    },
+    "detail": {
+     "roles": [
+      "paper",
+      "book"
+     ],
+     "texels_per_m": 80
+    },
+    "furniture": {
+     "roles": [
+      "body",
+      "body_alt",
+      "hull",
+      "hull_alt",
+      "wood",
+      "bark",
+      "foliage",
+      "flower",
+      "post",
+      "rail",
+      "band"
+     ],
+     "texels_per_m": 21.33
+    },
+    "ground": {
+     "roles": [
+      "field",
+      "grass",
+      "snow",
+      "dirt",
+      "sand",
+      "path",
+      "cap",
+      "ice",
+      "water"
+     ],
+     "texels_per_m": 10.67
+    },
+    "rockface": {
+     "roles": [
+      "cliff",
+      "rock"
+     ],
+     "texels_per_m": 16
+    },
+    "textile": {
+     "roles": [
+      "cushion",
+      "fabric",
+      "knit",
+      "fur",
+      "quilt",
+      "leather",
+      "rope"
+     ],
+     "texels_per_m": 53.33
+    }
+   },
+   "sizes": [
+    16,
+    32,
+    64,
+    128
+   ],
+   "tolerance": 0.25
+  },
+  "texture_px_max": {
+   "character": 128,
+   "default": 64,
+   "face_atlas": 128,
+   "sky": 128,
+   "view_plane": 128
+  },
+  "texture_sizes": [
+   8,
+   16,
+   32,
+   64,
+   128
+  ],
+  "triangles": {
+   "animal": 300,
+   "arch": 300,
+   "building": 900,
+   "character": 700,
+   "flora": 300,
+   "furniture": 300,
+   "furniture_large": 400,
+   "fx": 16,
+   "prop": 150,
+   "shell": 1500,
+   "sky": 128,
+   "soft": 150,
+   "structure": 500,
+   "terrain": 512,
+   "vehicle": 500
+  }
+ },
+ "characters": {
+  "keys": [
+   "bodies",
+   "budgets",
+   "defaults",
+   "description",
+   "extends",
+   "face",
+   "id",
+   "palette",
+   "parts_denied",
+   "proportions",
+   "roles",
+   "schema_version",
+   "source",
+   "texture"
+  ],
+  "owner": "CHARS3 (character lanes)",
+  "rule": "face and proportion ratios are read from the character style file; never restated here",
+  "sha256": "f535efb13961372648ce99fb83cd865a622198fb6e293c73d4e64d9542b98089",
+  "source": [
+   "profiles/character-styles/n64_base.json"
+  ]
+ },
+ "extents": {
+  "largest_extent_m": {
+   "animal": [
+    0.15,
+    2.6
+   ],
+   "arch": [
+    0.1,
+    16.0
+   ],
+   "building": [
+    2.0,
+    30.0
+   ],
+   "character": [
+    0.8,
+    2.6
+   ],
+   "flora": [
+    0.05,
+    30.0
+   ],
+   "furniture": [
+    0.15,
+    4.5
+   ],
+   "furniture_large": [
+    0.3,
+    6.0
+   ],
+   "fx": [
+    0.01,
+    5.0
+   ],
+   "prop": [
+    0.03,
+    1.6
+   ],
+   "shell": [
+    1.5,
+    40.0
+   ],
+   "sky": [
+    1.0,
+    4000.0
+   ],
+   "soft": [
+    0.1,
+    3.2
+   ],
+   "structure": [
+    0.5,
+    40.0
+   ],
+   "terrain": [
+    1.0,
+    200.0
+   ],
+   "vehicle": [
+    0.5,
+    20.0
+   ]
+  },
+  "name_re": "^[a-z0-9_]+$",
+  "node_re": "^(kit_(shell_|card_)?[a-z0-9_]+|rig_[a-z0-9_]+|attach_[a-z0-9_]+)$",
+  "source": [
+   "kits/validate/checks.py:EXTENTS",
+   "kits/validate/checks.py:NAME_RE",
+   "kits/validate/checks.py:NODE_RE"
+  ]
+ },
+ "format": "hermes64-style-bible/1",
+ "generated_by": "tools/style_bible.py (never hand-edit; run `python3 -B -m tools.style_bible build`)",
+ "light": {
+  "environments": {
+   "exterior_day": {
+    "ambient": [
+     0.3,
+     0.65
+    ],
+    "fill": [
+     0.05,
+     0.35
+    ],
+    "fog.far": [
+     30.0,
+     70.0
+    ],
+    "fog.near": [
+     6.0,
+     20.0
+    ],
+    "grade.contrast": [
+     0.95,
+     1.12
+    ],
+    "grade.saturation": [
+     0.85,
+     1.05
+    ],
+    "key": [
+     0.25,
+     0.6
+    ]
+   },
+   "exterior_night": {
+    "ambient": [
+     0.3,
+     0.6
+    ],
+    "fill": [
+     0.05,
+     0.3
+    ],
+    "fog.far": [
+     30.0,
+     70.0
+    ],
+    "fog.near": [
+     6.0,
+     20.0
+    ],
+    "grade.contrast": [
+     0.95,
+     1.12
+    ],
+    "grade.saturation": [
+     0.8,
+     1.0
+    ],
+    "key": [
+     0.2,
+     0.5
+    ]
+   },
+   "interior_cool": {
+    "ambient": [
+     0.3,
+     0.55
+    ],
+    "fill": [
+     0.05,
+     0.25
+    ],
+    "fog.far": [
+     16.0,
+     40.0
+    ],
+    "fog.near": [
+     4.0,
+     14.0
+    ],
+    "grade.contrast": [
+     0.95,
+     1.12
+    ],
+    "grade.saturation": [
+     0.8,
+     1.0
+    ],
+    "key": [
+     0.2,
+     0.55
+    ]
+   },
+   "interior_warm": {
+    "ambient": [
+     0.3,
+     0.6
+    ],
+    "fill": [
+     0.05,
+     0.3
+    ],
+    "fog.far": [
+     14.0,
+     40.0
+    ],
+    "fog.near": [
+     4.0,
+     14.0
+    ],
+    "grade.contrast": [
+     0.95,
+     1.12
+    ],
+    "grade.saturation": [
+     0.85,
+     1.05
+    ],
+    "key": [
+     0.2,
+     0.5
+    ]
+   }
+  },
+  "fog": {
+   "exterior_colour": "horizon",
+   "model": "linear_per_vertex",
+   "sky_horizon": [
+    -0.03,
+    0.12
+   ]
+  },
+  "lighting": {
+   "actor": {
+    "kicker_max": 0.22,
+    "rim": 0.0
+   },
+   "chrome": {
+    "gamma_max": 1.25,
+    "hot_from_min": 0.94,
+    "hot_max": 0.2,
+    "rim_max": 0.0
+   },
+   "emission_max": 0.15,
+   "fresnel_rim": false,
+   "halo": {
+    "max_size_m": 1.2,
+    "max_strength": 0.85
+   },
+   "lamp_pool": {
+    "max_strength": 0.3
+   },
+   "lattice_m": 1.0,
+   "model": "vertex",
+   "per_pixel_gloss": false,
+   "per_pixel_point_lights": false,
+   "point_lights_max": 4,
+   "specular_glints": false,
+   "unlit_level": 0.88
+  },
+  "source": [
+   "kits/core/n64_look.json:lighting",
+   "kits/core/n64_look.json:fog",
+   "kits/core/n64_look.json:environments"
+  ]
+ },
+ "material": {
+  "bake": {
+   "vertex_variation": {
+    "amount": 0.16,
+    "roles": [
+     "cliff",
+     "rock",
+     "field",
+     "grass",
+     "snow",
+     "dirt",
+     "sand",
+     "cap"
+    ],
+    "scale_m": 3.0
+   }
+  },
+  "output": {
+   "affine_uv": false,
+   "aspect": "4:3",
+   "dither": "none",
+   "dither_strength": 0.0,
+   "edge_aa": "msaa_4x",
+   "internal_resolution": [
+    320,
+    240
+   ],
+   "upscale_filter": "bilinear",
+   "upscale_fit": "integer_letterbox",
+   "vertex_snap": false
+  },
+  "source": [
+   "kits/core/n64_look.json:bake",
+   "kits/core/n64_look.json:textures",
+   "kits/core/n64_look.json:output"
+  ],
+  "textures": {
+   "crisp_gens": [
+    "screen",
+    "paper",
+    "spines"
+   ],
+   "dither": 1.0,
+   "dither_pattern": "mottle",
+   "mottle_clump": 0,
+   "painted_sky": true,
+   "soften": 0
+  }
+ },
+ "mood_vocabulary": {
+  "hue_words_hsv_deg": {
+   "amber": [
+    [
+     30,
+     48
+    ]
+   ],
+   "azure": [
+    [
+     195,
+     220
+    ]
+   ],
+   "blue": [
+    [
+     210,
+     245
+    ]
+   ],
+   "crimson": [
+    [
+     340,
+     360
+    ],
+    [
+     0,
+     8
+    ]
+   ],
+   "cyan": [
+    [
+     180,
+     200
+    ]
+   ],
+   "emerald": [
+    [
+     130,
+     160
+    ]
+   ],
+   "gold": [
+    [
+     38,
+     55
+    ]
+   ],
+   "green": [
+    [
+     90,
+     150
+    ]
+   ],
+   "indigo": [
+    [
+     235,
+     262
+    ]
+   ],
+   "lime": [
+    [
+     65,
+     95
+    ]
+   ],
+   "magenta": [
+    [
+     295,
+     325
+    ]
+   ],
+   "orange": [
+    [
+     15,
+     40
+    ]
+   ],
+   "pink": [
+    [
+     320,
+     350
+    ]
+   ],
+   "purple": [
+    [
+     265,
+     300
+    ]
+   ],
+   "red": [
+    [
+     345,
+     360
+    ],
+    [
+     0,
+     15
+    ]
+   ],
+   "rose": [
+    [
+     330,
+     355
+    ]
+   ],
+   "teal": [
+    [
+     160,
+     190
+    ]
+   ],
+   "violet": [
+    [
+     258,
+     285
+    ]
+   ],
+   "yellow": [
+    [
+     48,
+     65
+    ]
+   ]
+  },
+  "neutral_words": {
+   "beige": {
+    "hue": [
+     [
+      25,
+      50
+     ]
+    ],
+    "sat_max": 0.35
+   },
+   "black": {
+    "val_max": 0.15
+   },
+   "brown": {
+    "hue": [
+     [
+      15,
+      45
+     ]
+    ],
+    "sat_min": 0.3,
+    "val_max": 0.55
+   },
+   "earthy": {
+    "hue": [
+     [
+      15,
+      60
+     ]
+    ],
+    "sat_max": 0.5,
+    "val_max": 0.6
+   },
+   "grey": {
+    "sat_max": 0.12
+   },
+   "pastel": {
+    "sat_max": 0.35,
+    "val_min": 0.75
+   },
+   "white": {
+    "sat_max": 0.12,
+    "val_min": 0.85
+   }
+  },
+  "source": [
+   "hand-written in tools/style_bible.py (REVIEW-NEEDED)"
+  ],
+  "time_words": {
+   "afternoon": "exterior_day",
+   "dawn": "exterior_day",
+   "dusk": "exterior_night",
+   "golden_hour": "exterior_day",
+   "indoor_cool": "interior_cool",
+   "indoor_warm": "interior_warm",
+   "midnight": "exterior_night",
+   "morning": "exterior_day",
+   "night": "exterior_night",
+   "noon": "exterior_day",
+   "twilight": "exterior_night"
+  },
+  "tone_words": [
+   "cozy",
+   "mysterious",
+   "eerie",
+   "heroic",
+   "melancholic",
+   "whimsical",
+   "tense",
+   "serene",
+   "grim",
+   "festive",
+   "sacred",
+   "lonely",
+   "bustling",
+   "ancient",
+   "hopeful",
+   "dreamlike"
+  ],
+  "value_keys_mean_luma": {
+   "high": [
+    0.5,
+    0.7
+   ],
+   "low": [
+    0.12,
+    0.35
+   ],
+   "mid": [
+    0.3,
+    0.55
+   ]
+  },
+  "weather_words": [
+   "clear",
+   "cloudy",
+   "overcast",
+   "rain",
+   "storm",
+   "snow",
+   "fog",
+   "mist",
+   "sandstorm",
+   "ash"
+  ]
+ },
+ "palette": {
+  "core_roles": [
+   "wall",
+   "wall_alt",
+   "floor",
+   "ceiling",
+   "trim",
+   "frame",
+   "door",
+   "glass",
+   "view",
+   "roof",
+   "step",
+   "rail",
+   "post",
+   "stone",
+   "metal",
+   "chrome",
+   "body",
+   "body_alt",
+   "cushion",
+   "fabric",
+   "knit",
+   "fur",
+   "quilt",
+   "screen",
+   "light",
+   "orb",
+   "wood",
+   "paper",
+   "book",
+   "leather",
+   "rope",
+   "fire",
+   "grass",
+   "snow",
+   "sand",
+   "rock",
+   "dirt",
+   "water",
+   "ice",
+   "bark",
+   "foliage",
+   "cap",
+   "flower",
+   "hull",
+   "hull_alt",
+   "band",
+   "sky",
+   "particle",
+   "skin",
+   "face",
+   "headwear",
+   "opening",
+   "costume",
+   "coat"
+  ],
+  "light_ramp_min": 3,
+  "material_kinds": [
+   "baked_unlit",
+   "chrome_env",
+   "glass_env",
+   "emissive",
+   "view_plane",
+   "card_alpha",
+   "water",
+   "face_atlas"
+  ],
+  "material_kinds_in_shipped_packs": [
+   "baked_unlit",
+   "card_alpha",
+   "chrome_env",
+   "emissive",
+   "face_atlas",
+   "glass_env",
+   "view_plane",
+   "water"
+  ],
+  "max_colours": 32,
+  "neon_hsv": {
+   "sat_min": 0.6,
+   "val_min": 0.92
+  },
+  "neon_palette_share_max": 0.0625,
+  "neon_palette_share_note": "highest share of neon-capable colours in any shipped pack (all pass the frame neon gate); a pack above it is refused",
+  "optional_roles": {
+   "cliff": "rock",
+   "field": "grass",
+   "path": "dirt",
+   "vista": "view",
+   "vista_far": "view"
+  },
+  "source": [
+   "kits/core/packs.py:CORE_ROLES",
+   "kits/core/packs.py:OPTIONAL_ROLES",
+   "kits/core/packs.py:KINDS",
+   "kits/core/packs.py:TEXTURED_KINDS",
+   "kits/core/palette.py:Palette (probed)",
+   "kits/core/packs.py:validate_pack_dict (probed)",
+   "kits/packs/*/pack.json (neon share)",
+   "adventure_maker/n64_gate.py:colour_stats (probed neon cut)"
+  ],
+  "textured_kinds": [
+   "baked_unlit",
+   "emissive",
+   "view_plane",
+   "card_alpha",
+   "water",
+   "face_atlas"
+  ]
+ },
+ "reference": {
+  "advisory": true,
+  "brand": {
+   "L_mean": {
+    "median": 0.1406,
+    "p10": 0.1284,
+    "p90": 0.4474
+   },
+   "accent_cluster_share": {
+    "median": 0.0389,
+    "p10": 0.0078,
+    "p90": 0.0515
+   },
+   "chroma_mean": {
+    "median": 0.0224,
+    "p10": 0.0045,
+    "p90": 0.023
+   }
+  },
+  "brand_hue_hist_30deg_oklab": [
+   0.0059,
+   0.0219,
+   0.3604,
+   0.001,
+   0.0046,
+   0.0005,
+   0.0001,
+   0.0016,
+   0.0716,
+   0.4971,
+   0.0312,
+   0.0041
+  ],
+  "caveats": [
+   "character group = character sheets and close-ups; light sheet backgrounds survive the uniform-edge trim, so env_over_character_L_mean > 1 here does not contradict 'environment darker than characters' in-game; read it as unmeasured until a cropped character set exists",
+   "OKLab L and chroma, not the Rec.601 luma of style_gate: compare trends, never thresholds",
+   "triangle use far below budget is a visual observation from the references and is NOT measurable from images; the measured library budget_use_p50 in silhouette is the comparable number"
+  ],
+  "character": {
+   "L_mean": {
+    "median": 0.4734,
+    "p10": 0.3595,
+    "p90": 0.7349
+   },
+   "accent_cluster_share": {
+    "median": 0.0457,
+    "p10": 0.0118,
+    "p90": 0.1487
+   },
+   "chroma_mean": {
+    "median": 0.0466,
+    "p10": 0.0334,
+    "p90": 0.0565
+   }
+  },
+  "env": {
+   "L_mean": {
+    "median": 0.5288,
+    "p10": 0.3162,
+    "p90": 0.5829
+   },
+   "accent_cluster_share": {
+    "median": 0.0405,
+    "p10": 0.0,
+    "p90": 0.3559
+   },
+   "chroma_mean": {
+    "median": 0.057,
+    "p10": 0.0322,
+    "p90": 0.0782
+   },
+   "contrast_p95_p5": {
+    "median": 0.4609,
+    "p10": 0.3057,
+    "p90": 0.6227
+   },
+   "edges": {
+    "median": 0.0323,
+    "p10": 0.0027,
+    "p90": 0.1023
+   },
+   "flat": {
+    "median": 0.268,
+    "p10": 0.1142,
+    "p90": 0.4346
+   },
+   "gradient_L_top_minus_bottom": {
+    "median": 0.0999,
+    "p10": -0.1004,
+    "p90": 0.2552
+   },
+   "ground_darkening_mid_minus_bottom": {
+    "median": 0.0158,
+    "p10": -0.1167,
+    "p90": 0.0957
+   }
+  },
+  "fingerprints": {
+   "brand": "b880a0a225c7aad77ddcaf68ffe4707b69d7723a68d8e2f321468a761f03e9ae",
+   "character": "3a1f1067aecb4a9831404fc6e4ecbb6d894e60828e886851608f0f031c5c9050",
+   "env": "3bac5861bc1453c5758dcea10d1f6895d3ec00bda469a5e7addf99c56decefaf"
+  },
+  "groups_measured": {
+   "brand": 3,
+   "character": 5,
+   "env": 14
+  },
+  "ratios": {
+   "brand_accent_share_over_gate_max": 0.259,
+   "env_accent_share_over_gate_max": 0.27,
+   "env_over_character_L_mean": 1.117,
+   "env_over_character_chroma": 1.223
+  },
+  "source": [
+   "kits/core/style_ref_numbers.json",
+   "tools/style_ref_measure.py"
+  ]
+ },
+ "render_gates": {
+  "mood_may_change": [
+   "accent_hues"
+  ],
+  "mood_may_change_note": "plan 07 2.5: a mood pack may change hue identity (accent_hues, palette families), never a quality threshold",
+  "n64_gate": {
+   "clip_fraction_max": 0.02,
+   "closeup_crisp_edge_fraction_max": 0.5,
+   "crisp_edge_fraction_max": 0.45,
+   "fog_horizon_delta_max": 0.04,
+   "glow_coverage_max": 0.04,
+   "glow_energy_max": 0.006,
+   "modern_light_energy_max": 0.005,
+   "neon_fraction_max": 0.01,
+   "upscale_nearest_ratio_max": 0.25
+  },
+  "source": [
+   "adventure_maker/style_gate.py:CORE_DEFAULTS",
+   "adventure_maker/n64_gate.py:thresholds()"
+  ],
+  "style_gate": {
+   "accent_fraction_max": 0.15,
+   "accent_hues": [
+    [
+     8.0,
+     62.0
+    ]
+   ],
+   "accent_rooms_min_fraction": 0.0,
+   "accent_sat_min": 0.25,
+   "black_point_max": 0.16,
+   "camera_inside_interior": true,
+   "contrast_range_min": 0.42,
+   "edge_density_max": 0.42,
+   "edge_density_min": 0.07,
+   "edge_threshold": 0.07,
+   "ext_band_coverage_min": 0.03,
+   "ext_band_gap_min": 0.03,
+   "ext_band_range_min": 0.08,
+   "ext_far_haze_max": 0.16,
+   "ext_far_m": 32.0,
+   "ext_ground_flat_max": 0.6,
+   "ext_ground_lowfreq_min": 0.012,
+   "ext_landmarks_min": 1,
+   "ext_near_haze_min": 0.12,
+   "ext_near_m": 10.0,
+   "ext_sky_fraction_min": 0.06,
+   "ext_sky_gradient_min": 0.06,
+   "flat_fraction_max": 0.4,
+   "flat_std": 0.006,
+   "floating_max": 0,
+   "fog_near_dist": 0.07,
+   "fog_swallowed_max": 0.22,
+   "mean_luma_max": 0.7,
+   "mean_luma_min": 0.12,
+   "palette_adherence_min": 0.88,
+   "palette_hue_tol_deg": 20.0,
+   "uncut_doors_max": 0,
+   "void_fraction_max_exterior": 0.45,
+   "void_fraction_max_interior": 0.01,
+   "white_point_min": 0.8
+  }
+ },
+ "role_families": {
+  "families": {
+   "cloth": [
+    "body",
+    "body_alt",
+    "cushion",
+    "fabric",
+    "knit",
+    "fur",
+    "quilt",
+    "leather",
+    "rope",
+    "costume",
+    "coat",
+    "headwear"
+   ],
+   "emissive": [
+    "light",
+    "fire",
+    "screen",
+    "orb",
+    "particle"
+   ],
+   "foliage": [
+    "grass",
+    "foliage",
+    "flower",
+    "cap",
+    "field"
+   ],
+   "ground": [
+    "dirt",
+    "sand",
+    "snow",
+    "ice",
+    "water"
+   ],
+   "metal": [
+    "metal",
+    "chrome",
+    "hull",
+    "hull_alt",
+    "band"
+   ],
+   "roof": [
+    "roof"
+   ],
+   "skin": [
+    "skin",
+    "face"
+   ],
+   "sky": [
+    "sky",
+    "view",
+    "vista",
+    "vista_far",
+    "glass",
+    "opening"
+   ],
+   "stone": [
+    "wall",
+    "wall_alt",
+    "floor",
+    "ceiling",
+    "step",
+    "stone",
+    "rock",
+    "cliff",
+    "path"
+   ],
+   "wood": [
+    "wood",
+    "bark",
+    "door",
+    "frame",
+    "post",
+    "rail",
+    "trim",
+    "paper",
+    "book"
+   ]
+  },
+  "hue_shift_weight": {
+   "cloth": 0.4,
+   "emissive": 0.0,
+   "foliage": 0.4,
+   "ground": 0.5,
+   "metal": 0.5,
+   "roof": 0.6,
+   "skin": 0.0,
+   "sky": 1.0,
+   "stone": 0.7,
+   "wood": 0.25
+  },
+  "source": [
+   "hand-written in tools/style_bible.py:ROLE_FAMILIES (REVIEW-NEEDED)"
+  ]
+ },
+ "silhouette": {
+  "advisory": true,
+  "bbox_fill_note": "mesh volume over bounding-box volume (plan proposed convex hull; bbox is the cheap proxy used here)",
+  "classes": {
+   "arch": {
+    "bbox_fill": [
+     0.0899,
+     0.2933,
+     1.0
+    ],
+    "budget_use_p50": 0.44,
+    "height_over_footprint": [
+     0.0793,
+     1.0418,
+     3.6333
+    ],
+    "largest_extent_m": [
+     2.1028,
+     3.45,
+     7.915
+    ],
+    "n": 32,
+    "nodes": [
+     1.0,
+     3.0,
+     5.0
+    ],
+    "tris": [
+     16.4,
+     132.0,
+     259.6
+    ]
+   },
+   "building": {
+    "bbox_fill": [
+     0.0656,
+     0.4957,
+     0.7616
+    ],
+    "budget_use_p50": 0.471,
+    "height_over_footprint": [
+     0.5188,
+     0.9138,
+     2.0162
+    ],
+    "largest_extent_m": [
+     4.64,
+     10.4,
+     15.396
+    ],
+    "n": 29,
+    "nodes": [
+     3.0,
+     5.0,
+     9.6
+    ],
+    "tris": [
+     220.0,
+     424.0,
+     835.2
+    ]
+   },
+   "flora": {
+    "bbox_fill": [
+     0.0057,
+     0.0584,
+     0.4561
+    ],
+    "budget_use_p50": 0.45,
+    "height_over_footprint": [
+     0.2947,
+     1.0918,
+     1.844
+    ],
+    "largest_extent_m": [
+     0.7635,
+     2.0919,
+     7.5615
+    ],
+    "n": 34,
+    "nodes": [
+     1.0,
+     2.0,
+     7.0
+    ],
+    "tris": [
+     37.1,
+     135.0,
+     253.6
+    ]
+   },
+   "furniture": {
+    "bbox_fill": [
+     0.0292,
+     0.3145,
+     0.9567
+    ],
+    "budget_use_p50": 0.387,
+    "height_over_footprint": [
+     0.3267,
+     1.1482,
+     2.9651
+    ],
+    "largest_extent_m": [
+     0.6,
+     1.68,
+     2.806
+    ],
+    "n": 77,
+    "nodes": [
+     1.0,
+     2.0,
+     5.0
+    ],
+    "tris": [
+     40.8,
+     116.0,
+     272.0
+    ]
+   },
+   "furniture_large": {
+    "bbox_fill": [
+     0.1206,
+     0.3698,
+     0.8021
+    ],
+    "budget_use_p50": 0.565,
+    "height_over_footprint": [
+     0.2752,
+     0.6375,
+     2.3524
+    ],
+    "largest_extent_m": [
+     1.2584,
+     2.6525,
+     4.6961
+    ],
+    "n": 28,
+    "nodes": [
+     1.0,
+     3.0,
+     6.65
+    ],
+    "tris": [
+     66.4,
+     226.0,
+     378.9
+    ]
+   },
+   "fx": {
+    "bbox_fill": [
+     0.0,
+     0.0,
+     0.0
+    ],
+    "budget_use_p50": 0.375,
+    "height_over_footprint": [
+     1.05,
+     1.5,
+     1.95
+    ],
+    "largest_extent_m": [
+     0.2146,
+     1.4258,
+     2.6371
+    ],
+    "n": 2,
+    "nodes": [
+     1.0,
+     1.0,
+     1.0
+    ],
+    "tris": [
+     6.0,
+     6.0,
+     6.0
+    ]
+   },
+   "prop": {
+    "bbox_fill": [
+     0.0836,
+     0.3805,
+     1.0
+    ],
+    "budget_use_p50": 0.613,
+    "height_over_footprint": [
+     0.0704,
+     0.91,
+     1.8309
+    ],
+    "largest_extent_m": [
+     0.197,
+     0.9,
+     1.2893
+    ],
+    "n": 35,
+    "nodes": [
+     1.0,
+     2.0,
+     3.3
+    ],
+    "tris": [
+     24.0,
+     92.0,
+     136.6
+    ]
+   },
+   "shell": {
+    "bbox_fill": [
+     0.0472,
+     0.5312,
+     1.0
+    ],
+    "budget_use_p50": 0.135,
+    "height_over_footprint": [
+     0.0142,
+     0.362,
+     1.25
+    ],
+    "largest_extent_m": [
+     4.0,
+     12.0,
+     16.0
+    ],
+    "n": 44,
+    "nodes": [
+     1.0,
+     3.0,
+     6.0
+    ],
+    "tris": [
+     32.6,
+     202.0,
+     1063.1
+    ]
+   },
+   "sky": {
+    "bbox_fill": [
+     0.0,
+     0.1828,
+     0.5735
+    ],
+    "budget_use_p50": 0.422,
+    "height_over_footprint": [
+     0.0519,
+     0.5816,
+     1.0135
+    ],
+    "largest_extent_m": [
+     21.317,
+     56.0,
+     790.9488
+    ],
+    "n": 18,
+    "nodes": [
+     1.0,
+     1.0,
+     2.0
+    ],
+    "tris": [
+     8.8,
+     54.0,
+     114.4
+    ]
+   },
+   "soft": {
+    "bbox_fill": [
+     0.0375,
+     0.1162,
+     0.5632
+    ],
+    "budget_use_p50": 0.747,
+    "height_over_footprint": [
+     0.0927,
+     1.6688,
+     1.7732
+    ],
+    "largest_extent_m": [
+     0.7642,
+     2.295,
+     2.7894
+    ],
+    "n": 5,
+    "nodes": [
+     1.2,
+     2.0,
+     2.0
+    ],
+    "tris": [
+     92.8,
+     112.0,
+     124.8
+    ]
+   },
+   "structure": {
+    "bbox_fill": [
+     0.0307,
+     0.316,
+     0.8319
+    ],
+    "budget_use_p50": 0.408,
+    "height_over_footprint": [
+     0.0849,
+     0.8696,
+     3.5424
+    ],
+    "largest_extent_m": [
+     2.8077,
+     5.2727,
+     30.6
+    ],
+    "n": 89,
+    "nodes": [
+     1.0,
+     3.0,
+     8.0
+    ],
+    "tris": [
+     71.2,
+     204.0,
+     450.4
+    ]
+   },
+   "terrain": {
+    "bbox_fill": [
+     0.0,
+     0.4476,
+     0.8884
+    ],
+    "budget_use_p50": 0.375,
+    "height_over_footprint": [
+     0.0092,
+     0.2185,
+     0.9143
+    ],
+    "largest_extent_m": [
+     4.0,
+     8.0,
+     33.1086
+    ],
+    "n": 36,
+    "nodes": [
+     1.0,
+     1.0,
+     5.0
+    ],
+    "tris": [
+     31.0,
+     192.0,
+     412.0
+    ]
+   },
+   "vehicle": {
+    "bbox_fill": [
+     0.0988,
+     0.3488,
+     0.772
+    ],
+    "budget_use_p50": 0.672,
+    "height_over_footprint": [
+     0.2343,
+     0.4343,
+     0.7762
+    ],
+    "largest_extent_m": [
+     2.048,
+     4.29,
+     9.055
+    ],
+    "n": 19,
+    "nodes": [
+     2.0,
+     4.0,
+     9.5
+    ],
+    "tris": [
+     40.0,
+     336.0,
+     456.8
+    ]
+   }
+  },
+  "measured_generators": 448,
+  "percentiles": [
+   "p5",
+   "p50",
+   "p95"
+  ],
+  "source": [
+   "measured: every kits/core registered generator at defaults, seed 0, python mesh stats (tools/style_bible.py:measure_library)"
+  ],
+  "unmeasured": []
+ }
+}

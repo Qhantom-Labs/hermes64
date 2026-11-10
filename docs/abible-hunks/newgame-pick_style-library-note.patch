@@ -1,0 +1,14 @@
+--- a/adventure_maker/newgame.py	2026-11-10 14:16:55
++++ b/adventure_maker/newgame.py	2026-11-10 14:16:55
+@@ -98,7 +98,10 @@
+         if len(found) > len(hits):
+             best, hits = pack, found
+     if not hits:
+-        return best, 'auto: no style words in the premise, so the default'
++        from . import taxonomy  # plan 07 A2: say what the library holds for the premise's genres, never silently
++        rep = taxonomy.gap_report(taxonomy.genres_in(premise))
++        note = '; '.join('%s %s' % (r['want'], r['status']) for r in rep['rows'])
++        return best, 'auto: no style words in the premise, so the default' + (' (library: %s)' % note if note else '')
+     return best, 'auto: matched ' + ', '.join('"%s"' % w for w in dict.fromkeys(hits))
+ 
+ 

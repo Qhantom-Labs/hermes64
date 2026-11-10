@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hermes64:project:1.0.0",
+  "title": "Hermes64 project manifest, source-only v1",
+  "type": "object",
+  "required": ["schema_version", "id", "name", "style", "content"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "id": {"$ref": "#/$defs/id"},
+    "name": {"type": "string", "minLength": 1, "maxLength": 200},
+    "style": {
+      "type": "object",
+      "required": ["id", "version", "profile", "parents", "lock", "lock_sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {"$ref": "#/$defs/id"},
+        "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+        "profile": {"$ref": "#/$defs/path"},
+        "parents": {
+          "type": "array", "maxItems": 16,
+          "items": {
+            "type": "object", "required": ["id", "version", "path"], "additionalProperties": false,
+            "properties": {
+              "id": {"$ref": "#/$defs/id"},
+              "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+              "path": {"$ref": "#/$defs/path"}
+            }
+          }
+        },
+        "lock": {"$ref": "#/$defs/path"},
+        "lock_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "content": {
+      "type": "object", "required": ["story", "rooms", "cast", "bindings"], "additionalProperties": false,
+      "properties": {
+        "story": {"$ref": "#/$defs/path"},
+        "rooms": {"type": "array", "minItems": 1, "maxItems": 256, "uniqueItems": true, "items": {"$ref": "#/$defs/path"}},
+        "cast": {"$ref": "#/$defs/path"},
+        "bindings": {"$ref": "#/$defs/path"}
+      }
+    }
+  },
+  "$defs": {
+    "id": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]{0,63}$"},
+    "path": {"type": "string", "maxLength": 240, "pattern": "^[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*$"}
+  }
+}

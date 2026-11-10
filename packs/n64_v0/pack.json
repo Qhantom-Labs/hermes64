@@ -1,0 +1,73 @@
+{
+  "description": "Warm N64-era woodland village: timber, plaster, thatch, stone, meadow greens, sky blue, lantern light. Face-atlas cast. Data only; built from the same Hermes64 core as polar_pod.",
+  "format": 1,
+  "id": "n64_v0",
+  "kit_pack_id": "forest_village",
+  "lighting": {
+    "ambient_colour": "#FFF8E8",
+    "fog_colour": "#4A2F18",
+    "fog_enabled": true,
+    "fog_end": 20.0,
+    "fog_start": 6.0
+  },
+  "materials": [
+    {
+      "colour": "#D0A868",
+      "id": "surface",
+      "kind": "baked_unlit"
+    }
+  ],
+  "name": "N64 V0",
+  "palette": [
+    "#120D08",
+    "#2B1B0E",
+    "#4A2F18",
+    "#6E4724",
+    "#8F6334",
+    "#B08348",
+    "#D0A868",
+    "#ECD9A8",
+    "#FFF8E8",
+    "#1D3315",
+    "#2F4F1D",
+    "#487028",
+    "#6A9234",
+    "#96B84C",
+    "#C4D77A",
+    "#3A3833",
+    "#5D5850",
+    "#868074",
+    "#B2AB9B",
+    "#355F9C",
+    "#5E8FCE",
+    "#9CC4EC",
+    "#A8862F",
+    "#D8B95C",
+    "#8E3A24",
+    "#C25A2C",
+    "#F3CFA6",
+    "#D9A06E",
+    "#A7693F",
+    "#6B4127",
+    "#7A2F4F",
+    "#2F6F6A"
+  ],
+  "presets": [
+    {
+      "asset_id": "furn.lamp",
+      "id": "lamp",
+      "params_json": "{}"
+    }
+  ],
+  "sound_palette": {
+    "ambient": "audio/stock/wav/core.nature.forest.day.wav",
+    "interact": "audio/wav/ui.select.wav"
+  },
+  "thresholds": {
+    "character_tris": 700,
+    "kit_tris": 1500,
+    "prop_tris": 150,
+    "room_tris": 6000,
+    "texture_px": 128
+  }
+}

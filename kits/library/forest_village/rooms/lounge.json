@@ -1,0 +1,397 @@
+{
+ "coordinates": "glTF: pos [x, y(up), z]; rot_y_deg about +Y; shell floor centre = origin",
+ "layout_id": "lounge",
+ "layout_version": "3.1.0",
+ "pack": "forest_village",
+ "pack_version": "3.1.0",
+ "pieces": [
+  {
+   "generator": "arch.room_shell",
+   "glb": "forest_village/rooms/lounge/shell.glb",
+   "params": {
+    "ceiling": "gable",
+    "ceiling_rise": 1.2,
+    "ceiling_role": "wood",
+    "cove": 0.0,
+    "depth": 6.0,
+    "floor_role": "wood",
+    "height": 3.0,
+    "openings": [
+     {
+      "height": 2.1,
+      "kind": "door",
+      "offset": 0.0,
+      "shape": "arch",
+      "sill": 0.0,
+      "wall": "s",
+      "width": 1.1
+     },
+     {
+      "height": 1.2,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "rounded_rect",
+      "sill": 0.9,
+      "wall": "n",
+      "width": 2.4
+     },
+     {
+      "height": 0.9,
+      "kind": "window",
+      "offset": 0.0,
+      "shape": "round",
+      "sill": 1.1,
+      "wall": "e",
+      "width": 0.9
+     }
+    ],
+    "plan": "rect",
+    "trim": true,
+    "wall_role": "wall",
+    "wall_segments": 24,
+    "width": 7.0
+   },
+   "pos": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "preset": "default",
+   "rot_y_deg": 0.0,
+   "sha256": "ce2673a5f3e900e35164da3dce49d5e59a8413a0dcfbb390fc8847b82c3c27e2",
+   "slot": "shell",
+   "tris": 229
+  },
+  {
+   "generator": "arch.door",
+   "glb": "forest_village/rooms/lounge/door_main.glb",
+   "opening": 0,
+   "params": {
+    "frame_depth": 0.2,
+    "frame_role": "wood",
+    "frame_width": 0.1,
+    "height": 2.1,
+    "leaf": "planks",
+    "leaf_role": "wood",
+    "open_angle": 0.0,
+    "shape": "arch",
+    "width": 1.1
+   },
+   "pos": [
+    0.0,
+    0.0,
+    3.0
+   ],
+   "preset": "default",
+   "rot_y_deg": 180.0,
+   "sha256": "c6fc620213a96ac18073e7f99caa1e4b5f1d691af223f53efb2279b9ba607caa",
+   "slot": "door_main",
+   "tris": 148
+  },
+  {
+   "generator": "arch.window",
+   "glb": "forest_village/rooms/lounge/window_main.glb",
+   "opening": 1,
+   "params": {
+    "frame_depth": 0.18,
+    "frame_role": "wood",
+    "frame_style": "flat",
+    "frame_width": 0.08,
+    "glass": true,
+    "height": 1.2,
+    "ledge": true,
+    "mullions_x": 1,
+    "mullions_z": 1,
+    "shape": "rounded_rect",
+    "shutters": true,
+    "sill": 0.9,
+    "view_card": true,
+    "width": 2.4
+   },
+   "pos": [
+    0.0,
+    0.0,
+    -3.0
+   ],
+   "preset": "default",
+   "rot_y_deg": 0.0,
+   "sha256": "b07abb2642820aca6159e8ab59b66cda08aab73e8d2da5af494e7b948d2ee7a9",
+   "slot": "window_main",
+   "tris": 250
+  },
+  {
+   "generator": "arch.window",
+   "glb": "forest_village/rooms/lounge/window_side.glb",
+   "opening": 2,
+   "params": {
+    "frame_depth": 0.18,
+    "frame_role": "stone",
+    "frame_style": "flat",
+    "frame_width": 0.08,
+    "glass": true,
+    "height": 0.9,
+    "ledge": true,
+    "mullions_x": 1,
+    "mullions_z": 1,
+    "shape": "round",
+    "shutters": true,
+    "sill": 1.1,
+    "view_card": true,
+    "width": 0.9
+   },
+   "pos": [
+    3.5,
+    0.0,
+    -0.0
+   ],
+   "preset": "arched",
+   "rot_y_deg": 270.0,
+   "sha256": "3958db91f4b36ea7f8b7cf03430b4ea2d5b475ef3424e0811528ca140ff95b22",
+   "slot": "window_side",
+   "tris": 226
+  },
+  {
+   "generator": "furn.bench",
+   "glb": "forest_village/rooms/lounge/seat_lounge.glb",
+   "params": {
+    "body_role": "wood",
+    "curl": 0.2,
+    "curl_height": 1.0,
+    "depth": 0.6,
+    "leg_role": "wood",
+    "legs": 4,
+    "length": 2.2,
+    "orb": false,
+    "seat_height": 0.42,
+    "side_table": false,
+    "thickness": 0.12,
+    "throw": true,
+    "throw_role": "fabric"
+   },
+   "pos": [
+    -1.7,
+    0.0,
+    -1.5
+   ],
+   "preset": "default",
+   "rot_y_deg": 15.0,
+   "sha256": "85543df1f11cf9152a0a14f73a0c492a503423763d6bac98ed9e726c7511a29e",
+   "slot": "seat_lounge",
+   "tris": 236
+  },
+  {
+   "generator": "furn.chair",
+   "glb": "forest_village/rooms/lounge/seat_chair.glb",
+   "params": {
+    "back_height": 0.5,
+    "cushion": false,
+    "cushion_role": "cushion",
+    "depth": 0.46,
+    "frame_role": "wood",
+    "kind": "chair",
+    "legs": "four",
+    "seat_height": 0.45,
+    "seat_role": "wood",
+    "seat_shape": "rect",
+    "width": 0.46
+   },
+   "pos": [
+    1.9,
+    0.0,
+    -1.3
+   ],
+   "preset": "default",
+   "rot_y_deg": -35.0,
+   "sha256": "0359f04dd10afcb42379ea93d5fea484c0a6a22f13025f7b4cb6e4e08e4bcc5f",
+   "slot": "seat_chair",
+   "tris": 72
+  },
+  {
+   "generator": "furn.table",
+   "glb": "forest_village/rooms/lounge/table_low.glb",
+   "params": {
+    "base_role": "wood",
+    "depth": 1.0,
+    "height": 0.75,
+    "leg_radius": 0.035,
+    "legs": "pedestal",
+    "ornament": "none",
+    "top_role": "stone",
+    "top_shape": "round",
+    "top_thickness": 0.05,
+    "width": 1.0
+   },
+   "pos": [
+    0.1,
+    0.0,
+    -0.5
+   ],
+   "preset": "round_stone",
+   "rot_y_deg": 0.0,
+   "sha256": "a40bd7e8cae9c4b8dadeb3024219cb1f022a84d8e4d3c55285b8232f479265b9",
+   "slot": "table_low",
+   "tris": 160
+  },
+  {
+   "generator": "furn.rug",
+   "glb": "forest_village/rooms/lounge/rug.glb",
+   "params": {
+    "depth": 1.4,
+    "fringe": true,
+    "rug_role": "fabric",
+    "shape": "rect",
+    "thickness": 0.02,
+    "width": 2.0
+   },
+   "pos": [
+    0.1,
+    0.0,
+    -0.5
+   ],
+   "preset": "default",
+   "rot_y_deg": 0.0,
+   "sha256": "515f56aa6f3de74c1820aaf5ee4088a4421984c25b4efda65644a4e11c694bdb",
+   "slot": "rug",
+   "tris": 36
+  },
+  {
+   "generator": "furn.lamp",
+   "glb": "forest_village/rooms/lounge/lamp_floor.glb",
+   "params": {
+    "base": "disc",
+    "height": 0.5,
+    "kind": "lantern",
+    "shade": "cone",
+    "shade_size": 0.35,
+    "stand_role": "metal"
+   },
+   "pos": [
+    2.9,
+    0.0,
+    -2.5
+   ],
+   "preset": "default",
+   "rot_y_deg": -40.0,
+   "sha256": "d23885bd27cc2a902980b54ca5cc4d88be30a0b2d052955f7aa280f1a83243d3",
+   "slot": "lamp_floor",
+   "tris": 132
+  },
+  {
+   "generator": "furn.console",
+   "glb": "forest_village/rooms/lounge/console.glb",
+   "params": {
+    "body_role": "wood",
+    "height": 1.2,
+    "joystick": false,
+    "keyboard": false,
+    "kind": "lectern",
+    "leg_role": "chrome",
+    "screens": 0,
+    "wavy": 0.6,
+    "width": 0.9
+   },
+   "pos": [
+    2.75,
+    0.0,
+    1.55
+   ],
+   "preset": "default",
+   "rot_y_deg": -90.0,
+   "sha256": "c1b792610a0b1adc92920b461975a77785356d7497be82f4b1f024ddde210f7f",
+   "slot": "console",
+   "tris": 124
+  },
+  {
+   "generator": "furn.shelf",
+   "glb": "forest_village/rooms/lounge/shelf.glb",
+   "params": {
+    "books": 0.8,
+    "depth": 0.35,
+    "frame_role": "wood",
+    "height": 1.8,
+    "kind": "bookshelf",
+    "shelves": 4,
+    "width": 1.0
+   },
+   "pos": [
+    -3.25,
+    0.0,
+    1.3
+   ],
+   "preset": "default",
+   "rot_y_deg": 90.0,
+   "sha256": "c171ac17ac76069bea9b97cc3294b27cf772d347d684ea4738a660fc23074ee9",
+   "slot": "shelf",
+   "tris": 240
+  },
+  {
+   "generator": "soft.pillow",
+   "glb": "forest_village/rooms/lounge/cat_bed.glb",
+   "params": {
+    "piping": true,
+    "role": "knit",
+    "shape": "floor_cushion",
+    "size": 0.6,
+    "thickness": 0.14,
+    "tuft": false
+   },
+   "pos": [
+    -2.3,
+    0.0,
+    0.6
+   ],
+   "preset": "cat_bed",
+   "rot_y_deg": 0.0,
+   "sha256": "28c8590d9a7e00f2530ff6e5aa0c53257827c09e1fdd54fd5ec802245bf70a7c",
+   "slot": "cat_bed",
+   "tris": 112
+  },
+  {
+   "generator": "nature.bush",
+   "glb": "forest_village/rooms/lounge/plant.glb",
+   "params": {
+    "cap": false,
+    "flatness": 0.3,
+    "flowers": 3,
+    "lobes": 3,
+    "size": 0.8
+   },
+   "pos": [
+    -3.0,
+    0.0,
+    -2.5
+   ],
+   "preset": "default",
+   "rot_y_deg": 0.0,
+   "sha256": "a23e5388c07fa4df22d95765ff0a9af77b666c7e9d732b4115ea20d10427a52f",
+   "slot": "plant",
+   "tris": 132
+  },
+  {
+   "generator": "furn.container",
+   "glb": "forest_village/rooms/lounge/container.glb",
+   "params": {
+    "band_role": "metal",
+    "bands": 2,
+    "body_role": "wood",
+    "depth": 0.6,
+    "height": 0.6,
+    "kind": "barrel",
+    "lid_open": 0.0,
+    "width": 0.6
+   },
+   "pos": [
+    -1.6,
+    0.0,
+    2.55
+   ],
+   "preset": "default",
+   "rot_y_deg": 0.0,
+   "sha256": "3d8adb2668cb1cff2462dc8f33275a420e006f9bd736d66ba7064483fa85a7cc",
+   "slot": "container",
+   "tris": 220
+  }
+ ],
+ "problems": [],
+ "room_tris": 2317
+}

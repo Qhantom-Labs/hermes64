@@ -1,0 +1,8 @@
+{
+  "id": "default",
+  "description": "Neutral primitive fallback, not a finished theme kit",
+  "palette": {"floor": "#777777", "wall": "#aaaaaa", "prop": "#bbbbbb", "door": "#7b9b91", "collectible": "#ccb977", "body": "#8a8a8a", "boots": "#343434", "head": "#b6a18e", "void": "#101010", "follower": "#aaaaaa", "ui_bg": "#111111", "ui_text": "#eeeeee"},
+  "fog": {"color": "#232323", "near": 6, "far": 28},
+  "head_styles": {},
+  "coat_colors": {}
+}

@@ -1,0 +1,499 @@
+{
+ "attach": "rigkit.attach_clips(glb, 'dasher16_v1'): rotations copied verbatim; the hips translation regrounded per key so the lowest vertex keeps floor_clearance_m",
+ "channels": {
+  "rotation": "every joint except root",
+  "translation": [
+   "hips"
+  ]
+ },
+ "clips": [
+  {
+   "face_cell": 1,
+   "floor_clearance_m": [
+    0.0,
+    0.035,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.05,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "fsm_states": [
+    "attack"
+   ],
+   "group": "enemy",
+   "hit_window": {
+    "end_s": 0.6,
+    "frames": [
+     2,
+     8
+    ],
+    "start_s": 0.133333
+   },
+   "key_sha256": "e38716e3723b625a37c99f1ff18d0b807b9fcbc89aa85efc64534be3aea98054",
+   "keys": 16,
+   "loop": false,
+   "loop_source": "core/enemy_pose.PHASES",
+   "name": "attack",
+   "note": "melee_dash_v1 commits its bounded dash during the active window; the clip charges in place",
+   "phases": {
+    "active": [
+     2,
+     8
+    ],
+    "brake": [
+     9,
+     11
+    ],
+    "launch": [
+     1,
+     1
+    ],
+    "settle": [
+     12,
+     15
+    ]
+   },
+   "vertical_offset_m": {
+    "hips": [
+     0.072473,
+     0.088186,
+     0.099587,
+     0.040896,
+     0.099587,
+     0.040896,
+     0.099587,
+     0.040896,
+     0.099587,
+     0.006837,
+     -0.000981,
+     -0.000981,
+     0.005819,
+     0.006132,
+     0.002593,
+     0.0
+    ]
+   }
+  },
+  {
+   "face_cell": 3,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "fsm_states": [
+    "dead"
+   ],
+   "group": "enemy",
+   "key_sha256": "cc58f35f886c2ab50f941b4b4cc21113235cf3e45a094429e5ae9da682a92f1f",
+   "keys": 16,
+   "loop": false,
+   "loop_source": "core/enemy_pose.PHASES",
+   "name": "death",
+   "phases": {
+    "collapse": [
+     3,
+     10
+    ],
+    "down_hold": [
+     11,
+     15
+    ],
+    "impact": [
+     1,
+     2
+    ]
+   },
+   "vertical_offset_m": {
+    "hips": [
+     0.0,
+     0.029392,
+     0.029392,
+     0.017424,
+     0.015884,
+     0.015884,
+     0.06352,
+     -0.037614,
+     -0.225266,
+     -0.225074,
+     -0.225074,
+     -0.225074,
+     -0.225074,
+     -0.225074,
+     -0.225074,
+     -0.225074
+    ]
+   }
+  },
+  {
+   "face_cell": 2,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "fsm_states": [
+    "hurt"
+   ],
+   "group": "enemy",
+   "key_sha256": "d048986f82a9cf32a85677fbdaf6f5590cda9da6dae445d12981f92a7a9e82bb",
+   "keys": 16,
+   "loop": false,
+   "loop_source": "core/enemy_pose.PHASES",
+   "name": "hurt",
+   "phases": {
+    "impact": [
+     1,
+     3
+    ],
+    "recover": [
+     4,
+     15
+    ]
+   },
+   "vertical_offset_m": {
+    "hips": [
+     0.0,
+     0.029392,
+     0.029392,
+     0.025608,
+     0.021601,
+     0.017373,
+     0.013531,
+     0.009839,
+     0.006655,
+     0.004039,
+     0.002037,
+     0.000683,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "face_cell": 0,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "fsm_states": [
+    "idle"
+   ],
+   "group": "enemy",
+   "key_sha256": "5acbd2b4db625dfe118b8a54af6db5ed049cd2a5ca094540b841261b96283c57",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "core/enemy_pose.PHASES",
+   "name": "idle",
+   "phases": {
+    "loop": [
+     0,
+     15
+    ]
+   },
+   "vertical_offset_m": {
+    "hips": [
+     0.0,
+     0.005856,
+     0.0095,
+     0.010079,
+     0.008353,
+     0.007303,
+     0.005,
+     0.001789,
+     0.003108,
+     0.008037,
+     0.010177,
+     0.009296,
+     0.007999,
+     0.006291,
+     0.003479,
+     0.0
+    ]
+   }
+  },
+  {
+   "face_cell": 0,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "fsm_states": [
+    "approach"
+   ],
+   "gait": "heavy diagonal walk, 1 cycle per second",
+   "group": "enemy",
+   "key_sha256": "6ef9eb17fc751736a25dea3c9b06647d61870d9388f3004bd579523e66447d7a",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "core/enemy_pose.PHASES",
+   "name": "move",
+   "phases": {
+    "loop": [
+     0,
+     15
+    ]
+   },
+   "vertical_offset_m": {
+    "hips": [
+     0.027664,
+     0.026891,
+     0.012337,
+     -0.008938,
+     -0.008091,
+     0.005533,
+     0.016756,
+     0.025083,
+     0.028535,
+     0.02178,
+     -0.001872,
+     -0.011354,
+     -0.000997,
+     0.011465,
+     0.021343,
+     0.027664
+    ]
+   }
+  },
+  {
+   "face_cell": 0,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "fsm_states": [
+    "recover"
+   ],
+   "group": "enemy",
+   "key_sha256": "f0aac662db0cdde9ed25c1fe4dc30fe3181121501b0cc938ea8bf2a84af5ae8f",
+   "keys": 16,
+   "loop": false,
+   "loop_source": "core/enemy_pose.PHASES",
+   "name": "recover",
+   "phases": {
+    "settle": [
+     7,
+     15
+    ],
+    "shake": [
+     1,
+     6
+    ]
+   },
+   "vertical_offset_m": {
+    "hips": [
+     -0.000981,
+     0.005269,
+     0.005269,
+     0.005269,
+     0.005269,
+     0.005269,
+     0.005269,
+     0.006227,
+     0.006617,
+     0.006437,
+     0.005685,
+     0.004471,
+     0.002593,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "face_cell": 1,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "fsm_states": [
+    "telegraph"
+   ],
+   "group": "enemy",
+   "hold_frames": [
+    13,
+    15
+   ],
+   "key_sha256": "aa4aaccf2fa6af5bbd863e6a07fb0f43853b61ca80d58a4755d00af94933d429",
+   "keys": 16,
+   "loop": false,
+   "loop_source": "core/enemy_pose.PHASES",
+   "name": "telegraph",
+   "phases": {
+    "hold": [
+     13,
+     15
+    ],
+    "paw_scrape": [
+     4,
+     12
+    ],
+    "rear": [
+     1,
+     3
+    ]
+   },
+   "telegraph_peak_frame": 4,
+   "vertical_offset_m": {
+    "hips": [
+     0.0,
+     0.010793,
+     0.017639,
+     0.02161,
+     0.072473,
+     0.072473,
+     0.072473,
+     0.072473,
+     0.072473,
+     0.072473,
+     0.072473,
+     0.072473,
+     0.072473,
+     0.072473,
+     0.072473,
+     0.072473
+    ]
+   }
+  }
+ ],
+ "duration_s": 1.0,
+ "face_atlas": {
+  "cell": 0,
+  "clip_cells": {
+   "attack": 1,
+   "death": 3,
+   "hurt": 2,
+   "telegraph": 1
+  },
+  "cols": 2,
+  "rows": 2
+ },
+ "files": {
+  "clips.glb": {
+   "bytes": 55608,
+   "sha256": "8688042c5a534021cb263f241e5a5cedd07fd128106f17aa7f8b20100301fccf"
+  }
+ },
+ "fps": 15,
+ "fsm_clip": {
+  "approach": "move",
+  "attack": "attack",
+  "dead": "death",
+  "hurt": "hurt",
+  "idle": "idle",
+  "recover": "recover",
+  "telegraph": "telegraph"
+ },
+ "interpolation": "STEP",
+ "key_time": "key k at t = k / 15 s",
+ "keys": 16,
+ "reference_body": {
+  "enemy_id": "cairn_dasher",
+  "generator": "core/enemies.build('cairn_dasher')",
+  "props": [],
+  "reference_glb_sha256": "17c45ca4a7bc464f4f45e1b6a41a81e5bca169699c7222d0af7fd1e9b2c81676",
+  "stance": "neutral",
+  "template": "melee_dash_v1",
+  "topology": "cairn_dasher_v1"
+ },
+ "rig": "dasher16_v1",
+ "rig_version": "1.0.0",
+ "root_motion": "root never animated; the body joint 'hips' carries a vertical offset only",
+ "schema": "hermes64-rig-clips/1.0.0",
+ "source": "vendored generator (characters/gen) through adventure_maker.nbchars: the same per-key data the Blender exporter writes for this body (docs/NBCHARS-RESULT.md parity)"
+}

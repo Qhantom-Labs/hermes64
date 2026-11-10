@@ -1,0 +1,45 @@
+{
+ "schema_version": "1.0.0",
+ "id": "pack_forest_village",
+ "description": "Character lock for the legacy forest_village palette pack. Roles bind to the pack's own palette names; proportion ranges are the approved cast's spread.",
+ "extends": null,
+ "source": {"kind": "legacy_pack", "pack": "forest_village"},
+ "roles": {
+  "skin_light": "skin_0", "skin_fair": "skin_1", "skin_mid": "skin_1", "skin_tan": "skin_2", "skin_deep": "skin_3",
+  "hair_black": "ink", "hair_brown": "umber_1", "hair_auburn": "rust", "hair_blond": "straw_1", "hair_grey": "stone_2",
+  "hair_white": "cream", "hair_dyed": "teal",
+  "eye_dark": "ink", "eye_brown": "umber_2", "eye_cool": "sky_0", "eye_light": "leaf_3",
+  "cloth_light": "cream", "cloth_pale": "wood_2", "cloth_mid": "wood_1", "cloth_dark": "umber_1", "cloth_deep": "umber_0",
+  "cloth_warm": "brick", "cloth_cool": "teal", "cloth_muted": "stone_1", "cloth_accent": "straw_0", "cloth_bright": "leaf_3",
+  "trim_light": "straw_1", "trim_dark": "umber_0", "trim_accent": "rust",
+  "leather": "umber_2", "leather_dark": "umber_0",
+  "metal_light": "stone_3", "metal_mid": "stone_2", "metal_dark": "stone_0",
+  "glow": "straw_1",
+  "shell": "stone_2", "shell_light": "stone_3", "shell_alt": "teal", "shell_dark": "stone_0", "joint": "ink",
+  "lens": "straw_1", "visor": "umber_0", "warning": "rust", "emblem": "straw_0",
+  "coat_dark": "umber_0", "coat_mid": "umber_2", "coat_light": "cream", "coat_warm": "rust", "eye_glow": "leaf_3",
+  "lip": "brick"
+ },
+ "proportions": {
+  "height": {"child": [1.00, 1.30], "teen": [1.35, 1.70], "adult": [1.42, 1.92], "elder": [1.45, 1.85], "masked": [1.40, 1.90]},
+  "head": [0.88, 1.18], "shoulders": [0.85, 1.28], "waist": [0.0, 0.6], "legs": [0.80, 1.40],
+  "robot_height": {"walker": [1.00, 1.30], "brute": [1.70, 2.30], "floater": [1.00, 1.40]},
+  "boss_scale": [1.0, 1.15]
+ },
+ "texture": {"wear": [0.0, 0.8], "patterns": ["pattern.fabric", "pattern.knit", "pattern.stripes", "pattern.checks", "pattern.quilted", "pattern.plain"]},
+ "face": {"styles": ["painted_atlas", "faceless", "visor"],
+          "presets": ["face.calm", "face.stern", "face.weathered", "face.sharp", "face.scarred", "face.gentle", "face.bright", "face.round", "face.freckled", "face.elder_kind"],
+          "expressions": ["neutral", "blink", "talk_a", "talk_b", "smile", "worried", "surprised", "sleepy"]},
+ "bodies": ["body.person", "body.person_masked", "body.robot_walker", "body.robot_brute", "body.robot_floater", "body.creature_dasher", "body.creature_warden", "body.animal_cat", "body.animal_dog"],
+ "parts_denied": [],
+ "budgets": {"humanoid_body_lt": 700, "creature_body_lt": 500, "prop_le": 200, "actor_total_le": 900},
+ "defaults": {
+  "skin": "skin_fair", "hair": "hair_brown", "eyes": "eye_brown", "top": "cloth_light", "garment": "cloth_warm", "trim": "trim_light",
+  "accent": "cloth_accent", "legs": "cloth_dark", "boots": "leather_dark", "gloves": "leather", "belt": "leather_dark",
+  "collar": "trim_light", "extra": "cloth_light", "extra2": "trim_accent",
+  "hood": "cloth_mid", "vest": "cloth_bright", "cape": "cloth_cool", "skirt": "cloth_deep", "armband": "trim_accent",
+  "shell": "shell", "shell_light": "shell_light", "shell_alt": "shell_alt", "dark": "shell_dark", "joint": "joint", "lens": "lens",
+  "visor": "visor", "emblem": "emblem",
+  "coat": "coat_mid", "coat2": "coat_light", "coat3": "coat_warm"
+ }
+}

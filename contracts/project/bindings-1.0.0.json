@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:hermes64:project-bindings:1.0.0",
+  "description": "Logical maps only, not filesystem paths or runtime import approval. Asset -> profile prop recipe, character -> profile family, cue -> profile cue, icon -> profile icon collection. Future external resource binding needs an explicit versioned contract.",
+  "type": "object", "required": ["schema_version", "assets", "cast", "audio", "icons"], "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "assets": {"$ref": "#/$defs/map"},
+    "cast": {"$ref": "#/$defs/map"},
+    "audio": {"$ref": "#/$defs/map"},
+    "icons": {"$ref": "#/$defs/map"}
+  },
+  "$defs": {
+    "map": {"type": "object", "maxProperties": 1024,
+      "propertyNames": {"type": "string", "pattern": "^[a-z][a-z0-9_./-]{0,127}$"},
+      "additionalProperties": {"type": "string", "pattern": "^[a-z][a-z0-9_.-]{0,63}$"}}
+  }
+}

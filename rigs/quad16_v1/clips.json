@@ -1,0 +1,379 @@
+{
+ "attach": "rigkit.attach_clips(glb, 'quad16_v1'): rotations copied verbatim; the root translation regrounded per key so the lowest vertex keeps floor_clearance_m",
+ "channels": {
+  "rotation": "every joint (root included)",
+  "translation": [
+   "root"
+  ]
+ },
+ "clips": [
+  {
+   "face_cell": 0,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "animal",
+   "key_sha256": "5f7daca47785d975b758769ee8662fb9bf892cb7e4d528a6c2bd4c200c07a45b",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "idle",
+   "vertical_offset_m": {
+    "root": [
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ]
+   }
+  },
+  {
+   "face_cell": 0,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "animal",
+   "key_sha256": "2727cd8735173630884c82f6d9722e1d7390608e8007f3420d6f47136066d756",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "loaf",
+   "vertical_offset_m": {
+    "root": [
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089
+    ]
+   }
+  },
+  {
+   "face_cell": 0,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "animal",
+   "key_sha256": "aab276dabb307cf1049337f784c92b0a97161acdaebaf14a1909689f2ee7b9d4",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "run",
+   "vertical_offset_m": {
+    "root": [
+     0.0,
+     0.003064,
+     -0.002836,
+     -0.010071,
+     -0.011909,
+     -0.006796,
+     0.000809,
+     0.00299,
+     0.00299,
+     0.000809,
+     -0.006796,
+     -0.011909,
+     -0.010071,
+     -0.002836,
+     0.003064,
+     0.0
+    ]
+   }
+  },
+  {
+   "face_cell": 0,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "animal",
+   "key_sha256": "5108aec546456f7a7cbcb87e1efc88f7d5d65f7aa70c6ac18ef2905fb5f35be3",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "sit",
+   "vertical_offset_m": {
+    "root": [
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738,
+     -0.08738
+    ]
+   }
+  },
+  {
+   "face_cell": 1,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "animal",
+   "key_sha256": "e6c8d4bad2a86c99cad256760105a431f418eafec22e33a50cc9e5e7f446899f",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "sleep_curled",
+   "vertical_offset_m": {
+    "root": [
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089,
+     -0.089
+    ]
+   }
+  },
+  {
+   "face_cell": 0,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "animal",
+   "key_sha256": "bb96f052bcf686b6e97a5e6307764ed4a8f21de378abcba094eedc9db5a00a2c",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "stretch",
+   "vertical_offset_m": {
+    "root": [
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108,
+     0.015108
+    ]
+   }
+  },
+  {
+   "face_cell": 0,
+   "floor_clearance_m": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ],
+   "group": "animal",
+   "key_sha256": "0d36d71e17cc22f6ca9797c35384ec8873daf3d6d1ce7c36258ffe64636b025b",
+   "keys": 16,
+   "loop": true,
+   "loop_source": "data: key 15 equals key 0 (1 s period)",
+   "name": "walk",
+   "vertical_offset_m": {
+    "root": [
+     0.0,
+     0.003233,
+     0.002654,
+     0.000855,
+     0.000343,
+     0.001722,
+     0.003284,
+     0.002194,
+     0.002194,
+     0.003284,
+     0.001722,
+     0.000343,
+     0.000855,
+     0.002654,
+     0.003233,
+     0.0
+    ]
+   }
+  }
+ ],
+ "duration_s": 1.0,
+ "face_atlas": {
+  "cell": 0,
+  "clip_cells": {
+   "sleep_curled": 1
+  },
+  "cols": 2,
+  "rows": 1
+ },
+ "files": {
+  "clips.glb": {
+   "bytes": 58684,
+   "sha256": "f39044fb8bc7d917dcb98007edf581b92add5e0427edc82ec5f617baff7af123"
+  },
+  "mannequin.glb": {
+   "bytes": 100772,
+   "deterministic": true,
+   "sha256": "634e37499c24c22887286651f48fa2ff42a6f5af549d5bfb9dcb6d05e5f0c19d",
+   "tris": 248,
+   "validate_ok": true
+  }
+ },
+ "fps": 15,
+ "interpolation": "STEP",
+ "key_time": "key k at t = k / 15 s",
+ "keys": 16,
+ "reference_body": {
+  "generator": "core/geometry.quadruped(packs/polar_pod animal_defaults)",
+  "props": [],
+  "reference_glb_sha256": "b161a94c19b64b8909cf2fa6a9a6cb5331849614b38c0c0c88c89aeb7b8f2c45",
+  "species": "cat",
+  "stance": "neutral",
+  "topology": "quad16_v1"
+ },
+ "rig": "quad16_v1",
+ "rig_version": "1.0.0",
+ "root_motion": "root translation = vertical grounding only (x = z = 0)",
+ "schema": "hermes64-rig-clips/1.0.0",
+ "source": "vendored generator (characters/gen) through adventure_maker.nbchars: the same per-key data the Blender exporter writes for this body (docs/NBCHARS-RESULT.md parity)"
+}

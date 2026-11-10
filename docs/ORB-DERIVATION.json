@@ -1,0 +1,11 @@
+{
+  "animations": [],
+  "bone_names": [],
+  "output": "kits/derived/blue_glass_sphere.glb",
+  "sha256": "82e301c0820fc9fab5c425b447788603c31370be2927149084260a59d12be11d",
+  "source": "kits/library/polar_pod/presets/furn.table__disc_orb.glb",
+  "source_sha256": "723334b8d13feefe51b7b29555a646cd3e74dba3b164d9e1bd4f5d960c14c0d6",
+  "translation_y": -0.35339999198913574,
+  "tri_count": 260,
+  "vertex_color_encoding": "srgb8"
+}

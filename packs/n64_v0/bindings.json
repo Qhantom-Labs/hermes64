@@ -1,0 +1,665 @@
+{
+  "assets": {
+    "arch.bridge": {
+      "glb": "kits/library/forest_village/assets/arch.bridge.glb",
+      "kit_id": "arch.bridge",
+      "preset": null,
+      "sha256": "62e3086b389acfca435f96ad8ee6b575942b3c4f1166b5b6414d38b8e0cb55ca"
+    },
+    "arch.ceiling_module": {
+      "glb": "kits/library/forest_village/assets/arch.ceiling_module.glb",
+      "kit_id": "arch.ceiling_module",
+      "preset": null,
+      "sha256": "481b2ffd9a8a6bd826bdcc222a86427d379ca1b22c652a9b7063ad76234566c6"
+    },
+    "arch.column": {
+      "glb": "kits/library/forest_village/assets/arch.column.glb",
+      "kit_id": "arch.column",
+      "preset": null,
+      "sha256": "35482575abe27d32ae812e9d57641b4e282763a533a5b93a7e5199db87eb4434"
+    },
+    "arch.corridor": {
+      "glb": "kits/library/forest_village/assets/arch.corridor.glb",
+      "kit_id": "arch.corridor",
+      "preset": null,
+      "sha256": "61318bbbeea80982265f75d7f4d955b8043ad6f05eef840a0aecb5d466bff81e"
+    },
+    "arch.door": {
+      "glb": "kits/library/forest_village/assets/arch.door.glb",
+      "kit_id": "arch.door",
+      "preset": null,
+      "sha256": "ba9cb1b4cb64e2e86099c6dcbb03cbdfa0f3a0519a2606e60c58176ab1bf7211"
+    },
+    "arch.floor_module": {
+      "glb": "kits/library/forest_village/assets/arch.floor_module.glb",
+      "kit_id": "arch.floor_module",
+      "preset": null,
+      "sha256": "f3e332b1cc984d7e6ee7dde020305e22073b787563afda9eec2bb0331d1f03d0"
+    },
+    "arch.house": {
+      "glb": "kits/library/forest_village/assets/arch.house.glb",
+      "kit_id": "arch.house",
+      "preset": null,
+      "sha256": "a0b4b075bd82e7fc2ebf86bfff70c09ed351d6664ba9bc5e95962ad92174a97f"
+    },
+    "arch.pier": {
+      "glb": "kits/library/forest_village/assets/arch.pier.glb",
+      "kit_id": "arch.pier",
+      "preset": null,
+      "sha256": "75360d8bafea81ef50982a0d6756d914b98cb42ce23134d678275c50dd218a69"
+    },
+    "arch.railing": {
+      "glb": "kits/library/forest_village/assets/arch.railing.glb",
+      "kit_id": "arch.railing",
+      "preset": null,
+      "sha256": "5694ba5cf4edb8addfc0d062cfd5ca848eb11b4021e965fc38931a243138efee"
+    },
+    "arch.roof": {
+      "glb": "kits/library/forest_village/assets/arch.roof.glb",
+      "kit_id": "arch.roof",
+      "preset": null,
+      "sha256": "a65bc1bffd3ec8454d1edc8b0d574ff90939cc422c3b0c0be559b5476096dd24"
+    },
+    "arch.room_shell": {
+      "glb": "kits/library/forest_village/assets/arch.room_shell.glb",
+      "kit_id": "arch.room_shell",
+      "preset": null,
+      "sha256": "afa56ad6f1ea36533ea3361eaa195a7c3dd10a15c07fe79b53dc1bb35015f832"
+    },
+    "arch.stairs": {
+      "glb": "kits/library/forest_village/assets/arch.stairs.glb",
+      "kit_id": "arch.stairs",
+      "preset": null,
+      "sha256": "bffc4a14e0d2bfb1a3998ee7e0127dd803f700ead2b38d5548b21b75325e82fc"
+    },
+    "arch.tower": {
+      "fidelity": "pack look asset (ROOMLOOK exterior composition)",
+      "glb": "kits/library/forest_village/assets/arch.tower.glb",
+      "kit_id": "arch.tower",
+      "preset": null,
+      "sha256": "b83dcc783ced492e3c7ba3a0353bb5eeaa4ed5f848878b6eb1e4fa202c63c811"
+    },
+    "arch.wall_module": {
+      "glb": "kits/library/forest_village/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "fc9bfa3d65d10400a6c22b8877b6ea9e8724073acf292ca66e486705cb6acff6"
+    },
+    "arch.window": {
+      "glb": "kits/library/forest_village/assets/arch.window.glb",
+      "kit_id": "arch.window",
+      "preset": null,
+      "sha256": "c3882cdbe44154b3285fa5fb79753c3b1b1d760fe243870ca117893953f78d52"
+    },
+    "furn.bed": {
+      "glb": "kits/library/forest_village/assets/furn.bed.glb",
+      "kit_id": "furn.bed",
+      "preset": null,
+      "sha256": "59db07ff74cf016a86045082dfa34e484396a7e7e6c36900850df7f19a5abd66"
+    },
+    "furn.bench": {
+      "glb": "kits/library/forest_village/assets/furn.bench.glb",
+      "kit_id": "furn.bench",
+      "preset": null,
+      "sha256": "65cf1cad06bb59270ebb39cef904dfec0d4c80b13354d72f3e7cf2b2fc858738"
+    },
+    "furn.chair": {
+      "glb": "kits/library/forest_village/assets/furn.chair.glb",
+      "kit_id": "furn.chair",
+      "preset": null,
+      "sha256": "acdecb4d249830514f617907f03320d6860c31d25ed75bc4bd6aa5f2f8472c98"
+    },
+    "furn.console": {
+      "glb": "kits/library/forest_village/assets/furn.console.glb",
+      "kit_id": "furn.console",
+      "preset": null,
+      "sha256": "1bf44fbbe74063f5763caabeede65945b788562ca4dc173dde1ff91c126ba76c"
+    },
+    "furn.container": {
+      "glb": "kits/library/forest_village/assets/furn.container.glb",
+      "kit_id": "furn.container",
+      "preset": null,
+      "sha256": "8b78617fac688badd6d84949ad0947f0b1908df554c3e7a8a49e8b4b7d308756"
+    },
+    "furn.hearth": {
+      "glb": "kits/library/forest_village/assets/furn.hearth.glb",
+      "kit_id": "furn.hearth",
+      "preset": null,
+      "sha256": "b468449265e8a2741afbf953ea25c80035f6a0720cbbe5fbc49b89a86a530b32"
+    },
+    "furn.lamp": {
+      "glb": "kits/library/forest_village/assets/furn.lamp.glb",
+      "kit_id": "furn.lamp",
+      "preset": null,
+      "sha256": "edade6cab01bd53e8da277871ab37bd3dbf0b8401745cae43e35aa1fb55b1e88"
+    },
+    "furn.pod": {
+      "glb": "kits/library/forest_village/assets/furn.pod.glb",
+      "kit_id": "furn.pod",
+      "preset": null,
+      "sha256": "7f367b2bfd26d5d0915d9728d730aaf84d994c3b5f0db868ac5f488599836009"
+    },
+    "furn.rug": {
+      "glb": "kits/library/forest_village/assets/furn.rug.glb",
+      "kit_id": "furn.rug",
+      "preset": null,
+      "sha256": "c14690825cc8cb94a7ada4fae053e8e302ba3dc4ae442add44aaa4c40e787341"
+    },
+    "furn.shelf": {
+      "glb": "kits/library/forest_village/assets/furn.shelf.glb",
+      "kit_id": "furn.shelf",
+      "preset": null,
+      "sha256": "cbe2b2bdc127c4d0eceefaa70693e74c03ded1f7dd4dfaf4d11eb8f2ef336f06"
+    },
+    "furn.table": {
+      "glb": "kits/library/forest_village/assets/furn.table.glb",
+      "kit_id": "furn.table",
+      "preset": null,
+      "sha256": "908b35c8cb25ea8a1b54299fc0d0c92de1f20a8cac65231d0f7060293ab6e68b"
+    },
+    "fx.particles": {
+      "glb": "kits/library/forest_village/assets/fx.particles.glb",
+      "kit_id": "fx.particles",
+      "preset": null,
+      "sha256": "0638e5f5023e792e2470d560d6c309af02572162dcde6da1a04c430abb299cea"
+    },
+    "kit/blob_bench": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.bench.glb",
+      "kit_id": "furn.bench",
+      "preset": null,
+      "sha256": "65cf1cad06bb59270ebb39cef904dfec0d4c80b13354d72f3e7cf2b2fc858738"
+    },
+    "kit/blob_desk": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.console.glb",
+      "kit_id": "furn.console",
+      "preset": null,
+      "sha256": "1bf44fbbe74063f5763caabeede65945b788562ca4dc173dde1ff91c126ba76c"
+    },
+    "kit/boat": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/vehicle.boat.glb",
+      "kit_id": "vehicle.boat",
+      "preset": null,
+      "sha256": "5c5d543de8741ea1345e90244230705b4243ab65c19a0156dffa6d06075b064e"
+    },
+    "kit/chrome_chaise": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.pod.glb",
+      "kit_id": "furn.pod",
+      "preset": null,
+      "sha256": "7f367b2bfd26d5d0915d9728d730aaf84d994c3b5f0db868ac5f488599836009"
+    },
+    "kit/cobble": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.floor_module.glb",
+      "kit_id": "arch.floor_module",
+      "preset": null,
+      "sha256": "f3e332b1cc984d7e6ee7dde020305e22073b787563afda9eec2bb0331d1f03d0"
+    },
+    "kit/curved_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "fc9bfa3d65d10400a6c22b8877b6ea9e8724073acf292ca66e486705cb6acff6"
+    },
+    "kit/disc_table": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.table.glb",
+      "kit_id": "furn.table",
+      "preset": null,
+      "sha256": "908b35c8cb25ea8a1b54299fc0d0c92de1f20a8cac65231d0f7060293ab6e68b"
+    },
+    "kit/fence": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.railing.glb",
+      "kit_id": "arch.railing",
+      "preset": null,
+      "sha256": "5694ba5cf4edb8addfc0d062cfd5ca848eb11b4021e965fc38931a243138efee"
+    },
+    "kit/floor": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.floor_module.glb",
+      "kit_id": "arch.floor_module",
+      "preset": null,
+      "sha256": "f3e332b1cc984d7e6ee7dde020305e22073b787563afda9eec2bb0331d1f03d0"
+    },
+    "kit/flower_table": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.table.glb",
+      "kit_id": "furn.table",
+      "preset": null,
+      "sha256": "908b35c8cb25ea8a1b54299fc0d0c92de1f20a8cac65231d0f7060293ab6e68b"
+    },
+    "kit/gloss_floor": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.floor_module.glb",
+      "kit_id": "arch.floor_module",
+      "preset": null,
+      "sha256": "f3e332b1cc984d7e6ee7dde020305e22073b787563afda9eec2bb0331d1f03d0"
+    },
+    "kit/glowing_dome": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.house.glb",
+      "kit_id": "arch.house",
+      "preset": null,
+      "sha256": "a0b4b075bd82e7fc2ebf86bfff70c09ed351d6664ba9bc5e95962ad92174a97f"
+    },
+    "kit/heated_path": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.floor_module.glb",
+      "kit_id": "arch.floor_module",
+      "preset": null,
+      "sha256": "f3e332b1cc984d7e6ee7dde020305e22073b787563afda9eec2bb0331d1f03d0"
+    },
+    "kit/molded_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "fc9bfa3d65d10400a6c22b8877b6ea9e8724073acf292ca66e486705cb6acff6"
+    },
+    "kit/organic_column": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.column.glb",
+      "kit_id": "arch.column",
+      "preset": null,
+      "sha256": "35482575abe27d32ae812e9d57641b4e282763a533a5b93a7e5199db87eb4434"
+    },
+    "kit/oval_window": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.window.glb",
+      "kit_id": "arch.window",
+      "preset": null,
+      "sha256": "c3882cdbe44154b3285fa5fb79753c3b1b1d760fe243870ca117893953f78d52"
+    },
+    "kit/panoramic_window": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.window.glb",
+      "kit_id": "arch.window",
+      "preset": null,
+      "sha256": "c3882cdbe44154b3285fa5fb79753c3b1b1d760fe243870ca117893953f78d52"
+    },
+    "kit/path_markers": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.sign.glb",
+      "kit_id": "prop.sign",
+      "preset": null,
+      "sha256": "ccf751b2c4cc5784316aa71b13c13632c7eb32ddf38a004a017c6db57d8c8530"
+    },
+    "kit/pier": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.pier.glb",
+      "kit_id": "arch.pier",
+      "preset": null,
+      "sha256": "75360d8bafea81ef50982a0d6756d914b98cb42ce23134d678275c50dd218a69"
+    },
+    "kit/plaster_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "fc9bfa3d65d10400a6c22b8877b6ea9e8724073acf292ca66e486705cb6acff6"
+    },
+    "kit/pod_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "fc9bfa3d65d10400a6c22b8877b6ea9e8724073acf292ca66e486705cb6acff6"
+    },
+    "kit/quilt_chair": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.chair.glb",
+      "kit_id": "furn.chair",
+      "preset": null,
+      "sha256": "acdecb4d249830514f617907f03320d6860c31d25ed75bc4bd6aa5f2f8472c98"
+    },
+    "kit/railing": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.railing.glb",
+      "kit_id": "arch.railing",
+      "preset": null,
+      "sha256": "5694ba5cf4edb8addfc0d062cfd5ca848eb11b4021e965fc38931a243138efee"
+    },
+    "kit/roof": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.roof.glb",
+      "kit_id": "arch.roof",
+      "preset": null,
+      "sha256": "a65bc1bffd3ec8454d1edc8b0d574ff90939cc422c3b0c0be559b5476096dd24"
+    },
+    "kit/round_window": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.window.glb",
+      "kit_id": "arch.window",
+      "preset": null,
+      "sha256": "c3882cdbe44154b3285fa5fb79753c3b1b1d760fe243870ca117893953f78d52"
+    },
+    "kit/rounded_hatch": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.door.glb",
+      "kit_id": "arch.door",
+      "preset": null,
+      "sha256": "ba9cb1b4cb64e2e86099c6dcbb03cbdfa0f3a0519a2606e60c58176ab1bf7211"
+    },
+    "kit/sleeping_pods": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.bed.glb",
+      "kit_id": "furn.bed",
+      "preset": null,
+      "sha256": "59db07ff74cf016a86045082dfa34e484396a7e7e6c36900850df7f19a5abd66"
+    },
+    "kit/small_fountain": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.table.glb",
+      "kit_id": "furn.table",
+      "preset": null,
+      "sha256": "908b35c8cb25ea8a1b54299fc0d0c92de1f20a8cac65231d0f7060293ab6e68b"
+    },
+    "kit/snow_patch": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/terrain.patch.glb",
+      "kit_id": "terrain.patch",
+      "preset": null,
+      "sha256": "17e0c826dab89ef33e0e9201de9f3a2f1e886e599f334139abd26231356eeda0"
+    },
+    "kit/snow_rocks": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/nature.rock.glb",
+      "kit_id": "nature.rock",
+      "preset": null,
+      "sha256": "7afb7c30007072ed87c173a18bf3f7a62d9943f0dc4021e4f7bbbd3daa79d9e9"
+    },
+    "kit/stairs": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.stairs.glb",
+      "kit_id": "arch.stairs",
+      "preset": null,
+      "sha256": "bffc4a14e0d2bfb1a3998ee7e0127dd803f700ead2b38d5548b21b75325e82fc"
+    },
+    "kit/stone_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "fc9bfa3d65d10400a6c22b8877b6ea9e8724073acf292ca66e486705cb6acff6"
+    },
+    "kit/sunken_lounge": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.pod.glb",
+      "kit_id": "furn.pod",
+      "preset": null,
+      "sha256": "7f367b2bfd26d5d0915d9728d730aaf84d994c3b5f0db868ac5f488599836009"
+    },
+    "kit/timber_wall": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.wall_module.glb",
+      "kit_id": "arch.wall_module",
+      "preset": null,
+      "sha256": "fc9bfa3d65d10400a6c22b8877b6ea9e8724073acf292ca66e486705cb6acff6"
+    },
+    "kit/warm_pipe": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.column.glb",
+      "kit_id": "arch.column",
+      "preset": null,
+      "sha256": "35482575abe27d32ae812e9d57641b4e282763a533a5b93a7e5199db87eb4434"
+    },
+    "kit/window_frame": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/arch.window.glb",
+      "kit_id": "arch.window",
+      "preset": null,
+      "sha256": "c3882cdbe44154b3285fa5fb79753c3b1b1d760fe243870ca117893953f78d52"
+    },
+    "nature.bush": {
+      "glb": "kits/library/forest_village/assets/nature.bush.glb",
+      "kit_id": "nature.bush",
+      "preset": null,
+      "sha256": "4e033b3d9e168d643c1bea741979f3d70a9d93516dac8322ad54de9c7a22050d"
+    },
+    "nature.grass_tuft": {
+      "glb": "kits/library/forest_village/assets/nature.grass_tuft.glb",
+      "kit_id": "nature.grass_tuft",
+      "preset": null,
+      "sha256": "9a4868132b2778d540c3e6e4c6b1827cbee104edca90f5629600ef32561df8ac"
+    },
+    "nature.rock": {
+      "glb": "kits/library/forest_village/assets/nature.rock.glb",
+      "kit_id": "nature.rock",
+      "preset": null,
+      "sha256": "7afb7c30007072ed87c173a18bf3f7a62d9943f0dc4021e4f7bbbd3daa79d9e9"
+    },
+    "nature.tree": {
+      "glb": "kits/library/forest_village/assets/nature.tree.glb",
+      "kit_id": "nature.tree",
+      "preset": null,
+      "sha256": "ff2a5a68a6780ebb27c1109bb970cc47101bc696b0707a35446b312e991c6ebe"
+    },
+    "prop.book": {
+      "glb": "kits/library/forest_village/assets/prop.book.glb",
+      "kit_id": "prop.book",
+      "preset": null,
+      "sha256": "772c24f4c398f8a785d5002dbecd6787c6e91bd1f5719e16b30393ba7d717a08"
+    },
+    "prop.device": {
+      "glb": "kits/library/forest_village/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "8843eb16cf441cb5841b81f9321967f0274549743de10880ca5ee59f435842a2"
+    },
+    "prop.key": {
+      "glb": "kits/library/forest_village/assets/prop.key.glb",
+      "kit_id": "prop.key",
+      "preset": null,
+      "sha256": "ca4bcefa1dd2b6304bf919616054f6cce981da6f62bcbfa6d5409ad4b6117954"
+    },
+    "prop.sign": {
+      "glb": "kits/library/forest_village/assets/prop.sign.glb",
+      "kit_id": "prop.sign",
+      "preset": null,
+      "sha256": "ccf751b2c4cc5784316aa71b13c13632c7eb32ddf38a004a017c6db57d8c8530"
+    },
+    "prop.tool": {
+      "glb": "kits/library/forest_village/assets/prop.tool.glb",
+      "kit_id": "prop.tool",
+      "preset": null,
+      "sha256": "ef1a30ea338ef557754cfb19df857c9883fc9abd0576a70fdd7ae552d3397415"
+    },
+    "prop.vessel": {
+      "glb": "kits/library/forest_village/assets/prop.vessel.glb",
+      "kit_id": "prop.vessel",
+      "preset": null,
+      "sha256": "4995d767a042a937240160689b0b9ab6f9c14fc261161bc30a85f3457aa73b62"
+    },
+    "prop/bell": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "8843eb16cf441cb5841b81f9321967f0274549743de10880ca5ee59f435842a2"
+    },
+    "prop/blue_glass_sphere": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.table.glb",
+      "kit_id": "furn.table",
+      "preset": null,
+      "sha256": "908b35c8cb25ea8a1b54299fc0d0c92de1f20a8cac65231d0f7060293ab6e68b"
+    },
+    "prop/central_lamp": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.lamp.glb",
+      "kit_id": "furn.lamp",
+      "preset": null,
+      "sha256": "edade6cab01bd53e8da277871ab37bd3dbf0b8401745cae43e35aa1fb55b1e88"
+    },
+    "prop/clockwork_gear": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.tool.glb",
+      "kit_id": "prop.tool",
+      "preset": null,
+      "sha256": "ef1a30ea338ef557754cfb19df857c9883fc9abd0576a70fdd7ae552d3397415"
+    },
+    "prop/crt_screen": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "8843eb16cf441cb5841b81f9321967f0274549743de10880ca5ee59f435842a2"
+    },
+    "prop/dome_card": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.key.glb",
+      "kit_id": "prop.key",
+      "preset": null,
+      "sha256": "ca4bcefa1dd2b6304bf919616054f6cce981da6f62bcbfa6d5409ad4b6117954"
+    },
+    "prop/habitat_card": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.key.glb",
+      "kit_id": "prop.key",
+      "preset": null,
+      "sha256": "ca4bcefa1dd2b6304bf919616054f6cce981da6f62bcbfa6d5409ad4b6117954"
+    },
+    "prop/headphones": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.tool.glb",
+      "kit_id": "prop.tool",
+      "preset": null,
+      "sha256": "ef1a30ea338ef557754cfb19df857c9883fc9abd0576a70fdd7ae552d3397415"
+    },
+    "prop/keycard_cache": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.container.glb",
+      "kit_id": "furn.container",
+      "preset": null,
+      "sha256": "8b78617fac688badd6d84949ad0947f0b1908df554c3e7a8a49e8b4b7d308756"
+    },
+    "prop/keycard_reader": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "8843eb16cf441cb5841b81f9321967f0274549743de10880ca5ee59f435842a2"
+    },
+    "prop/knit_throw": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/soft.blanket.glb",
+      "kit_id": "soft.blanket",
+      "preset": null,
+      "sha256": "05cc0db4922954bbe4b9b8789049fd3c7a665581d4d8f8e0d6ce0bee2ad72468"
+    },
+    "prop/lens_crystal": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "8843eb16cf441cb5841b81f9321967f0274549743de10880ca5ee59f435842a2"
+    },
+    "prop/lighthouse_lamp": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/furn.lamp.glb",
+      "kit_id": "furn.lamp",
+      "preset": null,
+      "sha256": "edade6cab01bd53e8da277871ab37bd3dbf0b8401745cae43e35aa1fb55b1e88"
+    },
+    "prop/logbook": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.book.glb",
+      "kit_id": "prop.book",
+      "preset": null,
+      "sha256": "772c24f4c398f8a785d5002dbecd6787c6e91bd1f5719e16b30393ba7d717a08"
+    },
+    "prop/oil": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.vessel.glb",
+      "kit_id": "prop.vessel",
+      "preset": null,
+      "sha256": "4995d767a042a937240160689b0b9ab6f9c14fc261161bc30a85f3457aa73b62"
+    },
+    "prop/path_marker": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.sign.glb",
+      "kit_id": "prop.sign",
+      "preset": null,
+      "sha256": "ccf751b2c4cc5784316aa71b13c13632c7eb32ddf38a004a017c6db57d8c8530"
+    },
+    "prop/steaming_mug": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.vessel.glb",
+      "kit_id": "prop.vessel",
+      "preset": null,
+      "sha256": "4995d767a042a937240160689b0b9ab6f9c14fc261161bc30a85f3457aa73b62"
+    },
+    "prop/storm_panel": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.device.glb",
+      "kit_id": "prop.device",
+      "preset": null,
+      "sha256": "8843eb16cf441cb5841b81f9321967f0274549743de10880ca5ee59f435842a2"
+    },
+    "prop/thermos": {
+      "fidelity": "explicit kit interpretation; not a bespoke hero model",
+      "glb": "kits/library/forest_village/assets/prop.vessel.glb",
+      "kit_id": "prop.vessel",
+      "preset": null,
+      "sha256": "4995d767a042a937240160689b0b9ab6f9c14fc261161bc30a85f3457aa73b62"
+    },
+    "sky.backdrop": {
+      "glb": "kits/library/forest_village/assets/sky.backdrop.glb",
+      "kit_id": "sky.backdrop",
+      "preset": null,
+      "sha256": "249a262cbcc1d54640dc6777050a6d61712722658ad374558c46b9900b65fc76"
+    },
+    "soft.blanket": {
+      "glb": "kits/library/forest_village/assets/soft.blanket.glb",
+      "kit_id": "soft.blanket",
+      "preset": null,
+      "sha256": "05cc0db4922954bbe4b9b8789049fd3c7a665581d4d8f8e0d6ce0bee2ad72468"
+    },
+    "soft.pillow": {
+      "glb": "kits/library/forest_village/assets/soft.pillow.glb",
+      "kit_id": "soft.pillow",
+      "preset": null,
+      "sha256": "9933a9b1cee1b3cb0eeb1fb8445b66af36ebbfd447d91fc78adf72127e375f1b"
+    },
+    "terrain.patch": {
+      "glb": "kits/library/forest_village/assets/terrain.patch.glb",
+      "kit_id": "terrain.patch",
+      "preset": null,
+      "sha256": "17e0c826dab89ef33e0e9201de9f3a2f1e886e599f334139abd26231356eeda0"
+    },
+    "terrain.vista": {
+      "fidelity": "pack look asset (ROOMLOOK exterior composition)",
+      "glb": "kits/library/forest_village/assets/terrain.vista.glb",
+      "kit_id": "terrain.vista",
+      "preset": null,
+      "sha256": "bc9db37b6cf20da79fc4a419bbd968388f733d1eff749bcee37106f5d6f88ae4"
+    },
+    "terrain.water": {
+      "glb": "kits/library/forest_village/assets/terrain.water.glb",
+      "kit_id": "terrain.water",
+      "preset": null,
+      "sha256": "15e84cedf9d332990308afbc6057c84e6dadbeacb65f9db456f7140ded4129b7"
+    },
+    "vehicle.boat": {
+      "glb": "kits/library/forest_village/assets/vehicle.boat.glb",
+      "kit_id": "vehicle.boat",
+      "preset": null,
+      "sha256": "5c5d543de8741ea1345e90244230705b4243ab65c19a0156dffa6d06075b064e"
+    },
+    "vehicle.craft": {
+      "glb": "kits/library/forest_village/assets/vehicle.craft.glb",
+      "kit_id": "vehicle.craft",
+      "preset": null,
+      "sha256": "4bfdc433e7e2dee79a9312c91083be12c5d45b807988f2df857de8cec3cc69d1"
+    }
+  },
+  "format": 1,
+  "kit_pack": "forest_village",
+  "note": "n64_v0 explicitly uses forest_village environmental kits with harbor presentation",
+  "pack": "n64_v0"
+}

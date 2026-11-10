@@ -1,0 +1,1490 @@
+{
+  "character_clips": {
+    "combat": [
+      "idle_combat",
+      "swing",
+      "hurt",
+      "death",
+      "roll",
+      "block"
+    ],
+    "combat_metadata": {
+      "block": {
+        "duration_s": 1.0,
+        "fps": 15,
+        "guard_frames": [
+          3,
+          15
+        ],
+        "interpolation": "STEP",
+        "key_time": "key f at t = f / 15 s",
+        "keys": 16,
+        "loop": false,
+        "phases": {
+          "guard_hold": [
+            3,
+            15
+          ],
+          "raise": [
+            1,
+            2
+          ]
+        }
+      },
+      "death": {
+        "duration_s": 1.0,
+        "fps": 15,
+        "interpolation": "STEP",
+        "key_time": "key f at t = f / 15 s",
+        "keys": 16,
+        "loop": false,
+        "phases": {
+          "collapse": [
+            3,
+            9
+          ],
+          "down_hold": [
+            10,
+            15
+          ],
+          "impact": [
+            1,
+            2
+          ]
+        }
+      },
+      "hurt": {
+        "duration_s": 1.0,
+        "fps": 15,
+        "interpolation": "STEP",
+        "key_time": "key f at t = f / 15 s",
+        "keys": 16,
+        "loop": false,
+        "phases": {
+          "impact": [
+            1,
+            3
+          ],
+          "recover": [
+            4,
+            15
+          ]
+        }
+      },
+      "idle_combat": {
+        "duration_s": 1.0,
+        "fps": 15,
+        "interpolation": "STEP",
+        "key_time": "key f at t = f / 15 s",
+        "keys": 16,
+        "loop": true,
+        "phases": {
+          "loop": [
+            0,
+            15
+          ]
+        }
+      },
+      "roll": {
+        "duration_s": 1.0,
+        "fps": 15,
+        "iframes": [
+          2,
+          9
+        ],
+        "interpolation": "STEP",
+        "key_time": "key f at t = f / 15 s",
+        "keys": 16,
+        "loop": false,
+        "phases": {
+          "crouch": [
+            1,
+            1
+          ],
+          "ready": [
+            14,
+            15
+          ],
+          "rise": [
+            10,
+            13
+          ],
+          "tuck_roll": [
+            2,
+            9
+          ]
+        },
+        "travel_m": [
+          2.2,
+          3.2
+        ],
+        "travel_recommended_m": 2.6
+      },
+      "swing": {
+        "duration_s": 1.0,
+        "fps": 15,
+        "hit_window": {
+          "end_s": 0.533333,
+          "frames": [
+            5,
+            7
+          ],
+          "start_s": 0.333333
+        },
+        "interpolation": "STEP",
+        "key_time": "key f at t = f / 15 s",
+        "keys": 16,
+        "loop": false,
+        "phases": {
+          "active": [
+            5,
+            7
+          ],
+          "anticipation": [
+            1,
+            4
+          ],
+          "recovery": [
+            8,
+            15
+          ]
+        }
+      }
+    },
+    "combat_rules": {
+      "blend": "clips are STEP; do not crossfade into swing keys 6-8 (the right upper arm switches IK branch between keys 6 and 7: up to 171 deg of roll that STEP playback never shows)",
+      "combatants": "the 8 masked residents and 8 face-heads (16)",
+      "hand_props": "hide kit_acc_hand_l_* / kit_acc_hand_r_* nodes while a combat clip plays (the checks assume them stowed, as for carry)",
+      "restricted": "cameo_visor_01 is internal-only and NOT a combatant: its r21 row and bytes are carried unchanged, no combat clips",
+      "weapon": "attach props/<pack>/trail_staff.glb to joint hand_r with characters[].combat.weapon_grip"
+    },
+    "shared": [
+      "idle",
+      "walk",
+      "run",
+      "interact",
+      "talk",
+      "carry",
+      "sit"
+    ]
+  },
+  "conventions": {
+    "axes": "glTF Y-up; characters and enemies face -Z (glTF) / -Y (Blender)",
+    "duration_s": 1.0,
+    "fps": 15,
+    "interpolation": "STEP",
+    "key_time": "key f at t = f / 15 s; loops (idle_combat, enemy idle/move) have key 15 == key 0, the displayed cycle is keys 0-14",
+    "keys_per_clip": 16,
+    "root_motion": "none: characters keep the shared policy (root joint translation = vertical grounding only, x/z constant 0); enemies never animate the root joint and their body joint carries a vertical offset only; the runtime moves actors (roll travel, dasher charge) itself"
+  },
+  "enemies": [
+    {
+      "archetype_id": "cairn_dasher",
+      "budget_body": "<500",
+      "bytes": 96284,
+      "clip_keys": {
+        "attack": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "death": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "hurt": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "idle": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "move": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "recover": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "telegraph": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        }
+      },
+      "clips": [
+        "attack",
+        "death",
+        "hurt",
+        "idle",
+        "move",
+        "recover",
+        "telegraph"
+      ],
+      "face_atlas": {
+        "cells": {
+          "0": "eyes",
+          "1": "eyes_flare",
+          "2": "eyes_hurt",
+          "3": "eyes_closed"
+        },
+        "clip_cells": {
+          "attack": 1,
+          "death": 3,
+          "hurt": 2,
+          "telegraph": 1
+        },
+        "cols": 2,
+        "material": "mat_polar_pod_cairn_dasher_face",
+        "note": "set the face UV offset to the clip cell when a clip starts (same convention as the cast face atlas, material extras n64.atlas)",
+        "rows": 2
+      },
+      "file": "enemies/polar_pod/cairn_dasher.glb",
+      "fsm_state_clip": {
+        "approach": "move",
+        "attack": "attack",
+        "dead": "death",
+        "hurt": "hurt",
+        "idle": "idle",
+        "recover": "recover",
+        "telegraph": "telegraph"
+      },
+      "glb": "characters/combat/enemies/polar_pod/cairn_dasher.glb",
+      "id": "cairn_dasher",
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "cairn_low",
+        "cairn_top",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail"
+      ],
+      "measured": {
+        "body_triangles": 488,
+        "clips": [
+          "attack",
+          "death",
+          "hurt",
+          "idle",
+          "move",
+          "recover",
+          "telegraph"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "cairn_low",
+          "cairn_top",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail"
+        ]
+      },
+      "pack": "polar_pod",
+      "phases": {
+        "attack": {
+          "hit_window": {
+            "end_s": 0.6,
+            "frames": [
+              2,
+              8
+            ],
+            "start_s": 0.133333
+          },
+          "loop": false,
+          "note": "melee_dash_v1 commits its bounded dash during the active window; the clip charges in place",
+          "phases": {
+            "active": [
+              2,
+              8
+            ],
+            "brake": [
+              9,
+              11
+            ],
+            "launch": [
+              1,
+              1
+            ],
+            "settle": [
+              12,
+              15
+            ]
+          }
+        },
+        "death": {
+          "loop": false,
+          "phases": {
+            "collapse": [
+              3,
+              10
+            ],
+            "down_hold": [
+              11,
+              15
+            ],
+            "impact": [
+              1,
+              2
+            ]
+          }
+        },
+        "hurt": {
+          "loop": false,
+          "phases": {
+            "impact": [
+              1,
+              3
+            ],
+            "recover": [
+              4,
+              15
+            ]
+          }
+        },
+        "idle": {
+          "loop": true,
+          "phases": {
+            "loop": [
+              0,
+              15
+            ]
+          }
+        },
+        "move": {
+          "gait": "heavy diagonal walk, 1 cycle per second",
+          "loop": true,
+          "phases": {
+            "loop": [
+              0,
+              15
+            ]
+          }
+        },
+        "recover": {
+          "loop": false,
+          "phases": {
+            "settle": [
+              7,
+              15
+            ],
+            "shake": [
+              1,
+              6
+            ]
+          }
+        },
+        "telegraph": {
+          "hold_frames": [
+            13,
+            15
+          ],
+          "loop": false,
+          "phases": {
+            "hold": [
+              13,
+              15
+            ],
+            "paw_scrape": [
+              4,
+              12
+            ],
+            "rear": [
+              1,
+              3
+            ]
+          },
+          "telegraph_peak_frame": 4
+        }
+      },
+      "rig": "dasher16_v1",
+      "roles": {
+        "eye": "void",
+        "eye_glow": "glow_1",
+        "hide": "wool_1",
+        "hide_dark": "knit_0",
+        "hoof": "knit_0",
+        "lichen": "peri_1",
+        "mane": "lilac_1",
+        "plate": "chrome_2",
+        "stone": "chrome_3",
+        "stone_dark": "chrome_1"
+      },
+      "roles_fallback": [],
+      "root_motion": {
+        "body_joint": "hips",
+        "note": "the body joint translation carries only a vertical offset (grounding + hop/gallop lift); x and z are constant; the runtime moves the actor",
+        "policy": "none",
+        "root_joint": "root (never animated)"
+      },
+      "sha256": "cc9c37f13841d5e76a2601d1ca97ea5e33b3c30ddb319564d9b55dd00027c2e6",
+      "sockets": [
+        "attach_ram (head)",
+        "attach_core (chest)"
+      ],
+      "template": "melee_dash_v1",
+      "topology": "cairn_dasher_v1",
+      "tris_body": 488
+    },
+    {
+      "archetype_id": "reed_warden",
+      "budget_body": "<500",
+      "bytes": 91620,
+      "clip_keys": {
+        "attack": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "death": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "hurt": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "idle": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "move": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "recover": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "telegraph": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        }
+      },
+      "clips": [
+        "attack",
+        "death",
+        "hurt",
+        "idle",
+        "move",
+        "recover",
+        "telegraph"
+      ],
+      "face_atlas": {
+        "cells": {
+          "0": "eyes",
+          "1": "eyes_flare",
+          "2": "eyes_hurt",
+          "3": "eyes_closed"
+        },
+        "clip_cells": {
+          "attack": 1,
+          "death": 3,
+          "hurt": 2,
+          "telegraph": 1
+        },
+        "cols": 2,
+        "material": "mat_polar_pod_reed_warden_face",
+        "note": "set the face UV offset to the clip cell when a clip starts (same convention as the cast face atlas, material extras n64.atlas)",
+        "rows": 2
+      },
+      "file": "enemies/polar_pod/reed_warden.glb",
+      "fsm_state_clip": {
+        "approach": "move",
+        "attack": "attack",
+        "dead": "death",
+        "hurt": "hurt",
+        "idle": "idle",
+        "recover": "recover",
+        "telegraph": "telegraph"
+      },
+      "glb": "characters/combat/enemies/polar_pod/reed_warden.glb",
+      "id": "reed_warden",
+      "joints": [
+        "root",
+        "body",
+        "head",
+        "crest",
+        "crest_l",
+        "crest_r",
+        "tail",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r",
+        "wing_l",
+        "wing_r"
+      ],
+      "measured": {
+        "body_triangles": 464,
+        "clips": [
+          "attack",
+          "death",
+          "hurt",
+          "idle",
+          "move",
+          "recover",
+          "telegraph"
+        ],
+        "joints": [
+          "root",
+          "body",
+          "head",
+          "crest",
+          "crest_l",
+          "crest_r",
+          "tail",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r",
+          "wing_l",
+          "wing_r"
+        ]
+      },
+      "pack": "polar_pod",
+      "phases": {
+        "attack": {
+          "hit_window": {
+            "end_s": 0.4,
+            "frames": [
+              3,
+              5
+            ],
+            "start_s": 0.2
+          },
+          "lob_socket": {
+            "node": "attach_lob",
+            "note": "optional: a runtime that wants a lobbed burr spawns it here at the release frame",
+            "release_frame": 3
+          },
+          "loop": false,
+          "phases": {
+            "active": [
+              3,
+              5
+            ],
+            "recoil": [
+              6,
+              8
+            ],
+            "settle": [
+              9,
+              15
+            ],
+            "spring": [
+              1,
+              2
+            ]
+          }
+        },
+        "death": {
+          "loop": false,
+          "phases": {
+            "collapse": [
+              3,
+              9
+            ],
+            "down_hold": [
+              10,
+              15
+            ],
+            "impact": [
+              1,
+              2
+            ]
+          }
+        },
+        "hurt": {
+          "loop": false,
+          "phases": {
+            "impact": [
+              1,
+              3
+            ],
+            "recover": [
+              4,
+              15
+            ]
+          }
+        },
+        "idle": {
+          "loop": true,
+          "phases": {
+            "loop": [
+              0,
+              15
+            ]
+          }
+        },
+        "move": {
+          "gait": "two hops per second (period 7.5 keys)",
+          "loop": true,
+          "phases": {
+            "loop": [
+              0,
+              15
+            ]
+          }
+        },
+        "recover": {
+          "loop": false,
+          "phases": {
+            "settle": [
+              7,
+              15
+            ],
+            "shake": [
+              1,
+              6
+            ]
+          }
+        },
+        "telegraph": {
+          "hold_frames": [
+            4,
+            15
+          ],
+          "loop": false,
+          "phases": {
+            "hold_tremble": [
+              4,
+              15
+            ],
+            "squash_fan": [
+              1,
+              3
+            ]
+          },
+          "telegraph_peak_frame": 3
+        }
+      },
+      "rig": "warden15_v1",
+      "roles": {
+        "band": "berry",
+        "core_glow": "glow_1",
+        "crest": "ice_0",
+        "crest_tip": "glow_0",
+        "eye": "void",
+        "leg": "wool_0",
+        "mask": "pearl_0",
+        "weave": "chrome_1",
+        "weave_dark": "wool_0",
+        "weave_light": "chrome_3",
+        "wing": "peri_0"
+      },
+      "roles_fallback": [],
+      "root_motion": {
+        "body_joint": "body",
+        "note": "the body joint translation carries only a vertical offset (grounding + hop/gallop lift); x and z are constant; the runtime moves the actor",
+        "policy": "none",
+        "root_joint": "root (never animated)"
+      },
+      "sha256": "88e15e737ee2fc17a221e6d330b05014718265ca9a68a9e9f4c619e4085af221",
+      "sockets": [
+        "attach_lob (crest: optional projectile spawn)",
+        "attach_core (body)"
+      ],
+      "template": "melee_approach_v1",
+      "topology": "reed_warden_v1",
+      "tris_body": 464
+    },
+    {
+      "archetype_id": "cairn_dasher",
+      "budget_body": "<500",
+      "bytes": 95972,
+      "clip_keys": {
+        "attack": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "death": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "hurt": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "idle": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "move": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "recover": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "telegraph": {
+          "channels": 16,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        }
+      },
+      "clips": [
+        "attack",
+        "death",
+        "hurt",
+        "idle",
+        "move",
+        "recover",
+        "telegraph"
+      ],
+      "face_atlas": {
+        "cells": {
+          "0": "eyes",
+          "1": "eyes_flare",
+          "2": "eyes_hurt",
+          "3": "eyes_closed"
+        },
+        "clip_cells": {
+          "attack": 1,
+          "death": 3,
+          "hurt": 2,
+          "telegraph": 1
+        },
+        "cols": 2,
+        "material": "mat_forest_village_cairn_dasher_face",
+        "note": "set the face UV offset to the clip cell when a clip starts (same convention as the cast face atlas, material extras n64.atlas)",
+        "rows": 2
+      },
+      "file": "enemies/forest_village/cairn_dasher.glb",
+      "fsm_state_clip": {
+        "approach": "move",
+        "attack": "attack",
+        "dead": "death",
+        "hurt": "hurt",
+        "idle": "idle",
+        "recover": "recover",
+        "telegraph": "telegraph"
+      },
+      "glb": "characters/combat/enemies/forest_village/cairn_dasher.glb",
+      "id": "cairn_dasher",
+      "joints": [
+        "root",
+        "hips",
+        "chest",
+        "cairn_low",
+        "cairn_top",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail"
+      ],
+      "measured": {
+        "body_triangles": 488,
+        "clips": [
+          "attack",
+          "death",
+          "hurt",
+          "idle",
+          "move",
+          "recover",
+          "telegraph"
+        ],
+        "joints": [
+          "root",
+          "hips",
+          "chest",
+          "cairn_low",
+          "cairn_top",
+          "leg_fl",
+          "paw_fl",
+          "leg_fr",
+          "paw_fr",
+          "neck",
+          "head",
+          "leg_bl",
+          "paw_bl",
+          "leg_br",
+          "paw_br",
+          "tail"
+        ]
+      },
+      "pack": "forest_village",
+      "phases": {
+        "attack": {
+          "hit_window": {
+            "end_s": 0.6,
+            "frames": [
+              2,
+              8
+            ],
+            "start_s": 0.133333
+          },
+          "loop": false,
+          "note": "melee_dash_v1 commits its bounded dash during the active window; the clip charges in place",
+          "phases": {
+            "active": [
+              2,
+              8
+            ],
+            "brake": [
+              9,
+              11
+            ],
+            "launch": [
+              1,
+              1
+            ],
+            "settle": [
+              12,
+              15
+            ]
+          }
+        },
+        "death": {
+          "loop": false,
+          "phases": {
+            "collapse": [
+              3,
+              10
+            ],
+            "down_hold": [
+              11,
+              15
+            ],
+            "impact": [
+              1,
+              2
+            ]
+          }
+        },
+        "hurt": {
+          "loop": false,
+          "phases": {
+            "impact": [
+              1,
+              3
+            ],
+            "recover": [
+              4,
+              15
+            ]
+          }
+        },
+        "idle": {
+          "loop": true,
+          "phases": {
+            "loop": [
+              0,
+              15
+            ]
+          }
+        },
+        "move": {
+          "gait": "heavy diagonal walk, 1 cycle per second",
+          "loop": true,
+          "phases": {
+            "loop": [
+              0,
+              15
+            ]
+          }
+        },
+        "recover": {
+          "loop": false,
+          "phases": {
+            "settle": [
+              7,
+              15
+            ],
+            "shake": [
+              1,
+              6
+            ]
+          }
+        },
+        "telegraph": {
+          "hold_frames": [
+            13,
+            15
+          ],
+          "loop": false,
+          "phases": {
+            "hold": [
+              13,
+              15
+            ],
+            "paw_scrape": [
+              4,
+              12
+            ],
+            "rear": [
+              1,
+              3
+            ]
+          },
+          "telegraph_peak_frame": 4
+        }
+      },
+      "rig": "dasher16_v1",
+      "roles": {
+        "eye": "ink",
+        "eye_glow": "straw_1",
+        "hide": "umber_1",
+        "hide_dark": "ink",
+        "hoof": "ink",
+        "lichen": "leaf_4",
+        "mane": "cream",
+        "plate": "stone_2",
+        "stone": "stone_3",
+        "stone_dark": "stone_1"
+      },
+      "roles_fallback": [],
+      "root_motion": {
+        "body_joint": "hips",
+        "note": "the body joint translation carries only a vertical offset (grounding + hop/gallop lift); x and z are constant; the runtime moves the actor",
+        "policy": "none",
+        "root_joint": "root (never animated)"
+      },
+      "sha256": "c06af43cca71204f0dbe543a785fece423871937294500e578ad7bf60ca8a37b",
+      "sockets": [
+        "attach_ram (head)",
+        "attach_core (chest)"
+      ],
+      "template": "melee_dash_v1",
+      "topology": "cairn_dasher_v1",
+      "tris_body": 488
+    },
+    {
+      "archetype_id": "reed_warden",
+      "budget_body": "<500",
+      "bytes": 91704,
+      "clip_keys": {
+        "attack": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "death": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "hurt": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "idle": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "move": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "recover": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        },
+        "telegraph": {
+          "channels": 15,
+          "interpolation": [
+            "STEP"
+          ],
+          "keys": 16
+        }
+      },
+      "clips": [
+        "attack",
+        "death",
+        "hurt",
+        "idle",
+        "move",
+        "recover",
+        "telegraph"
+      ],
+      "face_atlas": {
+        "cells": {
+          "0": "eyes",
+          "1": "eyes_flare",
+          "2": "eyes_hurt",
+          "3": "eyes_closed"
+        },
+        "clip_cells": {
+          "attack": 1,
+          "death": 3,
+          "hurt": 2,
+          "telegraph": 1
+        },
+        "cols": 2,
+        "material": "mat_forest_village_reed_warden_face",
+        "note": "set the face UV offset to the clip cell when a clip starts (same convention as the cast face atlas, material extras n64.atlas)",
+        "rows": 2
+      },
+      "file": "enemies/forest_village/reed_warden.glb",
+      "fsm_state_clip": {
+        "approach": "move",
+        "attack": "attack",
+        "dead": "death",
+        "hurt": "hurt",
+        "idle": "idle",
+        "recover": "recover",
+        "telegraph": "telegraph"
+      },
+      "glb": "characters/combat/enemies/forest_village/reed_warden.glb",
+      "id": "reed_warden",
+      "joints": [
+        "root",
+        "body",
+        "head",
+        "crest",
+        "crest_l",
+        "crest_r",
+        "tail",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r",
+        "wing_l",
+        "wing_r"
+      ],
+      "measured": {
+        "body_triangles": 464,
+        "clips": [
+          "attack",
+          "death",
+          "hurt",
+          "idle",
+          "move",
+          "recover",
+          "telegraph"
+        ],
+        "joints": [
+          "root",
+          "body",
+          "head",
+          "crest",
+          "crest_l",
+          "crest_r",
+          "tail",
+          "thigh_l",
+          "shin_l",
+          "foot_l",
+          "thigh_r",
+          "shin_r",
+          "foot_r",
+          "wing_l",
+          "wing_r"
+        ]
+      },
+      "pack": "forest_village",
+      "phases": {
+        "attack": {
+          "hit_window": {
+            "end_s": 0.4,
+            "frames": [
+              3,
+              5
+            ],
+            "start_s": 0.2
+          },
+          "lob_socket": {
+            "node": "attach_lob",
+            "note": "optional: a runtime that wants a lobbed burr spawns it here at the release frame",
+            "release_frame": 3
+          },
+          "loop": false,
+          "phases": {
+            "active": [
+              3,
+              5
+            ],
+            "recoil": [
+              6,
+              8
+            ],
+            "settle": [
+              9,
+              15
+            ],
+            "spring": [
+              1,
+              2
+            ]
+          }
+        },
+        "death": {
+          "loop": false,
+          "phases": {
+            "collapse": [
+              3,
+              9
+            ],
+            "down_hold": [
+              10,
+              15
+            ],
+            "impact": [
+              1,
+              2
+            ]
+          }
+        },
+        "hurt": {
+          "loop": false,
+          "phases": {
+            "impact": [
+              1,
+              3
+            ],
+            "recover": [
+              4,
+              15
+            ]
+          }
+        },
+        "idle": {
+          "loop": true,
+          "phases": {
+            "loop": [
+              0,
+              15
+            ]
+          }
+        },
+        "move": {
+          "gait": "two hops per second (period 7.5 keys)",
+          "loop": true,
+          "phases": {
+            "loop": [
+              0,
+              15
+            ]
+          }
+        },
+        "recover": {
+          "loop": false,
+          "phases": {
+            "settle": [
+              7,
+              15
+            ],
+            "shake": [
+              1,
+              6
+            ]
+          }
+        },
+        "telegraph": {
+          "hold_frames": [
+            4,
+            15
+          ],
+          "loop": false,
+          "phases": {
+            "hold_tremble": [
+              4,
+              15
+            ],
+            "squash_fan": [
+              1,
+              3
+            ]
+          },
+          "telegraph_peak_frame": 3
+        }
+      },
+      "rig": "warden15_v1",
+      "roles": {
+        "band": "brick",
+        "core_glow": "straw_1",
+        "crest": "straw_1",
+        "crest_tip": "rust",
+        "eye": "ink",
+        "leg": "umber_0",
+        "mask": "cream",
+        "weave": "wood_1",
+        "weave_dark": "umber_1",
+        "weave_light": "wood_2",
+        "wing": "leaf_3"
+      },
+      "roles_fallback": [],
+      "root_motion": {
+        "body_joint": "body",
+        "note": "the body joint translation carries only a vertical offset (grounding + hop/gallop lift); x and z are constant; the runtime moves the actor",
+        "policy": "none",
+        "root_joint": "root (never animated)"
+      },
+      "sha256": "4c4635a47becd709e2e253b82e9b9c5fa939b3057d903575f5ba071db5683a3c",
+      "sockets": [
+        "attach_lob (crest: optional projectile spawn)",
+        "attach_core (body)"
+      ],
+      "template": "melee_approach_v1",
+      "topology": "reed_warden_v1",
+      "tris_body": 464
+    }
+  ],
+  "props": [
+    {
+      "axis": "+Y (glTF) from the grip toward the tip",
+      "budget": "<=200",
+      "bytes": 9136,
+      "file": "props/polar_pod/trail_staff.glb",
+      "glb": "characters/combat/props/polar_pod/trail_staff.glb",
+      "grip_rotation_on_hand_r_xyzw": [
+        0.8660254,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "grip_translation": "per character: characters[].combat.weapon_grip.translation (the rest mitt centre relative to the hand_r joint, glTF axes, metres)",
+      "id": "trail_staff",
+      "kind": "weapon",
+      "length_m": 0.825,
+      "measured": {
+        "triangles": 190
+      },
+      "node": "kit_acc_hand_r_trail_staff",
+      "origin": "grip centre (the middle of the fist)",
+      "pack": "polar_pod",
+      "pommel_m": 0.135,
+      "roles": {
+        "accent": "ember",
+        "metal": "pearl_0",
+        "metal_dark": "chrome_1",
+        "wood": "chrome_2",
+        "wood_dark": "chrome_1",
+        "wrap": "berry"
+      },
+      "roles_fallback": [],
+      "sha256": "4cfa5e8febd73ec777613f82e3e8ef803b2f5128ba284c770d4f0056d4cccf4a",
+      "slot": "hand_r",
+      "stow": {
+        "euler_blender": [
+          0.0,
+          0.62,
+          0.0
+        ],
+        "joint": "spine",
+        "note": "diagonal across the back while exploring (runtime option; not baked into clips)",
+        "translation_blender": [
+          0.0,
+          0.135,
+          0.02
+        ]
+      },
+      "tip_m": 0.69,
+      "tris": 190
+    },
+    {
+      "budget": "<=200",
+      "bytes": 8024,
+      "file": "props/polar_pod/reed_burr.glb",
+      "glb": "characters/combat/props/polar_pod/reed_burr.glb",
+      "id": "reed_burr",
+      "kind": "projectile",
+      "measured": {
+        "triangles": 96
+      },
+      "node": "kit_acc_projectile_reed_burr",
+      "origin": "centre",
+      "pack": "polar_pod",
+      "roles": {
+        "burr": "cobalt_0",
+        "burr_tip": "ice_1",
+        "weave_dark": "wool_0"
+      },
+      "roles_fallback": [],
+      "sha256": "0a8b362ddc6bb1b7444c8ae2c44b2be730bd7f1b02bc6fdc80ab74467dff537f",
+      "tris": 96,
+      "used_by": "reed_warden (optional lob from attach_lob at attack key 3)"
+    },
+    {
+      "axis": "+Y (glTF) from the grip toward the tip",
+      "budget": "<=200",
+      "bytes": 9228,
+      "file": "props/forest_village/trail_staff.glb",
+      "glb": "characters/combat/props/forest_village/trail_staff.glb",
+      "grip_rotation_on_hand_r_xyzw": [
+        0.8660254,
+        0.0,
+        0.0,
+        0.5
+      ],
+      "grip_translation": "per character: characters[].combat.weapon_grip.translation (the rest mitt centre relative to the hand_r joint, glTF axes, metres)",
+      "id": "trail_staff",
+      "kind": "weapon",
+      "length_m": 0.825,
+      "measured": {
+        "triangles": 190
+      },
+      "node": "kit_acc_hand_r_trail_staff",
+      "origin": "grip centre (the middle of the fist)",
+      "pack": "forest_village",
+      "pommel_m": 0.135,
+      "roles": {
+        "accent": "teal",
+        "metal": "stone_3",
+        "metal_dark": "stone_1",
+        "wood": "wood_1",
+        "wood_dark": "umber_2",
+        "wrap": "brick"
+      },
+      "roles_fallback": [],
+      "sha256": "21f6d40e0b3954858eaf896b396526f92f3d1a35cc65bb5baa2fbccd5c9f7231",
+      "slot": "hand_r",
+      "stow": {
+        "euler_blender": [
+          0.0,
+          0.62,
+          0.0
+        ],
+        "joint": "spine",
+        "note": "diagonal across the back while exploring (runtime option; not baked into clips)",
+        "translation_blender": [
+          0.0,
+          0.135,
+          0.02
+        ]
+      },
+      "tip_m": 0.69,
+      "tris": 190
+    },
+    {
+      "budget": "<=200",
+      "bytes": 8012,
+      "file": "props/forest_village/reed_burr.glb",
+      "glb": "characters/combat/props/forest_village/reed_burr.glb",
+      "id": "reed_burr",
+      "kind": "projectile",
+      "measured": {
+        "triangles": 96
+      },
+      "node": "kit_acc_projectile_reed_burr",
+      "origin": "centre",
+      "pack": "forest_village",
+      "roles": {
+        "burr": "umber_2",
+        "burr_tip": "straw_1",
+        "weave_dark": "umber_1"
+      },
+      "roles_fallback": [],
+      "sha256": "252fb098f2da094fb044a5c887244d43ff33358a9dee60f11b833453c934906d",
+      "tris": 96,
+      "used_by": "reed_warden (optional lob from attach_lob at attack key 3)"
+    }
+  ],
+  "schema": "hermes64-combat/1",
+  "source_export": "published",
+  "source_manifest_sha256": "4705f007608ea8c467a368a221cfd1d75a8b356d05664de4d17eb65bc3f729ed",
+  "source_sha256sums": "84550f1b6a1a5f5ed9cecf390d6bef07280e8e6609c77cfb0013f703af4a555e",
+  "templates": {
+    "melee_approach_v1": "reed_warden",
+    "melee_dash_v1": "cairn_dasher"
+  }
+}

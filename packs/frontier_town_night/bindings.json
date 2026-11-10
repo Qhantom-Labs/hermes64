@@ -1,0 +1,1389 @@
+{
+ "assets": {
+  "arch.door": {
+   "alias_of": "wtown.doorway",
+   "glb": "kits/library/frontier_town_night/assets/wtown.doorway.glb",
+   "kit_id": "wtown.doorway",
+   "preset": null,
+   "sha256": "b98894605f03668cc4a1b3c6174e8635ced065518978c7127eb786cc179ad71b"
+  },
+  "wland.arch": {
+   "glb": "kits/library/frontier_town_night/assets/wland.arch.glb",
+   "kit_id": "wland.arch",
+   "preset": null,
+   "sha256": "5ea11c2d29dc14bc1539c1a7787de25eb10c506b9cedb35b08157e00be7c149d"
+  },
+  "wland.arch__small": {
+   "glb": "kits/library/frontier_town_night/presets/wland.arch__small.glb",
+   "kit_id": "wland.arch",
+   "preset": "small",
+   "sha256": "cc19615a3b6254ac996de409e17f279463e6848db900c16c118e248e6a00cd38"
+  },
+  "wland.boulder": {
+   "glb": "kits/library/frontier_town_night/assets/wland.boulder.glb",
+   "kit_id": "wland.boulder",
+   "preset": null,
+   "sha256": "e30e1e9d02311945257e85d5dc413a6daf019cdfb9b1b310c848463843347c34"
+  },
+  "wland.boulder__big": {
+   "glb": "kits/library/frontier_town_night/presets/wland.boulder__big.glb",
+   "kit_id": "wland.boulder",
+   "preset": "big",
+   "sha256": "b19b3a770dcba58160d0c6f863add29f100fb6a7b0399213ac8cba61b5294983"
+  },
+  "wland.boulder__small": {
+   "glb": "kits/library/frontier_town_night/presets/wland.boulder__small.glb",
+   "kit_id": "wland.boulder",
+   "preset": "small",
+   "sha256": "6b15de26051273c23de85124fbff3f316a47f5d91a078209b2a15e49ae7c3359"
+  },
+  "wland.butte": {
+   "glb": "kits/library/frontier_town_night/assets/wland.butte.glb",
+   "kit_id": "wland.butte",
+   "preset": null,
+   "sha256": "bbcdfb2df4c34308cb8c5f63ab3dc7fdc00d9a309c442835f900167ebdad1d25"
+  },
+  "wland.butte__slim": {
+   "glb": "kits/library/frontier_town_night/presets/wland.butte__slim.glb",
+   "kit_id": "wland.butte",
+   "preset": "slim",
+   "sha256": "8fd3b6c3f7ca2cef79f5866c2ad2b2981876961d0cb05e79dc137d9ded609b19"
+  },
+  "wland.canyon_wall": {
+   "glb": "kits/library/frontier_town_night/assets/wland.canyon_wall.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": null,
+   "sha256": "8ea33e4f10a8dc6ac72e6bc1d1c9d5e6fae0dca8dc755aff4fee8eb1612804d5"
+  },
+  "wland.canyon_wall__corner": {
+   "glb": "kits/library/frontier_town_night/presets/wland.canyon_wall__corner.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": "corner",
+   "sha256": "ab000fbcdad7a165e06da3c95736911298f64632812e1898a61fa897dd1e4e07"
+  },
+  "wland.canyon_wall__end": {
+   "glb": "kits/library/frontier_town_night/presets/wland.canyon_wall__end.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": "end",
+   "sha256": "61a7bbfcba6c8d167d1cfa31eea5fac43a86061790052e18dd6fd78561b06969"
+  },
+  "wland.canyon_wall__end_w": {
+   "glb": "kits/library/frontier_town_night/presets/wland.canyon_wall__end_w.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": "end_w",
+   "sha256": "f1119547a611d858240ef0a9fa0d492331a74288e7e0fc5040dcc8719355527f"
+  },
+  "wland.canyon_wall__low": {
+   "glb": "kits/library/frontier_town_night/presets/wland.canyon_wall__low.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": "low",
+   "sha256": "e2bb37aa90d8254e6fcc70b6c74cf3d113e0e9121730e66c19bb0445a4713ece"
+  },
+  "wland.canyon_wall__tall": {
+   "glb": "kits/library/frontier_town_night/presets/wland.canyon_wall__tall.glb",
+   "kit_id": "wland.canyon_wall",
+   "preset": "tall",
+   "sha256": "45778849a5708b626e7f9e70f67f28d0d67dfd9ccff0bfa8b95ef1c9b14796ca"
+  },
+  "wland.dead_tree": {
+   "glb": "kits/library/frontier_town_night/assets/wland.dead_tree.glb",
+   "kit_id": "wland.dead_tree",
+   "preset": null,
+   "sha256": "e22e8d70aaa2e3478d11037f7ff46a07536f34f5c14d9505487cbfc126c0c765"
+  },
+  "wland.dead_tree__small": {
+   "glb": "kits/library/frontier_town_night/presets/wland.dead_tree__small.glb",
+   "kit_id": "wland.dead_tree",
+   "preset": "small",
+   "sha256": "a0dcf717402e43f4966d3f6a46cb3191dc5c717d56e4423a950e6b048cea8324"
+  },
+  "wland.grass": {
+   "glb": "kits/library/frontier_town_night/assets/wland.grass.glb",
+   "kit_id": "wland.grass",
+   "preset": null,
+   "sha256": "e2dd3e7b7f54c196f4d4a0da5cfb89140c8a602836649018dccc4a3e5fd4ffc5"
+  },
+  "wland.grass__tall": {
+   "glb": "kits/library/frontier_town_night/presets/wland.grass__tall.glb",
+   "kit_id": "wland.grass",
+   "preset": "tall",
+   "sha256": "2b8f349dbf7947ca535b43c6e6ddbe4938a43dadadd9b326898d640baee90564"
+  },
+  "wland.ground": {
+   "glb": "kits/library/frontier_town_night/assets/wland.ground.glb",
+   "kit_id": "wland.ground",
+   "preset": null,
+   "sha256": "b61b6380906af5c667f56568e3c49c872125d4793486693277de085febc8a0cf"
+  },
+  "wland.ground__desert": {
+   "glb": "kits/library/frontier_town_night/presets/wland.ground__desert.glb",
+   "kit_id": "wland.ground",
+   "preset": "desert",
+   "sha256": "f3f014646649ca272d9a6b8476ffc35c456b461d0eba37e21c8a279e0810c005"
+  },
+  "wland.ground__dunes": {
+   "glb": "kits/library/frontier_town_night/presets/wland.ground__dunes.glb",
+   "kit_id": "wland.ground",
+   "preset": "dunes",
+   "sha256": "501f963570ea06dd28648b6a3ce685102fc0c568491ff8ec5d9c2b8780613826"
+  },
+  "wland.ground__main": {
+   "glb": "kits/library/frontier_town_night/presets/wland.ground__main.glb",
+   "kit_id": "wland.ground",
+   "preset": "main",
+   "sha256": "98a2305e7ffa3faa6c475b348377cd36277273d421c224439205c54fc7ede988"
+  },
+  "wland.ground__plaza": {
+   "glb": "kits/library/frontier_town_night/presets/wland.ground__plaza.glb",
+   "kit_id": "wland.ground",
+   "preset": "plaza",
+   "sha256": "e9aeeed8111af602ce3e4568c24dc49e22a8b55488a2fdcf404d09f4dee45e5f"
+  },
+  "wland.ground__ruts": {
+   "glb": "kits/library/frontier_town_night/presets/wland.ground__ruts.glb",
+   "kit_id": "wland.ground",
+   "preset": "ruts",
+   "sha256": "16773bfafc08806ea93c4e1830a488599fed59acdce09bd304fbdc442d52e0f3"
+  },
+  "wland.ground__street": {
+   "glb": "kits/library/frontier_town_night/presets/wland.ground__street.glb",
+   "kit_id": "wland.ground",
+   "preset": "street",
+   "sha256": "766601ccc1f36c851f20df86fa6982024e62f64c1bcf2a953dc9733f32ff9fa9"
+  },
+  "wland.ground__yard": {
+   "glb": "kits/library/frontier_town_night/presets/wland.ground__yard.glb",
+   "kit_id": "wland.ground",
+   "preset": "yard",
+   "sha256": "a32eeaa6392461a5c121ae70844bbcaebbdc917724223b969581a0fbd1c47339"
+  },
+  "wland.hoodoo": {
+   "glb": "kits/library/frontier_town_night/assets/wland.hoodoo.glb",
+   "kit_id": "wland.hoodoo",
+   "preset": null,
+   "sha256": "64a16c4fd67b942a286c534f790cb9e00b160fb90fc896c4c35b56393090d9dd"
+  },
+  "wland.hoodoo__single": {
+   "glb": "kits/library/frontier_town_night/presets/wland.hoodoo__single.glb",
+   "kit_id": "wland.hoodoo",
+   "preset": "single",
+   "sha256": "531a4c860f4ded306e9391a4186db555bd45d35336a40ba7552ccde436bda56f"
+  },
+  "wland.ledge": {
+   "glb": "kits/library/frontier_town_night/assets/wland.ledge.glb",
+   "kit_id": "wland.ledge",
+   "preset": null,
+   "sha256": "43e0dc1d5467b5dfc4047fc4bdf93dbffc01df95dc08f03961f5f99c479e5938"
+  },
+  "wland.ledge__high": {
+   "glb": "kits/library/frontier_town_night/presets/wland.ledge__high.glb",
+   "kit_id": "wland.ledge",
+   "preset": "high",
+   "sha256": "52436c867579623f309d5a2353a3ea16003134c65538e55397b75b227a705b06"
+  },
+  "wland.ledge__low": {
+   "glb": "kits/library/frontier_town_night/presets/wland.ledge__low.glb",
+   "kit_id": "wland.ledge",
+   "preset": "low",
+   "sha256": "4e5bbc879f1008538b2808044bdb657b82862bf4d415783922eec28797656772"
+  },
+  "wland.mesa": {
+   "glb": "kits/library/frontier_town_night/assets/wland.mesa.glb",
+   "kit_id": "wland.mesa",
+   "preset": null,
+   "sha256": "4982e79eda3c0710913514b32b70d16f7f8ac45aabdaa2772798936457313837"
+  },
+  "wland.mesa__far": {
+   "glb": "kits/library/frontier_town_night/presets/wland.mesa__far.glb",
+   "kit_id": "wland.mesa",
+   "preset": "far",
+   "sha256": "089ff05fadad44cb8928dc4078a862bb7284941a20e8d7531bc8c1cf366027a6"
+  },
+  "wland.mesa__small": {
+   "glb": "kits/library/frontier_town_night/presets/wland.mesa__small.glb",
+   "kit_id": "wland.mesa",
+   "preset": "small",
+   "sha256": "914651abbb176063067dbc1cc9d16140da410799d42853e9c3a2ebbb6c17c614"
+  },
+  "wland.oasis": {
+   "glb": "kits/library/frontier_town_night/assets/wland.oasis.glb",
+   "kit_id": "wland.oasis",
+   "preset": null,
+   "sha256": "2aaacf168da9637a7c5eba6284cffa40c8646c301096a68d6adcd1943e2aeccc"
+  },
+  "wland.oasis__big": {
+   "glb": "kits/library/frontier_town_night/presets/wland.oasis__big.glb",
+   "kit_id": "wland.oasis",
+   "preset": "big",
+   "sha256": "4ca3e0e5db179872ce28bd88f8bee347e18ce0c21a19c1d03062f989c932a73e"
+  },
+  "wland.palm": {
+   "glb": "kits/library/frontier_town_night/assets/wland.palm.glb",
+   "kit_id": "wland.palm",
+   "preset": null,
+   "sha256": "7233a78d366e3f0ee4950d90412e911e4211ed7754d2bbac8fab3b40b86ce15b"
+  },
+  "wland.palm__tall": {
+   "glb": "kits/library/frontier_town_night/presets/wland.palm__tall.glb",
+   "kit_id": "wland.palm",
+   "preset": "tall",
+   "sha256": "ed103f0d75008fc2cbcd90896ad67eb3252f5dc4e339daede1bd8d86d8fd1761"
+  },
+  "wland.riverbed": {
+   "glb": "kits/library/frontier_town_night/assets/wland.riverbed.glb",
+   "kit_id": "wland.riverbed",
+   "preset": null,
+   "sha256": "d1baa2f4785da6865673cd6de3bc091af27c4e51917ca0f6671800e3eb26a1af"
+  },
+  "wland.riverbed__bend": {
+   "glb": "kits/library/frontier_town_night/presets/wland.riverbed__bend.glb",
+   "kit_id": "wland.riverbed",
+   "preset": "bend",
+   "sha256": "4edc584d1601e71b0126d5ab51eb642809c9feb8329571c676cc457662211468"
+  },
+  "wland.riverbed__canyon": {
+   "glb": "kits/library/frontier_town_night/presets/wland.riverbed__canyon.glb",
+   "kit_id": "wland.riverbed",
+   "preset": "canyon",
+   "sha256": "97a35aba0599d67d574e6360ae593b733e2befffd7017226271dbac0ea9d51d4"
+  },
+  "wland.scrub": {
+   "glb": "kits/library/frontier_town_night/assets/wland.scrub.glb",
+   "kit_id": "wland.scrub",
+   "preset": null,
+   "sha256": "8db30c4f40368acb3e2cd6b9b9e89259d0132d9b11ca3386b1b6eca5e4009b6b"
+  },
+  "wland.scrub__big": {
+   "glb": "kits/library/frontier_town_night/presets/wland.scrub__big.glb",
+   "kit_id": "wland.scrub",
+   "preset": "big",
+   "sha256": "fb2493834e7c259937991b78bf715f7614d3a2b1aed7c94e841f39955d7121ab"
+  },
+  "wland.slope": {
+   "glb": "kits/library/frontier_town_night/assets/wland.slope.glb",
+   "kit_id": "wland.slope",
+   "preset": null,
+   "sha256": "4e4a37e4a78a59fd8c7ffea6930746c7de58ddf64faf5f2d6c2714ed97b1708f"
+  },
+  "wland.yucca": {
+   "glb": "kits/library/frontier_town_night/assets/wland.yucca.glb",
+   "kit_id": "wland.yucca",
+   "preset": null,
+   "sha256": "59990f85a2289d96a05e93b62ca797a49379131e24a4a0f043a8e4ba7dd1fbe6"
+  },
+  "wland.yucca__no_stalk": {
+   "glb": "kits/library/frontier_town_night/presets/wland.yucca__no_stalk.glb",
+   "kit_id": "wland.yucca",
+   "preset": "no_stalk",
+   "sha256": "cc7948ba533c952d35cd2fd16407199133ae5be11478430f5c5b96d8ebdd2a7e"
+  },
+  "wmine.cart": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.cart.glb",
+   "kit_id": "wmine.cart",
+   "preset": null,
+   "sha256": "068dc486f0b4f26d444e384144c3e9fe4fd8e32e62886df85c879797cf77d817"
+  },
+  "wmine.cart__empty": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.cart__empty.glb",
+   "kit_id": "wmine.cart",
+   "preset": "empty",
+   "sha256": "b7826148b985b1887c34d20b9bc26457edcfe0c4ffde56e3b763b6bafd4c2968"
+  },
+  "wmine.cart__tipped": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.cart__tipped.glb",
+   "kit_id": "wmine.cart",
+   "preset": "tipped",
+   "sha256": "75128bcc7ef95b7dbdbd2f8f1871ce094c4b364955301a9a2f6f2309e7844f3f"
+  },
+  "wmine.headframe": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.headframe.glb",
+   "kit_id": "wmine.headframe",
+   "preset": null,
+   "sha256": "773cbde4b991b5061d12208bd267ee74d980b21fc17b1825567e3de92df502d8"
+  },
+  "wmine.headframe__tall": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.headframe__tall.glb",
+   "kit_id": "wmine.headframe",
+   "preset": "tall",
+   "sha256": "33c6f4a520842d7d50f9e7427e3569d34531375d267b85a372cf0383abc1e618"
+  },
+  "wmine.ladder": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.ladder.glb",
+   "kit_id": "wmine.ladder",
+   "preset": null,
+   "sha256": "3c54f15fb188ca040684d27796a30a331fba10913166fc08ffa77f190043d320"
+  },
+  "wmine.ladder__tall": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.ladder__tall.glb",
+   "kit_id": "wmine.ladder",
+   "preset": "tall",
+   "sha256": "87ac2ff2c38eef835bc850f35747a8c2ffa3481757779546d6a64a57ae365e6c"
+  },
+  "wmine.ore_bin": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.ore_bin.glb",
+   "kit_id": "wmine.ore_bin",
+   "preset": null,
+   "sha256": "a8e60fac0e1e4db9687221b64a0ff96cebd527b2ba432f81f75f62c85031760a"
+  },
+  "wmine.ore_pile": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.ore_pile.glb",
+   "kit_id": "wmine.ore_pile",
+   "preset": null,
+   "sha256": "8c5cf7bf49db54fe9e84a942f1a59f07f8fe69d6a2ec30b8e24ac2c4c493e105"
+  },
+  "wmine.ore_pile__big": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.ore_pile__big.glb",
+   "kit_id": "wmine.ore_pile",
+   "preset": "big",
+   "sha256": "07e8b0225d9d5a664f679026a23f365c298fd2e956e5dda24864975d7c8145cb"
+  },
+  "wmine.portal": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.portal.glb",
+   "kit_id": "wmine.portal",
+   "preset": null,
+   "sha256": "b395cb0f36c3680045149f4825ee41152383f1587df0cdbeca06d4ee3de8aab1"
+  },
+  "wmine.portal__bare": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.portal__bare.glb",
+   "kit_id": "wmine.portal",
+   "preset": "bare",
+   "sha256": "c6009d7ac16cf750b3bd15ac30ae586c6a83e9243d903f52e203ddd27983e7b4"
+  },
+  "wmine.portal__canyon": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.portal__canyon.glb",
+   "kit_id": "wmine.portal",
+   "preset": "canyon",
+   "sha256": "d61ba491f8a78abd3096f9568d05bdffd10ed81c374e4ada29a61fdd2ccfab32"
+  },
+  "wmine.rubble": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.rubble.glb",
+   "kit_id": "wmine.rubble",
+   "preset": null,
+   "sha256": "4f75b27b3d71b0e175a0db2d953c0daef934c853bff885d8bffdc0980b73d755"
+  },
+  "wmine.shaft": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.shaft.glb",
+   "kit_id": "wmine.shaft",
+   "preset": null,
+   "sha256": "df3b15d675fdc9d1fda78887f97e201dac769a1562a95923d103f9a20ae83482"
+  },
+  "wmine.shaft__small": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.shaft__small.glb",
+   "kit_id": "wmine.shaft",
+   "preset": "small",
+   "sha256": "e0dfe4c79db944410da55f791cd047b7a65e74719e8ef2a96f713598bfefcb0c"
+  },
+  "wmine.timber_set": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.timber_set.glb",
+   "kit_id": "wmine.timber_set",
+   "preset": null,
+   "sha256": "c6c1ceee88e4672e9f91c2331a6f6dbcae7ff10cbc31df87f65b24761cae8cfa"
+  },
+  "wmine.track": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.track.glb",
+   "kit_id": "wmine.track",
+   "preset": null,
+   "sha256": "3fb35f40c98e8db74afe0c0850fe29ebffc8dd01749cb6a2dd4c9e991cc32ecc"
+  },
+  "wmine.track__corner": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.track__corner.glb",
+   "kit_id": "wmine.track",
+   "preset": "corner",
+   "sha256": "344d03a44f0a0f8cba7961a3d769a667f1dee83771b017f8a110b28f22debf98"
+  },
+  "wmine.track__end": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.track__end.glb",
+   "kit_id": "wmine.track",
+   "preset": "end",
+   "sha256": "7de8ec4bb71703a0a07b8791f59733fc868a897b41dc7934fc42aa0caec5ef3d"
+  },
+  "wmine.tunnel": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.tunnel.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": null,
+   "sha256": "5fbae504031f596ec11197271c9d8869866fcc35e511144ceb9fc9111b8143f2"
+  },
+  "wmine.tunnel__corner": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.tunnel__corner.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "corner",
+   "sha256": "179e33ea7fe334e4dcea2d14b36b67bb623bf93351a886265d13afa220a9de46"
+  },
+  "wmine.tunnel__cross": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.tunnel__cross.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "cross",
+   "sha256": "18d2d9d5a3f90c4075e5690f422b23bb8abebc374b38b02eac21d7c4b903627d"
+  },
+  "wmine.tunnel__end": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.tunnel__end.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "end",
+   "sha256": "863915d54ce64009ed39ef5c8b83ee025c4a389f5e9461a2e03c3f15ec711e35"
+  },
+  "wmine.tunnel__end_door": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.tunnel__end_door.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "end_door",
+   "sha256": "43e922123cfc6fc62ff749e5f2e86ec4c1c0f99911e2d6fdb75ca496289edc2b"
+  },
+  "wmine.tunnel__mouth": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.tunnel__mouth.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "mouth",
+   "sha256": "37ee7be5e489a1f74a1606e597181588585b7dcae867ace2fb11d14b77bc89ba"
+  },
+  "wmine.tunnel__tee": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.tunnel__tee.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "tee",
+   "sha256": "de56f10719f3553641b28bc3556e45a59f573b459d7021b48e70a7f0470bebc6"
+  },
+  "wmine.tunnel__track": {
+   "glb": "kits/library/frontier_town_night/presets/wmine.tunnel__track.glb",
+   "kit_id": "wmine.tunnel",
+   "preset": "track",
+   "sha256": "ad30ea066da341f85f239b2de4b0f273a8ee1717f6e012ca361aeeac0960f221"
+  },
+  "wmine.windlass": {
+   "glb": "kits/library/frontier_town_night/assets/wmine.windlass.glb",
+   "kit_id": "wmine.windlass",
+   "preset": null,
+   "sha256": "3b230c1d60c488d7be73d646a061e6bb2a313a72f8b1053e896531ad98838174"
+  },
+  "wprop.bar": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.bar.glb",
+   "kit_id": "wprop.bar",
+   "preset": null,
+   "sha256": "517b0c727681ff90b1d7f93ef3e5623be05f54f56c16e812405a2149a8e47412"
+  },
+  "wprop.bar__back_bar": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.bar__back_bar.glb",
+   "kit_id": "wprop.bar",
+   "preset": "back_bar",
+   "sha256": "6a86635e05c599d253855b5bb0337bc4be5abc62112770b6f6591747e6987d21"
+  },
+  "wprop.bar__short": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.bar__short.glb",
+   "kit_id": "wprop.bar",
+   "preset": "short",
+   "sha256": "f5d3a11a8256836d72bffec388164f72fefec37005abc7a2fdd2919f068ed257"
+  },
+  "wprop.barrel": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.barrel.glb",
+   "kit_id": "wprop.barrel",
+   "preset": null,
+   "sha256": "57b7d92078699c9733d47ce42e6b3f9b970b4dfac604546491799b37762234e4"
+  },
+  "wprop.barrel__keg": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.barrel__keg.glb",
+   "kit_id": "wprop.barrel",
+   "preset": "keg",
+   "sha256": "748b1c3f4a593c921c6fbd5b9dce95d0e233f3e9c1a03382208bc1ca4bd44d66"
+  },
+  "wprop.barrel__powder": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.barrel__powder.glb",
+   "kit_id": "wprop.barrel",
+   "preset": "powder",
+   "sha256": "d8f57923f6290a437faaa02c00a4cafb4f287a8896566e70a00433af5117e886"
+  },
+  "wprop.barrel__tipped": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.barrel__tipped.glb",
+   "kit_id": "wprop.barrel",
+   "preset": "tipped",
+   "sha256": "b8ed45896972feac1fb28a1c9bdf908c576a5d50ead420f1618f386989adaf63"
+  },
+  "wprop.barrel__water": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.barrel__water.glb",
+   "kit_id": "wprop.barrel",
+   "preset": "water",
+   "sha256": "e75379e2aa5087fb36f743323ebf6e53cb8933c5e871902e16e8c0e12a958a2f"
+  },
+  "wprop.bottles": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.bottles.glb",
+   "kit_id": "wprop.bottles",
+   "preset": null,
+   "sha256": "ae9e4981cdca6198ca5b7431d29421d130ff69a18b35a6fb6ab8267eb168f991"
+  },
+  "wprop.bucket": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.bucket.glb",
+   "kit_id": "wprop.bucket",
+   "preset": null,
+   "sha256": "90dc825fceee3d488b7c067959874f3bd95205eb5b876a76604f369344e6ebe5"
+  },
+  "wprop.bucket__basin": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.bucket__basin.glb",
+   "kit_id": "wprop.bucket",
+   "preset": "basin",
+   "sha256": "2faa330900124d5a0af1aa0a9eaa3dee228d75a9268fcff49e021b33bfba4a8c"
+  },
+  "wprop.bucket__spittoon": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.bucket__spittoon.glb",
+   "kit_id": "wprop.bucket",
+   "preset": "spittoon",
+   "sha256": "75e46886169a0ce75515fbf3bb063909ae8594dd34248347acf71340b375dfff"
+  },
+  "wprop.cactus": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.cactus.glb",
+   "kit_id": "wprop.cactus",
+   "preset": null,
+   "sha256": "b8e4252b6d53db9e0971ca1f6710554c91ef27167cec71d88edcd031901976e5"
+  },
+  "wprop.cactus__barrel": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.cactus__barrel.glb",
+   "kit_id": "wprop.cactus",
+   "preset": "barrel",
+   "sha256": "e2483e36733949d589d725f216af667087981cffd0f8eb8f4723338ef5f8a4be"
+  },
+  "wprop.cactus__organ": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.cactus__organ.glb",
+   "kit_id": "wprop.cactus",
+   "preset": "organ",
+   "sha256": "ff6362c2847e73157053651d4b3bdcad9e6cd5fc786691bdfeb3bc5ebd8fe082"
+  },
+  "wprop.cactus__prickly": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.cactus__prickly.glb",
+   "kit_id": "wprop.cactus",
+   "preset": "prickly",
+   "sha256": "3d483f5ce6fe531afa8e19084cb4b00656a5ce4a006d70516d497651ad823d5a"
+  },
+  "wprop.cactus__tall": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.cactus__tall.glb",
+   "kit_id": "wprop.cactus",
+   "preset": "tall",
+   "sha256": "c8decbf03c2a87ee04a32b6a5c93372c6206f1582d565ff5912163a58fc494b2"
+  },
+  "wprop.campfire": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.campfire.glb",
+   "kit_id": "wprop.campfire",
+   "preset": null,
+   "sha256": "3c04a9a1eb28561488b9d1ca98b437ce96874512e45c3b14bf5d053924ec8055"
+  },
+  "wprop.campfire__cold": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.campfire__cold.glb",
+   "kit_id": "wprop.campfire",
+   "preset": "cold",
+   "sha256": "8c8d8a77eae933defab0ed31d1e4ad3ed0974ab876c82d9661648059d359c238"
+  },
+  "wprop.chair": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.chair.glb",
+   "kit_id": "wprop.chair",
+   "preset": null,
+   "sha256": "bdbce7352eeae9fe715813d3966c6626ac1eb217a4c8aab9c61d1090dbad5ca0"
+  },
+  "wprop.chair__bench": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.chair__bench.glb",
+   "kit_id": "wprop.chair",
+   "preset": "bench",
+   "sha256": "fc6e75baecec50ac7c67b3ae3e40b1b30c1c95cf32abc5ab06a50b8af52cd06d"
+  },
+  "wprop.chair__rocking": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.chair__rocking.glb",
+   "kit_id": "wprop.chair",
+   "preset": "rocking",
+   "sha256": "fbdc0891517bcb150894dcc7f1f419f428ab28cdc727f6ab896320c62ba059da"
+  },
+  "wprop.chair__stool": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.chair__stool.glb",
+   "kit_id": "wprop.chair",
+   "preset": "stool",
+   "sha256": "57987151cb9c4fb72f52edb9fa3f57240d738ce44b85bab3239ce8f4d02b594a"
+  },
+  "wprop.crate": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.crate.glb",
+   "kit_id": "wprop.crate",
+   "preset": null,
+   "sha256": "581907abf5a2ed9f154606616d5a39e0e9ea8994211031bc0b4956108fa59f02"
+  },
+  "wprop.crate__long": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.crate__long.glb",
+   "kit_id": "wprop.crate",
+   "preset": "long",
+   "sha256": "e9e4fea1e58bad8f17ea59805dcf7bc0a15967e8337c5340198a327dd326dd7e"
+  },
+  "wprop.crate__powder": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.crate__powder.glb",
+   "kit_id": "wprop.crate",
+   "preset": "powder",
+   "sha256": "e165996ba9c7dfc7af22388de377982d02f892dcada396af175c8742f46ee3c6"
+  },
+  "wprop.crate__slats": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.crate__slats.glb",
+   "kit_id": "wprop.crate",
+   "preset": "slats",
+   "sha256": "507347c3466d707b281c6bc9aff3892fccc52e8c5f729bc3a9761359d80e627d"
+  },
+  "wprop.crate__small": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.crate__small.glb",
+   "kit_id": "wprop.crate",
+   "preset": "small",
+   "sha256": "c4fd66887d1bcf4617c0e7bf47d57919f607652f79174927fde89d0812fa5b6d"
+  },
+  "wprop.hay": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.hay.glb",
+   "kit_id": "wprop.hay",
+   "preset": null,
+   "sha256": "6de35962426fa010d8bc6a7b937be3a2fc4dcc0503c3c45ad7832be84dbc86f8"
+  },
+  "wprop.hay__stack": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.hay__stack.glb",
+   "kit_id": "wprop.hay",
+   "preset": "stack",
+   "sha256": "c4b4d47f2d7f6418337eb40ea38bcfb38d469159afebca189e75d69cd318e1a8"
+  },
+  "wprop.lantern": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.lantern.glb",
+   "kit_id": "wprop.lantern",
+   "preset": null,
+   "sha256": "80093b195013e339c6908197d2cb1b01ec86a908b515996533aedb14b02c3ccc"
+  },
+  "wprop.lantern__post": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.lantern__post.glb",
+   "kit_id": "wprop.lantern",
+   "preset": "post",
+   "sha256": "c00263bfe1fc799a6ceba644e762e2fc4a59727c37f1ce78372a5f4dbfa8e600"
+  },
+  "wprop.lantern__table": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.lantern__table.glb",
+   "kit_id": "wprop.lantern",
+   "preset": "table",
+   "sha256": "9ee789dc34d6d41ff8c1d87e4d29e34972d89e3e2fc490eff6aba3147d0adcda"
+  },
+  "wprop.lantern__wall": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.lantern__wall.glb",
+   "kit_id": "wprop.lantern",
+   "preset": "wall",
+   "sha256": "d4af15067e90ff1f93b589e96de4bb116af719b076598ccf312a27a3dde4a23a"
+  },
+  "wprop.piano": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.piano.glb",
+   "kit_id": "wprop.piano",
+   "preset": null,
+   "sha256": "9ef8b3406689c8cb864f400cad60e2d6dcaa589b624f61e0f1bb108e97262628"
+  },
+  "wprop.sacks": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.sacks.glb",
+   "kit_id": "wprop.sacks",
+   "preset": null,
+   "sha256": "05dcfa12b2b362d4ad1939a316bb125f8ce1372829d613a6344890f70f120895"
+  },
+  "wprop.sacks__one": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.sacks__one.glb",
+   "kit_id": "wprop.sacks",
+   "preset": "one",
+   "sha256": "45d01cc27df38228ea020a82f534b4d7065fd3a6838ee72593f4c562df747fb0"
+  },
+  "wprop.saloon_doors": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.saloon_doors.glb",
+   "kit_id": "wprop.saloon_doors",
+   "preset": null,
+   "sha256": "2f437df8fe5fb6f737a83eec11a09eead5530b3e47114e23295d36aea6e60144"
+  },
+  "wprop.signpost": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.signpost.glb",
+   "kit_id": "wprop.signpost",
+   "preset": null,
+   "sha256": "d02c639e89546d85aea1b4b851952d0541598ebc8e59039865a6d97e89a8057c"
+  },
+  "wprop.signpost__two": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.signpost__two.glb",
+   "kit_id": "wprop.signpost",
+   "preset": "two",
+   "sha256": "152272c1a76c9692036d014c68b1ba00a8e22e0640fe18f05d42681900d78c50"
+  },
+  "wprop.skull": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.skull.glb",
+   "kit_id": "wprop.skull",
+   "preset": null,
+   "sha256": "caa7196d4b37dbb89da9528bf3714a5414fca460bdb76493c71b007a7b5d1720"
+  },
+  "wprop.stove": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.stove.glb",
+   "kit_id": "wprop.stove",
+   "preset": null,
+   "sha256": "c0e6f08901ce1df3b27a5a8614eaa16b973fc194fb4bfc37f5694ba1dc0c7d59"
+  },
+  "wprop.table": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.table.glb",
+   "kit_id": "wprop.table",
+   "preset": null,
+   "sha256": "7423fdca254e7606bd1cec32b6a6bac819b2e50dc402f59d463a4a8ec1483cac"
+  },
+  "wprop.table__card": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.table__card.glb",
+   "kit_id": "wprop.table",
+   "preset": "card",
+   "sha256": "4f983e0654e57a1f5a4e6c55b493d6bc221ae64d16894c9cae2d6d4d43cadd56"
+  },
+  "wprop.table__long": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.table__long.glb",
+   "kit_id": "wprop.table",
+   "preset": "long",
+   "sha256": "4bc884952936f22a870537581a71f0ecaf32c38672618875c02e5ab3b527c2fb"
+  },
+  "wprop.table__square": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.table__square.glb",
+   "kit_id": "wprop.table",
+   "preset": "square",
+   "sha256": "df07b064241dbf6e60e7156e32effa1baab919242b13c687b49ec7c1af3e8850"
+  },
+  "wprop.tombstone": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.tombstone.glb",
+   "kit_id": "wprop.tombstone",
+   "preset": null,
+   "sha256": "bd525fda0fcb0ef042c79e01fac638ddfba2dbd3da216dab99ad852d737990c3"
+  },
+  "wprop.tombstone__board": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.tombstone__board.glb",
+   "kit_id": "wprop.tombstone",
+   "preset": "board",
+   "sha256": "b8cbd9d1457d738e216834bdaa76534711d3d4cd2345ea01619cc53bdf64573c"
+  },
+  "wprop.tombstone__cairn": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.tombstone__cairn.glb",
+   "kit_id": "wprop.tombstone",
+   "preset": "cairn",
+   "sha256": "0ebc4d78b9d99a21a4f5dadfab8d1b903b40a337a71988698623103e2b7ddfa7"
+  },
+  "wprop.tombstone__cross": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.tombstone__cross.glb",
+   "kit_id": "wprop.tombstone",
+   "preset": "cross",
+   "sha256": "412711b94afb1be552d231f85266b51b628eee20f82f29114b8cb3d13ca3245e"
+  },
+  "wprop.trough": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.trough.glb",
+   "kit_id": "wprop.trough",
+   "preset": null,
+   "sha256": "1f4bbf3d064a351268970ae99598cff320ba718ce3d47772ae729f0fde0d95cc"
+  },
+  "wprop.wagon": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.wagon.glb",
+   "kit_id": "wprop.wagon",
+   "preset": null,
+   "sha256": "dd6969e0d9104a8c831ed9f994e4484d402213e0c2ee8d41edb19cbbbff420c7"
+  },
+  "wprop.wagon__broken": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.wagon__broken.glb",
+   "kit_id": "wprop.wagon",
+   "preset": "broken",
+   "sha256": "3c2cf143d94004d7c20fb69a4a3d6a8c6ee2856104a3b4177292e072afee138b"
+  },
+  "wprop.wagon__buckboard": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.wagon__buckboard.glb",
+   "kit_id": "wprop.wagon",
+   "preset": "buckboard",
+   "sha256": "03eaa61cff3a267983c400219cda46d2caeb9694ff22a57676f06743e2f895cc"
+  },
+  "wprop.wanted_board": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.wanted_board.glb",
+   "kit_id": "wprop.wanted_board",
+   "preset": null,
+   "sha256": "daaf7cfbd0c84d71d45de59f3ea499d49d45392d0433f8217fd2628f12198344"
+  },
+  "wprop.wanted_board__wall": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.wanted_board__wall.glb",
+   "kit_id": "wprop.wanted_board",
+   "preset": "wall",
+   "sha256": "9f2effbb7cfa47caee68fa925908fcdce95c07dcc931a29477c99dad1400fa28"
+  },
+  "wprop.well": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.well.glb",
+   "kit_id": "wprop.well",
+   "preset": null,
+   "sha256": "a55635b780296c94f4a9dae57e96f49e858ab058058cc183835e4dd8c3df52b5"
+  },
+  "wprop.well__open": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.well__open.glb",
+   "kit_id": "wprop.well",
+   "preset": "open",
+   "sha256": "6cd172fcb2c9f406c47b576f16b33cf91b3789196e0f2005e25b9c5a8066e52d"
+  },
+  "wprop.wheel": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.wheel.glb",
+   "kit_id": "wprop.wheel",
+   "preset": null,
+   "sha256": "0aab1fcf7986cc1c8694a859e8a42ccde1e17dd7d9c834f5447e73ead655f5fa"
+  },
+  "wprop.wheel__flat": {
+   "glb": "kits/library/frontier_town_night/presets/wprop.wheel__flat.glb",
+   "kit_id": "wprop.wheel",
+   "preset": "flat",
+   "sha256": "662346e53865b0e891e405c70a6d778fb0dcd21036747c5f17290c6e7d951f00"
+  },
+  "wprop.windmill": {
+   "glb": "kits/library/frontier_town_night/assets/wprop.windmill.glb",
+   "kit_id": "wprop.windmill",
+   "preset": null,
+   "sha256": "5fbd7c0b200811cf87617344c2eaab751b1e10fc2d587474bfb211aae6fab918"
+  },
+  "wrail.car": {
+   "glb": "kits/library/frontier_town_night/assets/wrail.car.glb",
+   "kit_id": "wrail.car",
+   "preset": null,
+   "sha256": "926da27331ae73e91a5b83d041ca3249671b33d61c02def5075bbbaae92312ad"
+  },
+  "wrail.car__caboose": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.car__caboose.glb",
+   "kit_id": "wrail.car",
+   "preset": "caboose",
+   "sha256": "1ff0ac95f81646388b5f9bc392630e7b95aa08a0ec2bbb9be3b247161c6a945a"
+  },
+  "wrail.car__flatcar": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.car__flatcar.glb",
+   "kit_id": "wrail.car",
+   "preset": "flatcar",
+   "sha256": "def9375eb174651039c565e01c74e2e7ba3e87c037982006a5f074340bafaf89"
+  },
+  "wrail.handcar": {
+   "glb": "kits/library/frontier_town_night/assets/wrail.handcar.glb",
+   "kit_id": "wrail.handcar",
+   "preset": null,
+   "sha256": "e72d4bc01f3af1583ff5bbc7a6afcc3670b180b3a679fa2efcc954cb0bc7f504"
+  },
+  "wrail.handcar__pumped": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.handcar__pumped.glb",
+   "kit_id": "wrail.handcar",
+   "preset": "pumped",
+   "sha256": "755aa7810617326860c126e3dbf54fa85e4e244aba1056dff737a2ecd47aff2d"
+  },
+  "wrail.locomotive": {
+   "glb": "kits/library/frontier_town_night/assets/wrail.locomotive.glb",
+   "kit_id": "wrail.locomotive",
+   "preset": null,
+   "sha256": "3c15a63a5c3cb43e56c06372f838f32d37da96ea50adfe55f94b5bec601f57a5"
+  },
+  "wrail.locomotive__straight_stack": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.locomotive__straight_stack.glb",
+   "kit_id": "wrail.locomotive",
+   "preset": "straight_stack",
+   "sha256": "67350c98575369ce00c79dfc7939abcc554ebc4d40cfd29a7590ea23915d684d"
+  },
+  "wrail.platform": {
+   "glb": "kits/library/frontier_town_night/assets/wrail.platform.glb",
+   "kit_id": "wrail.platform",
+   "preset": null,
+   "sha256": "6864221b2b71f35f246ad07641881ff5d5da59303d63ba8dbb8f2281255597a0"
+  },
+  "wrail.platform__end_e": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.platform__end_e.glb",
+   "kit_id": "wrail.platform",
+   "preset": "end_e",
+   "sha256": "50c196a158b65ed884121db8d6db2386744a7b1f8e86a10f4f4a197f09d173c8"
+  },
+  "wrail.platform__end_w": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.platform__end_w.glb",
+   "kit_id": "wrail.platform",
+   "preset": "end_w",
+   "sha256": "91bf76d663d3296130fcdaae9542b9db62d26410cd5025b79b4f5d69aed410d5"
+  },
+  "wrail.signal": {
+   "glb": "kits/library/frontier_town_night/assets/wrail.signal.glb",
+   "kit_id": "wrail.signal",
+   "preset": null,
+   "sha256": "e66edc5be80272d4d0a6b52a5f21099d011d93df18736341c0f10bd01b3b95b0"
+  },
+  "wrail.signal__clear": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.signal__clear.glb",
+   "kit_id": "wrail.signal",
+   "preset": "clear",
+   "sha256": "e3e422f7c39b0179e923eb0b003af02a150b515b1afcfa49b4ec3634edee29ab"
+  },
+  "wrail.station": {
+   "glb": "kits/library/frontier_town_night/assets/wrail.station.glb",
+   "kit_id": "wrail.station",
+   "preset": null,
+   "sha256": "c7ae21b779bcb95d1a562ddbca0dd8817e3c31f9c7c0fd7d5d6b37492d157ba8"
+  },
+  "wrail.station__entry": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.station__entry.glb",
+   "kit_id": "wrail.station",
+   "preset": "entry",
+   "sha256": "63d636ac039dfe72623e9d70947c2d7d4ff24254c321b52b133e0c9a9d4dcf9c"
+  },
+  "wrail.station__small": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.station__small.glb",
+   "kit_id": "wrail.station",
+   "preset": "small",
+   "sha256": "2ee2cbaf5f826c4d10d55e983fff2579b3aeb0cdd08aa59e6755b5bf95df231a"
+  },
+  "wrail.track": {
+   "glb": "kits/library/frontier_town_night/assets/wrail.track.glb",
+   "kit_id": "wrail.track",
+   "preset": null,
+   "sha256": "66e9cdd8c31a236e438935649c2221973c48a228293f83c6dad1291e95e4e772"
+  },
+  "wrail.track__bumper": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.track__bumper.glb",
+   "kit_id": "wrail.track",
+   "preset": "bumper",
+   "sha256": "476023be055c230fef65ae6a9f4dc24a1fe185adf3ebc8cfd5d2715a6e28d5b4"
+  },
+  "wrail.track__crossing": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.track__crossing.glb",
+   "kit_id": "wrail.track",
+   "preset": "crossing",
+   "sha256": "c313043faeba69ea620981e655012e3719e0c20129203c2e6c41e0cf24cea04e"
+  },
+  "wrail.track__curve": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.track__curve.glb",
+   "kit_id": "wrail.track",
+   "preset": "curve",
+   "sha256": "06d0a976bf176d7c45d6cbbc15ffeae16c8222159f49fc8d795aec0a0cb79dcb"
+  },
+  "wrail.trestle": {
+   "glb": "kits/library/frontier_town_night/assets/wrail.trestle.glb",
+   "kit_id": "wrail.trestle",
+   "preset": null,
+   "sha256": "7dcf911aea69da532664170ff139f902e84d6cad4f886d6c76f09c75cc22fe27"
+  },
+  "wrail.trestle__end": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.trestle__end.glb",
+   "kit_id": "wrail.trestle",
+   "preset": "end",
+   "sha256": "6835fc73fd8c5a8767ff96cb7f36d33d76f985149afb78b54a434a248707396c"
+  },
+  "wrail.trestle__low": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.trestle__low.glb",
+   "kit_id": "wrail.trestle",
+   "preset": "low",
+   "sha256": "3cccef0f89fc509dfe43713e465bdb34e5e83c8a98c06e5314b6cc3cf5b9d00d"
+  },
+  "wrail.trestle__tall": {
+   "glb": "kits/library/frontier_town_night/presets/wrail.trestle__tall.glb",
+   "kit_id": "wrail.trestle",
+   "preset": "tall",
+   "sha256": "0aee1ed6e4c73335a03e0f062b990b3b736dda6dd60dd51aa06582383ff15516"
+  },
+  "wsky.dome": {
+   "glb": "kits/library/frontier_town_night/assets/wsky.dome.glb",
+   "kit_id": "wsky.dome",
+   "preset": null,
+   "sha256": "21aec0d754da809c93f7f68084f1cb910ada6ea7dbac0d25d8714148bb986e67"
+  },
+  "wsky.mesas": {
+   "glb": "kits/library/frontier_town_night/assets/wsky.mesas.glb",
+   "kit_id": "wsky.mesas",
+   "preset": null,
+   "sha256": "804d904df3d50b5726f618b0a489acead43137a0458f84d43976587526bb7d05"
+  },
+  "wsky.mesas__canyon": {
+   "glb": "kits/library/frontier_town_night/presets/wsky.mesas__canyon.glb",
+   "kit_id": "wsky.mesas",
+   "preset": "canyon",
+   "sha256": "eb4fb05b00f8f00de676573c42896b3ceabc3b4e2ee4187697e923abca2264ea"
+  },
+  "wsky.mesas__near": {
+   "glb": "kits/library/frontier_town_night/presets/wsky.mesas__near.glb",
+   "kit_id": "wsky.mesas",
+   "preset": "near",
+   "sha256": "e96a15c4a5a1679a31f8f7f45b3209e7bb9209eeceb743ef65b64ac07fdf3cb5"
+  },
+  "wsky.mesas__town": {
+   "glb": "kits/library/frontier_town_night/presets/wsky.mesas__town.glb",
+   "kit_id": "wsky.mesas",
+   "preset": "town",
+   "sha256": "a76e9d99c22d8703988f88fbd6fa7d392a3be46c7e38d6a71ecbd9ef90180569"
+  },
+  "wsky.sun": {
+   "glb": "kits/library/frontier_town_night/assets/wsky.sun.glb",
+   "kit_id": "wsky.sun",
+   "preset": null,
+   "sha256": "9517fee6e65b27ffc77f4ad1043e9942bce2125719804d2788490f025574d53d"
+  },
+  "wtown.balcony": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.balcony.glb",
+   "kit_id": "wtown.balcony",
+   "preset": null,
+   "sha256": "25529124749ffe6473f77f34ed5d72f3fc20483fc2026b8a61a4b11ad4968596"
+  },
+  "wtown.balcony__wide": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.balcony__wide.glb",
+   "kit_id": "wtown.balcony",
+   "preset": "wide",
+   "sha256": "59ab858975cbc3ff3b567a3e2e829aa576bc93dd10e28a79837a59e9aaa37b58"
+  },
+  "wtown.bank": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.bank.glb",
+   "kit_id": "wtown.bank",
+   "preset": null,
+   "sha256": "42eee5f7eca77fc9c19993be2aefd17dffedb2e30e018c88dc85374ee9e71a7c"
+  },
+  "wtown.bank__entry": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.bank__entry.glb",
+   "kit_id": "wtown.bank",
+   "preset": "entry",
+   "sha256": "83ad5ee93b53d2278345f2cd9a7e9ede81bb721b5f7fc88d67a53c9a1a83077b"
+  },
+  "wtown.bank__wide": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.bank__wide.glb",
+   "kit_id": "wtown.bank",
+   "preset": "wide",
+   "sha256": "97543c7da640215db6976ec5825889278fd9410b306ad7e6bb4f90fd9503c5d3"
+  },
+  "wtown.boardwalk": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.boardwalk.glb",
+   "kit_id": "wtown.boardwalk",
+   "preset": null,
+   "sha256": "6ed9c40699d3a344898707e1f904f45eb40c2ed3dfd61d06dc7b1dfdb4832cfa"
+  },
+  "wtown.boardwalk__end_e": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.boardwalk__end_e.glb",
+   "kit_id": "wtown.boardwalk",
+   "preset": "end_e",
+   "sha256": "75533cb072b92a5093d1117e397a5dce1b2d040944f48630f85f6307081ea3b9"
+  },
+  "wtown.boardwalk__end_w": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.boardwalk__end_w.glb",
+   "kit_id": "wtown.boardwalk",
+   "preset": "end_w",
+   "sha256": "3cf897efca8b08781314285c400f2217a1cb2b35db6b14249c63dd2f5c0af4d6"
+  },
+  "wtown.boardwalk__ends": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.boardwalk__ends.glb",
+   "kit_id": "wtown.boardwalk",
+   "preset": "ends",
+   "sha256": "18b9ddb91ec29bc839251f9694a22e6a808bbfe8ac138a12c7deaecced516596"
+  },
+  "wtown.boardwalk__steps": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.boardwalk__steps.glb",
+   "kit_id": "wtown.boardwalk",
+   "preset": "steps",
+   "sha256": "b98683b144ea20f1e018883f60f62181b7b1e10dc3877322df9ba0132c798eb7"
+  },
+  "wtown.church": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.church.glb",
+   "kit_id": "wtown.church",
+   "preset": null,
+   "sha256": "e238895af8c0c44cc7d70904e30d3b0d0b33769f6c05b54346559a85b4ca0598"
+  },
+  "wtown.church__wide": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.church__wide.glb",
+   "kit_id": "wtown.church",
+   "preset": "wide",
+   "sha256": "ede4a62688b31a875be99667007c8f42b54d5fff4236afbd1a922491843e540f"
+  },
+  "wtown.doorway": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.doorway.glb",
+   "kit_id": "wtown.doorway",
+   "preset": null,
+   "sha256": "b98894605f03668cc4a1b3c6174e8635ced065518978c7127eb786cc179ad71b"
+  },
+  "wtown.doorway__gate": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.doorway__gate.glb",
+   "kit_id": "wtown.doorway",
+   "preset": "gate",
+   "sha256": "2b79321a3d5b640c8da39d35c1d351856c6ffc1caf8d68e25221316aafb0a804"
+  },
+  "wtown.facade": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.facade.glb",
+   "kit_id": "wtown.facade",
+   "preset": null,
+   "sha256": "f2a57f98a1a8a01e709ceee9c3aa198f6b80a79d637ffa48f53e6fe904b70dfc"
+  },
+  "wtown.facade__a_square": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.facade__a_square.glb",
+   "kit_id": "wtown.facade",
+   "preset": "a_square",
+   "sha256": "f2a57f98a1a8a01e709ceee9c3aa198f6b80a79d637ffa48f53e6fe904b70dfc"
+  },
+  "wtown.facade__b_stepped": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.facade__b_stepped.glb",
+   "kit_id": "wtown.facade",
+   "preset": "b_stepped",
+   "sha256": "367ed6b1badae863218291999ff0dec62f0e49c44ba706aa6ec889ec00ab4763"
+  },
+  "wtown.facade__c_arched": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.facade__c_arched.glb",
+   "kit_id": "wtown.facade",
+   "preset": "c_arched",
+   "sha256": "68de3a583486ed8705a02e490751acd3ee9e7b25f897bb9a8af9663d5417ce64"
+  },
+  "wtown.facade__d_gabled": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.facade__d_gabled.glb",
+   "kit_id": "wtown.facade",
+   "preset": "d_gabled",
+   "sha256": "88af504688eaaa323a92ead2342c3f6c8a89b25e09ca8bdc80dbc2c06d3b7225"
+  },
+  "wtown.facade__e_pediment": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.facade__e_pediment.glb",
+   "kit_id": "wtown.facade",
+   "preset": "e_pediment",
+   "sha256": "31ab98d814d0b69f165e009c752d3e86da541b2e8366a08b82cc7714c1e74e2c"
+  },
+  "wtown.facade__entry": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.facade__entry.glb",
+   "kit_id": "wtown.facade",
+   "preset": "entry",
+   "sha256": "abe0ea3e902212e6204ae622aa3bb76560ac23783dd9e7714a83becfe74b0b28"
+  },
+  "wtown.facade__f_tall": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.facade__f_tall.glb",
+   "kit_id": "wtown.facade",
+   "preset": "f_tall",
+   "sha256": "bf19dcc505b6876ce723eba3716ec6bbed02f77e9fb4af11ade5d882b2491fca"
+  },
+  "wtown.facade__g_brick": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.facade__g_brick.glb",
+   "kit_id": "wtown.facade",
+   "preset": "g_brick",
+   "sha256": "466c4756a8206b76af36d4dde5712b22c4e113dd92b585975f2e5333e5d83aef"
+  },
+  "wtown.fence": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.fence.glb",
+   "kit_id": "wtown.fence",
+   "preset": null,
+   "sha256": "6ada485649e2f56bbc21f3b06bd3db8b18e7c123d6465dd5ef25af202ae7322b"
+  },
+  "wtown.fence__broken": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.fence__broken.glb",
+   "kit_id": "wtown.fence",
+   "preset": "broken",
+   "sha256": "dd9840e8340698726b5d8e6902f83fce2b18b690670541c33b7f3c0f906f84fd"
+  },
+  "wtown.fence__gateway": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.fence__gateway.glb",
+   "kit_id": "wtown.fence",
+   "preset": "gateway",
+   "sha256": "31aae76a7f5491ba6508a137363bb7187aeec141970a934fec6c28e49e7abe25"
+  },
+  "wtown.fence__picket": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.fence__picket.glb",
+   "kit_id": "wtown.fence",
+   "preset": "picket",
+   "sha256": "28dd830e0023a8e1de36a70dd64e296ad00aa3810c86b574fbc342baebd26197"
+  },
+  "wtown.gallery": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.gallery.glb",
+   "kit_id": "wtown.gallery",
+   "preset": null,
+   "sha256": "526dd22ca2fcc775e92c94f9810ddf75840b00d1ffd67a966586bf076f9677c3"
+  },
+  "wtown.gallery__long": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.gallery__long.glb",
+   "kit_id": "wtown.gallery",
+   "preset": "long",
+   "sha256": "ab83166a1e9a350cf04a88d7aab3d1ae66b40ddf577872cee8a96d082a8ea614"
+  },
+  "wtown.gallery__west_stair": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.gallery__west_stair.glb",
+   "kit_id": "wtown.gallery",
+   "preset": "west_stair",
+   "sha256": "3687c8223709ded594b96b0bdc76f3f7f261d904a31241c37458764a84ca3a14"
+  },
+  "wtown.hitching_post": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.hitching_post.glb",
+   "kit_id": "wtown.hitching_post",
+   "preset": null,
+   "sha256": "fe0cec13334a639e4034ce093ae7871e2b55e06124df0bcef0e46d76842744d9"
+  },
+  "wtown.hitching_post__double": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.hitching_post__double.glb",
+   "kit_id": "wtown.hitching_post",
+   "preset": "double",
+   "sha256": "bd0dfd97a0b65142fd6e97c2e7b1bacc9cecd0320f418f5a48047d48710eeaae"
+  },
+  "wtown.hotel": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.hotel.glb",
+   "kit_id": "wtown.hotel",
+   "preset": null,
+   "sha256": "12ff2b16ae8afa9668e1a394380cdcc3927647a1c74a361e1d208b8018651563"
+  },
+  "wtown.hotel__entry": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.hotel__entry.glb",
+   "kit_id": "wtown.hotel",
+   "preset": "entry",
+   "sha256": "fd5aca8214095938dc2219afe6e8529317be76c6e5656f4a7ce688d99754fda0"
+  },
+  "wtown.hotel__grand": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.hotel__grand.glb",
+   "kit_id": "wtown.hotel",
+   "preset": "grand",
+   "sha256": "6ae6c75d9e5cfed72c58292d5121d36e86cd541bc688553020a69ea9ebd26eab"
+  },
+  "wtown.porch": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.porch.glb",
+   "kit_id": "wtown.porch",
+   "preset": null,
+   "sha256": "11d3d9e804d4a44da7a3d845d10e99e3a8bc9e6b7f4542fe50dea9ef42d5342d"
+  },
+  "wtown.porch__canvas": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.porch__canvas.glb",
+   "kit_id": "wtown.porch",
+   "preset": "canvas",
+   "sha256": "514b41624b97a492eeb1f1f4c85e774250fe3e37f7cc57ebec2cb7fee4789d92"
+  },
+  "wtown.porch__tin": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.porch__tin.glb",
+   "kit_id": "wtown.porch",
+   "preset": "tin",
+   "sha256": "03224efd3fae7db2ee249c7be9631fcc8041c410b16bab6deb784aaa9b367a1f"
+  },
+  "wtown.porch__wide": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.porch__wide.glb",
+   "kit_id": "wtown.porch",
+   "preset": "wide",
+   "sha256": "96f10f0babfeee25f3a0f83a9382910d9e4d5e1a090ac81c39639e282dfb3ddc"
+  },
+  "wtown.room": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.room.glb",
+   "kit_id": "wtown.room",
+   "preset": null,
+   "sha256": "a6444d6c27c336239f1875ace5285cd636b26ed559223eff48da1d8bd741d232"
+  },
+  "wtown.room__office": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.room__office.glb",
+   "kit_id": "wtown.room",
+   "preset": "office",
+   "sha256": "256ec8988ecf3950e21aa546bb43e8ad83594bf3bd076ee09eea6ad23a19f54a"
+  },
+  "wtown.room__saloon": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.room__saloon.glb",
+   "kit_id": "wtown.room",
+   "preset": "saloon",
+   "sha256": "438fd0e257801f9857f414fe87fdae11af9e325ac28e66fed49ba24a4a7ef613"
+  },
+  "wtown.room__store": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.room__store.glb",
+   "kit_id": "wtown.room",
+   "preset": "store",
+   "sha256": "20a35cc48e8d69280e4e7a8c58321eb84fb561461d24ec88086d7de4c0ad3d69"
+  },
+  "wtown.saloon": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.saloon.glb",
+   "kit_id": "wtown.saloon",
+   "preset": null,
+   "sha256": "33a796b2f287354eba34a442c28c93d2a94da599f39e583b46758f5113aa4b8c"
+  },
+  "wtown.saloon__arched": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.saloon__arched.glb",
+   "kit_id": "wtown.saloon",
+   "preset": "arched",
+   "sha256": "5ef684e99d33ff89f79d8243d46ec580eef0aea6e57b29272c9aed9995bdd633"
+  },
+  "wtown.saloon__entry": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.saloon__entry.glb",
+   "kit_id": "wtown.saloon",
+   "preset": "entry",
+   "sha256": "bdb6a5489cb50abf4c56cf28d1bc2022df44bb9833a0bdbff06364cdc0334011"
+  },
+  "wtown.saloon__plain": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.saloon__plain.glb",
+   "kit_id": "wtown.saloon",
+   "preset": "plain",
+   "sha256": "2914a44cd72bc398c57402d02c43314fcff2cdbb407ad456d98861eda03d73ad"
+  },
+  "wtown.shack": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.shack.glb",
+   "kit_id": "wtown.shack",
+   "preset": null,
+   "sha256": "0911e72fd4d9758280ffa93956e284df10e54e04f39073e2a0743c88ae33f5d2"
+  },
+  "wtown.shack__shingle": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.shack__shingle.glb",
+   "kit_id": "wtown.shack",
+   "preset": "shingle",
+   "sha256": "9add783dc0356a22252d2527585bcb02e09e535b327a3b8b4314b2a76fc871d7"
+  },
+  "wtown.sheriff": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.sheriff.glb",
+   "kit_id": "wtown.sheriff",
+   "preset": null,
+   "sha256": "45695f72eabf0e4262e6f6f7e28923250d3bec7380d65f3aa958625387f459d2"
+  },
+  "wtown.sheriff__entry": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.sheriff__entry.glb",
+   "kit_id": "wtown.sheriff",
+   "preset": "entry",
+   "sha256": "9f04f53427f15dae0bf8a3644acc27166b45ca313011a075905dc60687e087cf"
+  },
+  "wtown.sheriff__office": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.sheriff__office.glb",
+   "kit_id": "wtown.sheriff",
+   "preset": "office",
+   "sha256": "c1fe0e2405752a0b4d11f89fd62dce744bbd5651add89628c08b09984d0dd443"
+  },
+  "wtown.stable": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.stable.glb",
+   "kit_id": "wtown.stable",
+   "preset": null,
+   "sha256": "faf110caf05c51b2f8a6f56690171e108c860746b52ae6ec83b0cf20caddaaad"
+  },
+  "wtown.stable__barn": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.stable__barn.glb",
+   "kit_id": "wtown.stable",
+   "preset": "barn",
+   "sha256": "20b5d6fccd2226526d27caac507bc768a5a0bab0e3e3569fb58c2431553f923a"
+  },
+  "wtown.stable__wide": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.stable__wide.glb",
+   "kit_id": "wtown.stable",
+   "preset": "wide",
+   "sha256": "7cacd8dfc6cb5d7f577d209e6c961f8c2ce220d84e7650706634f3f0f145ab8c"
+  },
+  "wtown.stairs": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.stairs.glb",
+   "kit_id": "wtown.stairs",
+   "preset": null,
+   "sha256": "e7f194f69d262cce8f56cad3d2f4e5f048123b918384e6dd6523156d80616e87"
+  },
+  "wtown.stairs__gallery": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.stairs__gallery.glb",
+   "kit_id": "wtown.stairs",
+   "preset": "gallery",
+   "sha256": "277818a30b6b0215f75243e7d3cb9ef311b91d5b9e152fccbcd31d4bf1423d01"
+  },
+  "wtown.stairs__short": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.stairs__short.glb",
+   "kit_id": "wtown.stairs",
+   "preset": "short",
+   "sha256": "02b74393410bdd27cbceb1407f0178487afd665821f679d2a18482ce88c9edeb"
+  },
+  "wtown.store": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.store.glb",
+   "kit_id": "wtown.store",
+   "preset": null,
+   "sha256": "b5bd32400e5b23e9dc47ff68eeb314f464932266e52da52077a99e42677f34c4"
+  },
+  "wtown.store__battens": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.store__battens.glb",
+   "kit_id": "wtown.store",
+   "preset": "battens",
+   "sha256": "b5c68b63805f6d4a3b1f3a2fed819591fcab52f2023ad9b24053e64ffa7c4472"
+  },
+  "wtown.store__brick": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.store__brick.glb",
+   "kit_id": "wtown.store",
+   "preset": "brick",
+   "sha256": "16e6ee8e4e1bd0638fea53a76a47da14011207fcf00950c1aee66de671bf8c51"
+  },
+  "wtown.store__entry": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.store__entry.glb",
+   "kit_id": "wtown.store",
+   "preset": "entry",
+   "sha256": "94edce5bd2f848d637b682180d5740472393e2b73c2f952d6c572e07e34b91bc"
+  },
+  "wtown.store__narrow": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.store__narrow.glb",
+   "kit_id": "wtown.store",
+   "preset": "narrow",
+   "sha256": "0e90b598c5bff34135adb3b495c8e96a3c52fee6ce671a511e2aa133b58b395d"
+  },
+  "wtown.water_tower": {
+   "glb": "kits/library/frontier_town_night/assets/wtown.water_tower.glb",
+   "kit_id": "wtown.water_tower",
+   "preset": null,
+   "sha256": "0babde01973eac08aaf770aea5594ba2a1f84273d8589afa29f12e121e30a753"
+  },
+  "wtown.water_tower__tall": {
+   "glb": "kits/library/frontier_town_night/presets/wtown.water_tower__tall.glb",
+   "kit_id": "wtown.water_tower",
+   "preset": "tall",
+   "sha256": "4ee1a78063d91e7459d62fcc2690ecfd375716bbcaad932c3a6f526f12b25ad2"
+  }
+ },
+ "format": 1,
+ "kit_pack": "frontier_town_night",
+ "note": "WESTERNKIT bindings: kit defaults (<kit_id>), pack presets (<kit_id>__<preset>), aliases the runtime places by name (arch.door -> wtown.doorway timber frame). Every row hash-pinned; regenerate with tools/westernkit_library.py bindings.",
+ "pack": "frontier_town_night"
+}

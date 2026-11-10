@@ -1,0 +1,50 @@
+# STORY 1.2.0 gameplay contract (phase 1)
+
+**Status: data/model implementation, not a playable runtime.** API, state and analysis versions are `1.0.0`; STORY source/compiled version is `1.2.0`; checkpoint save version is `2.0.0`. These are deliberately separate version axes. The old `1.0.0` and `1.1.0` paths remain explicit and do not gain module fields. This document supersedes the exploratory schema sketches only for this implemented slice.
+
+## Authoritative definitions
+
+`story/modules/schema.py`, `registry.py` and `validation.py` define admission. Regenerate the closed machine-readable schemas with `python3 -B -m adventure_modules.export_contracts`. Exports live in `contracts/gameplay/1.0.0/`: manifest, abilities, challenge, combat, course, regions, state, events, operations, tools. The Python validator implements the exact schema subset emitted here, not arbitrary JSON Schema supplied by a game. Schemas describe shape; cross-reference, ownership, dependency and graph checks remain required.
+
+A 1.2 source adds `gameplay` and `start.modules`. `gameplay` requires `api_version`, integer `seed`, `verification_policy` (`logical_only` or explicit `conditional`), and a module array. Each selected module requires `{id, version, config, entities}`. No executable adapters, module directories, file paths, expressions, callbacks, dynamic registries, metadata rules or arbitrary event wiring are admitted. IDs match `[a-z][a-z0-9_]{0,63}`. Every module object is closed. Arrays, strings and numeric values are bounded; duplicate IDs, unknown fields/versions, NaN, infinities and reference/path-like IDs reject. Disk JSON additionally rejects duplicate keys. Human-readable names are inert text, not instructions or code.
+
+The static dependency DAG is `abilities <- challenge <- {combat, course, regions}`. Abilities and challenge are required in every 1.2 source; individual mechanic families are optional. Registered templates are trusted toolkit code/contracts, never implementations loaded from the authored manifest. The seed is reserved data for deterministic future executors; this lane performs no random damage, drops or runtime simulation.
+
+## Families and bounds
+
+| Family | Required data and deliberately narrow rules |
+|---|---|
+| Abilities | Up to 32 monotonic finite ability IDs with names and acyclic `requires` lists; player `max_health` 1–64. Conditions use `{ability: id}`; effects use `{unlock: id}`. Unlocks require prerequisites already present. Keys use existing finite inventory IDs. No skill trees with exclusive choice, experience, currencies or ammunition economy. |
+| Challenge | Up to 16 challenges and 64 safe checkpoints. A challenge names kind, one subject encounter/track, room, checkpoint, conditions, guaranteed reward items/abilities and `retry: checkpoint`. One active or failed challenge; no entry fee; failure leaves permanent progress unchanged. Each encounter/course has exactly one owner. |
+| Combat | Up to 16 archetypes, 16 encounters, 24 spawns per encounter, 8 contiguous waves, 1–3 simultaneous spawns per wave. Arena is an ordered min/max box inside its room. Spawns reference archetypes and remain inside the box. Win = all declared spawns defeated; loss = zero player health; simultaneous double KO = failure. Rewards are hosted by the challenge, not the enemy or scene. |
+| Enemy | Original named data with HP 1–64, speed 0.1–20 m/s, ordered attack ≤ aggro ≤ leash ranges, attack windup/active/recovery ticks and damage. Closed FSM templates `melee_approach_v1`, `melee_dash_v1`; exactly idle, approach, telegraph, attack, recover, hurt, dead states; initial idle. Arbitrary transition scripts are not supported. Template runtime behavior is specified in INTEGRATION, not executed here. |
+| Regions | Up to 32 regions and 64 links; exactly one region owner per room when enabled. Every reciprocal room door belongs to exactly one link. Endpoint gates remain the authoritative existing door conditions, so two competing gate sources cannot diverge. Each region has a same-room safe checkpoint and 1–16 landmarks. Load policy is one region; fast travel false. This is a connected gated graph, **not seamless open-world streaming**. |
+| Course | Up to 16 ordered timed on-foot courses, 1–32 checkpoint spheres, one lap, 60 Hz, speed ceiling 0.1–12 m/s, countdown 0–600 ticks, par/deadline 1–216000 ticks, par ≤ deadline. Positions are room-local metres. Pause freezes the clock. Par is a target; the deadline determines completion. This is timed traversal, **not vehicle racing**. |
+
+Positions are three finite bounded numbers; x/z must fit the declared room, y is 0–32. This proves only data bounds, not a walkable surface, collider fit, reachability of an anchor, or safe physical spawn. Retry checkpoints may be in another room; the checker must show a return route. Challenge reward items have exclusive once-only ownership: no other give/take producer, no initial ownership, no random or repeatable farming. Reward abilities may not themselves have prerequisites; put those conditions on entry.
+
+## Finite state and lifecycle
+
+Module state is `{abilities, completed, active, failed, checkpoint, discovered}`. ID lists are sorted, unique and catalogue-checked. Initial state has no active, failed or completed challenge, the checkpoint matches the initial room, and discovery matches the starting region. There is no physical HP, attack timer, velocity, live enemy, partial course index or RNG state in a checkpoint.
+
+`challenge:start:<id>` requires entry conditions, the challenge room, no dialogue cursor and no other active/failed challenge. While active, ordinary movement/interactions/dialogue/checkpoint commands are suppressed. The ordinary Python `Engine` dispatches 1.2 to `ModuleEngine` but never offers success/failure assumption actions. Its only active-attempt command is abort. An abort or modeled failure returns to the declared checkpoint and records `failed`; `challenge:retry:<id>` clears that failed attempt. It does not bypass the journey back to challenge entry. Modeled success grants the declared tokens/abilities once and records completion. Completed challenges cannot restart or reward twice. Endings cannot resolve during an active or failed attempt.
+
+Only explicit `AnalysisEngine` offers `assume:complete:<id>` and `assume:fail:<id>`. These are hypothetical transitions, **not player controls or authenticated observations**. `ModuleEngine.outcome` is a macro reducer for analysis, not a runtime success endpoint. Future runtime observation rules are in `events.json` and INTEGRATION.
+
+## Compiled output and invalidation
+
+`game.json` includes canonical module data, `module_contract` and room-local module dependency closures under each room's `content.modules`. `module_contract` pins schema, API/state/analysis versions and the SHA-256 digest of trusted story/module Python source. It explicitly says runtime `not_implemented`, physical/human evidence `not_run`. Source/build hashes bind the entire game; room hashes bind only actual local and transitive dependencies. Shared archetypes invalidate every consuming room; linked gate/arrival-checkpoint changes invalidate both endpoint rooms; unrelated doors do not invalidate every neighbour. Ability definitions/prerequisites used by local interactions, dialogue, collectibles, gates and rewards are included. Ordered course checkpoints are never sorted by ID.
+
+Compiled metadata is recomputed on validation, not trusted from a caller. Implementation changes invalidate 1.2 build/save pins; this lane does not offer automatic cross-toolkit replay. Old games without modules do not receive these fields or hashes.
+
+## Checkpoint save v2 and migrations
+
+A v2 envelope requires `save_version`, `contract_version`, `spec_hash`, `game_hash`, `module_contract_hash`, and full state; optional timestamps are inert legacy-compatible metadata. Saving requires a ready state in its committed checkpoint room and exact finite-model membership. Saving during a fight, course, or unreset failure rejects. There is no mid-fight resume or physical-position certification.
+
+A migration validates old source/build/save provenance, stable game identity and new model membership. A 1.1.0 save needs an explicit `initialize_modules` manifest from `migration_manifest(old, new)`; initial module abilities are introduced, no challenges are credited, and a safe checkpoint in the saved room is required. Unknown versions, downgrade to legacy, ID remapping, lost dependencies or an unsafe/unreachable target reject. New 1.2 initial abilities are initialized only for genuinely new stable IDs; existing ability state is preserved. Same-build saves return `as_is`; successful migration is `migrated`, otherwise `rejected` with no replacement save. Module membership is conditional and does not authenticate a physical play history.
+
+## Typed edits and artifacts
+
+Operations are `add-enemy`, `modify-enemy`, `change-arena`, `gate-region`, `change-course-checkpoints`, `add-ability`. `operations.json` is the exact closed union. Every transaction requires expected source and build hashes. Edits operate on a deep copy, compile/check it, preserve cast/game identity, report structural differences and canonical byte-identical unchanged rooms, and migrate a supplied checkpoint. Optional `expected_changed_rooms` is externally declared; benchmark edits require it and a save, rather than grading their own changed set. No generic JSON Patch, deletion, policy mutation or script operation is exposed in phase 1.
+
+The CLI `python3 -m story module-edit` accepts a source and operation JSON plus expected hashes and a **new** `--out-dir`; output is a candidate only. Hermes facade transactions use an isolated `.maker/modules/current.json` **data** pointer. They never advance `.maker/current.json`, `.maker/verified.json`, runtime builds or physical evidence. Failed validation/check/locality/migration/IO leaves the previous data pointer unchanged. See INTEGRATION for wiring and PROOF for evidence limitations.

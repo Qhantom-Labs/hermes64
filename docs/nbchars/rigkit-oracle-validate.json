@@ -1,0 +1,3643 @@
+{
+ "files": [
+  {
+   "budget": {
+    "body_tris": 684,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_duffel": 64
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 16.6,
+     "foot_r": 17.19,
+     "forearm_l": 95.37,
+     "forearm_r": 105.34,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 168.87,
+     "upper_arm_r": 168.72
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 12,
+    "max_at": "wrist_l talk@11",
+    "max_gap_m": 0.001986,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.4004,
+    "edge_ratio_min": 0.5531,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "c9acb9be1f5741c4e4323d7e9ad843fa5690e0bb4deb2ec215d2fe02cd67af03",
+   "file": "polar_pod/new_arrival.glb",
+   "id": "new_arrival",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 9.313225746154785e-10,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.5998122692108154,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 3.6,
+   "sha256": "c9acb9be1f5741c4e4323d7e9ad843fa5690e0bb4deb2ec215d2fe02cd67af03",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 684,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_mug": 84
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 16.6,
+     "foot_r": 17.19,
+     "forearm_l": 95.82,
+     "forearm_r": 105.2,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 169.86,
+     "upper_arm_r": 169.61
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 12,
+    "max_at": "wrist_l talk@9",
+    "max_gap_m": 0.001761,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.4118,
+    "edge_ratio_min": 0.5531,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "be7accc1c123372c7c8bda1659b711846464423863a4cd9b52cb7816d92737c2",
+   "file": "polar_pod/tavi.glb",
+   "id": "tavi",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 4.656612873077393e-10,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.5006386041641235,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 3.5,
+   "sha256": "be7accc1c123372c7c8bda1659b711846464423863a4cd9b52cb7816d92737c2",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 684,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_lantern": 152
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 16.6,
+     "foot_r": 17.19,
+     "forearm_l": 96.77,
+     "forearm_r": 104.99,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 172.07,
+     "upper_arm_r": 171.63
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 12,
+    "max_at": "wrist_l talk@11",
+    "max_gap_m": 0.001683,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.4004,
+    "edge_ratio_min": 0.5531,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "a8d0bd219d226f5495dc0524c591d7d55c62e250264064985d7a1929c96999f0",
+   "file": "polar_pod/neri.glb",
+   "id": "neri",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.7390824556350708,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 4.1,
+   "sha256": "a8d0bd219d226f5495dc0524c591d7d55c62e250264064985d7a1929c96999f0",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 684,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_belt_satchel": 48
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 93.45,
+     "forearm_r": 106.44,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 164.81,
+     "upper_arm_r": 168.01
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 12,
+    "max_at": "shoulder_r death@10",
+    "max_gap_m": 0.002832,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.4447,
+    "edge_ratio_min": 0.5531,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "49b8d95034e44b5da95d94068e87c46b094068cce0779cfab1dffc8007bf0793",
+   "file": "polar_pod/sol.glb",
+   "id": "sol",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 9.313225746154785e-10,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.5606377124786377,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 3.4,
+   "sha256": "49b8d95034e44b5da95d94068e87c46b094068cce0779cfab1dffc8007bf0793",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 684,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_cane": 58
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 94.94,
+     "forearm_r": 105.51,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 167.95,
+     "upper_arm_r": 174.21
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 12,
+    "max_at": "wrist_l talk@10",
+    "max_gap_m": 0.002365,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.4004,
+    "edge_ratio_min": 0.5531,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "ced5ee5b449a30a021bbb8bd6b482068e322dd2c2e1c6c95658728f72137250e",
+   "file": "polar_pod/ivo.glb",
+   "id": "ivo",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.8030378818511963,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 3.4,
+   "sha256": "ced5ee5b449a30a021bbb8bd6b482068e322dd2c2e1c6c95658728f72137250e",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 684,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_book": 24
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 93.93,
+     "forearm_r": 106.07,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 165.82,
+     "upper_arm_r": 156.03
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 12,
+    "max_at": "wrist_l talk@12",
+    "max_gap_m": 0.002192,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.4781,
+    "edge_ratio_min": 0.5531,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "5a0130cf5f3405ea1f85dd51da53636590e55819b5c2c78348bb42c99e1c01fa",
+   "file": "polar_pod/luma.glb",
+   "id": "luma",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 9.313225746154785e-10,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.5544281005859375,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 3.4,
+   "sha256": "5a0130cf5f3405ea1f85dd51da53636590e55819b5c2c78348bb42c99e1c01fa",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 684,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_datapad": 40
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 16.6,
+     "foot_r": 17.19,
+     "forearm_l": 96.29,
+     "forearm_r": 105.08,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 170.92,
+     "upper_arm_r": 170.58
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 12,
+    "max_at": "wrist_l talk@10",
+    "max_gap_m": 0.00178,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.4118,
+    "edge_ratio_min": 0.5531,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "f6541597f4aaad6c04ace12a8af26915607ac57a843b6b536860dbe83d225788",
+   "file": "polar_pod/study_07.glb",
+   "id": "study_07",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.678678274154663,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 3.7,
+   "sha256": "f6541597f4aaad6c04ace12a8af26915607ac57a843b6b536860dbe83d225788",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 684,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_l_thermos": 64
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 94.53,
+     "forearm_r": 105.71,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 167.09,
+     "upper_arm_r": 174.94
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 12,
+    "max_at": "wrist_l talk@4",
+    "max_gap_m": 0.00189,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.4004,
+    "edge_ratio_min": 0.5531,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "acad0174da185fd52333c60fce479ef71a6b5ba3112a43dc2a18e757bbc9e885",
+   "file": "polar_pod/study_08.glb",
+   "id": "study_08",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 9.313225746154785e-10,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.433554768562317,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 3.6,
+   "sha256": "acad0174da185fd52333c60fce479ef71a6b5ba3112a43dc2a18e757bbc9e885",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 696,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_l_thermos": 64
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 94.55,
+     "forearm_r": 106.89,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 127.64,
+     "upper_arm_r": 130.39
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 14,
+    "max_at": "wrist_l talk@9",
+    "max_gap_m": 0.001591,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.6361,
+    "edge_ratio_min": 0.46,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "0b63c5b59aee760fe324a68e6917f50193e45f86cf24b69869872e262a3318c2",
+   "file": "polar_pod/pp_engineer.glb",
+   "id": "pp_engineer",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.7814334630966187,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 4.9,
+   "sha256": "0b63c5b59aee760fe324a68e6917f50193e45f86cf24b69869872e262a3318c2",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 3,
+    "ok": true,
+    "weights_sum_dev": 7.450580596923828e-09
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 696,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_mug": 84
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 95.99,
+     "forearm_r": 106.37,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 126.98,
+     "upper_arm_r": 127.15
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 14,
+    "max_at": "wrist_l talk@13",
+    "max_gap_m": 0.00071,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.6125,
+    "edge_ratio_min": 0.4603,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "463883637f909c160a01276b405ec1445154dd55e3d65ce99d0d0de18e2127b6",
+   "file": "polar_pod/pp_medic.glb",
+   "id": "pp_medic",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.6507487297058105,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 6.6,
+   "sha256": "463883637f909c160a01276b405ec1445154dd55e3d65ce99d0d0de18e2127b6",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 3,
+    "ok": true,
+    "weights_sum_dev": 7.450580596923828e-09
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 696,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 97.46,
+     "forearm_r": 106.07,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 92.13,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 129.57,
+     "upper_arm_r": 126.86
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 14,
+    "max_at": "neck swing@6",
+    "max_gap_m": 0.001578,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.5825,
+    "edge_ratio_min": 0.4606,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "8a2d20207b167e30487165073c98f962c3ad21b0a5057d7a737d4c12d9bbd3ba",
+   "file": "polar_pod/pp_kid.glb",
+   "id": "pp_kid",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.184970736503601,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 7.1,
+   "sha256": "8a2d20207b167e30487165073c98f962c3ad21b0a5057d7a737d4c12d9bbd3ba",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 3,
+    "ok": true,
+    "weights_sum_dev": 7.450580596923828e-09
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 696,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 96.61,
+     "forearm_r": 111.56,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 127.99,
+     "upper_arm_r": 126.76
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 14,
+    "max_at": "wrist_l talk@11",
+    "max_gap_m": 0.001348,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.6211,
+    "edge_ratio_min": 0.4601,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "46a91617ab97312b798260b0ebe0211820dfba9467c1bbfec3ab58e94d7325f5",
+   "file": "polar_pod/pp_elder.glb",
+   "id": "pp_elder",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 9.313225746154785e-10,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.682892918586731,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 4.3,
+   "sha256": "46a91617ab97312b798260b0ebe0211820dfba9467c1bbfec3ab58e94d7325f5",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 3,
+    "ok": true,
+    "weights_sum_dev": 7.450580596923828e-09
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 696,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_belt_satchel": 48
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 96.82,
+     "forearm_r": 107.65,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.99,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 128.32,
+     "upper_arm_r": 126.45
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 14,
+    "max_at": "wrist_r swing@12",
+    "max_gap_m": 0.00087,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.5567,
+    "edge_ratio_min": 0.4601,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "568a9e41e0a5e1f14f0d1e8d8bedb28878afeae55d290e4c47a7ce7306818e6d",
+   "file": "forest_village/fv_warden.glb",
+   "id": "fv_warden",
+   "kind": "character",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 4.656612873077393e-10,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.5178135633468628,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 4.1,
+   "sha256": "568a9e41e0a5e1f14f0d1e8d8bedb28878afeae55d290e4c47a7ce7306818e6d",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 3,
+    "ok": true,
+    "weights_sum_dev": 7.450580596923828e-09
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 696,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 93.42,
+     "forearm_r": 107.62,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 129.89,
+     "upper_arm_r": 130.97
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 14,
+    "max_at": "wrist_l talk@8",
+    "max_gap_m": 0.001406,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.6184,
+    "edge_ratio_min": 0.46,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "7b52c0714c89c93d6a3ec2afeecbf68a89c64ed090a480475a6c128c27d5df82",
+   "file": "forest_village/fv_smith.glb",
+   "id": "fv_smith",
+   "kind": "character",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.7944453954696655,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 3.9,
+   "sha256": "7b52c0714c89c93d6a3ec2afeecbf68a89c64ed090a480475a6c128c27d5df82",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 3,
+    "ok": true,
+    "weights_sum_dev": 7.450580596923828e-09
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 696,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_cane": 58
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 97.05,
+     "forearm_r": 111.55,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 83.08,
+     "thigh_r": 83.08,
+     "upper_arm_l": 128.16,
+     "upper_arm_r": 126.82
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 14,
+    "max_at": "wrist_l talk@10",
+    "max_gap_m": 0.00071,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.5983,
+    "edge_ratio_min": 0.4601,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "043b48eb0994b7810909af9741639bb224d6927ea842f9523edc08efa7eb17ed",
+   "file": "forest_village/fv_elder.glb",
+   "id": "fv_elder",
+   "kind": "character",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.52043616771698,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 7.5,
+   "sha256": "043b48eb0994b7810909af9741639bb224d6927ea842f9523edc08efa7eb17ed",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 3,
+    "ok": true,
+    "weights_sum_dev": 7.450580596923828e-09
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 696,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_book": 24
+    }
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ],
+    "max_angle_deg": {
+     "foot_l": 17.19,
+     "foot_r": 17.19,
+     "forearm_l": 96.27,
+     "forearm_r": 106.31,
+     "hand_l": 12.33,
+     "hand_r": 9.0,
+     "head": 27.53,
+     "pelvis": 162.33,
+     "root": 0.0,
+     "shin_l": 85.94,
+     "shin_r": 85.94,
+     "spine": 39.31,
+     "thigh_l": 80.76,
+     "thigh_r": 80.76,
+     "upper_arm_l": 127.58,
+     "upper_arm_r": 127.27
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit",
+     "idle_combat",
+     "swing",
+     "hurt",
+     "death",
+     "roll",
+     "block"
+    ]
+   },
+   "connectivity": {
+    "joins": 14,
+    "max_at": "wrist_l talk@3",
+    "max_gap_m": 0.000775,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.5941,
+    "edge_ratio_min": 0.4601,
+    "keys_posed": 208,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "622fae8343cef09b876f0c9f08c962425afb3bac83f8b8cf262b05fe11175542",
+   "file": "forest_village/fv_scribe.glb",
+   "id": "fv_scribe",
+   "kind": "character",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 9.313225746154785e-10,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.6705378293991089,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 3.5,
+   "sha256": "622fae8343cef09b876f0c9f08c962425afb3bac83f8b8cf262b05fe11175542",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 3,
+    "ok": true,
+    "weights_sum_dev": 7.450580596923828e-09
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 690,
+    "budgets": {
+     "body_tris_lt": 700,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit"
+    ],
+    "max_angle_deg": {
+     "foot_l": 4.58,
+     "foot_r": 4.58,
+     "forearm_l": 67.49,
+     "forearm_r": 65.89,
+     "hand_l": 12.33,
+     "hand_r": 0.0,
+     "head": 13.31,
+     "pelvis": 5.57,
+     "root": 0.0,
+     "shin_l": 73.34,
+     "shin_r": 73.34,
+     "spine": 8.88,
+     "thigh_l": 77.35,
+     "thigh_r": 77.35,
+     "upper_arm_l": 32.26,
+     "upper_arm_r": 57.07
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "interact",
+     "talk",
+     "carry",
+     "sit"
+    ]
+   },
+   "connectivity": {
+    "joins": 55,
+    "max_at": "piece34->piece28 walk@9",
+    "max_gap_m": 0.002841,
+    "method": "generic",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.5438,
+    "edge_ratio_min": 0.7204,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "3df7030d6a4c4a9460def532a3779b43be1aedee39f242a2637d1f826e2c2f87",
+   "file": "cameo_visor/cameo_visor_01.glb",
+   "id": "cameo_visor_01",
+   "kind": "character",
+   "ok": true,
+   "pack": "cameo_visor",
+   "prop": null,
+   "rig": "human16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.8513129949569702,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.6,
+   "sha256": "3df7030d6a4c4a9460def532a3779b43be1aedee39f242a2637d1f826e2c2f87",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 3,
+    "ok": true,
+    "weights_sum_dev": 2.9802322387695312e-08
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6354,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "d0c6cdf0e56a6c6d7b969c8f9242b4fb09cf13490c953981cd2b271db9d8742c",
+   "file": "polar_pod/cat_tuxedo.glb",
+   "id": "cat_tuxedo",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.4964999854564667,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.4,
+   "sha256": "d0c6cdf0e56a6c6d7b969c8f9242b4fb09cf13490c953981cd2b271db9d8742c",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6354,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "ac359b3347e6a3fc44ad4aa2f84a7a9fdb27d41a2773b811cc8e4b20ec1c7e2c",
+   "file": "polar_pod/cat_tabby.glb",
+   "id": "cat_tabby",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.4964999854564667,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.4,
+   "sha256": "ac359b3347e6a3fc44ad4aa2f84a7a9fdb27d41a2773b811cc8e4b20ec1c7e2c",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6354,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "bb69f916a3d78c0868c6bf87abe05a94af702947ea726dcfa5fed88e4ccca9a1",
+   "file": "polar_pod/cat_calico.glb",
+   "id": "cat_calico",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.4964999854564667,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.4,
+   "sha256": "bb69f916a3d78c0868c6bf87abe05a94af702947ea726dcfa5fed88e4ccca9a1",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6354,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "3b21d757415026815ef894e83c52143177a3ff2563746d4f9a18287045724073",
+   "file": "polar_pod/cat_black.glb",
+   "id": "cat_black",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.4964999854564667,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.4,
+   "sha256": "3b21d757415026815ef894e83c52143177a3ff2563746d4f9a18287045724073",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6354,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "0cdc1d8d951c382c581a81536c09744c5fdd882649b15a3ad9c076ef2bfc2e75",
+   "file": "polar_pod/cat_white.glb",
+   "id": "cat_white",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.4964999854564667,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.4,
+   "sha256": "0cdc1d8d951c382c581a81536c09744c5fdd882649b15a3ad9c076ef2bfc2e75",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6251,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "01f5c6bec4f5a27ce0bf7fcc0d77afae75ba727af3a89cae04db03203719a1af",
+   "file": "polar_pod/dog_saddle.glb",
+   "id": "dog_saddle",
+   "kind": "character",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.524399995803833,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.6,
+   "sha256": "01f5c6bec4f5a27ce0bf7fcc0d77afae75ba727af3a89cae04db03203719a1af",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6354,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "364481bf316b01c99ec1f913803cc072d9c1e0f96f7bfdfd15a64e6f6e3cf13a",
+   "file": "forest_village/cat_tuxedo.glb",
+   "id": "cat_tuxedo",
+   "kind": "character",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.4964999854564667,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.4,
+   "sha256": "364481bf316b01c99ec1f913803cc072d9c1e0f96f7bfdfd15a64e6f6e3cf13a",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6354,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "b7e9df3469897b9001dee8cf12ab409403265af4024df676f4b26498f32fc44b",
+   "file": "forest_village/cat_tabby.glb",
+   "id": "cat_tabby",
+   "kind": "character",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.4964999854564667,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.4,
+   "sha256": "b7e9df3469897b9001dee8cf12ab409403265af4024df676f4b26498f32fc44b",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6354,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "ffa2ae985e56b017f81b69913dd0077bd98d512c4d402658476e28ec998c5ee0",
+   "file": "forest_village/cat_calico.glb",
+   "id": "cat_calico",
+   "kind": "character",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.4964999854564667,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.4,
+   "sha256": "ffa2ae985e56b017f81b69913dd0077bd98d512c4d402658476e28ec998c5ee0",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6354,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "6c1984bbef2104e68ff20c8deae7cdba792daf8bf1f3abc7ae3ec9b74dffbd7d",
+   "file": "forest_village/cat_black.glb",
+   "id": "cat_black",
+   "kind": "character",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.4964999854564667,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.4,
+   "sha256": "6c1984bbef2104e68ff20c8deae7cdba792daf8bf1f3abc7ae3ec9b74dffbd7d",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6354,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "ee9e62e9bebcb6ef5cb5a5ef4448c10b45bb0b87c2b42b26090ca76a0fd9170a",
+   "file": "forest_village/cat_white.glb",
+   "id": "cat_white",
+   "kind": "character",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.4964999854564667,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.4,
+   "sha256": "ee9e62e9bebcb6ef5cb5a5ef4448c10b45bb0b87c2b42b26090ca76a0fd9170a",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 300,
+    "budgets": {
+     "body_tris_le": 300,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ],
+    "max_angle_deg": {
+     "chest": 37.24,
+     "head": 29.88,
+     "hips": 34.38,
+     "leg_bl": 81.36,
+     "leg_br": 81.36,
+     "leg_fl": 81.36,
+     "leg_fr": 81.36,
+     "neck": 40.51,
+     "paw_bl": 81.36,
+     "paw_br": 81.36,
+     "paw_fl": 81.36,
+     "paw_fr": 81.36,
+     "root": 0.0,
+     "tail_1": 67.59,
+     "tail_2": 48.7,
+     "tail_3": 45.84
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "walk",
+     "run",
+     "sit",
+     "loaf",
+     "sleep_curled",
+     "stretch"
+    ]
+   },
+   "connectivity": {
+    "joins": 9,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3493,
+    "edge_ratio_min": 0.6251,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "399e657c67a03fc85b1adbbcd7920596fe1d54ecc2fc8233b6f85f02bae45f39",
+   "file": "forest_village/dog_saddle.glb",
+   "id": "dog_saddle",
+   "kind": "character",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "quad16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 0.524399995803833,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 0.6,
+   "sha256": "399e657c67a03fc85b1adbbcd7920596fe1d54ecc2fc8233b6f85f02bae45f39",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "touch",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 0.0
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 488,
+    "budgets": {
+     "body_tris_lt": 500,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "move",
+     "telegraph",
+     "attack",
+     "recover",
+     "hurt",
+     "death"
+    ],
+    "max_angle_deg": {
+     "cairn_low": 11.45,
+     "cairn_top": 19.69,
+     "chest": 17.19,
+     "head": 23.58,
+     "hips": 83.08,
+     "leg_bl": 35.52,
+     "leg_br": 32.56,
+     "leg_fl": 40.11,
+     "leg_fr": 40.11,
+     "neck": 24.06,
+     "paw_bl": 40.11,
+     "paw_br": 40.11,
+     "paw_fl": 74.48,
+     "paw_fr": 74.48,
+     "tail": 57.3
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "move",
+     "telegraph",
+     "attack",
+     "recover",
+     "hurt",
+     "death"
+    ]
+   },
+   "connectivity": {
+    "joins": 13,
+    "max_at": "mane_head death@10",
+    "max_gap_m": 0.000149,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3415,
+    "edge_ratio_min": 0.7675,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "cc9c37f13841d5e76a2601d1ca97ea5e33b3c30ddb319564d9b55dd00027c2e6",
+   "file": "enemies/polar_pod/cairn_dasher.glb",
+   "id": "cairn_dasher",
+   "kind": "enemy",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "dasher16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.1727999448776245,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 1.6,
+   "sha256": "cc9c37f13841d5e76a2601d1ca97ea5e33b3c30ddb319564d9b55dd00027c2e6",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "no_sink",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 2.9802322387695312e-08
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 464,
+    "budgets": {
+     "body_tris_lt": 500,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "move",
+     "telegraph",
+     "attack",
+     "recover",
+     "hurt",
+     "death"
+    ],
+    "max_angle_deg": {
+     "body": 83.24,
+     "crest": 106.0,
+     "crest_l": 93.39,
+     "crest_r": 93.39,
+     "foot_l": 32.66,
+     "foot_r": 32.66,
+     "head": 28.65,
+     "shin_l": 78.5,
+     "shin_r": 78.5,
+     "tail": 57.3,
+     "thigh_l": 45.89,
+     "thigh_r": 45.89,
+     "wing_l": 71.72,
+     "wing_r": 71.72
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "move",
+     "telegraph",
+     "attack",
+     "recover",
+     "hurt",
+     "death"
+    ]
+   },
+   "connectivity": {
+    "joins": 18,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.4079,
+    "edge_ratio_min": 0.5263,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "88e15e737ee2fc17a221e6d330b05014718265ca9a68a9e9f4c619e4085af221",
+   "file": "enemies/polar_pod/reed_warden.glb",
+   "id": "reed_warden",
+   "kind": "enemy",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": null,
+   "rig": "warden15_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 1.862645149230957e-09,
+    "joints": 15,
+    "ok": true,
+    "rest_height_m": 0.7517773509025574,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 1.3,
+   "sha256": "88e15e737ee2fc17a221e6d330b05014718265ca9a68a9e9f4c619e4085af221",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "no_sink",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 2.9802322387695312e-08
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 488,
+    "budgets": {
+     "body_tris_lt": 500,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "move",
+     "telegraph",
+     "attack",
+     "recover",
+     "hurt",
+     "death"
+    ],
+    "max_angle_deg": {
+     "cairn_low": 11.45,
+     "cairn_top": 19.69,
+     "chest": 17.19,
+     "head": 23.58,
+     "hips": 83.08,
+     "leg_bl": 35.52,
+     "leg_br": 32.56,
+     "leg_fl": 40.11,
+     "leg_fr": 40.11,
+     "neck": 24.06,
+     "paw_bl": 40.11,
+     "paw_br": 40.11,
+     "paw_fl": 74.48,
+     "paw_fr": 74.48,
+     "tail": 57.3
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "move",
+     "telegraph",
+     "attack",
+     "recover",
+     "hurt",
+     "death"
+    ]
+   },
+   "connectivity": {
+    "joins": 13,
+    "max_at": "mane_head death@10",
+    "max_gap_m": 0.000149,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.3415,
+    "edge_ratio_min": 0.7675,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "c06af43cca71204f0dbe543a785fece423871937294500e578ad7bf60ca8a37b",
+   "file": "enemies/forest_village/cairn_dasher.glb",
+   "id": "cairn_dasher",
+   "kind": "enemy",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "dasher16_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 0.0,
+    "joints": 16,
+    "ok": true,
+    "rest_height_m": 1.1727999448776245,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 1.5,
+   "sha256": "c06af43cca71204f0dbe543a785fece423871937294500e578ad7bf60ca8a37b",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "no_sink",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 2.9802322387695312e-08
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "body_tris": 464,
+    "budgets": {
+     "body_tris_lt": 500,
+     "prop_tris_le": 200
+    },
+    "ok": true,
+    "prop_tris": {}
+   },
+   "clips": {
+    "checked": [
+     "idle",
+     "move",
+     "telegraph",
+     "attack",
+     "recover",
+     "hurt",
+     "death"
+    ],
+    "max_angle_deg": {
+     "body": 83.24,
+     "crest": 106.0,
+     "crest_l": 93.39,
+     "crest_r": 93.39,
+     "foot_l": 32.66,
+     "foot_r": 32.66,
+     "head": 28.65,
+     "shin_l": 78.5,
+     "shin_r": 78.5,
+     "tail": 57.3,
+     "thigh_l": 45.89,
+     "thigh_r": 45.89,
+     "wing_l": 71.72,
+     "wing_r": 71.72
+    },
+    "ok": true,
+    "required": [
+     "idle",
+     "move",
+     "telegraph",
+     "attack",
+     "recover",
+     "hurt",
+     "death"
+    ]
+   },
+   "connectivity": {
+    "joins": 18,
+    "max_at": null,
+    "max_gap_m": 0.0,
+    "method": "generator",
+    "ok": true,
+    "tol_m": 0.003
+   },
+   "deformation": {
+    "edge_ratio_max": 1.4079,
+    "edge_ratio_min": 0.5263,
+    "keys_posed": 112,
+    "limits": [
+     0.45,
+     1.8
+    ],
+    "ok": true
+   },
+   "errors": [],
+   "expected_sha256": "4c4635a47becd709e2e253b82e9b9c5fa939b3057d903575f5ba071db5683a3c",
+   "file": "enemies/forest_village/reed_warden.glb",
+   "id": "reed_warden",
+   "kind": "enemy",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": null,
+   "rig": "warden15_v1@1.0.0",
+   "rig_check": {
+    "height_basis": "mesh_extent",
+    "ibm_err": 1.862645149230957e-09,
+    "joints": 15,
+    "ok": true,
+    "rest_height_m": 0.7517773509025574,
+    "rest_rotation_dev": 0.0
+   },
+   "seconds": 1.3,
+   "sha256": "4c4635a47becd709e2e253b82e9b9c5fa939b3057d903575f5ba071db5683a3c",
+   "silhouette": {
+    "floor_dev_max_m": 0.0,
+    "floor_mode": "no_sink",
+    "ok": true
+   },
+   "skin": {
+    "max_influences": 2,
+    "ok": true,
+    "weights_sum_dev": 2.9802322387695312e-08
+   },
+   "warnings": []
+  },
+  {
+   "budget": {
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_trail_staff": 190
+    },
+    "prop_tris_le": 200
+   },
+   "clips": null,
+   "connectivity": null,
+   "deformation": null,
+   "errors": [],
+   "expected_sha256": "4cfa5e8febd73ec777613f82e3e8ef803b2f5128ba284c770d4f0056d4cccf4a",
+   "file": "props/polar_pod/trail_staff.glb",
+   "id": "trail_staff",
+   "kind": "weapon",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": {
+    "ok": true,
+    "slot": "hand_r",
+    "socket_bone": "hand_r",
+    "weapon_rule": {
+     "bone": "hand_r",
+     "id": "trail_staff",
+     "rotation_xyzw": [
+      0.8660254,
+      0.0,
+      0.0,
+      0.5
+     ],
+     "translation": "per character: manifest characters[].combat.weapon_grip.translation"
+    }
+   },
+   "rig": "human16_v1@1.0.0",
+   "rig_check": null,
+   "seconds": 0.0,
+   "sha256": "4cfa5e8febd73ec777613f82e3e8ef803b2f5128ba284c770d4f0056d4cccf4a",
+   "silhouette": null,
+   "skin": null,
+   "warnings": []
+  },
+  {
+   "budget": {
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_projectile_reed_burr": 96
+    },
+    "prop_tris_le": 200
+   },
+   "clips": null,
+   "connectivity": null,
+   "deformation": null,
+   "errors": [],
+   "expected_sha256": "0a8b362ddc6bb1b7444c8ae2c44b2be730bd7f1b02bc6fdc80ab74467dff537f",
+   "file": "props/polar_pod/reed_burr.glb",
+   "id": "reed_burr",
+   "kind": "projectile",
+   "ok": true,
+   "pack": "polar_pod",
+   "prop": {
+    "ok": true,
+    "slot": null,
+    "socket_bone": null,
+    "weapon_rule": {
+     "bone": "hand_r",
+     "id": "trail_staff",
+     "rotation_xyzw": [
+      0.8660254,
+      0.0,
+      0.0,
+      0.5
+     ],
+     "translation": "per character: manifest characters[].combat.weapon_grip.translation"
+    }
+   },
+   "rig": "human16_v1@1.0.0",
+   "rig_check": null,
+   "seconds": 0.0,
+   "sha256": "0a8b362ddc6bb1b7444c8ae2c44b2be730bd7f1b02bc6fdc80ab74467dff537f",
+   "silhouette": null,
+   "skin": null,
+   "warnings": []
+  },
+  {
+   "budget": {
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_hand_r_trail_staff": 190
+    },
+    "prop_tris_le": 200
+   },
+   "clips": null,
+   "connectivity": null,
+   "deformation": null,
+   "errors": [],
+   "expected_sha256": "21f6d40e0b3954858eaf896b396526f92f3d1a35cc65bb5baa2fbccd5c9f7231",
+   "file": "props/forest_village/trail_staff.glb",
+   "id": "trail_staff",
+   "kind": "weapon",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": {
+    "ok": true,
+    "slot": "hand_r",
+    "socket_bone": "hand_r",
+    "weapon_rule": {
+     "bone": "hand_r",
+     "id": "trail_staff",
+     "rotation_xyzw": [
+      0.8660254,
+      0.0,
+      0.0,
+      0.5
+     ],
+     "translation": "per character: manifest characters[].combat.weapon_grip.translation"
+    }
+   },
+   "rig": "human16_v1@1.0.0",
+   "rig_check": null,
+   "seconds": 0.0,
+   "sha256": "21f6d40e0b3954858eaf896b396526f92f3d1a35cc65bb5baa2fbccd5c9f7231",
+   "silhouette": null,
+   "skin": null,
+   "warnings": []
+  },
+  {
+   "budget": {
+    "ok": true,
+    "prop_tris": {
+     "kit_acc_projectile_reed_burr": 96
+    },
+    "prop_tris_le": 200
+   },
+   "clips": null,
+   "connectivity": null,
+   "deformation": null,
+   "errors": [],
+   "expected_sha256": "252fb098f2da094fb044a5c887244d43ff33358a9dee60f11b833453c934906d",
+   "file": "props/forest_village/reed_burr.glb",
+   "id": "reed_burr",
+   "kind": "projectile",
+   "ok": true,
+   "pack": "forest_village",
+   "prop": {
+    "ok": true,
+    "slot": null,
+    "socket_bone": null,
+    "weapon_rule": {
+     "bone": "hand_r",
+     "id": "trail_staff",
+     "rotation_xyzw": [
+      0.8660254,
+      0.0,
+      0.0,
+      0.5
+     ],
+     "translation": "per character: manifest characters[].combat.weapon_grip.translation"
+    }
+   },
+   "rig": "human16_v1@1.0.0",
+   "rig_check": null,
+   "seconds": 0.0,
+   "sha256": "252fb098f2da094fb044a5c887244d43ff33358a9dee60f11b833453c934906d",
+   "silhouette": null,
+   "skin": null,
+   "warnings": []
+  }
+ ],
+ "keys": "all",
+ "oracle": "../lane-combat-art/published",
+ "schema": "hermes64-rig-validate-set/1.0.0",
+ "summary": {
+  "by_kind": {
+   "character": [
+    29,
+    29
+   ],
+   "enemy": [
+    4,
+    4
+   ],
+   "projectile": [
+    2,
+    2
+   ],
+   "weapon": [
+    2,
+    2
+   ]
+  },
+  "files": 37,
+  "pass": 37
+ }
+}

@@ -1,0 +1,668 @@
+{
+ "audio": {
+  "ambient": "audio/stock/wav/core.nature.wind.breeze.wav",
+  "night": "audio/stock/wav/core.nature.night.insects.wav",
+  "note": "pointers only (existing stock sounds); the style pack sound_palette carries ambient + interact",
+  "ui": "audio/wav/ui.select.wav"
+ },
+ "fog": {
+  "color": "#F6C79A",
+  "far": 48.0,
+  "near": 8.0
+ },
+ "kit_pack_id": "alien_world",
+ "light_rig": {
+  "ambient": 0.5,
+  "ao": 0.22,
+  "ao_height": 0.5,
+  "gamma": 1.0,
+  "ground": 0.04,
+  "key": 0.46,
+  "key_dir": [
+   -0.45,
+   -0.35,
+   0.82
+  ],
+  "sky": 0.14
+ },
+ "look": {
+  "backdrop": {
+   "asset": "skyx.starfield",
+   "interiors": false,
+   "note": "the painted alien sky dome (skyx.starfield, role sky: violet zenith, aurora, rose cloud bank, pale peach horizon glow); interiors show the void colour",
+   "scale": 0.2,
+   "y": -6.0
+  },
+  "emitters": {
+   "alien.bulb": {
+    "color": "#d8f070",
+    "halo": [
+     0.7,
+     0.35
+    ],
+    "halo_color": "#d8f070",
+    "intensity": 0.3,
+    "offset": [
+     0.0,
+     1.4,
+     0.0
+    ],
+    "radius": 2.5
+   },
+   "alien.crystal": {
+    "color": "#cafff2",
+    "halo": [
+     0.9,
+     0.4
+    ],
+    "halo_color": "#58dcd0",
+    "intensity": 0.45,
+    "offset": [
+     0.0,
+     0.9,
+     0.0
+    ],
+    "radius": 3.5
+   },
+   "alien.geode": {
+    "color": "#cafff2",
+    "intensity": 0.35,
+    "offset": [
+     0.0,
+     0.6,
+     0.0
+    ],
+    "radius": 3.0
+   },
+   "planet.pad": {
+    "color": "#e89a3a",
+    "intensity": 0.35,
+    "offset": [
+     0.0,
+     1.0,
+     0.0
+    ],
+    "radius": 4.0
+   },
+   "tech.charge_pod": {
+    "color": "#58dcd0",
+    "intensity": 0.3,
+    "offset": [
+     0.0,
+     1.6,
+     0.0
+    ],
+    "radius": 2.5
+   },
+   "tech.terminal": {
+    "color": "#58dcd0",
+    "intensity": 0.25,
+    "offset": [
+     0.0,
+     1.3,
+     0.2
+    ],
+    "radius": 2.0
+   }
+  },
+  "materials": {
+   "bark": {
+    "gloss": 0.0
+   },
+   "cap": {
+    "gloss": 0.0
+   },
+   "cliff": {
+    "gloss": 0.0
+   },
+   "dirt": {
+    "gloss": 0.0
+   },
+   "floor": {
+    "gloss": 0.0
+   },
+   "foliage": {
+    "gloss": 0.0
+   },
+   "light": {
+    "emission": 0.12,
+    "lit": 0.0
+   },
+   "path": {
+    "gloss": 0.0
+   },
+   "rock": {
+    "gloss": 0.0
+   },
+   "sand": {
+    "gloss": 0.0,
+    "note": "matte painted regolith"
+   },
+   "screen": {
+    "emission": 0.1,
+    "lit": 0.0
+   },
+   "wall": {
+    "gloss": 0.0
+   }
+  },
+  "note": "alien_world look (theme-agnostic runtime reads it). Terms are [colour, strength]. Kit regions set presentation look_profile per room (surface / dust / outpost) and kit_shell: true.",
+  "profiles": {
+   "dusk": {
+    "actors": {
+     "kicker": [
+      "#f6c79a",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#f6c79a",
+     0.5
+    ],
+    "background": "#f6c79a",
+    "bake_desaturate": 0.2,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#188c96",
+     0.14
+    ],
+    "fill_dir": [
+     0.6,
+     0.3,
+     0.5
+    ],
+    "fog": {
+     "color": "#f6c79a",
+     "far": 48.0,
+     "max": 0.9,
+     "near": 8.0
+    },
+    "grade": {
+     "contrast": 1.08,
+     "exposure": 1.04,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#7a4a2a",
+     0.14
+    ],
+    "key": [
+     "#f6c79a",
+     0.48
+    ],
+    "key_dir": [
+     -0.5,
+     0.45,
+     -0.6
+    ],
+    "note": "alien dusk exterior: a low peach sun under a violet-to-peach sky, a pale peach haze that IS the sky's horizon glow (fog tinted to the horizon), teal fill from the crystal-lit shade (complementary to the warm sky, never violet on the warm regolith) and basalt-violet shadows.",
+    "sky": [
+     "#e88a7a",
+     0.16
+    ]
+   },
+   "dust": {
+    "actors": {
+     "kicker": [
+      "#f6c79a",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#f6c79a",
+     0.52
+    ],
+    "background": "#f6c79a",
+    "bake_desaturate": 0.2,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#188c96",
+     0.14
+    ],
+    "fill_dir": [
+     0.6,
+     0.3,
+     0.5
+    ],
+    "fog": {
+     "color": "#f6c79a",
+     "far": 34.0,
+     "max": 0.92,
+     "near": 6.0
+    },
+    "grade": {
+     "contrast": 1.08,
+     "exposure": 1.04,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#7a4a2a",
+     0.14
+    ],
+    "key": [
+     "#f6c79a",
+     0.44
+    ],
+    "key_dir": [
+     -0.5,
+     0.45,
+     -0.6
+    ],
+    "note": "dust haze variant: the same dusk sky with the horizon glow pulled close (fog 6-34 m), for storm-front regions; fog stays the horizon colour",
+    "sky": [
+     "#e88a7a",
+     0.16
+    ]
+   },
+   "exterior": {
+    "actors": {
+     "kicker": [
+      "#f6c79a",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#f6c79a",
+     0.5
+    ],
+    "background": "#f6c79a",
+    "bake_desaturate": 0.2,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#188c96",
+     0.14
+    ],
+    "fill_dir": [
+     0.6,
+     0.3,
+     0.5
+    ],
+    "fog": {
+     "color": "#f6c79a",
+     "far": 48.0,
+     "max": 0.9,
+     "near": 8.0
+    },
+    "grade": {
+     "contrast": 1.08,
+     "exposure": 1.04,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#7a4a2a",
+     0.14
+    ],
+    "key": [
+     "#f6c79a",
+     0.48
+    ],
+    "key_dir": [
+     -0.5,
+     0.45,
+     -0.6
+    ],
+    "note": "alien dusk exterior: a low peach sun under a violet-to-peach sky, a pale peach haze that IS the sky's horizon glow (fog tinted to the horizon), teal fill from the crystal-lit shade (complementary to the warm sky, never violet on the warm regolith) and basalt-violet shadows.",
+    "sky": [
+     "#e88a7a",
+     0.16
+    ]
+   },
+   "interior": {
+    "actors": {
+     "kicker": [
+      "#e2e6ec",
+      0.2
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps characters readable"
+    },
+    "ambient": [
+     "#9aa2b2",
+     0.52
+    ],
+    "background": "#07050c",
+    "bake_desaturate": 0.15,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_cool",
+    "fill": [
+     "#188c96",
+     0.12
+    ],
+    "fill_dir": [
+     -0.6,
+     0.2,
+     -0.5
+    ],
+    "fog": {
+     "color": "#352c42",
+     "far": 30.0,
+     "max": 0.9,
+     "near": 9.0
+    },
+    "grade": {
+     "contrast": 1.08,
+     "exposure": 1.16,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.94
+    },
+    "ground": [
+     "#2c303a",
+     0.12
+    ],
+    "key": [
+     "#e2e6ec",
+     0.5
+    ],
+    "key_dir": [
+     0.25,
+     0.9,
+     0.35
+    ],
+    "note": "outpost interior: grey gear plating under a cool key, the amber accent on hazard lips, basalt fog",
+    "room": {
+     "base_ao": 0.24,
+     "base_height": 0.45,
+     "floor_lift": 0.3,
+     "note": "same value structure as the station corridors",
+     "top_dark": 0.12,
+     "top_from": 2.6,
+     "top_to": 4.6
+    },
+    "sky": [
+     "#e2e6ec",
+     0.16
+    ]
+   },
+   "outpost": {
+    "actors": {
+     "kicker": [
+      "#e2e6ec",
+      0.2
+     ],
+     "kicker_up": 0.7,
+     "note": "keeps characters readable"
+    },
+    "ambient": [
+     "#9aa2b2",
+     0.52
+    ],
+    "background": "#07050c",
+    "bake_desaturate": 0.15,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "interior_cool",
+    "fill": [
+     "#188c96",
+     0.12
+    ],
+    "fill_dir": [
+     -0.6,
+     0.2,
+     -0.5
+    ],
+    "fog": {
+     "color": "#352c42",
+     "far": 30.0,
+     "max": 0.9,
+     "near": 9.0
+    },
+    "grade": {
+     "contrast": 1.08,
+     "exposure": 1.16,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 0.94
+    },
+    "ground": [
+     "#2c303a",
+     0.12
+    ],
+    "key": [
+     "#e2e6ec",
+     0.5
+    ],
+    "key_dir": [
+     0.25,
+     0.9,
+     0.35
+    ],
+    "note": "outpost interior: grey gear plating under a cool key, the amber accent on hazard lips, basalt fog",
+    "room": {
+     "base_ao": 0.24,
+     "base_height": 0.45,
+     "floor_lift": 0.3,
+     "note": "same value structure as the station corridors",
+     "top_dark": 0.12,
+     "top_from": 2.6,
+     "top_to": 4.6
+    },
+    "sky": [
+     "#e2e6ec",
+     0.16
+    ]
+   },
+   "surface": {
+    "actors": {
+     "kicker": [
+      "#f6c79a",
+      0.2
+     ],
+     "kicker_up": 0.6,
+     "note": "rim-free kicker from the sun side"
+    },
+    "ambient": [
+     "#f6c79a",
+     0.5
+    ],
+    "background": "#f6c79a",
+    "bake_desaturate": 0.2,
+    "chrome": {
+     "gamma": 1.25,
+     "hot": 0.2,
+     "hot_from": 0.94,
+     "note": "painted sphere-map metal (N64 convention): the env texture carries the look",
+     "rim": 0.0
+    },
+    "environment": "exterior_day",
+    "fill": [
+     "#188c96",
+     0.14
+    ],
+    "fill_dir": [
+     0.6,
+     0.3,
+     0.5
+    ],
+    "fog": {
+     "color": "#f6c79a",
+     "far": 48.0,
+     "max": 0.9,
+     "near": 8.0
+    },
+    "grade": {
+     "contrast": 1.08,
+     "exposure": 1.04,
+     "gain": "#ffffff",
+     "gamma": 1.0,
+     "lift": "#000000",
+     "saturation": 1.0
+    },
+    "ground": [
+     "#7a4a2a",
+     0.14
+    ],
+    "key": [
+     "#f6c79a",
+     0.48
+    ],
+    "key_dir": [
+     -0.5,
+     0.45,
+     -0.6
+    ],
+    "note": "alien dusk exterior: a low peach sun under a violet-to-peach sky, a pale peach haze that IS the sky's horizon glow (fog tinted to the horizon), teal fill from the crystal-lit shade (complementary to the warm sky, never violet on the warm regolith) and basalt-violet shadows.",
+    "sky": [
+     "#e88a7a",
+     0.16
+    ]
+   }
+  },
+  "shadows": {
+   "color": "#07050c",
+   "kinds": [
+    "prop",
+    "piece",
+    "collectible",
+    "dressing"
+   ],
+   "max": 3.0,
+   "max_lift": 0.08,
+   "min": 0.4,
+   "note": "N64-era blob shadows under floor-standing props",
+   "scale": 1.3,
+   "strength": 0.55
+  },
+  "view_fog_scale": 0.5
+ },
+ "pack_id": "alien_world",
+ "palette": {
+  "body": "#9aa2b2",
+  "boots": "#2c303a",
+  "collectible": "#58dcd0",
+  "door": "#5c6474",
+  "floor": "#7a4a2a",
+  "head": "#e2e6ec",
+  "prop": "#55486a",
+  "ui_bg": "#07050c",
+  "ui_text": "#f6c79a",
+  "void": "#07050c",
+  "wall": "#55486a"
+ },
+ "palette_colors": [
+  "#07050C",
+  "#1C1030",
+  "#3A1F55",
+  "#6A2F72",
+  "#B24F78",
+  "#E88A7A",
+  "#F6C79A",
+  "#2E1C16",
+  "#4E2E1E",
+  "#7A4A2A",
+  "#A8703C",
+  "#D0A060",
+  "#1E1828",
+  "#352C42",
+  "#55486A",
+  "#7E6E90",
+  "#0C3E4C",
+  "#188C96",
+  "#58DCD0",
+  "#CAFFF2",
+  "#13323E",
+  "#24606A",
+  "#3E9488",
+  "#8A2C5E",
+  "#E46A5A",
+  "#D8F070",
+  "#2C303A",
+  "#5C6474",
+  "#9AA2B2",
+  "#E2E6EC",
+  "#E89A3A"
+ ],
+ "style_gate": {
+  "accent_fraction_max": 0.15,
+  "accent_hues": [
+   [
+    165.0,
+    195.0
+   ],
+   [
+    60.0,
+    80.0
+   ]
+  ],
+  "accent_rooms_min_fraction": 0.5,
+  "accent_sat_min": 0.45,
+  "black_point_max": 0.14,
+  "camera_inside_interior": true,
+  "contrast_range_min": 0.42,
+  "edge_density_max": 0.42,
+  "edge_density_min": 0.07,
+  "edge_threshold": 0.07,
+  "flat_fraction_max": 0.4,
+  "flat_std": 0.006,
+  "floating_max": 0,
+  "fog_near_dist": 0.07,
+  "fog_swallowed_max": 0.2,
+  "mean_luma_max": 0.66,
+  "mean_luma_min": 0.12,
+  "note": "alien_world thresholds, calibrated in the real runtime (docs/SCIFIKIT-RESULT.md): core defaults or stricter everywhere. accent = saturated crystal cyan or spore/bloom light (sat >= 0.45, hue 165-195 / 60-80): the warm sky and regolith are the base, not accents. Known-bad controls (tools/scifikit_controls.py) fail this set; never loosened to pass a round.",
+  "palette_adherence_min": 0.9,
+  "palette_hue_tol_deg": 20.0,
+  "uncut_doors_max": 0,
+  "void_fraction_max_exterior": 0.3,
+  "void_fraction_max_interior": 0.01,
+  "white_point_min": 0.8
+ },
+ "ui": {
+  "accent": "#58dcd0",
+  "dim": "#55486a",
+  "fill": "#1c1030d9",
+  "frame": "#7e6e90",
+  "ink": "#07050c",
+  "note": "deep violet panels, peach text, crystal-cyan accent; keyboard prompts only, no text-bubble clutter",
+  "text": "#f6c79a"
+ }
+}

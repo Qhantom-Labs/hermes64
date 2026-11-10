@@ -1,0 +1,34 @@
+{
+  "base_story_version": "1.2.0",
+  "files": [
+    "puzzle.json",
+    "puzzle_state.json",
+    "puzzle_condition.json",
+    "operations.json"
+  ],
+  "limits": {
+    "blocks": 3,
+    "cells": 16,
+    "elements": 32,
+    "open_steps": 15,
+    "stateful_bits": 23,
+    "timed_gates": 2
+  },
+  "lowering": "puzzle_flags_v1",
+  "note": "Additive to contracts/gameplay/1.0.0 (STORY 1.2). A 1.3 source lowers to a 1.2 source; see docs/PUZZLES.md.",
+  "operation_kinds": [
+    "add-switch",
+    "link-door",
+    "move-block",
+    "set-solution-hint"
+  ],
+  "puzzle_api": "1.0.0",
+  "reserved_flag_prefix": "puzzle__",
+  "reserved_flags": {
+    "latched": "puzzle__l__<id>",
+    "opened": "puzzle__o__<id>",
+    "solved": "puzzle__s__<id>",
+    "taken": "puzzle__t__<id>"
+  },
+  "story_version": "1.3.0"
+}

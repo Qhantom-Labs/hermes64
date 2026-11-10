@@ -1,0 +1,102 @@
+{
+ "builds": [
+  {
+   "glb": "kits/library/ancientkit-xprofile/polar_pod/ruin.column.glb",
+   "id": "ruin.column",
+   "pack": "polar_pod",
+   "preset": null,
+   "sha256": "47d6d6c579bd8106aaac7ef903f3661f87e972b0e649076789edcd4446022de9",
+   "tris": 244
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/polar_pod/ruin.wall__door.glb",
+   "id": "ruin.wall",
+   "pack": "polar_pod",
+   "preset": "door",
+   "sha256": "28d7b01bb58d970012ee7553d97d6ed25a1e1ae1d2574a85d404b9c8c079f1a2",
+   "tris": 204
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/polar_pod/relic.urn.glb",
+   "id": "relic.urn",
+   "pack": "polar_pod",
+   "preset": null,
+   "sha256": "841d3759a5d82d92fb67b6a24bc538a0b57f466a94c07a810a58371edca5b451",
+   "tris": 96
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/polar_pod/relic.statue.glb",
+   "id": "relic.statue",
+   "pack": "polar_pod",
+   "preset": null,
+   "sha256": "c3e5ed9f77a32918eeb3aaf8c86fa70a6811daa52d97e45e1e0473f6a230bedf",
+   "tris": 442
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/polar_pod/wild.palm.glb",
+   "id": "wild.palm",
+   "pack": "polar_pod",
+   "preset": null,
+   "sha256": "33c20bf2b52e21476947657e06369723d877194a3d8daba761451c52e60a30e3",
+   "tris": 188
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/polar_pod/land.ground.glb",
+   "id": "land.ground",
+   "pack": "polar_pod",
+   "preset": null,
+   "sha256": "7d24af1da9e28ad11a79f52d24d775410543fa40fa01bc76949cf8d8ffad9568",
+   "tris": 32
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/forest_village/ruin.column.glb",
+   "id": "ruin.column",
+   "pack": "forest_village",
+   "preset": null,
+   "sha256": "ae06b55daa76ed19a18667af72a067a46739195b4e5161c9e5eb2e3b875d9066",
+   "tris": 244
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/forest_village/ruin.wall__door.glb",
+   "id": "ruin.wall",
+   "pack": "forest_village",
+   "preset": "door",
+   "sha256": "5ecca4527add074e106d8a3debf9490032ec6d80e1a9180a586a204fb16d97b6",
+   "tris": 204
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/forest_village/relic.urn.glb",
+   "id": "relic.urn",
+   "pack": "forest_village",
+   "preset": null,
+   "sha256": "1ea2d0bdc7ad788516a49558dcaacaaf190e162a4df169a78fba0584a85b52cc",
+   "tris": 96
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/forest_village/relic.statue.glb",
+   "id": "relic.statue",
+   "pack": "forest_village",
+   "preset": null,
+   "sha256": "533a5bc4902de7dcd53e15702a4106d7d56d4ccd6467059b673011791f0f563e",
+   "tris": 442
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/forest_village/wild.palm.glb",
+   "id": "wild.palm",
+   "pack": "forest_village",
+   "preset": null,
+   "sha256": "99dd97b8b882c197721b2dcff4a71ffd6baeb9321481163eef8e92dff63decb8",
+   "tris": 188
+  },
+  {
+   "glb": "kits/library/ancientkit-xprofile/forest_village/land.ground.glb",
+   "id": "land.ground",
+   "pack": "forest_village",
+   "preset": null,
+   "sha256": "6900edc19a69b833e080c2852ecf2b45a48c2a4dacbab3af45ed78920f3cdc92",
+   "tris": 32
+  }
+ ],
+ "format": 1,
+ "note": "ANCIENTKIT pieces built with other style profiles' kit packs (same generators, roles only)"
+}

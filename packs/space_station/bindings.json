@@ -1,0 +1,465 @@
+{
+ "assets": {
+  "arch.door": {
+   "alias_of": "stn.doorway",
+   "glb": "kits/library/space_station/assets/stn.doorway.glb",
+   "kit_id": "stn.doorway",
+   "preset": null,
+   "sha256": "35025e150bcb2f2c9cd1daa464fce915a9dbb9ee03d4d262641888c3157f8543"
+  },
+  "ship.drone": {
+   "glb": "kits/library/space_station/assets/ship.drone.glb",
+   "kit_id": "ship.drone",
+   "preset": null,
+   "sha256": "dc163fc9cfd309d269bbc68e6c55535147983167cef4145d98af4abc3ec6f7c7"
+  },
+  "ship.drone__lifter": {
+   "glb": "kits/library/space_station/presets/ship.drone__lifter.glb",
+   "kit_id": "ship.drone",
+   "preset": "lifter",
+   "sha256": "34219ab51351446cbfbac813cdc149fff2d876f00f7a8a9719c3c040e1f75a97"
+  },
+  "ship.escape_pod": {
+   "glb": "kits/library/space_station/assets/ship.escape_pod.glb",
+   "kit_id": "ship.escape_pod",
+   "preset": null,
+   "sha256": "222e10b443a18b9a7c56a68927d1c74048baf300f220ca9f10f3d7f539924462"
+  },
+  "ship.escape_pod__crashed": {
+   "glb": "kits/library/space_station/presets/ship.escape_pod__crashed.glb",
+   "kit_id": "ship.escape_pod",
+   "preset": "crashed",
+   "sha256": "460ef7ffc068d97c99b049eb903f8567e0db6dae0b04a5c6d23199520010a62a"
+  },
+  "ship.escape_pod__open": {
+   "glb": "kits/library/space_station/presets/ship.escape_pod__open.glb",
+   "kit_id": "ship.escape_pod",
+   "preset": "open",
+   "sha256": "ce56f65ebc85505752ab6169fbcba2be95f28d67f78226b9314d95b6db745bf9"
+  },
+  "ship.hauler": {
+   "glb": "kits/library/space_station/assets/ship.hauler.glb",
+   "kit_id": "ship.hauler",
+   "preset": null,
+   "sha256": "db913daaed0071b115d807792b847c5ded9a46fb3fe06d1d555f50985b711dfc"
+  },
+  "ship.hauler__empty": {
+   "glb": "kits/library/space_station/presets/ship.hauler__empty.glb",
+   "kit_id": "ship.hauler",
+   "preset": "empty",
+   "sha256": "9e8c2fe8af60476b1b60eef72631170961cf064e40dc4e4636a827d027decb2a"
+  },
+  "ship.rover": {
+   "glb": "kits/library/space_station/assets/ship.rover.glb",
+   "kit_id": "ship.rover",
+   "preset": null,
+   "sha256": "6f0388ca26f59902be97258af8262dab233598f5ceb527fe419bcafc94cba090"
+  },
+  "ship.rover__scout": {
+   "glb": "kits/library/space_station/presets/ship.rover__scout.glb",
+   "kit_id": "ship.rover",
+   "preset": "scout",
+   "sha256": "17de5b6e717ee4e08546398e31bd40b6ba0dfed1b6825ed91d9999dc10c2a4c9"
+  },
+  "ship.shuttle": {
+   "glb": "kits/library/space_station/assets/ship.shuttle.glb",
+   "kit_id": "ship.shuttle",
+   "preset": null,
+   "sha256": "21f2e22ca02362a82deb815fee953883b01f95b9a954dce3c2c64426892170a8"
+  },
+  "ship.shuttle__cargo": {
+   "glb": "kits/library/space_station/presets/ship.shuttle__cargo.glb",
+   "kit_id": "ship.shuttle",
+   "preset": "cargo",
+   "sha256": "8a001716879f448aec74a2522f6b434a680a776189000ae0d9002075c8dda910"
+  },
+  "ship.shuttle__level": {
+   "glb": "kits/library/space_station/presets/ship.shuttle__level.glb",
+   "kit_id": "ship.shuttle",
+   "preset": "level",
+   "sha256": "90cb8a69bd8f0ea00add769df2e7e47a55916bab734410ea5f8ca605e72a8955"
+  },
+  "skyx.horizon": {
+   "glb": "kits/library/space_station/assets/skyx.horizon.glb",
+   "kit_id": "skyx.horizon",
+   "preset": null,
+   "sha256": "5386cbd1fef5fad0abad73f4ebde53a92942804440a6699c48a7cbf3ccd7491e"
+  },
+  "skyx.nebula": {
+   "glb": "kits/library/space_station/assets/skyx.nebula.glb",
+   "kit_id": "skyx.nebula",
+   "preset": null,
+   "sha256": "71765ff4fb0d0dcdfd1a3b287cb3cd11da4ed82b89cacb974bfe43144c5edd4c"
+  },
+  "skyx.planet": {
+   "glb": "kits/library/space_station/assets/skyx.planet.glb",
+   "kit_id": "skyx.planet",
+   "preset": null,
+   "sha256": "55550e6e139ff85b58a824dcab39f7e8417b91bd024f80cd269adb37d8ae4d44"
+  },
+  "skyx.planet__moon": {
+   "glb": "kits/library/space_station/presets/skyx.planet__moon.glb",
+   "kit_id": "skyx.planet",
+   "preset": "moon",
+   "sha256": "4f77998c54e0ac76b482ae8d2ee724da7e04acca044787b10be1ef2b8916391a"
+  },
+  "skyx.planet__ringed": {
+   "glb": "kits/library/space_station/presets/skyx.planet__ringed.glb",
+   "kit_id": "skyx.planet",
+   "preset": "ringed",
+   "sha256": "ffa0cbb7016d7bb2d11220caec26cd758d57f80e89c73e17f9ff304beb51d9f3"
+  },
+  "skyx.starfield": {
+   "glb": "kits/library/space_station/assets/skyx.starfield.glb",
+   "kit_id": "skyx.starfield",
+   "preset": null,
+   "sha256": "c4e3eac45f323fcb3df0121368856335c1b552e927204a8c832f6d99b0b2a35d"
+  },
+  "skyx.starfield__cylinder": {
+   "glb": "kits/library/space_station/presets/skyx.starfield__cylinder.glb",
+   "kit_id": "skyx.starfield",
+   "preset": "cylinder",
+   "sha256": "098a975dc0e94313d0f7bb8f1594b7b3d9c7ccaee94f3fd8c81da95dfffb655a"
+  },
+  "stn.airlock": {
+   "glb": "kits/library/space_station/assets/stn.airlock.glb",
+   "kit_id": "stn.airlock",
+   "preset": null,
+   "sha256": "bed6e846281f6f00ca6a5aee99c66cd1c5258865c3c7ada8dbb6e7e3422fa5ab"
+  },
+  "stn.airlock__open": {
+   "glb": "kits/library/space_station/presets/stn.airlock__open.glb",
+   "kit_id": "stn.airlock",
+   "preset": "open",
+   "sha256": "f165983045dc136a869bed91475b6efabbc9c63d570a41df6f43a3f5ea486f8b"
+  },
+  "stn.bridge": {
+   "glb": "kits/library/space_station/assets/stn.bridge.glb",
+   "kit_id": "stn.bridge",
+   "preset": null,
+   "sha256": "e447cb76196642e3c08070b2b0f6a5354f21039e9c045919f37181b5da9e62d1"
+  },
+  "stn.bulkhead": {
+   "glb": "kits/library/space_station/assets/stn.bulkhead.glb",
+   "kit_id": "stn.bulkhead",
+   "preset": null,
+   "sha256": "f0948b9066eb08ae0c59a48b80b35ec20f1bb8f64267db8d912129e10c1e869d"
+  },
+  "stn.ceiling": {
+   "glb": "kits/library/space_station/assets/stn.ceiling.glb",
+   "kit_id": "stn.ceiling",
+   "preset": null,
+   "sha256": "2622d55e9e660239e13d73f1fba3c3f15ef01000bac051512232583aa9ebcb57"
+  },
+  "stn.ceiling__c2x2": {
+   "glb": "kits/library/space_station/presets/stn.ceiling__c2x2.glb",
+   "kit_id": "stn.ceiling",
+   "preset": "c2x2",
+   "sha256": "ba97bd422409e1c7a8ca8af5fc38511112df5036c1d2ada1a996999ac0f3d388"
+  },
+  "stn.ceiling__c2x3": {
+   "glb": "kits/library/space_station/presets/stn.ceiling__c2x3.glb",
+   "kit_id": "stn.ceiling",
+   "preset": "c2x3",
+   "sha256": "832a8db2d6df8c7dc3ec7e7d11da41ddf9d90f81cf92ebf6e21fa98cc85ed83a"
+  },
+  "stn.ceiling__hangar": {
+   "glb": "kits/library/space_station/presets/stn.ceiling__hangar.glb",
+   "kit_id": "stn.ceiling",
+   "preset": "hangar",
+   "sha256": "24aaa5fa95bdc2abbaf54c23dc346db253d9b279a79e4301b948b164ed775774"
+  },
+  "stn.corridor": {
+   "glb": "kits/library/space_station/assets/stn.corridor.glb",
+   "kit_id": "stn.corridor",
+   "preset": null,
+   "sha256": "1c779308922316d3c26209db1881a730c5ce05de015977b50fa6ec9a33595bb9"
+  },
+  "stn.corridor__corner": {
+   "glb": "kits/library/space_station/presets/stn.corridor__corner.glb",
+   "kit_id": "stn.corridor",
+   "preset": "corner",
+   "sha256": "e2c0048ed2b85cc80942b3529c03963d42978c892d5649a0bc8d6ac8f2ad1951"
+  },
+  "stn.corridor__cross": {
+   "glb": "kits/library/space_station/presets/stn.corridor__cross.glb",
+   "kit_id": "stn.corridor",
+   "preset": "cross",
+   "sha256": "42ce9d2067ffc23d2e01c526261b2803f844edb2da323d790102c3557f2f6165"
+  },
+  "stn.corridor__end": {
+   "glb": "kits/library/space_station/presets/stn.corridor__end.glb",
+   "kit_id": "stn.corridor",
+   "preset": "end",
+   "sha256": "12095c2847d62d7a2eb6c3f1be9c44574ab1e6407176eddacfcba04609de9001"
+  },
+  "stn.corridor__end_door": {
+   "glb": "kits/library/space_station/presets/stn.corridor__end_door.glb",
+   "kit_id": "stn.corridor",
+   "preset": "end_door",
+   "sha256": "761ff8c78cd68f0545e45fc4af88ba57f7371d063629616df0d3d348ff4b6d2a"
+  },
+  "stn.corridor__plain": {
+   "glb": "kits/library/space_station/presets/stn.corridor__plain.glb",
+   "kit_id": "stn.corridor",
+   "preset": "plain",
+   "sha256": "2cc3770cd9130fe927aabea3c9524b29c4a84c7697741114b3e56c6d0e2e2caa"
+  },
+  "stn.corridor__tee": {
+   "glb": "kits/library/space_station/presets/stn.corridor__tee.glb",
+   "kit_id": "stn.corridor",
+   "preset": "tee",
+   "sha256": "2a62fe942fb43ac132f0c632c850f2593a3ec03354443213586c61f8c257d35f"
+  },
+  "stn.doorway": {
+   "glb": "kits/library/space_station/assets/stn.doorway.glb",
+   "kit_id": "stn.doorway",
+   "preset": null,
+   "sha256": "35025e150bcb2f2c9cd1daa464fce915a9dbb9ee03d4d262641888c3157f8543"
+  },
+  "stn.doorway__lit": {
+   "glb": "kits/library/space_station/presets/stn.doorway__lit.glb",
+   "kit_id": "stn.doorway",
+   "preset": "lit",
+   "sha256": "6040c33dc6da9778a7aeb0eb121670915b7b410f4bd199ec3224db2fc7bdc72d"
+  },
+  "stn.floor": {
+   "glb": "kits/library/space_station/assets/stn.floor.glb",
+   "kit_id": "stn.floor",
+   "preset": null,
+   "sha256": "33f61a81d47b9cf11f5b60220eadc2324c8af06775109bf659a639da495550a7"
+  },
+  "stn.floor__grate": {
+   "glb": "kits/library/space_station/presets/stn.floor__grate.glb",
+   "kit_id": "stn.floor",
+   "preset": "grate",
+   "sha256": "95e92726c5d6f602a311151e0c39f020130eff0bf5a5c80f70d49abd8a684256"
+  },
+  "stn.floor__pad": {
+   "glb": "kits/library/space_station/presets/stn.floor__pad.glb",
+   "kit_id": "stn.floor",
+   "preset": "pad",
+   "sha256": "91539fee56c21813031a137bbfd1e8c7f9e813020e0030d7bbdbeb7e20b164cd"
+  },
+  "stn.floor__plain": {
+   "glb": "kits/library/space_station/presets/stn.floor__plain.glb",
+   "kit_id": "stn.floor",
+   "preset": "plain",
+   "sha256": "9f45a10117dacfe843d5f0034b8703a20494f98f124b7d188e4063bfad2a1114"
+  },
+  "stn.hangar": {
+   "glb": "kits/library/space_station/assets/stn.hangar.glb",
+   "kit_id": "stn.hangar",
+   "preset": null,
+   "sha256": "7da816c7a30c8b56f7843e32944bb57a7db49a580cd91ac1a6c488ad244a6cf3"
+  },
+  "stn.lift": {
+   "glb": "kits/library/space_station/assets/stn.lift.glb",
+   "kit_id": "stn.lift",
+   "preset": null,
+   "sha256": "2f0f9567b9779372f94cc12b2a610a0f8a89bd5294fa57b826ac25f70b13d4c1"
+  },
+  "stn.room": {
+   "glb": "kits/library/space_station/assets/stn.room.glb",
+   "kit_id": "stn.room",
+   "preset": null,
+   "sha256": "c49e1d4c37eb17597aa478d0731874c6a9374ce964dffc4c8bf2e19236bfa7b7"
+  },
+  "stn.room__airlock_2x2": {
+   "glb": "kits/library/space_station/presets/stn.room__airlock_2x2.glb",
+   "kit_id": "stn.room",
+   "preset": "airlock_2x2",
+   "sha256": "f7d7286b551319341646c148ecbff537638533f01c9eeae7b90ea6b5d609788a"
+  },
+  "stn.room__deck_3x3": {
+   "glb": "kits/library/space_station/presets/stn.room__deck_3x3.glb",
+   "kit_id": "stn.room",
+   "preset": "deck_3x3",
+   "sha256": "aaa0640adc7d80b2ca2ece76e2139896a23740a54500d1af3dbba29e49610f10"
+  },
+  "stn.room__quarters_2x3": {
+   "glb": "kits/library/space_station/presets/stn.room__quarters_2x3.glb",
+   "kit_id": "stn.room",
+   "preset": "quarters_2x3",
+   "sha256": "fe1c357b175d766b1848d09d7c886a80d621d27a692e14df34f729459a4fc8de"
+  },
+  "stn.stairs": {
+   "glb": "kits/library/space_station/assets/stn.stairs.glb",
+   "kit_id": "stn.stairs",
+   "preset": null,
+   "sha256": "b1fafd0cf93671880c971d3784cb98147c403090c364fe0adef87c2b0b496bdf"
+  },
+  "stn.stairs__dais": {
+   "glb": "kits/library/space_station/presets/stn.stairs__dais.glb",
+   "kit_id": "stn.stairs",
+   "preset": "dais",
+   "sha256": "964f4b913cf108f302ec9139c56a5a4c8270174288ea6c0f6796988cbf82b234"
+  },
+  "stn.stairs__ramp": {
+   "glb": "kits/library/space_station/presets/stn.stairs__ramp.glb",
+   "kit_id": "stn.stairs",
+   "preset": "ramp",
+   "sha256": "a09d1da8e65e39f6d117c6d97bd33b7905c61995e98e1dfc0308a198548600d5"
+  },
+  "stn.viewport": {
+   "glb": "kits/library/space_station/assets/stn.viewport.glb",
+   "kit_id": "stn.viewport",
+   "preset": null,
+   "sha256": "773da6d137a31d2fdd5f294561c501bb4331254e79ae8442c6aff53241ec1fe6"
+  },
+  "stn.viewport__port": {
+   "glb": "kits/library/space_station/presets/stn.viewport__port.glb",
+   "kit_id": "stn.viewport",
+   "preset": "port",
+   "sha256": "eefb6148a201ac76930774c9e85def5df85437f9af9262b8345c79e8d38f4074"
+  },
+  "stn.viewport__tall": {
+   "glb": "kits/library/space_station/presets/stn.viewport__tall.glb",
+   "kit_id": "stn.viewport",
+   "preset": "tall",
+   "sha256": "258c06b5148e596c661970eae1f677e80cd8780fef7943978bed28481c4e26bd"
+  },
+  "tech.cables": {
+   "glb": "kits/library/space_station/assets/tech.cables.glb",
+   "kit_id": "tech.cables",
+   "preset": null,
+   "sha256": "ed45cb8cc1ac395bcb5e47689a1f8e5b575aa10b153fe4c994847c9ab76b9216"
+  },
+  "tech.cables__hang": {
+   "glb": "kits/library/space_station/presets/tech.cables__hang.glb",
+   "kit_id": "tech.cables",
+   "preset": "hang",
+   "sha256": "363d049ff10f906158dcfdf1a358e42641353c02ec7e8123f3ef57467ac075b1"
+  },
+  "tech.charge_pod": {
+   "glb": "kits/library/space_station/assets/tech.charge_pod.glb",
+   "kit_id": "tech.charge_pod",
+   "preset": null,
+   "sha256": "2dfaa9a43b24bde341ea08a09e0af269bb6103acedbcf96f15ec6d3ce49b31dd"
+  },
+  "tech.console": {
+   "glb": "kits/library/space_station/assets/tech.console.glb",
+   "kit_id": "tech.console",
+   "preset": null,
+   "sha256": "28429e44c028f376161f47ca2ad251b3d5f9fe677b82c54fec41c6656b1d705e"
+  },
+  "tech.console__pillar": {
+   "glb": "kits/library/space_station/presets/tech.console__pillar.glb",
+   "kit_id": "tech.console",
+   "preset": "pillar",
+   "sha256": "30ce6b1995dbe8b7960a3806500501200af511b10e4e25691ed9c5616c4b6e34"
+  },
+  "tech.console__tall": {
+   "glb": "kits/library/space_station/presets/tech.console__tall.glb",
+   "kit_id": "tech.console",
+   "preset": "tall",
+   "sha256": "9063b15a58ffb431a062e4c99ad3708b77997131b33e49c8c284526287527e49"
+  },
+  "tech.crate": {
+   "glb": "kits/library/space_station/assets/tech.crate.glb",
+   "kit_id": "tech.crate",
+   "preset": null,
+   "sha256": "cfd8a843ac6c07137e49318639b7c8b2cd1e6b86281a7adc9aef01362d352ada"
+  },
+  "tech.crate__large": {
+   "glb": "kits/library/space_station/presets/tech.crate__large.glb",
+   "kit_id": "tech.crate",
+   "preset": "large",
+   "sha256": "943beb4507593e2c23f979da03736d7acb2c29a3860c5eb3c1d3c899fce3b22d"
+  },
+  "tech.crate__long": {
+   "glb": "kits/library/space_station/presets/tech.crate__long.glb",
+   "kit_id": "tech.crate",
+   "preset": "long",
+   "sha256": "41d1dfe72f9050e37fdeae9ef78a1db35e848ca251caeb671e9686b1f5fa1f9e"
+  },
+  "tech.crate__stack": {
+   "glb": "kits/library/space_station/presets/tech.crate__stack.glb",
+   "kit_id": "tech.crate",
+   "preset": "stack",
+   "sha256": "8bec94db01f19e439317e0980696865cc2cab1ed5d6a0ccd170043a100aaa514"
+  },
+  "tech.cryo_pod": {
+   "glb": "kits/library/space_station/assets/tech.cryo_pod.glb",
+   "kit_id": "tech.cryo_pod",
+   "preset": null,
+   "sha256": "f04f3f37457578331c8ce050aedf016f71a828dc0776462964f9edafca694bfa"
+  },
+  "tech.cryo_pod__open": {
+   "glb": "kits/library/space_station/presets/tech.cryo_pod__open.glb",
+   "kit_id": "tech.cryo_pod",
+   "preset": "open",
+   "sha256": "9695cf802b6b706b534d9a0c0d6e354f95c68bf953bff73bd6067f6de6bd2114"
+  },
+  "tech.holo_table": {
+   "glb": "kits/library/space_station/assets/tech.holo_table.glb",
+   "kit_id": "tech.holo_table",
+   "preset": null,
+   "sha256": "5d7e3b28f0bd27b5c9fc2c4f890fd6feff5463bb9a81ef37d7fd9e4ff3cdf2b7"
+  },
+  "tech.locker": {
+   "glb": "kits/library/space_station/assets/tech.locker.glb",
+   "kit_id": "tech.locker",
+   "preset": null,
+   "sha256": "a617697018feaa232cb4e6d9988c081109ea00cabf08dc66f51d57c5e8ac246f"
+  },
+  "tech.locker__single": {
+   "glb": "kits/library/space_station/presets/tech.locker__single.glb",
+   "kit_id": "tech.locker",
+   "preset": "single",
+   "sha256": "c484d4130f1ff31c499403d7520a628deecc68b6ec67bc17168a1ad4b6c60b6f"
+  },
+  "tech.reactor": {
+   "glb": "kits/library/space_station/assets/tech.reactor.glb",
+   "kit_id": "tech.reactor",
+   "preset": null,
+   "sha256": "59d12affe6e87d11fd2be4518b4797e71d438c046d7f32ea33e5670227e03fbb"
+  },
+  "tech.seat": {
+   "glb": "kits/library/space_station/assets/tech.seat.glb",
+   "kit_id": "tech.seat",
+   "preset": null,
+   "sha256": "0cb785ec3bb02e08518a659efab928fb09b904e0ba64c9d25e50f101489a2f5b"
+  },
+  "tech.tank": {
+   "glb": "kits/library/space_station/assets/tech.tank.glb",
+   "kit_id": "tech.tank",
+   "preset": null,
+   "sha256": "ad3f8a8cb2bef343439f4e85da55b9b985831e37d6c61bcf534cad2ded69ae8c"
+  },
+  "tech.tank__horizontal": {
+   "glb": "kits/library/space_station/presets/tech.tank__horizontal.glb",
+   "kit_id": "tech.tank",
+   "preset": "horizontal",
+   "sha256": "19a5fda8ce15f842238b62731e0176cc40a1e881a18f05a9d87bacf52d4f9d41"
+  },
+  "tech.terminal": {
+   "glb": "kits/library/space_station/assets/tech.terminal.glb",
+   "kit_id": "tech.terminal",
+   "preset": null,
+   "sha256": "21d71276720f040b1fc4468c89ce9c54f9c4b5909f54559cfee3616e963bb8a9"
+  },
+  "tech.terminal__wall": {
+   "glb": "kits/library/space_station/presets/tech.terminal__wall.glb",
+   "kit_id": "tech.terminal",
+   "preset": "wall",
+   "sha256": "440c32b5416118dddf4a89a19ba3527bdd374da7683b1b34eb9bf0be5a09fbcc"
+  },
+  "tech.vent": {
+   "glb": "kits/library/space_station/assets/tech.vent.glb",
+   "kit_id": "tech.vent",
+   "preset": null,
+   "sha256": "6aa91a904f799362ec574a22863268f7f315fc2cff7cebbbd1c2bca1cf88976d"
+  },
+  "tech.vent__floor": {
+   "glb": "kits/library/space_station/presets/tech.vent__floor.glb",
+   "kit_id": "tech.vent",
+   "preset": "floor",
+   "sha256": "7b5aeff3f04439283007b17f229ad9494ca47decb15eaace57101ed52c84ae11"
+  }
+ },
+ "format": 1,
+ "kit_pack": "space_station",
+ "note": "SCIFIKIT bindings: kit defaults (<kit_id>), pack presets (<kit_id>__<preset>), aliases the runtime places by name (arch.door -> stn.doorway bulkhead frame). Every row hash-pinned; regenerate with tools/scifikit_library.py bindings. Variant theme packs (space_station_alert, alien_world_dusk) fall back to these rows through their kit_pack_id.",
+ "pack": "space_station"
+}

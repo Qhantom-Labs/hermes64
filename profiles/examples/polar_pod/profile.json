@@ -1,0 +1,734 @@
+{
+  "schema_version": "1.0.0",
+  "id": "polar_pod_example",
+  "version": "1.0.0",
+  "description": "Example polar habitat palette and rounded forms. One optional aesthetic, with no game-specific cast or story. Runtime proof pending.",
+  "extends": {
+    "id": "n64_base",
+    "version": "1.0.0",
+    "sha256": "468ae38234d5d0fea17c5a5fddf9c24e55a7952ecf9a8b3ce04d45631339a8e4"
+  },
+  "requirements": {
+    "renderer_api": "hermes64.render/1",
+    "generator_api": "hermes64.kits/1",
+    "character_api": "hermes64.characters/1",
+    "validator_api": "hermes64.validation/1"
+  },
+  "sections": {
+    "palette": {
+      "colors": {
+        "dark": "#101630",
+        "low": "#243C78",
+        "mid": "#7894CC",
+        "light": "#CBD8F0",
+        "white": "#F4F7FF",
+        "accent": "#E8B55C",
+        "skin": "#B98462",
+        "sky": "#ADC6EC"
+      },
+      "ramps": {
+        "surface": [
+          "low",
+          "mid",
+          "light"
+        ],
+        "light": [
+          "dark",
+          "low",
+          "mid",
+          "light",
+          "white"
+        ]
+      },
+      "allowed_sets": {
+        "surface": [
+          "dark",
+          "low",
+          "mid",
+          "light",
+          "white",
+          "accent",
+          "sky"
+        ],
+        "costume": [
+          "low",
+          "mid",
+          "light",
+          "accent"
+        ],
+        "skin": [
+          "skin",
+          "light"
+        ]
+      },
+      "roles": {
+        "wall": "light",
+        "floor": "mid",
+        "accent": "accent",
+        "sky": "sky"
+      },
+      "vertex_light_ramp": "light",
+      "alpha": "opaque_or_cutout",
+      "material_factor_tolerance_rgb8": 2,
+      "vertex_tolerance_rgb8": 2
+    },
+    "materials": {
+      "library": {
+        "wall": {
+          "kind": "baked_unlit",
+          "color": "light",
+          "texture": {
+            "generator": "molded",
+            "ramp": "surface",
+            "size_px": 32,
+            "tile_m": 1.0,
+            "params": {}
+          },
+          "environment": null,
+          "gloss": 0,
+          "specular": 0,
+          "emission": 0,
+          "alpha_cut": 0
+        },
+        "floor": {
+          "kind": "baked_unlit",
+          "color": "mid",
+          "texture": {
+            "generator": "flat",
+            "ramp": "surface",
+            "size_px": 32,
+            "tile_m": 1.0,
+            "params": {}
+          },
+          "environment": null,
+          "gloss": 0,
+          "specular": 0,
+          "emission": 0,
+          "alpha_cut": 0
+        },
+        "trim": {
+          "kind": "chrome_env",
+          "color": "light",
+          "texture": null,
+          "environment": "room",
+          "gloss": 0.7,
+          "specular": 0.25,
+          "emission": 0,
+          "alpha_cut": 0
+        }
+      },
+      "role_bindings": {
+        "wall": "wall",
+        "floor": "floor",
+        "trim": "trim",
+        "ground": "floor",
+        "body": "wall",
+        "ceiling": "wall",
+        "dirt": "floor",
+        "frame": "wall",
+        "light": "wall",
+        "metal": "wall",
+        "roof": "wall",
+        "snow": "floor",
+        "stone": "wall",
+        "wall_alt": "wall",
+        "wood": "wall",
+        "body_alt": "wall",
+        "chrome": "wall",
+        "glass": "wall",
+        "paper": "wall",
+        "water": "floor",
+        "orb": "wall",
+        "screen": "wall",
+        "cap": "wall",
+        "cliff": "wall",
+        "field": "floor",
+        "grass": "floor",
+        "ice": "floor",
+        "path": "floor",
+        "rock": "floor",
+        "sand": "floor",
+        "sky": "wall"
+      },
+      "environments": {
+        "room": {
+          "generator": "env",
+          "stops": [
+            "dark",
+            "mid",
+            "white"
+          ],
+          "size_px": 32
+        }
+      },
+      "chrome_glass": {
+        "enabled": true,
+        "allowed_roles": [
+          "trim"
+        ],
+        "reflection": "vertex_sphere_map",
+        "glass": "opaque_env",
+        "max_visible_fraction": 0.25
+      },
+      "diffuse_wrap": {
+        "min": 0,
+        "max": 0.5,
+        "default": 0.3
+      }
+    },
+    "lighting": {
+      "moods": {
+        "interior": {
+          "ambient": {
+            "color": "mid",
+            "energy": 0.4
+          },
+          "key": {
+            "color": "light",
+            "energy": 0.5,
+            "direction": [
+              0.3,
+              0.8,
+              0.45
+            ]
+          },
+          "fill": {
+            "color": "low",
+            "energy": 0.15,
+            "direction": [
+              -0.6,
+              0.3,
+              -0.4
+            ]
+          },
+          "rim": {
+            "color": "light",
+            "energy": 0.15,
+            "exponent": 2
+          },
+          "fog": {
+            "enabled": true,
+            "color": "dark",
+            "near_m": 6,
+            "far_m": 38,
+            "max_density": 0.7
+          },
+          "grade": {
+            "exposure": 1,
+            "contrast": 1.1,
+            "saturation": 1,
+            "gamma": 1,
+            "lift": "dark",
+            "gain": "white"
+          }
+        },
+        "exterior": {
+          "ambient": {
+            "color": "mid",
+            "energy": 0.44
+          },
+          "key": {
+            "color": "white",
+            "energy": 0.5,
+            "direction": [
+              0.3,
+              0.8,
+              0.45
+            ]
+          },
+          "fill": {
+            "color": "low",
+            "energy": 0.15,
+            "direction": [
+              -0.6,
+              0.3,
+              -0.4
+            ]
+          },
+          "rim": {
+            "color": "light",
+            "energy": 0.15,
+            "exponent": 2
+          },
+          "fog": {
+            "enabled": true,
+            "color": "sky",
+            "near_m": 6,
+            "far_m": 58,
+            "max_density": 0.7
+          },
+          "grade": {
+            "exposure": 1,
+            "contrast": 1.05,
+            "saturation": 1,
+            "gamma": 1,
+            "lift": "dark",
+            "gain": "white"
+          }
+        },
+        "warm_interior": {
+          "ambient": {
+            "color": "mid",
+            "energy": 0.4
+          },
+          "key": {
+            "color": "accent",
+            "energy": 0.5,
+            "direction": [
+              0.3,
+              0.8,
+              0.45
+            ]
+          },
+          "fill": {
+            "color": "low",
+            "energy": 0.15,
+            "direction": [
+              -0.6,
+              0.3,
+              -0.4
+            ]
+          },
+          "rim": {
+            "color": "light",
+            "energy": 0.15,
+            "exponent": 2
+          },
+          "fog": {
+            "enabled": true,
+            "color": "dark",
+            "near_m": 6,
+            "far_m": 36,
+            "max_density": 0.7
+          },
+          "grade": {
+            "exposure": 1,
+            "contrast": 1.1,
+            "saturation": 1,
+            "gamma": 1,
+            "lift": "dark",
+            "gain": "white"
+          }
+        }
+      },
+      "interior_default": "interior",
+      "exterior_default": "exterior",
+      "point_lights_max": 4,
+      "shadow_recipe": "core.blob"
+    },
+    "camera": {
+      "modes": [
+        "fixed"
+      ],
+      "fov_deg": {
+        "min": 58,
+        "max": 68,
+        "default": 64
+      },
+      "height_m": {
+        "min": 1,
+        "max": 4,
+        "default": 2
+      },
+      "near_m": 0.1,
+      "far_m": 120,
+      "require_inside_interior": true,
+      "occlusion_policy": "reject",
+      "safe_margin_px": 8
+    },
+    "kits": {
+      "selected": {
+        "arch.room_shell": {
+          "presets": {
+            "default": {
+              "generator": "arch.room_shell",
+              "preset": "default",
+              "params": {
+                "plan": "rounded_rect",
+                "height": 3
+              }
+            }
+          },
+          "parameter_rules": {
+            "height": {
+              "type": "number",
+              "min": 2.5,
+              "max": 4,
+              "default": 3,
+              "behavior": "reject"
+            },
+            "plan": {
+              "type": "enum",
+              "values": [
+                "rounded_rect",
+                "round",
+                "oval"
+              ],
+              "default": "rounded_rect"
+            }
+          }
+        },
+        "prop.vessel": {
+          "presets": {
+            "default": {
+              "generator": "prop.vessel",
+              "preset": "default",
+              "params": {}
+            }
+          },
+          "parameter_rules": {}
+        },
+        "prop.device": {
+          "presets": {
+            "default": {
+              "generator": "prop.device",
+              "preset": "default",
+              "params": {}
+            }
+          },
+          "parameter_rules": {}
+        },
+        "terrain.yard": {
+          "presets": {
+            "default": {
+              "generator": "terrain.yard",
+              "preset": "default",
+              "params": {
+                "plan": "rounded_rect",
+                "terraces": 2
+              }
+            }
+          },
+          "parameter_rules": {}
+        },
+        "sky.backdrop": {
+          "presets": {
+            "default": {
+              "generator": "sky.backdrop",
+              "preset": "default",
+              "params": {}
+            }
+          },
+          "parameter_rules": {}
+        }
+      },
+      "required_slots": {
+        "starter_room": "arch.room_shell",
+        "keepsake": "prop.vessel"
+      },
+      "fallbacks": {}
+    },
+    "geometry": {
+      "shape_vocabulary": [
+        "rounded_rect",
+        "round",
+        "oval"
+      ],
+      "bevel_m": {
+        "min": 0.1,
+        "max": 0.3,
+        "default": 0.2
+      },
+      "round_segments": {
+        "min": 6,
+        "max": 16,
+        "default": 8
+      },
+      "shading": "smooth_grouped",
+      "triangle_caps": {
+        "shell": 1500,
+        "prop": 150,
+        "character": 700,
+        "terrain": 512
+      },
+      "proportions": {
+        "width_height": {
+          "min": 0.25,
+          "max": 4,
+          "default": 1
+        }
+      },
+      "silhouette_checks": [
+        "core.non_degenerate"
+      ]
+    },
+    "characters": {
+      "families": [
+        "humanoid_hood"
+      ],
+      "rigs": [
+        "human16_v1"
+      ],
+      "proportions": {
+        "height_m": {
+          "min": 1.5,
+          "max": 1.9,
+          "default": 1.7
+        },
+        "head_scale": {
+          "min": 0.95,
+          "max": 1.15,
+          "default": 1
+        },
+        "build": {
+          "min": 0.95,
+          "max": 1.05,
+          "default": 1
+        }
+      },
+      "costume_palettes": {
+        "default": "costume"
+      },
+      "skin_palette": "skin",
+      "costume_recipes": [
+        "hood_vest"
+      ],
+      "face_styles": [
+        "faceless"
+      ],
+      "hair_set": [
+        "none"
+      ],
+      "animation_set": "human16_step",
+      "clip_ids": [
+        "idle",
+        "walk",
+        "interact",
+        "talk",
+        "carry",
+        "sit"
+      ],
+      "attachment_slots": [
+        "hand_l",
+        "hand_r"
+      ],
+      "body_triangles_max": 700,
+      "attachment_triangles_max": 150,
+      "total_actor_triangles_max": 700,
+      "pose_validator": "core.contact_pose"
+    },
+    "props": {
+      "vocabulary": [
+        "keepsake",
+        "instrument"
+      ],
+      "recipes": {
+        "keepsake": {
+          "generator": "prop.vessel",
+          "preset": "default",
+          "params": {}
+        },
+        "instrument": {
+          "generator": "prop.device",
+          "preset": "default",
+          "params": {}
+        }
+      },
+      "allowed_material_roles": [
+        "wall",
+        "floor",
+        "trim"
+      ],
+      "hero_policy": "generated_only"
+    },
+    "exterior": {
+      "terrain": {
+        "generator": "terrain.yard",
+        "preset": "default",
+        "params": {
+          "plan": "rounded_rect",
+          "terraces": 2
+        }
+      },
+      "sky": {
+        "generator": "sky.backdrop",
+        "preset": "default",
+        "params": {}
+      },
+      "flora": [],
+      "climate": "polar",
+      "depth_bands_m": [
+        10,
+        28,
+        58
+      ],
+      "allowed_ground_roles": [
+        "ground"
+      ]
+    },
+    "ui": {
+      "font": "core.bitmap",
+      "frame_recipe": "core.rounded_frame",
+      "icons": "core.verbs",
+      "colors": {
+        "background": "dark",
+        "text": "white",
+        "frame": "mid",
+        "accent": "accent"
+      },
+      "panel_alpha": 0.9,
+      "font_scale": 1,
+      "typewriter_cps": 42,
+      "layout": "core.adventure_320",
+      "min_contrast_ratio": 4.5
+    },
+    "audio": {
+      "sound_set": "core.original",
+      "allowed_tags": [
+        "wind",
+        "electronic",
+        "soft"
+      ],
+      "cues": {
+        "ambient": {
+          "generator": "core.noise",
+          "preset": "filtered_wind",
+          "gain_db": -24,
+          "loop": true
+        },
+        "interact": {
+          "generator": "core.tone",
+          "preset": "electronic_tick",
+          "gain_db": -18,
+          "loop": false
+        }
+      },
+      "gain_db": {
+        "min": -36,
+        "max": -12,
+        "default": -24
+      },
+      "sample_rates": [
+        22050
+      ],
+      "channels_max": 1,
+      "peak_dbfs_max": -1,
+      "loop_seam_max": 0.01,
+      "duration_seconds_max": 60
+    },
+    "validators": {
+      "budgets": {
+        "room_triangles": 6000,
+        "texture_px": 128,
+        "palette_colors": 32,
+        "visible_lights": 4
+      },
+      "asset_palette": {
+        "texel_tolerance_rgb8": 0,
+        "max_off_palette": 0,
+        "max_partial_alpha": 0
+      },
+      "metrics": [
+        {
+          "validator": "core.style_metrics",
+          "version": "1.0.0",
+          "scope": "room",
+          "metric": "contrast_range",
+          "op": "min",
+          "value": 0.25,
+          "severity": "error",
+          "on_missing": "fail"
+        },
+        {
+          "validator": "core.style_metrics",
+          "version": "1.0.0",
+          "scope": "room",
+          "metric": "void_fraction",
+          "op": "max",
+          "value": 0.01,
+          "severity": "error",
+          "on_missing": "fail"
+        },
+        {
+          "validator": "core.style_metrics",
+          "version": "1.0.0",
+          "scope": "room",
+          "metric": "floating_count",
+          "op": "equals",
+          "value": 0,
+          "severity": "error",
+          "on_missing": "fail"
+        },
+        {
+          "validator": "core.style_metrics",
+          "version": "1.0.0",
+          "scope": "room",
+          "metric": "fog_swallowed_fraction",
+          "op": "max",
+          "value": 0.3,
+          "severity": "error",
+          "on_missing": "fail"
+        },
+        {
+          "validator": "core.style_metrics",
+          "version": "1.0.0",
+          "scope": "room",
+          "metric": "palette_hue_adherence",
+          "op": "min",
+          "value": 0.85,
+          "severity": "error",
+          "on_missing": "fail"
+        },
+        {
+          "validator": "core.style_metrics",
+          "version": "1.0.0",
+          "scope": "room",
+          "metric": "accent_role_fraction",
+          "op": "max",
+          "value": 0.1,
+          "severity": "error",
+          "on_missing": "fail"
+        }
+      ],
+      "golden": {
+        "required": false,
+        "max_changed_fraction": 0.02,
+        "regions": [
+          "ground",
+          "sky",
+          "characters"
+        ],
+        "renderer_pin_required": true
+      },
+      "coverage": "all_rooms_and_cameras",
+      "known_bad_controls": [
+        "off_palette_texel",
+        "over_budget",
+        "missing_room_capture",
+        "invalid_pose"
+      ]
+    },
+    "variation": {
+      "room_moods": [
+        "interior",
+        "exterior",
+        "warm_interior"
+      ],
+      "room_numeric": {
+        "light_energy_scale": {
+          "min": 0.9,
+          "max": 1.1,
+          "default": 1
+        },
+        "fog_distance_scale": {
+          "min": 0.9,
+          "max": 1.1,
+          "default": 1
+        }
+      },
+      "character_costume_sets": [
+        "default"
+      ],
+      "asset_roles": [
+        "wall",
+        "floor",
+        "trim",
+        "ground"
+      ],
+      "palette_extensions": false,
+      "unknown_fields": "reject",
+      "on_violation": "reject_with_profile_change_option"
+    }
+  },
+  "resources": []
+}

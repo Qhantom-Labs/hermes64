@@ -1,0 +1,1991 @@
+{
+  "characters": [
+    {
+      "animations": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "authored_variant": "returning_daughter",
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "body_triangles": 696,
+      "bone_names": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "character_id": "fv_scribe",
+      "character_pack": "forest_village",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "returning_daughter",
+        "base_rig_id": "human_16",
+        "body_id": "human_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/82c219ee3f59e479c450bdd394013c06ea26ae7762441983bf6d7734fd5e31dd.glb",
+        "params": {
+          "colour": "#8d6a58",
+          "costume": "travel_coat",
+          "voice_tags": [
+            "quiet",
+            "measured"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "d70ec1a17a3c96010aad8f9cf04c3274a7ba5176afcc148f757d83d5457195fd",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "cast stand-in; not a bespoke Last Light costume",
+      "glb": "characters/assets/forest_village/fv_scribe.glb",
+      "internal_only": false,
+      "params": {
+        "colour": "#8d6a58",
+        "costume": "travel_coat",
+        "voice_tags": [
+          "quiet",
+          "measured"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {
+        "kit_acc_hand_r_book_mesh": 24
+      },
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "622fae8343cef09b876f0c9f08c962425afb3bac83f8b8cf262b05fe11175542",
+      "source_rig": "human16_v1",
+      "tri_count": 720,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "authored_variant": "clue_giver",
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "body_triangles": 696,
+      "bone_names": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "character_id": "fv_warden",
+      "character_pack": "forest_village",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "clue_giver",
+        "base_rig_id": "human_16",
+        "body_id": "human_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/9dac128f60a76bcd8fa16234b0731f557fcc6f27a8f09fde4e74d0b479a7fce1.glb",
+        "params": {
+          "colour": "#a89a64",
+          "costume": "oilskin",
+          "voice_tags": [
+            "weathered",
+            "restrained"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "ecf1c0c9418bc2a74f64fa3bac9817871b005b225c8ff30c881d00efc8f36ead",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "cast stand-in; not a bespoke Last Light costume",
+      "glb": "characters/assets/forest_village/fv_warden.glb",
+      "internal_only": false,
+      "params": {
+        "colour": "#a89a64",
+        "costume": "oilskin",
+        "voice_tags": [
+          "weathered",
+          "restrained"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {
+        "kit_acc_belt_satchel_mesh": 48
+      },
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "568a9e41e0a5e1f14f0d1e8d8bedb28878afeae55d290e4c47a7ce7306818e6d",
+      "source_rig": "human16_v1",
+      "tri_count": 744,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "authored_variant": "antagonist",
+      "base_rig_id": "human_16",
+      "body_id": "human_base_v1",
+      "body_triangles": 696,
+      "bone_names": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "character_id": "fv_elder",
+      "character_pack": "forest_village",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "antagonist",
+        "base_rig_id": "human_16",
+        "body_id": "human_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/1d35ead72b75bfe59191b0190992c0520377938434c7706601494d4b7cb51939.glb",
+        "params": {
+          "colour": "#514958",
+          "costume": "buttoned_storm_coat",
+          "voice_tags": [
+            "withholding",
+            "accusatory"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "98c85d3d435e1d5b2863e5dc39470335d8ecbb141a1bbc1d15720ac4b5247018",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "cast stand-in; not a bespoke Last Light costume",
+      "glb": "characters/assets/forest_village/fv_elder.glb",
+      "internal_only": false,
+      "params": {
+        "colour": "#514958",
+        "costume": "buttoned_storm_coat",
+        "voice_tags": [
+          "withholding",
+          "accusatory"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {
+        "kit_acc_hand_r_cane_mesh": 58
+      },
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "043b48eb0994b7810909af9741639bb224d6927ea842f9523edc08efa7eb17ed",
+      "source_rig": "human16_v1",
+      "tri_count": 754,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "authored_variant": "arrival",
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "body_triangles": 684,
+      "bone_names": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "character_id": "new_arrival",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "arrival",
+        "base_rig_id": "human_16",
+        "body_id": "expedition_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/0622592f2101184cf19822cfa346aaa9004b11a3346abe97dbb01d3f855cb541.glb",
+        "params": {
+          "colour": "#aebce6",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "arrival"
+          ],
+          "suit": {
+            "accessories": [
+              "blank_name_tab"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#879aca",
+            "sweater_wear": "fresh",
+            "trouser_colour": "#33486d",
+            "trouser_volume": 1.0,
+            "trouser_wear": "fresh",
+            "vest_colour": "#aebce6",
+            "vest_pattern": "wide_wave"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "4ad01237d74a019ffe8e310ba699c1745f1f8fe510593ee0c40af098caf143d5",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "authored polar cast",
+      "glb": "characters/assets/polar_pod/new_arrival.glb",
+      "internal_only": false,
+      "params": {
+        "colour": "#aebce6",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "arrival"
+        ],
+        "suit": {
+          "accessories": [
+            "blank_name_tab"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#879aca",
+          "sweater_wear": "fresh",
+          "trouser_colour": "#33486d",
+          "trouser_volume": 1.0,
+          "trouser_wear": "fresh",
+          "vest_colour": "#aebce6",
+          "vest_pattern": "wide_wave"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {
+        "kit_acc_hand_r_duffel_mesh": 64
+      },
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "c9acb9be1f5741c4e4323d7e9ad843fa5690e0bb4deb2ec215d2fe02cd67af03",
+      "source_rig": "human16_v1",
+      "tri_count": 748,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "authored_variant": "host",
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "body_triangles": 684,
+      "bone_names": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "character_id": "tavi",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "host",
+        "base_rig_id": "human_16",
+        "body_id": "expedition_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/02ae0173a48c98d877a30559d5f6f5249fc1e7af51d397970697f6df5973a465.glb",
+        "params": {
+          "colour": "#b1c1ed",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "host"
+          ],
+          "suit": {
+            "accessories": [
+              "mug_clip"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#677cbb",
+            "sweater_wear": "mended_cuffs",
+            "trouser_colour": "#293c69",
+            "trouser_volume": 1.2,
+            "trouser_wear": "mended_cuffs",
+            "vest_colour": "#b1c1ed",
+            "vest_pattern": "small_diamond"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "e92838c10e38bf5b56ca85e33e52eaa62136b3b0429ae484a8599973478f0fbd",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "authored polar cast",
+      "glb": "characters/assets/polar_pod/tavi.glb",
+      "internal_only": false,
+      "params": {
+        "colour": "#b1c1ed",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "host"
+        ],
+        "suit": {
+          "accessories": [
+            "mug_clip"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#677cbb",
+          "sweater_wear": "mended_cuffs",
+          "trouser_colour": "#293c69",
+          "trouser_volume": 1.2,
+          "trouser_wear": "mended_cuffs",
+          "vest_colour": "#b1c1ed",
+          "vest_pattern": "small_diamond"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {
+        "kit_acc_hand_r_mug_mesh": 84
+      },
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "be7accc1c123372c7c8bda1659b711846464423863a4cd9b52cb7816d92737c2",
+      "source_rig": "human16_v1",
+      "tri_count": 768,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "authored_variant": "helper",
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "body_triangles": 684,
+      "bone_names": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "character_id": "neri",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "helper",
+        "base_rig_id": "human_16",
+        "body_id": "expedition_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/bdf8ef9aee358245c2d39e1c2606cbb31ccd409dbde7e9e97e0a38861c0f206b.glb",
+        "params": {
+          "colour": "#8cace4",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "helper"
+          ],
+          "suit": {
+            "accessories": [
+              "three_screen_pin"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#415fad",
+            "sweater_wear": "polished_knees",
+            "trouser_colour": "#263e79",
+            "trouser_volume": 1.1,
+            "trouser_wear": "polished_knees",
+            "vest_colour": "#8cace4",
+            "vest_pattern": "parallel_wave"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "8b87256d1fbce3cddaa7bebf13849fba01f2788675934be3c5e9fb758b0e405b",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "authored polar cast",
+      "glb": "characters/assets/polar_pod/neri.glb",
+      "internal_only": false,
+      "params": {
+        "colour": "#8cace4",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "helper"
+        ],
+        "suit": {
+          "accessories": [
+            "three_screen_pin"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#415fad",
+          "sweater_wear": "polished_knees",
+          "trouser_colour": "#263e79",
+          "trouser_volume": 1.1,
+          "trouser_wear": "polished_knees",
+          "vest_colour": "#8cace4",
+          "vest_pattern": "parallel_wave"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {
+        "kit_acc_hand_r_lantern_mesh": 152
+      },
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "a8d0bd219d226f5495dc0524c591d7d55c62e250264064985d7a1929c96999f0",
+      "source_rig": "human16_v1",
+      "tri_count": 836,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "authored_variant": "saboteur",
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "body_triangles": 684,
+      "bone_names": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "character_id": "neri",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "saboteur",
+        "base_rig_id": "human_16",
+        "body_id": "expedition_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/c154612a009d34cf4cf95831b02c975995cd9f65192e4132be5ed1ebf77bfdbe.glb",
+        "params": {
+          "colour": "#4d5d9e",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "withholding",
+            "saboteur"
+          ],
+          "suit": {
+            "accessories": [
+              "reversed_screen_pin",
+              "label_roll"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#415fad",
+            "sweater_wear": "ink_marks",
+            "trouser_colour": "#263e79",
+            "trouser_volume": 1.1,
+            "trouser_wear": "polished_knees",
+            "vest_colour": "#4d5d9e",
+            "vest_pattern": "offset_wave"
+          },
+          "voice_tags": [
+            "dry",
+            "playful"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "9f567d5b5bf67ef79ef877876dbe57a543806fe2311f5bb6e9ea8578b1d089c8",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "authored polar cast",
+      "glb": "characters/assets/polar_pod/neri.glb",
+      "internal_only": false,
+      "params": {
+        "colour": "#4d5d9e",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "withholding",
+          "saboteur"
+        ],
+        "suit": {
+          "accessories": [
+            "reversed_screen_pin",
+            "label_roll"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#415fad",
+          "sweater_wear": "ink_marks",
+          "trouser_colour": "#263e79",
+          "trouser_volume": 1.1,
+          "trouser_wear": "polished_knees",
+          "vest_colour": "#4d5d9e",
+          "vest_pattern": "offset_wave"
+        },
+        "voice_tags": [
+          "dry",
+          "playful"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {
+        "kit_acc_hand_r_lantern_mesh": 152
+      },
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "a8d0bd219d226f5495dc0524c591d7d55c62e250264064985d7a1929c96999f0",
+      "source_rig": "human16_v1",
+      "tri_count": 836,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "authored_variant": "gardener",
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "body_triangles": 684,
+      "bone_names": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "character_id": "sol",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "gardener",
+        "base_rig_id": "human_16",
+        "body_id": "expedition_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/35df38e36b3fecbc137a9898a6307ef973667b1fb3d3245556ed5843912dcc90.glb",
+        "params": {
+          "colour": "#c0c9e2",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "gardener"
+          ],
+          "suit": {
+            "accessories": [
+              "seed_packet"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#8d8bbc",
+            "sweater_wear": "darned_hem",
+            "trouser_colour": "#41527c",
+            "trouser_volume": 1.3,
+            "trouser_wear": "darned_hem",
+            "vest_colour": "#c0c9e2",
+            "vest_pattern": "radial_quilt"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "78ffc72e50c63bd4c654d497c31edd15c9703dfd81a6bcd6adac4269afb1970b",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "authored polar cast",
+      "glb": "characters/assets/polar_pod/sol.glb",
+      "internal_only": false,
+      "params": {
+        "colour": "#c0c9e2",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "gardener"
+        ],
+        "suit": {
+          "accessories": [
+            "seed_packet"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#8d8bbc",
+          "sweater_wear": "darned_hem",
+          "trouser_colour": "#41527c",
+          "trouser_volume": 1.3,
+          "trouser_wear": "darned_hem",
+          "vest_colour": "#c0c9e2",
+          "vest_pattern": "radial_quilt"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {
+        "kit_acc_belt_satchel_mesh": 48
+      },
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "49b8d95034e44b5da95d94068e87c46b094068cce0779cfab1dffc8007bf0793",
+      "source_rig": "human16_v1",
+      "tri_count": 732,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "authored_variant": "pathkeeper",
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "body_triangles": 684,
+      "bone_names": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "character_id": "ivo",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "pathkeeper",
+        "base_rig_id": "human_16",
+        "body_id": "expedition_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/fb9552ab07e9a93a46a0bbe120d5cd998187488aae3a9a6614679509c8c41c84.glb",
+        "params": {
+          "colour": "#6b8eca",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "pathkeeper"
+          ],
+          "suit": {
+            "accessories": [
+              "hatch_wheel_badge"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#879aca",
+            "sweater_wear": "salt_stitching",
+            "trouser_colour": "#25365c",
+            "trouser_volume": 1.0,
+            "trouser_wear": "salt_stitching",
+            "vest_colour": "#6b8eca",
+            "vest_pattern": "chevron_quilt"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "d122bdccba60e833ee35d22428980975cd62d99431baf5fb0165ced46061faaa",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "authored polar cast",
+      "glb": "characters/assets/polar_pod/ivo.glb",
+      "internal_only": false,
+      "params": {
+        "colour": "#6b8eca",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "pathkeeper"
+        ],
+        "suit": {
+          "accessories": [
+            "hatch_wheel_badge"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#879aca",
+          "sweater_wear": "salt_stitching",
+          "trouser_colour": "#25365c",
+          "trouser_volume": 1.0,
+          "trouser_wear": "salt_stitching",
+          "vest_colour": "#6b8eca",
+          "vest_pattern": "chevron_quilt"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {
+        "kit_acc_hand_r_cane_mesh": 58
+      },
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "ced5ee5b449a30a021bbb8bd6b482068e322dd2c2e1c6c95658728f72137250e",
+      "source_rig": "human16_v1",
+      "tri_count": 742,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "carry",
+        "idle",
+        "interact",
+        "run",
+        "sit",
+        "talk",
+        "walk",
+        "idle_combat",
+        "swing",
+        "hurt",
+        "death",
+        "roll",
+        "block"
+      ],
+      "authored_variant": "dome_keeper",
+      "base_rig_id": "human_16",
+      "body_id": "expedition_base_v1",
+      "body_triangles": 684,
+      "bone_names": [
+        "root",
+        "pelvis",
+        "spine",
+        "head",
+        "upper_arm_l",
+        "forearm_l",
+        "hand_l",
+        "upper_arm_r",
+        "forearm_r",
+        "hand_r",
+        "thigh_l",
+        "shin_l",
+        "foot_l",
+        "thigh_r",
+        "shin_r",
+        "foot_r"
+      ],
+      "character_id": "luma",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "dome_keeper",
+        "base_rig_id": "human_16",
+        "body_id": "expedition_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/87a0146090836fc42e3ad77bc3398730102804932bafb1f204eb3a27fb078335.glb",
+        "params": {
+          "colour": "#d3d7df",
+          "costume": "expedition_suit",
+          "dialogue_tags": [
+            "dome_keeper"
+          ],
+          "suit": {
+            "accessories": [
+              "tiny_thermos"
+            ],
+            "boots": "heavy_silver",
+            "gloves": "black_knit",
+            "hood": "silver_faceless",
+            "sweater_colour": "#5374b1",
+            "sweater_wear": "softened_seams",
+            "trouser_colour": "#596596",
+            "trouser_volume": 1.4,
+            "trouser_wear": "softened_seams",
+            "vest_colour": "#d3d7df",
+            "vest_pattern": "square_quilt"
+          },
+          "voice_tags": [
+            "warm",
+            "unhurried"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "c45adca91a1fb0361c2665662adf9330b780c96e739a9cbe9602d52ab98d9383",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "authored polar cast",
+      "glb": "characters/assets/polar_pod/luma.glb",
+      "internal_only": false,
+      "params": {
+        "colour": "#d3d7df",
+        "costume": "expedition_suit",
+        "dialogue_tags": [
+          "dome_keeper"
+        ],
+        "suit": {
+          "accessories": [
+            "tiny_thermos"
+          ],
+          "boots": "heavy_silver",
+          "gloves": "black_knit",
+          "hood": "silver_faceless",
+          "sweater_colour": "#5374b1",
+          "sweater_wear": "softened_seams",
+          "trouser_colour": "#596596",
+          "trouser_volume": 1.4,
+          "trouser_wear": "softened_seams",
+          "vest_colour": "#d3d7df",
+          "vest_pattern": "square_quilt"
+        },
+        "voice_tags": [
+          "warm",
+          "unhurried"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {
+        "kit_acc_hand_r_book_mesh": 24
+      },
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "5a0130cf5f3405ea1f85dd51da53636590e55819b5c2c78348bb42c99e1c01fa",
+      "source_rig": "human16_v1",
+      "tri_count": 708,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_tabby",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/6584980249fead13cc38f8a8dd529bc119bea975044541370ea43ee6ac577e26.glb",
+        "params": {
+          "coat": "silver_tabby",
+          "colour": "#9caecb",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "274cd3a952a52337d9f8a608cee09ffefef8cc8e882d056d57552b114fc50ade",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_tabby.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "silver_tabby",
+        "colour": "#9caecb",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "ac359b3347e6a3fc44ad4aa2f84a7a9fdb27d41a2773b811cc8e4b20ec1c7e2c",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_tuxedo",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/6964c596e60a2f65f1d716b1af85fb983a9432ed173e5334a441b6e023e1068c.glb",
+        "params": {
+          "coat": "black_tuxedo",
+          "colour": "#273247",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "3b753934a8956441dd87ffff19770789245ec78eb224317574e2770984edad79",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_tuxedo.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "black_tuxedo",
+        "colour": "#273247",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "d0c6cdf0e56a6c6d7b969c8f9242b4fb09cf13490c953981cd2b271db9d8742c",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_black",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/5a29d9b2e6a13e6f02e812960bb8e3f0d3532ac9e220de99b3b288ce5c16d5ba.glb",
+        "params": {
+          "coat": "blue_solid",
+          "colour": "#6d83ac",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "739d9a7236bcae81e964c2d2449554f6045c708cd9b3aa96572682be4021f56d",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_black.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "blue_solid",
+        "colour": "#6d83ac",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "3b21d757415026815ef894e83c52143177a3ff2563746d4f9a18287045724073",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_white",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/ea1a33675c36f7e353d08415d1023900ef27c7cfb88167e5243cd77e08d2b52e.glb",
+        "params": {
+          "coat": "cream_point",
+          "colour": "#d5d4cc",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "cb9a5e68d3681a89e06641288a70b00ef344a1ae35095f1078f71090ae28238f",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_white.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "cream_point",
+        "colour": "#d5d4cc",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "0cdc1d8d951c382c581a81536c09744c5fdd882649b15a3ad9c076ef2bfc2e75",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_black",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/1680d9d4f10287ca6fa28af5dc16d32ef9a16b453b914d8b7581eadb083e7a78.glb",
+        "params": {
+          "coat": "black_solid",
+          "colour": "#1c283f",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "974cba26cf6a3b4a0ffbac8cd6c52c70bc9b454ec61a8e96f901ad681017292f",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_black.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "black_solid",
+        "colour": "#1c283f",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "3b21d757415026815ef894e83c52143177a3ff2563746d4f9a18287045724073",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_tabby",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/a727fc04ac1cfb4b7a7214e46fac5d3bff6580d47a97d6b0535ebb5d738b1d00.glb",
+        "params": {
+          "coat": "ginger_tabby",
+          "colour": "#ad947c",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "2bc0951eaf58949eca3aeeeaf57e8667b693ee7a6eb51aca034755bd8da482d8",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_tabby.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "ginger_tabby",
+        "colour": "#ad947c",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "ac359b3347e6a3fc44ad4aa2f84a7a9fdb27d41a2773b811cc8e4b20ec1c7e2c",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_calico",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/3adf8ce7dfbfdf73b7b4bd296e8d22a14d3800630fb4476abecf3cc628e1594e.glb",
+        "params": {
+          "coat": "calico",
+          "colour": "#a8a3bb",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "f3242aa2c9b8736799351f82a9f715aa56104cc88975bf563af61f076fd3e096",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_calico.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "calico",
+        "colour": "#a8a3bb",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "bb69f916a3d78c0868c6bf87abe05a94af702947ea726dcfa5fed88e4ccca9a1",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_white",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/f68aed498816d996111306f2c2362c0f81116d6b1543e897df538addfba64879.glb",
+        "params": {
+          "coat": "white_solid",
+          "colour": "#e0e5ee",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "9a723ed6be020ac5a787eef366c46649d297acfb30f94327f8401c780c408487",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_white.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "white_solid",
+        "colour": "#e0e5ee",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "0cdc1d8d951c382c581a81536c09744c5fdd882649b15a3ad9c076ef2bfc2e75",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_calico",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/40020933455231862cb25bbb7968aecb3146ee01762dce20fead2cf0be8b20d7.glb",
+        "params": {
+          "coat": "tortoiseshell",
+          "colour": "#6c6380",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "f456a57592fdd36dffcd2d0f38db268871a7e10cd66e48096b507da1b80de64f",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_calico.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "tortoiseshell",
+        "colour": "#6c6380",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "bb69f916a3d78c0868c6bf87abe05a94af702947ea726dcfa5fed88e4ccca9a1",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_tabby",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/2085788fda0c80894355aafdcd72d31e3f8690e05ccf21fbf883089688e48a87.glb",
+        "params": {
+          "coat": "brown_mackerel",
+          "colour": "#89919c",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "751ca434ba62be3920731fd99d946fb4b0c046e164b522c5a15ef38918a9e3ce",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_tabby.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "brown_mackerel",
+        "colour": "#89919c",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "ac359b3347e6a3fc44ad4aa2f84a7a9fdb27d41a2773b811cc8e4b20ec1c7e2c",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_black",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/980c763c965691ab84f930930c28fd0a42275f6b33d951fa44724d05078cdfa5.glb",
+        "params": {
+          "coat": "smoky_longhair",
+          "colour": "#596d90",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "ce86fd183c5a7c362af54732d6ddbc05613b8350c46875c6cdbb3d9cc69611d7",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_black.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "smoky_longhair",
+        "colour": "#596d90",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "3b21d757415026815ef894e83c52143177a3ff2563746d4f9a18287045724073",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    },
+    {
+      "animations": [
+        "idle",
+        "loaf",
+        "run",
+        "sit",
+        "sleep_curled",
+        "stretch",
+        "walk"
+      ],
+      "authored_variant": "cat",
+      "base_rig_id": "cat_8",
+      "body_id": "cat_base_v1",
+      "body_triangles": 300,
+      "bone_names": [
+        "root",
+        "hips",
+        "chest",
+        "leg_fl",
+        "paw_fl",
+        "leg_fr",
+        "paw_fr",
+        "neck",
+        "head",
+        "leg_bl",
+        "paw_bl",
+        "leg_br",
+        "paw_br",
+        "tail_1",
+        "tail_2",
+        "tail_3"
+      ],
+      "character_id": "cat_calico",
+      "character_pack": "polar_pod",
+      "fallback": {
+        "animations": [],
+        "authored_variant": "cat",
+        "base_rig_id": "cat_8",
+        "body_id": "cat_base_v1",
+        "bone_names": [],
+        "glb": "kits/placeholders/658f74e2a67b991081ccdeef9a3580e9a731e64b634e4beaa411953b42eef6a3.glb",
+        "params": {
+          "coat": "spotted_cream",
+          "colour": "#b9c8d8",
+          "costume": "fur",
+          "voice_tags": [
+            "purr"
+          ]
+        },
+        "placeholder": true,
+        "reason": "lane-characters pending; static marker, not rig-compatible or complete costume/coat rendering",
+        "sha256": "247a55d52fb09163687582d2b2b512bf0f5681bef3fdeb6d9bf2e6bf893e9d34",
+        "tri_count": 108,
+        "vertex_color_encoding": "srgb8"
+      },
+      "fidelity": "approximate coat family; original coat identity preserved",
+      "glb": "characters/assets/polar_pod/cat_calico.glb",
+      "internal_only": false,
+      "params": {
+        "coat": "spotted_cream",
+        "colour": "#b9c8d8",
+        "costume": "fur",
+        "voice_tags": [
+          "purr"
+        ]
+      },
+      "placeholder": false,
+      "prop_triangles": {},
+      "public_release": true,
+      "reason": "real exported cast; story identity retained, no rig retargeting",
+      "sha256": "bb69f916a3d78c0868c6bf87abe05a94af702947ea726dcfa5fed88e4ccca9a1",
+      "source_rig": "quad16_v1",
+      "tri_count": 300,
+      "vertex_color_encoding": "linear_gltf"
+    }
+  ],
+  "schema": "hermes64-characters/1"
+}

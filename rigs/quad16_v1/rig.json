@@ -1,0 +1,475 @@
+{
+ "schema": "hermes64-rig/1.0.0",
+ "id": "quad16_v1",
+ "version": "1.0.0",
+ "kind": "quadruped",
+ "conventions": {
+  "units": "metre",
+  "gltf_up": "+Y",
+  "gltf_forward": "+Z (the character faces +Z; Blender authoring: Z up, faces -Y)",
+  "left_side": "+X (bones *_l sit on +X)",
+  "handedness": "right-handed",
+  "rest_rotation": "identity on every joint; unit scale; translation-only offsets from the parent",
+  "blender_authoring": "every bone head at the joint, tail = head + (0, 0, 0.05), roll 0, export with +Y up, export_rest_position_armature",
+  "armature_node": "rig_quad16_v1",
+  "mesh_node": "kit_body",
+  "inverse_bind": "IBM[i] = inverse(world rest matrix of joint i) = translation(-rest_world_position[i])"
+ },
+ "bones": [
+  {
+   "name": "root",
+   "parent": null,
+   "index": 0,
+   "rest_translation": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "rest_world": [
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  {
+   "name": "hips",
+   "parent": "root",
+   "index": 1,
+   "rest_translation": [
+    0.0,
+    0.211,
+    -0.0918
+   ],
+   "rest_world": [
+    0.0,
+    0.211,
+    -0.0918
+   ]
+  },
+  {
+   "name": "chest",
+   "parent": "hips",
+   "index": 2,
+   "rest_translation": [
+    0.0,
+    0.0,
+    0.1734
+   ],
+   "rest_world": [
+    0.0,
+    0.211,
+    0.0816
+   ]
+  },
+  {
+   "name": "leg_fl",
+   "parent": "chest",
+   "index": 3,
+   "rest_translation": [
+    0.088,
+    0.0,
+    0.0306
+   ],
+   "rest_world": [
+    0.088,
+    0.211,
+    0.1122
+   ]
+  },
+  {
+   "name": "paw_fl",
+   "parent": "leg_fl",
+   "index": 4,
+   "rest_translation": [
+    0.0,
+    -0.155,
+    0.0
+   ],
+   "rest_world": [
+    0.088,
+    0.056,
+    0.1122
+   ]
+  },
+  {
+   "name": "leg_fr",
+   "parent": "chest",
+   "index": 5,
+   "rest_translation": [
+    -0.088,
+    0.0,
+    0.0306
+   ],
+   "rest_world": [
+    -0.088,
+    0.211,
+    0.1122
+   ]
+  },
+  {
+   "name": "paw_fr",
+   "parent": "leg_fr",
+   "index": 6,
+   "rest_translation": [
+    0.0,
+    -0.155,
+    0.0
+   ],
+   "rest_world": [
+    -0.088,
+    0.056,
+    0.1122
+   ]
+  },
+  {
+   "name": "neck",
+   "parent": "chest",
+   "index": 7,
+   "rest_translation": [
+    0.0,
+    0.055,
+    0.0578
+   ],
+   "rest_world": [
+    0.0,
+    0.266,
+    0.1394
+   ]
+  },
+  {
+   "name": "head",
+   "parent": "neck",
+   "index": 8,
+   "rest_translation": [
+    0.0,
+    0.075,
+    0.0918
+   ],
+   "rest_world": [
+    0.0,
+    0.341,
+    0.2312
+   ]
+  },
+  {
+   "name": "leg_bl",
+   "parent": "hips",
+   "index": 9,
+   "rest_translation": [
+    0.088,
+    0.0,
+    -0.0238
+   ],
+   "rest_world": [
+    0.088,
+    0.211,
+    -0.1156
+   ]
+  },
+  {
+   "name": "paw_bl",
+   "parent": "leg_bl",
+   "index": 10,
+   "rest_translation": [
+    0.0,
+    -0.155,
+    0.0
+   ],
+   "rest_world": [
+    0.088,
+    0.056,
+    -0.1156
+   ]
+  },
+  {
+   "name": "leg_br",
+   "parent": "hips",
+   "index": 11,
+   "rest_translation": [
+    -0.088,
+    0.0,
+    -0.0238
+   ],
+   "rest_world": [
+    -0.088,
+    0.211,
+    -0.1156
+   ]
+  },
+  {
+   "name": "paw_br",
+   "parent": "leg_br",
+   "index": 12,
+   "rest_translation": [
+    0.0,
+    -0.155,
+    0.0
+   ],
+   "rest_world": [
+    -0.088,
+    0.056,
+    -0.1156
+   ]
+  },
+  {
+   "name": "tail_1",
+   "parent": "hips",
+   "index": 13,
+   "rest_translation": [
+    0.0,
+    0.035,
+    -0.085
+   ],
+   "rest_world": [
+    0.0,
+    0.246,
+    -0.1768
+   ]
+  },
+  {
+   "name": "tail_2",
+   "parent": "tail_1",
+   "index": 14,
+   "rest_translation": [
+    0.0,
+    0.045,
+    -0.098
+   ],
+   "rest_world": [
+    0.0,
+    0.291,
+    -0.2748
+   ]
+  },
+  {
+   "name": "tail_3",
+   "parent": "tail_2",
+   "index": 15,
+   "rest_translation": [
+    0.0,
+    0.08,
+    -0.1036
+   ],
+   "rest_world": [
+    0.0,
+    0.371,
+    -0.3784
+   ]
+  }
+ ],
+ "mirror_pairs": [],
+ "skin": {
+  "max_influences": 4,
+  "weights_sum_tolerance": 0.001,
+  "joints_component": [
+   "UNSIGNED_BYTE",
+   "UNSIGNED_SHORT"
+  ],
+  "weights_component": "FLOAT",
+  "ibm_tolerance_m": 1e-05
+ },
+ "joint_limits": {
+  "root": {
+   "max_angle_deg": 10.0
+  },
+  "hips": {
+   "max_angle_deg": 45.0
+  },
+  "chest": {
+   "max_angle_deg": 50.0
+  },
+  "leg_fl": {
+   "max_angle_deg": 95.0
+  },
+  "paw_fl": {
+   "max_angle_deg": 95.0
+  },
+  "leg_fr": {
+   "max_angle_deg": 95.0
+  },
+  "paw_fr": {
+   "max_angle_deg": 95.0
+  },
+  "neck": {
+   "max_angle_deg": 55.0
+  },
+  "head": {
+   "max_angle_deg": 40.0
+  },
+  "leg_bl": {
+   "max_angle_deg": 95.0
+  },
+  "paw_bl": {
+   "max_angle_deg": 95.0
+  },
+  "leg_br": {
+   "max_angle_deg": 95.0
+  },
+  "paw_br": {
+   "max_angle_deg": 95.0
+  },
+  "tail_1": {
+   "max_angle_deg": 80.0
+  },
+  "tail_2": {
+   "max_angle_deg": 60.0
+  },
+  "tail_3": {
+   "max_angle_deg": 60.0
+  }
+ },
+ "joint_limits_source": "envelope of every key of every clip of 12 Blender-published files + 10 deg, rounded up to 5 deg",
+ "proportions": {
+  "height_m": [
+   0.397,
+   0.655
+  ],
+  "segment_fraction_of_height": {
+   "hips": [
+    0.3698,
+    0.6157
+   ],
+   "chest": [
+    0.2784,
+    0.5602
+   ],
+   "leg_fl": [
+    0.1474,
+    0.2356
+   ],
+   "paw_fl": [
+    0.2487,
+    0.4062
+   ],
+   "leg_fr": [
+    0.1474,
+    0.2356
+   ],
+   "paw_fr": [
+    0.2487,
+    0.4062
+   ],
+   "neck": [
+    0.1276,
+    0.2289
+   ],
+   "head": [
+    0.19,
+    0.3468
+   ],
+   "leg_bl": [
+    0.142,
+    0.2305
+   ],
+   "paw_bl": [
+    0.2487,
+    0.4062
+   ],
+   "leg_br": [
+    0.142,
+    0.2305
+   ],
+   "paw_br": [
+    0.2487,
+    0.4062
+   ],
+   "tail_1": [
+    0.1471,
+    0.2875
+   ],
+   "tail_2": [
+    0.1444,
+    0.2725
+   ],
+   "tail_3": [
+    0.1813,
+    0.3305
+   ]
+  }
+ },
+ "proportions_source": "Blender-published files: segment length / rest mesh height, range x0.8 .. x1.25",
+ "reference_body": {
+  "generator": "core/geometry.quadruped(packs/polar_pod animal_defaults)",
+  "species": "cat",
+  "topology": "quad16_v1"
+ },
+ "clips": {
+  "required": [
+   "idle",
+   "walk",
+   "run",
+   "sit",
+   "loaf",
+   "sleep_curled",
+   "stretch"
+  ],
+  "fps": 15,
+  "keys": 16,
+  "duration_s": 1.0,
+  "interpolation": "STEP",
+  "key_time": "key k at t = k / 15 s",
+  "channels": {
+   "rotation": "every joint (root included)",
+   "translation": [
+    "root"
+   ]
+  },
+  "root_motion": "root translation = vertical grounding only (x = z = 0)",
+  "face_cells": {
+   "sleep_curled": 1,
+   "default": 0
+  }
+ },
+ "sockets": [],
+ "budgets": {
+  "body_tris_le": 300,
+  "prop_tris_le": 200
+ },
+ "seams": [
+  {
+   "name": "neck_body",
+   "parent": "chest",
+   "child": "neck"
+  },
+  {
+   "name": "neck_head",
+   "parent": "neck",
+   "child": "head"
+  },
+  {
+   "name": "tail",
+   "parent": "hips",
+   "child": "tail_1"
+  },
+  {
+   "name": "leg_fl",
+   "parent": "chest",
+   "child": "leg_fl"
+  },
+  {
+   "name": "leg_fr",
+   "parent": "chest",
+   "child": "leg_fr"
+  },
+  {
+   "name": "leg_bl",
+   "parent": "hips",
+   "child": "leg_bl"
+  },
+  {
+   "name": "leg_br",
+   "parent": "hips",
+   "child": "leg_br"
+  }
+ ],
+ "silhouette": {
+  "rest_height_m": [
+   0.397,
+   0.655
+  ],
+  "floor": "touch",
+  "floor_tolerance_m": 0.002,
+  "blowup_height_factor": 1.6,
+  "max_vertex_departure_m": 0.5
+ }
+}

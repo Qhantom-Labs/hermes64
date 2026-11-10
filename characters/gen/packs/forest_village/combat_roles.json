@@ -1,0 +1,33 @@
+{
+ "note": "lane-combat-art palette-role bindings for the forest pack (names from packs/forest_village/pack.json palette). Unbound roles fall back by luminance/hue intent (core/roles.py).",
+ "roles": {
+  "accent": "teal",
+  "band": "brick",
+  "burr": "umber_2",
+  "burr_tip": "straw_1",
+  "core_glow": "straw_1",
+  "crest": "straw_1",
+  "crest_tip": "rust",
+  "eye": "ink",
+  "eye_glow": "straw_1",
+  "hide": "umber_1",
+  "hide_dark": "ink",
+  "hoof": "ink",
+  "leg": "umber_0",
+  "lichen": "leaf_4",
+  "mane": "cream",
+  "mask": "cream",
+  "metal": "stone_3",
+  "metal_dark": "stone_1",
+  "plate": "stone_2",
+  "stone": "stone_3",
+  "stone_dark": "stone_1",
+  "weave": "wood_1",
+  "weave_dark": "umber_1",
+  "weave_light": "wood_2",
+  "wing": "leaf_3",
+  "wood": "wood_1",
+  "wood_dark": "umber_2",
+  "wrap": "brick"
+ }
+}

@@ -1,0 +1,549 @@
+{
+ "assets": {
+  "alien.arch": {
+   "glb": "kits/library/alien_world/assets/alien.arch.glb",
+   "kit_id": "alien.arch",
+   "preset": null,
+   "sha256": "56b694bec9e4ec756c909a310d60ee3763d84fb010a5c178f6ec9f21a074438c"
+  },
+  "alien.boulder": {
+   "glb": "kits/library/alien_world/assets/alien.boulder.glb",
+   "kit_id": "alien.boulder",
+   "preset": null,
+   "sha256": "40008538ae591fdab1bd935fb7027f35ce674cdbbe6dc3c73687a5efae94e1a1"
+  },
+  "alien.boulder__big": {
+   "glb": "kits/library/alien_world/presets/alien.boulder__big.glb",
+   "kit_id": "alien.boulder",
+   "preset": "big",
+   "sha256": "e2da683268eb06eb566e56b6e277fa90964910da8f9387343f4d09d6bf7eddb0"
+  },
+  "alien.boulder__slab": {
+   "glb": "kits/library/alien_world/presets/alien.boulder__slab.glb",
+   "kit_id": "alien.boulder",
+   "preset": "slab",
+   "sha256": "364dde817c8834e1a30b7e755e6bd6345ce2142f92c3d4e9344d887b7be958b8"
+  },
+  "alien.bulb": {
+   "glb": "kits/library/alien_world/assets/alien.bulb.glb",
+   "kit_id": "alien.bulb",
+   "preset": null,
+   "sha256": "bf73ab780bce6d6a89bf9fe6ddceaea224bed7377a6fa7dcbc80a853ad80ccf8"
+  },
+  "alien.bulb__tall": {
+   "glb": "kits/library/alien_world/presets/alien.bulb__tall.glb",
+   "kit_id": "alien.bulb",
+   "preset": "tall",
+   "sha256": "e36d44c741f4b016658e91c6e81c63239880c60c31ab65bfa7f3168d8e650647"
+  },
+  "alien.cap_tree": {
+   "glb": "kits/library/alien_world/assets/alien.cap_tree.glb",
+   "kit_id": "alien.cap_tree",
+   "preset": null,
+   "sha256": "8ad1839826a83c1e76de1b2b0bd941a24b75ce75001f84a391e572e38b5d2b67"
+  },
+  "alien.cap_tree__triple": {
+   "glb": "kits/library/alien_world/presets/alien.cap_tree__triple.glb",
+   "kit_id": "alien.cap_tree",
+   "preset": "triple",
+   "sha256": "40e8fd8633c8c4abc86e17147ec73201266659b2605281dac1fbd122a77f8ee9"
+  },
+  "alien.cap_tree__young": {
+   "glb": "kits/library/alien_world/presets/alien.cap_tree__young.glb",
+   "kit_id": "alien.cap_tree",
+   "preset": "young",
+   "sha256": "b8a22b8e170e2671fef807859751cf6596ddeb4e6748228e8cebf5e76e2b2642"
+  },
+  "alien.crystal": {
+   "glb": "kits/library/alien_world/assets/alien.crystal.glb",
+   "kit_id": "alien.crystal",
+   "preset": null,
+   "sha256": "d277570d850b2d0a0887d04a2d6ee86fe31256eda63ca52860a3ff9638a13b03"
+  },
+  "alien.crystal__small": {
+   "glb": "kits/library/alien_world/presets/alien.crystal__small.glb",
+   "kit_id": "alien.crystal",
+   "preset": "small",
+   "sha256": "98bd9c8833c559dec39976121754c7c790491903a94eee782f6192e206e3eaaf"
+  },
+  "alien.crystal__tall": {
+   "glb": "kits/library/alien_world/presets/alien.crystal__tall.glb",
+   "kit_id": "alien.crystal",
+   "preset": "tall",
+   "sha256": "3c2a379ea36962d3b2140cfe84eefbba18d8d6819be0b18cb8a786f1ade85f26"
+  },
+  "alien.frond": {
+   "glb": "kits/library/alien_world/assets/alien.frond.glb",
+   "kit_id": "alien.frond",
+   "preset": null,
+   "sha256": "75fb97c8c23c610caae9f44ac04e479b7a0ecde9cb449e341e20c0f7b96ea5e4"
+  },
+  "alien.frond__low": {
+   "glb": "kits/library/alien_world/presets/alien.frond__low.glb",
+   "kit_id": "alien.frond",
+   "preset": "low",
+   "sha256": "8ceb76beac7c5b533b712723feeb4619d4506f85d5041d1e8703ae47917ec530"
+  },
+  "alien.geode": {
+   "glb": "kits/library/alien_world/assets/alien.geode.glb",
+   "kit_id": "alien.geode",
+   "preset": null,
+   "sha256": "e3ec860ba01b016b2a2e6a59c26d87fc50ce0b672fbe2cec518dddefd5d68af3"
+  },
+  "alien.grass": {
+   "glb": "kits/library/alien_world/assets/alien.grass.glb",
+   "kit_id": "alien.grass",
+   "preset": null,
+   "sha256": "b55c584946ba7edf96f8d87d25ff2db2020f9cfb7bb50cd1f0394e863ee9a62b"
+  },
+  "alien.rock_spire": {
+   "glb": "kits/library/alien_world/assets/alien.rock_spire.glb",
+   "kit_id": "alien.rock_spire",
+   "preset": null,
+   "sha256": "2412a2262f84961846a8ff186f8f368361eaa7507686285bf4d89992bb71f7a5"
+  },
+  "alien.rock_spire__tall": {
+   "glb": "kits/library/alien_world/presets/alien.rock_spire__tall.glb",
+   "kit_id": "alien.rock_spire",
+   "preset": "tall",
+   "sha256": "4b5648ad56dc71f03223a7ad02c8d41d5f3c0984b442a4f2674d775b59b39bdb"
+  },
+  "alien.spire": {
+   "glb": "kits/library/alien_world/assets/alien.spire.glb",
+   "kit_id": "alien.spire",
+   "preset": null,
+   "sha256": "eeb6f05fd0a7856e441f0badcb605468c4a09b66b14f5bc5c7102e95accb09be"
+  },
+  "alien.spire__short": {
+   "glb": "kits/library/alien_world/presets/alien.spire__short.glb",
+   "kit_id": "alien.spire",
+   "preset": "short",
+   "sha256": "af7ef75ab0b90b11c2027fe03ba34e8a49683a13b25bb428798becd7aa35a594"
+  },
+  "alien.tendril": {
+   "glb": "kits/library/alien_world/assets/alien.tendril.glb",
+   "kit_id": "alien.tendril",
+   "preset": null,
+   "sha256": "f9890655eefabfc1d98319b1c5c5feba6e14e963164da29433678d741fb3259e"
+  },
+  "arch.door": {
+   "alias_of": "stn.doorway",
+   "glb": "kits/library/alien_world/assets/stn.doorway.glb",
+   "kit_id": "stn.doorway",
+   "preset": null,
+   "sha256": "3219c6abca02751a67357d85442b66a37c7a1fb94f90b90ba3961e9bf5a03826"
+  },
+  "planet.crater": {
+   "glb": "kits/library/alien_world/assets/planet.crater.glb",
+   "kit_id": "planet.crater",
+   "preset": null,
+   "sha256": "a0333f005df11e73203ea1f0f6d304a22744f367ad8cb6e4bd748d6bdbd68f90"
+  },
+  "planet.dune": {
+   "glb": "kits/library/alien_world/assets/planet.dune.glb",
+   "kit_id": "planet.dune",
+   "preset": null,
+   "sha256": "0ed58a4b028ef586f08e65375103ec003dfdf1cf6a225271ae19548ee9505bed"
+  },
+  "planet.ground": {
+   "glb": "kits/library/alien_world/assets/planet.ground.glb",
+   "kit_id": "planet.ground",
+   "preset": null,
+   "sha256": "f4e6f6c76307fe8e15a73c1735fc4f13134565be174dedcd131c77f33de1d370"
+  },
+  "planet.ground__dirt": {
+   "glb": "kits/library/alien_world/presets/planet.ground__dirt.glb",
+   "kit_id": "planet.ground",
+   "preset": "dirt",
+   "sha256": "6e5fe958d47f6933fad187034aaee06b569dcb67535edeeffd158d687b11d4f7"
+  },
+  "planet.ground__field": {
+   "glb": "kits/library/alien_world/presets/planet.ground__field.glb",
+   "kit_id": "planet.ground",
+   "preset": "field",
+   "sha256": "76e0a207cf01c8af18ad75a065131ee4a58c6d2cb6e77003ac7c2a4ba297e2c3"
+  },
+  "planet.ground__high": {
+   "glb": "kits/library/alien_world/presets/planet.ground__high.glb",
+   "kit_id": "planet.ground",
+   "preset": "high",
+   "sha256": "91ad4ccfb1f968d6b056a7b77d3a041ae4c24f55ba7000c259698dd0e9d57137"
+  },
+  "planet.ground__plateau": {
+   "glb": "kits/library/alien_world/presets/planet.ground__plateau.glb",
+   "kit_id": "planet.ground",
+   "preset": "plateau",
+   "sha256": "bb07a55276a7908e4a4b876480328200dbf8067cc7d62cc64b703fcac2e9b529"
+  },
+  "planet.ground__rough": {
+   "glb": "kits/library/alien_world/presets/planet.ground__rough.glb",
+   "kit_id": "planet.ground",
+   "preset": "rough",
+   "sha256": "c1bf96f21250615dfa7dea70f88a3bfd817b6f31b0a0c0f84629ed62344bf2ae"
+  },
+  "planet.mesa": {
+   "glb": "kits/library/alien_world/assets/planet.mesa.glb",
+   "kit_id": "planet.mesa",
+   "preset": null,
+   "sha256": "400948c0e356713f73a9b358dc8b2d904a380f8db52900176fbc8e4d092a85ec"
+  },
+  "planet.pad": {
+   "glb": "kits/library/alien_world/assets/planet.pad.glb",
+   "kit_id": "planet.pad",
+   "preset": null,
+   "sha256": "3c53c00f1ccfe0e222052750c202eb7c41229fa94bef84248f9c42f70173a9c6"
+  },
+  "planet.ridge": {
+   "glb": "kits/library/alien_world/assets/planet.ridge.glb",
+   "kit_id": "planet.ridge",
+   "preset": null,
+   "sha256": "db40539979a6c4531aef8ea3d3bd212f63bc99a6e9e360d5413c02ea5ecf58b8"
+  },
+  "planet.rise": {
+   "glb": "kits/library/alien_world/assets/planet.rise.glb",
+   "kit_id": "planet.rise",
+   "preset": null,
+   "sha256": "626423588c713ec085a5c6440145be6c1359bf5dad6a8bf572dc973b21437ec1"
+  },
+  "planet.rise__steep": {
+   "glb": "kits/library/alien_world/presets/planet.rise__steep.glb",
+   "kit_id": "planet.rise",
+   "preset": "steep",
+   "sha256": "df9255feb91058cd96aad325e414b806d9ed92c465526d016b223333522854b6"
+  },
+  "planet.trail": {
+   "glb": "kits/library/alien_world/assets/planet.trail.glb",
+   "kit_id": "planet.trail",
+   "preset": null,
+   "sha256": "8b4388ce993077fa84d688ba63fb134847543607f8abfd584503a7290ec160c9"
+  },
+  "planet.trail__bend": {
+   "glb": "kits/library/alien_world/presets/planet.trail__bend.glb",
+   "kit_id": "planet.trail",
+   "preset": "bend",
+   "sha256": "5e502009254409b6cad63de48c6ad75c0f7e89d59b1b49b256e9c64427894c4a"
+  },
+  "planet.trail__end": {
+   "glb": "kits/library/alien_world/presets/planet.trail__end.glb",
+   "kit_id": "planet.trail",
+   "preset": "end",
+   "sha256": "d731d7f0983ac34d32c91973f69426fc3992ac0efdb600adaa9ad987ae1bd4f3"
+  },
+  "ship.drone": {
+   "glb": "kits/library/alien_world/assets/ship.drone.glb",
+   "kit_id": "ship.drone",
+   "preset": null,
+   "sha256": "a4ef8d269bd9b85199f7ca0323786e06dc0eada6504f828efeabe832c59f64fa"
+  },
+  "ship.drone__lifter": {
+   "glb": "kits/library/alien_world/presets/ship.drone__lifter.glb",
+   "kit_id": "ship.drone",
+   "preset": "lifter",
+   "sha256": "9739b2a26d6a5c295f88dccd1c951deed45101bb62f61510f922d7c39a3833f1"
+  },
+  "ship.escape_pod": {
+   "glb": "kits/library/alien_world/assets/ship.escape_pod.glb",
+   "kit_id": "ship.escape_pod",
+   "preset": null,
+   "sha256": "5d1e8c117390bb3564390365c381e64df0d96e478932dbf380a03bd79d7ae454"
+  },
+  "ship.escape_pod__crashed": {
+   "glb": "kits/library/alien_world/presets/ship.escape_pod__crashed.glb",
+   "kit_id": "ship.escape_pod",
+   "preset": "crashed",
+   "sha256": "4d24c618c0754ed693c5816b8c08e014c6e146fdb5bf5abe8df859a8e03fe79d"
+  },
+  "ship.escape_pod__open": {
+   "glb": "kits/library/alien_world/presets/ship.escape_pod__open.glb",
+   "kit_id": "ship.escape_pod",
+   "preset": "open",
+   "sha256": "cab4317d7af1c27821545cc80232b3e1de6383ef4d79b32e44e40c1e6b645c8b"
+  },
+  "ship.hauler": {
+   "glb": "kits/library/alien_world/assets/ship.hauler.glb",
+   "kit_id": "ship.hauler",
+   "preset": null,
+   "sha256": "d8d74a9a5a3ba2bfd75184afcc352b3c9702a591024b01c8a6fd0380458b4aa4"
+  },
+  "ship.hauler__empty": {
+   "glb": "kits/library/alien_world/presets/ship.hauler__empty.glb",
+   "kit_id": "ship.hauler",
+   "preset": "empty",
+   "sha256": "14f53677c11c096e4833bc6f020ecdec61b773268c03fd7cbd7145f9dc67db32"
+  },
+  "ship.rover": {
+   "glb": "kits/library/alien_world/assets/ship.rover.glb",
+   "kit_id": "ship.rover",
+   "preset": null,
+   "sha256": "c51e2a68872a11a9b3a4212984e9137ded5f66072f5e3f8fbb8a815edeac8d9c"
+  },
+  "ship.rover__scout": {
+   "glb": "kits/library/alien_world/presets/ship.rover__scout.glb",
+   "kit_id": "ship.rover",
+   "preset": "scout",
+   "sha256": "f44cd4fe9930a8e4d703c6df1f57291dd922e6daa3547cc82b6e86676e923f2f"
+  },
+  "ship.shuttle": {
+   "glb": "kits/library/alien_world/assets/ship.shuttle.glb",
+   "kit_id": "ship.shuttle",
+   "preset": null,
+   "sha256": "746db85bb5eaa35774aa9117d17ec9d214a57505c16a3a3ead94a32b3229ffba"
+  },
+  "ship.shuttle__cargo": {
+   "glb": "kits/library/alien_world/presets/ship.shuttle__cargo.glb",
+   "kit_id": "ship.shuttle",
+   "preset": "cargo",
+   "sha256": "654e2dfdc6fd2d3603cfd24494c0653691375259c1a4390bcbdc15e660252de9"
+  },
+  "ship.shuttle__level": {
+   "glb": "kits/library/alien_world/presets/ship.shuttle__level.glb",
+   "kit_id": "ship.shuttle",
+   "preset": "level",
+   "sha256": "8b6b4ac88f4f4c789f9bae51cb62493a2f31e188987a870d88d5e29649d823a5"
+  },
+  "skyx.horizon": {
+   "glb": "kits/library/alien_world/assets/skyx.horizon.glb",
+   "kit_id": "skyx.horizon",
+   "preset": null,
+   "sha256": "aaf51ba9db5dda2f3d7e9482da72cc74ce3a85687f0c5db268bfefc17124fb32"
+  },
+  "skyx.horizon__dunes": {
+   "glb": "kits/library/alien_world/presets/skyx.horizon__dunes.glb",
+   "kit_id": "skyx.horizon",
+   "preset": "dunes",
+   "sha256": "e69fc2b7ee660881b17d4d05c9ab6cc2be4e2db38be299795657d337e66b32d1"
+  },
+  "skyx.horizon__spires": {
+   "glb": "kits/library/alien_world/presets/skyx.horizon__spires.glb",
+   "kit_id": "skyx.horizon",
+   "preset": "spires",
+   "sha256": "f993a2b93106f062bf02326328e45d9c8c8431e62046307f8f3189389f02b3fd"
+  },
+  "skyx.nebula": {
+   "glb": "kits/library/alien_world/assets/skyx.nebula.glb",
+   "kit_id": "skyx.nebula",
+   "preset": null,
+   "sha256": "f846a64ef24f5cc8f860ee7ed92c6963ada05d24d4f33547e85be50d9a303267"
+  },
+  "skyx.planet": {
+   "glb": "kits/library/alien_world/assets/skyx.planet.glb",
+   "kit_id": "skyx.planet",
+   "preset": null,
+   "sha256": "860720a16ccff51f0bef43ef4e583e1b82ea1714f67dd93027ffe546cdce09ad"
+  },
+  "skyx.planet__moon": {
+   "glb": "kits/library/alien_world/presets/skyx.planet__moon.glb",
+   "kit_id": "skyx.planet",
+   "preset": "moon",
+   "sha256": "857b312bb5d1dfc6bcfaf9622436677b50d8d164c41325597ec85aac44a793f1"
+  },
+  "skyx.planet__ringed": {
+   "glb": "kits/library/alien_world/presets/skyx.planet__ringed.glb",
+   "kit_id": "skyx.planet",
+   "preset": "ringed",
+   "sha256": "7cbe28005dcb6879065de1abe1a82fe7903fd6481c036245ace7ff958497582d"
+  },
+  "skyx.starfield": {
+   "glb": "kits/library/alien_world/assets/skyx.starfield.glb",
+   "kit_id": "skyx.starfield",
+   "preset": null,
+   "sha256": "7d0cca3a7d071791cb90bf2d00157de8098fa6645bf46760bd0d6471879df828"
+  },
+  "stn.airlock": {
+   "glb": "kits/library/alien_world/assets/stn.airlock.glb",
+   "kit_id": "stn.airlock",
+   "preset": null,
+   "sha256": "e97f382fc47fa69477a664cdcd3fad63028bf2ef4b7635c674487a9ab84e4da8"
+  },
+  "stn.airlock__open": {
+   "glb": "kits/library/alien_world/presets/stn.airlock__open.glb",
+   "kit_id": "stn.airlock",
+   "preset": "open",
+   "sha256": "32d20177ffea5217b730ac1d972d8364a6e1f6b7b780c14abbadc12e412939db"
+  },
+  "stn.corridor": {
+   "glb": "kits/library/alien_world/assets/stn.corridor.glb",
+   "kit_id": "stn.corridor",
+   "preset": null,
+   "sha256": "f64bafe57bd2988cdb01f46ef81ea8591da059b65d3b979882ef82b659595dba"
+  },
+  "stn.corridor__corner": {
+   "glb": "kits/library/alien_world/presets/stn.corridor__corner.glb",
+   "kit_id": "stn.corridor",
+   "preset": "corner",
+   "sha256": "c8d93558b55795c73c42febbb6e08dcf621876271f93828ffd19d9d7cadc2ed5"
+  },
+  "stn.corridor__cross": {
+   "glb": "kits/library/alien_world/presets/stn.corridor__cross.glb",
+   "kit_id": "stn.corridor",
+   "preset": "cross",
+   "sha256": "8d42df24007cb7cffaf4a43078f28a9503adabe5aaeac095ae0cc6f9d565e922"
+  },
+  "stn.corridor__end": {
+   "glb": "kits/library/alien_world/presets/stn.corridor__end.glb",
+   "kit_id": "stn.corridor",
+   "preset": "end",
+   "sha256": "00664432a1119162b2da7c10ade9fd915927ab53028032727562307347db9981"
+  },
+  "stn.corridor__end_door": {
+   "glb": "kits/library/alien_world/presets/stn.corridor__end_door.glb",
+   "kit_id": "stn.corridor",
+   "preset": "end_door",
+   "sha256": "9206242453bcb414e00b1abfa3318ddea1aaafaed7583dd7e56c7d2574d6d96b"
+  },
+  "stn.corridor__plain": {
+   "glb": "kits/library/alien_world/presets/stn.corridor__plain.glb",
+   "kit_id": "stn.corridor",
+   "preset": "plain",
+   "sha256": "fe60e0a92e27dc0420afd123c36b63e2c72f753685f9bbfb07728ddb62d746f8"
+  },
+  "stn.corridor__tee": {
+   "glb": "kits/library/alien_world/presets/stn.corridor__tee.glb",
+   "kit_id": "stn.corridor",
+   "preset": "tee",
+   "sha256": "988a28e66fdcd641c27eb3193cafbb247c135c3d8a09a4af3b24d26d74e544d3"
+  },
+  "stn.doorway": {
+   "glb": "kits/library/alien_world/assets/stn.doorway.glb",
+   "kit_id": "stn.doorway",
+   "preset": null,
+   "sha256": "3219c6abca02751a67357d85442b66a37c7a1fb94f90b90ba3961e9bf5a03826"
+  },
+  "stn.doorway__lit": {
+   "glb": "kits/library/alien_world/presets/stn.doorway__lit.glb",
+   "kit_id": "stn.doorway",
+   "preset": "lit",
+   "sha256": "00028e6e1e10c7fdc81a7e2a26c925aa8b34439a645d4f982a061e9c79d12c21"
+  },
+  "stn.floor": {
+   "glb": "kits/library/alien_world/assets/stn.floor.glb",
+   "kit_id": "stn.floor",
+   "preset": null,
+   "sha256": "6beb68bb6ff1270404865483f4ea67c7113c70ba5a26107566a4e10de9518e1e"
+  },
+  "stn.floor__grate": {
+   "glb": "kits/library/alien_world/presets/stn.floor__grate.glb",
+   "kit_id": "stn.floor",
+   "preset": "grate",
+   "sha256": "df587d0bd3da43055fc41c5c528c70560094725a8bbad625c4534667128a6e05"
+  },
+  "stn.floor__pad": {
+   "glb": "kits/library/alien_world/presets/stn.floor__pad.glb",
+   "kit_id": "stn.floor",
+   "preset": "pad",
+   "sha256": "049bee44ed9e07251922b5d68c5b561dcae1ee90c149292464c698788c8846b9"
+  },
+  "stn.floor__plain": {
+   "glb": "kits/library/alien_world/presets/stn.floor__plain.glb",
+   "kit_id": "stn.floor",
+   "preset": "plain",
+   "sha256": "aeac6d6b4199e79cc2d1b23d0bd1b7ae9ffd9bf817439a3ed5c5fa8cd9a66593"
+  },
+  "stn.stairs": {
+   "glb": "kits/library/alien_world/assets/stn.stairs.glb",
+   "kit_id": "stn.stairs",
+   "preset": null,
+   "sha256": "8f5fa49c1c24fff43d497356b69e1025c26d28f1efa103003bcb71051ab43ffb"
+  },
+  "stn.stairs__dais": {
+   "glb": "kits/library/alien_world/presets/stn.stairs__dais.glb",
+   "kit_id": "stn.stairs",
+   "preset": "dais",
+   "sha256": "13497b4c060924cd89d9ba20505ea1a3ad2d901fdb3c1e59dd17c10f333b35fd"
+  },
+  "stn.stairs__ramp": {
+   "glb": "kits/library/alien_world/presets/stn.stairs__ramp.glb",
+   "kit_id": "stn.stairs",
+   "preset": "ramp",
+   "sha256": "66162523fa1be3110fd2c9a502d43bb866b3795de868c6d80d4c23b2ae446899"
+  },
+  "tech.cables": {
+   "glb": "kits/library/alien_world/assets/tech.cables.glb",
+   "kit_id": "tech.cables",
+   "preset": null,
+   "sha256": "0798d49c4e11bb89fc8ac240d1f4091b0a87dbcc7c6592c01b9d7fc37514f1ea"
+  },
+  "tech.cables__hang": {
+   "glb": "kits/library/alien_world/presets/tech.cables__hang.glb",
+   "kit_id": "tech.cables",
+   "preset": "hang",
+   "sha256": "ecece8134964a7b82ed2bc9df4e5314a9a3f7fc817d004995e08c7a8afe1dd6d"
+  },
+  "tech.charge_pod": {
+   "glb": "kits/library/alien_world/assets/tech.charge_pod.glb",
+   "kit_id": "tech.charge_pod",
+   "preset": null,
+   "sha256": "5f6697909ad3f9404f4c48cacbadbd3e27969fa64e00cbf126b3440fd7605c6b"
+  },
+  "tech.console": {
+   "glb": "kits/library/alien_world/assets/tech.console.glb",
+   "kit_id": "tech.console",
+   "preset": null,
+   "sha256": "b2737e4564046c2c9b50e6d7a166c91cdd8c0b43e083509b34138d46d485a4bb"
+  },
+  "tech.console__pillar": {
+   "glb": "kits/library/alien_world/presets/tech.console__pillar.glb",
+   "kit_id": "tech.console",
+   "preset": "pillar",
+   "sha256": "297309c9fc63bae607e3ff6c583d036f090061ae50a60206c6fcd75e6af639cb"
+  },
+  "tech.console__tall": {
+   "glb": "kits/library/alien_world/presets/tech.console__tall.glb",
+   "kit_id": "tech.console",
+   "preset": "tall",
+   "sha256": "ee5ef49d7e608c1ff1cddf310a80e3f5ba67b0811568591138fbed30e3b7a693"
+  },
+  "tech.crate": {
+   "glb": "kits/library/alien_world/assets/tech.crate.glb",
+   "kit_id": "tech.crate",
+   "preset": null,
+   "sha256": "d9c60d25a6629562ad04611f2ed97217d282ae81255280cfc7cf7bea98a9463b"
+  },
+  "tech.crate__large": {
+   "glb": "kits/library/alien_world/presets/tech.crate__large.glb",
+   "kit_id": "tech.crate",
+   "preset": "large",
+   "sha256": "cd6baa352d3d323553bff76ee4f5698e63f6925224c674725cdcb1005fdc913d"
+  },
+  "tech.crate__long": {
+   "glb": "kits/library/alien_world/presets/tech.crate__long.glb",
+   "kit_id": "tech.crate",
+   "preset": "long",
+   "sha256": "96cdd7437931efe13c7ecac4ddc41db047023129d5a0c1c3585eb638ca2aa17c"
+  },
+  "tech.crate__stack": {
+   "glb": "kits/library/alien_world/presets/tech.crate__stack.glb",
+   "kit_id": "tech.crate",
+   "preset": "stack",
+   "sha256": "3a8d7243bb163aa45a32ed4ef1b3b9817a3ed4500ee292eabccc42ac9d8599dd"
+  },
+  "tech.tank": {
+   "glb": "kits/library/alien_world/assets/tech.tank.glb",
+   "kit_id": "tech.tank",
+   "preset": null,
+   "sha256": "5b7697575ea96f20afe8f2d054cb4e2e71e6b42897d3781f0efd04a5d3454faf"
+  },
+  "tech.tank__horizontal": {
+   "glb": "kits/library/alien_world/presets/tech.tank__horizontal.glb",
+   "kit_id": "tech.tank",
+   "preset": "horizontal",
+   "sha256": "31450399fc8c666a99216f2eb1ef5916eb19fdfb7c4d5309f744cb3317930ffc"
+  },
+  "tech.terminal": {
+   "glb": "kits/library/alien_world/assets/tech.terminal.glb",
+   "kit_id": "tech.terminal",
+   "preset": null,
+   "sha256": "05557036b969b3c67afc2752f2a31e166edaacc801a697e68bbf8c04737f337e"
+  },
+  "tech.terminal__wall": {
+   "glb": "kits/library/alien_world/presets/tech.terminal__wall.glb",
+   "kit_id": "tech.terminal",
+   "preset": "wall",
+   "sha256": "eadc6ad0fdb96add9dc2b2ce7f905c6d44f3eccd806e841b5ded51968eabd34c"
+  }
+ },
+ "format": 1,
+ "kit_pack": "alien_world",
+ "note": "SCIFIKIT bindings: kit defaults (<kit_id>), pack presets (<kit_id>__<preset>), aliases the runtime places by name (arch.door -> stn.doorway bulkhead frame). Every row hash-pinned; regenerate with tools/scifikit_library.py bindings. Variant theme packs (space_station_alert, alien_world_dusk) fall back to these rows through their kit_pack_id.",
+ "pack": "alien_world"
+}

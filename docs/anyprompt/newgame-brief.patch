@@ -1,0 +1,54 @@
+--- a/adventure_maker/newgame.py
++++ b/adventure_maker/newgame.py
+@@ -20,6 +20,7 @@
+ from .runner import locate
+ from .templates import premise_spec
+ from . import badge as badges
++from . import brief as briefs
+ 
+ MAX_PREMISE = 300
+ NAME = re.compile(r'[a-z][a-z0-9_-]{0,63}')
+@@ -200,6 +201,16 @@
+     stages = []
+     premise = normalize_premise(premise)
+     pack, reason = pick_style(premise, style)
++    # Plan 07 A1: record what the prompt asked for as a structured brief (keyword fallback; the agent may replace
++    # <project>/brief.json with a model-filled one). The pack choice is unchanged until mood packs (A3/A8) land, but
++    # an unmatched prompt now says plainly that it got the default pack, not what it asked for.
++    try:
++        asked = briefs.from_prompt(premise)
++    except Fault:
++        asked = None
++    if asked is not None and reason.startswith('auto: no style words'):
++        reason = ('auto: no shipped pack matches this %s prompt yet, so the default; brief.json records what was asked'
++                  % asked['setting']['genre'])
+     name = slug(premise) if name in (None, '') else check_name(name)
+     tools = preflight(settings)
+     stages.append({'stage': 'doctor', 'seconds': round(time.monotonic() - started, 3), 'status': 'ready'})
+@@ -230,6 +241,8 @@
+ 
+     call('scaffold', 'scaffold', {'pack': pack, 'spec_json': json.dumps(starter_spec(settings, premise, name, pack))})
+     project = service.project(name)
++    if asked is not None and not project.path('brief.json').exists():
++        project.write_json('brief.json', asked)
+     call('compile', 'compile', {'spec_path': 'source/spec.json'})
+     checked = call('check', 'check', {}, required=False)
+     # MERGE5: build the room shells/kit assets before the playtest, play runtime and style audit (an unbuilt game is
+@@ -263,6 +276,8 @@
+                  'game_card': 'project.json', 'receipt': '.maker/new.json'}
+         if assets.get('report_path'):
+             paths['assets'] = assets['report_path']
++        if asked is not None:
++            paths['brief'] = 'brief.json'
+         if audited['result']:
+             paths.update(style_audit=audited['result']['report_path'], contact_sheet=audited['result']['contact_sheet'])
+         title = project.read_json('source/spec.json')['title']
+@@ -273,6 +288,8 @@
+                            'blender': tools['blender'] or 'not found. ' + BLENDER_NOTE},
+                 'note': ('Game card written by /hermes64 new. It is not the portable source-project manifest '
+                          '(contracts/project/1.0.0.json) and no tool reads it; the current build pointer is .maker/current.json.')}
++        if asked is not None:
++            card['brief'] = briefs.summary(asked)
+         project.write_json('project.json', card)
+         ok = badge['ok']
+         first = 'Made "%s" in %s%s' % (title, project.root, ' (default games folder)' if uses_default else '')

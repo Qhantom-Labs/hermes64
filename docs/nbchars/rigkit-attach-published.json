@@ -1,0 +1,501 @@
+{
+ "files": 29,
+ "guarded_keys_total": 0,
+ "pass": 29,
+ "rows": [
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.5531,
+    1.4004
+   ],
+   "errors": [],
+   "file": "polar_pod/new_arrival.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.001986,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 5.0,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.5531,
+    1.4118
+   ],
+   "errors": [],
+   "file": "polar_pod/tavi.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.001761,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 4.5,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.5531,
+    1.4004
+   ],
+   "errors": [],
+   "file": "polar_pod/neri.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.001683,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 5.2,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.5531,
+    1.4464
+   ],
+   "errors": [],
+   "file": "polar_pod/sol.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.002336,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 4.9,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.5531,
+    1.4004
+   ],
+   "errors": [],
+   "file": "polar_pod/ivo.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.002365,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 4.2,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.5531,
+    1.4781
+   ],
+   "errors": [],
+   "file": "polar_pod/luma.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.002192,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 4.5,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.5531,
+    1.4118
+   ],
+   "errors": [],
+   "file": "polar_pod/study_07.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.001905,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 4.5,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.5531,
+    1.4004
+   ],
+   "errors": [],
+   "file": "polar_pod/study_08.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.00189,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 4.3,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.4566,
+    1.6391
+   ],
+   "errors": [],
+   "file": "polar_pod/pp_engineer.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.001591,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 4.5,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.4603,
+    1.6125
+   ],
+   "errors": [],
+   "file": "polar_pod/pp_medic.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.000711,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 5.6,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.4552,
+    1.5769
+   ],
+   "errors": [],
+   "file": "polar_pod/pp_kid.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.001578,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 7.3,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.4604,
+    1.6183
+   ],
+   "errors": [],
+   "file": "polar_pod/pp_elder.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.001348,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 5.1,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.4584,
+    1.5494
+   ],
+   "errors": [],
+   "file": "forest_village/fv_warden.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.000866,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 5.3,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.4552,
+    1.6351
+   ],
+   "errors": [],
+   "file": "forest_village/fv_smith.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.001406,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 5.5,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.4602,
+    1.5944
+   ],
+   "errors": [],
+   "file": "forest_village/fv_elder.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.00071,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 8.7,
+   "warnings": 0
+  },
+  {
+   "clips": 13,
+   "deterministic": true,
+   "edge": [
+    0.4601,
+    1.5936
+   ],
+   "errors": [],
+   "file": "forest_village/fv_scribe.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.000671,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 4.3,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.7233,
+    1.5388
+   ],
+   "errors": [],
+   "file": "cameo_visor/cameo_visor_01.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.002841,
+   "ok": true,
+   "rig": "human16_v1",
+   "s": 0.8,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6354,
+    1.3493
+   ],
+   "errors": [],
+   "file": "polar_pod/cat_tuxedo.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.6,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6354,
+    1.3493
+   ],
+   "errors": [],
+   "file": "polar_pod/cat_tabby.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.6,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6354,
+    1.3493
+   ],
+   "errors": [],
+   "file": "polar_pod/cat_calico.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.6,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6354,
+    1.3493
+   ],
+   "errors": [],
+   "file": "polar_pod/cat_black.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.6,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6354,
+    1.3493
+   ],
+   "errors": [],
+   "file": "polar_pod/cat_white.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.6,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6251,
+    1.3493
+   ],
+   "errors": [],
+   "file": "polar_pod/dog_saddle.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.8,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6354,
+    1.3493
+   ],
+   "errors": [],
+   "file": "forest_village/cat_tuxedo.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.6,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6354,
+    1.3493
+   ],
+   "errors": [],
+   "file": "forest_village/cat_tabby.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.7,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6354,
+    1.3493
+   ],
+   "errors": [],
+   "file": "forest_village/cat_calico.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.6,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6354,
+    1.3493
+   ],
+   "errors": [],
+   "file": "forest_village/cat_black.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.6,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6354,
+    1.3493
+   ],
+   "errors": [],
+   "file": "forest_village/cat_white.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.6,
+   "warnings": 0
+  },
+  {
+   "clips": 7,
+   "deterministic": true,
+   "edge": [
+    0.6251,
+    1.3493
+   ],
+   "errors": [],
+   "file": "forest_village/dog_saddle.glb",
+   "floor": 0.0,
+   "guarded_keys": 0,
+   "max_gap_m": 0.0,
+   "ok": true,
+   "rig": "quad16_v1",
+   "s": 0.8,
+   "warnings": 0
+  }
+ ],
+ "schema": "hermes64-rig-attach-batch/1"
+}
