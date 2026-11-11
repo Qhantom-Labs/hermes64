@@ -258,7 +258,7 @@ STANCES = {
 
 
 # Known-bad controls for core/posecheck.py: kept verbatim, never used by a cast entry.
-# 'arms_crossed_r7' is the round-7 crossed-arms stance Dylan flagged (thin forearms merging into one lump,
+# 'arms_crossed_r7' is the round-7 crossed-arms stance the owner flagged (thin forearms merging into one lump,
 # hands clipped inside the volume); the pose check must reject it (tests/test_posecheck.py).
 KNOWN_BAD_STANCES = {
     'arms_crossed_r7': {'fk': {'spine': (-.03, 0, 0), 'head': (.03, 0, -.12), 'pelvis': (0, -.05, .04), 'thigh_r': (-.06, 0, 0),

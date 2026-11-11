@@ -40,7 +40,7 @@ It demonstrates combat waves and sequential CEO duels.
 Bots exercise the authored encounters and prove completion of the tested route.
 That is mechanical evidence, not a claim about player-facing polish or human playability.
 The demo is separate from the plugin; its assets are not needed to install Hermes64.
-[demo video: link added at submission]
+Demo video: https://x.com/arkqhantom/status/2120627040840044863
 
 ## What works best, and the limits
 

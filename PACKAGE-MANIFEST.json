@@ -27,9 +27,9 @@
    "sha256": "283cae9c7e3412c1c5f1609aeb04aa2a15b25084e4c176ab2f1867ac9fd16d06"
   },
   {
-   "bytes": 11723,
+   "bytes": 11748,
    "path": "README.md",
-   "sha256": "035bde5558a70d71847a15b90ac2eff3bb1a98cd1fef96d74248d0e52510ba8a"
+   "sha256": "fc19cf552651feb0d681ce40d0ee337faf3654a7d5013a0a345fd814cc412b07"
   },
   {
    "bytes": 11955,
@@ -367,9 +367,9 @@
    "sha256": "95b895b6999efae5eae8cc7d499a0d43e7cdb9c92eff7b7dfbd820bb545f5ac6"
   },
   {
-   "bytes": 38621,
+   "bytes": 38625,
    "path": "adventure_maker/hub_sources.py",
-   "sha256": "fb4c851dfc99dbfb51e06509cdf1fce3629e67a5ef1aaa0c14edc636474d1b92"
+   "sha256": "683a6e7d964f93f77754e20f1d3bde4b9eae75bc0f0f4e2d398542beb995cb94"
   },
   {
    "bytes": 714,
@@ -832,9 +832,9 @@
    "sha256": "2556c05db38cfdc4ff88f69d148a8393e133b376fce2a0cc5a784b8b9fe6fa54"
   },
   {
-   "bytes": 252619,
+   "bytes": 252771,
    "path": "audio/catalog.json",
-   "sha256": "81ab8380d25e1d5e3dd45a027a551ed18fd20ec4c76a546a98341b7ca3f53f80"
+   "sha256": "d45eebd044cdcfa7db35cd06a5409c3ea21daaad3cc5c45dc004ef907fe54167"
   },
   {
    "bytes": 1316,
@@ -1952,14 +1952,14 @@
    "sha256": "1b42ba721a9fa0e8de3bf11bb9c922edd6c8a1c7a3b5b8dff4487e0a8ebe520e"
   },
   {
-   "bytes": 6703,
+   "bytes": 6707,
    "path": "audio/thaw_audio/stock_catalog.py",
-   "sha256": "5369283d12c2c6ce6ed8dbd44a67637b5eb45d763df13ca6e614653766ee346b"
+   "sha256": "feae11b60ea4a201c5929840cae6f5d2142553fa32b0885ec23836dcbd037499"
   },
   {
-   "bytes": 8704,
+   "bytes": 8708,
    "path": "audio/thaw_audio/stock_media.py",
-   "sha256": "eddcabaab97328d488e608cfe2feab3d9a8aa8ba68aec73229121fafe6ba8e69"
+   "sha256": "8203ec7543625acedca8d95135451ba18f6d1cfb463b652eb1ca92536aaf05f5"
   },
   {
    "bytes": 18113,
@@ -2177,14 +2177,14 @@
    "sha256": "4f7e744df4032c0bfbbc28b23aa15513041de12aab39c3e771e89ee82a855de9"
   },
   {
-   "bytes": 2620802,
+   "bytes": 2620806,
    "path": "catalog/catalog.json",
-   "sha256": "137cd8b027902739a47d4564ccab4cdc9fc9c8d5f565204f0fdddfbbbea8b220"
+   "sha256": "188c4c5598d1ec79f7d46a1b6d6c7c050011b11d686a805ac2a63fd125151b31"
   },
   {
-   "bytes": 7505,
+   "bytes": 7513,
    "path": "catalog/names.json",
-   "sha256": "d442986086014881c81ad2bd74748aa4b5a693dfadd23c79f82565b76af7d0e0"
+   "sha256": "b1f93154b3363c1fe98fc0df64b98b13dcc0a30eac1a2a4df4e2ddbb170eb7a9"
   },
   {
    "bytes": 368482,
@@ -2752,9 +2752,9 @@
    "sha256": "fe300b238424368ffef302b959ea46813b93eb000c5251c655840847a9bcba32"
   },
   {
-   "bytes": 42657,
+   "bytes": 42661,
    "path": "characters/gen/core/people.py",
-   "sha256": "0c1978f00ab3a9e8aca817023475a18fc1ec50f44a282ab85d73e3cf3b9c63b3"
+   "sha256": "f4b1034f8c84d99cc3b2973928e0f52d245423ec0ef4fc61e2104795569acc87"
   },
   {
    "bytes": 34997,
@@ -2762,9 +2762,9 @@
    "sha256": "9218931843e51099f1eb9f82cb4b5e031610e8a20f8d392509135c68ff26a98f"
   },
   {
-   "bytes": 29880,
+   "bytes": 29884,
    "path": "characters/gen/core/pose.py",
-   "sha256": "83c8951416319c6dfd76e7b30ddf29b05c80378da5e7eda2a30b57010aead1de"
+   "sha256": "8cf763438dae1565c1629516cf2ed41b48aa7f85b4f860812a635027e7440d38"
   },
   {
    "bytes": 18106,
@@ -4597,9 +4597,9 @@
    "sha256": "86e9a448ebb7adc0d8f2b9bac89d87629dd058fccd079d801ee013d6829ba88d"
   },
   {
-   "bytes": 1274164,
+   "bytes": 1274168,
    "path": "hub/index.json",
-   "sha256": "281e2ddd8179a78ba57085f49eb3f900916bfa12591e18eb3a01f2ea55750dc6"
+   "sha256": "ae4ac74097c1c6b819021d7ade31258a6031c965576bd68048c38e7575c20700"
   },
   {
    "bytes": 30316,
@@ -4792,9 +4792,9 @@
    "sha256": "6f9b63c292dda3d8e9165dc6fe1be60674a12c35b9bbf7175a4b044234a44f6f"
   },
   {
-   "bytes": 521596,
+   "bytes": 521600,
    "path": "hub/site/index.html",
-   "sha256": "93564653a11f2788c86d21e2680df345d7ae0867cf0e8ed2744d303be5bcc91c"
+   "sha256": "2598d6a5772a037a69a1bfc860d1638c7bf459e7934047e6ab4ba20f9311468e"
   },
   {
    "bytes": 19777,
@@ -28532,9 +28532,9 @@
    "sha256": "5196e01e31acb69b8dea14d03495a30101958575f2139eba63a47948a35865cb"
   },
   {
-   "bytes": 3781,
+   "bytes": 3785,
    "path": "runtime/godot/modules/combat/readability.json",
-   "sha256": "4dd6a36cc974690df51ad65c37719965f66a16a8f6b51b288f8a5b319959efca"
+   "sha256": "fee1f2bb8223a63e05e9702ceebbfc1c67c2c90068671404beb626b57d6fc56c"
   },
   {
    "bytes": 14926,
@@ -29810,7 +29810,7 @@
    },
    "qhantom": {
     "files": 32,
-    "hits": 586
+    "hits": 587
    },
    "teknium": {
     "files": 14,
@@ -29820,12 +29820,12 @@
  },
  "schema": "hermes64-package/1",
  "source": {
-  "commit": "0aa9f752818c5ee365837eaba7a0ab1d96ccbc6a",
+  "commit": "20444b87eeb65fa0e777c45dfd76df8f50e0d695",
   "tree": "clean"
  },
  "tools": 27,
  "totals": {
-  "bytes": 151910563,
+  "bytes": 151910784,
   "files": 5959
  },
  "version": "1.0.0-rc"

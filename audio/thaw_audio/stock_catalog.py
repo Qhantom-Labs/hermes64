@@ -58,7 +58,7 @@ def frozen_records():
         row = copy.deepcopy(original)
         row.update(category=category_by_synth[original["synth"]], generator="frozen_v1",
                    tags=sorted(dict.fromkeys(original["id"].split(".")+["soft", "low-fi", "dylan-approved-wave1"])),
-                   provenance="wave1_frozen", owner_feedback="Dylan listened to and loved the original 38; unchanged")
+                   provenance="wave1_frozen", owner_feedback="the owner listened to and loved the original 38; unchanged")
         if original["kind"] == "music":
             row["composition_note"] = "Original wave-1 code-composed score, preserved byte-for-byte."
         result.append(row)

@@ -89,7 +89,7 @@ def create_spectra(root, output):
     summaries, sheets = [], []
     flags = ["# Review priorities: suspected harshness, NOT heard", "",
              "I cannot listen. These flags are conservative inferences from synthesis design, not a harshness classifier or owner approval.",
-             "All new sounds need Dylan's audition. Start with low playback gain. Bright ringing, animal likeness, noise/transient texture and repeated blips are separate risks.",
+             "All new sounds need the owner's audition. Start with low playback gain. Bright ringing, animal likeness, noise/transient texture and repeated blips are separate risks.",
              "The spectral fraction is sampled energy above 4 kHz, NOT perceived harshness. Low values do not clear any flag.", "",
              "| ID | Sampled >4 kHz fraction | Design-based flags |", "|---|---:|---|"]
     for category in CATEGORIES:

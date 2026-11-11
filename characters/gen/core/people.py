@@ -1,6 +1,6 @@
 """Face-head people v2 for the Hermes64 humanoid (lane-characters).
 
-Pure Python 3.9, no Blender. The Dylan-approved masked/hooded expedition figure stays on
+Pure Python 3.9, no Blender. The the owner-approved masked/hooded expedition figure stays on
 geometry.humanoid (frozen in approved/masked_v1) and is never built here. This module builds every
 FACE-head person, including the visor cameo, as ONE fixed topology `human16_face_v2`: identical
 vertex count, triangles, UVs, material roles and skin weights for every parameter value. Hair

@@ -446,7 +446,7 @@ def recipes(root=ROOT):
     return sorted(rows, key=lambda r: r['id'])
 
 
-CAMEO_NOTICE = ("Likeness included with Teknium's consent (relayed by Dylan) for games made with Hermes64; not for "
+CAMEO_NOTICE = ("Likeness included with Teknium's consent (relayed by the owner) for games made with Hermes64; not for "
                 'impersonation, endorsement or misleading use. See LICENSE-CAMEO.md.')
 
 

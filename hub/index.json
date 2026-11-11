@@ -3,7 +3,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 114239,
+    "bytes": 114243,
     "tris_max": 690
    },
    "catalog_ids": [
@@ -19,9 +19,9 @@
    "download": "archives/character.cameo.cameo_visor_01-1.0.0.zip",
    "files": [
     {
-     "bytes": 1162,
+     "bytes": 1166,
      "path": "LICENSE-CAMEO.md",
-     "sha256": "4ff72615fb37b69097532baf72b76be2a75f2e4c4ff466f38c2c002b8d369c9f"
+     "sha256": "7f036dd973bc24cef8c450d4cbd54b40d7e63a7c0c845db91b6b8c01e6962f22"
     },
     {
      "bytes": 1095,
@@ -49,9 +49,9 @@
    "kind": "character",
    "licence": "MIT",
    "name": "Teknium (cameo)",
-   "notice": "Likeness included with Teknium's consent (relayed by Dylan) for games made with Hermes64; not for impersonation, endorsement or misleading use. See LICENSE-CAMEO.md.",
-   "sha256": "c9c6d72f57cdbd8be1432f84a9cc2208576adbf54c34e8b9662eeb227248c451",
-   "size": 115796,
+   "notice": "Likeness included with Teknium's consent (relayed by the owner) for games made with Hermes64; not for impersonation, endorsement or misleading use. See LICENSE-CAMEO.md.",
+   "sha256": "84a6db5eb858ae9ac5746e51deecaca3bc3441673d0a866575ef8b72ba8ed362",
+   "size": 115800,
    "source": "bundled",
    "summary": "Optional cameo character for games made with Hermes64: 690 triangles; read the notice first.",
    "tags": [
@@ -43738,7 +43738,7 @@
    "visibility": "public"
   }
  ],
- "entries_sha256": "a8cd65b399805971eb82859c1b13f83793633310d8c02108cad8ea81d97ef545",
+ "entries_sha256": "cee2eeaddc9fe10e493ec9e68d81fedd0d7f33e6cbaa182952b7330f87f6cd7a",
  "licences": {
   "allowed": [
    "CC0-1.0",

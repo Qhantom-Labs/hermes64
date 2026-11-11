@@ -1,7 +1,7 @@
 {
   "api_version": "1.0.0",
   "schema": "hermes64-combat-readability/1",
-  "note": "Combat readability profile (presentation only; never read by the simulation). Defaults here, then the pack view.json \"combat\" block, then the room presentation \"combat\" block (per-region override). Overrides are clamped to \"ranges\"; light strengths are also capped by the N64 convention (lighting.actor.kicker_max, lighting.lamp_pool.max_strength). Tunables for Dylan: camera.distance_m, camera.pitch_deg, light.kicker[1], light.enemy_fill[1], telegraph.flash_ticks. See docs/COMBAT-READABILITY.md.",
+  "note": "Combat readability profile (presentation only; never read by the simulation). Defaults here, then the pack view.json \"combat\" block, then the room presentation \"combat\" block (per-region override). Overrides are clamped to \"ranges\"; light strengths are also capped by the N64 convention (lighting.actor.kicker_max, lighting.lamp_pool.max_strength). Tunables for the owner: camera.distance_m, camera.pitch_deg, light.kicker[1], light.enemy_fill[1], telegraph.flash_ticks. See docs/COMBAT-READABILITY.md.",
   "camera": {
     "enabled": true,
     "distance_m": 4.5,

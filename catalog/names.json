@@ -1,8 +1,8 @@
 {
  "schema": "hermes64-names/1",
- "note": "The one place to rename things. People are named by Dylan: every person still carries placeholder: true until he names them (the masked lead is Qhantom). Items, kits, sounds, styles, packs and games are named by Main. Ids never change; only display names do. After editing run: python3 -B -m tools.catalog build && python3 -B -m tools.hub build.",
+ "note": "The one place to rename things. People are named by the owner: every person still carries placeholder: true until he names them (the masked lead is Qhantom). Items, kits, sounds, styles, packs and games are named by Main. Ids never change; only display names do. After editing run: python3 -B -m tools.catalog build && python3 -B -m tools.hub build.",
  "people": {
-  "new_arrival": {"name": "Qhantom", "placeholder": false, "named_by": "Dylan"},
+  "new_arrival": {"name": "Qhantom", "placeholder": false, "named_by": "the owner"},
   "tavi": {"name": "Tavi", "placeholder": true},
   "neri": {"name": "Neri", "placeholder": true},
   "sol": {"name": "Sol", "placeholder": true},
