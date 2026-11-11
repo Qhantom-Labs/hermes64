@@ -1,0 +1,13 @@
+diff --git a/adventure_maker/locomotion/core.py b/adventure_maker/locomotion/core.py
+index 22abdef..a057a78 100644
+--- a/adventure_maker/locomotion/core.py
++++ b/adventure_maker/locomotion/core.py
+@@ -56,7 +56,7 @@ def load_spec(name='base_v1'):
+         p = Path(name) if str(name).endswith('.json') else HERE / (str(name) + '.json')
+         if not p.is_file():
+             raise LocomotionError('no_spec', 'there is no locomotion base named %s (looked for %s)' % (name, p))
+-        spec = json.loads(p.read_text())
++        spec = json.loads(p.read_text(encoding='utf-8'))
+     check_spec(spec)
+     return spec
+ 

@@ -13,7 +13,7 @@ stock_synth = import_module('..audio.thaw_audio.stock_synth', __package__) if '.
 
 
 def library():
-    return json.loads((d.DATA/'voices.json').read_text())
+    return json.loads((d.DATA/'voices.json').read_text(encoding='utf-8'))
 
 
 def resolve(params):

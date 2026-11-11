@@ -170,7 +170,7 @@ def build_kits(out=None, rigs=KIT_RIGS, log=print, human_values=None):
         rep = {'clips': [r['name'] for r in rows], 'clips_glb_sha256': _sha(pack), 'clips_glb_bytes': len(pack)}
         if rid in MANNEQUIN_RIGS:
             bare = mannequin.build(rid)
-            (d / 'clips.json').write_text(json.dumps(meta, indent=1, sort_keys=True) + '\n')
+            (d / 'clips.json').write_bytes((json.dumps(meta, indent=1, sort_keys=True) + '\n').encode('utf-8'))
             full = CL.attach_clips(bare, rig)
             again = CL.attach_clips(bare, rig)
             v = validate_character(full, rig, clips=[r['name'] for r in rows])
@@ -181,7 +181,7 @@ def build_kits(out=None, rigs=KIT_RIGS, log=print, human_values=None):
             rep.update(mannequin_ok=v['ok'], mannequin_errors=v['errors'][:6], deterministic=full == again,
                        connectivity=v['checks'].get('connectivity'), deformation=v['checks'].get('deformation'),
                        silhouette=v['checks'].get('silhouette'))
-        (d / 'clips.json').write_text(json.dumps(meta, indent=1, sort_keys=True) + '\n')
+        (d / 'clips.json').write_bytes((json.dumps(meta, indent=1, sort_keys=True) + '\n').encode('utf-8'))
         report[rid] = rep
         log('KIT %-12s clips %2d pack %s%s' % (rid, len(rows), _sha(pack)[:12],
                                                 '' if rid not in MANNEQUIN_RIGS else ' mannequin ok=%s' % rep['mannequin_ok']))

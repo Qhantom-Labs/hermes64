@@ -10,6 +10,9 @@ import tempfile
 
 JSON_LIMIT = 1024 * 1024
 OUTPUT_LIMIT = 24000
+WINDOWS_RESERVED = frozenset(['con', 'prn', 'aux', 'nul'] + ['com%d' % i for i in range(1, 10)] +
+                             ['lpt%d' % i for i in range(1, 10)])
+_NAME_SURROGATE = 0x20000000      # reparse-tag bit of junctions and symlinks (not OneDrive/cloud placeholders)
 
 
 class Fault(Exception):
@@ -85,6 +88,12 @@ def relative(value):
     parts = value.split('/')
     if any(p in ('', '.', '..') for p in parts) or value.startswith('/'):
         fail('path', 'Absolute/traversal path rejected')
+    # Same rule on every OS so a project made on a Mac opens on Windows: NTFS refuses <>"|?*, drops a trailing dot or
+    # space (foo. == foo) and maps reserved device names (con, nul, aux.txt, com1...) to devices.
+    for part in parts:
+        if any(c in '<>"|?*' for c in part) or part[-1] in '. ' or \
+                part.split('.')[0].rstrip(' ').lower() in WINDOWS_RESERVED:
+            fail('path', 'Name not allowed on Windows: ' + part)
     return Path(*parts)
 
 
@@ -98,6 +107,9 @@ def inspect_path(path):
             continue
         if stat.S_ISLNK(info.st_mode):
             fail('path', 'symlink path rejected: ' + str(node))
+        # Windows: a directory junction is a reparse point that lstat reports as a plain directory.
+        if getattr(info, 'st_reparse_tag', 0) & _NAME_SURROGATE:
+            fail('path', 'junction/reparse-point path rejected: ' + str(node))
         if stat.S_ISREG(info.st_mode) and info.st_nlink != 1:
             fail('path', 'hardlink path rejected: ' + str(node))
         if not (stat.S_ISREG(info.st_mode) or stat.S_ISDIR(info.st_mode)):

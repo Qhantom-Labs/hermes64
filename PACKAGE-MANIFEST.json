@@ -6,9 +6,9 @@
    "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
   },
   {
-   "bytes": 6534,
+   "bytes": 10410,
    "path": "README.md",
-   "sha256": "f88ac469732c6748b656e6deb971ba10b700de17e480722383fa39c8070de692"
+   "sha256": "e41347da5b5c83d662f65bd3aef96422a51f743c8fe6c51b2707f922f19e0941"
   },
   {
    "bytes": 11689,
@@ -16,9 +16,9 @@
    "sha256": "bcc67aa42bb3ce5f93eedb4d7528ddba50aeb17e0eb0d0f070c169d6b7d7829e"
   },
   {
-   "bytes": 2282,
+   "bytes": 2655,
    "path": "__init__.py",
-   "sha256": "e85d6fda75884fd7a119b0c775c2a40722ee4a29fe401d5c8ad335f2358b06bf"
+   "sha256": "4fec3f0fe31477e3b9b5ac71ebcfe33bbc02eb152e96400e2f4f6538dcad35e6"
   },
   {
    "bytes": 77,
@@ -36,29 +36,34 @@
    "sha256": "c3a46a4838e2e68a8e5c7fe067492eef95c53aca1526ddb1420ecc5f14235e05"
   },
   {
-   "bytes": 12951,
+   "bytes": 12967,
    "path": "adventure_maker/audio_bank.py",
-   "sha256": "e8015a20c78f44f93dafda4765360911fe25e725946725b37311315579952ada"
+   "sha256": "a6a1d373ad0d5a7d1662f74d3a65c06adccb0de6b5ea957f03af05456dd28f73"
   },
   {
-   "bytes": 9453,
+   "bytes": 9501,
    "path": "adventure_maker/audio_catalog.py",
-   "sha256": "fd561d929390bd1b496cc3133b6a9e9a9f046718372af051dbc2970a4bdf251a"
+   "sha256": "9b70e9ad8583c434290f8c6f4415d8b533d3004f8b4c3d90e602488a7e642814"
   },
   {
-   "bytes": 9931,
+   "bytes": 9947,
    "path": "adventure_maker/audio_dsp.py",
-   "sha256": "209525d6d0956e9c98d473104748132e7ae974410dbc861e235ab5c721024db9"
+   "sha256": "9a32d28ba1d5fd807b0e10a390b4b9ba76e90aa56fe02015b6dcf25ef70b4288"
   },
   {
-   "bytes": 31365,
+   "bytes": 6722,
+   "path": "adventure_maker/audio_formats.py",
+   "sha256": "f1b1261435463e49b3f7647652fd77ad52046e4c6bf520ae792da50db1ac08a9"
+  },
+  {
+   "bytes": 31426,
    "path": "adventure_maker/audio_import.py",
-   "sha256": "370c67db1ad65791755d13539a4a79eb927368bf073194604647c2bb19fc16a6"
+   "sha256": "907e88bfd87bc7dabeb58accc31d7b3104ab233da643ef643da305932d5d5eed"
   },
   {
-   "bytes": 10430,
+   "bytes": 10446,
    "path": "adventure_maker/audio_music.py",
-   "sha256": "b1a79b8a16e3229f9197afbb664b5a55cfecf2399550328f0a810b54be4b19a5"
+   "sha256": "4332a2e1632c1008ed952919b24001278f5e8b73e9a252db42468947b6daff7a"
   },
   {
    "bytes": 4230,
@@ -71,24 +76,34 @@
    "sha256": "a21d9b8dd802993c7303126ed8f172129607bc711307236e5eaf39e9da975913"
   },
   {
-   "bytes": 4520,
+   "bytes": 4536,
    "path": "adventure_maker/audio_voice.py",
-   "sha256": "0651d57be73a33b6026baa37d36d6f7406b5dc07f81f48407b3438b429c07acf"
+   "sha256": "4d18481083a5e1a86df704a11988c97eb3f5d791dafd862e2fe460d5067a69d4"
   },
   {
-   "bytes": 41346,
+   "bytes": 41903,
    "path": "adventure_maker/audit.py",
-   "sha256": "9fa066d4f66ea831e7d14184401f1abbee950a61b24dd43a21a30685a39837d4"
+   "sha256": "271f2ba8d2b840e0d693cb018fae1f9932500c448000bed7a7e2afd82742a073"
   },
   {
-   "bytes": 9321,
+   "bytes": 24313,
+   "path": "adventure_maker/author.py",
+   "sha256": "e3f5a2ed914d8b18ce32dbc8394f4a86edccc72192213497180f7fb5bd4802da"
+  },
+  {
+   "bytes": 3382,
+   "path": "adventure_maker/author_patterns.json",
+   "sha256": "c980ce88b5420140c3a5ce55ea8dd916180359ccee7ceda0ba3d282064223044"
+  },
+  {
+   "bytes": 9337,
    "path": "adventure_maker/badge.py",
-   "sha256": "2d5cfdd2fcdcec6bf55f0401e3ef6a6377e96333ff4854638a5c15ee0917cdec"
+   "sha256": "95dfcb3928640a7c4f3c3c7e904e33d3b378c5546ae2abdb8d5281d8d21f52f4"
   },
   {
-   "bytes": 4572,
+   "bytes": 4588,
    "path": "adventure_maker/benchmark.py",
-   "sha256": "f8ed9c0014485d292961ece0d974cb9bebe666bede5eaca4dfa2062affe2e532"
+   "sha256": "05374a09190b2a4a2cd460f118512b1d5fe4e36d12a58c0f5bbfd43b18910db8"
   },
   {
    "bytes": 65810,
@@ -96,9 +111,9 @@
    "sha256": "dbd0a26d99243e6746597e97b99ba99923074a5163ce3143a7a2d3b8786c45ae"
   },
   {
-   "bytes": 1109,
+   "bytes": 3324,
    "path": "adventure_maker/builders.py",
-   "sha256": "b49757c04c540506cf6d1c8cdf6ee2a61ac46975167479c222831843e6dad4d0"
+   "sha256": "1f9ce899315c473bd21c06c8d896c4f2bc2c624e4a676ad8dcfc0fea9da4a1b6"
   },
   {
    "bytes": 7488,
@@ -106,14 +121,14 @@
    "sha256": "c8e679e15d13c61512d1c24f525a128889b126326332172cb631318c0c02fc67"
   },
   {
-   "bytes": 18103,
+   "bytes": 18680,
    "path": "adventure_maker/character_gate.py",
-   "sha256": "154d072fdb06aa559843f46c82dd316fa2638513b5c62b779f88940a76868b59"
+   "sha256": "aca7ca75f937f54ef2502a08b6ec01d9dde8ac8ee68647dbd63e5f81c8914fb4"
   },
   {
-   "bytes": 11679,
+   "bytes": 11762,
    "path": "adventure_maker/character_pipeline.py",
-   "sha256": "068d27b124f5a62a60ff28af351f7fdf09055111cec64f550fbe0e2eeacf153e"
+   "sha256": "3beb307419dc4bb01ed33196f1a0d6dc63a49fe04313f3c6f65edbbc8286e2cf"
   },
   {
    "bytes": 27302,
@@ -161,9 +176,9 @@
    "sha256": "d82ed47c01213230b4939240815dee34c4e4f655142f324c10f4fdd1c1219b4e"
   },
   {
-   "bytes": 9574,
+   "bytes": 9590,
    "path": "adventure_maker/cover_render.py",
-   "sha256": "d089dcb9e0a09adc3be31559be6b56b20562439d5f2932e8672c0fccaaf487c3"
+   "sha256": "231f94b3f06499e95bc6e3f268c82d74c72b854d26febb90f5b7bafc20730705"
   },
   {
    "bytes": 50866,
@@ -181,24 +196,24 @@
    "sha256": "365bbd09eac1422402662d2fef89c76f53cfde9b20725ff421c7e118c595c391"
   },
   {
-   "bytes": 18154,
+   "bytes": 18170,
    "path": "adventure_maker/cover_tools.py",
-   "sha256": "e5b1508428806bc39a1f2b3717af428203703e58da60b53877e2236ad4b1ddbf"
+   "sha256": "d187a687b5cb74433d072182aad9c3de940554327182b7920b450fcd30a49e36"
   },
   {
-   "bytes": 10479,
+   "bytes": 10495,
    "path": "adventure_maker/demo.py",
-   "sha256": "d9395d5c29d24f7e1eb43218388db0d0f5e0610f1faa7ca0baa80b7fb2062057"
+   "sha256": "278132eed2c2121a4d3fca0bca2c24490b80157ba9a406c7f02cfbf61cf6395b"
   },
   {
-   "bytes": 9640,
+   "bytes": 12997,
    "path": "adventure_maker/doctor.py",
-   "sha256": "c77841a8a3595744026878778a0e2825c12b4f474195469024b01d6a4b699b91"
+   "sha256": "ecdd4d1f2070230a95bb61de8b523c587e7293084529a78c1f0ec4947b10a670"
   },
   {
-   "bytes": 27371,
+   "bytes": 31294,
    "path": "adventure_maker/export.py",
-   "sha256": "7bea89d71b95d3eefc386f5fab33cd6e5927859e447e31ac3bbbb1c966acfe6b"
+   "sha256": "51639249c63b7324eb564321745c9ec5972490cff63f4f0815e6741b284b33c4"
   },
   {
    "bytes": 9714,
@@ -211,19 +226,29 @@
    "sha256": "d975bcdce20bdf9e9f253cd7c9c033058c8b3dd32f23ef94e1528623e970533a"
   },
   {
-   "bytes": 25706,
+   "bytes": 25722,
    "path": "adventure_maker/glb_validate.py",
-   "sha256": "dfeedd41e57c6f41f8a4daf718d1762bad1b3821e352af1490c057f79ec70a41"
+   "sha256": "9b6c5ebbda0a01eecbc04f679e8433c171dc0ae182d68299fb3c4e6b79571b2d"
   },
   {
-   "bytes": 14972,
+   "bytes": 21703,
+   "path": "adventure_maker/godot_fetch.py",
+   "sha256": "de525c195339fc5671f8ecc0a9b5da8523988cd801d3a5d5368bee6655f792b0"
+  },
+  {
+   "bytes": 15074,
    "path": "adventure_maker/golden.py",
-   "sha256": "d7f608cb888f1eee6c7a26b652c2b6581811044889c61979ed83ca30bb4f8b73"
+   "sha256": "47aaaf59c6c2f5986daeea1268737509e0eda9c6e4e3a7f9fcc929490a8d37b7"
   },
   {
-   "bytes": 40178,
+   "bytes": 6398,
+   "path": "adventure_maker/host_compat.py",
+   "sha256": "6f5c9db0987dd2e6262a06a07143f2dc3e72582a301201498c33e8ad5705d4e4"
+  },
+  {
+   "bytes": 40219,
    "path": "adventure_maker/hub.py",
-   "sha256": "ea00bb611b84d5e5523eb90a3d8b4b98a55ec2ee0e0e8c62b4e42c57b9c20945"
+   "sha256": "4a9846955d72abfd8c97e0208e82aeed69f3ec59e8bcd797a74a898e25bab2d0"
   },
   {
    "bytes": 23271,
@@ -241,14 +266,19 @@
    "sha256": "fb4c851dfc99dbfb51e06509cdf1fce3629e67a5ef1aaa0c14edc636474d1b92"
   },
   {
-   "bytes": 4482,
+   "bytes": 4514,
    "path": "adventure_maker/module_playtest.py",
-   "sha256": "13962ed4fee658dff536c644d6d0b810bf450ebf963ccb476fcc8409578da63c"
+   "sha256": "bcf55b82dd640c764402557b1f8f98df16da62a195747ac20a6e68ccb5294469"
   },
   {
-   "bytes": 17437,
+   "bytes": 3716,
+   "path": "adventure_maker/module_replay.py",
+   "sha256": "dad65505879d99099e2505c5a706a19232aa035f69fb88c5da3d38a0eac5d007"
+  },
+  {
+   "bytes": 17520,
    "path": "adventure_maker/n64_gate.py",
-   "sha256": "faffd951e96948cedf7b7cb5fbd17c62e448dc29fcf10313b7746e28dfd9c64a"
+   "sha256": "b8b61fb9c3085501d841c6474432813608f68d7050c3a818af2c5e894fd9b469"
   },
   {
    "bytes": 4626,
@@ -266,9 +296,9 @@
    "sha256": "8ba82a5b378f6f93db1d0c7c5672e98f96f5714e597d7a59aa4842e1cd7a3be3"
   },
   {
-   "bytes": 5836,
+   "bytes": 5868,
    "path": "adventure_maker/nbchars/__main__.py",
-   "sha256": "49340792eab9d5328ccc6020633f43fe0ebabf61c282779a781a715f86bb3ffb"
+   "sha256": "77a4d9de4e228ad42707ba8dd30040a38274114b49b5db5537fc109e5d27bcee"
   },
   {
    "bytes": 14938,
@@ -291,14 +321,14 @@
    "sha256": "d7ced33657e44a06eccc589dee5490a7de42510fc7a8ac26cde62a7de9b59494"
   },
   {
-   "bytes": 17658,
+   "bytes": 17746,
    "path": "adventure_maker/nbchars/parity.py",
-   "sha256": "89c419baf625557357d88f8782308b04e1f6efa1d687513c60c54493d668ede5"
+   "sha256": "3eb2903b338086c858100d5f446cfe9b7938fb14432ce0c7bc2b337a806ccb20"
   },
   {
-   "bytes": 8240,
+   "bytes": 8621,
    "path": "adventure_maker/nbchars/preview.py",
-   "sha256": "acf9723118f784e7bf16e8398001f50337bffa8d258767c0bf350333270de1e3"
+   "sha256": "800f5c20f38cc007538d1c6099c387da52642f1cec194648331d91dd4315cc62"
   },
   {
    "bytes": 4458,
@@ -311,9 +341,9 @@
    "sha256": "855df7d205508daa4696d6fb4e8e91de8527f7e08b8ce7aa0108664133fc7e40"
   },
   {
-   "bytes": 6496,
+   "bytes": 6740,
    "path": "adventure_maker/nbchars/select.py",
-   "sha256": "1e5904b374a5d2e817420d7b253060fd01dc6cffca711173e300036e42fbaa53"
+   "sha256": "a13f6d29bac9231526e6d72b13386d09cb8ad805ff72d1caebe98b6e4b3c944c"
   },
   {
    "bytes": 16979,
@@ -321,9 +351,9 @@
    "sha256": "5f2c5b70feaaae275e0d9a5d8974a5a77f0e3f6ecf3d1facbddb888dbc6c72cc"
   },
   {
-   "bytes": 28876,
+   "bytes": 29161,
    "path": "adventure_maker/newgame.py",
-   "sha256": "729dfa135adaca3266574a7cb5333f695e0079729ac379a552c6bb1c71ff6745"
+   "sha256": "341373017e8f5c108611546e74c7fa797abd4ebff97f55eb81cbacc4828edfb3"
   },
   {
    "bytes": 3372,
@@ -341,9 +371,14 @@
    "sha256": "b2ddad9c8f3203d410defe164db1ceba080b7605b5099341d597cd18af646527"
   },
   {
-   "bytes": 12703,
+   "bytes": 14994,
+   "path": "adventure_maker/platforms.py",
+   "sha256": "91da07cc625789557d4b5c2fabbc5e50c1266c861ba528adc4c2935be32390de"
+  },
+  {
+   "bytes": 12808,
    "path": "adventure_maker/playtest.py",
-   "sha256": "920edb54702fb5b6b1105ec445de31714a376d5c2071c85d213f3899dd319d41"
+   "sha256": "30c15b04d4fe6f8bf031d02e4fcedb3204746f54c464f225f74758f8bd1a10db"
   },
   {
    "bytes": 2124,
@@ -366,9 +401,9 @@
    "sha256": "2db5827f53e96efe15359e000fd7117ff3b61d47f28f6dab1390be829e65e7d1"
   },
   {
-   "bytes": 2678,
+   "bytes": 2710,
    "path": "adventure_maker/puzzle_runtime.py",
-   "sha256": "fabfd13e20187da12775b67b91578108600d4926dc040863ad40c3414fbab368"
+   "sha256": "b36a32e0a220b32d9a15be7c82e8f4b839a66385af00be962d3df9a1852abb11"
   },
   {
    "bytes": 3497,
@@ -386,19 +421,19 @@
    "sha256": "43655b839b19a5c989c8d5d671410ad6460019c8bcbf108595f0bdef39275697"
   },
   {
-   "bytes": 4269,
+   "bytes": 4305,
    "path": "adventure_maker/rigkit/__main__.py",
-   "sha256": "e0029a0141ceac753b76e330985d662995bf22d43ec341ce5b62f7935aee8648"
+   "sha256": "bc04be26e96c7e23aa21881e6b7b70d4fb7fb868163306d8d84105372e9f771d"
   },
   {
-   "bytes": 14396,
+   "bytes": 14412,
    "path": "adventure_maker/rigkit/clips.py",
-   "sha256": "ddc34f2ec902734857b21ceba9f364400e817d2b9be811a13563849a4f1c97bc"
+   "sha256": "9baadb2d456dde4975232ea629dd54960a4c01740e51633cc267345a17018597"
   },
   {
-   "bytes": 13915,
+   "bytes": 13950,
    "path": "adventure_maker/rigkit/derive.py",
-   "sha256": "3d7feab16647255a321e96af4a1744b813048e5aebc47079dd8eb70e94551886"
+   "sha256": "217179e2fd43f5e9c0e89e925d0052727f1d7c0bb56ef398dc96a3d2bc99742c"
   },
   {
    "bytes": 4806,
@@ -411,9 +446,9 @@
    "sha256": "0232abe41191868f8f48dc65ef600dbadee05196ae30e0c0cb313cd6438e5ac2"
   },
   {
-   "bytes": 9900,
+   "bytes": 9938,
    "path": "adventure_maker/rigkit/kits.py",
-   "sha256": "0b35e282da392081a237529553b3167980e89fced0fa1d51021e816cb043098b"
+   "sha256": "1f7df930e1a3f2f5f7989aff97a1b54cc1b35fee6bbd1e355d88fd3834c804fd"
   },
   {
    "bytes": 8964,
@@ -426,14 +461,14 @@
    "sha256": "8576d50f5bce5d59072f5114ecef43c87425991861efc0b0e20faff38dd47a8a"
   },
   {
-   "bytes": 3498,
+   "bytes": 3514,
    "path": "adventure_maker/rigkit/report.py",
-   "sha256": "02d402bd0354e9f76867f2bb4d859d867dd6350fd4cc0193a9fd6fec6e295015"
+   "sha256": "b29c9df8cc1053cfd2263e2dbc9438be906969f61a9ec552efc648496e71075a"
   },
   {
-   "bytes": 5166,
+   "bytes": 5182,
    "path": "adventure_maker/rigkit/rig.py",
-   "sha256": "609410d1e5271a71136f2379f4837875c42c4985e0b133b873f7346cb1919b5b"
+   "sha256": "e6ba137778538bf87a8e68dd3c69657036208927fdab6798ae61e155f3d53f00"
   },
   {
    "bytes": 12153,
@@ -446,14 +481,14 @@
    "sha256": "04faf72413dee5c41a5c5f269a55feb21d5004e09139202dbf580c3b0b594612"
   },
   {
-   "bytes": 6395,
+   "bytes": 16040,
    "path": "adventure_maker/runner.py",
-   "sha256": "2650e17a94f5ca552f98d9bf8a0e1fa19cd7091ae37eec24dee5dfa59a3fd52f"
+   "sha256": "9afd08d9dd993cdf3e62e2452bfdcac7df912724307cc5b3a96fc67c005c6a76"
   },
   {
-   "bytes": 6592,
+   "bytes": 7561,
    "path": "adventure_maker/safety.py",
-   "sha256": "bf33cad6a79d395f9d23134c6b985cf1255f69a3864a2869c89e60f9cee1662a"
+   "sha256": "37defdaea8bf404c0bbd37a33f88e8007dd10ddc96093de68fbef0c639c7b6e4"
   },
   {
    "bytes": 8818,
@@ -461,9 +496,14 @@
    "sha256": "fb39b6b7d9569f56a5325799458c17874580962a3b06cd1839a78e2a19091cbb"
   },
   {
-   "bytes": 27918,
+   "bytes": 28941,
    "path": "adventure_maker/service.py",
-   "sha256": "62c936dbae0237af9673fcacd909ec5fa8835862947bdbe259022f0e1c183825"
+   "sha256": "6eb54bf26bff0b227c4916b3a30c55f9b4b5b33918087d77f99d7254849edbb0"
+  },
+  {
+   "bytes": 12467,
+   "path": "adventure_maker/setup_check.py",
+   "sha256": "808b0dd22bdda7ebaaea1403be8f35ea2798a8a998d5fe45e74a9188332217ff"
   },
   {
    "bytes": 11789,
@@ -471,19 +511,24 @@
    "sha256": "8ef19e40cb195ff89b9d23e46606e98be597c8d98de27b7da43b550e17bc36ee"
   },
   {
-   "bytes": 5952,
+   "bytes": 6263,
    "path": "adventure_maker/static_preview.py",
-   "sha256": "4fd1f6d228bb7bc162412350254493e2e9e751ee69d03974b9bbf86c23e0bfcd"
+   "sha256": "117f4f26e1c6d52f202d820d34ec9b6cb8b2eada74d988663316aeac4f54864b"
   },
   {
-   "bytes": 35838,
+   "bytes": 2938,
+   "path": "adventure_maker/stubs.py",
+   "sha256": "43898ecb8b13a9ef362f08e6e23ae93cdd28bf9774af7c56fe397704afb83c07"
+  },
+  {
+   "bytes": 39474,
    "path": "adventure_maker/studio_catalogue.py",
-   "sha256": "80b380da4b1e633c21d125fac9a800651ea5b22c7378091d59756e8e1b45b911"
+   "sha256": "82a55538a8c7f3c8a5e6dba4dee1f8bf409ed2b9c1e46d62a615e72684428bec"
   },
   {
-   "bytes": 24522,
+   "bytes": 24571,
    "path": "adventure_maker/style_gate.py",
-   "sha256": "6f5e62fca54da36e6b5728ec663050b621e0938176e88b675bc7e4481b3f4749"
+   "sha256": "a5bd4b96cf65d86a2bb77447adc6ea0f803ff3e2257de0f099eae9a7657de72d"
   },
   {
    "bytes": 39333,
@@ -491,9 +536,9 @@
    "sha256": "2d4a2d31a4c43f920541346e3988de624b8ea45c281d3ad8ff3bbedeb22d1ddc"
   },
   {
-   "bytes": 28244,
+   "bytes": 28276,
    "path": "adventure_maker/taxonomy.py",
-   "sha256": "faf5c50a7deec5a7d09b59378b6c1a200d73bf39158ec6c9934446c36b54d9b4"
+   "sha256": "7416b43d0debd26b113f015b6364fce925c41eee6fd70568eb023b64f30ca5fc"
   },
   {
    "bytes": 19932,
@@ -501,14 +546,14 @@
    "sha256": "90d3f3b294d4cffe1ae5ec3ab65da84bfac679feae4e28e366774b3f0af629fa"
   },
   {
-   "bytes": 2470,
+   "bytes": 2765,
    "path": "adventure_maker/tools.py",
-   "sha256": "6056df8bb99f2335433e4f2e55ff417f7b9e723daa454bf2b83a3bb472cdf696"
+   "sha256": "b69e41693862a57bbc1cc19e6eb2d4785e9b5e725979efb3f173be698a1145db"
   },
   {
-   "bytes": 12424,
+   "bytes": 12418,
    "path": "adventure_maker/wire.py",
-   "sha256": "2aba878a6b0702af7d823cde6da91f84c2f39faec00c7670204860d7c7825492"
+   "sha256": "ff6da0684ca5dce24c34f3b89cfcb9d68602ec0f3ba147cbb8dad7fd12ab84b5"
   },
   {
    "bytes": 5466,
@@ -1826,9 +1871,9 @@
    "sha256": "3df7030d6a4c4a9460def532a3779b43be1aedee39f242a2637d1f826e2c2f87"
   },
   {
-   "bytes": 2620111,
+   "bytes": 2620191,
    "path": "catalog/catalog.json",
-   "sha256": "7bb3abdfb5db2020a9b891defbbfee61c905709fff1172ee5fb81f34b4b33a58"
+   "sha256": "6d0b81796c2d6bacee41fb439b35a14d892574a75a4926c13a660c1619c90f12"
   },
   {
    "bytes": 7505,
@@ -2676,9 +2721,9 @@
    "sha256": "d0a333c2e5a819ad6c32123068cb4bcfa4c07fc4bf673bdca1d40f65f80bb32e"
   },
   {
-   "bytes": 17622,
+   "bytes": 19002,
    "path": "dashboard/plugin_api.py",
-   "sha256": "c69ab23189dba9491914c29f28e357fecee44beebbad56c3239392cdc68f92a1"
+   "sha256": "c87b31f2b6346499515cf1b93e5fad373839104a5d9087ea4fff748815f9d3be"
   },
   {
    "bytes": 222988,
@@ -2724,6 +2769,26 @@
    "bytes": 13492,
    "path": "docs/AUDIO-INTEGRATION.md",
    "sha256": "00045d3b317a6a369a8799195252ed6884cfd96e92cf1ebfeb3a99835ecb239e"
+  },
+  {
+   "bytes": 4400,
+   "path": "docs/AUTHOR-AUDIT.md",
+   "sha256": "12f788db487e1674d6592794ee2e03b8db6be7ebd771b369b3efe3303eeae139"
+  },
+  {
+   "bytes": 1251,
+   "path": "docs/AUTHOR-NEWGAME-HANDOFF.md",
+   "sha256": "49420ae02b88b1117e33761da29ebcf86899fc0e0ad5df80a7123c28ffb0fbf6"
+  },
+  {
+   "bytes": 4993,
+   "path": "docs/AUTHORING-SCOPE.md",
+   "sha256": "67e407d60a77f091310ce52196cc75bad5f4c8d29ff496bd27b632510211dd5f"
+  },
+  {
+   "bytes": 8353,
+   "path": "docs/AUTHORING.md",
+   "sha256": "39d9c79492f572fa7022e3adcaa64cba4319f07f3051fd1c8b984f5d88c258e7"
   },
   {
    "bytes": 6532,
@@ -2846,6 +2911,11 @@
    "sha256": "e4836e8fb4cd5da356e8d6c21bbee12ce91651b2510468d0fee730c38bf341a6"
   },
   {
+   "bytes": 4119,
+   "path": "docs/EXAMPLE-CAST.md",
+   "sha256": "a100a8c43b8e480c98155cdc42d16987cc1be2dc87ebfdd5ee86f66251918f05"
+  },
+  {
    "bytes": 8301,
    "path": "docs/EXPORT.md",
    "sha256": "7b6a674cfe5c75217e373ae62f181aceb749c8593c2cf9ffa27fea023d73f92b"
@@ -2906,6 +2976,16 @@
    "sha256": "c9c9f79141ee498829039ad79263d16e95ccd0e7ad9fc3470777ec303ae563af"
   },
   {
+   "bytes": 870,
+   "path": "docs/GODOTFETCH-WINDOWS-FINDER.patch",
+   "sha256": "63b1618faa271ef8eb5d2664b2d54eee8f3f0cdeb1c6f3c0441e0961fbd665c2"
+  },
+  {
+   "bytes": 5828,
+   "path": "docs/HOST-COMPAT.md",
+   "sha256": "0efad42a70e9d9b07ab5fdd3b88734e72ecaf636e6d5ea534038672c12b0b51f"
+  },
+  {
    "bytes": 3216,
    "path": "docs/HUB-ROADMAP.md",
    "sha256": "6a37611b1b8b15e22cab30665bfb67a6bf2b568c20c30a2e5c1f18c8795834d1"
@@ -2919,6 +2999,16 @@
    "bytes": 3852,
    "path": "docs/INTEG4-PORTAL.md",
    "sha256": "ec33928c2f535256970195a4d3c08e4341dcf91f0554337a814ec48cf3c4ca7e"
+  },
+  {
+   "bytes": 11539,
+   "path": "docs/INTEGB-S1-REPINS.json",
+   "sha256": "6bd19fb905ae13c0906edc54fdc15ad6cd82ecab496b868cd1f082aa9d045d90"
+  },
+  {
+   "bytes": 4613,
+   "path": "docs/INTEGB2-FIXES.md",
+   "sha256": "c758f097db5064450fbc6c79ad9e8007b2f8c8db79782e4fef04151fc1e615ac"
   },
   {
    "bytes": 7324,
@@ -3001,9 +3091,9 @@
    "sha256": "d26a507008be958af3719e7693bf05595622509804a700dce007534c8283b0d9"
   },
   {
-   "bytes": 12682,
+   "bytes": 14061,
    "path": "docs/PACKAGE-CONTENTS.md",
-   "sha256": "b249ffccf768cb6f065f3a3e4829aa9f2311068cdd48f41ff952161bb0563558"
+   "sha256": "c71b49276d72d0fcaa8ee8d7fd31516908b741a8620429516569e5c330f0f6b8"
   },
   {
    "bytes": 2989,
@@ -3014,6 +3104,11 @@
    "bytes": 29099,
    "path": "docs/PERF.md",
    "sha256": "e7c2efaaaf5cad8848f8ce0069c3662b65a6336596916b9849118c5ff545ebac"
+  },
+  {
+   "bytes": 13607,
+   "path": "docs/PLATFORM-PARITY.md",
+   "sha256": "7c65790cb065d6036e0398911b67da9a0f1b32a2b9febffb7d7a949184cd0100"
   },
   {
    "bytes": 6569,
@@ -3071,9 +3166,24 @@
    "sha256": "9e7596fe9ffb95cbfd8834ad8a061fff2d87994df269a4129e4f7f9c4858f772"
   },
   {
+   "bytes": 4348,
+   "path": "docs/SAVES.md",
+   "sha256": "95c5e1620509254254cf0feafcbbf63a196d3ca7c432a00bb0f1e29f1788da53"
+  },
+  {
    "bytes": 17220,
    "path": "docs/SCIFIKIT.md",
    "sha256": "1c687eeee2ffa26854f3d2a23fb02c83acf77e1809b41e5cb85508fe1a0ba5b1"
+  },
+  {
+   "bytes": 1370,
+   "path": "docs/SETUP-FETCH-DISCLOSURE.md",
+   "sha256": "356ccfe5b1356ead96b44d50054256af45984cdb3b83e8a59c95d34410aa4d03"
+  },
+  {
+   "bytes": 5848,
+   "path": "docs/SETUP-FETCH.md",
+   "sha256": "0a6262b1934d19472817f5506b984accde041a1f04f4107de42116d9345701d5"
   },
   {
    "bytes": 3640,
@@ -3116,14 +3226,29 @@
    "sha256": "49c2ea1a0e43e14c7160c6427bdc992683f0f83ac2f2b3b5f7222724a32607df"
   },
   {
-   "bytes": 16463,
+   "bytes": 16903,
    "path": "docs/TOKEN-DIET.md",
-   "sha256": "2800c31e7ceff4947b718a9ce8c368e9e52e5860e61f4d8b6472be249c72701c"
+   "sha256": "775aa16d38ffc207a42aa18d86fcf45381433080e8e2b71667aa9f3311992617"
   },
   {
    "bytes": 12109,
    "path": "docs/WESTERNKIT.md",
    "sha256": "7609a94468f6ce8986ea71f0b933001c2c1a97fcb3957af2d19e5903f4c33d9a"
+  },
+  {
+   "bytes": 7720,
+   "path": "docs/WINDOWS-TEST-SHEET.md",
+   "sha256": "f415f7868691280110d46081cf6e35a221b68ba7b00baefdb077de653049a54a"
+  },
+  {
+   "bytes": 8486,
+   "path": "docs/WINDOWS.md",
+   "sha256": "f87dfb5da4e172575ce2157e453d05ee51ce36ae2302d4961f3be13000b0a354"
+  },
+  {
+   "bytes": 7292,
+   "path": "docs/ZEROSETUP-INVENTORY.md",
+   "sha256": "2c7f6fc9c2559154bf0e23724f13a27ac97f3b3a9f0904228c8aca4d374e847c"
   },
   {
    "bytes": 767,
@@ -3214,6 +3339,21 @@
    "bytes": 140845,
    "path": "docs/nbchars/room_game_scale.png",
    "sha256": "a41c27670f13b8afb09f4ecbcf78fb49c23b05beeded183c38c94efdd9dffcdf"
+  },
+  {
+   "bytes": 1351,
+   "path": "docs/parity-patches/audiopipe-ffmpeg-no-window.patch",
+   "sha256": "fd3f9db9872252c538a13409aef8f29799118f629ab74e326ae2e8fcbf7fb83b"
+  },
+  {
+   "bytes": 619,
+   "path": "docs/parity-patches/chars-locomotion-utf8.patch",
+   "sha256": "f6ef8c9efde44d9163aa2975c95d9da67f2e2130b859ea33eb63a268a1cc8455"
+  },
+  {
+   "bytes": 27926,
+   "path": "docs/parity-patches/rc3-windows-runner.patch",
+   "sha256": "ed6ac327b0e3c9a9b6da0b8281734a0ce3e1a02bf140fbf219debda8d7c90294"
   },
   {
    "bytes": 73333,
@@ -3361,44 +3501,44 @@
    "sha256": "7a2490704a0ba16097fa8bad805e3c58908afe8761f3f7d48df5ad32a761c445"
   },
   {
-   "bytes": 5644,
+   "bytes": 6256,
    "path": "examples/gameplay-combat-arena/game.json",
-   "sha256": "21163575c67f2bfa7468449fb94912663383ef1da5e7a7a717b119d40dc8ae47"
+   "sha256": "960a64194a3728bf7221b2c97bf91109e6cb6dd913223d2407af4a07948be158"
   },
   {
    "bytes": 4100,
    "path": "examples/gameplay-combat-arena/proof.json",
-   "sha256": "2dd3b462917c94d318641815e83bbf8adc3a57aff64e114f40c21f568d313fee"
+   "sha256": "e84c6710c72a3c0878e92b4ffc225f5464053463807d81ebc0c5d310dce1f9b4"
   },
   {
    "bytes": 550,
    "path": "examples/gameplay-combat-arena/save.json",
-   "sha256": "26fff5044321aabab40f59104b435c2ccef4b84a0fdf104dd4603e443b2403bc"
+   "sha256": "0c1222e8180d2760ca8d3381238916b7df7366de85e1715bda9d6971c152f80b"
   },
   {
-   "bytes": 3102,
+   "bytes": 3423,
    "path": "examples/gameplay-combat-arena/spec.json",
-   "sha256": "64e82a8dfcd758e0a561318b4efce4d0e1f9f4458ebc49a2c7ab5ca966f5b23b"
+   "sha256": "e28326f1fa8cef0a637b2bc5351cbd4005248e71e87c49f09cde3c529333addb"
   },
   {
-   "bytes": 12942,
+   "bytes": 14152,
    "path": "examples/gameplay-mixed/game.json",
-   "sha256": "f10cac3550f18d87904bf7fda027ef83b699d711115cc6ec148b39133d8aaac1"
+   "sha256": "f9b57454076be53bfa3f6a5d5b438319337d7ac87deaec1167703d60cd3a4737"
   },
   {
    "bytes": 6757,
    "path": "examples/gameplay-mixed/proof.json",
-   "sha256": "d8368b426cbefe6a74c97081d79576db3d4bb69ec9856c48e01aabeda678f5ea"
+   "sha256": "2348f377ed868d975e3b119442faed7715ad6b1468b7bfdc14f9e9c586abaf39"
   },
   {
    "bytes": 538,
    "path": "examples/gameplay-mixed/save.json",
-   "sha256": "b10858a73b20618baee25b9353f681c636a4fc70f13b48d5807d80f0d7850010"
+   "sha256": "e7c8d87b4d5b3099c743dcf9da5ecd25c723e520eb55412fd8a25561aa110425"
   },
   {
-   "bytes": 5625,
+   "bytes": 5962,
    "path": "examples/gameplay-mixed/spec.json",
-   "sha256": "f386674416bef2b468b97c4da9db17d90f467f997d22184786e73f63799e4344"
+   "sha256": "5cb164514274d6828460f40ea0160ce43363ce3e0d91a9a852ea41c24d883611"
   },
   {
    "bytes": 16781,
@@ -3421,24 +3561,24 @@
    "sha256": "c037230073b856f9567c1456ca6900c31b5761c0a19708a1cef390257f490908"
   },
   {
-   "bytes": 8831,
+   "bytes": 10041,
    "path": "examples/gameplay-outdoor-regions/game.json",
-   "sha256": "17afc7ce2cb44166ff83f6483c4902d3603ac09ad87364c4ce45ea17ce1e2367"
+   "sha256": "da7ac6f9775675a1c21995f2925496a86b5fb10f3bb17f4c777eadfe52d9e622"
   },
   {
    "bytes": 4139,
    "path": "examples/gameplay-outdoor-regions/proof.json",
-   "sha256": "4a1004eb996f89c9251ffab79e3ba61da5b970a449f4b51d8952d50458e7eb25"
+   "sha256": "e628f964fd4f72acac75adf915d99c269882f6babad131301984ad62497e2edb"
   },
   {
    "bytes": 538,
    "path": "examples/gameplay-outdoor-regions/save.json",
-   "sha256": "ea66fa75dcad150f4d79f564c5d9184804e6b322cddd7233f73995f3b2d7d8ad"
+   "sha256": "a23795555622d988ad8348afa8541730199c2f77568d2a2013dd80b5c10ff589"
   },
   {
-   "bytes": 3600,
+   "bytes": 3937,
    "path": "examples/gameplay-outdoor-regions/spec.json",
-   "sha256": "ea829ef8f2b420a29d75100f740f1fcae018c9fa8b0bee922548518be147dfc7"
+   "sha256": "8ba292a245b9e3df92603f9a61b4fdbca3e2207061ededc4d5c8350f7a9020cc"
   },
   {
    "bytes": 12466,
@@ -3481,24 +3621,24 @@
    "sha256": "9270da3b60e5d2da645892f825cf7d2293770a8897e870b9a986c72864c26391"
   },
   {
-   "bytes": 3966,
+   "bytes": 4578,
    "path": "examples/gameplay-timed-course/game.json",
-   "sha256": "d98b6dfdce732773eadd00ad6c3f907482ebb139d4e98474a3d58d2620a184eb"
+   "sha256": "e9dad75d893ea8a7bd9df0774e64dfe68dae3910698aa1375b9dd98d31767008"
   },
   {
    "bytes": 4175,
    "path": "examples/gameplay-timed-course/proof.json",
-   "sha256": "dec922e6b7541b6f1710b8b8a824710c79c0d36e96bdafbbff8d38a37fe5efc3"
+   "sha256": "b755df672b3fe4c99d43e0a613ceab0cc78e8de7632447c74d988663ab6995e1"
   },
   {
    "bytes": 537,
    "path": "examples/gameplay-timed-course/save.json",
-   "sha256": "a5e222328843110ec6105a36f0120119d6a714b167daf7714351a5752cf84545"
+   "sha256": "d5a2d9cfc53170df25395e806eb1593beaf3e3b64b187944a60228b691c1596d"
   },
   {
-   "bytes": 2329,
+   "bytes": 2650,
    "path": "examples/gameplay-timed-course/spec.json",
-   "sha256": "7d7ea9547e3f30f84f3337db732f212fddfbc15a43e52539740109550ce9ecd5"
+   "sha256": "cc4f9727043bc09d210ec97c0ab0f3c32abd30fc7a58bfa72ea706788fb73d6a"
   },
   {
    "bytes": 5872,
@@ -3566,6 +3706,21 @@
    "sha256": "ecc90bc9b95f0332a961c4f97692c8b7ce4178a9857c7fbe9f5f9398c30fcb6d"
   },
   {
+   "bytes": 1769,
+   "path": "examples/wizard-purple/README.md",
+   "sha256": "1d46f115df20577e6584319c1f7788504ef0a49145719ac217c5c474fdb351e7"
+  },
+  {
+   "bytes": 23827,
+   "path": "examples/wizard-purple/spec.json",
+   "sha256": "cdde76a5e3810427272f26debe1bce362f9901e032ca03c5207a27d46863806b"
+  },
+  {
+   "bytes": 3493,
+   "path": "examples/wizard-purple/world.json",
+   "sha256": "1ae8fa819746e46701d07b81967ae14ddf6aeb39c633fdf4eedb1c5045128bde"
+  },
+  {
    "bytes": 1083,
    "path": "hub/README.md",
    "sha256": "86e9a448ebb7adc0d8f2b9bac89d87629dd058fccd079d801ee013d6829ba88d"
@@ -3573,7 +3728,7 @@
   {
    "bytes": 1273615,
    "path": "hub/index.json",
-   "sha256": "aa606e3aad3db226259c67013b10cb98fe3571a930d4238fe5cb302b70e4989e"
+   "sha256": "eb2c1144d16ef63b7e8c8a21032857fbebb99efd621ca59f3692e2477f53d635"
   },
   {
    "bytes": 30316,
@@ -3768,7 +3923,7 @@
   {
    "bytes": 521596,
    "path": "hub/site/index.html",
-   "sha256": "376221ab2ecdf148492f6d563bd96ec30c61a1d6e291bd13f1e05ef410b85360"
+   "sha256": "5dfe61d236618fb39ae1e11ab9d4dd8dc7d58ac81e3644082a654002fdd70cf2"
   },
   {
    "bytes": 19777,
@@ -26876,9 +27031,9 @@
    "sha256": "99d6f2d3146f7918892f7f33fddac42298bb9c076c3abee7c8de8d9ef9bf72e4"
   },
   {
-   "bytes": 3234,
+   "bytes": 3470,
    "path": "plugin.yaml",
-   "sha256": "3e727f72b3708691b7bbfcfdb002f8822d2776ff1fc65b07e56e9884b2186b45"
+   "sha256": "d00363b7e5fca782ce7a283d8ad61bb5052a86218285c25373665718dfe0216b"
   },
   {
    "bytes": 1471,
@@ -27491,9 +27646,9 @@
    "sha256": "770b150f376940cfa3cf1294530d5afef35a493131863003363fb14dfb3639b2"
   },
   {
-   "bytes": 5448,
+   "bytes": 8410,
    "path": "runtime/godot/playtest/release.gd",
-   "sha256": "a3004cc50f601e880c524b0dbb51e8a64571f2a992f7d63b80732190592d7c36"
+   "sha256": "0cedb835281380b39d10abfc72908259f79dc8026b3a36f53e26960d467960e2"
   },
   {
    "bytes": 21848,
@@ -27511,9 +27666,9 @@
    "sha256": "97f73763668e86c223d2f91033b8f9739d6203f41e84c43c60a32e00a9eacb93"
   },
   {
-   "bytes": 697,
+   "bytes": 702,
    "path": "runtime/godot/project.godot",
-   "sha256": "816b4b50b87654af5f15cd2e2f5e43a04095b9c3eb4a44ab551cf63df80fb149"
+   "sha256": "4e918a4182b2833c2f961c148ab8d3900763a8af101e9ba122dafa648e2bb818"
   },
   {
    "bytes": 1441,
@@ -27574,6 +27729,11 @@
    "bytes": 176,
    "path": "runtime/godot/tests/audit_main.tscn",
    "sha256": "a64f977228c71168cfa49093c71132720e0a24e708ef0a7d8af7ae113e394ea2"
+  },
+  {
+   "bytes": 1974,
+   "path": "runtime/godot/tests/author_module_replay.gd",
+   "sha256": "a8f6f0236e697dc00a73dd752b8a7c271716df48ec415d839c189dd4876a65e4"
   },
   {
    "bytes": 3318,
@@ -27911,6 +28071,11 @@
    "sha256": "7568525f5e7e67010cb39eae6b91e76c2e7360113e96e2988c24310b1286f0c8"
   },
   {
+   "bytes": 3585,
+   "path": "runtime/godot/tests/savefix_slots.gd",
+   "sha256": "1bd6b4322f59e6848bb9f11a6d0f6c811514ad7fb96e5c3db317ed2a82c3aa71"
+  },
+  {
    "bytes": 2972,
    "path": "runtime/godot/tests/tbuild_entry.gd",
    "sha256": "060fcf589c94b8338bb32079f351fdc33d322e40d5fbd98fb092bca45d919a70"
@@ -28021,6 +28186,11 @@
    "sha256": "f7aaeea1f096c92a9cb20c128e4bad67b3b06d958142b94d7261f187676b544e"
   },
   {
+   "bytes": 9912,
+   "path": "skills/hermes64-author/SKILL.md",
+   "sha256": "812c3dc18c07b5768f180bcffad1618a45e95146251aadf845ead5f80ef273a3"
+  },
+  {
    "bytes": 3476,
    "path": "skills/hermes64-characters/SKILL.md",
    "sha256": "9adbc159d7755bd472461574004695e428b89469543be9fbadd239e756e6fe0a"
@@ -28046,9 +28216,9 @@
    "sha256": "3be1c04c32efc97a9911f1b39e8e28e53ca2a1a1b307b050d9bb72e363ee5afe"
   },
   {
-   "bytes": 14309,
+   "bytes": 15884,
    "path": "skills/hermes64/SKILL.md",
-   "sha256": "49962dbc37bf3b12109cf97d71529fcf2be244c6edd7fef2c71b1d6f379e56a8"
+   "sha256": "5a37435ea736e5d8c4c85ff8c63900b189b92395e030f04fb527b73a8cafb912"
   },
   {
    "bytes": 100,
@@ -28311,9 +28481,24 @@
    "sha256": "1fb47552f67d1845e10fd2efd238fb8800a31261c33b4de00f0153a7a45248f6"
   },
   {
-   "bytes": 6551,
+   "bytes": 1093,
+   "path": "tools/bin/MANIFEST.json",
+   "sha256": "fb4a3fb6ccef031802dea3947129693f10db43e9a3fb0b7af2c2a9ec1cf44286"
+  },
+  {
+   "bytes": 7945,
    "path": "tools/check_install.py",
-   "sha256": "248ff60316fa4119200e747e835e3d8fbb845905066b5b18171b239d5d000ff0"
+   "sha256": "12da680c6782d8fd9ff8229081ead3e7a319f2d07b42fcc7dbc0e54fbdb525ba"
+  },
+  {
+   "bytes": 3381,
+   "path": "tools/fetch-manifest.json",
+   "sha256": "39b867d5b3b164359d546d9a88825173b95b351ffd631b5260ae44f29504bfb9"
+  },
+  {
+   "bytes": 2587,
+   "path": "tools/hermes64_setup.py",
+   "sha256": "c2f99d3778201aa63769e13df90074db0c03c0da3e3bbafa21d5cabdaa504b95"
   },
   {
    "bytes": 26450,
@@ -28354,13 +28539,13 @@
  },
  "schema": "hermes64-package/1",
  "source": {
-  "commit": "6afa41899dcb016bc54eb7df737c9f22e2cc99f3",
+  "commit": "546d92a54d6446441b96190c46f85dd044281eda",
   "tree": "clean"
  },
  "tools": 27,
  "totals": {
-  "bytes": 136526412,
-  "files": 5666
+  "bytes": 136846376,
+  "files": 5703
  },
  "version": "1.0.0-rc"
 }

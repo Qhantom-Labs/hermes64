@@ -17,7 +17,7 @@ def look_gate(service,project,components,revision):
     capture=result.get('capture')
     if not isinstance(capture,dict) or capture.get('status')!='passed':
         return {'status':'failed','reason':'capture did not pass'}
-    theme=json.loads(Path(result['theme_path']).read_text()) if Path(result.get('theme_path','')).is_file() else {}
+    theme=json.loads(Path(result['theme_path']).read_text(encoding='utf-8')) if Path(result.get('theme_path','')).is_file() else {}
     gate=style_gate.gate_directory(project.path(folder+'/screens'),theme)
     project.write_json(folder+'/style-gate.json',gate)
     return {'status':gate['status'],'report_path':folder+'/style-gate.json','failed_rooms':[r['id'] for r in gate['rooms'] if r['status']!='passed'],'scope':gate['scope']}

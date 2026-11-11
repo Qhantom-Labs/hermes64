@@ -72,14 +72,14 @@ def write_reports(folder, report):
     panels = []
     for index, (rid, row) in enumerate(sorted(report.get('rooms', {}).items())):
         name = 'heat-%03d.svg' % index
-        (folder / name).write_text(heatmap(rid, row))
+        (folder / name).write_bytes(heatmap(rid, row).encode('utf-8'))
         panels.append('<figure><img src="' + name + '"><figcaption>' + html.escape(rid) + '</figcaption></figure>')
     # Always supply an honest map contact sheet; real rendered PNGs are separate when requested.
     tiles = []
     for i, (rid, row) in enumerate(sorted(report.get('rooms', {}).items())):
         svg = heatmap(rid, row).replace('width="340" height="340"', 'x="%d" y="%d" width="340" height="340"' % ((i%2)*340, (i//2)*340), 1)
         tiles.append(svg)
-    (folder / 'contact-sheet.svg').write_text('<svg xmlns="http://www.w3.org/2000/svg" width="680" height="%d">%s</svg>' % (max(1,(len(tiles)+1)//2)*340,''.join(tiles)))
+    (folder / 'contact-sheet.svg').write_bytes(('<svg xmlns="http://www.w3.org/2000/svg" width="680" height="%d">%s</svg>' % (max(1,(len(tiles)+1)//2)*340,''.join(tiles))).encode('utf-8'))
     captures=sorted(p for p in folder.glob('*.png') if p.name!='contact-sheet.png')
     if captures:
         import importlib.util
@@ -99,10 +99,10 @@ def write_reports(folder, report):
     text += '\n| Room | Triangles | Draw calls | Samples |\n|---|---:|---:|---:|\n'
     for rid, row in sorted(report.get('rooms', {}).items()):
         text += '| {} | {} | {} | {} |\n'.format(rid, row.get('triangles'), row.get('draw_calls', 'unmeasured'), row.get('samples',0))
-    (folder / 'report.md').write_text(text)
-    (folder / 'report.json').write_text(json.dumps(report, sort_keys=True, indent=2))
+    (folder / 'report.md').write_bytes(text.encode('utf-8'))
+    (folder / 'report.json').write_bytes(json.dumps(report, sort_keys=True, indent=2).encode('utf-8'))
     images = ''.join('<img width="320" src="'+html.escape(p.name)+'" alt="actual runtime frame">' for p in sorted(folder.glob('*.png')))
-    (folder / 'report.html').write_text('<!doctype html><meta charset="utf-8"><title>Hermes64 playtest</title><style>body{font:16px system-ui;max-width:1100px;margin:2em auto;background:#101720;color:#eee}figure{display:inline-block;margin:4px}pre{white-space:pre-wrap}img{max-width:100%}</style><pre>'+html.escape(text)+'</pre>'+''.join(panels)+images+'<details><summary>Full measured report</summary><pre>'+html.escape(json.dumps(report,indent=2))+'</pre></details>')
+    (folder / 'report.html').write_bytes(('<!doctype html><meta charset="utf-8"><title>Hermes64 playtest</title><style>body{font:16px system-ui;max-width:1100px;margin:2em auto;background:#101720;color:#eee}figure{display:inline-block;margin:4px}pre{white-space:pre-wrap}img{max-width:100%}</style><pre>'+html.escape(text)+'</pre>'+''.join(panels)+images+'<details><summary>Full measured report</summary><pre>'+html.escape(json.dumps(report,indent=2))+'</pre></details>').encode('utf-8'))
 
 
 def run(service, project, args, control=''):
@@ -142,7 +142,7 @@ def run(service, project, args, control=''):
     project.write_json(folder + '/process.json', dict(process, argv=argv))
     output = project.path(folder)
     native_path = output / 'native.json'
-    native = json.loads(native_path.read_text()) if native_path.is_file() else {}
+    native = json.loads(native_path.read_text(encoding='utf-8')) if native_path.is_file() else {}
     if process.get('elapsed_seconds'):
         native.setdefault('timing',{})['whole_probe_ticks_per_wall_second']=native.get('ticks',0)/process['elapsed_seconds']
     # Hash only deterministic observations, never wall timings/allocator values.

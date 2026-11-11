@@ -35,14 +35,14 @@ def sidecar(game13, root):
            'game_hash': game13['game_hash'], 'lowered_game_hash': game13['lowered']['game_hash'],
            'reachable': _runtime_states(game13)}
     if look_path.is_file():
-        out['look'] = json.loads(look_path.read_text())
+        out['look'] = json.loads(look_path.read_text(encoding='utf-8'))
     return out
 
 
 def audio_rows(root):
     """Puzzle cue event -> {path, sha256} of the shipped catalog WAV (the build's audio.json rows)."""
     root = Path(root)
-    catalog = {a['id']: a for a in json.loads((root / 'audio/catalog.json').read_text())['assets']}
+    catalog = {a['id']: a for a in json.loads((root / 'audio/catalog.json').read_text(encoding='utf-8'))['assets']}
     out = {}
     for event, aid in sorted(AUDIO.items()):
         path = root / 'audio' / catalog[aid]['file']

@@ -48,7 +48,7 @@ def _r6(x):
 
 def _oracle_files(oracle, kind):
     root = Path(oracle)
-    man = json.loads((root / 'manifest.json').read_text())
+    man = json.loads((root / 'manifest.json').read_text(encoding='utf-8'))
     rows = []
     if kind in ('human', 'quad'):
         for c in man['characters']:
@@ -266,6 +266,6 @@ def derive(oracle, out=None, generator_root=None):
     for d in docs:
         p = out / d['id'] / 'rig.json'
         p.parent.mkdir(parents=True, exist_ok=True)
-        p.write_text(json.dumps(d, indent=1, sort_keys=False) + '\n')
+        p.write_bytes((json.dumps(d, indent=1, sort_keys=False) + '\n').encode('utf-8'))
         written.append(str(p))
     return written

@@ -26,7 +26,7 @@ def physical(project, settings, game_path, proof, folder, render=False):
         process = {'returncode': 124, 'stdout': '', 'stderr': str(exc)}
     project.write_json(folder + '/process.json', dict(process, argv=argv))
     path = project.path(folder + '/native.json')
-    native = json.loads(path.read_text()) if path.exists() else {}
+    native = json.loads(path.read_text(encoding='utf-8')) if path.exists() else {}
     if native and native.get('game_hash') != game['game_hash']:
         raise ValueError('native module build mismatch')
     rating, reasons = verdict(native, proof, process)
@@ -42,7 +42,7 @@ def physical(project, settings, game_path, proof, folder, render=False):
             resources[asset.relative_to(component.root).as_posix() if component.root in asset.parents else str(asset.relative_to(project.root))] = actual
     combat_path = project.path(folder + '/runtime/combat.json')
     if combat_path.is_file():
-        combat = json.loads(combat_path.read_text())
+        combat = json.loads(combat_path.read_text(encoding='utf-8'))
         for row in list(combat['enemies'].values()) + list(combat['weapons'].values()):
             asset = Path(row['path'])
             actual = hashlib.sha256(asset.read_bytes()).hexdigest()

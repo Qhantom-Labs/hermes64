@@ -189,8 +189,18 @@ class Service:
         table = 'Feature | Available | Needs\n--- | --- | ---\n' + '\n'.join(
             name.replace('_', ' ') + ' | ' + ('yes' if row['available'] else 'no') + ' | ' + row['needs']
             for name, row in report['features'].items())
+        from . import setup_check
+        py = report['python']
+        numpy = py.get('supported') and py.get('selected_interpreter_verified') and py['numpy']['available']
+        rows = setup_check.check(self.settings,
+                                 probe_numpy=lambda _exe: py['numpy'].get('version') if numpy else None,
+                                 blender_present=report['programs']['blender']['available'],
+                                 templates=report['export_templates'])
+        setup = {'rows': rows, 'message': setup_check.render(rows),
+                 'download_plan': setup_check.run(self.settings, fetch=True, yes=False,
+                                                  include_templates=True, interactive=False)}
         return {'ok': True, 'status': 'capabilities_detected_not_verified', 'capabilities': report, 'table': table,
-                'guidance': report['guidance']}
+                'guidance': report['guidance'], 'setup': setup}
 
     def pack_from_refs(self, project, args):
         from .reference_tools import draft_pack
@@ -398,6 +408,9 @@ class Service:
         components = Components(self.settings, project)
         proof_path = folder + '/proof.json'
         proof = components.check(current['game'], proof_path)
+        if proof['status'] == 'conditional' and project.read_json(current['game']).get('contract_version') == '1.2.0':
+            from .module_replay import run as module_replay
+            return module_replay(self, project, current, proof, folder)
         if proof['status'] != 'proved':
             fail('unproved', 'Godot replay requires a current proved checker report')
         report = components.replay(current['game'], proof_path, folder)
@@ -430,7 +443,7 @@ class Service:
         A verdict on measurable defects only; not human art approval."""
         from . import style_gate, golden
         screens = project.path(folder + '/screens')
-        theme = json.loads(Path(theme_path).read_text()) if theme_path and Path(theme_path).is_file() else {}
+        theme = json.loads(Path(theme_path).read_text(encoding='utf-8')) if theme_path and Path(theme_path).is_file() else {}
         gate = style_gate.gate_directory(screens, theme)
         project.write_json(folder + '/style-gate.json', gate)
         verdict = {'style_gate': {'status': gate['status'], 'scope': gate['scope'], 'set_reasons': gate['set_reasons'],

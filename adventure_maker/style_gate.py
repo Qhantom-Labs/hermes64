@@ -417,7 +417,7 @@ def judge(metrics, audit, th, exterior=False):
 def gate_directory(folder, theme=None, thresholds=None, rooms=None):
     """Run the gate over a capture folder. theme = runtime theme.json dict (fog colour, palette)."""
     folder = Path(folder)
-    cap = json.loads((folder / 'capture.json').read_text())
+    cap = json.loads((folder / 'capture.json').read_text(encoding='utf-8'))
     theme = theme or {}
     th = dict(CORE_DEFAULTS)
     th.update((theme.get('style_gate') or {}))
@@ -490,10 +490,10 @@ def main(argv):
     ap.add_argument('--theme', help='runtime theme.json (fog colour, palette, style_gate thresholds)')
     ap.add_argument('--out', help='write the JSON report here')
     a = ap.parse_args(argv)
-    theme = json.loads(Path(a.theme).read_text()) if a.theme else {}
+    theme = json.loads(Path(a.theme).read_text(encoding='utf-8')) if a.theme else {}
     report = gate_directory(a.folder, theme)
     if a.out:
-        Path(a.out).write_text(json.dumps(report, indent=2))
+        Path(a.out).write_bytes(json.dumps(report, indent=2).encode('utf-8'))
     print('\n'.join(summary_lines(report)))
     return 0 if report['status'] == 'passed' else 1
 

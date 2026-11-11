@@ -195,7 +195,7 @@ def explain(rep):
 
 
 def oracle_items(oracle):
-    man = json.loads((Path(oracle) / 'manifest.json').read_text())
+    man = json.loads((Path(oracle) / 'manifest.json').read_text(encoding='utf-8'))
     items = []
     for c in man['characters']:
         items.append({'type': 'character', 'id': c['id'], 'pack': c['pack'], 'file': c['file'],
@@ -310,12 +310,12 @@ def run(oracle, out, only=None, root=None, visor_root=None, reexport=(), blender
     summary['verdict'] = 'PASS' if ok else 'FAIL'
     rep = {'schema': 'hermes64-nbchars-parity/1', 'oracle': str(oracle), 'summary': summary, 'files': rows,
            'blender_reexport': reex}
-    (out / 'parity.json').write_text(json.dumps(rep, indent=1, sort_keys=True, default=str))
+    (out / 'parity.json').write_bytes(json.dumps(rep, indent=1, sort_keys=True, default=str).encode('utf-8'))
     if write_verdict:
         if only:
             raise ValueError('--write-verdict needs the full oracle set (no --only)')
         from . import select as SEL
-        SEL.PARITY.write_text(json.dumps(verdict_record(rep, oracle), indent=1, sort_keys=True) + '\n')
+        SEL.PARITY.write_bytes((json.dumps(verdict_record(rep, oracle), indent=1, sort_keys=True) + '\n').encode('utf-8'))
     return rep
 
 
@@ -333,7 +333,7 @@ def reexport_blender(oracle, out, ids, blender_path, log=print):
     argv = [bp, '--background', '--factory-startup', '--disable-autoexec', '--python',
             str(repo / 'tools' / 'nbchars_blender_export.py'), '--', '--gen', str(repo / 'characters' / 'gen'), '--out',
             str(bo), '--what', 'parity', '--only', ','.join(ids), '--oracle', str(oracle)]
-    p = subprocess.run(argv, capture_output=True, text=True, timeout=3600)
+    p = subprocess.run(argv, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=3600)
     res = []
     if p.returncode != 0:
         return [{'error': 'blender exit %d' % p.returncode, 'stderr': p.stderr[-800:]}]

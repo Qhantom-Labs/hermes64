@@ -38,6 +38,9 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 | `tools/__init__.py`, `tools/pngtool.py`, `tools/import_characters.py` | The only `tools/` modules imported at runtime (playtest contact sheet, character staging) |
 | `tools/roomlook.py` | MERGE4: imported by `characters/integration.capture_games` (reached through the shipped `tools/import_characters.py`); without it `hermes plugins validate` on the package read `tools.roomlook` as a private Hermes core import (the `git archive` of the repository was clean because the file is there) |
 | `tools/check_install.py` | MERGE4: checks an installed copy against the `PACKAGE-MANIFEST.json` that `--out` writes (every file's size and sha256, the source commit) and prints PASS or FAIL; stdlib, read-only, runs on macOS and Windows |
+| `tools/hermes64_setup.py` | One-step setup checklist; only a user-typed `--fetch` plus confirmation downloads the official Godot editor (and, with `--templates`, the official export templates) into a per-user cache. Plain checklist downloads nothing; see `docs/SETUP-FETCH.md` |
+| `tools/fetch-manifest.json` | Pinned download plan (official godot-builds 4.6.2-stable URLs and their published SHA-512), printed by `--fetch-plan`. CAT-FIX F4 removed the self-hosted stub bundle and its builder |
+| `tools/bin/MANIFEST.json` | ZEROSETUP: pinned (empty) manifest for the optional `tools/bin/<platform>/ffmpeg` lookup; no binary ships |
 
 ## Exclude
 
@@ -60,6 +63,7 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 | `docs/*-MODEL.md`, `docs/*-VERIFICATION.json` | RC3: runtime-lane receipts (cam, feel2, livefix, move model headers and verification ledgers, plus the RC3 integrator's model header) remain repository-only; they carry build-machine paths. The user-facing docs of those lanes still ship. |
 | `characters/internal/*` | Internal and restricted characters (git-ignored as well; MERGE4 adds the package rule so a force-added file still cannot ship) |
 | `kits/library/*.glb.json` | Source-only kit build reports, which can contain absolute build paths. Runtime kit packing uses the core/side manifests and hash-pinned GLBs/textures; authoring catalog generation may inspect the real sidecar validation, while a project's own cache reports are separate. |
+| Not included (WIN2): `tools/windows_gate.py` | The Windows portability gate is a source-text scan of the runtime code: its result is the same on any OS, so it runs in the repository (and CI) before a package is cut, together with `tests/test_windows_gate.py`, which cannot ship anyway (`tests/` is repository-only). The first Windows test sheet told users to run `py -B -m tools.windows_gate` on the unpacked package, where it does not exist (Dylan's PC run: `No module named tools.windows_gate`); the sheet v2 drops that step. Rule: a `tools/` module ships only when the runtime imports it or the user runs it on the installed copy (`check_install.py`); `tests/test_package.py` checks every `tools` command in the Windows test sheet ships |
 | Not included at all: `tests/`, `tests_story/`, `tests_refpack/`, `tests_cover/`, `goldens/`, `games/`, `projects/`, other `tools/*` (including the catalog/hub generators `tools/catalog.py`, `tools/hub.py`, `tools/hub_site.py`, `tools/thumbs.py`), `PROVENANCE.json`, `*-CHECKPOINT.md`, `*-BLOCKED.md`, `*-RESULT.md` | Tests, golden images, showcase/sample projects, developer tools, provenance and lane process records |
 
 ## Privacy scan (MERGE4)

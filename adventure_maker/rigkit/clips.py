@@ -55,7 +55,7 @@ def load_pack(rig):
     if not g.is_file() or not j.is_file():
         raise RigError('rig %s has no clip pack (%s, %s)' % (rig.id, g.name, j.name))
     raw = g.read_bytes()
-    meta = json.loads(j.read_text())
+    meta = json.loads(j.read_text(encoding='utf-8'))
     if meta.get('schema') != PACK_SCHEMA or meta.get('rig') != rig.id:
         raise RigError('%s is not a %s clip pack for %s' % (j, PACK_SCHEMA, rig.id))
     sha = hashlib.sha256(raw).hexdigest()

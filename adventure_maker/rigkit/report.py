@@ -20,7 +20,7 @@ def _row(kind, rec, rep, seconds):
 
 def report(oracle, keys='all', log=print):
     oracle = Path(oracle)
-    man = json.loads((oracle / 'manifest.json').read_text())
+    man = json.loads((oracle / 'manifest.json').read_text(encoding='utf-8'))
     rows = []
     for kind, recs in (('character', man.get('characters', [])), ('enemy', man.get('enemies', []))):
         for rec in recs:

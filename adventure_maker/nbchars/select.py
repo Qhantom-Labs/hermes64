@@ -33,7 +33,7 @@ def fingerprint(repo=None):
     repo = Path(repo or REPO)
     files = list(EXPORTER_FILES)
     try:
-        files += [f['file'] for f in json.loads((HERE / 'VENDORED-GEN.json').read_text())['files']]
+        files += [f['file'] for f in json.loads((HERE / 'VENDORED-GEN.json').read_text(encoding='utf-8'))['files']]
     except (OSError, ValueError, KeyError):
         return None
     h = hashlib.sha256()
@@ -49,7 +49,7 @@ def fingerprint(repo=None):
 def parity():
     """The committed parity verdict; 'STALE' when the generator or exporter code changed since it was proven."""
     try:
-        rec = json.loads(PARITY.read_text())
+        rec = json.loads(PARITY.read_text(encoding='utf-8'))
     except (OSError, ValueError):
         return {'verdict': 'MISSING', 'note': 'no committed parity verdict (adventure_maker/nbchars/PARITY.json)'}
     fp = fingerprint()
@@ -63,10 +63,16 @@ def parity():
 def _blender_path(settings):
     """Resolved Blender executable or None. When blender_path is configured it is the only candidate; otherwise the
     standard install locations and PATH are tried."""
+    from .. import platforms
     configured = (settings or {}).get('blender_path') or ''
-    cands = [configured] if configured else list(BLENDER_DEFAULTS)
+    if configured:
+        cands = [configured]
+    elif platforms.is_windows():
+        cands = platforms.blender_candidates()
+    else:
+        cands = [c for c in (platforms.override('blender'),) if c] + list(BLENDER_DEFAULTS)
     for c in cands:
-        p = shutil.which(c) if '/' not in c else c
+        p = shutil.which(c) if not platforms.looks_like_path(c) else c
         if p and Path(p).is_file() and os.access(p, os.X_OK):
             return str(Path(p).resolve())
     return None

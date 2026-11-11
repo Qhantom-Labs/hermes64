@@ -1,5 +1,8 @@
 # Token diet: tool schemas sent on every request
 
+INTEG-B2 folds GODOTFETCH's setup checklist and official download plan into the existing `hermes64_doctor` result: **27 tools**, no new model arguments or consent path. The original validation hashes and **6,000-token cap remain unchanged**. The historical GODOTFETCH 28-tool receipts describe its standalone lane, not the composed public API.
+Run the meter below for the current count/cost; historical tables retain their original scope.
+
 The 24 Hermes64 tools used to cost **14,607 tokens** of schema and description per request. They now cost **4,828** (budget 6,000). Tool names, count, handlers and validation are unchanged.
 
 **MERGE3 update:** `hermes64_cover` (cover-lane) joined as the 25th tool. Registered as committed on cover-lane it cost 7,103 chars / **1,776 tokens** alone (total 26,415 chars / **6,604 tokens**, over budget; its description was 758 characters, over the 400 limit). It now goes through `wire.py` like the others: **440 tokens** (1,758 chars, longest description 226), total **5,268 tokens** for 25 tools (21,070 chars), inside the unchanged 6,000 budget. See [the MERGE3 section](#merge3-hermes64_cover-joins-25-tools).

@@ -18,6 +18,7 @@ Exit code 0 on PASS, 1 on FAIL, 2 when the folder cannot be read at all.
 """
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 
@@ -28,6 +29,18 @@ REQUIRED = ('plugin.yaml', '__init__.py', 'adventure_maker/tools.py', 'desktop/p
             'hub/index.json', 'catalog/catalog.json', 'catalog/names.json', 'runtime/godot/project.godot')
 
 
+WINDOWS_PATH_LIMIT = 250   # MAX_PATH is 260 including the drive and terminator; keep a margin
+
+
+def crlf_only(path, expected):
+    """True when the file equals the packaged bytes once CRLF is turned back into LF (git autocrlf damage)."""
+    try:
+        raw = Path(path).read_bytes()
+    except OSError:
+        return False
+    return b'\r\n' in raw and hashlib.sha256(raw.replace(b'\r\n', b'\n')).hexdigest() == expected
+
+
 def sha256(path):
     h = hashlib.sha256()
     with open(path, 'rb') as f:
@@ -36,10 +49,10 @@ def sha256(path):
     return h.hexdigest()
 
 
-def check(folder):
+def check(folder, platform=None):
     """{'ok': bool, 'fail': [...], 'warn': [...], 'checked': n, ...} for one installed plugin folder."""
     folder = Path(folder)
-    fail, warn = [], []
+    fail, warn, crlf = [], [], []
     try:
         record = json.loads((folder / MANIFEST).read_text(encoding='utf-8'))
         rows = record['files']
@@ -61,7 +74,11 @@ def check(folder):
             continue
         checked += 1
         if path.stat().st_size != row['bytes'] or sha256(path) != row['sha256']:
-            fail.append('changed (size or sha256 differs): ' + row['path'])
+            if crlf_only(path, row['sha256']):
+                crlf.append(row['path'])
+                fail.append('changed (line endings converted to CRLF): ' + row['path'])
+            else:
+                fail.append('changed (size or sha256 differs): ' + row['path'])
     for path in sorted(folder.rglob('*')):
         rel = path.relative_to(folder).as_posix()
         if path.is_dir() or rel == MANIFEST or any(part in IGNORED_PARTS for part in path.parts) or rel.endswith('.pyc'):
@@ -92,7 +109,15 @@ def check(folder):
                     fail.append('cameo notice missing: cameo/' + info['notice'])
             except (OSError, ValueError, KeyError) as exc:
                 fail.append('cameo/cameo.json unreadable (%s)' % type(exc).__name__)
-    return {'ok': not fail, 'fail': fail, 'warn': warn, 'checked': checked, 'listed': len(rows),
+    if crlf:
+        fail.append('%d file(s) had their line endings changed to Windows CRLF, usually by git core.autocrlf or an editor: '
+                    'unzip the package again with Explorer or Expand-Archive (or clone with: git -c core.autocrlf=false clone ...)'
+                    % len(crlf))
+    longest = max((len(str(Path(os.path.abspath(str(folder))) / r['path'])) for r in rows), default=0)
+    if longest >= WINDOWS_PATH_LIMIT and (platform or sys.platform) == 'win32':
+        warn.insert(0, 'longest installed path is %d characters; Windows limits paths to 260 unless long paths are '
+                       'enabled: move the plugin to a shorter folder (e.g. C:\\H64\\hermes64)' % longest)
+    return {'ok': not fail, 'fail': fail, 'warn': warn, 'checked': checked, 'listed': len(rows), 'longest_path': longest,
             'cameo': 'removed' if cameo_removed else ('present' if cameo_rows else 'not in package'),
             'source': record.get('source'), 'version': record.get('version')}
 

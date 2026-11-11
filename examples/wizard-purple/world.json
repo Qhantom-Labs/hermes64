@@ -1,0 +1,33 @@
+{
+  "format":"hermes64-world/1",
+  "id":"violet_tower",
+  "title":"The Violet Tower",
+  "brief":"An apprentice restores a purple tower beacon by learning a word of mercy, finding the moon key and answering a guardian. A four-room exploration quest, not a combat game.",
+  "pack":"castle_keep", "mood":"violet_dusk", "start":"court", "hero":"apprentice",
+  "rooms":[
+    {"id":"court","name":"Violet Court","description":"The tower's violet lamps are fading. Ione remembers how to reach the crown.","size":[10,10],"pieces":[{"asset":"cst.tower_round__roofed","position":[8,0,2],"scale":[0.35,0.35,0.35]},{"asset":"mprop.cauldron","position":[2,0,7]}]},
+    {"id":"library","name":"Whisper Library","description":"Between two old shelves rests the key that opens the moon seal.","size":[10,10],"pieces":[{"asset":"mprop.shelf__books","position":[2,0,2]},{"asset":"mprop.shelf","position":[8,0,2],"yaw":180},{"asset":"mprop.table__round","position":[7,0,7]}]},
+    {"id":"seal","name":"Moon Seal","description":"A guardian asks what strength must protect. Return to Ione if you do not know.","size":[10,10],"pieces":[{"asset":"cst.pillar","position":[2,0,2]},{"asset":"cst.pillar","position":[8,0,2]},{"asset":"cst.banner__roundel","position":[1,1,4],"mounted":true}]},
+    {"id":"crown","name":"Crown Chamber","description":"The beacon awaits a steady hand. Light it and shelter the valley.","size":[10,10],"pieces":[{"asset":"cst.brazier","position":[7,0,3]},{"asset":"cst.throne","position":[2,0,2]}]}
+  ],
+  "links":[
+    {"a":"court:east","b":"library:west","label":"Visit the whisper library"},
+    {"a":"court:north","b":"seal:south","label":"Unlock the moon seal","when":[{"item":"moon_key","present":true}]},
+    {"a":"seal:north","b":"crown:south","label":"Pass the guardian","when":[{"flag":"guardian_yields","equals":true}]}
+  ],
+  "cast":[
+    {"id":"apprentice","name":"Ada","role":"protagonist","asset":"fv_scribe","room":"court"},
+    {"id":"archivist","name":"Ione","role":"archivist","asset":"fv_warden","room":"court","at":[3,0,3]},
+    {"id":"guardian","name":"Violet Guardian","role":"guardian","asset":"fv_elder","room":"seal","at":[3,0,3]}
+  ],
+  "items":[{"id":"moon_key","name":"Moon key","description":"The library key fits the moon seal. It is not consumed."}],
+  "flags":{"rune_known":false,"guardian_yields":false,"beacon_lit":false},
+  "patterns":[
+    {"use":"npc_hint","args":{"id":"ione_hint","character":"archivist","room":"court","flag":"rune_known","text":"The library keeps the moon key. If the guardian tests you, remember: strength must protect mercy.","choice":"I will remember mercy.","at":[3,0,4]}},
+    {"use":"key_pickup","args":{"id":"moon_key_pickup","room":"library","item":"moon_key","label":"Lift the moon key","text":"A silver key rests on the reading desk.","at":[5,0,4]}},
+    {"use":"guardian_answer","args":{"id":"guardian_riddle","character":"guardian","room":"seal","clue":"rune_known","granted":"guardian_yields","question":"Name what strength must protect.","answer":"Mercy.","at":[3,0,4]}},
+    {"use":"branch_finish","args":{"id":"restore_beacon","room":"crown","flag":"beacon_lit","label":"Restore the violet beacon","text":"The beacon glows violet again. The valley has a light to guide it home.","when":[],"at":[6,0,3]}}
+  ],
+  "quests":[{"id":"restore","title":"Restore the violet beacon","description":"Find the key, learn the word and earn the guardian's passage.","when":[{"flag":"beacon_lit","equals":true}]}],
+  "endings":[]
+}

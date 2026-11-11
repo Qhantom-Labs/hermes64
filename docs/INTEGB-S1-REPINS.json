@@ -1,0 +1,270 @@
+[
+  {
+    "path": "examples/gameplay-combat-arena/spec.json",
+    "before_sha256": "64e82a8dfcd758e0a561318b4efce4d0e1f9f4458ebc49a2c7ab5ca966f5b23b",
+    "lane_sha256": "e28326f1fa8cef0a637b2bc5351cbd4005248e71e87c49f09cde3c529333addb",
+    "after_sha256": "e28326f1fa8cef0a637b2bc5351cbd4005248e71e87c49f09cde3c529333addb",
+    "changed_from_m9": [
+      "$.characters",
+      "$.metadata.protagonist",
+      "$.rooms[0].character_ids"
+    ],
+    "changed_from_win2": [],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-combat-arena/game.json",
+    "before_sha256": "21163575c67f2bfa7468449fb94912663383ef1da5e7a7a717b119d40dc8ae47",
+    "lane_sha256": "0b76f2cf7e9a0f7148926c8bd521fc60c8db9a9089e5b06dc5906ebba789348a",
+    "after_sha256": "960a64194a3728bf7221b2c97bf91109e6cb6dd913223d2407af4a07948be158",
+    "changed_from_m9": [
+      "$.characters",
+      "$.game_hash",
+      "$.metadata.protagonist",
+      "$.rooms[0].build_hash",
+      "$.rooms[0].character_ids",
+      "$.rooms[0].content.characters",
+      "$.spec_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.module_contract.implementation_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-combat-arena/proof.json",
+    "before_sha256": "2dd3b462917c94d318641815e83bbf8adc3a57aff64e114f40c21f568d313fee",
+    "lane_sha256": "dd6160d0f7c8687a2a922243486fc0b1233bdcebbff72f777459a6592e475c6a",
+    "after_sha256": "e84c6710c72a3c0878e92b4ffc225f5464053463807d81ebc0c5d310dce1f9b4",
+    "changed_from_m9": [
+      "$.game_hash",
+      "$.model_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.model_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-combat-arena/save.json",
+    "before_sha256": "26fff5044321aabab40f59104b435c2ccef4b84a0fdf104dd4603e443b2403bc",
+    "lane_sha256": "54c3f15dcbd14e5fe952fb64cb709c57115d22c6923c678d8bf82091932ce464",
+    "after_sha256": "0c1222e8180d2760ca8d3381238916b7df7366de85e1715bda9d6971c152f80b",
+    "changed_from_m9": [
+      "$.game_hash",
+      "$.spec_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.module_contract_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-mixed/spec.json",
+    "before_sha256": "f386674416bef2b468b97c4da9db17d90f467f997d22184786e73f63799e4344",
+    "lane_sha256": "5cb164514274d6828460f40ea0160ce43363ce3e0d91a9a852ea41c24d883611",
+    "after_sha256": "5cb164514274d6828460f40ea0160ce43363ce3e0d91a9a852ea41c24d883611",
+    "changed_from_m9": [
+      "$.characters",
+      "$.metadata.protagonist",
+      "$.rooms[0].character_ids",
+      "$.rooms[1].character_ids",
+      "$.rooms[2].character_ids"
+    ],
+    "changed_from_win2": [],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-mixed/game.json",
+    "before_sha256": "f10cac3550f18d87904bf7fda027ef83b699d711115cc6ec148b39133d8aaac1",
+    "lane_sha256": "847ca3ca75a51bf778676ea86ad7c113488c8f7ef7ef8583203755e643fef949",
+    "after_sha256": "f9b57454076be53bfa3f6a5d5b438319337d7ac87deaec1167703d60cd3a4737",
+    "changed_from_m9": [
+      "$.characters",
+      "$.game_hash",
+      "$.metadata.protagonist",
+      "$.rooms[0].build_hash",
+      "$.rooms[0].character_ids",
+      "$.rooms[0].content.characters",
+      "$.rooms[1].build_hash",
+      "$.rooms[1].character_ids",
+      "$.rooms[1].content.characters",
+      "$.rooms[2].build_hash",
+      "$.rooms[2].character_ids",
+      "$.rooms[2].content.characters",
+      "$.spec_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.module_contract.implementation_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-mixed/proof.json",
+    "before_sha256": "d8368b426cbefe6a74c97081d79576db3d4bb69ec9856c48e01aabeda678f5ea",
+    "lane_sha256": "4b6bf3b9c35460dc881ef98f014809739506da716b7875827072e7f6245c85bc",
+    "after_sha256": "2348f377ed868d975e3b119442faed7715ad6b1468b7bfdc14f9e9c586abaf39",
+    "changed_from_m9": [
+      "$.game_hash",
+      "$.model_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.model_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-mixed/save.json",
+    "before_sha256": "b10858a73b20618baee25b9353f681c636a4fc70f13b48d5807d80f0d7850010",
+    "lane_sha256": "197a46e9b230bca83df44cc590612dd0f2a9d11e0e8e55fe25ede29ca019741a",
+    "after_sha256": "e7c8d87b4d5b3099c743dcf9da5ecd25c723e520eb55412fd8a25561aa110425",
+    "changed_from_m9": [
+      "$.game_hash",
+      "$.spec_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.module_contract_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-outdoor-regions/spec.json",
+    "before_sha256": "ea829ef8f2b420a29d75100f740f1fcae018c9fa8b0bee922548518be147dfc7",
+    "lane_sha256": "8ba292a245b9e3df92603f9a61b4fdbca3e2207061ededc4d5c8350f7a9020cc",
+    "after_sha256": "8ba292a245b9e3df92603f9a61b4fdbca3e2207061ededc4d5c8350f7a9020cc",
+    "changed_from_m9": [
+      "$.characters",
+      "$.metadata.protagonist",
+      "$.rooms[0].character_ids",
+      "$.rooms[1].character_ids",
+      "$.rooms[2].character_ids"
+    ],
+    "changed_from_win2": [],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-outdoor-regions/game.json",
+    "before_sha256": "17afc7ce2cb44166ff83f6483c4902d3603ac09ad87364c4ce45ea17ce1e2367",
+    "lane_sha256": "1286ef8aa0ffbd667c3f96245313de75f0c61a45891d2bec3d4513a21648fa23",
+    "after_sha256": "da7ac6f9775675a1c21995f2925496a86b5fb10f3bb17f4c777eadfe52d9e622",
+    "changed_from_m9": [
+      "$.characters",
+      "$.game_hash",
+      "$.metadata.protagonist",
+      "$.rooms[0].build_hash",
+      "$.rooms[0].character_ids",
+      "$.rooms[0].content.characters",
+      "$.rooms[1].build_hash",
+      "$.rooms[1].character_ids",
+      "$.rooms[1].content.characters",
+      "$.rooms[2].build_hash",
+      "$.rooms[2].character_ids",
+      "$.rooms[2].content.characters",
+      "$.spec_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.module_contract.implementation_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-outdoor-regions/proof.json",
+    "before_sha256": "4a1004eb996f89c9251ffab79e3ba61da5b970a449f4b51d8952d50458e7eb25",
+    "lane_sha256": "485a13e1b54583b2ad62cad8639e9eec0978cde0ac256f066a3a8127d3378e25",
+    "after_sha256": "e628f964fd4f72acac75adf915d99c269882f6babad131301984ad62497e2edb",
+    "changed_from_m9": [
+      "$.game_hash",
+      "$.model_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.model_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-outdoor-regions/save.json",
+    "before_sha256": "ea66fa75dcad150f4d79f564c5d9184804e6b322cddd7233f73995f3b2d7d8ad",
+    "lane_sha256": "307c0f81c2784d330f89e9fce4c2726a6ae1101866d61ac44fa5f66a0a106188",
+    "after_sha256": "a23795555622d988ad8348afa8541730199c2f77568d2a2013dd80b5c10ff589",
+    "changed_from_m9": [
+      "$.game_hash",
+      "$.spec_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.module_contract_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-timed-course/spec.json",
+    "before_sha256": "7d7ea9547e3f30f84f3337db732f212fddfbc15a43e52539740109550ce9ecd5",
+    "lane_sha256": "cc4f9727043bc09d210ec97c0ab0f3c32abd30fc7a58bfa72ea706788fb73d6a",
+    "after_sha256": "cc4f9727043bc09d210ec97c0ab0f3c32abd30fc7a58bfa72ea706788fb73d6a",
+    "changed_from_m9": [
+      "$.characters",
+      "$.metadata.protagonist",
+      "$.rooms[0].character_ids"
+    ],
+    "changed_from_win2": [],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-timed-course/game.json",
+    "before_sha256": "d98b6dfdce732773eadd00ad6c3f907482ebb139d4e98474a3d58d2620a184eb",
+    "lane_sha256": "506938d3ae354c0845d592f5b3fc70848a93fc49b7e1234e46495a12ca91edc6",
+    "after_sha256": "e9dad75d893ea8a7bd9df0774e64dfe68dae3910698aa1375b9dd98d31767008",
+    "changed_from_m9": [
+      "$.characters",
+      "$.game_hash",
+      "$.metadata.protagonist",
+      "$.rooms[0].build_hash",
+      "$.rooms[0].character_ids",
+      "$.rooms[0].content.characters",
+      "$.spec_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.module_contract.implementation_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-timed-course/proof.json",
+    "before_sha256": "dec922e6b7541b6f1710b8b8a824710c79c0d36e96bdafbbff8d38a37fe5efc3",
+    "lane_sha256": "18892a0f37034da43dba22542998323b94f51fc70942660d9c968373e6255dbd",
+    "after_sha256": "b755df672b3fe4c99d43e0a613ceab0cc78e8de7632447c74d988663ab6995e1",
+    "changed_from_m9": [
+      "$.game_hash",
+      "$.model_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.model_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  },
+  {
+    "path": "examples/gameplay-timed-course/save.json",
+    "before_sha256": "a5e222328843110ec6105a36f0120119d6a714b167daf7714351a5752cf84545",
+    "lane_sha256": "4bc9be7e6168707f8322daa04e5ca115602153553654e8639e0ef67196736e85",
+    "after_sha256": "d5a2d9cfc53170df25395e806eb1593beaf3e3b64b187944a60228b691c1596d",
+    "changed_from_m9": [
+      "$.game_hash",
+      "$.spec_hash"
+    ],
+    "changed_from_win2": [
+      "$.game_hash",
+      "$.module_contract_hash"
+    ],
+    "reason": "WIN2 authored protagonist binding + composed COMBAT2 implementation identities; generated with compile_spec/check_game/make_save, no movie edits"
+  }
+]

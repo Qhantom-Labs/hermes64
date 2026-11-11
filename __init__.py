@@ -7,10 +7,12 @@ from .adventure_maker.demo import register_tools as register_ship_tools
 from .adventure_maker.cover_tools import register_cover_tools
 from .adventure_maker.character_tools import register_character_tools
 from .adventure_maker.hub import register_tools as register_hub_tools
+from .adventure_maker import host_compat
 
 # Bundled skills carry the detail the compact tool schemas leave out (docs/TOKEN-DIET.md).
 # Descriptions mirror each SKILL.md frontmatter (tests/test_schema_budget.py checks they match).
 SKILLS = {
+    'hermes64-author': 'Use when building original games. Compile maps and verify.',
     'hermes64': 'Make and safely edit retro-style 3D adventure games.',
     'hermes64-audio': 'Create and validate original retro game audio banks.',
     'hermes64-gameplay-modules': 'Use when authoring gameplay data. Verify bounded contracts.',
@@ -22,6 +24,9 @@ SKILLS = {
 
 
 def register(ctx):
+    # Older hosts (Hermes < 0.20.1 has no ctx.get_config/ctx.state) get a compatibility ctx; a host without the tool
+    # API is refused with one plain sentence (docs/HOST-COMPAT.md).
+    ctx = host_compat.adapt(ctx)
     register_tools(ctx)
     register_module_tools(ctx)
     register_audio_tools(ctx)
@@ -29,9 +34,9 @@ def register(ctx):
     register_cover_tools(ctx)
     register_character_tools(ctx)
     register_hub_tools(ctx)
-    ctx.register_command('hermes64', make_command(ctx),
-                         description='Make a game: /hermes64 new "<premise>" [village|forest|polar]; share: /hermes64 hub search <words>',
-                         args_hint='new "<premise>" [style] | hub search|info|install|pack|publish ...')
+    host_compat.register_command(ctx, 'hermes64', make_command(ctx),
+                                 description='Make a game: /hermes64 new "<premise>" [village|forest|polar]; share: /hermes64 hub search <words>',
+                                 args_hint='new "<premise>" [style] | hub search|info|install|pack|publish ...')
     add_skill = getattr(ctx, 'register_skill', None)
     if callable(add_skill):
         for name, description in SKILLS.items():

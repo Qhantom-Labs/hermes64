@@ -11,11 +11,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "human16_v1@1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.cameo.cameo_visor_01-1.0.0.zip",
    "files": [
     {
@@ -81,11 +81,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "human16_v1@1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.forest_village.fv_elder-1.0.0.zip",
    "files": [
     {
@@ -148,11 +148,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "human16_v1@1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.forest_village.fv_scribe-1.0.0.zip",
    "files": [
     {
@@ -217,11 +217,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "human16_v1@1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.forest_village.fv_warden-1.0.0.zip",
    "files": [
     {
@@ -286,11 +286,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "quad16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.cat_black-1.0.0.zip",
    "files": [
     {
@@ -354,11 +354,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "quad16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.cat_calico-1.0.0.zip",
    "files": [
     {
@@ -422,11 +422,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "quad16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.cat_tabby-1.0.0.zip",
    "files": [
     {
@@ -490,11 +490,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "quad16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.cat_tuxedo-1.0.0.zip",
    "files": [
     {
@@ -558,11 +558,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "quad16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.cat_white-1.0.0.zip",
    "files": [
     {
@@ -626,11 +626,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "human16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.ivo-1.0.0.zip",
    "files": [
     {
@@ -693,11 +693,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "human16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.luma-1.0.0.zip",
    "files": [
     {
@@ -762,11 +762,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "human16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.neri-1.0.0.zip",
    "files": [
     {
@@ -831,11 +831,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "human16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.new_arrival-1.0.0.zip",
    "files": [
     {
@@ -902,11 +902,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "human16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.sol-1.0.0.zip",
    "files": [
     {
@@ -969,11 +969,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "rig": "human16_v1@1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/character.polar_pod.tavi-1.0.0.zip",
    "files": [
     {
@@ -1038,11 +1038,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "story": "1.2.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/game.reedland_region_gates-1.0.0.zip",
    "files": [
     {
@@ -1109,11 +1109,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "story": "1.2.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/game.reedland_relay-1.0.0.zip",
    "files": [
     {
@@ -1194,10 +1194,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "alien_world"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.alien_world.alien_nature-1.0.0.zip",
    "files": [
     {
@@ -1438,10 +1438,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "alien_world"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.alien_world.planet_terrain-1.0.0.zip",
    "files": [
     {
@@ -1662,10 +1662,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "alien_world"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.alien_world.ships-1.0.0.zip",
    "files": [
     {
@@ -1868,10 +1868,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "alien_world"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.alien_world.space_sky-1.0.0.zip",
    "files": [
     {
@@ -2000,10 +2000,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "alien_world"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.alien_world.station_architecture-1.0.0.zip",
    "files": [
     {
@@ -2239,10 +2239,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "alien_world"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.alien_world.tech_props-1.0.0.zip",
    "files": [
     {
@@ -2457,10 +2457,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "ancient_ruins"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.ancient_ruins.land-1.0.0.zip",
    "files": [
     {
@@ -2807,10 +2807,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "ancient_ruins"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.ancient_ruins.relic-1.0.0.zip",
    "files": [
     {
@@ -3165,10 +3165,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "ancient_ruins"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.ancient_ruins.ruin-1.0.0.zip",
    "files": [
     {
@@ -3603,10 +3603,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "ancient_ruins"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.ancient_ruins.wild-1.0.0.zip",
    "files": [
     {
@@ -3934,10 +3934,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "canyon_mesa"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.canyon_mesa.canyon_terrain-1.0.0.zip",
    "files": [
     {
@@ -4387,10 +4387,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "canyon_mesa"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.canyon_mesa.frontier_mine-1.0.0.zip",
    "files": [
     {
@@ -4740,10 +4740,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "canyon_mesa"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.canyon_mesa.frontier_props-1.0.0.zip",
    "files": [
     {
@@ -5349,10 +5349,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "canyon_mesa"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.canyon_mesa.frontier_rail-1.0.0.zip",
    "files": [
     {
@@ -5669,10 +5669,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "canyon_mesa"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.canyon_mesa.frontier_town-1.0.0.zip",
    "files": [
     {
@@ -6264,10 +6264,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "castle_keep"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.castle_keep.medieval_castle-1.0.0.zip",
    "files": [
     {
@@ -6733,10 +6733,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "castle_keep"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.castle_keep.medieval_nature-1.0.0.zip",
    "files": [
     {
@@ -7100,10 +7100,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "castle_keep"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.castle_keep.medieval_props-1.0.0.zip",
    "files": [
     {
@@ -7672,10 +7672,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "castle_keep"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.castle_keep.medieval_terrain-1.0.0.zip",
    "files": [
     {
@@ -7982,10 +7982,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "castle_keep"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.castle_keep.medieval_village_architecture-1.0.0.zip",
    "files": [
     {
@@ -8531,10 +8531,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "castle_keep"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.castle_keep.terrain-1.0.0.zip",
    "files": [
     {
@@ -8612,10 +8612,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "cyber_blue_grid"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.cyber_blue_grid.cyber_dressing-1.0.0.zip",
    "files": [
     {
@@ -8845,10 +8845,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "cyber_blue_grid"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.cyber_blue_grid.cyber_rooms-1.0.0.zip",
    "files": [
     {
@@ -9220,10 +9220,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "cyber_blue_grid"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.cyber_blue_grid.cyber_signs-1.0.0.zip",
    "files": [
     {
@@ -9495,10 +9495,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "cyber_blue_grid"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.cyber_blue_grid.cyber_sky-1.0.0.zip",
    "files": [
     {
@@ -9736,10 +9736,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "cyber_blue_grid"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.cyber_blue_grid.cyber_streets-1.0.0.zip",
    "files": [
     {
@@ -10026,10 +10026,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "cyber_blue_grid"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.cyber_blue_grid.cyber_tech-1.0.0.zip",
    "files": [
     {
@@ -10315,10 +10315,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "cyber_blue_grid"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.cyber_blue_grid.cyber_towers-1.0.0.zip",
    "files": [
     {
@@ -10606,10 +10606,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "cyber_blue_grid"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.cyber_blue_grid.terrain-1.0.0.zip",
    "files": [
     {
@@ -10688,10 +10688,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.forest_village.architecture-1.0.0.zip",
    "files": [
     {
@@ -10920,10 +10920,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.forest_village.furniture-1.0.0.zip",
    "files": [
     {
@@ -11149,10 +11149,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.forest_village.nature-1.0.0.zip",
    "files": [
     {
@@ -11271,10 +11271,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.forest_village.props-1.0.0.zip",
    "files": [
     {
@@ -11406,10 +11406,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.forest_village.terrain-1.0.0.zip",
    "files": [
     {
@@ -11560,10 +11560,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.forest_village.vehicles-1.0.0.zip",
    "files": [
     {
@@ -11663,10 +11663,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town.canyon_terrain-1.0.0.zip",
    "files": [
     {
@@ -12116,10 +12116,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town.frontier_mine-1.0.0.zip",
    "files": [
     {
@@ -12469,10 +12469,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town.frontier_props-1.0.0.zip",
    "files": [
     {
@@ -13078,10 +13078,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town.frontier_rail-1.0.0.zip",
    "files": [
     {
@@ -13398,10 +13398,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town.frontier_town-1.0.0.zip",
    "files": [
     {
@@ -13991,10 +13991,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_golden"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town_golden.canyon_terrain-1.0.0.zip",
    "files": [
     {
@@ -14444,10 +14444,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_golden"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town_golden.frontier_mine-1.0.0.zip",
    "files": [
     {
@@ -14797,10 +14797,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_golden"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town_golden.frontier_props-1.0.0.zip",
    "files": [
     {
@@ -15406,10 +15406,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_golden"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town_golden.frontier_rail-1.0.0.zip",
    "files": [
     {
@@ -15726,10 +15726,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_golden"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town_golden.frontier_town-1.0.0.zip",
    "files": [
     {
@@ -16320,10 +16320,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town_night.canyon_terrain-1.0.0.zip",
    "files": [
     {
@@ -16773,10 +16773,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town_night.frontier_mine-1.0.0.zip",
    "files": [
     {
@@ -17126,10 +17126,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town_night.frontier_props-1.0.0.zip",
    "files": [
     {
@@ -17735,10 +17735,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town_night.frontier_rail-1.0.0.zip",
    "files": [
     {
@@ -18055,10 +18055,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.frontier_town_night.frontier_town-1.0.0.zip",
    "files": [
     {
@@ -18638,10 +18638,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "jungle_temple"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.jungle_temple.land-1.0.0.zip",
    "files": [
     {
@@ -18988,10 +18988,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "jungle_temple"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.jungle_temple.relic-1.0.0.zip",
    "files": [
     {
@@ -19346,10 +19346,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "jungle_temple"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.jungle_temple.ruin-1.0.0.zip",
    "files": [
     {
@@ -19784,10 +19784,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "jungle_temple"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.jungle_temple.wild-1.0.0.zip",
    "files": [
     {
@@ -20116,10 +20116,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village.medieval_castle-1.0.0.zip",
    "files": [
     {
@@ -20585,10 +20585,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village.medieval_nature-1.0.0.zip",
    "files": [
     {
@@ -20952,10 +20952,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village.medieval_props-1.0.0.zip",
    "files": [
     {
@@ -21524,10 +21524,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village.medieval_terrain-1.0.0.zip",
    "files": [
     {
@@ -21834,10 +21834,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village.medieval_village_architecture-1.0.0.zip",
    "files": [
     {
@@ -22383,10 +22383,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village.terrain-1.0.0.zip",
    "files": [
     {
@@ -22470,10 +22470,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_dusk"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_dusk.medieval_castle-1.0.0.zip",
    "files": [
     {
@@ -22939,10 +22939,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_dusk"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_dusk.medieval_nature-1.0.0.zip",
    "files": [
     {
@@ -23306,10 +23306,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_dusk"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_dusk.medieval_props-1.0.0.zip",
    "files": [
     {
@@ -23878,10 +23878,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_dusk"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_dusk.medieval_terrain-1.0.0.zip",
    "files": [
     {
@@ -24188,10 +24188,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_dusk"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_dusk.medieval_village_architecture-1.0.0.zip",
    "files": [
     {
@@ -24737,10 +24737,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_dusk"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_dusk.terrain-1.0.0.zip",
    "files": [
     {
@@ -24824,10 +24824,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_night.medieval_castle-1.0.0.zip",
    "files": [
     {
@@ -25293,10 +25293,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_night.medieval_nature-1.0.0.zip",
    "files": [
     {
@@ -25660,10 +25660,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_night.medieval_props-1.0.0.zip",
    "files": [
     {
@@ -26232,10 +26232,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_night.medieval_terrain-1.0.0.zip",
    "files": [
     {
@@ -26542,10 +26542,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_night.medieval_village_architecture-1.0.0.zip",
    "files": [
     {
@@ -27091,10 +27091,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_night.terrain-1.0.0.zip",
    "files": [
     {
@@ -27178,10 +27178,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_snow"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_snow.medieval_castle-1.0.0.zip",
    "files": [
     {
@@ -27647,10 +27647,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_snow"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_snow.medieval_nature-1.0.0.zip",
    "files": [
     {
@@ -28014,10 +28014,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_snow"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_snow.medieval_props-1.0.0.zip",
    "files": [
     {
@@ -28586,10 +28586,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_snow"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_snow.medieval_terrain-1.0.0.zip",
    "files": [
     {
@@ -28896,10 +28896,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_snow"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_snow.medieval_village_architecture-1.0.0.zip",
    "files": [
     {
@@ -29445,10 +29445,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_snow"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.medieval_village_snow.terrain-1.0.0.zip",
    "files": [
     {
@@ -29526,10 +29526,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_city_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_city_night.cyber_dressing-1.0.0.zip",
    "files": [
     {
@@ -29759,10 +29759,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_city_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_city_night.cyber_rooms-1.0.0.zip",
    "files": [
     {
@@ -30134,10 +30134,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_city_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_city_night.cyber_signs-1.0.0.zip",
    "files": [
     {
@@ -30409,10 +30409,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_city_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_city_night.cyber_sky-1.0.0.zip",
    "files": [
     {
@@ -30650,10 +30650,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_city_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_city_night.cyber_streets-1.0.0.zip",
    "files": [
     {
@@ -30940,10 +30940,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_city_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_city_night.cyber_tech-1.0.0.zip",
    "files": [
     {
@@ -31229,10 +31229,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_city_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_city_night.cyber_towers-1.0.0.zip",
    "files": [
     {
@@ -31520,10 +31520,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_city_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_city_night.terrain-1.0.0.zip",
    "files": [
     {
@@ -31601,10 +31601,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_dawn"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_dawn.cyber_dressing-1.0.0.zip",
    "files": [
     {
@@ -31834,10 +31834,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_dawn"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_dawn.cyber_rooms-1.0.0.zip",
    "files": [
     {
@@ -32209,10 +32209,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_dawn"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_dawn.cyber_signs-1.0.0.zip",
    "files": [
     {
@@ -32484,10 +32484,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_dawn"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_dawn.cyber_sky-1.0.0.zip",
    "files": [
     {
@@ -32725,10 +32725,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_dawn"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_dawn.cyber_streets-1.0.0.zip",
    "files": [
     {
@@ -33015,10 +33015,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_dawn"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_dawn.cyber_tech-1.0.0.zip",
    "files": [
     {
@@ -33304,10 +33304,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_dawn"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_dawn.cyber_towers-1.0.0.zip",
    "files": [
     {
@@ -33595,10 +33595,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_dawn"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.neon_dawn.terrain-1.0.0.zip",
    "files": [
     {
@@ -33677,10 +33677,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.polar_pod.architecture-1.0.0.zip",
    "files": [
     {
@@ -33938,10 +33938,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.polar_pod.furniture-1.0.0.zip",
    "files": [
     {
@@ -34210,10 +34210,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.polar_pod.nature-1.0.0.zip",
    "files": [
     {
@@ -34349,10 +34349,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.polar_pod.props-1.0.0.zip",
    "files": [
     {
@@ -34474,10 +34474,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.polar_pod.terrain-1.0.0.zip",
    "files": [
     {
@@ -34628,10 +34628,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.polar_pod.vehicles-1.0.0.zip",
    "files": [
     {
@@ -34723,10 +34723,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "space_station"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.space_station.ships-1.0.0.zip",
    "files": [
     {
@@ -34929,10 +34929,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "space_station"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.space_station.space_sky-1.0.0.zip",
    "files": [
     {
@@ -35062,10 +35062,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "space_station"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.space_station.station_architecture-1.0.0.zip",
    "files": [
     {
@@ -35417,10 +35417,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "space_station"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.space_station.tech_props-1.0.0.zip",
    "files": [
     {
@@ -35708,10 +35708,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon.cave-1.0.0.zip",
    "files": [
     {
@@ -35897,10 +35897,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon.dungeon_architecture-1.0.0.zip",
    "files": [
     {
@@ -36447,10 +36447,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon.dungeon_props-1.0.0.zip",
    "files": [
     {
@@ -36757,10 +36757,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon.lake-1.0.0.zip",
    "files": [
     {
@@ -36983,10 +36983,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon.nature-1.0.0.zip",
    "files": [
     {
@@ -37070,10 +37070,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon.temple-1.0.0.zip",
    "files": [
     {
@@ -37288,10 +37288,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon.terrain-1.0.0.zip",
    "files": [
     {
@@ -37363,10 +37363,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon_torchlit"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon_torchlit.cave-1.0.0.zip",
    "files": [
     {
@@ -37552,10 +37552,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon_torchlit"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon_torchlit.dungeon_architecture-1.0.0.zip",
    "files": [
     {
@@ -38102,10 +38102,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon_torchlit"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon_torchlit.dungeon_props-1.0.0.zip",
    "files": [
     {
@@ -38412,10 +38412,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon_torchlit"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon_torchlit.lake-1.0.0.zip",
    "files": [
     {
@@ -38638,10 +38638,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon_torchlit"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon_torchlit.nature-1.0.0.zip",
    "files": [
     {
@@ -38725,10 +38725,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon_torchlit"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon_torchlit.temple-1.0.0.zip",
    "files": [
     {
@@ -38943,10 +38943,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon_torchlit"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/kit.stone_dungeon_torchlit.terrain-1.0.0.zip",
    "files": [
     {
@@ -39024,10 +39024,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.combat-1.0.0.zip",
    "files": [
     {
@@ -39170,10 +39170,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.craft-1.0.0.zip",
    "files": [
     {
@@ -39317,10 +39317,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.creatures-1.0.0.zip",
    "files": [
     {
@@ -39466,10 +39466,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.dialogue-1.0.0.zip",
    "files": [
     {
@@ -39615,10 +39615,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.footsteps-1.0.0.zip",
    "files": [
     {
@@ -39830,10 +39830,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.footsteps_ui-1.0.0.zip",
    "files": [
     {
@@ -40016,10 +40016,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.habitat_wave1-1.0.0.zip",
    "files": [
     {
@@ -40279,10 +40279,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.machines-1.0.0.zip",
    "files": [
     {
@@ -40411,10 +40411,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.magic-1.0.0.zip",
    "files": [
     {
@@ -40505,10 +40505,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.mechanisms-1.0.0.zip",
    "files": [
     {
@@ -40646,10 +40646,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.music-1.0.0.zip",
    "files": [
     {
@@ -40758,10 +40758,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.rewards-1.0.0.zip",
    "files": [
     {
@@ -40876,10 +40876,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.stingers-1.0.0.zip",
    "files": [
     {
@@ -40981,10 +40981,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.ui-1.0.0.zip",
    "files": [
     {
@@ -41158,10 +41158,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/sound.weather-1.0.0.zip",
    "files": [
     {
@@ -41292,10 +41292,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "alien_world"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.alien_world-1.0.0.zip",
    "files": [
     {
@@ -41397,10 +41397,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "ancient_ruins"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.ancient_ruins-1.0.0.zip",
    "files": [
     {
@@ -41502,10 +41502,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "canyon_mesa"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.canyon_mesa-1.0.0.zip",
    "files": [
     {
@@ -41609,10 +41609,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "castle_keep"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.castle_keep-1.0.0.zip",
    "files": [
     {
@@ -41716,10 +41716,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "cyber_blue_grid"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.cyber_blue_grid-1.0.0.zip",
    "files": [
     {
@@ -41820,10 +41820,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.forest_village-1.0.0.zip",
    "files": [
     {
@@ -41924,10 +41924,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.frontier_town-1.0.0.zip",
    "files": [
     {
@@ -42031,10 +42031,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_golden"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.frontier_town_golden-1.0.0.zip",
    "files": [
     {
@@ -42137,10 +42137,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "frontier_town_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.frontier_town_night-1.0.0.zip",
    "files": [
     {
@@ -42243,10 +42243,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "jungle_temple"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.jungle_temple-1.0.0.zip",
    "files": [
     {
@@ -42348,10 +42348,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.medieval_village-1.0.0.zip",
    "files": [
     {
@@ -42454,10 +42454,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_dusk"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.medieval_village_dusk-1.0.0.zip",
    "files": [
     {
@@ -42560,10 +42560,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.medieval_village_night-1.0.0.zip",
    "files": [
     {
@@ -42665,10 +42665,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "medieval_village_snow"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.medieval_village_snow-1.0.0.zip",
    "files": [
     {
@@ -42770,11 +42770,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "profile": "n64_base@1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.n64_base-1.0.0.zip",
    "files": [
     {
@@ -42840,10 +42840,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "forest_village"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.n64_v0-1.0.0.zip",
    "files": [
     {
@@ -42950,10 +42950,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_city_night"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.neon_city_night-1.0.0.zip",
    "files": [
     {
@@ -43057,10 +43057,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "neon_dawn"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.neon_dawn-1.0.0.zip",
    "files": [
     {
@@ -43163,10 +43163,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "polar_pod"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.polar_pod-1.0.0.zip",
    "files": [
     {
@@ -43273,11 +43273,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "profile": "extends n64_base@1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.polar_pod_example-1.0.0.zip",
    "files": [
     {
@@ -43342,10 +43342,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "space_station"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.space_station-1.0.0.zip",
    "files": [
     {
@@ -43447,10 +43447,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.stone_dungeon-1.0.0.zip",
    "files": [
     {
@@ -43554,10 +43554,10 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "style": "stone_dungeon_torchlit"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.stone_dungeon_torchlit-1.0.0.zip",
    "files": [
     {
@@ -43661,11 +43661,11 @@
    ],
    "compat": {
     "contract": "hermes64-hub-pack/1",
-    "plugin": ">=0.1.0",
+    "plugin": ">=1.0.0",
     "profile": "extends n64_base@1.0.0",
     "style": "any"
    },
-   "created_by": "hermes64 0.1.0",
+   "created_by": "hermes64 1.0.0",
    "download": "archives/style.warm_desert_example-1.0.0.zip",
    "files": [
     {
@@ -43720,7 +43720,7 @@
    "visibility": "public"
   }
  ],
- "entries_sha256": "61954e3ab82203652d6db96ec2dbe92af35421ee8133d4c461dc1594189ed53a",
+ "entries_sha256": "f9d8a2f61c5e58002cf06c4bf5e30aaacb338acf45c54097a64ffdc22776f64a",
  "licences": {
   "allowed": [
    "CC0-1.0",
@@ -43741,7 +43741,7 @@
   "contract": "hermes64-hub-pack/1",
   "name": "Hermes64 Hub",
   "note": "Bundled seed registry, generated by python3 -B -m tools.hub build from the plugin's own manifests. Archives are rebuilt from the shipped files on install and must hash to the sha256 listed here.",
-  "plugin_version": "0.1.0"
+  "plugin_version": "1.0.0"
  },
  "schema": "hub/1.0.0"
 }

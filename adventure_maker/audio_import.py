@@ -24,6 +24,7 @@ import subprocess
 import sys
 import wave
 
+from . import platforms
 from .safety import Fault, fail
 
 GENERATOR = 'hermes64.audio_import/1'
@@ -84,10 +85,7 @@ def find_ffmpeg(configured='', root=None):
     found = shutil.which(_exe('ffmpeg')) or shutil.which('ffmpeg')
     if found:
         candidates.append(Path(found))
-    candidates += [Path('/opt/homebrew/bin/ffmpeg'), Path('/usr/local/bin/ffmpeg'), Path('/usr/bin/ffmpeg')]
-    if os.name == 'nt':
-        candidates += [Path(os.environ.get('ProgramFiles', r'C:\Program Files')) / 'ffmpeg' / 'bin' / 'ffmpeg.exe',
-                       Path(r'C:\ffmpeg\bin\ffmpeg.exe')]
+    candidates += [Path(p) for p in platforms.ffmpeg_candidates()]
     for path in candidates:
         if path.is_file() and os.access(str(path), os.X_OK):
             return path
@@ -101,11 +99,14 @@ def _run(ffmpeg, args, data=None, timeout=600):
     try:
         # List argv, never a shell: spaces, quotes and Windows drive paths pass through untouched.
         argv = [str(ffmpeg), '-hide_banner'] + (['-nostdin'] if data is None else []) + list(args)
+        # Windows: no console window flashing up per ffmpeg call when Hermes runs without a console.
+        extra = {'creationflags': getattr(subprocess, 'CREATE_NO_WINDOW', 0x08000000)} if os.name == 'nt' else {}
         if data is None:
             proc = subprocess.run(argv, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                                  timeout=timeout)
+                                  timeout=timeout, **extra)
         else:
-            proc = subprocess.run(argv, input=data, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout)
+            proc = subprocess.run(argv, input=data, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout,
+                                  **extra)
     except subprocess.TimeoutExpired:
         _fail('ffmpeg_timeout', 'ffmpeg timed out')
     except OSError as exc:
@@ -505,7 +506,7 @@ def import_audio(out_dir, sources, ffmpeg, kind='auto', items=None, options=None
                                 'ladder': [list(x) for x in v['ladder']]} for k, v in TARGETS.items()},
                 'ceiling_dbfs': CEILING_DBFS, 'assets': dict(sorted(combined.items())),
                 'budget': size_report(combined, max_total_bytes)}
-    manifest_path.write_text(json.dumps(manifest, indent=1, sort_keys=True) + '\n', 'utf-8')
+    manifest_path.write_bytes((json.dumps(manifest, indent=1, sort_keys=True) + '\n').encode('utf-8'))
     return manifest, sorted(new)
 
 

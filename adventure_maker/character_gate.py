@@ -79,9 +79,16 @@ def rig_gate(glb_path, rig, clips=None, profile='grounded', expect_sha256=None, 
             argv += ['--clips', ','.join(clips)]
         if expect_sha256:
             argv += ['--expect-sha256', expect_sha256]
-        env = {'PATH': '/usr/bin:/bin', 'PYTHONDONTWRITEBYTECODE': '1', 'HOME': os.environ.get('HOME', '/tmp'),
-               'TMPDIR': os.environ.get('TMPDIR', '/tmp'), 'LANG': 'C.UTF-8'}
-        proc = subprocess.run(argv, cwd=str(Path(root).resolve()), capture_output=True, text=True, timeout=900, env=env)
+        if os.name == 'nt':
+            # Windows needs SystemRoot for any child; keep the parent's temp/profile folders (the gate only reads).
+            env = {k: os.environ[k] for k in ('SystemRoot', 'WINDIR', 'TEMP', 'TMP', 'USERPROFILE', 'APPDATA',
+                                              'LOCALAPPDATA') if k in os.environ}
+            env.update(PATH=os.environ.get('SystemRoot', 'C:\\Windows') + '\\System32', PYTHONDONTWRITEBYTECODE='1',
+                       PYTHONUTF8='1', PYTHONIOENCODING='utf-8')
+        else:
+            env = {'PATH': '/usr/bin:/bin', 'PYTHONDONTWRITEBYTECODE': '1', 'HOME': os.environ.get('HOME', '/tmp'),
+                   'TMPDIR': os.environ.get('TMPDIR', '/tmp'), 'LANG': 'C.UTF-8'}
+        proc = subprocess.run(argv, cwd=str(Path(root).resolve()), capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=900, env=env)
         try:
             rep = json.loads(proc.stdout)
             if isinstance(rep, list):

@@ -62,6 +62,18 @@ _FILE = (os.O_RDONLY | os.O_NOFOLLOW | os.O_NONBLOCK | _CLOEXEC) if POSIX_DESCRI
 PLATFORM_SENTENCE = ("The Studio shelf can't read projects on this computer yet: it needs macOS (or Linux) no-follow "
                      "folder reads, and no Settings change fixes that. Ask Hermes to run hermes64_doctor for what works "
                      "here; the web play builds run in any browser.")
+# Without descriptors (Windows) Root reads by checked path instead: every component is lstat'ed and refused when it is
+# a symlink or any reparse point (junctions included), and an opened file must be the same file (st_dev, st_ino) the
+# check saw, so a swap between check and open is refused. Weaker than descriptor confinement against a concurrent
+# local attacker; equal for the read-only shelf's purpose (no link is ever followed). docs/WINDOWS.md.
+_REPARSE = 0x400          # FILE_ATTRIBUTE_REPARSE_POINT
+_PATH_FILE = os.O_RDONLY | getattr(os, 'O_BINARY', 0) | getattr(os, 'O_NOINHERIT', 0)
+
+
+def _kind(st):
+    if stat.S_ISLNK(st.st_mode) or getattr(st, 'st_file_attributes', 0) & _REPARSE:
+        return 'symlink'
+    return 'dir' if stat.S_ISDIR(st.st_mode) else 'file' if stat.S_ISREG(st.st_mode) else 'other'
 
 
 class ScanError(Exception):
@@ -100,16 +112,19 @@ class Root:
             raise ScanError('CONFIG', 'projects_root must be an absolute path')
         if '..' in path.split(os.sep):
             raise ScanError('CONFIG', 'projects_root must not contain ..')
-        if not POSIX_DESCRIPTORS:
-            raise ScanError('PLATFORM', PLATFORM_SENTENCE)
+        self.fd = None
+        self.paths = not POSIX_DESCRIPTORS
         try:
             st = os.lstat(path)
         except OSError:
             raise ScanError('CONFIG', 'projects_root does not exist')
-        if stat.S_ISLNK(st.st_mode):
+        if _kind(st) == 'symlink':
             raise ScanError('CONFIG', 'projects_root must not be a symlink')
         if not stat.S_ISDIR(st.st_mode):
             raise ScanError('CONFIG', 'projects_root must be a directory')
+        if self.paths:
+            self.path = path
+            return
         try:
             self.fd = os.open(path, _DIR)
         except OSError as exc:
@@ -117,6 +132,8 @@ class Root:
         self.path = path
 
     def close(self):
+        if self.paths:
+            self.path = None
         if self.fd is not None:
             os.close(self.fd)
             self.fd = None
@@ -126,6 +143,41 @@ class Root:
 
     def __exit__(self, *exc):
         self.close()
+
+    def _walk(self, parts, rel):
+        """Path mode: the checked absolute path of parts (each existing component lstat'ed, links refused)."""
+        if self.path is None:
+            raise ScanError('CLOSED', 'projects_root is closed')
+        here = self.path
+        for i, part in enumerate(parts):
+            here = os.path.join(here, part)
+            try:
+                st = os.lstat(here)
+            except FileNotFoundError:
+                raise ScanError('MISSING', rel)
+            except OSError as exc:
+                raise _oserror(exc, rel)
+            kind = _kind(st)
+            if kind == 'symlink':
+                raise ScanError('SYMLINK', 'symlink refused: ' + rel)
+            if i < len(parts) - 1 and kind != 'dir':
+                raise ScanError('NOT_DIR', rel)
+        return here
+
+    def _open_checked(self, parts, rel):
+        full = self._walk(parts, rel)
+        before = os.lstat(full)
+        if _kind(before) != 'file':
+            raise ScanError('NOT_FILE', 'not a regular file: ' + rel)
+        try:
+            fd = os.open(full, _PATH_FILE)
+        except OSError as exc:
+            raise _oserror(exc, rel)
+        after = os.fstat(fd)
+        if (before.st_ino, before.st_dev) != (after.st_ino, after.st_dev):
+            os.close(fd)
+            raise ScanError('SYMLINK', 'file changed between check and open: ' + rel)
+        return fd
 
     def _dir(self, parts, rel):
         if self.fd is None:
@@ -144,6 +196,20 @@ class Root:
     def entry(self, rel):
         """('dir'|'file'|'symlink'|'other', size, mtime_ns), or None when missing."""
         parts = _parts(rel)
+        if self.paths:
+            try:
+                folder = self._walk(parts[:-1], rel)
+            except ScanError as exc:
+                if exc.code in ('MISSING', 'NOT_DIR'):
+                    return None
+                raise
+            try:
+                st = os.lstat(os.path.join(folder, parts[-1]))
+            except FileNotFoundError:
+                return None
+            except OSError as exc:
+                raise _oserror(exc, rel)
+            return _kind(st), st.st_size, st.st_mtime_ns
         try:
             dfd = self._dir(parts[:-1], rel)
         except ScanError as exc:
@@ -165,6 +231,19 @@ class Root:
     def listdir(self, rel=''):
         """Sorted (name, kind, size, mtime_ns) rows, at most LIMITS['dir_entries'], plus truncation flag."""
         parts = _parts(rel) if rel else []
+        if self.paths:
+            folder = self._walk(parts, rel or '.')
+            if parts and _kind(os.lstat(folder)) != 'dir':
+                raise ScanError('NOT_DIR', rel)
+            names = sorted(os.listdir(folder))
+            rows = []
+            for name in names[:LIMITS['dir_entries']]:
+                try:
+                    st = os.lstat(os.path.join(folder, name))
+                except OSError:
+                    continue
+                rows.append((name, _kind(st), st.st_size, st.st_mtime_ns))
+            return rows, len(names) > LIMITS['dir_entries']
         fd = self._dir(parts, rel or '.')
         rows = []
         try:
@@ -185,13 +264,16 @@ class Root:
     def open_regular(self, rel, limit):
         """(fd, size) of a confined regular file for streaming; the caller closes fd."""
         parts = _parts(rel)
-        dfd = self._dir(parts[:-1], rel)
-        try:
-            fd = os.open(parts[-1], _FILE, dir_fd=dfd)
-        except OSError as exc:
-            raise _oserror(exc, rel)
-        finally:
-            os.close(dfd)
+        if self.paths:
+            fd = self._open_checked(parts, rel)
+        else:
+            dfd = self._dir(parts[:-1], rel)
+            try:
+                fd = os.open(parts[-1], _FILE, dir_fd=dfd)
+            except OSError as exc:
+                raise _oserror(exc, rel)
+            finally:
+                os.close(dfd)
         st = os.fstat(fd)
         if not stat.S_ISREG(st.st_mode) or st.st_size > limit:
             os.close(fd)
@@ -200,13 +282,16 @@ class Root:
 
     def read(self, rel, limit):
         parts = _parts(rel)
-        dfd = self._dir(parts[:-1], rel)
-        try:
-            fd = os.open(parts[-1], _FILE, dir_fd=dfd)
-        except OSError as exc:
-            raise _oserror(exc, rel)
-        finally:
-            os.close(dfd)
+        if self.paths:
+            fd = self._open_checked(parts, rel)
+        else:
+            dfd = self._dir(parts[:-1], rel)
+            try:
+                fd = os.open(parts[-1], _FILE, dir_fd=dfd)
+            except OSError as exc:
+                raise _oserror(exc, rel)
+            finally:
+                os.close(dfd)
         try:
             st = os.fstat(fd)
             if not stat.S_ISREG(st.st_mode):

@@ -27,7 +27,7 @@ def source_fingerprints():
 
 
 def definitions():
-    source = json.loads((d.DATA/'recipes.json').read_text())
+    source = json.loads((d.DATA/'recipes.json').read_text(encoding='utf-8'))
     rows = source['assets']
     seen = {}
     for row in rows:
@@ -42,11 +42,11 @@ def definitions():
 
 
 def all_records():
-    legacy = json.loads((ROOT/'audio/catalog.json').read_text())['assets']
+    legacy = json.loads((ROOT/'audio/catalog.json').read_text(encoding='utf-8'))['assets']
     rows = definitions()
     measured = d.DATA/'catalog.json'
     if measured.is_file():
-        saved_catalog = json.loads(measured.read_text())
+        saved_catalog = json.loads(measured.read_text(encoding='utf-8'))
         valid = saved_catalog.get('source_sha256')==source_fingerprints()
         index = {r['id']:r for r in saved_catalog['assets']} if valid else {}
         for row in rows:

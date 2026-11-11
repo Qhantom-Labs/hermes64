@@ -38,10 +38,15 @@ def display_available():
     forced = os.environ.get('HERMES64_DISPLAY')
     if forced == '0':
         return False, 'HERMES64_DISPLAY=0'
+    if sys.platform == 'win32':
+        # An interactive Windows desktop session (Hermes run by the signed-in person) can open a window;
+        # a service (session 0) cannot. SESSIONNAME is Console or RDP-* for interactive sessions.
+        session = os.environ.get('SESSIONNAME', '')
+        return (bool(session), 'Windows desktop session (%s)' % session if session else 'no interactive Windows session')
     if sys.platform != 'darwin':
         return False, 'not macOS'
     try:
-        name = subprocess.run(['/bin/launchctl', 'managername'], capture_output=True, text=True, timeout=5,
+        name = subprocess.run(['/bin/launchctl', 'managername'], capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=5,
                               stdin=subprocess.DEVNULL).stdout.strip()
     except (OSError, subprocess.SubprocessError):
         return False, 'launchctl unavailable'
@@ -56,7 +61,7 @@ def room_path(rid, *rest):
 def style_lock(root, spec, pack, theme=None):
     root = Path(root)
     base = pack['id'] if (root / 'packs' / pack['id'] / 'view.json').is_file() else pack['kit_pack_id']
-    view = theme or json.loads((root / 'packs' / base / 'view.json').read_text())
+    view = theme or json.loads((root / 'packs' / base / 'view.json').read_text(encoding='utf-8'))
     th = dict(style_gate.CORE_DEFAULTS)
     th.update(view.get('style_gate') or {})
     budgets = dict(pack.get('thresholds') or {})
@@ -70,7 +75,7 @@ def style_lock(root, spec, pack, theme=None):
 def known_assets(root, pack):
     root = Path(root)
     base = pack['id'] if (root / 'packs' / pack['id'] / 'bindings.json').is_file() else pack['kit_pack_id']
-    keys = set(json.loads((root / 'packs' / base / 'bindings.json').read_text())['assets'])
+    keys = set(json.loads((root / 'packs' / base / 'bindings.json').read_text(encoding='utf-8'))['assets'])
     return keys | {'_floor', '_wall', ''}
 
 
@@ -79,7 +84,7 @@ def cast_rows(root):
     for rel in ('bindings.json', 'kits/bindings.json'):
         path = Path(root) / rel
         if path.is_file():
-            rows += [r for r in json.loads(path.read_text()).get('characters', []) if isinstance(r, dict)]
+            rows += [r for r in json.loads(path.read_text(encoding='utf-8')).get('characters', []) if isinstance(r, dict)]
     return rows
 
 
@@ -256,8 +261,8 @@ def frame_findings(rid, m, th, palette, view=None, exterior=False):
 def rendered_findings(root, folder, spec, pack, lock):
     """Per-room rows (metrics + findings) from a capture folder written by tests/audit_main.tscn."""
     folder = Path(folder)
-    cap = json.loads((folder / 'capture.json').read_text())
-    views = json.loads((folder / 'audit-views.json').read_text()) if (folder / 'audit-views.json').is_file() else {'rooms': []}
+    cap = json.loads((folder / 'capture.json').read_text(encoding='utf-8'))
+    views = json.loads((folder / 'audit-views.json').read_text(encoding='utf-8')) if (folder / 'audit-views.json').is_file() else {'rooms': []}
     extra = {r['id']: r for r in views.get('rooms', [])}
     theme = lock['view']
     th = lock['gate']
@@ -581,7 +586,7 @@ def render(settings, project, game, folder, views):
     project.write_json(folder + '/audit.process.json', dict(process, argv=argv))
     if not (screens / 'capture.json').is_file():
         fail('audit_render', 'Godot wrote no audit capture (exit %s): %s' % (process['returncode'], process['stderr'][-600:]))
-    return folder + '/screens', json.loads((runtime / 'theme.json').read_text())
+    return folder + '/screens', json.loads((runtime / 'theme.json').read_text(encoding='utf-8'))
 
 
 def measure(root, spec, pack, folder=None, theme=None, rendered=True):
@@ -682,7 +687,7 @@ def proved_now(service, project, current):
     runs = sorted(project.path('.maker/runs').glob('check-*/proof.json'), key=lambda p: p.stat().st_mtime, reverse=True)
     for p in runs[:5]:
         try:
-            proof = json.loads(p.read_text())
+            proof = json.loads(p.read_text(encoding='utf-8'))
         except (OSError, ValueError):
             continue
         if proof.get('game_hash') == game_hash:

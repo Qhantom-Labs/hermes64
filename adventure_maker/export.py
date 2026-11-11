@@ -11,7 +11,27 @@ import stat
 import zipfile
 from .adapters import Components
 from .runner import locate
+from . import platforms
 from .safety import fail, inspect_path
+
+SAVE_ID = re.compile(r'^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$')
+WINDOWS_DEVICE = re.compile(r'^(con|prn|aux|nul|com[0-9]|lpt[0-9])$', re.I)
+RUNTIME_USER_DIR = 'config/custom_user_dir_name="AdventureRuntime"'
+
+
+def user_dir_name(game_id):
+    """Per-game save folder under the OS data dir (Godot application/config/custom_user_dir_name)."""
+    if not isinstance(game_id,str) or not SAVE_ID.match(game_id) or WINDOWS_DEVICE.match(game_id):
+        fail('release_save_dir','Game id must be 1-64 letters, digits, _ or - (not a Windows device name) to key its save folder')
+    return 'Hermes64/'+game_id
+
+
+def user_dir_project(project, game_id):
+    """Point the exported project's user:// at Hermes64/<game_id>; fail if the runtime template lost the key."""
+    if project.count(RUNTIME_USER_DIR)!=1 or 'config/use_custom_user_dir=true' not in project:
+        fail('release_save_dir','Runtime project.godot no longer carries the per-game save folder setting')
+    return project.replace(RUNTIME_USER_DIR,'config/custom_user_dir_name="'+user_dir_name(game_id)+'"')
+
 
 TEMPLATES = {'web':'web_nothreads_release.zip','macos':'macos.zip','windows':'windows_release_x86_64.exe'}
 TEMPLATE_HASHES = {'web':'7d91986ea27d901b37963ace014a88ab6ba8e4bfe830031043bcf89ebac307dc',
@@ -77,6 +97,17 @@ def scan_tree(root):
     return rows
 
 
+_WINDOWS_HOST=os.name=='nt'
+
+
+def _executable(path):
+    # Windows reports every file as executable (os.access X_OK); zip modes must not depend on the host.
+    # No macOS app is exported on Windows (refused), and Windows/web files carry no mode bit.
+    if _WINDOWS_HOST:
+        return False
+    return os.access(path,os.X_OK)
+
+
 def zip_tree(root, output):
     """Deterministic sorted list, fixed timestamps and executable permissions; bytes aren't engine reproducibility."""
     with zipfile.ZipFile(output,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
@@ -85,20 +116,34 @@ def zip_tree(root, output):
             if not path.is_file(): continue
             info=zipfile.ZipInfo(path.relative_to(root).as_posix(),(1980,1,1,0,0,0))
             info.create_system=3
-            info.external_attr=((stat.S_IFREG | (0o755 if os.access(path,os.X_OK) else 0o644)) << 16)
+            info.external_attr=((stat.S_IFREG | (0o755 if _executable(path) else 0o644)) << 16)
             info.compress_type=zipfile.ZIP_DEFLATED
             z.writestr(info,path.read_bytes())
 
 
 def template_path(target):
-    base=Path.home()/'Library/Application Support/Godot/export_templates/4.6.2.stable'
+    base=Path(str(platforms.templates_dir()))   # macOS ~/Library/..., Windows %APPDATA%\Godot\..., or HERMES64_TEMPLATES
     version=inspect_path(base/'version.txt')
     path=inspect_path(base/TEMPLATES[target])
-    if not version.is_file() or version.read_text().strip()!='4.6.2.stable' or not path.is_file():
+    if not version.is_file() or version.read_text(encoding='utf-8').strip()!='4.6.2.stable' or not path.is_file():
+        stub=_stub_template(target)
+        if stub: return stub
         from .doctor import templates_help
         fail('export_template_missing',templates_help()+' (Missing target: %s.)' % target)
     if digest(path.read_bytes())!=TEMPLATE_HASHES[target]: fail('export_template_hash','Official target template hash mismatch')
     return path
+
+
+def _stub_template(target):
+    """Official player kept by `setup --fetch --templates` in the per-user cache (adventure_maker/stubs.py), else None."""
+    from . import stubs
+    try: return stubs.template(target)
+    except ValueError as exc: fail('export_template_hash',str(exc))
+
+
+def _stub_accepted(target, path):
+    from . import stubs
+    return stubs.accepted(target, path)
 
 
 MODULE_POINTER='.maker/modules/current.json'
@@ -149,9 +194,9 @@ def stage(c, game_path, folder):
     game=c.project.read_json(game_path)
     public_data(game)
     # Check all source binding policy flags before stage_runtime can add host paths.
-    source_bindings=json.loads(c.shipped('bindings.json').read_text())
+    source_bindings=json.loads(c.shipped('bindings.json').read_text(encoding='utf-8'))
     public_data(source_bindings)
-    manifest=json.loads(c.shipped('characters/manifest.json').read_text())
+    manifest=json.loads(c.shipped('characters/manifest.json').read_text(encoding='utf-8'))
     public_data(manifest)
     puzzle=None
     if game.get('contract_version')=='1.3.0':
@@ -164,10 +209,10 @@ def stage(c, game_path, folder):
         puzzle=sidecar(story13,c.root)
     generated=c.prepare_runtime(game_path,folder)
     if puzzle is not None:
-        sound=json.loads((generated/'audio.json').read_text())
+        sound=json.loads((generated/'audio.json').read_text(encoding='utf-8'))
         sound.update(audio_rows(c.root))
-        (generated/'audio.json').write_text(json.dumps(sound,sort_keys=True))
-        (generated/'puzzle.json').write_text(json.dumps(puzzle,sort_keys=True))
+        (generated/'audio.json').write_bytes(json.dumps(sound,sort_keys=True).encode('utf-8'))
+        (generated/'puzzle.json').write_bytes(json.dumps(puzzle,sort_keys=True).encode('utf-8'))
     output=c.project.path(folder+'/release'); output.mkdir()
     allowed_dirs=('core','view','look','shaders','input','modules')
     allowed_actor=('main.gd','assets.gd','bridge.gd','character.gd')
@@ -179,13 +224,13 @@ def stage(c, game_path, folder):
             dest=output/rel; dest.parent.mkdir(parents=True,exist_ok=True); dest.write_bytes(path.read_bytes())
     (output/'ship').mkdir()
     (output/'ship/main.gd').write_bytes(c.shipped('runtime/godot/playtest/release.gd').read_bytes())
-    (output/'main.tscn').write_text('[gd_scene load_steps=2 format=3]\n[ext_resource type="Script" path="res://ship/main.gd" id="1"]\n[node name="Adventure" type="Node"]\nscript = ExtResource("1")\n')
-    project=(generated/'project.godot').read_text()
+    (output/'main.tscn').write_bytes('[gd_scene load_steps=2 format=3]\n[ext_resource type="Script" path="res://ship/main.gd" id="1"]\n[node name="Adventure" type="Node"]\nscript = ExtResource("1")\n'.encode('utf-8'))
+    project=(generated/'project.godot').read_text(encoding='utf-8')
     project=project.replace('renderer/rendering_method="mobile"','renderer/rendering_method="gl_compatibility"').replace('renderer/rendering_method.mobile="mobile"','renderer/rendering_method.mobile="gl_compatibility"')
-    project=project.replace('config/custom_user_dir="AdventureRuntime"','config/custom_user_dir="Hermes64/'+game['id']+'"')
+    project=user_dir_project(project,game['id'])
     project=project.replace('[rendering]', '[rendering]\ntextures/vram_compression/import_etc2_astc=true')
-    (output/'project.godot').write_text(project)
-    bindings=json.loads((generated/'bindings.json').read_text())
+    (output/'project.godot').write_bytes(project.encode('utf-8'))
+    bindings=json.loads((generated/'bindings.json').read_text(encoding='utf-8'))
     # Real characters must be members of the public frozen manifest, not merely self-declared public.
     records=manifest.get('characters',manifest.get('assets',[]))
     if isinstance(records,dict): records=list(records.values())
@@ -203,7 +248,7 @@ def stage(c, game_path, folder):
         if not dest.exists():
             dest.write_bytes(raw)
             # Runtime GLTFDocument/Image/AudioStreamWAV need original bytes, not importer remaps.
-            dest.with_name(dest.name+'.import').write_text('[remap]\nimporter="keep"\n')
+            dest.with_name(dest.name+'.import').write_bytes('[remap]\nimporter="keep"\n'.encode('utf-8'))
             closure.append({'path':rel,'sha256':expected,'bytes':len(raw)})
         return 'res://'+rel
     def bind(row, actor=False):
@@ -222,23 +267,23 @@ def stage(c, game_path, folder):
     # character's pack, as hash-checked media like every other bound asset.
     combat=None
     if game.get('contract_version')=='1.2.0' and (generated/'combat.json').is_file():
-        combat=json.loads((generated/'combat.json').read_text())
+        combat=json.loads((generated/'combat.json').read_text(encoding='utf-8'))
         packs={row.get('character_pack') for row in bindings['characters']}
         combat['enemies']={k:dict(row,path=media(row['path'],row['sha256'])) for k,row in combat['enemies'].items()}
         combat['weapons']={k:dict(row,path=media(row['path'],row['sha256'])) for k,row in combat['weapons'].items() if k in packs}
-    theme=json.loads((generated/'theme.json').read_text())
+    theme=json.loads((generated/'theme.json').read_text(encoding='utf-8'))
     env=inspect_path(Path(theme.pop('env_root')))
     if c.root not in env.parents: fail('release_asset','Environment outside bundle')
     (output/'env').mkdir()
     for p in sorted(env.glob('*.png')):
         inspect_path(p); raw=p.read_bytes(); scan_bytes(raw,p.name)
         (output/'env'/p.name).write_bytes(raw)
-        (output/'env'/(p.name+'.import')).write_text('[remap]\nimporter="keep"\n')
+        (output/'env'/(p.name+'.import')).write_bytes('[remap]\nimporter="keep"\n'.encode('utf-8'))
     theme['env_root']='res://env'
-    audio=json.loads((generated/'audio.json').read_text())
+    audio=json.loads((generated/'audio.json').read_text(encoding='utf-8'))
     for row in audio.values(): row['path']=media(row['path'],row['sha256'])
     for name,value in [('game',game),('bindings',bindings),('theme',theme),('audio',audio)]+([('combat',combat)] if combat is not None else [])+([('puzzle',puzzle)] if puzzle is not None else []):
-        public_data(value); (output/(name+'.json')).write_text(json.dumps(value,sort_keys=True,separators=(',',':')))
+        public_data(value); (output/(name+'.json')).write_bytes(json.dumps(value,sort_keys=True,separators=(',',':')).encode('utf-8'))
     (output/'licenses').mkdir()
     for name,expected in LICENSE_HASHES.items():
         raw=c.shipped('licenses/godot-4.6.2/'+name).read_bytes()
@@ -287,21 +332,32 @@ def qualify(service, project, component, current, folder, module_preview=False):
 def run(service, project, args):
     targets=args.get('targets',['web'])
     if len(targets)!=len(set(targets)): fail('arguments','Duplicate export target')
+    if 'macos' in targets and platforms.host()!='darwin':
+        fail('export_target','The macos target needs a Mac (local ad-hoc signing with codesign); export web and windows here, '
+             'or export macos on a Mac. Nothing was exported.')
     templates={t:template_path(t) for t in targets}
     folder=service.folder(project,'export'); c=Components(service.settings,project)
     current=build_source(service,project)
     proof, physical=qualify(service,project,c,current,folder,args.get('module_preview',False))
     release=stage(c,current['game'],folder)
     exe=locate('godot',service.settings.get('godot_path',''))
-    # Supported self-contained editor mode. Preserve the signed app bundle;
-    # copying just its Mach-O breaks the Info.plist seal and macOS kills it.
-    source_app=Path(exe).parents[2]
-    if source_app.suffix!='.app': fail('engine_bundle','macOS export needs the existing official Godot.app bundle')
-    local_app=project.path('.maker/local/export-editor/Godot.app')
-    if not local_app.exists():
-        local_app.parent.mkdir(parents=True,exist_ok=True)
-        shutil.copytree(source_app,local_app)
-    local_engine=local_app/'Contents/MacOS/Godot'
+    if platforms.host()=='darwin':
+        # Supported self-contained editor mode. Preserve the signed app bundle;
+        # copying just its Mach-O breaks the Info.plist seal and macOS kills it.
+        source_app=Path(exe).parents[2]
+        if source_app.suffix!='.app': fail('engine_bundle','macOS export needs the existing official Godot.app bundle')
+        local_app=project.path('.maker/local/export-editor/Godot.app')
+        if not local_app.exists():
+            local_app.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copytree(source_app,local_app)
+        local_engine=local_app/'Contents/MacOS/Godot'
+    else:
+        # Windows/Linux: Godot is one executable; self-contained mode reads _sc_ and editor_data/ beside it.
+        local_app=project.path('.maker/local/export-editor/'+platforms.exe_name('godot'))
+        if not local_app.exists():
+            local_app.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copy2(exe,local_app)
+        local_engine=local_app
     if digest(local_engine.read_bytes())!=digest(Path(exe).read_bytes()): fail('engine_hash','Project-local editor copy differs; use a new project')
     (local_app.parent/'_sc_').touch(exist_ok=True)
     # macOS preset validation checks the shared zip even with custom_template.
@@ -310,8 +366,8 @@ def run(service, project, args):
     for target,template in templates.items():
         dest=local_templates/TEMPLATES[target]
         if not dest.is_file(): dest.write_bytes(template.read_bytes())
-        if digest(dest.read_bytes())!=TEMPLATE_HASHES[target]: fail('export_template_hash','Local template cache differs')
-    (local_templates/'version.txt').write_text('4.6.2.stable\n')
+        if digest(dest.read_bytes())!=TEMPLATE_HASHES[target] and not _stub_accepted(target,dest): fail('export_template_hash','Local template cache differs')
+    (local_templates/'version.txt').write_bytes('4.6.2.stable\n'.encode('utf-8'))
     exe=str(local_engine)
     version=c.runner.run([exe,'--version'],project.root)
     project.write_json(folder+'/engine-version.process.json',version)
@@ -319,7 +375,7 @@ def run(service, project, args):
     share=project.path(folder+'/share'); share.mkdir()
     rows=[]
     for target in targets:
-        (release/'export_presets.cfg').write_text(preset(target,templates[target]))
+        (release/'export_presets.cfg').write_bytes(preset(target,templates[target]).encode('utf-8'))
         dest=share/target; dest.mkdir()
         artifact=dest/({'web':'index.html','macos':'Adventure.zip','windows':'Adventure.exe'}[target])
         # Explicit import pass makes export behavior independent of editor history.
@@ -340,23 +396,31 @@ def run(service, project, args):
                     if (info.external_attr>>16)&0o111: p.chmod(0o755)
             artifact.unlink()
         shutil.copytree(release/'licenses',dest/'licenses')
-        (dest/'README.txt').write_text('Hermes64 local export. Keyboard: WASD/arrows move (Shift walk); E act/confirm; Q or Backspace cancel; hold Z Focus; Space dodge in combat/courses (confirm in menus); Tab action menu; I inventory; Esc pause/settings; F5/F9 quick save/load; hold R retry from checkpoint; C optional camera.\n'+
-            ('Serve this directory over localhost HTTP (python3 -m http.server --bind 127.0.0.1). Open index.html; WebGL2 required. No threads/PWA/service worker. Browser saves use local IndexedDB.\n' if target=='web' else 'Saves are local Godot user data, under Hermes64/game-id.\n')+
-            ('Windows recipient execution UNVERIFIED on this Mac.\n' if target=='windows' else '')+
+        (dest/'README.txt').write_bytes(('Hermes64 local export. Keyboard: WASD/arrows move (Shift walk); E act/confirm; Q or Backspace cancel; hold Z Focus; Space dodge in combat/courses (confirm in menus); Tab action menu; I inventory; Esc pause/settings; F5/F9 quick save/load; hold R retry from checkpoint; C optional camera.\n'+
+            ('Serve this directory over localhost HTTP (python3 -m http.server --bind 127.0.0.1; Windows: py -m http.server --bind 127.0.0.1). Open index.html; WebGL2 required. No threads/PWA/service worker. Browser saves use local IndexedDB.\n' if target=='web' else 'Saves are local Godot user data, under Hermes64/game-id.\n')+
+            ('Windows: unsigned, so SmartScreen may warn: More info, then Run anyway. Saves and the log (logs\\godot.log): %APPDATA%\\Hermes64\\<game id>.\n' if target=='windows' else '')+
+            ('Windows recipient execution UNVERIFIED on this Mac.\n' if target=='windows' and platforms.host()!='win32' else '')+
             ('Locally ad-hoc signed, not Developer ID signed/notarized: recipient Gatekeeper acceptance is NOT verified.\n' if target=='macos' else '')+
-            'No upload, telemetry or external service. Engine and third-party notices are in licenses/. Human fun and other machines are unverified.\n')
+            'No upload, telemetry or external service. Engine and third-party notices are in licenses/. Human fun and other machines are unverified.\n').encode('utf-8'))
         if target=='web':
             for suffix in ('.js','.wasm'):
                 payload=artifact.with_suffix(suffix)
                 payload.write_bytes(portable_web_vfs(payload.read_bytes()))
-            (dest/'licenses/WEB_VFS_MODIFICATION.txt').write_text('Generated Godot 4.6.2 web payload modification: virtual /home/web_user relocated to /data/web_user in JS/WASM with equal-length byte replacements. No host path was present in that upstream virtual default. Engine source license remains MIT.\n'.replace('/home/web_user','Emscripten HOME'))
-            text=artifact.read_text().replace('</head>','<link rel="icon" href="data:,"></head>')
-            text=text.replace('</body>','<a style="position:fixed;bottom:4px;right:4px;color:white" href="licenses/GODOT_COPYRIGHT.txt">Engine &amp; third-party notices</a></body>'); artifact.write_text(text)
+            (dest/'licenses/WEB_VFS_MODIFICATION.txt').write_bytes('Generated Godot 4.6.2 web payload modification: virtual /home/web_user relocated to /data/web_user in JS/WASM with equal-length byte replacements. No host path was present in that upstream virtual default. Engine source license remains MIT.\n'.replace('/home/web_user','Emscripten HOME').encode('utf-8'))
+            text=artifact.read_text(encoding='utf-8').replace('</head>','<link rel="icon" href="data:,"></head>')
+            text=text.replace('</body>','<a style="position:fixed;bottom:4px;right:4px;color:white" href="licenses/GODOT_COPYRIGHT.txt">Engine &amp; third-party notices</a></body>'); artifact.write_bytes(text.encode('utf-8'))
         if target=='windows':
             artifact.write_bytes(native_diagnostic_paths(artifact.read_bytes()))
-            (dest/'licenses/NATIVE_MODIFICATION.txt').write_text('Official Godot 4.6.2 Rust diagnostic source-root prefix relocated to /data/runner/.cargo/ with equal-length replacements. Windows executable is unsigned and execution UNVERIFIED. Engine remains MIT.\n')
+            (dest/'licenses/NATIVE_MODIFICATION.txt').write_bytes('Official Godot 4.6.2 Rust diagnostic source-root prefix relocated to /data/runner/.cargo/ with equal-length replacements. Windows executable is unsigned and execution UNVERIFIED. Engine remains MIT.\n'.encode('utf-8'))
         verified='not_run'
         entry=artifact.relative_to(share).as_posix()
+        if target=='windows' and platforms.host()=='win32':
+            # On Windows the exported game itself can be booted headless, like the macOS smoke below.
+            argv=[str(artifact),'--headless','--','--quit_after=2']
+            proc=c.runner.run(argv,project.root,timeout=60)
+            project.write_json(folder+'/windows-smoke.process.json',dict(proc,argv=argv))
+            verified='passed' if proc['returncode']==0 and 'BOOT game=' in proc['stdout'] else 'failed'
+            if verified!='passed': fail('export_smoke','Windows export smoke failed; inspect '+folder+'/windows-smoke.process.json')
         if target=='macos':
             binaries=list(dest.glob('*.app/Contents/MacOS/*'))
             if len(binaries)!=1: fail('export_failed','Unexpected macOS executable roster')
@@ -366,21 +430,21 @@ def run(service, project, args):
             signing=c.runner.run(['/usr/bin/codesign','--force','--sign','-','--timestamp=none',str(app)],project.root)
             project.write_json(folder+'/macos-adhoc.process.json',signing)
             if signing['returncode']: fail('export_sign','Local ad-hoc signing failed; no identity/notarization requested')
-            (dest/'licenses/NATIVE_MODIFICATION.txt').write_text('Official Godot 4.6.2 Rust diagnostic source-root prefix relocated to /build/runner/.cargo/ with equal-length replacements. Local ad-hoc signature only; not Developer ID signed or notarized. Engine remains MIT.\n')
+            (dest/'licenses/NATIVE_MODIFICATION.txt').write_bytes('Official Godot 4.6.2 Rust diagnostic source-root prefix relocated to /build/runner/.cargo/ with equal-length replacements. Local ad-hoc signature only; not Developer ID signed or notarized. Engine remains MIT.\n'.encode('utf-8'))
             argv=[str(binaries[0]),'--headless','--','--quit_after=2']
             proc=c.runner.run(argv,project.root,timeout=30)
             project.write_json(folder+'/macos-smoke.process.json',dict(proc,argv=argv))
             verified='passed' if proc['returncode']==0 and 'BOOT game=' in proc['stdout'] and not proc['stderr'] else 'failed'
             if verified!='passed': fail('export_smoke','macOS export smoke failed; inspect '+folder+'/macos-smoke.process.json')
         files=scan_tree(dest)
-        (dest/'FILES.json').write_text(json.dumps(files,sort_keys=True,indent=2))
+        (dest/'FILES.json').write_bytes(json.dumps(files,sort_keys=True,indent=2).encode('utf-8'))
         zipped=share/(target+'.zip'); zip_tree(dest,zipped)
-        rows.append({'target':target,'bytes':sum(r['bytes'] for r in files),'files':len(files),'zip_bytes':zipped.stat().st_size,'zip_sha256':digest(zipped.read_bytes()),'verification':verified if target!='windows' else 'UNVERIFIED: not executed on Windows','entry':entry})
-    (share/'README.txt').write_text('Hermes64 LOCAL share bundle. Nothing was uploaded. See target README files, licenses, and deterministic FILES.json manifests. Windows execution and other machines unverified. Engine export bytes can vary; file inventories/hashes describe this exact build.\n')
+        rows.append({'target':target,'bytes':sum(r['bytes'] for r in files),'files':len(files),'zip_bytes':zipped.stat().st_size,'zip_sha256':digest(zipped.read_bytes()),'verification':verified if target!='windows' or verified=='passed' else 'UNVERIFIED: not executed on Windows','entry':entry})
+    (share/'README.txt').write_bytes('Hermes64 LOCAL share bundle. Nothing was uploaded. See target README files, licenses, and deterministic FILES.json manifests. Windows execution and other machines unverified. Engine export bytes can vary; file inventories/hashes describe this exact build.\n'.encode('utf-8'))
     if physical is not None:
-        (share/'CONDITIONAL-PREVIEW.txt').write_text('LOCAL MODULE PREVIEW ONLY. Logical progression is conditional on named skill assumptions. A fresh real-input native bot completed this exact game; this is not human balance, rendered performance, art approval or public-release clearance. Combat uses the imported combat-art clips and enemy models (no art approval claimed).\n')
+        (share/'CONDITIONAL-PREVIEW.txt').write_bytes('LOCAL MODULE PREVIEW ONLY. Logical progression is conditional on named skill assumptions. A fresh real-input native bot completed this exact game; this is not human balance, rendered performance, art approval or public-release clearance. Combat uses the imported combat-art clips and enemy models (no art approval claimed).\n'.encode('utf-8'))
     all_files=scan_tree(share)
-    (share/'FILES.json').write_text(json.dumps(all_files,sort_keys=True,indent=2))
+    (share/'FILES.json').write_bytes(json.dumps(all_files,sort_keys=True,indent=2).encode('utf-8'))
     zip_tree(share,project.path(folder+'/share.zip'))
     report={'ok':True,'status':'exported_local_only','targets':rows,'share_path':folder+'/share','zip_path':folder+'/share.zip','report_path':folder+'/report.json','bytes':sum(r['bytes'] for r in all_files),'privacy_scan':'passed: explicit portable closure + nested-archive/home-path scan','proof_status':proof['status'],'network':'none; no upload','scope':'Build success is not browser/recipient execution; see per-target verification.'}
     report['module_preview'] = physical is not None

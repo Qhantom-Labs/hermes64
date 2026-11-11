@@ -30,7 +30,8 @@ def help_command(raw_args='', **kwargs):
             '/hermes64 hub search <words> (then hub info, hub install, hub pack, hub publish). Everything else uses the tools: '
             'hermes64_packs → hermes64_scaffold(pack=ID) → hermes64_compile → hermes64_check. '
             'Edit with hermes64_edit; always check after every edit. Never hand-edit generated files. '
-            'No downloads unless you set hub_url. See the bundled hermes64 skill. Other /hermes64 text only shows this help; '
+            '/hermes64 setup checks dependencies; /hermes64 setup --fetch explicitly offers a pinned Godot download. '
+            'Other downloads require hub_url. See the bundled hermes64 skill. Other /hermes64 text only shows this help; '
             'it is never executed.')
 
 
@@ -45,5 +46,8 @@ def make_command(ctx):
         if first and first[0].lower() == 'hub':
             from .hub import command as hub_command
             return hub_command(ctx, text.strip()[len(first[0]):])
+        if first and first[0].lower() == 'setup':
+            from .setup_check import command as setup_command
+            return setup_command(ctx, text.strip()[len(first[0]):])
         return help_command(text)
     return command

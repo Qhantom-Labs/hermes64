@@ -1,0 +1,21 @@
+diff --git a/adventure_maker/audio_import.py b/adventure_maker/audio_import.py
+index a00e911..ec5a507 100644
+--- a/adventure_maker/audio_import.py
++++ b/adventure_maker/audio_import.py
+@@ -101,11 +101,14 @@ def _run(ffmpeg, args, data=None, timeout=600):
+     try:
+         # List argv, never a shell: spaces, quotes and Windows drive paths pass through untouched.
+         argv = [str(ffmpeg), '-hide_banner'] + (['-nostdin'] if data is None else []) + list(args)
++        # Windows: no console window flashing up per ffmpeg call when Hermes runs without a console.
++        extra = {'creationflags': getattr(subprocess, 'CREATE_NO_WINDOW', 0x08000000)} if os.name == 'nt' else {}
+         if data is None:
+             proc = subprocess.run(argv, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+-                                  timeout=timeout)
++                                  timeout=timeout, **extra)
+         else:
+-            proc = subprocess.run(argv, input=data, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout)
++            proc = subprocess.run(argv, input=data, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout,
++                                  **extra)
+     except subprocess.TimeoutExpired:
+         _fail('ffmpeg_timeout', 'ffmpeg timed out')
+     except OSError as exc:

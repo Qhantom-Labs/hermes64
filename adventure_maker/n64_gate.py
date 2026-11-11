@@ -39,7 +39,7 @@ CONVENTION = ROOT / 'kits' / 'core' / 'n64_look.json'
 
 
 def convention(path=None):
-    return json.loads(Path(path or CONVENTION).read_text())
+    return json.loads(Path(path or CONVENTION).read_text(encoding='utf-8'))
 
 
 def thresholds(theme=None, conv=None):
@@ -244,7 +244,7 @@ def judge(m, th):
 
 def gate_folder(folder, theme=None, conv=None, rooms=None):
     folder = Path(folder)
-    cap = json.loads((folder / 'capture.json').read_text())
+    cap = json.loads((folder / 'capture.json').read_text(encoding='utf-8'))
     th = thresholds(theme, conv)
     rows = []
     for row in cap['rooms']:
@@ -319,7 +319,7 @@ def library_report(root=ROOT, conv=None, packs=None):
     exempt = set(lib.get('hf_exempt_roles', []))
     report = {'packs': {}, 'status': 'passed', 'reasons': []}
     for pk in packs or sorted(p.name for p in (root / 'kits' / 'packs').iterdir() if (p / 'pack.json').is_file()):
-        kp = json.loads((root / 'kits' / 'packs' / pk / 'pack.json').read_text())
+        kp = json.loads((root / 'kits' / 'packs' / pk / 'pack.json').read_text(encoding='utf-8'))
         dens = pack_density(conv, kp)
         spread = {}
         for cls, roles in dens.items():
@@ -359,7 +359,7 @@ def main(argv):
     lb.add_argument('--json', help='write the full report here')
     a = ap.parse_args(argv)
     if a.cmd == 'frames':
-        theme = json.loads(Path(a.theme).read_text()) if a.theme else {}
+        theme = json.loads(Path(a.theme).read_text(encoding='utf-8')) if a.theme else {}
         rep = gate_folder(a.folder, theme)
         print('\n'.join(summary_lines(rep)))
     else:
@@ -368,7 +368,7 @@ def main(argv):
         for pk, v in rep['packs'].items():
             print(pk, 'spread', v['density_spread'], 'hf median', v['hf_energy_median'])
     if a.json:
-        Path(a.json).write_text(json.dumps(rep, indent=1, sort_keys=True) + '\n')
+        Path(a.json).write_bytes((json.dumps(rep, indent=1, sort_keys=True) + '\n').encode('utf-8'))
     return 0 if rep['status'] == 'passed' else 1
 
 

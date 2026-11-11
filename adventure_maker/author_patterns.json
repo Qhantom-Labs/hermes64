@@ -1,0 +1,49 @@
+{
+  "format": "hermes64-author-patterns/1",
+  "scope": "Finite data expansions, no executable behaviors. Guards are AND lists. Text and flags are supplied by the author.",
+  "moods": {
+    "violet_dusk": {
+      "background": "#352447",
+      "fog": {"color": "#4B375E", "near": 5, "far": 30, "max": 0.8},
+      "ambient": ["#AD87CD", 0.56],
+      "key": ["#D2B4E8", 0.38],
+      "grade": {"gain": "#D39CE8", "lift": "#0A0410", "saturation": 0.88, "exposure": 1.0}
+    },
+    "amber_evening": {
+      "background": "#554335",
+      "fog": {"color": "#A17D58", "near": 8, "far": 38},
+      "ambient": ["#D7BD9A", 0.55],
+      "key": ["#E4CA98", 0.4]
+    }
+  },
+  "patterns": {
+    "key_pickup": {
+      "description": "Once-only inventory pickup. Put the producer BEFORE the door that requires the item; do not consume the only reusable key.",
+      "args": ["id", "room", "item", "label", "text", "at"],
+      "emit": {"actions": [{"id": "${id}", "room": "${room}", "kind": "take", "target": "${item}", "label": "${label}", "text": "${text}", "at": "${at}", "when": [{"item": "${item}", "present": false}], "effects": [{"give": "${item}"}]}]}
+    },
+    "flag_switch": {
+      "description": "A monotone switch. Declare a false flag; gate a link with {flag,equals:true}. Reverse travel normally stays ungated.",
+      "args": ["id", "room", "flag", "label", "text", "at"],
+      "emit": {"actions": [{"id": "${id}", "room": "${room}", "label": "${label}", "text": "${text}", "at": "${at}", "when": [{"flag": "${flag}", "equals": false}], "effects": [{"flag": "${flag}", "value": true}]}]}
+    },
+    "npc_hint": {
+      "description": "One conversation teaches a fact. Declare the NPC and false flag; another action or dialogue choice can require it.",
+      "args": ["id", "character", "room", "flag", "text", "choice", "at"],
+      "emit": {"dialogues": [{"id": "${id}", "character": "${character}", "room": "${room}", "at": "${at}", "nodes": [{"id": "hello", "text": "${text}", "choices": [{"id": "remember", "text": "${choice}", "effects": [{"flag": "${flag}", "value": true}]}]}]}]}
+    },
+    "guardian_answer": {
+      "description": "A non-combat guardian with a clue-gated answer and an always-safe retreat. Gate forward travel on the granted flag. This is not a combat boss.",
+      "args": ["id", "character", "room", "clue", "granted", "question", "answer", "at"],
+      "emit": {"dialogues": [{"id": "${id}", "character": "${character}", "room": "${room}", "at": "${at}", "nodes": [{"id": "riddle", "text": "${question}", "choices": [{"id": "answer", "text": "${answer}", "when": [{"flag": "${clue}", "equals": true}], "effects": [{"flag": "${granted}", "value": true}]}, {"id": "return", "text": "I will return with an answer."}]}]}]}
+    },
+    "branch_finish": {
+      "description": "One branch's explicit terminal trigger and ending. Instantiate twice with DIFFERENT result flags and alternative guards. Endings terminate immediately; preserve all options before departure.",
+      "args": ["id", "room", "flag", "label", "text", "when", "at"],
+      "emit": {
+        "actions": [{"id": "${id}", "room": "${room}", "label": "${label}", "text": "${text}", "when": "${when}", "at": "${at}", "effects": [{"flag": "${flag}", "value": true}]}],
+        "endings": [{"id": "${id}", "text": "${text}", "when": [{"flag": "${flag}", "equals": true}]}]
+      }
+    }
+  }
+}

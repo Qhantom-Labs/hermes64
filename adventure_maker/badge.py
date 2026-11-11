@@ -159,7 +159,7 @@ def _read(path):
     if not path:
         return None
     path = Path(path)
-    return json.loads(path.read_text()) if path.is_file() else None
+    return json.loads(path.read_text(encoding='utf-8')) if path.is_file() else None
 
 
 def from_paths(proof=None, playtest=None, style=None, base=None, audit=None, assets=None, required_modules=None):

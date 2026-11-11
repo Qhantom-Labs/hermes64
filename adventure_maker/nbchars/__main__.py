@@ -56,11 +56,11 @@ def main(argv=None):
             print('EXPORT COMPLETE enemies %d props %d' % (len(rec['enemies']), len(rec['props'])))
             return 0
         if a.job:
-            rep = api.build_job(json.loads(Path(a.job).read_text()), a.out, exporter=a.exporter, settings=settings,
+            rep = api.build_job(json.loads(Path(a.job).read_text(encoding='utf-8')), a.out, exporter=a.exporter, settings=settings,
                                 root=a.generator_root)
             print('BUILD COMPLETE %d' % len(rep['items']))
             return 0
-        doc = json.loads(Path(a.recipe).read_text())
+        doc = json.loads(Path(a.recipe).read_text(encoding='utf-8'))
         if 'kind' not in doc or 'pack_id' not in doc:
             try:
                 from .. import character_recipe as CR      # CHARSYS (present after the lanes merge)

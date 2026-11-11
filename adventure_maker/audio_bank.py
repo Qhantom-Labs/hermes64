@@ -14,7 +14,7 @@ METRICS = ('duration','frames','sample_rate','peak','rms','dc','seam',
 
 
 def palettes():
-    return json.loads((d.DATA/'palettes.json').read_text())
+    return json.loads((d.DATA/'palettes.json').read_text(encoding='utf-8'))
 
 
 def check_palette(palette):

@@ -1,0 +1,1092 @@
+{
+  "contract_version": "1.1.0",
+  "id": "violet_tower",
+  "title": "The Violet Tower",
+  "description": "An apprentice restores a purple tower beacon by learning a word of mercy, finding the moon key and answering a guardian. A four-room exploration quest, not a combat game.",
+  "metadata": {
+    "authoring": "hermes64-world/1",
+    "protagonist": "apprentice",
+    "presentation": {
+      "rooms": {
+        "court": {
+          "exterior": false,
+          "kit_shell": true,
+          "pieces": [
+            {
+              "asset": "_wall",
+              "position": [
+                2.375,
+                0,
+                0
+              ],
+              "scale": [
+                2.375,
+                1,
+                1
+              ],
+              "yaw": 0,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                8.125,
+                0,
+                0
+              ],
+              "scale": [
+                1.875,
+                1,
+                1
+              ],
+              "yaw": 0,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                10,
+                0,
+                2.375
+              ],
+              "scale": [
+                2.375,
+                1,
+                1
+              ],
+              "yaw": -90,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                10,
+                0,
+                8.125
+              ],
+              "scale": [
+                1.875,
+                1,
+                1
+              ],
+              "yaw": -90,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                5.0,
+                0,
+                10
+              ],
+              "scale": [
+                5.0,
+                0.32,
+                1
+              ],
+              "yaw": 180,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                0,
+                0,
+                5.0
+              ],
+              "scale": [
+                5.0,
+                1,
+                1
+              ],
+              "yaw": 90,
+              "kind": "wall"
+            },
+            {
+              "asset": "cst.tower_round__roofed",
+              "position": [
+                8,
+                0,
+                2
+              ],
+              "scale": [
+                0.35,
+                0.35,
+                0.35
+              ]
+            },
+            {
+              "asset": "mprop.cauldron",
+              "position": [
+                2,
+                0,
+                7
+              ]
+            }
+          ],
+          "interactions": {
+            "interact:talk_ione_hint": {
+              "position": [
+                3,
+                0,
+                4
+              ]
+            }
+          },
+          "characters": {
+            "apprentice": {
+              "position": [
+                2,
+                0,
+                2
+              ]
+            },
+            "archivist": {
+              "position": [
+                3,
+                0,
+                3
+              ]
+            }
+          },
+          "look": {
+            "background": "#352447",
+            "fog": {
+              "color": "#4B375E",
+              "near": 5,
+              "far": 30,
+              "max": 0.8
+            },
+            "ambient": [
+              "#AD87CD",
+              0.56
+            ],
+            "key": [
+              "#D2B4E8",
+              0.38
+            ],
+            "grade": {
+              "gain": "#D39CE8",
+              "lift": "#0A0410",
+              "saturation": 0.88,
+              "exposure": 1.0
+            }
+          }
+        },
+        "library": {
+          "exterior": false,
+          "kit_shell": true,
+          "pieces": [
+            {
+              "asset": "_wall",
+              "position": [
+                5.0,
+                0,
+                0
+              ],
+              "scale": [
+                5.0,
+                1,
+                1
+              ],
+              "yaw": 0,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                10,
+                0,
+                5.0
+              ],
+              "scale": [
+                5.0,
+                1,
+                1
+              ],
+              "yaw": -90,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                5.0,
+                0,
+                10
+              ],
+              "scale": [
+                5.0,
+                0.32,
+                1
+              ],
+              "yaw": 180,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                0,
+                0,
+                2.375
+              ],
+              "scale": [
+                2.375,
+                1,
+                1
+              ],
+              "yaw": 90,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                0,
+                0,
+                8.125
+              ],
+              "scale": [
+                1.875,
+                1,
+                1
+              ],
+              "yaw": 90,
+              "kind": "wall"
+            },
+            {
+              "asset": "mprop.shelf__books",
+              "position": [
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "asset": "mprop.shelf",
+              "position": [
+                8,
+                0,
+                2
+              ],
+              "yaw": 180
+            },
+            {
+              "asset": "mprop.table__round",
+              "position": [
+                7,
+                0,
+                7
+              ]
+            }
+          ],
+          "interactions": {
+            "interact:moon_key_pickup": {
+              "position": [
+                5,
+                0,
+                4
+              ]
+            }
+          },
+          "characters": {},
+          "look": {
+            "background": "#352447",
+            "fog": {
+              "color": "#4B375E",
+              "near": 5,
+              "far": 30,
+              "max": 0.8
+            },
+            "ambient": [
+              "#AD87CD",
+              0.56
+            ],
+            "key": [
+              "#D2B4E8",
+              0.38
+            ],
+            "grade": {
+              "gain": "#D39CE8",
+              "lift": "#0A0410",
+              "saturation": 0.88,
+              "exposure": 1.0
+            }
+          }
+        },
+        "seal": {
+          "exterior": false,
+          "kit_shell": true,
+          "pieces": [
+            {
+              "asset": "_wall",
+              "position": [
+                2.375,
+                0,
+                0
+              ],
+              "scale": [
+                2.375,
+                1,
+                1
+              ],
+              "yaw": 0,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                8.125,
+                0,
+                0
+              ],
+              "scale": [
+                1.875,
+                1,
+                1
+              ],
+              "yaw": 0,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                10,
+                0,
+                5.0
+              ],
+              "scale": [
+                5.0,
+                1,
+                1
+              ],
+              "yaw": -90,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                2.375,
+                0,
+                10
+              ],
+              "scale": [
+                2.375,
+                0.32,
+                1
+              ],
+              "yaw": 180,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                8.125,
+                0,
+                10
+              ],
+              "scale": [
+                1.875,
+                0.32,
+                1
+              ],
+              "yaw": 180,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                0,
+                0,
+                5.0
+              ],
+              "scale": [
+                5.0,
+                1,
+                1
+              ],
+              "yaw": 90,
+              "kind": "wall"
+            },
+            {
+              "asset": "cst.pillar",
+              "position": [
+                2,
+                0,
+                2
+              ]
+            },
+            {
+              "asset": "cst.pillar",
+              "position": [
+                8,
+                0,
+                2
+              ]
+            },
+            {
+              "asset": "cst.banner__roundel",
+              "position": [
+                1,
+                1,
+                4
+              ],
+              "mounted": true
+            }
+          ],
+          "interactions": {
+            "interact:talk_guardian_riddle": {
+              "position": [
+                3,
+                0,
+                4
+              ]
+            }
+          },
+          "characters": {
+            "guardian": {
+              "position": [
+                3,
+                0,
+                3
+              ]
+            }
+          },
+          "look": {
+            "background": "#352447",
+            "fog": {
+              "color": "#4B375E",
+              "near": 5,
+              "far": 30,
+              "max": 0.8
+            },
+            "ambient": [
+              "#AD87CD",
+              0.56
+            ],
+            "key": [
+              "#D2B4E8",
+              0.38
+            ],
+            "grade": {
+              "gain": "#D39CE8",
+              "lift": "#0A0410",
+              "saturation": 0.88,
+              "exposure": 1.0
+            }
+          }
+        },
+        "crown": {
+          "exterior": false,
+          "kit_shell": true,
+          "pieces": [
+            {
+              "asset": "_wall",
+              "position": [
+                5.0,
+                0,
+                0
+              ],
+              "scale": [
+                5.0,
+                1,
+                1
+              ],
+              "yaw": 0,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                10,
+                0,
+                5.0
+              ],
+              "scale": [
+                5.0,
+                1,
+                1
+              ],
+              "yaw": -90,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                2.375,
+                0,
+                10
+              ],
+              "scale": [
+                2.375,
+                0.32,
+                1
+              ],
+              "yaw": 180,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                8.125,
+                0,
+                10
+              ],
+              "scale": [
+                1.875,
+                0.32,
+                1
+              ],
+              "yaw": 180,
+              "kind": "wall"
+            },
+            {
+              "asset": "_wall",
+              "position": [
+                0,
+                0,
+                5.0
+              ],
+              "scale": [
+                5.0,
+                1,
+                1
+              ],
+              "yaw": 90,
+              "kind": "wall"
+            },
+            {
+              "asset": "cst.brazier",
+              "position": [
+                7,
+                0,
+                3
+              ]
+            },
+            {
+              "asset": "cst.throne",
+              "position": [
+                2,
+                0,
+                2
+              ]
+            }
+          ],
+          "interactions": {
+            "interact:restore_beacon": {
+              "position": [
+                6,
+                0,
+                3
+              ]
+            }
+          },
+          "characters": {},
+          "look": {
+            "background": "#352447",
+            "fog": {
+              "color": "#4B375E",
+              "near": 5,
+              "far": 30,
+              "max": 0.8
+            },
+            "ambient": [
+              "#AD87CD",
+              0.56
+            ],
+            "key": [
+              "#D2B4E8",
+              0.38
+            ],
+            "grade": {
+              "gain": "#D39CE8",
+              "lift": "#0A0410",
+              "saturation": 0.88,
+              "exposure": 1.0
+            }
+          }
+        }
+      }
+    },
+    "asset_disclosure": {
+      "cast": "Explicit reused public cast, not bespoke characters.",
+      "architecture": "Neutral kit-module cutaways; review the runtime."
+    }
+  },
+  "start": {
+    "location": "court",
+    "inventory": [],
+    "flags": {
+      "rune_known": false,
+      "guardian_yields": false,
+      "beacon_lit": false
+    },
+    "dialogue": {
+      "ione_hint": "",
+      "guardian_riddle": ""
+    },
+    "collected": [],
+    "tide": {
+      "state": "still",
+      "tick": 0
+    }
+  },
+  "rooms": [
+    {
+      "id": "court",
+      "name": "Violet Court",
+      "description": "The tower's violet lamps are fading. Ione remembers how to reach the crown.",
+      "grid_size": [
+        10,
+        10
+      ],
+      "kit_refs": [],
+      "doors": [
+        {
+          "id": "to_library",
+          "wall": "east",
+          "position": 5,
+          "to_room": "library",
+          "to_door": "to_court",
+          "label": "Visit the whisper library",
+          "conditions": []
+        },
+        {
+          "id": "to_seal",
+          "wall": "north",
+          "position": 5,
+          "to_room": "seal",
+          "to_door": "to_court",
+          "label": "Unlock the moon seal",
+          "conditions": [
+            {
+              "item": "moon_key",
+              "present": true
+            }
+          ]
+        }
+      ],
+      "props": [],
+      "character_ids": [
+        "apprentice",
+        "archivist"
+      ],
+      "cameras": [
+        {
+          "id": "main",
+          "position": [
+            5.0,
+            8,
+            13
+          ],
+          "look_at": [
+            5.0,
+            0,
+            5.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "library",
+      "name": "Whisper Library",
+      "description": "Between two old shelves rests the key that opens the moon seal.",
+      "grid_size": [
+        10,
+        10
+      ],
+      "kit_refs": [],
+      "doors": [
+        {
+          "id": "to_court",
+          "wall": "west",
+          "position": 5,
+          "to_room": "court",
+          "to_door": "to_library",
+          "label": "Enter Violet Court",
+          "conditions": []
+        }
+      ],
+      "props": [],
+      "character_ids": [],
+      "cameras": [
+        {
+          "id": "main",
+          "position": [
+            5.0,
+            8,
+            13
+          ],
+          "look_at": [
+            5.0,
+            0,
+            5.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "seal",
+      "name": "Moon Seal",
+      "description": "A guardian asks what strength must protect. Return to Ione if you do not know.",
+      "grid_size": [
+        10,
+        10
+      ],
+      "kit_refs": [],
+      "doors": [
+        {
+          "id": "to_court",
+          "wall": "south",
+          "position": 5,
+          "to_room": "court",
+          "to_door": "to_seal",
+          "label": "Enter Violet Court",
+          "conditions": []
+        },
+        {
+          "id": "to_crown",
+          "wall": "north",
+          "position": 5,
+          "to_room": "crown",
+          "to_door": "to_seal",
+          "label": "Pass the guardian",
+          "conditions": [
+            {
+              "flag": "guardian_yields",
+              "equals": true
+            }
+          ]
+        }
+      ],
+      "props": [],
+      "character_ids": [
+        "guardian"
+      ],
+      "cameras": [
+        {
+          "id": "main",
+          "position": [
+            5.0,
+            8,
+            13
+          ],
+          "look_at": [
+            5.0,
+            0,
+            5.0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crown",
+      "name": "Crown Chamber",
+      "description": "The beacon awaits a steady hand. Light it and shelter the valley.",
+      "grid_size": [
+        10,
+        10
+      ],
+      "kit_refs": [],
+      "doors": [
+        {
+          "id": "to_seal",
+          "wall": "south",
+          "position": 5,
+          "to_room": "seal",
+          "to_door": "to_crown",
+          "label": "Enter Moon Seal",
+          "conditions": []
+        }
+      ],
+      "props": [],
+      "character_ids": [],
+      "cameras": [
+        {
+          "id": "main",
+          "position": [
+            5.0,
+            8,
+            13
+          ],
+          "look_at": [
+            5.0,
+            0,
+            5.0
+          ]
+        }
+      ]
+    }
+  ],
+  "characters": [
+    {
+      "id": "apprentice",
+      "name": "Ada",
+      "role": "protagonist",
+      "body_id": "human_base_v1",
+      "base_rig_id": "human_16",
+      "params": {
+        "colour": "#8d6a58",
+        "costume": "travel_coat",
+        "voice_tags": [
+          "quiet",
+          "measured"
+        ]
+      },
+      "role_profiles": {
+        "protagonist": {
+          "colour": "#8d6a58",
+          "costume": "travel_coat",
+          "voice_tags": [
+            "quiet",
+            "measured"
+          ]
+        }
+      }
+    },
+    {
+      "id": "archivist",
+      "name": "Ione",
+      "role": "archivist",
+      "body_id": "human_base_v1",
+      "base_rig_id": "human_16",
+      "params": {
+        "colour": "#a89a64",
+        "costume": "oilskin",
+        "voice_tags": [
+          "weathered",
+          "restrained"
+        ]
+      },
+      "role_profiles": {
+        "archivist": {
+          "colour": "#a89a64",
+          "costume": "oilskin",
+          "voice_tags": [
+            "weathered",
+            "restrained"
+          ]
+        }
+      }
+    },
+    {
+      "id": "guardian",
+      "name": "Violet Guardian",
+      "role": "guardian",
+      "body_id": "human_base_v1",
+      "base_rig_id": "human_16",
+      "params": {
+        "colour": "#514958",
+        "costume": "buttoned_storm_coat",
+        "voice_tags": [
+          "withholding",
+          "accusatory"
+        ]
+      },
+      "role_profiles": {
+        "guardian": {
+          "colour": "#514958",
+          "costume": "buttoned_storm_coat",
+          "voice_tags": [
+            "withholding",
+            "accusatory"
+          ]
+        }
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "moon_key",
+      "name": "Moon key",
+      "description": "The library key fits the moon seal. It is not consumed.",
+      "asset": "inventory/moon_key"
+    }
+  ],
+  "flags": [
+    {
+      "id": "rune_known",
+      "initial": false,
+      "description": "rune known"
+    },
+    {
+      "id": "guardian_yields",
+      "initial": false,
+      "description": "guardian yields"
+    },
+    {
+      "id": "beacon_lit",
+      "initial": false,
+      "description": "beacon lit"
+    }
+  ],
+  "interactions": [
+    {
+      "id": "moon_key_pickup",
+      "room": "library",
+      "kind": "take",
+      "target": "moon_key",
+      "label": "Lift the moon key",
+      "text": "A silver key rests on the reading desk.",
+      "conditions": [
+        {
+          "item": "moon_key",
+          "present": false
+        }
+      ],
+      "effects": [
+        {
+          "give": "moon_key"
+        }
+      ]
+    },
+    {
+      "id": "restore_beacon",
+      "room": "crown",
+      "kind": "use",
+      "target": "restore_beacon",
+      "label": "Restore the violet beacon",
+      "text": "The beacon glows violet again. The valley has a light to guide it home.",
+      "conditions": [],
+      "effects": [
+        {
+          "flag": "beacon_lit",
+          "value": true
+        }
+      ]
+    },
+    {
+      "id": "talk_ione_hint",
+      "room": "court",
+      "kind": "talk",
+      "target": "archivist",
+      "label": "Speak with archivist",
+      "text": "Speak with archivist",
+      "conditions": [],
+      "effects": [
+        {
+          "dialogue": "ione_hint",
+          "node": "hello"
+        }
+      ]
+    },
+    {
+      "id": "talk_guardian_riddle",
+      "room": "seal",
+      "kind": "talk",
+      "target": "guardian",
+      "label": "Speak with guardian",
+      "text": "Speak with guardian",
+      "conditions": [],
+      "effects": [
+        {
+          "dialogue": "guardian_riddle",
+          "node": "riddle"
+        }
+      ]
+    }
+  ],
+  "dialogues": [
+    {
+      "id": "ione_hint",
+      "character": "archivist",
+      "start_node": "hello",
+      "nodes": [
+        {
+          "id": "hello",
+          "text": "The library keeps the moon key. If the guardian tests you, remember: strength must protect mercy.",
+          "conditions": [],
+          "choices": [
+            {
+              "id": "remember",
+              "text": "I will remember mercy.",
+              "conditions": [],
+              "effects": [
+                {
+                  "flag": "rune_known",
+                  "value": true
+                }
+              ],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guardian_riddle",
+      "character": "guardian",
+      "start_node": "riddle",
+      "nodes": [
+        {
+          "id": "riddle",
+          "text": "Name what strength must protect.",
+          "conditions": [],
+          "choices": [
+            {
+              "id": "answer",
+              "text": "Mercy.",
+              "conditions": [
+                {
+                  "flag": "rune_known",
+                  "equals": true
+                }
+              ],
+              "effects": [
+                {
+                  "flag": "guardian_yields",
+                  "value": true
+                }
+              ],
+              "next": ""
+            },
+            {
+              "id": "return",
+              "text": "I will return with an answer.",
+              "conditions": [],
+              "effects": [],
+              "next": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quests": [
+    {
+      "id": "restore",
+      "title": "Restore the violet beacon",
+      "description": "Find the key, learn the word and earn the guardian's passage.",
+      "conditions": [
+        {
+          "flag": "beacon_lit",
+          "equals": true
+        }
+      ]
+    }
+  ],
+  "endings": [
+    {
+      "id": "restore_beacon",
+      "text": "The beacon glows violet again. The valley has a light to guide it home.",
+      "conditions": [
+        {
+          "flag": "beacon_lit",
+          "equals": true
+        }
+      ]
+    }
+  ],
+  "collectible_groups": [],
+  "collectibles": [],
+  "tide": {
+    "id": "cycle",
+    "states": [
+      {
+        "id": "still",
+        "label": "Still",
+        "duration": 1
+      }
+    ],
+    "wait_label": "Wait",
+    "wait_text": "A moment passes."
+  }
+}

@@ -9,6 +9,12 @@ import json
 from pathlib import Path
 import sys
 
+try:
+    from . import platforms
+except ImportError:          # run as a script by path (doctor.py --runtime-json): no package parent
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import platforms
+
 # The one supported engine (runtime/godot targets it; export templates are hash-pinned to it).
 GODOT_VERSION = '4.6.2'
 GODOT_RELEASE = 'https://github.com/godotengine/godot/releases/tag/4.6.2-stable'
@@ -18,13 +24,15 @@ def godot_help(configured=''):
     """The one Godot-missing message (doctor, /hermes64 new): exact version, where to get it, per-OS steps. One line."""
     where = ' at the configured godot_path %r' % configured[:240] if configured else ''
     return ("Godot wasn't found%s. Hermes64 supports Godot %s, the standard build (not the .NET build): %s . "
+            "Run /hermes64 setup --fetch for an explicit, hash-verified download into your user cache. "
             "macOS: unzip Godot_v4.6.2-stable_macos.universal.zip, move Godot.app to Applications, then Control-click it "
             "and choose Open once; Hermes64 finds /Applications/Godot.app by itself (or set godot_path). "
             "Windows: unzip Godot_v4.6.2-stable_win64.exe.zip anywhere and set godot_path in the hermes64 plugin "
-            "settings to that .exe." % (where, GODOT_VERSION, GODOT_RELEASE))
+            "settings to that .exe (or the HERMES64_GODOT environment variable); Hermes64 finds it by itself in "
+            "%%LOCALAPPDATA%%\\Programs\\Godot, Program Files\\Godot, winget and scoop installs." % (where, GODOT_VERSION, GODOT_RELEASE))
 
 
-TEMPLATES_DIR = Path('Library/Application Support/Godot/export_templates/4.6.2.stable')   # under the home folder
+TEMPLATES_DIR = Path('Library/Application Support/Godot/export_templates/4.6.2.stable')   # macOS, under the home folder
 
 
 def templates_help():
@@ -32,37 +40,56 @@ def templates_help():
     return ("Godot 4.6.2 export templates aren't installed. The demo, the web build and standalone game files need them; "
             "making, playing and replaying games do not. Download Godot_v4.6.2-stable_export_templates.tpz (about 1.25 GB) "
             "from %s , open any project in Godot, choose Editor > Manage Export Templates > Install from File and pick that "
-            "file. Hermes64 never downloads or installs them, and checks their official hashes when it exports." % GODOT_RELEASE)
+            "file (they land in %s). This check never downloads or installs them; the user may type "
+            "/hermes64 setup --fetch --yes --templates for the explicit official-only fetch. Hermes64 checks their "
+            "official hashes when it exports." % (GODOT_RELEASE, templates_location()))
 
 
-def export_templates(home=None):
+def templates_location(platform=None):
+    if platforms.is_windows(platform):
+        return '%APPDATA%\\Godot\\export_templates\\4.6.2.stable, or set HERMES64_TEMPLATES'
+    if platforms.host(platform) == 'darwin':
+        return '~/Library/Application Support/Godot/export_templates/4.6.2.stable'
+    return '~/.local/share/godot/export_templates/4.6.2.stable'
+
+
+def export_templates(home=None, platform=None, env=None):
     """Which official 4.6.2 targets are installed (presence and version only; the exporter checks each hash)."""
     from .export import TEMPLATES
-    base = Path(home or Path.home()) / TEMPLATES_DIR
+    base = Path(str(platforms.templates_dir(platform, env, home)))
     try:
-        version = (base / 'version.txt').read_text().strip()
+        version = (base / 'version.txt').read_text(encoding='utf-8').strip()
     except (OSError, UnicodeDecodeError):
         version = ''
     targets = sorted(t for t, name in TEMPLATES.items() if version == '4.6.2.stable' and (base / name).is_file())
-    return {'available': bool(targets), 'targets': targets, 'version': version or None, 'hash_checked_on_export': True}
+    return {'available': bool(targets), 'targets': targets, 'version': version or None, 'hash_checked_on_export': True,
+            'folder': str(platforms.templates_dir(platform, env, '~' if home is None else home))}
 
 
 BLENDER_NOTE = ('Blender: not required. Making and playing games, the bundled kits and cast, and new character bodies '
-                '(python exporter, numpy) work without it; static kit builds need it only with the default '
-                'builder=blender (set builder to python or auto). Blender (optional, set blender_path) also adds '
+                '(python exporter, numpy) work without it; with the default builder=auto, room models use the Python '
+                'builder (numpy) when Blender is missing; only builder=blender needs it (set builder to python or auto). Blender (optional, set blender_path) also adds '
                 'character review renders.')
 
-PLATFORM_NOTE = ('This computer is not a Mac: Hermes64 runs Godot, Blender and its Python probe only inside the macOS '
-                 'sandbox (sandbox-exec), so building and playing games needs macOS for now. The web play builds run in '
-                 'any browser.')
+PLATFORM_NOTE = ('This computer is not a Mac: Hermes64 runs Godot, Blender and its Python probe only inside a child '
+                 'sandbox. macOS has one built in (sandbox-exec); on Windows making and rebuilding games works after '
+                 'you opt in to the Windows Job Object runner (no OS network or write confinement): see the Windows '
+                 'checklist (python -m adventure_maker.doctor --windows-checklist). Playing exported games and the web '
+                 'play builds needs no opt-in.')
+LINUX_NOTE = ('This computer is Linux: Hermes64 has no Linux child sandbox yet, so making games is off; exported web '
+              'builds run in any browser.')
 
 
-def guidance(programs, platform=None, templates=None):
-    """Plain-English lines for what is missing: Godot (exact version, link, per-OS steps), its export templates,
-    Blender (not required)."""
+def guidance(programs, platform=None, templates=None, env=None):
+    """Plain-English lines for what is missing: platform runner, Godot (exact version, link, per-OS steps), its
+    export templates, Blender (not required)."""
     lines = []
-    if (platform or sys.platform) != 'darwin':
-        lines.append(PLATFORM_NOTE)
+    plat = platforms.host(platform)
+    if plat == 'win32':
+        if not platforms.windows_runner_enabled(env):
+            lines.append(PLATFORM_NOTE)
+    elif plat != 'darwin':
+        lines.append(LINUX_NOTE)
     if not programs['godot']['available']:
         lines.append(godot_help(programs['godot'].get('configured', '')))
     if templates is not None and not templates['available']:
@@ -123,7 +150,10 @@ def probe(settings=None, python_info=None):
     }
     return {'python':py,'programs':programs,'features':features,'installs_performed':False,
             'character_exporter':nbselect.doctor_line(settings,numpy=npv,blender=programs['blender'].get('path') if blender else False),
-            'export_templates':templates,'guidance':guidance(programs,templates=templates)}
+            'export_templates':templates,'guidance':guidance(programs,templates=templates),
+            'platform':{'host':platforms.host(),'isolation':platforms.isolation(),
+                        'python_command':platforms.python_command(),
+                        'override_env':dict(platforms.OVERRIDE_ENV,templates=platforms.TEMPLATES_ENV)}}
 
 
 def check(components):
@@ -153,9 +183,30 @@ def check(components):
         return report
 
 
+def windows_report(platform='win32'):
+    """The Windows checklist lines for this computer (or, with platform='win32' on a Mac, a simulation of what a
+    Windows computer with this environment would see; program lookups use the Windows candidate list)."""
+    report = probe({'python_path':sys.executable},python_capabilities())
+    if platforms.host() != 'win32':
+        report['programs']['godot'] = {'available':False}
+        report['programs']['blender'] = {'available':False}
+        home = platforms.PureWindowsPath('C:/Users/you')
+        report['export_templates'] = dict(export_templates(platform='win32',env={},home=home),available=False,targets=[])
+        return platforms.windows_checklist(report,env={},home=home)
+    return platforms.windows_checklist(report)
+
+
 def main():
     if '--runtime-json' in sys.argv:
         print(json.dumps(python_capabilities(),sort_keys=True))
+    elif '--windows-checklist' in sys.argv:
+        if platforms.host() != 'win32':
+            print('SIMULATED: this computer is %s, not Windows; program lookups below are not real.' % platforms.host())
+        lines = windows_report()
+        for line in lines:
+            print(line)
+        print('RESULT  %s' % ('READY to make games' if all(not l.startswith(('MISSING','OFF')) for l in lines[:6])
+                              else 'NOT READY: fix the MISSING/OFF lines above'))
     else:
         report = probe({'python_path':sys.executable},python_capabilities())
         if '--table' in sys.argv:

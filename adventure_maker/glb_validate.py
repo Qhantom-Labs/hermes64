@@ -386,7 +386,7 @@ def library(root):
     limits = {}
     man = root / 'kits' / 'manifest.json'
     if man.is_file():
-        m = json.loads(man.read_text())
+        m = json.loads(man.read_text(encoding='utf-8'))
         for k in m.get('kits', []):
             for b in k.get('builds', []):
                 limits[str((root / 'kits' / b['glb']).resolve())] = k.get('tri_limit')

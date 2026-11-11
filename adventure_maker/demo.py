@@ -111,7 +111,7 @@ def run(service,args):
                 from ..characters.integration import apply_presentation
             else:
                 from characters.integration import apply_presentation
-            spec=json.loads((bundle/'examples'/example/'spec.json').read_text())
+            spec=json.loads((bundle/'examples'/example/'spec.json').read_text(encoding='utf-8'))
             # Exactly the bundled showcase presentation; logical source fields are unchanged.
             spec=apply_presentation(spec,example)
             payload={'spec_json':json.dumps(spec),'pack':{'last_light':'n64_v0','thaw':'polar_pod'}[example]}

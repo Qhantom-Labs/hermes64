@@ -574,7 +574,8 @@ def run_tool(settings, args, data_root=None, games_root=None):
 def parse(raw):
     """`hub <action> ...` -> (action, args). key=value / --key value options; quotes allowed."""
     try:
-        tokens = shlex.split(raw or '')
+        from .platforms import split_args
+        tokens = split_args(raw or '')
     except ValueError:
         fail('arguments', 'A quote is not closed; try /hermes64 hub search cat.')
     if not tokens or tokens[0].lower() in ('help', '-h', '--help'):

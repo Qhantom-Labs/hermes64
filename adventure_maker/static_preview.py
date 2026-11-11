@@ -97,29 +97,33 @@ def software(frame, size=(320,240)):
 
 def capture(frames, out, godot=None, size=(320,240), allow_software=False, timeout=180):
     out = Path(out).resolve(); out.mkdir(parents=True,exist_ok=True)
-    exe = shutil.which(godot) if godot else shutil.which('godot')
+    if godot:
+        exe = shutil.which(godot)
+    else:
+        from .platforms import godot_candidates
+        exe = next((shutil.which(c) for c in godot_candidates() if shutil.which(c)), None)
     if not exe:
         if not allow_software:
             raise RuntimeError('Godot not found; configure godot_path. No parity render can be certified with software.')
         report = {'ok':True,'renderer':'software_lower_fidelity','frames':[software(f,size) for f in frames]}
-        (out/'capture.json').write_text(json.dumps(report,indent=1))
+        (out/'capture.json').write_bytes(json.dumps(report,indent=1).encode('utf-8'))
         return report
     runtime = out/'runtime'
     shutil.copytree(ROOT/'runtime/godot',runtime,dirs_exist_ok=True,
                     ignore=shutil.ignore_patterns('.godot','*.uid'))
     job = out/'job.json'; report_path = out/'capture.json'
-    job.write_text(json.dumps({'frames':frames,'size':list(size),'report':str(report_path)},indent=1))
-    env = {k:os.environ[k] for k in ('PATH','LANG','LC_ALL') if k in os.environ}
-    for key in ('HOME','TMPDIR','XDG_CONFIG_HOME','XDG_CACHE_HOME','XDG_DATA_HOME'):
+    job.write_bytes(json.dumps({'frames':frames,'size':list(size),'report':str(report_path)},indent=1).encode('utf-8'))
+    env = {k:os.environ[k] for k in ('PATH','LANG','LC_ALL','SystemRoot','WINDIR','PATHEXT') if k in os.environ}
+    for key in ('HOME','TMPDIR','XDG_CONFIG_HOME','XDG_CACHE_HOME','XDG_DATA_HOME')+(('USERPROFILE','APPDATA','LOCALAPPDATA','TEMP','TMP') if os.name=='nt' else ()):
         path = out/key.lower(); path.mkdir(exist_ok=True); env[key] = str(path)
     argv = [str(Path(exe).resolve()),'--path',str(runtime),'--resolution','320x240',
             '--script','res://noblender_capture.gd','--',str(job)]
     with (out/'godot.log').open('w') as log:
         proc = subprocess.run(argv,cwd=out,env=env,stdout=log,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,timeout=timeout)
-    (out/'process.json').write_text(json.dumps({'argv':argv,'returncode':proc.returncode},indent=1))
+    (out/'process.json').write_bytes(json.dumps({'argv':argv,'returncode':proc.returncode},indent=1).encode('utf-8'))
     if proc.returncode or not report_path.exists():
         raise RuntimeError('Godot capture failed; configure godot_path or inspect '+str(out/'godot.log'))
-    report = json.loads(report_path.read_text())
+    report = json.loads(report_path.read_text(encoding='utf-8'))
     if not report['ok'] or len(report['frames'])!=len(frames):
         raise RuntimeError('Godot returned incomplete captures; see '+str(report_path))
     return report

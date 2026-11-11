@@ -1,0 +1,44 @@
+{
+  "purpose": "Human-typed setup --fetch --yes only: official Godot 4.6.2 files from github.com/godotengine/godot-builds, each pinned by the SHA-512 published in that release's SHA512-SUMS.txt (as copied by Main into GODOT-OFFICIAL-4.6.2-FACTS.json). No download on import, checklist or any model tool call. Nothing self-hosted, no mirrors. URLs are unconfirmed until a real first run; a 404 fails closed. Archive byte sizes are not measured here; max_bytes are safety caps.",
+  "artifacts": {
+    "godot-4.6.2-macos-editor": {
+      "why": "Godot 4.6.2 standard (non-.NET) editor; plays and exports games",
+      "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.2-stable/Godot_v4.6.2-stable_macos.universal.zip",
+      "official_page": "https://github.com/godotengine/godot-builds/releases/tag/4.6.2-stable",
+      "archive": "Godot_v4.6.2-stable_macos.universal.zip",
+      "sha512": "a4ef421d7ff0d50a0cd8ff2cb935ae0757c769e3f5cc29af13d1c44317d4469b2c0b3bd922f43b8806688604b7fa4b68c8e7e0b559656b8db375917da55418b2",
+      "bytes": "unknown (archive not downloaded or measured)",
+      "max_bytes": 536870912,
+      "installed_binary_sha256": "e6b5cfdc226ffb7ec4f4950b0b12ddba4f040624724cff1acce9ae1241cf0034",
+      "installed_binary": "Godot.app/Contents/MacOS/Godot (356,290,656 bytes; Godot.app 342 MB on disk)",
+      "licence": "MIT (licenses/godot-4.6.2/LICENSE.txt, COPYRIGHT.txt)"
+    },
+    "godot-4.6.2-windows-editor": {
+      "why": "Godot 4.6.2 standard editor for Windows",
+      "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.2-stable/Godot_v4.6.2-stable_win64.exe.zip",
+      "official_page": "https://github.com/godotengine/godot-builds/releases/tag/4.6.2-stable",
+      "archive": "Godot_v4.6.2-stable_win64.exe.zip",
+      "sha512": "01c3bc0ede0f8771e810832fb92ce52a3a4352af7b7ac32a81a8edf05bb30760f56a6ab7e17cebc80b81c4f609a95c24c2fdbbe6929ac4e0285cb8f654b56d78",
+      "bytes": "unknown (archive not downloaded or measured)",
+      "max_bytes": 536870912,
+      "licence": "MIT"
+    },
+    "godot-4.6.2-export-templates": {
+      "why": "Optional, only with --templates: the official export templates; setup keeps the three players exports use and deletes the .tpz",
+      "url": "https://github.com/godotengine/godot-builds/releases/download/4.6.2-stable/Godot_v4.6.2-stable_export_templates.tpz",
+      "official_page": "https://github.com/godotengine/godot-builds/releases/tag/4.6.2-stable",
+      "archive": "Godot_v4.6.2-stable_export_templates.tpz",
+      "sha512": "ce6a91e8d86df3183452c5e40d75fa0faf94268257b1d3dc1e4538caa277ca7c0fd3d113f8104a5515c3af84d49c5cefc77d7d1e7847ba422413d5466feb49fd",
+      "bytes": "about 1.25 GB (FIRSTRUN report; not measured here)",
+      "max_bytes": 1468006400,
+      "members_used": {
+        "templates/version.txt": "must read 4.6.2.stable",
+        "templates/web_nothreads_release.zip": "7d91986ea27d901b37963ace014a88ab6ba8e4bfe830031043bcf89ebac307dc",
+        "templates/macos.zip": "bf4bc195bb4dbe5edf7067582c5b1c428de70eaf552b9c284dd533a8c3d70717",
+        "templates/windows_release_x86_64.exe": "3b2d3f99bd640961aad1a1a200f0f7233b7de45b02801ce22d3224dc294d93d1"
+      },
+      "members_note": "sha256 of each kept member, the same pins as adventure_maker/export.py TEMPLATE_HASHES; checked before a member is kept",
+      "licence": "MIT"
+    }
+  }
+}

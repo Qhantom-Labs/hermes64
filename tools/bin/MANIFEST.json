@@ -1,0 +1,10 @@
+{
+  "purpose": "Optional helper binaries looked up by adventure_maker/audio_formats.py. Empty by default: Hermes64 needs none of them to make, play or export games. A binary placed in tools/bin/<platform>/ is used only when its sha256 below is filled in and matches.",
+  "status": "NOTHING BUNDLED. No URL, build or licence has been chosen; every field marked TODO-DYLAN needs an owner decision (docs/ZEROSETUP-RESULT.md).",
+  "binaries": {
+    "darwin-arm64": {"file": "ffmpeg", "url": "TODO-DYLAN", "sha256": "TODO-DYLAN", "licence": "TODO-DYLAN: must be an LGPL-only build (no --enable-gpl / --enable-nonfree), decoders only", "source_offer": "TODO-DYLAN"},
+    "darwin-x86_64": {"file": "ffmpeg", "url": "TODO-DYLAN", "sha256": "TODO-DYLAN", "licence": "TODO-DYLAN", "source_offer": "TODO-DYLAN"},
+    "windows-x86_64": {"file": "ffmpeg.exe", "url": "TODO-DYLAN", "sha256": "TODO-DYLAN", "licence": "TODO-DYLAN", "source_offer": "TODO-DYLAN"},
+    "linux-x86_64": {"file": "ffmpeg", "url": "TODO-DYLAN", "sha256": "TODO-DYLAN", "licence": "TODO-DYLAN", "source_offer": "TODO-DYLAN"}
+  }
+}

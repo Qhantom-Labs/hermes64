@@ -136,7 +136,7 @@ def load_rig(rig, root=None):
         path = root / str(rig) / 'rig.json'
     if not path.is_file():
         raise RigError('unknown rig %r (no %s)' % (rig, path))
-    doc = json.loads(path.read_text())
+    doc = json.loads(path.read_text(encoding='utf-8'))
     probs = check_doc(doc)
     if probs:
         raise RigError('invalid rig %s: %s' % (path, '; '.join(probs)))

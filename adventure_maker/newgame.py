@@ -133,8 +133,13 @@ def title_for(premise):
 
 def preflight(settings):
     """Doctor before creating anything: plain-English fixes; Blender is optional."""
-    if sys.platform != 'darwin' or not Path('/usr/bin/sandbox-exec').is_file():
-        fail('new_platform', 'Hermes64 currently runs only on macOS (it needs the built-in sandbox-exec); nothing was created.')
+    from . import platforms
+    if platforms.is_windows():
+        if not platforms.windows_runner_enabled():
+            fail('new_platform', platforms.isolation('win32')['note'] + ' Nothing was created.')
+    elif sys.platform != 'darwin' or not Path('/usr/bin/sandbox-exec').is_file():
+        fail('new_platform', 'Hermes64 makes games on macOS (built-in sandbox-exec) and, after an opt-in, on Windows; '
+             'this computer has neither, so nothing was created.')
     from .doctor import godot_help
     notes = {}
     for tool, label, fix in (
@@ -320,7 +325,8 @@ def create(settings, premise, style=None, name=None, default_root=None, story=No
                                   required_modules=[m['id'] for m in spec.get('gameplay', {}).get('modules', [])
                                                     if m['id'] in ('combat', 'course', 'regions')])
         argv = [tools['godot'], '--path', str(project.root / 'play' / 'runtime'), '--', '--pack=res://theme.json']
-        command = ' '.join(shlex.quote(part) for part in argv)
+        from .platforms import command_line
+        command = command_line(argv)
         paths = {'source': 'source/spec.json', 'current': '.maker/current.json', 'proof': checked.get('report_path'),
                  'playtest': tested['report_path'], 'playtest_html': tested['html_path'], 'play_runtime': 'play/runtime',
                  'game_card': 'project.json', 'receipt': '.maker/new.json'}

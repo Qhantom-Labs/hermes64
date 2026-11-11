@@ -157,13 +157,13 @@ def judge(result, limits=None):
 
 def _manifest(goldens):
     p = Path(goldens) / 'manifest.json'
-    return json.loads(p.read_text()) if p.is_file() else {'format': 'hermes64-goldens/1', 'rooms': {}, 'approved': None}
+    return json.loads(p.read_text(encoding='utf-8')) if p.is_file() else {'format': 'hermes64-goldens/1', 'rooms': {}, 'approved': None}
 
 
 def compare(capture, goldens, limits=None, threshold=0.1):
     capture, goldens = Path(capture), Path(goldens)
     man = _manifest(goldens)
-    cap = json.loads((capture / 'capture.json').read_text())
+    cap = json.loads((capture / 'capture.json').read_text(encoding='utf-8'))
     rows = []
     for row in cap['rooms']:
         rid = row['id']
@@ -194,7 +194,7 @@ def bless(capture, goldens, by, note=''):
     capture, goldens = Path(capture), Path(goldens)
     goldens.mkdir(parents=True, exist_ok=True)
     man = _manifest(goldens)
-    cap = json.loads((capture / 'capture.json').read_text())
+    cap = json.loads((capture / 'capture.json').read_text(encoding='utf-8'))
     stamp = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     for row in cap['rooms']:
         src = capture / row.get('clean', row['id'] + '-clean.png')
@@ -206,7 +206,7 @@ def bless(capture, goldens, by, note=''):
         man['rooms'][row['id']] = {'sha256': hashlib.sha256(dst.read_bytes()).hexdigest(), 'blessed_by': by, 'blessed_at': stamp,
                                    'note': note}
     man['approved'] = None  # any re-bless needs a fresh human approval
-    (goldens / 'manifest.json').write_text(json.dumps(man, indent=2, sort_keys=True) + '\n')
+    (goldens / 'manifest.json').write_bytes((json.dumps(man, indent=2, sort_keys=True) + '\n').encode('utf-8'))
     return man
 
 
@@ -217,7 +217,7 @@ def approve(goldens, by):
         if hashlib.sha256((goldens / (rid + '.png')).read_bytes()).hexdigest() != row['sha256']:
             raise SystemExit('golden %s changed since it was blessed; re-bless first' % rid)
     man['approved'] = {'by': by, 'at': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}
-    (goldens / 'manifest.json').write_text(json.dumps(man, indent=2, sort_keys=True) + '\n')
+    (goldens / 'manifest.json').write_bytes((json.dumps(man, indent=2, sort_keys=True) + '\n').encode('utf-8'))
     return man
 
 
@@ -266,7 +266,7 @@ def controls(capture, goldens, out_dir, kinds=('washed_out', 'flat_chrome', 'emp
     capture may be None: the blessed goldens and their region masks are used directly."""
     goldens, out_dir = Path(goldens), Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    rids = sorted(_manifest(goldens)['rooms']) if capture is None else [r['id'] for r in json.loads((Path(capture) / 'capture.json').read_text())['rooms']]
+    rids = sorted(_manifest(goldens)['rooms']) if capture is None else [r['id'] for r in json.loads((Path(capture) / 'capture.json').read_text(encoding='utf-8'))['rooms']]
     rows = []
     for rid in rids:
         gold = goldens / (rid + '.png')

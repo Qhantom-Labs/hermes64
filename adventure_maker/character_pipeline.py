@@ -60,7 +60,7 @@ def _write_job(items, packs, out_dir):
     out_dir = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     jp = out_dir / 'job.json'
-    jp.write_text(json.dumps({'schema': 'hermes64-charsys-job/1', 'packs': packs, 'items': items}, indent=1, sort_keys=True))
+    jp.write_bytes(json.dumps({'schema': 'hermes64-charsys-job/1', 'packs': packs, 'items': items}, indent=1, sort_keys=True).encode('utf-8'))
     return out_dir, jp
 
 
@@ -70,7 +70,7 @@ def _run_job(items, packs, out_dir, invoke, blender, timeout):
     if res.get('returncode') != 0 or 'BUILD COMPLETE' not in res.get('stdout', ''):
         tail = (res.get('stdout', '') + res.get('stderr', ''))[-1500:]
         raise RuntimeError('blender build failed (exit %s): %s' % (res.get('returncode'), tail))
-    return json.loads((out_dir / 'build-report.json').read_text())
+    return json.loads((out_dir / 'build-report.json').read_text(encoding='utf-8'))
 
 
 def _glb_height(path):
@@ -109,11 +109,11 @@ def _run_job_python(items, packs, out_dir, invoke, python, timeout):
     if res.get('returncode') != 0 or 'BUILD COMPLETE' not in res.get('stdout', ''):
         tail = (res.get('stdout', '') + res.get('stderr', ''))[-1500:]
         raise RuntimeError('python character export failed (exit %s): %s' % (res.get('returncode'), tail))
-    rep = json.loads((out_dir / 'build-report.json').read_text())
+    rep = json.loads((out_dir / 'build-report.json').read_text(encoding='utf-8'))
     by_id = {it['id']: it for it in items}
     for info in rep['items']:
         _complete(info, by_id[info['id']], out_dir)
-    (out_dir / 'build-report.json').write_text(json.dumps(rep, indent=1, sort_keys=True))
+    (out_dir / 'build-report.json').write_bytes(json.dumps(rep, indent=1, sort_keys=True).encode('utf-8'))
     return rep
 
 
@@ -208,7 +208,7 @@ def build(recipes, lock, out_dir, *, invoke, blender=None, render=True, determin
         result['items'][rid] = {'ok': gates['ok'], 'glb': str(glb), 'sha256': info['sha256'], 'bytes': info['bytes'],
                                 'tris_body': info.get('tris_body'), 'clips': info['clips'], 'height_m': info.get('height_m'),
                                 'renders': renders, 'recipe': rep, 'gates': gates, 'exporter': exporter}
-    (out_dir / 'gates.json').write_text(json.dumps(result, indent=1, sort_keys=True))
+    (out_dir / 'gates.json').write_bytes(json.dumps(result, indent=1, sort_keys=True).encode('utf-8'))
     return result
 
 

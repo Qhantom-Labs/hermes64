@@ -44,7 +44,7 @@ def admitted_characters(root):
     path = root / 'bindings.json'
     if not path.is_file():
         return []
-    bound = json.loads(path.read_text())
+    bound = json.loads(path.read_text(encoding='utf-8'))
     rows = []
     for row in bound.get('characters', []):
         if row.get('internal_only') or not row.get('public_release', False) or row.get('character_id') in RESTRICTED_IDS:

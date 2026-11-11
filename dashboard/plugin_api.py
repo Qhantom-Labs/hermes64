@@ -339,8 +339,32 @@ def api_stop():
     return {'ok': True, 'stopped': _PlayServer.stop()}
 
 
-def api_launch(settings, body, runner=subprocess.run):
+def _start_detached(argv, cwd):
+    """Windows: start the exported game as its own process (no console, not tied to Hermes); returns at once."""
+    flags = getattr(subprocess, 'DETACHED_PROCESS', 0x8) | getattr(subprocess, 'CREATE_NEW_PROCESS_GROUP', 0x200)
+    subprocess.Popen(argv, cwd=cwd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+                     creationflags=flags, close_fds=True)
+
+
+def api_launch(settings, body, runner=subprocess.run, starter=_start_detached, platform=None):
     body = body if isinstance(body, dict) else {}
+    if body.get('target') == 'windows':
+        if (platform or sys.platform) != 'win32':
+            return _fail('PLATFORM', 'Windows builds open only on Windows')
+        try:
+            root, base_rel, entry = _export(settings, body.get('game'), 'windows')
+            with sc.Root(root) as r:
+                kind = (r.entry(base_rel + '/' + entry) or ('',))[0]
+        except sc.ScanError as exc:
+            return _fail(exc.code, exc.detail)
+        if kind != 'file' or not entry.lower().endswith('.exe'):
+            return _fail('NO_EXPORT', 'the Windows export has no .exe')
+        folder = os.path.join(root, *base_rel.split('/'))
+        try:
+            starter([os.path.join(folder, *entry.split('/'))], folder)
+        except OSError:
+            return _fail('LAUNCH', 'Windows refused to start the build (SmartScreen may need More info, then Run anyway)')
+        return {'ok': True}
     if body.get('target') != 'macos':
         return _fail('ARGUMENT', 'only macOS builds launch natively here')
     if sys.platform != 'darwin':

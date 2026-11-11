@@ -41,7 +41,7 @@ def uint(value, name='seed', maximum=2**32-1):
 
 
 def identity():
-    return json.loads((DATA / 'identity.json').read_text())['mastering']
+    return json.loads((DATA / 'identity.json').read_text(encoding='utf-8'))['mastering']
 
 
 def check_identity(p):

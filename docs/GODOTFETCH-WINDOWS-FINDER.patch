@@ -1,0 +1,17 @@
+diff --git a/adventure_maker/platforms.py b/adventure_maker/platforms.py
+--- a/adventure_maker/platforms.py
++++ b/adventure_maker/platforms.py
+@@ -124,6 +124,13 @@ def godot_candidates(platform=None, env=None, home=None):
+     plat = host(platform)
+     e = _env(env)
+     found = [override('godot', e)] if override('godot', e) else []
++    # Only inspect the real user's verified cache for real-host discovery.
++    # Keep explicit godot_path and HERMES64_GODOT ahead of automatic candidates;
++    # simulated Windows path inventories must not read the host's cache.
++    if platform is None and env is None and home is None:
++        from .godot_fetch import cached_godot
++        cached = cached_godot()
++        found += [str(cached)] if cached else []
+     if plat == 'win32':
+         h = _home(home, plat)
+         local, _roaming, progs, scoop = _win_dirs(e, h)

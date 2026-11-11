@@ -19,10 +19,10 @@ SHORT = {
     'hermes64_demo': ('Make a new game from a one-sentence premise (optional style): checks tools, builds, '
                       'proof-checks and bot-plays it, returns a proof badge and the play command. '
                       'Or run a bundled example (project + example).'),
-    'hermes64_doctor': 'Read-only check of the configured Python (numpy/Pillow), Godot and Blender. Installs and launches nothing.',
+    'hermes64_doctor': 'Read-only Python, Godot, Blender and setup/download plans. No engine launch, download or install.',
     'hermes64_pack_from_refs': ('Draft an unapproved theme pack from 1-8 project-local PNG/JPEG references plus a notes file. '
                                 'Local only; never auto-selected.'),
-    'hermes64_scaffold': 'Create project source from a premise starter or a story spec_json with a theme pack. Unvalidated: compile and check next.',
+    'hermes64_scaffold': 'Create source from spec_json or a starter. Original games: skill hermes64:hermes64-author. Unvalidated: compile and check next.',
     'hermes64_kits': 'List or inspect the bundled kit manifest, or a style pack (action=style). Read-only.',
     'hermes64_packs': 'List or inspect bundled and project-local theme packs. Read-only.',
     'hermes64_pack_create': 'Create a new data-only theme pack (pack_json) inside a project. Never overwrites.',
@@ -33,7 +33,7 @@ SHORT = {
                        'Failures return next: the calls that fix and retry.'),
     'hermes64_edit': ('Apply one story edit, recompile and re-check it; only a passing candidate is adopted. '
                       'Always check after editing; never hand-edit generated files.'),
-    'hermes64_build_assets': 'Build and validate theme assets with the configured kit builder (Blender default). No downloads.',
+    'hermes64_build_assets': 'Build and validate theme assets with the configured kit builder (auto default). No downloads.',
     'hermes64_replay': 'Replay checker witnesses in the Godot bot: every ending plus a save/load round trip.',
     'hermes64_benchmark': 'Measure 1-20 sequential story edits in isolated candidates without moving the live build; unrun gates report NOT RUN.',
     'hermes64_open': 'Open the current game in a bounded Godot preview (closes after seconds); screenshots=true also runs the measured style gate.',

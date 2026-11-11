@@ -1,10 +1,10 @@
 {
   "name": "hermes64",
   "version": "1.0.0-rc",
-  "requires_hermes": ">=0.20.1",
   "description": "Make and precisely edit N64-era-style 3D adventures with local story proofs and theme packs.",
   "author": "Dylan / Qhantom",
   "license": "MIT",
+  "requires_hermes": ">=0.18.2",
   "provides_tools": ["hermes64_scaffold", "hermes64_kits", "hermes64_packs", "hermes64_pack_create", "hermes64_pack_select", "hermes64_pack_validate", "hermes64_compile", "hermes64_check", "hermes64_edit", "hermes64_build_assets", "hermes64_replay", "hermes64_benchmark", "hermes64_open", "hermes64_modules", "hermes64_module_add", "hermes64_module_edit", "hermes64_module_check", "hermes64_module_benchmark", "hermes64_audio", "hermes64_playtest", "hermes64_export", "hermes64_demo", "hermes64_doctor", "hermes64_pack_from_refs", "hermes64_cover", "hermes64_character", "hermes64_hub"],
   "provides_hooks": [],
   "provides_middleware": [],
@@ -14,14 +14,14 @@
   "config_schema": {
     "projects_root": {"type": "str", "default": "", "description": "Absolute owner-chosen existing directory for game projects. No writes until chosen."},
     "bundle_root": {"type": "str", "default": "", "description": "Trusted assembled repository path; blank uses the plugin root. Not a user game directory."},
-    "builder": {"type": "str", "default": "blender", "description": "Static kit builder: python, blender or auto. auto uses Python for static kits and Blender for armatures. Python requires numpy in python_path. Default promotion is parity-gated; see docs/NOBLENDER-PARITY.md."},
+    "builder": {"type": "str", "default": "auto", "description": "Room/prop model builder: auto, python or blender. auto (default) uses Blender when it is installed and the Python builder when it is not; python always uses the Python builder; blender always needs Blender. The Python builder needs numpy in python_path. Strict Python-vs-Blender mesh parity is not proven (docs/NOBLENDER-PARITY.md)."},
     "python_path": {"type": "str", "default": "", "description": "Existing Python 3.9+ executable; static builds need numpy, JPEG references additionally need Pillow. Blank discovers python3 on PATH."},
     "blender_path": {"type": "str", "default": "", "description": "Existing Blender executable; blank checks /opt/homebrew/bin/blender then PATH."},
     "character_exporter": {"type": "str", "default": "auto", "description": "Character bodies: python, blender or auto. auto uses the Blender-free python exporter (numpy in python_path, parity PASS), else Blender."},
-    "godot_path": {"type": "str", "default": "", "description": "Existing Godot executable; blank checks /Applications/Godot.app/Contents/MacOS/Godot then PATH."},
+    "godot_path": {"type": "str", "default": "", "description": "Existing Godot executable; an explicit path wins. Blank checks the verified setup --fetch user cache, /Applications/Godot.app/Contents/MacOS/Godot, then PATH."},
     "rigkit_root": {"type": "str", "default": "", "description": "Leave blank: the rig kit is bundled (adventure_maker.rigkit). Only read when a trimmed install lacks it; without a rig kit, character gates fail closed."},
     "hub_registry": {"type": "str", "default": "", "description": "Optional absolute folder of a Hermes64 Hub registry (with index.json) to browse instead of the bundled one. Local files only."},
     "ffmpeg_path": {"type": "str", "default": "", "description": "Optional ffmpeg executable for importing your own MP3/OGG/WAV audio (hermes64_audio action=import). Blank checks tools/bin/<platform>/ffmpeg, then PATH and common install folders. Never downloaded."},
-    "hub_url": {"type": "str", "default": "", "description": "Optional https:// address of a Hermes64 Hub registry you trust. Blank keeps downloads off: nothing is ever fetched unless you set this."}
+    "hub_url": {"type": "str", "default": "", "description": "Optional https:// address of a Hermes64 Hub registry you trust. Blank keeps Hub downloads off. Separately, a user-typed setup --fetch --yes downloads official SHA-512-pinned Godot files."}
   }
 }

@@ -322,7 +322,7 @@ _CACHE = {}
 def load(path=TAGS):
     key = str(path)
     if key not in _CACHE:
-        _CACHE[key] = json.loads(Path(path).read_text())
+        _CACHE[key] = json.loads(Path(path).read_text(encoding="utf-8"))
     return _CACHE[key]
 
 
@@ -518,7 +518,7 @@ def main(argv=None):
     brief = None
     wanted = argv[1:]
     if wanted[:1] == ["--brief"]:
-        brief = json.loads(Path(wanted[1]).read_text())
+        brief = json.loads(Path(wanted[1]).read_text(encoding="utf-8"))
         wanted = wanted_from_brief(brief) + wanted[2:]
     rep = gap_report(wanted, brief=brief)
     print("\n".join(report_lines(rep)))

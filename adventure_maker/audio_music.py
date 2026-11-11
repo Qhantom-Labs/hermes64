@@ -22,7 +22,7 @@ LAYERS = {'explore':(1.,1.,.7,.35,.18), 'tension':(1.,.6,1.,.8,.65),
 
 
 def library():
-    return json.loads((d.DATA/'music.json').read_text())
+    return json.loads((d.DATA/'music.json').read_text(encoding='utf-8'))
 
 
 def resolve(params):

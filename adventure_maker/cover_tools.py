@@ -90,7 +90,7 @@ class CoverService:
             style = cover_style.resolve(spec, Packs(self.settings, project), self.root)
             if style_id and style.id != style_id:
                 fail('cover_scene', 'Scene style %s does not match the project pack %s' % (style_id, style.id))
-        bind = json.loads((self.root / 'bindings.json').read_text()) if (self.root / 'bindings.json').is_file() else {}
+        bind = json.loads((self.root / 'bindings.json').read_text(encoding='utf-8')) if (self.root / 'bindings.json').is_file() else {}
         cast = cover_scene.cast_table(spec, bind, self.root)
         return cover_scene.CoverContext(style, cast, self.root)
 

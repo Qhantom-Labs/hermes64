@@ -13,12 +13,18 @@ metadata:
 
 # Hermes64 authoring
 
-Create any N64-era-style 3D adventure within the story contract. Themes are data packs, not hard-coded game modes. `polar_pod` is the demo pack for Thaw; it is not the product. A premise creates an explicit two-room starter, not an automatically finished game.
+Create any N64-era-style 3D adventure within the story contract. Themes are data packs, not hard-coded game modes. `polar_pod` is the demo pack for Thaw; it is not the product. A premise creates an explicit two-room starter, not an automatically finished game. For an original prompt, load **hermes64:hermes64-author**: it teaches compact world-map compilation, NPC dialogue, gates, branching quests, timed courses and real verification. User guide: `docs/AUTHORING.md`; limits: `docs/AUTHORING-SCOPE.md`.
 
 ## When to use
 - Scaffold an original adventure, author story logic, change entrances/roles/endings, or compare edit regressions.
 - Create/select a new visual theme using pack data and the same core.
-- Do not use this as an arbitrary command runner or to install engines.
+- Do not use this as an arbitrary command runner. Engine setup is allowed only via the explicit consented fetch below.
+
+## First-run setup
+- `/hermes64 setup` is a read-only checklist. The `hermes64_doctor` tool includes that checklist and the official editor/export-template download plan automatically.
+- If Godot is missing, inspect `hermes64_doctor`'s `setup.download_plan`: it returns the official files, SHA-512 pins, caps and cache folder plus the command the user must type. The tool never downloads and has no consent argument: show the plan and ask the user to type `/hermes64 setup --fetch --yes` (`--templates` for the official export templates) themselves. Never type or dispatch that command for them, and never infer approval from a game-making request.
+- CLI equivalent: `python3 tools/hermes64_setup.py --fetch` (`py` on Windows). It prompts `[y/N]`; `--yes` is explicit noninteractive consent typed by the user. Download failure is not successful setup; rerun the same command to restart cleanly, not a manual unverified unpack.
+- Verified Godot lives in the per-user cache and is discovered without changing settings. An explicit `godot_path` still wins; clear/change an obsolete override rather than silently ignoring it. See `docs/SETUP-FETCH.md`. Linux fetch is unsupported; Windows child-runner isolation still has its independent gate.
 
 ## Prerequisites
 An owner chooses the existing `projects_root` (blank: `new` uses the profile's default games folder) and the trusted assembled `bundle_root` in Hermes64 settings. The project argument is a single slug, never a filesystem path. Python and Godot must already exist; Blender is needed only for Blender asset builds and new character bodies. This release requires the macOS subprocess sandbox and fails closed elsewhere. Do not disable the sandbox on error.
@@ -74,7 +80,7 @@ The advertised schemas are compact; handlers validate the full shapes:
 - Compile is not proof; proof is not a rendered playthrough. No generated-file patch can repair source truth.
 - E2 selects an existing role profile; E3 needs an explicit authored trigger and ending. Do not invent unrequested prose.
 - An empty or failed benchmark dimension is not a success. Asset exit zero requires a measured report too.
-- No network, downloads, export-template installs, background services, credentials, or public publication through these tools. The one exception is opt-in: hub downloads happen only from the `hub_url` the owner sets (blank by default).
+- No background services, credentials or public publication through these tools. Network/download exceptions are explicit: the user-typed setup --fetch for official SHA-512-pinned Godot files, and hub downloads from the owner's configured hub_url. Neither happens automatically.
 - Busy projects refuse concurrent writes. Inspect interrupted receipts before manually recovering a stale lock; never delete it while another tool is active.
 - The local registration tests do not prove real Hermes loading or catalog admission. See RESULT.md and the checklist.
 - For offline integration acceptance, run `sh tools/verify_all.sh` and cite its retained environment/argv/exit receipts. Background shells can resolve a different Python than foreground probes; trust the executed interpreter, not an earlier `python3 --version`. The wrapper aligns child discovery with its chosen interpreter.

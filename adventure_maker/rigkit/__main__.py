@@ -75,9 +75,9 @@ def main(argv=None):
         from .report import report, markdown
         doc = report(a.oracle, keys='all' if a.keys == 'all' else int(a.keys))
         Path(a.out).parent.mkdir(parents=True, exist_ok=True)
-        Path(a.out).write_text(json.dumps(doc, indent=1, sort_keys=True) + '\n')
+        Path(a.out).write_bytes((json.dumps(doc, indent=1, sort_keys=True) + '\n').encode('utf-8'))
         if a.md:
-            Path(a.md).write_text(markdown(doc))
+            Path(a.md).write_bytes(markdown(doc).encode('utf-8'))
         print(json.dumps(doc['summary']))
         return 0 if doc['summary']['pass'] == doc['summary']['files'] else 1
     if a.cmd == 'build-kits':
