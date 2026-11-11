@@ -1,0 +1,10 @@
+{
+ "format":"hermes64-recipe/1", "id":"crystal_spire", "class":"structure", "licence":"CC0-1.0",
+ "parameters":{"height":{"type":"number","default":2.4,"minimum":1.8,"maximum":3.0}},
+ "operations":[
+  {"primitive":"lathe","role":"stone","args":{"profile":[[0.58,0],[0.58,0.18]],"segs":6}},
+  {"primitive":"lathe","role":"glass","args":{"profile":[[0.34,0.16],[0.42,{"param":"height","mul":0.18}],[0.28,{"param":"height","mul":0.78}],[0,{"param":"height"}]],"segs":6}},
+  {"primitive":"lathe","role":"trim","args":{"profile":[[0.36,0.19],[0.36,0.26]],"segs":6}}
+ ],
+ "sockets":[{"id":"crown","position":[0,0,{"param":"height"}],"facing":"up"}]
+}

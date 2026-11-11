@@ -72,9 +72,9 @@ class Materials:
                                        'roughnessFactor': f32(.2 if kind=='chrome_env' else .05)}
             info.update(env=spec['env'],tint=spec['tint'])
         elif kind in TEXTURED_KINDS:
-            arr = make_texture(spec['texture'],self.pack.pal,self.pack.id,role)
+            arr = make_texture(spec['texture'],self.pack.pal,self.pack.seed_id,role)
             if kind == 'card_alpha':
-                a = alpha_mask(spec['texture'].get('alpha','disc'),arr.shape[0],self.pack.id,role)
+                a = alpha_mask(spec['texture'].get('alpha','disc'),arr.shape[0],self.pack.seed_id,role)
                 arr = np.concatenate([arr,a[:,:,None]],2)
             name = 'tex_%s_%s'%(self.pack.id,role)
             raw = png.encode(arr)

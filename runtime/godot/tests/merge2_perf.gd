@@ -219,6 +219,7 @@ func apply_levers(_room := "") -> void:
 		view.n64_ui.visible = false
 		view.n64_ui.set_process(false)
 		view.controls_hud.visible = false
+		if view.key_overlay != null: view.key_overlay.visible = false
 		if view.module_host != null and view.module_host.hud != null: view.module_host.hud.visible = false
 	if "msaa2" in tokens: view.viewport.msaa_3d = Viewport.MSAA_2X
 	if "msaa0" in tokens: view.viewport.msaa_3d = Viewport.MSAA_DISABLED

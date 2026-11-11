@@ -53,6 +53,16 @@ def display_available():
     return (name == 'Aqua'), ('GUI session' if name == 'Aqua' else 'no GUI session (%s)' % (name or 'unknown'))
 
 
+ROOM_TRIS_CEILING = 8000   # kits/core/style_bible.json: the largest room_tris any budget profile may name
+
+
+def room_tris_cap(lock, room_pres):
+    """The pack cap, or the compiled room's style-bible budget profile cap ("budget": {"room_tris": N}), never above
+    ROOM_TRIS_CEILING. Rooms without a budget block keep the pack's strict cap."""
+    v = ((room_pres or {}).get('budget') or {}).get('room_tris')
+    return min(int(v), ROOM_TRIS_CEILING) if isinstance(v, int) and v > 0 else lock['room_tris']
+
+
 def room_path(rid, *rest):
     return ('metadata', 'presentation', 'rooms', rid) + rest
 
@@ -77,6 +87,12 @@ def known_assets(root, pack):
     base = pack['id'] if (root / 'packs' / pack['id'] / 'bindings.json').is_file() else pack['kit_pack_id']
     keys = set(json.loads((root / 'packs' / base / 'bindings.json').read_text(encoding='utf-8'))['assets'])
     return keys | {'_floor', '_wall', ''}
+
+
+def pack_presets(pack):
+    """'preset/<id>' refs the pack's presets bind (the asset stage builds every one; create-flow gen: pieces and core-kit
+    stand-ins draw through them). A ref the pack does not declare still counts as a cuboid placeholder (TFIX F2)."""
+    return {'preset/' + p['id'] for p in pack.get('presets') or [] if isinstance(p, dict) and p.get('id')}
 
 
 def cast_rows(root):
@@ -125,6 +141,7 @@ def look_colours(value, trail=()):
 def static_findings(root, spec, pack, lock):
     out = []
     known = known_assets(root, pack)
+    drawn = known | pack_presets(pack)     # suggestions below still come from the base bindings only
     pres = ((spec.get('metadata') or {}).get('presentation') or {}).get('rooms') or {}
     anchors = (spec.get('metadata') or {}).get('collectible_prop_ids') or {}
     bound = {anchors.get(c['id'], c['id']) for c in spec.get('collectibles', []) if c.get('character')}
@@ -133,7 +150,7 @@ def static_findings(root, spec, pack, lock):
         prow = pres.get(rid) or {}
         for i, piece in enumerate(prow.get('pieces') or []):
             ref = piece.get('asset', '')
-            if ref not in known:
+            if ref not in drawn:
                 pick = nearest_asset(ref, known - {'', '_floor', '_wall'})
                 out.append(finding('missing_binding', 'rooms/%s/pieces/%d' % (rid, i),
                                    'room %s piece %r has no asset (draws a magenta cuboid): use %s' % (rid, ref, pick),
@@ -145,9 +162,9 @@ def static_findings(root, spec, pack, lock):
                                lambda b, rid=rid, pick=pick: b.op('replace', pointer(*room_path(rid, 'floor')), pick), room=rid,
                                check='cuboid_placeholder'))
         for k, prop in enumerate(room.get('props', [])):
-            if prop['id'] in bound and prop.get('asset') not in known:
+            if prop['id'] in bound and prop.get('asset') not in drawn:
                 continue  # a collectible's character stands here; the runtime draws no prop for it
-            if prop.get('asset') not in known:
+            if prop.get('asset') not in drawn:
                 pick = nearest_asset(prop['asset'], known - {'', '_floor', '_wall'})
                 pid = prop['id']
                 out.append(finding('missing_binding', 'rooms/%s/props/%s' % (rid, pid),
@@ -309,9 +326,10 @@ def rendered_findings(root, folder, spec, pack, lock):
                     rid, ds['spread_m'], DEPTH_SPREAD_MIN_M), room=rid, check='depth'))
         # Budgets.
         tris = int(crow.get('triangles', 0))
-        if tris > lock['room_tris']:
-            f.append(finding('over_budget', 'rooms/' + rid, 'room %s is %d triangles over the %d cap' % (rid, tris - lock['room_tris'], lock['room_tris']),
-                             room=rid, check='triangles', measured=tris, limit=lock['room_tris'],
+        tri_cap = room_tris_cap(lock, pres.get(rid))
+        if tris > tri_cap:
+            f.append(finding('over_budget', 'rooms/' + rid, 'room %s is %d triangles over the %d cap' % (rid, tris - tri_cap, tri_cap),
+                             room=rid, check='triangles', measured=tris, limit=tri_cap,
                              top=((crow.get('triangles_split') or {}).get('top') or [])[:10]))
         inv = (extra.get(rid) or {}).get('inventory') or {}
         if inv.get('surfaces', 0) > DRAW_BUDGET:

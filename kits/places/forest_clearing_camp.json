@@ -1,0 +1,610 @@
+{
+ "format": "hermes64-place/1",
+ "id": "forest_clearing_camp",
+ "name": "Forest Clearing Camp",
+ "description": "A camp in a forest clearing: a ring of oaks and pines, a fire at the centre with logs to sit on, a lantern, supplies and a cart at the edge, rocks, bushes and flowers on the grass.",
+ "genres": [
+  "fantasy",
+  "medieval",
+  "nature",
+  "adventure"
+ ],
+ "kit": "medieval",
+ "base_pack": "medieval_village",
+ "look_profile": "village",
+ "exterior": true,
+ "default_mood": "base",
+ "moods": {
+  "base": "base",
+  "golden_hour": "derive",
+  "ember_night": "derive",
+  "purple_dusk": "derive",
+  "dusk": "pack:medieval_village_dusk",
+  "night": "pack:medieval_village_night"
+ },
+ "texture_roles": [
+  "grass",
+  "foliage",
+  "bark",
+  "wood",
+  "rock",
+  "sky"
+ ],
+ "lighting": {
+  "look_profile": "village",
+  "sky": "mter.backdrop (painted sky + hills, viewer origin)",
+  "fog": "look profile",
+  "lights": "the campfire and lantern carry glow roles"
+ },
+ "spawn": {
+  "entrance": "a postern gate in a hedge line on the south edge (the medieval kit's cut-door wall piece; a door must exist because every region has to be reachable)",
+  "checkpoint": "2 m in from the south edge"
+ },
+ "clearance": {
+  "rule": "tools.room_clearance from the south trail point; focal approach reachable; tree canopies count as solid footprints",
+  "overhead_tris": 200,
+  "reserve_tris": 300
+ },
+ "params": {
+  "size": "small",
+  "clutter": 1
+ },
+ "max_coverage": 0.42,
+ "wants": [
+  "tent",
+  "bedroll",
+  "cooking pot",
+  "woodpile"
+ ],
+ "zones": {
+  "entrance_depth_m": 4.0,
+  "entrance_width_m": 4.0,
+  "path_width_m": 2.0,
+  "nook_m": 4.0,
+  "fight_clear_m": 0
+ },
+ "footprints": [
+  {
+   "size": "small",
+   "plot_cells": [
+    4,
+    4
+   ],
+   "skeleton": [
+    {
+     "key": "mter.ground__meadow_4",
+     "block": [
+      0,
+      0
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_4",
+     "block": [
+      -4,
+      0
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_4",
+     "block": [
+      0,
+      4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_4",
+     "block": [
+      4,
+      0
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_4",
+     "block": [
+      0,
+      -4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_far",
+     "block": [
+      -4,
+      -4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_far",
+     "block": [
+      4,
+      -4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_far",
+     "block": [
+      -4,
+      4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_far",
+     "block": [
+      4,
+      4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.backdrop",
+     "at_m": [
+      8.5,
+      8.5
+     ],
+     "scale": 0.2,
+     "kind": "vista"
+    },
+    {
+     "key": "vlg.wall__postern",
+     "edge": [
+      2,
+      3,
+      "s"
+     ]
+    },
+    {
+     "key": "mnat.hedgerow",
+     "edge": [
+      0,
+      3,
+      "s"
+     ]
+    },
+    {
+     "key": "mnat.hedgerow",
+     "edge": [
+      1,
+      3,
+      "s"
+     ]
+    },
+    {
+     "key": "mnat.hedgerow",
+     "edge": [
+      3,
+      3,
+      "s"
+     ]
+    }
+   ],
+   "floor_rect_m": [
+    0.5,
+    0.5,
+    16.5,
+    16.5
+   ],
+   "walk_rect_m": [
+    0.9,
+    0.9,
+    16.1,
+    15.7
+   ],
+   "place_rect_m": [
+    3.2,
+    3.2,
+    13.8,
+    13.8
+   ],
+   "perimeter_rect_m": [
+    0.0,
+    0.0,
+    17.0,
+    17.0
+   ],
+   "doors": [
+    {
+     "id": "trail",
+     "side": "s",
+     "cell": 2,
+     "at_m": 10.5
+    }
+   ],
+   "entrance": {
+    "id": "trail",
+    "side": "s",
+    "at_m": 10.5
+   },
+   "focal_m": [
+    8.5,
+    7.8
+   ],
+   "focal_reach_m": 2.9,
+   "min_clear_m": 4.0,
+   "blocked_m": [
+    [
+     0.0,
+     15.7,
+     17.0,
+     17.2
+    ]
+   ]
+  },
+  {
+   "size": "large",
+   "plot_cells": [
+    5,
+    5
+   ],
+   "skeleton": [
+    {
+     "key": "mter.ground__meadow_4",
+     "block": [
+      0,
+      0
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_4",
+     "block": [
+      4,
+      0
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_4",
+     "block": [
+      0,
+      4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_4",
+     "block": [
+      4,
+      4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_far",
+     "block": [
+      -4,
+      0
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_far",
+     "block": [
+      0,
+      -4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_far",
+     "block": [
+      -4,
+      -4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_far",
+     "block": [
+      4,
+      -4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.ground__meadow_far",
+     "block": [
+      -4,
+      4
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "mter.backdrop",
+     "at_m": [
+      10.5,
+      10.5
+     ],
+     "scale": 0.2,
+     "kind": "vista"
+    },
+    {
+     "key": "vlg.wall__postern",
+     "edge": [
+      2,
+      4,
+      "s"
+     ]
+    },
+    {
+     "key": "mnat.hedgerow",
+     "edge": [
+      0,
+      4,
+      "s"
+     ]
+    },
+    {
+     "key": "mnat.hedgerow",
+     "edge": [
+      1,
+      4,
+      "s"
+     ]
+    },
+    {
+     "key": "mnat.hedgerow",
+     "edge": [
+      3,
+      4,
+      "s"
+     ]
+    },
+    {
+     "key": "mnat.hedgerow",
+     "edge": [
+      4,
+      4,
+      "s"
+     ]
+    }
+   ],
+   "floor_rect_m": [
+    0.5,
+    0.5,
+    20.5,
+    20.5
+   ],
+   "walk_rect_m": [
+    0.9,
+    0.9,
+    20.1,
+    19.7
+   ],
+   "place_rect_m": [
+    3.4,
+    3.4,
+    17.6,
+    17.6
+   ],
+   "perimeter_rect_m": [
+    0.0,
+    0.0,
+    21.0,
+    21.0
+   ],
+   "doors": [
+    {
+     "id": "trail",
+     "side": "s",
+     "cell": 2,
+     "at_m": 10.5
+    }
+   ],
+   "entrance": {
+    "id": "trail",
+    "side": "s",
+    "at_m": 10.5
+   },
+   "focal_m": [
+    10.5,
+    9.6
+   ],
+   "focal_reach_m": 2.9,
+   "min_clear_m": 5.0,
+   "blocked_m": [
+    [
+     0.0,
+     19.7,
+     21.0,
+     21.2
+    ]
+   ]
+  }
+ ],
+ "groups": [
+  {
+   "id": "fire",
+   "rule": "focal-point",
+   "tag": {
+    "kind": "campfire"
+   },
+   "prefer": [
+    "wprop.campfire"
+   ],
+   "count": [
+    1,
+    1
+   ],
+   "required": true,
+   "tier": "floor"
+  },
+  {
+   "id": "logs",
+   "rule": "ring-focal",
+   "tag": {
+    "kind": "log"
+   },
+   "prefer": [
+    "mnat.stump__log",
+    "mnat.stump__mossy_log"
+   ],
+   "variety": 2,
+   "count": [
+    2,
+    4
+   ],
+   "radius_m": 2.2,
+   "spacing_m": 0.4,
+   "tier": "floor"
+  },
+  {
+   "id": "lantern",
+   "rule": "flanking-focal",
+   "tag": {
+    "kind": "lantern"
+   },
+   "prefer": [
+    "mprop.lantern"
+   ],
+   "count": [
+    1,
+    2
+   ],
+   "lateral_m": 3.4,
+   "tier": "floor"
+  },
+  {
+   "id": "trees",
+   "rule": "perimeter",
+   "tag": {
+    "kind": "tree"
+   },
+   "prefer": [
+    "mnat.oak",
+    "mnat.pine",
+    "mnat.oak__young",
+    "mnat.pine__short"
+   ],
+   "avoid": [
+    "alien.cap_tree",
+    "alien.cap_tree__triple",
+    "alien.cap_tree__young"
+   ],
+   "variety": 4,
+   "count": [
+    6,
+    10
+   ],
+   "band_m": 3.2,
+   "spacing_m": 0.2,
+   "tier": "floor"
+  },
+  {
+   "id": "supplies",
+   "rule": "cluster",
+   "nooks": [
+    "nw",
+    "ne",
+    "sw",
+    "se"
+   ],
+   "clusters": 2,
+   "tag": {
+    "kind": [
+     "crate",
+     "barrel",
+     "sack",
+     "basket"
+    ]
+   },
+   "prefer": [
+    "mprop.crate",
+    "mprop.barrel",
+    "mprop.sack__pile",
+    "mprop.basket"
+   ],
+   "variety": 4,
+   "count": [
+    1,
+    5
+   ],
+   "spacing_m": 0.3,
+   "tier": "floor"
+  },
+  {
+   "id": "cart",
+   "rule": "cluster",
+   "nooks": [
+    "nw",
+    "ne"
+   ],
+   "tag": {
+    "kind": "cart"
+   },
+   "prefer": [
+    "mprop.cart",
+    "mprop.cart__sacks"
+   ],
+   "variety": 2,
+   "count": [
+    0,
+    1
+   ],
+   "tier": "floor"
+  },
+  {
+   "id": "rocks",
+   "rule": "scatter",
+   "tag": {
+    "kind": "rock"
+   },
+   "prefer": [
+    "mnat.rock",
+    "mnat.rock__cluster"
+   ],
+   "variety": 2,
+   "count": [
+    1,
+    4
+   ],
+   "spacing_m": 1.4,
+   "tier": "floor"
+  },
+  {
+   "id": "bushes",
+   "rule": "scatter",
+   "tag": {
+    "kind": "bush"
+   },
+   "prefer": [
+    "mnat.bush",
+    "mnat.bush__berry",
+    "mnat.bush__flowering"
+   ],
+   "variety": 3,
+   "count": [
+    1,
+    4
+   ],
+   "spacing_m": 1.4,
+   "tier": "floor"
+  },
+  {
+   "id": "flowers",
+   "rule": "scatter",
+   "tag": {
+    "kind": "flower"
+   },
+   "prefer": [
+    "mnat.flowers",
+    "mnat.flowers__tufts",
+    "mnat.flowers__mushrooms"
+   ],
+   "variety": 3,
+   "count": [
+    0,
+    4
+   ],
+   "spacing_m": 1.0,
+   "tier": "floor"
+  }
+ ]
+}

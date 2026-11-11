@@ -38,7 +38,7 @@ def pack_tables(pack, root):
            "ramps": {k: [names.index(n) for n in v] for k, v in (pack.d.get("ramps") or {}).items()},
            "light_ramp": list(pack.light_ramp)}
     pj = os.path.join(d, "palette.json")
-    json.dump(pal, open(pj, "w"), indent=1, sort_keys=True)
+    json.dump(pal, open(pj, "w", encoding='utf-8'), indent=1, sort_keys=True)
     lut = os.path.join(d, "lut16.png")
     png.write(lut, pack.pal.lut16())
     mats = {}
@@ -51,7 +51,7 @@ def pack_tables(pack, root):
             e["texture_gen"] = m["texture"].get("gen")
         mats["mat_%s_%s" % (pack.id, role)] = e
     mj = os.path.join(d, "materials.json")
-    json.dump(mats, open(mj, "w"), indent=1, sort_keys=True)
+    json.dump(mats, open(mj, "w", encoding='utf-8'), indent=1, sort_keys=True)
     envs = []
     for name in sorted(pack.env_maps):  # env maps for chrome_env / glass_env (runtime inputs, not embedded)
         ep = os.path.join(d, "env", name + ".png")
@@ -131,13 +131,13 @@ def main(argv):
             for fn in sorted(os.listdir(rd)):
                 if fn.endswith(".json"):
                     p = os.path.join(rd, fn)
-                    r = json.load(open(p))
+                    r = json.load(open(p, encoding='utf-8'))
                     rooms.append({"layout": r["layout_id"], "pack": pk, "file": os.path.relpath(p, os.path.join(LANE, "kits")),
                                   "sha256": sha(p), "room_tris": r["room_tris"], "pieces": len(r["pieces"])})
     report = {"tag": a.tag, "builds_passed": builds, "problems": problems, "seconds": round(time.time() - t0, 1),
               "out_root": root, "blender": bpy.app.version_string}
     os.makedirs(os.path.join(LANE, "reports", "manifest"), exist_ok=True)
-    json.dump(report, open(os.path.join(LANE, "reports", "manifest", a.tag + ".json"), "w"), indent=1, sort_keys=True)
+    json.dump(report, open(os.path.join(LANE, "reports", "manifest", a.tag + ".json"), "w", encoding='utf-8'), indent=1, sort_keys=True)
     if not a.no_manifest:
         man = {"contract_version": CONTRACT_VERSION, "blender": bpy.app.version_string,
                "generated": time.strftime("%Y-%m-%d %H:%M:%S %Z"),
@@ -148,7 +148,7 @@ def main(argv):
                "skeletons": {}, "kits": [entries[k] for k in sorted(entries)],
                "layouts": layouts, "rooms": rooms}
         mp = os.path.join(root, "manifest.json")
-        json.dump(man, open(mp, "w"), indent=1, sort_keys=True)
+        json.dump(man, open(mp, "w", encoding='utf-8'), indent=1, sort_keys=True)
         print("MANIFEST", mp, "kits", len(entries), "builds", builds, "sha256", sha(mp))
     print("MANIFEST TOTAL builds_passed=%d problems=%d -> exit %d" % (builds, len(problems), 3 if problems else 0))
     return 3 if problems else 0

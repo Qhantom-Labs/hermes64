@@ -1,0 +1,111 @@
+{
+ "format": "hermes64-texture-values/1",
+ "slots": {
+  "banner_crest": {
+   "format": "hermes64-mask/1",
+   "name": "keep crest: tower and key",
+   "grid": 32,
+   "tones": [
+    "field",
+    "charge",
+    "border"
+   ],
+   "background": 0,
+   "prims": [
+    {
+     "op": "rect",
+     "at": [
+      11,
+      6
+     ],
+     "size": [
+      10,
+      12
+     ],
+     "tone": 1
+    },
+    {
+     "op": "rect",
+     "at": [
+      10,
+      4
+     ],
+     "size": [
+      3,
+      3
+     ],
+     "tone": 1
+    },
+    {
+     "op": "rect",
+     "at": [
+      14.5,
+      4
+     ],
+     "size": [
+      3,
+      3
+     ],
+     "tone": 1
+    },
+    {
+     "op": "rect",
+     "at": [
+      19,
+      4
+     ],
+     "size": [
+      3,
+      3
+     ],
+     "tone": 1
+    },
+    {
+     "op": "rect",
+     "at": [
+      14.5,
+      13
+     ],
+     "size": [
+      3,
+      5
+     ],
+     "tone": 0
+    },
+    {
+     "op": "disc",
+     "at": [
+      16,
+      22.5
+     ],
+     "r": 2.5,
+     "tone": 1
+    },
+    {
+     "op": "rect",
+     "at": [
+      15,
+      24
+     ],
+     "size": [
+      2,
+      5
+     ],
+     "tone": 1
+    },
+    {
+     "op": "rect",
+     "at": [
+      17,
+      26.5
+     ],
+     "size": [
+      2,
+      1.5
+     ],
+     "tone": 1
+    }
+   ]
+  }
+ }
+}

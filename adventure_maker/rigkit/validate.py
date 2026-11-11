@@ -19,6 +19,36 @@ ROOT_DRIFT_TOL = 1e-5   # metres of horizontal root translation allowed
 TIME_TOL = 1e-5
 PROFILES = ('grounded', 'hover')
 EDGE_LIMITS = (.45, 1.8)
+# Declared clip forms (lane CHARBIND, docs/CHARBIND-RESULT.md "rig contract amendment"). Only what a file declares is
+# judged by these rules; an undeclared key or clip keeps the rig's own floor and root-motion rules.
+#   run flight: the locomotion block (root extras hermes64_locomotion, base_v1 bake) lists the run keys that leave the
+#     floor, and the run clip carries the same base in its extras. On exactly those keys the lowest vertex may be above
+#     the floor, at most FLIGHT_MAX_FRACTION x rest height; it may never sink below it.
+#   seated: an animation with extras hermes64_seat {height_m} sits on a seat. Its root keeps one horizontal placement
+#     on every key (at most SEAT_MAX_OFFSET_M from rest) and its lowest vertex never goes below the floor.
+LOCOMOTION_BLOCK = 'hermes64_locomotion'
+SEAT_KEY = 'hermes64_seat'
+FLIGHT_MAX_FRACTION = .15
+SEAT_MAX_OFFSET_M = .5
+SEAT_HEIGHT_M = (.2, 1.2)
+
+
+def declarations(doc):
+    """{'flight': {clip: set(keys)}, 'seats': {clip: seat height m}} that this file declares (see above)."""
+    out = {'flight': {}, 'seats': {}}
+    anims = {a.get('name'): a for a in doc.get('animations', [])}
+    block = (doc.get('extras') or {}).get(LOCOMOTION_BLOCK)
+    if isinstance(block, dict) and 'run' in anims:
+        keys = (block.get('run') or {}).get('flight_keys')
+        tagged = (anims['run'].get('extras') or {}).get(LOCOMOTION_BLOCK)
+        if tagged and tagged == block.get('base') and isinstance(keys, list) and all(type(k) is int for k in keys):
+            out['flight']['run'] = set(keys)
+    for name, a in anims.items():
+        seat = (a.get('extras') or {}).get(SEAT_KEY)
+        h = seat.get('height_m') if isinstance(seat, dict) else None
+        if isinstance(h, (int, float)) and SEAT_HEIGHT_M[0] <= h <= SEAT_HEIGHT_M[1]:
+            out['seats'][name] = float(h)
+    return out
 
 
 class Report:
@@ -174,7 +204,8 @@ def _skin(rep, rig, doc, binary, ctx):
     rep.check('skin', max_influences=max_inf, weights_sum_dev=worst_sum)
 
 
-def _clips(rep, rig, doc, binary, ctx, clips, combat, profile='grounded'):
+def _clips(rep, rig, doc, binary, ctx, clips, combat, profile='grounded', decl=None):
+    seats = (decl or {}).get('seats', {})
     anims = {a.get('name'): a for a in doc.get('animations', [])}
     want = list(clips) if clips is not None else rig.required_clips(combat)
     if profile == 'hover' and clips is None:          # rig.json hover.optional_clips (sit): checked only when present
@@ -223,7 +254,13 @@ def _clips(rep, rig, doc, binary, ctx, clips, combat, profile='grounded'):
                     rep.warn('clips', 'clip.joint_limit', '%s %s rotates %.1f deg > limit %.1f' % (name, nm, ang, lim))
             elif path == 'translation':
                 rest = np.array(nodes[ch['target']['node']].get('translation', [0, 0, 0]), dtype=np.float64)
-                drift = float(max(np.abs(v[:, 0] - rest[0]).max(), np.abs(v[:, 2] - rest[2]).max()))
+                if name in seats:          # declared seat: one fixed horizontal placement, no travel
+                    drift = float(max(np.abs(v[:, 0] - v[0, 0]).max(), np.abs(v[:, 2] - v[0, 2]).max()))
+                    if math.hypot(v[0, 0] - rest[0], v[0, 2] - rest[2]) > SEAT_MAX_OFFSET_M:
+                        rep.error('clips', 'clip.root_motion', '%s %s seat placement %.3f m from rest > %.2f' % (
+                            name, nm, math.hypot(v[0, 0] - rest[0], v[0, 2] - rest[2]), SEAT_MAX_OFFSET_M))
+                else:
+                    drift = float(max(np.abs(v[:, 0] - rest[0]).max(), np.abs(v[:, 2] - rest[2]).max()))
                 if drift > ROOT_DRIFT_TOL:
                     rep.error('clips', 'clip.root_motion', '%s %s horizontal translation drift %.4g m' % (name, nm, drift))
         for b in sorted(rot_need):
@@ -267,7 +304,9 @@ def _edges(prim):
     return np.unique(e, axis=0)
 
 
-def _posed_checks(rep, rig, doc, binary, ctx, clips, keys, profile, tol_m, connectivity_fn):
+def _posed_checks(rep, rig, doc, binary, ctx, clips, keys, profile, tol_m, connectivity_fn, decl=None):
+    flight = (decl or {}).get('flight', {})
+    seats = (decl or {}).get('seats', {})
     body = ctx['body']
     prims = ctx['prims']
     if not body:
@@ -299,19 +338,26 @@ def _posed_checks(rep, rig, doc, binary, ctx, clips, keys, profile, tol_m, conne
         rep.error('connectivity', 'mesh.connectivity.floating', seam_ctx['error'])
     conn_worst = (0.0, None)
     n_posed = 0
+    per = {}         # per clip: edge ratio range, keys with an edge out, floor deviation (lane WAIVER; see validate_character)
     for clip in clips:
+        pc = per.setdefault(clip, {'lo': 1.0, 'hi': 1.0, 'keys_out': 0, 'floor_dev': 0.0, 'floor_keys': 0})
         for k in range(0, n_keys, stride):
             pos_all = lbs.posed(doc, binary, clip, k, prims)
             pos = [p for p, r in zip(pos_all, prims) if r['joints'] is not None]
             n_posed += 1
+            key_lo, key_hi = 1.0, 1.0
             for p, e, l0, ok in zip(pos, edges, rest_len, valid):
                 l1 = np.linalg.norm(p[e[:, 0]] - p[e[:, 1]], axis=1)
                 ratio = l1[ok] / l0[ok]
                 if len(ratio):
+                    key_lo, key_hi = min(key_lo, float(ratio.min())), max(key_hi, float(ratio.max()))
                     if ratio.min() < lo:
                         lo = float(ratio.min()); worst_at = '%s@%d' % (clip, k) if lo < EDGE_LIMITS[0] else worst_at
                     if ratio.max() > hi:
                         hi = float(ratio.max()); worst_at = '%s@%d' % (clip, k) if hi > EDGE_LIMITS[1] else worst_at
+            pc['lo'], pc['hi'] = min(pc['lo'], key_lo), max(pc['hi'], key_hi)
+            if key_lo < EDGE_LIMITS[0] or key_hi > EDGE_LIMITS[1]:
+                pc['keys_out'] += 1
             if not all(np.isfinite(p).all() for p in pos):
                 rep.error('deformation', 'data.nan', 'non-finite skinned position at %s@%d' % (clip, k))
                 continue
@@ -319,12 +365,18 @@ def _posed_checks(rep, rig, doc, binary, ctx, clips, keys, profile, tol_m, conne
             ymin = float(allp[:, 1].min())
             if profile == 'hover':
                 dev = max(0., hover - floor_tol - ymin)
+            elif clip in seats:
+                dev = max(0., -ymin)
+            elif floor_mode == 'touch' and k in flight.get(clip, ()) and ymin > 0.:
+                dev = max(0., ymin - FLIGHT_MAX_FRACTION * H)
             elif floor_mode == 'touch':
                 dev = abs(ymin)
             else:
                 dev = max(0., -ymin)
             floor_worst = max(floor_worst, dev)
+            pc['floor_dev'] = max(pc['floor_dev'], dev)
             if dev > floor_tol:
+                pc['floor_keys'] += 1
                 rep.error('silhouette', 'mesh.silhouette.floor', '%s@%d lowest vertex at %.4f m' % (clip, k, ymin))
             ext = float(allp[:, 1].max() - ymin)
             if ext > blow * H:
@@ -339,13 +391,25 @@ def _posed_checks(rep, rig, doc, binary, ctx, clips, keys, profile, tol_m, conne
         rep.error('deformation', 'mesh.deformation', 'edge ratio %.3f..%.3f outside %s (worst %s)' % (lo, hi, EDGE_LIMITS, worst_at))
     rep.check('deformation', edge_ratio_min=round(lo, 4), edge_ratio_max=round(hi, 4), limits=list(EDGE_LIMITS), keys_posed=n_posed)
     rep.check('silhouette', floor_dev_max_m=round(floor_worst, 6), floor_mode=('hover' if profile == 'hover' else floor_mode))
+    if flight or seats:
+        rep.check('silhouette', declared_flight={c: sorted(v) for c, v in flight.items()},
+                  declared_seats=dict(sorted(seats.items())), flight_max_m=round(FLIGHT_MAX_FRACTION * H, 4))
     if seam_ctx is not None:
         rep.check('connectivity', method=seam_ctx.get('method'), joins=seam_ctx.get('n_joins'), max_gap_m=round(conn_worst[0], 6),
                   max_at=conn_worst[1], tol_m=tol_m)
+    return per
 
 
 def validate_character(glb, rig='human16_v1', *, clips=None, budget=None, expect_sha256=None, profile='grounded',
-                       keys='all', tol_m=0.003, combat=None, connectivity=True):
+                       keys='all', tol_m=0.003, combat=None, connectivity=True, waiver=False, per_clip=False):
+    """Validate a character GLB against a rig contract (see module docstring).
+
+    waiver    lane WAIVER (rigkit/waiver.py, docs/WAIVER.md). A file may carry an owner waiver block (root extras
+              hermes64_waiver). False (default): the block is reported under report['waiver'] and ignored. True: the
+              caller grants it, and the failures it covers move from report['errors'] to report['waived'] with their
+              numbers. Files without a block give the same report either way.
+    per_clip  also report per-clip numbers (checks.deformation.per_clip, checks.silhouette.per_clip). They are always
+              reported when the file carries a waiver block."""
     if profile not in PROFILES:
         raise ValueError('profile must be one of %s, not %r' % (PROFILES, profile))
     raw = _raw(glb)
@@ -366,25 +430,41 @@ def validate_character(glb, rig='human16_v1', *, clips=None, budget=None, expect
     except Exception as e:     # noqa: BLE001 - any parse failure is a container rejection
         rep.error('container', 'container.parse', str(e))
         return rep.d
+    per = _checks(rep, rig, raw, doc, binary, clips, budget, profile, keys, tol_m, combat, connectivity)
+    from . import waiver as W
+    block = W.read(doc)
+    if per is not None and (per_clip or block is not None):
+        rep.check('deformation', per_clip={c: {'edge_ratio': [round(n['lo'], 4), round(n['hi'], 4)], 'keys_out': n['keys_out']}
+                                           for c, n in per.items()})
+        rep.check('silhouette', per_clip={c: {'floor_dev_m': round(n['floor_dev'], 6), 'floor_keys': n['floor_keys']}
+                                          for c, n in per.items()})
+    if block is not None:
+        W.apply(rep, block, doc, binary, per, waiver)
+    return rep.d
+
+
+def _checks(rep, rig, raw, doc, binary, clips, budget, profile, keys, tol_m, combat, connectivity):
+    """Every check of validate_character after the parse; -> per-clip numbers, or None when it stopped early."""
     _container(rep, raw)
     _finite(rep, doc, binary)
     if not rep.d['checks']['finite']['ok']:
-        return rep.d
+        return None
     ctx = _rig(rep, rig, doc, binary, profile)
     if ctx is None:
-        return rep.d
+        return None
     _skin(rep, rig, doc, binary, ctx)
     if combat is None:
         names = {a.get('name') for a in doc.get('animations', [])}
         combat = bool(set(rig.clips.get('combat', [])) & names)
-    checked = _clips(rep, rig, doc, binary, ctx, clips, combat, profile)
+    decl = declarations(doc)
+    checked = _clips(rep, rig, doc, binary, ctx, clips, combat, profile, decl)
     _budget(rep, rig, doc, budget)
     if not rep.d['checks']['skin']['ok'] or any(e['code'] in ('rig.ibm_missing',) for e in rep.d['errors']):
-        return rep.d
+        return None
     from . import seams
-    _posed_checks(rep, rig, doc, binary, ctx, checked, keys, profile, tol_m, seams if connectivity else None)
+    per = _posed_checks(rep, rig, doc, binary, ctx, checked, keys, profile, tol_m, seams if connectivity else None, decl)
     rep.d['metrics'] = {'clips_checked': len(checked), 'keys_per_clip': rig.clips['keys'] if keys == 'all' else 'stride %s' % keys}
-    return rep.d
+    return per
 
 
 def validate_prop(glb, rig='human16_v1', *, slot=None, budget=None, expect_sha256=None):

@@ -193,6 +193,12 @@
    "preset": null,
    "sha256": "d5c2dccc661ae47c8704f0d0f584beedc6b1c62e86a2f5133875bb0f8ac93514"
   },
+  "cyroom.rooftop__arena": {
+   "glb": "kits/library/cyber_blue_grid/presets/cyroom.rooftop__arena.glb",
+   "kit_id": "cyroom.rooftop",
+   "preset": "arena",
+   "sha256": "d9f8a03254150bd733b9843755e96009f8e581fd14ff9b8ea7686ead69af7320"
+  },
   "cyroom.rooftop__tower": {
    "glb": "kits/library/cyber_blue_grid/presets/cyroom.rooftop__tower.glb",
    "kit_id": "cyroom.rooftop",

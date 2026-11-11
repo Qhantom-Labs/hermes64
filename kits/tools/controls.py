@@ -114,10 +114,10 @@ def main(argv):
     big = finalize([Node("blob", K.sphere(0, 0, 0, 0.3, 0.3, 0.3, 48, 24, "body"))])
     out = export_asset(big, polar, os.path.join(d, "over_tris.glb"), tex)
     record("B1", "budget", "2208-tri sphere validated as a prop (limit 150)", validate(out, "prop.key", polar))
-    pj = json.load(open(polar.path))
+    pj = json.load(open(polar.path, encoding='utf-8'))
     pj["materials"]["body"]["texture"]["size"] = 128
     bad_pack = os.path.join(d, "pack_bigtex.json")
-    json.dump(pj, open(bad_pack, "w"))
+    json.dump(pj, open(bad_pack, "w", encoding='utf-8'))
     out = os.path.join(d, "big_texture.glb")
     st, rep = pipeline.build_one("furn.table", "polar_pod", None, {"top_role": "body", "base_role": "body"}, 0, out, tex_dir=os.path.join(d, "tex_big"),
                                  pack_path=bad_pack, keep_failed=True)
@@ -284,10 +284,10 @@ def main(argv):
             results[-1]["proven"] = False
 
     # ---- failed validation deletes the output (CLI exit 3 path)
-    pj = json.load(open(polar.path))
+    pj = json.load(open(polar.path, encoding='utf-8'))
     pj["validator_thresholds"]["tri_limits"] = {"furniture": 40}
     tight = os.path.join(d, "pack_tight.json")
-    json.dump(pj, open(tight, "w"))
+    json.dump(pj, open(tight, "w", encoding='utf-8'))
     out = os.path.join(d, "deleted_on_fail.glb")
     st, rep = pipeline.build_one("furn.table", "polar_pod", None, {}, 0, out, tex_dir=tex, pack_path=tight)
     ok = st == "failed" and not os.path.exists(out) and rep.get("deleted_failed_output")
@@ -302,7 +302,7 @@ def main(argv):
               "exit_code": 0 if n_ok == len(results) else 3}
     rd = os.path.join(REPORT_ROOT, "controls")
     os.makedirs(rd, exist_ok=True)
-    with open(os.path.join(rd, a.tag + ".json"), "w") as f:
+    with open(os.path.join(rd, a.tag + ".json"), "w", encoding='utf-8') as f:
         json.dump(report, f, indent=1, sort_keys=True)
     print("CONTROLS TOTAL proven=%d/%d -> exit %d" % (n_ok, len(results), report["exit_code"]))
     pipeline.build_one = original_build

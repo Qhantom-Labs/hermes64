@@ -1,0 +1,14 @@
+{
+ "format":"hermes64-recipe/1", "id":"lighthouse", "class":"structure", "licence":"CC0-1.0",
+ "parameters":{"height":{"type":"number","default":7.0,"minimum":6.0,"maximum":8.0}},
+ "operations":[
+  {"primitive":"lathe","role":"stone","args":{"profile":[[1.35,0],[1.2,{"param":"height","mul":0.35}],[1.0,{"param":"height","mul":0.7}],[0.9,{"param":"height"}]],"segs":8}},
+  {"primitive":"lathe","role":"trim","args":{"profile":[[1.25,{"param":"height","mul":0.45}],[1.18,{"param":"height","mul":0.55}]],"segs":8}},
+  {"primitive":"lathe","role":"trim","args":{"profile":[[1.3,{"param":"height"}],[1.3,{"param":"height","add":0.18}]],"segs":8}},
+  {"primitive":"lathe","role":"glass","args":{"profile":[[0.62,{"param":"height","add":0.18}],[0.62,{"param":"height","add":1.05}]],"segs":8}},
+  {"primitive":"lathe","role":"trim","args":{"profile":[[0.78,{"param":"height","add":1.05}],[0.0,{"param":"height","add":1.8}]],"segs":8}},
+  {"primitive":"torus","role":"trim","args":{"R":1.22,"r":0.04,"segs":8,"sides":3},"transform":{"translate":[0,0,7.6]}},
+  {"primitive":"box","role":"wood","args":{"cx":0,"cy":-1.3,"cz":0.6,"sx":0.7,"sy":0.12,"sz":1.2}}
+ ],
+ "sockets":[{"id":"door","position":[0,-1.4,0.0],"facing":"s"}]
+}

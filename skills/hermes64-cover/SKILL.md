@@ -2,7 +2,7 @@
 name: hermes64-cover
 description: Stage, render, gate and finish original box-art covers.
 version: 0.1.0
-author: Dylan (Qhantom), Hermes Agent
+author: Qhantom Labs, Hermes Agent
 license: MIT
 platforms: [macos]
 metadata:

@@ -1,0 +1,152 @@
+{
+ "format": "hermes64-detail-prompts/1",
+ "note": "Eight detailed prompts (3-8 sentences) with the features a built game is checked for. Written before any run; the checks (tools/detail_score.py) were fixed before the first run and were not changed after it. match = lowercase words, any one counts. Kinds: player (protagonist name), actor (named non-player character placed in a room), foe (combat enemy archetype by name; boss=true is the named boss), place (room name, or an anchored interaction whose label names it), item (collectible/item name), beat (story text: interactions, dialogues, quests, endings, collectibles; room descriptions and the title are excluded because they echo the prompt), quest (spec quests), module (gameplay module id present), no_module (module id absent), waves (combat encounter with at least n waves), timer (course track time limit, seconds within 10%), checkpoints (course checkpoints, at least n), timed (time element: tide phases gating interactions, or a course time limit), lose (ending text matches, or a failure path of a listed module), win (ending text matches), choice (one dialogue whose choices name at least n of the match words), follower (a collectible bound to the named character with a follower flag), mood_hue (brief dominant hue in hues and the palette applied: derived mood, or a hand-made pack whose id names a hue), mood_time (brief time in times and applied: derived mood or a shipped variant whose id names the time).",
+ "prompts": [
+  {
+   "id": "heist-museum",
+   "prompt": "Make a heist game set in a flooded city museum at night. You play Ines Calder, a retired thief pulled back for one last job. Your fixer Bram waits on the museum steps outside and gives you the plan; the night guard, Old Teodor, patrols the drowned sculpture hall inside. The prize is the Tidewater Crown in the sealed vault. The vault door is a puzzle: three tide dials must be turned in the right order before it opens. Keep it tense and quiet, with dark teal water and gold light from the exhibits.",
+   "expect": [
+    {"id": "player-ines", "kind": "player", "match": ["ines"]},
+    {"id": "actor-bram", "kind": "actor", "match": ["bram"]},
+    {"id": "actor-teodor", "kind": "actor", "match": ["teodor"], "or_foe": true},
+    {"id": "place-steps", "kind": "place", "match": ["steps"]},
+    {"id": "place-sculpture-hall", "kind": "place", "match": ["sculpture"]},
+    {"id": "place-vault", "kind": "place", "match": ["vault"]},
+    {"id": "item-crown", "kind": "item", "match": ["crown"]},
+    {"id": "beat-plan", "kind": "beat", "match": ["plan"]},
+    {"id": "mech-door-puzzle", "kind": "module", "module": "puzzle", "match": ["dial", "dials", "puzzle"]},
+    {"id": "mood-teal", "kind": "mood_hue", "hues": ["teal", "cyan"], "match": ["teal"]},
+    {"id": "mood-night", "kind": "mood_time", "times": ["night"], "match": ["night"]}
+   ]
+  },
+  {
+   "id": "lighthouse-ghost",
+   "prompt": "Make a ghost story on a lonely lighthouse island. You play Maren, the new keeper, on her first night alone. At dusk the lamp gutters out and she must climb the tower to relight it. At midnight the ghost of the old keeper, Silas Wren, appears on the gallery and asks her to find his lost logbook. Before dawn she must return the logbook to his grave by the shore, or the light will fail for good. No combat; it should feel eerie and sad, with grey fog, cold blue light and one warm amber lamp.",
+   "expect": [
+    {"id": "player-maren", "kind": "player", "match": ["maren"]},
+    {"id": "actor-silas", "kind": "actor", "match": ["silas", "wren"]},
+    {"id": "place-shore", "kind": "place", "match": ["shore", "island"]},
+    {"id": "place-tower", "kind": "place", "match": ["tower", "lighthouse", "gallery"]},
+    {"id": "place-grave", "kind": "place", "match": ["grave"]},
+    {"id": "beat-dusk-lamp", "kind": "beat", "match": ["relight", "lamp"]},
+    {"id": "beat-midnight-ghost", "kind": "beat", "match": ["midnight", "ghost"]},
+    {"id": "beat-dawn-grave", "kind": "beat", "match": ["grave"]},
+    {"id": "item-logbook", "kind": "item", "match": ["logbook"]},
+    {"id": "mech-timed-beats", "kind": "timed", "match": ["dusk", "midnight", "dawn", "timed"]},
+    {"id": "lose-light-fails", "kind": "lose", "match": ["fail", "fails", "dark"], "modules": []},
+    {"id": "no-combat", "kind": "no_module", "module": "combat", "match": ["combat"]},
+    {"id": "mood-blue", "kind": "mood_hue", "hues": ["blue", "grey", "indigo"], "match": ["blue", "grey"]},
+    {"id": "mood-night", "kind": "mood_time", "times": ["night", "dusk"], "match": ["night"]}
+   ]
+  },
+  {
+   "id": "caravan-escort",
+   "prompt": "Make a desert caravan escort game. You are Kesh, a young caravan guard, protecting the merchant Old Haddo and his three camels on the road to the oasis city of Amberwell. Raiders attack in waves along the canyon pass: first two scouts, then three riders. When the last wave falls, their leader Vael the Sand Witch blocks the gate of Amberwell and must be defeated in a final boss fight. If Haddo's caravan is lost, the run fails. Golden-hour light, orange dunes and long shadows.",
+   "expect": [
+    {"id": "player-kesh", "kind": "player", "match": ["kesh"]},
+    {"id": "actor-haddo", "kind": "actor", "match": ["haddo"]},
+    {"id": "foe-raiders", "kind": "foe", "match": ["raider", "raiders", "scout", "scouts", "rider", "riders"]},
+    {"id": "boss-vael", "kind": "foe", "boss": true, "match": ["vael"]},
+    {"id": "place-canyon", "kind": "place", "match": ["canyon", "pass"]},
+    {"id": "place-amberwell", "kind": "place", "match": ["amberwell", "gate", "oasis"]},
+    {"id": "mech-combat", "kind": "module", "module": "combat", "match": ["combat", "fight"]},
+    {"id": "mech-waves", "kind": "waves", "n": 2, "match": ["wave", "waves"]},
+    {"id": "quest-escort", "kind": "quest", "match": ["escort", "haddo", "caravan", "amberwell"]},
+    {"id": "lose-caravan", "kind": "lose", "match": ["caravan", "lost"], "modules": []},
+    {"id": "mood-orange", "kind": "mood_hue", "hues": ["orange", "amber", "gold", "tan"], "match": ["orange"]},
+    {"id": "mood-golden", "kind": "mood_time", "times": ["golden-hour", "dusk", "afternoon"], "match": ["golden"]}
+   ]
+  },
+  {
+   "id": "magic-school",
+   "prompt": "Make an exploration game at Brightspire, a school of magic on a cliff. You play Wren, a first-year student. Your rival, Corvin Ashby, keeps trying to beat you to the Lost Spellbook of the founder, which is hidden somewhere in the old library tower. Talk to Professor Lune in the courtyard to learn the first clue, explore the library at night to find the book, and face Corvin when he tries to take it from you. The school should feel bright and hopeful by day and mysterious by night, with purple and silver colours.",
+   "expect": [
+    {"id": "player-wren", "kind": "player", "match": ["wren"]},
+    {"id": "actor-corvin", "kind": "actor", "match": ["corvin", "ashby"], "or_foe": true},
+    {"id": "actor-lune", "kind": "actor", "match": ["lune"]},
+    {"id": "place-courtyard", "kind": "place", "match": ["courtyard", "brightspire"]},
+    {"id": "place-library", "kind": "place", "match": ["library"]},
+    {"id": "item-spellbook", "kind": "item", "match": ["spellbook"]},
+    {"id": "quest-spellbook", "kind": "quest", "match": ["spellbook", "book"]},
+    {"id": "beat-clue", "kind": "beat", "match": ["clue"]},
+    {"id": "beat-face-corvin", "kind": "beat", "match": ["corvin"]},
+    {"id": "mech-day-night", "kind": "timed", "match": ["day", "night"]},
+    {"id": "mood-purple", "kind": "mood_hue", "hues": ["purple", "violet", "indigo"], "match": ["purple"]},
+    {"id": "mood-night", "kind": "mood_time", "times": ["night", "dusk"], "match": ["night"]}
+   ]
+  },
+  {
+   "id": "mushroom-detective",
+   "prompt": "Make a detective mystery in Mossbottom, a village of mushroom houses. You play Inspector Pip, a beetle detective, called in because the Moon Cap, the village's prize glowing mushroom, was stolen from the festival hall. There are four suspects: Morel the baker, Chanterelle the mayor, Puffball the bard and Inkcap the librarian. Search the village for clues and pin each one to the clue board in the inspector's office. When you have three clues, accuse the thief; the real culprit is Inkcap. Cozy and whimsical, with warm autumn colours.",
+   "expect": [
+    {"id": "player-pip", "kind": "player", "match": ["pip"]},
+    {"id": "actor-morel", "kind": "actor", "match": ["morel"]},
+    {"id": "actor-chanterelle", "kind": "actor", "match": ["chanterelle"]},
+    {"id": "actor-puffball", "kind": "actor", "match": ["puffball"]},
+    {"id": "actor-inkcap", "kind": "actor", "match": ["inkcap"]},
+    {"id": "place-mossbottom", "kind": "place", "match": ["mossbottom", "village"]},
+    {"id": "place-festival-hall", "kind": "place", "match": ["festival"]},
+    {"id": "place-office", "kind": "place", "match": ["office", "board"]},
+    {"id": "item-moon-cap", "kind": "item", "match": ["moon"]},
+    {"id": "beat-clues", "kind": "beat", "match": ["clue", "clues"]},
+    {"id": "quest-clue-board", "kind": "quest", "match": ["clue", "clues", "board"]},
+    {"id": "choice-accuse", "kind": "choice", "n": 3, "match": ["morel", "chanterelle", "puffball", "inkcap"]},
+    {"id": "win-inkcap", "kind": "win", "match": ["inkcap"]},
+    {"id": "mood-autumn", "kind": "mood_hue", "hues": ["orange", "amber", "brown", "gold", "red"], "match": ["autumn", "warm"]}
+   ]
+  },
+  {
+   "id": "train-station",
+   "prompt": "Make a timed race through Grand Junction, a busy steam-train station. You play Tilly Marsh, a courier who must deliver a sealed letter to the conductor of the 5:15 express before it leaves. Run from the ticket hall across the platforms, touching three checkpoints: the clock tower, the baggage cart and platform nine. You have ninety seconds; if the clock runs out, the train leaves without the letter. The station is crowded, smoky and golden in the late afternoon.",
+   "expect": [
+    {"id": "player-tilly", "kind": "player", "match": ["tilly"]},
+    {"id": "actor-conductor", "kind": "actor", "match": ["conductor"]},
+    {"id": "place-ticket-hall", "kind": "place", "match": ["ticket"]},
+    {"id": "place-platforms", "kind": "place", "match": ["platform", "platforms", "junction", "station"]},
+    {"id": "item-letter", "kind": "item", "match": ["letter"]},
+    {"id": "quest-deliver", "kind": "quest", "match": ["letter", "deliver", "conductor"]},
+    {"id": "mech-course", "kind": "module", "module": "course", "match": ["timed", "race", "course"]},
+    {"id": "mech-90s", "kind": "timer", "seconds": 90, "match": ["ninety", "90"]},
+    {"id": "mech-3-checkpoints", "kind": "checkpoints", "n": 3, "match": ["checkpoint", "checkpoints"]},
+    {"id": "lose-train-leaves", "kind": "lose", "match": ["leaves", "missed", "late"], "modules": ["course"]},
+    {"id": "mood-golden", "kind": "mood_time", "times": ["golden-hour", "afternoon", "dusk"], "match": ["golden", "afternoon"]}
+   ]
+  },
+  {
+   "id": "rescue-betrayal",
+   "prompt": "Make a rescue adventure in the mountain fortress of Kragmoor. You play Sera, a scout who sneaks in to free her brother Tomas, who is held captive in the dungeon. Her old friend Daven offers to guide her through the gate, but in the throne room he betrays her and reveals he works for the warlord. Sera must fight her way past the guards, free Tomas and escape with him back to the mountain path. Make it dark and dramatic, cold stone and torchlight.",
+   "expect": [
+    {"id": "player-sera", "kind": "player", "match": ["sera"]},
+    {"id": "actor-tomas", "kind": "actor", "match": ["tomas"]},
+    {"id": "actor-daven", "kind": "actor", "match": ["daven"], "or_foe": true},
+    {"id": "foe-guards", "kind": "foe", "match": ["guard", "guards", "warlord", "daven"]},
+    {"id": "place-mountain-path", "kind": "place", "match": ["mountain", "path", "kragmoor", "gate"]},
+    {"id": "place-throne-room", "kind": "place", "match": ["throne"]},
+    {"id": "place-dungeon", "kind": "place", "match": ["dungeon"]},
+    {"id": "beat-betrayal", "kind": "beat", "match": ["betray", "betrays", "betrayal", "warlord"]},
+    {"id": "beat-escape", "kind": "beat", "match": ["escape", "free"]},
+    {"id": "mech-combat", "kind": "module", "module": "combat", "match": ["combat", "fight"]},
+    {"id": "mech-rescue-follower", "kind": "follower", "match": ["tomas"]},
+    {"id": "mood-night", "kind": "mood_time", "times": ["night", "dusk"], "match": ["dark", "night", "torch"]}
+   ]
+  },
+  {
+   "id": "story-walk",
+   "prompt": "Make a quiet story-only walking game with no combat and no puzzles. You play Ada, an old woman walking through her childhood village one last time before it is flooded for a new reservoir. There are six scenes in order: the schoolhouse where she learned to read, the bakery where her mother worked, the bridge where she met her husband, the chapel where they married, the empty family house, and finally the hill above the valley where she says goodbye. Each scene is a short memory she remembers out loud. Gentle, melancholy and warm, late summer evening light.",
+   "expect": [
+    {"id": "player-ada", "kind": "player", "match": ["ada"]},
+    {"id": "place-village", "kind": "place", "match": ["village", "valley"]},
+    {"id": "scene-schoolhouse", "kind": "beat", "match": ["schoolhouse", "school"]},
+    {"id": "scene-bakery", "kind": "beat", "match": ["bakery"]},
+    {"id": "scene-bridge", "kind": "beat", "match": ["bridge"]},
+    {"id": "scene-chapel", "kind": "beat", "match": ["chapel"]},
+    {"id": "scene-house", "kind": "beat", "match": ["house"]},
+    {"id": "scene-hill", "kind": "beat", "match": ["hill", "goodbye"]},
+    {"id": "no-combat", "kind": "no_module", "module": "combat", "match": ["combat"]},
+    {"id": "no-puzzle", "kind": "no_module", "module": "puzzle", "match": ["puzzle"]},
+    {"id": "mood-warm", "kind": "mood_hue", "hues": ["orange", "amber", "gold", "yellow"], "match": ["warm"]},
+    {"id": "mood-evening", "kind": "mood_time", "times": ["dusk", "golden-hour"], "match": ["evening", "dusk"]}
+   ]
+  }
+ ]
+}

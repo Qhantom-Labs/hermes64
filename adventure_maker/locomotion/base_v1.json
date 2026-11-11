@@ -1,0 +1,501 @@
+{
+ "schema": "hermes64-locomotion-base/1.0.0",
+ "id": "base_v1",
+ "summary": "Planted-foot run and walk for any two-legged character on a human16 armature. The cycles are written in standing hip heights and solved on the character's own legs and boots, so the ground speed scales with the leg and a planted boot does not slide.",
+ "rigs": [
+  "human16_v1",
+  "human16_v3",
+  "any armature that carries the bones below (extra joints ride rigidly on their nearest listed ancestor)"
+ ],
+ "bones": {
+  "required": [
+   "pelvis",
+   "spine",
+   "head",
+   "upper_arm_l",
+   "forearm_l",
+   "upper_arm_r",
+   "forearm_r",
+   "thigh_l",
+   "shin_l",
+   "foot_l",
+   "thigh_r",
+   "shin_r",
+   "foot_r"
+  ],
+  "optional": [
+   "root",
+   "hand_l",
+   "hand_r"
+  ],
+  "hierarchy": {
+   "spine": "pelvis",
+   "head": "spine",
+   "upper_arm_l": "spine",
+   "upper_arm_r": "spine",
+   "forearm_l": "upper_arm_l",
+   "forearm_r": "upper_arm_r",
+   "hand_l": "forearm_l",
+   "hand_r": "forearm_r",
+   "thigh_l": "pelvis",
+   "thigh_r": "pelvis",
+   "shin_l": "thigh_l",
+   "shin_r": "thigh_r",
+   "foot_l": "shin_l",
+   "foot_r": "shin_r"
+  },
+  "conventions": "glTF +Y up, the character faces +Z, bones *_l on +X, metres, unit scale, feet on y = 0 in the rest pose. Rest rotations may be anything (the bake works in world space)."
+ },
+ "timing": {
+  "fps": 15,
+  "keys": 16,
+  "step_keys": 8,
+  "cycle_keys": 16,
+  "interpolation": "STEP",
+  "closing_key": false,
+  "note": "key k at t = k / 15 s; 16 keys, the rig kit clip contract (rigkit validate: clip.key_count, clip.time_mismatch). One cycle is 16 keys = two steps and lasts 16 / 15 s, but a 16-key clip ends at t = 1 s, so a player that loops on the clip length shows 15 keys per cycle and never shows key 15 (the right step is then one key short and the planted boot slides). The block therefore carries cycle_keys and fps: a player must loop the baked clips on cycle_keys / fps seconds. The Godot runtime does (actors/character.gd). closing_key: true writes a 17th key equal to key 0 instead, for players that cannot set the loop period; such a file is outside the rig kit clip contract."
+ },
+ "measurements": {
+  "height_m": {
+   "how": "top of the skinned mesh in the rest pose",
+   "required": true,
+   "min": 0.3,
+   "max": 4.0
+  },
+  "hip_height_m": {
+   "how": "mean height of the two thigh joints in the rest pose",
+   "required": true,
+   "min_fraction_of_height": 0.2
+  },
+  "thigh_len_m": {
+   "how": "thigh joint to shin joint, per side",
+   "required": true,
+   "min_fraction_of_hip": 0.15
+  },
+  "shin_len_m": {
+   "how": "shin joint to foot joint, per side",
+   "required": true,
+   "min_fraction_of_hip": 0.15
+  },
+  "leg_len_m": {
+   "how": "thigh_len + shin_len, per side"
+  },
+  "ankle_height_m": {
+   "how": "foot joint over the lowest boot vertex, per side",
+   "required": true
+  },
+  "boot_outline": {
+   "how": "vertices that follow the foot joint with weight > 0.99, in the fore-aft plane; toe and heel are the ends of the sole (boot vertices within 12 mm of the lowest)",
+   "required": true,
+   "min_vertices": 4,
+   "min_length_fraction_of_hip": 0.08
+  },
+  "boot_gap_m": {
+   "how": "inner edge of each boot to the centre line (x = 0) in the rest pose",
+   "required": true,
+   "min": 0.0
+  },
+  "hip_width_m": {
+   "how": "distance between the thigh joints"
+  },
+  "upper_arm_len_m": {
+   "how": "upper arm joint to forearm joint, per side",
+   "required": true
+  },
+  "forearm_len_m": {
+   "how": "forearm joint to hand joint, or to the far end of the forearm's vertices when there is no hand joint",
+   "required": true
+  },
+  "arm_rest_abduction_deg": {
+   "how": "angle of the upper arm away from straight down in the rest pose, seen from the front (0 = hanging, 90 = T pose)",
+   "band": [
+    5.0,
+    40.0
+   ],
+   "target_when_outside": 12.0,
+   "rule": "inside the band the rest arm is used as it is; outside (a T pose, or arms pressed to the body) the upper arm is first turned to target_when_outside, then the cycle's arm angles apply"
+  },
+  "torso_len_m": {
+   "how": "pelvis joint to head joint"
+  },
+  "lean_limits_deg": {
+   "how": "forward pitch of the pelvis-to-head line, mean over the cycle",
+   "run": [
+    12.0,
+    18.0
+   ],
+   "walk": [
+    0.0,
+    8.0
+   ]
+  },
+  "left_right_mismatch_m": {
+   "how": "largest difference between a left leg measurement and its right twin",
+   "max_fraction_of_hip": 0.05
+  },
+  "facing": {
+   "how": "the boots must reach further forward (+Z) of the ankle than backward",
+   "required": true
+  },
+  "scale": {
+   "how": "every joint's rest matrix must be a rotation (unit scale, no shear) within 0.001",
+   "required": true
+  }
+ },
+ "reference": {
+  "hip_height_m": 0.804,
+  "note": "stride_mps of a cycle is the ground speed of the reference build; a body's own stride is stride_mps * hip_height_m / 0.804",
+  "arm_rest_abduction_deg": 11.6336,
+  "arm_note": "the arm turns of both cycles are written for an arm that hangs 11.6 deg out from straight down; the forearm turns are re-expressed about the axes of the arm being baked",
+  "cycle_note": "lean_deg and yaw_deg (pelvis, shoulders) of both cycles are the values of the run and walk reviewed on tall_v3 (stills-04/05): a bake of that body with no dial moved gives those clips vertex for vertex. The older adult family values (run lean 8.5 / 12.5, pelvis yaw 7 and 6) carried the forward boot across the centre line on bodies whose legs stand close together."
+ },
+ "cycles": {
+  "run": {
+   "phases": {
+    "contact": [
+     0
+    ],
+    "down": [
+     1
+    ],
+    "push_off": [
+     2,
+     3,
+     4
+    ],
+    "flight": [
+     5,
+     6,
+     7
+    ]
+   },
+   "phases_note": "keys of one step (8 keys); the other leg is 8 keys behind. Stance = keys 0..4, toe-off before key 5, next strike at key 8.",
+   "swing_mode": "angles",
+   "toe0": -0.497,
+   "stance": 4,
+   "pitch_deg": [
+    -6.0,
+    0.0,
+    4.0,
+    18.0,
+    42.0
+   ],
+   "hip": [
+    0.975,
+    0.962,
+    0.973,
+    1.0,
+    1.04,
+    1.06,
+    1.065,
+    1.03
+   ],
+   "swing": {
+    "5": [
+     18.0,
+     48.0,
+     70.0
+    ],
+    "6": [
+     6.0,
+     94.0,
+     88.0
+    ],
+    "7": [
+     -14.0,
+     108.0,
+     80.0
+    ],
+    "8": [
+     -36.0,
+     106.0,
+     60.0
+    ],
+    "9": [
+     -56.0,
+     98.0,
+     40.0
+    ],
+    "10": [
+     -68.0,
+     92.0,
+     25.0
+    ],
+    "11": [
+     -72.0,
+     78.0,
+     14.0
+    ],
+    "12": [
+     -68.0,
+     60.0,
+     4.0
+    ],
+    "13": [
+     -58.0,
+     42.0,
+     -4.0
+    ],
+    "14": [
+     -50.0,
+     24.0,
+     -10.0
+    ],
+    "15": [
+     -43.0,
+     11.0,
+     -12.0
+    ]
+   },
+   "swing_columns": "thigh angle (deg, world, - = forward), knee flexion (deg), foot pitch (deg, world, + = toe down)",
+   "lean_deg": [
+    8.0,
+    11.0
+   ],
+   "yaw_deg": [
+    2.5,
+    13.0
+   ],
+   "arm_deg": [
+    26.0,
+    44.0,
+    -78.0,
+    10.0
+   ],
+   "arm_in_deg": [
+    -3.0,
+    2.0
+   ],
+   "arm_peak_key": 4.5,
+   "stride_mps": 2.2,
+   "stride_scale": 1.0,
+   "ankle_swing_scale": 1.0
+  },
+  "walk": {
+   "phases": {
+    "heel_strike": [
+     0
+    ],
+    "down": [
+     1
+    ],
+    "mid_stance": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "push_off": [
+     6,
+     7,
+     8,
+     9
+    ],
+    "swing": [
+     10,
+     11,
+     12,
+     13,
+     14,
+     15
+    ]
+   },
+   "phases_note": "keys of one leg's cycle (16 keys); the other leg is 8 keys behind. Stance = keys 0..9 (keys 8 and 9 overlap the other foot's strike: double support), passing pose at key 4.",
+   "swing_mode": "ankle_path",
+   "toe0": -0.66,
+   "stance": 9,
+   "pitch_deg": [
+    -24.0,
+    -10.0,
+    0.0,
+    0.0,
+    0.0,
+    2.0,
+    9.0,
+    20.0,
+    32.0,
+    46.0
+   ],
+   "hip": [
+    0.99,
+    0.968,
+    0.972,
+    0.988,
+    0.996,
+    0.996,
+    0.994,
+    0.992
+   ],
+   "swing": {
+    "10": [
+     0.36,
+     0.06,
+     52.0
+    ],
+    "11": [
+     0.24,
+     0.16,
+     46.0
+    ],
+    "12": [
+     0.05,
+     0.23,
+     26.0
+    ],
+    "13": [
+     -0.15,
+     0.14,
+     4.0
+    ],
+    "14": [
+     -0.33,
+     0.08,
+     -16.0
+    ],
+    "15": [
+     -0.4,
+     0.05,
+     -26.0
+    ]
+   },
+   "swing_columns": "ankle behind (+) / ahead (-) of the hip (hip heights), sole clearance over the ground (hip heights), foot pitch (deg, world, + = toe down)",
+   "lean_deg": [
+    1.5,
+    2.0
+   ],
+   "yaw_deg": [
+    2.5,
+    9.0
+   ],
+   "arm_deg": [
+    4.0,
+    25.0,
+    -16.0,
+    14.0
+   ],
+   "arm_in_deg": [
+    5.0,
+    4.0
+   ],
+   "arm_peak_key": 7.5,
+   "stride_mps": 1.1,
+   "stride_scale": 1.0,
+   "ankle_swing_scale": 1.0
+  }
+ },
+ "fit": {
+  "note": "the bake starts from the cycle as written. When a metric fails and has a dial, the dial moves one step and the bake is measured again; the first setting that passes every metric is kept and recorded in the report. A failure without a dial, or a dial at its end, refuses the body.",
+  "dials": {
+   "boots_cross": {
+    "field": "pelvis yaw",
+    "scale": [
+     1.0,
+     0.7,
+     0.36,
+     0.0
+    ]
+   },
+   "bounce_high": {
+    "field": "step length and ground speed together (the planted leg is asked to reach less far; stride_mps in the block is the scaled speed, so the boot still does not slide)",
+    "scale": [
+     1.0,
+     0.94,
+     0.88,
+     0.82,
+     0.76,
+     0.7
+    ]
+   },
+   "lean_high": {
+    "field": "pelvis and spine lean",
+    "scale": [
+     1.0,
+     0.9,
+     0.8,
+     0.7
+    ]
+   },
+   "lean_low": {
+    "field": "pelvis and spine lean",
+    "scale": [
+     1.0,
+     1.1,
+     1.2,
+     1.3
+    ]
+   },
+   "limb_in_torso": {
+    "field": "upper arm out",
+    "add_deg": [
+     0.0,
+     5.0,
+     10.0,
+     15.0,
+     20.0
+    ]
+   },
+   "seam_gap": {
+    "field": "ankle turn of the swinging foot (the foot follows its shin more closely, so the boot stays on the shin; the planted foot is not changed)",
+    "scale": [
+     1.0,
+     0.8,
+     0.6,
+     0.4,
+     0.2
+    ]
+   }
+  }
+ },
+ "limits": {
+  "clear_m": 0.012,
+  "run": {
+   "flight_keys_per_step_min": 2,
+   "bounce_hip": [
+    0.085,
+    0.125
+   ],
+   "lean_deg": [
+    12.0,
+    18.0
+   ],
+   "slip_mps_max": 0.25,
+   "test_speed_mps": 3.2
+  },
+  "walk": {
+   "flight_keys_per_step_max": 0,
+   "bounce_hip": [
+    0.0,
+    0.08
+   ],
+   "lean_deg": [
+    0.0,
+    8.0
+   ],
+   "slip_mps_max": 0.25,
+   "test_speed_mps": 1.1
+  },
+  "boot_gap_min_m": 0.0,
+  "leg_plane_dev_max_m": 0.01,
+  "leg_mid_off_centre_max_m": 0.03,
+  "limb_in_torso_vertices_max": 0,
+  "note": "bounce is in standing hip heights (0.085-0.125 is 4.2-6.2 % of the height of the reference build; as a fraction of height it would refuse every short-legged body for its proportions, not for its motion). test_speed scales with the leg like the stride.",
+  "clear_max_fraction_of_hip": 0.015,
+  "limb_points": "vertices that follow a forearm, hand, shin or foot with weight >= 0.9",
+  "torso_surface": "triangles whose three vertices follow the pelvis or spine with weight >= 0.5; a point is inside when its winding number is above 0.5 and it was not inside in the rest pose",
+  "seam_gap_max_m": 0.003
+ },
+ "blend": {
+  "enter_mps": 2.0,
+  "exit_mps": 1.7,
+  "note": "the runtime plays walk at speed / walk.stride_mps; at or above enter_mps it plays run at speed / run.stride_mps and goes back to walk below exit_mps. enter and exit scale with the leg like the strides. The cycle phase is kept across the switch (both cycles strike the left foot at key 0)."
+ },
+ "output": {
+  "clips": [
+   "run",
+   "walk"
+  ],
+  "channels": "16 keys per clip; rotation on every skin joint (a joint the cycle does not turn holds its rest rotation); translation on the grounding joint (root, or pelvis when there is no root)",
+  "grounding": "every key the lowest vertex is put on y = 0, then the flight lift is added",
+  "block": "glTF extras.hermes64_locomotion = {format, source_sha256, cycle_keys, fps, walk: {stride_mps}, run: {stride_mps, enter_mps, exit_mps, flight_keys}, sole: {l: {toe, heel}, r: {toe, heel}}} (sole points are in the foot joint's space, for runtime foot-plant measurements and effects)"
+ }
+}

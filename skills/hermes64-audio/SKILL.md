@@ -2,7 +2,7 @@
 name: hermes64-audio
 description: Create and validate original retro game audio banks.
 version: 0.1.0
-author: Dylan (Qhantom), Hermes Agent
+author: Qhantom Labs, Hermes Agent
 license: MIT
 platforms: [linux, macos, windows]
 metadata:

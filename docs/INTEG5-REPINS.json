@@ -1,0 +1,28 @@
+{
+  "prior_ledger": "docs/INTEG3-RESULT.md",
+  "retained_derived_identity_repins": 15,
+  "retained_lowered_identity_helper_guard": true,
+  "retained_thaw_movies": [
+    "a99294463d4b8ec1c579fa07aadc2dd73806ac39afc3b4c5e610277b41a1da3b",
+    "2c52fac575544fe849973c0a8cf2f2321116d4de4db5d6ec0a987f31eba20eae"
+  ],
+  "steps": {
+    "m10": {
+      "prior_tag": "rc3-roof",
+      "accepted_legacy_comparisons": 15,
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": [],
+      "note": "Runtime build header substituted in memory only by unchanged cross-runner; original movie bytes and checkpoint state hashes retained."
+    },
+    "m11": {
+      "prior_tag": "rc3-m10",
+      "status": "blocked_plugin_1800s_guard",
+      "accepted_legacy_comparisons": 0,
+      "legacy_status": "not_reached_after_timed_out_plugin_stage",
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": []
+    }
+  }
+}

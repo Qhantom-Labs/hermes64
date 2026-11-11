@@ -130,8 +130,10 @@ class AudioService:
             manifest,new = ai.import_audio(folder,args.get('sources',[]),ffmpeg,kind=args.get('kind','auto'),
                 items=args.get('items'),options=options,replace=args.get('replace',False),base=project.root,
                 max_total_bytes=budget)
+            from .premise_apply import assign_imported   # GAPS2 G3: a story file's audio block assigns itself
             return dict(summary(manifest,new),ok=True,manifest=IMPORT_DIR+'/manifest.json',
-                        next='hermes64_audio action=assign with slots, then rebuild/open the game')
+                        next='hermes64_audio action=assign with slots, then rebuild/open the game',
+                        **assign_imported(project,manifest,SLOTS_FILE))
         if not project.path(IMPORT_DIR+'/manifest.json').is_file():
             fail('not_imported','Nothing imported yet: run hermes64_audio action=import first')
         manifest,problems = ai.verify(folder)

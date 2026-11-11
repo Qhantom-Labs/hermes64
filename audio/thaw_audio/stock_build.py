@@ -15,7 +15,7 @@ VERSION = "1.1.0"
 
 
 def preserve_originals():
-    baseline = json.loads((LANE/"evidence/wave2/baseline.json").read_text())
+    baseline = json.loads((LANE/"evidence/wave2/baseline.json").read_text(encoding='utf-8'))
     for entry in baseline["assets"]+baseline["protected"]:
         path = lane_path(LANE/entry["file"])
         # Git records bytes, not filesystem timestamps. A fresh checkout must pass.

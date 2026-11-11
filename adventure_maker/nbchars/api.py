@@ -194,7 +194,7 @@ def export_cast(out_dir, *, only=None, exporter='auto', settings=None, layout='p
             rec['sha256'][:12], time.time() - t0))
     doc = {'count': len([m for m in man if 'skipped' not in m]), 'characters': man, 'exporter': 'python',
            'layout': layout}
-    (out / 'manifest.json').write_text(json.dumps(doc, indent=1, sort_keys=True))
+    (out / 'manifest.json').write_text(json.dumps(doc, indent=1, sort_keys=True), encoding='utf-8')
     return doc
 
 
@@ -232,7 +232,7 @@ def export_combat(out_dir, *, only=None, exporter='auto', settings=None, root=No
             rec['props'].append({'id': pid, 'kind': kind, 'pack': pn, 'file': rel, 'sha256': _sha(raw), 'bytes': len(raw),
                                  'tris': sc.info['tris'], 'roles': sc.info['roles'], 'roles_fallback': sc.info['roles_fallback']})
             log('EXPORT %s %-12s %-14s %s' % (kind, pid, pn, _sha(raw)[:12]))
-    (out / 'export.json').write_text(json.dumps(rec, indent=1, sort_keys=True))
+    (out / 'export.json').write_text(json.dumps(rec, indent=1, sort_keys=True), encoding='utf-8')
     return rec
 
 
@@ -247,7 +247,7 @@ def _blender_export(blender, out, what, only):
     if p.returncode != 0:
         raise ExportError('blender exporter failed (exit %d): %s' % (p.returncode, p.stderr[-800:]))
     f = out / ('manifest.json' if what == 'cast' else 'export.json')
-    return json.loads(f.read_text())
+    return json.loads(f.read_text(encoding='utf-8'))
 
 
 # ------------------------------------------------------------------ CHARSYS build items / jobs
@@ -299,7 +299,7 @@ def build_job(job, out_dir, *, exporter='auto', settings=None, root=None):
     for item in job['items']:
         report['items'].append(build_item(item, out, packs=job.get('packs'), exporter=exporter, settings=settings,
                                           root=root))
-    (out / 'build-report.json').write_text(json.dumps(report, indent=1, sort_keys=True))
+    (out / 'build-report.json').write_text(json.dumps(report, indent=1, sort_keys=True), encoding='utf-8')
     return report
 
 

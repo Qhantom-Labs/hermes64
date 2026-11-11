@@ -1,0 +1,126 @@
+{
+ "format": "hermes64-create-patterns/1",
+ "note": "Room SKELETONS for the create flow's fallback room planner, transcribed from the shipped kit demo plans (tools/medievalkit_demo.py square/throne_room/tavern, tools/westernkit_demo.py main_street/saloon) with their dressing removed. Each is a normal plan for the kit's own room compiler (tools.<kit>_rooms.compile_room), which checks sockets, doors and the triangle cap. The create flow adds the brief's resolved pieces into the dress area, keeping the door lanes, the room centre and the character spot clear. Positions are metres in the compiler's plot frame (x east, z south). '@inner'/'@outer' are replaced by the real room/door ids.",
+ "camera_knobs": {
+  "note": "Bounded camera/light candidates the capture stage may try when a room fails the style gate on a framing or value reason (never a threshold change). Candidate 0 is always the pattern camera. Deltas are relative to it; a pattern may list its own camera_alternates inside these bounds.",
+  "max_candidates": 7, "fov": [52, 66], "height_delta_m": 1.0, "look_y_delta_m": 1.0, "move_delta_m": 3.0,
+  "light": {"intensity_max": 1.2, "radius_max": 6.0, "max_lights": 1},
+  "default_alternates": [
+   {"id": "look_up_wide", "look_at_delta": [0, 0.8, 0], "fov": 66},
+   {"id": "pull_back_raise", "move_back_m": 2.5, "position_delta": [0, 0.8, 0], "look_at_delta": [0, 0.4, 0]},
+   {"id": "pull_back_look_up_wide", "move_back_m": 2.5, "position_delta": [0, 0.8, 0], "look_at_delta": [0, 1.0, 0], "fov": 66},
+   {"id": "near_light_soft", "light": {"at": "near", "ahead_m": 6.0, "lift_m": 1.5, "intensity": 0.6, "radius": 5.0, "color": "#fff2d8"}},
+   {"id": "near_light", "light": {"at": "near", "ahead_m": 6.0, "lift_m": 1.5, "intensity": 1.2, "radius": 6.0, "color": "#fff2d8"}},
+   {"id": "key_light", "light": {"at": "look_at", "lift_m": 1.2, "intensity": 1.2, "radius": 6.0, "color": "#fff2d8"}}
+  ],
+  "never_retry": ["floating pieces", "doors without a wall opening"]
+ },
+ "families": {
+  "medieval": {
+   "compiler": "tools.medievalkit_rooms",
+   "manifest": "kits/library/medievalkit-sockets.json",
+   "packs": ["castle_keep", "medieval_village"],
+   "outdoor": [
+    {"id": "plaza", "source": "tools/medievalkit_demo.py plans()[0] square, dressing removed; east postern replaced by plain wall",
+     "tags": ["village", "town", "square", "castle", "tower", "fantasy", "medieval", "wizard", "haunted", "horror", "lighthouse", "chapel"],
+     "plan": {"exterior": true, "look_profile": "village", "plot_cells": [4, 4],
+      "pieces": [
+       {"key": "mter.ground__plaza_4", "block": [0, 0], "kind": "floor"},
+       {"key": "mter.ground__meadow_4", "block": [-4, 0], "kind": "floor"},
+       {"key": "mter.ground__meadow_4", "block": [0, 4], "kind": "floor"},
+       {"key": "mter.ground__meadow_far", "block": [0, -4], "kind": "floor"},
+       {"key": "mter.ground__meadow_far", "block": [4, -4], "kind": "floor"},
+       {"key": "mter.ground__meadow_far", "block": [4, 0], "kind": "floor"},
+       {"key": "vlg.tavern__doorway", "door_to": "@door", "kind": "landmark"},
+       {"key": "vlg.wall", "edge": [3, 0, "e"], "kind": "wall"}, {"key": "vlg.wall", "edge": [3, 1, "e"], "kind": "wall"},
+       {"key": "vlg.wall", "edge": [3, 2, "e"], "kind": "wall"}, {"key": "vlg.wall", "edge": [3, 3, "e"], "kind": "wall"},
+       {"key": "mter.backdrop", "at_m": [8.5, 8.5], "scale": 0.2, "kind": "backdrop"}
+      ],
+      "doors": [{"id": "@door", "side": "n", "cell": 1}],
+      "camera": {"position": [15.6, 4.6, 16.4], "look_at": [6.0, 1.4, 4.0], "fov": 60}},
+     "door_point_m": [6.0, 0.5], "centre_m": [8.5, 9.0], "npc_m": [11.5, 12.5], "npc_yaw": -150,
+     "dress_rect_m": [1.5, 3.5, 15.0, 16.0],
+     "blocked_m": [[0.0, -6.0, 17.0, 2.6], [15.4, 0.0, 17.5, 17.0]],
+     "vista_m": [[10.5, -11.0, 0], [-6.0, 6.0, 90], [24.0, 10.0, -90], [-6.0, 14.0, 90]],
+     "landmark_vista_m": [-7.0, 8.5, 90, 2]},
+    {"id": "plaza_snow", "source": "same skeleton with the shipped snow ground pieces", "tags": ["snow", "winter"],
+     "only_if_keys": ["mter.ground__snow_4", "mter.ground__snow_far"],
+     "plan": {"exterior": true, "look_profile": "village", "plot_cells": [4, 4],
+      "pieces": [
+       {"key": "mter.ground__snow_4", "block": [0, 0], "kind": "floor"},
+       {"key": "mter.ground__snow_4", "block": [-4, 0], "kind": "floor"},
+       {"key": "mter.ground__snow_4", "block": [0, 4], "kind": "floor"},
+       {"key": "mter.ground__snow_far", "block": [0, -4], "kind": "floor"},
+       {"key": "mter.ground__snow_far", "block": [4, -4], "kind": "floor"},
+       {"key": "mter.ground__snow_far", "block": [4, 0], "kind": "floor"},
+       {"key": "vlg.tavern__doorway", "door_to": "@door", "kind": "landmark"},
+       {"key": "vlg.wall", "edge": [3, 0, "e"], "kind": "wall"}, {"key": "vlg.wall", "edge": [3, 1, "e"], "kind": "wall"},
+       {"key": "vlg.wall", "edge": [3, 2, "e"], "kind": "wall"}, {"key": "vlg.wall", "edge": [3, 3, "e"], "kind": "wall"},
+       {"key": "mter.backdrop", "at_m": [8.5, 8.5], "scale": 0.2, "kind": "backdrop"}
+      ],
+      "doors": [{"id": "@door", "side": "n", "cell": 1}],
+      "camera": {"position": [15.6, 4.6, 16.4], "look_at": [6.0, 1.4, 4.0], "fov": 60}},
+     "door_point_m": [6.0, 0.5], "centre_m": [8.5, 9.0], "npc_m": [11.5, 12.5], "npc_yaw": -150,
+     "dress_rect_m": [1.5, 3.5, 15.0, 16.0],
+     "blocked_m": [[0.0, -6.0, 17.0, 2.6], [15.4, 0.0, 17.5, 17.0]],
+     "vista_m": [[10.5, -11.0, 0], [-6.0, 6.0, 90], [24.0, 10.0, -90], [-6.0, 14.0, 90]],
+     "landmark_vista_m": [-7.0, 8.5, 90, 2]}
+   ],
+   "indoor": [
+    {"id": "hall", "source": "tools/medievalkit_demo.py plans()[3] throne_room, dressing removed",
+     "tags": ["castle", "tower", "wizard", "hall", "throne", "keep", "fantasy", "magic", "temple"],
+     "plan": {"look_profile": "hall", "wall_height": 7.0, "plot_cells": [3, 4],
+      "pieces": [{"key": "cst.hall__throne", "block": [0, 0]}, {"key": "cst.ceiling__throne", "block": [0, 0]}],
+      "doors": [{"id": "@door", "side": "s", "cell": 1}],
+      "camera": {"position": [6.5, 4.6, 16.0], "look_at": [6.5, 2.0, 2.0], "fov": 60}},
+     "door_point_m": [6.0, 15.5], "centre_m": [6.5, 9.5], "npc_m": [9.0, 4.5], "npc_yaw": 200,
+     "dress_rect_m": [1.6, 1.4, 11.4, 13.6], "blocked_m": [], "vista_m": []},
+    {"id": "taproom", "source": "tools/medievalkit_demo.py plans()[1] tavern, dressing removed",
+     "tags": ["house", "cottage", "tavern", "inn", "village", "haunted", "horror", "lighthouse", "chapel", "cozy", "mystery"],
+     "plan": {"look_profile": "tavern", "wall_height": 3.4, "plot_cells": [3, 2],
+      "pieces": [{"key": "vlg.room__taproom", "block": [0, 0]}, {"key": "vlg.ceiling", "block": [0, 0]}],
+      "doors": [{"id": "@door", "side": "s", "cell": 1}],
+      "camera": {"position": [1.6, 2.9, 7.9], "look_at": [8.8, 1.0, 2.2], "fov": 60}},
+     "door_point_m": [6.0, 7.5], "centre_m": [6.5, 4.5], "npc_m": [10.4, 3.1], "npc_yaw": -120,
+     "dress_rect_m": [1.4, 1.2, 11.6, 6.8], "blocked_m": [], "vista_m": []}
+   ]
+  },
+  "western": {
+   "compiler": "tools.westernkit_rooms",
+   "manifest": "kits/library/westernkit-sockets.json",
+   "packs": ["frontier_town", "canyon_mesa"],
+   "outdoor": [
+    {"id": "street", "source": "tools/westernkit_demo.py plans()[0] main_street, frontage/dressing and road gateways removed",
+     "tags": ["western", "frontier", "town", "street", "saloon", "train", "rail", "shootout"],
+     "plan": {"exterior": true, "look_profile": "street", "plot_cells": [5, 4],
+      "pieces": [
+       {"key": "wland.ground__main", "block": [-3.5, -4.0], "yaw": 90, "kind": "floor"},
+       {"key": "wtown.saloon__entry", "lot": [1.0, 0, "n"], "kind": "landmark"},
+       {"key": "wtown.boardwalk__end_w", "lot": [0.5, 0, "n"], "kind": "floor"},
+       {"key": "wtown.boardwalk", "lot": [1.5, 0, "n"], "kind": "floor"},
+       {"key": "wtown.boardwalk", "lot": [2.5, 0, "n"], "kind": "floor"},
+       {"key": "wtown.boardwalk", "lot": [3.5, 0, "n"], "kind": "floor"},
+       {"key": "wtown.boardwalk__end_e", "lot": [4.5, 0, "n"], "kind": "floor"},
+       {"key": "wsky.mesas__town", "at_m": [10.5, 8.5], "kind": "vista"},
+       {"key": "wland.butte", "at_m": [-27.0, 10.0], "kind": "vista"}
+      ],
+      "doors": [{"id": "@door", "side": "n", "cell": 0.5}],
+      "camera": {"position": [20.2, 3.0, 9.4], "look_at": [0.0, 2.4, 7.6], "fov": 60}},
+     "door_point_m": [4.5, 1.0], "centre_m": [10.5, 8.5], "npc_m": [14.0, 10.5], "npc_yaw": 160,
+     "dress_rect_m": [1.5, 4.0, 19.5, 12.6], "blocked_m": [[0.0, -4.0, 21.0, 3.6]],
+     "lots": [[3.0, 0, "n"], [4.5, 0, "n"], [1.0, 4, "s"], [3.0, 4, "s"], [4.5, 4, "s"]],
+     "vista_m": [[10.5, 24.0, 90], [30.0, 8.5, 0], [10.5, -12.0, 90]]}
+   ],
+   "indoor": [
+    {"id": "saloon", "source": "tools/westernkit_demo.py plans()[1] saloon, dressing removed",
+     "tags": ["saloon", "bar", "western", "frontier", "town", "shootout"],
+     "plan": {"look_profile": "saloon", "wall_height": 6.4, "plot_cells": [4, 3],
+      "pieces": [{"key": "wtown.room__saloon", "block": [0, 0]}],
+      "doors": [{"id": "@door", "side": "s", "cell": 1}],
+      "camera": {"position": [14.6, 3.6, 11.4], "look_at": [7.0, 1.7, 3.0], "fov": 60}},
+     "door_point_m": [6.0, 12.5], "centre_m": [8.5, 6.5], "npc_m": [10.6, 2.2], "npc_yaw": 180,
+     "dress_rect_m": [1.5, 1.6, 15.5, 10.6], "blocked_m": [], "vista_m": []}
+   ]
+  }
+ }
+}

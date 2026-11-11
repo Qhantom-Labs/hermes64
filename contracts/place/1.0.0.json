@@ -1,0 +1,507 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "hermes64-place/1",
+ "title": "Hermes64 place archetype",
+ "description": "A type of place as DATA (kits/places/<id>.json). adventure_maker.place.make_plan(archetype, params) turns it into a normal room plan for the kit's existing compiler (tools.<kit>kit_rooms.compile_room). The validator in adventure_maker/place.py (validate) is the executable form of this contract; tests/test_place.py checks every shipped archetype against it. Style stays ours: an archetype chooses WHAT goes WHERE and the mood; budgets, palettes and render rules come from the kits, packs and style bible.",
+ "type": "object",
+ "required": [
+  "format",
+  "id",
+  "name",
+  "description",
+  "kit",
+  "base_pack",
+  "look_profile",
+  "exterior",
+  "default_mood",
+  "moods",
+  "footprints",
+  "zones",
+  "groups",
+  "lighting",
+  "texture_roles",
+  "spawn",
+  "clearance",
+  "params"
+ ],
+ "additionalProperties": false,
+ "properties": {
+  "format": {
+   "const": "hermes64-place/1"
+  },
+  "id": {
+   "type": "string",
+   "pattern": "^[a-z][a-z0-9_]{2,47}$"
+  },
+  "name": {
+   "type": "string",
+   "maxLength": 60
+  },
+  "description": {
+   "type": "string",
+   "maxLength": 400
+  },
+  "genres": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "catalog/tags.json genre words (report only)"
+  },
+  "kit": {
+   "enum": [
+    "medieval",
+    "western",
+    "cyber"
+   ],
+   "description": "which existing room compiler builds the plan"
+  },
+  "base_pack": {
+   "type": "string",
+   "description": "shipped style pack whose bindings give sizes and the base look"
+  },
+  "look_profile": {
+   "type": "string",
+   "description": "look profile in the pack view (a footprint may override it)"
+  },
+  "exterior": {
+   "type": "boolean"
+  },
+  "default_mood": {
+   "type": "string"
+  },
+  "moods": {
+   "type": "object",
+   "description": "mood name -> 'base' | 'derive' (kits/core/mood.py derive_checked of base_pack) | 'pack:<id>' (a shipped hand-made pack)",
+   "additionalProperties": {
+    "type": "string",
+    "pattern": "^(base|derive|pack:[a-z0-9_]+)$"
+   }
+  },
+  "texture_roles": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "material roles the place leans on (report only)"
+  },
+  "lighting": {
+   "type": "object",
+   "description": "look profile, sky piece, fog source and light sources (report only; light energy is a bounded run parameter)"
+  },
+  "spawn": {
+   "type": "object",
+   "properties": {
+    "entrance": {
+     "type": "string"
+    },
+    "checkpoint": {
+     "type": "string"
+    }
+   }
+  },
+  "clearance": {
+   "type": "object",
+   "properties": {
+    "rule": {
+     "type": "string"
+    },
+    "overhead_tris": {
+     "type": "integer"
+    },
+    "reserve_tris": {
+     "type": "integer"
+    }
+   }
+  },
+  "params": {
+   "type": "object",
+   "properties": {
+    "size": {
+     "enum": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    "clutter": {
+     "type": "integer",
+     "minimum": 0,
+     "maximum": 3
+    }
+   }
+  },
+  "max_coverage": {
+   "type": "number",
+   "minimum": 0,
+   "maximum": 1,
+   "description": "clutter budget: floor share covered by solid footprints (default 0.35)"
+  },
+  "wants": {
+   "type": "array",
+   "items": {
+    "type": "string"
+   },
+   "description": "things this place should have that the library may lack; each goes through the taxonomy gap report"
+  },
+  "notes": {
+   "type": "string"
+  },
+  "zones": {
+   "type": "object",
+   "properties": {
+    "entrance_depth_m": {
+     "type": "number"
+    },
+    "entrance_width_m": {
+     "type": "number"
+    },
+    "path_width_m": {
+     "type": "number"
+    },
+    "nook_m": {
+     "type": "number"
+    },
+    "fight_clear_m": {
+     "type": "number"
+    }
+   }
+  },
+  "footprints": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "$ref": "#/$defs/footprint"
+   }
+  },
+  "groups": {
+   "type": "array",
+   "items": {
+    "$ref": "#/$defs/group"
+   }
+  }
+ },
+ "$defs": {
+  "rect": {
+   "type": "array",
+   "items": {
+    "type": "number"
+   },
+   "minItems": 4,
+   "maxItems": 4,
+   "description": "[x0, z0, x1, z1] plot metres (x east, z south)"
+  },
+  "footprint": {
+   "type": "object",
+   "required": [
+    "size",
+    "plot_cells",
+    "skeleton",
+    "floor_rect_m",
+    "doors",
+    "entrance",
+    "focal_m",
+    "min_clear_m"
+   ],
+   "properties": {
+    "size": {
+     "enum": [
+      "small",
+      "medium",
+      "large"
+     ]
+    },
+    "plot_cells": {
+     "type": "array",
+     "items": {
+      "type": "integer"
+     },
+     "minItems": 2,
+     "maxItems": 2
+    },
+    "look_profile": {
+     "type": "string"
+    },
+    "skeleton": {
+     "type": "array",
+     "description": "kit plan pieces in the compiler's own syntax (block / cell / edge / lot / at_m / door_to); socket-checked by the compiler"
+    },
+    "floor_rect_m": {
+     "$ref": "#/$defs/rect"
+    },
+    "walk_rect_m": {
+     "$ref": "#/$defs/rect",
+     "description": "clearance boundary (default floor_rect_m)"
+    },
+    "place_rect_m": {
+     "$ref": "#/$defs/rect",
+     "description": "exteriors: where free props may stand"
+    },
+    "perimeter_rect_m": {
+     "$ref": "#/$defs/rect"
+    },
+    "frontage_runs": {
+     "type": "array",
+     "description": "lot-line runs for frontage-row groups: {side, line, from, to} in cells"
+    },
+    "doors": {
+     "type": "array",
+     "items": {
+      "type": "object",
+      "required": [
+       "id",
+       "side",
+       "at_m"
+      ],
+      "properties": {
+       "id": {
+        "type": "string"
+       },
+       "side": {
+        "enum": [
+         "n",
+         "s",
+         "e",
+         "w"
+        ]
+       },
+       "cell": {
+        "type": "number"
+       },
+       "at_m": {
+        "type": "number"
+       },
+       "virtual": {
+        "type": "boolean",
+        "description": "an opening with no door piece (no region door is declared)"
+       }
+      }
+     }
+    },
+    "entrance": {
+     "type": "object",
+     "required": [
+      "id",
+      "side",
+      "at_m"
+     ]
+    },
+    "focal_m": {
+     "type": "array",
+     "items": {
+      "type": "number"
+     },
+     "minItems": 2,
+     "maxItems": 2
+    },
+    "focal_reach_m": {
+     "type": "number"
+    },
+    "path_via_m": {
+     "type": "array"
+    },
+    "path_width_m": {
+     "type": "number"
+    },
+    "fight_m": {
+     "type": "array"
+    },
+    "fight_clear_m": {
+     "type": "number"
+    },
+    "min_clear_m": {
+     "type": "number",
+     "description": "arena clearance rule: largest clear square of reachable floor"
+    },
+    "wall_sockets": {
+     "type": "object",
+     "description": "socket name (medieval shell socket like n1) -> [x, z] on the wall line"
+    },
+    "wall_height": {
+     "type": "number"
+    },
+    "ceiling_y": {
+     "type": "number"
+    },
+    "camera_a": {
+     "type": "array"
+    }
+   }
+  },
+  "group": {
+   "type": "object",
+   "required": [
+    "id",
+    "rule",
+    "tag",
+    "count"
+   ],
+   "properties": {
+    "id": {
+     "type": "string"
+    },
+    "rule": {
+     "enum": [
+      "focal-point",
+      "centre",
+      "against-wall",
+      "wall-mount",
+      "flanking-door",
+      "flanking-focal",
+      "along-path",
+      "on-path",
+      "ring-focal",
+      "cluster",
+      "scatter",
+      "perimeter",
+      "ceiling",
+      "on-top",
+      "frontage-row"
+     ]
+    },
+    "tag": {
+     "type": "object",
+     "properties": {
+      "kind": {
+       "description": "catalog/tags.json vocabulary kinds; an unknown word is refused",
+       "oneOf": [
+        {
+         "type": "string"
+        },
+        {
+         "type": "array",
+         "items": {
+          "type": "string"
+         }
+        }
+       ]
+      },
+      "keys": {
+       "type": "array",
+       "items": {
+        "type": "string"
+       }
+      },
+      "place": {
+       "type": "string"
+      }
+     }
+    },
+    "prefer": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "avoid": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "variety": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "count": {
+     "type": "array",
+     "items": {
+      "type": "integer"
+     },
+     "minItems": 2,
+     "maxItems": 2,
+     "description": "[min, max]; clutter 0..3 interpolates"
+    },
+    "required": {
+     "type": "boolean",
+     "description": "refuse the place when this group cannot be placed"
+    },
+    "tier": {
+     "enum": [
+      "floor",
+      "table",
+      "wall",
+      "ceiling",
+      "lot"
+     ]
+    },
+    "sizes": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "small",
+       "medium",
+       "large"
+      ]
+     }
+    },
+    "on": {
+     "type": "string",
+     "description": "on-top: host group id"
+    },
+    "walls": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "n",
+       "s",
+       "e",
+       "w"
+      ]
+     }
+    },
+    "nooks": {
+     "type": "array",
+     "items": {
+      "enum": [
+       "nw",
+       "ne",
+       "sw",
+       "se"
+      ]
+     }
+    },
+    "spacing_m": {
+     "type": "number"
+    },
+    "lateral_m": {
+     "type": "number"
+    },
+    "radius_m": {
+     "type": "number"
+    },
+    "mount_y": {
+     "type": "number"
+    },
+    "area": {
+     "enum": [
+      "walk"
+     ]
+    },
+    "inside": {
+     "type": "boolean"
+    },
+    "face": {
+     "enum": [
+      "entrance",
+      "focal",
+      "fixed"
+     ]
+    },
+    "snap90": {
+     "type": "boolean"
+    },
+    "budget_share": {
+     "type": "number"
+    },
+    "fill": {
+     "type": "number"
+    },
+    "keep_from_entrance_m": {
+     "type": "number",
+     "description": "keep this group's pieces at least this far from the entrance point (light sources glaring into the entrance camera)"
+    }
+   }
+  }
+ }
+}

@@ -17,9 +17,9 @@ def main():
             return 0 if proof(job)['ok'] else 3
         raise ValueError('unknown worker '+kind)
     except ImportError as exc:
-        data = json.loads(Path(job).read_text())
+        data = json.loads(Path(job).read_text(encoding='utf-8'))
         reason = 'Configure python_path with Python 3.9+ and numpy (JPEG also needs Pillow): '+str(exc)
-        Path(data['out']).write_text(json.dumps({'ok':False,'error':reason,'errors':[{'index':None,'reason':reason}]}))
+        Path(data['out']).write_text(json.dumps({'ok':False,'error':reason,'errors':[{'index':None,'reason':reason}]}), encoding='utf-8')
         return 2
 
 

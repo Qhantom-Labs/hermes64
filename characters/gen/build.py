@@ -133,7 +133,7 @@ def main():
     argv = sys.argv[sys.argv.index('--') + 1:] if '--' in sys.argv else []
     if len(argv) != 4 or argv[0] != '--job' or argv[2] != '--out':
         raise SystemExit('usage: build.py -- --job <job.json> --out <dir>')
-    job = json.loads(Path(argv[1]).read_text())
+    job = json.loads(Path(argv[1]).read_text(encoding='utf-8'))
     out = Path(argv[3])
     out.mkdir(parents=True, exist_ok=True)
     if job.get('schema') != 'hermes64-charsys-job/1':
@@ -146,7 +146,7 @@ def main():
         report['items'].append(info)
         print('BUILT %-24s %-8s %s body %s clips %d' % (info['id'], info['kind'], info['sha256'][:12],
                                                       info.get('tris_body'), len(info['clips'])), flush=True)
-    (out / 'build-report.json').write_text(json.dumps(report, indent=1, sort_keys=True))
+    (out / 'build-report.json').write_text(json.dumps(report, indent=1, sort_keys=True), encoding='utf-8')
     print('BUILD COMPLETE %d' % len(report['items']), flush=True)
 
 

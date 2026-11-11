@@ -1,0 +1,1878 @@
+{
+ "castle_keep": {
+  "castle_keep": {
+   "capture": "passed",
+   "fidelity": {
+    "castle_gate": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "square": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "tavern": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "throne_room": {
+     "reasons": [],
+     "status": "passed"
+    }
+   },
+   "n64_fidelity": "passed",
+   "rooms": {
+    "castle_gate": {
+     "metrics": {
+      "accent_fraction": 0.009,
+      "contrast_range": 0.5475,
+      "flat_fraction": 0.1762,
+      "mean_luma": null,
+      "palette_adherence": 0.9983
+     },
+     "reasons": [
+      "no real darks: luma p2 = 0.157 > 0.14",
+      "depth layering: 3/3 near/mid/far bands present, value range 0.418 (min 0.08), smallest gap 0.001 (min 0.03)"
+     ],
+     "status": "failed"
+    },
+    "square": {
+     "metrics": {
+      "accent_fraction": 0.05,
+      "contrast_range": 0.6339,
+      "flat_fraction": 0.104,
+      "mean_luma": null,
+      "palette_adherence": 1.0
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "tavern": {
+     "metrics": {
+      "accent_fraction": 0.0138,
+      "contrast_range": 0.5088,
+      "flat_fraction": 0.2235,
+      "mean_luma": null,
+      "palette_adherence": 0.9998
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "throne_room": {
+     "metrics": {
+      "accent_fraction": 0.0201,
+      "contrast_range": 0.5396,
+      "flat_fraction": 0.065,
+      "mean_luma": null,
+      "palette_adherence": 0.9989
+     },
+     "reasons": [],
+     "status": "passed"
+    }
+   },
+   "round": "round-7",
+   "style_gate": "failed"
+  },
+  "castle_keep_purple_dusk": {
+   "capture": "passed",
+   "fidelity": {
+    "castle_gate": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "square": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "tavern": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "throne_room": {
+     "reasons": [],
+     "status": "passed"
+    }
+   },
+   "n64_fidelity": "passed",
+   "rooms": {
+    "castle_gate": {
+     "metrics": {
+      "accent_fraction": 0.0083,
+      "contrast_range": 0.5471,
+      "flat_fraction": 0.1783,
+      "mean_luma": null,
+      "palette_adherence": 1.0
+     },
+     "reasons": [
+      "no real darks: luma p2 = 0.156 > 0.14",
+      "depth layering: 3/3 near/mid/far bands present, value range 0.418 (min 0.08), smallest gap 0.000 (min 0.03)"
+     ],
+     "status": "failed"
+    },
+    "square": {
+     "metrics": {
+      "accent_fraction": 0.0062,
+      "contrast_range": 0.6418,
+      "flat_fraction": 0.1042,
+      "mean_luma": null,
+      "palette_adherence": 1.0
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "tavern": {
+     "metrics": {
+      "accent_fraction": 0.0045,
+      "contrast_range": 0.5009,
+      "flat_fraction": 0.2323,
+      "mean_luma": null,
+      "palette_adherence": 0.9999
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "throne_room": {
+     "metrics": {
+      "accent_fraction": 0.0065,
+      "contrast_range": 0.5171,
+      "flat_fraction": 0.0645,
+      "mean_luma": null,
+      "palette_adherence": 0.9989
+     },
+     "reasons": [],
+     "status": "passed"
+    }
+   },
+   "round": "round-9",
+   "style_gate": "failed"
+  },
+  "dropped_for_budget": {
+   "castle_gate": [
+    "mnat.rock__cluster",
+    "mnat.pine"
+   ],
+   "square": [
+    "mprop.trough",
+    "mprop.crate",
+    "mprop.barrel__keg",
+    "mprop.barrel",
+    "mprop.cart",
+    "mnat.oak__young"
+   ],
+   "tavern": [],
+   "throne_room": [
+    "cst.pillar",
+    "cst.pillar"
+   ]
+  },
+  "install": {
+   "built": 233,
+   "clamped": false,
+   "failed": {},
+   "id": "castle_keep_purple_dusk",
+   "pack_sha256": "1a9bcc589c60f3a799ea54bfa1efb8afa0cdfeb65616e975492e1dd424cf46af",
+   "strength": 0.85
+  },
+  "look": {
+   "errors": [],
+   "ok": true,
+   "set": {
+    "base_median_span": 0.2661,
+    "density_spread": {
+     "architecture": 1.0,
+     "detail": 1.0,
+     "furniture": 1.0,
+     "ground": 1.0,
+     "rockface": 1.0,
+     "textile": 1.0
+    },
+    "median_hf": 0.04632,
+    "median_span": 0.2753,
+    "median_span_vs_base": 1.035,
+    "min_adherence": 1.0,
+    "textures": 48
+   }
+  },
+  "look_per_texture": {
+   "band": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.07349,
+    "one_px_edges": 0.3027,
+    "span": 0.572,
+    "span_vs_base": 1.03,
+    "texels_per_m": 21.333
+   },
+   "bark": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.03472,
+    "one_px_edges": 0.0,
+    "span": 0.1755,
+    "span_vs_base": 0.97,
+    "texels_per_m": 21.333
+   },
+   "body": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.06567,
+    "one_px_edges": 0.0377,
+    "span": 0.3651,
+    "span_vs_base": 0.993,
+    "texels_per_m": 21.333
+   },
+   "body_alt": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.03269,
+    "one_px_edges": 0.0,
+    "span": 0.0905,
+    "span_vs_base": 0.979,
+    "texels_per_m": 21.333
+   },
+   "book": {
+    "adherence": 1.0,
+    "class": "detail",
+    "hf_energy": 0.04771,
+    "one_px_edges": 0.1667,
+    "span": 0.195,
+    "span_vs_base": 1.107,
+    "texels_per_m": 80.0
+   },
+   "cap": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.04313,
+    "one_px_edges": 0.0,
+    "span": 0.1498,
+    "span_vs_base": 1.018,
+    "texels_per_m": 10.667
+   },
+   "ceiling": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.0389,
+    "one_px_edges": 0.0,
+    "span": 0.1755,
+    "span_vs_base": 0.97,
+    "texels_per_m": 16.0
+   },
+   "cliff": {
+    "adherence": 1.0,
+    "class": "rockface",
+    "hf_energy": 0.04358,
+    "one_px_edges": 0.0491,
+    "span": 0.2753,
+    "span_vs_base": 1.035,
+    "texels_per_m": 16.0
+   },
+   "cushion": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.02051,
+    "one_px_edges": 0.0,
+    "span": 0.1346,
+    "span_vs_base": 0.925,
+    "texels_per_m": 53.333
+   },
+   "dirt": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.04161,
+    "one_px_edges": 0.0,
+    "span": 0.1319,
+    "span_vs_base": 1.011,
+    "texels_per_m": 10.667
+   },
+   "door": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.05203,
+    "one_px_edges": 0.1182,
+    "span": 0.3073,
+    "span_vs_base": 0.987,
+    "texels_per_m": 16.0
+   },
+   "fabric": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.11815,
+    "one_px_edges": 0.3788,
+    "span": 0.5572,
+    "span_vs_base": 0.996,
+    "texels_per_m": 53.333
+   },
+   "field": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.03321,
+    "one_px_edges": 0.0376,
+    "span": 0.2421,
+    "span_vs_base": 1.097,
+    "texels_per_m": 10.667
+   },
+   "fire": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.08123,
+    "one_px_edges": 0.2838,
+    "span": 0.5572,
+    "span_vs_base": 0.996,
+    "texels_per_m": 16.0
+   },
+   "floor": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04622,
+    "one_px_edges": 0.0845,
+    "span": 0.4025,
+    "span_vs_base": 1.022,
+    "texels_per_m": 16.0
+   },
+   "flower": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.16687,
+    "one_px_edges": 0.3151,
+    "span": 0.5572,
+    "span_vs_base": 0.996,
+    "texels_per_m": 21.333
+   },
+   "foliage": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.06526,
+    "one_px_edges": 0.1285,
+    "span": 0.3816,
+    "span_vs_base": 1.041,
+    "texels_per_m": 21.333
+   },
+   "frame": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.02213,
+    "one_px_edges": 0.0,
+    "span": 0.0905,
+    "span_vs_base": 0.979,
+    "texels_per_m": 16.0
+   },
+   "fur": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.05051,
+    "one_px_edges": 0.2188,
+    "span": 0.3457,
+    "span_vs_base": 1.034,
+    "texels_per_m": 53.333
+   },
+   "glass": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.06869,
+    "one_px_edges": 0.3934,
+    "span": 0.3363,
+    "span_vs_base": 0.99,
+    "texels_per_m": 16.0
+   },
+   "grass": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.04383,
+    "one_px_edges": 0.0,
+    "span": 0.1498,
+    "span_vs_base": 1.018,
+    "texels_per_m": 10.667
+   },
+   "hull": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.04591,
+    "one_px_edges": 0.0204,
+    "span": 0.1545,
+    "span_vs_base": 1.012,
+    "texels_per_m": 21.333
+   },
+   "hull_alt": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.05563,
+    "one_px_edges": 0.2054,
+    "span": 0.3865,
+    "span_vs_base": 1.027,
+    "texels_per_m": 21.333
+   },
+   "ice": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.04607,
+    "one_px_edges": 0.0,
+    "span": 0.1223,
+    "span_vs_base": 1.03,
+    "texels_per_m": 10.667
+   },
+   "knit": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.05717,
+    "one_px_edges": 0.1413,
+    "span": 0.371,
+    "span_vs_base": 1.027,
+    "texels_per_m": 53.333
+   },
+   "leather": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.03038,
+    "one_px_edges": 0.0,
+    "span": 0.0849,
+    "span_vs_base": 0.959,
+    "texels_per_m": 53.333
+   },
+   "light": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.04569,
+    "one_px_edges": 0.0,
+    "span": 0.346,
+    "span_vs_base": 1.019,
+    "texels_per_m": 16.0
+   },
+   "metal": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.03173,
+    "one_px_edges": 0.0,
+    "span": 0.1819,
+    "span_vs_base": 0.973,
+    "texels_per_m": 21.333
+   },
+   "opening": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.0,
+    "one_px_edges": 0.0,
+    "span": 0.0,
+    "texels_per_m": 8.0
+   },
+   "paper": {
+    "adherence": 1.0,
+    "class": "detail",
+    "hf_energy": 0.0481,
+    "one_px_edges": 0.0,
+    "span": 0.3113,
+    "span_vs_base": 1.053,
+    "texels_per_m": 80.0
+   },
+   "path": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.04803,
+    "one_px_edges": 0.0583,
+    "span": 0.2642,
+    "span_vs_base": 1.014,
+    "texels_per_m": 10.667
+   },
+   "post": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.03506,
+    "one_px_edges": 0.0,
+    "span": 0.1755,
+    "span_vs_base": 0.97,
+    "texels_per_m": 21.333
+   },
+   "quilt": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.06116,
+    "one_px_edges": 0.3128,
+    "span": 0.4063,
+    "span_vs_base": 1.026,
+    "texels_per_m": 53.333
+   },
+   "rail": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.06772,
+    "one_px_edges": 0.0556,
+    "span": 0.3651,
+    "span_vs_base": 0.993,
+    "texels_per_m": 21.333
+   },
+   "rock": {
+    "adherence": 1.0,
+    "class": "rockface",
+    "hf_energy": 0.05974,
+    "one_px_edges": 0.1375,
+    "span": 0.3817,
+    "span_vs_base": 1.021,
+    "texels_per_m": 16.0
+   },
+   "roof": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04632,
+    "one_px_edges": 0.0541,
+    "span": 0.1545,
+    "span_vs_base": 1.012,
+    "texels_per_m": 16.0
+   },
+   "rope": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.10413,
+    "one_px_edges": 0.0,
+    "span": 0.3457,
+    "span_vs_base": 1.034,
+    "texels_per_m": 53.333
+   },
+   "sky": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.01622,
+    "one_px_edges": 0.3359,
+    "span": 0.6434,
+    "texels_per_m": 128.0
+   },
+   "snow": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.03839,
+    "one_px_edges": 0.0,
+    "span": 0.1184,
+    "span_vs_base": 1.058,
+    "texels_per_m": 10.667
+   },
+   "step": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04744,
+    "one_px_edges": 0.0885,
+    "span": 0.4025,
+    "span_vs_base": 1.022,
+    "texels_per_m": 16.0
+   },
+   "stone": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04951,
+    "one_px_edges": 0.0857,
+    "span": 0.2753,
+    "span_vs_base": 1.035,
+    "texels_per_m": 16.0
+   },
+   "trim": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04472,
+    "one_px_edges": 0.0769,
+    "span": 0.2606,
+    "span_vs_base": 1.035,
+    "texels_per_m": 16.0
+   },
+   "vista": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.04247,
+    "one_px_edges": 0.1786,
+    "span": 0.2781,
+    "span_vs_base": 1.04,
+    "texels_per_m": 32.0
+   },
+   "vista_far": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.02035,
+    "one_px_edges": 0.0,
+    "span": 0.1223,
+    "span_vs_base": 1.03,
+    "texels_per_m": 32.0
+   },
+   "wall": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.0502,
+    "one_px_edges": 0.0654,
+    "span": 0.2753,
+    "span_vs_base": 1.035,
+    "texels_per_m": 16.0
+   },
+   "wall_alt": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.0495,
+    "one_px_edges": 0.0789,
+    "span": 0.4025,
+    "span_vs_base": 1.022,
+    "texels_per_m": 16.0
+   },
+   "water": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.06342,
+    "one_px_edges": 0.2423,
+    "span": 0.5213,
+    "span_vs_base": 1.009,
+    "texels_per_m": 10.667
+   },
+   "wood": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.0166,
+    "one_px_edges": 0.0,
+    "span": 0.0412,
+    "span_vs_base": 1.446,
+    "texels_per_m": 21.333
+   }
+  }
+ },
+ "medieval_village": {
+  "dropped_for_budget": {
+   "castle_gate": [
+    "mnat.rock__cluster",
+    "mnat.pine"
+   ],
+   "square": [
+    "mprop.trough",
+    "mprop.crate",
+    "mprop.barrel__keg",
+    "mprop.barrel",
+    "mprop.cart",
+    "mnat.oak__young"
+   ],
+   "tavern": [],
+   "throne_room": [
+    "cst.pillar",
+    "cst.pillar"
+   ]
+  },
+  "install": {
+   "built": 233,
+   "clamped": false,
+   "failed": {},
+   "id": "medieval_village_purple_dusk",
+   "pack_sha256": "ba3046c66bee69a9205bbe41476a3acf661956a5127a74c1930838131d88fa67",
+   "strength": 0.85
+  },
+  "look": {
+   "errors": [],
+   "ok": true,
+   "set": {
+    "base_median_span": 0.2674,
+    "density_spread": {
+     "architecture": 1.0,
+     "detail": 1.0,
+     "furniture": 1.0,
+     "ground": 1.0,
+     "rockface": 1.0,
+     "textile": 1.0
+    },
+    "median_hf": 0.04682,
+    "median_span": 0.305,
+    "median_span_vs_base": 1.141,
+    "min_adherence": 1.0,
+    "textures": 48
+   }
+  },
+  "look_per_texture": {
+   "band": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.07109,
+    "one_px_edges": 0.3185,
+    "span": 0.571,
+    "span_vs_base": 1.028,
+    "texels_per_m": 21.333
+   },
+   "bark": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.03757,
+    "one_px_edges": 0.0,
+    "span": 0.1743,
+    "span_vs_base": 0.964,
+    "texels_per_m": 21.333
+   },
+   "body": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.0584,
+    "one_px_edges": 0.0571,
+    "span": 0.3655,
+    "span_vs_base": 0.995,
+    "texels_per_m": 21.333
+   },
+   "body_alt": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.03236,
+    "one_px_edges": 0.0,
+    "span": 0.0894,
+    "span_vs_base": 0.968,
+    "texels_per_m": 21.333
+   },
+   "book": {
+    "adherence": 1.0,
+    "class": "detail",
+    "hf_energy": 0.04714,
+    "one_px_edges": 0.3333,
+    "span": 0.4076,
+    "span_vs_base": 1.029,
+    "texels_per_m": 80.0
+   },
+   "cap": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.05148,
+    "one_px_edges": 0.0,
+    "span": 0.151,
+    "span_vs_base": 1.027,
+    "texels_per_m": 10.667
+   },
+   "ceiling": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04002,
+    "one_px_edges": 0.0,
+    "span": 0.1743,
+    "span_vs_base": 0.964,
+    "texels_per_m": 16.0
+   },
+   "cliff": {
+    "adherence": 1.0,
+    "class": "rockface",
+    "hf_energy": 0.04456,
+    "one_px_edges": 0.0369,
+    "span": 0.2742,
+    "span_vs_base": 1.03,
+    "texels_per_m": 16.0
+   },
+   "cushion": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.02328,
+    "one_px_edges": 0.0,
+    "span": 0.1358,
+    "span_vs_base": 0.933,
+    "texels_per_m": 53.333
+   },
+   "dirt": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.03627,
+    "one_px_edges": 0.0,
+    "span": 0.1307,
+    "span_vs_base": 1.002,
+    "texels_per_m": 10.667
+   },
+   "door": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04796,
+    "one_px_edges": 0.184,
+    "span": 0.305,
+    "span_vs_base": 0.979,
+    "texels_per_m": 16.0
+   },
+   "fabric": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.12296,
+    "one_px_edges": 0.4062,
+    "span": 0.5566,
+    "span_vs_base": 0.995,
+    "texels_per_m": 53.333
+   },
+   "field": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.03317,
+    "one_px_edges": 0.0474,
+    "span": 0.2421,
+    "span_vs_base": 1.097,
+    "texels_per_m": 10.667
+   },
+   "fire": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.07236,
+    "one_px_edges": 0.3056,
+    "span": 0.5566,
+    "span_vs_base": 0.995,
+    "texels_per_m": 16.0
+   },
+   "floor": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.0632,
+    "one_px_edges": 0.1856,
+    "span": 0.3655,
+    "span_vs_base": 0.995,
+    "texels_per_m": 16.0
+   },
+   "flower": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.14222,
+    "one_px_edges": 0.3357,
+    "span": 0.5566,
+    "span_vs_base": 0.995,
+    "texels_per_m": 21.333
+   },
+   "foliage": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.06174,
+    "one_px_edges": 0.1058,
+    "span": 0.3816,
+    "span_vs_base": 1.041,
+    "texels_per_m": 21.333
+   },
+   "frame": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.02775,
+    "one_px_edges": 0.0,
+    "span": 0.1307,
+    "span_vs_base": 1.002,
+    "texels_per_m": 16.0
+   },
+   "fur": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.04917,
+    "one_px_edges": 0.1833,
+    "span": 0.3445,
+    "span_vs_base": 1.031,
+    "texels_per_m": 53.333
+   },
+   "glass": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.06866,
+    "one_px_edges": 0.3934,
+    "span": 0.3363,
+    "span_vs_base": 0.99,
+    "texels_per_m": 16.0
+   },
+   "grass": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.04449,
+    "one_px_edges": 0.0,
+    "span": 0.151,
+    "span_vs_base": 1.027,
+    "texels_per_m": 10.667
+   },
+   "hull": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.04915,
+    "one_px_edges": 0.037,
+    "span": 0.1545,
+    "span_vs_base": 1.012,
+    "texels_per_m": 21.333
+   },
+   "hull_alt": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.05759,
+    "one_px_edges": 0.2222,
+    "span": 0.3851,
+    "span_vs_base": 1.023,
+    "texels_per_m": 21.333
+   },
+   "ice": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.04235,
+    "one_px_edges": 0.0,
+    "span": 0.1227,
+    "span_vs_base": 1.034,
+    "texels_per_m": 10.667
+   },
+   "knit": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.04931,
+    "one_px_edges": 0.0974,
+    "span": 0.3713,
+    "span_vs_base": 1.028,
+    "texels_per_m": 53.333
+   },
+   "leather": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.02845,
+    "one_px_edges": 0.0,
+    "span": 0.0849,
+    "span_vs_base": 0.959,
+    "texels_per_m": 53.333
+   },
+   "light": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.04397,
+    "one_px_edges": 0.0,
+    "span": 0.3432,
+    "span_vs_base": 1.011,
+    "texels_per_m": 16.0
+   },
+   "metal": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.02789,
+    "one_px_edges": 0.125,
+    "span": 0.1819,
+    "span_vs_base": 0.973,
+    "texels_per_m": 21.333
+   },
+   "opening": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.0,
+    "one_px_edges": 0.0,
+    "span": 0.0,
+    "texels_per_m": 8.0
+   },
+   "paper": {
+    "adherence": 1.0,
+    "class": "detail",
+    "hf_energy": 0.04418,
+    "one_px_edges": 0.0,
+    "span": 0.3072,
+    "span_vs_base": 1.039,
+    "texels_per_m": 80.0
+   },
+   "path": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.04682,
+    "one_px_edges": 0.0598,
+    "span": 0.2642,
+    "span_vs_base": 1.014,
+    "texels_per_m": 10.667
+   },
+   "post": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.03975,
+    "one_px_edges": 0.0,
+    "span": 0.1743,
+    "span_vs_base": 0.964,
+    "texels_per_m": 21.333
+   },
+   "quilt": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.06336,
+    "one_px_edges": 0.2768,
+    "span": 0.4076,
+    "span_vs_base": 1.029,
+    "texels_per_m": 53.333
+   },
+   "rail": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.06623,
+    "one_px_edges": 0.0741,
+    "span": 0.3655,
+    "span_vs_base": 0.995,
+    "texels_per_m": 21.333
+   },
+   "rock": {
+    "adherence": 1.0,
+    "class": "rockface",
+    "hf_energy": 0.06075,
+    "one_px_edges": 0.1477,
+    "span": 0.4025,
+    "span_vs_base": 1.022,
+    "texels_per_m": 16.0
+   },
+   "roof": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.07157,
+    "one_px_edges": 0.1667,
+    "span": 0.3445,
+    "span_vs_base": 1.031,
+    "texels_per_m": 16.0
+   },
+   "rope": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.09997,
+    "one_px_edges": 0.0,
+    "span": 0.3445,
+    "span_vs_base": 1.031,
+    "texels_per_m": 53.333
+   },
+   "sky": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.01458,
+    "one_px_edges": 0.3395,
+    "span": 0.6389,
+    "texels_per_m": 128.0
+   },
+   "snow": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.02951,
+    "one_px_edges": 0.0,
+    "span": 0.1165,
+    "span_vs_base": 1.041,
+    "texels_per_m": 10.667
+   },
+   "step": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04419,
+    "one_px_edges": 0.1071,
+    "span": 0.4025,
+    "span_vs_base": 1.022,
+    "texels_per_m": 16.0
+   },
+   "stone": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04787,
+    "one_px_edges": 0.0854,
+    "span": 0.2742,
+    "span_vs_base": 1.03,
+    "texels_per_m": 16.0
+   },
+   "trim": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.0371,
+    "one_px_edges": 0.0,
+    "span": 0.1383,
+    "span_vs_base": 1.038,
+    "texels_per_m": 16.0
+   },
+   "vista": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.04565,
+    "one_px_edges": 0.0769,
+    "span": 0.2792,
+    "span_vs_base": 1.044,
+    "texels_per_m": 32.0
+   },
+   "vista_far": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.02229,
+    "one_px_edges": 0.0,
+    "span": 0.1227,
+    "span_vs_base": 1.034,
+    "texels_per_m": 32.0
+   },
+   "wall": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.0341,
+    "one_px_edges": 0.0,
+    "span": 0.1282,
+    "span_vs_base": 1.042,
+    "texels_per_m": 16.0
+   },
+   "wall_alt": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04865,
+    "one_px_edges": 0.0531,
+    "span": 0.4025,
+    "span_vs_base": 1.022,
+    "texels_per_m": 16.0
+   },
+   "water": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.0656,
+    "one_px_edges": 0.1472,
+    "span": 0.5202,
+    "span_vs_base": 1.007,
+    "texels_per_m": 10.667
+   },
+   "wood": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.01579,
+    "one_px_edges": 0.0,
+    "span": 0.0421,
+    "span_vs_base": 1.477,
+    "texels_per_m": 21.333
+   }
+  },
+  "medieval_village": {
+   "capture": "passed",
+   "fidelity": {
+    "castle_gate": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "square": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "tavern": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "throne_room": {
+     "reasons": [],
+     "status": "passed"
+    }
+   },
+   "n64_fidelity": "passed",
+   "rooms": {
+    "castle_gate": {
+     "metrics": {
+      "accent_fraction": 0.009,
+      "contrast_range": 0.5422,
+      "flat_fraction": 0.1708,
+      "mean_luma": null,
+      "palette_adherence": 0.9978
+     },
+     "reasons": [
+      "no real darks: luma p2 = 0.159 > 0.14",
+      "depth layering: 3/3 near/mid/far bands present, value range 0.420 (min 0.08), smallest gap 0.002 (min 0.03)"
+     ],
+     "status": "failed"
+    },
+    "square": {
+     "metrics": {
+      "accent_fraction": 0.0625,
+      "contrast_range": 0.6356,
+      "flat_fraction": 0.1192,
+      "mean_luma": null,
+      "palette_adherence": 0.9999
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "tavern": {
+     "metrics": {
+      "accent_fraction": 0.0181,
+      "contrast_range": 0.5064,
+      "flat_fraction": 0.2559,
+      "mean_luma": null,
+      "palette_adherence": 0.9998
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "throne_room": {
+     "metrics": {
+      "accent_fraction": 0.0203,
+      "contrast_range": 0.4978,
+      "flat_fraction": 0.067,
+      "mean_luma": null,
+      "palette_adherence": 0.9991
+     },
+     "reasons": [],
+     "status": "passed"
+    }
+   },
+   "round": "round-7",
+   "style_gate": "failed"
+  },
+  "medieval_village_purple_dusk": {
+   "capture": "passed",
+   "fidelity": {
+    "castle_gate": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "square": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "tavern": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "throne_room": {
+     "reasons": [],
+     "status": "passed"
+    }
+   },
+   "n64_fidelity": "passed",
+   "rooms": {
+    "castle_gate": {
+     "metrics": {
+      "accent_fraction": 0.0084,
+      "contrast_range": 0.5415,
+      "flat_fraction": 0.1702,
+      "mean_luma": null,
+      "palette_adherence": 1.0
+     },
+     "reasons": [
+      "no real darks: luma p2 = 0.156 > 0.14",
+      "depth layering: 3/3 near/mid/far bands present, value range 0.420 (min 0.08), smallest gap 0.000 (min 0.03)"
+     ],
+     "status": "failed"
+    },
+    "square": {
+     "metrics": {
+      "accent_fraction": 0.0066,
+      "contrast_range": 0.6434,
+      "flat_fraction": 0.1189,
+      "mean_luma": null,
+      "palette_adherence": 1.0
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "tavern": {
+     "metrics": {
+      "accent_fraction": 0.0046,
+      "contrast_range": 0.5002,
+      "flat_fraction": 0.2694,
+      "mean_luma": null,
+      "palette_adherence": 0.9999
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "throne_room": {
+     "metrics": {
+      "accent_fraction": 0.0065,
+      "contrast_range": 0.4851,
+      "flat_fraction": 0.0752,
+      "mean_luma": null,
+      "palette_adherence": 0.9989
+     },
+     "reasons": [],
+     "status": "passed"
+    }
+   },
+   "round": "round-9",
+   "style_gate": "failed"
+  }
+ },
+ "stone_dungeon": {
+  "dropped_for_budget": {
+   "castle_gate": [
+    "mnat.rock__cluster",
+    "mnat.pine"
+   ],
+   "gatehall": [
+    "dprop.breakable__urn",
+    "dprop.statue__shield"
+   ],
+   "lakeside": [
+    "cave.boulder"
+   ],
+   "sanctum": [],
+   "square": [
+    "mprop.trough",
+    "mprop.crate",
+    "mprop.barrel__keg",
+    "mprop.barrel",
+    "mprop.cart",
+    "mnat.oak__young"
+   ],
+   "tavern": [],
+   "throne_room": [
+    "cst.pillar",
+    "cst.pillar"
+   ],
+   "vault": []
+  },
+  "install": {
+   "built": 147,
+   "clamped": false,
+   "failed": {},
+   "id": "stone_dungeon_purple_dusk",
+   "pack_sha256": "b48bc32e3ab280487772ebc25a06e82c0ac71ae2f0abbe9eac36409adb103b51",
+   "strength": 0.85
+  },
+  "look": {
+   "errors": [],
+   "ok": true,
+   "set": {
+    "base_median_span": 0.2516,
+    "density_spread": {
+     "architecture": 1.0,
+     "detail": 1.0,
+     "furniture": 1.0,
+     "ground": 1.0,
+     "rockface": 1.0,
+     "textile": 1.0
+    },
+    "median_hf": 0.0449,
+    "median_span": 0.2975,
+    "median_span_vs_base": 1.182,
+    "min_adherence": 1.0,
+    "textures": 37
+   }
+  },
+  "look_per_texture": {
+   "bark": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.04676,
+    "one_px_edges": 0.0417,
+    "span": 0.2388,
+    "span_vs_base": 0.999,
+    "texels_per_m": 21.333
+   },
+   "body_alt": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.05049,
+    "one_px_edges": 0.0,
+    "span": 0.2452,
+    "span_vs_base": 1.012,
+    "texels_per_m": 21.333
+   },
+   "cap": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.02403,
+    "one_px_edges": 0.0,
+    "span": 0.2562,
+    "span_vs_base": 1.027,
+    "texels_per_m": 10.667
+   },
+   "ceiling": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.04303,
+    "one_px_edges": 0.25,
+    "span": 0.1966,
+    "span_vs_base": 0.978,
+    "texels_per_m": 16.0
+   },
+   "cliff": {
+    "adherence": 1.0,
+    "class": "rockface",
+    "hf_energy": 0.03374,
+    "one_px_edges": 0.2194,
+    "span": 0.2352,
+    "span_vs_base": 0.972,
+    "texels_per_m": 16.0
+   },
+   "dirt": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.00648,
+    "one_px_edges": 0.0,
+    "span": 0.004,
+    "texels_per_m": 10.667
+   },
+   "door": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.042,
+    "one_px_edges": 0.0238,
+    "span": 0.2388,
+    "span_vs_base": 0.999,
+    "texels_per_m": 16.0
+   },
+   "fabric": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.06196,
+    "one_px_edges": 0.3339,
+    "span": 0.6103,
+    "span_vs_base": 1.012,
+    "texels_per_m": 53.333
+   },
+   "fire": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.0717,
+    "one_px_edges": 0.2459,
+    "span": 0.6107,
+    "span_vs_base": 1.01,
+    "texels_per_m": 16.0
+   },
+   "floor": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.05005,
+    "one_px_edges": 0.1792,
+    "span": 0.3393,
+    "span_vs_base": 1.008,
+    "texels_per_m": 16.0
+   },
+   "flower": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.0995,
+    "one_px_edges": 0.1429,
+    "span": 0.5327,
+    "span_vs_base": 0.996,
+    "texels_per_m": 21.333
+   },
+   "foliage": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.04137,
+    "one_px_edges": 0.193,
+    "span": 0.2562,
+    "span_vs_base": 1.027,
+    "texels_per_m": 21.333
+   },
+   "frame": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.10443,
+    "one_px_edges": 0.1382,
+    "span": 0.5697,
+    "span_vs_base": 1.004,
+    "texels_per_m": 16.0
+   },
+   "grass": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.03372,
+    "one_px_edges": 0.0,
+    "span": 0.1196,
+    "span_vs_base": 1.033,
+    "texels_per_m": 10.667
+   },
+   "hull": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.0285,
+    "one_px_edges": 0.3369,
+    "span": 0.4079,
+    "span_vs_base": 1.071,
+    "texels_per_m": 21.333
+   },
+   "ice": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.04047,
+    "one_px_edges": 0.3274,
+    "span": 0.3974,
+    "span_vs_base": 1.01,
+    "texels_per_m": 10.667
+   },
+   "light": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.05017,
+    "one_px_edges": 0.2785,
+    "span": 0.437,
+    "span_vs_base": 0.992,
+    "texels_per_m": 16.0
+   },
+   "metal": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.04271,
+    "one_px_edges": 0.4132,
+    "span": 0.2481,
+    "span_vs_base": 0.986,
+    "texels_per_m": 32.0
+   },
+   "opening": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.0,
+    "one_px_edges": 0.0,
+    "span": 0.0,
+    "texels_per_m": 8.0
+   },
+   "paper": {
+    "adherence": 1.0,
+    "class": "detail",
+    "hf_energy": 0.06058,
+    "one_px_edges": 0.3377,
+    "span": 0.4637,
+    "span_vs_base": 1.02,
+    "texels_per_m": 80.0
+   },
+   "particle": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.0,
+    "one_px_edges": 0.0,
+    "span": 0.0,
+    "texels_per_m": 8.0
+   },
+   "path": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.0589,
+    "one_px_edges": 0.3384,
+    "span": 0.2975,
+    "span_vs_base": 0.985,
+    "texels_per_m": 10.667
+   },
+   "post": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.04166,
+    "one_px_edges": 0.0,
+    "span": 0.2388,
+    "span_vs_base": 0.999,
+    "texels_per_m": 21.333
+   },
+   "rock": {
+    "adherence": 1.0,
+    "class": "rockface",
+    "hf_energy": 0.04394,
+    "one_px_edges": 0.1635,
+    "span": 0.4804,
+    "span_vs_base": 0.992,
+    "texels_per_m": 16.0
+   },
+   "rope": {
+    "adherence": 1.0,
+    "class": "textile",
+    "hf_energy": 0.08245,
+    "one_px_edges": 0.3691,
+    "span": 0.2381,
+    "span_vs_base": 0.995,
+    "texels_per_m": 53.333
+   },
+   "sand": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.03981,
+    "one_px_edges": 0.1961,
+    "span": 0.2436,
+    "span_vs_base": 0.991,
+    "texels_per_m": 10.667
+   },
+   "screen": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.05776,
+    "one_px_edges": 0.1159,
+    "span": 0.7078,
+    "span_vs_base": 1.011,
+    "texels_per_m": 32.0
+   },
+   "sky": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.02681,
+    "one_px_edges": 0.4787,
+    "span": 0.5017,
+    "texels_per_m": 128.0
+   },
+   "snow": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.02972,
+    "one_px_edges": 0.0,
+    "span": 0.2606,
+    "span_vs_base": 1.041,
+    "texels_per_m": 10.667
+   },
+   "step": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.06693,
+    "one_px_edges": 0.2088,
+    "span": 0.4804,
+    "span_vs_base": 0.992,
+    "texels_per_m": 16.0
+   },
+   "stone": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.0609,
+    "one_px_edges": 0.1197,
+    "span": 0.2975,
+    "span_vs_base": 0.985,
+    "texels_per_m": 16.0
+   },
+   "trim": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.05317,
+    "one_px_edges": 0.0,
+    "span": 0.2452,
+    "span_vs_base": 1.012,
+    "texels_per_m": 16.0
+   },
+   "view": {
+    "adherence": 1.0,
+    "class": null,
+    "hf_energy": 0.06249,
+    "one_px_edges": 0.704,
+    "span": 0.3974,
+    "texels_per_m": 64.0
+   },
+   "wall": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.06716,
+    "one_px_edges": 0.1884,
+    "span": 0.4354,
+    "span_vs_base": 0.997,
+    "texels_per_m": 16.0
+   },
+   "wall_alt": {
+    "adherence": 1.0,
+    "class": "architecture",
+    "hf_energy": 0.0449,
+    "one_px_edges": 0.1232,
+    "span": 0.3795,
+    "span_vs_base": 1.017,
+    "texels_per_m": 16.0
+   },
+   "water": {
+    "adherence": 1.0,
+    "class": "ground",
+    "hf_energy": 0.05006,
+    "one_px_edges": 0.1381,
+    "span": 0.3269,
+    "span_vs_base": 1.038,
+    "texels_per_m": 10.667
+   },
+   "wood": {
+    "adherence": 1.0,
+    "class": "furniture",
+    "hf_energy": 0.02748,
+    "one_px_edges": 0.0,
+    "span": 0.0985,
+    "span_vs_base": 0.998,
+    "texels_per_m": 21.333
+   }
+  },
+  "stone_dungeon": {
+   "capture": "passed",
+   "fidelity": {
+    "boss_gate": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "corridor": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "gatehall": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "lakeside": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "pit_hall": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "sanctum": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "vault": {
+     "reasons": [],
+     "status": "passed"
+    }
+   },
+   "n64_fidelity": "passed",
+   "rooms": {
+    "boss_gate": {
+     "metrics": {
+      "accent_fraction": 0.0092,
+      "contrast_range": 0.5592,
+      "flat_fraction": 0.2408,
+      "mean_luma": null,
+      "palette_adherence": 0.9981
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "corridor": {
+     "metrics": {
+      "accent_fraction": 0.0042,
+      "contrast_range": 0.6254,
+      "flat_fraction": 0.3003,
+      "mean_luma": null,
+      "palette_adherence": 0.9931
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "gatehall": {
+     "metrics": {
+      "accent_fraction": 0.0144,
+      "contrast_range": 0.4607,
+      "flat_fraction": 0.1619,
+      "mean_luma": null,
+      "palette_adherence": 0.9895
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "lakeside": {
+     "metrics": {
+      "accent_fraction": 0.1261,
+      "contrast_range": 0.5181,
+      "flat_fraction": 0.3432,
+      "mean_luma": null,
+      "palette_adherence": 0.9999
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "pit_hall": {
+     "metrics": {
+      "accent_fraction": 0.0138,
+      "contrast_range": 0.5128,
+      "flat_fraction": 0.1617,
+      "mean_luma": null,
+      "palette_adherence": 0.979
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "sanctum": {
+     "metrics": {
+      "accent_fraction": 0.0104,
+      "contrast_range": 0.6461,
+      "flat_fraction": 0.1378,
+      "mean_luma": null,
+      "palette_adherence": 0.9966
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "vault": {
+     "metrics": {
+      "accent_fraction": 0.0082,
+      "contrast_range": 0.4433,
+      "flat_fraction": 0.3805,
+      "mean_luma": null,
+      "palette_adherence": 0.9938
+     },
+     "reasons": [
+      "fog flattens the frame: 20% of drawn (non-sky) pixels sit within 0.07 of the fog colour (max 20%)"
+     ],
+     "status": "failed"
+    }
+   },
+   "round": "round-7",
+   "style_gate": "failed"
+  },
+  "stone_dungeon_purple_dusk": {
+   "capture": "passed",
+   "fidelity": {
+    "boss_gate": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "corridor": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "gatehall": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "lakeside": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "pit_hall": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "sanctum": {
+     "reasons": [],
+     "status": "passed"
+    },
+    "vault": {
+     "reasons": [],
+     "status": "passed"
+    }
+   },
+   "n64_fidelity": "passed",
+   "rooms": {
+    "boss_gate": {
+     "metrics": {
+      "accent_fraction": 0.0007,
+      "contrast_range": 0.5243,
+      "flat_fraction": 0.3182,
+      "mean_luma": null,
+      "palette_adherence": 0.9362
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "corridor": {
+     "metrics": {
+      "accent_fraction": 0.0027,
+      "contrast_range": 0.5935,
+      "flat_fraction": 0.3,
+      "mean_luma": null,
+      "palette_adherence": 0.9578
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "gatehall": {
+     "metrics": {
+      "accent_fraction": 0.0081,
+      "contrast_range": 0.4321,
+      "flat_fraction": 0.22,
+      "mean_luma": null,
+      "palette_adherence": 0.9705
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "lakeside": {
+     "metrics": {
+      "accent_fraction": 0.0031,
+      "contrast_range": 0.4997,
+      "flat_fraction": 0.3427,
+      "mean_luma": null,
+      "palette_adherence": 0.9834
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "pit_hall": {
+     "metrics": {
+      "accent_fraction": 0.0039,
+      "contrast_range": 0.4927,
+      "flat_fraction": 0.1819,
+      "mean_luma": null,
+      "palette_adherence": 0.9803
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "sanctum": {
+     "metrics": {
+      "accent_fraction": 0.0037,
+      "contrast_range": 0.6187,
+      "flat_fraction": 0.1446,
+      "mean_luma": null,
+      "palette_adherence": 0.9492
+     },
+     "reasons": [],
+     "status": "passed"
+    },
+    "vault": {
+     "metrics": {
+      "accent_fraction": 0.0026,
+      "contrast_range": 0.4311,
+      "flat_fraction": 0.3989,
+      "mean_luma": null,
+      "palette_adherence": 0.98
+     },
+     "reasons": [
+      "fog flattens the frame: 27% of drawn (non-sky) pixels sit within 0.07 of the fog colour (max 20%)"
+     ],
+     "status": "failed"
+    }
+   },
+   "round": "round-9",
+   "style_gate": "failed"
+  }
+ }
+}

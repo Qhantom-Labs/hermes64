@@ -1,0 +1,8 @@
+{
+ "format":"hermes64-recipe/1", "id":"rune_circle", "class":"prop", "licence":"CC0-1.0",
+ "parameters":{"radius":{"type":"number","default":0.6,"minimum":0.48,"maximum":0.7}},
+ "operations":[
+  {"primitive":"torus","role":"metal","args":{"R":{"param":"radius"},"r":0.025,"segs":12,"sides":3},"transform":{"translate":[0,0,0.035]}},
+  {"primitive":"box","role":"trim","args":{"cx":0,"cy":0,"cz":0.035,"sx":0.10,"sy":0.035,"sz":0.018},"transform":{"translate":[{"param":"radius","mul":0.74},0,0]},"repeat":{"count":6,"rotate":[0,0,60]}}
+ ]
+}

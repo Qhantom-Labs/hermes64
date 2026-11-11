@@ -1,0 +1,1385 @@
+{
+ "api_version": "1.0.0",
+ "enemies": [
+  {
+   "archetype": "walker",
+   "brief": "hunched pod on reverse-knee legs, wide visor head pushed forward, two downward prods",
+   "bytes": 174264,
+   "clip_set": "robot_enemy",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "company": "NOT EVIL AI",
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_neon_city_night_robot_6feb217ab5_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robotkit/neon_city_night/ne_walker.glb",
+   "height_m": 1.2,
+   "hover": false,
+   "hover_m": 0.0,
+   "id": "ne_walker",
+   "livery": "not_evil_ai",
+   "mark": "ring",
+   "pack": "neon_city_night",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "61b29e22cfc84ba277a3951c63b638e6d4a4abffdb7f238594c43f357f048665",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1",
+   "robot_body": "walker",
+   "sha256": "845ecfa18b38870e8596b7c6246b9573c882813e19589e1cd0cc53b4296783de",
+   "telegraph": "poke",
+   "template": "walker_patrol_v1",
+   "tris_attachments": 0,
+   "tris_body": 226,
+   "tris_glb": 226
+  },
+  {
+   "archetype": "brute",
+   "brief": "tall inverted wedge: wide chest, block pauldrons and fists, small sunk head, two back stacks",
+   "bytes": 176692,
+   "clip_set": "robot_enemy",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "company": "NOT EVIL AI",
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_neon_city_night_robot_73b1f60afa_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robotkit/neon_city_night/ne_brute.glb",
+   "height_m": 1.95,
+   "hover": false,
+   "hover_m": 0.0,
+   "id": "ne_brute",
+   "livery": "not_evil_ai",
+   "mark": "ring",
+   "pack": "neon_city_night",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "61b29e22cfc84ba277a3951c63b638e6d4a4abffdb7f238594c43f357f048665",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1",
+   "robot_body": "brute",
+   "sha256": "58722f3a9298f85841dc3cc5ee942558585da223b6d3b4f75af14e08bb5efd37",
+   "telegraph": "slam",
+   "template": "brute_slam_v1",
+   "tris_attachments": 0,
+   "tris_body": 246,
+   "tris_glb": 246
+  },
+  {
+   "archetype": "drone",
+   "brief": "hovering flat hex hull, nose eye pod with an under-slung barrel, two finned side pods, tail fin",
+   "bytes": 166396,
+   "clip_set": "robot_enemy",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "company": "NOT EVIL AI",
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_neon_city_night_robot_10ead65b98_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robotkit/neon_city_night/ne_drone.glb",
+   "height_m": 1.3,
+   "hover": true,
+   "hover_m": 0.65,
+   "id": "ne_drone",
+   "livery": "not_evil_ai",
+   "mark": "ring",
+   "pack": "neon_city_night",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "61b29e22cfc84ba277a3951c63b638e6d4a4abffdb7f238594c43f357f048665",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1",
+   "robot_body": "floater",
+   "sha256": "3e7a22783a7b8f84941acb5483c315738f3a93cdaccb49bb256de4345628e1bc",
+   "telegraph": "shot",
+   "template": "hover_drone_v1",
+   "tris_attachments": 0,
+   "tris_body": 160,
+   "tris_glb": 160
+  },
+  {
+   "archetype": "walker",
+   "brief": "hunched pod on reverse-knee legs, wide visor head pushed forward, two downward prods",
+   "bytes": 174192,
+   "clip_set": "robot_enemy",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "company": "Closed Models Corp",
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_neon_city_night_robot_8d95e84437_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robotkit/neon_city_night/cm_walker.glb",
+   "height_m": 1.2,
+   "hover": false,
+   "hover_m": 0.0,
+   "id": "cm_walker",
+   "livery": "closed_models",
+   "mark": "bars",
+   "pack": "neon_city_night",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "61b29e22cfc84ba277a3951c63b638e6d4a4abffdb7f238594c43f357f048665",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1",
+   "robot_body": "walker",
+   "sha256": "3bb644ea5c2dc4247973dd55fa452a5ac604bf7aaf1b7fc57c9a7559251f0580",
+   "telegraph": "poke",
+   "template": "walker_patrol_v1",
+   "tris_attachments": 0,
+   "tris_body": 226,
+   "tris_glb": 226
+  },
+  {
+   "archetype": "brute",
+   "brief": "tall inverted wedge: wide chest, block pauldrons and fists, small sunk head, two back stacks",
+   "bytes": 176596,
+   "clip_set": "robot_enemy",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "company": "Closed Models Corp",
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_neon_city_night_robot_f01e1ad1c3_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robotkit/neon_city_night/cm_brute.glb",
+   "height_m": 1.95,
+   "hover": false,
+   "hover_m": 0.0,
+   "id": "cm_brute",
+   "livery": "closed_models",
+   "mark": "bars",
+   "pack": "neon_city_night",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "61b29e22cfc84ba277a3951c63b638e6d4a4abffdb7f238594c43f357f048665",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1",
+   "robot_body": "brute",
+   "sha256": "9a1e1ae61352035bfc90b2f0b48a638e849e2188d0e2f47fc9dc8aebef0c706c",
+   "telegraph": "slam",
+   "template": "brute_slam_v1",
+   "tris_attachments": 0,
+   "tris_body": 246,
+   "tris_glb": 246
+  },
+  {
+   "archetype": "drone",
+   "brief": "hovering flat hex hull, nose eye pod with an under-slung barrel, two finned side pods, tail fin",
+   "bytes": 166312,
+   "clip_set": "robot_enemy",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "company": "Closed Models Corp",
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_neon_city_night_robot_f33638d79b_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robotkit/neon_city_night/cm_drone.glb",
+   "height_m": 1.3,
+   "hover": true,
+   "hover_m": 0.65,
+   "id": "cm_drone",
+   "livery": "closed_models",
+   "mark": "bars",
+   "pack": "neon_city_night",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "61b29e22cfc84ba277a3951c63b638e6d4a4abffdb7f238594c43f357f048665",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1",
+   "robot_body": "floater",
+   "sha256": "dcd2e22e20544069a711d5eb65439760b71dcfc7d2d5c919da10b8bf3452df1f",
+   "telegraph": "shot",
+   "template": "hover_drone_v1",
+   "tris_attachments": 0,
+   "tris_body": 160,
+   "tris_glb": 160
+  },
+  {
+   "archetype": "walker",
+   "brief": "hunched pod on reverse-knee legs, wide visor head pushed forward, two downward prods",
+   "bytes": 174200,
+   "clip_set": "robot_enemy",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "company": "AIPO",
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_neon_city_night_robot_3aa668df6f_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robotkit/neon_city_night/ai_walker.glb",
+   "height_m": 1.2,
+   "hover": false,
+   "hover_m": 0.0,
+   "id": "ai_walker",
+   "livery": "aipo",
+   "mark": "key",
+   "pack": "neon_city_night",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "61b29e22cfc84ba277a3951c63b638e6d4a4abffdb7f238594c43f357f048665",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1",
+   "robot_body": "walker",
+   "sha256": "6c0f855a089269fa52eacf046f6fd933743d3ed9afd09adf2e845cae1cd46f63",
+   "telegraph": "poke",
+   "template": "walker_patrol_v1",
+   "tris_attachments": 0,
+   "tris_body": 226,
+   "tris_glb": 226
+  },
+  {
+   "archetype": "brute",
+   "brief": "tall inverted wedge: wide chest, block pauldrons and fists, small sunk head, two back stacks",
+   "bytes": 176616,
+   "clip_set": "robot_enemy",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "company": "AIPO",
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_neon_city_night_robot_72d68ef865_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robotkit/neon_city_night/ai_brute.glb",
+   "height_m": 1.95,
+   "hover": false,
+   "hover_m": 0.0,
+   "id": "ai_brute",
+   "livery": "aipo",
+   "mark": "key",
+   "pack": "neon_city_night",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "61b29e22cfc84ba277a3951c63b638e6d4a4abffdb7f238594c43f357f048665",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1",
+   "robot_body": "brute",
+   "sha256": "62f7e960aaf2d370472a46f8e931effb25beb318ce722acbe6eeabcd164c78dd",
+   "telegraph": "slam",
+   "template": "brute_slam_v1",
+   "tris_attachments": 0,
+   "tris_body": 246,
+   "tris_glb": 246
+  },
+  {
+   "archetype": "drone",
+   "brief": "hovering flat hex hull, nose eye pod with an under-slung barrel, two finned side pods, tail fin",
+   "bytes": 166340,
+   "clip_set": "robot_enemy",
+   "clips": [
+    "attack",
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "move",
+    "recover",
+    "roll",
+    "run",
+    "sit",
+    "swing",
+    "talk",
+    "telegraph",
+    "walk"
+   ],
+   "company": "AIPO",
+   "exporter": "python",
+   "face_atlas": {
+    "cells": {
+     "0": "calm",
+     "1": "dim",
+     "2": "talk_a",
+     "3": "talk_b",
+     "4": "bright",
+     "5": "hurt",
+     "6": "flare",
+     "7": "off"
+    },
+    "clip_cells": {
+     "attack": 6,
+     "death": 7,
+     "hurt": 5,
+     "recover": 1,
+     "swing": 6,
+     "telegraph": 6
+    },
+    "cols": 4,
+    "material": "mat_neon_city_night_robot_a2e5ebe803_face",
+    "note": "the robot visor: the same face atlas convention as the cast (material extras n64.atlas)",
+    "rows": 2
+   },
+   "fsm_state_clip": {
+    "approach": "move",
+    "attack": "attack",
+    "dead": "death",
+    "hurt": "hurt",
+    "idle": "idle_combat",
+    "recover": "recover",
+    "telegraph": "telegraph"
+   },
+   "gates": {
+    "not_run": {},
+    "ok": true
+   },
+   "glb": "characters/combat/robotkit/neon_city_night/ai_drone.glb",
+   "height_m": 1.3,
+   "hover": true,
+   "hover_m": 0.65,
+   "id": "ai_drone",
+   "livery": "aipo",
+   "mark": "key",
+   "pack": "neon_city_night",
+   "phases": {
+    "attack": {
+     "hit_window": {
+      "end_s": 0.466667,
+      "frames": [
+       2,
+       6
+      ],
+      "start_s": 0.133333
+     },
+     "loop": false,
+     "phases": {
+      "active": [
+       2,
+       6
+      ],
+      "launch": [
+       1,
+       1
+      ],
+      "recoil": [
+       7,
+       9
+      ],
+      "settle": [
+       10,
+       15
+      ]
+     }
+    },
+    "move": {
+     "loop": true,
+     "phases": {
+      "loop": [
+       0,
+       15
+      ]
+     }
+    },
+    "recover": {
+     "loop": false,
+     "phases": {
+      "settle": [
+       8,
+       15
+      ],
+      "shake": [
+       1,
+       7
+      ]
+     }
+    },
+    "telegraph": {
+     "hold_frames": [
+      4,
+      15
+     ],
+     "loop": false,
+     "phases": {
+      "hold": [
+       4,
+       15
+      ],
+      "wind": [
+       1,
+       3
+      ]
+     },
+     "telegraph_peak_frame": 3
+    }
+   },
+   "recipe_sha256": "61b29e22cfc84ba277a3951c63b638e6d4a4abffdb7f238594c43f357f048665",
+   "rig": "human16_v1",
+   "rig_ref": "human16_v1",
+   "robot_body": "floater",
+   "sha256": "8ed7fda713f4e5d52c0e4f1b9fd160c0d46a707cd3daf167e0140ec7e01cecae",
+   "telegraph": "shot",
+   "template": "hover_drone_v1",
+   "tris_attachments": 0,
+   "tris_body": 160,
+   "tris_glb": 160
+  }
+ ],
+ "generated_by": "python3 -B -m tools.robots_build stage <build>",
+ "note": "Robot kit enemy art (adventure_maker.robotkit, recipes in characters/robotkit/<pack>.json). characters.integration.stage_robotkit adds a row to combat.json for every combat archetype of the game whose id is a robot id here and whose FSM template is the row template; the module host (host.gd enemy_art) binds an archetype to the enemy row of its own id first. No template alias is written, so the stock robots (characters/combat/robots.json) keep every game that does not name these ids.",
+ "schema": "hermes64-combat-robotkit-art/1"
+}

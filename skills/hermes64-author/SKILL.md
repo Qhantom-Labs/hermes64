@@ -2,7 +2,7 @@
 name: hermes64-author
 description: Use when building original games. Compile maps and verify.
 version: 0.1.0
-author: Dylan, Hermes Agent
+author: Qhantom Labs, Hermes Agent
 license: MIT
 platforms: [macos]
 metadata:

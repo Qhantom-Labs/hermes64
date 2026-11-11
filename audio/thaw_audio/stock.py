@@ -38,7 +38,7 @@ def main(argv=None):
         report["preservation"] = preserve_originals()
         report["controls"] = run_controls()
         per_asset = []
-        index = json.loads((root/"catalog.json").read_text())
+        index = json.loads((root/"catalog.json").read_text(encoding='utf-8'))
         for row in index["assets"]:
             if row["provenance"] == "core_generated":
                 per_asset.extend(asset_controls(row,lane_path(root/row["file"]).read_bytes()))
@@ -65,7 +65,7 @@ def main(argv=None):
         root = lane_path(args.root)
         samplers = create_samplers(root,root/"samplers")
         spectra = create_spectra(root,root/"stock/spectra")
-        index = json.loads((root/"catalog.json").read_text())
+        index = json.loads((root/"catalog.json").read_text(encoding='utf-8'))
         paths = sorted((LANE/"packs").glob("*/audio.json"))+[lane_path(path) for path in args.palette]
         proof = prove_palettes(index,paths)
         write_bytes(root/"stock/palette-proof.json",json_bytes(proof))

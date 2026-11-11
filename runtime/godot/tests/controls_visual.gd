@@ -21,6 +21,7 @@ func run() -> void:
 	for i in 30: await frame()
 	passed=passed and view.contextual.alpha<0.001 and await view.capture_low(folder.path_join("faded.png"))
 	view.actions.submit_frame({"digital":["menu"]}); await physics_frame; await process_frame
-	passed=passed and await view.capture_low(folder.path_join("settings.png"))
+	# UI5: the pause menu is drawn in the window overlay (integer pixel scale), not in the low-res frame.
+	passed=passed and await view.capture(folder.path_join("settings.png"))
 	print("CONTROLS VISUAL passed=",passed," folder=",folder)
 	await view.quit_cleanly(0 if passed else 1)

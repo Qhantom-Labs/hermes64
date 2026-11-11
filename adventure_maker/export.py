@@ -40,6 +40,11 @@ TEMPLATE_HASHES = {'web':'7d91986ea27d901b37963ace014a88ab6ba8e4bfe830031043bcf8
 LICENSE_HASHES = {'LICENSE.txt':'b0435e3b3e4e55238f05f4b306f30524a1b2e20147810d436eaa554fa6855c80',
                   'COPYRIGHT.txt':'dc043a7dbf69632560219e72fbc61ef9fa7338c7a773660acd81b51590b69104'}
 PRIVATE = re.compile(rb'cameo_visor_01|characters[/\\]internal[/\\]|/Users/[^\x00\s"\x27]+|(?<![A-Za-z0-9_./-])/home/[^\x00\s"\x27]+|[A-Za-z]:[/\\]Users[/\\]',re.I)
+# Release runtime allow-list. Under RELEASE_DIRS only scripts/shaders and the RELEASE_DATA files are copied; a data
+# file the shipped scripts read that is not listed is silently absent from exported games (tests/test_feel4_export.py).
+RELEASE_DIRS = ('core','view','look','shaders','input','modules')
+RELEASE_DATA = ('input/defaults.json','input/keyhud.json','input/GLYPHS-LICENSE.txt','modules/combat/readability.json','modules/combat/robots.json',
+                'view/shell_kit_metadata.json','view/solid_kit_metadata.json')
 
 
 def digest(raw): return hashlib.sha256(raw).hexdigest()
@@ -189,6 +194,22 @@ def runtime_game(project, game_path, folder):
     return folder+'/lowered-game.json'
 
 
+def overlay_gate(c, project, game_path, folder, release):
+    """L3: report what the overlay filled; in neutral mode prove the staged release carries none of the overlay's
+    bytes (overlay files, overlay-baked textures), failing the export with overlay_leak otherwise."""
+    from .overlay import leak_check, overlay_reference
+    path=folder+'/slots-report.json'
+    report=project.read_json(path) if project.path(path).is_file() else {'mode':getattr(c,'overlay_mode','apply')}
+    if report.get('mode')=='neutral' and report.get('pack'):
+        ref=overlay_reference(c,report['pack'],project.read_json(game_path))
+        if ref is not None:
+            report['leak_check']=leak_check(release,project.path('overlay'),ref)
+            project.write_json(path,report)
+            if not report['leak_check']['ok']:
+                fail('overlay_leak','Neutral export contains overlay bytes: '+json.dumps(report['leak_check']['leaks'][:3]))
+    return report
+
+
 def stage(c, game_path, folder):
     """Prepare only trusted runtime source + verified referenced media; never copy a repository/PCK wholesale."""
     game=c.project.read_json(game_path)
@@ -214,13 +235,13 @@ def stage(c, game_path, folder):
         (generated/'audio.json').write_bytes(json.dumps(sound,sort_keys=True).encode('utf-8'))
         (generated/'puzzle.json').write_bytes(json.dumps(puzzle,sort_keys=True).encode('utf-8'))
     output=c.project.path(folder+'/release'); output.mkdir()
-    allowed_dirs=('core','view','look','shaders','input','modules')
+    allowed_dirs=RELEASE_DIRS
     allowed_actor=('main.gd','assets.gd','bridge.gd','character.gd')
     for path in sorted(generated.rglob('*')):
         if not path.is_file(): continue
         rel=path.relative_to(generated)
         if rel.parts[0] in allowed_dirs or (rel.parts[0]=='actors' and rel.name in allowed_actor) or rel.as_posix()=='main.gd':
-            if path.suffix not in ('.gd','.gdshader','.uid') and rel.as_posix() not in ('input/defaults.json','input/GLYPHS-LICENSE.txt'): continue
+            if path.suffix not in ('.gd','.gdshader','.uid') and rel.as_posix() not in RELEASE_DATA: continue
             dest=output/rel; dest.parent.mkdir(parents=True,exist_ok=True); dest.write_bytes(path.read_bytes())
     (output/'ship').mkdir()
     (output/'ship/main.gd').write_bytes(c.shipped('runtime/godot/playtest/release.gd').read_bytes())
@@ -229,6 +250,9 @@ def stage(c, game_path, folder):
     project=project.replace('renderer/rendering_method="mobile"','renderer/rendering_method="gl_compatibility"').replace('renderer/rendering_method.mobile="mobile"','renderer/rendering_method.mobile="gl_compatibility"')
     project=user_dir_project(project,game['id'])
     project=project.replace('[rendering]', '[rendering]\ntextures/vram_compression/import_etc2_astc=true')
+    # Same game, same bytes: the engine's text-to-binary conversion of main.tscn writes fresh node_ids on every
+    # export (docs/INTEG5-EXPORT.md); keeping text resources as text makes repeated exports byte-identical.
+    project+='\n[editor]\n\nexport/convert_text_resources_to_binary=false\n'
     (output/'project.godot').write_bytes(project.encode('utf-8'))
     bindings=json.loads((generated/'bindings.json').read_text(encoding='utf-8'))
     # Real characters must be members of the public frozen manifest, not merely self-declared public.
@@ -236,6 +260,7 @@ def stage(c, game_path, folder):
     if isinstance(records,dict): records=list(records.values())
     admitted={row['sha256'] for row in records}
     closure=[]
+    provenance_files={}
     def media(path, expected, suffix=None):
         path=inspect_path(Path(path))
         if not path.is_file(): fail('release_asset','Release requires every bound asset, not an absent fallback')
@@ -251,14 +276,27 @@ def stage(c, game_path, folder):
             dest.with_name(dest.name+'.import').write_bytes('[remap]\nimporter="keep"\n'.encode('utf-8'))
             closure.append({'path':rel,'sha256':expected,'bytes':len(raw)})
         return 'res://'+rel
-    def bind(row, actor=False):
+    def bind(row, actor=False, licence_scope=True):
         row=copy.deepcopy(row)
         original=row.pop('path',None)
         row.pop('glb',None)
         if actor and not row.get('placeholder') and row['sha256'] not in admitted:
             fail('release_private','Character hash not admitted by public manifest')
+        bound=inspect_path(Path(original))
+        project_asset=c.project.root in bound.parents
+        rel=bound.relative_to(c.project.root).as_posix() if project_asset else ''
+        manifest=c.project.path('assets/PROVENANCE.json').is_file()
+        required=row.get('licence_required',False) or (licence_scope and (rel.startswith(('assets/generated/','assets/imported/','assets/kit/')) or (manifest and not actor)))
+        if required:
+            if project_asset: provenance_id=rel
+            elif c.root in bound.parents and not actor: provenance_id='bundle/'+bound.relative_to(c.root).as_posix()
+            else: fail('release_licence','Required asset provenance is outside project/bundle')
+            from .provenance import require_export
+            try: require_export(c.project.root,[provenance_id],bundle_root=c.root)
+            except ValueError as exc: fail('release_licence',str(exc))
+            provenance_files[provenance_id]='media/'+row['sha256']+bound.suffix
         row['path']=media(original,row['sha256'])
-        if 'fallback' in row: row['fallback']=bind(row['fallback'])
+        if 'fallback' in row: row['fallback']=bind(row['fallback'],licence_scope=licence_scope and not actor)
         public_data(row)
         return row
     bindings['assets']={k:bind(row) for k,row in bindings['assets'].items()}
@@ -280,6 +318,7 @@ def stage(c, game_path, folder):
         (output/'env'/p.name).write_bytes(raw)
         (output/'env'/(p.name+'.import')).write_bytes('[remap]\nimporter="keep"\n'.encode('utf-8'))
     theme['env_root']='res://env'
+    from .overlay import release_slots; release_slots(theme,media)   # L3: baked texture slot PNGs as release media
     audio=json.loads((generated/'audio.json').read_text(encoding='utf-8'))
     for row in audio.values(): row['path']=media(row['path'],row['sha256'])
     for name,value in [('game',game),('bindings',bindings),('theme',theme),('audio',audio)]+([('combat',combat)] if combat is not None else [])+([('puzzle',puzzle)] if puzzle is not None else []):
@@ -290,6 +329,9 @@ def stage(c, game_path, folder):
         if digest(raw)!=expected: fail('license_hash','Godot legal notice hash mismatch')
         (output/'licenses'/('GODOT_'+name)).write_bytes(raw)
     (output/'licenses/HERMES64_LICENSE.txt').write_bytes(c.shipped('LICENSE').read_bytes())
+    if provenance_files:
+        from .provenance import prepare_export
+        prepare_export(c.project.root,provenance_files,str(output.relative_to(c.project.root)),bundle_root=c.root)
     rows=scan_tree(output)
     record={'game_hash':game['game_hash'],'files':rows,'media':closure}
     if puzzle is not None:
@@ -337,9 +379,11 @@ def run(service, project, args):
              'or export macos on a Mac. Nothing was exported.')
     templates={t:template_path(t) for t in targets}
     folder=service.folder(project,'export'); c=Components(service.settings,project)
+    c.overlay_mode=args.get('overlay','apply')   # L3: 'neutral' ignores overlay/ and proves no overlay byte ships
     current=build_source(service,project)
     proof, physical=qualify(service,project,c,current,folder,args.get('module_preview',False))
     release=stage(c,current['game'],folder)
+    overlay_gate(c,project,current['game'],folder,release)
     exe=locate('godot',service.settings.get('godot_path',''))
     if platforms.host()=='darwin':
         # Supported self-contained editor mode. Preserve the signed app bundle;
@@ -396,7 +440,7 @@ def run(service, project, args):
                     if (info.external_attr>>16)&0o111: p.chmod(0o755)
             artifact.unlink()
         shutil.copytree(release/'licenses',dest/'licenses')
-        (dest/'README.txt').write_bytes(('Hermes64 local export. Keyboard: WASD/arrows move (Shift walk); E act/confirm; Q or Backspace cancel; hold Z Focus; Space dodge in combat/courses (confirm in menus); Tab action menu; I inventory; Esc pause/settings; F5/F9 quick save/load; hold R retry from checkpoint; C optional camera.\n'+
+        (dest/'README.txt').write_bytes(('Hermes64 local export. Keyboard: WASD/arrows move (Shift run; Alt precision); E act/confirm; Q or Backspace cancel; hold Z Focus; Space dodge in combat/courses (confirm in menus); Tab action menu; I inventory; Esc pause/settings; F5/F9 quick save/load; hold R retry from checkpoint; C optional camera.\n'+
             ('Serve this directory over localhost HTTP (python3 -m http.server --bind 127.0.0.1; Windows: py -m http.server --bind 127.0.0.1). Open index.html; WebGL2 required. No threads/PWA/service worker. Browser saves use local IndexedDB.\n' if target=='web' else 'Saves are local Godot user data, under Hermes64/game-id.\n')+
             ('Windows: unsigned, so SmartScreen may warn: More info, then Run anyway. Saves and the log (logs\\godot.log): %APPDATA%\\Hermes64\\<game id>.\n' if target=='windows' else '')+
             ('Windows recipient execution UNVERIFIED on this Mac.\n' if target=='windows' and platforms.host()!='win32' else '')+

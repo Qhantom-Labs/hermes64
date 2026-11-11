@@ -18,6 +18,13 @@ def blender_available(settings):
         return False
 
 
+def effective(settings):
+    """The builder setting as used: absent, None or blank means DEFAULT_BUILDER ('auto', as plugin.yaml documents);
+    case and surrounding spaces are ignored. Every reader goes through this (BFIX: no reader may treat blank as blender)."""
+    value = (settings or {}).get('builder')
+    return str(value).strip().lower() if value is not None and str(value).strip() else DEFAULT_BUILDER
+
+
 def select(settings, needs_armature=False, blender_present=None):
     """Concrete builder for this build.
 
@@ -25,7 +32,7 @@ def select(settings, needs_armature=False, blender_present=None):
     python   always the Python builder (needs numpy in python_path); never for new armatures.
     auto     Blender when it is found, otherwise Python for static kits. New armatures still need Blender.
     """
-    builder = settings.get('builder') or DEFAULT_BUILDER
+    builder = effective(settings)
     if builder not in ('auto','python','blender'):
         fail('configuration','builder must be python, blender or auto')
     if builder == 'auto':
@@ -43,7 +50,7 @@ def select(settings, needs_armature=False, blender_present=None):
 
 def explain(settings, blender_present=None, numpy_present=None):
     """One plain line: which builder `auto`/the setting will use on this machine and what it depends on."""
-    builder = settings.get('builder') or DEFAULT_BUILDER
+    builder = effective(settings)
     present = blender_available(settings) if blender_present is None else blender_present
     chosen = select(dict(settings, builder=builder), blender_present=present)
     if chosen == 'blender':

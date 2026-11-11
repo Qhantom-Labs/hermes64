@@ -79,6 +79,16 @@ def command_line(argv, platform=None):
     return ' '.join(shlex.quote(p) for p in argv)
 
 
+def console_text(text, stream=None):
+    """Keep human output printable on legacy Windows consoles; UTF-8 surfaces retain all characters."""
+    stream = sys.stdout if stream is None else stream
+    encoding = getattr(stream, 'encoding', None) or 'utf-8'
+    try:
+        return str(text).encode(encoding, 'backslashreplace').decode(encoding)
+    except LookupError:
+        return str(text).encode('ascii', 'backslashreplace').decode('ascii')
+
+
 def split_args(raw, platform=None):
     """shlex.split that keeps Windows backslashes literal (C:\\games stays C:\\games)."""
     import shlex
@@ -178,11 +188,46 @@ def ffmpeg_candidates(platform=None, env=None):
             str(root / 'usr' / 'local' / 'bin' / 'ffmpeg'), str(root / 'usr' / 'bin' / 'ffmpeg')]
 
 
+def environment_pythons(platform=None):
+    """Python executables of the virtual environments whose packages this process imports without running their python.
+
+    The Hermes launcher (`hermes`) starts its managed base interpreter (sys.executable) with -I and puts its own
+    environment's site-packages on sys.path, so Hermes imports numpy and Pillow while a child `sys.executable -I` cannot.
+    That environment's python (its pyvenv.cfg sits next to it) starts with those packages. Environments that hold numpy
+    come first. Empty when this process already runs a virtual environment's python (sys.executable then carries the
+    packages itself) and for simulated platforms. Reads only the folders already on sys.path."""
+    if host(platform) != host() or sys.prefix != getattr(sys, 'base_prefix', sys.prefix):
+        return []
+    windows = host() == 'win32'
+    found = []
+    for entry in sys.path:
+        site = Path(entry) if entry else None
+        if site is None or site.name.lower() != 'site-packages':
+            continue
+        parents = site.parents      # <env>\Lib\site-packages on Windows, <env>/lib/pythonX.Y/site-packages elsewhere
+        if len(parents) < (2 if windows else 3):
+            continue
+        root = parents[1] if windows else parents[2]
+        try:
+            if not (root / 'pyvenv.cfg').is_file():
+                continue
+            names = ('Scripts/python.exe',) if windows else ('bin/python3', 'bin/python')
+            exe = next((root / name for name in names if (root / name).is_file()), None)
+            if exe is not None:      # absolute, never resolved: the venv's own name is what makes it use pyvenv.cfg
+                found.append((not (site / 'numpy').is_dir(), str(exe.absolute())))
+        except OSError:
+            continue
+    return _unique(exe for _without_numpy, exe in sorted(found, key=lambda row: row[0]))
+
+
 def python_candidates(platform=None, env=None, executable=None):
-    """Hermes's own interpreter first (it carries numpy/Pillow), then the platform's usual names."""
+    """Hermes's own interpreter first (it carries numpy/Pillow), then the platform's usual names. Under the Hermes
+    launcher that interpreter is its environment's python (environment_pythons), not the bare sys.executable."""
     plat = host(platform)
     e = _env(env)
     found = [override('python', e)] if override('python', e) else []
+    if executable is None:
+        found += environment_pythons(platform)
     exe = sys.executable if executable is None else executable
     if exe:
         found.append(exe)

@@ -1,0 +1,32 @@
+--- a/adventure_maker/newgame.py
++++ b/adventure_maker/newgame.py
+@@ -89,7 +89,7 @@
+         if pack is None:
+             fail('new_style', 'Unknown style %r; choose %s (or a pack id: n64_v0, forest_village, polar_pod).'
+                  % (one_line(style)[:40], STYLE_CHOICES))
+-        return pack, 'chosen'
++        return _with_mood(premise, pack, 'chosen')
+     if style not in (None, ''):
+         fail('new_style', 'Style must be a word: ' + STYLE_CHOICES + '.')
+     tokens = words(premise)
+@@ -113,8 +113,18 @@
+                                'applied and no new pieces were generated: this build has no mood packs or asset generators. '
+                                'For another look add a style word: village, forest, polar or a pack id'
+                                % (genre, candidate, palette))
+-        return best, 'auto: no style words in the premise, so the default'
+-    return best, 'auto: matched ' + ', '.join('"%s"' % w for w in dict.fromkeys(hits))
++        return _with_mood(premise, best, 'auto: no style words in the premise, so the default')
++    return _with_mood(premise, best, 'auto: matched ' + ', '.join('"%s"' % w for w in dict.fromkeys(hits)))
++
++
++def _with_mood(premise, pack, reason):
++    from . import mood_packs  # plan 07 A3: pure lookup; nothing is written here
++    m = mood_packs.plan(premise, pack)
++    if not m['mood']:
++        return pack, reason
++    if m['apply']:
++        return m['derived_id'], '%s; mood %s (%s) -> %s' % (reason, m['mood'], m['reason'], m['derived_id'])
++    return pack, '%s; mood %s named but not installed for %s (run: %s)' % (reason, m['mood'], pack, m['command'])
+ 
+ 
+ def slug(premise):

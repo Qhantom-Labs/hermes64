@@ -1,0 +1,41 @@
+diff --git a/adventure_maker/tools.py b/adventure_maker/tools.py
+index fb841a01..6d3fdad9 100644
+--- a/adventure_maker/tools.py
++++ b/adventure_maker/tools.py
+@@ -24,14 +24,16 @@ def register_tools(ctx):
+ 
+ 
+ def help_command(raw_args='', **kwargs):
+-    return ('Hermes64 makes N64-era-style 3D adventures. Quick start: /hermes64 new "<one-sentence premise>" '
++    return ('Hermes64 makes N64-era-style 3D adventures. To make a game from a prompt, ask Hermes to follow the skill '
++            'hermes64:hermes64-create: create_flow plan, then create_flow run, then hermes64_edit, hermes64_check, '
++            'hermes64_playtest, hermes64_open and hermes64_export. Quick start: /hermes64 new "<one-sentence premise>" '
+             '[village|forest|polar] checks your tools, builds the game, proof-checks and bot-plays it, then prints '
+-            'a proof badge and the command to play it. Share and reuse styles, kits, characters, sounds and games: '
+-            '/hermes64 hub search <words> (then hub info, hub install, hub pack, hub publish). Everything else uses the tools: '
+-            'hermes64_packs → hermes64_scaffold(pack=ID) → hermes64_compile → hermes64_check. '
+-            'Edit with hermes64_edit; always check after every edit. Never hand-edit generated files. '
+-            'No downloads unless you set hub_url. See the bundled hermes64 skill. Other /hermes64 text only shows this help; '
+-            'it is never executed.')
++            'a proof badge and the command to play it. Your own story spec with the tools: '
++            'hermes64_packs → hermes64_scaffold(pack=ID) → hermes64_compile → hermes64_check; always check after every '
++            'edit. Setup trouble: hermes64_doctor. Characters, audio, enemies and puzzles, styles, box art: only when '
++            'asked (see the skill). Share and reuse: /hermes64 hub search <words> (then hub info, hub install, hub pack, '
++            'hub publish). Never hand-edit generated files. No downloads unless you set hub_url. Other /hermes64 text '
++            'only shows this help; it is never executed.')
+ 
+ 
+ def make_command(ctx):
+diff --git a/adventure_maker/wire.py b/adventure_maker/wire.py
+index aa85bb81..ec7a134c 100644
+--- a/adventure_maker/wire.py
++++ b/adventure_maker/wire.py
+@@ -89,6 +89,8 @@ PARAMS = {
+     'hermes64_module_benchmark': {'operations': {'type': 'array', 'items': dict(module_operation(MODULE_KINDS),
+                                                                                 description='One hermes64_module_edit operation.')}},
+     'hermes64_scaffold': {'spec_json': {'type': 'string', 'description': 'Serialized story spec; use instead of premise.'}},
++    # TIERS: agents passed absolute spec paths (3 of 12 condition-A runs, both models); the handler rejects them.
++    'hermes64_compile': {'spec_path': {'type': 'string', 'description': 'Inside the project, e.g. source/spec.json; never absolute.'}},
+     'hermes64_export': {'module_preview': {'type': 'boolean', 'description': 'Local module preview; needs a fresh real-input bot run.'}},
+     'hermes64_audio': {'music': {'type': 'object', 'description': 'mood, mode, key, tempo, bars, seed, style, instruments.'},
+                        'voice': {'type': 'object', 'description': 'character, emotion, seed, pitch, rate, timbre, formant.'},

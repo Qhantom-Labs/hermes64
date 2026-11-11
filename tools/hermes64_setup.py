@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from adventure_maker.platforms import console_text  # noqa: E402
 from adventure_maker import setup_check  # noqa: E402
 
 
@@ -34,21 +35,22 @@ def main(argv=None):
     for name in ('godot', 'python', 'blender'):
         p.add_argument('--%s-path' % name, default='')
     p.add_argument('--builder', default='')
+    p.add_argument('--projects-root', default='', help='Existing absolute games folder (required without host storage)')
     a = p.parse_args(argv)
     if a.fetch_plan:
         if a.fetch or a.yes or a.templates:
             p.error('--fetch-plan cannot be combined with --fetch/--yes/--templates')
-        print(setup_check.fetch_plan())
+        print(console_text(setup_check.fetch_plan()))
         return 0
-    conf = {'godot_path': a.godot_path, 'python_path': a.python_path, 'blender_path': a.blender_path, 'builder': a.builder}
+    conf = {'godot_path': a.godot_path, 'python_path': a.python_path, 'blender_path': a.blender_path, 'builder': a.builder, 'projects_root': a.projects_root}
     def progress(line):
-        print(line, file=sys.stderr if a.json else sys.stdout, flush=True)
+        print(console_text(line, sys.stderr if a.json else sys.stdout), file=sys.stderr if a.json else sys.stdout, flush=True)
     result = setup_check.run(conf, fetch=a.fetch, yes=a.yes, include_templates=a.templates, interactive=True,
                              emit=progress if a.fetch else None)
     if a.json:
         print(json.dumps(result if a.fetch else result['rows'], indent=2))
     elif not a.fetch:
-        print(result['message'])
+        print(console_text(result['message']))
     return 0 if result['ok'] else 1
 
 

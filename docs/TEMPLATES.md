@@ -269,3 +269,31 @@ called "1.2.0" in the plan.
 - That `kits/packs/<pack>/pack.json` is the right home for `rooms.json` versus `packs/<pack>/`.
 - AUDIOPIPE's actual slot schema (nothing written yet when read).
 - Behaviour on Windows; the probe ran on this Mac only.
+
+## 9. GAPS2: what `arena_run_v1` applies now (supersedes the "not yet applied" rows above)
+
+- **Room data.** `pack_rooms.load` reads, first found wins: your games folder `rooms/<pack>/rooms.json`, then the plugin
+  pack's `pack-rooms.json` (packs whose `rooms.json` holds room plans), then `rooms.json` (castle_keep). A pack whose
+  `rooms.json` says `"rooms_from": "<pack>"` (neon_dawn, cyber_blue_grid) uses that pack's rooms. Games-folder data is
+  checked like plugin data (format, pack id, 3-32 rooms, kit shell, 8 spawns, 3 boss spots, finite anchors, positive
+  arena box, triangle estimate under the room's `budget.room_tris`, max 8,000; optional `weather.rain`) and refused
+  with one line naming the file; nothing falls back silently. The card says `Rooms: your games folder ...` and the spec
+  records `metadata.rooms_source` (`path@sha256`).
+- **Cyber rooms.** `kits/packs/neon_city_night/room-anchors.json` holds anchors for tower_roof, canyon, subway, club,
+  server_room and tower_roof_finale; `python3 -B -m tools.pack_rooms --source kits/packs/neon_city_night/room-anchors.json`
+  compiles each plan (`tools.cyberkit_rooms.compile_room`) with north/south doors, refuses an anchor the player cannot
+  reach (`tools.room_clearance`) and writes `pack-rooms.json`; `--check` fails when it is stale (a test regenerates it).
+- **Story fields applied:** `scenes` (the simple cards become runtime scenes: `opening` on start, `pre_finale` on
+  entering the finale room, `ending` on the ending; a held shot from the named room camera, the hero at `hero_start`,
+  an npc on its own anchor in its room or at `interact`; `line` becomes the subtitle, `voice` the voice line;
+  `scenes.list` takes full runtime scenes as written in docs/SCENES.md). Both are checked with the plugin's scene
+  validator at create and refused with the story path (e.g. `scenes.opening[0]: room server_room has no camera 'side'`).
+  `results`, `weather` (`rain` = the pack's rain look, `none` = off), npc `clip` (played by the room; idle when the
+  body lacks the clip), boss `robot` {armor none|until_recover, hurt_ticks 1-60, knockback_m 0-1.5} and `speed_mps`
+  (0.1-2.4, the checker's player run speed, so a boss can be outrun). `audio`: the slot names wait in the project
+  (`audio/premise-slots.json`) and are assigned to `audio/slots.json` by `hermes64_audio action=import` once every
+  named file is imported (never over an existing `audio/slots.json`).
+- **No text boxes.** Generated arena games get `metadata.presentation.text_boxes: false` (a story file may set
+  `text_boxes: true`): no room description, narration, event label ("Arena cleared", "Retrying checkpoint") or ending
+  text box, and no room-name card on a door. Subtitles, titles, wave labels and the results card come from scene data.
+  Games without the key keep the old behaviour, so older games, goldens and replays are unchanged.

@@ -32,6 +32,32 @@ def godot_help(configured=''):
             "%%LOCALAPPDATA%%\\Programs\\Godot, Program Files\\Godot, winget and scoop installs." % (where, GODOT_VERSION, GODOT_RELEASE))
 
 
+def godot_version(path):
+    """The version a macOS Godot.app declares (Contents/Info.plist CFBundleShortVersionString), else None. Reads one
+    file; never launches the engine."""
+    if sys.platform != 'darwin' or not path:
+        return None
+    plist = Path(path).parents[1] / 'Info.plist' if len(Path(path).parents) > 1 else None
+    if plist is None or not plist.is_file():
+        return None
+    import plistlib
+    try:
+        value = plistlib.loads(plist.read_bytes()).get('CFBundleShortVersionString')
+    except Exception:
+        return None
+    return value if isinstance(value, str) and value else None
+
+
+def other_godot(version, path, lead='Found'):
+    """REUSE: one line when the Godot found is not the proven GODOT_VERSION ('' when it is, or when its version is
+    unknown). Message only: the pin, discovery and every gate are unchanged (docs/REUSE-RESULT.md, Godot policy)."""
+    if not version or version == GODOT_VERSION:
+        return ''
+    return ('%s Godot %s at %s; Hermes64 is proven on %s; fetch the pinned %s (recommended, one command: /hermes64 setup '
+            '--fetch --yes; Hermes64 then uses it and your %s stays) or set godot_path to it at your own risk (unproven; '
+            'exports need %s)' % (lead, version, path, GODOT_VERSION, GODOT_VERSION, version, GODOT_VERSION))
+
+
 TEMPLATES_DIR = Path('Library/Application Support/Godot/export_templates/4.6.2.stable')   # macOS, under the home folder
 
 

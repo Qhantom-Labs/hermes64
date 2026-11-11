@@ -8,7 +8,7 @@ path = sys.argv[1]
 only = sys.argv[2] if len(sys.argv) > 2 else None
 by = collections.defaultdict(collections.Counter)
 examples = {}
-for line in open(path):
+for line in open(path, encoding='utf-8'):
     r = json.loads(line)
     if only and r["gen"] != only:
         continue

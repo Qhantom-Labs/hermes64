@@ -17,12 +17,13 @@ CHARACTER_SCHEMA = {
     'name': 'hermes64_character',
     'description': ('House-style characters from recipes: propose three variants with contact sheets for the user to '
                     'pick, edit with typed edits, build the chosen one (GLB, clips, every gate incl. the rig kit), '
-                    'list/info parts, bind a character to the project cast. Never auto-adopts. Local Blender; '
+                    'list/info parts, bind a character to the project cast, locomotion = bake run + walk for a body '
+                    '(docs/LOCOMOTION.md). Never auto-adopts. Local Blender; '
                     'writes only inside the project. Details: skill hermes64:hermes64-characters.'),
     'parameters': {
         'type': 'object', 'additionalProperties': False, 'required': ['action'],
         'properties': {
-            'action': {'enum': ['propose', 'build', 'edit', 'list', 'info', 'bind']},
+            'action': {'enum': ['propose', 'build', 'edit', 'list', 'info', 'bind', 'locomotion']},
             'project': {'type': 'string', 'pattern': '^[a-z0-9][a-z0-9_-]{0,63}$'},
             'brief': {'type': 'string', 'minLength': 3, 'maxLength': 400},
             'references': {'type': 'array', 'items': PATH, 'maxItems': 4},
@@ -36,6 +37,10 @@ CHARACTER_SCHEMA = {
             'placeholder': {'type': 'boolean'},
             'source': {'enum': ['generated', 'cameo_pack', 'community']},
             'what': {'enum': ['parts', 'bodies', 'styles', 'recipes', 'cast']},
+            'legacy': {'type': 'boolean'},
+            # WAIVER (docs/WAIVER.md): bind waive=true owner_approved=<the owner's name> brief=<the owner's words>
+            'waive': {'type': 'boolean'},
+            'owner_approved': {'type': 'string', 'minLength': 1, 'maxLength': 80},
         },
     },
 }

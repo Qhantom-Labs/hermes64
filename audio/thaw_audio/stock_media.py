@@ -24,7 +24,7 @@ GROUPS = (
 def create_samplers(root, output):
     root,output = lane_path(root),lane_path(output)
     audit_catalog(root)
-    index = json.loads((root/"catalog.json").read_text())
+    index = json.loads((root/"catalog.json").read_text(encoding='utf-8'))
     rows = [r for r in index["assets"] if r["provenance"] == "core_generated"]
     target_frames = round(40.5*SR)
     gap = round(.15*SR)
@@ -84,7 +84,7 @@ def create_samplers(root, output):
 def create_spectra(root, output):
     root,output = lane_path(root),lane_path(output)
     audit_catalog(root)
-    index = json.loads((root/"catalog.json").read_text())
+    index = json.loads((root/"catalog.json").read_text(encoding='utf-8'))
     rows = [r for r in index["assets"] if r["provenance"] == "core_generated"]
     summaries, sheets = [], []
     flags = ["# Review priorities: suspected harshness, NOT heard", "",

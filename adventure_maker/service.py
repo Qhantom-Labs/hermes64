@@ -31,6 +31,26 @@ def source_guard(spec):
     return spec
 
 
+def proof_accepted(report, spec):
+    """'proved', or 'conditional' under the game's own declared module policy (the hermes64_module_edit rule,
+    story/modules/edits.accepted). Older games have no gameplay policy, so they still need 'proved'."""
+    policy = (spec.get('gameplay') or {}).get('verification_policy') if isinstance(spec, dict) else None
+    return report.get('status') == 'proved' or (report.get('status') == 'conditional' and policy == 'conditional')
+
+
+def proof_reason(report, spec):
+    """One plain line: the checker status and its first failing rule."""
+    bad = [o for o in report.get('obligations', []) if o.get('status') == 'rejected']
+    if bad:
+        return 'status %s; %s: %s' % (report.get('status'), bad[0].get('id'), ' '.join(str(bad[0].get('explanation', '')).split())[:240])
+    if report.get('status') == 'conditional':
+        return 'status conditional, but the game does not declare verification_policy conditional'
+    for key in ('softlock_count', 'dead_end_count', 'ambiguous_terminal_count'):
+        if report.get(key):
+            return 'status %s; %s %s' % (report.get('status'), key.replace('_', ' '), report[key])
+    return 'status %s' % report.get('status')
+
+
 def regression(old_spec, new_spec, old, new, proof, operation):
     old_rooms = {r['id']: r for r in old['rooms']}
     new_rooms = {r['id']: r for r in new['rooms']}
@@ -66,9 +86,10 @@ class Service:
         self.settings = dict(settings or {})
 
     def response(self, value, project):
-        raw = encode(value)
-        if len(raw) <= OUTPUT_LIMIT:
-            return raw.decode('utf-8')
+        raw = encode(value)  # validate canonical file JSON; files/hashes remain UTF-8, unchanged
+        wire = json.dumps(value, ensure_ascii=True, sort_keys=True, separators=(',', ':'), allow_nan=False)
+        if len(wire) <= OUTPUT_LIMIT:
+            return wire
         report = None
         if project is not None:
             report = '.maker/reports/' + uuid.uuid4().hex + '.json'
@@ -121,20 +142,7 @@ class Service:
                     result = {'ok': True, 'packs': packs.list()}
                 return self.response(result, None)
             if action == 'scaffold':
-                # Validate all caller data before creating a new directory.
-                if ('premise' in args) == ('spec_json' in args):
-                    fail('arguments', 'Supply exactly one of premise or spec_json')
-                pack = Packs(self.settings).get(args['pack'])
-                spec = source_guard(strict_json(args['spec_json']) if 'spec_json' in args else premise_spec(args['premise'], args['project'], pack))
-                if not isinstance(spec.get('metadata'), dict):
-                    fail('spec', 'Spec metadata must be an object')
-                project = self.project(args['project'], create=True)
-                with project.lock():
-                    spec['metadata']['hermes64_pack'] = Packs(self.settings, project).snapshot(pack)
-                    project.write_json('source/spec.json', spec)
-                    project.write_bytes('AUTHORING.md', b'Author source with Hermes64 tools. Compile and check after every edit. Never hand-edit generated revisions. This is a starter, not a finished demo.\n')
-                return self.response({'ok': True, 'status': 'scaffolded_unvalidated', 'project_dir': str(project.root),
-                                      'spec_path': 'source/spec.json', 'next': 'hermes64_compile then hermes64_check'}, project)
+                return self.scaffold(args)
             if action == 'doctor':
                 return self.response(self.doctor_anywhere(args), None)
             project = self.project(args['project'])
@@ -145,12 +153,55 @@ class Service:
             out = {'ok': False, 'error': {'code': exc.code, 'message': str(exc)[:2000]}}
             if getattr(exc, 'next', None):  # auto-repair plan for a failed compile (adventure_maker/repair.py)
                 out.update(next=exc.next, repair=exc.repair)
+            out.update(getattr(exc, 'created', None) or {})   # REUSE: a scaffold says whether it made a folder
             return json.dumps(out, ensure_ascii=True)
         except (OSError, ValueError, TypeError, KeyError, UnicodeError, RecursionError) as exc:
-            return json.dumps({'ok': False, 'error': {'code': 'local_error', 'message': type(exc).__name__ + ': ' + str(exc)[:2000]}}, ensure_ascii=True)
+            return json.dumps(dict({'ok': False, 'error': {'code': 'local_error', 'message': type(exc).__name__ + ': ' + str(exc)[:2000]}},
+                                   **(getattr(exc, 'created', None) or {})), ensure_ascii=True)
         except Exception as exc:
             # Public Hermes handler contract: JSON on every ordinary error; never fabricate success.
             return json.dumps({'ok': False, 'error': {'code': 'internal_error', 'message': type(exc).__name__ + ': ' + str(exc)[:1000]}})
+
+    def scaffold(self, args):
+        """hermes64_scaffold: a new source project under exactly the given name. REUSE: an existing name is refused
+        with one plain line naming what is there and how to continue it (never reused, never written into); every
+        reply states created, project_dir, seconds and assets_built (scaffold never builds assets)."""
+        import time
+        started = time.monotonic()
+        made = None
+        try:
+            # Validate all caller data before creating a new directory.
+            if ('premise' in args) == ('spec_json' in args):
+                fail('arguments', 'Supply exactly one of premise or spec_json')
+            pack = Packs(self.settings).get(args['pack'])
+            spec = source_guard(strict_json(args['spec_json']) if 'spec_json' in args else premise_spec(args['premise'], args['project'], pack))
+            if not isinstance(spec.get('metadata'), dict):
+                fail('spec', 'Spec metadata must be an object')
+            try:
+                project = self.project(args['project'], create=True)
+            except Fault as exc:
+                if exc.code != 'exists':
+                    raise
+                from .newgame import continue_line, describe_existing, existing_line
+                info = describe_existing(self.settings['projects_root'], args['project'])
+                refused = Fault('exists', 'Nothing was created: %s already exists at %s; %s, or scaffold under a new '
+                                'project name.' % (args['project'], existing_line(info), continue_line(info)))
+                setattr(refused, 'created', {'created': False, 'project_dir': info['project_dir'], 'existing': info,
+                                             'assets_built': False, 'seconds': round(time.monotonic() - started, 3)})
+                raise refused from None
+            made = str(project.root)
+            with project.lock():
+                spec['metadata']['hermes64_pack'] = Packs(self.settings, project).snapshot(pack)
+                project.write_json('source/spec.json', spec)
+                project.write_bytes('AUTHORING.md', b'Author source with Hermes64 tools. Compile and check after every edit. Never hand-edit generated revisions. This is a starter, not a finished demo.\n')
+        except Exception as exc:
+            if getattr(exc, 'created', None) is None:
+                setattr(exc, 'created', {'created': made is not None, 'project_dir': made, 'assets_built': False,
+                                         'seconds': round(time.monotonic() - started, 3)})
+            raise
+        return self.response({'ok': True, 'status': 'scaffolded_unvalidated', 'created': True, 'project_dir': str(project.root),
+                              'assets_built': False, 'seconds': round(time.monotonic() - started, 3),
+                              'spec_path': 'source/spec.json', 'next': 'hermes64_compile then hermes64_check'}, project)
 
     def doctor_anywhere(self, args):
         """The doctor is a new user's first step, so it must work before any projects_root or game exists.
@@ -192,15 +243,27 @@ class Service:
         from . import setup_check
         py = report['python']
         numpy = py.get('supported') and py.get('selected_interpreter_verified') and py['numpy']['available']
+        pillow = py.get('supported') and py.get('selected_interpreter_verified') and (py.get('pillow') or {}).get('available')
         rows = setup_check.check(self.settings,
                                  probe_numpy=lambda _exe: py['numpy'].get('version') if numpy else None,
+                                 probe_pillow=lambda _exe: (py.get('pillow') or {}).get('version') if pillow else None,
                                  blender_present=report['programs']['blender']['available'],
                                  templates=report['export_templates'])
         setup = {'rows': rows, 'message': setup_check.render(rows),
                  'download_plan': setup_check.run(self.settings, fetch=True, yes=False,
                                                   include_templates=True, interactive=False)}
-        return {'ok': True, 'status': 'capabilities_detected_not_verified', 'capabilities': report, 'table': table,
-                'guidance': report['guidance'], 'setup': setup}
+        out = {'ok': True, 'status': 'capabilities_detected_not_verified', 'capabilities': report, 'table': table,
+               'guidance': report['guidance'], 'setup': setup}
+        from .character_waiver import all_waivers
+        waived = all_waivers(self.settings.get('projects_root'), args.get('project'))
+        if waived:      # WAIVER (docs/WAIVER.md): every character bound with an owner waiver, read-only
+            out['waived_characters'] = waived
+            out['guidance'] = list(out['guidance']) + [
+                '%d character(s) bound with an owner waiver; the rig kit reports their failures as WAIVED, and hub pack/'
+                'publish refuse them unless waived=true: %s' % (len(waived), '; '.join(
+                    '%s/%s (%s, %s: %s)' % (w['project'], w['id'], w['owner'], w['approved_on'], ', '.join(w['checks'] or []))
+                    for w in waived))]
+        return out
 
     def pack_from_refs(self, project, args):
         from .reference_tools import draft_pack
@@ -267,6 +330,14 @@ class Service:
         if 'patch_json' in args:  # a repair patch from a `next` step; the source file itself is never rewritten
             spec = source_guard(apply_patch(spec, strict_json(args['patch_json'])))
         Packs(self.settings, project).selected(spec)
+        try:  # SCENES: scene cards/results are presentation data with their own closed checks
+            if '.' in (__package__ or ''):  # installed plugin: story is a sibling package (see repair._story)
+                from ..story.presentation.scenes import validate_spec as validate_scenes
+            else:
+                from story.presentation.scenes import validate_spec as validate_scenes
+            validate_scenes(spec)
+        except ValueError as exc:
+            raise Fault('compile_failed', 'scenes: ' + str(exc)[:2000]) from exc
         folder = self.folder(project, 'compile')
         project.write_json(folder + '/spec.json', spec)
         try:
@@ -349,8 +420,9 @@ class Service:
         folder = self.folder(project, 'edit')
         components = Components(self.settings, project)
         baseline = components.check(current['game'], folder + '/baseline-proof.json')
-        if baseline['status'] != 'proved':
-            fail('baseline_unproved', 'Baseline is not proved; repair/recompile before an accepted edit')
+        if not proof_accepted(baseline, old_spec):  # GAPS2 G5: a combat game's proof is 'conditional' by its own policy
+            fail('baseline_unproved', 'The current game does not pass its checker (' + proof_reason(baseline, old_spec) +
+                 '); repair or recompile it, then edit.')
         kind = operation['kind']
         manifest = None
         if kind == 'json-patch':
@@ -384,13 +456,30 @@ class Service:
         reg = regression(old_spec, spec, old, game, proof, operation)
         if save:
             reg['save_migration'] = components.migrate(save, current['game'], folder + '/game.json', folder, manifest)
-        good = proof['status'] == 'proved' and reg['identity_preserved'] and reg['unchanged_byte_identical']
-        good = good and reg['expected_room_locality'] != 'failed' and reg['save_migration']['status'] != 'rejected'
+        # GAPS2 G5: the proof is re-run on the edited game; it must pass under the old AND the new policy (a patch cannot
+        # loosen its own bar). A refusal carries one plain reason.
+        reasons = []
+        if not (proof_accepted(proof, old_spec) and proof_accepted(proof, spec)):
+            reasons.append('the edited game does not pass its checker (' + proof_reason(proof, spec) + ')')
+        if not reg['identity_preserved']:
+            reasons.append('the edit removes or rebinds ids (' + (', '.join(reg['lost_ids'][:6]) or 'id/contract/body changed') + ')')
+        if not reg['unchanged_byte_identical']:
+            reasons.append('a room the edit did not change compiled differently')
+        if reg['expected_room_locality'] == 'failed':
+            reasons.append('changed rooms ' + str(reg['changed_rooms']) + ' differ from expected_changed_rooms')
+        if reg['save_migration']['status'] == 'rejected':
+            reasons.append('the save cannot be migrated')
+        good = not reasons
         project.write_json(folder + '/plugin-diff.json', delta)
         project.write_json(folder + '/plugin-regression.json', reg)
         revision = {'spec': folder + '/spec.json', 'game': folder + '/game.json'}
-        return {'ok': bool(good), 'status': 'edited' if good else 'candidate_rejected', 'revision': revision,
-                'diff': delta, 'regression': reg, 'report_path': folder + '/plugin-regression.json'}, revision
+        out = {'ok': bool(good), 'status': 'edited' if good else 'candidate_rejected', 'revision': revision,
+               'proof_status': proof['status'], 'diff': delta, 'regression': reg, 'report_path': folder + '/plugin-regression.json'}
+        if reasons:
+            out['reason'] = 'Edit not adopted: ' + '; '.join(reasons) + '. The current game is unchanged.'
+        elif proof['status'] == 'conditional':
+            out['note'] = 'Proof re-run: conditional (logical proof passed; fights are not proved). Run hermes64_playtest on this revision.'
+        return out, revision
 
     def build_assets(self, project, args):
         # MERGE5: a STORY 1.3 (puzzle) build behind the module pointer builds for its lowered 1.2 build (export.py).

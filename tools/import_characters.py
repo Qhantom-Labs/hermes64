@@ -59,7 +59,7 @@ def sha(raw):
 
 
 def read_json(path):
-    return json.loads(Path(path).read_text())
+    return json.loads(Path(path).read_text(encoding='utf-8'))
 
 
 def write_json(path, value):
@@ -231,7 +231,7 @@ def read_sums(source):
     if not path.is_file():
         raise CharacterError('combat export requires SHA256SUMS')
     sums = {}
-    for line in path.read_text().splitlines():
+    for line in path.read_text(encoding='utf-8').splitlines():
         if not line.strip():
             continue
         match = re.fullmatch(r'([0-9a-f]{64})\s+\*?(\S+)', line.strip())

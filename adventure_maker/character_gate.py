@@ -60,13 +60,19 @@ def _rigkit_inprocess():
         return None
 
 
-def rig_gate(glb_path, rig, clips=None, profile='grounded', expect_sha256=None, rigkit_root=None, keys='all'):
-    """Run validate_character; returns the rig kit's own report with 'ok' and a one-line 'errors' list added."""
+def rig_gate(glb_path, rig, clips=None, profile='grounded', expect_sha256=None, rigkit_root=None, keys='all', waiver=False):
+    """Run validate_character; returns the rig kit's own report with 'ok' and a one-line 'errors' list added.
+    waiver=True grants the file's owner waiver block (lane WAIVER): covered failures come back in 'waived' (one line
+    each), not in 'errors'. The CLI fallback never grants one."""
     glb_path = Path(glb_path)
     rk = _rigkit_inprocess()
     if rk is not None:
-        rep = rk.validate_character(glb_path, rig=rig, clips=clips, expect_sha256=expect_sha256, profile=profile, keys=keys)
+        rep = rk.validate_character(glb_path, rig=rig, clips=clips, expect_sha256=expect_sha256, profile=profile, keys=keys,
+                                    **({'waiver': True} if waiver else {}))
         how = 'in-process'
+        if rep.get('waived'):
+            from .rigkit.waiver import waived_lines
+            rep = dict(rep, waived_lines=waived_lines(rep['waived']))
     else:
         root = rigkit_root or os.environ.get('HERMES64_RIGKIT_ROOT')
         if not root or not (Path(root) / 'adventure_maker' / 'rigkit' / '__main__.py').is_file():

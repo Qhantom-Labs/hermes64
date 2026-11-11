@@ -17,11 +17,11 @@
 | Hold R, 0.6 s | Retry from the current checkpoint. |
 | C | Optional authored camera-anchor cycle. Never required for progress. |
 
-A small **key glyph + verb icon** appears beside a target, not a control sentence. Prompts fade after three uses of that verb and return after an idle interval. Story dialogue is separate from control prompts. Releasing all movement after a menu avoids stale held-key movement. Holding through camera cuts preserves world direction until release or a deliberate direction change.
+A small **key glyph + verb icon** appears beside a target, not a control sentence. Prompts fade after three uses of that verb and return after an idle interval. Games made by `/hermes64 new` (UI5) instead show the keycap + the target's type icon (door, take, talk, lever, look) whenever E would act, at a whole-pixel scale, fading only when out of reach, plus a corner keycap strip (move, E, Space) at start that fades after the first step or 8 s; see `UI5-HUD.md`. Story dialogue is separate from control prompts. Releasing all movement after a menu avoids stale held-key movement. Holding through camera cuts preserves world direction until release or a deliberate direction change.
 
 ## Preferences / remapping
 
-In Esc settings: E toggles hold/toggle Focus; Shift cycles auto-run / hold-to-run / toggle-precision; Q toggles reduced motion; Tab switches left/right-hand presets. These changes persist for live play. Reduced motion preserves fixed cameras and has no camera shake/bob to disable in this runtime.
+Esc shows every control as keycap + icon + one word (left column) and, on the right, Resume plus the four settings with their current value, drawn at a whole-pixel scale outside the low-resolution frame. In Esc settings: E toggles hold/toggle Focus; Shift cycles auto-run / hold-to-run / toggle-precision; Q toggles reduced motion; Tab switches left/right-hand presets. These changes persist for live play. Reduced motion preserves fixed cameras and has no camera shake/bob to disable in this runtime.
 
 The default **left-hand** preset uses the table above. **Right-hand** uses arrows, Shift, Enter primary, Ctrl secondary, `/` Focus, Alt dodge and Backspace action menu. Keyboard hardware ghosting and physical pad behavior still require hands-on testing.
 

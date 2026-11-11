@@ -1,0 +1,14 @@
+--- a/tools/package.py	2026-11-10 17:53:25
++++ b/tools/package.py	2026-11-10 17:53:25
+@@ -45,6 +45,11 @@
+     # that characters/integration.capture_games imports (reached through tools/import_characters.py): without it the
+     # package's `hermes plugins validate` saw `tools.roomlook` as a private Hermes core import.
+     'tools/check_install.py', 'tools/roomlook.py',
++    # PLACEMAKER: place archetypes -> room plans (adventure_maker/place.py) needs the kit room compilers and the clearance
++    # check; the place_maker CLI adds the render loop, measurement and approval store.
++    'tools/room_clearance.py', 'tools/medievalkit_rooms.py', 'tools/westernkit_rooms.py', 'tools/cyberkit_rooms.py',
++    'tools/dungeonkit_rooms.py', 'tools/place_maker.py', 'tools/place_measure.py', 'tools/style_ref_measure.py',
++    'tools/mood_pack.py', 'tools/mood_demo.py', 'place_approvals/README.md',
+ )
+ MANIFEST = 'PACKAGE-MANIFEST.json'
+ ZIP_TIME = (1980, 1, 1, 0, 0, 0)      # fixed member timestamps: the same tree always zips to the same bytes

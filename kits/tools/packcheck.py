@@ -82,7 +82,7 @@ def main(argv):
     report["exit_code"] = 3 if bad else 0
     d = os.path.join(LANE, "reports", "packcheck")
     os.makedirs(d, exist_ok=True)
-    with open(os.path.join(d, a.tag + ".json"), "w") as f:
+    with open(os.path.join(d, a.tag + ".json"), "w", encoding='utf-8') as f:
         json.dump(report, f, indent=1, sort_keys=True)
     print("PACKCHECK TOTAL problems=%d -> exit %d" % (bad, report["exit_code"]))
     return report["exit_code"]

@@ -1,0 +1,3287 @@
+{
+ "base": "base_v1",
+ "characters": [
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       13.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0002,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.66,
+      "leg_mid_off_centre_m": 0.001,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.03,
+      "slip_pairs": 8,
+      "stride_mps": 2.0036
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       9.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0008,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0027,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0005,
+      "slip_mps": 0.024,
+      "slip_pairs": 18,
+      "stride_mps": 1.0018
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.73224,
+    "run": {
+     "enter_mps": 1.82149,
+     "exit_mps": 1.54827,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 2.0036
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       -0.0,
+       -0.13284,
+       -0.13336
+      ],
+      "toe": [
+       -0.0,
+       -0.13284,
+       0.21254
+      ]
+     },
+     "r": {
+      "heel": [
+       0.0,
+       -0.13284,
+       -0.13336
+      ],
+      "toe": [
+       0.0,
+       -0.13284,
+       0.21254
+      ]
+     }
+    },
+    "source_sha256": "c9acb9be1f5741c4e4323d7e9ad843fa5690e0bb4deb2ec215d2fe02cd67af03",
+    "walk": {
+     "stride_mps": 1.0018
+    }
+   },
+   "bytes": 181884,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/new_arrival.glb",
+   "id": "new_arrival",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": -0.0116,
+      "bounce_hip": 0.2289,
+      "flight_keys_per_step": 0,
+      "lean_deg": -4.61,
+      "leg_mid_off_centre_m": 0.0204,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 7.393,
+      "slip_pairs": 14,
+      "stride_mps": 2.0036
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip",
+      "boots_cross"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": -0.017,
+      "bounce_hip": 0.0758,
+      "flight_keys_per_step": 0,
+      "lean_deg": -1.18,
+      "leg_mid_off_centre_m": 0.0255,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 4.722,
+      "slip_pairs": 14,
+      "stride_mps": 1.0018
+     },
+     [
+      "lean_low",
+      "slip",
+      "boots_cross"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.5998,
+    "hip_height_m": 0.7322,
+    "hip_height_per_height": 0.4577,
+    "leg_len_m": 0.5997,
+    "triangles": 684
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "d01e0f92a4b63b1ac6d711479c27548ab3c16169072ebc4d489765d47e2c7d3e",
+   "source": "characters/assets/polar_pod/new_arrival.glb",
+   "source_sha256": "c9acb9be1f5741c4e4323d7e9ad843fa5690e0bb4deb2ec215d2fe02cd67af03"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       0.9,
+       13.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 2
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0053,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.66,
+      "leg_mid_off_centre_m": 0.0005,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0001,
+      "slip_mps": 0.011,
+      "slip_pairs": 8,
+      "stride_mps": 1.8552
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       9.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0002,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0025,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0004,
+      "slip_mps": 0.021,
+      "slip_pairs": 18,
+      "stride_mps": 0.9276
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.678,
+    "run": {
+     "enter_mps": 1.68657,
+     "exit_mps": 1.43358,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 1.8552
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       0.0,
+       -0.123,
+       -0.12348
+      ],
+      "toe": [
+       0.0,
+       -0.123,
+       0.1968
+      ]
+     },
+     "r": {
+      "heel": [
+       -0.0,
+       -0.123,
+       -0.12348
+      ],
+      "toe": [
+       -0.0,
+       -0.123,
+       0.1968
+      ]
+     }
+    },
+    "source_sha256": "be7accc1c123372c7c8bda1659b711846464423863a4cd9b52cb7816d92737c2",
+    "walk": {
+     "stride_mps": 0.9276
+    }
+   },
+   "bytes": 182408,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/tavi.glb",
+   "id": "tavi",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": -0.0066,
+      "bounce_hip": 0.2238,
+      "flight_keys_per_step": 0,
+      "lean_deg": -3.93,
+      "leg_mid_off_centre_m": 0.0139,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0001,
+      "slip_mps": 6.845,
+      "slip_pairs": 14,
+      "stride_mps": 1.8552
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip",
+      "boots_cross"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": -0.0114,
+      "bounce_hip": 0.0706,
+      "flight_keys_per_step": 0,
+      "lean_deg": -0.51,
+      "leg_mid_off_centre_m": 0.0187,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0001,
+      "slip_mps": 4.372,
+      "slip_pairs": 14,
+      "stride_mps": 0.9276
+     },
+     [
+      "lean_low",
+      "slip",
+      "boots_cross"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.5006,
+    "hip_height_m": 0.678,
+    "hip_height_per_height": 0.4518,
+    "leg_len_m": 0.5553,
+    "triangles": 684
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "fb942eee6709054d56f19adf9acf983776d3fd8e98db94247b916dc90c6aa015",
+   "source": "characters/assets/polar_pod/tavi.glb",
+   "source_sha256": "be7accc1c123372c7c8bda1659b711846464423863a4cd9b52cb7816d92737c2"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       0.9,
+       13.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 2
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0048,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.66,
+      "leg_mid_off_centre_m": 0.0006,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.012,
+      "slip_pairs": 8,
+      "stride_mps": 2.2015
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       0.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       0.9,
+       9.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 2,
+      "limb_in_torso": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0052,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0015,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0005,
+      "slip_mps": 0.011,
+      "slip_pairs": 18,
+      "stride_mps": 1.1008
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.80456,
+    "run": {
+     "enter_mps": 2.00139,
+     "exit_mps": 1.70118,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 2.2015
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       0.0,
+       -0.14596,
+       -0.14653
+      ],
+      "toe": [
+       0.0,
+       -0.14596,
+       0.23353
+      ]
+     },
+     "r": {
+      "heel": [
+       -0.0,
+       -0.14596,
+       -0.14653
+      ],
+      "toe": [
+       -0.0,
+       -0.14596,
+       0.23353
+      ]
+     }
+    },
+    "source_sha256": "a8d0bd219d226f5495dc0524c591d7d55c62e250264064985d7a1929c96999f0",
+    "walk": {
+     "stride_mps": 1.1008
+    }
+   },
+   "bytes": 184544,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/neri.glb",
+   "id": "neri",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": -0.0001,
+      "bounce_hip": 0.2226,
+      "flight_keys_per_step": 0,
+      "lean_deg": -5.22,
+      "leg_mid_off_centre_m": 0.0145,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 13.499,
+      "slip_pairs": 15,
+      "stride_mps": 2.2015
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip",
+      "boots_cross"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": -0.0047,
+      "bounce_hip": 0.0693,
+      "flight_keys_per_step": 0,
+      "lean_deg": -1.81,
+      "leg_mid_off_centre_m": 0.0203,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 5.188,
+      "slip_pairs": 14,
+      "stride_mps": 1.1008
+     },
+     [
+      "lean_low",
+      "slip",
+      "boots_cross"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.7391,
+    "hip_height_m": 0.8046,
+    "hip_height_per_height": 0.4626,
+    "leg_len_m": 0.6589,
+    "triangles": 684
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "a9c62f52824e3c1fb93e7a57292a058e8151c501c6f50b0c0c1a2eecb1bb00f8",
+   "source": "characters/assets/polar_pod/neri.glb",
+   "source_sha256": "a8d0bd219d226f5495dc0524c591d7d55c62e250264064985d7a1929c96999f0"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       13.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0033,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.66,
+      "leg_mid_off_centre_m": 0.001,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.037,
+      "slip_pairs": 8,
+      "stride_mps": 1.9418
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 0.8,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       9.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1,
+      "seam_gap": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0039,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0026,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.029,
+      "slip_pairs": 18,
+      "stride_mps": 0.9709
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.70964,
+    "run": {
+     "enter_mps": 1.76527,
+     "exit_mps": 1.50048,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 1.9418
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       -0.0,
+       -0.12874,
+       -0.12924
+      ],
+      "toe": [
+       -0.0,
+       -0.12874,
+       0.20598
+      ]
+     },
+     "r": {
+      "heel": [
+       0.0,
+       -0.12874,
+       -0.12924
+      ],
+      "toe": [
+       0.0,
+       -0.12874,
+       0.20598
+      ]
+     }
+    },
+    "source_sha256": "49b8d95034e44b5da95d94068e87c46b094068cce0779cfab1dffc8007bf0793",
+    "walk": {
+     "stride_mps": 0.9709
+    }
+   },
+   "bytes": 181084,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/sol.glb",
+   "id": "sol",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0049,
+      "bounce_hip": 0.2273,
+      "flight_keys_per_step": 0,
+      "lean_deg": -4.09,
+      "leg_mid_off_centre_m": 0.0128,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 11.907,
+      "slip_pairs": 14,
+      "stride_mps": 1.9418
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": 0.0008,
+      "bounce_hip": 0.0744,
+      "flight_keys_per_step": 0,
+      "lean_deg": -0.67,
+      "leg_mid_off_centre_m": 0.0179,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 4.576,
+      "slip_pairs": 14,
+      "stride_mps": 0.9709
+     },
+     [
+      "lean_low",
+      "slip"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.5606,
+    "hip_height_m": 0.7096,
+    "hip_height_per_height": 0.4547,
+    "leg_len_m": 0.5812,
+    "triangles": 684
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "7b5fc00a4fd635316538e007f65422ccbfe7b4ddaa6e5e1ecc2295cac9c45f1d",
+   "source": "characters/assets/polar_pod/sol.glb",
+   "source_sha256": "49b8d95034e44b5da95d94068e87c46b094068cce0779cfab1dffc8007bf0793"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       13.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.001,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.66,
+      "leg_mid_off_centre_m": 0.0011,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.036,
+      "slip_pairs": 8,
+      "stride_mps": 2.2881
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 0.8,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       9.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1,
+      "seam_gap": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0017,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0031,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.028,
+      "slip_pairs": 18,
+      "stride_mps": 1.1441
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.8362,
+    "run": {
+     "enter_mps": 2.0801,
+     "exit_mps": 1.76808,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 2.2881
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       -0.0,
+       -0.1517,
+       -0.15229
+      ],
+      "toe": [
+       -0.0,
+       -0.1517,
+       0.24271
+      ]
+     },
+     "r": {
+      "heel": [
+       0.0,
+       -0.1517,
+       -0.15229
+      ],
+      "toe": [
+       0.0,
+       -0.1517,
+       0.24271
+      ]
+     }
+    },
+    "source_sha256": "ced5ee5b449a30a021bbb8bd6b482068e322dd2c2e1c6c95658728f72137250e",
+    "walk": {
+     "stride_mps": 1.1441
+    }
+   },
+   "bytes": 181632,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/ivo.glb",
+   "id": "ivo",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": -0.0177,
+      "bounce_hip": 0.2265,
+      "flight_keys_per_step": 0,
+      "lean_deg": -5.38,
+      "leg_mid_off_centre_m": 0.0207,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 8.443,
+      "slip_pairs": 14,
+      "stride_mps": 2.2881
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip",
+      "boots_cross"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": -0.023,
+      "bounce_hip": 0.0735,
+      "flight_keys_per_step": 0,
+      "lean_deg": -1.95,
+      "leg_mid_off_centre_m": 0.0266,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 5.393,
+      "slip_pairs": 14,
+      "stride_mps": 1.1441
+     },
+     [
+      "lean_low",
+      "slip",
+      "boots_cross"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.803,
+    "hip_height_m": 0.8362,
+    "hip_height_per_height": 0.4638,
+    "leg_len_m": 0.6849,
+    "triangles": 684
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "7aad19a7fe41f095e88a7fa420f76b3896ca072ba918d98e38c6184698e815f8",
+   "source": "characters/assets/polar_pod/ivo.glb",
+   "source_sha256": "ced5ee5b449a30a021bbb8bd6b482068e322dd2c2e1c6c95658728f72137250e"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       13.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0024,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.66,
+      "leg_mid_off_centre_m": 0.001,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0005,
+      "slip_mps": 0.034,
+      "slip_pairs": 8,
+      "stride_mps": 1.9171
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 0.8,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       9.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1,
+      "seam_gap": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.003,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0026,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.027,
+      "slip_pairs": 18,
+      "stride_mps": 0.9585
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.7006,
+    "run": {
+     "enter_mps": 1.74279,
+     "exit_mps": 1.48137,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 1.9171
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       0.0,
+       -0.1271,
+       -0.1276
+      ],
+      "toe": [
+       0.0,
+       -0.1271,
+       0.20336
+      ]
+     },
+     "r": {
+      "heel": [
+       -0.0,
+       -0.1271,
+       -0.1276
+      ],
+      "toe": [
+       -0.0,
+       -0.1271,
+       0.20336
+      ]
+     }
+    },
+    "source_sha256": "5a0130cf5f3405ea1f85dd51da53636590e55819b5c2c78348bb42c99e1c01fa",
+    "walk": {
+     "stride_mps": 0.9585
+    }
+   },
+   "bytes": 180764,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/luma.glb",
+   "id": "luma",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0017,
+      "bounce_hip": 0.2193,
+      "flight_keys_per_step": 0,
+      "lean_deg": -3.28,
+      "leg_mid_off_centre_m": 0.0082,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 8.139,
+      "slip_pairs": 14,
+      "stride_mps": 1.9171
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": -0.0023,
+      "bounce_hip": 0.0663,
+      "flight_keys_per_step": 0,
+      "lean_deg": 0.14,
+      "leg_mid_off_centre_m": 0.0127,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 4.518,
+      "slip_pairs": 14,
+      "stride_mps": 0.9585
+     },
+     [
+      "slip",
+      "boots_cross"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.5544,
+    "hip_height_m": 0.7006,
+    "hip_height_per_height": 0.4507,
+    "leg_len_m": 0.5738,
+    "triangles": 684
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "6ab6549e5624ee31c66ac26cae84c6a2c6aa8535b642a1f1e939727c6d561b7d",
+   "source": "characters/assets/polar_pod/luma.glb",
+   "source_sha256": "5a0130cf5f3405ea1f85dd51da53636590e55819b5c2c78348bb42c99e1c01fa"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       0.9,
+       13.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 2
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0053,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.66,
+      "leg_mid_off_centre_m": 0.0005,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.012,
+      "slip_pairs": 8,
+      "stride_mps": 2.1026
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       0.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       0.9,
+       9.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 2,
+      "limb_in_torso": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0056,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0015,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0005,
+      "slip_mps": 0.011,
+      "slip_pairs": 18,
+      "stride_mps": 1.0513
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.7684,
+    "run": {
+     "enter_mps": 1.91144,
+     "exit_mps": 1.62473,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 2.1026
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       0.0,
+       -0.1394,
+       -0.13994
+      ],
+      "toe": [
+       0.0,
+       -0.1394,
+       0.22303
+      ]
+     },
+     "r": {
+      "heel": [
+       -0.0,
+       -0.1394,
+       -0.13994
+      ],
+      "toe": [
+       -0.0,
+       -0.1394,
+       0.22303
+      ]
+     }
+    },
+    "source_sha256": "f6541597f4aaad6c04ace12a8af26915607ac57a843b6b536860dbe83d225788",
+    "walk": {
+     "stride_mps": 1.0513
+    }
+   },
+   "bytes": 180988,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/study_07.glb",
+   "id": "study_07",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": -0.0063,
+      "bounce_hip": 0.2218,
+      "flight_keys_per_step": 0,
+      "lean_deg": -2.97,
+      "leg_mid_off_centre_m": 0.014,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 8.927,
+      "slip_pairs": 14,
+      "stride_mps": 2.1026
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip",
+      "boots_cross"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": -0.0118,
+      "bounce_hip": 0.0685,
+      "flight_keys_per_step": 0,
+      "lean_deg": 0.45,
+      "leg_mid_off_centre_m": 0.0194,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 4.955,
+      "slip_pairs": 14,
+      "stride_mps": 1.0513
+     },
+     [
+      "slip",
+      "boots_cross"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.6787,
+    "hip_height_m": 0.7684,
+    "hip_height_per_height": 0.4577,
+    "leg_len_m": 0.6293,
+    "triangles": 684
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "6f329b54a3e7da5f347029b30d5a7fd8907cb0f2a940f793d53de7c7a7d6e1bd",
+   "source": "characters/assets/polar_pod/study_07.glb",
+   "source_sha256": "f6541597f4aaad6c04ace12a8af26915607ac57a843b6b536860dbe83d225788"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       13.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0013,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.66,
+      "leg_mid_off_centre_m": 0.0009,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.029,
+      "slip_pairs": 8,
+      "stride_mps": 1.7563
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 0.8,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       1.75,
+       9.0
+      ]
+     },
+     "dials_moved": {
+      "boots_cross": 1,
+      "seam_gap": 1
+     },
+     "metrics": {
+      "boot_gap_min_m": 0.0018,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0024,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.023,
+      "slip_pairs": 18,
+      "stride_mps": 0.8781
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.64184,
+    "run": {
+     "enter_mps": 1.59662,
+     "exit_mps": 1.35712,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 1.7563
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       -0.0,
+       -0.11644,
+       -0.11689
+      ],
+      "toe": [
+       -0.0,
+       -0.11644,
+       0.1863
+      ]
+     },
+     "r": {
+      "heel": [
+       0.0,
+       -0.11644,
+       -0.11689
+      ],
+      "toe": [
+       0.0,
+       -0.11644,
+       0.1863
+      ]
+     }
+    },
+    "source_sha256": "acad0174da185fd52333c60fce479ef71a6b5ba3112a43dc2a18e757bbc9e885",
+    "walk": {
+     "stride_mps": 0.8781
+    }
+   },
+   "bytes": 181996,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/study_08.glb",
+   "id": "study_08",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0007,
+      "bounce_hip": 0.2188,
+      "flight_keys_per_step": 0,
+      "lean_deg": -4.24,
+      "leg_mid_off_centre_m": 0.0075,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0011,
+      "slip_mps": 7.456,
+      "slip_pairs": 14,
+      "stride_mps": 1.7563
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": -0.003,
+      "bounce_hip": 0.0658,
+      "flight_keys_per_step": 0,
+      "lean_deg": -0.81,
+      "leg_mid_off_centre_m": 0.0116,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0011,
+      "slip_mps": 4.139,
+      "slip_pairs": 14,
+      "stride_mps": 0.8781
+     },
+     [
+      "lean_low",
+      "slip",
+      "boots_cross"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.4336,
+    "hip_height_m": 0.6418,
+    "hip_height_per_height": 0.4477,
+    "leg_len_m": 0.5257,
+    "triangles": 684
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "2dacdab3c219192b3488896b99e786b962db512d3444a3bf8753de99af9dbcf6",
+   "source": "characters/assets/polar_pod/study_08.glb",
+   "source_sha256": "acad0174da185fd52333c60fce479ef71a6b5ba3112a43dc2a18e757bbc9e885"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       13.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0368,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.62,
+      "leg_mid_off_centre_m": 0.0018,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.056,
+      "slip_pairs": 8,
+      "stride_mps": 2.2241
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       9.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0378,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0039,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0014,
+      "slip_mps": 0.042,
+      "slip_pairs": 18,
+      "stride_mps": 1.1121
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.81281,
+    "run": {
+     "enter_mps": 2.02193,
+     "exit_mps": 1.71864,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 2.2241
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       0.0,
+       -0.14746,
+       -0.1389
+      ],
+      "toe": [
+       0.0,
+       -0.14746,
+       0.23746
+      ]
+     },
+     "r": {
+      "heel": [
+       -0.0,
+       -0.14746,
+       -0.1389
+      ],
+      "toe": [
+       -0.0,
+       -0.14746,
+       0.23746
+      ]
+     }
+    },
+    "source_sha256": "0b63c5b59aee760fe324a68e6917f50193e45f86cf24b69869872e262a3318c2",
+    "walk": {
+     "stride_mps": 1.1121
+    }
+   },
+   "bytes": 175936,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/pp_engineer.glb",
+   "id": "pp_engineer",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0432,
+      "bounce_hip": 0.2276,
+      "flight_keys_per_step": 0,
+      "lean_deg": -4.22,
+      "leg_mid_off_centre_m": 0.0097,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0002,
+      "slip_mps": 13.648,
+      "slip_pairs": 16,
+      "stride_mps": 2.2241
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": 0.0385,
+      "bounce_hip": 0.0712,
+      "flight_keys_per_step": 0,
+      "lean_deg": -0.81,
+      "leg_mid_off_centre_m": 0.0149,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 5.244,
+      "slip_pairs": 14,
+      "stride_mps": 1.1121
+     },
+     [
+      "lean_low",
+      "slip"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.7814,
+    "hip_height_m": 0.8128,
+    "hip_height_per_height": 0.4563,
+    "leg_len_m": 0.6657,
+    "triangles": 696
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "0560ded59e9510a435f94b130932ffd78e2a97ba9936ff99d0b869c09b0a22a5",
+   "source": "characters/assets/polar_pod/pp_engineer.glb",
+   "source_sha256": "0b63c5b59aee760fe324a68e6917f50193e45f86cf24b69869872e262a3318c2"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       13.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0397,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.62,
+      "leg_mid_off_centre_m": 0.0014,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.05,
+      "slip_pairs": 8,
+      "stride_mps": 2.0598
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       9.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0406,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0038,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.038,
+      "slip_pairs": 18,
+      "stride_mps": 1.0299
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.75278,
+    "run": {
+     "enter_mps": 1.87258,
+     "exit_mps": 1.59169,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 2.0598
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       0.0,
+       -0.13657,
+       -0.11896
+      ],
+      "toe": [
+       0.0,
+       -0.13657,
+       0.21024
+      ]
+     },
+     "r": {
+      "heel": [
+       -0.0,
+       -0.13657,
+       -0.11896
+      ],
+      "toe": [
+       -0.0,
+       -0.13657,
+       0.21024
+      ]
+     }
+    },
+    "source_sha256": "463883637f909c160a01276b405ec1445154dd55e3d65ce99d0d0de18e2127b6",
+    "walk": {
+     "stride_mps": 1.0299
+    }
+   },
+   "bytes": 177312,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/pp_medic.glb",
+   "id": "pp_medic",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0392,
+      "bounce_hip": 0.2378,
+      "flight_keys_per_step": 0,
+      "lean_deg": -3.92,
+      "leg_mid_off_centre_m": 0.0153,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 8.725,
+      "slip_pairs": 15,
+      "stride_mps": 2.0598
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": 0.0333,
+      "bounce_hip": 0.0773,
+      "flight_keys_per_step": 0,
+      "lean_deg": -0.51,
+      "leg_mid_off_centre_m": 0.0206,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 4.843,
+      "slip_pairs": 14,
+      "stride_mps": 1.0299
+     },
+     [
+      "lean_low",
+      "slip"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.6507,
+    "hip_height_m": 0.7528,
+    "hip_height_per_height": 0.456,
+    "leg_len_m": 0.6165,
+    "triangles": 696
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "7a23a9e41300074f2e67a1862f46e055329e350acd491b8e36e8857c1b42cf93",
+   "source": "characters/assets/polar_pod/pp_medic.glb",
+   "source_sha256": "463883637f909c160a01276b405ec1445154dd55e3d65ce99d0d0de18e2127b6"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       13.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0108,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.62,
+      "leg_mid_off_centre_m": 0.001,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.03,
+      "slip_pairs": 8,
+      "stride_mps": 1.2849
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       9.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0114,
+      "bounce_hip": 0.026,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0017,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0028,
+      "slip_mps": 0.023,
+      "slip_pairs": 18,
+      "stride_mps": 0.6425
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.46959,
+    "run": {
+     "enter_mps": 1.16813,
+     "exit_mps": 0.99291,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 1.2849
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       -0.0,
+       -0.08519,
+       -0.1007
+      ],
+      "toe": [
+       -0.0,
+       -0.08519,
+       0.16678
+      ]
+     },
+     "r": {
+      "heel": [
+       0.0,
+       -0.08519,
+       -0.1007
+      ],
+      "toe": [
+       0.0,
+       -0.08519,
+       0.16678
+      ]
+     }
+    },
+    "source_sha256": "8a2d20207b167e30487165073c98f962c3ad21b0a5057d7a737d4c12d9bbd3ba",
+    "walk": {
+     "stride_mps": 0.6425
+    }
+   },
+   "bytes": 172080,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/pp_kid.glb",
+   "id": "pp_kid",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0149,
+      "bounce_hip": 0.2185,
+      "flight_keys_per_step": 0,
+      "lean_deg": -2.95,
+      "leg_mid_off_centre_m": 0.0056,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 8.045,
+      "slip_pairs": 16,
+      "stride_mps": 1.2849
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": 0.0122,
+      "bounce_hip": 0.0765,
+      "flight_keys_per_step": 0,
+      "lean_deg": 0.45,
+      "leg_mid_off_centre_m": 0.0086,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 3.068,
+      "slip_pairs": 14,
+      "stride_mps": 0.6425
+     },
+     [
+      "slip"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.185,
+    "hip_height_m": 0.4696,
+    "hip_height_per_height": 0.3963,
+    "leg_len_m": 0.3847,
+    "triangles": 696
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "5aeb4ed5024df29d39e8657a8a87a178bfc283e5665ba9b6d587fa02cee3d08d",
+   "source": "characters/assets/polar_pod/pp_kid.glb",
+   "source_sha256": "8a2d20207b167e30487165073c98f962c3ad21b0a5057d7a737d4c12d9bbd3ba"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       13.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0478,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.62,
+      "leg_mid_off_centre_m": 0.0016,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0007,
+      "slip_mps": 0.055,
+      "slip_pairs": 8,
+      "stride_mps": 2.0553
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       9.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0487,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.0038,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0015,
+      "slip_mps": 0.041,
+      "slip_pairs": 18,
+      "stride_mps": 1.0276
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.75111,
+    "run": {
+     "enter_mps": 1.86842,
+     "exit_mps": 1.58816,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 2.0553
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       -0.0,
+       -0.13626,
+       -0.11928
+      ],
+      "toe": [
+       -0.0,
+       -0.13626,
+       0.21336
+      ]
+     },
+     "r": {
+      "heel": [
+       0.0,
+       -0.13626,
+       -0.11928
+      ],
+      "toe": [
+       0.0,
+       -0.13626,
+       0.21336
+      ]
+     }
+    },
+    "source_sha256": "46a91617ab97312b798260b0ebe0211820dfba9467c1bbfec3ab58e94d7325f5",
+    "walk": {
+     "stride_mps": 1.0276
+    }
+   },
+   "bytes": 172204,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/polar_pod/pp_elder.glb",
+   "id": "pp_elder",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0536,
+      "bounce_hip": 0.2337,
+      "flight_keys_per_step": 0,
+      "lean_deg": -5.82,
+      "leg_mid_off_centre_m": 0.0089,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 8.706,
+      "slip_pairs": 14,
+      "stride_mps": 2.0553
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": 0.0492,
+      "bounce_hip": 0.0737,
+      "flight_keys_per_step": 0,
+      "lean_deg": -2.41,
+      "leg_mid_off_centre_m": 0.0138,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 4.837,
+      "slip_pairs": 14,
+      "stride_mps": 1.0276
+     },
+     [
+      "lean_low",
+      "slip"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.6829,
+    "hip_height_m": 0.7511,
+    "hip_height_per_height": 0.4463,
+    "leg_len_m": 0.6152,
+    "triangles": 696
+   },
+   "ok": true,
+   "pack": "polar_pod",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "92f650e34593d61bcd8fb1613fc7eb6fd195284c260059789c884893c8980d5b",
+   "source": "characters/assets/polar_pod/pp_elder.glb",
+   "source_sha256": "46a91617ab97312b798260b0ebe0211820dfba9467c1bbfec3ab58e94d7325f5"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       13.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0355,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.62,
+      "leg_mid_off_centre_m": 0.0012,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.044,
+      "slip_pairs": 8,
+      "stride_mps": 1.7746
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       9.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0363,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.003,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.034,
+      "slip_pairs": 18,
+      "stride_mps": 0.8873
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.64852,
+    "run": {
+     "enter_mps": 1.61324,
+     "exit_mps": 1.37125,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 1.7746
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       0.0,
+       -0.11765,
+       -0.10947
+      ],
+      "toe": [
+       0.0,
+       -0.11765,
+       0.19347
+      ]
+     },
+     "r": {
+      "heel": [
+       -0.0,
+       -0.11765,
+       -0.10947
+      ],
+      "toe": [
+       -0.0,
+       -0.11765,
+       0.19347
+      ]
+     }
+    },
+    "source_sha256": "568a9e41e0a5e1f14f0d1e8d8bedb28878afeae55d290e4c47a7ce7306818e6d",
+    "walk": {
+     "stride_mps": 0.8873
+    }
+   },
+   "bytes": 175892,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/forest_village/fv_warden.glb",
+   "id": "fv_warden",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0426,
+      "bounce_hip": 0.2372,
+      "flight_keys_per_step": 0,
+      "lean_deg": -4.08,
+      "leg_mid_off_centre_m": 0.0115,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 10.908,
+      "slip_pairs": 14,
+      "stride_mps": 1.7746
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": 0.0383,
+      "bounce_hip": 0.0805,
+      "flight_keys_per_step": 0,
+      "lean_deg": -0.67,
+      "leg_mid_off_centre_m": 0.0161,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 4.188,
+      "slip_pairs": 14,
+      "stride_mps": 0.8873
+     },
+     [
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.5178,
+    "hip_height_m": 0.6485,
+    "hip_height_per_height": 0.4273,
+    "leg_len_m": 0.5312,
+    "triangles": 696
+   },
+   "ok": true,
+   "pack": "forest_village",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "2669a7811de6a4b63a4bfc44fcb4610c3c23ddb4557cea6fbdf6423793e50953",
+   "source": "characters/assets/forest_village/fv_warden.glb",
+   "source_sha256": "568a9e41e0a5e1f14f0d1e8d8bedb28878afeae55d290e4c47a7ce7306818e6d"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       13.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0784,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.62,
+      "leg_mid_off_centre_m": 0.0018,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0014,
+      "slip_mps": 0.072,
+      "slip_pairs": 8,
+      "stride_mps": 2.2747
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       9.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0794,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.004,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0015,
+      "slip_mps": 0.054,
+      "slip_pairs": 18,
+      "stride_mps": 1.1373
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.83129,
+    "run": {
+     "enter_mps": 2.06788,
+     "exit_mps": 1.7577,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 2.2747
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       -0.0,
+       -0.15081,
+       -0.14206
+      ],
+      "toe": [
+       -0.0,
+       -0.15081,
+       0.24286
+      ]
+     },
+     "r": {
+      "heel": [
+       0.0,
+       -0.15081,
+       -0.14206
+      ],
+      "toe": [
+       0.0,
+       -0.15081,
+       0.24286
+      ]
+     }
+    },
+    "source_sha256": "7b52c0714c89c93d6a3ec2afeecbf68a89c64ed090a480475a6c128c27d5df82",
+    "walk": {
+     "stride_mps": 1.1373
+    }
+   },
+   "bytes": 172812,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/forest_village/fv_smith.glb",
+   "id": "fv_smith",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0813,
+      "bounce_hip": 0.2382,
+      "flight_keys_per_step": 0,
+      "lean_deg": -5.0,
+      "leg_mid_off_centre_m": 0.0156,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0014,
+      "slip_mps": 13.958,
+      "slip_pairs": 14,
+      "stride_mps": 2.2747
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": 0.0833,
+      "bounce_hip": 0.082,
+      "flight_keys_per_step": 0,
+      "lean_deg": -1.59,
+      "leg_mid_off_centre_m": 0.0217,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0007,
+      "slip_mps": 5.364,
+      "slip_pairs": 14,
+      "stride_mps": 1.1373
+     },
+     [
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.7944,
+    "hip_height_m": 0.8313,
+    "hip_height_per_height": 0.4633,
+    "leg_len_m": 0.6808,
+    "triangles": 696
+   },
+   "ok": true,
+   "pack": "forest_village",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "1c6bc3441c3c9c221a26999020c13c29814a627426b78259ebc01780f63900d2",
+   "source": "characters/assets/forest_village/fv_smith.glb",
+   "source_sha256": "7b52c0714c89c93d6a3ec2afeecbf68a89c64ed090a480475a6c128c27d5df82"
+  },
+  {
+   "id": "fv_elder",
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0633,
+      "bounce_hip": 0.2296,
+      "flight_keys_per_step": 0,
+      "lean_deg": 7.27,
+      "leg_mid_off_centre_m": 0.0078,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 7.806,
+      "slip_pairs": 16,
+      "stride_mps": 1.8595
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": 0.0594,
+      "bounce_hip": 0.07,
+      "flight_keys_per_step": 0,
+      "lean_deg": 10.69,
+      "leg_mid_off_centre_m": 0.0121,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 4.293,
+      "slip_pairs": 18,
+      "stride_mps": 0.9298
+     },
+     [
+      "lean_high",
+      "slip"
+     ]
+    ]
+   },
+   "ok": false,
+   "pack": "forest_village",
+   "refused": {
+    "code": "clip_refused",
+    "message": "no run and walk were written for this body: 10 vertices of foot_l, foot_r, shin_l, shin_r pass through the torso in the run (the torso here is every surface that follows the pelvis or spine: a robe, skirt or long coat that hangs over the legs counts, and the base has no cloth that moves with the legs); 8 vertices of foot_l, foot_r, shin_l, shin_r pass through the torso in the walk (the torso here is every surface that follows the pelvis or spine: a robe, skirt or long coat that hangs over the legs counts, and the base has no cloth that moves with the legs)."
+   },
+   "source": "characters/assets/forest_village/fv_elder.glb",
+   "source_sha256": "043b48eb0994b7810909af9741639bb224d6927ea842f9523edc08efa7eb17ed"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       13.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0423,
+      "bounce_hip": 0.103,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.62,
+      "leg_mid_off_centre_m": 0.0016,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 0.05,
+      "slip_pairs": 8,
+      "stride_mps": 2.0977
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       9.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0432,
+      "bounce_hip": 0.028,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.08,
+      "leg_mid_off_centre_m": 0.004,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0009,
+      "slip_mps": 0.038,
+      "slip_pairs": 18,
+      "stride_mps": 1.0489
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.76663,
+    "run": {
+     "enter_mps": 1.90704,
+     "exit_mps": 1.62099,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 2.0977
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       0.0,
+       -0.13908,
+       -0.11786
+      ],
+      "toe": [
+       0.0,
+       -0.13908,
+       0.21082
+      ]
+     },
+     "r": {
+      "heel": [
+       -0.0,
+       -0.13908,
+       -0.11786
+      ],
+      "toe": [
+       -0.0,
+       -0.13908,
+       0.21082
+      ]
+     }
+    },
+    "source_sha256": "622fae8343cef09b876f0c9f08c962425afb3bac83f8b8cf262b05fe11175542",
+    "walk": {
+     "stride_mps": 1.0489
+    }
+   },
+   "bytes": 175500,
+   "clips_in_file": [
+    "block",
+    "carry",
+    "death",
+    "hurt",
+    "idle",
+    "idle_combat",
+    "interact",
+    "roll",
+    "run",
+    "run_legacy",
+    "sit",
+    "swing",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/forest_village/fv_scribe.glb",
+   "id": "fv_scribe",
+   "in_repo": true,
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0482,
+      "bounce_hip": 0.2335,
+      "flight_keys_per_step": 0,
+      "lean_deg": -3.27,
+      "leg_mid_off_centre_m": 0.0091,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 8.881,
+      "slip_pairs": 14,
+      "stride_mps": 2.0977
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": 0.0437,
+      "bounce_hip": 0.0717,
+      "flight_keys_per_step": 0,
+      "lean_deg": 0.14,
+      "leg_mid_off_centre_m": 0.0141,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0,
+      "slip_mps": 4.928,
+      "slip_pairs": 14,
+      "stride_mps": 1.0489
+     },
+     [
+      "slip"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.6705,
+    "hip_height_m": 0.7666,
+    "hip_height_per_height": 0.4589,
+    "leg_len_m": 0.6279,
+    "triangles": 696
+   },
+   "ok": true,
+   "pack": "forest_village",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "ed9a6057eed8bf7eca832d53c218a64385e4fe4fa711cbee8834a67a9910c4e4",
+   "source": "characters/assets/forest_village/fv_scribe.glb",
+   "source_sha256": "622fae8343cef09b876f0c9f08c962425afb3bac83f8b8cf262b05fe11175542"
+  },
+  {
+   "baked": {
+    "run": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       -3.0,
+       2.0
+      ],
+      "lean_deg": [
+       8.0,
+       11.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       13.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.027,
+      "bounce_hip": 0.1054,
+      "flight_keys_per_step": 3,
+      "lean_deg": 16.3,
+      "leg_mid_off_centre_m": 0.0031,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0028,
+      "slip_mps": 0.049,
+      "slip_pairs": 8,
+      "stride_mps": 2.4331
+     }
+    },
+    "walk": {
+     "cycle_used": {
+      "ankle_swing_scale": 1.0,
+      "arm_in_deg": [
+       5.0,
+       4.0
+      ],
+      "lean_deg": [
+       1.5,
+       2.0
+      ],
+      "stride_scale": 1.0,
+      "yaw_deg": [
+       2.5,
+       9.0
+      ]
+     },
+     "dials_moved": {},
+     "metrics": {
+      "boot_gap_min_m": 0.0302,
+      "bounce_hip": 0.0599,
+      "flight_keys_per_step": 0,
+      "lean_deg": 3.02,
+      "leg_mid_off_centre_m": 0.0055,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0028,
+      "slip_mps": 0.036,
+      "slip_pairs": 18,
+      "stride_mps": 1.2166
+     }
+    }
+   },
+   "block": {
+    "base": "base_v1",
+    "cycle_keys": 16,
+    "format": "hermes64-locomotion-base/1.0.0",
+    "fps": 15,
+    "hip_height_m": 0.8892,
+    "run": {
+     "enter_mps": 2.21194,
+     "exit_mps": 1.88015,
+     "flight_keys": [
+      5,
+      6,
+      7,
+      13,
+      14,
+      15
+     ],
+     "stride_mps": 2.4331
+    },
+    "sole": {
+     "l": {
+      "heel": [
+       -0.0,
+       -0.1008,
+       -0.1044
+      ],
+      "toe": [
+       -0.0,
+       -0.1008,
+       0.18303
+      ]
+     },
+     "r": {
+      "heel": [
+       0.0,
+       -0.1008,
+       -0.1044
+      ],
+      "toe": [
+       0.0,
+       -0.1008,
+       0.18303
+      ]
+     }
+    },
+    "source_sha256": "3df7030d6a4c4a9460def532a3779b43be1aedee39f242a2637d1f826e2c2f87",
+    "walk": {
+     "stride_mps": 1.2166
+    }
+   },
+   "bytes": 128036,
+   "clips_in_file": [
+    "carry",
+    "idle",
+    "interact",
+    "run",
+    "run_legacy",
+    "sit",
+    "talk",
+    "walk",
+    "walk_legacy"
+   ],
+   "glb": "characters/locomotion/cameo/cameo_visor_01.glb",
+   "id": "cameo_visor_01",
+   "in_repo": false,
+   "in_repo_note": "a .gitignore rule keeps this file out of the repository; `shipped` writes it on this machine and the bake of the source gives these bytes (sha256)",
+   "legacy": {
+    "run": [
+     {
+      "boot_gap_min_m": 0.0139,
+      "bounce_hip": 0.2399,
+      "flight_keys_per_step": 0,
+      "lean_deg": -5.16,
+      "leg_mid_off_centre_m": 0.0226,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0028,
+      "slip_mps": 10.267,
+      "slip_pairs": 16,
+      "stride_mps": 2.4331
+     },
+     [
+      "flight",
+      "bounce_high",
+      "lean_low",
+      "slip"
+     ]
+    ],
+    "walk": [
+     {
+      "boot_gap_min_m": 0.0081,
+      "bounce_hip": 0.077,
+      "flight_keys_per_step": 0,
+      "lean_deg": -1.88,
+      "leg_mid_off_centre_m": 0.029,
+      "leg_plane_dev_m": 0.0,
+      "limb_in_torso_vertices": 0,
+      "seam_gap_m": 0.0028,
+      "slip_mps": 5.537,
+      "slip_pairs": 17,
+      "stride_mps": 1.2166
+     },
+     [
+      "lean_low",
+      "slip"
+     ]
+    ]
+   },
+   "measurements": {
+    "height_m": 1.8513,
+    "hip_height_m": 0.8892,
+    "hip_height_per_height": 0.4803,
+    "leg_len_m": 0.7887,
+    "triangles": 690
+   },
+   "ok": true,
+   "pack": "cameo",
+   "rig_contract": {
+    "errors": [],
+    "ok": true,
+    "rig": "human16_v1",
+    "waived_run_flight_floor_keys": 6
+   },
+   "sha256": "0bd28ee66cac0c9f7a3a2f1a11161429f07e9dff96c7fcccbdf4780f1050bf79",
+   "source": "cameo/cameo_visor_01.glb",
+   "source_sha256": "3df7030d6a4c4a9460def532a3779b43be1aedee39f242a2637d1f826e2c2f87"
+  }
+ ],
+ "note": "Additive: baked run + walk for the shipped cast as NEW files. The shipped GLBs, characters/manifest.json and every pack keep their bytes; a project gets these only by binding them.",
+ "schema": "hermes64-locomotion-cast/1.0.0"
+}

@@ -3,7 +3,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 114242,
+    "bytes": 114239,
     "tris_max": 690
    },
    "catalog_ids": [
@@ -24,9 +24,9 @@
      "sha256": "4ff72615fb37b69097532baf72b76be2a75f2e4c4ff466f38c2c002b8d369c9f"
     },
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 501,
@@ -50,8 +50,8 @@
    "licence": "MIT",
    "name": "Teknium (cameo)",
    "notice": "Likeness included with Teknium's consent (relayed by Dylan) for games made with Hermes64; not for impersonation, endorsement or misleading use. See LICENSE-CAMEO.md.",
-   "sha256": "a686b35c8cc1a3a4ee17b599fb09d35771c0768dc1ad71b94d5b8ada1b7c915a",
-   "size": 115799,
+   "sha256": "c9c6d72f57cdbd8be1432f84a9cc2208576adbf54c34e8b9662eeb227248c451",
+   "size": 115796,
    "source": "bundled",
    "summary": "Optional cameo character for games made with Hermes64: 690 triangles; read the notice first.",
    "tags": [
@@ -73,7 +73,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 162115,
+    "bytes": 162112,
     "tris_max": 754
    },
    "catalog_ids": [
@@ -89,9 +89,9 @@
    "download": "archives/character.forest_village.fv_elder-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 486,
@@ -114,8 +114,8 @@
    "kind": "character",
    "licence": "MIT",
    "name": "Village Elder",
-   "sha256": "212f47fafbe57f7362b753e58a07e64082faecd06da18a7b4da45dd9b8bf2adb",
-   "size": 163410,
+   "sha256": "caf208b50dfda1d8ae2e8776e79f4c857a1cc025f7da28760f741add517d8d18",
+   "size": 163407,
    "source": "bundled",
    "summary": "Animated person for Forest Village games: 754 triangles, 13 clips; placeholder name.",
    "tags": [
@@ -140,7 +140,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 161261,
+    "bytes": 161258,
     "tris_max": 720
    },
    "catalog_ids": [
@@ -156,9 +156,9 @@
    "download": "archives/character.forest_village.fv_scribe-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 481,
@@ -183,8 +183,8 @@
    "name": "Scribe",
    "preview": "previews/character.forest_village.fv_scribe.png",
    "preview_source": "in-game close-up from The Last Light",
-   "sha256": "9ce95dc17a56f6e94d30589dfe5cff98d47653caac1de923cec26ecc6831dd50",
-   "size": 162553,
+   "sha256": "96a5606e2465727b6b3874bb46e67cfe1a8c98d59311b7aa02f8a47f1bf9fc45",
+   "size": 162550,
    "source": "bundled",
    "summary": "Animated person for Forest Village games: 720 triangles, 13 clips; placeholder name.",
    "tags": [
@@ -209,7 +209,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 161646,
+    "bytes": 161643,
     "tris_max": 744
    },
    "catalog_ids": [
@@ -225,9 +225,9 @@
    "download": "archives/character.forest_village.fv_warden-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 481,
@@ -252,8 +252,8 @@
    "name": "Warden",
    "preview": "previews/character.forest_village.fv_warden.png",
    "preview_source": "in-game close-up from The Last Light",
-   "sha256": "f7ce4e75a33213b519b2d7b946c3c7c0d7506af6cf70c023faa88276ef1644d8",
-   "size": 162938,
+   "sha256": "3a975ee2e88c864100b2e905092aeb9103c84b8c706fb8ddd38a28660dbbf2e8",
+   "size": 162935,
    "source": "bundled",
    "summary": "Animated person for Forest Village games: 744 triangles, 13 clips; placeholder name.",
    "tags": [
@@ -278,7 +278,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 88141,
+    "bytes": 88138,
     "tris_max": 300
    },
    "catalog_ids": [
@@ -294,9 +294,9 @@
    "download": "archives/character.polar_pod.cat_black-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 447,
@@ -319,8 +319,8 @@
    "kind": "character",
    "licence": "MIT",
    "name": "Black Cat",
-   "sha256": "6c08f34f1eb90d582fececf52586fe3cb84cc5674500808d17e4a71d0d6a8a3b",
-   "size": 89430,
+   "sha256": "6ee1aff7c47b649e685c32ff80bdbef446ae0d0d424efc67c4958db5005f9162",
+   "size": 89427,
    "source": "bundled",
    "summary": "Animated creature for Polar Pod games: 300 triangles, 7 clips.",
    "tags": [
@@ -346,7 +346,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 89140,
+    "bytes": 89137,
     "tris_max": 300
    },
    "catalog_ids": [
@@ -362,9 +362,9 @@
    "download": "archives/character.polar_pod.cat_calico-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 450,
@@ -387,8 +387,8 @@
    "kind": "character",
    "licence": "MIT",
    "name": "Calico Cat",
-   "sha256": "c469c1de3d175946225d2a56f4515bd5e5d10511f36a5623547ec78e816039ff",
-   "size": 90434,
+   "sha256": "9b8bf7f5f2c55bdf6f2859d9170f06a5f528842a5d40f4be69b942630de7b6a3",
+   "size": 90431,
    "source": "bundled",
    "summary": "Animated creature for Polar Pod games: 300 triangles, 7 clips.",
    "tags": [
@@ -414,7 +414,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 88304,
+    "bytes": 88301,
     "tris_max": 300
    },
    "catalog_ids": [
@@ -430,9 +430,9 @@
    "download": "archives/character.polar_pod.cat_tabby-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 447,
@@ -455,8 +455,8 @@
    "kind": "character",
    "licence": "MIT",
    "name": "Tabby Cat",
-   "sha256": "65df67035eb43309f944928fd7a708785b133a5e2efb4bfe354436efcde02b7e",
-   "size": 89593,
+   "sha256": "e5aa8d5864f16e3a124f87929c3d756f2baadad10259c093b78f8882cd6a8523",
+   "size": 89590,
    "source": "bundled",
    "summary": "Animated creature for Polar Pod games: 300 triangles, 7 clips.",
    "tags": [
@@ -482,7 +482,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 87862,
+    "bytes": 87859,
     "tris_max": 300
    },
    "catalog_ids": [
@@ -498,9 +498,9 @@
    "download": "archives/character.polar_pod.cat_tuxedo-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 450,
@@ -523,8 +523,8 @@
    "kind": "character",
    "licence": "MIT",
    "name": "Tuxedo Cat",
-   "sha256": "2a431c436d758924932a93f227dab7b09c8bf03ae61a8d9158412e8020015ea6",
-   "size": 89155,
+   "sha256": "a22645e0d8b907020638cd5594152e8b80f7ed8b1ff4d1025a785960e33dc707",
+   "size": 89152,
    "source": "bundled",
    "summary": "Animated creature for Polar Pod games: 300 triangles, 7 clips.",
    "tags": [
@@ -550,7 +550,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 88821,
+    "bytes": 88818,
     "tris_max": 300
    },
    "catalog_ids": [
@@ -566,9 +566,9 @@
    "download": "archives/character.polar_pod.cat_white-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 447,
@@ -591,8 +591,8 @@
    "kind": "character",
    "licence": "MIT",
    "name": "White Cat",
-   "sha256": "56d00502b7d581c3906d5ca3f674b4fabac412296a6b85105d226f8d177dd3c8",
-   "size": 90110,
+   "sha256": "1a0a52ba77568c473a7b82776c07854ba4e34fb23721392c54a723895bd5e5fb",
+   "size": 90107,
    "source": "bundled",
    "summary": "Animated creature for Polar Pod games: 300 triangles, 7 clips.",
    "tags": [
@@ -618,7 +618,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 167791,
+    "bytes": 167788,
     "tris_max": 742
    },
    "catalog_ids": [
@@ -634,9 +634,9 @@
    "download": "archives/character.polar_pod.ivo-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 446,
@@ -659,8 +659,8 @@
    "kind": "character",
    "licence": "MIT",
    "name": "Ivo",
-   "sha256": "803d8c5d32107427b03caeab93647c2fcc3d382399bbd6f945628567a6e1dafd",
-   "size": 169051,
+   "sha256": "dd11fcd4997f70b8017d0cc094d65941f86df1cc1fa387588e4abfb3089439ce",
+   "size": 169048,
    "source": "bundled",
    "summary": "Animated person for Polar Pod games: 742 triangles, 13 clips; placeholder name.",
    "tags": [
@@ -685,7 +685,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 166925,
+    "bytes": 166922,
     "tris_max": 708
    },
    "catalog_ids": [
@@ -701,9 +701,9 @@
    "download": "archives/character.polar_pod.luma-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 449,
@@ -728,8 +728,8 @@
    "name": "Luma",
    "preview": "previews/character.polar_pod.luma.png",
    "preview_source": "in-game capture of Thaw (cropped)",
-   "sha256": "19956bd9fd96a3807d2cd1d023f326dacc53ad69710db59482e0448880ab24ae",
-   "size": 168190,
+   "sha256": "8390f3b4bd8a50d802b895fa50fbd7cfa9d0a4e7c2027135b4f71ef5362533d3",
+   "size": 168187,
    "source": "bundled",
    "summary": "Animated person for Polar Pod games: 708 triangles, 13 clips; placeholder name.",
    "tags": [
@@ -754,7 +754,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 171423,
+    "bytes": 171420,
     "tris_max": 836
    },
    "catalog_ids": [
@@ -770,9 +770,9 @@
    "download": "archives/character.polar_pod.neri-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 449,
@@ -797,8 +797,8 @@
    "name": "Neri",
    "preview": "previews/character.polar_pod.neri.png",
    "preview_source": "in-game capture of Thaw (cropped)",
-   "sha256": "6230f04d4206a4562bf31b4b2caaf7e3794161d8bb68665b83966cf9a95e11c7",
-   "size": 172688,
+   "sha256": "6e597b5a7e322e46b91e258d550b7032be4cdc24ff3de5919dcfdcd588e76547",
+   "size": 172685,
    "source": "bundled",
    "summary": "Animated person for Polar Pod games: 836 triangles, 13 clips; placeholder name.",
    "tags": [
@@ -823,7 +823,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 168033,
+    "bytes": 168030,
     "tris_max": 748
    },
    "catalog_ids": [
@@ -839,9 +839,9 @@
    "download": "archives/character.polar_pod.new_arrival-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 448,
@@ -866,8 +866,8 @@
    "name": "Qhantom",
    "preview": "previews/character.polar_pod.new_arrival.png",
    "preview_source": "in-game close-up from Thaw",
-   "sha256": "47a888a769aa41f131935d32ea6b77595199fca881cc5db9f8dc927c2fe582c4",
-   "size": 169329,
+   "sha256": "7d2f63d0e4b9705e253e051d08f28bfaba90e0645193356a319f6dd864501759",
+   "size": 169326,
    "source": "bundled",
    "summary": "Animated person for Polar Pod games: 748 triangles, 13 clips.",
    "tags": [
@@ -894,7 +894,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 167223,
+    "bytes": 167220,
     "tris_max": 732
    },
    "catalog_ids": [
@@ -910,9 +910,9 @@
    "download": "archives/character.polar_pod.sol-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 446,
@@ -935,8 +935,8 @@
    "kind": "character",
    "licence": "MIT",
    "name": "Sol",
-   "sha256": "0b2c3e544c72fa759ee27c6ba7240e67b18ef0005b0abefee7bb9fb839e21d80",
-   "size": 168483,
+   "sha256": "94253822a524dbf0e384024f9edff245c67366fe9bcfad27835d714c291830a5",
+   "size": 168480,
    "source": "bundled",
    "summary": "Animated person for Polar Pod games: 732 triangles, 13 clips; placeholder name.",
    "tags": [
@@ -961,7 +961,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 168555,
+    "bytes": 168552,
     "tris_max": 768
    },
    "catalog_ids": [
@@ -977,9 +977,9 @@
    "download": "archives/character.polar_pod.tavi-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 449,
@@ -1004,8 +1004,8 @@
    "name": "Tavi",
    "preview": "previews/character.polar_pod.tavi.png",
    "preview_source": "in-game capture of Thaw (cropped)",
-   "sha256": "b8c4e650277113567c95d9a68dc7e324eebe1d52033d9135b49b62affcee2d0d",
-   "size": 169820,
+   "sha256": "d848a57dd9996cef0e936ff58bd249a120f7555c76cea7e83e7e922aa78166c0",
+   "size": 169817,
    "source": "bundled",
    "summary": "Animated person for Polar Pod games: 768 triangles, 13 clips; placeholder name.",
    "tags": [
@@ -1030,7 +1030,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 9555,
+    "bytes": 9552,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -1051,9 +1051,9 @@
      "sha256": "b3dbc5af1faae69f215ba5af32d79fa4e05cd820f917b09061a98b9cfddd3deb"
     },
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 559,
@@ -1075,8 +1075,8 @@
    "kind": "game",
    "licence": "MIT",
    "name": "Reedland Relay: Region Gates",
-   "sha256": "8eed39256cb0c223b0695526ace6b2723d9eaea522296dd84c445fb9146ee2d1",
-   "size": 11083,
+   "sha256": "66c98c6e942c42423ae75f644d143ec3eb8f9d354bf16a80c04c40138542dcf9",
+   "size": 11080,
    "source": "bundled",
    "summary": "A small STORY 1.2 adventure in 3 rooms with region gates that open as you learn abilities. Installs as a new game you can compile, check and edit.",
    "tags": [
@@ -1101,7 +1101,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 12312,
+    "bytes": 12309,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -1122,9 +1122,9 @@
      "sha256": "b3dbc5af1faae69f215ba5af32d79fa4e05cd820f917b09061a98b9cfddd3deb"
     },
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 533,
@@ -1148,8 +1148,8 @@
    "name": "Reedland Relay",
    "preview": "previews/game.reedland_relay.png",
    "preview_source": "in-game capture of Reedland Relay (module runtime evidence)",
-   "sha256": "70ce2c9d2679dfbc4a93ef7e7d09feede96c3d22274a94d51f45b9d0967c0539",
-   "size": 13819,
+   "sha256": "aa4081e39100e9bbaae580f66f868573bc30ba6ce0e4a4eb99c9f84ca062673f",
+   "size": 13816,
    "source": "bundled",
    "summary": "A small STORY 1.2 adventure in 3 rooms with a timed course, an arena fight and region gates. Installs as a new game you can compile, check and edit.",
    "tags": [
@@ -1176,7 +1176,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 520267,
+    "bytes": 520264,
     "tris_max": 258
    },
    "catalog_ids": [
@@ -1201,9 +1201,9 @@
    "download": "archives/kit.alien_world.alien_nature-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 535,
@@ -1391,8 +1391,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Alien World Alien Flora, Rock & Crystal",
-   "sha256": "5e3eab82b15aa467449bb8461cb429db870a6228eb21b409263d3034b492716b",
-   "size": 530144,
+   "sha256": "bb12fe13d89e799df6e6ef8126a207967155501394ad35d48db223577cc7990b",
+   "size": 530141,
    "source": "bundled",
    "summary": "21 low-poly alien nature models for Alien World games: crystals, cap trees, fronds, geodes and rock spires.",
    "tags": [
@@ -1423,7 +1423,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 436518,
+    "bytes": 436515,
     "tris_max": 430
    },
    "catalog_ids": [
@@ -1445,9 +1445,9 @@
    "download": "archives/kit.alien_world.planet_terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 537,
@@ -1620,8 +1620,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Alien World Planet Terrain",
-   "sha256": "e51df5ea309773f1c6519d652d39752af42bfc93f69ba978eb45a8a9b9a01ca7",
-   "size": 445812,
+   "sha256": "b0a63909b37f21769be7cf12ca20f85cbe54e2f5b0ca02a7a6f7e2c50d1cb267",
+   "size": 445809,
    "source": "bundled",
    "summary": "16 low-poly planet terrain models for Alien World games: interlocking surface tiles, craters, dunes, ridges and mesas.",
    "tags": [
@@ -1650,7 +1650,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 515117,
+    "bytes": 515114,
     "tris_max": 500
    },
    "catalog_ids": [
@@ -1669,9 +1669,9 @@
    "download": "archives/kit.alien_world.ships-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 501,
@@ -1830,8 +1830,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Alien World Ships & Vehicles",
-   "sha256": "df1d330e5cc98264d894aaa741354598a8f13886b56e8114f5116bdec4ca1e6d",
-   "size": 523862,
+   "sha256": "5e116ed9ae7ce4a0b1cbeddd836f2eaa23dc8c86ecaf85bc58a8c96a10b4361d",
+   "size": 523859,
    "source": "bundled",
    "summary": "12 low-poly ships models for Alien World games: shuttles, haulers, rovers, escape pods and drones.",
    "tags": [
@@ -1857,7 +1857,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 67388,
+    "bytes": 67385,
     "tris_max": 120
    },
    "catalog_ids": [
@@ -1875,9 +1875,9 @@
    "download": "archives/kit.alien_world.space_sky-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 502,
@@ -1962,8 +1962,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Alien World Space Sky",
-   "sha256": "8faff6e2a96251fbbde4ed9ce2dea258e138dbd85374bcb77f14c746595472f9",
-   "size": 71928,
+   "sha256": "1a8a6d767707a288e08c72a80bcc079cac3e43867abe60d41dbbb525d3491018",
+   "size": 71925,
    "source": "bundled",
    "summary": "8 low-poly space sky models for Alien World games: star domes, planets, nebulae and horizon rings.",
    "tags": [
@@ -1988,7 +1988,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 368567,
+    "bytes": 368564,
     "tris_max": 320
    },
    "catalog_ids": [
@@ -2007,9 +2007,9 @@
    "download": "archives/kit.alien_world.station_architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 553,
@@ -2199,8 +2199,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Alien World Station Architecture",
-   "sha256": "c4e1eee2a80a13b884a43863eb5910c71d247fa042aae45e07565b25350d09dc",
-   "size": 378768,
+   "sha256": "090dadb9b4d06262055675dee5179baba7a3743cfa55e2bd4c40c01ab4f5e02f",
+   "size": 378765,
    "source": "bundled",
    "summary": "18 low-poly station architecture models for Alien World games: corridors, airlocks, decks, bridge and hangar shells.",
    "tags": [
@@ -2226,7 +2226,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 384850,
+    "bytes": 384847,
     "tris_max": 436
    },
    "catalog_ids": [
@@ -2246,9 +2246,9 @@
    "download": "archives/kit.alien_world.tech_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 529,
@@ -2414,8 +2414,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Alien World Tech Props",
-   "sha256": "cacb1a34f486545a92bd70ae70646ca79827389ad3b8b20a243f9ce1a465702a",
-   "size": 393865,
+   "sha256": "05ea80be44d1f78cdb111df97ae997a3fe31535dd07b64d288c171631c05d7b8",
+   "size": 393862,
    "source": "bundled",
    "summary": "14 low-poly tech props models for Alien World games: consoles, holo-tables, cryo pods, crates, tanks, vents and terminals.",
    "tags": [
@@ -2442,7 +2442,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 362676,
+    "bytes": 362673,
     "tris_max": 220
    },
    "catalog_ids": [
@@ -2464,9 +2464,9 @@
    "download": "archives/kit.ancient_ruins.land-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 531,
@@ -2760,8 +2760,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Ancient Ruins Desert & Jungle Terrain & Sky",
-   "sha256": "a2caa16447613f534706c9f33ca2d31cd999d69d2efc7fe687e8091e7276023d",
-   "size": 378003,
+   "sha256": "556ebebb445938e28e8d57ba679c2707fd572c83ecd8ef3826504eb75ad8ae5c",
+   "size": 378000,
    "source": "bundled",
    "summary": "37 low-poly land models for Ancient Ruins games: ground tiles, cliffs, slopes, causeways, terraces and skies.",
    "tags": [
@@ -2790,7 +2790,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 657168,
+    "bytes": 657165,
     "tris_max": 442
    },
    "catalog_ids": [
@@ -2814,9 +2814,9 @@
    "download": "archives/kit.ancient_ruins.relic-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 526,
@@ -3114,8 +3114,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Ancient Ruins Carving Props",
-   "sha256": "51b7920d345ebdedd2f8214373299d0c647f161c243da8eefc087edb6a4c823e",
-   "size": 673225,
+   "sha256": "35b74ef970edae555a2b4b62db33180c33a321c5bea3031e412d04d61f135ce2",
+   "size": 673222,
    "source": "bundled",
    "summary": "31 low-poly relic models for Ancient Ruins games: statues, altars, braziers, urns, tablets, pressure plates and dials.",
    "tags": [
@@ -3146,7 +3146,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1114546,
+    "bytes": 1114543,
     "tris_max": 876
    },
    "catalog_ids": [
@@ -3172,9 +3172,9 @@
    "download": "archives/kit.ancient_ruins.ruin-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 525,
@@ -3554,8 +3554,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Ancient Ruins Ruin Architecture",
-   "sha256": "d6aa435d34fc3b1284e23888efefe632d8af9611143f5db871aec56c31662e52",
-   "size": 1134289,
+   "sha256": "7b324d980effa47020756c7f43f9351b5a79af2d0ffcb53c434d3f73d9d06f0b",
+   "size": 1134286,
    "source": "bundled",
    "summary": "48 low-poly ruin models for Ancient Ruins games: carved walls, columns, pyramids, stairs, gates, arches and courts.",
    "tags": [
@@ -3586,7 +3586,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 457849,
+    "bytes": 457846,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -3610,9 +3610,9 @@
    "download": "archives/kit.ancient_ruins.wild-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 528,
@@ -3876,8 +3876,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Ancient Ruins Desert & Jungle Nature",
-   "sha256": "ce5e90d34537b624a418b3a8f4b86ae606383882a0c3f9f310c4e0fa64d32ad9",
-   "size": 471530,
+   "sha256": "8257903e1868e5675885b59ef38700887641614485a64fb92c5a99290b2913f9",
+   "size": 471527,
    "source": "bundled",
    "summary": "32 low-poly wild models for Ancient Ruins games: palms, jungle trees, ferns, vines, dunes, rocks and oasis pools.",
    "tags": [
@@ -3908,7 +3908,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1051160,
+    "bytes": 1051157,
     "tris_max": 492
    },
    "catalog_ids": [
@@ -3941,9 +3941,9 @@
    "download": "archives/kit.canyon_mesa.canyon_terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 550,
@@ -4336,8 +4336,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Canyon Mesa Canyon Terrain & Sky",
-   "sha256": "91ddbddf3574ca7111b4b2cc5ddfed49814b22415000486c5be1f175fdd096f1",
-   "size": 1071442,
+   "sha256": "1a02732dc552b5aa8785758c1bd433e134cc68fd0cf77786b63489d4b59eef23",
+   "size": 1071439,
    "source": "bundled",
    "summary": "51 low-poly canyon terrain models for Canyon Mesa games: canyon walls, mesas, arches, ground, desert plants, oasis and skies.",
    "tags": [
@@ -4368,7 +4368,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 934467,
+    "bytes": 934464,
     "tris_max": 736
    },
    "catalog_ids": [
@@ -4394,9 +4394,9 @@
    "download": "archives/kit.canyon_mesa.frontier_mine-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 540,
@@ -4677,8 +4677,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Canyon Mesa Frontier Mine",
-   "sha256": "ef5e5a0554f89356b6ab5cc06d6c332e777ff271fb1df49205c21631efa7b91b",
-   "size": 949425,
+   "sha256": "27aed2762ea07e996f93a20f984b399964c27ee41044037ab3cabbb9eaf62ff3",
+   "size": 949422,
    "source": "bundled",
    "summary": "29 low-poly frontier mine models for Canyon Mesa games: timbered tunnels, mine track, portals, ore carts and mine machinery.",
    "tags": [
@@ -4709,7 +4709,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1065253,
+    "bytes": 1065250,
     "tris_max": 458
    },
    "catalog_ids": [
@@ -4747,9 +4747,9 @@
    "download": "archives/kit.canyon_mesa.frontier_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 549,
@@ -5302,8 +5302,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Canyon Mesa Frontier Props",
-   "sha256": "c3e1786e0b767ab586d8a2f3f4e614dc8d9d24cd8ae8f6de91eaf0161f706ddc",
-   "size": 1094496,
+   "sha256": "1c0335ff3c3e2d1d2f5c2ad8cb106fc60ad773105bc8539082e14d408e1adf35",
+   "size": 1094493,
    "source": "bundled",
    "summary": "61 low-poly frontier props models for Canyon Mesa games: barrels, crates, wagons, saloon furniture, signs, lanterns and campfires.",
    "tags": [
@@ -5334,7 +5334,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 911180,
+    "bytes": 911177,
     "tris_max": 496
    },
    "catalog_ids": [
@@ -5356,9 +5356,9 @@
    "download": "archives/kit.canyon_mesa.frontier_rail-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 534,
@@ -5613,8 +5613,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Canyon Mesa Frontier Rail",
-   "sha256": "1b719322f92405bdc63caef8b1201981fec67aceaf05c83cb2b3f1ce68c1b4f5",
-   "size": 925072,
+   "sha256": "71eab4d7d3cd3b147a08bbcc9858d6e09260a944173f93c5b14cd6febcfae64c",
+   "size": 925069,
    "source": "bundled",
    "summary": "23 low-poly frontier rail models for Canyon Mesa games: track, platforms, stations, bridges, railcars and locomotives.",
    "tags": [
@@ -5643,7 +5643,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 2622793,
+    "bytes": 2622790,
     "tris_max": 1374
    },
    "catalog_ids": [
@@ -5676,9 +5676,9 @@
    "download": "archives/kit.canyon_mesa.frontier_town-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 544,
@@ -6205,8 +6205,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Canyon Mesa Town Architecture",
-   "sha256": "862a690004250f9f386f466e101ef4de89d44b7f07a2277d273141179da0fa6c",
-   "size": 2650547,
+   "sha256": "7acfab6d2080f1345ab015218b1527ad2b572b79093db83ebcb95fce2ea77bc7",
+   "size": 2650544,
    "source": "bundled",
    "summary": "65 low-poly frontier town models for Canyon Mesa games: false-front buildings, boardwalks, porches, balconies and interiors.",
    "tags": [
@@ -6237,7 +6237,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1551582,
+    "bytes": 1551579,
     "tris_max": 1264
    },
    "catalog_ids": [
@@ -6271,9 +6271,9 @@
    "download": "archives/kit.castle_keep.medieval_castle-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 534,
@@ -6684,8 +6684,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Castle Keep Castle",
-   "sha256": "03cbd29b60b3bbd4da909f0c0df47242e2003698fb60660576ff2f1842dd959a",
-   "size": 1573108,
+   "sha256": "0bec830bf187911551ecb46b7fbb89e36a814764862698f9711b9dc97c631cf7",
+   "size": 1573105,
    "source": "bundled",
    "summary": "49 low-poly medieval castle models for Castle Keep games: towers, gatehouses, portcullises, halls, cells and throne sets.",
    "tags": [
@@ -6716,7 +6716,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 490288,
+    "bytes": 490285,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -6740,9 +6740,9 @@
    "download": "archives/kit.castle_keep.medieval_nature-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 541,
@@ -7038,8 +7038,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Castle Keep Medieval Nature",
-   "sha256": "0e6d369d9baaae1366baa47526187be0607eca4d3918104216a126221972944c",
-   "size": 505812,
+   "sha256": "35d2d41bac0c8dc4d94305ea90caae1ce6d63ed0afe32f81854b0c0332f48694",
+   "size": 505809,
    "source": "bundled",
    "summary": "34 low-poly medieval nature models for Castle Keep games: trees, orchards, hedges, farm crops, rocks, flowers and logs.",
    "tags": [
@@ -7070,7 +7070,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 983885,
+    "bytes": 983882,
     "tris_max": 340
    },
    "catalog_ids": [
@@ -7107,9 +7107,9 @@
    "download": "archives/kit.castle_keep.medieval_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 535,
@@ -7628,8 +7628,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Castle Keep Medieval Props",
-   "sha256": "ee2a0e1834654beba08c3b20b9954154b8466dc77759aebcc2edcf27016772f5",
-   "size": 1011117,
+   "sha256": "96215f701e127b82ccd5630ef6e7c588be2ef239add1d1cb8ed4de6d8235c3b2",
+   "size": 1011114,
    "source": "bundled",
    "summary": "62 low-poly medieval props models for Castle Keep games: storage, carts, furniture, weapons, tableware and lanterns.",
    "tags": [
@@ -7660,7 +7660,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 309090,
+    "bytes": 309087,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -7679,9 +7679,9 @@
    "download": "archives/kit.castle_keep.medieval_terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 544,
@@ -7932,8 +7932,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Castle Keep Medieval Terrain",
-   "sha256": "f353cb010927df3f73104f5052eff899d3a3cda9570f37793c6ba2a5bccf38d9",
-   "size": 322390,
+   "sha256": "2ebab74ea220302fa30dc1a7052f0ed48b8537873af21651b2f305087ef000cd",
+   "size": 322387,
    "source": "bundled",
    "summary": "29 low-poly medieval terrain models for Castle Keep games: ground and paths, hills, banks, water and distant backdrops.",
    "tags": [
@@ -7959,7 +7959,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 2193199,
+    "bytes": 2193196,
     "tris_max": 864
    },
    "catalog_ids": [
@@ -7989,9 +7989,9 @@
    "download": "archives/kit.castle_keep.medieval_village_architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 583,
@@ -8491,8 +8491,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Castle Keep Village Architecture",
-   "sha256": "d9f1e676800f7ff8260dcd53906d75e36af3bffb98da64d51f3e0467825a23c3",
-   "size": 2219674,
+   "sha256": "7235526a6fe96dda461c78866ede5643005a28afe1b42fa27e682b9cadfde93c",
+   "size": 2219671,
    "source": "bundled",
    "summary": "53 low-poly medieval village architecture models for Castle Keep games: cottages, taverns, mills, chapels and village interiors.",
    "tags": [
@@ -8523,7 +8523,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 12016,
+    "bytes": 12013,
     "tris_max": 84
    },
    "catalog_ids": [
@@ -8538,9 +8538,9 @@
    "download": "archives/kit.castle_keep.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 519,
@@ -8568,8 +8568,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Castle Keep Terrain & Sky",
-   "sha256": "f42c98c089f4e12f90f1310b9ce0b5d3b27bbefeb559500c1858bdff7f93363d",
-   "size": 13590,
+   "sha256": "7bf9eec213ed3f4993993ab536b10a7a12acbba0465210ec7a988e345173112e",
+   "size": 13587,
    "source": "bundled",
    "summary": "1 low-poly terrain models for Castle Keep games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -8591,7 +8591,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 154569,
+    "bytes": 154566,
     "tris_max": 148
    },
    "catalog_ids": [
@@ -8619,9 +8619,9 @@
    "download": "archives/kit.cyber_blue_grid.cyber_dressing-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 561,
@@ -8787,8 +8787,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Cyber Blue Grid Cyber Street Dressing",
-   "sha256": "fb3d50a7f8b43022ce3d76ff09c3cd06924834cab335f4e310c6e7dfded2560d",
-   "size": 163692,
+   "sha256": "302f29d62da20854a1a23ca279883de7a7b14e9b017358acfd345629e78495a2",
+   "size": 163689,
    "source": "bundled",
    "summary": "14 low-poly cyber dressing models for Cyber Blue Grid games: benches, bins, crates, carts, awnings, shutters and tanks.",
    "tags": [
@@ -8819,7 +8819,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 762668,
+    "bytes": 808282,
     "tris_max": 1072
    },
    "catalog_ids": [
@@ -8852,19 +8852,19 @@
    "download": "archives/kit.cyber_blue_grid.cyber_rooms-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 555,
      "path": "README.md",
-     "sha256": "6f3ef4ec6d54715b27c526456e28454a33ebf8267e6c1a907cfbef42fd11cae0"
+     "sha256": "0302564b4cf8dc559276150c28eacb01dedca2c43a4ecfe173df6f28f83a46c8"
     },
     {
-     "bytes": 16138,
+     "bytes": 16635,
      "path": "kit.json",
-     "sha256": "43d9d70c29142a6387685a1e3e3da9d478d3ec1c2f874b21cbca7955387e1115"
+     "sha256": "fd764c45d12018f4ada8ea58f46147883e2dd0118bba814e0230d7c15cfabbbf"
     },
     {
      "bytes": 39012,
@@ -8967,6 +8967,12 @@
      "path": "models/cyroom.rooftop.glb",
      "sha256": "d5c2dccc661ae47c8704f0d0f584beedc6b1c62e86a2f5133875bb0f8ac93514",
      "tris": 492
+    },
+    {
+     "bytes": 45120,
+     "path": "models/cyroom.rooftop__arena.glb",
+     "sha256": "d9f8a03254150bd733b9843755e96009f8e581fd14ff9b8ea7686ead69af7320",
+     "tris": 702
     },
     {
      "bytes": 45120,
@@ -9167,10 +9173,10 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Cyber Blue Grid Cyber Interiors",
-   "sha256": "dbf575eb62aa281536b3d85c1f7c89399fe6a3c765c601e7727ad50c3db0032f",
-   "size": 779957,
+   "sha256": "e67caba500f7e4acbace14dc78c86df2ca8cc3f4857ead015275d886a06743c7",
+   "size": 825882,
    "source": "bundled",
-   "summary": "26 low-poly cyber rooms models for Cyber Blue Grid games: club, apartment, den, lobby, subway and roof shells with furniture.",
+   "summary": "27 low-poly cyber rooms models for Cyber Blue Grid games: club, apartment, den, lobby, subway and roof shells with furniture.",
    "tags": [
     "apartment",
     "bar",
@@ -9199,7 +9205,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 388711,
+    "bytes": 388708,
     "tris_max": 414
    },
    "catalog_ids": [
@@ -9227,9 +9233,9 @@
    "download": "archives/kit.cyber_blue_grid.cyber_signs-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 554,
@@ -9442,8 +9448,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Cyber Blue Grid Cyber Signs",
-   "sha256": "ec3b038e113b06deccbaf6e0e6ad5cfe4bdbbaeeeac66c8ff90318e928bae5c5",
-   "size": 400540,
+   "sha256": "9a42e3074ebdb94226301da7d034673522c17b565b98024a761e9e4a5d61aea0",
+   "size": 400537,
    "source": "bundled",
    "summary": "16 low-poly cyber signs models for Cyber Blue Grid games: original glyph signs, billboards, banners, holo signs and storefronts.",
    "tags": [
@@ -9474,7 +9480,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 183729,
+    "bytes": 183726,
     "tris_max": 184
    },
    "catalog_ids": [
@@ -9502,9 +9508,9 @@
    "download": "archives/kit.cyber_blue_grid.cyber_sky-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 543,
@@ -9682,8 +9688,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Cyber Blue Grid Cyber Sky",
-   "sha256": "ffa9b0a3cee2af34c4adefff495a885dd1522b97dddfaa6e13bf335a6f82f8ca",
-   "size": 192979,
+   "sha256": "070a188cab0f29bafc19d3e797ff2ab27edfd22857e51b41ec4706f20f6ea4d9",
+   "size": 192976,
    "source": "bundled",
    "summary": "21 low-poly cyber sky models for Cyber Blue Grid games: layered skyline cards, aircraft, halo and network cards, megatower.",
    "tags": [
@@ -9714,7 +9720,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 369372,
+    "bytes": 369369,
     "tris_max": 310
    },
    "catalog_ids": [
@@ -9743,9 +9749,9 @@
    "download": "archives/kit.cyber_blue_grid.cyber_streets-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 557,
@@ -9971,8 +9977,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Cyber Blue Grid Cyber Streets",
-   "sha256": "0338df67bb447360051cc31c714bdafa7e800a143424d1d4da4687c887bdb7dd",
-   "size": 381883,
+   "sha256": "5d9e486a0a9572e213624975e36382f4f3041691ec42bf24d25ebc404a5d1d14",
+   "size": 381880,
    "source": "bundled",
    "summary": "19 low-poly cyber streets models for Cyber Blue Grid games: roads, crossings, elevated roads, rail, ramps, alleys and plazas.",
    "tags": [
@@ -10003,7 +10009,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 434190,
+    "bytes": 434187,
     "tris_max": 402
    },
    "catalog_ids": [
@@ -10033,9 +10039,9 @@
    "download": "archives/kit.cyber_blue_grid.cyber_tech-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 554,
@@ -10262,8 +10268,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Cyber Blue Grid Cyber Tech",
-   "sha256": "e65541c80afb391c019daa78921ac8bfed3324eccb7a0c76d94e4ebbb17428da",
-   "size": 446661,
+   "sha256": "99024650370366ac2012772eef852102154cfe4eecd2820ff003e6a802d0bd48",
+   "size": 446658,
    "source": "bundled",
    "summary": "20 low-poly cyber tech models for Cyber Blue Grid games: terminals, racks, vending, conduits, drones, hover-cars and street lights.",
    "tags": [
@@ -10294,7 +10300,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 758016,
+    "bytes": 758013,
     "tris_max": 578
    },
    "catalog_ids": [
@@ -10322,9 +10328,9 @@
    "download": "archives/kit.cyber_blue_grid.cyber_towers-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 565,
@@ -10566,8 +10572,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Cyber Blue Grid Cyber Towers",
-   "sha256": "1ae6ae6e290e16c6102b5bafa44b5785596c2ad4987ea0e0ec7a474786d392ea",
-   "size": 771451,
+   "sha256": "e705b68d4a8dbadcb3c83971fa3058320b2df4cc1fc83064e684121bb16421b4",
+   "size": 771448,
    "source": "bundled",
    "summary": "20 low-poly cyber towers models for Cyber Blue Grid games: drum, setback, needle, twin and wedge towers, crowns, facades and skybridges.",
    "tags": [
@@ -10598,7 +10604,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 12508,
+    "bytes": 12505,
     "tris_max": 84
    },
    "catalog_ids": [
@@ -10613,9 +10619,9 @@
    "download": "archives/kit.cyber_blue_grid.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 539,
@@ -10643,8 +10649,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Cyber Blue Grid Terrain & Sky",
-   "sha256": "46303b1742953b63b2abfa8301943d6a6f2d99e5359c031fa9f1130726b135b0",
-   "size": 14102,
+   "sha256": "ef1cf56db7f9a1c03b150274fcbd9fc84adb24a229cdd6e312ed19af60ea0baa",
+   "size": 14099,
    "source": "bundled",
    "summary": "1 low-poly terrain models for Cyber Blue Grid games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -10666,7 +10672,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 380423,
+    "bytes": 380420,
     "tris_max": 688
    },
    "catalog_ids": [
@@ -10695,9 +10701,9 @@
    "download": "archives/kit.forest_village.architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 562,
@@ -10868,8 +10874,8 @@
    "name": "Forest Village Architecture",
    "preview": "previews/kit.forest_village.architecture.png",
    "preview_source": "kit render (Blender preview of the shipped model)",
-   "sha256": "054c2375a2595cc25def9a76b7e756aee20976adba91ce17839d874f2d44f25d",
-   "size": 389381,
+   "sha256": "a4a2f0b755bfc741c6e25f28dc38dce11b5c1cf668eadaecccbfcaa2ecee327c",
+   "size": 389378,
    "source": "bundled",
    "summary": "17 low-poly architecture models for Forest Village games: walls, floors, doors, windows, roofs, stairs, bridges, a tower and room shells.",
    "tags": [
@@ -10900,7 +10906,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 282166,
+    "bytes": 282163,
     "tris_max": 336
    },
    "catalog_ids": [
@@ -10927,9 +10933,9 @@
    "download": "archives/kit.forest_village.furniture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 544,
@@ -11106,8 +11112,8 @@
    "name": "Forest Village Furniture",
    "preview": "previews/kit.forest_village.furniture.png",
    "preview_source": "kit render (Blender preview of the shipped model)",
-   "sha256": "0178ba426367d5951851f3b37731bc97b21fba0b924da00688163fb654c2e7d1",
-   "size": 291398,
+   "sha256": "1f34e39bcc2f7c4e714b07599279d31fe277335013fe054b3b171aa5dfa08384",
+   "size": 291395,
    "source": "bundled",
    "summary": "18 low-poly furniture models for Forest Village games: beds, seats, tables, lamps, shelves, chests, a hearth, rugs and cushions.",
    "tags": [
@@ -11138,7 +11144,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 68294,
+    "bytes": 68291,
     "tris_max": 170
    },
    "catalog_ids": [
@@ -11156,9 +11162,9 @@
    "download": "archives/kit.forest_village.nature-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 489,
@@ -11232,8 +11238,8 @@
    "name": "Forest Village Nature",
    "preview": "previews/kit.forest_village.nature.png",
    "preview_source": "kit render (Blender preview of the shipped model)",
-   "sha256": "8d56f6458338267bf7f28ef04f6c1f63fbe7ecb9ed6c3ff6ad2efbadbed1b6cb",
-   "size": 72275,
+   "sha256": "71763500bf4349c0dc23a3dabbe1932e2d29d0bd8f7957676cb6f8392994968e",
+   "size": 72272,
    "source": "bundled",
    "summary": "5 low-poly nature models for Forest Village games: trees, bushes, rocks and grass.",
    "tags": [
@@ -11258,7 +11264,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 76535,
+    "bytes": 76532,
     "tris_max": 142
    },
    "catalog_ids": [
@@ -11278,9 +11284,9 @@
    "download": "archives/kit.forest_village.props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 501,
@@ -11365,8 +11371,8 @@
    "name": "Forest Village Props",
    "preview": "previews/kit.forest_village.props.png",
    "preview_source": "kit render (Blender preview of the shipped model)",
-   "sha256": "27801eda5ccb22ac7aabcfd7b789540590c20680119eff9081defb7dfb7025d2",
-   "size": 81033,
+   "sha256": "d591e6bcde81a7ae2848c6966c493c3359bb7ff22f54282f6c931ae0d2bdc5d3",
+   "size": 81030,
    "source": "bundled",
    "summary": "6 low-poly props models for Forest Village games: keys, books, signs, tools, devices and vessels.",
    "tags": [
@@ -11393,7 +11399,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 107706,
+    "bytes": 107703,
     "tris_max": 478
    },
    "catalog_ids": [
@@ -11413,9 +11419,9 @@
    "download": "archives/kit.forest_village.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 534,
@@ -11523,8 +11529,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Forest Village Terrain & Sky",
-   "sha256": "39771cc6d9a10469281e114f17b29c75822191d6fd9a800119d87b277af7f683",
-   "size": 113812,
+   "sha256": "7b18bb93ef42551e884ae6c636eea0a39557dc9fc4e94df66f77473ce5d646e1",
+   "size": 113809,
    "source": "bundled",
    "summary": "6 low-poly terrain models for Forest Village games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -11551,7 +11557,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 81652,
+    "bytes": 81649,
     "tris_max": 356
    },
    "catalog_ids": [
@@ -11567,9 +11573,9 @@
    "download": "archives/kit.forest_village.vehicles-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 494,
@@ -11613,8 +11619,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Forest Village Vehicles",
-   "sha256": "31795aad4e663963ec39f17360823e9dcd3b1e38b9e7be0a063b43b356cd52cf",
-   "size": 84149,
+   "sha256": "b90a3084d3a85fae1ff568a2a35ecae853851575898dc620442e3b6a2dbaf55d",
+   "size": 84146,
    "source": "bundled",
    "summary": "2 low-poly vehicles models for Forest Village games: a rowboat and a small craft.",
    "tags": [
@@ -11637,7 +11643,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1052663,
+    "bytes": 1052660,
     "tris_max": 492
    },
    "catalog_ids": [
@@ -11670,9 +11676,9 @@
    "download": "archives/kit.frontier_town.canyon_terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 560,
@@ -12065,8 +12071,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town Canyon Terrain & Sky",
-   "sha256": "0c671fc59af69f1e1340265aaf85786563938e6b8ad57b0bc539273065982b6b",
-   "size": 1073035,
+   "sha256": "caa109e1c74bc619c209324b0436d77ffd1dac9ee90812f1ae596d5e185ebaba",
+   "size": 1073032,
    "source": "bundled",
    "summary": "51 low-poly canyon terrain models for Frontier Town games: canyon walls, mesas, arches, ground, desert plants, oasis and skies.",
    "tags": [
@@ -12097,7 +12103,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 935294,
+    "bytes": 935291,
     "tris_max": 736
    },
    "catalog_ids": [
@@ -12123,9 +12129,9 @@
    "download": "archives/kit.frontier_town.frontier_mine-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 550,
@@ -12406,8 +12412,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town Frontier Mine",
-   "sha256": "209f15848178f060a60401b37da5fe0372be742e6a272c6a879122661fbbaa98",
-   "size": 950364,
+   "sha256": "41f43a570a4f628a2aa00c596189741eb2be9bde396ca76253d05212dd305c4c",
+   "size": 950361,
    "source": "bundled",
    "summary": "29 low-poly frontier mine models for Frontier Town games: timbered tunnels, mine track, portals, ore carts and mine machinery.",
    "tags": [
@@ -12438,7 +12444,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1068872,
+    "bytes": 1068869,
     "tris_max": 458
    },
    "catalog_ids": [
@@ -12476,9 +12482,9 @@
    "download": "archives/kit.frontier_town.frontier_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 559,
@@ -13031,8 +13037,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town Frontier Props",
-   "sha256": "94abce3b4587b3620c3f6ce198162f9d558723e5eeb84e660224e540b1f815fe",
-   "size": 1098323,
+   "sha256": "28395a666eecc105332552d0b2f222eaf5c9a905c25d815889c87661a00e45ce",
+   "size": 1098320,
    "source": "bundled",
    "summary": "61 low-poly frontier props models for Frontier Town games: barrels, crates, wagons, saloon furniture, signs, lanterns and campfires.",
    "tags": [
@@ -13063,7 +13069,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 914534,
+    "bytes": 914531,
     "tris_max": 496
    },
    "catalog_ids": [
@@ -13085,9 +13091,9 @@
    "download": "archives/kit.frontier_town.frontier_rail-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 544,
@@ -13342,8 +13348,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town Frontier Rail",
-   "sha256": "f10bd4a661efe2326137009d4e9ec79fd594aab989f286ce3cd9f911f0f5c13b",
-   "size": 928551,
+   "sha256": "a65306360b7bf3c5d4fceb761c603e3b4bc41fb2f529dbffbd6baccaa3035c6a",
+   "size": 928548,
    "source": "bundled",
    "summary": "23 low-poly frontier rail models for Frontier Town games: track, platforms, stations, bridges, railcars and locomotives.",
    "tags": [
@@ -13372,7 +13378,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 2627777,
+    "bytes": 2627774,
     "tris_max": 1374
    },
    "catalog_ids": [
@@ -13405,9 +13411,9 @@
    "download": "archives/kit.frontier_town.frontier_town-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 554,
@@ -13934,8 +13940,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town Town Architecture",
-   "sha256": "87fd1529ddb68eb33a476036895111eaefe8a87002108c99882a8558549c2a25",
-   "size": 2655679,
+   "sha256": "95d0f4bb4d1bc050b30cc9d58ba863f5691b54815286448e38e3c75b54e14542",
+   "size": 2655676,
    "source": "bundled",
    "summary": "65 low-poly frontier town models for Frontier Town games: false-front buildings, boardwalks, porches, balconies and interiors.",
    "tags": [
@@ -13965,7 +13971,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1052557,
+    "bytes": 1052554,
     "tris_max": 492
    },
    "catalog_ids": [
@@ -13998,9 +14004,9 @@
    "download": "archives/kit.frontier_town_golden.canyon_terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 609,
@@ -14393,8 +14399,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town (golden hour) Canyon Terrain & Sky",
-   "sha256": "b6a43a4e253d26cb0c7cf2cfd26716dc7a1c73864a11ee7b70bf3a083f703c45",
-   "size": 1073242,
+   "sha256": "71f7c02c760a4d29c4facf3b1099d3070495815d13d98cd580e2465ea768d46e",
+   "size": 1073239,
    "source": "bundled",
    "summary": "51 low-poly canyon terrain models for Frontier Town (golden hour) games: canyon walls, mesas, arches, ground, desert plants, oasis and skies.",
    "tags": [
@@ -14425,7 +14431,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 938385,
+    "bytes": 938382,
     "tris_max": 736
    },
    "catalog_ids": [
@@ -14451,9 +14457,9 @@
    "download": "archives/kit.frontier_town_golden.frontier_mine-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 599,
@@ -14734,8 +14740,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town (golden hour) Frontier Mine",
-   "sha256": "989743149efa0107d9825c465e8e5f844186c9227334ee98e853dfae0b1ca2b6",
-   "size": 953854,
+   "sha256": "62490091e794592ce4c1cec877eee4be0b90d8ab6f534b8460baaaedcbc0fac7",
+   "size": 953851,
    "source": "bundled",
    "summary": "29 low-poly frontier mine models for Frontier Town (golden hour) games: timbered tunnels, mine track, portals, ore carts and mine machinery.",
    "tags": [
@@ -14766,7 +14772,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1080058,
+    "bytes": 1080055,
     "tris_max": 458
    },
    "catalog_ids": [
@@ -14804,9 +14810,9 @@
    "download": "archives/kit.frontier_town_golden.frontier_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 608,
@@ -15359,8 +15365,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town (golden hour) Frontier Props",
-   "sha256": "ce9dd0d960e9cad99aed9c9dcb752d22c15df6f6e0f0f0f64018102145420b93",
-   "size": 1110244,
+   "sha256": "c3d5a0cc3d44848a49304a1d0208162fbac5b8b95295ae193c229117bd9fe915",
+   "size": 1110241,
    "source": "bundled",
    "summary": "61 low-poly frontier props models for Frontier Town (golden hour) games: barrels, crates, wagons, saloon furniture, signs, lanterns and campfires.",
    "tags": [
@@ -15391,7 +15397,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 919953,
+    "bytes": 919950,
     "tris_max": 496
    },
    "catalog_ids": [
@@ -15413,9 +15419,9 @@
    "download": "archives/kit.frontier_town_golden.frontier_rail-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 593,
@@ -15670,8 +15676,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town (golden hour) Frontier Rail",
-   "sha256": "1be9ef941019d24dcec0ab36bd7c62d64030edd8679335434763c4c965ce1329",
-   "size": 934410,
+   "sha256": "be3780fee4886c6ef73eb0b98c7451310f0ce51cf567aaaa61d9cc64b33ce119",
+   "size": 934407,
    "source": "bundled",
    "summary": "23 low-poly frontier rail models for Frontier Town (golden hour) games: track, platforms, stations, bridges, railcars and locomotives.",
    "tags": [
@@ -15700,7 +15706,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 2641731,
+    "bytes": 2641728,
     "tris_max": 1374
    },
    "catalog_ids": [
@@ -15733,9 +15739,9 @@
    "download": "archives/kit.frontier_town_golden.frontier_town-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 603,
@@ -16262,8 +16268,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town (golden hour) Town Architecture",
-   "sha256": "ea2e4b7fc80660ffb5e2d2162f98a93491887919cc19775034a47d0d4e4bf19d",
-   "size": 2670158,
+   "sha256": "e1be5cf238c969dfa262b60b9ec36c18b7451a4efe4a1e40366dda2103b1cc13",
+   "size": 2670155,
    "source": "bundled",
    "summary": "65 low-poly frontier town models for Frontier Town (golden hour) games: false-front buildings, boardwalks, porches, balconies and interiors.",
    "tags": [
@@ -16294,7 +16300,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1057010,
+    "bytes": 1057007,
     "tris_max": 492
    },
    "catalog_ids": [
@@ -16327,9 +16333,9 @@
    "download": "archives/kit.frontier_town_night.canyon_terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 594,
@@ -16722,8 +16728,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town (night) Canyon Terrain & Sky",
-   "sha256": "a4f4405a1cbd81fcaacbcd606ff6cff3ab66e384057edb9945c300417db4b24b",
-   "size": 1077647,
+   "sha256": "72295a192be397341bc7452fcde096929107a85e210a5bf12f7a872610257769",
+   "size": 1077644,
    "source": "bundled",
    "summary": "51 low-poly canyon terrain models for Frontier Town (night) games: canyon walls, mesas, arches, ground, desert plants, oasis and skies.",
    "tags": [
@@ -16754,7 +16760,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 939150,
+    "bytes": 939147,
     "tris_max": 736
    },
    "catalog_ids": [
@@ -16780,9 +16786,9 @@
    "download": "archives/kit.frontier_town_night.frontier_mine-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 584,
@@ -17063,8 +17069,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town (night) Frontier Mine",
-   "sha256": "d937828b36e906202f67a378b823366fdfb9fa9759f15bf8a00180fa2cae7ac6",
-   "size": 954558,
+   "sha256": "254d43273e68b1d75b4e7ae605307f2a3723116ad138c19838ddd6a91edb572c",
+   "size": 954555,
    "source": "bundled",
    "summary": "29 low-poly frontier mine models for Frontier Town (night) games: timbered tunnels, mine track, portals, ore carts and mine machinery.",
    "tags": [
@@ -17095,7 +17101,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1075646,
+    "bytes": 1075643,
     "tris_max": 458
    },
    "catalog_ids": [
@@ -17133,9 +17139,9 @@
    "download": "archives/kit.frontier_town_night.frontier_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 593,
@@ -17688,8 +17694,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town (night) Frontier Props",
-   "sha256": "8de994c75d4ea1c2b5b08066977986c1092f26f57bc9ef790f14f72c0560fac5",
-   "size": 1105723,
+   "sha256": "e5f65835513e9ae13f8edf537e02cd2aaa1df227d807c81d0bf0dfa5f3585e7d",
+   "size": 1105720,
    "source": "bundled",
    "summary": "61 low-poly frontier props models for Frontier Town (night) games: barrels, crates, wagons, saloon furniture, signs, lanterns and campfires.",
    "tags": [
@@ -17720,7 +17726,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 918692,
+    "bytes": 918689,
     "tris_max": 496
    },
    "catalog_ids": [
@@ -17742,9 +17748,9 @@
    "download": "archives/kit.frontier_town_night.frontier_rail-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 578,
@@ -17999,8 +18005,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town (night) Frontier Rail",
-   "sha256": "807a3159d27b1b7c13b4877d9692a99339e36d18d0783fcb542b0ef160723775",
-   "size": 933082,
+   "sha256": "52d975b9864b40123c22208f8760e79f3639f0d029d12ea8e8bf698f14b80adc",
+   "size": 933079,
    "source": "bundled",
    "summary": "23 low-poly frontier rail models for Frontier Town (night) games: track, platforms, stations, bridges, railcars and locomotives.",
    "tags": [
@@ -18029,7 +18035,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 2636206,
+    "bytes": 2636203,
     "tris_max": 1374
    },
    "catalog_ids": [
@@ -18062,9 +18068,9 @@
    "download": "archives/kit.frontier_town_night.frontier_town-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 588,
@@ -18591,8 +18597,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Frontier Town (night) Town Architecture",
-   "sha256": "b6fa8f514184b4051c252bd35e0f12aa309f8d5f14f33afff47aa54469073874",
-   "size": 2664554,
+   "sha256": "35b5819cd8cdda7556513965b6661b47c2fe0c17a7e9334818db4b04536743be",
+   "size": 2664551,
    "source": "bundled",
    "summary": "65 low-poly frontier town models for Frontier Town (night) games: false-front buildings, boardwalks, porches, balconies and interiors.",
    "tags": [
@@ -18623,7 +18629,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 362956,
+    "bytes": 362953,
     "tris_max": 220
    },
    "catalog_ids": [
@@ -18645,9 +18651,9 @@
    "download": "archives/kit.jungle_temple.land-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 531,
@@ -18941,8 +18947,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Jungle Temple Desert & Jungle Terrain & Sky",
-   "sha256": "7b0ad0281dbe703d5d5257e32e3b15fded1cedc91a9479f5bbbb658495fb72d4",
-   "size": 378283,
+   "sha256": "bda764d6250ae99796fab5b942477b480f6442b62a81b90d8bb64c7ee5cb8e45",
+   "size": 378280,
    "source": "bundled",
    "summary": "37 low-poly land models for Jungle Temple games: ground tiles, cliffs, slopes, causeways, terraces and skies.",
    "tags": [
@@ -18971,7 +18977,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 656164,
+    "bytes": 656161,
     "tris_max": 442
    },
    "catalog_ids": [
@@ -18995,9 +19001,9 @@
    "download": "archives/kit.jungle_temple.relic-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 526,
@@ -19295,8 +19301,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Jungle Temple Carving Props",
-   "sha256": "375116a4aec36d785ac5824f66073bb86e98073627b6ac5fb2975649c9c07eed",
-   "size": 672219,
+   "sha256": "c5d85fed384ed4f8d717fc96c4eac602fa7ba8e452797b591d10e52bc7f777b5",
+   "size": 672216,
    "source": "bundled",
    "summary": "31 low-poly relic models for Jungle Temple games: statues, altars, braziers, urns, tablets, pressure plates and dials.",
    "tags": [
@@ -19327,7 +19333,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1114949,
+    "bytes": 1114946,
     "tris_max": 876
    },
    "catalog_ids": [
@@ -19353,9 +19359,9 @@
    "download": "archives/kit.jungle_temple.ruin-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 525,
@@ -19735,8 +19741,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Jungle Temple Ruin Architecture",
-   "sha256": "c9d29ac4aa6f5c546c558e245e57b3d04ae07169af14fb43300a19f46708e6cc",
-   "size": 1134692,
+   "sha256": "8d12843fc74849c96e10277c006e6434e58f1457830434a3975fb316046a3638",
+   "size": 1134689,
    "source": "bundled",
    "summary": "48 low-poly ruin models for Jungle Temple games: carved walls, columns, pyramids, stairs, gates, arches and courts.",
    "tags": [
@@ -19767,7 +19773,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 459846,
+    "bytes": 459843,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -19791,9 +19797,9 @@
    "download": "archives/kit.jungle_temple.wild-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 528,
@@ -20057,8 +20063,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Jungle Temple Desert & Jungle Nature",
-   "sha256": "cd7ce1244fe647bdabf6c1ea0458ecd1dfc0d501604f0c9e0fc0a1cce4df1f3b",
-   "size": 473527,
+   "sha256": "b1494bd0fba554b4484b8ded2120ce7a2dfc7cbc3a9d1c32873efa0621ed119d",
+   "size": 473524,
    "source": "bundled",
    "summary": "32 low-poly wild models for Jungle Temple games: palms, jungle trees, ferns, vines, dunes, rocks and oasis pools.",
    "tags": [
@@ -20089,7 +20095,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1556092,
+    "bytes": 1556089,
     "tris_max": 1264
    },
    "catalog_ids": [
@@ -20123,9 +20129,9 @@
    "download": "archives/kit.medieval_village.medieval_castle-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 559,
@@ -20536,8 +20542,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village Castle",
-   "sha256": "5b009fc6971334ae1478fb26715e048e998a88bc0a53071d4cd395d8c82fa1d5",
-   "size": 1577928,
+   "sha256": "74ea2048ff0293731a17afd80240bd3dd850ca0170d13b8350cd30d0157e393c",
+   "size": 1577925,
    "source": "bundled",
    "summary": "49 low-poly medieval castle models for Medieval Village games: towers, gatehouses, portcullises, halls, cells and throne sets.",
    "tags": [
@@ -20568,7 +20574,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 491473,
+    "bytes": 491470,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -20592,9 +20598,9 @@
    "download": "archives/kit.medieval_village.medieval_nature-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 566,
@@ -20890,8 +20896,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village Medieval Nature",
-   "sha256": "34a7d4bd101691896df4490ef3de55626105e81fea667d2241e74164eade010d",
-   "size": 507232,
+   "sha256": "78fd8a7dd4bc167fa66f5785ac7384dbf226fd4683f76377a3345d7c69f881cb",
+   "size": 507229,
    "source": "bundled",
    "summary": "34 low-poly medieval nature models for Medieval Village games: trees, orchards, hedges, farm crops, rocks, flowers and logs.",
    "tags": [
@@ -20922,7 +20928,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 987625,
+    "bytes": 987622,
     "tris_max": 340
    },
    "catalog_ids": [
@@ -20959,9 +20965,9 @@
    "download": "archives/kit.medieval_village.medieval_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 560,
@@ -21480,8 +21486,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village Medieval Props",
-   "sha256": "86be55083fec42efccd59b4400ffaf5b0cab56d05ba2d1a7782dfeaf0c8fdf09",
-   "size": 1015257,
+   "sha256": "ab4c372fde21fcb0a5c75ca88c1f785787115d18bc8746c07f94c44aae6a0d82",
+   "size": 1015254,
    "source": "bundled",
    "summary": "62 low-poly medieval props models for Medieval Village games: storage, carts, furniture, weapons, tableware and lanterns.",
    "tags": [
@@ -21512,7 +21518,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 310075,
+    "bytes": 310072,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -21531,9 +21537,9 @@
    "download": "archives/kit.medieval_village.medieval_terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 569,
@@ -21784,8 +21790,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village Medieval Terrain",
-   "sha256": "ccfac6e8ebd296f18d0bb9173d48799314331adea5a8c7b5ddfc766efe615c79",
-   "size": 323565,
+   "sha256": "0ce2ef536bc6514607ff097a2df9e4b4ad7cc6f92f6bd3682dbb3b3dd34fad59",
+   "size": 323562,
    "source": "bundled",
    "summary": "29 low-poly medieval terrain models for Medieval Village games: ground and paths, hills, banks, water and distant backdrops.",
    "tags": [
@@ -21811,7 +21817,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 2197705,
+    "bytes": 2197702,
     "tris_max": 864
    },
    "catalog_ids": [
@@ -21841,9 +21847,9 @@
    "download": "archives/kit.medieval_village.medieval_village_architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 608,
@@ -22343,8 +22349,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village Village Architecture",
-   "sha256": "3ff3953fd8fd76a649ba27ce79a9a1e98033d21d507a483949b1c560aa5f623d",
-   "size": 2224685,
+   "sha256": "f1244f1673ad7b449be1373f035cb781115d34a257405415f9e22896776ebe4d",
+   "size": 2224682,
    "source": "bundled",
    "summary": "53 low-poly medieval village architecture models for Medieval Village games: cottages, taverns, mills, chapels and village interiors.",
    "tags": [
@@ -22375,7 +22381,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 11986,
+    "bytes": 11983,
     "tris_max": 84
    },
    "catalog_ids": [
@@ -22390,9 +22396,9 @@
    "download": "archives/kit.medieval_village.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 544,
@@ -22420,8 +22426,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village Terrain & Sky",
-   "sha256": "ba0b44244e82a58f001ecd290dcf2e848058d631223ee4be4f01be3be2fb971e",
-   "size": 13585,
+   "sha256": "bea4804c8d43dae6d1cd39a4cc4d6251c2fc7b1fe2c03458da58c8204611e4b0",
+   "size": 13582,
    "source": "bundled",
    "summary": "1 low-poly terrain models for Medieval Village games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -22443,7 +22449,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1563590,
+    "bytes": 1563587,
     "tris_max": 1264
    },
    "catalog_ids": [
@@ -22477,9 +22483,9 @@
    "download": "archives/kit.medieval_village_dusk.medieval_castle-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 588,
@@ -22890,8 +22896,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (dusk) Castle",
-   "sha256": "7c7f5d2c4617153eebdf5a95f738839969eb11c3b0f3f912a44f561512405922",
-   "size": 1585738,
+   "sha256": "4a7d1a86a4c6e6aaf12deb216358ba08eb94b92147baeacc67d5a62ca0620d1c",
+   "size": 1585735,
    "source": "bundled",
    "summary": "49 low-poly medieval castle models for Medieval Village (dusk) games: towers, gatehouses, portcullises, halls, cells and throne sets.",
    "tags": [
@@ -22922,7 +22928,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 492879,
+    "bytes": 492876,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -22946,9 +22952,9 @@
    "download": "archives/kit.medieval_village_dusk.medieval_nature-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 595,
@@ -23244,8 +23250,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (dusk) Medieval Nature",
-   "sha256": "292c26be808ef1f4e01031911e10da4a0ba0c0e71860416fb71af4761cb21164",
-   "size": 508875,
+   "sha256": "9b53a1af922055224dd09ecdce4271951e4305625d0e6ba95094be494a0bbf75",
+   "size": 508872,
    "source": "bundled",
    "summary": "34 low-poly medieval nature models for Medieval Village (dusk) games: trees, orchards, hedges, farm crops, rocks, flowers and logs.",
    "tags": [
@@ -23276,7 +23282,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 993893,
+    "bytes": 993890,
     "tris_max": 340
    },
    "catalog_ids": [
@@ -23313,9 +23319,9 @@
    "download": "archives/kit.medieval_village_dusk.medieval_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 589,
@@ -23834,8 +23840,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (dusk) Medieval Props",
-   "sha256": "c3d829ce1b74aed710a5b623978b383eaa410a5c7b6935e4ce3d7f6f8a019f38",
-   "size": 1021927,
+   "sha256": "b8b3e24cb82323f518be4d28848f158163936b5fd7931fcdc83bbffa2eac2e15",
+   "size": 1021924,
    "source": "bundled",
    "summary": "62 low-poly medieval props models for Medieval Village (dusk) games: storage, carts, furniture, weapons, tableware and lanterns.",
    "tags": [
@@ -23866,7 +23872,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 311726,
+    "bytes": 311723,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -23885,9 +23891,9 @@
    "download": "archives/kit.medieval_village_dusk.medieval_terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 598,
@@ -24138,8 +24144,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (dusk) Medieval Terrain",
-   "sha256": "3956b2a3e4181e434dd5f2b011dd5e50a8e91cbb88b4560ce0ceaca5103b0c05",
-   "size": 325408,
+   "sha256": "6654567c715319fc8ec1924e668a9d12d6a1121b44f0e9f2a3c42d79d91deb5d",
+   "size": 325405,
    "source": "bundled",
    "summary": "29 low-poly medieval terrain models for Medieval Village (dusk) games: ground and paths, hills, banks, water and distant backdrops.",
    "tags": [
@@ -24165,7 +24171,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 2205560,
+    "bytes": 2205557,
     "tris_max": 864
    },
    "catalog_ids": [
@@ -24195,9 +24201,9 @@
    "download": "archives/kit.medieval_village_dusk.medieval_village_architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 637,
@@ -24697,8 +24703,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (dusk) Village Architecture",
-   "sha256": "ab620995c80e85e926038b680b8b62fcefcd48b52e97ddf153dfb2c7e4b59c7c",
-   "size": 2233047,
+   "sha256": "dd9f32f0df02ba1ae27600df7925189b3d104b19f5d59b8b35fbd440ab25727f",
+   "size": 2233044,
    "source": "bundled",
    "summary": "53 low-poly medieval village architecture models for Medieval Village (dusk) games: cottages, taverns, mills, chapels and village interiors.",
    "tags": [
@@ -24729,7 +24735,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 12107,
+    "bytes": 12104,
     "tris_max": 84
    },
    "catalog_ids": [
@@ -24744,9 +24750,9 @@
    "download": "archives/kit.medieval_village_dusk.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 573,
@@ -24774,8 +24780,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (dusk) Terrain & Sky",
-   "sha256": "808c36a5183d87842032f14042c60193d752b828dca7e99c3285b16fb383383a",
-   "size": 13733,
+   "sha256": "9d03da2e7b0f8b8d741d30082f12bf43f43a50a555edf52796f06a09704f24f0",
+   "size": 13730,
    "source": "bundled",
    "summary": "1 low-poly terrain models for Medieval Village (dusk) games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -24797,7 +24803,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1560220,
+    "bytes": 1560217,
     "tris_max": 1264
    },
    "catalog_ids": [
@@ -24831,9 +24837,9 @@
    "download": "archives/kit.medieval_village_night.medieval_castle-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 593,
@@ -25244,8 +25250,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (night) Castle",
-   "sha256": "972c5cd1286f91daa227cc2e2aa490c6daad1d01085c4f5d089c2ca1341632ad",
-   "size": 1582430,
+   "sha256": "b7de13cd6c794a3d1ea149a053f812c0c8cd46ca5d651766a9565affaac20e10",
+   "size": 1582427,
    "source": "bundled",
    "summary": "49 low-poly medieval castle models for Medieval Village (night) games: towers, gatehouses, portcullises, halls, cells and throne sets.",
    "tags": [
@@ -25276,7 +25282,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 496032,
+    "bytes": 496029,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -25300,9 +25306,9 @@
    "download": "archives/kit.medieval_village_night.medieval_nature-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 600,
@@ -25598,8 +25604,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (night) Medieval Nature",
-   "sha256": "cbc9cf00a7580fe91a6ea425c19739cd37653af4d45e3dd6a815214cb71fbf25",
-   "size": 512075,
+   "sha256": "1483368f6165ab44a0706573e99114aa05f03e34a84c368789f5bdc5159dcce7",
+   "size": 512072,
    "source": "bundled",
    "summary": "34 low-poly medieval nature models for Medieval Village (night) games: trees, orchards, hedges, farm crops, rocks, flowers and logs.",
    "tags": [
@@ -25630,7 +25636,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 992810,
+    "bytes": 992807,
     "tris_max": 340
    },
    "catalog_ids": [
@@ -25667,9 +25673,9 @@
    "download": "archives/kit.medieval_village_night.medieval_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 594,
@@ -26188,8 +26194,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (night) Medieval Props",
-   "sha256": "09aa6750934a0e5d1406c21d812bcb744ac5f00312beb547a97a478ceea08a25",
-   "size": 1020924,
+   "sha256": "9a9e89a56fb50514a78d3b9362387a5921a688ba80011919ab7c8f565289e126",
+   "size": 1020921,
    "source": "bundled",
    "summary": "62 low-poly medieval props models for Medieval Village (night) games: storage, carts, furniture, weapons, tableware and lanterns.",
    "tags": [
@@ -26220,7 +26226,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 311664,
+    "bytes": 311661,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -26239,9 +26245,9 @@
    "download": "archives/kit.medieval_village_night.medieval_terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 603,
@@ -26492,8 +26498,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (night) Medieval Terrain",
-   "sha256": "def253a08ddd980f85c44ae75ebdcab2b3db87ac8d01cc8e28051129938f000a",
-   "size": 325384,
+   "sha256": "0bef2055b3bfe2d9df7f260d157576c5bac75e3ea2ba45637fca4aa430549481",
+   "size": 325381,
    "source": "bundled",
    "summary": "29 low-poly medieval terrain models for Medieval Village (night) games: ground and paths, hills, banks, water and distant backdrops.",
    "tags": [
@@ -26519,7 +26525,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 2205986,
+    "bytes": 2205983,
     "tris_max": 864
    },
    "catalog_ids": [
@@ -26549,9 +26555,9 @@
    "download": "archives/kit.medieval_village_night.medieval_village_architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 642,
@@ -27051,8 +27057,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (night) Village Architecture",
-   "sha256": "23a0d25559f6636db2f70f5d34e1e514733719b1900faa0216296bde6fbccaca",
-   "size": 2233574,
+   "sha256": "deefeeb0850ede4a6a8dd07881e2faafca516c5f91599999107de9db95a158c0",
+   "size": 2233571,
    "source": "bundled",
    "summary": "53 low-poly medieval village architecture models for Medieval Village (night) games: cottages, taverns, mills, chapels and village interiors.",
    "tags": [
@@ -27083,7 +27089,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 12134,
+    "bytes": 12131,
     "tris_max": 84
    },
    "catalog_ids": [
@@ -27098,9 +27104,9 @@
    "download": "archives/kit.medieval_village_night.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 578,
@@ -27128,8 +27134,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (night) Terrain & Sky",
-   "sha256": "9604775cbd7d5b6da1545cf1158ad896679af12058d2b3da3754277938c10362",
-   "size": 13765,
+   "sha256": "00f4a44e0fc51a2cb7a27499e2aa87b5b6f34747afb297d79252abacd073c438",
+   "size": 13762,
    "source": "bundled",
    "summary": "1 low-poly terrain models for Medieval Village (night) games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -27151,7 +27157,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1559643,
+    "bytes": 1559640,
     "tris_max": 1264
    },
    "catalog_ids": [
@@ -27185,9 +27191,9 @@
    "download": "archives/kit.medieval_village_snow.medieval_castle-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 588,
@@ -27598,8 +27604,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (snow) Castle",
-   "sha256": "bd456d9e20ee37a07bc0d8e86b6cf98dc5ba37696c6ab080e481be4e94fce613",
-   "size": 1581791,
+   "sha256": "d3163644b91ed2d4a957e22e476de55e3d45e1c19466093ae8adfe032bf4a8e7",
+   "size": 1581788,
    "source": "bundled",
    "summary": "49 low-poly medieval castle models for Medieval Village (snow) games: towers, gatehouses, portcullises, halls, cells and throne sets.",
    "tags": [
@@ -27630,7 +27636,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 491391,
+    "bytes": 491388,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -27654,9 +27660,9 @@
    "download": "archives/kit.medieval_village_snow.medieval_nature-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 595,
@@ -27952,8 +27958,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (snow) Medieval Nature",
-   "sha256": "a2ecc0e38f25c9b3f96c9fc0a71c6e9619ccad512f3dd46778c4db2bc8cc77fe",
-   "size": 507386,
+   "sha256": "0331d9bddf00c9555a3ff3eadfab8614d8e7081af7175348346b9e53c4b8788c",
+   "size": 507383,
    "source": "bundled",
    "summary": "34 low-poly medieval nature models for Medieval Village (snow) games: trees, orchards, hedges, farm crops, rocks, flowers and logs.",
    "tags": [
@@ -27984,7 +27990,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 991331,
+    "bytes": 991328,
     "tris_max": 340
    },
    "catalog_ids": [
@@ -28021,9 +28027,9 @@
    "download": "archives/kit.medieval_village_snow.medieval_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 589,
@@ -28542,8 +28548,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (snow) Medieval Props",
-   "sha256": "dfa8f670c5a0d5aff32ba14d5dc463b389f70b7c45eea8c3eea8913bc6b001b1",
-   "size": 1019365,
+   "sha256": "89c823743b6c66742c3d3ac5162cabfac15ebbf807e0d6f4c59d00ffed963ce0",
+   "size": 1019362,
    "source": "bundled",
    "summary": "62 low-poly medieval props models for Medieval Village (snow) games: storage, carts, furniture, weapons, tableware and lanterns.",
    "tags": [
@@ -28574,7 +28580,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 309181,
+    "bytes": 309178,
     "tris_max": 352
    },
    "catalog_ids": [
@@ -28593,9 +28599,9 @@
    "download": "archives/kit.medieval_village_snow.medieval_terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 598,
@@ -28846,8 +28852,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (snow) Medieval Terrain",
-   "sha256": "8a441ee0063ab6e10aa30d13dae343931760752f8dea33686e25c3ba4a1e7275",
-   "size": 322862,
+   "sha256": "75c776a27d14f41028233d220dff5c3e4231b5165a5898625cb5698a6aa2512d",
+   "size": 322859,
    "source": "bundled",
    "summary": "29 low-poly medieval terrain models for Medieval Village (snow) games: ground and paths, hills, banks, water and distant backdrops.",
    "tags": [
@@ -28873,7 +28879,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 2204858,
+    "bytes": 2204855,
     "tris_max": 864
    },
    "catalog_ids": [
@@ -28903,9 +28909,9 @@
    "download": "archives/kit.medieval_village_snow.medieval_village_architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 637,
@@ -29405,8 +29411,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (snow) Village Architecture",
-   "sha256": "90fa7d48b453d70e483040455aa844125744c4b273af02e3a47c0f0097dc39b1",
-   "size": 2232345,
+   "sha256": "e437d1aa92308c11786b28e070030557d0d1d51e66a0cefb1509139422a8acdf",
+   "size": 2232342,
    "source": "bundled",
    "summary": "53 low-poly medieval village architecture models for Medieval Village (snow) games: cottages, taverns, mills, chapels and village interiors.",
    "tags": [
@@ -29437,7 +29443,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 12204,
+    "bytes": 12201,
     "tris_max": 84
    },
    "catalog_ids": [
@@ -29452,9 +29458,9 @@
    "download": "archives/kit.medieval_village_snow.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 573,
@@ -29482,8 +29488,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Medieval Village (snow) Terrain & Sky",
-   "sha256": "9608856c508bed4489f05ec7d137cbc5336f3584748c03942bb6445853c1d4f4",
-   "size": 13830,
+   "sha256": "2c0eb3e0ab6ef5f99bec20ae6be922ef31fe5e6dc488645506ba626e26084fcb",
+   "size": 13827,
    "source": "bundled",
    "summary": "1 low-poly terrain models for Medieval Village (snow) games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -29505,7 +29511,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 154744,
+    "bytes": 154741,
     "tris_max": 148
    },
    "catalog_ids": [
@@ -29533,9 +29539,9 @@
    "download": "archives/kit.neon_city_night.cyber_dressing-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 561,
@@ -29701,8 +29707,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon City Night Cyber Street Dressing",
-   "sha256": "cec878fe2d2221bd06afc2ed438d39d47766731dacf6dd266ac292623c85ca94",
-   "size": 163867,
+   "sha256": "e3fcca345caec8b1e5e46b04f02532529bb776aef3312b5135fa1a3d3f49bf86",
+   "size": 163864,
    "source": "bundled",
    "summary": "14 low-poly cyber dressing models for Neon City Night games: benches, bins, crates, carts, awnings, shutters and tanks.",
    "tags": [
@@ -29733,7 +29739,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 762443,
+    "bytes": 808129,
     "tris_max": 1072
    },
    "catalog_ids": [
@@ -29766,19 +29772,19 @@
    "download": "archives/kit.neon_city_night.cyber_rooms-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 555,
      "path": "README.md",
-     "sha256": "1ec2cdb2a89d7efc50571bfb8acfb7e7629db31b665d87e79f2530b4e7c78666"
+     "sha256": "b500336fdda59c1368e055ae2a63a498e419e843edbe1161ad76bf29b85a9d72"
     },
     {
-     "bytes": 16138,
+     "bytes": 16635,
      "path": "kit.json",
-     "sha256": "6cdf702c345087aa1ddcb5600b98cec09400164061a1e6e9777610ba77bd27b3"
+     "sha256": "79b6c00ae392627316cd53fec028a67b70e472cd9564ae388e8ea34b5ffba638"
     },
     {
      "bytes": 38892,
@@ -29881,6 +29887,12 @@
      "path": "models/cyroom.rooftop.glb",
      "sha256": "f18bd063ce0f1caad78c2e5e5c127bebd98c2cb38c6d496171e975b49bd27573",
      "tris": 492
+    },
+    {
+     "bytes": 45192,
+     "path": "models/cyroom.rooftop__arena.glb",
+     "sha256": "945277dc278d2488aacaed91d409511333a0490369e4444817b942f56295dd41",
+     "tris": 702
     },
     {
      "bytes": 45192,
@@ -30081,10 +30093,10 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon City Night Cyber Interiors",
-   "sha256": "cdb0b908f2ae0924fc0514055dd1927cb6ac680f990cc2bb3ae7812791a5bee3",
-   "size": 779732,
+   "sha256": "bd1e37ed57c8051dca7dc7016f29e46d927472c513acb6457c1836ba56b59a0c",
+   "size": 825729,
    "source": "bundled",
-   "summary": "26 low-poly cyber rooms models for Neon City Night games: club, apartment, den, lobby, subway and roof shells with furniture.",
+   "summary": "27 low-poly cyber rooms models for Neon City Night games: club, apartment, den, lobby, subway and roof shells with furniture.",
    "tags": [
     "apartment",
     "bar",
@@ -30113,7 +30125,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 389134,
+    "bytes": 389131,
     "tris_max": 414
    },
    "catalog_ids": [
@@ -30141,9 +30153,9 @@
    "download": "archives/kit.neon_city_night.cyber_signs-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 554,
@@ -30356,8 +30368,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon City Night Cyber Signs",
-   "sha256": "5ffb79de0733eb19937f306a0d96aa37f04b963befef1ce677109460d014c149",
-   "size": 400963,
+   "sha256": "a547bb0c5eb4782e73b3189c96d964cf7b1805d3d1d4d63f5b549e4b77a1c21a",
+   "size": 400960,
    "source": "bundled",
    "summary": "16 low-poly cyber signs models for Neon City Night games: original glyph signs, billboards, banners, holo signs and storefronts.",
    "tags": [
@@ -30388,7 +30400,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 178595,
+    "bytes": 178592,
     "tris_max": 184
    },
    "catalog_ids": [
@@ -30416,9 +30428,9 @@
    "download": "archives/kit.neon_city_night.cyber_sky-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 543,
@@ -30596,8 +30608,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon City Night Cyber Sky",
-   "sha256": "a5bdd8130037c0d5022b9fa11c98603065d767685e3ed0c81527aef99620bbbb",
-   "size": 187845,
+   "sha256": "5c62fc1d0ae096945e47e3817d5cd345f3b924c2ebc746925e93194b6da083a5",
+   "size": 187842,
    "source": "bundled",
    "summary": "21 low-poly cyber sky models for Neon City Night games: layered skyline cards, aircraft, halo and network cards, megatower.",
    "tags": [
@@ -30628,7 +30640,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 367933,
+    "bytes": 367930,
     "tris_max": 310
    },
    "catalog_ids": [
@@ -30657,9 +30669,9 @@
    "download": "archives/kit.neon_city_night.cyber_streets-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 557,
@@ -30885,8 +30897,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon City Night Cyber Streets",
-   "sha256": "87750645a6edb675c7ad7e0b1356249ff3dc895ec4693467d573c9c44a7d5f3a",
-   "size": 380444,
+   "sha256": "3eb6907b92482175917c42283b9ec8ce21cb69c2a9ee3b8f279c3b47d07b93c2",
+   "size": 380441,
    "source": "bundled",
    "summary": "19 low-poly cyber streets models for Neon City Night games: roads, crossings, elevated roads, rail, ramps, alleys and plazas.",
    "tags": [
@@ -30917,7 +30929,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 434754,
+    "bytes": 434751,
     "tris_max": 402
    },
    "catalog_ids": [
@@ -30947,9 +30959,9 @@
    "download": "archives/kit.neon_city_night.cyber_tech-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 554,
@@ -31176,8 +31188,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon City Night Cyber Tech",
-   "sha256": "e78666fe7a6879fc70d6fbf5738003e51ce62563d4805a354d02ed8112690c10",
-   "size": 447225,
+   "sha256": "8f3e3c156961ae2f2050dec19212e0ee0466e4baf34015f2fc47b49338c3c04a",
+   "size": 447222,
    "source": "bundled",
    "summary": "20 low-poly cyber tech models for Neon City Night games: terminals, racks, vending, conduits, drones, hover-cars and street lights.",
    "tags": [
@@ -31208,7 +31220,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 758288,
+    "bytes": 758285,
     "tris_max": 578
    },
    "catalog_ids": [
@@ -31236,9 +31248,9 @@
    "download": "archives/kit.neon_city_night.cyber_towers-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 565,
@@ -31480,8 +31492,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon City Night Cyber Towers",
-   "sha256": "4fc17b94bd7fefd5a29197cd51c57c2c242f10a310cdfac63d5d96b76fa506b0",
-   "size": 771723,
+   "sha256": "67d6dfd85750a1b126094a3e71a904cd351f2862a61d5ee86ab64d152dc19ddb",
+   "size": 771720,
    "source": "bundled",
    "summary": "20 low-poly cyber towers models for Neon City Night games: drum, setback, needle, twin and wedge towers, crowns, facades and skybridges.",
    "tags": [
@@ -31512,7 +31524,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 12438,
+    "bytes": 12435,
     "tris_max": 84
    },
    "catalog_ids": [
@@ -31527,9 +31539,9 @@
    "download": "archives/kit.neon_city_night.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 539,
@@ -31557,8 +31569,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon City Night Terrain & Sky",
-   "sha256": "af0728c6860f12b665cc1f2d819bb0b7fe560b8aea443ac17b010bc222a1dc7f",
-   "size": 14032,
+   "sha256": "f3722de7f51632ab2f73f9cd6fb07b056ea609588fd93ef2ec988fa54c6b8c7f",
+   "size": 14029,
    "source": "bundled",
    "summary": "1 low-poly terrain models for Neon City Night games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -31580,7 +31592,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 154023,
+    "bytes": 154020,
     "tris_max": 148
    },
    "catalog_ids": [
@@ -31608,9 +31620,9 @@
    "download": "archives/kit.neon_dawn.cyber_dressing-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 531,
@@ -31776,8 +31788,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon Dawn Cyber Street Dressing",
-   "sha256": "2670f285b3e24fe2f03bc2fe1687b41fa50b42eb741211e7444e1342fe41c012",
-   "size": 162900,
+   "sha256": "384d82b0614dfad4691b1372b9df7373ac8adcac5b071a4a20fdbbef8752b7c4",
+   "size": 162897,
    "source": "bundled",
    "summary": "14 low-poly cyber dressing models for Neon Dawn games: benches, bins, crates, carts, awnings, shutters and tanks.",
    "tags": [
@@ -31808,7 +31820,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 758474,
+    "bytes": 803956,
     "tris_max": 1072
    },
    "catalog_ids": [
@@ -31841,19 +31853,19 @@
    "download": "archives/kit.neon_dawn.cyber_rooms-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 525,
      "path": "README.md",
-     "sha256": "e2d526be72f7396969c3ced826a3a58cfcf118dbd174a35d633b56ed6472021e"
+     "sha256": "8c7471f855f2dd3cf41f21f2e7d93ecd5a56b42a34d4ed694722bbf61f0e5771"
     },
     {
-     "bytes": 15382,
+     "bytes": 15843,
      "path": "kit.json",
-     "sha256": "993ed71db2d9c8cb39ff3e22d35eafedbbe04a0083d5edd9b3be52bff3efc6af"
+     "sha256": "eb0a454cce5d67742239f1b2341457a91761da8d59b3a265c58049bb578f908c"
     },
     {
      "bytes": 38816,
@@ -31956,6 +31968,12 @@
      "path": "models/cyroom.rooftop.glb",
      "sha256": "7d5e6d93ec684ef2649c4fe8c43b8f988d921026a90c6ca6b9c246aef80ecdc9",
      "tris": 492
+    },
+    {
+     "bytes": 45024,
+     "path": "models/cyroom.rooftop__arena.glb",
+     "sha256": "b07c500ca0c3243106a56792114718b23a1ed1e19b1879b9efc22b282177413a",
+     "tris": 702
     },
     {
      "bytes": 45028,
@@ -32156,10 +32174,10 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon Dawn Cyber Interiors",
-   "sha256": "76c8c73e5b2dd8f2eef1fb6863f00aff7bd00ebc3e7f7d38e6585e1c90635bd8",
-   "size": 775247,
+   "sha256": "18af3fa3ee265c56f8ab1b445d301d766729314fdb084c3539537627db163d40",
+   "size": 821040,
    "source": "bundled",
-   "summary": "26 low-poly cyber rooms models for Neon Dawn games: club, apartment, den, lobby, subway and roof shells with furniture.",
+   "summary": "27 low-poly cyber rooms models for Neon Dawn games: club, apartment, den, lobby, subway and roof shells with furniture.",
    "tags": [
     "apartment",
     "bar",
@@ -32188,7 +32206,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 387490,
+    "bytes": 387487,
     "tris_max": 414
    },
    "catalog_ids": [
@@ -32216,9 +32234,9 @@
    "download": "archives/kit.neon_dawn.cyber_signs-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 524,
@@ -32431,8 +32449,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon Dawn Cyber Signs",
-   "sha256": "d6986a8b808a5be94024b175e576853db66a9b4c4ae09184f793952429887079",
-   "size": 398947,
+   "sha256": "6688b3164d301a65f94f5debe7ecc9514dcb044cd513fafe4e9405984f9cd16a",
+   "size": 398944,
    "source": "bundled",
    "summary": "16 low-poly cyber signs models for Neon Dawn games: original glyph signs, billboards, banners, holo signs and storefronts.",
    "tags": [
@@ -32463,7 +32481,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 177985,
+    "bytes": 177982,
     "tris_max": 184
    },
    "catalog_ids": [
@@ -32491,9 +32509,9 @@
    "download": "archives/kit.neon_dawn.cyber_sky-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 513,
@@ -32671,8 +32689,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon Dawn Cyber Sky",
-   "sha256": "98f4d0cf037960781bfa415e3203e5582b0580a2cf4f2018a10884e4285a8b25",
-   "size": 187097,
+   "sha256": "05ff4c0feb26b10696d916aa1122a60125f7a67f4c55477ce72b467f01ef16f3",
+   "size": 187094,
    "source": "bundled",
    "summary": "21 low-poly cyber sky models for Neon Dawn games: layered skyline cards, aircraft, halo and network cards, megatower.",
    "tags": [
@@ -32703,7 +32721,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 367940,
+    "bytes": 367937,
     "tris_max": 310
    },
    "catalog_ids": [
@@ -32732,9 +32750,9 @@
    "download": "archives/kit.neon_dawn.cyber_streets-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 527,
@@ -32960,8 +32978,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon Dawn Cyber Streets",
-   "sha256": "4bd0491a3719cc3c7eef78b1999a97a8823f21c826217426608de809e5d4dbc4",
-   "size": 380097,
+   "sha256": "2ec1cfa80feb869d601e3b70fc249b246f890ce27b4eea8ef316e8c1592fc514",
+   "size": 380094,
    "source": "bundled",
    "summary": "19 low-poly cyber streets models for Neon Dawn games: roads, crossings, elevated roads, rail, ramps, alleys and plazas.",
    "tags": [
@@ -32992,7 +33010,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 431365,
+    "bytes": 431362,
     "tris_max": 402
    },
    "catalog_ids": [
@@ -33022,9 +33040,9 @@
    "download": "archives/kit.neon_dawn.cyber_tech-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 524,
@@ -33251,8 +33269,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon Dawn Cyber Tech",
-   "sha256": "bcb7ff1104efd5b69f718691d0fdbc71867757499cd6bb78ae5e4b4997d0eac3",
-   "size": 443500,
+   "sha256": "c96c79ebdcf006f4c892c52926ee1cdde7a49dca30a25935b9d4dad749dd032d",
+   "size": 443497,
    "source": "bundled",
    "summary": "20 low-poly cyber tech models for Neon Dawn games: terminals, racks, vending, conduits, drones, hover-cars and street lights.",
    "tags": [
@@ -33283,7 +33301,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 756388,
+    "bytes": 756385,
     "tris_max": 578
    },
    "catalog_ids": [
@@ -33311,9 +33329,9 @@
    "download": "archives/kit.neon_dawn.cyber_towers-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 535,
@@ -33555,8 +33573,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon Dawn Cyber Towers",
-   "sha256": "ac4348c3ba02c4200130874e3b389951db80fc8700c38b8995cfae6c6569e9eb",
-   "size": 769433,
+   "sha256": "bf56946f775c507368360356d56983f96280c95116e03339efd0652e197b51aa",
+   "size": 769430,
    "source": "bundled",
    "summary": "20 low-poly cyber towers models for Neon Dawn games: drum, setback, needle, twin and wedge towers, crowns, facades and skybridges.",
    "tags": [
@@ -33587,7 +33605,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 12291,
+    "bytes": 12288,
     "tris_max": 84
    },
    "catalog_ids": [
@@ -33602,9 +33620,9 @@
    "download": "archives/kit.neon_dawn.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 509,
@@ -33632,8 +33650,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Neon Dawn Terrain & Sky",
-   "sha256": "3b0e20a198affe747ffc2432de85266d81ba632937fbb992405bf6fe21f8c39c",
-   "size": 13855,
+   "sha256": "74b6f88292af90c8d2617abfabd4c9676b9d78d23853cd800d6aa30d2f121862",
+   "size": 13852,
    "source": "bundled",
    "summary": "1 low-poly terrain models for Neon Dawn games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -33655,7 +33673,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 742862,
+    "bytes": 742859,
     "tris_max": 1482
    },
    "catalog_ids": [
@@ -33684,9 +33702,9 @@
    "download": "archives/kit.polar_pod.architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 537,
@@ -33886,8 +33904,8 @@
    "name": "Polar Pod Architecture",
    "preview": "previews/kit.polar_pod.architecture.png",
    "preview_source": "kit render (Blender preview of the shipped model)",
-   "sha256": "f36dbcc94cfbbe33a59174e15fd991f371fddc424637fe37d51d95a0365796c9",
-   "size": 753238,
+   "sha256": "7f6420de61e5f2af821ae6ace71885e81bebb12967b7e36ca8bc6390955d9cfc",
+   "size": 753235,
    "source": "bundled",
    "summary": "21 low-poly architecture models for Polar Pod games: walls, floors, doors, windows, roofs, stairs, bridges, a tower and room shells.",
    "tags": [
@@ -33918,7 +33936,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 581171,
+    "bytes": 581168,
     "tris_max": 394
    },
    "catalog_ids": [
@@ -33945,9 +33963,9 @@
    "download": "archives/kit.polar_pod.furniture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 519,
@@ -34167,8 +34185,8 @@
    "name": "Polar Pod Furniture",
    "preview": "previews/kit.polar_pod.furniture.png",
    "preview_source": "kit render (Blender preview of the shipped model)",
-   "sha256": "f08cb5cd7435dfabcadf25ea8c27fe9be0c1847f2d4cd9e36eb59d7434a3ddc9",
-   "size": 592455,
+   "sha256": "605f944dbf572990bfcfe39e66b2e25c25d3c0f962fe3bd4bcfdfa23fef07ac4",
+   "size": 592452,
    "source": "bundled",
    "summary": "26 low-poly furniture models for Polar Pod games: beds, seats, tables, lamps, shelves, chests, a hearth, rugs and cushions.",
    "tags": [
@@ -34199,7 +34217,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 134840,
+    "bytes": 134837,
     "tris_max": 256
    },
    "catalog_ids": [
@@ -34217,9 +34235,9 @@
    "download": "archives/kit.polar_pod.nature-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 464,
@@ -34310,8 +34328,8 @@
    "name": "Polar Pod Nature",
    "preview": "previews/kit.polar_pod.nature.png",
    "preview_source": "kit render (Blender preview of the shipped model)",
-   "sha256": "74ca0c4e3138ffff68c66c3551e2e8ed390a5ee39697bba05fbeca4bcd47f9a1",
-   "size": 139640,
+   "sha256": "f90378bb3449ff69f3819587e057e7b4910a12b342621140ca15fd385bdb3099",
+   "size": 139637,
    "source": "bundled",
    "summary": "7 low-poly nature models for Polar Pod games: trees, bushes, rocks and grass.",
    "tags": [
@@ -34336,7 +34354,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 64940,
+    "bytes": 64937,
     "tris_max": 112
    },
    "catalog_ids": [
@@ -34356,9 +34374,9 @@
    "download": "archives/kit.polar_pod.props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 476,
@@ -34433,8 +34451,8 @@
    "name": "Polar Pod Props",
    "preview": "previews/kit.polar_pod.props.png",
    "preview_source": "kit render (Blender preview of the shipped model)",
-   "sha256": "b928f192dbc50b1dcba687b92416033471bd1ba80b54fa34b03100bc935092e4",
-   "size": 68747,
+   "sha256": "a5b8d5cfe2efb848117ca57ba6b403e228215a139d0bd800623f47687252b16e",
+   "size": 68744,
    "source": "bundled",
    "summary": "6 low-poly props models for Polar Pod games: keys, books, signs, tools, devices and vessels.",
    "tags": [
@@ -34461,7 +34479,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 116643,
+    "bytes": 116640,
     "tris_max": 554
    },
    "catalog_ids": [
@@ -34481,9 +34499,9 @@
    "download": "archives/kit.polar_pod.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 509,
@@ -34591,8 +34609,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Polar Pod Terrain & Sky",
-   "sha256": "112204b5560ba1e374fef2f23a86cd9ea9d2fc486e0b296679afbda068dc2f9d",
-   "size": 122567,
+   "sha256": "c3e5c34b4d300b186b4834a3aa9171f6e22189a90d6b73509725e1cf2022a45d",
+   "size": 122564,
    "source": "bundled",
    "summary": "6 low-poly terrain models for Polar Pod games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -34619,7 +34637,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 121622,
+    "bytes": 121619,
     "tris_max": 488
    },
    "catalog_ids": [
@@ -34635,9 +34653,9 @@
    "download": "archives/kit.polar_pod.vehicles-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 469,
@@ -34687,8 +34705,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Polar Pod Vehicles",
-   "sha256": "e41a9769b945a109c515ec4c329b6202f4236ff699c0af2a30cbbef638a62a1a",
-   "size": 124378,
+   "sha256": "644c1366a40dcac94193281f6ea9fd068f0f540177019854952be024f2a8fa40",
+   "size": 124375,
    "source": "bundled",
    "summary": "3 low-poly vehicles models for Polar Pod games: a rowboat and a small craft.",
    "tags": [
@@ -34711,7 +34729,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 520957,
+    "bytes": 520954,
     "tris_max": 500
    },
    "catalog_ids": [
@@ -34730,9 +34748,9 @@
    "download": "archives/kit.space_station.ships-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 511,
@@ -34891,8 +34909,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Space Station Ships & Vehicles",
-   "sha256": "dbc37387f8280d50049877b90d0fc2e5d2de8ae1077121c21e10ae99be1b2bf6",
-   "size": 529791,
+   "sha256": "a2c17253f566f045783dc320c36eb17f2254d716d4c24cc998078c47ed3e24e3",
+   "size": 529788,
    "source": "bundled",
    "summary": "12 low-poly ships models for Space Station games: shuttles, haulers, rovers, escape pods and drones.",
    "tags": [
@@ -34918,7 +34936,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 62124,
+    "bytes": 62121,
     "tris_max": 120
    },
    "catalog_ids": [
@@ -34936,9 +34954,9 @@
    "download": "archives/kit.space_station.space_sky-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 512,
@@ -35017,8 +35035,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Space Station Space Sky",
-   "sha256": "7c024a087b864a5ceaea8fcbfad2c7ed3e5204852c23e667a25e6bce094f6b12",
-   "size": 66404,
+   "sha256": "d8ddcee88aec9089518965eef011ea6c48da083558fcd9c84b06417b448fac08",
+   "size": 66401,
    "source": "bundled",
    "summary": "7 low-poly space sky models for Space Station games: star domes, planets, nebulae and horizon rings.",
    "tags": [
@@ -35043,7 +35061,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 852408,
+    "bytes": 852405,
     "tris_max": 1090
    },
    "catalog_ids": [
@@ -35069,9 +35087,9 @@
    "download": "archives/kit.space_station.station_architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 563,
@@ -35366,8 +35384,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Space Station Station Architecture",
-   "sha256": "7674c63fcac8732ec6b568c55b5367adf791be149fb8221d433408340e01c97b",
-   "size": 868000,
+   "sha256": "4b94ad8e24458c2e16af172f1997dff834b500949e7795768263bc11b5383158",
+   "size": 867997,
    "source": "bundled",
    "summary": "33 low-poly station architecture models for Space Station games: corridors, airlocks, decks, bridge and hangar shells.",
    "tags": [
@@ -35398,7 +35416,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 658536,
+    "bytes": 658533,
     "tris_max": 460
    },
    "catalog_ids": [
@@ -35424,9 +35442,9 @@
    "download": "archives/kit.space_station.tech_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 539,
@@ -35661,8 +35679,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Space Station Tech Props",
-   "sha256": "e73dd1cc5246f3fa5ac1b244c448ee4b638a2e4a05ebe45a2e6f78212276186a",
-   "size": 671151,
+   "sha256": "608c4f4e09c77313e8a27730a286aaeb93777d1d9b6de413a6d7f094ee152680",
+   "size": 671148,
    "source": "bundled",
    "summary": "23 low-poly tech props models for Space Station games: consoles, holo-tables, cryo pods, crates, tanks, vents and terminals.",
    "tags": [
@@ -35693,7 +35711,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 190924,
+    "bytes": 190921,
     "tris_max": 216
    },
    "catalog_ids": [
@@ -35715,9 +35733,9 @@
    "download": "archives/kit.stone_dungeon.cave-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 529,
@@ -35848,8 +35866,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon Cave",
-   "sha256": "62aff8c28ddda6bd5f3d1853d0c92ac077fbc4be1ad00f8aedb430e09416d460",
-   "size": 197788,
+   "sha256": "0583deef8105cf70d1585f911b77df076b8272a74b5f0b8e8c2bc18b68fa64d6",
+   "size": 197785,
    "source": "bundled",
    "summary": "14 low-poly cave models for Stone Dungeon games: organic rock walls, floors, stalactites, boulders, a cave mouth, ledges and cliffs.",
    "tags": [
@@ -35878,7 +35896,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1997862,
+    "bytes": 1997859,
     "tris_max": 1448
    },
    "catalog_ids": [
@@ -35904,9 +35922,9 @@
    "download": "archives/kit.stone_dungeon.dungeon_architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 605,
@@ -36396,8 +36414,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon Dungeon Architecture",
-   "sha256": "973cf2d636bdcad3b5fc0b70e52906be88a996fc447a8a77878fcd59aed50862",
-   "size": 2023182,
+   "sha256": "d952ad658c233931e649d510a7b9d2c43a7325e9e477b7c496ed8cc3c3fd7094",
+   "size": 2023179,
    "source": "bundled",
    "summary": "68 low-poly dungeon architecture models for Stone Dungeon games: corridors, room shells, doorways, locked doors, stairs, pillars, pits, bridges, window slits, c",
    "tags": [
@@ -36428,7 +36446,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 517447,
+    "bytes": 517444,
     "tris_max": 330
    },
    "catalog_ids": [
@@ -36454,9 +36472,9 @@
    "download": "archives/kit.stone_dungeon.dungeon_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 584,
@@ -36710,8 +36728,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon Dungeon Props",
-   "sha256": "9a33e89df74af74ed2c0e8f13aa699df1eef1d09323ce35d09abb8850c155888",
-   "size": 531038,
+   "sha256": "cca75e1069683da21c66969dea6de15bfe4e43e0d20334db7ab2933dcb3ba228",
+   "size": 531035,
    "source": "bundled",
    "summary": "27 low-poly dungeon props models for Stone Dungeon games: sconces, braziers, chests, pots, switches, pressure plates, a carved push block, statues, banners, cob",
    "tags": [
@@ -36742,7 +36760,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 342515,
+    "bytes": 342512,
     "tris_max": 512
    },
    "catalog_ids": [
@@ -36764,9 +36782,9 @@
    "download": "archives/kit.stone_dungeon.lake-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 546,
@@ -36944,8 +36962,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon Lake & Water",
-   "sha256": "36e688f73270898e73d520af2cecc1a24445b91df6f95268acff20b528570973",
-   "size": 352109,
+   "sha256": "bb49289006b8176366f8ad4b26fbb1f294645508d0474cf58fc9a63da9a0f612",
+   "size": 352106,
    "source": "bundled",
    "summary": "16 low-poly lake models for Stone Dungeon games: water, shores, a dock, a stepping-stone bridge, reeds, lilies, a waterfall and the lake bed.",
    "tags": [
@@ -36974,7 +36992,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 26530,
+    "bytes": 26527,
     "tris_max": 170
    },
    "catalog_ids": [
@@ -36990,9 +37008,9 @@
    "download": "archives/kit.stone_dungeon.nature-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 484,
@@ -37031,8 +37049,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon Nature",
-   "sha256": "f9f1a6965983ae7a4193abc4e4f9242a7050f2ed4f92dd7cb13ed55a8c16cb3c",
-   "size": 28700,
+   "sha256": "ea217a32e9c567b81bee85740ba8eb75c6d127fd4491896886e66049244e4a38",
+   "size": 28697,
    "source": "bundled",
    "summary": "2 low-poly nature models for Stone Dungeon games: trees, bushes, rocks and grass.",
    "tags": [
@@ -37055,7 +37073,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 376886,
+    "bytes": 376883,
     "tris_max": 440
    },
    "catalog_ids": [
@@ -37077,9 +37095,9 @@
    "download": "archives/kit.stone_dungeon.temple-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 537,
@@ -37250,8 +37268,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon Temple",
-   "sha256": "b66b5bee80b115eef4e956f3c5f4168c1e75bdda2b7e523cbf8635bfb965d4aa",
-   "size": 386195,
+   "sha256": "16362961c863bc78bb71e4da4b34adf026b4cbe3779c56a288e2b07762c3a5f7",
+   "size": 386192,
    "source": "bundled",
    "summary": "14 low-poly temple models for Stone Dungeon games: columns, altars, carved reliefs, a boss door, a dais, an obelisk and inlaid floors.",
    "tags": [
@@ -37280,7 +37298,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 12303,
+    "bytes": 12300,
     "tris_max": 84
    },
    "catalog_ids": [
@@ -37295,9 +37313,9 @@
    "download": "archives/kit.stone_dungeon.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 529,
@@ -37325,8 +37343,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon Terrain & Sky",
-   "sha256": "5099db6194e045b32b7c9f52f4d47f9e12d2dc6b7973e6feab91d60331561203",
-   "size": 13887,
+   "sha256": "0d6a4a153aa137f0cccd9c73de035ad07bbf8f9481cbbed2f133cbae65983b13",
+   "size": 13884,
    "source": "bundled",
    "summary": "1 low-poly terrain models for Stone Dungeon games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -37348,7 +37366,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 190023,
+    "bytes": 190020,
     "tris_max": 216
    },
    "catalog_ids": [
@@ -37370,9 +37388,9 @@
    "download": "archives/kit.stone_dungeon_torchlit.cave-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 578,
@@ -37503,8 +37521,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon (Torchlit) Cave",
-   "sha256": "9b83914b6365ae379c5f197aaf5983272d6ef47ecf0ac3ec6bdc6cd10a51572b",
-   "size": 197069,
+   "sha256": "27f3918d044dbf942d1bc188fb111c02cd8ae79c2d37e4af32cf6593ac0b1f37",
+   "size": 197066,
    "source": "bundled",
    "summary": "14 low-poly cave models for Stone Dungeon (Torchlit) games: organic rock walls, floors, stalactites, boulders, a cave mouth, ledges and cliffs.",
    "tags": [
@@ -37533,7 +37551,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 2011882,
+    "bytes": 2011879,
     "tris_max": 1448
    },
    "catalog_ids": [
@@ -37559,9 +37577,9 @@
    "download": "archives/kit.stone_dungeon_torchlit.dungeon_architecture-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 643,
@@ -38051,8 +38069,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon (Torchlit) Dungeon Architecture",
-   "sha256": "4fd7f51085fc0161abea9f3ec7b9f1044a77f69fd86bcbed4fd0d017484f5c3c",
-   "size": 2037573,
+   "sha256": "443e5843dc97ec51da337d60bd4729723a62ee8f7a9890c0bf0f85c3fbfe38e0",
+   "size": 2037570,
    "source": "bundled",
    "summary": "68 low-poly dungeon architecture models for Stone Dungeon (Torchlit) games: corridors, room shells, doorways, locked doors, stairs, pillars, pits, bridges, wind",
    "tags": [
@@ -38083,7 +38101,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 520181,
+    "bytes": 520178,
     "tris_max": 330
    },
    "catalog_ids": [
@@ -38109,9 +38127,9 @@
    "download": "archives/kit.stone_dungeon_torchlit.dungeon_props-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 622,
@@ -38365,8 +38383,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon (Torchlit) Dungeon Props",
-   "sha256": "be00f9c83c7d2cc2068144ba4999f2c503c4a0fce9c0529c7ee578e72066aea4",
-   "size": 534197,
+   "sha256": "5d0d4375b97dd2ba31a58419fc33659f4d8eea041fb798a6e2a29b116c99e6d6",
+   "size": 534194,
    "source": "bundled",
    "summary": "27 low-poly dungeon props models for Stone Dungeon (Torchlit) games: sconces, braziers, chests, pots, switches, pressure plates, a carved push block, statues, b",
    "tags": [
@@ -38397,7 +38415,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 343128,
+    "bytes": 343125,
     "tris_max": 512
    },
    "catalog_ids": [
@@ -38419,9 +38437,9 @@
    "download": "archives/kit.stone_dungeon_torchlit.lake-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 595,
@@ -38599,8 +38617,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon (Torchlit) Lake & Water",
-   "sha256": "47cb76ad681316071b6a8103275a26123928786690d1d1c089dfa94fea430511",
-   "size": 353093,
+   "sha256": "c76be9f2ab6098a9fe4ba399d0bf156305c9f2147c5b41a067263607ea7d3e15",
+   "size": 353090,
    "source": "bundled",
    "summary": "16 low-poly lake models for Stone Dungeon (Torchlit) games: water, shores, a dock, a stepping-stone bridge, reeds, lilies, a waterfall and the lake bed.",
    "tags": [
@@ -38629,7 +38647,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 26804,
+    "bytes": 26801,
     "tris_max": 170
    },
    "catalog_ids": [
@@ -38645,9 +38663,9 @@
    "download": "archives/kit.stone_dungeon_torchlit.nature-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 533,
@@ -38686,8 +38704,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon (Torchlit) Nature",
-   "sha256": "2565f0cf04c9f4fa12a2e8bce1009befe3a2df64d82d24f67862f3ce6e2cf77f",
-   "size": 29048,
+   "sha256": "8dc4b6aac255af747cf3fd3d1767c2d7e03fd91b0ca5e066dca287a7a4622b4f",
+   "size": 29045,
    "source": "bundled",
    "summary": "2 low-poly nature models for Stone Dungeon (Torchlit) games: trees, bushes, rocks and grass.",
    "tags": [
@@ -38710,7 +38728,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 379855,
+    "bytes": 379852,
     "tris_max": 440
    },
    "catalog_ids": [
@@ -38732,9 +38750,9 @@
    "download": "archives/kit.stone_dungeon_torchlit.temple-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 586,
@@ -38905,8 +38923,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon (Torchlit) Temple",
-   "sha256": "16270be036be37235199b3b4009430ee1314b05858f1c878742df22b50eed368",
-   "size": 389562,
+   "sha256": "e89d938db1031ff24e32459d7beede218246463d727295ea212d65d37687cd3e",
+   "size": 389559,
    "source": "bundled",
    "summary": "14 low-poly temple models for Stone Dungeon (Torchlit) games: columns, altars, carved reliefs, a boss door, a dais, an obelisk and inlaid floors.",
    "tags": [
@@ -38935,7 +38953,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 12390,
+    "bytes": 12387,
     "tris_max": 84
    },
    "catalog_ids": [
@@ -38950,9 +38968,9 @@
    "download": "archives/kit.stone_dungeon_torchlit.terrain-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 578,
@@ -38980,8 +38998,8 @@
    "kind": "kit",
    "licence": "MIT",
    "name": "Stone Dungeon (Torchlit) Terrain & Sky",
-   "sha256": "4faa46e523f705db8f79ec57e0b8029f387284aaab6433426032ec172a7aeefa",
-   "size": 14021,
+   "sha256": "ff01644a048ce7d132849b1ebafffc824a310b3b8e060c4cebd1ee3a35145f31",
+   "size": 14018,
    "source": "bundled",
    "summary": "1 low-poly terrain models for Stone Dungeon (Torchlit) games: ground patches, yards, water, far hills, a sky dome and particles.",
    "tags": [
@@ -39003,7 +39021,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 304617,
+    "bytes": 304614,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -39031,9 +39049,9 @@
    "download": "archives/sound.combat-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 415,
@@ -39120,8 +39138,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Combat Sounds",
-   "sha256": "444575f22c04065e5177aa07348de31df08b0863d641a5f83c9531d59f652282",
-   "size": 309833,
+   "sha256": "1b88a3e1ae568cac5e71b85c1d9e69c60e72ec42d282984d3f6826579ae26f21",
+   "size": 309830,
    "source": "bundled",
    "summary": "14 original procedural sounds: block metal, block wood, death, explosion large and more.",
    "tags": [
@@ -39149,7 +39167,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 323526,
+    "bytes": 323523,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -39177,9 +39195,9 @@
    "download": "archives/sound.craft-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 431,
@@ -39266,8 +39284,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Crafting Sounds",
-   "sha256": "26f1f1f17396a80318733993f0a95eb04528b8cd117dd3d35fd356acecc73069",
-   "size": 328702,
+   "sha256": "94f4297c51f729bbeaa78f576d7cc2d4f5a0e0c5a11b6d8320ac393f156e1304",
+   "size": 328699,
    "source": "bundled",
    "summary": "14 original procedural sounds: assemble complete, assemble ratchet, assemble snap, build place and more.",
    "tags": [
@@ -39295,7 +39313,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 401018,
+    "bytes": 401015,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -39324,9 +39342,9 @@
    "download": "archives/sound.creatures-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 399,
@@ -39418,8 +39436,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Creature Calls",
-   "sha256": "20b5fa60713290bd0d3676a53fa021d109a607608814b29ff4908671d7ff3d26",
-   "size": 406564,
+   "sha256": "3fefb370f234babbb6851c24511aa1db85b3e32310a51d8ca785ce6c26137d03",
+   "size": 406561,
    "source": "bundled",
    "summary": "15 original procedural sounds: flap, tweet, chirp, meow and more.",
    "tags": [
@@ -39447,7 +39465,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 67157,
+    "bytes": 67154,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -39473,9 +39491,9 @@
    "download": "archives/sound.dialogue-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 399,
@@ -39552,8 +39570,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Dialogue Voices",
-   "sha256": "43bd84e4d3c47744da3fe4c7f2e2e41e38b04ec5d548a6c5b5763df4bed27f01",
-   "size": 71611,
+   "sha256": "b996e74858c03ec9da3fc8cd668f4c97178209587b6bae35cd6397a416e8b61e",
+   "size": 71608,
    "source": "bundled",
    "summary": "12 original procedural sounds: airy, bright, calm, child and more.",
    "tags": [
@@ -39581,7 +39599,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 379516,
+    "bytes": 379513,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -39622,9 +39640,9 @@
    "download": "archives/sound.footsteps-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 398,
@@ -39776,8 +39794,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Footsteps",
-   "sha256": "a6d13a0d3c9c0ea8f67594f024e02f49139dd6eaabea705034a02e4d968c3552",
-   "size": 388531,
+   "sha256": "05fd7b53053da422a654a9370876e9c4b41a48d6d43fbc747321f5218bc2b2e1",
+   "size": 388528,
    "source": "bundled",
    "summary": "27 original procedural sounds: carpet, grass, gravel, metal and more.",
    "tags": [
@@ -39971,7 +39989,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 4539557,
+    "bytes": 4539554,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -40023,9 +40041,9 @@
    "download": "archives/sound.habitat_wave1-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 448,
@@ -40232,8 +40250,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Habitat Sound Set",
-   "sha256": "d1bce11d9cd0f9e60abf9e48fccf6eed5a47341be7fdac24c68e34423a363072",
-   "size": 4550871,
+   "sha256": "4f7054e8c3b9342b11ffb350a6c5b6d2a111ccbf95821c1ec517078e3bb2622e",
+   "size": 4550868,
    "source": "bundled",
    "summary": "38 original low-fi sounds from Thaw: habitat ambience, footsteps, cats, UI, pickups and two music loops.",
    "tags": [
@@ -40259,7 +40277,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 682720,
+    "bytes": 682717,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -40286,9 +40304,9 @@
    "download": "archives/sound.machines-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 432,
@@ -40370,8 +40388,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Machine Hums",
-   "sha256": "1cd5d8ecdff0db2625d945ba646aeab2426195f6033d0bd071da0fbbe0d88ff4",
-   "size": 687697,
+   "sha256": "d9e7037d4e0281510c68c20617003f68b2206568c3638c95c5e4e10e0f103158",
+   "size": 687694,
    "source": "bundled",
    "summary": "13 original procedural sounds: computer accept, computer busy, elevator start, elevator stop and more.",
    "tags": [
@@ -40400,7 +40418,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 218835,
+    "bytes": 218832,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -40418,9 +40436,9 @@
    "download": "archives/sound.magic-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 388,
@@ -40457,8 +40475,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Magic Sparks",
-   "sha256": "2d583948b0e5c8de92116ffe89bf7a716b380c52bd60252f71ab6bba71d59d67",
-   "size": 220962,
+   "sha256": "2c356da16e866d1e1a564d54c7879dff12582eb47519fbee595be36a9979ec9d",
+   "size": 220959,
    "source": "bundled",
    "summary": "4 original procedural sounds: charge up, chime, portal, shimmer.",
    "tags": [
@@ -40484,7 +40502,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 389520,
+    "bytes": 389517,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -40512,9 +40530,9 @@
    "download": "archives/sound.mechanisms-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 417,
@@ -40601,8 +40619,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Doors & Mechanisms",
-   "sha256": "fa254764499c081309570a3384d0f6a03fca5e908b3aa63a8c987e2b65653ce9",
-   "size": 394524,
+   "sha256": "ba2e3cd75c467426c3a8349e3aa81ac7db1500d11706b7de6800f794b8c9ece1",
+   "size": 394521,
    "source": "bundled",
    "summary": "14 original procedural sounds: close, open, metal close, metal open and more.",
    "tags": [
@@ -40631,7 +40649,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 4413939,
+    "bytes": 4413936,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -40653,9 +40671,9 @@
    "download": "archives/sound.music-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 400,
@@ -40712,8 +40730,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Music Loops",
-   "sha256": "a9b2f2758751603524b95807cd85f0b975dc7fa066d8de994e8e68478ee44a82",
-   "size": 4417211,
+   "sha256": "c897df19ec7f9bf1bbe3d02af54990510f6a74d709a246959b461dcbd616f20a",
+   "size": 4417208,
    "source": "bundled",
    "summary": "8 original procedural sounds: cozy hub, credits, forest day, harbor and more.",
    "tags": [
@@ -40741,7 +40759,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 353237,
+    "bytes": 353234,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -40765,9 +40783,9 @@
    "download": "archives/sound.rewards-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 423,
@@ -40834,8 +40852,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Reward Chimes",
-   "sha256": "ba9839dfabad25a362bcff9e7b9d92eb34914219a1e21c9a1ebeada46ebc5d8a",
-   "size": 357287,
+   "sha256": "b03512b09ba953945aaff785528bc776b7616b9daa2eec45a6a53a70f17a35aa",
+   "size": 357284,
    "source": "bundled",
    "summary": "10 original procedural sounds: coin bright, coin soft, fanfare large, fanfare medium and more.",
    "tags": [
@@ -40864,7 +40882,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 201556,
+    "bytes": 201553,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -40883,9 +40901,9 @@
    "download": "archives/sound.stingers-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 401,
@@ -40927,8 +40945,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Stingers",
-   "sha256": "1f80eef145bce5205c43905212948c9f2b40be92c95bffbc586df93724e3c6bb",
-   "size": 204004,
+   "sha256": "eb68d964034ac0ab91cd4ba2836137c050e04d368ccd32ebbe1acac2e8c718b4",
+   "size": 204001,
    "source": "bundled",
    "summary": "5 original procedural sounds: danger, discovery, failure, mystery and more.",
    "tags": [
@@ -40954,7 +40972,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 224458,
+    "bytes": 224455,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -40988,9 +41006,9 @@
    "download": "archives/sound.ui-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 388,
@@ -41107,8 +41125,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Menu Sounds",
-   "sha256": "b3ffdce6eb0e170501022d3a2a5509b029cdc3e2ff9d704a47cd3210f7f3b36a",
-   "size": 231084,
+   "sha256": "a0edd213843b931fc73a6f27543008b56f1c7e9383c39f0f3dcf891f6d4bd67e",
+   "size": 231081,
    "source": "bundled",
    "summary": "20 original procedural sounds: back, confirm, error, level up and more.",
    "tags": [
@@ -41137,7 +41155,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 1672953,
+    "bytes": 1672950,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -41165,9 +41183,9 @@
    "download": "archives/sound.weather-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 425,
@@ -41254,8 +41272,8 @@
    "kind": "sound",
    "licence": "MIT",
    "name": "Weather & Ambience",
-   "sha256": "fa1df9e4e15316ba972464a5d68050713d7d9e7c062ef817b9ab0559a0907796",
-   "size": 1678163,
+   "sha256": "edf6954302ed5ad9ab7122579f33feddd819e8d12933a65fe6c9a4330604feca",
+   "size": 1678160,
    "source": "bundled",
    "summary": "14 original procedural sounds: cave drip, fire crackle, forest day, night insects and more.",
    "tags": [
@@ -41284,7 +41302,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 37148,
+    "bytes": 37145,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -41299,9 +41317,9 @@
    "download": "archives/style.alien_world-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 482,
@@ -41363,8 +41381,8 @@
    ],
    "preview": "previews/style.alien_world.png",
    "preview_source": "in-game capture of Corva Landing",
-   "sha256": "e362dc86185d703920ae520bf8db6f481e97b8c840711c5fd745b19a7d749f4c",
-   "size": 38597,
+   "sha256": "22b59e91c6bff0148fc4cd1d02c172c5eb9678ee369943fde36c7ddfce036630",
+   "size": 38594,
    "source": "bundled",
    "summary": "Alien World theme pack: palette, materials, fog and kit bindings for alien world kits. Select it to restyle a game.",
    "tags": [
@@ -41389,7 +41407,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 51827,
+    "bytes": 51824,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -41404,9 +41422,9 @@
    "download": "archives/style.ancient_ruins-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 494,
@@ -41469,8 +41487,8 @@
    ],
    "preview": "previews/style.ancient_ruins.png",
    "preview_source": "in-game capture of The Sun Road (ancient_ruins)",
-   "sha256": "9f5ac42dde0d5e7adf2d12d227092a2971b738624441162e4803d0317ed602a9",
-   "size": 53280,
+   "sha256": "9c2985c0fa0744f4661561f2cf5ac981f7d1c1eb12d4af195d189dc01f744d09",
+   "size": 53277,
    "source": "bundled",
    "summary": "Ancient Ruins theme pack: palette, materials, fog and kit bindings for ancient ruins kits. Select it to restyle a game.",
    "tags": [
@@ -41494,7 +41512,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 71108,
+    "bytes": 71105,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -41509,9 +41527,9 @@
    "download": "archives/style.canyon_mesa-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 482,
@@ -41574,8 +41592,8 @@
    ],
    "preview": "previews/style.canyon_mesa.png",
    "preview_source": "in-game capture of Redwater canyon (canyon_mesa)",
-   "sha256": "16ae8ab3b77ed693f8376fdae4909134a8dd3a01ad304eb19634a5be0e0c57ac",
-   "size": 72557,
+   "sha256": "7d9d1dc5f3dda3d1951a8c41d3c7dbd46b64772040bb8e8db56c9247b9eef23d",
+   "size": 72554,
    "source": "bundled",
    "summary": "Canyon Mesa theme pack: palette, materials, fog and kit bindings for canyon mesa kits. Select it to restyle a game.",
    "tags": [
@@ -41601,7 +41619,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 72811,
+    "bytes": 72808,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -41616,9 +41634,9 @@
    "download": "archives/style.castle_keep-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 482,
@@ -41681,8 +41699,8 @@
    ],
    "preview": "previews/style.castle_keep.png",
    "preview_source": "in-game capture of The Wayfarer's Audience square (castle_keep)",
-   "sha256": "d5340e952b39f7cf743446433e8dbf78a30fc01a38faa6fc95a4af80f603e565",
-   "size": 74260,
+   "sha256": "083eb3ac1c28f5eab600af02c158f64d39e97b45f04d0b948cc81cec8d669ff2",
+   "size": 74257,
    "source": "bundled",
    "summary": "Castle Keep theme pack: palette, materials, fog and kit bindings for castle keep kits. Select it to restyle a game.",
    "tags": [
@@ -41708,7 +41726,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 49375,
+    "bytes": 49615,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -41723,9 +41741,9 @@
    "download": "archives/style.cyber_blue_grid-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 506,
@@ -41733,9 +41751,9 @@
      "sha256": "a9f33365233e5e3283c817d8acf6d6a943125b3c03ef2a67c259a14799925d6b"
     },
     {
-     "bytes": 31366,
+     "bytes": 31609,
      "path": "bindings.json",
-     "sha256": "10598eaf87ee2976fe40d54aa22d018632db119b0e08145521d4fa1d66236524"
+     "sha256": "241a658038716ca6dbd025396debf79ba6268340fd5c66d34e00623434e94fab"
     },
     {
      "bytes": 1522,
@@ -41785,8 +41803,8 @@
    ],
    "preview": "previews/style.cyber_blue_grid.png",
    "preview_source": "in-game capture of Night Relay roof (cyber_blue_grid, round 41; art review open)",
-   "sha256": "04981c3f28d017caab865196609c4c194c8da49743a970a40aea1dcf1dc1b1c6",
-   "size": 50832,
+   "sha256": "54da8e3ee19d5d24073db7840d8d3241c70aa99819142cf21b44a34079e98228",
+   "size": 51072,
    "source": "bundled",
    "summary": "Cyber Blue Grid theme pack: palette, materials, fog and kit bindings for cyber blue grid kits. Select it to restyle a game.",
    "tags": [
@@ -41812,7 +41830,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 32168,
+    "bytes": 32165,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -41827,9 +41845,9 @@
    "download": "archives/style.forest_village-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 500,
@@ -41892,8 +41910,8 @@
    ],
    "preview": "previews/style.forest_village.png",
    "preview_source": "kit render of a Forest Village tree (not a game capture)",
-   "sha256": "c3b92b49d37d51ee9961bf8f0fcb99dae7ce5b5e4c573845e8f1452d6ea043cd",
-   "size": 33622,
+   "sha256": "55e025444f2fa91cebdb9dcc83fe2718002a4752ad227c7d8015bd491b27a7f3",
+   "size": 33619,
    "source": "bundled",
    "summary": "Forest Village theme pack: palette, materials, fog and kit bindings for forest village kits. Select it to restyle a game.",
    "tags": [
@@ -41916,7 +41934,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 71618,
+    "bytes": 71615,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -41931,9 +41949,9 @@
    "download": "archives/style.frontier_town-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 494,
@@ -41996,8 +42014,8 @@
    ],
    "preview": "previews/style.frontier_town.png",
    "preview_source": "in-game capture of Redwater (frontier_town)",
-   "sha256": "9d45bb6964273583615ffa6cf951a86d67e9f8072579835f8bf0097a30fba150",
-   "size": 73071,
+   "sha256": "035f2ebd3b806c68f5e5fc3f5fda85439c2e7c1b806528490c6d1f42c2f06d48",
+   "size": 73068,
    "source": "bundled",
    "summary": "Frontier Town theme pack: palette, materials, fog and kit bindings for frontier town kits. Select it to restyle a game.",
    "tags": [
@@ -42023,7 +42041,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 73367,
+    "bytes": 73364,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -42038,9 +42056,9 @@
    "download": "archives/style.frontier_town_golden-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 550,
@@ -42103,8 +42121,8 @@
    ],
    "preview": "previews/style.frontier_town_golden.png",
    "preview_source": "in-game capture of Redwater (golden hour)",
-   "sha256": "1e92d1691c037b184b2afa269f31dbbce3b432b1f6973c0e1886c9b4ae48fec6",
-   "size": 74841,
+   "sha256": "7ef65d8f6a4b8edc5b0ac166390a64a117650f120bd839a2dfd34492549cbce3",
+   "size": 74838,
    "source": "bundled",
    "summary": "Frontier Town (golden hour) theme pack: palette, materials, fog and kit bindings for frontier town golden kits. Select it to restyle a game.",
    "tags": [
@@ -42129,7 +42147,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 73145,
+    "bytes": 73142,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -42144,9 +42162,9 @@
    "download": "archives/style.frontier_town_night-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 534,
@@ -42209,8 +42227,8 @@
    ],
    "preview": "previews/style.frontier_town_night.png",
    "preview_source": "in-game capture of Redwater (night)",
-   "sha256": "099a93abeedb9dfa6f07536228a41bcf2c787aa1f5b5b07a4c84d3ae7f61dabd",
-   "size": 74612,
+   "sha256": "5a652efd31a45cda475f3fbb851337e6d027ec3d104079d4035d76974fad9435",
+   "size": 74609,
    "source": "bundled",
    "summary": "Frontier Town (night) theme pack: palette, materials, fog and kit bindings for frontier town night kits. Select it to restyle a game.",
    "tags": [
@@ -42235,7 +42253,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 51748,
+    "bytes": 51745,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -42250,9 +42268,9 @@
    "download": "archives/style.jungle_temple-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 494,
@@ -42315,8 +42333,8 @@
    ],
    "preview": "previews/style.jungle_temple.png",
    "preview_source": "in-game capture of The Sun Road (jungle_temple)",
-   "sha256": "d07ae04f3d55faf4d98ef5b884567e999e2f7afdb94d3b59cd103974aed12b52",
-   "size": 53201,
+   "sha256": "4375720d43bd5e9fa159321feb4c1b4a4b5bdead88572bd0b85f673dba781c4d",
+   "size": 53198,
    "source": "bundled",
    "summary": "Jungle Temple theme pack: palette, materials, fog and kit bindings for jungle temple kits. Select it to restyle a game.",
    "tags": [
@@ -42340,7 +42358,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 74102,
+    "bytes": 74099,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -42355,9 +42373,9 @@
    "download": "archives/style.medieval_village-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 512,
@@ -42420,8 +42438,8 @@
    ],
    "preview": "previews/style.medieval_village.png",
    "preview_source": "in-game capture of The Wayfarer's Audience square (medieval_village)",
-   "sha256": "9860c5f502fb75a0695db9b46c398873e43cc80413e2846fbcd9b5439d3f33ea",
-   "size": 75561,
+   "sha256": "43d525e19dc0ed10f3bc853e828e36b6dd86405d370e4650adfb57c61239ba4f",
+   "size": 75558,
    "source": "bundled",
    "summary": "Medieval Village theme pack: palette, materials, fog and kit bindings for medieval village kits. Select it to restyle a game.",
    "tags": [
@@ -42446,7 +42464,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 75358,
+    "bytes": 75355,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -42461,9 +42479,9 @@
    "download": "archives/style.medieval_village_dusk-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 546,
@@ -42526,8 +42544,8 @@
    ],
    "preview": "previews/style.medieval_village_dusk.png",
    "preview_source": "in-game capture of The Wayfarer's Audience square (medieval_village_dusk)",
-   "sha256": "1ecda9272d9ad54517999e006cc3cc7183a6195ba6afcd5d22ecfc1dc8197a9b",
-   "size": 76829,
+   "sha256": "d49d925bc71f8daf6803fd80b91319068499f5ae6dc0c990d545a48b89b5d5a5",
+   "size": 76826,
    "source": "bundled",
    "summary": "Medieval Village (dusk) theme pack: palette, materials, fog and kit bindings for medieval village dusk kits. Select it to restyle a game.",
    "tags": [
@@ -42552,7 +42570,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 75848,
+    "bytes": 75845,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -42567,9 +42585,9 @@
    "download": "archives/style.medieval_village_night-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 552,
@@ -42632,8 +42650,8 @@
    ],
    "preview": "previews/style.medieval_village_night.png",
    "preview_source": "in-game capture of The Wayfarer's Audience square (medieval_village_night)",
-   "sha256": "983f0e8c38e7724ab6c585f0bce6b4e51b12e116be562c32492fcb323689d540",
-   "size": 77321,
+   "sha256": "ed784c8444e7e876cd9eb8950a22f125e6537a8b64e10f38d48f6b2c34d66198",
+   "size": 77318,
    "source": "bundled",
    "summary": "Medieval Village (night) theme pack: palette, materials, fog and kit bindings for medieval village night kits. Select it to restyle a game.",
    "tags": [
@@ -42657,7 +42675,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 75109,
+    "bytes": 75106,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -42672,9 +42690,9 @@
    "download": "archives/style.medieval_village_snow-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 546,
@@ -42737,8 +42755,8 @@
    ],
    "preview": "previews/style.medieval_village_snow.png",
    "preview_source": "in-game capture of The Wayfarer's Audience square (medieval_village_snow)",
-   "sha256": "29dc770375245eb058bd6655def1a50786ea9b6c093705d6ddcf6dd26bbaebea",
-   "size": 76580,
+   "sha256": "f67d73a35db42a45b2d4fcd6836d526223f0a2666ed5f69b6b08b0ed4e5e825c",
+   "size": 76577,
    "source": "bundled",
    "summary": "Medieval Village (snow) theme pack: palette, materials, fog and kit bindings for medieval village snow kits. Select it to restyle a game.",
    "tags": [
@@ -42762,7 +42780,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 16594,
+    "bytes": 16591,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -42778,9 +42796,9 @@
    "download": "archives/style.n64_base-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 501,
@@ -42807,8 +42825,8 @@
     "#A87858",
     "#A0B0C0"
    ],
-   "sha256": "f459d648fddb276597ddeef937ffce1f44007c596eedff84174a053d834a2074",
-   "size": 17587,
+   "sha256": "3ff0af57f7978e0398da627635678dd343974b1cfaf5b3b97da7bd84aa5b5069",
+   "size": 17584,
    "source": "bundled",
    "summary": "Neutral low-poly N64-era defaults for small adventures. Data contract only; runtime integration and visual approval are pending.",
    "tags": [
@@ -42832,7 +42850,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 41269,
+    "bytes": 41266,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -42847,9 +42865,9 @@
    "download": "archives/style.n64_v0-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 486,
@@ -42917,8 +42935,8 @@
    ],
    "preview": "previews/style.n64_v0.png",
    "preview_source": "in-game capture of The Last Light, which uses Lantern Village",
-   "sha256": "03921ade90f3bc9ec18adb126b066ffc680b66af7e6c6c67b22f8ccb1e2a5119",
-   "size": 42941,
+   "sha256": "03681d5d109f58c80e2133569977ff23d864fd65965536b94518b065af78ff2f",
+   "size": 42938,
    "source": "bundled",
    "summary": "Lantern Village theme pack: palette, materials, fog and kit bindings for forest village kits. Select it to restyle a game.",
    "tags": [
@@ -42942,7 +42960,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 49540,
+    "bytes": 49780,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -42957,9 +42975,9 @@
    "download": "archives/style.neon_city_night-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 506,
@@ -42967,9 +42985,9 @@
      "sha256": "51addc166dbe1834e991d8589ac687cd339ec68dc5911678f83642b01379a806"
     },
     {
-     "bytes": 31366,
+     "bytes": 31609,
      "path": "bindings.json",
-     "sha256": "e5be3c3617baeb4f499c0c21422d803281dc44478ec0a3c77efeaaef073ae3dd"
+     "sha256": "a800a84b07a86bdfdda4d7ff4fe20a12a398c73d1c51cac6c1c361e720a125e7"
     },
     {
      "bytes": 1648,
@@ -43022,8 +43040,8 @@
    ],
    "preview": "previews/style.neon_city_night.png",
    "preview_source": "in-game capture of Night Relay street (neon_city_night, round 41; art review open)",
-   "sha256": "2f7a23b0dd1133db77d931ebd1476428b8bd8f2d2837e37eddd6a9e79de8ff64",
-   "size": 50997,
+   "sha256": "7106e876feb17a81142fbf67e1f2007f15cdda654d4d0c8fba4a7f9bd0939f44",
+   "size": 51237,
    "source": "bundled",
    "summary": "Neon City Night theme pack: palette, materials, fog and kit bindings for neon city night kits. Select it to restyle a game.",
    "tags": [
@@ -43049,7 +43067,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 48599,
+    "bytes": 48833,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -43064,9 +43082,9 @@
    "download": "archives/style.neon_dawn-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 470,
@@ -43074,9 +43092,9 @@
      "sha256": "8bbf59042e8f89d5a0983cc6e5fe9eba1cdd6091f7df515f70953d93075743b3"
     },
     {
-     "bytes": 30526,
+     "bytes": 30763,
      "path": "bindings.json",
-     "sha256": "4b93da836e0c0617bca279644946a1a00044157517dcfc98159b0be9bebe17df"
+     "sha256": "b64fb8923825a77299d9b27943c4e5e827b2eaf76d2ac5949f9c8b3d9d35eea2"
     },
     {
      "bytes": 1571,
@@ -43129,8 +43147,8 @@
    ],
    "preview": "previews/style.neon_dawn.png",
    "preview_source": "in-game capture of Night Relay street (neon_dawn, round 41; art review open)",
-   "sha256": "c9f5fe4eac71b7bdc9175aeb23f6b5b7a7201e4c64f011706113b8489c54fe9e",
-   "size": 50044,
+   "sha256": "d61b5475f0e227668cb3895fc83b746893e819c602c05ff0fd568c8b370af1a8",
+   "size": 50278,
    "source": "bundled",
    "summary": "Neon Dawn theme pack: palette, materials, fog and kit bindings for neon dawn kits. Select it to restyle a game.",
    "tags": [
@@ -43155,7 +43173,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 54748,
+    "bytes": 54745,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -43170,9 +43188,9 @@
    "download": "archives/style.polar_pod-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 470,
@@ -43240,8 +43258,8 @@
    ],
    "preview": "previews/style.polar_pod.png",
    "preview_source": "in-game capture of Thaw, which uses Polar Pod",
-   "sha256": "0d01db027d9bd1e3b3a2d207fe0918c07cebe00cdc9ee1224be72aa6bc5e99ff",
-   "size": 56418,
+   "sha256": "ed92b8c68dfcb2017d80302e8df26ea0a942a0f4e46cd00475ff011497dd80eb",
+   "size": 56415,
    "source": "bundled",
    "summary": "Polar Pod theme pack: palette, materials, fog and kit bindings for polar pod kits. Select it to restyle a game.",
    "tags": [
@@ -43265,7 +43283,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 18293,
+    "bytes": 18290,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -43281,9 +43299,9 @@
    "download": "archives/style.polar_pod_example-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 530,
@@ -43310,8 +43328,8 @@
     "#B98462",
     "#ADC6EC"
    ],
-   "sha256": "21089a574b977a249534735769df3edece70ab86d95f4be61e417b81cf109b67",
-   "size": 19302,
+   "sha256": "fdef5d95854e45fd30d93aa6ff7fd236e4387ebc5a469b83917ae0f6baece29f",
+   "size": 19299,
    "source": "bundled",
    "summary": "Example polar habitat palette and rounded forms. One optional aesthetic, with no game-specific cast or story. Runtime proof pending.",
    "tags": [
@@ -43334,7 +43352,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 40778,
+    "bytes": 40775,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -43349,9 +43367,9 @@
    "download": "archives/style.space_station-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 494,
@@ -43413,8 +43431,8 @@
    ],
    "preview": "previews/style.space_station.png",
    "preview_source": "in-game capture of Tessera Relay bridge",
-   "sha256": "315eaeebc0bd01063b9fa2046fae4e33d0009b0b883088310c001a7b7dce0d70",
-   "size": 42231,
+   "sha256": "2a627f916601e4835a4a60bdc84755019bb7723c49152348b016a8b371d1515c",
+   "size": 42228,
    "source": "bundled",
    "summary": "Space Station theme pack: palette, materials, fog and kit bindings for space station kits. Select it to restyle a game.",
    "tags": [
@@ -43439,7 +43457,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 52571,
+    "bytes": 52568,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -43454,9 +43472,9 @@
    "download": "archives/style.stone_dungeon-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 494,
@@ -43519,8 +43537,8 @@
    ],
    "preview": "previews/style.stone_dungeon.png",
    "preview_source": "in-game capture of The Drowned Gate (stone_dungeon)",
-   "sha256": "89a50a35de81724935ab0bd7ac3bd25eb1fe77f21f01a1e9ceb34caeb93dae5e",
-   "size": 54024,
+   "sha256": "02e40687ab73de8b1c9a15b463fc32d1e1392b13a2a88b89e6a98f35a8c8e9e4",
+   "size": 54021,
    "source": "bundled",
    "summary": "Stone Dungeon theme pack: palette, materials, fog and kit bindings for stone dungeon kits. Select it to restyle a game.",
    "tags": [
@@ -43546,7 +43564,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 53583,
+    "bytes": 53580,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -43561,9 +43579,9 @@
    "download": "archives/style.stone_dungeon_torchlit-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 552,
@@ -43626,8 +43644,8 @@
    ],
    "preview": "previews/style.stone_dungeon_torchlit.png",
    "preview_source": "in-game capture of The Drowned Gate (stone_dungeon_torchlit)",
-   "sha256": "68d23e932c4de82205d177f084c8bdc0f034a6caa5e32c068b3a9eadde9dbbdf",
-   "size": 55056,
+   "sha256": "520ed416e22290dc53273feb086226c62c1f7d87a3866f18a24c891c6d8bbfd1",
+   "size": 55053,
    "source": "bundled",
    "summary": "Stone Dungeon (Torchlit) theme pack: palette, materials, fog and kit bindings for stone dungeon torchlit kits. Select it to restyle a game.",
    "tags": [
@@ -43653,7 +43671,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 18716,
+    "bytes": 18713,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -43669,9 +43687,9 @@
    "download": "archives/style.warm_desert_example-1.0.0.zip",
    "files": [
     {
-     "bytes": 1098,
+     "bytes": 1095,
      "path": "LICENSE.txt",
-     "sha256": "cb0ac4322e913580ce8ed5c41e337f2b2b62c8382fc3969fad7ce7a8bfa9d6b8"
+     "sha256": "7c89e62c461b9a98ae039595717060b08f096d40764ca8be1d78a9c28470e348"
     },
     {
      "bytes": 527,
@@ -43698,8 +43716,8 @@
     "#B87C5C",
     "#C8DCE0"
    ],
-   "sha256": "079ae023b02d70c2b082da0125bad8c1b857f7dca51ffc8751ec2498eb5d980c",
-   "size": 19719,
+   "sha256": "cbe4983d8ec5271beeb56359b9fe8f066c42984094a3e8d27bcfa5182e7a0aa3",
+   "size": 19716,
    "source": "bundled",
    "summary": "Example warm desert palette and restrained forms. One optional aesthetic, with no game-specific cast or story. Runtime proof pending.",
    "tags": [
@@ -43720,7 +43738,7 @@
    "visibility": "public"
   }
  ],
- "entries_sha256": "f9d8a2f61c5e58002cf06c4bf5e30aaacb338acf45c54097a64ffdc22776f64a",
+ "entries_sha256": "00b9c8981c8efdb7a269b2838e18f638a1c481e622cb2d982ed98963b7dca284",
  "licences": {
   "allowed": [
    "CC0-1.0",

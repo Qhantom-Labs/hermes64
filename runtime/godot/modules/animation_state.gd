@@ -104,6 +104,7 @@ func release() -> void:
 	shown = ""
 	release_weapon()
 	if actor == null or not is_instance_valid(actor): return
+	if actor.get("hold") is Dictionary: actor.hold = {}  # COMBATFIX: no stance held once the module lets go
 	actor.set_meta("module_animation_owner", false)
 	if actor.get("skeleton") != null: actor.skeleton.reset_bone_poses()
 	if actor.has_method("play_clip"): actor.play_clip("idle")

@@ -19,7 +19,7 @@ def vertex_variation():
     global _VARIATION
     if _VARIATION is None:
         p = Path(__file__).with_name("n64_look.json")
-        _VARIATION = json.loads(p.read_text()).get("bake", {}).get("vertex_variation", {}) if p.is_file() else {}
+        _VARIATION = json.loads(p.read_text(encoding='utf-8')).get("bake", {}).get("vertex_variation", {}) if p.is_file() else {}
     return _VARIATION
 
 

@@ -2,7 +2,7 @@
 name: hermes64-characters
 description: Make house-style characters with hermes64_character.
 version: 0.1.0
-author: Dylan (Qhantom), Hermes Agent
+author: Qhantom Labs, Hermes Agent
 license: MIT
 platforms: [macos]
 metadata:
@@ -34,6 +34,16 @@ passes the gates (rig kit `validate_character`, palette, no cuboids, hair, silho
      then `glb=assets/hub/character.cameo.cameo_visor_01/models/cameo_visor_01.glb` (same sha256, its
      `LICENSE-CAMEO.md` next to it); visibility public-with-notice. Show the user the notice first.
    - community: a loose file stays `internal` (licence unknown); a hub-installed file keeps its hub row.
+   - The game uses a cast row for the game id that `metadata.presentation.cast` maps to it, or for the same id.
+     Ids can be the player, NPCs or captive, scene actors, and bosses or robots; premise `binding` fields fill the
+     mapping. Read `used_by`, then rebuild the runtime. Refusals come as one `reason` line; pass it to the user
+     as is. Role details and warnings: `runtime/cast-binding.json` and docs/CHARACTERS.md.
+5. Owner waiver (docs/WAIVER.md). Only the owner may accept a file the rig kit refuses for `mesh.deformation`,
+   `mesh.silhouette.floor` or `budget.body` (at most 800 triangles). After the owner has seen it and told you so,
+   bind with `waive=true owner_approved=<their name, as they gave it> brief="<their words>"`, once the game names
+   the character (so the player's fight clips are measured too). Never fill these in yourself. The result lists
+   every waived failure as WAIVED with its numbers: show them to the user. Hub pack/publish refuse a waived
+   character unless the user asks for `waived=true`.
 
 ## Look-ups
 

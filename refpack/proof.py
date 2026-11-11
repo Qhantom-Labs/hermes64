@@ -11,7 +11,7 @@ from . import measure_np as M
 
 
 def main(job_path):
-    job = json.loads(Path(job_path).read_text())
+    job = json.loads(Path(job_path).read_text(encoding='utf-8'))
     pdir = Path(job['pack_dir']); proof = pdir/'proof'; proof.mkdir(exist_ok=True)
     report = {'ok':False,'stage':'setup','builder':'python','status':'draft_unapproved'}
     try:
@@ -27,7 +27,7 @@ def main(job_path):
         layout_id = job.get('layout','lounge')
         if not layout_id.isidentifier():
             raise ValueError('layout must name a shipped layout')
-        layout = json.loads((Path(job['kits_dir'])/'library/layouts'/(layout_id+'.json')).read_text())
+        layout = json.loads((Path(job['kits_dir'])/'library/layouts'/(layout_id+'.json')).read_text(encoding='utf-8'))
         report['stage'] = 'build'
         pieces,problems,checks = assemble_room(pipeline,layout,pack,job['pack_json'],str(proof/'rooms'/layout_id),str(proof/'textures'),builder='python')
         report['room'] = {'layout':layout_id,'pieces':len(pieces),
@@ -55,7 +55,7 @@ def main(job_path):
             report['render_sha256'] = {k:sha(v) for k,v in renders.items()}
             if job.get('ref_measurements'):
                 measured = M.measure([{'index':i,'srgba':measure_png(png,p),'weight':1.} for i,p in enumerate(renders.values())])
-                report['style_match'] = style_match(json.loads(Path(job['ref_measurements']).read_text()),measured)
+                report['style_match'] = style_match(json.loads(Path(job['ref_measurements']).read_text(encoding='utf-8')),measured)
         else:
             report.update(renderer='none',lower_fidelity=None)
         refs,labels = [],[]
@@ -70,5 +70,5 @@ def main(job_path):
     except Exception as exc:
         report.update(ok=False,error=type(exc).__name__+': '+str(exc),traceback=traceback.format_exc()[-4000:])
     finally:
-        Path(job['out']).write_text(json.dumps(report,indent=1,sort_keys=True)+'\n')
+        Path(job['out']).write_text(json.dumps(report,indent=1,sort_keys=True)+'\n', encoding='utf-8')
     return report

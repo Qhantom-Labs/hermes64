@@ -26,7 +26,10 @@ SETTINGS = ('projects_root', 'bundle_root', 'python_path', 'godot_path', 'blende
 HUB_SCHEMA = obj({'action': {'enum': list(ACTIONS)}, 'query': text(200), 'kind': {'enum': list(KINDS)},
                   'id': text(400), 'project': ID,
                   'version': text(16, pattern=r'^(0|[1-9][0-9]{0,3})\.(0|[1-9][0-9]{0,3})\.(0|[1-9][0-9]{0,3})$'),
-                  'author': text(80), 'licence': {'enum': list(LICENCES)}}, ['action'])
+                  'author': text(80), 'licence': {'enum': list(LICENCES)},
+                  # WAIVER (docs/WAIVER.md): pack/publish of anything with an owner-waived character needs waived=true
+                  'waived': {'type': 'boolean'}}, ['action'])
+WAIVER_TAG = 'owner-waiver'
 SCHEMA = {'name': 'hermes64_hub', 'description': 'Hermes64 Hub actions (wire copy: adventure_maker/wire.py SHORT).',
           'parameters': HUB_SCHEMA}
 PRIVATE = re.compile(rb'/Users/[^\x00\s"\'<>]+|(?<![A-Za-z0-9_./-])/home/[^\x00\s"\'<>]+|[A-Za-z]:[/\\]Users[/\\]|'
@@ -448,14 +451,52 @@ class Hub:
                                            proof=proof[:80], style='not run')}
         return recipe, author or 'Hermes64 creator', recipe['licence'], 'community'
 
-    def pack(self, ref, project=None, version=None, author=None, licence=None):
+    def waived_in(self, contents, game=None):
+        """WAIVER: lines naming owner-waived characters a pack would carry: the project cast of a game (game = its
+        name), and every model among `contents` whose JSON chunk holds a hermes64_waiver block."""
+        from .character_waiver import line, waived_rows
+        found = []
+        if game:
+            try:
+                cast = strict_json((Path(self.settings['projects_root']) / game / 'characters' / 'cast.json').read_bytes())
+                found += [line(i, r) for i, r in waived_rows(cast)]
+            except (OSError, Fault):
+                pass
+        for path, data in sorted((contents or {}).items()):
+            data = bytes(data)
+            if hub_archive.kind_of(path)[0] == 'glb' and len(data) > 20 and \
+                    b'"hermes64_waiver"' in data[20:20 + int.from_bytes(data[12:16], 'little')]:
+                found.append('%s carries an owner waiver block' % path)
+        return found
+
+    @staticmethod
+    def refuse_waived(found, what):
+        fail('hub_waived', 'Refused to %s: it carries characters bound with an owner waiver (%s). A waiver is the owner\'s '
+             'approval of rig kit failures for one project; pass waived=true only if the owner wants it shared anyway.'
+             % (what, '; '.join(found)[:600]))
+
+    def pack(self, ref, project=None, version=None, author=None, licence=None, waived=False):
         version = version or hub_sources.VERSION
         recipe, author, licence, source = self.recipe_for(ref, project, version, author, licence)
         if hub_index.EMAIL.search(author or ''):
             fail('hub_entry', 'Use a name, not an email address, as the author.')
         recipe = dict(recipe, licence=licence)
+        # WAIVER: a game whose cast has owner-waived characters, or any archive model with a waiver block, is refused
+        # unless waived=true; an acknowledged pack is tagged owner-waiver, so publish asks again
+        found = self.waived_in(recipe.get('blobs'), ref if not project and self.is_project(ref) else None)
+        if found and not waived:
+            self.refuse_waived(found, 'pack ' + ref[:64])
+        if found:
+            recipe['tags'] = hub_sources.clean_tags(list(recipe.get('tags') or []) + [WAIVER_TAG])
         blob, entry = hub_sources.build(recipe, self.bundle, version=version, author=author, source=source)
         report = hub_archive.validate(blob, entry)
+        late = [x for x in self.waived_in(report['contents']) if x not in found]
+        if late and not waived:
+            self.refuse_waived(late, 'pack ' + ref[:64])
+        if late and WAIVER_TAG not in (recipe.get('tags') or []):
+            recipe['tags'] = hub_sources.clean_tags(list(recipe.get('tags') or []) + [WAIVER_TAG])
+            blob, entry = hub_sources.build(recipe, self.bundle, version=version, author=author, source=source)
+            report = hub_archive.validate(blob, entry)
         for path, data in text_files(report['contents']):
             match = PRIVATE.search(data)
             if match:
@@ -485,12 +526,16 @@ class Hub:
         major, minor, patch = version_tuple(version) or (1, 0, 0)
         return '%d.%d.%d' % (major, minor, patch + 1)
 
-    def publish(self, ref, version=None):
+    def publish(self, ref, version=None, waived=False):
         rows = [row for row in self.local() if row[0]['id'] == ref and (version is None or row[0]['version'] == version)]
         if not rows:
             fail('hub_not_packed', 'Nothing packed as %r yet; run /hermes64 hub pack %s first.' % (ref[:64], ref[:64]))
         entry, base, _label = max(rows, key=lambda row: version_tuple(row[0]['version']))
         report = self.verified(entry, base)
+        found = (['%s is tagged %s' % (entry['id'], WAIVER_TAG)] if WAIVER_TAG in (entry.get('tags') or []) else []) + \
+            self.waived_in(report['contents'])
+        if found and not waived:
+            self.refuse_waived(found, 'publish ' + ref[:64])
         name = '%s-%s' % (entry['id'], entry['version'])
         draft = self.work() / 'drafts' / name
         blob = (Path(base) / entry['download']).read_bytes()
@@ -549,8 +594,9 @@ class Hub:
         if action == 'install':
             return self.install(args['id'], args.get('project'))
         if action == 'pack':
-            return self.pack(args['id'], args.get('project'), args.get('version'), args.get('author'), args.get('licence'))
-        return self.publish(args['id'], args.get('version'))
+            return self.pack(args['id'], args.get('project'), args.get('version'), args.get('author'), args.get('licence'),
+                             waived=bool(args.get('waived')))
+        return self.publish(args['id'], args.get('version'), waived=bool(args.get('waived')))
 
 
 def failure(exc, prefix=''):
@@ -566,7 +612,7 @@ def run_tool(settings, args, data_root=None, games_root=None):
             fail('arguments', 'Arguments must be an object with an action.')
         validate(args, HUB_SCHEMA)
         result = Hub(settings, data_root, games_root).run(args['action'], args)
-        return json.dumps(result, ensure_ascii=False, sort_keys=True)
+        return json.dumps(result, ensure_ascii=True, sort_keys=True)
     except Exception as exc:   # every refusal is one line of JSON; never a fabricated success
         return json.dumps(failure(exc), ensure_ascii=True)
 
@@ -588,6 +634,10 @@ def parse(raw):
         token = rest[index]
         key, _, value = token.partition('=')
         key = key.lstrip('-').lower()
+        if key == 'waived' and (value or token.startswith('--')):     # WAIVER: waived=true / --waived acknowledges
+            args['waived'] = (value or 'true').lower() in ('true', 'yes', '1')
+            index += 1
+            continue
         if token.startswith('--') and not value and key in ('version', 'author', 'licence', 'license', 'kind', 'project'):
             if index + 1 >= len(rest):
                 fail('arguments', '%s needs a value.' % token)

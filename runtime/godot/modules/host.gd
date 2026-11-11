@@ -279,6 +279,32 @@ func player_key(pose: String) -> int:
 		"death": return ClipPhases.realtime_key(death_ticks - 1)
 		"block": return ClipPhases.block_key(block_ticks - 1, meta)
 	return ClipPhases.loop_key(combat.tick_index)
+## COMBATFIX: moving in the idle stance plays the body's baked walk/run at the ground speed (backwards when moving away
+## from the facing), the stance's spine, head and arms held; a stop settles into the stance. Every other pose (swing,
+## roll, hurt, block, death) shows at once, as before. Bodies without baked locomotion keep the stance. Presentation only.
+var walk_back := false
+var walk_from = null
+func show_player(pose: String) -> void:
+	var key := player_key(pose)
+	var actor = animation.actor
+	# the ground speed is the body's move this tick after the fight's impulse and arena clamp (actual_velocity is the
+	# controller's, which keeps walking into the arena edge)
+	var v: Vector3 = presenter.player.actual_velocity
+	var at: Vector3 = presenter.player.position
+	if walk_from is Vector3 and (at - walk_from).length() < 0.2: v = (at - walk_from) * 60.0
+	walk_from = at
+	if pose == "idle_combat" and not animation.placeholder and is_instance_valid(actor) and actor.get("loco") is Dictionary and not actor.loco.is_empty():
+		var speed := Vector2(v.x, v.z).length()
+		if speed > 0.05 or actor.loco_on:
+			var ahead := Vector3(-sin(presenter.player.facing_yaw), 0, -cos(presenter.player.facing_yaw)).dot(Vector3(v.x, 0, v.z)) / maxf(speed, 0.001)
+			if speed > 0.05: walk_back = ahead < -0.2 or (walk_back and ahead < 0.2)
+			actor.hold = {"clip": animation.resolve_clip(pose), "key": key}
+			actor.drive(speed, 0.05, walk_back)
+			actor.advance_pose(1.0 / 60.0)
+			animation.shown = ""
+			if actor.loco_on: return
+	if is_instance_valid(actor) and actor.get("hold") is Dictionary: actor.hold = {}
+	animation.show(pose, key)
 ## Enemy clip/key from its FSM state and saved FSM age (dead counts presentation ticks on the host).
 func show_enemy(enemy) -> void:
 	var row = enemy.get_meta("art_row", null)
@@ -550,10 +576,11 @@ func _physics_process(_delta: float) -> void:
 				var d: Vector3 = target.body.position - presenter.player.position
 				presenter.player.set_facing_yaw(atan2(-d.x, -d.z))
 				focus_changed.emit(combat.target, target.body.position)
-			animation.show(motion.pose, player_key(motion.pose))
+			show_player(motion.pose)
 			animation_requested.emit(motion.pose, animation.placeholder)
 			motion_requested.emit({"enabled":presenter.player.enabled,"speed_scale":1.0,"facing_target":target.body.position if target != null else null,"impulse":motion.impulse})
 			tick_feedback = combat.feedback.duplicate(true)
+			sfx_extra = sfx_events() if presenter.sounds.has_method("has_sfx") and presenter.sounds.has_sfx() else []
 			if not combat.feedback.is_empty(): flash_ticks = 6
 			# Story events for the boss beat (dialogue/region hooks); emitted before encounter_cleared.
 			for f in combat.feedback:
@@ -596,6 +623,37 @@ var tick_feedback := []
 ## The last fight used gameplay API 1.1.0: it ends on its own defeat beat (burst ring, cue, gate bars lifting), so
 ## the presenter shows no "Arena cleared" text panel for it. 1.0.0 fights keep the panel.
 var quiet_clear := false
+## COMBATFIX: combat event sounds (audio rows "sfx:<event>:<n>", from the project's audio slots combat_sfx). An event
+## with rows replaces the stock cue for that feedback; games without rows keep the stock cues exactly. Events read from
+## state after the step: dodge (a roll starts), punch_miss (a swing's hit window closes with no hit) and boss_telegraph
+## (a boss enters telegraph). Presentation only: nothing here is read back by the simulation.
+var sfx_extra := []
+var sfx_rolls := 0
+var sfx_window := false
+var sfx_states := {}
+func sfx_events() -> Array:
+	var out := []
+	if combat.rolls > sfx_rolls: out.append({"kind": "dodge"})
+	sfx_rolls = combat.rolls
+	var open: bool = combat.attack_window()
+	if sfx_window and not open and combat.hit_ids.is_empty(): out.append({"kind": "miss"})
+	sfx_window = open
+	for enemy in combat.enemies:
+		var was: String = sfx_states.get(enemy.identity, "")
+		sfx_states[enemy.identity] = str(enemy.state)
+		sfx_kinds[enemy.identity] = ("boss" if enemy.is_boss() else "robot") if enemy.has_method("is_boss") else "other"
+		if str(enemy.state) == "telegraph" and was != "telegraph" and sfx_kinds[enemy.identity] == "boss": out.append({"kind": "telegraph", "id": enemy.identity})
+	return out
+var sfx_kinds := {}
+func combat_sfx(f: Dictionary) -> bool:
+	if not presenter.sounds.has_method("has_sfx") or not presenter.sounds.has_sfx(): return false
+	var who: String = sfx_kinds.get(str(f.get("id", "")), "other")
+	var boss := who == "boss"
+	var robot := who == "robot"
+	var event: String = {"hit": "boss_hit" if boss else ("robot_hit" if robot else "punch_hit"), "hurt": "player_hurt", "block": "block",
+		"armor": "block", "deflect": "block", "defeated": "robot_death" if robot else "", "boss_defeated": "boss_hit", "dodge": "dodge",
+		"miss": "punch_miss", "telegraph": "boss_telegraph"}.get(str(f.get("kind", "")), "")
+	return event != "" and presenter.sounds.sfx(event, int(f.get("variant", 0)))
 ## COMBAT lane: camera, stage and cues after the simulation tick. Reads state only; presentation never feeds back.
 func tick_readability() -> void:
 	var feedback := tick_feedback
@@ -624,7 +682,11 @@ func tick_readability() -> void:
 	if stage.active or not stage.bursts.is_empty(): stage.effects(feedback, combat)
 	var fb: Dictionary = stage.profile.get("feedback", {})
 	var cues: Array = stage.cues.duplicate()
-	for f in feedback:
+	var played := false
+	for f in feedback + sfx_extra:
+		if combat_sfx(f):
+			played = true
+			continue
 		match str(f.get("kind", "")):
 			"hurt":
 				stage.edge_ticks = int(fb.get("edge_flash_ticks", 8))
@@ -636,7 +698,7 @@ func tick_readability() -> void:
 			"phase": cues.append(str(fb.get("phase_audio", "")))
 			"heal": cues.append(str(fb.get("heal_audio", "")))
 			"cue": cues.append(str(f.get("id", "")))
-	var played := false
+	sfx_extra = []
 	for id in cues:
 		if id != "" and presenter.sounds.has_method("cue") and presenter.sounds.cue(id): played = true
 	if not played and not feedback.is_empty(): presenter.sounds.trigger()

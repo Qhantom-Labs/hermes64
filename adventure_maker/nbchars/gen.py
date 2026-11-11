@@ -19,6 +19,10 @@ from . import pycompat
 REPO = Path(__file__).resolve().parents[2]
 DEFAULT_ROOT = REPO / 'characters' / 'gen'
 _LOADED = {}
+# ext/ modules that run inside the core package (Blender-free; lane CHARS3: the n64_adult body family)
+EXT_MODULES = ('adult', 'adult_paint', 'adult_props', 'adult_cast', 'clips_adult',
+               'tall_v3', 'tall_v3_paint', 'clips_tall_v3')   # lane CHARS4: the fixed round-21 visor body
+EXT_MODULES += ('nous_girl', 'nous_girl_paint', 'nous_girl_props', 'clips_nous_girl')   # lane CAST2: the captive girl
 
 
 class _CompatLoader(importlib.machinery.SourceFileLoader):
@@ -80,18 +84,37 @@ class Generator:
             raise RuntimeError('COMBAT_GRIP_TILT_DEG must not be set: core/weapon.py reads it at import time')
         return importlib.import_module(self.pkg + '.' + name)
 
+    def ext(self, name):
+        """A Blender-free module of <root>/ext loaded INTO the core package as <pkg>.<name>, so its `from . import
+        pose` binds the very modules .core() returns. Roots without ext/<name>.py raise ImportError."""
+        full = self.pkg + '.' + name
+        if full in sys.modules:
+            return sys.modules[full]
+        f = self.root / 'ext' / (name + '.py')
+        if name not in EXT_MODULES or not f.is_file() or (self.root / 'core' / (name + '.py')).is_file():
+            raise ImportError('no generator extension ext/%s.py at %s' % (name, self.root))
+        spec = importlib.util.spec_from_file_location(full, str(f), loader=_CompatLoader(full, str(f)))
+        mod = importlib.util.module_from_spec(spec)
+        sys.modules[full] = mod
+        try:
+            spec.loader.exec_module(mod)
+        except BaseException:
+            sys.modules.pop(full, None)
+            raise
+        return mod
+
     def pack(self, name):
         if name in self.inline:
             return json.loads(json.dumps(self.inline[name]['pack']))
         if name not in self._packs:
-            self._packs[name] = json.loads((self.packs_dir / name / 'pack.json').read_text())
+            self._packs[name] = json.loads((self.packs_dir / name / 'pack.json').read_text(encoding='utf-8'))
         return json.loads(json.dumps(self._packs[name]))
 
     def combat_roles(self, pack):
         if pack['id'] in self.inline:
             return dict(self.inline[pack['id']].get('combat_roles', {}))
         p = self.packs_dir / pack['id'] / 'combat_roles.json'
-        return json.loads(p.read_text()) if p.is_file() else {}
+        return json.loads(p.read_text(encoding='utf-8')) if p.is_file() else {}
 
 
 def load(root=None):

@@ -124,6 +124,7 @@ Exit code 0 only when every file validates.
 | `deformation` | triangle edge-length ratio outside [0.45, 1.8] on any key (`mesh.deformation`) |
 | `silhouette` | grounded clips that leave the floor or sink (lowest vertex not at y=0 +- 2 mm, `mesh.silhouette.floor`); posed bounds exploding past 1.6x rest height or a vertex leaving its bone chain by > 0.5 m (`mesh.silhouette.blowup`); rest height outside the rig range (`mesh.silhouette.height`) |
 | `hash` | `expect_sha256` given and different (`hash.mismatch`) |
+| `waiver` | only with `waiver=True` and a file that carries an owner waiver block (lane WAIVER, docs/WAIVER.md): a malformed block (`waiver.invalid`), a block that names a check the owner may not waive or a body over 800 triangles (`waiver.refused`), a mesh/weights hash other than the one it was granted for (`waiver.hash_mismatch`). Covered failures move to `report['waived']` with their numbers; see `rigkit/waiver.py` |
 
 Connectivity method: if the file carries a known generator topology (`rig_*` node extras `topology` +
 `params_json`), the exact generator join table (`core/connectivity.JOINS`: buried / sector / anchored joins) is

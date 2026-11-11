@@ -1,0 +1,118 @@
+{
+  "note": "cast_v1 presets (lane CAST1). Data only: every entry is a spec for adventure_maker.nbchars.cast (params = cameo / face / colour keys, shape and style = ext/cast_v1 dials, paint = ext/cast_v1_paint dials, props = ext/cast_v1_props kinds). The generator names no character. The CEO presets are originals (plans/05C section 5), not likenesses; marks are abstract shapes, no text, no logos. Faction colours are the livery colours of the robot kit (cyan / magenta / amber).",
+  "pack": {
+    "id": "cast_v1",
+    "base": "cameo_visor",
+    "colors": {
+      "cyan_0": "#0d4658", "cyan_1": "#1a9aae", "cyan_2": "#66e4e0",
+      "mag_0": "#4a1342", "mag_1": "#b02f8e", "mag_2": "#f07fcf",
+      "amber_0": "#5b2c12", "amber_1": "#c9711f", "amber_2": "#f6c264",
+      "ice_0": "#5f7f9a", "ice_1": "#9dbcd2", "ice_2": "#cfe3ee",
+      "navy_0": "#1a2238", "navy_1": "#2b3a5c", "navy_2": "#46588a",
+      "tan_0": "#7a5330", "tan_1": "#b88a52", "tan_2": "#dcb97f",
+      "brown_0": "#3b2618", "brown_1": "#5e3d26", "brown_2": "#86603f"
+    },
+    "ramps": {
+      "cyan": ["cyan_0", "cyan_1", "cyan_2"],
+      "magenta": ["mag_0", "mag_1", "mag_2"],
+      "amber": ["amber_0", "amber_1", "amber_2"],
+      "ice": ["ice_0", "ice_1", "ice_2"],
+      "navy": ["navy_0", "navy_1", "navy_2"],
+      "tan": ["tan_0", "tan_1", "tan_2"],
+      "brown": ["brown_0", "brown_1", "brown_2"]
+    }
+  },
+  "common": {"cheek_leaf": false},
+  "presets": {
+    "ceo_not_evil": {
+      "label": "NOT EVIL AI, CEO (charger)",
+      "params": {"skin": "skin", "hair_color": "tan_1", "brow_color": "tan_0", "eye_color": "cyan_0", "eye_shape": "round",
+                 "brows": "arched", "mouth": "neutral", "garment_color": "grey_1", "collar_color": "grey_1",
+                 "trim_color": "cyan_2", "bottom_color": "cyan_0", "boot_color": "k_1", "glove_color": "skin", "belt_color": "k_0"},
+      "shape": {"height": 1.86, "shoulder_w": 1.28, "chest_w": 1.24, "neck_w": 1.12, "arm_w": 1.22, "leg_w": 1.05, "hip_w": 1.08, "stance_w": 1.04},
+      "style": {"hair": "swept", "visor": "none", "guards": true},
+      "paint": {"outfit": "plain", "mark": "ring", "mark_color": "cyan_2", "mark_ground": "cyan_0", "guard_color": "cyan_1",
+                "guard_rim": "cyan_2", "belt": true},
+      "props": [{"kind": "ring_buckler", "colors": {"main": "grey_1", "dark": "k_1", "accent": "cyan_1", "light": "cyan_2"}}]
+    },
+    "ceo_closed_models": {
+      "label": "Closed Models Corp, CEO (ranged)",
+      "params": {"skin": "skin_2", "hair_color": "k_1", "brow_color": "k_0", "eye_color": "k_0", "garment_color": "mag_0",
+                 "collar_color": "mag_0", "trim_color": "mag_2", "bottom_color": "k_1", "boot_color": "k_0", "glove_color": "mag_1",
+                 "belt_color": "k_0"},
+      "shape": {"height": 2.05, "shoulder_w": 1.32, "chest_w": 1.30, "waist_w": 1.35, "hip_w": 1.30, "depth": 1.25,
+                "neck_w": 1.25, "arm_w": 1.30, "leg_w": 1.25, "boot": 1.20, "stance_w": 1.22},
+      "style": {"hair": "crop", "visor": "band", "guards": true, "plate": true},
+      "paint": {"outfit": "plain", "mark": "bars", "mark_color": "mag_2", "mark_ground": "k_1", "plate_color": "grey_0",
+                "guard_color": "mag_1", "guard_rim": "mag_2", "visor_stripe": "mag_1", "belt": true},
+      "props": [{"kind": "launcher_case", "colors": {"main": "k_3", "dark": "k_0", "accent": "mag_1", "light": "mag_2"}}]
+    },
+    "ceo_aipo": {
+      "label": "AIPO, CEO (area attack)",
+      "params": {"skin": "skin", "hair_color": "brown_1", "brow_color": "brown_0", "eye_color": "brown_0", "eye_shape": "almond",
+                 "garment_color": "amber_0", "collar_color": "amber_0", "trim_color": "amber_2", "bottom_color": "k_3",
+                 "boot_color": "k_1", "glove_color": "amber_1", "belt_color": "k_0"},
+      "shape": {"height": 1.76, "shoulder_w": 0.94, "chest_w": 0.95, "belly": 0.12, "arm_w": 0.92, "leg_w": 0.95},
+      "style": {"hair": "curls", "visor": "glasses", "coat": 0.22},
+      "paint": {"outfit": "plain", "mark": "key", "mark_color": "amber_2", "frame_color": "k_0", "lens_color": "off_white"},
+      "props": [{"kind": "key_staff", "colors": {"main": "k_3", "dark": "amber_0", "accent": "amber_1", "light": "amber_2"}}]
+    },
+    "qhantom": {
+      "label": "Qhantom (hooded, hero band)",
+      "params": {"skin": "skin", "hair_color": "k_1", "brow_color": "k_0", "eye_color": "navy_0", "eye_shape": "almond",
+                 "mouth": "neutral", "garment_color": "ice_1", "collar_color": "ice_0", "trim_color": "ice_2",
+                 "bottom_color": "navy_1", "boot_color": "navy_0", "glove_color": "navy_0", "belt_color": "tan_1"},
+      "shape": {},
+      "style": {"hair": "hood", "visor": "none", "coat": 0.40},
+      "paint": {"outfit": "plain", "belt": true},
+      "props": []
+    },
+    "npc_short_stocky": {
+      "label": "NPC body, short / stocky",
+      "params": {"skin": "skin_1", "hair_color": "k_1", "brow_color": "k_0", "eye_color": "k_0", "eye_shape": "almond",
+                 "mouth": "neutral", "garment_color": "tan_1", "collar_color": "tan_0", "trim_color": "off_white",
+                 "bottom_color": "brown_0", "boot_color": "k_1", "glove_color": "skin_1", "belt_color": "brown_1"},
+      "shape": {"height": 1.55, "leg": 0.86, "arm": 0.95, "head": 1.06, "neck_w": 1.15, "shoulder_w": 1.12, "chest_w": 1.18,
+                "waist_w": 1.32, "hip_w": 1.25, "depth": 1.18, "belly": 0.20, "leg_w": 1.22, "arm_w": 1.18, "stance_w": 1.20},
+      "style": {"hair": "crop", "visor": "none"},
+      "paint": {"outfit": "plain", "belt": true},
+      "props": []
+    },
+    "npc_tall_thin": {
+      "label": "NPC body, tall / thin",
+      "params": {"skin": "skin_2", "hair_color": "brown_2", "brow_color": "brown_0", "eye_color": "teal_0",
+                 "garment_color": "teal_1", "collar_color": "teal_0", "trim_color": "off_white", "bottom_color": "k_3",
+                 "boot_color": "k_1", "glove_color": "skin_2", "belt_color": "k_0"},
+      "shape": {"height": 1.97, "leg": 1.08, "arm": 1.06, "head": 0.97, "neck_w": 0.90, "shoulder_w": 0.85, "chest_w": 0.85,
+                "waist_w": 0.85, "hip_w": 0.85, "depth": 0.85, "leg_w": 0.80, "arm_w": 0.80, "stance_w": 0.86},
+      "style": {"hair": "swept", "visor": "band"},
+      "paint": {"outfit": "plain", "visor_stripe": "teal"},
+      "props": []
+    },
+    "npc_child": {
+      "label": "NPC body, child",
+      "params": {"skin": "skin", "hair_color": "tan_1", "brow_color": "tan_0", "eye_color": "brown_0", "eye_shape": "round",
+                 "mouth": "neutral", "garment_color": "leaf_2", "collar_color": "leaf_1", "trim_color": "mint_1",
+                 "bottom_color": "navy_1", "boot_color": "brown_1", "glove_color": "skin", "belt_color": "brown_0"},
+      "shape": {"height": 1.18, "leg": 0.82, "arm": 0.88, "head": 1.32, "shoulder_w": 0.92, "leg_w": 1.05, "hip_w": 1.08, "stance_w": 1.03},
+      "style": {"hair": "tufts", "visor": "none"},
+      "paint": {"outfit": "plain"},
+      "props": []
+    }
+  },
+  "revisions": {
+    "ceo_closed_models": {
+      "2": {"note": "lane CEOFIX: bind fixes. A collar vertex grazed each shoulder guard at rest (0.39 mm) and the arm-weighted guard left it in every clip; guard_clear 0.0016 lifts or lowers the guards by the smallest step (0.0005 x H) that keeps every other part 0.0016 x H (3.28 mm, over the rig kit's 3 mm seam tolerance) away: 3 steps up, 3.075 mm. The launcher case's box pieces are faceted prisms (house cuboid gate).",
+            "style": {"guard_clear": 0.0016},
+            "props": [{"kind": "launcher_case", "form": "faceted", "colors": {"main": "k_3", "dark": "k_0", "accent": "mag_1", "light": "mag_2"}}]}
+    },
+    "ceo_aipo": {
+      "2": {"note": "lane CEOFIX: bind fixes. The coat shared the jacket's hem ring, so the jacket was no longer a closed volume and collar, sleeves and legs seated inside it were loose pieces for the rig kit; the coat now has its own top ring on the hem (micrometres above it). The coat's first band (hem to hip ring, 7 mm drop) stretched 2.48x in run because the hip ring followed the pelvis while the hem follows pelvis and spine; coat_seam 0.7 gives the hip ring 0.7 of the hem's weight mix (0.6 still stretches 1.833x, limit 1.8; 0.7: 1.728x).",
+            "style": {"coat_top": "tucked", "coat_seam": 0.7}}
+    },
+    "ceo_not_evil": {
+      "2": {"note": "lane CEOFIX: the ring buckler's box pieces (boss, spoke) are faceted prisms (house cuboid gate); the body is unchanged.",
+            "props": [{"kind": "ring_buckler", "form": "faceted", "colors": {"main": "grey_1", "dark": "k_1", "accent": "cyan_1", "light": "cyan_2"}}]}
+    }
+  }
+}

@@ -27,11 +27,25 @@ def n64_look(c, view):
     base=data(c,'kits/core/n64_look.json') if path.is_file() else {}
     return merged(base, view.get('n64') or {})
 
+def resolve_project_recipe(c, gid, pack_id, params=None, seed=0):
+    """Build a project-local gen: id through the bounded sandbox, not the shipped registry."""
+    from .gen_tools import build as build_recipe
+    row = build_recipe(c.project.root, gid, pack_id, params=params, seed=seed, sweep=False,
+                       python_path=c.settings.get('python_path', ''))
+    if not row['ok']:
+        fail('asset_failed', 'Recipe refused: ' + '; '.join(row['errors'])[:400])
+    path = c.project.path(row['file'])
+    return dict(row, path=str(path), source='generated')
+
+
 def build(c, game_path, folder, seed, pack):
     from .runner import locate
     manifest=data(c,'kits/manifest.json')
     if manifest.get('contract_version')!='3.1.0': fail('component_protocol','Expected KITS 3.1.0')
-    kit_pack=pack['kit_pack_id']; recipe=data(c,'kits/packs/'+kit_pack+'/pack.json')
+    kit_pack=pack['kit_pack_id']
+    local_pack=c.project.path('kits/packs/'+kit_pack+'/pack.json')
+    pack_file=str(local_pack) if local_pack.is_file() else None
+    recipe=c.project.read_json('kits/packs/'+kit_pack+'/pack.json') if pack_file else data(c,'kits/packs/'+kit_pack+'/pack.json')
     game=c.project.read_json(game_path)
     # Geometry defaults are theme-agnostic. Scale at room assembly; all themed materials are pack data.
     requests=[{'id':'arch.floor_module','params':{'shape':'rect','width':3.0,'depth':3.0},'semantic':'_floor'},
@@ -42,6 +56,13 @@ def build(c, game_path, folder, seed, pack):
     tool = 'python' if builder == 'python' else 'blender'
     exe=locate(tool,c.settings.get(tool+'_path','')); script=c.shipped('kits/build.py')
     for req in requests:
+        if req['id'].startswith('gen:'):
+            row = resolve_project_recipe(c, req['id'], kit_pack, req['params'], seed)
+            records.append(dict(row, request=req))
+            overrides[req['semantic']] = {'path': row['path'], 'sha256': row['sha256'], 'tri_count': row['tri_count'], 'meta': row['meta']}
+            overrides[req['id']] = overrides[req['semantic']]
+            built += 1
+            continue
         kits=[k for k in manifest['kits'] if k['id']==req['id']]
         if len(kits)!=1: fail('component_protocol','Unknown kit '+req['id'])
         key=digest(encode({'request':req,'seed':seed,'pack':recipe,'generator':generator_hash,'builder':builder_identity(builder),'encoding':'srgb8-v1'}))
@@ -53,7 +74,8 @@ def build(c, game_path, folder, seed, pack):
         else:
             out.parent.mkdir(parents=True,exist_ok=True)
             tex=c.project.path('.maker/cache/textures'); tex.mkdir(parents=True,exist_ok=True)
-            argv=build_command(builder,exe,script,['--id',req['id'],'--pack',kit_pack,'--params',json.dumps(req['params'],sort_keys=True),'--seed',str(seed),'--out',str(out),'--tex-dir',str(tex)])
+            extra_pack=['--pack-file',pack_file] if pack_file else []
+            argv=build_command(builder,exe,script,['--id',req['id'],'--pack',kit_pack,'--params',json.dumps(req['params'],sort_keys=True),'--seed',str(seed),'--out',str(out),'--tex-dir',str(tex)]+extra_pack)
             result=c.runner.run(argv,c.project.root,timeout=180)
             c.project.write_json(folder+'/'+req['semantic'].replace('/','-')+'.'+builder+'.process.json',dict(result,argv=argv))
             if result['returncode']!=0: fail('asset_failed',builder+' builder failed (check '+tool+'_path): '+result['stdout'][-1600:]+result['stderr'][-400:])
@@ -109,6 +131,10 @@ def build_shells(c, game, pack, seed, folder, exe, script, generator_hash, recip
         plans['shell/' + rid] = {'id': 'arch.room_shell', 'room': rid, 'row': 'shell_plan', 'extra': 'openings', 'candidates': pl['candidates']}
     for rid, pl in plan_yards(game, view.get('yards') or {}).items():
         plans['yard/' + rid] = {'id': 'terrain.yard', 'room': rid, 'row': 'yard_plan', 'extra': 'exits', 'candidates': pl['candidates']}
+    local_pack_file=c.project.path('kits/packs/'+pack['kit_pack_id']+'/pack.json')
+    if local_pack_file.is_file():
+        for pl in plans.values():
+            pl['pack_file']=str(local_pack_file)
     limits = {k['id']: k['tri_limit'] for k in manifest['kits']}
     rooms = {sem: {'status': 'legacy', 'reason': 'no candidates'} for sem in sorted(plans)}
     built = hits = 0
@@ -127,7 +153,8 @@ def build_shells(c, game, pack, seed, folder, exe, script, generator_hash, recip
             key = digest(encode({'request': req, 'seed': seed, 'pack': recipe, 'generator': generator_hash, 'builder': builder_identity(builder), 'encoding': 'srgb8-v1'}))
             keyed[sem] = (key, req, cand)
             if not c.project.path('.maker/cache/assets/' + key + '.json').exists() and not any(j['out'] == key + '.glb' for j in jobs):
-                jobs.append({'id': req['id'], 'pack': pack['kit_pack_id'], 'params': req['params'], 'seed': seed, 'out': key + '.glb'})
+                jobs.append({'id': req['id'], 'pack': pack['kit_pack_id'], 'params': req['params'], 'seed': seed, 'out': key + '.glb',
+                             **({'pack_file': pl['pack_file']} if pl.get('pack_file') else {})})
         if jobs:
             jp = '.maker/cache/room-kit-jobs-' + digest(encode(jobs))[:16] + '.json'; c.project.write_json(jp, jobs)
             argv = build_command(builder, exe, script, ['--batch', str(c.project.path(jp)),
@@ -204,6 +231,9 @@ def imported_audio(c):
     from . import audio_import as ai
     folder = c.project.path('audio/import')
     if not (folder / 'manifest.json').is_file():
+        doc = c.project.read_json('audio/slots.json')
+        if isinstance(doc, dict) and doc.get('combat_sfx') == 'default' and not set(doc) - {'format', 'combat_sfx', 'mix'}:
+            return ai.runtime_rows(ai.validate_slots(doc, {}), {}, folder)  # COMBATFIX: the shipped set needs no import
         fail('audio_import', 'audio/slots.json exists but nothing was imported (hermes64_audio action=import)')
     manifest, problems = ai.verify(folder)
     if problems:
@@ -242,6 +272,10 @@ def runtime_snapshot(c, game, folder):
         path=c.shipped(rel); sound[event]={'path':str(path),'sha256':digest(path.read_bytes())}
     sound.update(combat_cues(c, game))
     sound.update(imported_audio(c))
+    from .overlay import apply_build; apply_build(c,game,kit_pack,folder,sound,theme)   # L3: texture slots + overlay
+    if c.project.path('assets/PROVENANCE.json').is_file():
+        from .provenance import capture_bindings
+        capture_bindings(c.project.root, mapping, c.root, pack=pack_id)
     c.project.write_json(folder+'/runtime/audio.json',sound)
     c.project.write_json(folder+'/runtime/bindings.json',{'assets':mapping,'characters':characters})
     c.project.write_json(folder+'/runtime/theme.json',theme)

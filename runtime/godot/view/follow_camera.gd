@@ -60,6 +60,18 @@ var was_recenter_key := false
 var heading_orbit := false
 var heading_yaw := 0.0
 var heading_ready := false
+# FEEL4 turn smoothing (presentation only; replays use recorded headings). Yaw is driven by a bounded-acceleration
+# controller with a braking curve: it eases in, never overshoots its target and never stops dead. Auto-follow uses
+# hysteresis around the "heading away from the lens" threshold and a low-passed travel heading, so a brief tap or a
+# re-latched key does not swing the view back and forth. Manual orbit may lead the camera by at most ORBIT_LEAD.
+const FOLLOW_START := 0.35
+const FOLLOW_STOP := 0.1
+const FOLLOW_HEADING_RATE := 6.0
+const ORBIT_LEAD := 0.2
+var following := false
+var follow_heading := 0.0
+var follow_heading_ready := false
+var aim_sample_velocity := Vector3.ZERO
 
 ## Recorded per live frame: yaw of the FIXED-TICK view source (never the
 ## interpolated render camera) and whether a deliberate orbit is in progress.
@@ -96,6 +108,7 @@ func orbit_tick(reduced: bool, dt := 1.0/60.0) -> void:
 		manual=false; orbit=Vector2.ZERO; mouse_delta=Vector2.ZERO; dragging=false
 	if manual:
 		wanted_yaw = wrapf(wanted_yaw-orbit.x*1.65*dt-mouse_delta.x*0.006,-PI,PI)
+		wanted_yaw = wrapf(yaw+clampf(angle_difference(yaw,wanted_yaw),-ORBIT_LEAD,ORBIT_LEAD),-PI,PI)   # FEEL4: bounded overrun
 		wanted_pitch = clampf(wanted_pitch+orbit.y*1.32*dt+mouse_delta.y*0.004,0.15,1.05)
 		idle_ticks=0; recentering=false; orbit_override=true
 	else:
@@ -113,20 +126,29 @@ func orbit_tick(reduced: bool, dt := 1.0/60.0) -> void:
 	# trails actual horizontal travel, NOT the fast animation/facing reversal.
 	var velocity: Vector3=view.player.actual_velocity; velocity.y=0.0
 	if not manual and not orbit_override:
-		if recentering: wanted_yaw=recenter_target
+		if recentering: wanted_yaw=recenter_target; following=false
 		elif velocity.length()>0.18:
 			# MOVE: swing behind travel only while it heads AWAY from the lens.
 			# Backward/lateral travel previously spun the view up to 180 degrees
 			# behind the player, so a held S ended up walking "forward" on screen.
+			# FEEL4: hysteresis (start above FOLLOW_START, stop below FOLLOW_STOP) and a low-passed travel heading.
 			var forward := Vector3(-sin(yaw),0,-cos(yaw))
-			if velocity.normalized().dot(forward)>FOLLOW_MIN_FORWARD: wanted_yaw=atan2(-velocity.x,-velocity.z)
-			else: wanted_yaw=yaw
+			var travel := atan2(-velocity.x,-velocity.z)
+			if not follow_heading_ready: follow_heading=travel; follow_heading_ready=true
+			follow_heading=wrapf(follow_heading+angle_difference(follow_heading,travel)*minf(1.0,FOLLOW_HEADING_RATE*dt),-PI,PI)
+			var dot := velocity.normalized().dot(forward)
+			following = dot>FOLLOW_STOP if following else dot>maxf(FOLLOW_START,FOLLOW_MIN_FORWARD)
+			wanted_yaw = follow_heading if following else yaw
+		else:
+			following=false; follow_heading_ready=false
 		wanted_pitch=DEFAULT_PITCH
 	# MOVE heading guard: while a movement key is held its world direction is
 	# latched to the view heading at press. Automatic follow may drift at most
 	# MAX_HEADING_DRIFT from that heading, so W/S/A/D never reverse on screen.
 	var guarded := false
-	if not manual and not recentering and view.player.latched and view.player.frame_heading()!=null:
+	# FEEL4: not during a deliberate orbit's hold (orbit_override): auto-follow is off then, and the latch was
+	# re-taken from the view every frame of the orbit, so there is no drift to guard.
+	if not manual and not orbit_override and not recentering and view.player.latched and view.player.frame_heading()!=null:
 		var b: Basis=view.player.latched_basis
 		var heading := atan2(b.z.x,b.z.z)
 		var off := angle_difference(heading,wanted_yaw)
@@ -134,15 +156,26 @@ func orbit_tick(reduced: bool, dt := 1.0/60.0) -> void:
 		guarded=true
 	var omega := 10.0 if reduced else 5.0
 	var error := angle_difference(yaw,wanted_yaw)
-	var acceleration := clampf(omega*omega*error-2.0*omega*yaw_velocity,-deg_to_rad(130.0),deg_to_rad(130.0))
-	yaw_velocity=clampf(yaw_velocity+acceleration*dt,-deg_to_rad(65.0),deg_to_rad(65.0))
+	# FEEL4: braking-curve controller (bounded acceleration, no overshoot, no dead stop). Manual orbit is quicker
+	# but still slower than the player's own turn (720 deg/s); automatic follow keeps the 65 deg/s / 130 deg/s^2 caps.
+	# Manual orbit keeps the 65 deg/s cap (the drawn eye moves at most ~6 m/s on its ~4.5 m orbit in present(); a faster
+	# fixed-tick yaw only made the drawn view lag, measured 40-88 deg) but starts faster and leads by <= ORBIT_LEAD.
+	var orbiting: bool = manual or orbit_override
+	var gain := (10.0 if orbiting else omega*0.6)
+	var accel_cap := deg_to_rad(540.0 if orbiting else (260.0 if reduced else 130.0))
+	var speed_cap := deg_to_rad(130.0 if reduced else 65.0)
+	var speed := minf(minf(absf(error)*gain,sqrt(2.0*accel_cap*absf(error))),speed_cap)
+	yaw_velocity=move_toward(yaw_velocity,signf(error)*speed,accel_cap*dt)
 	yaw=wrapf(yaw+yaw_velocity*dt,-PI,PI)
 	if guarded:
 		var b2: Basis=view.player.latched_basis
 		var h2 := atan2(b2.z.x,b2.z.z)
 		var off2 := angle_difference(h2,yaw)
-		if absf(off2)>MAX_HEADING_DRIFT:
-			yaw=wrapf(h2+signf(off2)*MAX_HEADING_DRIFT,-PI,PI); yaw_velocity=0.0
+		# FEEL4: the clamped target and the braking curve keep yaw inside the band; just past it the motion eases
+		# out instead of stopping dead. The hard limit stays as a safety net a little further out.
+		if absf(off2)>MAX_HEADING_DRIFT and signf(yaw_velocity)==signf(off2): yaw_velocity=move_toward(yaw_velocity,0.0,accel_cap*dt)
+		if absf(off2)>MAX_HEADING_DRIFT+0.15:
+			yaw=wrapf(h2+signf(off2)*(MAX_HEADING_DRIFT+0.15),-PI,PI); yaw_velocity=0.0
 	if recentering and absf(angle_difference(yaw,recenter_target))<0.02 and absf(yaw_velocity)<0.05: recentering=false
 	was_recentering=recentering
 	heading_orbit = manual or recentering
@@ -186,9 +219,24 @@ func reset() -> void:
 	was_recentering=false; heading_orbit=false
 	var back: Vector3 = view.camera.global_basis.z
 	yaw=atan2(back.x,back.z); wanted_yaw=yaw
+	following=false; follow_heading_ready=false; aim_sample_velocity=Vector3.ZERO
 	heading_yaw=yaw; heading_ready=true
+	face_goal()
 	pitch=DEFAULT_PITCH; wanted_pitch=pitch
 	distance=DEFAULT_DISTANCE; wanted_distance=distance
+## FEEL4: in a goal-cue game (view/goal_cue.gd) a room opens with the camera behind the player, facing the next goal,
+## so the way on is on screen from the first frame. Called on room entry and when the cue installs; other games keep
+## the authored yaw. Presentation only (the render rig snaps to the new pose, it does not swing there).
+func face_goal() -> void:
+	var cue = view.world.get_node_or_null("goal_cue") if view.get("world") != null else null
+	if cue == null or view.player == null: return
+	var goal: Dictionary = cue.find_goal()
+	if not goal.get("at") is Vector3: return
+	var d: Vector3 = view.player.global_position-goal.at
+	if Vector2(d.x,d.z).length()<=2.0: return
+	yaw=atan2(d.x,d.z); wanted_yaw=yaw; yaw_velocity=0.0
+	heading_yaw=yaw; heading_ready=true
+	reset_presentation=true
 func available() -> bool:
 	return enabled and view.room_root != null and not (view.module_host != null and view.module_host.puzzle != null and view.module_host.puzzle.active)
 func current() -> Camera3D:
@@ -225,10 +273,14 @@ func _physics_process(delta: float) -> void:
 		var sample_omega: float=(28.0 if view.actions.profile.options.reduced_motion else 18.0)/sqrt(1.0+pow(error_m/0.8,2.0))
 		var sample: Array=Smooth.spring(next_pose.origin,sample_velocity,desired_pose.origin,sample_omega,maxf(delta,1.0/60.0))
 		desired_pose.origin=sample[0]; sample_velocity=sample[1]
+		# FEEL4: the aim takes the same filter as the eye. Filtering only the eye let travel lag rotate the view
+		# (the drawn yaw swung ~14 deg past a settled follow yaw when the player stopped).
+		var aim_sample: Array=Smooth.spring(previous_aim,aim_sample_velocity,next_aim,sample_omega,maxf(delta,1.0/60.0))
+		next_aim=aim_sample[0]; aim_sample_velocity=aim_sample[1]
 	next_pose=desired_pose; next_fov=source.fov
 	if reset_presentation or not presentation_ready:
 		previous_pose=next_pose; previous_fov=next_fov; previous_aim=next_aim
-		render_aim=next_aim; aim_velocity=Vector3.ZERO
+		render_aim=next_aim; aim_velocity=Vector3.ZERO; aim_sample_velocity=Vector3.ZERO
 		render_camera.global_transform=next_pose; render_camera.fov=next_fov
 		eye_velocity=Vector3.ZERO; sample_velocity=Vector3.ZERO; rotation_velocity=Vector3.ZERO; fov_velocity=0.0
 		presentation_ready=true; reset_presentation=false
@@ -331,7 +383,8 @@ func present(delta: float, alpha: float) -> void:
 	remaining=minf(delta,0.1)
 	while remaining>0.0000001:
 		var dt := minf(remaining,1.0/120.0); remaining-=dt
-		var look: Array=Smooth.spring(render_aim,aim_velocity,aim_target,26.0 if reduced else 18.0,dt)
+		# FEEL4: same time constant as the eye spring (omega), so eye and aim lag alike and travel never rotates the view.
+		var look: Array=Smooth.spring(render_aim,aim_velocity,aim_target,omega,dt)
 		render_aim=look[0]; aim_velocity=look[1]
 		if render_aim.distance_to(render_camera.global_position)<0.05: continue
 		var q := render_camera.global_basis.get_rotation_quaternion()
@@ -341,9 +394,9 @@ func present(delta: float, alpha: float) -> void:
 		var angle := error.get_angle()
 		if angle>0.00001:
 			var axis := error.get_axis()
-			var desired: Vector3=axis*angle
-			var acceleration: Vector3=(desired*64.0-rotation_velocity*16.0).limit_length(deg_to_rad(240.0))
-			rotation_velocity=(rotation_velocity+acceleration*dt).limit_length(deg_to_rad(85.0))
+			# FEEL4: braking curve (bounded acceleration, no overshoot) instead of a clamped spring that overshot.
+			var rate := minf(minf(angle*20.0,sqrt(2.0*deg_to_rad(360.0)*angle)),deg_to_rad(240.0))
+			rotation_velocity=rotation_velocity.move_toward(axis*rate,deg_to_rad(360.0)*dt)
 			var step := rotation_velocity*dt
 			if step.length()>0.0000001: render_camera.global_basis=Basis(Quaternion(step.normalized(),step.length())*q)
 		else: rotation_velocity=rotation_velocity.move_toward(Vector3.ZERO,deg_to_rad(240.0)*dt)

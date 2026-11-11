@@ -2,7 +2,7 @@
 name: hermes64
 description: Make and safely edit retro-style 3D adventure games.
 version: 0.1.0
-author: Dylan (Qhantom), Hermes Agent
+author: Qhantom Labs, Hermes Agent
 license: MIT
 platforms: [macos]
 metadata:
@@ -16,6 +16,7 @@ metadata:
 Create any N64-era-style 3D adventure within the story contract. Themes are data packs, not hard-coded game modes. `polar_pod` is the demo pack for Thaw; it is not the product. A premise creates an explicit two-room starter, not an automatically finished game. For an original prompt, load **hermes64:hermes64-author**: it teaches compact world-map compilation, NPC dialogue, gates, branching quests, timed courses and real verification. User guide: `docs/AUTHORING.md`; limits: `docs/AUTHORING-SCOPE.md`.
 
 ## When to use
+- A plain "make me a game about ..." (or make, edit, play, export a game): load **hermes64:hermes64-create** and follow it. The user needs no slash command.
 - Scaffold an original adventure, author story logic, change entrances/roles/endings, or compare edit regressions.
 - Create/select a new visual theme using pack data and the same core.
 - Do not use this as an arbitrary command runner. Engine setup is allowed only via the explicit consented fetch below.
@@ -31,6 +32,8 @@ An owner chooses the existing `projects_root` (blank: `new` uses the profile's d
 
 ## Quick start
 `/hermes64 new "<one-sentence premise>" [village|forest|polar]` (or `hermes64_demo` with `premise` and optional `style`/`project`) checks Python and Godot, picks a bundled style from premise words when none is given, builds the two-room starter through scaffold/compile/check, builds its room assets (`hermes64_build_assets`, seed 7), runs a short headless bot playtest and writes `project.json` with a proof badge such as `proof-checked · 2 bots played · assets built · style audit WARN 70/100 · 0 softlocks · PLAYABLE (headless)` plus the exact Godot command to play. With a window available it also runs the style audit after the playtest; without one the badge says `style audit not run (no display)`. With no usable builder (default Blender not found) the badge says `assets NOT BUILT (...)`, the game is not ok and `next` starts with `hermes64_build_assets`. With no `projects_root` set, games go to the profile's default games folder. Refusals are one line with the next step. Report the badge as written: it never upgrades a tier, and a failing audit keeps it not ok. The badge in `project.json` is a snapshot from creation and is not updated later.
+
+New is always new: when the name (from the premise, or `--name`/`project`) is taken, `new` and `hermes64_demo` with a premise make the next free name (`-2`, `-3` ...) and the reply has an `Earlier:` line naming the old folder, which is left unchanged. Every create reply states `created`, `project_dir`, `seconds` and `assets_built` (plus `earlier_project`). `created: false`, or an `exists` refusal from `hermes64_scaffold` (which never takes another name), means this call made nothing: never present an earlier game's card, badge or path as the new game; say it already existed and where. `hermes64_demo` with `example` may resume its own unchanged demo project (`resumed: true`, `created: false`).
 
 ## Tool argument shapes
 The advertised schemas are compact; handlers validate the full shapes:

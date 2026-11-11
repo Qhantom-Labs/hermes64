@@ -154,7 +154,7 @@ def sheet(records, columns_by_id, title):
 def generate(root):
     root = lane_path(root)
     audit_manifest(root)
-    manifest = json.loads((root / "manifest.json").read_text())
+    manifest = json.loads((root / "manifest.json").read_text(encoding='utf-8'))
     columns_by_id = {}
     summaries = []
     for record in manifest["assets"]:

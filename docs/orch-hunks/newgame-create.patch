@@ -1,0 +1,31 @@
+diff --git a/adventure_maker/newgame.py b/adventure_maker/newgame.py
+index 4f71a1b..83853bb 100644
+--- a/adventure_maker/newgame.py
++++ b/adventure_maker/newgame.py
+@@ -400,13 +400,26 @@ def run_tool(settings, args, default_root=None):
+         return json.dumps(failure(exc), ensure_ascii=True)
+ 
+ 
++def split_create(raw):
++    """A leading `--create` routes `/hermes64 new` to the create flow (brief, mood, gap report, generated pieces,
++    dressed rooms, honest report): adventure_maker/create_flow.py. Anything else is the classic starter path."""
++    value = (raw or '').strip()
++    if value == '--create' or value.startswith('--create '):
++        return True, value[len('--create'):].strip()
++    return False, raw
++
++
+ def command(ctx, raw):
+     """Slash command text: the four-line success summary, or one plain-English failure line."""
+     from .tools import SETTINGS
+     from .plugin_settings import default_games_root
+     try:
+         settings = {key: ctx.get_config(key, '') for key in SETTINGS}
++        create_mode, raw = split_create(raw)
+         premise, style, name = parse(raw)
++        if create_mode:
++            from .create_flow import command_create
++            return command_create(settings, premise, style, name, default_games_root(ctx))
+         return create(settings, premise, style, name, default_games_root(ctx))['message']
+     except Exception as exc:
+         return 'Hermes64 new: ' + failure(exc)['error']['message']

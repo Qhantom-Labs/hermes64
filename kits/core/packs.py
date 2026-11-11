@@ -56,6 +56,9 @@ class Pack:
         self.thresholds = d["validator_thresholds"]
         self.env_maps = d["env_maps"]
         self.face_atlas = d.get("face_atlas")
+        # texture painting seed: a mood pack (kits/core/mood.py) keeps its base pack's seed, so every texture is painted
+        # with the same strokes and mottle as the base and only the ramp colours differ
+        self.seed_id = d.get("texture_seed", self.id)
 
     @property
     def palette_names(self):
@@ -101,6 +104,8 @@ def validate_pack_dict(d):
     if len(set(x.lower() for x in pal if isinstance(x, str))) != len(pal):
         err.append("duplicate palette colours")
     pn = set(names)
+    if "texture_seed" in d and not (isinstance(d["texture_seed"], str) and d["texture_seed"]):
+        err.append("texture_seed must be a non-empty string")
     lr = d["light_ramp"]
     if not isinstance(lr, list) or len(lr) < 3 or not all(_is_name(pn, n) for n in lr):
         err.append("light_ramp must list >= 3 palette names")

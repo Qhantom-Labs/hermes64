@@ -16,7 +16,8 @@ Every tool handler and `/hermes64 new` read settings through `ctx.get_config`, s
 |---|---|---|---|
 | `ctx.register_tool(name, toolset, schema, handler, check_fn, requires_env, description)` | `adventure_maker/wire.py` (all 27 tools) | 0.3.0 | **Required.** Missing: plain `HostCompatError` naming 0.18.2 |
 | `ctx.register_command(name, handler, description, args_hint)` | `__init__.py` (`/hermes64`) | 0.4.0 | Skipped when missing; retried without `args_hint` if the host rejects that keyword |
-| `ctx.register_skill(name, path, description)` | `__init__.py` (7 bundled skills) | 0.10.0 | Skipped when missing; `OSError`/`ValueError` per skill ignored |
+| `ctx.register_skill(name, path, description)` | `__init__.py` (7 bundled skills) | 0.10.0 | Skipped when missing; `OSError`/`ValueError` per skill ignored. Listed in the agent's `<available_skills>` only from 0.21.6; before that `skill_view('hermes64:<name>')` by exact name only (0.18.2 source: "opt-in explicit loads only") |
+| `ctx.register_hook('pre_llm_call', fn)`; `fn(**kwargs)` returns `{"context": str}` or None | `adventure_maker/native_hint.py` (NATIVE: one-line hint for plain game requests) | present in 0.18.2 (`agent/turn_context.py`, same return contract on 0.22.7) | Skipped when `register_hook` is missing; `TypeError`/`ValueError` ignored; the callback never raises. Hook context goes into that turn's user message and is never stored |
 | `ctx.get_config(key, default)` | `plugin_settings.py`, `newgame.py`, `character_tools.py`, `cover_tools.py` (call time) | 0.20.1 | Compat: reads `plugins.entries.hermes64.settings` (legacy `.config`) via `hermes_cli.config.load_config_readonly`, else the default |
 | `ctx.state.data_dir` | `plugin_settings.default_games_root` (default games/hub folder) | 0.20.1 | Absent (not invented): set **projects_root**; otherwise `/hermes64 new` says to choose one |
 | `ctx.manifest.key` / `.name` | `host_compat` (plugin id for the settings fallback) | 0.18.x | Falls back to `hermes64` |
@@ -27,7 +28,7 @@ Every tool handler and `/hermes64 new` read settings through `ctx.get_config`, s
 | Dashboard plugin `dashboard/manifest.json` + `plugin_api.py` exposing a FastAPI `router` (optional; stdlib fallback) | Hermes64 Studio | 0.18.2 mounts plugin API routes | Not exercised on 0.18.2 (see NOT verified) |
 | Manifest fields `name, version, description, author, license, provides_tools, provides_hooks, provides_middleware, capabilities, requires_env, python_dependencies, config_schema, requires_hermes` | `plugin.yaml` | all known to 0.22.x | 0.18.2 reads name/version/description/author/requires_env/provides_tools/provides_hooks and ignores the rest (settings UI from `config_schema` absent there) |
 
-Not used: hooks, middleware, `ctx.llm`, `ctx.dispatch_tool`, `inject_message`, `register_cli_command`, `plugins_state`
+Not used: hooks other than `pre_llm_call`, middleware, `ctx.llm`, `ctx.dispatch_tool`, `inject_message`, `register_cli_command`, `plugins_state`
 imports, any other `hermes_cli`/`tools`/`agent` import. Plugin-internal `tools.*` imports are package-relative when
 loaded by Hermes (`hermes_plugins.hermes64.*`), so they never resolve to Hermes's own `tools` package.
 

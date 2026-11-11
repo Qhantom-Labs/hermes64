@@ -1,0 +1,54 @@
+PLACEMAKER run proof4 (numbers only; looks are for Dylan to judge)
+
+camp_a  [forest_clearing_camp]  asked {"clutter": 1, "mood": "golden_hour", "seed": 3, "size": "small"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size small mood golden_hour clutter 1 seed 3 light 1.00 contrast 0.00 pull 0.00: static ok clear 4.27 m reach 2/2 cov 0.343 | render ok: style passed n64 passed band 0.71 tris 4230
+
+camp_b  [forest_clearing_camp]  asked {"clutter": 2, "mood": "purple_dusk", "seed": 8, "size": "large"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size large mood purple_dusk clutter 2 seed 8 light 1.00 contrast 0.00 pull 0.00: static ok clear 5.02 m reach 2/2 cov 0.301 | render ok: style passed n64 passed band 0.71 tris 5080
+
+camp_c  [forest_clearing_camp]  asked {"clutter": 1, "mood": "ember_night", "seed": 13, "size": "large"}  attempts 3 (renders 3)  best #1  NOT all checks passed
+  #1 size large mood ember_night clutter 1 seed 13 light 1.00 contrast 0.00 pull 0.00: static ok clear 5.52 m reach 2/2 cov 0.258 | render FAIL: style failed n64 passed band 0.71 tris 4422 (style gate: accent overuse: 33.7% accent pixels (max 15%)) -> next: seed re-roll
+  #2 size large mood ember_night clutter 1 seed 209471 light 1.00 contrast 0.00 pull 0.00: static ok clear 5.77 m reach 2/2 cov 0.266 | render FAIL: style failed n64 passed band 0.71 tris 4456 (style gate: accent overuse: 35.4% accent pixels (max 15%)) -> next: seed re-roll
+  #3 size large mood ember_night clutter 1 seed 523658 light 1.00 contrast 0.00 pull 0.00: static ok clear 6.02 m reach 2/2 cov 0.238 | render FAIL: style failed n64 passed band 0.71 tris 4494 (style gate: accent overuse: 35.4% accent pixels (max 15%))
+
+hall_a  [castle_great_hall]  asked {"clutter": 1, "mood": "golden_hour", "seed": 2, "size": "medium"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size medium mood golden_hour clutter 1 seed 2 light 1.00 contrast 0.00 pull 0.00: static ok clear 6.52 m reach 3/3 cov 0.211 | render ok: style passed n64 passed band 0.86 tris 4802
+
+hall_b  [castle_great_hall]  asked {"clutter": 2, "mood": "ember_night", "seed": 6, "size": "medium"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size medium mood ember_night clutter 2 seed 6 light 1.00 contrast 0.00 pull 0.00: static ok clear 6.52 m reach 3/3 cov 0.216 | render ok: style passed n64 passed band 1.00 tris 5368
+
+hall_c  [castle_great_hall]  asked {"clutter": 3, "mood": "purple_dusk", "seed": 10, "size": "medium"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size medium mood purple_dusk clutter 3 seed 10 light 1.00 contrast 0.00 pull 0.00: static ok clear 6.52 m reach 3/3 cov 0.235 | render ok: style passed n64 passed band 1.00 tris 5656
+
+street_a  [western_main_street]  asked {"clutter": 1, "mood": "base", "seed": 2, "size": "small"}  attempts 3 (renders 3)  best #1  NOT all checks passed
+  #1 size small mood base clutter 1 seed 2 light 1.00 contrast 0.00 pull 0.00: static ok clear 9.27 m reach 4/4 cov 0.043 | render FAIL: style passed n64 failed band 0.43 tris 5324 (n64: neon colour: 2.08% saturated very bright pixels (max 1.00%); reference band 0.43 < 0.50 (out: L_mean, contrast_p95_p5, rms_contrast, flat)) -> next: light -0.07
+  #2 size small mood base clutter 1 seed 2 light 0.93 contrast 0.00 pull 0.00: static ok clear 9.27 m reach 4/4 cov 0.043 | render FAIL: style passed n64 failed band 0.43 tris 5324 (n64: neon colour: 1.72% saturated very bright pixels (max 1.00%); reference band 0.43 < 0.50 (out: L_mean, contrast_p95_p5, rms_contrast, flat)) -> next: light -0.07
+  #3 size small mood base clutter 1 seed 2 light 0.86 contrast 0.00 pull 0.00: static ok clear 9.27 m reach 4/4 cov 0.043 | render FAIL: style passed n64 failed band 0.43 tris 5324 (n64: neon colour: 1.44% saturated very bright pixels (max 1.00%); reference band 0.43 < 0.50 (out: L_mean, contrast_p95_p5, rms_contrast, flat))
+
+street_b  [western_main_street]  asked {"clutter": 2, "mood": "golden_hour", "seed": 5, "size": "medium"}  attempts 3 (renders 3)  best #1  NOT all checks passed
+  #1 size medium mood golden_hour clutter 2 seed 5 light 1.00 contrast 0.00 pull 0.00: static ok clear 10.27 m reach 4/4 cov 0.042 | render FAIL: style failed n64 passed band 0.29 tris 5840 (style gate: depth layering: 3/3 near/mid/far bands present, value range 0.509 (min 0.08), smallest gap 0.027 (min 0.03); reference band 0.29 < 0.50 (out: contrast_p95_p5, rms_contrast, flat, chroma_mean, accent_cluster_share)) -> next: clutter +1
+  #2 size medium mood golden_hour clutter 3 seed 5 light 1.00 contrast 0.00 pull 0.00: static ok clear 9.52 m reach 4/4 cov 0.046 | render FAIL: style failed n64 failed band 0.29 tris 5936 (style gate: depth layering: 3/3 near/mid/far bands present, value range 0.503 (min 0.08), smallest gap 0.021 (min 0.03); n64: neon colour: 1.01% saturated very bright pixels (max 1.00%)) -> next: light -0.07
+  #3 size medium mood golden_hour clutter 3 seed 5 light 0.93 contrast 0.00 pull 0.00: static ok clear 9.52 m reach 4/4 cov 0.046 | render FAIL: style failed n64 passed band 0.29 tris 5936 (style gate: depth layering: 3/3 near/mid/far bands present, value range 0.514 (min 0.08), smallest gap 0.015 (min 0.03); reference band 0.29 < 0.50 (out: contrast_p95_p5, rms_contrast, flat, chroma_mean, accent_cluster_share))
+
+street_c  [western_main_street]  asked {"clutter": 1, "mood": "purple_dusk", "seed": 9, "size": "large"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size large mood purple_dusk clutter 1 seed 9 light 1.00 contrast 0.00 pull 0.00: static ok clear 10.27 m reach 4/4 cov 0.028 | render ok: style passed n64 passed band 0.57 tris 5636
+
+subway_a  [cyber_subway_platform]  asked {"clutter": 1, "mood": "base", "seed": 1, "size": "small"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size small mood base clutter 1 seed 1 light 1.00 contrast 0.00 pull 0.00: static ok clear 6.52 m reach 4/4 cov 0.063 | render ok: style passed n64 passed band 0.57 tris 2368
+
+subway_b  [cyber_subway_platform]  asked {"clutter": 2, "mood": "neon_dawn", "seed": 4, "size": "large"}  attempts 3 (renders 3)  best #1  NOT all checks passed
+  #1 size large mood neon_dawn clutter 2 seed 4 light 1.00 contrast 0.00 pull 0.00: static ok clear 12.02 m reach 4/4 cov 0.044 | render FAIL: style failed n64 passed band 0.86 tris 3082 (style gate: low contrast: luma p95-p5 = 0.345 < 0.38 (washed out; add darks/highlights)) -> next: contrast +0.1 (ambient down, key up)
+  #2 size large mood neon_dawn clutter 2 seed 4 light 1.00 contrast 0.10 pull 0.00: static ok clear 12.02 m reach 4/4 cov 0.044 | render FAIL: style failed n64 passed band 0.86 tris 3082 (style gate: low contrast: luma p95-p5 = 0.346 < 0.38 (washed out; add darks/highlights); fog flattens the frame: 20% of drawn (non-sky) pixels sit within 0.07 of the fog colour (max 20%)) -> next: contrast +0.1 (ambient down, key up)
+  #3 size large mood neon_dawn clutter 2 seed 4 light 1.00 contrast 0.20 pull 0.00: static ok clear 12.02 m reach 4/4 cov 0.044 | render FAIL: style failed n64 passed band 0.86 tris 3082 (style gate: low contrast: luma p95-p5 = 0.355 < 0.38 (washed out; add darks/highlights); fog flattens the frame: 24% of drawn (non-sky) pixels sit within 0.07 of the fog colour (max 20%))
+
+subway_c  [cyber_subway_platform]  asked {"clutter": 1, "mood": "ember_night", "seed": 11, "size": "large"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size large mood ember_night clutter 1 seed 11 light 1.00 contrast 0.00 pull 0.00: static ok clear 12.52 m reach 4/4 cov 0.027 | render ok: style passed n64 passed band 0.86 tris 2802
+
+wizard_a  [wizard_tower_interior]  asked {"clutter": 1, "mood": "purple_dusk", "seed": 3, "size": "small"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size small mood purple_dusk clutter 1 seed 3 light 1.00 contrast 0.00 pull 0.00: static ok clear 6.02 m reach 3/3 cov 0.082 | render ok: style passed n64 passed band 1.00 tris 3086
+
+wizard_b  [wizard_tower_interior]  asked {"clutter": 2, "mood": "ember_night", "seed": 7, "size": "medium"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size medium mood ember_night clutter 2 seed 7 light 1.00 contrast 0.00 pull 0.00: static ok clear 8.02 m reach 3/3 cov 0.087 | render ok: style passed n64 passed band 1.00 tris 5404
+
+wizard_c  [wizard_tower_interior]  asked {"clutter": 1, "mood": "golden_hour", "seed": 12, "size": "medium"}  attempts 1 (renders 1)  best #1  all checks passed
+  #1 size medium mood golden_hour clutter 1 seed 12 light 1.00 contrast 0.00 pull 0.00: static ok clear 8.27 m reach 3/3 cov 0.149 | render ok: style passed n64 passed band 0.86 tris 4680

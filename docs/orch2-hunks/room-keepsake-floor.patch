@@ -1,0 +1,20 @@
+diff --git a/runtime/godot/view/room.gd b/runtime/godot/view/room.gd
+index e3bf672..46c85e1 100644
+--- a/runtime/godot/view/room.gd
++++ b/runtime/godot/view/room.gd
+@@ -275,6 +275,7 @@ func build(room: Dictionary, runtime, resolver) -> void:
+ 		if c.room == room.id: local_collectibles.append(c)
+ 	for i in local_collectibles.size():
+ 		var c: Dictionary = local_collectibles[i]
++		var authored: bool = target_positions.has("collect:" + c.id) or target_positions.has(c.character) or presentation.get("collectibles",{}).get(c.id,{}).has("position")
+ 		var pos: Vector3 = target_positions.get("collect:" + c.id, target_positions.get(c.character, Vector3(1.5 + fmod(i * 1.4, maxf(1, w - 2)), 0.6, d * 0.65 + floor(i * 1.4 / maxf(1, w - 2)))))
+ 		pos = vector(presentation.get("collectibles",{}).get(c.id,{}).get("position",[pos.x,pos.y,pos.z]))
+ 		target_positions["collect:" + c.id] = pos
+@@ -284,6 +285,7 @@ func build(room: Dictionary, runtime, resolver) -> void:
+ 			if visual == null: visual = sphere(self, "collect_" + c.id, pos, 0.24, color("collectible"))
+ 			else:
+ 				add_child(visual)
++				if not authored: pos.y = 0.0   # a keepsake model with no authored spot rests on the floor (kit props stand on their base)
+ 				visual.position = pos
+ 			visual.set_meta("placed", "collectible")
+ 	for id in presentation.get("interactions",{}): target_positions[id] = vector(presentation.interactions[id].position)

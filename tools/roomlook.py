@@ -175,17 +175,17 @@ def capture(round_id, games, seconds=40, refs=None, private_out=None, only_rooms
         t0 = time.monotonic()
         result = json.loads(svc.handle('hermes64_' + name, dict(project=project, **args)))
         if result.get('truncated'):
-            result = json.loads((projects / project / result['report_path']).read_text())
+            result = json.loads((projects / project / result['report_path']).read_text(encoding='utf-8'))
         log.append({'tool': name, 'project': project, 'seconds': round(time.monotonic() - t0, 2),
                     'status': result.get('status', result.get('error')), 'ok': result.get('ok')})
-        (out / 'calls.json').write_text(json.dumps(log, indent=2))
+        (out / 'calls.json').write_text(json.dumps(log, indent=2), encoding='utf-8')
         print(project, name, result.get('status', result.get('error')), '%.1fs' % (time.monotonic() - t0), flush=True)
         return result
 
     summary = {'round': round_id, 'started': stamp(), 'games': {}}
     for game in games:
-        source = json.loads((R / 'examples' / game / 'spec.json').read_text())
-        source['metadata']['presentation'] = json.loads((R / 'examples' / game / 'presentation.json').read_text())
+        source = json.loads((R / 'examples' / game / 'spec.json').read_text(encoding='utf-8'))
+        source['metadata']['presentation'] = json.loads((R / 'examples' / game / 'presentation.json').read_text(encoding='utf-8'))
         if actors:
             # Real imported characters through the character lane's additive adapter (read-only use: staging
             # overlay + generated-runtime bindings). The ordinary facade keeps its markers until Main adopts it.
@@ -203,7 +203,7 @@ def capture(round_id, games, seconds=40, refs=None, private_out=None, only_rooms
             project = svc.project(game)
             folder = svc.folder(project, 'actor-capture')
             opened = CharacterComponents(svc.settings, project).open(svc.current(project)['game'], folder, seconds, screenshots=True)
-            (projects / game / folder / 'open.process.json').write_text(json.dumps(opened, indent=1))
+            (projects / game / folder / 'open.process.json').write_text(json.dumps(opened, indent=1), encoding='utf-8')
             print(game, 'open (real actors)', opened.get('returncode'), flush=True)
             run = projects / game / folder
         else:
@@ -215,19 +215,19 @@ def capture(round_id, games, seconds=40, refs=None, private_out=None, only_rooms
             raise SystemExit('capture failed')
         dest = out / game
         shutil.copytree(run / 'screens', dest)
-        theme = json.loads((run / 'runtime' / 'theme.json').read_text())
-        (dest / 'theme.json').write_text(json.dumps(theme, indent=2))
+        theme = json.loads((run / 'runtime' / 'theme.json').read_text(encoding='utf-8'))
+        (dest / 'theme.json').write_text(json.dumps(theme, indent=2), encoding='utf-8')
         report = style_gate.gate_directory(dest, theme)  # full metrics (the service returns a summary)
-        (dest / 'style-gate.json').write_text(json.dumps(report, indent=2))
+        (dest / 'style-gate.json').write_text(json.dumps(report, indent=2), encoding='utf-8')
         lines = style_gate.summary_lines(report)
         gold = None
         gdir = R / 'goldens' / (game + ('-actors' if actors else ''))
         if (gdir / 'manifest.json').is_file():
             gold = golden.compare(dest, gdir)
-            (dest / 'golden.json').write_text(json.dumps(gold, indent=2))
+            (dest / 'golden.json').write_text(json.dumps(gold, indent=2), encoding='utf-8')
             lines += ['GOLDEN %s (%s)' % (gold['status'].upper(), gold['note'])]
             lines += ['  %-18s %s %s' % (g['id'], g['status'], '; '.join(g['reasons'])) for g in gold['rooms']]
-        (dest / 'style-gate.txt').write_text('\n'.join(lines) + '\n')
+        (dest / 'style-gate.txt').write_text('\n'.join(lines) + '\n', encoding='utf-8')
         print('\n'.join(lines))
         rows, private_rows = [], []
         for r in report['rooms']:
@@ -263,7 +263,7 @@ def capture(round_id, games, seconds=40, refs=None, private_out=None, only_rooms
                                   'triangles': {x['id']: x['triangles'] for x in cap['rooms']},
                                   'triangles_split': {x['id']: x.get('triangles_split') for x in cap['rooms']}, 'actors': actors}
     summary['finished'] = stamp()
-    (out / 'summary.json').write_text(json.dumps(summary, indent=2))
+    (out / 'summary.json').write_text(json.dumps(summary, indent=2), encoding='utf-8')
     print(json.dumps({g: v['gate'] for g, v in summary['games'].items()}))
     return summary
 
@@ -285,11 +285,11 @@ def main(argv):
     g.add_argument('--theme')
     a = ap.parse_args(argv)
     if a.cmd == 'capture':
-        refs = json.loads(outside_repo(a.refs).read_text()) if a.refs else {}
+        refs = json.loads(outside_repo(a.refs).read_text(encoding='utf-8')) if a.refs else {}
         capture(a.round, a.games.split(','), a.seconds, refs, a.private_out, [x for x in a.rooms.split(',') if x], a.actors,
                 a.out_root)
         return 0
-    theme = json.loads(Path(a.theme).read_text()) if a.theme else {}
+    theme = json.loads(Path(a.theme).read_text(encoding='utf-8')) if a.theme else {}
     report = style_gate.gate_directory(a.folder, theme)
     print('\n'.join(style_gate.summary_lines(report)))
     return 0 if report['status'] == 'passed' else 1

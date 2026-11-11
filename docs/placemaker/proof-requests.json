@@ -1,0 +1,18 @@
+{"note": "PLACEMAKER proof: 5 archetypes x 3 rooms (different seeds / sizes / moods). Run: python3 -B -m tools.place_maker proof --requests docs/placemaker/proof-requests.json --run proof1",
+ "requests": [
+  {"name": "wizard_a", "archetype": "wizard_tower_interior", "params": {"size": "small", "mood": "purple_dusk", "clutter": 1, "seed": 3}},
+  {"name": "wizard_b", "archetype": "wizard_tower_interior", "params": {"size": "medium", "mood": "ember_night", "clutter": 2, "seed": 7}},
+  {"name": "wizard_c", "archetype": "wizard_tower_interior", "params": {"size": "medium", "mood": "golden_hour", "clutter": 1, "seed": 12}},
+  {"name": "street_a", "archetype": "western_main_street", "params": {"size": "small", "mood": "base", "clutter": 1, "seed": 2}},
+  {"name": "street_b", "archetype": "western_main_street", "params": {"size": "medium", "mood": "golden_hour", "clutter": 2, "seed": 5}},
+  {"name": "street_c", "archetype": "western_main_street", "params": {"size": "large", "mood": "purple_dusk", "clutter": 1, "seed": 9}},
+  {"name": "subway_a", "archetype": "cyber_subway_platform", "params": {"size": "small", "mood": "base", "clutter": 1, "seed": 1}},
+  {"name": "subway_b", "archetype": "cyber_subway_platform", "params": {"size": "large", "mood": "neon_dawn", "clutter": 2, "seed": 4}},
+  {"name": "subway_c", "archetype": "cyber_subway_platform", "params": {"size": "large", "mood": "ember_night", "clutter": 1, "seed": 11}},
+  {"name": "hall_a", "archetype": "castle_great_hall", "params": {"size": "medium", "mood": "golden_hour", "clutter": 1, "seed": 2}},
+  {"name": "hall_b", "archetype": "castle_great_hall", "params": {"size": "medium", "mood": "ember_night", "clutter": 2, "seed": 6}},
+  {"name": "hall_c", "archetype": "castle_great_hall", "params": {"size": "medium", "mood": "purple_dusk", "clutter": 3, "seed": 10}},
+  {"name": "camp_a", "archetype": "forest_clearing_camp", "params": {"size": "small", "mood": "golden_hour", "clutter": 1, "seed": 3}},
+  {"name": "camp_b", "archetype": "forest_clearing_camp", "params": {"size": "large", "mood": "purple_dusk", "clutter": 2, "seed": 8}},
+  {"name": "camp_c", "archetype": "forest_clearing_camp", "params": {"size": "large", "mood": "ember_night", "clutter": 1, "seed": 13}}
+ ]}

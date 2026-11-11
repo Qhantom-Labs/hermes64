@@ -7,7 +7,7 @@ from .guard import GuardError
 
 
 def main(job_path):
-    with open(job_path) as f:
+    with open(job_path, encoding='utf-8') as f:
         job = json.load(f)
     errors,images,decode = [],[],[]
     for spec in job['images']:
@@ -34,7 +34,7 @@ def main(job_path):
             errors.append({'index':index,'reason':msg})
     out: dict = dict(schema='hermes64.refpack.measurements',version='1.0.0',ok=not errors)
     out.update({'errors':errors} if errors else dict(result,decode=decode))
-    with open(job['out'],'w') as f:
+    with open(job['out'],'w', encoding='utf-8') as f:
         json.dump(out,f,indent=1,sort_keys=True)
         f.write('\n')
     return 2 if errors else 0

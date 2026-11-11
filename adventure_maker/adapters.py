@@ -165,6 +165,8 @@ class Components:
                 else:
                     from characters.integration import stage_runtime
                 stage_runtime(destination, self.root)
+            from .cast_binding import stage as stage_cast   # CHARBIND: project cast (hermes64_character bind)
+            stage_cast(destination, self.project, self.root)
         return destination
 
     def replay(self, game, proof_path, folder, save_path=None):

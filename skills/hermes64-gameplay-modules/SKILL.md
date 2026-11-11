@@ -2,7 +2,7 @@
 name: hermes64-gameplay-modules
 description: "Use when authoring gameplay data. Verify bounded contracts."
 version: 0.1.0
-author: Dylan (Qhantom), Hermes Agent
+author: Qhantom Labs, Hermes Agent
 license: MIT
 platforms: [macos]
 metadata:

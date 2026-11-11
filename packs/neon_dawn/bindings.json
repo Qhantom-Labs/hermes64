@@ -193,6 +193,12 @@
    "preset": null,
    "sha256": "7d5e6d93ec684ef2649c4fe8c43b8f988d921026a90c6ca6b9c246aef80ecdc9"
   },
+  "cyroom.rooftop__arena": {
+   "glb": "kits/library/neon_dawn/presets/cyroom.rooftop__arena.glb",
+   "kit_id": "cyroom.rooftop",
+   "preset": "arena",
+   "sha256": "b07c500ca0c3243106a56792114718b23a1ed1e19b1879b9efc22b282177413a"
+  },
   "cyroom.rooftop__tower": {
    "glb": "kits/library/neon_dawn/presets/cyroom.rooftop__tower.glb",
    "kit_id": "cyroom.rooftop",

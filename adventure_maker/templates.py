@@ -173,8 +173,8 @@ def arena_spec(premise, project, pack, rooms, slots=None):
         next(r for r in spec['rooms'] if r['id'] == npc['room'])['character_ids'].append(npc['id'])
         placed = spec['metadata']['presentation']['rooms'][npc['room']].setdefault('characters', {})
         placed[npc['id']] = {'position': copy.deepcopy(position), 'yaw': 180}
-        if npc.get('clip', 'idle') != 'idle':
-            spec['metadata']['template_pending'] = ['npcs.clip (idle fallback)']
+        if npc.get('clip', 'idle') != 'idle':   # CHARBIND: the actor bridge plays it (idle when the body lacks it)
+            placed[npc['id']]['clip'] = npc['clip']
     spec['start']['modules'] = {'abilities': [], 'completed': [], 'active': '', 'failed': '',
                                 'checkpoint': checkpoints[0]['id'], 'discovered': []}
     spec['gameplay'] = {'api_version': '1.1.0', 'seed': 7, 'verification_policy': 'conditional', 'modules': [

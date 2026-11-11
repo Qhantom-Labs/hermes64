@@ -41,6 +41,7 @@
   "boss": {"type": "object", "additionalProperties": false,
            "properties": {"scale": {"type": "number", "minimum": 0.5, "maximum": 2}, "crown": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/part"}]},
                           "emblem": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/part"}]}}},
+  "preset": {"enum": ["tall_v2", "n64_adult", "n64_adult_caricature"], "description": "proportion preset of a person body (docs/CHARS3-RESULT.md); absent = tall_v2 (every recipe written before CHARS3, rig human16_v1). n64_adult / n64_adult_caricature bodies use rig human16_v3"},
   "legacy": {"type": "object", "additionalProperties": false, "required": ["pack", "kind", "params", "stance", "props"],
              "properties": {"pack": {"enum": ["polar_pod", "forest_village"]}, "kind": {"enum": ["person", "masked"]},
                             "params": {"type": "object", "maxProperties": 96}, "stance": {"type": "string", "pattern": "^[a-z][a-z_]{0,23}$"},

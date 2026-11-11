@@ -114,6 +114,7 @@ def stage_combat(runtime, root=ROOT):
             'enemies': enemies, 'weapons': weapons, 'grips': grips,
             'source_manifest_sha256': combat['source_manifest_sha256']}
     stage_robots(data, runtime, root, admit)
+    stage_robotkit(data, runtime, root, admit)
     write_json(runtime / 'combat.json', data)
     return data
 
@@ -152,6 +153,44 @@ def stage_robots(data, runtime, root, admit):
         data['templates'] = dict(data['templates'], **{data['enemies'][i]['template']: i for i in added})
         data['robot_art'] = {'schema': side['schema'], 'rows': sorted(added),
                              'manifest_sha256': hashlib.sha256(source.read_bytes()).hexdigest()}
+
+
+def game_archetypes(runtime):
+    """{archetype id: FSM template} of the staged game's combat archetypes."""
+    path = Path(runtime) / 'game.json'
+    game = read_json(path) if path.is_file() else {}
+    return {str(row.get('id', '')): str((row.get('fsm') or {}).get('template', ''))
+            for module in (game.get('gameplay') or {}).get('modules', [])
+            for row in (module.get('entities') or {}).get('archetypes', []) if isinstance(row, dict)}
+
+
+def stage_robotkit(data, runtime, root, admit):
+    """Robot kit art seam (characters/combat/robotkit.json, built and gated by tools/robots_build.py): a combat
+    archetype whose id is a robot kit id gets that robot's enemy row, which the module host binds by id before any
+    template alias or stand-in. No alias is written and no other row is touched, so a game that names no robot kit id
+    gets the same combat.json as before. The archetype's FSM template must be the template the robot's clips were
+    built for. Every GLB is hash-checked."""
+    source = Path(root) / 'characters/combat/robotkit.json'
+    if not source.is_file():
+        return
+    side = read_json(source)
+    used = game_archetypes(runtime)
+    added = []
+    for row in side['enemies']:
+        if row['id'] not in used or row['id'] in data['enemies']:
+            continue
+        if used[row['id']] != row['template']:
+            raise CharacterError('robot kit %s is built for %s, the game archetype uses %s'
+                                 % (row['id'], row['template'], used[row['id']]))
+        data['enemies'][row['id']] = {'id': row['id'], 'template': row['template'], 'rig': row['rig'], 'pack': row['pack'],
+                                      'path': admit(row), 'sha256': row['sha256'], 'clips': row['clips'],
+                                      'fsm_state_clip': row['fsm_state_clip'], 'phases': row['phases'],
+                                      'face_atlas': row['face_atlas'], 'tris_body': row['tris_body'],
+                                      'tris_glb': row['tris_glb']}
+        added.append(row['id'])
+    if added:
+        data['robotkit_art'] = {'schema': side['schema'], 'rows': sorted(added),
+                                'manifest_sha256': hashlib.sha256(source.read_bytes()).hexdigest()}
 
 
 # Backward-compatible name for room-look's harness, not a second activation path.

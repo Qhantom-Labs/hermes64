@@ -1,0 +1,55 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema",
+ "$id":"hermes64/recipe/1.0.0",
+ "title":"Hermes64 bounded data-only mesh recipe",
+ "description":"Additional semantic checks enforce finite data, actual palette roles, generic ids, class budgets, total instances/vertices and parameter bounds. No expressions or executable content.",
+ "type":"object", "additionalProperties":false,
+ "required":["format","id","class","licence","operations"],
+ "properties":{
+  "format":{"const":"hermes64-recipe/1"},
+  "id":{"$ref":"#/$defs/id"},
+  "class":{"enum":["arch","prop","furniture","furniture_large","structure","building","shell","terrain","flora","sky","fx","soft","vehicle"]},
+  "licence":{"type":"string","pattern":"^[A-Za-z0-9.+-]{2,64}$"},
+  "parameters":{"type":"object","maxProperties":16,"propertyNames":{"$ref":"#/$defs/id"},"additionalProperties":{"$ref":"#/$defs/parameter"}},
+  "operations":{"type":"array","minItems":1,"maxItems":128,"items":{"$ref":"#/$defs/operation"}},
+  "sockets":{"type":"array","maxItems":16,"items":{"type":"object","additionalProperties":false,"required":["id","position","facing"],"properties":{"id":{"$ref":"#/$defs/id"},"position":{"$ref":"#/$defs/vec3"},"facing":{"enum":["n","e","s","w","up","down"]}}}}
+ },
+ "$defs":{
+  "id":{"type":"string","pattern":"^[a-z][a-z0-9_]{1,47}$"},
+  "scalar":{"oneOf":[{"type":"number","minimum":-100,"maximum":100},{"type":"object","additionalProperties":false,"required":["param"],"properties":{"param":{"$ref":"#/$defs/id"},"mul":{"type":"number","minimum":-100,"maximum":100},"add":{"type":"number","minimum":-100,"maximum":100}}}]},
+  "role":{"oneOf":[{"type":"string","pattern":"^[a-z][a-z0-9_]{1,47}$"},{"type":"object","additionalProperties":false,"required":["param"],"properties":{"param":{"$ref":"#/$defs/id"}}}]},
+  "vec2":{"type":"array","minItems":2,"maxItems":2,"items":{"$ref":"#/$defs/scalar"}},
+  "vec3":{"type":"array","minItems":3,"maxItems":3,"items":{"$ref":"#/$defs/scalar"}},
+  "parameter":{"oneOf":[
+   {"type":"object","additionalProperties":false,"required":["type","minimum","maximum","default"],"properties":{"type":{"const":"number"},"minimum":{"type":"number","minimum":-100,"maximum":100},"maximum":{"type":"number","minimum":-100,"maximum":100},"default":{"type":"number","minimum":-100,"maximum":100}}},
+   {"type":"object","additionalProperties":false,"required":["type","minimum","maximum","default"],"properties":{"type":{"const":"integer"},"minimum":{"type":"integer","minimum":-100,"maximum":100},"maximum":{"type":"integer","minimum":-100,"maximum":100},"default":{"type":"integer","minimum":-100,"maximum":100}}},
+   {"type":"object","additionalProperties":false,"required":["type","enum","default"],"properties":{"type":{"const":"string"},"enum":{"type":"array","minItems":1,"maxItems":8,"items":{"type":"string"}},"default":{"type":"string"}}}
+  ]},
+  "repeat":{"type":"object","additionalProperties":false,"required":["count"],"properties":{"count":{"type":"integer","minimum":1,"maximum":32},"step":{"$ref":"#/$defs/vec3"},"rotate":{"$ref":"#/$defs/vec3"}}},
+  "transform":{"type":"object","additionalProperties":false,"properties":{"translate":{"$ref":"#/$defs/vec3"},"rotate":{"$ref":"#/$defs/vec3"},"scale":{"$ref":"#/$defs/vec3"}}},
+  "operation":{
+   "type":"object","additionalProperties":false,"required":["primitive","args","role"],
+   "properties":{"primitive":{"enum":["box","prism","lathe","loft","tube","blob","torus","card","grid_surface"]},"args":{"type":"object"},"role":{"$ref":"#/$defs/role"},"smooth":{"type":"boolean"},"transform":{"$ref":"#/$defs/transform"},"repeat":{"$ref":"#/$defs/repeat"},"mirror":{"enum":["x","y","z",null]}},
+   "allOf":[
+    {"if":{"properties":{"primitive":{"const":"box"}}},"then":{"properties":{"args":{"$ref":"#/$defs/box"}}}},
+    {"if":{"properties":{"primitive":{"const":"prism"}}},"then":{"properties":{"args":{"$ref":"#/$defs/prism"}}}},
+    {"if":{"properties":{"primitive":{"const":"lathe"}}},"then":{"properties":{"args":{"$ref":"#/$defs/lathe"}}}},
+    {"if":{"properties":{"primitive":{"const":"loft"}}},"then":{"properties":{"args":{"$ref":"#/$defs/loft"}}}},
+    {"if":{"properties":{"primitive":{"const":"tube"}}},"then":{"properties":{"args":{"$ref":"#/$defs/tube"}}}},
+    {"if":{"properties":{"primitive":{"const":"blob"}}},"then":{"properties":{"args":{"$ref":"#/$defs/blob"}}}},
+    {"if":{"properties":{"primitive":{"const":"torus"}}},"then":{"properties":{"args":{"$ref":"#/$defs/torus"}}}},
+    {"if":{"properties":{"primitive":{"const":"card"}}},"then":{"properties":{"args":{"$ref":"#/$defs/card"}}}},
+    {"if":{"properties":{"primitive":{"const":"grid_surface"}}},"then":{"properties":{"args":{"$ref":"#/$defs/grid_surface"}}}}
+   ]
+  },
+  "box":{"type":"object","additionalProperties":false,"required":["cx","cy","cz","sx","sy","sz"],"properties":{"cx":{"$ref":"#/$defs/scalar"},"cy":{"$ref":"#/$defs/scalar"},"cz":{"$ref":"#/$defs/scalar"},"sx":{"$ref":"#/$defs/scalar"},"sy":{"$ref":"#/$defs/scalar"},"sz":{"$ref":"#/$defs/scalar"}}},
+  "prism":{"type":"object","additionalProperties":false,"required":["outline","z0","z1"],"properties":{"outline":{"type":"array","minItems":3,"maxItems":32,"items":{"$ref":"#/$defs/vec2"}},"z0":{"$ref":"#/$defs/scalar"},"z1":{"$ref":"#/$defs/scalar"}}},
+  "lathe":{"type":"object","additionalProperties":false,"required":["profile","segs"],"properties":{"profile":{"type":"array","minItems":2,"maxItems":32,"items":{"$ref":"#/$defs/vec2"}},"segs":{"$ref":"#/$defs/scalar"},"rx":{"$ref":"#/$defs/scalar"},"ry":{"$ref":"#/$defs/scalar"}}},
+  "loft":{"type":"object","additionalProperties":false,"required":["rings"],"properties":{"rings":{"type":"array","minItems":2,"maxItems":16,"items":{"type":"array","minItems":3,"maxItems":32,"items":{"$ref":"#/$defs/vec3"}}}}},
+  "tube":{"type":"object","additionalProperties":false,"required":["path","radius","sides"],"properties":{"path":{"type":"array","minItems":2,"maxItems":32,"items":{"$ref":"#/$defs/vec3"}},"radius":{"$ref":"#/$defs/scalar"},"sides":{"$ref":"#/$defs/scalar"}}},
+  "blob":{"type":"object","additionalProperties":false,"required":["cx","cy","cz","rx","ry","rz"],"properties":{"cx":{"$ref":"#/$defs/scalar"},"cy":{"$ref":"#/$defs/scalar"},"cz":{"$ref":"#/$defs/scalar"},"rx":{"$ref":"#/$defs/scalar"},"ry":{"$ref":"#/$defs/scalar"},"rz":{"$ref":"#/$defs/scalar"},"segs":{"$ref":"#/$defs/scalar"},"rings":{"$ref":"#/$defs/scalar"},"squash_bottom":{"$ref":"#/$defs/scalar"}}},
+  "torus":{"type":"object","additionalProperties":false,"required":["R","r","segs","sides"],"properties":{"R":{"$ref":"#/$defs/scalar"},"r":{"$ref":"#/$defs/scalar"},"segs":{"$ref":"#/$defs/scalar"},"sides":{"$ref":"#/$defs/scalar"}}},
+  "card":{"type":"object","additionalProperties":false,"required":["w","h"],"properties":{"w":{"$ref":"#/$defs/scalar"},"h":{"$ref":"#/$defs/scalar"}}},
+  "grid_surface":{"type":"object","additionalProperties":false,"required":["nu","nv","width","depth","heights"],"properties":{"nu":{"$ref":"#/$defs/scalar"},"nv":{"$ref":"#/$defs/scalar"},"width":{"$ref":"#/$defs/scalar"},"depth":{"$ref":"#/$defs/scalar"},"heights":{"type":"array","maxItems":25,"items":{"type":"array","maxItems":25,"items":{"$ref":"#/$defs/scalar"}}}}}
+ }
+}

@@ -1,4 +1,33 @@
 {
+ "budget_profiles": {
+  "profiles": {
+   "arena": {
+    "evidence": "docs/ROOF-BUDGET.md",
+    "frame_ms_target": 8.0,
+    "justification": "Wave/boss arena rooms hold more simultaneous combatants. Measured (docs/ROOF-BUDGET.md, Mac mini M4 Pro, Godot 4.6.2): the trimmed finale roof with hero + 3 bosses + captive is 5,820 triangles, so no robot fits under 6,000; with 4 robots it is 7,684 and the GL Compatibility renderer (the exports' renderer) ran p50 1.2-1.4 ms, p95 5.7-6.6 ms per frame; 8,818 (6 robots) still p95 6.2 ms; 17,230 rose to p95 13.4 ms. 8,000 keeps a 2x margin to that knee. Only plans with an arena clearance block may use it.",
+    "overhead_exterior": 200,
+    "overhead_interior": 80,
+    "person_tris": 760,
+    "requires": [
+     "arena"
+    ],
+    "robot_tris": 480,
+    "room_tris": 8000
+   },
+   "default": {
+    "justification": "The original N64-class cap: one room, everything loaded, inside the measured frame budget of the GL Compatibility web/desktop exports with margin.",
+    "overhead_exterior": 200,
+    "overhead_interior": 80,
+    "person_tris": 760,
+    "requires": [],
+    "robot_tris": 480,
+    "room_tris": 6000
+   }
+  },
+  "source": [
+   "kits/core/room_budget_profiles.json"
+  ]
+ },
  "budgets": {
   "project_pack_limits": {
    "character_tris": 700,

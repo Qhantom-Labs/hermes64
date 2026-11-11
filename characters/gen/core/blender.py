@@ -16,7 +16,7 @@ def clear():
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.context.scene.render.fps=15
 
-def loadpack(name):return json.loads((ROOT/'packs'/name/'pack.json').read_text())
+def loadpack(name):return json.loads((ROOT/'packs'/name/'pack.json').read_text(encoding='utf-8'))
 
 def image(name,arr,folder):
     path=Path(folder)/(name+'.png');paint.png(path,arr)

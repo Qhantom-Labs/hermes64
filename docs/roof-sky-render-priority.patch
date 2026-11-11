@@ -1,0 +1,10 @@
+--- a/runtime/godot/view/room.gd	2026-11-10 17:21:31
++++ b/runtime/godot/view/room.gd	2026-11-10 17:21:31
+@@ -379,6 +379,7 @@
+ 		var m := sky_material(true, false)
+ 		m.albedo_texture = tex
+ 		m.vertex_color_use_as_albedo = false
++		m.render_priority = 1
+ 		q.material_override = m
+ 		q.position = at
+ 		root.add_child(q)

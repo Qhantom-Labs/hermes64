@@ -183,3 +183,37 @@ anyway. Not cut, and why: the audio tool's three nested field lists (`music`, `v
 belong to the audio lane's copy and its skill does not list the `transform` fields; the remaining tool sentences
 carry safety or honesty claims ("Never uploads", "Read-only", "Windows execution unverified on Mac", "Always check
 after editing"). A lane that needs more than 132 should route its own argument detail into its skill.
+
+## WAIVER: owner waiver on bind, acknowledgement on the hub (5,984 -> 5,996)
+
+Measured with `python3 -B -m tools.schema_budget` on `waiver-lane`. After the slide-lane merge (chars5's `locomotion`
+action and `legacy`), the 27 tools stood at **5,984** tokens. The WAIVER lane added `hermes64_character.waive` (boolean),
+`hermes64_character.owner_approved` (string; the handler checks it is a name, so no pattern is advertised) and
+`hermes64_hub.waived` (boolean). bind reuses the existing `brief` as the owner's words. That took the total to 6,009.
+The budget was not raised. The `hermes64_character` description was rewritten 25 characters shorter with the same
+facts: "propose 3 variants, edit, build the user's pick ...", and "locomotion = bake run + walk" without "for a body".
+Total **5,996** (23,986 characters). The character and hub validation pins moved deliberately; the reasons are next to
+them in `tests/test_schema_budget.py`.
+
+## MERGEPREP: chars4 + waiver + tiers on one branch (6,010 -> 6,000)
+
+Measured with `python3 -B -m tools.schema_budget` on `mergeprep-lane`. Each lane fit on its own base; together, since
+rc3-m15 (5,952), stack B's doctor copy (-6), chars4's `locomotion` action (+32), WAIVER's three arguments (+12) and
+TIERS' `hermes64_compile.spec_path` description (+20) put the 27 tools at **6,010** tokens (24,039 characters). The
+budget was not raised and no validation schema changed (all four validation pins pass unchanged). Advertised copy only,
+same facts:
+
+| Edit | Characters |
+|---|---:|
+| `hermes64_compile.spec_path`: "Project-relative, e.g. source/spec.json." (was "Inside the project, e.g. source/spec.json; never absolute.") | -18 |
+| `hermes64_hub`: "Local Hermes64 Hub: ..." (was "Local Hermes64 Hub registry: ..."; counted twice, schema + tool) | -18 |
+| `hermes64_character`: "locomotion = bake run/walk" (was "bake run + walk"; counted twice) | -4 |
+
+NATIVE: `hermes64_demo` now starts with the plain-request trigger, its first sentence being the deferred listing line
+(hosts 0.19.1+): "For any game request, load skill hermes64:hermes64-create first. Quick path: a premise sentence (optional
+style) builds, proof-checks and bot-plays a game; or run a bundled example (project + example)." 201 characters, was
+204 (counted twice): -6 characters. The pre_llm_call hint costs no schema tokens (it is added to a turn only when the
+message looks like a game request).
+
+Total **6,000** (23,993 characters after NATIVE; 23,999 before): no headroom. A re-merged lane that adds advertised copy must route its detail into
+its skill or trim the same way.

@@ -36,7 +36,7 @@ ROLE_SPECS = {
 def load_roles(pack):
     p = ROOT / 'packs' / pack['id'] / 'combat_roles.json'
     if p.is_file():
-        return json.loads(p.read_text())['roles']
+        return json.loads(p.read_text(encoding='utf-8'))['roles']
     return {}
 
 

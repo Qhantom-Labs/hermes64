@@ -1,0 +1,49 @@
+{
+ "format": "hermes64-create-vocab/1",
+ "note": "Data for the create flow's no-LLM path. brief_cues are merged into the keyword fallback tables of adventure_maker/brief.py for one from_prompt call (brief.py is not edited); keys must be words that brief.py's closed vocabulary already knows (genres, hints, roles). genre_tags maps a brief genre to catalog genre tags. weights rank style packs by weighted tag coverage (setting words above prop words). An agent-written brief does not need any of this: it names things in the brief directly.",
+ "brief_cues": {
+  "genre": {
+   "western": {"2": ["gunslinger", "shootout", "showdown", "stagecoach", "train robbery", "bandit", "bandits", "revolver", "gunfight"], "1": ["railroad", "train", "desperado"]},
+   "horror": {"2": ["phantom", "phantoms", "spectre", "specter", "poltergeist"], "1": ["spirit", "spirits", "crypt", "tomb", "gravestone"]},
+   "fantasy": {"2": ["portal", "floating island", "enchanter", "warlock"], "1": ["rune", "runes"]},
+   "polar": {"1": ["snowfield", "iceberg", "ice shelf"]},
+   "sci-fi": {"1": ["reactor", "airlock", "drone"]}
+  },
+  "hint": {
+   "heist": ["robbery", "robberies", "robber", "robbers", "rob", "hold up", "holdup", "stick up", "bank job", "train robbery"],
+   "combat": ["shootout", "shoot out", "gunfight", "gun fight", "duel", "showdown", "brawl", "ambush", "shooting", "shooter"],
+   "racing": ["time trial", "timed", "countdown", "against the clock", "race against time"],
+   "puzzle": ["riddle", "riddles", "lever", "levers", "pressure plate", "push block", "switch puzzle", "sokoban"],
+   "ghost": ["spirit", "spirits", "phantom", "phantoms", "spectre", "specter", "apparition"],
+   "haunted": ["haunting", "possessed"],
+   "magic": ["portal", "portals", "teleport", "floating island"],
+   "exploration": ["quest", "journey", "explorer"]
+  },
+  "build": {
+   "train": "train car", "trains": "train car", "railway": "railway track", "railroad": "railway track",
+   "locomotive": "locomotive", "train station": "train station", "bank": "bank", "jail": "jail", "water tower": "water tower",
+   "research station": "research station", "outpost": "outpost", "crypt": "crypt", "tomb": "tomb", "keep": "castle keep"
+  },
+  "prop": {
+   "safe": "safe", "strongbox": "strongbox", "money bag": "money bag", "gold bars": "gold bars", "revolver": "revolver",
+   "wanted poster": "wanted poster", "rail": "rail track", "handcar": "handcar", "lamp post": "street lamp",
+   "lens": "lighthouse lens", "bell": "bell", "rope": "rope coil", "net": "net", "spellbook": "spellbook on a lectern",
+   "repair kit": "toolbox", "toolbox": "toolbox", "generator": "generator", "antenna": "antenna"
+  },
+  "character": {
+   "bandit": ["bandit", "enemy"], "bandits": ["bandit", "enemy"], "robber": ["train robber", "enemy"],
+   "robbers": ["train robber", "enemy"], "gunslinger": ["gunslinger", "player"], "conductor": ["train conductor", "npc"],
+   "keeper": ["lighthouse keeper", "npc"], "lighthouse keeper": ["lighthouse keeper", "npc"], "spirit": ["ghost", "enemy"],
+   "phantom": ["ghost", "enemy"], "apprentice": ["apprentice wizard", "player"], "warlock": ["warlock", "enemy"]
+  }
+ },
+ "genre_tags": {
+  "sci-fi": ["scifi"], "space": ["space", "scifi"], "polar": ["polar", "snow", "ice", "arctic"], "fantasy": ["fantasy", "magic", "wizard"],
+  "medieval": ["medieval", "castle"], "horror": ["horror"], "western": ["western"], "ancient": ["ancient", "temple"],
+  "jungle": ["jungle", "temple"], "desert": ["desert"], "pirate": ["pirate", "nautical"], "fairy-tale": ["fantasy", "cozy"],
+  "mystery": ["horror", "interior"], "cozy": ["cozy"], "post-apocalypse": ["industrial", "urban"]
+ },
+ "weights": {"genre": 6, "hint": 2, "place": 3, "build": 2, "prop": 1, "time": 1, "room_patterns": 0},
+ "genre_exists_min": 5,
+ "close_margin": 2
+}

@@ -30,6 +30,8 @@ def shell(P, seed, kind):
     dm = float(P.get('door_m', 6.0))          # door centre from the plot-side shell edge (cell 1 by default)
     if night:
         floor_role = NIGHT_FLOOR.get(kind, 'trim')
+    if P.get('deck', 'service') == 'calm':
+        floor_role = CALM_FLOOR                # plain dark deck: floor telegraphs (lines, rings, fans) read against it
     st = 4 if night else 2                     # night arenas: coarser floor grid keeps big rooms inside budget
     body = C.grid_floor(C.stations(-w/2, w/2, st), C.stations(-d/2, d/2, st), lambda x, y: True, role=floor_role)
     walls, trim, cards, ceiling = K.Mesh(), K.Mesh(), K.Mesh(), K.Mesh()
@@ -98,6 +100,12 @@ def shell(P, seed, kind):
 # ---- Night finish (CYBERPOLISH). Opt-in through presets; the default 'day' builds are byte-identical to before.
 # Dark floors keep characters readable (the cast is lit warm/pale against navy), each interior gets its own ceiling.
 NIGHT_FLOOR = {'club': 'body_alt', 'subway': 'step', 'server': 'trim', 'rooftop': 'dirt', 'lobby': 'step'}
+# Calm deck (ROOF lane, opt-in 'deck': 'calm'): the same painted ground role (the style gate reads it as ground and
+# wants its large-scale variation) under a dimmer overhead bake light, so the deck's luma spread drops and amber floor
+# telegraphs keep a measured contrast against it (tools.telegraph_contrast). A flatter non-ground role ('cap') was
+# tried and failed the exterior ground gates (no ground in view, 49% flat frame).
+CALM_FLOOR = 'dirt'
+CALM_DECK_LIGHT = 0.3
 NIGHT_WALL = {'club': 'wall_alt', 'subway': 'stone', 'server': 'body_alt', 'lobby': 'stone'}
 
 
@@ -114,7 +122,8 @@ def night_finish(P, kind, w, d, h, body, walls, trim, cards):
             cards.merge(C.strip((x0, y0, 1.12), (x1, y1, 1.12), 0.08, 'light', up, a))
         trim.merge(C.taper(-w/2+2.3, d/2-2.2, 0, 3.8, 3.4, 3.2, 3.1, 2.9, 0.35, 0.3, 'wall', top='roof'))
         nodes = [Node('floor', body, 'shell'), Node('walls', walls, 'shell'), Node('trim', trim, 'solid'), Node('lights', cards, 'card')]
-        return nodes, [C.light((0, 0, 8), 18.0 + 2*w/4, 0.6)]
+        calm = P.get('deck', 'service') == 'calm'
+        return nodes, [C.light((0, 0, 8), 18.0 + 2*w/4, CALM_DECK_LIGHT if calm else 0.6)]
     if kind == 'club':
         # Dark ceiling with two nested neon frames over the floor, wall neon ribs alternating cyan / magenta,
         # a violet skirting glow and a raised dance floor inlaid with a neon grid.
@@ -182,7 +191,8 @@ def night_finish(P, kind, w, d, h, body, walls, trim, cards):
 def register_shell(kind, description):
     @register('cyroom.'+kind,V,'shell',{'cells_x':S.integer(3,3,5),'cells_y':S.integer(3,3,5),'accent':SLOT,
               'finish':S.enum('day',['day','night'],'night: dark floor, per-kind ceiling and neon (arena presets)'),
-              'door_m':S.num(6.0,6.0,10.0,'door centre from the shell edge in metres')},description,
+              'door_m':S.num(6.0,6.0,10.0,'door centre from the shell edge in metres'),
+              'deck':S.enum('service',['service','calm'],'calm: plain dark floor and dimmer deck light so floor telegraphs read (arena presets)')},description,
               origin='room_floor')
     def build(P,seed):
         return shell(P,seed,kind)

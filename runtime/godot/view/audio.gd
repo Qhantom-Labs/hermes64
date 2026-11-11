@@ -63,6 +63,7 @@ func boot(path: String) -> void:
 		clips[event] = stream
 		rows[event] = row
 		report[event] = {"sha256":row.sha256,"seconds":stream.get_length(),"loaded":true}
+	for event in sfx_keys(): sfx_banks[event.split(":")[1]] = sfx_banks.get(event.split(":")[1], []) + [event]
 	if clips.has("ambient"):
 		ambient.stream = clips.ambient
 		ambient.stream.loop_mode = AudioStreamWAV.LOOP_FORWARD
@@ -75,11 +76,12 @@ func boot(path: String) -> void:
 func _exit_tree() -> void:
 	stop_playback()
 func stop_playback() -> void:
-	for player in [ambient, effect, voice_player] + voices + music_players:
+	for player in [ambient, effect, voice_player] + voices + music_players + sfx_pool:
 		if is_instance_valid(player):
 			player.stop()
 			player.stream = null
 	clips.clear()
+	sfx_banks.clear()
 func shutdown() -> void:
 	stop_playback()
 	if playback_enabled:
@@ -116,6 +118,70 @@ func cue(id: String) -> bool:
 	player.volume_db = float(rows[key].get("gain_db", -14))
 	player.play()
 	return true
+## COMBATFIX: combat event sounds, rows "sfx:<event>:<n>" lowered from the project's audio slots combat_sfx
+## (docs/AUDIO-IMPORT.md); a game without them has none and keeps its stock cues. One-shot: an event plays at most
+## once per SFX_COOLDOWN ticks, at most SFX_VOICES sounds at once (the longest-playing one is cut), and the Music bus
+## ducks SFX_DUCK dB for 0.35 s under heavy hits. Presentation only; sfx_stats counts what was asked and played.
+const SFX_VOICES := 4
+const SFX_COOLDOWN := {"punch_hit": 4, "punch_miss": 8, "robot_hit": 4, "boss_hit": 6, "player_hurt": 12, "dodge": 10, "block": 6, "robot_death": 10, "boss_telegraph": 30}
+const SFX_DUCK := {"boss_hit": 4.0, "player_hurt": 3.0, "robot_death": 3.0}
+var sfx_banks := {}
+var sfx_last := {}
+var sfx_pool := []
+var sfx_stats := {"asked": 0, "played": 0, "cooldown": 0, "cut": 0, "max_voices": 0, "events": {}}
+var duck_left := 0.0
+var duck_db := 0.0
+func sfx_keys() -> Array:
+	var out := []
+	for key in clips:
+		if str(key).begins_with("sfx:") and str(key).count(":") == 2: out.append(key)
+	out.sort()
+	return out
+func has_sfx() -> bool:
+	return not sfx_banks.is_empty()
+func sfx(event: String, variant := 0) -> bool:
+	var bank: Array = sfx_banks.get(event, [])
+	if bank.is_empty(): return false
+	sfx_stats.asked += 1
+	var now := Engine.get_physics_frames()
+	if now - int(sfx_last.get(event, -1000)) < int(SFX_COOLDOWN.get(event, 4)):
+		sfx_stats.cooldown += 1
+		return true
+	sfx_last[event] = now
+	sfx_stats.played += 1
+	sfx_stats.events[event] = int(sfx_stats.events.get(event, 0)) + 1
+	if not playback_enabled: return true
+	if sfx_pool.is_empty():
+		for i in SFX_VOICES:
+			var p := AudioStreamPlayer.new()
+			p.bus = bus_or_master("SFX")
+			add_child(p)
+			sfx_pool.append(p)
+	var player: AudioStreamPlayer = null
+	for p in sfx_pool:
+		if not p.playing: player = p; break
+	if player == null:
+		sfx_stats.cut += 1
+		player = sfx_pool[0]
+		for p in sfx_pool:
+			if p.get_playback_position() > player.get_playback_position(): player = p
+	var key: String = bank[posmod(variant, bank.size())]
+	player.stream = clips[key]
+	player.volume_db = float(rows[key].get("gain_db", -6))
+	player.play()
+	var busy := 0
+	for p in sfx_pool:
+		if p.playing: busy += 1
+	sfx_stats.max_voices = maxi(int(sfx_stats.max_voices), busy)
+	if SFX_DUCK.has(event):
+		duck_db = maxf(duck_db if duck_left > 0.0 else 0.0, float(SFX_DUCK[event]))
+		duck_left = 0.35
+	return true
+func _process(delta: float) -> void:
+	if duck_left <= 0.0: return
+	duck_left = maxf(0.0, duck_left - delta)
+	var idx := AudioServer.get_bus_index("Music")
+	if idx >= 0: AudioServer.set_bus_volume_db(idx, linear_to_db(maxf(float(settings.music), 0.001)) - duck_db * minf(1.0, duck_left / 0.15))
 
 # ------------------------------------------------------------------ AUDIOPIPE: busses + settings
 func bus_or_master(bus_name: String) -> String:
@@ -201,6 +267,15 @@ func on_event(kind: String, payload: Dictionary) -> void:
 		event_key = ""
 	play_hooked("on_event", kind)
 	update_music()
+## SCENES passes the exact runtime slot name; absent cues retain the current room music.
+func on_cutscene_music(slot: String) -> void:
+	if not slot.begins_with("music:") or not clips.has(slot): return
+	event_key = slot
+	update_music()
+func stop_voice() -> void:
+	if is_instance_valid(voice_player):
+		voice_player.stop()
+		voice_player.stream = null
 func on_action(action_id: String) -> void:
 	play_hooked("on_action", action_id)
 func on_menu(open: bool) -> void:

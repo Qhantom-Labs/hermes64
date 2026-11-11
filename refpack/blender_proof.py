@@ -336,7 +336,7 @@ def main(job_path):
             report["ok"] = False
             return report
         report["stage"] = "build"
-        layout = json.load(open(os.path.join(job["kits_dir"], "kits", "layouts", job.get("layout", "lounge") + ".json")))
+        layout = json.load(open(os.path.join(job["kits_dir"], "kits", "layouts", job.get("layout", "lounge") + ".json"), encoding='utf-8'))
         pieces, problems, checks = assemble_room(pipeline, layout, pack, job["pack_json"], os.path.join(proof, "rooms", layout["layout_id"]),
                                                  os.path.join(proof, "textures"))
         report["room"] = {"layout": layout["layout_id"], "pieces": len(pieces), "expected": 1 + len(layout.get("openings", {})) + len(layout["fixtures"]),
@@ -350,7 +350,7 @@ def main(job_path):
             report["renders"] = {k: os.path.relpath(v, pdir) for k, v in renders.items()}
             report["render_sha256"] = {k: sha(v) for k, v in renders.items()}
             if job.get("ref_measurements"):
-                ref_meas = json.load(open(job["ref_measurements"]))
+                ref_meas = json.load(open(job["ref_measurements"], encoding='utf-8'))
                 imgs = [{"index": i, "srgba": measure_png(png_mod, p), "weight": 1.0} for i, p in enumerate(renders.values())]
                 pm = M.measure(imgs)
                 report["proof_measurements"] = {"pooled_clusters": len(pm["pooled"]["clusters"])}
@@ -361,7 +361,7 @@ def main(job_path):
             for r in job.get("refs", []):
                 refs_rgba.append(load_ref_rgba(r["path"]))
                 labels.append("REF %d  %s" % (r["index"], r.get("label", "")))
-        d = json.load(open(job["pack_json"]))
+        d = json.load(open(job["pack_json"], encoding='utf-8'))
         sheet = compose_sheet(png_mod, pixfont, refs_rgba, list(renders.values()), d, os.path.join(proof, "proof_sheet.png"),
                               "DRAFT PACK %s  (HERMES64_PACK_FROM_REFS)" % d["id"].upper(), labels)
         report["proof_sheet"] = os.path.relpath(sheet, pdir)

@@ -214,7 +214,7 @@ def pack_from_refs(reference_paths, notes, pack_id, project_dir, read_root=None,
             json.dump(pj, f, indent=1, sort_keys=True)
         code, tail, secs = run_python(python_bin, "proof", pjp, timeout_s, work)
         res["timings"]["proof"] = round(secs, 2)
-        rep = json.load(open(pj["out"])) if os.path.exists(pj["out"]) else {"ok": False, "error": "no report: %s" % tail[-800:]}
+        rep = json.load(open(pj["out"], encoding='utf-8')) if os.path.exists(pj["out"]) else {"ok": False, "error": "no report: %s" % tail[-800:]}
         if code is None:
             rep = {"ok": False, "error": "proof stage %s" % tail}
         validation = {"tool": config.TOOL_ID, "pack": pack_id, "pack_json_sha256": res["hashes"]["pack.json"],

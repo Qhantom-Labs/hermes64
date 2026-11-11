@@ -25,7 +25,7 @@ def main(out):
     sys.path.insert(0, config.kits_dir())
     from core.palette import Palette
     from core.texgen import make_texture
-    mats = json.load(open(config.library_path("materials.json")))
+    mats = json.load(open(config.library_path("materials.json"), encoding='utf-8'))
     jobs = {}
     for word, t in mats["materials"].items():
         if t["kind"] in ("chrome_env", "glass_env") or "ramp" not in t or "gen" not in t:
@@ -59,7 +59,7 @@ def main(out):
         mL = float(L[(L >= lo) & (L <= hi)].mean())
         pos = (mL - Ls[0]) / (Ls[-1] - Ls[0]) * (n - 1) if n > 1 else 0.0
         res["%s/%d" % (gen, n)] = {"mean_pos": round(pos, 3), "steps": n}
-    with open(out, "w") as f:
+    with open(out, "w", encoding='utf-8') as f:
         json.dump({"_note": "fractional ramp index of each generator's robust mean (0 = darkest step); "
                             "measured by refpack/calibrate_gens.py from lane-kits core/texgen.py", "gens": res},
                   f, indent=1, sort_keys=True)

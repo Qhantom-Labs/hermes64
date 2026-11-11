@@ -1,0 +1,152 @@
+{
+ "format": "hermes64-room-layouts/1",
+ "note": "Room-scale dial (lane SCALE). Scale profiles + open-space and interior layouts as element rules over the room grid (metres, x east, z south, north wall z=0). The core square stays clear and its boundary is marked by 'at_core' pieces, which is what sets the clear square. Every asset is an existing core kit key bound in the village (n64_v0), forest (forest_village) and polar (polar_pod) packs; nothing here is new art. adventure_maker/room_scale.py interprets it; 'small' is the legacy 4 x 4 m starter and is never rewritten.",
+ "scales": {
+  "small": {"legacy": true, "clear_m": [1.5, 3.6], "note": "legacy two_room_collect_v1 starter, byte-identical"},
+  "medium": {"grid": [13, 13], "core_m": 8.0, "clear_m": [7.0, 9.0], "door_frac": 0.27, "density": 1.0, "tri_budget": 6000,
+             "fog": {"near": 15.0, "far": 44.0}, "wall_height_scale": 1.25, "ceiling_tiles": 3,
+             "camera": {"back": 3.5, "height": 5.2, "look_z": 0.42, "fov": 60}},
+  "large": {"grid": [16, 16], "core_m": 13.0, "clear_m": [12.0, 16.0], "door_frac": 0.27, "density": 1.0, "tri_budget": 6000,
+            "fog": {"near": 18.0, "far": 52.0}, "wall_height_scale": 1.45, "ceiling_tiles": 4,
+            "camera": {"back": 4.0, "height": 6.4, "look_z": 0.42, "fov": 60}},
+  "open": {"grid": [16, 16], "core_m": 13.0, "clear_m": [12.0, 16.0], "door_frac": 0.27, "density": 1.0, "tri_budget": 8000, "outdoor": true,
+           "fog": {"near": 18.0, "far": 52.0}, "wall_height_scale": 1.45, "ceiling_tiles": 4,
+           "camera": {"back": 4.0, "height": 6.4, "look_z": 0.42, "fov": 60},
+           "note": "large with outdoor treatment for both rooms; the profile allows 8,000 triangles, but the style audit checks the pack room cap (6,000), so the planner budgets every room against 6,000"}
+ },
+ "default_scale": "medium",
+ "runtime_tris": {"plain": 1400, "shell": 2300, "yard": {"n64_v0": 3900, "polar_pod": 3000, "default": 3900}, "npc": 800, "margin": 100,
+                  "source": "measured: playtest room triangles minus planned pieces, medium fox/village/polar builds (lane SCALE run r2)"},
+ "variant_tris": {"polar_pod": {"nature.tree": 256}},
+ "legacy_exterior_fog": {"forest_village": {"from": "n64_v0", "note": "forest_village has no look block; outdoor rooms reuse the exterior fog n64_v0 tuned for the same sky.backdrop file (applied only while both packs bind that file)"}},
+ "required_keys": ["nature.tree", "nature.rock", "nature.bush", "arch.house", "arch.wall_module", "furn.table"],
+ "pack_outdoor": {"n64_v0": "village_square", "forest_village": "forest_clearing", "polar_pod": "snowfield"},
+ "second_outdoor": {"water": "riverside", "default": "courtyard"},
+ "words": {
+  "library": ["library", "libraries", "book", "books", "scroll", "scrolls", "archive", "archives", "study", "reads", "reading", "tome", "tomes", "scholar", "manuscript"],
+  "workshop": ["workshop", "repair", "repairs", "fix", "fixes", "tool", "tools", "radio", "machine", "machines", "forge", "smith", "engine", "invent", "invents", "tinker", "tinkers", "gadget"],
+  "hall": ["hall", "castle", "palace", "temple", "manor", "throne", "inn", "tavern", "inside", "indoors", "mansion", "chapel", "museum"],
+  "water": ["river", "rivers", "stream", "creek", "brook", "riverside", "harbor", "harbour", "sea", "lake", "pond", "boat", "boats", "fishing", "pier", "dock", "ferry", "shore", "canal"]
+ },
+ "layouts": {
+  "village_square": {
+   "kind": "outdoor", "label": "village square with buildings around it",
+   "anchors": {"npc": ["e", 0.45, 1.95], "finish": ["e", 0.45, 2.95], "keepsake_on": ["w", 0.42, "furn.container"]},
+   "elements": [
+    {"type": "edge", "asset": "arch.house", "front_m": 1.0, "at": [["e", 0.45], ["w", 0.6], ["n", 0.76]], "large_at": [["s", 0.15]], "kind": "piece"},
+    {"type": "anchor", "asset": "arch.tower", "at": [0.70, -9.0], "scale": 1.0, "kind": "landmark", "treatment": "plain"},
+    {"type": "gate", "asset": "arch.railing", "kind": "piece"},
+    {"type": "ring", "at_core": true, "assets": ["furn.container", "nature.bush", "furn.bench", "nature.rock", "nature.bush"], "yard_assets": ["nature.rock", "nature.bush", "nature.rock"], "spacing_m": 2.2, "scale": [0.9, 1.1], "kind": "piece"},
+    {"type": "ring", "inset_m": -0.6, "outside_m": 3.6, "assets": ["nature.tree", "nature.bush", "nature.tree"], "spacing_m": 3.6, "scale": [0.85, 1.05], "kind": "piece"},
+    {"type": "anchor", "asset": "prop.sign", "at_lane": ["door", 0.3, 1.25], "kind": "piece"},
+    {"type": "path", "asset": "arch.floor_module", "spacing_m": 2.0, "kind": "floor"},
+    {"type": "plaza", "asset": "arch.floor_module", "tiles": 3, "kind": "floor", "treatment": "plain"},
+    {"type": "scatter", "assets": ["nature.grass_tuft", "nature.grass_tuft", "nature.rock"], "region": "band", "per_100m2": 5.0, "gap_m": 0.4, "scale": [0.7, 1.3], "kind": "piece"},
+    {"type": "scatter", "assets": ["nature.grass_tuft"], "region": "core", "cell_m": 3.0, "scale": [0.8, 1.2], "kind": "floor"}
+   ]
+  },
+  "forest_clearing": {
+   "kind": "outdoor", "label": "forest clearing, tree ring, landmark tree at the head of the clearing",
+   "anchors": {"npc": ["e", 0.45, 1.95], "finish": ["e", 0.45, 2.95], "keepsake_on": ["w", 0.45, "nature.rock"]},
+   "elements": [
+    {"type": "anchor", "asset": "nature.tree", "at": [0.68, -1.4], "scale": 1.55, "kind": "landmark"},
+    {"type": "gate", "asset": "arch.railing", "kind": "piece"},
+    {"type": "ring", "at_core": true, "assets": ["nature.tree", "nature.bush", "nature.tree", "nature.rock", "nature.bush"], "spacing_m": 2.4, "scale": [0.85, 1.1], "kind": "piece"},
+    {"type": "ring", "inset_m": -1.6, "outside_m": 4.6, "assets": ["nature.tree"], "spacing_m": 3.5, "scale": [1.0, 1.3], "kind": "piece"},
+    {"type": "scatter", "assets": ["nature.bush", "nature.rock", "nature.grass_tuft", "nature.grass_tuft"], "region": "band", "per_100m2": 6.0, "gap_m": 0.35, "scale": [0.7, 1.4], "kind": "piece"},
+    {"type": "scatter", "assets": ["nature.grass_tuft"], "region": "core", "cell_m": 2.9, "scale": [0.8, 1.3], "kind": "floor"}
+   ]
+  },
+  "snowfield": {
+   "kind": "outdoor", "label": "snowfield with scattered rocks and a hut",
+   "anchors": {"npc": ["e", 0.45, 1.95], "finish": ["e", 0.45, 2.95], "keepsake_on": ["w", 0.45, "nature.rock"]},
+   "elements": [
+    {"type": "edge", "asset": "arch.house", "front_m": 1.0, "at": [["e", 0.45]], "kind": "piece"},
+    {"type": "anchor", "asset": "arch.tower", "at": [0.70, -9.0], "scale": 1.0, "kind": "landmark", "treatment": "plain"},
+    {"type": "gate", "asset": "arch.railing", "kind": "piece"},
+    {"type": "ring", "at_core": true, "assets": ["nature.rock", "nature.rock", "nature.tree", "nature.rock", "nature.bush"], "yard_assets": ["nature.rock", "nature.rock", "nature.bush"], "spacing_m": 2.3, "scale": [1.0, 2.2], "kind": "piece"},
+    {"type": "ring", "inset_m": -0.8, "outside_m": 4.0, "assets": ["nature.tree", "nature.rock"], "spacing_m": 4.0, "scale": [0.9, 1.6], "kind": "piece"},
+    {"type": "scatter", "assets": ["nature.rock", "nature.rock", "nature.bush"], "region": "band", "per_100m2": 4.0, "gap_m": 0.5, "scale": [0.8, 2.0], "kind": "piece"},
+    {"type": "scatter", "assets": ["nature.grass_tuft", "nature.grass_tuft", "nature.rock"], "region": "core", "cell_m": 3.0, "scale": [0.45, 0.7], "kind": "floor"}
+   ]
+  },
+  "courtyard": {
+   "kind": "outdoor", "label": "walled courtyard with columns, benches and corner trees",
+   "anchors": {"npc": ["e", 0.5, 1.8], "finish": ["e", 0.5, 2.8], "keepsake_on": ["w", 0.62, "furn.bench"]},
+   "elements": [
+    {"type": "walls", "asset": "arch.wall_module", "height_scale": 1.0, "windows": 0, "ceiling": false, "kind": "wall"},
+    {"type": "anchor", "asset": "arch.tower", "at": [0.70, -9.0], "scale": 1.0, "kind": "landmark", "treatment": "plain"},
+    {"type": "corners", "asset": "nature.tree", "inset_band": 0.5, "scale": [0.8, 0.95], "kind": "piece"},
+    {"type": "along_wall", "items": [{"asset": "arch.column", "sides": ["w", "e", "n", "s"], "spacing_m": 2.9, "at_core": true},
+                                      {"asset": "furn.bench", "sides": ["w", "e"], "spacing_m": 4.2, "inset_m": 0.6},
+                                      {"asset": "nature.bush", "sides": ["n", "s"], "spacing_m": 2.6, "inset_m": 0.65}], "kind": "piece"},
+    {"type": "plaza", "asset": "arch.floor_module", "tiles": 4, "kind": "floor"},
+    {"type": "scatter", "assets": ["nature.grass_tuft", "nature.bush"], "region": "band", "per_100m2": 3.0, "gap_m": 0.4, "scale": [0.8, 1.2], "kind": "piece"}
+   ]
+  },
+  "riverside": {
+   "kind": "outdoor", "label": "riverside: a stream along one side, bank, pier and boat",
+   "core_m": {"large": 12.2, "open": 12.2},
+   "core_west_m": 0.7,
+   "anchors": {"npc": ["e", 0.62, "bank"], "finish": ["e", 0.62, "bank+1"], "keepsake_on": ["w", 0.55, "furn.container"]},
+   "elements": [
+    {"type": "strip", "asset": "terrain.water", "side": "e", "outside_m": 1.0, "kind": "piece"},
+    {"type": "anchor", "asset": "arch.tower", "at": [0.25, -9.0], "scale": 1.0, "kind": "landmark", "treatment": "plain"},
+    {"type": "bank", "assets": ["nature.rock", "nature.grass_tuft", "nature.rock", "nature.bush", "nature.grass_tuft"], "spacing_m": 1.2, "kind": "piece"},
+    {"type": "on_strip", "items": [{"asset": "arch.pier", "at": 0.36, "yaw": 90, "into_m": 0.9}, {"asset": "vehicle.boat", "at": 0.18, "yaw": 8, "into_m": 1.4},
+                                    {"asset": "arch.bridge", "at": 0.02, "yaw": 90, "into_m": 1.2}], "kind": "piece"},
+    {"type": "gate", "asset": "arch.railing", "kind": "piece"},
+    {"type": "ring", "at_core": true, "assets": ["nature.bush", "nature.tree", "nature.rock", "nature.bush"], "yard_assets": ["nature.rock", "nature.bush", "nature.rock"], "spacing_m": 2.4, "scale": [0.85, 1.1], "kind": "piece", "sides": ["n", "w", "s"]},
+    {"type": "ring", "inset_m": -1.4, "outside_m": 4.4, "assets": ["nature.tree"], "spacing_m": 3.6, "scale": [0.95, 1.2], "kind": "piece", "sides": ["n", "w", "s"]},
+    {"type": "scatter", "assets": ["nature.grass_tuft", "nature.bush", "nature.rock"], "region": "band", "per_100m2": 3.0, "gap_m": 0.4, "scale": [0.7, 1.2], "kind": "piece"},
+    {"type": "scatter", "assets": ["nature.grass_tuft"], "region": "core", "cell_m": 3.0, "scale": [0.8, 1.2], "kind": "floor"}
+   ]
+  },
+  "hall": {
+   "kind": "indoor", "label": "hall: long tables and benches, columns, hearth",
+   "anchors": {"npc": ["e", 0.45, 1.6], "finish": ["e", 0.45, 2.6], "keepsake_on": ["w", 0.45, "furn.table"]},
+   "elements": [
+    {"type": "walls", "asset": "arch.wall_module", "windows": 2, "window_asset": "arch.window", "ceiling": true, "kind": "wall"},
+    {"type": "anchor", "asset": "furn.hearth", "at_wall": ["n", 0.72, 0.5], "kind": "piece"},
+    {"type": "along_wall", "items": [{"asset": "arch.column", "sides": ["w", "e"], "spacing_m": 3.0, "at_core": true},
+                                      {"asset": "furn.bench", "sides": ["n", "s"], "spacing_m": 3.2, "at_core": true},
+                                      {"asset": "furn.table", "sides": ["w", "e"], "spacing_m": 2.6, "inset_m": 0.6},
+                                      {"asset": "furn.chair", "sides": ["w", "e"], "spacing_m": 2.6, "inset_m": 1.25},
+                                      {"asset": "furn.lamp", "sides": ["s"], "spacing_m": 4.0, "inset_m": 0.45}], "kind": "piece"},
+    {"type": "on_top", "of": "furn.table", "assets": ["prop.vessel", "furn.lamp", "prop.book"], "per": 1, "kind": "piece"},
+    {"type": "scatter", "assets": ["furn.rug"], "region": "core", "cell_m": 3.4, "scale": [1.0, 1.0], "kind": "floor"}
+   ]
+  },
+  "library": {
+   "kind": "indoor", "label": "library: wall shelves, shelf stacks, reading tables, catalogue desk",
+   "anchors": {"npc": ["e", 0.45, 1.6], "finish": ["e", 0.45, 2.6], "keepsake_on": ["w", 0.45, "furn.table"]},
+   "elements": [
+    {"type": "walls", "asset": "arch.wall_module", "windows": 1, "window_asset": "arch.window", "ceiling": true, "kind": "wall"},
+    {"type": "along_wall", "items": [{"asset": "furn.shelf", "sides": ["w", "e"], "spacing_m": 2.6, "at_core": true, "turn": 90},
+                                      {"asset": "furn.shelf", "sides": ["n", "s"], "spacing_m": 2.4, "at_core": true},
+                                      {"asset": "furn.shelf", "sides": ["w", "e", "n"], "spacing_m": 1.3, "inset_m": 0.3}], "kind": "piece"},
+    {"type": "corners", "cluster": [{"asset": "furn.table", "dx": 0.0, "dz": 0.0}, {"asset": "furn.chair", "dx": -0.9, "dz": 0.0, "face": "in"},
+                                    {"asset": "furn.lamp", "dx": 0.25, "dz": 0.1, "y": "top"}, {"asset": "prop.book", "dx": -0.2, "dz": -0.1, "y": "top"}],
+     "inset_band": 0.5, "kind": "piece"},
+    {"type": "anchor", "asset": "furn.console", "at_wall": ["n", 0.72, 1.2], "kind": "piece"},
+    {"type": "scatter", "assets": ["furn.rug"], "region": "core", "cell_m": 3.4, "scale": [1.0, 1.0], "kind": "floor"}
+   ]
+  },
+  "workshop": {
+   "kind": "indoor", "label": "workshop: workbenches with tools, crates, forge, machines",
+   "anchors": {"npc": ["e", 0.45, 1.6], "finish": ["e", 0.45, 2.6], "keepsake_on": ["w", 0.45, "furn.table"]},
+   "elements": [
+    {"type": "walls", "asset": "arch.wall_module", "windows": 2, "window_asset": "arch.window", "ceiling": true, "kind": "wall"},
+    {"type": "anchor", "asset": "furn.hearth", "at_wall": ["n", 0.74, 0.5], "kind": "piece"},
+    {"type": "along_wall", "items": [{"asset": "furn.table", "sides": ["w", "e"], "spacing_m": 2.3, "at_core": true},
+                                      {"asset": "furn.container", "sides": ["n", "s"], "spacing_m": 2.2, "at_core": true},
+                                      {"asset": "furn.console", "sides": ["w", "e"], "spacing_m": 3.4, "inset_m": 0.5},
+                                      {"asset": "furn.container", "sides": ["s"], "spacing_m": 1.4, "inset_m": 0.45}], "kind": "piece"},
+    {"type": "on_top", "of": "furn.table", "assets": ["prop.tool", "prop.device", "prop.vessel", "prop.tool"], "per": 2, "kind": "piece"},
+    {"type": "corners", "cluster": [{"asset": "furn.container", "dx": 0.0, "dz": 0.0}, {"asset": "furn.container", "dx": 0.68, "dz": 0.05},
+                                    {"asset": "furn.container", "dx": 0.3, "dz": 0.0, "y": "stack"}], "inset_band": 0.45, "kind": "piece"},
+    {"type": "scatter", "assets": ["furn.rug"], "region": "core", "cell_m": 3.6, "scale": [0.9, 1.0], "kind": "floor"}
+   ]
+  }
+ }
+}

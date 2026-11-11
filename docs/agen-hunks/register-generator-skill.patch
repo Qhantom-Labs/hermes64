@@ -1,0 +1,10 @@
+--- a/__init__.py
++++ b/__init__.py
+@@ -18,6 +18,7 @@
+     'hermes64-cover': 'Stage, render, gate and finish original box-art covers.',
+     'hermes64-characters': 'Make house-style characters with hermes64_character.',
+     'hermes64-hub': 'Use when sharing or installing Hermes64 Hub entries.',
++    'hermes64-generators': 'Use when a game needs a new prop. Author bounded recipes.',
+ }
+ 
+ 

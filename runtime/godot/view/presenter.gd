@@ -46,6 +46,7 @@ var actions
 var contextual = preload("res://input/context.gd").new()
 var belt = preload("res://input/toolbelt.gd").new()
 var controls_hud
+var key_overlay # UI5: integer-scale pause menu, keycap prompt and corner hint (input/key_overlay.gd)
 var simulation_enabled := true
 var focus_id := ""
 var current_candidate := {}
@@ -62,6 +63,13 @@ var transition_prior_simulation := true
 var transition_process_gates := []
 var transition_hud_gates := []
 var transition_look_pending := false
+var scene_cards
+# GAPS2 G9: metadata.presentation.text_boxes=false (arena_run_v1 / story-file games) shows no room description,
+# narration, event or ending text box; subtitles/titles/labels come only from scene cards. Absent = old behaviour.
+var text_boxes := true
+
+func boxed(text: String) -> String:
+	return text if text_boxes else ""
 
 func finalize_room_entry() -> Dictionary:
 	var placed: Dictionary = player.place_in_room(room_root)
@@ -83,7 +91,7 @@ func begin_room_transition(id: String, source_room: Dictionary) -> void:
 		if not room_transition.begin(world,drawing_camera(),player.get_node_or_null("visual"),at,outward,actions.profile.options.reduced_motion): return
 		transition_action=id; transition_prior_simulation=simulation_enabled
 		transition_hud_gates=[]
-		for hud in [n64_ui,controls_hud,module_host.hud if module_host != null else null]:
+		for hud in [n64_ui,controls_hud,key_overlay,module_host.hud if module_host != null else null]:
 			if is_instance_valid(hud): transition_hud_gates.append([hud,hud.visible]); hud.visible=false
 		lock_transition_input()
 		return
@@ -127,7 +135,9 @@ func transition_black() -> void:
 	if transition_look_pending: apply_room_look(); transition_look_pending=false
 	if DisplayServer.get_name() != "headless": await RenderingServer.frame_post_draw
 	else: await get_tree().process_frame
-	if is_instance_valid(room_transition) and room_transition.phase=="black": room_transition.reveal(runtime.rooms[runtime.state.location].name)
+	# SCENES: an authored travel shot plays inside the held black; the canonical pipeline stays frozen.
+	if scene_cards != null: await scene_cards.travel(transition_action)
+	if is_instance_valid(room_transition) and room_transition.phase=="black": room_transition.reveal(boxed(runtime.rooms[runtime.state.location].name))
 
 func transition_finished() -> void:
 	for gate in transition_process_gates:
@@ -143,6 +153,7 @@ func transition_finished() -> void:
 	actions.raw_previous=[]; actions.held.clear(); actions.edges.clear()
 	actions.buffers.clear(); actions.blocked_move=false
 	transition_action=""
+	if scene_cards != null: scene_cards.room_ready(runtime.state.location)
 
 func exploration_camera() -> Camera3D:
 	return follow_camera.current() if follow_camera != null else camera
@@ -164,6 +175,8 @@ func boot(game: Dictionary, opts: Dictionary = {}) -> Dictionary:
 	runtime = Runtime.new()
 	var result: Dictionary = runtime.configure(game)
 	if not result.ok: return result
+	var pres_meta = game.metadata.get("presentation", {})
+	text_boxes = not (pres_meta is Dictionary and pres_meta.get("text_boxes", true) == false)
 	resolver.root = options.get("asset_root", "")
 	resolver.mapping = options.get("asset_map", {})
 	save_path = options.get("save", ProjectSettings.globalize_path("res://../saves/slot1.json"))
@@ -187,12 +200,18 @@ func boot(game: Dictionary, opts: Dictionary = {}) -> Dictionary:
 	if visual != null: player.add_child(visual)
 	else: visual = room_root.person(player, protagonist.get("params", {}))
 	visual.name = "visual"
-	last_text = runtime.rooms[runtime.state.location].description
+	last_text = boxed(runtime.rooms[runtime.state.location].description)
 	refresh()
 	checkpoint = physical_checkpoint()
 	controls_hud = preload("res://input/hud.gd").new()
 	controls_hud.presenter = self
 	viewport.add_child(controls_hud)
+	var key_layer := CanvasLayer.new()
+	key_layer.layer = 2
+	add_child(key_layer)
+	key_overlay = preload("res://input/key_overlay.gd").new()
+	key_layer.add_child(key_overlay)
+	key_overlay.setup(self)
 	replay = preload("res://input/movie.gd").new()
 	add_child(replay)
 	replay.attach(self)
@@ -216,6 +235,11 @@ func boot(game: Dictionary, opts: Dictionary = {}) -> Dictionary:
 	room_transition.finished.connect(transition_finished)
 	room_transition.release_provider=func(): return actions.sample_live() if actions.source=="live" else {}
 	room_transition.release_dead_zone=float(actions.profile.tuning.dead_zone_pad)
+	scene_cards=preload("res://view/scene_cards.gd").new()
+	add_child(scene_cards)
+	scene_cards.attach(self)
+	preload("res://view/goal_cue.gd").install(self)   # FEEL4: next-goal marker (arena_run_v1/premise games)
+	preload("res://input/controls_hint.gd").install(self)   # FEEL4: keycap controls hint (arena_run_v1/premise games)
 	if not finalize_room_entry().ok: return {"ok":false,"reason":entry_error}
 	return {"ok": true}
 
@@ -233,13 +257,14 @@ func module_released(_generation: int) -> void:
 func module_event(kind: String, payload: Dictionary) -> void:
 	# Observable presentation event, not a story command or analysis outcome.
 	if sounds != null: sounds.on_event(kind, payload)   # AUDIOPIPE: boss/wave/event music + voice hooks
+	if key_overlay != null: key_overlay.on_event(kind)   # UI5: corner hint when a move first matters
 	# Boss beats (COMBAT lane) are hooks for dialogue/region data; mid-fight they show no UI (the combat stage plays
 	# the burst, cue and hit-stop) and must not reopen the narration panel. encounter_cleared follows the defeat.
 	if kind in ["boss_phase", "boss_defeated"]:
 		set_meta("last_module_event", {"kind": kind, "payload": payload.duplicate(true)})
 		return
 	var labels := {"encounter_cleared":"Arena cleared", "course_completed":"Course complete", "challenge_failed":"Retrying checkpoint", "checkpoint_ready":"Checkpoint ready", "region_unlocked":"Region reached"}
-	var quiet: bool = kind == "encounter_cleared" and module_host != null and module_host.get("quiet_clear") == true
+	var quiet: bool = (kind == "encounter_cleared" and module_host != null and module_host.get("quiet_clear") == true) or not text_boxes
 	if labels.has(kind) and not quiet:
 		last_text = labels[kind]
 		text_label.text = last_text
@@ -449,7 +474,23 @@ func warm_room_shaders() -> void:
 ## Pack look rig for the current room (no-op for legacy packs without a "look" block).
 func apply_room_look() -> void:
 	const Rig = preload("res://look/rig.gd")
-	if not Rig.has_look(theme): return
+	if not Rig.has_look(theme):
+		# SCALE: a scaled room of a legacy-look pack pushes the pack fog out with the room (presentation "fog":
+		# {near, far, optional color, max}; the rest of the legacy look stays the pack's). Rooms without it are untouched.
+		var scaled_fog: Dictionary = room_root.presentation.get("fog", {})
+		if not scaled_fog.is_empty():
+			var pack_fog: Dictionary = theme.get("fog", {})
+			var fc := Color.from_string(str(scaled_fog.get("color", pack_fog.get("color", "#333344"))), Color.GRAY)
+			RenderingServer.global_shader_parameter_set("n64_fog_color", Vector4(fc.r, fc.g, fc.b, 1))
+			RenderingServer.global_shader_parameter_set("n64_fog", Vector4(float(scaled_fog.get("near", pack_fog.get("near", 6))), float(scaled_fog.get("far", pack_fog.get("far", 28))), 1, float(scaled_fog.get("max", 1.0))))
+			if scaled_fog.has("sky_fog_scale"):
+				for n in room_root.get_children():
+					if str(n.get_meta("placed", "")) != "backdrop": continue
+					for mi in n.find_children("*", "MeshInstance3D", true, false) + ([n] if n is MeshInstance3D else []):
+						for i in mi.mesh.get_surface_count():
+							var m = mi.get_surface_override_material(i)
+							if m is ShaderMaterial and str(m.get_meta("role", "")) == "sky": m.set_shader_parameter("fog_scale", float(scaled_fog.sky_fog_scale))
+		return
 	if not Rig.has_profile(theme, room_root.profile_name()):
 		# partial look block (e.g. exterior-only): this room keeps the legacy pack look exactly
 		resolver.legacy_globals(0.0)
@@ -515,7 +556,7 @@ func commit_portal(id: String) -> Dictionary:
 	var before: Dictionary = runtime.state.duplicate(true)
 	var result: Dictionary = runtime.step(id)
 	if not result.ok:
-		last_text = result.reason
+		last_text = boxed(result.reason)
 		refresh()
 		return result
 	if sounds != null:
@@ -524,7 +565,7 @@ func commit_portal(id: String) -> Dictionary:
 	var from_menu := menu_open
 	menu_open = false
 	page_index = 0
-	last_text = result.text
+	last_text = boxed(result.text)
 	# Finishing a conversation closes it, rather than displaying the chosen reply as
 	# another nearby interaction. Informational interactions get a dismissible modal.
 	if before.dialogue.values().any(func(v): return v != "") and not dialogue_active(): last_text = ""
@@ -533,7 +574,7 @@ func commit_portal(id: String) -> Dictionary:
 	if before.location != runtime.state.location:
 		begin_room_transition(id,runtime.rooms[before.location])
 		enter_room(id)
-		if last_text == "": last_text = runtime.rooms[runtime.state.location].description
+		if last_text == "": last_text = boxed(runtime.rooms[runtime.state.location].description)
 	elif before.get("collected", []) != runtime.state.get("collected", []):
 		var pos: Vector3 = player.position
 		enter_room("")
@@ -568,7 +609,7 @@ func refresh() -> void:
 			text_label.text = runtime.nodes[did][st.dialogue[did]].text
 	if ends.size() == 1:
 		for ending in runtime.game.endings:
-			if ending.id == ends[0]: text_label.text = ending.text
+			if ending.id == ends[0]: text_label.text = boxed(ending.text)
 		title_label.text += " / " + ends[0]
 	elif ends.size() > 1:
 		text_label.text = "CONTRACT ERROR: ambiguous terminal " + str(ends)
@@ -624,7 +665,7 @@ func sync_n64_ui() -> void:
 		if text_label.text.strip_edges().is_empty(): n64_ui.hide_dialog()
 		else: n64_ui.show_line("%s %d/%d" % [runtime.game.title,page_index+1,text_pages.size()],n64_ui.C_LAMP,text_pages[page_index],[])
 	var endings: Array = runtime.endings(st)
-	if endings.size() == 1:
+	if endings.size() == 1 and text_boxes:
 		var titles: Dictionary = runtime.game.metadata.get("presentation", {}).get("ending_titles", {})
 		n64_ui.show_line(titles.get(endings[0],str(endings[0]).replace("_"," ").capitalize()),n64_ui.C_LAMP,text_pages[page_index],[])
 	n64_ui.queue_redraw()
@@ -851,7 +892,7 @@ func restore_checkpoint(value: Dictionary) -> Dictionary:
 		module_host.restore_checkpoint()
 	if not finalize_room_entry().ok: return {"ok":false,"reason":entry_error}
 	menu_open = false; page_index = 0; narration_pending = false; n64_ui.inv_open = false
-	last_text = runtime.rooms[runtime.state.location].description
+	last_text = boxed(runtime.rooms[runtime.state.location].description)
 	refresh(); sync_input_context()
 	return result
 

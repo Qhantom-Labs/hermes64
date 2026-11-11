@@ -463,6 +463,38 @@
    ],
    "tris": 492
   },
+  "cyroom.rooftop__arena": {
+   "anchor": "cell_block_centre",
+   "cells": [
+    5,
+    5
+   ],
+   "class": "shell",
+   "id": "cyroom.rooftop",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "tris": 702
+  },
   "cyroom.rooftop__tower": {
    "anchor": "cell_block_centre",
    "cells": [

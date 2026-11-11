@@ -1,0 +1,12 @@
+diff --git a/docs/PACKAGE-CONTENTS.md b/docs/PACKAGE-CONTENTS.md
+index 0fcfadb..70e7ce9 100644
+--- a/docs/PACKAGE-CONTENTS.md
++++ b/docs/PACKAGE-CONTENTS.md
+@@ -34,6 +34,7 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
+ | `rigs/*` | The rig kit (merged at MERGE4): `rigs/<id>/rig.json`, `clips.json`, `clips.glb` and the mannequins. The in-process validator (`adventure_maker/rigkit`) and the hub's `compat.rig` check read them; without them every hub install failed from a package (found by `tests/test_merge4_cameo.py`) |
+ | `desktop/plugin.js`, `dashboard/manifest.json`, `dashboard/plugin_api.py` | Hermes64 Studio (merged at MERGE4): the Desktop half (one generated ES module) and the backend routes it calls; without them a package install has no Studio tab |
+ | `tools/style_bible.py` | Recipe screening uses the existing derived bible consumer; generator CLI and skill ship under `adventure_maker/*` and `skills/*` |
++| `tools/medievalkit_rooms.py`, `tools/westernkit_rooms.py`, `tools/mood_pack.py` | ORCH create flow (`adventure_maker/create_flow.py`): the kit room compilers that compile its room skeletons, and the mood pack derive/install it calls; stdlib plus the shipped `kits/core` modules |
+ | `tools/__init__.py`, `tools/pngtool.py`, `tools/import_characters.py` | The only `tools/` modules imported at runtime (playtest contact sheet, character staging) |
+ | `tools/roomlook.py` | MERGE4: imported by `characters/integration.capture_games` (reached through the shipped `tools/import_characters.py`); without it `hermes plugins validate` on the package read `tools.roomlook` as a private Hermes core import (the `git archive` of the repository was clean because the file is there) |
+ | `tools/check_install.py` | MERGE4: checks an installed copy against the `PACKAGE-MANIFEST.json` that `--out` writes (every file's size and sha256, the source commit) and prints PASS or FAIL; stdlib, read-only, runs on macOS and Windows |

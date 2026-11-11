@@ -1,7 +1,6 @@
 extends Control
 ## Original geometric glyphs, authored for this project. CC0-1.0; no controller art.
 var presenter
-const SETTINGS_CHOICES := [["menu","play"],["primary","focus"],["run","run"],["secondary","motion"],["action_menu","use"],["quick_save","save"],["quick_load","load"]]
 const OVERLAY_ACTIONS := ["move_up","move_left","move_down","move_right","walk","primary","secondary","focus","dodge","run"]
 const Glyphs := {
 	"door":["#####","#...#","#..##","#...#","#####"],
@@ -42,22 +41,8 @@ func _draw() -> void:
 	var color: Color = view.n64_ui.C_LAMP
 	var font = view.n64_ui.font
 	if view.belt.settings_open:
-		draw_set_transform(Vector2((W-320)/2.0,0))
-		draw_rect(Rect2(52,36,216,164),Color(0.03,0.04,0.06,0.94))
-		glyph(Vector2(157,45),"pause",color)
-		var choices := SETTINGS_CHOICES.duplicate(true)
-		if not view.actions.profile.bindings.has("run"): choices[2] = ["walk","walk"]
-		for i in choices.size():
-			var at := Vector2(83,62+i*18)
-			key(at,view.actions.binding_glyph(choices[i][0]),color)
-			glyph(at+Vector2(39,1),choices[i][1],color)
-		var values := ["",view.actions.profile.options.focus_mode,view.actions.profile.options.run_mode,"on" if view.actions.profile.options.reduced_motion else "off",view.actions.profile.preset,"",""]
-		for i in values.size(): font.draw(self,Vector2(150,62+i*18),str(values[i]),color,Color.TRANSPARENT)
-		if view.actions.profile.bindings.has("run"):
-			key(Vector2(83,187),view.actions.binding_glyph("walk"),color)
-			glyph(Vector2(122,188),"walk",color)
-			font.draw(self,Vector2(150,187),"precision",color,Color.TRANSPARENT)
-	elif not view.menu_open and not view.dialogue_active() and not view.n64_ui.inv_open:
+		pass # UI5: the pause menu is drawn by input/key_overlay.gd at an integer pixel scale (rows: keyhud.json).
+	elif not view.menu_open and not view.dialogue_active() and not view.n64_ui.inv_open and (view.key_overlay == null or view.key_overlay.prompt_mode == "legacy"):
 		var c: Dictionary = view.current_candidate
 		var cam: Camera3D = view.drawing_camera()
 		if not c.is_empty() and cam != null and not cam.is_position_behind(c.position):

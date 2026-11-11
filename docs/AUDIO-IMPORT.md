@@ -145,6 +145,21 @@ Runtime code can also call `voice("<line id>")`.
 
 **Mix:** sets each kind's in-game level on top of its normalised loudness. Voice is 3 dB louder than music by default.
 
+**Combat sounds (`combat_sfx`):** off unless you list them. `"combat_sfx": "default"` plays the plugin's own original
+set (`audio/combat_sfx/`, CC0, no import needed) for every combat event. Or name events one by one, each `"default"`, an
+imported `sfx` asset ID, or a list of up to 4 IDs (played as variants):
+
+```
+"combat_sfx": {"robot_hit": ["clang_a", "clang_b"], "boss_hit": "default", "punch_miss": "default"}
+```
+
+Events: `punch_hit` (a hit on a non-robot enemy), `punch_miss` (a swing's hit window closes with no hit),
+`robot_hit`, `boss_hit` (also a boss defeat), `player_hurt`, `dodge` (a roll starts), `block` (block, armour or
+deflect), `robot_death`, `boss_telegraph`. An event you list replaces the pack's stock combat cue for that moment;
+events you leave out keep the stock cue. Each sound plays once (no loop) at `mix.sfx_db`. One event plays at most once
+every 4 to 30 ticks (hits 4, telegraph 30). At most 4 combat sounds play at once (the longest-playing one is cut).
+Music drops 3 to 4 dB for 0.35 s under a boss hit, a hurt or a robot death.
+
 Unknown asset IDs or the wrong kind (for example a voice file in a music slot) are refused. Each build re-checks every slot and file hash. If an imported file changed on disk, the build stops with an error instead of playing something else.
 
 ## 4. Build, play, check

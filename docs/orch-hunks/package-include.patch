@@ -1,0 +1,13 @@
+diff --git a/tools/package.py b/tools/package.py
+index 0658524..48b5d52 100644
+--- a/tools/package.py
++++ b/tools/package.py
+@@ -47,6 +47,8 @@ INCLUDE = (
+     'tools/check_install.py', 'tools/roomlook.py',
+     # Data-only generator CLI screens recipes with the same derived bible consumer as kit authoring.
+     'tools/style_bible.py',
++    # Create flow (ORCH): the kit room compilers it compiles room skeletons with, and the mood pack derive/install.
++    'tools/medievalkit_rooms.py', 'tools/westernkit_rooms.py', 'tools/mood_pack.py',
+ )
+ MANIFEST = 'PACKAGE-MANIFEST.json'
+ ZIP_TIME = (1980, 1, 1, 0, 0, 0)      # fixed member timestamps: the same tree always zips to the same bytes

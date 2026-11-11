@@ -1963,6 +1963,373 @@
     5
    ],
    "role": "roof"
+  },
+  "tower_roof_finale": {
+   "actor_spots": [
+    {
+     "position": [
+      5.0,
+      0,
+      9.0
+     ],
+     "yaw": 20
+    },
+    {
+     "position": [
+      11.5,
+      0,
+      6.0
+     ],
+     "yaw": 0
+    },
+    {
+     "position": [
+      16.5,
+      0,
+      9.5
+     ],
+     "yaw": -20
+    },
+    {
+     "pose": "captive",
+     "position": [
+      9.5,
+      0,
+      3.1
+     ],
+     "yaw": 0
+    }
+   ],
+   "arena": {
+    "boss_spacing_m": 5.0,
+    "boss_spots": [
+     [
+      5.0,
+      9.0
+     ],
+     [
+      11.5,
+      6.0
+     ],
+     [
+      16.5,
+      9.5
+     ]
+    ],
+    "crowd_spots": [
+     [
+      3.2,
+      13.0,
+      -90
+     ],
+     [
+      17.8,
+      8.0,
+      90
+     ],
+     [
+      7.0,
+      15.5,
+      0
+     ],
+     [
+      12.5,
+      15.0,
+      0
+     ],
+     [
+      3.2,
+      5.5,
+      -90
+     ],
+     [
+      17.8,
+      5.0,
+      90
+     ],
+     [
+      8.0,
+      12.0,
+      -40
+     ],
+     [
+      13.5,
+      12.5,
+      40
+     ]
+    ],
+    "hero_spot": [
+     10.5,
+     15.0
+    ],
+    "lane_clear_m": 2.0,
+    "min_clear_m": 14.0,
+    "probe_rect": [
+     3.0,
+     4.0,
+     18.0,
+     17.5
+    ],
+    "robots": 4,
+    "spots": [
+     [
+      10.5,
+      15.0
+     ],
+     [
+      9.5,
+      3.1
+     ]
+    ]
+   },
+   "budget_profile": "arena",
+   "cameras": {
+    "a": {
+     "fov": 60,
+     "look_at": [
+      6.0,
+      2.8,
+      3.0
+     ],
+     "position": [
+      17.6,
+      4.4,
+      20.2
+     ]
+    },
+    "b": {
+     "fov": 60,
+     "look_at": [
+      8.0,
+      3.4,
+      4.0
+     ],
+     "position": [
+      11.5,
+      4.6,
+      20.4
+     ]
+    },
+    "c": {
+     "fov": 60,
+     "look_at": [
+      14.0,
+      2.0,
+      4.0
+     ],
+     "position": [
+      3.0,
+      3.0,
+      19.5
+     ]
+    },
+    "d": {
+     "fov": 60,
+     "look_at": [
+      2.0,
+      10.0,
+      -20.0
+     ],
+     "position": [
+      10.5,
+      2.0,
+      17.0
+     ]
+    }
+   },
+   "combat": {
+    "telegraph": {
+     "alpha": 0.65
+    }
+   },
+   "description": "Signal Roof, finale arena. A calm dark deck under rain, the sign in the clouds, the captive seat at the north edge.",
+   "exterior": true,
+   "look_profile": "rooftop",
+   "name": "Signal Roof (finale)",
+   "note": "Finale variant of tower_roof (ROOF lane): rooftop__arena shell (calm deck), props cut to the edge (no water tank, desk, AC, cables, terminal, roof screen sign), sky ring trimmed to the camera-side towers, rain on, sky signal over the north-west skyline. Arena profile budget (style bible).",
+   "open_streets": [],
+   "open_transitions": false,
+   "pieces": [
+    {
+     "block": [
+      0,
+      0
+     ],
+     "key": "cyroom.rooftop__arena"
+    },
+    {
+     "at_m": [
+      -13.5,
+      -17.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      10.5,
+      -17.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      34.5,
+      -17.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      -13.5,
+      -35.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      10.5,
+      -35.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      34.5,
+      -35.5
+     ],
+     "key": "cysky.far__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      -24.5,
+      34.5
+     ],
+     "key": "cysky.needle__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -24.5,
+      10.5
+     ],
+     "key": "cysky.needle__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      -24.5,
+      -13.5
+     ],
+     "key": "cysky.needle__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": 90
+    },
+    {
+     "at_m": [
+      45.5,
+      -13.5
+     ],
+     "key": "cysky.near__tile",
+     "kind": "vista",
+     "y": 0.0,
+     "yaw": -90
+    },
+    {
+     "at_m": [
+      -8,
+      -16
+     ],
+     "key": "cysky.megatower",
+     "kind": "landmark",
+     "y": -10.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      26,
+      -12
+     ],
+     "key": "cytower.setback__halo",
+     "kind": "landmark",
+     "y": -10.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      18.4,
+      2.4
+     ],
+     "key": "cytech.vent",
+     "y": 0.0,
+     "yaw": 0.0
+    },
+    {
+     "at_m": [
+      9.5,
+      2.6
+     ],
+     "key": "cyroom.chair__captive",
+     "y": 0.0,
+     "yaw": 0.0
+    }
+   ],
+   "plot_cells": [
+    5,
+    5
+   ],
+   "role": "roof",
+   "sky_signal": {
+    "beam_alpha": 0.5,
+    "beam_from": [
+     3.0,
+     -6.0,
+     -22.0
+    ],
+    "beam_width_m": 5.0,
+    "color": "#dea250",
+    "emblem_color": "#1d1838",
+    "inner": 0.45,
+    "points": 5,
+    "position": [
+     -6.0,
+     19.0,
+     -34.0
+    ],
+    "size_m": 15.0,
+    "strength": 0.9,
+    "texture": ""
+   },
+   "weather": {
+    "rain": {
+     "alpha": 0.3,
+     "enabled": true,
+     "slant": 0.16,
+     "streaks": 170
+    }
+   }
   }
  },
  "sockets": "kits/library/cyberkit-sockets.json",

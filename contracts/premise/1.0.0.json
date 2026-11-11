@@ -220,6 +220,12 @@
       "items": {
         "additionalProperties": false,
         "properties": {
+          "binding": {
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_.-]*$",
+            "type": "string"
+          },
           "id": {
             "maxLength": 48,
             "minLength": 1,
@@ -317,6 +323,34 @@
             "maxItems": 8,
             "minItems": 1,
             "type": "array"
+          },
+          "robot": {
+            "additionalProperties": false,
+            "properties": {
+              "armor": {
+                "enum": [
+                  "none",
+                  "until_recover"
+                ]
+              },
+              "hurt_ticks": {
+                "maximum": 60,
+                "minimum": 1,
+                "type": "integer"
+              },
+              "knockback_m": {
+                "maximum": 1.5,
+                "minimum": 0,
+                "type": "number"
+              }
+            },
+            "required": [],
+            "type": "object"
+          },
+          "speed_mps": {
+            "maximum": 2.4,
+            "minimum": 0.1,
+            "type": "number"
           }
         },
         "required": [
@@ -521,6 +555,12 @@
               "drone"
             ]
           },
+          "binding": {
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[a-z][a-z0-9_.-]*$",
+            "type": "string"
+          },
           "damage": {
             "maximum": 64,
             "minimum": 1,
@@ -553,6 +593,14 @@
       "maxItems": 12,
       "minItems": 0,
       "type": "array"
+    },
+    "room_scale": {
+      "enum": [
+        "small",
+        "medium",
+        "large",
+        "open"
+      ]
     },
     "rooms": {
       "additionalProperties": false,
@@ -700,6 +748,15 @@
             "type": "object"
           },
           "maxItems": 16,
+          "minItems": 0,
+          "type": "array"
+        },
+        "list": {
+          "items": {
+            "type": "object",
+            "x-validated-by": "story/presentation/scenes.py"
+          },
+          "maxItems": 32,
           "minItems": 0,
           "type": "array"
         },
@@ -904,6 +961,9 @@
         "two_room_collect_v1",
         "arena_run_v1"
       ]
+    },
+    "text_boxes": {
+      "type": "boolean"
     },
     "textures": {
       "additionalProperties": {

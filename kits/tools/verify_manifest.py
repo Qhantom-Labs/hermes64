@@ -15,7 +15,7 @@ def sha(p):
 
 def main(argv):
     root = argv[0] if argv else os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "kits")
-    m = json.load(open(os.path.join(root, "manifest.json")))
+    m = json.load(open(os.path.join(root, "manifest.json"), encoding='utf-8'))
     problems, counts = [], {"glb": 0, "texture_refs": 0, "env": 0, "pack_files": 0, "rooms": 0, "room_pieces": 0, "layouts": 0}
 
     def check(path, want, kind):
@@ -47,7 +47,7 @@ def main(argv):
     for r in m["rooms"]:
         counts["rooms"] += 1
         check(r["file"], r["sha256"], "room")
-        for pc in json.load(open(os.path.join(root, r["file"])))["pieces"]:
+        for pc in json.load(open(os.path.join(root, r["file"]), encoding='utf-8'))["pieces"]:
             counts["room_pieces"] += 1
             check(pc["glb"], pc["sha256"], "room piece")
     listed = {b["glb"] for k in m["kits"] for b in k["builds"]}

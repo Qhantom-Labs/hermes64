@@ -1,0 +1,4292 @@
+{
+ "assets": {
+  "03e7fffc9873821852d0039a0cb8b64bb64dcb7f9d5748ff817b0e6ce81a28b3": {
+   "class": "shell",
+   "key": "cyroom.club__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      9.42
+     ],
+     [
+      -9.42,
+      9.42
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "0543725ddeb25c647b2b0b46c37f97c2324d24da16e4428247caba965c9a544f": {
+   "class": "building",
+   "key": "cysign.clinic",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.805,
+       -0.2
+      ],
+      [
+       -0.905,
+       -0.2
+      ],
+      [
+       -0.905,
+       0.0
+      ],
+      [
+       -1.805,
+       0.0
+      ]
+     ],
+     [
+      [
+       -0.205,
+       -1.9
+      ],
+      [
+       1.395,
+       -1.9
+      ],
+      [
+       1.395,
+       -1.3
+      ],
+      [
+       -0.205,
+       -1.3
+      ]
+     ],
+     [
+      [
+       0.895,
+       -0.2
+      ],
+      [
+       1.795,
+       -0.2
+      ],
+      [
+       1.795,
+       0.0
+      ],
+      [
+       0.895,
+       0.0
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "06b11a55a4bd4c7494bc20d7d22b41ef3c55803c52fb0ecc58fc6901a6d52e73": {
+   "class": "shell",
+   "key": "cystreet.road__short",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      2.0
+     ],
+     [
+      -6.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "08ff1d88c1dec77f9c334de3d1dea03b4e9c32877c3e6a73d884c9aa69dbfbeb": {
+   "class": "shell",
+   "key": "cyroom.lobby",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -5.288,
+       -0.488
+      ],
+      [
+       -4.312,
+       -0.488
+      ],
+      [
+       -4.312,
+       0.488
+      ],
+      [
+       -5.288,
+       0.488
+      ]
+     ],
+     [
+      [
+       4.312,
+       -0.488
+      ],
+      [
+       5.288,
+       -0.488
+      ],
+      [
+       5.288,
+       0.488
+      ],
+      [
+       4.312,
+       0.488
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "0ceec1ec47884dd9b2d2d03d80edec8fd4218403aefdde996713c4ee3324cc20": {
+   "class": "arch",
+   "key": "cyroom.portal",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.397,
+       -0.048
+      ],
+      [
+       -1.003,
+       -0.048
+      ],
+      [
+       -1.003,
+       0.648
+      ],
+      [
+       -1.397,
+       0.648
+      ]
+     ],
+     [
+      [
+       1.003,
+       -0.048
+      ],
+      [
+       1.397,
+       -0.048
+      ],
+      [
+       1.397,
+       0.648
+      ],
+      [
+       1.003,
+       0.648
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "0e5837e16198fa8f39fa06f5e9c0460c53a181ac68b48837e9c2cbc2660eb8c0": {
+   "class": "shell",
+   "key": "cystreet.alley",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -2.0,
+       -4.0
+      ],
+      [
+       -1.693,
+       -4.0
+      ],
+      [
+       -1.693,
+       4.0
+      ],
+      [
+       -2.0,
+       4.0
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "0e9aacf3032853b481d701624d7f3be2a46949556410291ad23e63dc3ab9f052": {
+   "class": "shell",
+   "key": "cytower.facade__canyon",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -6.059,
+       -0.25
+      ],
+      [
+       6.059,
+       -0.25
+      ],
+      [
+       6.059,
+       0.349
+      ],
+      [
+       -6.059,
+       0.349
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "103809cd3545fdeaed481397bfbe0cc75e3b6e47ecb6e8a458e97b15336a3b8d": {
+   "class": "building",
+   "key": "cytower.annex",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -4.105,
+       -4.105
+      ],
+      [
+       3.495,
+       -4.105
+      ],
+      [
+       3.495,
+       3.495
+      ],
+      [
+       -4.105,
+       3.495
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "16eb76ceae5bce582fff5bef197b4f3968d8419fc3bdd5f31e08b29048e103b3": {
+   "class": "shell",
+   "key": "cyroom.club__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      9.42
+     ],
+     [
+      -9.42,
+      9.42
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "17899ccc8a8b42d361470566f621d3a8ee7f9853528bab6ebfb4e74815a21e7a": {
+   "class": "shell",
+   "key": "cyroom.subway",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "178fab1199467ed16f6de9856dc338e738aa702f456058c4cb9b20182a939f91": {
+   "class": "arch",
+   "key": "cyroom.portal",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.397,
+       -0.048
+      ],
+      [
+       -1.003,
+       -0.048
+      ],
+      [
+       -1.003,
+       0.648
+      ],
+      [
+       -1.397,
+       0.648
+      ]
+     ],
+     [
+      [
+       1.003,
+       -0.048
+      ],
+      [
+       1.397,
+       -0.048
+      ],
+      [
+       1.397,
+       0.648
+      ],
+      [
+       1.003,
+       0.648
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "17dc8e4d912f5e415b6cffdbc737805749fada50976d0c64996d73bcd076d905": {
+   "class": "shell",
+   "key": "cyroom.subway",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "19677470ca7f4a259f21c41e5700aa87bd73a53f89f197cffb70899107e6f661": {
+   "class": "arch",
+   "key": "cysign.roof",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -4.68,
+       -0.55
+      ],
+      [
+       4.68,
+       -0.55
+      ],
+      [
+       4.68,
+       0.338
+      ],
+      [
+       -4.68,
+       0.338
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "199246091a0539b8f9e8b6ccab4f276b5932912d52c37f6fa791d6b3e1a2fc27": {
+   "class": "shell",
+   "key": "cystreet.sidewalk__strip2",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -4.0,
+      -2.0
+     ],
+     [
+      4.0,
+      -2.0
+     ],
+     [
+      4.0,
+      2.0
+     ],
+     [
+      -4.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "1cc0e031176f905210c9d106e25aaecbf32d4d3cd761953bd7821831c1c59154": {
+   "class": "shell",
+   "key": "cyroom.lobby",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -5.288,
+       -0.488
+      ],
+      [
+       -4.312,
+       -0.488
+      ],
+      [
+       -4.312,
+       0.488
+      ],
+      [
+       -5.288,
+       0.488
+      ]
+     ],
+     [
+      [
+       4.312,
+       -0.488
+      ],
+      [
+       5.288,
+       -0.488
+      ],
+      [
+       5.288,
+       0.488
+      ],
+      [
+       4.312,
+       0.488
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "1daa8532bf3315c32a8ea7b1d3db5a2a145dc8cb2ec4e9db71d70501d580398c": {
+   "class": "building",
+   "key": "cysign.clinic",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.805,
+       -0.2
+      ],
+      [
+       -0.905,
+       -0.2
+      ],
+      [
+       -0.905,
+       0.0
+      ],
+      [
+       -1.805,
+       0.0
+      ]
+     ],
+     [
+      [
+       -0.205,
+       -1.9
+      ],
+      [
+       1.395,
+       -1.9
+      ],
+      [
+       1.395,
+       -1.3
+      ],
+      [
+       -0.205,
+       -1.3
+      ]
+     ],
+     [
+      [
+       0.895,
+       -0.2
+      ],
+      [
+       1.795,
+       -0.2
+      ],
+      [
+       1.795,
+       0.0
+      ],
+      [
+       0.895,
+       0.0
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "2c00965f1522f73adf7e1268baea25c1c9d81b73e6e16d7f09d13f5fe58ab554": {
+   "class": "shell",
+   "key": "cystreet.road",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -4.0
+     ],
+     [
+      6.0,
+      -4.0
+     ],
+     [
+      6.0,
+      4.0
+     ],
+     [
+      -6.0,
+      4.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "2eccbbc38981d8b351770cfcfcfd36993f4d9277db6cf401f1488a9a3bdcdfe1": {
+   "class": "shell",
+   "key": "cytower.facade__canyon",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -6.059,
+       -0.25
+      ],
+      [
+       6.059,
+       -0.25
+      ],
+      [
+       6.059,
+       0.349
+      ],
+      [
+       -6.059,
+       0.349
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "2f5b4607e619f4c230ac52f38bb04e691a90625da6c7bdf4303592905a67fe21": {
+   "class": "shell",
+   "key": "cyroom.den",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -5.525,
+       -5.25
+      ],
+      [
+       -5.075,
+       -5.25
+      ],
+      [
+       -5.075,
+       5.25
+      ],
+      [
+       -5.525,
+       5.25
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "30e6eb2b98e323154ec11bbdd91b0fff02cb54dd587aaa078ef635fb76c36199": {
+   "class": "building",
+   "key": "cysign.pawn",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.79,
+       -0.7
+      ],
+      [
+       -0.05,
+       -0.7
+      ],
+      [
+       -0.05,
+       -0.1
+      ],
+      [
+       -1.79,
+       -0.1
+      ]
+     ],
+     [
+      [
+       0.26,
+       -1.85
+      ],
+      [
+       1.46,
+       -1.85
+      ],
+      [
+       1.46,
+       -1.35
+      ],
+      [
+       0.26,
+       -1.35
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "351c0919fa84339b3f6fc0f629c6accbb985e652a4785f2d33fa26175bc7c7a1": {
+   "class": "shell",
+   "key": "cystreet.sidewalk",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -2.0,
+      -2.0
+     ],
+     [
+      2.0,
+      -2.0
+     ],
+     [
+      2.0,
+      2.0
+     ],
+     [
+      -2.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "35531971b88436b0dc506c7c376d349a4684dcada3030436f710fdeb373d70c3": {
+   "class": "shell",
+   "key": "cyroom.platform",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -2.0,
+      -6.0
+     ],
+     [
+      2.0,
+      -6.0
+     ],
+     [
+      2.0,
+      6.0
+     ],
+     [
+      -2.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "36777627ef2bf768c3bd56cef272addd3bdf76afaa5010e5f1f5449dab0bdd93": {
+   "class": "shell",
+   "key": "cystreet.sidewalk__strip2",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -4.0,
+      -2.0
+     ],
+     [
+      4.0,
+      -2.0
+     ],
+     [
+      4.0,
+      2.0
+     ],
+     [
+      -4.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "3d05fda8cdcbc9ff80f19979e332e2c5351a8876d847ada6db4049eecc19f957": {
+   "class": "shell",
+   "key": "cytower.facade",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       0.35
+      ],
+      [
+       -6.059,
+       0.35
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "3d3deaaf0daa853cc7367abecb73f591b88c0abf60467db4ac4eb8932fbd5bc6": {
+   "class": "shell",
+   "key": "cyroom.server__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      9.42
+     ],
+     [
+      -9.42,
+      9.42
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "3ea6d1462c93a40ce1caa53d1aaf8f93a6ab09b8f0f24c887f93a18e96a54430": {
+   "class": "shell",
+   "key": "cystreet.road__long",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "407cb59f7406885e678033a0bd67f43870e797e91bd53235498d37a701c0f9c1": {
+   "class": "shell",
+   "key": "cystreet.sidewalk__strip",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      2.0
+     ],
+     [
+      -6.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "435e65e8ba4b413fce59e6f294602b04ff5b8860ca72330d06f0cea35f8a8b15": {
+   "class": "shell",
+   "key": "cyroom.club",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "4378b4546e9824dda7263696d82c6329e3fe7721745b431ef630a0161b491210": {
+   "class": "building",
+   "key": "cysign.pawn",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.79,
+       -0.7
+      ],
+      [
+       -0.05,
+       -0.7
+      ],
+      [
+       -0.05,
+       -0.1
+      ],
+      [
+       -1.79,
+       -0.1
+      ]
+     ],
+     [
+      [
+       0.26,
+       -1.85
+      ],
+      [
+       1.46,
+       -1.85
+      ],
+      [
+       1.46,
+       -1.35
+      ],
+      [
+       0.26,
+       -1.35
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "4824775b511f482d3b860e8f80a7592ab0045069b88ca9e2662ce268c89fbc0d": {
+   "class": "shell",
+   "key": "cyroom.subway__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -9.42,
+      -7.42
+     ],
+     [
+      9.42,
+      -7.42
+     ],
+     [
+      9.42,
+      7.42
+     ],
+     [
+      -9.42,
+      7.42
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "49bbcb9257f39d6c8d37fc793e6a4e3f84ddf8623450730c4dbd6f4100ddb278": {
+   "class": "shell",
+   "key": "cyroom.lobby",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -5.288,
+       -0.488
+      ],
+      [
+       -4.312,
+       -0.488
+      ],
+      [
+       -4.312,
+       0.488
+      ],
+      [
+       -5.288,
+       0.488
+      ]
+     ],
+     [
+      [
+       4.312,
+       -0.488
+      ],
+      [
+       5.288,
+       -0.488
+      ],
+      [
+       5.288,
+       0.488
+      ],
+      [
+       4.312,
+       0.488
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "4acbaca2a54df6769aaba53f32e3b586825946862f8541d983a140ae9b750de4": {
+   "class": "arch",
+   "key": "cysign.billboard",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -3.29,
+       -1.414
+      ],
+      [
+       -3.11,
+       -1.414
+      ],
+      [
+       -3.11,
+       -0.454
+      ],
+      [
+       -3.29,
+       -0.454
+      ]
+     ],
+     [
+      [
+       -0.09,
+       -1.414
+      ],
+      [
+       0.09,
+       -1.414
+      ],
+      [
+       0.09,
+       -0.454
+      ],
+      [
+       -0.09,
+       -0.454
+      ]
+     ],
+     [
+      [
+       3.11,
+       -1.414
+      ],
+      [
+       3.29,
+       -1.414
+      ],
+      [
+       3.29,
+       -0.454
+      ],
+      [
+       3.11,
+       -0.454
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "4c27ade378c96128893f0e36db700b870b93bc62d3609ac7a17677b37bd19ad3": {
+   "class": "arch",
+   "key": "cysign.billboard",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -3.29,
+       -1.414
+      ],
+      [
+       -3.11,
+       -1.414
+      ],
+      [
+       -3.11,
+       -0.454
+      ],
+      [
+       -3.29,
+       -0.454
+      ]
+     ],
+     [
+      [
+       -0.09,
+       -1.414
+      ],
+      [
+       0.09,
+       -1.414
+      ],
+      [
+       0.09,
+       -0.454
+      ],
+      [
+       -0.09,
+       -0.454
+      ]
+     ],
+     [
+      [
+       3.11,
+       -1.414
+      ],
+      [
+       3.29,
+       -1.414
+      ],
+      [
+       3.29,
+       -0.454
+      ],
+      [
+       3.11,
+       -0.454
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "4d9d33c39f1e1d112f8f74e66e16a9a12cc92d0ffed5e4dfcd2410a75a2984dd": {
+   "class": "shell",
+   "key": "cystreet.tee",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "54ce650dbc201102b9952727166165f53286a64d82c60414e7ae7ca7c68bb24f": {
+   "class": "shell",
+   "key": "cystreet.end",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -3.53,
+       -1.213
+      ],
+      [
+       -3.27,
+       -1.213
+      ],
+      [
+       -3.27,
+       -0.987
+      ],
+      [
+       -3.53,
+       -0.987
+      ]
+     ],
+     [
+      [
+       -1.263,
+       -1.213
+      ],
+      [
+       -1.003,
+       -1.213
+      ],
+      [
+       -1.003,
+       -0.987
+      ],
+      [
+       -1.263,
+       -0.987
+      ]
+     ],
+     [
+      [
+       1.003,
+       -1.213
+      ],
+      [
+       1.263,
+       -1.213
+      ],
+      [
+       1.263,
+       -0.987
+      ],
+      [
+       1.003,
+       -0.987
+      ]
+     ],
+     [
+      [
+       3.27,
+       -1.213
+      ],
+      [
+       3.53,
+       -1.213
+      ],
+      [
+       3.53,
+       -0.987
+      ],
+      [
+       3.27,
+       -0.987
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "556ea8cef99afb11494ac70f098dd1c69d40c086ec5c16517a65bf2658361201": {
+   "class": "arch",
+   "key": "cyroom.portal",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.397,
+       -0.048
+      ],
+      [
+       -1.003,
+       -0.048
+      ],
+      [
+       -1.003,
+       0.648
+      ],
+      [
+       -1.397,
+       0.648
+      ]
+     ],
+     [
+      [
+       1.003,
+       -0.048
+      ],
+      [
+       1.397,
+       -0.048
+      ],
+      [
+       1.397,
+       0.648
+      ],
+      [
+       1.003,
+       0.648
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "56ba2eb80ecddc47cb81ce401f513373dabcfcc580a74011047bf276b00d8505": {
+   "class": "shell",
+   "key": "cystreet.road",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -4.0
+     ],
+     [
+      6.0,
+      -4.0
+     ],
+     [
+      6.0,
+      4.0
+     ],
+     [
+      -6.0,
+      4.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "579bc1c96309087e321ed8d6d31ebcec36441dfd98206e5c3d2a8cd0963153f4": {
+   "class": "shell",
+   "key": "cytower.facade__shops",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       0.349
+      ],
+      [
+       -6.059,
+       0.349
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "5d1c99af2bbb8f0a4b9dbcfbdec7623e81880657fe3254b7830082bcd9dea6f3": {
+   "class": "building",
+   "key": "cytower.annex",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -4.105,
+       -4.105
+      ],
+      [
+       3.495,
+       -4.105
+      ],
+      [
+       3.495,
+       3.495
+      ],
+      [
+       -4.105,
+       3.495
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "5e0869d223d835427801d3fa78663a785867e6cf5314b126b8e24bf9e8da8f06": {
+   "class": "shell",
+   "key": "cystreet.road__short",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      2.0
+     ],
+     [
+      -6.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "5f5e2d6ee71308ff2adcbea36f9c923aaa606e54b7bcc3a5b5cc20ceb2edde83": {
+   "class": "shell",
+   "key": "cystreet.alley",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -2.0,
+       -4.0
+      ],
+      [
+       -1.693,
+       -4.0
+      ],
+      [
+       -1.693,
+       4.0
+      ],
+      [
+       -2.0,
+       4.0
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "6474a4f51751dd09b09bd15321b9c318bc98a902663c1b0896c6c1e453908b50": {
+   "class": "shell",
+   "key": "cyroom.club",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "693a242d57397fdddae4bccbb3bdca52ba418e072921d123109aac6b3fb668e7": {
+   "class": "shell",
+   "key": "cystreet.road",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -4.0
+     ],
+     [
+      6.0,
+      -4.0
+     ],
+     [
+      6.0,
+      4.0
+     ],
+     [
+      -6.0,
+      4.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "6a47ee74ecabf046965c7fbd945bcad831146f6107406d1b02066da204c57c49": {
+   "class": "shell",
+   "key": "cyroom.club__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      9.42
+     ],
+     [
+      -9.42,
+      9.42
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "70d0c41d1eaf1aa1518af6df60ba969128eb121f16879519514b26c788cbcf58": {
+   "class": "shell",
+   "key": "cyroom.rooftop__tower",
+   "meta": {
+    "inset_m": {
+     "+x": 0.68,
+     "+z": 0.68,
+     "-x": 0.68,
+     "-z": 0.68
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -9.388,
+       -9.388
+      ],
+      [
+       -6.012,
+       -9.388
+      ],
+      [
+       -6.012,
+       -6.212
+      ],
+      [
+       -9.388,
+       -6.212
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      9.32
+     ],
+     [
+      -9.32,
+      9.32
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "7437dc2bd1be28302743b6b8a64dcabf41de14a9f89ceeabf1705aa5fa5b5764": {
+   "class": "building",
+   "key": "cysign.hotel",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -2.41,
+       1.84
+      ],
+      [
+       -2.29,
+       1.84
+      ],
+      [
+       -2.29,
+       1.96
+      ],
+      [
+       -2.41,
+       1.96
+      ]
+     ],
+     [
+      [
+       -2.23,
+       0.12
+      ],
+      [
+       -1.47,
+       0.12
+      ],
+      [
+       -1.47,
+       0.88
+      ],
+      [
+       -2.23,
+       0.88
+      ]
+     ],
+     [
+      [
+       1.47,
+       0.12
+      ],
+      [
+       2.23,
+       0.12
+      ],
+      [
+       2.23,
+       0.88
+      ],
+      [
+       1.47,
+       0.88
+      ]
+     ],
+     [
+      [
+       2.29,
+       1.84
+      ],
+      [
+       2.41,
+       1.84
+      ],
+      [
+       2.41,
+       1.96
+      ],
+      [
+       2.29,
+       1.96
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "767b39f4f43a0916dfcb05614ef51d6661c18946ac83f7a009846311e5731c79": {
+   "class": "shell",
+   "key": "cyroom.rooftop__tower",
+   "meta": {
+    "inset_m": {
+     "+x": 0.68,
+     "+z": 0.68,
+     "-x": 0.68,
+     "-z": 0.68
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -9.388,
+       -9.388
+      ],
+      [
+       -6.012,
+       -9.388
+      ],
+      [
+       -6.012,
+       -6.212
+      ],
+      [
+       -9.388,
+       -6.212
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      9.32
+     ],
+     [
+      -9.32,
+      9.32
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "770f5da4e546f5d856a23c662e7b5e67fa10fee5e8b2b4b02dda4e10acddd898": {
+   "class": "shell",
+   "key": "cyroom.subway",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "7b7d47f0c8d431377da9fee8d63d9f0eb0a198e36b6e5a8e05211c58d8528f9c": {
+   "class": "shell",
+   "key": "cystreet.sidewalk__strip",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      2.0
+     ],
+     [
+      -6.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "7c16391e425f31aa7b8cc0c65b2c25045866731e08fe8f336d81c99859ed6d67": {
+   "class": "shell",
+   "key": "cyroom.platform",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -2.0,
+      -6.0
+     ],
+     [
+      2.0,
+      -6.0
+     ],
+     [
+      2.0,
+      6.0
+     ],
+     [
+      -2.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "7d5e6d93ec684ef2649c4fe8c43b8f988d921026a90c6ca6b9c246aef80ecdc9": {
+   "class": "shell",
+   "key": "cyroom.rooftop",
+   "meta": {
+    "inset_m": {
+     "+x": 0.68,
+     "+z": 0.68,
+     "-x": 0.68,
+     "-z": 0.68
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -5.388,
+       -5.388
+      ],
+      [
+       -2.012,
+       -5.388
+      ],
+      [
+       -2.012,
+       -2.212
+      ],
+      [
+       -5.388,
+       -2.212
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -5.32,
+      -5.32
+     ],
+     [
+      5.32,
+      -5.32
+     ],
+     [
+      5.32,
+      5.32
+     ],
+     [
+      -5.32,
+      5.32
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "7e05fb0dfcec5ab8fb6dfcc7096e793b9aaee15bb5c5655cd7679da2eccfe622": {
+   "class": "shell",
+   "key": "cyroom.server",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "88483b4a8b83686e1b2dcd90f25bb747fe29d4f10261f433a19a2feaad110a26": {
+   "class": "shell",
+   "key": "cytower.facade__shops",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       0.349
+      ],
+      [
+       -6.059,
+       0.349
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "8b9f9ff23cedf3a83fd35a9376219d8c66d542a727aba19df1b646a055447932": {
+   "class": "shell",
+   "key": "cystreet.corner",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "8cdb4c3e6f37c540ae0e6230a4b401c0bd75492d528125d87c0d8501a833d4ad": {
+   "class": "arch",
+   "key": "cysign.ticker",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -3.0,
+       0.0
+      ],
+      [
+       3.0,
+       0.0
+      ],
+      [
+       3.0,
+       0.24
+      ],
+      [
+       -3.0,
+       0.24
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "8d02b6e6ce0d3ad1634d5ad108c8070c2a367df82f4160c4f30b9cb0d083abfe": {
+   "class": "arch",
+   "key": "cysign.roof",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -4.68,
+       -0.55
+      ],
+      [
+       4.68,
+       -0.55
+      ],
+      [
+       4.68,
+       0.338
+      ],
+      [
+       -4.68,
+       0.338
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "8df6f415142021cb1aab054035e883758e58636da3ef6cb0d74d43adeb457d1c": {
+   "class": "shell",
+   "key": "cytower.facade",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       0.35
+      ],
+      [
+       -6.059,
+       0.35
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "8e264b772aee3979958c74e0d021a3786b243d8766a9a6c736b1027ff2bc5adf": {
+   "class": "building",
+   "key": "cysign.arcade",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.514,
+       -2.0
+      ],
+      [
+       -0.714,
+       -2.0
+      ],
+      [
+       -0.714,
+       -1.2
+      ],
+      [
+       -1.514,
+       -1.2
+      ]
+     ],
+     [
+      [
+       0.686,
+       -2.0
+      ],
+      [
+       1.486,
+       -2.0
+      ],
+      [
+       1.486,
+       -1.2
+      ],
+      [
+       0.686,
+       -1.2
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "945277dc278d2488aacaed91d409511333a0490369e4444817b942f56295dd41": {
+   "class": "shell",
+   "key": "cyroom.rooftop__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.68,
+     "+z": 0.68,
+     "-x": 0.68,
+     "-z": 0.68
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -9.388,
+       -9.388
+      ],
+      [
+       -6.012,
+       -9.388
+      ],
+      [
+       -6.012,
+       -6.212
+      ],
+      [
+       -9.388,
+       -6.212
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      9.32
+     ],
+     [
+      -9.32,
+      9.32
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "94c6f16c4de9f38a4d7437938f8aeb0c050e13224677cb9e5278b7bfc2112e5c": {
+   "class": "shell",
+   "key": "cystreet.sidewalk__strip",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      2.0
+     ],
+     [
+      -6.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "9974f7f60b3a0c6118f08d491f52324899b169d0dc52495fc163fe8754179690": {
+   "class": "building",
+   "key": "cysign.hotel",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -2.41,
+       1.84
+      ],
+      [
+       -2.29,
+       1.84
+      ],
+      [
+       -2.29,
+       1.96
+      ],
+      [
+       -2.41,
+       1.96
+      ]
+     ],
+     [
+      [
+       -2.23,
+       0.12
+      ],
+      [
+       -1.47,
+       0.12
+      ],
+      [
+       -1.47,
+       0.88
+      ],
+      [
+       -2.23,
+       0.88
+      ]
+     ],
+     [
+      [
+       1.47,
+       0.12
+      ],
+      [
+       2.23,
+       0.12
+      ],
+      [
+       2.23,
+       0.88
+      ],
+      [
+       1.47,
+       0.88
+      ]
+     ],
+     [
+      [
+       2.29,
+       1.84
+      ],
+      [
+       2.41,
+       1.84
+      ],
+      [
+       2.41,
+       1.96
+      ],
+      [
+       2.29,
+       1.96
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "99ad429708c7318b11f18ff117133dbd9fd29ac94b2bf0e999fdacce22834c53": {
+   "class": "shell",
+   "key": "cystreet.alley",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -2.0,
+       -4.0
+      ],
+      [
+       -1.693,
+       -4.0
+      ],
+      [
+       -1.693,
+       4.0
+      ],
+      [
+       -2.0,
+       4.0
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "9b78760735a4fd898881f1ded916b505195e44fc1cb1625bf6c1e69005b3d034": {
+   "class": "shell",
+   "key": "cyroom.platform",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -2.0,
+      -6.0
+     ],
+     [
+      2.0,
+      -6.0
+     ],
+     [
+      2.0,
+      6.0
+     ],
+     [
+      -2.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "9e2f23ec883b1535b7234a07ca0d15798fd490434202476c21e0edc590c2517c": {
+   "class": "building",
+   "key": "cysign.noodle",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.75,
+       -0.725
+      ],
+      [
+       1.75,
+       -0.725
+      ],
+      [
+       1.75,
+       0.623
+      ],
+      [
+       -1.75,
+       0.623
+      ]
+     ],
+     [
+      [
+       -1.65,
+       -2.3
+      ],
+      [
+       1.65,
+       -2.3
+      ],
+      [
+       1.65,
+       -1.7
+      ],
+      [
+       -1.65,
+       -1.7
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "a06989d1e61ad3444a0f9c4613f0de25ec20bba8073d127baf111cacd7836525": {
+   "class": "arch",
+   "key": "cysign.billboard",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -3.29,
+       -1.414
+      ],
+      [
+       -3.11,
+       -1.414
+      ],
+      [
+       -3.11,
+       -0.454
+      ],
+      [
+       -3.29,
+       -0.454
+      ]
+     ],
+     [
+      [
+       -0.09,
+       -1.414
+      ],
+      [
+       0.09,
+       -1.414
+      ],
+      [
+       0.09,
+       -0.454
+      ],
+      [
+       -0.09,
+       -0.454
+      ]
+     ],
+     [
+      [
+       3.11,
+       -1.414
+      ],
+      [
+       3.29,
+       -1.414
+      ],
+      [
+       3.29,
+       -0.454
+      ],
+      [
+       3.11,
+       -0.454
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "a15391151f45482988c4adf4792de0a9dec6d615479b3166ea4f8701a15a6cde": {
+   "class": "building",
+   "key": "cysign.noodle",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.75,
+       -0.725
+      ],
+      [
+       1.75,
+       -0.725
+      ],
+      [
+       1.75,
+       0.623
+      ],
+      [
+       -1.75,
+       0.623
+      ]
+     ],
+     [
+      [
+       -1.65,
+       -2.3
+      ],
+      [
+       1.65,
+       -2.3
+      ],
+      [
+       1.65,
+       -1.7
+      ],
+      [
+       -1.65,
+       -1.7
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "a19c195d92a19f694ff4c2a58e70b842915ab5c465a257d958848220a7ad7914": {
+   "class": "shell",
+   "key": "cytower.facade__shops",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       0.349
+      ],
+      [
+       -6.059,
+       0.349
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "a19c414a68a12be173cd690ed073c8a4ef4fb69aa3ccab98632ed31dbec5333d": {
+   "class": "shell",
+   "key": "cystreet.road__long",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "a1c3482473c80920a6a0ca0de21d5e102a083cd4e0a1ef74517c2bbac8e88593": {
+   "class": "arch",
+   "key": "cysign.ticker",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -3.0,
+       0.0
+      ],
+      [
+       3.0,
+       0.0
+      ],
+      [
+       3.0,
+       0.24
+      ],
+      [
+       -3.0,
+       0.24
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "a1e2a045ae44065a02b323e83766f5a88e49ec3742e34bcdd058c2d2382b4ae9": {
+   "class": "shell",
+   "key": "cyroom.server__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      9.42
+     ],
+     [
+      -9.42,
+      9.42
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "a4e57ecc0ac36f7a239dae63343129e20394728e9e84382875912ab151502012": {
+   "class": "arch",
+   "key": "cysign.roof",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -4.68,
+       -0.55
+      ],
+      [
+       4.68,
+       -0.55
+      ],
+      [
+       4.68,
+       0.338
+      ],
+      [
+       -4.68,
+       0.338
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "a976c78cd9a73772c45e3002aecd584c4ed4bfe8aa58040fe78b532c184ed6a4": {
+   "class": "shell",
+   "key": "cystreet.crossing",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "aace5a7ffa133ff2432ae630844fcf5f724e20145de35834a0850a5350c6b219": {
+   "class": "building",
+   "key": "cysign.clinic",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.805,
+       -0.2
+      ],
+      [
+       -0.905,
+       -0.2
+      ],
+      [
+       -0.905,
+       0.0
+      ],
+      [
+       -1.805,
+       0.0
+      ]
+     ],
+     [
+      [
+       -0.205,
+       -1.9
+      ],
+      [
+       1.395,
+       -1.9
+      ],
+      [
+       1.395,
+       -1.3
+      ],
+      [
+       -0.205,
+       -1.3
+      ]
+     ],
+     [
+      [
+       0.895,
+       -0.2
+      ],
+      [
+       1.795,
+       -0.2
+      ],
+      [
+       1.795,
+       0.0
+      ],
+      [
+       0.895,
+       0.0
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "ad3638cd37d6153a4130a3749b5009107c44865475c63610a816407add4d24de": {
+   "class": "shell",
+   "key": "cyroom.subway__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -9.42,
+      -7.42
+     ],
+     [
+      9.42,
+      -7.42
+     ],
+     [
+      9.42,
+      7.42
+     ],
+     [
+      -9.42,
+      7.42
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "b07c500ca0c3243106a56792114718b23a1ed1e19b1879b9efc22b282177413a": {
+   "class": "shell",
+   "key": "cyroom.rooftop__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.68,
+     "+z": 0.68,
+     "-x": 0.68,
+     "-z": 0.68
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -9.388,
+       -9.388
+      ],
+      [
+       -6.012,
+       -9.388
+      ],
+      [
+       -6.012,
+       -6.212
+      ],
+      [
+       -9.388,
+       -6.212
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      9.32
+     ],
+     [
+      -9.32,
+      9.32
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "b2a90f2b38e249d6b03e3c042732d8d8789fc1df433ce463a5fed8260003934e": {
+   "class": "building",
+   "key": "cysign.noodle",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.75,
+       -0.725
+      ],
+      [
+       1.75,
+       -0.725
+      ],
+      [
+       1.75,
+       0.623
+      ],
+      [
+       -1.75,
+       0.623
+      ]
+     ],
+     [
+      [
+       -1.65,
+       -2.3
+      ],
+      [
+       1.65,
+       -2.3
+      ],
+      [
+       1.65,
+       -1.7
+      ],
+      [
+       -1.65,
+       -1.7
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "b351a2371e31f1adcb7c69b386ef8c26a0f776b6477c6cbaf6fd7be18181fedb": {
+   "class": "building",
+   "key": "cysign.hotel",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -2.41,
+       1.84
+      ],
+      [
+       -2.29,
+       1.84
+      ],
+      [
+       -2.29,
+       1.96
+      ],
+      [
+       -2.41,
+       1.96
+      ]
+     ],
+     [
+      [
+       -2.23,
+       0.12
+      ],
+      [
+       -1.47,
+       0.12
+      ],
+      [
+       -1.47,
+       0.88
+      ],
+      [
+       -2.23,
+       0.88
+      ]
+     ],
+     [
+      [
+       1.47,
+       0.12
+      ],
+      [
+       2.23,
+       0.12
+      ],
+      [
+       2.23,
+       0.88
+      ],
+      [
+       1.47,
+       0.88
+      ]
+     ],
+     [
+      [
+       2.29,
+       1.84
+      ],
+      [
+       2.41,
+       1.84
+      ],
+      [
+       2.41,
+       1.96
+      ],
+      [
+       2.29,
+       1.96
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "b654d5cd0b8c62070d9199b373d7d9eb585199201a1a478060d80b879e66fdd3": {
+   "class": "shell",
+   "key": "cyroom.den",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -5.525,
+       -5.25
+      ],
+      [
+       -5.075,
+       -5.25
+      ],
+      [
+       -5.075,
+       5.25
+      ],
+      [
+       -5.525,
+       5.25
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "b739c07dc9ecd526fbdef5d51c7b400d710eefdbdcca8a6381f37d364e88258b": {
+   "class": "shell",
+   "key": "cyroom.club",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "b95bb2db3174640e329dedf9a63561e211533ebaa2dc80763aefd5508a1c4640": {
+   "class": "building",
+   "key": "cysign.pawn",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.79,
+       -0.7
+      ],
+      [
+       -0.05,
+       -0.7
+      ],
+      [
+       -0.05,
+       -0.1
+      ],
+      [
+       -1.79,
+       -0.1
+      ]
+     ],
+     [
+      [
+       0.26,
+       -1.85
+      ],
+      [
+       1.46,
+       -1.85
+      ],
+      [
+       1.46,
+       -1.35
+      ],
+      [
+       0.26,
+       -1.35
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "badddbf249f4c046212a6383d94434e3b7dd2088e31e4665a067275af100c2d5": {
+   "class": "shell",
+   "key": "cyroom.server__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      -9.42
+     ],
+     [
+      9.42,
+      9.42
+     ],
+     [
+      -9.42,
+      9.42
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "bf157731fb8c79d02efb6aff351206bffad762e25484c7ab005bd462d9c5c956": {
+   "class": "shell",
+   "key": "cystreet.tee",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "c17e4469937f6302d8529f4f937da610f0a034a8e8a7d1cbd3137bddc1b8db72": {
+   "class": "shell",
+   "key": "cystreet.plaza",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -4.0,
+      -4.0
+     ],
+     [
+      4.0,
+      -4.0
+     ],
+     [
+      4.0,
+      4.0
+     ],
+     [
+      -4.0,
+      4.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "ca015df1bf293da0072bfa7b90c8638ecc34a89187feb7b99bc2a8d1fe02e8b3": {
+   "class": "shell",
+   "key": "cystreet.crossing",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "d18ffcbf57dffb285416d75a3f5a9d1335c5b07363ba3365de88b42ff1ec6e73": {
+   "class": "shell",
+   "key": "cyroom.rooftop__tower",
+   "meta": {
+    "inset_m": {
+     "+x": 0.68,
+     "+z": 0.68,
+     "-x": 0.68,
+     "-z": 0.68
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -9.388,
+       -9.388
+      ],
+      [
+       -6.012,
+       -9.388
+      ],
+      [
+       -6.012,
+       -6.212
+      ],
+      [
+       -9.388,
+       -6.212
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      9.32
+     ],
+     [
+      -9.32,
+      9.32
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "d1a1129d47792f907c488a8ea73d2e64078e91485afd111140742285d1982636": {
+   "class": "shell",
+   "key": "cystreet.sidewalk",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -2.0,
+      -2.0
+     ],
+     [
+      2.0,
+      -2.0
+     ],
+     [
+      2.0,
+      2.0
+     ],
+     [
+      -2.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "d30bb921bf0c5424c28d8e130f01bfb8030432e1b75bef5c40d7739cc87e02be": {
+   "class": "shell",
+   "key": "cystreet.end",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -3.53,
+       -1.213
+      ],
+      [
+       -3.27,
+       -1.213
+      ],
+      [
+       -3.27,
+       -0.987
+      ],
+      [
+       -3.53,
+       -0.987
+      ]
+     ],
+     [
+      [
+       -1.263,
+       -1.213
+      ],
+      [
+       -1.003,
+       -1.213
+      ],
+      [
+       -1.003,
+       -0.987
+      ],
+      [
+       -1.263,
+       -0.987
+      ]
+     ],
+     [
+      [
+       1.003,
+       -1.213
+      ],
+      [
+       1.263,
+       -1.213
+      ],
+      [
+       1.263,
+       -0.987
+      ],
+      [
+       1.003,
+       -0.987
+      ]
+     ],
+     [
+      [
+       3.27,
+       -1.213
+      ],
+      [
+       3.53,
+       -1.213
+      ],
+      [
+       3.53,
+       -0.987
+      ],
+      [
+       3.27,
+       -0.987
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "d5445ace59bb95539b7b6831f0207764f16f753e2da334782b782048d3362f8b": {
+   "class": "building",
+   "key": "cysign.arcade",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.514,
+       -2.0
+      ],
+      [
+       -0.714,
+       -2.0
+      ],
+      [
+       -0.714,
+       -1.2
+      ],
+      [
+       -1.514,
+       -1.2
+      ]
+     ],
+     [
+      [
+       0.686,
+       -2.0
+      ],
+      [
+       1.486,
+       -2.0
+      ],
+      [
+       1.486,
+       -1.2
+      ],
+      [
+       0.686,
+       -1.2
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "d5c2dccc661ae47c8704f0d0f584beedc6b1c62e86a2f5133875bb0f8ac93514": {
+   "class": "shell",
+   "key": "cyroom.rooftop",
+   "meta": {
+    "inset_m": {
+     "+x": 0.68,
+     "+z": 0.68,
+     "-x": 0.68,
+     "-z": 0.68
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -5.388,
+       -5.388
+      ],
+      [
+       -2.012,
+       -5.388
+      ],
+      [
+       -2.012,
+       -2.212
+      ],
+      [
+       -5.388,
+       -2.212
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -5.32,
+      -5.32
+     ],
+     [
+      5.32,
+      -5.32
+     ],
+     [
+      5.32,
+      5.32
+     ],
+     [
+      -5.32,
+      5.32
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "d6105c77a60d1d672d1e813a658d8cc94f2bbc02a4a2931469b5c27ca8ee188e": {
+   "class": "shell",
+   "key": "cystreet.crossing",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "d6113a928a8d495a84d6adf077e513200424fb97f5d9c28f6e22ddb0fa38c6e2": {
+   "class": "shell",
+   "key": "cystreet.road__long",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "d79aeff1402c7507ae3eeb3b34cf7202bd2d2920e219405aad0b5a2e0420bf3a": {
+   "class": "shell",
+   "key": "cytower.facade",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       -2.4
+      ],
+      [
+       6.059,
+       0.35
+      ],
+      [
+       -6.059,
+       0.35
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "d96fbdfc079cf09dbb02303d2f1f9942f510e95e067839fab0733536c7c66492": {
+   "class": "shell",
+   "key": "cystreet.sidewalk__strip2",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -4.0,
+      -2.0
+     ],
+     [
+      4.0,
+      -2.0
+     ],
+     [
+      4.0,
+      2.0
+     ],
+     [
+      -4.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "d9daaafee5d7b301d3e6f1e4af1ab0b3b0ccfd90d047c54b3688777423ac3119": {
+   "class": "shell",
+   "key": "cystreet.plaza",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -4.0,
+      -4.0
+     ],
+     [
+      4.0,
+      -4.0
+     ],
+     [
+      4.0,
+      4.0
+     ],
+     [
+      -4.0,
+      4.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "d9f8a03254150bd733b9843755e96009f8e581fd14ff9b8ea7686ead69af7320": {
+   "class": "shell",
+   "key": "cyroom.rooftop__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.68,
+     "+z": 0.68,
+     "-x": 0.68,
+     "-z": 0.68
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -9.388,
+       -9.388
+      ],
+      [
+       -6.012,
+       -9.388
+      ],
+      [
+       -6.012,
+       -6.212
+      ],
+      [
+       -9.388,
+       -6.212
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      -9.32
+     ],
+     [
+      9.32,
+      9.32
+     ],
+     [
+      -9.32,
+      9.32
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "dd5c90c2612a4cddecf9fb921fc5244c763fe3824bd4faed0226060b70d06ac7": {
+   "class": "shell",
+   "key": "cystreet.corner",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "df0d08e8e3cf5c69663fcc0dc60f514361dc4536eedc0bdd7ac4a9b8faa2df6a": {
+   "class": "arch",
+   "key": "cysign.ticker",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -3.0,
+       0.0
+      ],
+      [
+       3.0,
+       0.0
+      ],
+      [
+       3.0,
+       0.24
+      ],
+      [
+       -3.0,
+       0.24
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "e34e500f2007770f946769cfd905e02aede00a4de6a58a525124ade2c2cb36cb": {
+   "class": "building",
+   "key": "cysign.arcade",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -1.514,
+       -2.0
+      ],
+      [
+       -0.714,
+       -2.0
+      ],
+      [
+       -0.714,
+       -1.2
+      ],
+      [
+       -1.514,
+       -1.2
+      ]
+     ],
+     [
+      [
+       0.686,
+       -2.0
+      ],
+      [
+       1.486,
+       -2.0
+      ],
+      [
+       1.486,
+       -1.2
+      ],
+      [
+       0.686,
+       -1.2
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "e8dd74fdcbf2044b2bf9e914557088b41cca7658a912af71cce90a7435f90825": {
+   "class": "shell",
+   "key": "cyroom.subway__arena",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -9.42,
+      -7.42
+     ],
+     [
+      9.42,
+      -7.42
+     ],
+     [
+      9.42,
+      7.42
+     ],
+     [
+      -9.42,
+      7.42
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "ea1c8926cb2c238fc060cb3c2ba6bb2a85380a546cbb88ed1eca9549b1e73bb7": {
+   "class": "shell",
+   "key": "cyroom.den",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -5.525,
+       -5.25
+      ],
+      [
+       -5.075,
+       -5.25
+      ],
+      [
+       -5.075,
+       5.25
+      ],
+      [
+       -5.525,
+       5.25
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "ecf5f7f5b6c4d4bbb067ae8a315a1b713467750bd5d228521604a20f46e82936": {
+   "class": "shell",
+   "key": "cystreet.road__short",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      -2.0
+     ],
+     [
+      6.0,
+      2.0
+     ],
+     [
+      -6.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "eeb3dda04080311d9f05d9e9b61d91f0716b7839cd1101b6ad44cadcece98623": {
+   "class": "building",
+   "key": "cytower.annex",
+   "meta": {
+    "kind": "landmark",
+    "obstacles_gltf": [
+     [
+      [
+       -4.105,
+       -4.105
+      ],
+      [
+       3.495,
+       -4.105
+      ],
+      [
+       3.495,
+       3.495
+      ],
+      [
+       -4.105,
+       3.495
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "efa2d2bad52057f65bcce7d2335a9f9126652a31e3f29df3c47c8547fe1ddb12": {
+   "class": "shell",
+   "key": "cytower.facade__canyon",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -6.059,
+       -0.25
+      ],
+      [
+       6.059,
+       -0.25
+      ],
+      [
+       6.059,
+       0.349
+      ],
+      [
+       -6.059,
+       0.349
+      ]
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "f18bd063ce0f1caad78c2e5e5c127bebd98c2cb38c6d496171e975b49bd27573": {
+   "class": "shell",
+   "key": "cyroom.rooftop",
+   "meta": {
+    "inset_m": {
+     "+x": 0.68,
+     "+z": 0.68,
+     "-x": 0.68,
+     "-z": 0.68
+    },
+    "kind": "container",
+    "obstacles_gltf": [
+     [
+      [
+       -5.388,
+       -5.388
+      ],
+      [
+       -2.012,
+       -5.388
+      ],
+      [
+       -2.012,
+       -2.212
+      ],
+      [
+       -5.388,
+       -2.212
+      ]
+     ]
+    ],
+    "walkable_outline_gltf": [
+     [
+      -5.32,
+      -5.32
+     ],
+     [
+      5.32,
+      -5.32
+     ],
+     [
+      5.32,
+      5.32
+     ],
+     [
+      -5.32,
+      5.32
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "f34cec759ae7699cc8718267c54e6e73552ae703877cf1cff149d92666c96060": {
+   "class": "shell",
+   "key": "cystreet.corner",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "f41cc612bc81d484dd5770a2f9a2c32f52bb978ed43fab0056c4dfba78788858": {
+   "class": "shell",
+   "key": "cyroom.server",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "f5d4a0b702e4ae3ba9d45138373b2878cc2c96fd6f34e4a39a81c1903dbb71f1": {
+   "class": "shell",
+   "key": "cystreet.plaza",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -4.0,
+      -4.0
+     ],
+     [
+      4.0,
+      -4.0
+     ],
+     [
+      4.0,
+      4.0
+     ],
+     [
+      -4.0,
+      4.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "f64fa3b564a35ab8ccf957fe5a70f541604536e934978e7a29a1ea663557a641": {
+   "class": "shell",
+   "key": "cystreet.end",
+   "meta": {
+    "kind": "slab",
+    "obstacles_gltf": [
+     [
+      [
+       -3.53,
+       -1.213
+      ],
+      [
+       -3.27,
+       -1.213
+      ],
+      [
+       -3.27,
+       -0.987
+      ],
+      [
+       -3.53,
+       -0.987
+      ]
+     ],
+     [
+      [
+       -1.263,
+       -1.213
+      ],
+      [
+       -1.003,
+       -1.213
+      ],
+      [
+       -1.003,
+       -0.987
+      ],
+      [
+       -1.263,
+       -0.987
+      ]
+     ],
+     [
+      [
+       1.003,
+       -1.213
+      ],
+      [
+       1.263,
+       -1.213
+      ],
+      [
+       1.263,
+       -0.987
+      ],
+      [
+       1.003,
+       -0.987
+      ]
+     ],
+     [
+      [
+       3.27,
+       -1.213
+      ],
+      [
+       3.53,
+       -1.213
+      ],
+      [
+       3.53,
+       -0.987
+      ],
+      [
+       3.27,
+       -0.987
+      ]
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  },
+  "f90cca59559c356c23f642ed850b2695c72eb17f1a2c46157a8735ef978bc9d8": {
+   "class": "shell",
+   "key": "cystreet.tee",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      -6.0
+     ],
+     [
+      6.0,
+      6.0
+     ],
+     [
+      -6.0,
+      6.0
+     ]
+    ]
+   },
+   "variant": "neon_dawn"
+  },
+  "fa3261d4f932dbc63741af6f2f32222b6ea78413f6267a7197aa3eaf47eda7da": {
+   "class": "shell",
+   "key": "cystreet.sidewalk",
+   "meta": {
+    "kind": "floor",
+    "walkable_outline_gltf": [
+     [
+      -2.0,
+      -2.0
+     ],
+     [
+      2.0,
+      -2.0
+     ],
+     [
+      2.0,
+      2.0
+     ],
+     [
+      -2.0,
+      2.0
+     ]
+    ]
+   },
+   "variant": "neon_city_night"
+  },
+  "fca6305d4d9f3a81d373a3fe725ac08971603cb24ae099aa81f7488a7954500c": {
+   "class": "shell",
+   "key": "cyroom.server",
+   "meta": {
+    "inset_m": {
+     "+x": 0.58,
+     "+z": 0.58,
+     "-x": 0.58,
+     "-z": 0.58
+    },
+    "kind": "container",
+    "walkable_outline_gltf": [
+     [
+      -5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      -5.42
+     ],
+     [
+      5.42,
+      5.42
+     ],
+     [
+      -5.42,
+      5.42
+     ]
+    ]
+   },
+   "variant": "cyber_blue_grid"
+  }
+ },
+ "coordinates": "glTF metres (Godot x/z), relative to the piece origin; body band 0.3..1.3 m",
+ "format": "feel4-shell-kit-metadata/1",
+ "generated_by": "tools/feel4_shells.py",
+ "source": "kits/library/cyberkit-manifest.json"
+}

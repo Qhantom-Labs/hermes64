@@ -18,7 +18,7 @@ def main(argv):
         spec = reg[gid]
         d[gid] = {"version": spec.version, "class": spec.cls, "description": spec.description,
                   "has_rules": spec.rules is not None, "wall_mounted": spec.wall_mounted, "schema": spec.schema}
-    with open(out, "w") as f:
+    with open(out, "w", encoding="utf-8") as f:
         json.dump(d, f, indent=1, sort_keys=True, default=str)
     print("SCHEMADUMP", out, len(d))
     return 0

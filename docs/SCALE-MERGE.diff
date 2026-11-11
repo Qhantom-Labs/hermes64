@@ -1,0 +1,206 @@
+diff --git a/adventure_maker/newgame.py b/adventure_maker/newgame.py
+index 21ed667c..4de7e7d7 100644
+--- a/adventure_maker/newgame.py
++++ b/adventure_maker/newgame.py
+@@ -348,7 +348,7 @@ def starter_spec(settings, premise, name, pack_id, template=None, slots=None, ga
+     return spec
+ 
+ 
+-def create(settings, premise, style=None, name=None, default_root=None, story=None):
++def create(settings, premise, style=None, name=None, default_root=None, story=None, scale=None):
+     """Run the one-command start. Returns a result dict; raises Fault with a one-line message.
+ 
+     REUSE: every call makes a NEW project. When the name (derived from the premise, or given) is already taken, the
+@@ -379,6 +379,13 @@ def create(settings, premise, style=None, name=None, default_root=None, story=No
+     template, template_reason = pick_template(premise, explicit=slots.get('template'))
+     base = slug(premise) if name in (None, '') else check_name(name)
+     spec = starter_spec(settings, premise, base, pack, template, slots, games_root=root)
++    # SCALE: room-scale dial (adventure_maker/room_scale.py). New games default to medium (about 4x the legacy floor
++    # area); small keeps the legacy 4 x 4 m starter byte-identical; templates other than the starter keep their rooms.
++    from . import room_scale
++    scale, scale_reason = room_scale.pick(premise, explicit=scale, brief=asked, slots=slots)
++    spec, scaled = room_scale.apply(spec, scale, pack, premise,
++                                    Path(settings.get('bundle_root') or Path(__file__).resolve().parents[1]))
++    scaled['reason'] = scale_reason if scaled.get('applied') else scaled.get('reason', scale_reason)
+     unapplied = list(spec['metadata'].get('template_pending', []))
+     from .premise_apply import APPLIED  # GAPS2 G3: applied by arena_run_v1; audio slot names wait in the project
+     applied = APPLIED if template == 'arena_run_v1' else ()
+@@ -397,6 +404,8 @@ def create(settings, premise, style=None, name=None, default_root=None, story=No
+         """The starter spec under one candidate project name, dressed with the story record and pending slots."""
+         value = spec if candidate == base else starter_spec(settings, premise, candidate, pack, template, slots,
+                                                              games_root=root)
++        if candidate != base:   # SCALE: the same room-scale plan for a renamed project
++            value = room_scale.apply(value, scale, pack, premise, Path(settings.get('bundle_root') or Path(__file__).resolve().parents[1]))[0]
+         if record:
+             value['metadata']['premise'] = record['id'] + '@' + record['sha256']
+         if unapplied:
+@@ -414,20 +423,22 @@ def create(settings, premise, style=None, name=None, default_root=None, story=No
+     earlier = dict(describe_existing(root, names[0]), also_taken=names[1:]) if names else None
+     try:
+         return finish(settings, service, root, uses_default, name, earlier, premise, asked, record, pack, reason,
+-                      template, template_reason, spec_for(name), unapplied, tools, stages, started)
++                      template, template_reason, spec_for(name), unapplied, tools, stages, started, scaled)
+     except Exception as exc:
+         setattr(exc, 'created_dir', str(root / name))   # this call's own half-made folder, never an earlier project
+         raise
+ 
+ 
+ def finish(settings, service, root, uses_default, name, earlier, premise, asked, record, pack, reason, template,
+-           template_reason, spec, unapplied, tools, stages, started):
++           template_reason, spec, unapplied, tools, stages, started, scaled=None):
+     """Everything after the new project's source is scaffolded: compile, check, assets, playtest, play runtime, audit,
+     badge, game card and the reply."""
+     from .adapters import Components
+     from . import playtest
+     from . import brief as briefs
+     from .doctor import BLENDER_NOTE, godot_version, other_godot
++    from . import room_scale
++    scaled = scaled or {'scale': 'small', 'applied': False, 'reason': 'not planned'}
+     project = None
+     slots = record['data'] if record else {}   # as in create(): GAPS2's audio-slot steps run here since REUSE's split
+ 
+@@ -509,6 +520,7 @@ def finish(settings, service, root, uses_default, name, earlier, premise, asked,
+             card['brief'] = briefs.summary(asked)
+         story_card = ({k: record[k] for k in ('id', 'sha256', 'reason')} if record else None)
+         card['story'] = story_card
++        card['rooms'] = room_scale.card(scaled)
+         card['not_applied'] = unapplied
+         project.write_json('project.json', card)
+         ok = badge['ok']
+@@ -524,11 +536,11 @@ def finish(settings, service, root, uses_default, name, earlier, premise, asked,
+                 reasons = [audited['result']['summary'] + '; run the style audit next steps (hermes64_check action=audit)']
+             first = '%s, but it needs work: %s' % (made, (reasons or ['see the badge'])[0])
+         style_line = 'Style: %s (%s), %s' % (STYLE_NAMES[pack], pack, reason)
+-        lines = [first, style_line, 'Badge: ' + badge['text'], 'Play: ' + command]
++        lines = [first, style_line, room_scale.summary_line(scaled), 'Badge: ' + badge['text'], 'Play: ' + command]
+         if template != 'two_room_collect_v1' or record:
+-            lines.insert(2, 'Template: %s (%s)' % (template, template_reason))
++            lines.insert(3, 'Template: %s (%s)' % (template, template_reason))
+         if record:
+-            lines.insert(3, 'Story: %s (%s)' % (record['id'], record['reason']))
++            lines.insert(4, 'Story: %s (%s)' % (record['id'], record['reason']))
+         if earlier:
+             more = earlier['also_taken']
+             lines.insert(1, 'Earlier: an earlier project with that name exists at %s; it was left unchanged%s.'
+@@ -564,7 +576,8 @@ def finish(settings, service, root, uses_default, name, earlier, premise, asked,
+                   'style_audit': audited['line'], 'assets': assets, 'next': steps,
+                   'project_dir': str(project.root), 'title': title, 'premise': premise,
+                   'story': story_card, 'not_applied': unapplied,
+-                  'template': card['template'], 'style': card['style'], 'badge': badge['text'], 'proof_badge': badge, 'play_command': command,
++                  'template': card['template'], 'style': card['style'], 'rooms': card['rooms'], 'badge': badge['text'],
++                  'proof_badge': badge, 'play_command': command,
+                   'play_argv': argv, 'paths': paths, 'default_games_folder': uses_default, 'stages': stages,
+                   'seconds': round(time.monotonic() - started, 3), 'message': message}
+         project.write_json('.maker/new.json', result)
+@@ -643,10 +656,11 @@ def quick_audit(service, project, stages):
+     return {'line': result['summary'], 'result': result, 'badge': result['report_path']}
+ 
+ 
+-def parse(raw, include_story=False):
+-    """Quoted premise and optional style/name/story; legacy callers retain their three-tuple."""
++def parse(raw, include_story=False, include_scale=False):
++    """Quoted premise and optional style/name/story (and room scale: a small/medium/large/open word after the quoted
++    premise, or scale=...); legacy callers retain their three-tuple."""
+     value = (raw or '').strip()
+-    premise, style, name, story, positional = None, None, None, None, []
++    premise, style, name, story, scale, positional = None, None, None, None, None, []
+     if value[:1] in QUOTES:
+         end = value.find(QUOTES[value[0]], 1)
+         if end < 0:
+@@ -657,15 +671,18 @@ def parse(raw, include_story=False):
+     while index < len(tokens):
+         token = tokens[index]
+         key, _, inline = token.partition('=')
+-        if token in ('--style', '--name', '--story'):
++        options = ('style', 'name', 'story') + (('scale',) if include_scale else ())
++        if token in tuple('--' + o for o in options):
+             if index + 1 >= len(tokens):
+                 fail('new_option', token + ' needs a value, e.g. ' + token + ' polar.')
+             key, inline, index = token[2:], tokens[index + 1], index + 1
+-        elif key in ('style', 'name', 'story', '--style', '--name', '--story') and inline:
++        elif key.lstrip('-') in options and key in options + tuple('--' + o for o in options) and inline:
+             key = key.lstrip('-')
+         else:
+             key = None
+-        if key == 'style':
++        if key == 'scale':
++            scale = inline
++        elif key == 'style':
+             style = inline
+         elif key == 'name':
+             name = inline
+@@ -676,13 +693,18 @@ def parse(raw, include_story=False):
+         index += 1
+     if premise is None:
+         premise = ' '.join(positional)
+-    elif positional:
++        positional = []
++    elif include_scale and scale is None and positional and positional[-1].lower() in ('small', 'medium', 'large', 'open'):
++        scale = positional.pop()
++    if positional:
+         if len(positional) > 1 or style is not None:
+             fail('new_extra', 'Unexpected text after the premise (%r); use ' % one_line(' '.join(positional))[:60]
+                  + EXAMPLE + ' polar.')
+         style = positional[0]
+     if story is not None and not include_story:
+         fail('new_option', 'Story options require the story-aware command path.')
++    if include_scale:
++        return premise, style, name, story, scale
+     return (premise, style, name, story) if include_story else (premise, style, name)
+ 
+ 
+@@ -736,7 +758,7 @@ def command(ctx, raw):
+             premise, style, name = parse(raw)
+             from .create_flow import command_create
+             return command_create(settings, premise, style, name, default_games_root(ctx))
+-        premise, style, name, story = parse(raw, include_story=True)
+-        return create(settings, premise, style, name, default_games_root(ctx), story=story)['message']
++        premise, style, name, story, scale = parse(raw, include_story=True, include_scale=True)
++        return create(settings, premise, style, name, default_games_root(ctx), story=story, scale=scale)['message']
+     except Exception as exc:
+         return 'Hermes64 new: ' + failure(exc)['error']['message']
+diff --git a/tests/test_newgame.py b/tests/test_newgame.py
+index 90709854..9faa6a74 100644
+--- a/tests/test_newgame.py
++++ b/tests/test_newgame.py
+@@ -201,10 +201,10 @@ class SuccessPath(unittest.TestCase):
+         self.assertEqual(before['error']['code'], 'configuration')
+         text = ctx.commands['hermes64']('new "' + PREMISE + '"')
+         lines = text.split('\n')
+-        self.assertIn(len(lines), (4, 5), text)  # a fifth line only notes a missing optional Blender
+-        blender = len(lines) == 4
++        self.assertIn(len(lines), (5, 6), text)  # a sixth line only notes a missing optional Blender
++        blender = len(lines) == 5
+         if not blender:
+-            self.assertTrue(lines[4].startswith('Optional: Blender not found'))
++            self.assertTrue(lines[5].startswith('Optional: Blender not found'))
+         project = self.data / 'games' / 'penguin-repairs-frozen-research'
+         # MERGE5: the room assets are built before the playtest and audit. BFIX: the default builder is auto: Blender
+         # when found, else the Python builder, which needs numpy in python_path (this test's own interpreter).
+@@ -221,10 +221,12 @@ class SuccessPath(unittest.TestCase):
+         self.assertEqual(lines[0], made + ' (default games folder)' if built else
+                          made + ', but it needs work: room assets not built (%s); run hermes64_build_assets' % reason)
+         self.assertEqual(lines[1], 'Style: polar (polar_pod), auto: matched "penguin", "frozen", "station"')
+-        self.assertEqual(lines[2], 'Badge: proof-checked · 2 bots played · ' + assets + ' · style audit not run (no display) · 0 softlocks · PLAYABLE (headless)')
+-        self.assertTrue(lines[3].startswith('Play: ') and lines[3].endswith('-- --pack=res://theme.json'))
++        # SCALE: new games default to medium rooms (adventure_maker/room_scale.py); the line reports the clear squares
++        self.assertTrue(lines[2].startswith('Rooms: medium, 13 x 13 m (default for new games): snowfield '), lines[2])
++        self.assertEqual(lines[3], 'Badge: proof-checked · 2 bots played · ' + assets + ' · style audit not run (no display) · 0 softlocks · PLAYABLE (headless)')
++        self.assertTrue(lines[4].startswith('Play: ') and lines[4].endswith('-- --pack=res://theme.json'))
+         if not blender:
+-            self.assertEqual(lines[4], newgame.blender_line({}, dict(card['proof_badge']['assets'], builder='python'))
++            self.assertEqual(lines[5], newgame.blender_line({}, dict(card['proof_badge']['assets'], builder='python'))
+                              if built else newgame.blender_line({}, {}))
+         self.assertEqual(card['format'], 'hermes64-game/1')
+         self.assertEqual(card['proof_badge']['ok'], built)
+@@ -232,7 +234,9 @@ class SuccessPath(unittest.TestCase):
+         if built:
+             self.assertTrue((project / card['paths']['assets']).is_file())
+             self.assertTrue((project / '.maker/assets/current.json').is_file())
+-        self.assertEqual(card['proof_badge']['text'], lines[2][len('Badge: '):])
++        self.assertEqual(card['proof_badge']['text'], lines[3][len('Badge: '):])
++        self.assertEqual(card['rooms']['scale'], 'medium')
++        self.assertTrue(card['rooms']['applied'])
+         self.assertEqual(card['style']['pack'], 'polar_pod')
+         self.assertTrue((project / 'play/runtime/game.json').is_file())
+         self.assertTrue((project / card['paths']['playtest']).is_file())

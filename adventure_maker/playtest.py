@@ -14,6 +14,15 @@ SCOPE = ('Bounded deterministic physical probes at 60 Hz plus seeded explorer in
          'Production action menus remain contract-level; proximity is a harness constraint, not a new story rule.')
 
 
+ROOM_TRIS_CEILING = 8000     # kits/core/style_bible.json: the largest room_tris any budget profile may name
+
+
+def room_cap(row):
+    """A measured room's triangle cap: 6,000, or the compiled room's budget profile cap (never above the ceiling)."""
+    cap = row.get('room_tris_cap')
+    return min(int(cap), ROOM_TRIS_CEILING) if isinstance(cap, int) and cap > 0 else 6000
+
+
 def verdict(native, proof, process):
     reasons = []
     logs = process.get('stderr', '') + process.get('stdout', '')
@@ -29,8 +38,10 @@ def verdict(native, proof, process):
     if not native.get('completed'): reasons.append('No complete physical winning path demonstrated.'); rough = True
     for key in ['failures', 'stuck', 'unreachable', 'camera_bugs', 'missing_assets', 'transition_errors']:
         if native.get(key): reasons.append(key + ': ' + str(len(native[key]))); rough = True
-    if any(r.get('triangles', 0) > 6000 for r in native.get('rooms', {}).values()):
-        reasons.append('Measured room geometry exceeds 6,000 triangles.'); rough = True
+    over = [rid for rid, r in native.get('rooms', {}).items() if r.get('triangles', 0) > room_cap(r)]
+    if over:
+        reasons.append('Measured room geometry exceeds the room triangle cap (6,000 unless the room names a larger '
+                       'style-bible budget profile): ' + ', '.join(sorted(over))); rough = True
     if any((r.get('draw_calls') or 0) > 256 for r in native.get('rooms', {}).values()):
         reasons.append('Measured room draw calls exceed the 256-call probe budget.'); rough = True
     timing = native.get('timing', {})

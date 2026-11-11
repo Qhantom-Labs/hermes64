@@ -544,7 +544,7 @@ def validate_slots(slots, assets):
     """Check a slots document against the imported manifest. Returns a normalised copy."""
     if not isinstance(slots, dict):
         _fail('slots', 'slots must be an object')
-    unknown = set(slots) - {'format', 'music', 'voice', 'cues', 'mix'}
+    unknown = set(slots) - {'format', 'music', 'voice', 'cues', 'mix', 'combat_sfx'}
     if unknown:
         _fail('slots', 'Unknown slots fields: ' + ', '.join(sorted(unknown)))
 
@@ -590,6 +590,44 @@ def validate_slots(slots, assets):
         if isinstance(v, bool) or not isinstance(v, (int, float)) or not (lo <= v <= hi):
             _fail('slots', 'mix.%s must be a number in [%g, %g]' % (k, lo, hi))
         out['mix'][k] = float(v)
+    if 'combat_sfx' in slots:
+        out['combat_sfx'] = combat_sfx_slots(slots['combat_sfx'], ref)
+    return out
+
+
+# COMBATFIX: combat event sounds. `combat_sfx` is "default" (every event, the shipped original set) or
+# {event: "default" | imported sfx id | [ids, up to 4 variants]}; events left out stay silent and keep the stock cue.
+COMBAT_SFX_EVENTS = ('punch_hit', 'punch_miss', 'robot_hit', 'boss_hit', 'player_hurt', 'dodge', 'block', 'robot_death',
+                     'boss_telegraph')
+COMBAT_SFX_DIR = Path(__file__).resolve().parent.parent / 'audio' / 'combat_sfx'
+
+
+def combat_sfx_slots(value, ref):
+    if value == 'default':
+        return {e: 'default' for e in COMBAT_SFX_EVENTS}
+    if not isinstance(value, dict) or not value:
+        _fail('slots', 'combat_sfx must be "default" or an object {event: "default" | sfx asset id | [ids]}')
+    out = {}
+    for event, v in value.items():
+        if event not in COMBAT_SFX_EVENTS:
+            _fail('slots', 'combat_sfx.%s unknown (use %s)' % (event, ', '.join(COMBAT_SFX_EVENTS)))
+        ids = [v] if isinstance(v, str) else v
+        if not isinstance(ids, list) or not 1 <= len(ids) <= 4:
+            _fail('slots', 'combat_sfx.%s must be "default", an sfx asset id or a list of 1-4 ids' % event)
+        out[event] = 'default' if ids == ['default'] else [ref(i, ('sfx',), 'combat_sfx.' + event) for i in ids]
+    return out
+
+
+def combat_sfx_defaults():
+    """The shipped original set (audio/combat_sfx/combat_sfx.json): event -> [file paths], each hash-checked."""
+    manifest = json.loads((COMBAT_SFX_DIR / 'combat_sfx.json').read_text(encoding='utf-8'))
+    out = {}
+    for name in sorted(manifest['files']):
+        row = manifest['files'][name]
+        path = COMBAT_SFX_DIR / name
+        if not path.is_file() or sha256_file(path) != row['sha256']:
+            _fail('asset_integrity', 'Default combat sound changed or missing: ' + name)
+        out.setdefault(row['event'], []).append((str(path), row['sha256']))
     return out
 
 
@@ -625,4 +663,9 @@ def runtime_rows(slots, assets, folder_path):
         row = base(ident, mix['sfx_db'])
         row['kind'] = 'sfx'
         rows[event if event in ('ambient', 'interact') or event.startswith('cue:') else 'cue:' + event] = row
+    defaults = combat_sfx_defaults() if 'default' in slots.get('combat_sfx', {}).values() else {}
+    for event, value in sorted(slots.get('combat_sfx', {}).items()):
+        files = defaults.get(event, []) if value == 'default' else [(str(Path(folder_path) / assets[i]['file']), assets[i]['sha256']) for i in value]
+        for n, (path, digest) in enumerate(files, 1):
+            rows['sfx:%s:%d' % (event, n)] = {'path': path, 'sha256': digest, 'gain_db': mix['sfx_db'], 'kind': 'sfx'}
     return rows

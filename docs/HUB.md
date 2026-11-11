@@ -76,7 +76,8 @@ packs and style profiles. Missing or unknown licences are refused. The allow-lis
 - Authors are names, never email addresses.
 - Each archive carries `LICENSE.txt`.
 - Bundled assets keep their author (Qhantom Labs) and licence when re-packed.
-- The optional cameo pack is `public-with-notice` and ships `cameo/LICENSE-CAMEO.md`. Its likeness is included with
+- The optional cameo pack is not in the default plugin package (it is added only when the package is built with
+  `--with-cameo`). When present it is `public-with-notice` and ships `cameo/LICENSE-CAMEO.md`. Its likeness is included with
   consent, for games made with Hermes64, and not for impersonation, endorsement or misleading use. Remove it in one
   step: delete `cameo/`, or run `python3 -B -m tools.catalog remove-cameo`.
 

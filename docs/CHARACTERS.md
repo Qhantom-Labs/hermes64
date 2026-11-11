@@ -33,6 +33,45 @@ hermes64_character action=propose project=<p> brief="A city courier in a teal ja
      then `glb=assets/hub/character.cameo.cameo_visor_01/models/cameo_visor_01.glb source=cameo_pack` (MERGE4).
    - A community file binds with `glb=... source=community`.
    - Both pass the same rig kit validator.
+   - A refused file gets one plain line (`reason`) plus the validator errors.
+
+### A bound character in the game (CHARBIND)
+
+The cast row is used when the runtime is staged (`adventure_maker/cast_binding.py`). A game id takes the cast row
+that `metadata.presentation.cast` names, else the cast row with its own id. A game id is a story character, a combat
+archetype (robot or boss) or a scene card actor.
+
+- Premise fields fill `presentation.cast`: `hero.binding`, `npcs[].binding`, `bosses[].binding` and
+  `robots[].binding`, when the value is not a bundled public character. `bind` reports the ids that use the row
+  (`used_by`).
+- **Player:** the bound file, plus any missing fight clips. These come from the file's rig clip pack, else from a
+  rig with the same bones (human16_v3 for human16_v1). Each clip is kept only if the rig kit accepts it on this body.
+  `swing` may come from the file's own `interact`. A fight clip still missing is the runtime's labelled POSE TEST
+  hold, and the HUD shows POSE TEST.
+- **Room actor or captive:** plays its authored clip (`npcs[].clip`, for example `captive`), else idle.
+- **Scene actor:** a story character, a boss/robot id, or a `presentation.cast` id. A clip the file lacks shows
+  idle and is listed as a warning.
+- **Boss or robot body:** telegraph, attack and recover come from the file. If it lacks them, they are made from
+  its swing keys (or its `interact` keys) and checked by the rig kit. hurt, death and idle_combat come from a clip
+  pack the rig kit accepts on the body, else that state shows the held POSE TEST pose. A body that cannot show
+  telegraph, attack and recover keeps the stock robot art.
+- Every decision and warning is written to `runtime/cast-binding.json`.
+- With no cast row and no mapping, staging is byte-identical to before.
+
+Declared clip forms accepted by the validator, within fixed limits:
+
+- **Run flight:** the base_v1 locomotion block's `run.flight_keys` may leave the floor by at most 0.15 x height.
+- **Seated clips:** declared with `rigkit.declare.declare_seat`. They hold one horizontal placement within 0.5 m of
+  rest and never go below the floor.
+
+Lossless conversion: `rigkit.conform.rigid_pieces_to_props` turns floating pieces weighted to one joint into props
+on that joint. `keep_clips` and `drop_props` are explicit, lossy steps.
+
+Cast preset revisions (CEOFIX): `cast.recipe(name, revision=2)` builds a later revision. Revisions are listed in the
+`revisions` block of `adventure_maker/nbchars/cast_presets.json`, and `cast.revisions(name)` returns them. Revision 1
+is the preset as listed, and its files keep their bytes. Revision 2 of the three CEOs uses bind dials of the cast_v1
+generator (`coat_top`, `coat_seam`, `guard_clear`) and the `faceted` prop form, so the files pass the bind gates.
+`docs/CEOFIX-RESULT.md` has the measured change.
 
 Look-ups: `action=list what=parts|bodies|styles|recipes|cast` and `action=info id=...`.
 

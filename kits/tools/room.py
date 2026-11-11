@@ -90,7 +90,7 @@ def assemble_room(layout, pk, root):
     room = {"layout_id": layout["layout_id"], "layout_version": layout["version"], "pack": pk, "pack_version": pack.version,
             "pieces": pieces, "room_tris": sum(p["tris"] for p in pieces), "problems": problems,
             "coordinates": "glTF: pos [x, y(up), z]; rot_y_deg about +Y; shell floor centre = origin"}
-    with open(os.path.join(root, pk, "rooms", layout["layout_id"] + ".json"), "w") as f:
+    with open(os.path.join(root, pk, "rooms", layout["layout_id"] + ".json"), "w", encoding='utf-8') as f:
         json.dump(room, f, indent=1, sort_keys=True)
     return pieces, problems, room
 
@@ -118,14 +118,14 @@ def main(argv):
     a = ap.parse_args(argv)
     rw, rh = (int(x) for x in a.res.split("x"))
     root = os.path.join(LANE, "kits")
-    layout = json.load(open(os.path.join(root, "layouts", a.layout + ".json")))
+    layout = json.load(open(os.path.join(root, "layouts", a.layout + ".json"), encoding='utf-8'))
     pipeline.load_generators()
     cells, labels, bad = [], [], 0
     for view in a.views.split(","):
         for pk in a.packs.split(","):
             pieces, problems, room = assemble_room(layout, pk, root) if view == a.views.split(",")[0] else (None, None, None)
             if pieces is None:
-                room = json.load(open(os.path.join(root, pk, "rooms", a.layout + ".json")))
+                room = json.load(open(os.path.join(root, pk, "rooms", a.layout + ".json"), encoding='utf-8'))
                 pieces, problems = room["pieces"], room["problems"]
             else:
                 bad += len(problems)

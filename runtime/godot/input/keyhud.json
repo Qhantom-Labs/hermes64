@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "status": "UI5 controls HUD data (pause menu rows, interact prompt icons, corner hint moments). Presentation only: never read by the simulation, replays or state hashes.",
+  "pause": {
+    "note": "Two columns. Left: what each key does in play (word = the game's input-map action name). Right: Resume, then the four pause settings; their key is the key you press while paused, the word is the current setting.",
+    "word_max_px": 44,
+    "controls": [
+      {"action": "move", "icon": "move", "word": "Move"},
+      {"action": "primary", "icon": "hand", "word": "Interact"},
+      {"action": "secondary", "icon": "back", "word": "Back"},
+      {"action": "dodge", "icon": "dodge", "word": "Dodge"},
+      {"action": "run", "icon": "run", "word": "Run"},
+      {"action": "walk", "icon": "walk", "word": "Walk"},
+      {"action": "focus", "icon": "focus", "word": "Focus"},
+      {"action": "action_menu", "icon": "actions", "word": "Actions"},
+      {"action": "inventory", "icon": "items", "word": "Items"},
+      {"action": "quick_save", "icon": "save", "word": "Save"},
+      {"action": "quick_load", "icon": "load", "word": "Load"},
+      {"action": "reset", "icon": "retry", "word": "Retry"}
+    ],
+    "resume": {"action": "menu", "icon": "play", "word": "Resume"},
+    "settings": [
+      {"action": "primary", "icon": "focus", "option": "focus_mode", "words": {"hold": "Hold", "toggle": "Toggle"}},
+      {"action": "run", "legacy_action": "walk", "icon": "run", "option": "run_mode", "words": {"hold": "Hold", "toggle": "Toggle", "auto": "Auto"}},
+      {"action": "secondary", "icon": "motion", "option": "reduced_motion", "words": {"false": "Full", "true": "Reduced"}},
+      {"action": "action_menu", "icon": "keys_PRESET", "option": "preset", "words": {"left": "Left", "right": "Right"}}
+    ]
+  },
+  "prompt": {
+    "note": "Keycap of the game's primary binding + the target's type icon, above the target; fades in near, out when away. Old games keep the legacy low-resolution prompt unless their metadata.hud.interact_prompt is keycap.",
+    "icons": {"move": "door", "talk": "talk", "recall": "talk", "collect": "take", "take": "take", "use": "use",
+              "examine": "look", "inspect": "look", "look": "look", "climb": "climb", "attack": "attack",
+              "challenge": "attack", "checkpoint": "checkpoint"},
+    "default_icon": "look",
+    "lift_m": 0.9,
+    "full_alpha_m": 1.6,
+    "fade_in_s": 0.12,
+    "fade_out_s": 0.25,
+    "margin_px": 8
+  },
+  "hint": {
+    "note": "Corner keycap strip, icons only. Shown at game start; fades after the first movement or its seconds; reappears for 'resume' after Esc/Tab menus close and once per session when a moment first matters.",
+    "corner": "bottom_left",
+    "margin_px": 8,
+    "fade_s": 0.4,
+    "moments": {
+      "start": {"actions": ["move", "primary", "dodge"], "seconds": 8.0, "until": "move"},
+      "resume": {"actions": ["move", "primary", "dodge"], "seconds": 4.0, "until": "move"},
+      "challenge_started": {"actions": ["primary", "dodge", "focus"], "seconds": 6.0, "until": "primary", "once": true},
+      "arena_start": {"actions": ["move", "run", "camera_left", "camera_right", "primary"], "icons": {"camera_left": "camera", "camera_right": "camera"}, "seconds": 8.0, "until": "move", "once": true},
+      "arena_combat": {"actions": ["primary", "secondary", "dodge", "focus"], "icons": {"primary": "attack", "secondary": "block"}, "seconds": 8.0, "until": "primary", "once": true},
+      "arena_combat_no_block": {"actions": ["primary", "dodge", "focus"], "icons": {"primary": "attack"}, "seconds": 8.0, "until": "primary", "once": true}
+    }
+  }
+}

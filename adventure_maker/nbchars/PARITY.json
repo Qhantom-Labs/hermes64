@@ -10,7 +10,7 @@
   "zlib_runtime": "1.2.12"
  },
  "files": 37,
- "fingerprint": "480d4c3db43c93a6cd22ecab9fe21382efe882b3d75f815dfe61a68cdee1eaae",
+ "fingerprint": "c2ec6e386413d7a3a149f36ecf9018187cf39804de43f5e9e1e568d0078cbe56",
  "glb_validate_ok": true,
  "max_skinned_error_m": 9.929969596310734e-07,
  "note": "skinned vertex positions compared at every key of every clip (numpy LBS of both files); bytes identical for POSITION/TEXCOORD_0/COLOR_0/JOINTS_0/WEIGHTS_0/indices/IBM/textures/layout; NORMAL and animation floats differ only by float32 rounding noise (docs/NBCHARS-RESULT.md)",

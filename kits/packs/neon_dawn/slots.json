@@ -1,0 +1,187 @@
+{
+ "format": "hermes64-texture-slots/1",
+ "note": "Texture slots of the CYBERKIT atlases (cell table: kits/core/cykit.py). Unfilled atlas slots keep the pack painting; unfilled sheet slots use 'default'. Values are hermes64-mask/1 recipes (kits/core/mask_recipe.py).",
+ "pack": "neon_dawn",
+ "slots": {
+  "emblem_jacket": {
+   "consumer": "character_emblem",
+   "default": "none",
+   "note": "One shared character emblem cell. The character texture consumer is not wired in this build (character files are frozen; see docs/SLOTS-CHARACTER-PATCH.md).",
+   "ramp": [
+    "void",
+    "ink_1",
+    "cool_white",
+    "cyan_2",
+    "amber_2"
+   ],
+   "size": 32,
+   "target": "sheet",
+   "tones": {
+    "amber": 4,
+    "clear": "clear",
+    "cyan": 3,
+    "dark": 0,
+    "ink": 1,
+    "white": 2
+   }
+  },
+  "emblem_screen": {
+   "cell": [
+    0,
+    32,
+    32,
+    32
+   ],
+   "default": "pack",
+   "note": "Monitor cell 32x32.",
+   "pieces": [
+    "cytech.terminal",
+    "cytech.charger",
+    "cyroom.desk",
+    "cyroom.turnstile",
+    "cysign.arcade",
+    "cysign.clinic"
+   ],
+   "role": "book",
+   "target": "atlas",
+   "tones": {
+    "a": 5,
+    "a_0": 3,
+    "a_1": 4,
+    "a_2": 5,
+    "b": 8,
+    "b_0": 6,
+    "b_1": 7,
+    "b_2": 8,
+    "c": 11,
+    "c_0": 9,
+    "c_1": 10,
+    "c_2": 11,
+    "d": 14,
+    "d_0": 12,
+    "d_1": 13,
+    "d_2": 14,
+    "dark": 0,
+    "dark_1": 1,
+    "dark_2": 2,
+    "white": 15
+   }
+  },
+  "emblem_sky": {
+   "consumer": "sky_signal",
+   "image": {
+    "grids": [32, 64, 128]
+   },
+   "default": {
+    "background": 0,
+    "format": "hermes64-mask/1",
+    "grid": 16,
+    "name": "empty halo",
+    "prims": [],
+    "tones": [
+     "clear"
+    ]
+   },
+   "note": "Emblem sheet for the room presentation sky_signal (disc emblem). Default: empty halo. An overlay may fill it with a local picture (docs/SLOTS.md, image values).",
+   "ramp": [
+    "void",
+    "ink_1",
+    "warm_white",
+    "cool_white",
+    "amber_2",
+    "cyan_2"
+   ],
+   "size": 64,
+   "target": "sheet",
+   "tones": {
+    "amber": 4,
+    "clear": "clear",
+    "cream": 2,
+    "cyan": 5,
+    "dark": 0,
+    "ink": 1,
+    "white": 3
+   }
+  },
+  "emblem_tower": {
+   "cell": [
+    0,
+    0,
+    16,
+    64
+   ],
+   "default": "pack",
+   "note": "Vertical blade sign cell 16x64 (slot a). cysign.roof shows rows 11-47 of it.",
+   "pieces": [
+    "cysign.roof",
+    "cysign.blade",
+    "cysign.hotel",
+    "cytower.annex",
+    "cytower.arch"
+   ],
+   "role": "paper",
+   "target": "atlas",
+   "tones": {
+    "a": 5,
+    "a_0": 3,
+    "a_1": 4,
+    "a_2": 5,
+    "b": 8,
+    "b_0": 6,
+    "b_1": 7,
+    "b_2": 8,
+    "c": 11,
+    "c_0": 9,
+    "c_1": 10,
+    "c_2": 11,
+    "d": 14,
+    "d_0": 12,
+    "d_1": 13,
+    "d_2": 14,
+    "dark": 0,
+    "dark_1": 1,
+    "dark_2": 2,
+    "white": 15
+   }
+  },
+  "poster_mascot": {
+   "cell": [
+    0,
+    0,
+    64,
+    32
+   ],
+   "default": "pack",
+   "note": "Billboard cell 64x32.",
+   "pieces": [
+    "cysign.billboard",
+    "cysign.adpanel",
+    "cytower.wedge"
+   ],
+   "role": "book",
+   "target": "atlas",
+   "tones": {
+    "a": 5,
+    "a_0": 3,
+    "a_1": 4,
+    "a_2": 5,
+    "b": 8,
+    "b_0": 6,
+    "b_1": 7,
+    "b_2": 8,
+    "c": 11,
+    "c_0": 9,
+    "c_1": 10,
+    "c_2": 11,
+    "d": 14,
+    "d_0": 12,
+    "d_1": 13,
+    "d_2": 14,
+    "dark": 0,
+    "dark_1": 1,
+    "dark_2": 2,
+    "white": 15
+   }
+  }
+ }
+}

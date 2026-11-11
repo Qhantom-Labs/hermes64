@@ -1,0 +1,15 @@
+{
+ "format": "hermes64-overlay/1",
+ "name": "guild overlay (example)",
+ "enabled": true,
+ "licence": "CC0-1.0, written for the Hermes64 examples",
+ "source": "Hand-written mask recipe in examples/slots-heraldry",
+ "textures": {
+  "banner_crest_cross": {
+   "file": "textures/banner_crest_cross.mask.json",
+   "sha256": "2a0dcaae1d2f9960d6b9aa6cab23d4085906e9dbd81a29c969b1012456bf5d13",
+   "licence": "CC0-1.0",
+   "source": "examples/slots-heraldry"
+  }
+ }
+}

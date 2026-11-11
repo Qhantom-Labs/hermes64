@@ -5,7 +5,7 @@ from .safety import JSON_LIMIT, encode, fail, inspect_path, relative, strict_jso
 from .schemas import ID, obj, text, validate
 
 COLOUR = text(7, pattern=r'^#[0-9A-F]{6}$')
-ASSET_ID = text(64, pattern=r'^[a-z][a-z0-9_.]*$')
+ASSET_ID = text(64, pattern=r'^(?:gen:[a-z][a-z0-9_]{1,47}|[a-z][a-z0-9_.]*)$')
 MATERIAL = obj({'id': ID, 'kind': {'enum': ['baked_unlit', 'chrome_env', 'glass_env', 'emissive', 'card_alpha']}, 'colour': COLOUR}, ['id', 'kind', 'colour'])
 LIGHT = obj({'fog_enabled': {'type': 'boolean', 'const': True}, 'fog_colour': COLOUR, 'ambient_colour': COLOUR,
              'fog_start': {'type': 'number', 'minimum': 0, 'maximum': 1000},

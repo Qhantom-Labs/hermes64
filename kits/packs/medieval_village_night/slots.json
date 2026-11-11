@@ -1,0 +1,49 @@
+{
+ "format": "hermes64-texture-slots/1",
+ "note": "Heraldic banner crest slots on the 2x2 mk_banner atlas (any game's crest, guild or team mark). Unfilled: the pack's own banner designs.",
+ "pack": "medieval_village_night",
+ "slots": {
+  "banner_crest": {
+   "cell": [
+    0,
+    0,
+    32,
+    32
+   ],
+   "default": "pack",
+   "note": "Top-left quadrant: the cloth of cst.banner.",
+   "pieces": [
+    "cst.banner"
+   ],
+   "role": "band",
+   "target": "atlas",
+   "tones": {
+    "border": 0,
+    "charge": 3,
+    "field": 2,
+    "field_dark": 1
+   }
+  },
+  "banner_crest_cross": {
+   "cell": [
+    32,
+    0,
+    32,
+    32
+   ],
+   "default": "pack",
+   "note": "Top-right quadrant: the cloth of the cst.banner__cross preset.",
+   "pieces": [
+    "cst.banner__cross"
+   ],
+   "role": "band",
+   "target": "atlas",
+   "tones": {
+    "border": 0,
+    "charge": 3,
+    "field": 2,
+    "field_dark": 1
+   }
+  }
+ }
+}

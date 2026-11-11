@@ -1,0 +1,9 @@
+{
+ "format":"hermes64-recipe/1", "id":"potion_bottle", "class":"prop", "licence":"CC0-1.0",
+ "parameters":{"segments":{"type":"integer","default":6,"minimum":5,"maximum":8},"height":{"type":"number","default":0.48,"minimum":0.36,"maximum":0.64}},
+ "operations":[
+  {"primitive":"lathe","role":"glass","smooth":true,"args":{"profile":[[0.10,0],[0.16,{"param":"height","mul":0.16}],[0.16,{"param":"height","mul":0.48}],[0.065,{"param":"height","mul":0.68}],[0.065,{"param":"height","mul":0.88}]],"segs":{"param":"segments"}}},
+  {"primitive":"lathe","role":"wood","args":{"profile":[[0.052,{"param":"height","mul":0.87}],[0.058,{"param":"height"}]],"segs":5}},
+  {"primitive":"box","role":"paper","args":{"cx":0,"cy":-0.151,"cz":{"param":"height","mul":0.34},"sx":0.12,"sy":0.018,"sz":0.09}}
+ ]
+}

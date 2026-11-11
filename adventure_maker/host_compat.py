@@ -61,13 +61,17 @@ def _read_settings_fallback(plugin_id):
         cfg = load_config_readonly() or {}
     except Exception:
         return {}
-    entry = ((cfg.get('plugins') or {}).get('entries') or {}).get(plugin_id) if isinstance(cfg, dict) else None
+    entry = cfg
+    for key in ('plugins', 'entries', plugin_id):
+        entry = entry.get(key) if isinstance(entry, dict) else None
     if not isinstance(entry, dict):
         return {}
-    for key in ('settings', 'config'):
-        if isinstance(entry.get(key), dict):
-            return entry[key]
-    return {}
+    # Match native get_config's per-key fallback during a partial settings migration.
+    # Explicit canonical blanks/nulls still override legacy values.
+    result = dict(entry['config']) if isinstance(entry.get('config'), dict) else {}
+    if isinstance(entry.get('settings'), dict):
+        result.update(entry['settings'])
+    return result
 
 
 class CompatContext:

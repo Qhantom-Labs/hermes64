@@ -1,0 +1,50 @@
+--- a/adventure_maker/export.py
++++ b/adventure_maker/export.py
+@@ -191,6 +191,7 @@
+     if isinstance(records,dict): records=list(records.values())
+     admitted={row['sha256'] for row in records}
+     closure=[]
++    provenance_files={}
+     def media(path, expected, suffix=None):
+         path=inspect_path(Path(path))
+         if not path.is_file(): fail('release_asset','Release requires every bound asset, not an absent fallback')
+@@ -206,14 +207,27 @@
+             dest.with_name(dest.name+'.import').write_text('[remap]\nimporter="keep"\n')
+             closure.append({'path':rel,'sha256':expected,'bytes':len(raw)})
+         return 'res://'+rel
+-    def bind(row, actor=False):
++    def bind(row, actor=False, licence_scope=True):
+         row=copy.deepcopy(row)
+         original=row.pop('path',None)
+         row.pop('glb',None)
+         if actor and not row.get('placeholder') and row['sha256'] not in admitted:
+             fail('release_private','Character hash not admitted by public manifest')
++        bound=inspect_path(Path(original))
++        project_asset=c.project.root in bound.parents
++        rel=bound.relative_to(c.project.root).as_posix() if project_asset else ''
++        manifest=c.project.path('assets/PROVENANCE.json').is_file()
++        required=row.get('licence_required',False) or (licence_scope and (rel.startswith(('assets/generated/','assets/imported/','assets/kit/')) or (manifest and not actor)))
++        if required:
++            if project_asset: provenance_id=rel
++            elif c.root in bound.parents and not actor: provenance_id='bundle/'+bound.relative_to(c.root).as_posix()
++            else: fail('release_licence','Required asset provenance is outside project/bundle')
++            from .provenance import require_export
++            try: require_export(c.project.root,[provenance_id],bundle_root=c.root)
++            except ValueError as exc: fail('release_licence',str(exc))
++            provenance_files[provenance_id]='media/'+row['sha256']+bound.suffix
+         row['path']=media(original,row['sha256'])
+-        if 'fallback' in row: row['fallback']=bind(row['fallback'])
++        if 'fallback' in row: row['fallback']=bind(row['fallback'],licence_scope=licence_scope and not actor)
+         public_data(row)
+         return row
+     bindings['assets']={k:bind(row) for k,row in bindings['assets'].items()}
+@@ -245,6 +259,9 @@
+         if digest(raw)!=expected: fail('license_hash','Godot legal notice hash mismatch')
+         (output/'licenses'/('GODOT_'+name)).write_bytes(raw)
+     (output/'licenses/HERMES64_LICENSE.txt').write_bytes(c.shipped('LICENSE').read_bytes())
++    if provenance_files:
++        from .provenance import prepare_export
++        prepare_export(c.project.root,provenance_files,str(output.relative_to(c.project.root)),bundle_root=c.root)
+     rows=scan_tree(output)
+     record={'game_hash':game['game_hash'],'files':rows,'media':closure}
+     if puzzle is not None:

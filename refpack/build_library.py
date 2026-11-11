@@ -68,9 +68,9 @@ def main(argv):
     from core import pipeline  # noqa: E402
     from core import schema as S  # noqa: E402
     reg = pipeline.load_generators()
-    tags = json.load(open(config.library_path("kit_tags.json")))
-    variants = json.load(open(config.library_path("kit_variants.json")))["variants"]
-    layout = json.load(open(os.path.join(kits, "kits", "layouts", "lounge.json")))
+    tags = json.load(open(config.library_path("kit_tags.json"), encoding='utf-8'))
+    variants = json.load(open(config.library_path("kit_variants.json"), encoding='utf-8'))["variants"]
+    layout = json.load(open(os.path.join(kits, "kits", "layouts", "lounge.json"), encoding='utf-8'))
     shell_layer = layout["shell"]["params"]
     packs = ["polar_pod", "forest_village"]
     entries, problems = {}, []

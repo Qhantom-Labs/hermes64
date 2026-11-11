@@ -16,9 +16,10 @@ MODULE_SKILL = 'skill hermes64:hermes64-gameplay-modules'
 
 # One or two sentences each; every word here is paid on every request.
 SHORT = {
-    'hermes64_demo': ('Make a new game from a one-sentence premise (optional style): checks tools, builds, '
-                      'proof-checks and bot-plays it, returns a proof badge and the play command. '
-                      'Or run a bundled example (project + example).'),
+    # First sentence = the deferred tool listing's line (hosts 0.19.1+): the trigger for plain game requests (NATIVE).
+    'hermes64_demo': ('For any game request, load skill hermes64:hermes64-create first. Quick path: a premise sentence '
+                      '(optional style) builds, proof-checks and bot-plays a game; or run a bundled example '
+                      '(project + example).'),
     'hermes64_doctor': 'Read-only Python, Godot, Blender and setup/download plans. No engine launch, download or install.',
     'hermes64_pack_from_refs': ('Draft an unapproved theme pack from 1-8 project-local PNG/JPEG references plus a notes file. '
                                 'Local only; never auto-selected.'),
@@ -49,12 +50,13 @@ SHORT = {
     'hermes64_cover': ('Box-art covers: propose 3 variants for the user to pick, apply typed edits, render with the cover '
                        'gate, export. adopt=true only on the user\'s explicit choice. Local Godot; writes only inside '
                        'the project.'),
-    'hermes64_hub': ('Local Hermes64 Hub registry: search/info styles, kits, characters, sounds, games; install into a '
+    'hermes64_hub': ('Local Hermes64 Hub: search/info styles, kits, characters, sounds, games; install into a '
                      'game after hash, data-only, style and rig checks; pack an asset or game; publish = local PR draft. '
                      'Never uploads.'),
-    'hermes64_character': ('House-style characters: propose 3 variants for the user to pick, edit, build the pick (GLB, '
-                           'clips, all gates incl. rig kit; no Blender needed), list/info parts, bind to the cast. Never '
-                           'auto-adopts.'),
+    # WAIVER: 25 characters shorter (same facts) to make room for bind waive/owner_approved and hub waived, budget unchanged
+    'hermes64_character': ('House-style characters: propose 3 variants, edit, build the user\'s pick (GLB, clips, all gates '
+                           'incl. rig kit; no Blender needed), list/info parts, bind to the cast, locomotion = bake run/walk. '
+                           'Never auto-adopts.'),
 }
 
 COVER_SKILL = 'skill hermes64:hermes64-cover'
@@ -89,6 +91,8 @@ PARAMS = {
     'hermes64_module_benchmark': {'operations': {'type': 'array', 'items': dict(module_operation(MODULE_KINDS),
                                                                                 description='One hermes64_module_edit operation.')}},
     'hermes64_scaffold': {'spec_json': {'type': 'string', 'description': 'Serialized story spec; use instead of premise.'}},
+    # TIERS: agents passed absolute spec paths (3 of 12 condition-A runs, both models); the handler rejects them.
+    'hermes64_compile': {'spec_path': {'type': 'string', 'description': 'Project-relative, e.g. source/spec.json.'}},
     'hermes64_export': {'module_preview': {'type': 'boolean', 'description': 'Local module preview; needs a fresh real-input bot run.'}},
     'hermes64_audio': {'music': {'type': 'object', 'description': 'mood, mode, key, tempo, bars, seed, style, instruments.'},
                        'voice': {'type': 'object', 'description': 'character, emotion, seed, pitch, rate, timbre, formant.'},

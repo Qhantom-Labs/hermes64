@@ -19,7 +19,7 @@ LANE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 def load(tag):
     out = {}
-    for line in open(os.path.join(LANE, "reports", "sweep", tag, "samples.jsonl")):
+    for line in open(os.path.join(LANE, "reports", "sweep", tag, "samples.jsonl"), encoding='utf-8'):
         r = json.loads(line)
         out[(r["gen"], r["pack"], r["i"])] = r
     return out
@@ -109,7 +109,7 @@ def main(argv):
             a.rebuild_a, a.rebuild_b, len(common), len(same), len(differ)))
         bad += bool(differ) + bool(set(fa) ^ set(fb))
     rep["exit_code"] = 3 if bad else 0
-    json.dump(rep, open(os.path.join(LANE, "reports", "determinism.json"), "w"), indent=1, sort_keys=True)
+    json.dump(rep, open(os.path.join(LANE, "reports", "determinism.json"), "w", encoding='utf-8'), indent=1, sort_keys=True)
     print("DETERMINISM TOTAL -> exit %d" % rep["exit_code"])
     return rep["exit_code"]
 

@@ -2,7 +2,7 @@
 name: hermes64-playtest-and-ship
 description: "Use when testing or shipping Hermes64. Keep proof gates."
 version: 0.1.0
-author: Dylan, Hermes Agent
+author: Qhantom Labs, Hermes Agent
 license: MIT
 platforms: [macos]
 metadata:

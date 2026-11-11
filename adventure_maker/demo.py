@@ -58,9 +58,9 @@ def handle(settings, name, args, default_root=None):
                     value.update(playtest_repair(service,project,value))
         return service.response(value,project)
     except Fault as exc:
-        return json.dumps({'ok':False,'error':{'code':exc.code,'message':str(exc)[:2000]}})
+        return json.dumps(dict({'ok':False,'error':{'code':exc.code,'message':str(exc)[:2000]}},**(getattr(exc,'created',None) or {})))
     except Exception as exc:
-        return json.dumps({'ok':False,'error':{'code':'local_error','message':type(exc).__name__+': '+str(exc)[:2000]}})
+        return json.dumps(dict({'ok':False,'error':{'code':'local_error','message':type(exc).__name__+': '+str(exc)[:2000]}},**(getattr(exc,'created',None) or {})))
 
 
 def playtest_repair(service, project, value):
@@ -78,13 +78,26 @@ def playtest_repair(service, project, value):
 
 
 def run(service,args):
+    """The bundled example under project=NAME: scaffolded when the name is free, else RESUMED when that folder is this
+    demo's own unchanged project. REUSE: the reply says which (created / resumed), with project_dir, seconds and
+    assets_built; a failure says whether this call made the folder."""
+    started=time.monotonic(); state={'made':False,'dir':None}
+    try:
+        return _run(service,args,started,state)
+    except Exception as exc:
+        setattr(exc,'created',{'created':state['made'],'project_dir':state['dir'],'assets_built':False,
+                               'seconds':round(time.monotonic()-started,3)})
+        raise
+
+
+def _run(service,args,started,state):
     from . import playtest, export
     example=args.get('example','last_light'); seed=args.get('seed',7); name=args['project']
     # Establish configured project boundary before attempting any writes.
     root=service.settings.get('projects_root','')
     if not root or not Path(root).is_absolute() or not Path(root).is_dir(): fail('configuration','Choose an existing absolute projects_root; nothing created.')
     bundle=Path(service.settings.get('bundle_root') or Path(__file__).resolve().parents[1])
-    started=time.monotonic(); stages=[]
+    stages=[]
     def call(stage,payload):
         begin=time.monotonic()
         result=json.loads(service.handle('hermes64_'+stage,dict(project=name,**payload)))
@@ -93,6 +106,7 @@ def run(service,args):
         if not result.get('ok'): fail('demo_'+stage,json.dumps(result)[:1800])
         return result
     exists=(Path(root)/name).exists()
+    state['dir']=str(Path(root)/name) if exists else None
     if exists:
         project=service.project(name)
         if not project.path('.maker/demo.json').is_file(): fail('demo_conflict','Existing project is not owned by this demo; choose a new name.')
@@ -116,6 +130,7 @@ def run(service,args):
             spec=apply_presentation(spec,example)
             payload={'spec_json':json.dumps(spec),'pack':{'last_light':'n64_v0','thaw':'polar_pod'}[example]}
         call('scaffold',payload)
+        state.update(made=True,dir=str(Path(root)/name))
         project=service.project(name)
         project.write_json('.maker/demo.json',{'example':example,'seed':seed,'source_sha256':hashlib.sha256(project.path('source/spec.json').read_bytes()).hexdigest()})
     call('compile',{'spec_path':'source/spec.json'}); call('check',{}); call('build_assets',{'seed':seed})
@@ -126,7 +141,11 @@ def run(service,args):
         if not tested['ok']: fail('demo_playtest','Physical playtest '+tested['status']+'; inspect '+tested['report_path'])
         begin=time.monotonic(); exported=export.run(service,project,{'targets':['web']})
         stages.append({'stage':'export_web','seconds':round(time.monotonic()-begin,3),'status':exported['status'],'report_path':exported['report_path']})
-        result={'ok':True,'status':'demo_ready_local','example':example,'project_dir':str(project.root),'seconds':round(time.monotonic()-started,3),'stages':stages,'playtest':tested,'export':exported,'report_path':'.maker/demo-latest.json','limits':['Browser execution is a separate smoke test.','Cannot judge human fun.','No upload or public release.']}
+        result={'ok':True,'status':'demo_ready_local','example':example,'project_dir':str(project.root),'seconds':round(time.monotonic()-started,3),'stages':stages,'playtest':tested,'export':exported,'report_path':'.maker/demo-latest.json','limits':['Browser execution is a separate smoke test.','Cannot judge human fun.','No upload or public release.'],
+                'created':not exists,'resumed':exists,'assets_built':True}
+        if exists:
+            result['note']=('Resumed the existing %s demo project at %s (made by an earlier call); no new project was created. '
+                            'Its source was unchanged, so it was rebuilt and re-checked in place.' % (example,project.root))
         project.write_json('.maker/demo-latest.json',result)
     return result
 

@@ -1,0 +1,12 @@
+diff --git a/__init__.py b/__init__.py
+index 76b9e69..736d660 100644
+--- a/__init__.py
++++ b/__init__.py
+@@ -19,6 +19,7 @@ SKILLS = {
+     'hermes64-characters': 'Make house-style characters with hermes64_character.',
+     'hermes64-hub': 'Use when sharing or installing Hermes64 Hub entries.',
+     'hermes64-generators': 'Use when a game needs a new prop. Author bounded recipes.',
++    'hermes64-create': 'Use when asked to make a game from a prompt. Run create.',
+ }
+ 
+ 

@@ -35,7 +35,9 @@ ACTIONS = {
     'propose': (('action', 'project', 'brief', 'references', 'style'), ('project', 'brief')),
     'edit': (('action', 'project', 'recipe', 'edits', 'style', 'render'), ('project', 'recipe', 'edits')),
     'build': (('action', 'project', 'recipe', 'style'), ('project', 'recipe')),
-    'bind': (('action', 'project', 'id', 'glb', 'display_name', 'placeholder', 'source'), ('project', 'display_name')),
+    'bind': (('action', 'project', 'id', 'glb', 'display_name', 'placeholder', 'source', 'legacy', 'waive', 'owner_approved',
+              'brief'), ('project', 'display_name')),
+    'locomotion': (('action', 'project', 'id', 'glb'), ('project',)),
 }
 # A project has one catalog.json (hermes64-catalog/1.0.0) with one write path, adventure_maker/catalog.py
 # (read_project -> upsert -> write_project), shared with /hermes64 hub install. A loose community file has no known
@@ -240,8 +242,12 @@ class CharacterService:
         if what == 'recipes':
             d = project.path('characters/recipes')
             return {'recipes': sorted(p.stem for p in d.glob('*.json')) if d.is_dir() else []}
-        return {'cast': project.read_json('characters/cast.json').get('cast', []) if project.path('characters/cast.json').is_file() else [],
-                'builtin': builtin_cast()}
+        cast = project.read_json('characters/cast.json') if project.path('characters/cast.json').is_file() else {}
+        out = {'cast': cast.get('cast', []), 'builtin': builtin_cast()}
+        from .character_waiver import line, waived_rows
+        if waived_rows(cast):           # WAIVER: every character bound with an owner waiver, named
+            out['waived_characters'] = [line(i, r) for i, r in waived_rows(cast)]
+        return out
 
     def do_info(self, project, args):
         lib = CR.load_parts()
@@ -331,6 +337,9 @@ class CharacterService:
                  'tris': rep['tris'], 'height_m': it['height_m'], 'style_lock': rep['lock'], 'recipe_sha256': rep['recipe_sha256'],
                  'gates': 'passed' if not not_run else 'passed (not run: %s)' % ', '.join(sorted(not_run)),
                  'hover': rep['hover'], 'exporter': it.get('exporter', 'blender')}
+        loco = self._locomotion(project, rec['id'], glb_rel, rec['rig']['id'], 'hover' if entry['hover'] else 'grounded')
+        if loco.get('ok'):
+            entry['locomotion'] = loco['entry']
         man = project.read_json('characters/manifest.json') if project.path('characters/manifest.json').is_file() else {
             'schema': 'hermes64-project-characters/1', 'characters': []}
         man['characters'] = [c for c in man['characters'] if c['id'] != rec['id']] + [entry]
@@ -345,13 +354,83 @@ class CharacterService:
                'next': 'bind id=%s display_name=... to add it to the project cast' % rec['id']}
         if not_run:
             out['not_run'] = not_run
+        out['locomotion'] = loco['summary']
         return out
+
+    # ------------------------------------------------------------------ base locomotion (docs/LOCOMOTION.md)
+    @staticmethod
+    def _loco():
+        """The locomotion base needs numpy (as the rig kit does); the plugin itself must load without it."""
+        try:
+            from . import locomotion
+        except ImportError as e:
+            fail('missing', 'Base locomotion needs numpy in this Python (%s)' % e)
+        return locomotion
+
+    def _locomotion(self, project, cid, glb_rel, rig, profile='grounded'):
+        """Bake run + walk for one project file into characters/locomotion/<id>.glb (the source file is not changed).
+        A body the base refuses keeps its own clips; the reason is returned in plain words."""
+        if profile != 'grounded' or not rig.startswith('human16'):
+            return {'ok': False, 'summary': {'baked': False, 'why': 'base locomotion is for walking human16 bodies (this one: %s, %s)' % (rig, profile)}}
+        try:
+            LOCO = self._loco()
+        except Exception as e:                                # no numpy: the build still succeeds, with its own clips
+            return {'ok': False, 'summary': {'baked': False, 'why': str(e)[:300]}}
+        res = LOCO.attach(project.path(glb_rel).read_bytes(), rig=rig)
+        if not res['ok']:
+            return {'ok': False, 'summary': {'baked': False, 'code': res['refused']['code'], 'why': res['refused']['message'][:600],
+                                             'kept': 'the clips the file already has'}}
+        rel = 'characters/locomotion/%s.glb' % cid
+        project.path(rel).parent.mkdir(parents=True, exist_ok=True)
+        project.path(rel).write_bytes(res['glb'])
+        rep = res['report']
+        project.write_json('characters/locomotion/%s.json' % cid, dict(rep, rig_contract=res['rig_contract']))
+        blk = rep['block']
+        entry = {'format': blk['format'], 'base': blk['base'], 'glb': rel, 'sha256': rep['sha256'], 'bytes': rep['bytes'],
+                 'clips': rep['clips_in_file'], 'source_sha256': blk['source_sha256']}
+        summary = {'baked': True, 'glb': rel, 'report': 'characters/locomotion/%s.json' % cid, 'sha256': rep['sha256'],
+                   'walk_stride_mps': blk['walk']['stride_mps'], 'run_stride_mps': blk['run']['stride_mps'],
+                   'run_enter_mps': blk['run']['enter_mps'], 'run_exit_mps': blk['run']['exit_mps'],
+                   'changed_to_fit': {c: rep['clips'][c]['dials_moved'] for c in LOCO.CLIPS if rep['clips'][c].get('dials_moved')}}
+        return {'ok': True, 'entry': entry, 'summary': summary}
+
+    def do_locomotion(self, project, args):
+        if ('id' in args) == ('glb' in args):
+            fail('arguments', 'locomotion needs id (a character built here) or glb (a character file in the project), not both')
+        man = None
+        if 'id' in args:
+            man = project.read_json('characters/manifest.json') if project.path('characters/manifest.json').is_file() else {'characters': []}
+            entry = next((c for c in man['characters'] if c['id'] == args['id']), None)
+            if entry is None:
+                fail('missing', 'Build %s first (no manifest entry)' % args['id'])
+            cid, glb_rel, rig, profile = entry['id'], entry['glb'], entry['rig']['id'], 'hover' if entry.get('hover') else 'grounded'
+        else:
+            glb_rel, cid = args['glb'], Path(args['glb']).stem
+            if not re.fullmatch(r'[a-z][a-z0-9_]{0,47}', cid):
+                fail('arguments', 'the file name must be a lowercase slug')
+            if not project.path(glb_rel).is_file():
+                fail('missing', 'No GLB at ' + glb_rel)
+            if glb_rel.startswith('characters/locomotion/'):
+                fail('arguments', 'that file is already a baked copy; bake from the original file')
+            doc, _ = GATE.GLB.read(project.path(glb_rel).read_bytes())
+            rig = next((s.get('name', '')[4:] for s in doc.get('skins', []) if s.get('name', '').startswith('rig_')), 'human16_v1')
+            profile = 'grounded'
+        loco = self._locomotion(project, cid, glb_rel, rig, profile)
+        if not loco['ok']:
+            return {'ok': False, 'id': cid, 'refused': loco['summary']}
+        if man is not None:
+            entry['locomotion'] = loco['entry']
+            project.write_json('characters/manifest.json', man)
+        return dict(loco['summary'], id=cid, source=glb_rel,
+                    next=('bind id=%s display_name=... (legacy=true binds the clips it had before)' % cid) if man is not None
+                    else 'bind glb=%s source=... display_name=...' % loco['summary']['glb'])
 
     def read_catalog(self, project):
         return CAT.read_project(project)
 
-    def _catalog(self, project, cid, name, placeholder, entry, source, thumb, style='any'):
-        """Add or replace this character's row in the project catalog (hub asset shape); returns the row id."""
+    def _catalog(self, project, cid, name, placeholder, entry, source, thumb, style='any', waiver=None):
+        """Add or replace this character's row in the project catalog (hub asset shape); returns the row id.
+        waiver: the cast row's owner waiver record (lane WAIVER): tag owner-waiver, and the provenance says so."""
         cat = self.read_catalog(project)
         kind = 'creature' if entry.get('archetype') == 'creature' else 'person'
         tris = entry.get('tris')
@@ -359,7 +438,8 @@ class CharacterService:
         total = sum(v for v in tris.values() if isinstance(v, int)) if isinstance(tris, dict) else tris
         rig = entry['rig']
         tags = []
-        for t in ('rig-' + rig['id'], entry.get('archetype'), entry.get('role'), (entry.get('body') or '').split('.')[-1]):
+        for t in ('rig-' + rig['id'], entry.get('archetype'), entry.get('role'), (entry.get('body') or '').split('.')[-1],
+                  'owner-waiver' if waiver else None):
             t = _tag(t) if t else None
             if t and t not in tags:
                 tags.append(t)
@@ -378,6 +458,9 @@ class CharacterService:
                              'validator.' % (cid, rig['id'], rig['version'], style),
                 'community': 'Community character bound with hermes64_character; rig kit validator passed (rig %s %s); '
                              'licence not asserted.' % (rig['id'], rig['version'])}[source]
+        if waiver:
+            prov = prov.replace('validator passed', 'validator passed with an owner waiver of %s (%s, %s)' % (
+                ', '.join(waiver['scope']['checks']), waiver['owner'], waiver['approved_on']), 1)
         row = {'id': ID_PREFIX[source] + cid, 'name': name[:80], 'kind': kind, 'source_lane': SOURCE_LANE[source],
                'source': {'generated': 'characters/manifest.json'}.get(source, entry['glb'])[:200],
                'files': [f], 'hashes': hashes, 'budgets': budgets, 'tags': tags[:24], 'licence': LICENCE[source],
@@ -408,6 +491,10 @@ class CharacterService:
 
     def do_bind(self, project, args):
         source = args.get('source', 'generated')
+        from . import character_waiver as WV
+        refusal = WV.check_args(args)          # WAIVER: waive=true needs owner_approved=<name> + brief=<owner's words>
+        if refusal:
+            return {'ok': False, 'reason': 'Refused: ' + refusal}
         if 'id' in args and 'glb' not in args:
             if source != 'generated':
                 fail('arguments', 'id binds a character built here; a %s character binds with glb=...' % source)
@@ -417,6 +504,8 @@ class CharacterService:
                 fail('missing', 'Build %s first (no manifest entry)' % args['id'])
             glb_rel, cid = entry['glb'], entry['id']
             rig, clips, profile = entry['rig']['id'], entry['clips'], 'hover' if entry.get('hover') else 'grounded'
+            if entry.get('locomotion') and not args.get('legacy'):
+                glb_rel = entry['locomotion']['glb']      # baked run + walk (docs/LOCOMOTION.md); legacy=true binds the build's own clips
         elif 'glb' in args:
             if source == 'generated':
                 fail('arguments', 'a file binds with source=cameo_pack or source=community')
@@ -440,17 +529,46 @@ class CharacterService:
             doc, _ = GATE.GLB.read(raw)
             skins = [s.get('name', '') for s in doc.get('skins', [])]
             rig = next((s[4:] for s in skins if s.startswith('rig_')), 'human16_v1')
-        rg = GATE.rig_gate(path, rig, clips=clips, profile=profile, rigkit_root=self.settings.get('rigkit_root') or None)
+            # CHARBIND: a file is held to every clip it carries (plus idle), like a built character; the clips a game
+            # role needs are checked when the runtime is staged (adventure_maker/cast_binding.py).
+            clips = sorted({a.get('name') for a in doc.get('animations', []) if a.get('name')} | {'idle'})
+        from .cast_binding import plain_reason
+        cast = project.read_json('characters/cast.json') if project.path('characters/cast.json').is_file() else {
+            'schema': 'hermes64-project-cast/1', 'note': 'Project-owned character bindings (hermes64_character bind).', 'cast': []}
+        prior = next((c for c in cast['cast'] if c['id'] == cid), None)
+        # WAIVER (docs/WAIVER.md): waive=true writes characters/waived/<id>.glb with the owner's waiver block; a file
+        # that already carries a block is granted only when this project's cast row recorded exactly that block.
+        wblock, wv, source_glb, source_sha = None, None, glb_rel, _sha(raw)
+        if args.get('waive'):
+            pre = GATE.glb_gate(path)['errors'] + GATE.cuboid_gate(path)['errors']
+            if pre:
+                return {'ok': False, 'id': cid, 'reason': plain_reason(pre, rig), 'errors': pre[:12], 'rig': rig}
+            _gids, player = WV.roles(project, cid, {c['id']: c for c in cast['cast']})
+            try:
+                raw, wblock, wv = WV.grant(raw, rig, clips, profile, args['owner_approved'], args['brief'], player)
+            except WV.Refusal as exc:
+                return {'ok': False, 'id': cid, 'reason': 'Refused: ' + str(exc), 'errors': exc.errors[:12], 'rig': rig}
+            glb_rel = '%s/%s.glb' % (WV.WAIVED_DIR, cid)
+            project.write_bytes(glb_rel, raw)
+            path = project.path(glb_rel)
+        granted = wblock is not None or (prior is not None and prior.get('glb') == glb_rel and WV.granted(prior, raw))
+        foreign = not granted and WV.W.block_of(raw) is not None
+        rg = GATE.rig_gate(path, rig, clips=clips, profile=profile, rigkit_root=self.settings.get('rigkit_root') or None,
+                           waiver=granted)
         gb = GATE.glb_gate(path)
         cb = GATE.cuboid_gate(path)
-        errors = rg['errors'] + gb['errors'] + cb['errors']
+        block = self._loco().block_of(raw) if b'hermes64_locomotion' in raw else None
+        rig_errors, waived = self._loco().waive_flight(rg['errors'], block) if block else (rg['errors'], [])
+        errors = rig_errors + gb['errors'] + cb['errors']
         if errors:
-            return {'ok': False, 'id': cid, 'errors': errors[:12], 'rig': rig}
+            reason = plain_reason(errors, rig)
+            if foreign:
+                reason += ('. The file carries an owner waiver that this project did not grant; a waiver is granted only '
+                           'through bind waive=true owner_approved=<name> brief=<their words>')
+            return {'ok': False, 'id': cid, 'reason': reason, 'errors': errors[:12], 'rig': rig}
         if source == 'community':
             hub_row = next((a for a in self.read_catalog(project)['assets']
                             if a.get('status') == 'installed' and any(f['path'] == glb_rel for f in a['files'])), None)
-        cast = project.read_json('characters/cast.json') if project.path('characters/cast.json').is_file() else {
-            'schema': 'hermes64-project-cast/1', 'note': 'Project-owned character bindings (hermes64_character bind).', 'cast': []}
         version = rg.get('rig', rig + '@1.0.0').split('@')[-1]
         row = {'id': cid, 'display_name': args['display_name'], 'placeholder': bool(args.get('placeholder', True)),
                'glb': glb_rel, 'sha256': _sha(raw), 'rig': {'id': rig, 'version': version},
@@ -458,18 +576,43 @@ class CharacterService:
                'visibility': hub_row['visibility'] if hub_row else VISIBILITY[source], 'validated': 'rig kit validate_character passed'}
         if notice:
             row['notice'] = notice
+        if block:
+            row['locomotion'] = {'format': block['format'], 'base': block['base'], 'run_flight_keys_off_the_floor': len(waived)}
+        rec = None
+        if granted:
+            rec = WV.record(wblock, source_glb, source_sha, wv['waived']) if wblock is not None else prior['waiver']
+            row['waiver'] = rec
+            row['validated'] = 'rig kit validate_character passed with an owner waiver (WAIVED: %s)' % ', '.join(rec['scope']['checks'])
         if hub_row is None:
             if entry is None:
                 entry = {'tris': rg.get('metrics', {}).get('body_tris'), 'archetype': 'person'}
             entry = dict(entry, glb=glb_rel, sha256=row['sha256'], bytes=len(raw), rig=row['rig'])
             row['catalog_id'] = self._catalog(project, cid, args['display_name'], row['placeholder'], entry, source, None,
-                                              style=entry.get('style_lock', 'any'))
+                                              style=(entry.get('style_lock') or {}).get('lock', 'any')
+                                              if isinstance(entry.get('style_lock'), dict) else entry.get('style_lock', 'any'),
+                                              waiver=rec)
         else:
             row['catalog_id'] = hub_row['id']
         cast['cast'] = sorted([c for c in cast['cast'] if c['id'] != cid] + [row], key=lambda c: c['id'])
         project.write_json('characters/cast.json', cast)
-        return {'id': cid, 'cast': 'characters/cast.json', 'rig': '%s@%s' % (rig, version), 'visibility': row['visibility'],
-                'catalog_id': row['catalog_id']}
+        used = []
+        if project.path('.maker/current.json').is_file():      # CHARBIND: which ids of the current game use it
+            from .cast_binding import uses
+            cur = project.read_json('.maker/current.json')
+            if cur.get('game') and project.path(cur['game']).is_file():
+                used = uses(project.read_json(cur['game']), {c['id']: c for c in cast['cast']}).get(cid, [])
+        out = {'id': cid, 'cast': 'characters/cast.json', 'rig': '%s@%s' % (rig, version), 'visibility': row['visibility'],
+               'catalog_id': row['catalog_id'], 'used_by': used,
+               'next': ('rebuild the runtime (hermes64_playtest or hermes64_open) to see it'
+                        if used else 'no game id uses %s yet: bind with id=<character, robot, boss or scene actor id> or '
+                                     'name it in a premise binding' % cid)}
+        if rec is not None:          # WAIVER: the waived failures with their numbers, never hidden
+            out.update(glb=glb_rel, waiver=WV.line(cid, rec), waived=rg.get('waived_lines', []) + [
+                l for l in rec.get('waived', []) if 'fight clip' in l])
+        every = WV.waived_rows(cast)
+        if every:
+            out['waived_characters'] = [WV.line(i, r) for i, r in every]
+        return out
 
 
 def register_character_tools(ctx):

@@ -821,6 +821,53 @@
     5
    ],
    "class": "shell",
+   "glb": "kits/library/cyber_blue_grid/presets/cyroom.rooftop__arena.glb",
+   "id": "cyroom.rooftop",
+   "key": "cyroom.rooftop__arena",
+   "preset": "arena",
+   "sha256": "d9f8a03254150bd733b9843755e96009f8e581fd14ff9b8ea7686ead69af7320",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "d9f8a03254150bd733b9843755e96009f8e581fd14ff9b8ea7686ead69af7320",
+   "textures": [
+    "cyber_blue_grid/textures/tex_cyber_blue_grid_dirt.png",
+    "cyber_blue_grid/textures/tex_cyber_blue_grid_light.png",
+    "cyber_blue_grid/textures/tex_cyber_blue_grid_roof.png",
+    "cyber_blue_grid/textures/tex_cyber_blue_grid_stone.png",
+    "cyber_blue_grid/textures/tex_cyber_blue_grid_trim.png",
+    "cyber_blue_grid/textures/tex_cyber_blue_grid_wall.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 702,
+   "variant": "cyber_blue_grid"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "cells": [
+    5,
+    5
+   ],
+   "class": "shell",
    "glb": "kits/library/cyber_blue_grid/presets/cyroom.rooftop__tower.glb",
    "id": "cyroom.rooftop",
    "key": "cyroom.rooftop__tower",
@@ -4898,6 +4945,53 @@
     5
    ],
    "class": "shell",
+   "glb": "kits/library/neon_city_night/presets/cyroom.rooftop__arena.glb",
+   "id": "cyroom.rooftop",
+   "key": "cyroom.rooftop__arena",
+   "preset": "arena",
+   "sha256": "945277dc278d2488aacaed91d409511333a0490369e4444817b942f56295dd41",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "945277dc278d2488aacaed91d409511333a0490369e4444817b942f56295dd41",
+   "textures": [
+    "neon_city_night/textures/tex_neon_city_night_dirt.png",
+    "neon_city_night/textures/tex_neon_city_night_light.png",
+    "neon_city_night/textures/tex_neon_city_night_roof.png",
+    "neon_city_night/textures/tex_neon_city_night_stone.png",
+    "neon_city_night/textures/tex_neon_city_night_trim.png",
+    "neon_city_night/textures/tex_neon_city_night_wall.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 702,
+   "variant": "neon_city_night"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "cells": [
+    5,
+    5
+   ],
+   "class": "shell",
    "glb": "kits/library/neon_city_night/presets/cyroom.rooftop__tower.glb",
    "id": "cyroom.rooftop",
    "key": "cyroom.rooftop__tower",
@@ -8966,6 +9060,53 @@
    ],
    "tri_limit": 1500,
    "tris": 492,
+   "variant": "neon_dawn"
+  },
+  {
+   "anchor": "cell_block_centre",
+   "cells": [
+    5,
+    5
+   ],
+   "class": "shell",
+   "glb": "kits/library/neon_dawn/presets/cyroom.rooftop__arena.glb",
+   "id": "cyroom.rooftop",
+   "key": "cyroom.rooftop__arena",
+   "preset": "arena",
+   "sha256": "b07c500ca0c3243106a56792114718b23a1ed1e19b1879b9efc22b282177413a",
+   "sockets": [
+    {
+     "facing": "n",
+     "position": [
+      0.0,
+      0.0,
+      -9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    },
+    {
+     "facing": "s",
+     "position": [
+      0.0,
+      0.0,
+      9.5
+     ],
+     "type": "door",
+     "width_m": 2.0
+    }
+   ],
+   "source_sha256": "b07c500ca0c3243106a56792114718b23a1ed1e19b1879b9efc22b282177413a",
+   "textures": [
+    "neon_dawn/textures/tex_neon_dawn_dirt.png",
+    "neon_dawn/textures/tex_neon_dawn_light.png",
+    "neon_dawn/textures/tex_neon_dawn_roof.png",
+    "neon_dawn/textures/tex_neon_dawn_stone.png",
+    "neon_dawn/textures/tex_neon_dawn_trim.png",
+    "neon_dawn/textures/tex_neon_dawn_wall.png"
+   ],
+   "tri_limit": 1500,
+   "tris": 702,
    "variant": "neon_dawn"
   },
   {

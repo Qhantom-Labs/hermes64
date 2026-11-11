@@ -14,7 +14,7 @@ CATEGORIES = ("footsteps", "mechanisms", "ui", "rewards", "craft", "dialogue", "
 def definitions(seed=90517):
     if type(seed) is not int or not 0 <= seed < 2**32:
         raise ValueError("seed must be uint32")
-    source = json.loads((LANE / "core/sound_definitions.json").read_text())
+    source = json.loads((LANE / "core/sound_definitions.json").read_text(encoding='utf-8'))
     records = []
     seen = {}
     for entry in source["assets"]:
@@ -48,7 +48,7 @@ def definitions(seed=90517):
 
 
 def frozen_records():
-    source = json.loads((LANE / "manifest.json").read_text())
+    source = json.loads((LANE / "manifest.json").read_text(encoding='utf-8'))
     category_by_synth = {"footstep": "footsteps", "hatch": "mechanisms", "ui": "ui",
                          "dialogue": "dialogue", "cat": "creatures", "sphere": "rewards",
                          "keycard": "mechanisms", "gust": "weather", "hum": "machines",
@@ -84,7 +84,7 @@ def query(index, terms=(), category=None, tags=(), limit=None):
 
 
 def resolve_palette(path, index):
-    palette = json.loads(lane_path(path).read_text())
+    palette = json.loads(lane_path(path).read_text(encoding='utf-8'))
     required = ("schema_version", "id", "bindings", "presets")
     if not isinstance(palette, dict) or any(key not in palette for key in required):
         raise ValueError("palette requires schema_version/id/bindings/presets")

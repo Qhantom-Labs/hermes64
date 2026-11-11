@@ -15,7 +15,9 @@ func clear_caches() -> void:
 	mipless.clear()
 func character(c: Dictionary) -> Node3D:
 	for row in characters:
-		if row.body_id != c.get("body_id", "") or row.base_rig_id != c.get("base_rig_id", "") or row.params != c.get("params", {}): continue
+		if row.has("for_ids"):  # project cast (CHARBIND): bound by game id, staged ahead of every selector row
+			if not row.for_ids.has(str(c.get("id", ""))): continue
+		elif row.body_id != c.get("body_id", "") or row.base_rig_id != c.get("base_rig_id", "") or row.params != c.get("params", {}): continue
 		if row.get("placeholder",true): return super.character(c)
 		var path: String = row.get("path", "")
 		if not FileAccess.file_exists(path):
@@ -33,12 +35,25 @@ func character(c: Dictionary) -> Node3D:
 		if model == null: return null
 		var actor := Actor.new()
 		actor.configure(model,row)
+		actor.set_locomotion(locomotion_block(path))
 		shade_character(model,actor)
 		actor.expression(0)
 		actor.set_meta("character_params", c.params.duplicate(true))
 		loaded["character:" + str(c.get("id","unknown"))] = {"sha256":row.sha256,"placeholder":false,"character_id":row.character_id,"bone_names":row.bone_names,"animations":row.animations}
 		return actor
 	return super.character(c)
+## A scene actor that is no story character (a boss, a bound CEO): its project cast row, as a character query; {} if none.
+func cast_character(id: String) -> Dictionary:
+	for row in characters:
+		if row.has("for_ids") and row.for_ids.has(id): return {"id": id, "body_id": "", "base_rig_id": "", "params": {}}
+	return {}
+## Baked locomotion travels in the character file (root extras, docs/LOCOMOTION.md). No block = {} = legacy clips.
+func locomotion_block(path: String) -> Dictionary:
+	if not character_cache.has(path): return {}
+	var extras = character_cache[path][1].json.get("extras", {})
+	if not extras is Dictionary: return {}
+	var block = extras.get("hermes64_locomotion", {})
+	return block if block is Dictionary else {}
 ## One fresh scene per call from the cached parse of a verified GLB (see character_cache above).
 func instance_glb(path: String) -> Node3D:
 	if not character_cache.has(path):

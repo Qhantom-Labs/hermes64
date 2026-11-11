@@ -25,7 +25,7 @@ Source: cached official `catalog-submission.md` (all 18 admission rules); canoni
 | 2 | Exact SHA pin | **NOT DONE**: full 40-character commit of complete reviewed tree. |
 | 3 | No self-updating code | Local source: no network/updater/downloader in production modules. Pin-reviewed final tree audit **NOT DONE**. |
 | 4 | SHA bumps get new PRs | Documented release policy; no update/pin exists. Future updates require a fresh reviewed pin. |
-| 5 | Owner/major-contributor submission | Authored for Dylan/Qhantom; submission/identity authority and actual owner PR **NOT DONE**. |
+| 5 | Owner/major-contributor submission | Authored for Qhantom Labs; submission/identity authority and actual owner PR **NOT DONE**. |
 | 6 | Declared capabilities match reality | Local recording-ctx tests assert 13 exact provides_tools names, empty hooks/middleware/env/capabilities; one help slash command documented. Actual Hermes validator and pinned tree **NOT DONE**. |
 | 7 | Install scanner at admission | **NOT DONE**. Dangerous must block; caution findings need reviewer disclosure/resolution, not suppression. |
 | 8 | Desktop stays inside SDK | No Desktop plugin/UI shipped; rule not applicable to current native tool-only package. Final tree check **NOT DONE**. |

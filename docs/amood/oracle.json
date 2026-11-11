@@ -1,0 +1,35 @@
+{
+ "medieval_village_dusk": {
+  "base": 0.0099,
+  "bone_white": 0.1021,
+  "candy_pastel": 0.0907,
+  "deep_sea": 0.0566,
+  "ember_night": 0.0465,
+  "frost_dawn": 0.05,
+  "golden_hour": 0.0241,
+  "purple_dusk": 0.0557,
+  "toxic_green": 0.0448
+ },
+ "medieval_village_night": {
+  "base": 0.0442,
+  "bone_white": 0.1317,
+  "candy_pastel": 0.118,
+  "deep_sea": 0.0729,
+  "ember_night": 0.0698,
+  "frost_dawn": 0.0689,
+  "golden_hour": 0.0567,
+  "purple_dusk": 0.068,
+  "toxic_green": 0.0733
+ },
+ "medieval_village_snow": {
+  "base": 0.0205,
+  "bone_white": 0.096,
+  "candy_pastel": 0.0835,
+  "deep_sea": 0.0647,
+  "ember_night": 0.0583,
+  "frost_dawn": 0.0543,
+  "golden_hour": 0.0354,
+  "purple_dusk": 0.0603,
+  "toxic_green": 0.0588
+ }
+}

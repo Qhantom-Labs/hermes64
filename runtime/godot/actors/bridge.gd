@@ -20,9 +20,13 @@ func place(_room: String) -> void:
 		if actor != null:
 			var row: Dictionary = metadata[cid]
 			if row.has("scale"): actor.scale = presenter.room_root.vector(row.scale)
+			if actor.get_meta("real_character",false): actor.play_clip(rest_clip(actor))
+## Authored room clip (presentation characters.<id>.clip, e.g. a seated captive); the actor falls back to idle.
+func rest_clip(n) -> String:
+	return str(presenter.room_root.presentation.get("characters",{}).get(str(n.name).trim_prefix("actor_"),{}).get("clip","idle"))
 func dialogue(_result: Dictionary) -> void:
 	for n in presenter.room_root.get_children():
-		if n.get_meta("real_character",false): n.play_clip("idle")
+		if n.get_meta("real_character",false): n.play_clip(rest_clip(n))
 	for did in presenter.runtime.state.dialogue:
 		if presenter.runtime.state.dialogue[did] == "": continue
 		for d in presenter.runtime.game.dialogues:
@@ -36,8 +40,10 @@ func _physics_process(_delta: float) -> void:
 	if actor != null and actor.get_meta("real_character",false) and not actor.get_meta("module_animation_owner",false):
 		var speed: float = Vector2(presenter.player.actual_velocity.x,presenter.player.actual_velocity.z).length()
 		actor.manual_clock = true
-		actor.pose_speed = speed / float(presenter.player.tuning.walk_stride_mps) if speed > 0.05 else 1.0
-		actor.play_clip("walk" if speed > 0.05 else "idle")
+		if actor.locomotion.is_empty():
+			actor.pose_speed = speed / float(presenter.player.tuning.walk_stride_mps) if speed > 0.05 else 1.0
+			actor.play_clip("walk" if speed > 0.05 else "idle")
+		else: actor.drive(speed, 0.05)  # baked locomotion (docs/LOCOMOTION.md): run above enter_mps, strides from the file
 		if presenter.simulation_enabled: actor.advance_pose(1.0/60.0)
 	for key in presenter.followers:
 		var f = presenter.followers[key]
@@ -45,5 +51,6 @@ func _physics_process(_delta: float) -> void:
 		var last: Vector3 = previous_followers.get(key,f.position)
 		var velocity: Vector3 = f.position-last
 		f.face_velocity(velocity)
-		f.play_clip("walk" if velocity.length() > 0.001 else "idle")
+		if f.locomotion.is_empty(): f.play_clip("walk" if velocity.length() > 0.001 else "idle")
+		else: f.drive(velocity.length() * float(Engine.physics_ticks_per_second), 0.06)
 		previous_followers[key] = f.position

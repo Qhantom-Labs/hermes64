@@ -1,0 +1,286 @@
+{
+ "schema": "hermes64-robotkit/1",
+ "id": "neon_city_night",
+ "note": "Robot enemy recipes for the neon_city_night pack (lane ROBOTS): three archetypes x three company liveries. Data only: adventure_maker.robotkit builds every robot from this file. Colours are palette names of the pack; nothing here is a hex value outside `palette`.",
+ "palette_source": {
+  "path": "kits/packs/neon_city_night/pack.json",
+  "pack_version": "1.0.0",
+  "commit": "32366d05",
+  "sha256": "ec9442012acfa94df90ba67326f7201778bcd15a63db6262cce28a40e2578fcc",
+  "note": "copied verbatim from the roof lane's pack (this base has no neon_city_night pack); tools.robots_build check compares the copy with the pack file when one is present"
+ },
+ "palette_names": [
+  "void",
+  "ink_0",
+  "ink_1",
+  "ink_2",
+  "ink_3",
+  "haze_0",
+  "haze_1",
+  "haze_2",
+  "steel_0",
+  "steel_1",
+  "steel_2",
+  "steel_3",
+  "cyan_0",
+  "cyan_1",
+  "cyan_2",
+  "mag_0",
+  "mag_1",
+  "mag_2",
+  "amber_0",
+  "amber_1",
+  "amber_2",
+  "violet_0",
+  "violet_1",
+  "violet_2",
+  "warm_white",
+  "cool_white",
+  "rose",
+  "peach",
+  "gold",
+  "teal_0",
+  "teal_1",
+  "wood_1"
+ ],
+ "palette": [
+  "#07060e",
+  "#100d1f",
+  "#19152f",
+  "#241e42",
+  "#332a58",
+  "#463b68",
+  "#625486",
+  "#8a76a8",
+  "#2b2d44",
+  "#44475f",
+  "#66698a",
+  "#9396b4",
+  "#0d4658",
+  "#1a9aae",
+  "#66e4e0",
+  "#4a1342",
+  "#b02f8e",
+  "#f07fcf",
+  "#5b2c12",
+  "#c9711f",
+  "#f6c264",
+  "#2e1c66",
+  "#6f4ad0",
+  "#b4a0f4",
+  "#fbe9c0",
+  "#e6eeff",
+  "#c76a83",
+  "#f0a98c",
+  "#ffd9a0",
+  "#173f3a",
+  "#2f7662",
+  "#8a5530"
+ ],
+ "palette_roles": {
+  "shadow_violet": [
+   "void",
+   "ink_0",
+   "ink_1",
+   "ink_2",
+   "ink_3"
+  ],
+  "haze": [
+   "haze_0",
+   "haze_1",
+   "haze_2"
+  ],
+  "steel_concrete": [
+   "steel_0",
+   "steel_1",
+   "steel_2",
+   "steel_3"
+  ],
+  "neon_cyan": [
+   "cyan_0",
+   "cyan_1",
+   "cyan_2"
+  ],
+  "neon_magenta": [
+   "mag_0",
+   "mag_1",
+   "mag_2"
+  ],
+  "neon_amber": [
+   "amber_0",
+   "amber_1",
+   "amber_2"
+  ],
+  "holo_violet": [
+   "violet_0",
+   "violet_1",
+   "violet_2"
+  ],
+  "light_core": [
+   "warm_white",
+   "cool_white"
+  ],
+  "dawn_sky": [
+   "rose",
+   "peach",
+   "gold"
+  ],
+  "garden": [
+   "teal_0",
+   "teal_1"
+  ],
+  "timber": [
+   "wood_1"
+  ]
+ },
+ "light_ramp": [
+  "steel_0",
+  "steel_1",
+  "steel_2",
+  "steel_3",
+  "cool_white"
+ ],
+ "rig": "human16_v1",
+ "texture": {
+  "coat": [
+   64,
+   64
+  ],
+  "face": [
+   64,
+   32
+  ],
+  "tile": 16,
+  "filter": "nearest source, three-point in the runtime (kits/core/n64_look.json filtering)"
+ },
+ "roles": {
+  "shell": "steel_2",
+  "shell_hi": "steel_3",
+  "shell_lo": "steel_1",
+  "trim": "steel_3",
+  "joint": "haze_1",
+  "joint_hi": "haze_2",
+  "vent": "ink_3",
+  "vent_hi": "haze_1",
+  "sole": "steel_0",
+  "rim": "cool_white",
+  "top": "steel_3",
+  "top_hi": "cool_white",
+  "eye_off": "ink_1",
+  "eye_core": "cool_white",
+  "hurt": "warm_white"
+ },
+ "liveries": {
+  "not_evil_ai": {
+   "company": "NOT EVIL AI",
+   "prefix": "ne",
+   "role": "neon_cyan",
+   "dark": "cyan_0",
+   "main": "cyan_1",
+   "bright": "cyan_2",
+   "mark": "ring",
+   "mark_note": "an open ring (the CEO's pinned badge, plan 01)"
+  },
+  "closed_models": {
+   "company": "Closed Models Corp",
+   "prefix": "cm",
+   "role": "neon_magenta",
+   "dark": "mag_0",
+   "main": "mag_1",
+   "bright": "mag_2",
+   "mark": "bars",
+   "mark_note": "two horizontal bars in a square frame (the CEO's vault-door plate, plan 01)"
+  },
+  "aipo": {
+   "company": "AIPO",
+   "prefix": "ai",
+   "role": "neon_amber",
+   "dark": "amber_0",
+   "main": "amber_1",
+   "bright": "amber_2",
+   "mark": "key",
+   "mark_note": "a keyhole: disc over a wedge (the CEO's key-shaped staff, plan 01)"
+  }
+ },
+ "archetypes": {
+  "walker": {
+   "template": "walker_patrol_v1",
+   "pose_body": "walker",
+   "params": {
+    "height": 1.2
+   },
+   "telegraph": "poke",
+   "silhouette": "hunched pod on reverse-knee legs, wide visor head pushed forward, two downward prods"
+  },
+  "brute": {
+   "template": "brute_slam_v1",
+   "pose_body": "brute",
+   "params": {
+    "height": 1.95
+   },
+   "telegraph": "slam",
+   "silhouette": "tall inverted wedge: wide chest, block pauldrons and fists, small sunk head, two back stacks"
+  },
+  "drone": {
+   "template": "hover_drone_v1",
+   "pose_body": "floater",
+   "params": {
+    "height": 1.3
+   },
+   "telegraph": "shot",
+   "silhouette": "hovering flat hex hull, nose eye pod with an under-slung barrel, two finned side pods, tail fin"
+  }
+ },
+ "robots": [
+  {
+   "id": "ne_walker",
+   "archetype": "walker",
+   "livery": "not_evil_ai"
+  },
+  {
+   "id": "ne_brute",
+   "archetype": "brute",
+   "livery": "not_evil_ai"
+  },
+  {
+   "id": "ne_drone",
+   "archetype": "drone",
+   "livery": "not_evil_ai"
+  },
+  {
+   "id": "cm_walker",
+   "archetype": "walker",
+   "livery": "closed_models"
+  },
+  {
+   "id": "cm_brute",
+   "archetype": "brute",
+   "livery": "closed_models"
+  },
+  {
+   "id": "cm_drone",
+   "archetype": "drone",
+   "livery": "closed_models"
+  },
+  {
+   "id": "ai_walker",
+   "archetype": "walker",
+   "livery": "aipo"
+  },
+  {
+   "id": "ai_brute",
+   "archetype": "brute",
+   "livery": "aipo"
+  },
+  {
+   "id": "ai_drone",
+   "archetype": "drone",
+   "livery": "aipo"
+  }
+ ],
+ "budget": {
+  "tris_max": 250,
+  "source": "lane brief ceiling (250 GLB triangles per robot); under every budget of wt-roof docs/ROBOT-BUDGET-CONSTRAINT.md", "roof_lane_runtime_budget": {"walker": 300, "brute": 360, "drone": 260, "includes_blob_shadow_tris": 12}
+ },
+ "roles_note": "shell / joint / vent / sole stay off ink_0..ink_2 (the room's own dark tones); with ink joints and a steel_1 shell 61-65 % of a walker's or brute's back-view pixels sat within contrast ratio 1.5 of ink_1 (tools.robots_build readability)"
+}

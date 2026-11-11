@@ -23,7 +23,7 @@ _PACKS = {}
 FROZEN_MODULES = ("gen_char", "charrig", "chartex")
 
 
-def load_generators():
+def load_generators(project_dir=None, recipe_id=None):
     from . import gen_arch, gen_terrain, gen_nature, gen_furniture, gen_molded, gen_vehicles, gen_props  # noqa: F401
     from . import gen_dungeon, gen_dprops, gen_cave, gen_temple  # noqa: F401  DUNGEONKIT (dgn. dprop. cave. lake. tmpl.)
     from . import gen_scifikit  # noqa: F401  SCIFIKIT (stn. tech. ship. alien. planet. skyx.)
@@ -31,7 +31,18 @@ def load_generators():
     from . import gen_medievalkit_village, gen_medievalkit_village2, gen_medievalkit_castle, gen_medievalkit_props, gen_medievalkit_nature  # noqa: F401,E501  MEDIEVALKIT (vlg. cst. mprop. mnat. mter.)
     from . import gen_westernkit_paint, gen_westernkit_town, gen_westernkit_rail, gen_westernkit_props, gen_westernkit_land  # noqa: F401  WESTERNKIT (wtown. wrail. wmine. wprop. wland. wsky.)
     from . import gen_cyberkit  # noqa: F401  CYBERKIT (cytower. cystreet. cysign. cytech. cyroom. cydress. cysky.)
-    return REGISTRY
+    if project_dir is None:
+        return REGISTRY
+    from pathlib import Path
+    from .gen_recipe import load_recipe, spec_from_recipe
+    reg = dict(REGISTRY)
+    ids = [recipe_id] if recipe_id else ['gen:' + p.stem for p in sorted((Path(project_dir) / 'recipes').glob('*.json'))]
+    if len(ids) > 64:
+        raise S.ParamError('project recipe count exceeds 64')
+    for gid in ids:
+        spec = spec_from_recipe(load_recipe(project_dir, gid))
+        reg[spec.id] = spec
+    return reg
 
 
 def get_pack(pack_id, path=None):
@@ -63,12 +74,12 @@ def resolve(spec, pack, preset=None, params=None):
 
 
 def build_one(gid, pack_id, preset=None, params=None, seed=0, out=None, tex_dir=None, validate=True,
-              pack_path=None, keep_failed=False, builder="blender"):
+              pack_path=None, keep_failed=False, builder="blender", project_dir=None):
     """Returns (status, report). builder=python|blender|auto; no implicit subprocesses."""
     t0 = time.time()
     rep = {"id": gid, "pack": pack_id, "preset": preset, "seed": seed, "out": out, "core_version": CORE_VERSION}
     try:
-        reg = load_generators()
+        reg = load_generators(project_dir if gid.startswith('gen:') else None, gid if gid.startswith('gen:') else None)
         if gid not in reg:
             raise S.ParamError("unknown generator id %r" % gid)
         spec = reg[gid]
@@ -151,5 +162,5 @@ def validate_file(path, spec, pack, tri_limit, asset=None):
 def write_sidecar(out, status, rep):
     rep = dict(rep)
     rep["status"] = status
-    with open(out + ".json", "w") as f:
+    with open(out + ".json", "w", encoding="utf-8") as f:
         json.dump(rep, f, indent=1, sort_keys=True, default=str)

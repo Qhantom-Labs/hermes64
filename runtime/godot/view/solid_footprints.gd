@@ -126,6 +126,13 @@ static func definition(id: String, ref: String, placement: Transform3D, binding:
 			for i in 16: table.append(Vector2(cos(TAU*i/16.0),sin(TAU*i/16.0))*r)
 			polygons.append(table)
 		source = "kit_hollow_footprint"
+	if not binding.get("kit_obstacles", []).is_empty():   # FEEL4: measured body-height structure (view/kit_shells.gd)
+		polygons.clear()
+		for poly in binding.kit_obstacles:
+			var points := PackedVector2Array()
+			for p in poly: points.append(Vector2(float(p[0]), float(p[1])))
+			polygons.append(points)
+		source = "kit_obstacles"
 	if not polygons.is_empty():
 		var lo := Vector2(INF,INF); var hi := Vector2(-INF,-INF)
 		for polygon in polygons:

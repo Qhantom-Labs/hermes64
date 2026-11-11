@@ -37,6 +37,13 @@ PATTERN = obj({'id': ID, 'kind': {'enum': ['bump', 'slam', 'shot', 'surge']},
 CARD = obj({'room': ID, 'camera': ID, 'actors': array(obj({'id': ID, 'clip': ID}, ['id', 'clip']), 8),
             'line': obj({'id': ID, 'speaker': text(80), 'text': text(240)}, ['id', 'speaker', 'text']),
             'voice': ASSET, 'hold_ticks': integer(1, 3600)}, ['room', 'camera', 'hold_ticks'])
+# GAPS2: a full runtime scene (docs/SCENES.md), bounded here and closed-checked by story/presentation/scenes.py at create.
+RUNTIME_SCENE = {'type': 'object', 'x-validated-by': 'story/presentation/scenes.py'}
+# GAPS2 G4: boss robot tuning, inside the gameplay contract's ROBOT bounds; speed_mps stops at the checker's player run
+# speed (story/modules/combat_bounds.PLAYER_RUN_MPS) so a boss can always be outrun.
+BOSS_ROBOT = obj({'armor': {'enum': ['none', 'until_recover']}, 'hurt_ticks': integer(1, 60),
+                  'knockback_m': {'type': 'number', 'minimum': 0, 'maximum': 1.5}})
+BOSS_SPEED = {'type': 'number', 'minimum': 0.1, 'maximum': 2.4}
 MUSIC = obj({k: ASSET for k in ('default', 'menu', 'boss', 'results')})
 MUSIC['properties'].update({k: mapping(ASSET) for k in ('scenes', 'waves', 'events')})
 AUDIO = obj({'music': MUSIC,
@@ -47,14 +54,15 @@ AUDIO['properties']['mix']['properties']['crossfade_s'] = {'type': 'number', 'mi
 SCHEMA = obj({
     'format': {'const': 'hermes64-premise/1'}, 'id': STORY_ID, 'title': text(120),
     'template': {'enum': ['two_room_collect_v1', 'arena_run_v1']}, 'style': ID,
+    'room_scale': {'enum': ['small', 'medium', 'large', 'open']},
     'hero': obj({'id': ID, 'name': text(80), 'binding': ASSET}, ['id', 'name']),
     'npcs': array(obj({'id': ID, 'name': text(80), 'binding': ASSET, 'room': ID,
                        'anchor': {'enum': ['captive', 'interact']}, 'clip': ID}, ['id', 'name', 'room', 'anchor']), 8),
     'rooms': obj({'order': array(ID, 16, 3)}, ['order']),
     'robots': array(obj({'id': ID, 'name': text(80), 'base': {'enum': ['walker', 'brute', 'drone']},
-                         'max_health': integer(1, 64), 'damage': integer(1, 64)}, ['id', 'name', 'base']), 12),
-    'bosses': array(obj({'id': ID, 'name': text(80), 'max_health': integer(1, 64), 'patterns': array(PATTERN, 8, 1)},
-                       ['id', 'name']), 3),
+                         'max_health': integer(1, 64), 'damage': integer(1, 64), 'binding': ASSET}, ['id', 'name', 'base']), 12),
+    'bosses': array(obj({'id': ID, 'name': text(80), 'max_health': integer(1, 64), 'patterns': array(PATTERN, 8, 1),
+                         'binding': ASSET}, ['id', 'name']), 3),
     'arenas': array(obj({'room': ID, 'label': text(80), 'waves': array(array(obj({'robot': ID, 'count': integer(1, 24)},
                                                                             ['robot', 'count']), 16, 1), 8, 1)},
                         ['room', 'label', 'waves']), 14),
@@ -70,10 +78,42 @@ SCHEMA = obj({
     'results': obj({'enabled': {'type': 'boolean'}, 'title': text(120)}),
     'audio': AUDIO, 'textures': mapping(ASSET), 'weather': mapping({'enum': ['rain', 'none']})
 }, ['format', 'id', 'title', 'template', 'style'])
+# GAPS2 (one block, so the rows above merge cleanly with other lanes): G4 boss robot block + speed; G3 full runtime
+# scenes in scenes.list; G9 text_boxes (default off for arena_run_v1).
+SCHEMA['properties']['bosses']['items']['properties'].update(robot=BOSS_ROBOT, speed_mps=BOSS_SPEED)
+SCHEMA['properties']['scenes']['properties']['list'] = array(RUNTIME_SCENE, 32)
+SCHEMA['properties']['text_boxes'] = {'type': 'boolean'}
+
+
+def _opaque(value, at, depth=0):
+    """Bounded JSON for a runtime scene: short lowercase keys, finite numbers, short strings; closed rules come later."""
+    if depth > 8:
+        fail('premise', at + ': nested too deep')
+    if isinstance(value, dict):
+        if len(value) > 64:
+            fail('premise', at + ': too many fields')
+        for key, child in value.items():
+            if not re.fullmatch(r'[a-z_]{1,32}', str(key)):
+                fail('premise', at + ': unknown field ' + str(key)[:40])
+            _opaque(child, at + '.' + key, depth + 1)
+    elif isinstance(value, list):
+        if len(value) > 64:
+            fail('premise', at + ': array length out of bounds')
+        for child in value:
+            _opaque(child, at + '[]', depth + 1)
+    elif isinstance(value, str):
+        if len(value) > 240:
+            fail('premise', at + ': text over 240 characters')
+    elif not (isinstance(value, bool) or (isinstance(value, (int, float)) and abs(value) < 1e9)):
+        fail('premise', at + ': expected JSON text, numbers or booleans')
 
 
 def _check(value, schema, at='$'):
     """The normal validator's primitive rules plus explicitly bounded dynamic slot maps."""
+    if schema.get('x-validated-by'):
+        if not isinstance(value, dict):
+            fail('premise', at + ': expected an object')
+        return _opaque(value, at)
     if schema.get('type') == 'object':
         if not isinstance(value, dict):
             fail('premise', at + ': expected an object')
@@ -111,6 +151,8 @@ def validate(data: Any) -> dict:
     for row in data.get('arenas', []) + data.get('npcs', []):
         if row['room'] not in order:
             fail('premise', 'Premise references a room outside rooms.order')
+    if any(room not in order for room in data.get('weather', {})):
+        fail('premise', 'weather names a room outside rooms.order')
     if data.get('finale') and (not order or data['finale']['room'] != order[-1]):
         fail('premise', 'Finale must use the last room in rooms.order')
     builtins = ['walker', 'brute', 'drone', 'guardian']

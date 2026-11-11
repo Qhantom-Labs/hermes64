@@ -63,10 +63,10 @@ class MaterialFactory:
 
     def role_image(self, role):
         spec = self.pack.mat(role)
-        arr = make_texture(spec["texture"], self.pack.pal, self.pack.id, role)
+        arr = make_texture(spec["texture"], self.pack.pal, self.pack.seed_id, role)
         if spec["kind"] == "card_alpha":
             from .texgen import alpha_mask
-            a = alpha_mask(spec["texture"].get("alpha", "disc"), arr.shape[0], self.pack.id, role)
+            a = alpha_mask(spec["texture"].get("alpha", "disc"), arr.shape[0], self.pack.seed_id, role)
             arr = np.concatenate([arr, a[:, :, None]], 2)
         return self.image_from_array("tex_%s_%s" % (self.pack.id, role), arr)
 
@@ -215,5 +215,5 @@ def export_glb(path, animations=False):
 
 
 def write_json(path, obj):
-    with open(path, "w") as f:
+    with open(path, "w", encoding="utf-8") as f:
         json.dump(obj, f, indent=1, sort_keys=True)

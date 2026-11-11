@@ -1,5 +1,6 @@
 extends "res://view/presenter.gd"
 var args := {}
+const ROOM_TRIS_CEILING := 8000   # kits/core/style_bible.json budget_profiles: the largest room_tris any profile may name
 func _ready() -> void:
 	var user_args := OS.get_cmdline_user_args()
 	var i := 0
@@ -28,11 +29,20 @@ func _ready() -> void:
 		add_child(observer)
 		observer.attach(self,args.observe)
 	if args.has("replay"):
-		var playback: Dictionary = replay.load_movie(args.replay,true)
+		# GAPS2 G14: --capture_scenes=<folder> keeps the replay running past its final hash and saves scene/results frames.
+		var capturing := args.has("capture_scenes")
+		var playback: Dictionary = replay.load_movie(args.replay,not capturing)
 		if not playback.ok: print("MOVIE REFUSED ",playback); await quit_cleanly(2)
+		elif capturing:
+			var capture_node = preload("res://view/scene_capture.gd").new()
+			add_child(capture_node)
+			capture_node.attach(self,str(args.capture_scenes),float(args.get("capture_tail","90")))
 		return
 	if args.has("record"): replay.start_record(args.record,int(args.get("seed","7")))
 	if args.has("screens"):
+		# GAPS2 (G12 sibling): room coverage frames (style audit, open screenshots) show the rooms, never a start/enter
+		# scene card drawn over them. Set before the first await, so no start scene begins.
+		if scene_cards != null: scene_cards.enabled = false
 		await capture_all(args.screens)
 	elif args.has("bot"):
 		var bot = preload("res://view/bot.gd").new()
@@ -52,7 +62,7 @@ func capture_all(folder: String) -> void:
 		runtime.state.location = room.id
 		enter_room("")
 		if follow_camera != null: follow_camera.enabled = false
-		last_text = room.description
+		last_text = boxed(room.description)   # GAPS2 G9: the audit frame shows what the player sees
 		page_index = 0
 		refresh()
 		n64_ui.skip_typing()
@@ -64,6 +74,9 @@ func capture_all(folder: String) -> void:
 		n64_ui.visible = false
 		await get_tree().process_frame
 		var clean_ok: bool = await capture_low(folder.path_join(room.id+"-clean.png"))
+		# screen-space rain is in the game view only: the key/depth/mask passes are read as exact colours
+		var weather_layer = room_root.get_node_or_null("weather")
+		if weather_layer != null: weather_layer.visible = false
 		var env: Environment = world_environment().environment
 		var clear: Color = env.background_color
 		env.background_color = Color(1, 0, 1)
@@ -112,15 +125,19 @@ func capture_all(folder: String) -> void:
 		RenderingServer.global_shader_parameter_set("n64_debug", Vector4(0, 0, 0, 0))
 		viewport.msaa_3d = msaa
 		for n in hidden: n.visible = true
+		if weather_layer != null: weather_layer.visible = true
 		env.background_color = clear
 		# Character close-up (evidence only, not a gate input): the tallest person in the room seen from the room
 		# camera's side, UI hidden. The room camera is current again before the next room.
 		var closeup: Dictionary = await capture_closeup(folder.path_join(room.id+"-closeup.png"))
 		n64_ui.visible = true
 		var tri: int = room_root.triangle_count() + room_root.triangle_count(player)
-		var good: bool = captured and clean_ok and key_ok and depth_ok and mask_ok and tri <= 6000 and room_root.real_piece_count > 0
+		# Room triangle cap: 6,000 unless the compiled room presentation names a larger budget profile (the style
+		# bible's arena profile, written by the room compiler); never above ROOM_TRIS_CEILING.
+		var cap: int = clampi(int(room_root.presentation.get("budget", {}).get("room_tris", 6000)), 1, ROOM_TRIS_CEILING)
+		var good: bool = captured and clean_ok and key_ok and depth_ok and mask_ok and tri <= cap and room_root.real_piece_count > 0
 		ok = ok and good
-		rows.append({"id":room.id,"status":"passed" if good else "failed","screenshot":path.get_file(),"clean":room.id+"-clean.png","key":room.id+"-key.png","depth":room.id+"-depth.png","depth_scale_m":120,"mask":room.id+"-mask.png","triangles":tri,"triangles_split":room_root.triangle_split(player),"real_kit_pieces":room_root.real_piece_count,"camera":room_root.camera_nodes[camera_index].id,"audit":room_root.audit(room_root.camera_nodes[camera_index].node),"closeup":closeup,"noglow":room.id+"-noglow.png" if noglow_ok else "","classic":room.id+"-classic.png" if classic_ok else ""})
+		rows.append({"id":room.id,"status":"passed" if good else "failed","screenshot":path.get_file(),"clean":room.id+"-clean.png","key":room.id+"-key.png","depth":room.id+"-depth.png","depth_scale_m":120,"mask":room.id+"-mask.png","triangles":tri,"room_tris_cap":cap,"triangles_split":room_root.triangle_split(player),"real_kit_pieces":room_root.real_piece_count,"camera":room_root.camera_nodes[camera_index].id,"audit":room_root.audit(room_root.camera_nodes[camera_index].node),"closeup":closeup,"noglow":room.id+"-noglow.png" if noglow_ok else "","classic":room.id+"-classic.png" if classic_ok else ""})
 	ok = ok and resolver.missing.is_empty()
 	var report := {"status":"passed" if ok else "failed","rooms":rows,"missing_assets":resolver.missing.keys(),"loaded_assets":resolver.loaded,"audio":sounds.report,"material_kinds":resolver.material_kinds,"placeholder_characters":resolver.placeholders,"renderer":RenderingServer.get_current_rendering_method(),"device":RenderingServer.get_video_adapter_name(),"engine":Engine.get_version_info().string,"display":DisplayServer.get_name(),"resolution":[viewport.size.x,viewport.size.y],"scope":"room visual coverage; teleported initial state, not a gameplay replay"}
 	var file := FileAccess.open(folder.path_join("capture.json"),FileAccess.WRITE)

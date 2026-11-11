@@ -1,0 +1,28 @@
+{
+ "format": "hermes64-style-bible/1",
+ "note": "Machine-readable part of the style bible (prose: STYLE-BIBLE-v0, docs/N64-LOOK-CONVENTIONS.md). budget_profiles: named room triangle budgets. A room plan opts into a profile with \"budget_profile\"; no field means \"default\" (the 6,000 cap every pack threshold and gate already uses). A profile may only be used by plans that carry every block it \"requires\" (arena: the plan's \"arena\" clearance block). room_tris counts the whole loaded room scene (kit pieces, props, generated cards, people with their blob shadows, the player) at its worst moment, not only what the camera sees. Raising a profile needs a new frame-time receipt on the slowest supported machine.",
+ "budget_profiles": {
+  "default": {
+   "room_tris": 6000,
+   "person_tris": 760,
+   "robot_tris": 480,
+   "overhead_exterior": 200,
+   "overhead_interior": 80,
+   "requires": [],
+   "justification": "The original N64-class cap: one room, everything loaded, inside the measured frame budget of the GL Compatibility web/desktop exports with margin."
+  },
+  "arena": {
+   "room_tris": 8000,
+   "person_tris": 760,
+   "robot_tris": 480,
+   "overhead_exterior": 200,
+   "overhead_interior": 80,
+   "requires": [
+    "arena"
+   ],
+   "frame_ms_target": 8.0,
+   "justification": "Wave/boss arena rooms hold more simultaneous combatants. Measured (docs/ROOF-BUDGET.md, Mac mini M4 Pro, Godot 4.6.2): the trimmed finale roof with hero + 3 bosses + captive is 5,820 triangles, so no robot fits under 6,000; with 4 robots it is 7,684 and the GL Compatibility renderer (the exports' renderer) ran p50 1.2-1.4 ms, p95 5.7-6.6 ms per frame; 8,818 (6 robots) still p95 6.2 ms; 17,230 rose to p95 13.4 ms. 8,000 keeps a 2x margin to that knee. Only plans with an arena clearance block may use it.",
+   "evidence": "docs/ROOF-BUDGET.md"
+  }
+ }
+}

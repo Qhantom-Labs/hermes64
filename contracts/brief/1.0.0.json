@@ -78,6 +78,15 @@
           "minLength": 1,
           "maxLength": 60,
           "description": "e.g. \"small outdoor hub + 2 interiors\"."
+        },
+        "room_scale": {
+          "enum": [
+            "small",
+            "medium",
+            "large",
+            "open"
+          ],
+          "description": "Optional room-scale dial (adventure_maker/room_scale.py): small = legacy 4 x 4 m starter, medium = default for new games, large, open = large with outdoor treatment."
         }
       }
     },

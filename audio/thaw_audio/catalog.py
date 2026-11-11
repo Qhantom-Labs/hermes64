@@ -75,7 +75,7 @@ def main(argv=None):
         sub.add_argument("--catalog", default=str(LANE/"catalog.json"))
     args = parser.parse_args(argv)
     try:
-        index = json.loads(lane_path(args.catalog).read_text())
+        index = json.loads(lane_path(args.catalog).read_text(encoding='utf-8'))
         if index.get("schema_version") != "1.1":
             raise ValueError("expected catalog schema 1.1")
         report = query(index, getattr(args,"terms",()), args.category, args.tag, args.limit)

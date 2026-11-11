@@ -1,0 +1,9 @@
+{
+ "format":"hermes64-recipe/1", "id":"floating_island", "class":"terrain", "licence":"CC0-1.0",
+ "parameters":{"radius":{"type":"number","default":1.6,"minimum":1.2,"maximum":1.9},"segments":{"type":"integer","default":8,"minimum":6,"maximum":10},"surface_role":{"type":"string","default":"rock","enum":["rock","stone"]}},
+ "operations":[
+  {"primitive":"lathe","role":{"param":"surface_role"},"args":{"profile":[[0.12,0],[0.45,0.25],[{"param":"radius","mul":0.72},0.88],[{"param":"radius"},1.28],[{"param":"radius","mul":0.94},1.42]],"segs":{"param":"segments"},"ry":0.82}},
+  {"primitive":"lathe","role":"grass","args":{"profile":[[{"param":"radius","mul":0.92},1.40],[{"param":"radius","mul":0.90},1.49]],"segs":{"param":"segments"},"ry":0.82}}
+ ],
+ "sockets":[{"id":"top","position":[0,0,1.49],"facing":"up"}]
+}

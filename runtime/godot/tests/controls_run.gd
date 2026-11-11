@@ -138,8 +138,10 @@ func test_remap_and_hud() -> void:
 	var hud := Hud.new()
 	var constants: Dictionary = hud.get_script().get_script_constant_map()
 	hud.free()
-	var choices: Array = constants.get("SETTINGS_CHOICES",[])
-	check(choices.has(["run","run"]),"HUD run-mode row uses new run binding and glyph")
+	# UI5: pause rows live in res://input/keyhud.json (drawn by input/key_overlay.gd).
+	var pause: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://input/keyhud.json")).pause
+	check(pause.settings.any(func(r): return r.action == "run" and r.legacy_action == "walk" and r.icon == "run" and r.option == "run_mode"),"HUD run-mode row uses new run binding and glyph")
+	check(pause.controls.any(func(r): return r.action == "run") and pause.controls.any(func(r): return r.action == "walk" and r.icon == "walk"),"pause legend lists run and precision walk separately")
 	var overlay: Array = constants.get("OVERLAY_ACTIONS",[])
 	check("run" in overlay and "walk" in overlay,"HUD overlay distinguishes run from old precision")
 	check(constants.Glyphs.has("run") and constants.Glyphs.has("walk"),"HUD keeps distinct run and precision icons")

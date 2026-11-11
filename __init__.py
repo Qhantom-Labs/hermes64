@@ -7,7 +7,7 @@ from .adventure_maker.demo import register_tools as register_ship_tools
 from .adventure_maker.cover_tools import register_cover_tools
 from .adventure_maker.character_tools import register_character_tools
 from .adventure_maker.hub import register_tools as register_hub_tools
-from .adventure_maker import host_compat
+from .adventure_maker import host_compat, native_hint
 
 # Bundled skills carry the detail the compact tool schemas leave out (docs/TOKEN-DIET.md).
 # Descriptions mirror each SKILL.md frontmatter (tests/test_schema_budget.py checks they match).
@@ -20,6 +20,9 @@ SKILLS = {
     'hermes64-cover': 'Stage, render, gate and finish original box-art covers.',
     'hermes64-characters': 'Make house-style characters with hermes64_character.',
     'hermes64-hub': 'Use when sharing or installing Hermes64 Hub entries.',
+    'hermes64-generators': 'Use when a game needs a new prop. Author bounded recipes.',
+    'hermes64-places': 'Use when asked for a type of place. Dress rooms from data.',
+    'hermes64-create': 'Use for any request to make, edit, play or export a game.',
 }
 
 
@@ -35,8 +38,8 @@ def register(ctx):
     register_character_tools(ctx)
     register_hub_tools(ctx)
     host_compat.register_command(ctx, 'hermes64', make_command(ctx),
-                                 description='Make a game: /hermes64 new "<premise>" [village|forest|polar]; share: /hermes64 hub search <words>',
-                                 args_hint='new "<premise>" [style] | hub search|info|install|pack|publish ...')
+                                 description='First run: /hermes64 setup. Make a game: /hermes64 new "<premise>" [village|forest|polar]; share: /hermes64 hub search <words>',
+                                 args_hint='setup | new "<premise>" [style] | hub search|info|install|pack|publish ...')
     add_skill = getattr(ctx, 'register_skill', None)
     if callable(add_skill):
         for name, description in SKILLS.items():
@@ -44,3 +47,5 @@ def register(ctx):
                 add_skill(name, Path(__file__).absolute().parent / 'skills' / name / 'SKILL.md', description)
             except (OSError, ValueError):
                 pass
+    # A plain "make me a game about ..." reaches the create skill on hosts that keep plugin skills out of the index.
+    native_hint.register(ctx)

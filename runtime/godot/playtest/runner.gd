@@ -136,6 +136,11 @@ func step(v := Vector2.ZERO, discrete := []) -> void:
 	# its tick/recording clock while the exact same production envelope freezes.
 	if view.room_transition != null and view.room_transition.active():
 		await view.room_transition.finished
+	# GAPS2 G12: start/enter/ending scene cards freeze the same envelope; wait them out off the bot clock too. The
+	# results card is the end of the run (it waits for a player choice), so the bot does not wait for it.
+	# Known-bad control `control: "no_scene_wait"` restores the old behaviour (the bot inputs into a frozen scene).
+	while view.scene_cards != null and view.scene_cards.blocking() and view.scene_cards.phase != "results" and config.get("control","") != "no_scene_wait":
+		await process_frame
 	keys(v)
 	var digital: Array = discrete.duplicate()
 	for pair in [["move_left",v.x<0],["move_right",v.x>0],["move_up",v.y<0],["move_down",v.y>0]]:
@@ -153,7 +158,8 @@ func step(v := Vector2.ZERO, discrete := []) -> void:
 	var rid: String = view.runtime.state.location
 	if not rooms.has(rid):
 		var size: Array = view.runtime.rooms[rid].grid_size
-		rooms[rid] = {"size":size,"heat":{},"samples":0,"triangles":0,"draw_calls":null,"rendered":DisplayServer.get_name() != "headless"}
+		var cap := int(view.runtime.game.metadata.get("presentation", {}).get("rooms", {}).get(rid, {}).get("budget", {}).get("room_tris", 6000))
+		rooms[rid] = {"size":size,"heat":{},"samples":0,"triangles":0,"room_tris_cap":cap,"draw_calls":null,"rendered":DisplayServer.get_name() != "headless"}
 	var row: Dictionary = rooms[rid]
 	var pos: Vector3 = view.player.position
 	var cell := "%d,%d" % [floori(pos.x*2),floori(pos.z*2)]

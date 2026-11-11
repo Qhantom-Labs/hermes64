@@ -1,0 +1,74 @@
+{
+  "about": "Non-demo SCENES example on the shipped Thaw game (polar research pod). Merged into metadata.presentation by tools/scenes_stage.py. Three scenes (opening, a travel shot through a door, an ending) and a results card. Data only.",
+  "scenes": [
+    {
+      "id": "arrival",
+      "trigger": {"on": "start"},
+      "cards": [
+        {
+          "room": "pod_bay",
+          "hold": 180,
+          "title": "THAW",
+          "cast_only": true,
+          "actors": [{"character": "protagonist", "at": [8.6, 6.5], "yaw": 200, "clip": "idle"}],
+          "shot": {"kind": "orbit", "look": [7.0, 0.8, 6.0], "radius": 7.5, "height": 4.6, "start_deg": 25, "sweep_deg": 45, "fov": 55}
+        },
+        {
+          "room": "pod_bay",
+          "hold": 170,
+          "cut": "fade",
+          "cast_only": true,
+          "actors": [
+            {"character": "protagonist", "at": [8.6, 6.5], "yaw": -43, "clip": "idle"},
+            {"character": "tavi", "at": [7.0, 8.2], "yaw": 137, "clip": "talk"}
+          ],
+          "subtitle": {"speaker": "TAVI", "text": "The long night starts soon. Bring the eight blue spheres home.", "color": "#9fd4ff"},
+          "shot": {"kind": "push", "from": [11.2, 1.8, 9.6], "look": [7.8, 1.1, 7.3], "amount": 1.2, "fov": 50}
+        }
+      ]
+    },
+    {
+      "id": "to_workstation",
+      "trigger": {"on": "door", "from": "pod_bay", "to": "workstation"},
+      "transition_in": "fade",
+      "cards": [
+        {
+          "room": "curved_corridor",
+          "hold": 150,
+          "cast_only": true,
+          "actors": [{"character": "protagonist", "at": [3.0, 3.0], "to": [11.0, 3.0], "clip": "idle", "moving_clip": "walk"}],
+          "shot": {"kind": "track", "follow": 0, "offset": [0.0, 1.9, 2.4], "look_height": 0.9, "fov": 60},
+          "reduced": {"shot": {"kind": "hold", "from": [7.0, 3.2, 8.5], "look": [7.0, 0.8, 3.0], "fov": 60}}
+        },
+        {
+          "room": "workstation",
+          "hold": 120,
+          "cut": "iris",
+          "title": "THE WORKSTATION",
+          "shot": {"kind": "pan", "from": [8.8, 2.8, 7.2], "look": [4.5, 0.9, 3.5], "look_to": [6.0, 0.9, 3.2], "fov": 58}
+        }
+      ]
+    },
+    {
+      "id": "night_ends",
+      "trigger": {"on": "ending"},
+      "cards": [
+        {
+          "room": "conversation_pit",
+          "hold": 200,
+          "actors": [{"character": "protagonist", "at": [9.6, 8.6], "yaw": -132, "clip": "idle"}],
+          "shot": {"kind": "orbit", "look": [7.8, 0.9, 7.0], "radius": 3.8, "height": 2.6, "start_deg": 40, "sweep_deg": 35, "fov": 60}
+        },
+        {
+          "room": "conversation_pit",
+          "hold": 140,
+          "cut": "fade",
+          "title": "MORNING",
+          "actors": [{"character": "protagonist", "at": [9.6, 8.6], "yaw": -132, "clip": "idle"}],
+          "shot": {"kind": "hold", "from": [7.4, 1.8, 6.6], "look": [9.6, 1.2, 8.6], "fov": 50}
+        }
+      ]
+    }
+  ],
+  "results": {"enabled": true, "music": "results"}
+}

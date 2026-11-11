@@ -1,0 +1,10 @@
+{
+ "format":"hermes64-recipe/1", "id":"portal", "class":"structure", "licence":"CC0-1.0",
+ "parameters":{"radius":{"type":"number","default":1.0,"minimum":0.8,"maximum":1.1}},
+ "operations":[
+  {"primitive":"box","role":"stone","args":{"cx":0,"cy":0,"cz":0.1,"sx":2.6,"sy":0.65,"sz":0.2}},
+  {"primitive":"box","role":"stone","args":{"cx":1.1,"cy":0,"cz":0.55,"sx":0.26,"sy":0.50,"sz":1.1},"mirror":"x"},
+  {"primitive":"torus","role":"trim","args":{"R":{"param":"radius"},"r":0.13,"segs":12,"sides":4},"transform":{"rotate":[90,0,0],"translate":[0,0,1.35]}}
+ ],
+ "sockets":[{"id":"threshold","position":[0,-0.2,0.2],"facing":"s"}]
+}

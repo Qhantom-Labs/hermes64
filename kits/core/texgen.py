@@ -26,7 +26,7 @@ def convention_textures():
     global _CONVENTION
     if _CONVENTION is None:
         p = Path(__file__).with_name("n64_look.json")
-        _CONVENTION = json.loads(p.read_text()).get("textures", {}) if p.is_file() else {}
+        _CONVENTION = json.loads(p.read_text(encoding='utf-8')).get("textures", {}) if p.is_file() else {}
     return _CONVENTION
 
 

@@ -98,6 +98,7 @@ def _o(fields):
     return ('obj', fields)
 
 
+ROOM_SCALES = ('small', 'medium', 'large', 'open')   # SCALE: adventure_maker/room_scale.py SCALES (optional word)
 TEXT_FIELDS = {'place': 80, 'era': 40, 'scale': 60, 'want': 60, 'character': 80, 'generic': 80, 'term': 60,
                'for': 60, 'credit': 80, 'note': 120, 'unrecognised': 32}
 PROP = _o({'want': (('text', 60), True), 'count': (('int', 1, 32), True), 'importance': (('word', IMPORTANCE), True),
@@ -112,7 +113,8 @@ SPEC = _o({
     'prompt': (('text', MAX_PROMPT), True),
     'filled_by': (('word', FILLED_BY), True),
     'setting': (_o({'genre': (('word', GENRES), True), 'genre_hints': (('list', ('word', GENRES + HINTS), 6), True),
-                    'place': (('text', 80), True), 'era': (('text', 40), True), 'scale': (('text', 60), True)}), True),
+                    'place': (('text', 80), True), 'era': (('text', 40), True), 'scale': (('text', 60), True),
+                    'room_scale': (('word', ROOM_SCALES), False)}), True),
     'mood': (_o({'time': (('word', TIMES), True), 'weather': (('word', WEATHERS), True),
                  'season': (('word', SEASONS), True), 'tone': (('word', TONES), True)}), True),
     'palette_mood': (_o({'dominant': (('word', HUES), True), 'support': (('list', ('word', HUES), 3), True),
@@ -305,6 +307,7 @@ def normalise(raw):
             s['genre_hints'] = _dedupe(_word(h, 'genre') for h in s['genre_hints'])
         for key in ('place', 'era', 'scale'):
             _map(s, key, _clean_text)
+        _map(s, 'room_scale', lambda v: _word(v, 'room_scale'))
     m = b.get('mood')
     if isinstance(m, dict):
         m.setdefault('season', 'none')
@@ -899,6 +902,10 @@ def from_prompt(prompt):
             unrecognised.append(tok)
     if unrecognised:
         notes.append('unrecognised words kept for the report: ' + ', '.join(_dedupe(unrecognised)[:16]))
+    from .room_scale import keyword
+    room_scale, phrase = keyword(prompt)
+    if room_scale:
+        notes.append('room scale %s from "%s"' % (room_scale, phrase))
     brief = {
         'format': FORMAT, 'prompt': prompt, 'filled_by': 'fallback',
         'setting': {'genre': genre, 'genre_hints': hints, 'place': place_out[:80], 'era': era,
@@ -910,6 +917,8 @@ def from_prompt(prompt):
         'ip_terms': ip_terms, 'unrecognised': _dedupe(unrecognised)[:16],
         'assumptions': [n[:120] for n in notes][:24],
     }
+    if room_scale:
+        brief['setting']['room_scale'] = room_scale
     return normalise(brief)
 
 

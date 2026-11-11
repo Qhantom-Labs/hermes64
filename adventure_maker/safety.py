@@ -121,6 +121,7 @@ class Project:
     def __init__(self, projects_root, name, create=False):
         if not isinstance(name, str) or not re.fullmatch(r'[a-z][a-z0-9_-]{0,63}', name):
             fail('path', 'Project name must be a single lowercase slug; not a path')
+        relative(name)  # project ids, not just files inside them, must be NTFS-safe (con/nul/etc.)
         base = Path(projects_root)
         if not base.is_absolute() or '..' in base.parts:
             fail('configuration', 'projects_root must be an absolute path without traversal')
@@ -129,9 +130,12 @@ class Project:
             fail('configuration', 'projects_root must be an existing directory; no parent directories were created')
         self.root = inspect_path(base / name)
         if create:
-            if self.root.exists():
+            if self.root.exists() or self.root.is_symlink():
                 fail('exists', 'Project already exists; scaffold never overwrites')
-            self.root.mkdir(parents=True)
+            try:  # REUSE: atomic, so of two creates racing for one name exactly one wins and the other gets 'exists'
+                self.root.mkdir()
+            except FileExistsError:
+                fail('exists', 'Project already exists; scaffold never overwrites')
             self.write_json('.maker/project.json', {'format': 1, 'name': name})
         elif not self.root.is_dir() or not self.path('.maker/project.json').is_file():
             fail('project', 'Not a managed adventure project; scaffold first')

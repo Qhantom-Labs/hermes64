@@ -193,6 +193,12 @@
    "preset": null,
    "sha256": "f18bd063ce0f1caad78c2e5e5c127bebd98c2cb38c6d496171e975b49bd27573"
   },
+  "cyroom.rooftop__arena": {
+   "glb": "kits/library/neon_city_night/presets/cyroom.rooftop__arena.glb",
+   "kit_id": "cyroom.rooftop",
+   "preset": "arena",
+   "sha256": "945277dc278d2488aacaed91d409511333a0490369e4444817b942f56295dd41"
+  },
   "cyroom.rooftop__tower": {
    "glb": "kits/library/neon_city_night/presets/cyroom.rooftop__tower.glb",
    "kit_id": "cyroom.rooftop",

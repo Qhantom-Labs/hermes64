@@ -1,0 +1,66 @@
+{
+ "format": "hermes64-mask/1",
+ "name": "guild mark overlay",
+ "grid": 32,
+ "tones": [
+  "field",
+  "charge"
+ ],
+ "background": 0,
+ "prims": [
+  {
+   "op": "poly",
+   "points": [
+    [
+     16,
+     5
+    ],
+    [
+     25,
+     14
+    ],
+    [
+     16,
+     23
+    ],
+    [
+     7,
+     14
+    ]
+   ],
+   "tone": 1
+  },
+  {
+   "op": "poly",
+   "points": [
+    [
+     16,
+     9
+    ],
+    [
+     21,
+     14
+    ],
+    [
+     16,
+     19
+    ],
+    [
+     11,
+     14
+    ]
+   ],
+   "tone": 0
+  },
+  {
+   "op": "text5x7",
+   "text": "GV",
+   "at": [
+    10.5,
+    25
+   ],
+   "scale": 1,
+   "tone": 1
+  }
+ ]
+}

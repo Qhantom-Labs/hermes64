@@ -226,6 +226,7 @@ func build(room: Dictionary, runtime, resolver) -> void:
 		var placed_node: Node = get_child(get_child_count() - 1)
 		if placed.has("kind"): placed_node.set_meta("placed", str(placed.kind))
 		if bool(placed.get("mounted", false)): placed_node.set_meta("mounted", true)
+		if kit_shell and placed_node is Node3D: KitShells.collect(self, ref, placed_node, str(placed.get("kind", "piece")), bool(placed.get("mounted", false)), w, d)   # FEEL4
 		# MOVE: free-standing authored scenery (fences/railings, columns, rocks,
 		# trees, buildings) blocks like props. Room structure (shell/wall/floor/
 		# ceiling kinds) is the boundary's job; walk-through kits and hung or
@@ -296,6 +297,7 @@ func build(room: Dictionary, runtime, resolver) -> void:
 		var authored: Dictionary = presentation.get("characters", {}).get(cid, {})
 		actor.position = vector(authored.position) if authored.has("position") else character_anchors.get(cid, Vector3(2 + fmod(character_index * 1.5, maxf(1, w - 3)), 0, d * 0.4))
 		actor.rotation_degrees.y = float(authored.get("yaw",180))
+		if authored.has("clip") and actor.has_method("play_clip"): actor.play_clip(str(authored.clip))   # GAPS2 G3 (idle if absent)
 		target_positions[cid] = actor.position
 		register_solid("actor:" + str(cid),"character:" + str(cid),actor,{"actor":true,"animal":c.params.has("coat")})
 		character_index += 1
@@ -304,6 +306,7 @@ func build(room: Dictionary, runtime, resolver) -> void:
 		if c.room == room.id: local_collectibles.append(c)
 	for i in local_collectibles.size():
 		var c: Dictionary = local_collectibles[i]
+		var authored: bool = target_positions.has("collect:" + c.id) or target_positions.has(c.character) or presentation.get("collectibles",{}).get(c.id,{}).has("position")
 		var pos: Vector3 = target_positions.get("collect:" + c.id, target_positions.get(c.character, Vector3(1.5 + fmod(i * 1.4, maxf(1, w - 2)), 0.6, d * 0.65 + floor(i * 1.4 / maxf(1, w - 2)))))
 		pos = vector(presentation.get("collectibles",{}).get(c.id,{}).get("position",[pos.x,pos.y,pos.z]))
 		target_positions["collect:" + c.id] = pos
@@ -313,6 +316,7 @@ func build(room: Dictionary, runtime, resolver) -> void:
 			if visual == null: visual = sphere(self, "collect_" + c.id, pos, 0.24, color("collectible"))
 			else:
 				add_child(visual)
+				if not authored: pos.y = 0.0   # a keepsake model with no authored spot rests on the floor (kit props stand on their base)
 				visual.position = pos
 			visual.set_meta("placed", "collectible")
 	for id in presentation.get("interactions",{}): target_positions[id] = vector(presentation.interactions[id].position)
@@ -328,7 +332,13 @@ func build(room: Dictionary, runtime, resolver) -> void:
 		cam.near = 0.05
 		add_child(cam)
 		camera_nodes.append({"node": cam, "target": vector(anchor.look_at), "id": anchor.id})
+	presentation = preload("res://view/slots.gd").apply(self, theme, presentation)   # L3 texture slots (no-op without theme.texture_slots)
 	compose_exterior(w, d, theme.get("look", {}).get("exterior", {}))
+	sky_signal(presentation.get("sky_signal", {}))
+	# Rain is presentation-only and remains off unless the theme/room asks for it.
+	var Weather = preload("res://view/weather.gd")
+	var rain = Weather.attach(self, Weather.config_from(theme, presentation))
+	if rain != null: rain.set_meta("placed", "weather")
 	target_anchors = target_positions.duplicate()
 	build_solid_bodies()
 	build_boundary(w, d)
@@ -343,6 +353,8 @@ func build(room: Dictionary, runtime, resolver) -> void:
 var scenery_index := 0
 var boundary_outline := PackedVector2Array()
 var boundary_source := ""
+const KitShells = preload("res://view/kit_shells.gd")   # FEEL4
+var kit_outlines := []
 
 static func outline_room_space(outline: Array, w: float, d: float) -> PackedVector2Array:
 	var out := PackedVector2Array()
@@ -373,7 +385,11 @@ func build_boundary(w: float, d: float) -> void:
 	if outline.size() >= 3:
 		raw = outline_room_space(outline, w, d)
 		boundary_source = "shell_outline" if not shell_info.is_empty() else "yard_outline"
+	elif not kit_outlines.is_empty():   # FEEL4: measured kit-shell pieces (view/kit_shells.gd)
+		raw = KitShells.union(kit_outlines)
+		boundary_source = "kit_shell_outline"
 	boundary_outline = boundary_polygon(raw, w, d)
+	if boundary_source == "kit_shell_outline": KitShells.doors_inside(self)
 	# Deliberately NO native bodies: a first version used thin box segments on
 	# its own layer, but capsule recovery against many rotated segments of a
 	# curved wall drifted 0.3 mm with render cadence (Thaw dome replay diverged
@@ -411,6 +427,126 @@ func update_interaction_targets(from: Vector3) -> void:
 	ids.sort()
 	for id in ids:
 		target_positions[id] = Solids.target_point(solid_definitions,target_anchors[id],from)
+
+## ---------------------------------------------------------------- sky signal (room presentation "sky_signal")
+## A projected sign in the clouds, generated in-engine (no image file needed): a bright disc with an emblem, a soft
+## halo and an optional searchlight beam from a point below. The emblem is a placeholder star (points, inner ratio)
+## unless "texture" names a loadable image (res:// or absolute path): then a textured quad fills the disc (the slot
+## a game fills with its own logo). Camera-facing, unshaded, unfogged. Any game can use it (bat-signal style).
+##   {"position": [x,y,z], "size_m": 9, "color": "#ffe9a8", "emblem_color": "#1a1630", "strength": 1.0,
+##    "points": 5, "inner": 0.45, "texture": "", "beam_from": [x,y,z], "beam_width_m": 2.5, "beam_alpha": 0.22}
+func sky_signal(cfg: Dictionary) -> Node3D:
+	if cfg.is_empty() or not cfg.has("position"): return null
+	var root := Node3D.new()
+	root.name = "sky_signal"
+	root.set_meta("placed", "sky")
+	add_child(root)
+	var at := vector(cfg.position)
+	var size := float(cfg.get("size_m", 8.0))
+	var r := size / 2.0
+	var bright := Color.from_string(str(cfg.get("color", "#ffe9a8")), Color(1, 0.91, 0.66))
+	var dark := Color.from_string(str(cfg.get("emblem_color", "#1a1630")), Color(0.1, 0.09, 0.19))
+	var strength := float(cfg.get("strength", 1.0))
+	var st := SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var segs := 24
+	var rim := Color(bright.r, bright.g, bright.b, 0.0)
+	var core := Color(bright.r * strength, bright.g * strength, bright.b * strength, 0.92)
+	for i in segs:      # disc: bright core fading to a soft rim
+		var a0 := TAU * i / segs
+		var a1 := TAU * (i + 1) / segs
+		st.set_color(core); st.add_vertex(Vector3.ZERO)
+		st.set_color(core); st.add_vertex(Vector3(cos(a0), sin(a0), 0) * r * 0.86)
+		st.set_color(core); st.add_vertex(Vector3(cos(a1), sin(a1), 0) * r * 0.86)
+	for i in segs:
+		var a0 := TAU * i / segs
+		var a1 := TAU * (i + 1) / segs
+		for v in [[Vector3(cos(a0), sin(a0), 0) * r * 0.86, core], [Vector3(cos(a0), sin(a0), 0) * r, rim], [Vector3(cos(a1), sin(a1), 0) * r, rim],
+				[Vector3(cos(a0), sin(a0), 0) * r * 0.86, core], [Vector3(cos(a1), sin(a1), 0) * r, rim], [Vector3(cos(a1), sin(a1), 0) * r * 0.86, core]]:
+			st.set_color(v[1]); st.add_vertex(v[0])
+	var tex: Texture2D = null
+	var tex_path := str(cfg.get("texture", ""))
+	if tex_path != "" and ResourceLoader.exists(tex_path):
+		tex = load(tex_path) as Texture2D
+	elif tex_path != "" and FileAccess.file_exists(tex_path):
+		var img: Image = Image.load_from_file(ProjectSettings.globalize_path(tex_path))
+		if img != null and not img.is_empty(): tex = ImageTexture.create_from_image(img)
+	if tex == null:     # placeholder emblem: an N-point star, slightly in front of the disc
+		var pts := clampi(int(cfg.get("points", 5)), 3, 12)
+		var inner := clampf(float(cfg.get("inner", 0.45)), 0.15, 0.9)
+		var ec := Color(dark.r, dark.g, dark.b, 0.95)
+		for i in pts * 2:
+			var a0 := PI / 2 + PI * i / pts
+			var a1 := PI / 2 + PI * (i + 1) / pts
+			var r0 := r * 0.62 * (1.0 if i % 2 == 0 else inner)
+			var r1 := r * 0.62 * (inner if i % 2 == 0 else 1.0)
+			st.set_color(ec); st.add_vertex(Vector3(0, 0, 0.05))
+			st.set_color(ec); st.add_vertex(Vector3(cos(a0) * r0, sin(a0) * r0, 0.05))
+			st.set_color(ec); st.add_vertex(Vector3(cos(a1) * r1, sin(a1) * r1, 0.05))
+	var disc := MeshInstance3D.new()
+	disc.name = "sign"
+	disc.mesh = st.commit()
+	disc.material_override = sky_material(true, false)
+	disc.position = at
+	disc.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	root.add_child(disc)
+	if tex != null:     # textured slot: the game's own emblem image fills the disc
+		var q := MeshInstance3D.new()
+		q.name = "emblem"
+		var qm := QuadMesh.new()
+		qm.size = Vector2(size * 0.78, size * 0.78)
+		qm.center_offset = Vector3(0, 0, 0.05)
+		q.mesh = qm
+		var m := sky_material(true, false)
+		m.albedo_texture = tex
+		m.vertex_color_use_as_albedo = false
+		m.render_priority = 1
+		q.material_override = m
+		q.position = at
+		root.add_child(q)
+	# soft halo around the disc (the pack's additive glow card, camera-facing)
+	var halo := glow_card(at, size * 1.9, bright, 0.55 * strength, 1)
+	remove_child(halo)
+	root.add_child(halo)
+	if cfg.has("beam_from"):     # searchlight: two crossed quads, bright at the lamp, fading toward the disc
+		var from := vector(cfg.beam_from)
+		var bw := float(cfg.get("beam_width_m", 2.5))
+		var ba := float(cfg.get("beam_alpha", 0.22))
+		var axis := at - from
+		var side1 := axis.cross(Vector3.UP).normalized()
+		if side1.length() < 0.1: side1 = Vector3.RIGHT
+		var side2 := axis.cross(side1).normalized()
+		var bs := SurfaceTool.new()
+		bs.begin(Mesh.PRIMITIVE_TRIANGLES)
+		var lamp := Color(bright.r, bright.g, bright.b, ba)
+		var far := Color(bright.r, bright.g, bright.b, ba * 0.35)
+		for s in [side1, side2]:
+			var a0: Vector3 = from - s * bw * 0.12
+			var a1: Vector3 = from + s * bw * 0.12
+			var b0: Vector3 = at - s * r * 0.8
+			var b1: Vector3 = at + s * r * 0.8
+			for v in [[a0, lamp], [a1, lamp], [b1, far], [a0, lamp], [b1, far], [b0, far]]:
+				bs.set_color(v[1]); bs.add_vertex(v[0])
+		var beam := MeshInstance3D.new()
+		beam.name = "beam"
+		beam.mesh = bs.commit()
+		beam.material_override = sky_material(false, true)
+		beam.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		root.add_child(beam)
+	return root
+
+func sky_material(billboard: bool, additive: bool) -> StandardMaterial3D:
+	var m := StandardMaterial3D.new()
+	m.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	m.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	m.vertex_color_use_as_albedo = true
+	m.vertex_color_is_srgb = true      # authored colours are sRGB hex like every other look colour
+	m.cull_mode = BaseMaterial3D.CULL_DISABLED
+	m.disable_fog = true
+	m.no_depth_test = false
+	if additive: m.blend_mode = BaseMaterial3D.BLEND_MODE_ADD
+	if billboard: m.billboard_mode = BaseMaterial3D.BILLBOARD_ENABLED
+	return m
 
 ## ---------------------------------------------------------------- exterior composition (pack look.exterior)
 ## Height of the yard surface at a grid point (playfield 0, then terrace treads), from the kit meta.
@@ -499,6 +635,11 @@ func mounted_piece(ref: String, pos: Vector3, sc: Vector3, yaw: float, kind: Str
 ## the paths, vegetation on the ledges and a particle field. All from pack data; positions are deterministic.
 func compose_exterior(w: float, d: float, ext: Dictionary) -> void:
 	if yard_info.is_empty() or ext.is_empty(): return
+	# SCALE: a scaled room (presentation "layout_dressing": true) is dressed by its layout; the pack's clusters and
+	# path rhythm sit at legacy-room offsets and would land in its clear core. Framing moves beside "clear_core".
+	if bool(presentation.get("layout_dressing", false)):
+		ext = ext.duplicate()
+		for key in ["clusters", "rhythm"]: ext.erase(key)
 	var meta: Dictionary = yard_info.get("meta", {})
 	var outline: Array = meta.get("walkable_outline_gltf", [])
 	var c := Vector2(w / 2, d / 2)
@@ -537,6 +678,11 @@ func compose_exterior(w: float, d: float, ext: Dictionary) -> void:
 		var dist := float(f.get("distance", 4.5))
 		var lateral := float(f.get("side", 1.0)) * dist * tan(deg_to_rad(float(exterior_cam.get("fov", 60)) * 0.5 * 1.15))
 		var fp := cam_p + fwd * dist + right * lateral
+		var core: Array = presentation.get("clear_core", [])
+		if core.size() == 4:   # SCALE: framing stands beside the layout's clear core (same depth), never inside it
+			var m := float(presentation.get("framing_margin_m", 1.6))
+			if fp.x > float(core[0]) - m and fp.x < float(core[2]) + m and fp.y > float(core[1]) - m and fp.y < float(core[3]) + m:
+				fp.x = float(core[0]) - m if lateral < 0.0 else float(core[2]) + m
 		var sc = f.get("scale", 1.0)
 		var s3 := Vector3(sc[0], sc[1], sc[2]) if sc is Array else Vector3(float(sc), float(sc), float(sc))
 		var fnode := mounted_piece(str(f.asset), Vector3(fp.x, yard_height(fp.x, fp.y, w, d), fp.y), s3, hashf(i) * 360.0, "framing")

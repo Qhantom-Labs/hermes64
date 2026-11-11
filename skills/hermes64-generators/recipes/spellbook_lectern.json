@@ -1,0 +1,11 @@
+{
+ "format":"hermes64-recipe/1", "id":"spellbook_lectern", "class":"furniture", "licence":"CC0-1.0",
+ "parameters":{"height":{"type":"number","default":0.9,"minimum":0.7,"maximum":1.15}},
+ "operations":[
+  {"primitive":"box","role":"stone","args":{"cx":0,"cy":0,"cz":0.06,"sx":0.62,"sy":0.56,"sz":0.12}},
+  {"primitive":"box","role":"wood","args":{"cx":0,"cy":0.08,"cz":{"param":"height","mul":0.5},"sx":0.15,"sy":0.15,"sz":{"param":"height"}}},
+  {"primitive":"box","role":"wood","args":{"cx":0,"cy":0,"cz":0,"sx":0.72,"sy":0.48,"sz":0.07},"transform":{"rotate":[-16,0,0],"translate":[0,0,{"param":"height"}]}},
+  {"primitive":"box","role":"book","args":{"cx":-0.16,"cy":0,"cz":0.07,"sx":0.32,"sy":0.36,"sz":0.05},"transform":{"rotate":[-16,0,0],"translate":[0,0,{"param":"height"}]},"mirror":"x"},
+  {"primitive":"box","role":"paper","args":{"cx":-0.15,"cy":0,"cz":0.105,"sx":0.28,"sy":0.32,"sz":0.03},"transform":{"rotate":[-16,0,0],"translate":[0,0,{"param":"height"}]},"mirror":"x"}
+ ]
+}

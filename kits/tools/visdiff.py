@@ -90,10 +90,10 @@ def flag_pairs(items, thr, stats=None, schema=None):
 def main(argv):
     root = argv[0]
     thr = float(argv[argv.index("--min") + 1]) if "--min" in argv else DEFAULT_MIN
-    sd = json.load(open(os.path.join(LANE, "reports", "schema_dump.json")))
+    sd = json.load(open(os.path.join(LANE, "reports", "schema_dump.json"), encoding='utf-8'))
     sd = sd.get("generators", sd)
     groups, classes = {}, {}
-    for line in open(os.path.join(root, "samples.jsonl")):
+    for line in open(os.path.join(root, "samples.jsonl"), encoding='utf-8'):
         r = json.loads(line)
         if r.get("status") != "passed" or not r.get("thumb"):
             continue
@@ -125,7 +125,7 @@ def main(argv):
             gid, pk, len(items), st.get("tested", 0), "-" if mn is None else "%.4f" % mn, st.get("size_only", 0), len(fl)))
     out["flagged_total"] = total_flag
     out["exit_code"] = 3 if total_flag else 0
-    with open(os.path.join(root, "visdiff.json"), "w") as f:
+    with open(os.path.join(root, "visdiff.json"), "w", encoding='utf-8') as f:
         json.dump(out, f, indent=1, sort_keys=True)
     print("VISDIFF TOTAL groups=%d flagged=%d -> exit %d" % (len(groups), total_flag, out["exit_code"]))
     return out["exit_code"]

@@ -1,0 +1,168 @@
+{
+  "prior_ledger": "docs/INTEG5-REPINS.json",
+  "retained_derived_identity_repins": 15,
+  "retained_lowered_identity_helper_guard": true,
+  "retained_thaw_movies": [
+    "a99294463d4b8ec1c579fa07aadc2dd73806ac39afc3b4c5e610277b41a1da3b",
+    "2c52fac575544fe849973c0a8cf2f2321116d4de4db5d6ec0a987f31eba20eae"
+  ],
+  "steps": {
+    "m11": {
+      "prior_tag": "rc3-m10",
+      "accepted_legacy_comparisons": 15,
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": [],
+      "test_inventory_pins": [],
+      "verification_method_change": "plugin stage run as three discovery shards (unchanged merge6_run, existing 1,800 s guard, partition proof); docs/INTEG6-TIMEOUT.md",
+      "note": "Runtime build header substituted in memory only by unchanged cross-runner; original movie bytes and checkpoint state hashes retained."
+    },
+    "m12": {
+      "prior_tag": "rc3-m11",
+      "accepted_legacy_comparisons": 15,
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": [],
+      "test_inventory_pins": [
+        {
+          "file": "tests/test_schema_budget.py",
+          "test": "test_bundled_skills_registered_with_frontmatter_descriptions",
+          "change": "exact registered-skill list +hermes64-generators",
+          "reason": "AGEN owner hunk register-generator-skill registers one skill"
+        }
+      ],
+      "test_configuration": [
+        {
+          "files": [
+            "tests/test_gen_recipe.py",
+            "tests/test_asset_loop.py",
+            "tests/test_no_kit_dependency.py",
+            "tests/test_agen_controls.py",
+            "tests/test_gen_resolver.py",
+            "tests/test_gen_tools.py"
+          ],
+          "change": "HERMES64_TEST_PYTHON (when set) is the configured python_path for sandboxed -I recipe children",
+          "reason": "canonical /usr/bin/python3 keeps NumPy in user-site; INTEG4 AUTHOR rule"
+        }
+      ]
+    },
+    "m13": {
+      "prior_tag": "rc3-m12",
+      "accepted_legacy_comparisons": 15,
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": [],
+      "test_inventory_pins": [
+        {
+          "file": "tests/test_schema_budget.py",
+          "change": "exact registered-skill list +hermes64-places (lane's own edit; union with +hermes64-generators)",
+          "reason": "PLACEMAKER registers one skill"
+        }
+      ]
+    },
+    "m14": {
+      "prior_tag": "rc3-m13",
+      "accepted_legacy_comparisons": 15,
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": [],
+      "derived_verdict_repins": [
+        {
+          "file": "adventure_maker/nbchars/PARITY.json",
+          "field": "fingerprint",
+          "old": "480d4c3db43c93a6cd22ecab9fe21382efe882b3d75f815dfe61a68cdee1eaae",
+          "new": "ee37de2532b9f6f36b11a32d16bf6a71e4feec6ffda86db51a728885b51e17af",
+          "evidence": "nbchars parity --write-verdict on the composed tree: PASS, 37/37 equivalent-within-tolerance, max 9.93e-07 m (unchanged), deterministic; all other fields identical",
+          "reason": "CHARS3/CHARS4 commits (via robots-lane) change nbchars/gen.py, a fingerprinted exporter file; NBCHARS-RESULT documents this re-run as the merge step"
+        }
+      ],
+      "test_inventory_pins": [
+        {
+          "file": "tests/test_rigkit.py",
+          "change": "rig list +human16_v3; bones 16; version 3.0.0; human16_v1/human16_v3 carry combat clips",
+          "reason": "CHARS3 rig kit rigs/human16_v3 arrives with robots-lane"
+        }
+      ]
+    },
+    "m15": {
+      "prior_tag": "rc3-m14",
+      "accepted_legacy_comparisons": 15,
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": [],
+      "test_inventory_pins": []
+    },
+    "m15b1": {
+      "prior_tag": "rc3-m15",
+      "accepted_legacy_comparisons": 15,
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": [],
+      "test_inventory_pins": []
+    },
+    "m15b2": {
+      "prior_tag": "rc3-m15b1",
+      "accepted_legacy_comparisons": 15,
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": [],
+      "test_inventory_pins": [],
+      "derived_verdict_repins": [
+        {
+          "file": "adventure_maker/nbchars/PARITY.json",
+          "field": "fingerprint",
+          "old": "ee37de2532b9f6f36b11a32d16bf6a71e4feec6ffda86db51a728885b51e17af",
+          "new": "404a94f65099999fcb7483f7ad528374902f03ca57ce3759b75fcbee7fa6829b",
+          "evidence": "nbchars parity --write-verdict: PASS, 37/37 equivalent-within-tolerance, max 9.93e-07 m (unchanged); all other fields identical",
+          "reason": "CAST2's documented EXT_MODULES line in nbchars/gen.py (a fingerprinted exporter file)"
+        }
+      ]
+    },
+    "m16": {
+      "prior_tag": "rc3-m15b2",
+      "accepted_legacy_comparisons": 15,
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": [],
+      "test_inventory_pins": [
+        {
+          "file": "tests/test_schema_budget.py",
+          "change": "exact registered-skill list +hermes64-create",
+          "reason": "ORCH owner hunk register-create-skill registers one skill"
+        }
+      ],
+      "test_configuration": [
+        {
+          "files": [
+            "tests/test_create_flow.py"
+          ],
+          "change": "PY = HERMES64_TEST_PYTHON when set (else sys.executable)",
+          "reason": "recipe children run python -I; canonical /usr/bin/python3 keeps NumPy in user-site (M12 rule)"
+        }
+      ],
+      "test_adaptations": [
+        {
+          "file": "tests/test_create_flow.py",
+          "test": "Rooms.test_rooms_compile_check_and_keep_the_door_lane_clear",
+          "change": "cap check reads report.get('tri_estimate_with_appended', report['tri_estimate'])",
+          "reason": "with PLACEMAKER merged the inner room is a placemaker archetype with no appended pieces; same fallback as create_flow report code",
+          "coverage_note": "no create piece is placed in that inner room, so the inside-room door-lane loop has nothing to check in the composed tree"
+        }
+      ]
+    },
+    "export": {
+      "prior_tag": "rc3-m16",
+      "accepted_legacy_comparisons": 15,
+      "new_state_or_input_repins": [],
+      "new_derived_identity_repins": [],
+      "new_schema_validation_repins": [],
+      "test_inventory_pins": [],
+      "product_change": {
+        "file": "adventure_maker/export.py",
+        "commit": "b13aca5b",
+        "change": "release project.godot: [editor] export/convert_text_resources_to_binary=false",
+        "evidence": "two real web+macOS exports of one fresh project: 30/30 files identical (before, same product in scratch: 9/30 differed); goldens and 15/15 replays unchanged"
+      }
+    }
+  }
+}

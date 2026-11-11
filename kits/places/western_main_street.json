@@ -1,0 +1,860 @@
+{
+ "format": "hermes64-place/1",
+ "id": "western_main_street",
+ "name": "Frontier Main Street",
+ "description": "A frontier town's main street: false-front buildings shoulder to shoulder on both lot lines over boardwalks, ranch gateways at each end, a well, hitching posts, troughs, barrels and lantern posts along the boardwalks and a wagon at the edge.",
+ "genres": [
+  "western",
+  "rural"
+ ],
+ "kit": "western",
+ "base_pack": "frontier_town",
+ "look_profile": "street",
+ "exterior": true,
+ "default_mood": "base",
+ "moods": {
+  "base": "base",
+  "golden_hour": "pack:frontier_town_golden",
+  "night": "pack:frontier_town_night",
+  "ember_night": "derive",
+  "purple_dusk": "derive"
+ },
+ "texture_roles": [
+  "wood",
+  "plank",
+  "ground",
+  "roof",
+  "metal",
+  "sky"
+ ],
+ "lighting": {
+  "look_profile": "street",
+  "sky": "wsky.dome (added by the compiler on exteriors) + wsky.mesas__town / wland.butte vistas",
+  "fog": "look profile",
+  "lights": "lantern posts along the boardwalks carry glow roles"
+ },
+ "spawn": {
+  "entrance": "west ranch gateway (door 'west'); the east gateway is the second door",
+  "checkpoint": "1.6 m inside the west gateway"
+ },
+ "clearance": {
+  "rule": "tools.room_clearance between the boardwalk fronts; both gateways, focal approach and fight floor reachable",
+  "overhead_tris": 200,
+  "reserve_tris": 250
+ },
+ "params": {
+  "size": "medium",
+  "clutter": 1
+ },
+ "max_coverage": 0.25,
+ "wants": [
+  "horse",
+  "tumbleweed",
+  "water pump"
+ ],
+ "zones": {
+  "entrance_depth_m": 2.4,
+  "entrance_width_m": 3.0,
+  "path_width_m": 2.4,
+  "nook_m": 3.0,
+  "fight_clear_m": 0
+ },
+ "footprints": [
+  {
+   "size": "small",
+   "plot_cells": [
+    4,
+    4
+   ],
+   "skeleton": [
+    {
+     "key": "wland.ground__main",
+     "block": [
+      -4.0,
+      -4.0
+     ],
+     "yaw": 90,
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_w",
+     "lot": [
+      0.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      1.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      2.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_e",
+     "lot": [
+      3.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_e",
+     "lot": [
+      0.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      1.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      2.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_w",
+     "lot": [
+      3.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.fence__gateway",
+     "lot": [
+      0,
+      2,
+      "w"
+     ]
+    },
+    {
+     "key": "wtown.fence__gateway",
+     "lot": [
+      4,
+      2,
+      "e"
+     ]
+    },
+    {
+     "key": "wsky.mesas__town",
+     "at_m": [
+      8.5,
+      8.5
+     ],
+     "kind": "vista"
+    },
+    {
+     "key": "wland.butte",
+     "at_m": [
+      -27.0,
+      10.0
+     ],
+     "kind": "vista"
+    }
+   ],
+   "frontage_runs": [
+    {
+     "side": "n",
+     "line": 0,
+     "from": 0,
+     "to": 4
+    },
+    {
+     "side": "s",
+     "line": 4,
+     "from": 0,
+     "to": 4
+    }
+   ],
+   "floor_rect_m": [
+    0.5,
+    2.8,
+    16.5,
+    14.2
+   ],
+   "walk_rect_m": [
+    0.5,
+    0.9,
+    16.5,
+    16.1
+   ],
+   "doors": [
+    {
+     "id": "west",
+     "side": "w",
+     "cell": 1.5,
+     "at_m": 8.5
+    },
+    {
+     "id": "east",
+     "side": "e",
+     "cell": 1.5,
+     "at_m": 8.5
+    }
+   ],
+   "entrance": {
+    "id": "west",
+    "side": "w",
+    "at_m": 8.5
+   },
+   "focal_m": [
+    11.0,
+    5.8
+   ],
+   "focal_reach_m": 2.2,
+   "path_via_m": [
+    [
+     6.0,
+     8.5
+    ]
+   ],
+   "fight_m": [
+    7.0,
+    9.6
+   ],
+   "fight_clear_m": 3.6,
+   "min_clear_m": 5.0
+  },
+  {
+   "size": "medium",
+   "plot_cells": [
+    5,
+    4
+   ],
+   "skeleton": [
+    {
+     "key": "wland.ground__main",
+     "block": [
+      -3.5,
+      -4.0
+     ],
+     "yaw": 90,
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_w",
+     "lot": [
+      0.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      1.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      2.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      3.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_e",
+     "lot": [
+      4.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_e",
+     "lot": [
+      0.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      1.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      2.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      3.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_w",
+     "lot": [
+      4.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.fence__gateway",
+     "lot": [
+      0,
+      2,
+      "w"
+     ]
+    },
+    {
+     "key": "wtown.fence__gateway",
+     "lot": [
+      5,
+      2,
+      "e"
+     ]
+    },
+    {
+     "key": "wsky.mesas__town",
+     "at_m": [
+      10.5,
+      8.5
+     ],
+     "kind": "vista"
+    },
+    {
+     "key": "wland.butte",
+     "at_m": [
+      -27.0,
+      10.0
+     ],
+     "kind": "vista"
+    }
+   ],
+   "frontage_runs": [
+    {
+     "side": "n",
+     "line": 0,
+     "from": 0,
+     "to": 5
+    },
+    {
+     "side": "s",
+     "line": 4,
+     "from": 0,
+     "to": 5
+    }
+   ],
+   "floor_rect_m": [
+    0.5,
+    2.8,
+    20.5,
+    14.2
+   ],
+   "walk_rect_m": [
+    0.5,
+    0.9,
+    20.5,
+    16.1
+   ],
+   "doors": [
+    {
+     "id": "west",
+     "side": "w",
+     "cell": 1.5,
+     "at_m": 8.5
+    },
+    {
+     "id": "east",
+     "side": "e",
+     "cell": 1.5,
+     "at_m": 8.5
+    }
+   ],
+   "entrance": {
+    "id": "west",
+    "side": "w",
+    "at_m": 8.5
+   },
+   "focal_m": [
+    13.6,
+    5.8
+   ],
+   "focal_reach_m": 2.2,
+   "path_via_m": [
+    [
+     7.0,
+     8.5
+    ]
+   ],
+   "fight_m": [
+    8.6,
+    9.8
+   ],
+   "fight_clear_m": 4.0,
+   "min_clear_m": 6.0
+  },
+  {
+   "size": "large",
+   "plot_cells": [
+    6,
+    4
+   ],
+   "skeleton": [
+    {
+     "key": "wland.ground__main",
+     "block": [
+      -3.0,
+      -4.0
+     ],
+     "yaw": 90,
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_w",
+     "lot": [
+      0.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      1.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      2.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      3.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      4.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_e",
+     "lot": [
+      5.5,
+      0,
+      "n"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_e",
+     "lot": [
+      0.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      1.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      2.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      3.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk",
+     "lot": [
+      4.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.boardwalk__end_w",
+     "lot": [
+      5.5,
+      4,
+      "s"
+     ],
+     "kind": "floor"
+    },
+    {
+     "key": "wtown.fence__gateway",
+     "lot": [
+      0,
+      2,
+      "w"
+     ]
+    },
+    {
+     "key": "wtown.fence__gateway",
+     "lot": [
+      6,
+      2,
+      "e"
+     ]
+    },
+    {
+     "key": "wsky.mesas__town",
+     "at_m": [
+      12.5,
+      8.5
+     ],
+     "kind": "vista"
+    },
+    {
+     "key": "wland.butte",
+     "at_m": [
+      -27.0,
+      10.0
+     ],
+     "kind": "vista"
+    }
+   ],
+   "frontage_runs": [
+    {
+     "side": "n",
+     "line": 0,
+     "from": 0,
+     "to": 6
+    },
+    {
+     "side": "s",
+     "line": 4,
+     "from": 0,
+     "to": 6
+    }
+   ],
+   "floor_rect_m": [
+    0.5,
+    2.8,
+    24.5,
+    14.2
+   ],
+   "walk_rect_m": [
+    0.5,
+    0.9,
+    24.5,
+    16.1
+   ],
+   "doors": [
+    {
+     "id": "west",
+     "side": "w",
+     "cell": 1.5,
+     "at_m": 8.5
+    },
+    {
+     "id": "east",
+     "side": "e",
+     "cell": 1.5,
+     "at_m": 8.5
+    }
+   ],
+   "entrance": {
+    "id": "west",
+    "side": "w",
+    "at_m": 8.5
+   },
+   "focal_m": [
+    16.4,
+    5.8
+   ],
+   "focal_reach_m": 2.2,
+   "path_via_m": [
+    [
+     8.0,
+     8.5
+    ]
+   ],
+   "fight_m": [
+    10.0,
+    9.8
+   ],
+   "fight_clear_m": 4.4,
+   "min_clear_m": 6.0
+  }
+ ],
+ "groups": [
+  {
+   "id": "well",
+   "rule": "focal-point",
+   "tag": {
+    "kind": "well"
+   },
+   "prefer": [
+    "wprop.well"
+   ],
+   "count": [
+    1,
+    1
+   ],
+   "required": true,
+   "tier": "floor",
+   "face": "entrance"
+  },
+  {
+   "id": "buildings",
+   "rule": "frontage-row",
+   "tag": {
+    "kind": [
+     "shop",
+     "house",
+     "inn",
+     "church"
+    ]
+   },
+   "prefer": [
+    "wtown.saloon__plain",
+    "wtown.facade",
+    "wtown.facade__b_stepped",
+    "wtown.store__narrow",
+    "wtown.facade__c_arched",
+    "wtown.facade__d_gabled",
+    "wtown.sheriff__office",
+    "wtown.facade__a_square"
+   ],
+   "variety": 7,
+   "count": [
+    1,
+    1
+   ],
+   "tier": "lot",
+   "budget_share": 0.55,
+   "fill": 0.85
+  },
+  {
+   "id": "hitching",
+   "rule": "against-wall",
+   "walls": [
+    "n",
+    "s"
+   ],
+   "tag": {
+    "kind": "fence",
+    "keys": [
+     "wtown.hitching_post"
+    ]
+   },
+   "prefer": [
+    "wtown.hitching_post"
+   ],
+   "avoid": [
+    "wtown.fence",
+    "wtown.fence__broken",
+    "wtown.fence__picket",
+    "wtown.fence__gateway"
+   ],
+   "count": [
+    1,
+    3
+   ],
+   "spacing_m": 1.6,
+   "tier": "floor"
+  },
+  {
+   "id": "lanterns",
+   "rule": "against-wall",
+   "walls": [
+    "n",
+    "s"
+   ],
+   "tag": {
+    "kind": "lantern"
+   },
+   "prefer": [
+    "wprop.lantern__post"
+   ],
+   "count": [
+    1,
+    3
+   ],
+   "spacing_m": 3.0,
+   "tier": "floor",
+   "keep_from_entrance_m": 7.0
+  },
+  {
+   "id": "troughs",
+   "rule": "against-wall",
+   "walls": [
+    "n",
+    "s"
+   ],
+   "tag": {
+    "kind": "trough"
+   },
+   "prefer": [
+    "wprop.trough"
+   ],
+   "count": [
+    0,
+    2
+   ],
+   "spacing_m": 1.2,
+   "tier": "floor"
+  },
+  {
+   "id": "barrels",
+   "rule": "against-wall",
+   "walls": [
+    "n",
+    "s"
+   ],
+   "tag": {
+    "kind": [
+     "barrel",
+     "crate"
+    ]
+   },
+   "prefer": [
+    "wprop.barrel",
+    "wprop.barrel__water",
+    "wprop.crate",
+    "wprop.crate__slats"
+   ],
+   "variety": 4,
+   "count": [
+    1,
+    5
+   ],
+   "spacing_m": 0.3,
+   "tier": "floor"
+  },
+  {
+   "id": "board",
+   "rule": "against-wall",
+   "walls": [
+    "n",
+    "s"
+   ],
+   "tag": {
+    "kind": "sign"
+   },
+   "prefer": [
+    "wprop.wanted_board"
+   ],
+   "count": [
+    0,
+    1
+   ],
+   "tier": "floor"
+  },
+  {
+   "id": "wagon",
+   "rule": "cluster",
+   "nooks": [
+    "ne",
+    "se"
+   ],
+   "tag": {
+    "kind": "cart"
+   },
+   "prefer": [
+    "wprop.wagon",
+    "wprop.wagon__buckboard"
+   ],
+   "avoid": [
+    "wprop.wagon__broken"
+   ],
+   "variety": 2,
+   "count": [
+    0,
+    1
+   ],
+   "tier": "floor",
+   "snap90": true
+  }
+ ]
+}

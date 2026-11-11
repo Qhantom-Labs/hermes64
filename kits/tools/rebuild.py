@@ -26,7 +26,7 @@ def main(argv):
     ap.add_argument("--report", required=True)
     a = ap.parse_args(argv)
     root = os.path.abspath(a.root)
-    jobs = json.load(open(a.jobs))
+    jobs = json.load(open(a.jobs, encoding='utf-8'))
     out = {"packs": {}, "builds": [], "kits": {}}
     reg = pipeline.load_generators()
     from core.packs import CORE_CLASSES
@@ -55,7 +55,7 @@ def main(argv):
             row["textures"][t] = {"file": os.path.relpath(tpa, root), "size": list(tw.get("size", [])) if isinstance(tw, dict) else None}
         out["builds"].append(row)
         print("REBUILD", st.upper(), gid, pk, preset, "tris=%s" % rep.get("tri_count"), rep.get("error") or "", row["fails"] or "")
-    json.dump(out, open(a.report, "w"), indent=1, sort_keys=True, default=str)
+    json.dump(out, open(a.report, "w", encoding='utf-8'), indent=1, sort_keys=True, default=str)
     bad = [b for b in out["builds"] if b["status"] != "passed"]
     print("REBUILD TOTAL builds=%d failed=%d packs=%d" % (len(out["builds"]), len(bad), len(out["packs"])))
     return 3 if bad else 0

@@ -1,0 +1,43 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "hermes64-mask/1.0.0",
+ "title": "hermes64-mask/1: a texture slot value drawn as a small mask recipe",
+ "description": "Validated in-process by kits/core/mask_recipe.validate (which is authoritative and also enforces: total canonical JSON <= 8192 bytes; tone names must belong to the slot's pack ramp; tone/background indices < len(tones); a grid must fit its slot cell by an integer scale with the same aspect). No image data, no file references.",
+ "type": "object",
+ "additionalProperties": false,
+ "required": ["format", "grid", "tones", "prims"],
+ "properties": {
+  "format": {"const": "hermes64-mask/1"},
+  "name": {"type": "string", "maxLength": 64, "pattern": "^[^/\\\\]*$"},
+  "grid": {"enum": [16, 32, 64]},
+  "rows": {"enum": [8, 16, 32, 64], "description": "Raster rows; default = grid."},
+  "tones": {"type": "array", "minItems": 1, "maxItems": 3, "uniqueItems": true,
+            "items": {"type": "string", "pattern": "^[a-z][a-z0-9_]{0,15}$"}},
+  "background": {"type": "integer", "minimum": 0, "maximum": 2, "default": 0},
+  "prims": {"type": "array", "maxItems": 64, "items": {"oneOf": [
+   {"$ref": "#/$defs/rect"}, {"$ref": "#/$defs/disc"}, {"$ref": "#/$defs/poly"},
+   {"$ref": "#/$defs/stroke"}, {"$ref": "#/$defs/text5x7"}]}}
+ },
+ "$defs": {
+  "num": {"type": "number", "minimum": -128, "maximum": 128},
+  "point": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"$ref": "#/$defs/num"}},
+  "tone": {"type": "integer", "minimum": 0, "maximum": 2},
+  "rect": {"type": "object", "additionalProperties": false, "required": ["op", "at", "size", "tone"],
+           "properties": {"op": {"const": "rect"}, "at": {"$ref": "#/$defs/point"},
+                          "size": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "minimum": 0, "maximum": 128}},
+                          "tone": {"$ref": "#/$defs/tone"}}},
+  "disc": {"type": "object", "additionalProperties": false, "required": ["op", "at", "r", "tone"],
+           "properties": {"op": {"const": "disc"}, "at": {"$ref": "#/$defs/point"},
+                          "r": {"type": "number", "minimum": 0, "maximum": 128}, "tone": {"$ref": "#/$defs/tone"}}},
+  "poly": {"type": "object", "additionalProperties": false, "required": ["op", "points", "tone"],
+           "properties": {"op": {"const": "poly"}, "points": {"type": "array", "minItems": 3, "maxItems": 32, "items": {"$ref": "#/$defs/point"}},
+                          "tone": {"$ref": "#/$defs/tone"}}},
+  "stroke": {"type": "object", "additionalProperties": false, "required": ["op", "points", "tone"],
+             "properties": {"op": {"const": "stroke"}, "points": {"type": "array", "minItems": 2, "maxItems": 32, "items": {"$ref": "#/$defs/point"}},
+                            "width": {"type": "number", "minimum": 0.5, "maximum": 8, "default": 1}, "tone": {"$ref": "#/$defs/tone"}}},
+  "text5x7": {"type": "object", "additionalProperties": false, "required": ["op", "text", "at", "tone"],
+              "properties": {"op": {"const": "text5x7"}, "text": {"type": "string", "minLength": 1, "maxLength": 12, "pattern": "^[A-Z0-9 ]+$"},
+                             "at": {"$ref": "#/$defs/point"}, "scale": {"type": "integer", "minimum": 1, "maximum": 4, "default": 1},
+                             "tone": {"$ref": "#/$defs/tone"}}}
+ }
+}

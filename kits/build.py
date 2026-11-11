@@ -3,6 +3,7 @@
   blender -b --factory-startup --python build.py -- --id furn.table --pack polar_pod \
       [--preset NAME] [--params JSON] [--seed N] --out OUT.glb [--tex-dir DIR]
   blender -b --factory-startup --python build.py -- --batch JOBS.json --out-dir DIR
+  python3 build.py --builder python --id ID --pack MOOD_ID --pack-file PATH/pack.json --out OUT.glb   (mood/project pack)
 
 Exit 0 = built and passed validators; 2 = rejected input (no file written); 3 = built but failed
 validation (GLB deleted, OUT.glb.json explains); 4 = internal build error.
@@ -29,6 +30,7 @@ def main(argv):
     ap.add_argument("--builder", choices=["python", "blender", "auto"], default="blender")
     ap.add_argument("--id")
     ap.add_argument("--pack")
+    ap.add_argument("--pack-file", default=None, help="pack.json path (a project / mood pack); --pack is its id")
     ap.add_argument("--preset", default=None)
     ap.add_argument("--params", default="{}")
     ap.add_argument("--seed", type=int, default=0)
@@ -38,18 +40,18 @@ def main(argv):
     ap.add_argument("--out-dir", default=None)
     a = ap.parse_args(argv)
     if a.batch:
-        jobs = json.load(open(a.batch))
+        jobs = json.load(open(a.batch, encoding='utf-8'))
         results = []
         worst = 0
         for j in jobs:
             out = os.path.join(a.out_dir, j["out"])
             st, rep = pipeline.build_one(j["id"], j["pack"], j.get("preset"), j.get("params", {}), j.get("seed", 0),
-                                         out, tex_dir=a.tex_dir, builder=a.builder)
+                                         out, tex_dir=a.tex_dir, builder=a.builder, pack_path=j.get("pack_file", a.pack_file))
             if st != "rejected":
                 pipeline.write_sidecar(out, st, rep)
             results.append({"out": j["out"], "status": st, "error": rep.get("error")})
             worst = max(worst, CODES[st])
-        json.dump(results, open(os.path.join(a.out_dir, "batch_result.json"), "w"), indent=1)
+        json.dump(results, open(os.path.join(a.out_dir, "batch_result.json"), "w", encoding='utf-8'), indent=1)
         print("BATCH", json.dumps({s: sum(1 for r in results if r["status"] == s) for s in CODES}))
         return worst
     if not (a.id and a.pack and a.out):
@@ -60,7 +62,11 @@ def main(argv):
     except Exception as e:
         print("REJECTED: --params is not JSON: %s" % e)
         return 2
-    st, rep = pipeline.build_one(a.id, a.pack, a.preset, params, a.seed, os.path.abspath(a.out), tex_dir=a.tex_dir, builder=a.builder)
+    if a.pack_file and not os.path.isfile(a.pack_file):
+        print("REJECTED: --pack-file %s does not exist" % a.pack_file)
+        return 2
+    st, rep = pipeline.build_one(a.id, a.pack, a.preset, params, a.seed, os.path.abspath(a.out), tex_dir=a.tex_dir,
+                                 builder=a.builder, pack_path=os.path.abspath(a.pack_file) if a.pack_file else None)
     if st == "rejected":
         print("REJECTED:", rep.get("error"))
         return 2

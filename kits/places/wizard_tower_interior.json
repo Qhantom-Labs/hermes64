@@ -1,0 +1,435 @@
+{
+ "format": "hermes64-place/1",
+ "id": "wizard_tower_interior",
+ "name": "Wizard's Tower Room",
+ "description": "A wizard's stone tower room: a cauldron at the heart, crystals beside it, book shelves on the walls, a reading table with candles, chests and stores in the corners and, in the larger room, a spiral stair up the tower.",
+ "genres": [
+  "fantasy",
+  "wizard",
+  "magic",
+  "medieval"
+ ],
+ "kit": "medieval",
+ "base_pack": "castle_keep",
+ "look_profile": "hall",
+ "exterior": false,
+ "default_mood": "purple_dusk",
+ "moods": {
+  "base": "base",
+  "purple_dusk": "derive",
+  "ember_night": "derive",
+  "golden_hour": "derive",
+  "deep_sea": "derive"
+ },
+ "texture_roles": [
+  "stone",
+  "floor",
+  "wood",
+  "cloth",
+  "metal",
+  "glow"
+ ],
+ "lighting": {
+  "look_profile": "hall (both sizes; the dungeon profile fog covered 33-35% of the small room in proof run 2)",
+  "sky": null,
+  "fog": "look profile",
+  "lights": "torch sockets mounted by the compiler; one hanging lantern; the cauldron and crystals carry glow roles",
+  "notes": "small room: cst.hall__dungeon has no ceiling of its own, so the taproom beam ceiling vlg.ceiling (3x2) closes it at 3.15-3.43 m"
+ },
+ "spawn": {
+  "entrance": "the shell's one cut door (west in the small room, south in the medium room)",
+  "checkpoint": "1.6 m inside the entrance door"
+ },
+ "clearance": {
+  "rule": "tools.room_clearance from the entrance; door, focal approach and fight floor reachable",
+  "overhead_tris": 120,
+  "reserve_tris": 300
+ },
+ "params": {
+  "size": "medium",
+  "clutter": 1
+ },
+ "max_coverage": 0.3,
+ "wants": [
+  "potion",
+  "spellbook",
+  "telescope",
+  "rune circle",
+  "wand",
+  "rotunda"
+ ],
+ "zones": {
+  "entrance_depth_m": 2.0,
+  "entrance_width_m": 2.4,
+  "path_width_m": 1.6,
+  "nook_m": 3.0,
+  "fight_clear_m": 0
+ },
+ "footprints": [
+  {
+   "size": "small",
+   "plot_cells": [
+    3,
+    2
+   ],
+   "look_profile": "hall",
+   "wall_height": 3.4,
+   "ceiling_y": 3.1,
+   "skeleton": [
+    {
+     "key": "cst.hall__dungeon",
+     "block": [
+      0,
+      0
+     ]
+    },
+    {
+     "key": "vlg.ceiling",
+     "block": [
+      0,
+      0
+     ]
+    }
+   ],
+   "floor_rect_m": [
+    1.0,
+    1.0,
+    12.0,
+    8.0
+   ],
+   "doors": [
+    {
+     "id": "entrance",
+     "side": "w",
+     "cell": 0,
+     "at_m": 2.5
+    }
+   ],
+   "entrance": {
+    "id": "entrance",
+    "side": "w",
+    "at_m": 2.5
+   },
+   "focal_m": [
+    8.6,
+    4.6
+   ],
+   "focal_reach_m": 1.8,
+   "fight_m": [
+    5.6,
+    5.4
+   ],
+   "fight_clear_m": 2.6,
+   "min_clear_m": 2.6,
+   "wall_sockets": {
+    "n0": [
+     2.5,
+     1.0
+    ],
+    "n1": [
+     6.5,
+     1.0
+    ],
+    "n2": [
+     10.5,
+     1.0
+    ],
+    "e0": [
+     12.0,
+     2.5
+    ],
+    "e1": [
+     12.0,
+     6.5
+    ],
+    "s1": [
+     6.5,
+     8.0
+    ]
+   }
+  },
+  {
+   "size": "medium",
+   "plot_cells": [
+    3,
+    4
+   ],
+   "wall_height": 6.0,
+   "ceiling_y": 4.6,
+   "skeleton": [
+    {
+     "key": "cst.hall",
+     "block": [
+      0,
+      0
+     ]
+    },
+    {
+     "key": "cst.ceiling__vault",
+     "block": [
+      0,
+      0
+     ]
+    }
+   ],
+   "floor_rect_m": [
+    1.0,
+    1.0,
+    12.0,
+    16.0
+   ],
+   "doors": [
+    {
+     "id": "entrance",
+     "side": "s",
+     "cell": 1,
+     "at_m": 6.5
+    }
+   ],
+   "entrance": {
+    "id": "entrance",
+    "side": "s",
+    "at_m": 6.5
+   },
+   "focal_m": [
+    6.5,
+    5.6
+   ],
+   "focal_reach_m": 1.9,
+   "fight_m": [
+    6.5,
+    10.6
+   ],
+   "fight_clear_m": 4.0,
+   "min_clear_m": 4.0,
+   "wall_sockets": {
+    "n1": [
+     6.5,
+     1.0
+    ],
+    "e0": [
+     12.0,
+     2.5
+    ],
+    "e2": [
+     12.0,
+     10.5
+    ],
+    "w0": [
+     1.0,
+     2.5
+    ],
+    "w2": [
+     1.0,
+     10.5
+    ],
+    "s0": [
+     2.5,
+     16.0
+    ],
+    "s2": [
+     10.5,
+     16.0
+    ]
+   }
+  }
+ ],
+ "groups": [
+  {
+   "id": "cauldron",
+   "rule": "focal-point",
+   "tag": {
+    "kind": "cauldron"
+   },
+   "prefer": [
+    "mprop.cauldron"
+   ],
+   "count": [
+    1,
+    1
+   ],
+   "required": true,
+   "tier": "floor",
+   "face": "entrance"
+  },
+  {
+   "id": "stair",
+   "rule": "cluster",
+   "sizes": [
+    "medium"
+   ],
+   "nooks": [
+    "ne",
+    "nw"
+   ],
+   "tag": {
+    "kind": "stairs",
+    "keys": [
+     "cst.spiral_stair"
+    ]
+   },
+   "prefer": [
+    "cst.spiral_stair"
+   ],
+   "count": [
+    1,
+    1
+   ],
+   "tier": "floor"
+  },
+  {
+   "id": "crystals",
+   "rule": "flanking-focal",
+   "tag": {
+    "kind": "crystal"
+   },
+   "prefer": [
+    "alien.crystal__small",
+    "dprop.crystal",
+    "alien.crystal"
+   ],
+   "count": [
+    2,
+    2
+   ],
+   "lateral_m": 2.0,
+   "tier": "floor"
+  },
+  {
+   "id": "shelves",
+   "rule": "wall-mount",
+   "tag": {
+    "kind": "shelf"
+   },
+   "prefer": [
+    "mprop.shelf__books",
+    "mprop.shelf"
+   ],
+   "count": [
+    2,
+    5
+   ],
+   "tier": "wall"
+  },
+  {
+   "id": "table",
+   "rule": "against-wall",
+   "tag": {
+    "kind": "table",
+    "place": "indoor"
+   },
+   "prefer": [
+    "mprop.table",
+    "mprop.table__round"
+   ],
+   "count": [
+    1,
+    2
+   ],
+   "spacing_m": 0.8,
+   "tier": "floor"
+  },
+  {
+   "id": "candles",
+   "rule": "on-top",
+   "on": "table",
+   "tag": {
+    "kind": "vessel",
+    "keys": [
+     "mprop.tableware__candles"
+    ]
+   },
+   "prefer": [
+    "mprop.tableware__candles"
+   ],
+   "count": [
+    1,
+    2
+   ],
+   "tier": "table"
+  },
+  {
+   "id": "chests",
+   "rule": "against-wall",
+   "tag": {
+    "kind": "chest"
+   },
+   "prefer": [
+    "mprop.chest",
+    "mprop.chest__open"
+   ],
+   "variety": 2,
+   "count": [
+    0,
+    2
+   ],
+   "spacing_m": 0.5,
+   "tier": "floor"
+  },
+  {
+   "id": "lantern",
+   "rule": "ceiling",
+   "tag": {
+    "kind": "lantern"
+   },
+   "prefer": [
+    "mprop.lantern_hung__hanging"
+   ],
+   "count": [
+    1,
+    2
+   ],
+   "tier": "ceiling"
+  },
+  {
+   "id": "shards",
+   "rule": "scatter",
+   "tag": {
+    "kind": "crystal"
+   },
+   "prefer": [
+    "dprop.crystal",
+    "alien.crystal__small"
+   ],
+   "variety": 2,
+   "count": [
+    0,
+    3
+   ],
+   "spacing_m": 1.2,
+   "tier": "floor"
+  },
+  {
+   "id": "stores",
+   "rule": "cluster",
+   "nooks": [
+    "sw",
+    "se",
+    "nw",
+    "ne"
+   ],
+   "clusters": 2,
+   "tag": {
+    "kind": [
+     "sack",
+     "barrel",
+     "basket",
+     "crate"
+    ]
+   },
+   "prefer": [
+    "mprop.sack__pile",
+    "mprop.basket",
+    "mprop.barrel",
+    "mprop.crate__small"
+   ],
+   "variety": 4,
+   "count": [
+    0,
+    4
+   ],
+   "spacing_m": 0.3,
+   "tier": "floor"
+  }
+ ]
+}

@@ -40,7 +40,7 @@ func run(view, replay_path: String, directory: String) -> void:
 	for trace in replay.traces:
 		view.runtime.configure(view.runtime.game)
 		view.enter_room("")
-		view.last_text = view.runtime.rooms[view.runtime.state.location].description
+		view.last_text = view.boxed(view.runtime.rooms[view.runtime.state.location].description)
 		view.refresh()
 		await room_capture(view, directory)
 		for step in trace.steps:

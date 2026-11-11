@@ -57,7 +57,9 @@ def _default_candidates(tool, default, platform=None, env=None):
     """Default search order. For python, the interpreter Hermes itself runs under comes first:
     it is the one known to carry numpy/Pillow, while a bare `python3` on PATH often resolves to
     an interpreter without them (and the plugin runs it in isolated mode, so user-site packages
-    do not count). A configured python_path always wins and never falls back silently.
+    do not count). Under the Hermes launcher that is its environment's python, not the bare base
+    interpreter in sys.executable (platforms.environment_pythons; BFIX).
+    A configured python_path always wins and never falls back silently.
     HERMES64_GODOT / HERMES64_BLENDER / HERMES64_PYTHON come before the defaults on every platform;
     on Windows the defaults are platforms.candidates (LOCALAPPDATA, Program Files, winget, scoop, PATH)."""
     first = [platforms.override(tool, env)] if platforms.override(tool, env) else []
@@ -65,9 +67,10 @@ def _default_candidates(tool, default, platform=None, env=None):
         return tuple(platforms.candidates(tool, platform, env))
     if tool == 'python':
         host = sys.executable
+        envs = tuple(platforms.environment_pythons(platform)) if env is None else ()
         if host and sys.version_info >= (3, 9):
-            return tuple(first) + (host, 'python3')
-        return tuple(first) + ('python3',)
+            return tuple(first) + envs + (host, 'python3')
+        return tuple(first) + envs + ('python3',)
     if tool == 'godot':
         # Keep explicit/configured and env overrides ahead of verified cached Godot.
         # Windows cache discovery is in platforms.godot_candidates; inventories stay pure.

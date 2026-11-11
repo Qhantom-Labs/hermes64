@@ -45,7 +45,7 @@ def main(argv):
         return 2
     os.makedirs(root, exist_ok=True)
     os.makedirs(tmp, exist_ok=True)
-    lines = open(os.path.join(root, "samples.jsonl"), "w")
+    lines = open(os.path.join(root, "samples.jsonl"), "w", encoding='utf-8')
     summary = {"tag": a.tag, "n_per_generator_per_pack": a.n, "generators": {}, "started": time.strftime("%Y-%m-%d %H:%M:%S"),
                "fixed_params": fixed}
     thumbs = {}
@@ -95,7 +95,7 @@ def main(argv):
     summary["totals"] = tot
     bad = tot["failed"] + tot["error"] + tot["rejected"]
     summary["exit_code"] = 3 if bad else 0
-    json.dump(summary, open(os.path.join(root, "summary.json"), "w"), indent=1, sort_keys=True)
+    json.dump(summary, open(os.path.join(root, "summary.json"), "w", encoding='utf-8'), indent=1, sort_keys=True)
     if not a.keep_glb:
         shutil.rmtree(tmp, ignore_errors=True)
     print("SWEEP TOTAL tag=%s samples=%d passed=%d failed=%d error=%d rejected=%d -> exit %d" % (

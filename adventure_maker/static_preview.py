@@ -118,7 +118,7 @@ def capture(frames, out, godot=None, size=(320,240), allow_software=False, timeo
         path = out/key.lower(); path.mkdir(exist_ok=True); env[key] = str(path)
     argv = [str(Path(exe).resolve()),'--path',str(runtime),'--resolution','320x240',
             '--script','res://noblender_capture.gd','--',str(job)]
-    with (out/'godot.log').open('w') as log:
+    with (out/'godot.log').open('w', encoding='utf-8') as log:
         proc = subprocess.run(argv,cwd=out,env=env,stdout=log,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,timeout=timeout)
     (out/'process.json').write_bytes(json.dumps({'argv':argv,'returncode':proc.returncode},indent=1).encode('utf-8'))
     if proc.returncode or not report_path.exists():
