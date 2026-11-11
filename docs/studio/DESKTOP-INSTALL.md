@@ -1,8 +1,8 @@
 # Hermes64 Studio in Hermes Desktop: install, rollback, keyboard
 
-Verified on a real Hermes Desktop: a second, throwaway instance of the same build Dylan runs
+Verified on a real Hermes Desktop: a second, throwaway instance of the same build the owner runs
 (`apps/desktop/dist`, identical `hermes-build.json` to `release/mac-arm64/Hermes.app`, Electron 44.9.3)
-with a private HOME, HERMES_HOME and Electron profile under `cache/scratch`. Never in Dylan's daily app
+with a private HOME, HERMES_HOME and Electron profile under `cache/scratch`. Never in the owner's daily app
 or profile. Commands, outputs and screenshots: `DESKTOP-RESULT.md`. Claims taken from host source but
 not exercised are marked *(source)*.
 
@@ -38,7 +38,7 @@ Host calls used: `ctx.rest` (own backend), `ctx.os.revealPath` (Open folder), `c
 (fallback only), `ctx.storage`, `host.navigate`, `host.newChat`, `host.composer.setDraft('new', …)` +
 `host.composer.focus('new')` (NEW GAME; never `submit`), `host.notify`/`notifyError`, `SandboxedFrame` (web builds).
 
-## Install (Dylan runs this; it includes one backend restart)
+## Install (the owner runs this; it includes one backend restart)
 
 1. **Link the package** (development) or install it as usual:
    ```bash
@@ -50,7 +50,7 @@ Host calls used: `ctx.rest` (own backend), `ctx.os.revealPath` (Open folder), `c
      enabled:
        - hermes64
    ```
-3. **Restart the Hermes backend** so the backend routes mount. This is the only restart, and it is Dylan's call.
+3. **Restart the Hermes backend** so the backend routes mount. This is the only restart, and it is the owner's call.
 4. **Switch the desktop half on:** **Capabilities ▸ Plugins**, search `hermes64`, switch **Hermes64 Studio** On.
    The STUDIO tab and the Studio row appear at once, with no app restart.
 5. **Choose the projects folder:** the gear on the card (**Settings: Hermes64 Studio**) or

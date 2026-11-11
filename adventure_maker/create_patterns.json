@@ -34,13 +34,14 @@
        {"key": "vlg.tavern__doorway", "door_to": "@door", "kind": "landmark"},
        {"key": "vlg.wall", "edge": [3, 0, "e"], "kind": "wall"}, {"key": "vlg.wall", "edge": [3, 1, "e"], "kind": "wall"},
        {"key": "vlg.wall", "edge": [3, 2, "e"], "kind": "wall"}, {"key": "vlg.wall", "edge": [3, 3, "e"], "kind": "wall"},
-       {"key": "mter.backdrop", "at_m": [8.5, 8.5], "scale": 0.2, "kind": "backdrop"}
+       {"key": "mter.backdrop", "at_m": [8.5, 8.5], "scale": 0.2, "kind": "backdrop"},
+       {"key": "cst.brazier", "at_m": [4.0, 12.0]}, {"key": "cst.brazier", "at_m": [13.2, 10.0]}
       ],
       "doors": [{"id": "@door", "side": "n", "cell": 1}],
       "camera": {"position": [15.6, 4.6, 16.4], "look_at": [6.0, 1.4, 4.0], "fov": 60}},
      "door_point_m": [6.0, 0.5], "centre_m": [8.5, 9.0], "npc_m": [11.5, 12.5], "npc_yaw": -150,
      "dress_rect_m": [1.5, 3.5, 15.0, 16.0],
-     "blocked_m": [[0.0, -6.0, 17.0, 2.6], [15.4, 0.0, 17.5, 17.0]],
+     "blocked_m": [[0.0, -6.0, 17.0, 2.6], [15.4, 0.0, 17.5, 17.0], [3.2, 11.2, 4.8, 12.8], [12.4, 9.2, 14.0, 10.8]],
      "vista_m": [[10.5, -11.0, 0], [-6.0, 6.0, 90], [24.0, 10.0, -90], [-6.0, 14.0, 90]],
      "landmark_vista_m": [-7.0, 8.5, 90, 2]},
     {"id": "plaza_snow", "source": "same skeleton with the shipped snow ground pieces", "tags": ["snow", "winter"],
@@ -56,13 +57,14 @@
        {"key": "vlg.tavern__doorway", "door_to": "@door", "kind": "landmark"},
        {"key": "vlg.wall", "edge": [3, 0, "e"], "kind": "wall"}, {"key": "vlg.wall", "edge": [3, 1, "e"], "kind": "wall"},
        {"key": "vlg.wall", "edge": [3, 2, "e"], "kind": "wall"}, {"key": "vlg.wall", "edge": [3, 3, "e"], "kind": "wall"},
-       {"key": "mter.backdrop", "at_m": [8.5, 8.5], "scale": 0.2, "kind": "backdrop"}
+       {"key": "mter.backdrop", "at_m": [8.5, 8.5], "scale": 0.2, "kind": "backdrop"},
+       {"key": "cst.brazier", "at_m": [4.0, 12.0]}, {"key": "cst.brazier", "at_m": [13.2, 10.0]}
       ],
       "doors": [{"id": "@door", "side": "n", "cell": 1}],
       "camera": {"position": [15.6, 4.6, 16.4], "look_at": [6.0, 1.4, 4.0], "fov": 60}},
      "door_point_m": [6.0, 0.5], "centre_m": [8.5, 9.0], "npc_m": [11.5, 12.5], "npc_yaw": -150,
      "dress_rect_m": [1.5, 3.5, 15.0, 16.0],
-     "blocked_m": [[0.0, -6.0, 17.0, 2.6], [15.4, 0.0, 17.5, 17.0]],
+     "blocked_m": [[0.0, -6.0, 17.0, 2.6], [15.4, 0.0, 17.5, 17.0], [3.2, 11.2, 4.8, 12.8], [12.4, 9.2, 14.0, 10.8]],
      "vista_m": [[10.5, -11.0, 0], [-6.0, 6.0, 90], [24.0, 10.0, -90], [-6.0, 14.0, 90]],
      "landmark_vista_m": [-7.0, 8.5, 90, 2]}
    ],
@@ -70,19 +72,21 @@
     {"id": "hall", "source": "tools/medievalkit_demo.py plans()[3] throne_room, dressing removed",
      "tags": ["castle", "tower", "wizard", "hall", "throne", "keep", "fantasy", "magic", "temple"],
      "plan": {"look_profile": "hall", "wall_height": 7.0, "plot_cells": [3, 4],
-      "pieces": [{"key": "cst.hall__throne", "block": [0, 0]}, {"key": "cst.ceiling__throne", "block": [0, 0]}],
+      "pieces": [{"key": "cst.hall__throne", "block": [0, 0]}, {"key": "cst.ceiling__throne", "block": [0, 0]},
+                 {"key": "cst.brazier", "at_m": [3.2, 12.0]}, {"key": "cst.brazier", "at_m": [9.8, 12.0]}],
       "doors": [{"id": "@door", "side": "s", "cell": 1}],
       "camera": {"position": [6.5, 4.6, 16.0], "look_at": [6.5, 2.0, 2.0], "fov": 60}},
      "door_point_m": [6.0, 15.5], "centre_m": [6.5, 9.5], "npc_m": [9.0, 4.5], "npc_yaw": 200,
-     "dress_rect_m": [1.6, 1.4, 11.4, 13.6], "blocked_m": [], "vista_m": []},
+     "dress_rect_m": [1.6, 1.4, 11.4, 13.6], "blocked_m": [[2.4, 11.2, 4.0, 12.8], [9.0, 11.2, 10.6, 12.8]], "vista_m": []},
     {"id": "taproom", "source": "tools/medievalkit_demo.py plans()[1] tavern, dressing removed",
      "tags": ["house", "cottage", "tavern", "inn", "village", "haunted", "horror", "lighthouse", "chapel", "cozy", "mystery"],
      "plan": {"look_profile": "tavern", "wall_height": 3.4, "plot_cells": [3, 2],
-      "pieces": [{"key": "vlg.room__taproom", "block": [0, 0]}, {"key": "vlg.ceiling", "block": [0, 0]}],
+      "pieces": [{"key": "vlg.room__taproom", "block": [0, 0]}, {"key": "vlg.ceiling", "block": [0, 0]},
+                 {"key": "cst.brazier", "at_m": [9.8, 5.4]}, {"key": "cst.brazier", "at_m": [3.0, 4.0]}],
       "doors": [{"id": "@door", "side": "s", "cell": 1}],
       "camera": {"position": [1.6, 2.9, 7.9], "look_at": [8.8, 1.0, 2.2], "fov": 60}},
      "door_point_m": [6.0, 7.5], "centre_m": [6.5, 4.5], "npc_m": [10.4, 3.1], "npc_yaw": -120,
-     "dress_rect_m": [1.4, 1.2, 11.6, 6.8], "blocked_m": [], "vista_m": []}
+     "dress_rect_m": [1.4, 1.2, 11.6, 6.8], "blocked_m": [[9.0, 4.6, 10.6, 6.2], [2.2, 3.2, 3.8, 4.8]], "vista_m": []}
    ]
   },
   "western": {

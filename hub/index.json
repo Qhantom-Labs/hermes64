@@ -41619,7 +41619,7 @@
   {
    "author": "Qhantom Labs",
    "budget": {
-    "bytes": 72808,
+    "bytes": 73023,
     "tris_max": 0
    },
    "catalog_ids": [
@@ -41644,9 +41644,9 @@
      "sha256": "6f02170c046cc364873c8ccaa847e320e0e2b25387e431054f8e5b8eea175a12"
     },
     {
-     "bytes": 52079,
+     "bytes": 52294,
      "path": "bindings.json",
-     "sha256": "fdf05ef45262013cdcff0ebb1e9964ba3287df73457b283e763327d5fbd44750"
+     "sha256": "c243958911928a1ca6d9e3c22378e6ed9d172755fff7ac9b53412b6566a983a5"
     },
     {
      "bytes": 1931,
@@ -41699,8 +41699,8 @@
    ],
    "preview": "previews/style.castle_keep.png",
    "preview_source": "in-game capture of The Wayfarer's Audience square (castle_keep)",
-   "sha256": "083eb3ac1c28f5eab600af02c158f64d39e97b45f04d0b948cc81cec8d669ff2",
-   "size": 74257,
+   "sha256": "466d28eb5e3a26ed2f7c5095614a93702f9d1c6360a5050f2d83ae1b5a996d32",
+   "size": 74472,
    "source": "bundled",
    "summary": "Castle Keep theme pack: palette, materials, fog and kit bindings for castle keep kits. Select it to restyle a game.",
    "tags": [
@@ -43738,7 +43738,7 @@
    "visibility": "public"
   }
  ],
- "entries_sha256": "00b9c8981c8efdb7a269b2838e18f638a1c481e622cb2d982ed98963b7dca284",
+ "entries_sha256": "c0786d0ba09bc4632decff1761287e9f5e3cbd9bba7e4926f2d526b7207b58a4",
  "licences": {
   "allowed": [
    "CC0-1.0",

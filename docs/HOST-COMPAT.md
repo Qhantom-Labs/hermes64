@@ -1,10 +1,10 @@
 # Host compatibility: which Hermes Agent versions Hermes64 needs
 
-**Minimum: Hermes Agent 0.18.2. Full support: 0.20.1 or newer.** Declared in `plugin.yaml` as
+**Minimum declared: Hermes Agent 0.18.2. The modern settings APIs arrived in 0.20.1; that is not full-host certification.** Declared in `plugin.yaml` as
 `"requires_hermes": ">=0.18.2"` (hosts 0.21.2+ check it before importing the plugin; older hosts ignore unknown
 manifest fields) and enforced again in-process by `adventure_maker/host_compat.py`.
 
-Why: Dylan's Windows PC ran Hermes Agent **0.18.2** and needed a local fix. Reading the 0.18.2 release source
+Why: the owner's Windows PC ran Hermes Agent **0.18.2** and needed a local fix. Reading the 0.18.2 release source
 (`git show 9de9c25f62:hermes_cli/plugins.py` in the Hermes repository) shows its `PluginContext` has no
 `get_config` and no `state`. Both arrived in commit 6bf93c0e38 (2026-08-08), first released in **v0.20.1**.
 Every tool handler and `/hermes64 new` read settings through `ctx.get_config`, so on 0.18.2 each call failed with an
@@ -16,7 +16,7 @@ Every tool handler and `/hermes64 new` read settings through `ctx.get_config`, s
 |---|---|---|---|
 | `ctx.register_tool(name, toolset, schema, handler, check_fn, requires_env, description)` | `adventure_maker/wire.py` (all 27 tools) | 0.3.0 | **Required.** Missing: plain `HostCompatError` naming 0.18.2 |
 | `ctx.register_command(name, handler, description, args_hint)` | `__init__.py` (`/hermes64`) | 0.4.0 | Skipped when missing; retried without `args_hint` if the host rejects that keyword |
-| `ctx.register_skill(name, path, description)` | `__init__.py` (7 bundled skills) | 0.10.0 | Skipped when missing; `OSError`/`ValueError` per skill ignored. Listed in the agent's `<available_skills>` only from 0.21.6; before that `skill_view('hermes64:<name>')` by exact name only (0.18.2 source: "opt-in explicit loads only") |
+| `ctx.register_skill(name, path, description)` | `__init__.py` (11 bundled skills) | 0.10.0 | Skipped when missing; `OSError`/`ValueError` per skill ignored. Listed in the agent's `<available_skills>` only from 0.21.6; before that `skill_view('hermes64:<name>')` by exact name only (0.18.2 source: "opt-in explicit loads only") |
 | `ctx.register_hook('pre_llm_call', fn)`; `fn(**kwargs)` returns `{"context": str}` or None | `adventure_maker/native_hint.py` (NATIVE: one-line hint for plain game requests) | present in 0.18.2 (`agent/turn_context.py`, same return contract on 0.22.7) | Skipped when `register_hook` is missing; `TypeError`/`ValueError` ignored; the callback never raises. Hook context goes into that turn's user message and is never stored |
 | `ctx.get_config(key, default)` | `plugin_settings.py`, `newgame.py`, `character_tools.py`, `cover_tools.py` (call time) | 0.20.1 | Compat: reads `plugins.entries.hermes64.settings` (legacy `.config`) via `hermes_cli.config.load_config_readonly`, else the default |
 | `ctx.state.data_dir` | `plugin_settings.default_games_root` (default games/hub folder) | 0.20.1 | Absent (not invented): set **projects_root**; otherwise `/hermes64 new` says to choose one |
@@ -44,14 +44,14 @@ loaded by Hermes (`hermes_plugins.hermes64.*`), so they never resolve to Hermes'
 - **No `register_tool` at all:** refused with one sentence naming `ctx.register_tool`.
 
 Tests: `tests/test_host_compat.py` (stub 0.18.2 context with the exact 0.18.2 `register_tool` signature; known-bad
-control: the unadapted stub makes `/hermes64 new` report `get_config`; 27 tools + command + 7 skills register in
+control: the unadapted stub makes `/hermes64 new` report `get_config`; 27 tools + command + the bundled skills register in
 compat mode; eight tool handlers and `/hermes64 new` answer without `AttributeError`; settings/legacy-config fallback
 through a stub `hermes_cli.config`; version floor; missing tool API; missing command/skill APIs; `args_hint` retry;
 foreign `TypeError` not swallowed; `plugin.yaml` floor equals `MIN_HERMES`).
 
 ## Adopt the PC fix (slot)
 
-> **SLOT, not filled.** Dylan's PC agent applied a local compatibility fix for Hermes 0.18.2. Its diff has not been
+> **SLOT, not filled.** The owner's PC agent applied a local compatibility fix for Hermes 0.18.2. Its diff has not been
 > received and is **not guessed here**. When Main passes it (`git diff > hermes64-local-compat.patch` on the PC, see
 > the test sheet v2):
 > 1. Save it as `docs/windows-pc-compat.patch` (untouched).

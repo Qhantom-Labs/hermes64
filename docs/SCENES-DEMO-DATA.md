@@ -1,10 +1,10 @@
 # Handoff to L4 (template/premise): Nous showcase scenes as DATA
 
 Not plugin code and not in the package. This is the shape the `teknium-vs-tyrants` premise file
-should emit into `metadata.presentation.scenes`, following Dylan's 11-10 direction: cutscenes for the
+should emit into `metadata.presentation.scenes`, following the owner's 11-10 direction: cutscenes for the
 transitions between rooms and waves (for example Teknium runs from the street to the subway), the
 server room is the gloat scene, the finale is on the rooftop. This changes 05C section 7, where the
-finale and the CEO lines were on the server floor; Dylan's later direction wins.
+finale and the CEO lines were on the server floor; the owner's later direction wins.
 
 Every coordinate below is a **placeholder**: the cyber rooms are on `cyberpolish-lane` and their
 final sizes and anchors were not read by this lane. `story/presentation/scenes.py` will refuse the

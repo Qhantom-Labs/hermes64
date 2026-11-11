@@ -1,0 +1,28 @@
+# Local assembly build products, not installable executable payloads
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.godot/
+/evidence/
+/games/*/.maker/
+/games/*/saves/
+# Hub: seed archives are rebuilt from shipped files (python3 -B -m tools.hub archives); drafts are local PR folders
+/hub/archives/
+/hub/drafts/
+/audio/evidence/*
+!/audio/evidence/wave2/
+/audio/evidence/wave2/*
+!/audio/evidence/wave2/baseline.json
+!/audio/evidence/wave2/RESULT.md.wave1
+!/audio/evidence/wave2/third_pack.json
+# Local configuration/credentials: never part of the plugin release
+.env
+.env.*
+!.env.example
+/auth.json
+*.pem
+*.key
+# Owner-only material and install backups (not a replacement for release scans)
+/plugin-backups/
+/private/

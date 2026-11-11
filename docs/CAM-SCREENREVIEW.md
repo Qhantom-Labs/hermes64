@@ -2,7 +2,7 @@
 
 **Actually viewed with the image tool:** all four `evidence/cam/review-final/` strips below, containing **20 selected source PNGs** from the exact `export-05` / `d0d8e1a` web PCKs. Two of those same final source images were also viewed individually at full size; they are not additional unique images. **68 final-case PNGs** are retained as inventory, not 68 reviewed images.
 
-`review-final/index.json` pins every source and strip SHA-256 plus receiving-state observations. Screenshot calls advance wall time. Receiving ticks are sampled after capture, stream phase labels are observations, and the selected images are not uniformly spaced. Continuous smoothness is established by the separate per-render traces, not inferred from these stills. This is assistant review, not Dylan's art/play-feel approval.
+`review-final/index.json` pins every source and strip SHA-256 plus receiving-state observations. Screenshot calls advance wall time. Receiving ticks are sampled after capture, stream phase labels are observations, and the selected images are not uniformly spaced. Continuous smoothness is established by the separate per-render traces, not inferred from these stills. This is assistant review, not the owner's art/play-feel approval.
 
 ## Final strips / weak frames
 

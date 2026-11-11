@@ -39,4 +39,4 @@ python -B -m adventure_maker.gen_tools screen --project PROJECT --id gen:potion_
 python -B -m adventure_maker.gen_tools build --project PROJECT --id gen:potion_bottle --pack castle_keep_purple_dusk --seed 7
 ```
 
-The pack must already exist under `PROJECT/kits/packs/ID/pack.json` or in the shipped pack library. The CLI does not silently pick another mood. Native mesh/file checks, deterministic replay, bible checks and texture fidelity are machine measurements. Frame gates require the room capture. Appearance is for Dylan to judge; no aesthetic grade is implied by passing.
+The pack must already exist under `PROJECT/kits/packs/ID/pack.json` or in the shipped pack library. The CLI does not silently pick another mood. Native mesh/file checks, deterministic replay, bible checks and texture fidelity are machine measurements. Frame gates require the room capture. Appearance is for the owner to judge; no aesthetic grade is implied by passing.

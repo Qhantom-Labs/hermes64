@@ -1,6 +1,6 @@
 # Package contents: what a user install needs
 
-Hermes installs a plugin by cloning its repository; there is no include/exclude manifest. This repository also carries lane evidence, receipts and tests, so a clone is about 2,400 files / 82 MB. These rules select the user-facing files for a release branch, catalog tree or archive. **Nothing is deleted from the repository**: evidence, provenance and private review material stay tracked here and are only left out of the package.
+Hermes installs a plugin by cloning its repository; there is no include/exclude manifest. This development repository also carries lane evidence, receipts and tests; its size is not the size of an installed package. These rules select the user-facing files for a release branch, catalog tree or archive. **Nothing is deleted from the repository**: evidence, provenance and private review material stay tracked here and are only left out of the package.
 
 The rules live in one place, `tools/package.py`:
 
@@ -18,7 +18,7 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 
 | Rule | Why users need it |
 |---|---|
-| `plugin.yaml`, `__init__.py`, `LICENSE`, `README.md`, `RESULT.md`, `licenses/*` | Manifest, entrypoint, licences, quick start, the acceptance limits README links to |
+| `plugin.yaml`, `__init__.py`, `LICENSE`, `README.md`, `PLAY.md`, `RESULT.md`, `licenses/*` | Manifest, entrypoint, licences, quick start, the acceptance limits README links to |
 | `bindings.json`, `characters/*` | Public bundled cast and its staging code (runtime character bindings); since MERGE3 also `characters/combat/` (combat manifest, 4 enemy and 4 prop GLBs) |
 | `adventure_maker/*`, `adventure_modules/*`, `story/*`, `refpack/*` | Tool code, story compiler/checker, module contracts, reference-pack drafting |
 | `runtime/*` | Godot runtime layer, including `runtime/godot/tests/playthrough.gd` used by `hermes64_replay` |
@@ -27,7 +27,7 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 | `contracts/*` | JSON schemas read at runtime (project, style, gameplay) |
 | `examples/*` | Bundled examples used by `hermes64_demo` and module docs |
 | `premises/*` | Neutral data-only story files and prompt text; user stories can also live in the games folder |
-| `skills/*` | The bundled skills, registered on load (four at the polish lane; five since MERGE3 added `hermes64-cover`) |
+| `skills/*` | The 11 bundled skills, registered in `__init__.py`; discovery behavior depends on the host |
 | `docs/*` | User and integration docs (story spec, packs, playtest, export, badge, token diet) |
 | `catalog/*` | The generated asset catalog (`catalog.json`, thumbnails) and `names.json`, the one file the hub reads display names from |
 | `hub/*` | The bundled Hub registry: `index.json`, preview PNGs and the offline browse page `hub/site/` (`hermes64_hub` reads the index and rebuilds each seed archive from the shipped files) |
@@ -68,21 +68,34 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 | `docs/measurements/*`, `docs/MESHY*-INGEST.md`, `docs/INTEG6-TIMEOUT.md`, `docs/tiers/*` | FINALINT: measurement receipts of the private character conversions (they carry private model hashes), the conversion notes and an integration timeout note (private folder names), and raw agent-run transcripts (build-machine user name) stay in the repository. Found by the release verification kit's privacy gate; no runtime code reads them |
 | `docs/demobuild/*`, `docs/gaps2/*`, `docs/tfix/*` | FINALINT4: the demo-build, GAPS2 and TFIX proof/measurement harnesses (and TFIX's `measured.json` receipt) are developer-only; shipped, TFIX's scripts failed the WIN3 packaged text-IO gate (`tests/test_win3.py`: implicit-encoding `read_text()`). The first two folders import repository tools (`tools.controls_replay`) that never ship, which the catalog validator (`hermes plugins validate`, rule 9) listed as private Hermes core imports. `tools/mood_demo.py` (the amood demo driver) left the include list too: `place_maker` now takes `add_extras_to_base` from `tools/mood_pack.py` |
 | `kits/library/*.glb.json` | Source-only kit build reports, which can contain absolute build paths. Runtime kit packing uses the core/side manifests and hash-pinned GLBs/textures; authoring catalog generation may inspect the real sidecar validation, while a project's own cache reports are separate. |
-| Not included (WIN2): `tools/windows_gate.py` | The Windows portability gate is a source-text scan of the runtime code: its result is the same on any OS, so it runs in the repository (and CI) before a package is cut, together with `tests/test_windows_gate.py`, which cannot ship anyway (`tests/` is repository-only). The first Windows test sheet told users to run `py -B -m tools.windows_gate` on the unpacked package, where it does not exist (Dylan's PC run: `No module named tools.windows_gate`); the sheet v2 drops that step. Rule: a `tools/` module ships only when the runtime imports it or the user runs it on the installed copy (`check_install.py`); `tests/test_package.py` checks every `tools` command in the Windows test sheet ships |
+| Not included (WIN2): `tools/windows_gate.py` | The Windows portability gate is a source-text scan of the runtime code: its result is the same on any OS, so it runs in the repository (and CI) before a package is cut, together with `tests/test_windows_gate.py`, which cannot ship anyway (`tests/` is repository-only). The first Windows test sheet told users to run `py -B -m tools.windows_gate` on the unpacked package, where it does not exist (the owner's PC run: `No module named tools.windows_gate`); the sheet v2 drops that step. Rule: a `tools/` module ships only when the runtime imports it or the user runs it on the installed copy (`check_install.py`); `tests/test_package.py` checks every `tools` command in the Windows test sheet ships |
 | Not included at all: `tests/`, `tests_story/`, `tests_refpack/`, `tests_cover/`, `goldens/`, `games/`, `projects/`, other `tools/*` (including the catalog/hub generators `tools/catalog.py`, `tools/hub.py`, `tools/hub_site.py`, `tools/thumbs.py`), `PROVENANCE.json`, `*-CHECKPOINT.md`, `*-BLOCKED.md`, `*-RESULT.md` | Tests, golden images, showcase/sample projects, developer tools, provenance and lane process records |
+
+## DOCS2 rc8 rules (applied to `tools/package.py` at FINALINT5)
+
+DOCS2 proposed these rules and changed documentation only; FINALINT5 applied them to the filter for rc8. The root guide, changelog, security note and `.gitignore` now ship; submission drafts, DOCS2 receipts, lane handoffs and the merge ledger do not.
+
+| Rule | Purpose |
+|---|---|
+| INCLUDE `QUICKSTART.md`, `CHANGELOG.md`, `SECURITY.md`, `.gitignore` | Ship the root onboarding/release/security/source-tree guidance. `README.md` already ships. |
+| EXCLUDE `docs/submission/*`, `docs/docs2/*`, `docs/PUBLIC-READINESS.md` | Submission drafts and local audit/verification records are developer-only. |
+| EXCLUDE `docs/*-HUNKS.md`, `docs/MERGE-HANDOFF.md`, `docs/MERGE-LEDGER.md` | Keep developer handoff/private conversion provenance out of the public package. This also excludes `docs/DOCS2-HUNKS.md`. |
+| Existing EXCLUDE `docs/*-RESULT.md` | Already keeps `docs/DOCS2-RESULT.md` out; do not ship it as user documentation. |
+
+The rc8 archive's contents, links and manifest are checked in `docs/FINALINT5-RESULT.md` (repository only).
 
 ## Privacy scan (MERGE4)
 
 `tools.package.scan` reads every byte that would ship (nested zips to depth 4):
 
 - **Blocking:** a shipped path under `evidence/`, `docs/sources/`, `characters/internal/`, `tests/`, `goldens/`, `games/` or `projects/`; a real home-directory path (`/Users/<name>/`, `/home/<name>/`, `C:\Users\`); the name of one of the private reference folders kept outside the repository (the `PRIVATE_REFS` pattern in `tools/package.py`; not spelled out here, since this doc ships). Allowed as not anyone's home: `you`, `me`, `user`, `username`, `name`, `example`, `runner` (the official CI user inside Godot's templates) and `web_user` (Emscripten's virtual home).
-- **Report-only:** the cameo's id and name, the publisher name, and the owner and project names the release audit tracks (the `REPORT_TERMS` pattern in `tools/package.py`; not spelled out here, since this doc ships). The cameo ships with its notice, so it is counted, not blocked.
+- **Report-only:** the cameo's id and name, the publisher name, and the owner and project names the release audit tracks (the `REPORT_TERMS` pattern in `tools/package.py`; not spelled out here, since this doc ships). The optional cameo is absent by default; its identifiers can remain in code/docs and are counted, not blocked.
 
 Blocking rows name the file, kind and line, never the matched text.
 
 MERGE4 (`--scan` on the final tree, see `docs/MERGE4-RESULT.md`): 0 blocking. Before the MERGE4 rules the same scan would have blocked 127 files (the kit sidecars and four receipts with absolute paths).
 
-## Measured (this lane)
+## Historical development measurements (not the current package)
 
 | | Files | Bytes |
 |---|---:|---:|

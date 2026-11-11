@@ -71,6 +71,6 @@ lower `metal` (0.063 -> 0.064) or `fire`; those generators need a different chan
    lower the generator detail instead (fewer `boards`/`rows`, lower `joints`/`weather`/`wear`, or a 32 px texture like
    the medieval kit), then re-measure with `look.continuity`.
 3. Rebuild and re-pin the shipped library GLBs of the four western packs (their `bindings.json` hashes change with
-   the pack), re-run the western kit's own gates and goldens. Dylan judges the resulting look.
+   the pack), re-run the western kit's own gates and goldens. The owner judges the resulting look.
 
 Until then the create flow keeps using the shipped western bindings as-is and names each one in the report.

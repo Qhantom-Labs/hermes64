@@ -37,7 +37,7 @@ New is always new: when the name (from the premise, or `--name`/`project`) is ta
 
 ## Tool argument shapes
 The advertised schemas are compact; handlers validate the full shapes:
-- `hermes64_edit.operation`: `{kind:"move-entrance", room, door, wall: north|south|east|west, position: 0-10000}`, `{kind:"change-role", character, role}`, `{kind:"add-ending", ending_json}` or `{kind:"json-patch", patch_json}` (RFC 6902 string), each with optional `expected_changed_rooms` (≤100 room IDs). Optional `save_path` and `expected_spec_hash` (64 hex).
+- `hermes64_edit.operation`: `{kind:"move-entrance", room, door, wall: north|south|east|west, position: integer_metres_along_wall}`, `{kind:"change-role", character, role}`, `{kind:"add-ending", ending_json}` or `{kind:"json-patch", patch_json}` (RFC 6902 string), each with optional `expected_changed_rooms` (≤100 room IDs). Optional `save_path` and `expected_spec_hash` (64 hex). `position` is an integer number of metres along the wall: 0 up to, but not including, that wall's room extent (`grid_size[0]` for north/south, `grid_size[1]` for east/west).
 - `hermes64_benchmark.operations_json`: a JSON array string of 1-20 such operations; `build_assets` is required, `style_gate` optional.
 - `hermes64_scaffold`: `project`, `pack`, and exactly one of `premise` (≤6000 chars) or `spec_json`.
 - `hermes64_check`: `action` `proof` (default) or `audit` (render + score the style, docs/STYLE-AUDIT.md); `views` 0-2 extra authored cameras per room (audit only).

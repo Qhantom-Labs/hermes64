@@ -32,7 +32,7 @@ Every report lists `spatial_access`: logically available room doors, interaction
 | `logical_proof` | `proved` only for the finite macro graph and admitted resource/ownership rules, or rejected/invalid/inconclusive. It is not a physical result. |
 | `conditional_on_assumptions` | `conditional` for a passing challenge game, listing named assumptions. `logical_only` policy refuses required challenge assumptions. Region/ability-only graphs can be logically `proved`; spatial geometry is still outside the claim. |
 | `physically_tested_by_bot` | Always `not_run`; receipt null. A later real production-input run must bind exact build, runtime and resource hashes. |
-| `human_tested` | Always `not_run`; receipt null. An author/model cannot manufacture Dylan's playability/feel approval. |
+| `human_tested` | Always `not_run`; receipt null. An author/model cannot manufacture the owner's playability/feel approval. |
 
 Overall successful challenge reports are `conditional`, not `proved`. The facade accepts them only if the source explicitly declares `verification_policy: conditional`. `rejected` means an actual failed obligation, `invalid` means unsupported/malformed input, and `inconclusive` means bounded exploration stopped. CLI `story check` returns 0 for logical proved, **4 for conditional**, 3 for inconclusive, 2 for rejected/invalid. These are not interchangeable success codes for runtime verification.
 

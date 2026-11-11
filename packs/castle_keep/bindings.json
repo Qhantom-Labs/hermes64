@@ -7,6 +7,12 @@
    "preset": null,
    "sha256": "2f7261c810796ffc25e0b2aa91aa67dc18e5aca1e6668433d53cba72719328cc"
   },
+  "arch.window": {
+   "glb": "kits/library/forest_village/assets/arch.window.glb",
+   "kit_id": "arch.window",
+   "preset": null,
+   "sha256": "c3882cdbe44154b3285fa5fb79753c3b1b1d760fe243870ca117893953f78d52"
+  },
   "cst.banner": {
    "glb": "kits/library/castle_keep/assets/cst.banner.glb",
    "kit_id": "cst.banner",

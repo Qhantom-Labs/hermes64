@@ -1,9 +1,9 @@
 # Platform parity: Windows and macOS
 
-Rule (Dylan, 2026-11-10): every plugin feature has a Windows path and a macOS path. macOS is verified on this Mac;
-Windows is verified only by Dylan's PC (the "WINDOWS TEST REPORT" entry in `PUBLISH-DECISIONS.md`, Win11 25H2,
+Rule (the owner, 2026-11-10): every plugin feature has a Windows path and a macOS path. macOS is verified on this Mac;
+Windows is verified only by the owner's PC (the "WINDOWS TEST REPORT" entry in `PUBLISH-DECISIONS.md`, Win11 25H2,
 Hermes Agent 0.18.2, plugin package from windows-lane cd15b620 in `play-win/`). Anything else is **built, not
-verified on Windows**. Lane model: [PARITY-MODEL.md](PARITY-MODEL.md).
+verified on Windows**. Lane model: `docs/PARITY-MODEL.md` (development repository only; not in the package).
 
 "Real Windows" = yes only when that report says the step ran and passed. "Here" = tests and probes on this Mac.
 
@@ -24,7 +24,7 @@ verified on Windows**. Lane model: [PARITY-MODEL.md](PARITY-MODEL.md).
 | Studio (Desktop tab, dashboard API) | `dashboard/plugin_api.py`; shelf in checked-path mode (links, reparse points refused); web play on 127.0.0.1; native launch backend accepts `windows` | descriptor reads; `open` for `.app` | `test_windows_paths::StudioShelfPathMode`, `test_native_launch_target_windows` | **no** | `desktop/plugin.js` has no Windows launch button (studio owner); the shelf refuses **every** reparse point, so games inside OneDrive-placeholder folders may be hidden; dashboard on 0.18.2 unexercised |
 | Audio import (ffmpeg) | audiopipe-lane `audio_import.py` (not in this branch): argv list, `ffmpeg.exe` via PATH/`ProgramFiles\ffmpeg`/bundled | Homebrew/PATH ffmpeg | audiopipe tests (in its worktree) | **no** | Not merged here. ffmpeg runs outside the runner on both OSes (no sandbox, no Job). Console window per call on Windows: patch [parity-patches/audiopipe-ffmpeg-no-window.patch](parity-patches/audiopipe-ffmpeg-no-window.patch) |
 | Locomotion bake (shared run cycle) | chars lane `adventure_maker/locomotion/` (untracked in `wt-chars3`, not in this branch); pure Python | same | chars lane | **no** | `p.read_text()` without encoding (cp1252 on Windows): patch [parity-patches/chars-locomotion-utf8.patch](parity-patches/chars-locomotion-utf8.patch) |
-| Godot + templates fetch (setup) | godotfetch-lane `godot_fetch.py`: pinned SHA-512 Windows x86-64 ZIP, cache `%LOCALAPPDATA%\hermes64\` | macOS universal ZIP, `~/Library/Caches/hermes64/`, quarantine handling | godotfetch tests (simulated Windows layout) | **no** | Not merged here; needs `docs/GODOTFETCH-WINDOWS-FINDER.patch` (godotfetch's) when composed with this branch's `platforms.py`; network fetch needs Dylan's yes |
+| Godot + templates fetch (setup) | godotfetch-lane `godot_fetch.py`: pinned SHA-512 Windows x86-64 ZIP, cache `%LOCALAPPDATA%\hermes64\` | macOS universal ZIP, `~/Library/Caches/hermes64/`, quarantine handling | godotfetch tests (simulated Windows layout) | **no** | Not merged here; needs `docs/GODOTFETCH-WINDOWS-FINDER.patch` (godotfetch's) when composed with this branch's `platforms.py`; network fetch needs the owner's yes |
 | Packaging (`tools/package.py`) | Same package for both; `.gitattributes * -text`; file names NTFS-safe (<180 chars, no case clash, no reserved names) | same | `test_package`, `test_windows_paths::RepoFileNames`, `test_platform_parity::LongPathsAndText` | **yes** (package installed); `tools/windows_gate` was missing and is now repo-only by rule (WIN2) | deep install roots (OneDrive Documents) can still pass MAX_PATH; `check_install` warns, does not fix |
 | Runner / sandbox | Job Object: kill-on-close tree, 64 processes, 8 GB, private profile folders, system-only PATH, CRLF normalised; **no network block, no write confinement**; refused without opt-in | `sandbox-exec`: no network, writes only in the project | `test_windows_paths::Runner`, `test_platform_parity::WindowsRunnerEndToEnd/NoSandboxFailsClosed` | **yes, inferred**: new/playtest/export ran, which needs the runner; the report does not quote the env var | Weaker than macOS by design. Child starts before it is assigned to the job (no `CREATE_SUSPENDED`): a grandchild started in that window escapes the kill. Untestable here; not changed |
 | Children outside the runner | `character_gate`, `static_preview`, `nbchars/preview`, audio ffmpeg call `subprocess.run` directly (argv lists, scrubbed or private env except `nbchars/preview`) | same, also **without** `sandbox-exec` | `test_platform_parity::SubprocessQuotingInSource` (no shell anywhere) | partly (character gate runs during builds) | Same on both OSes: not sandboxed, and on Windows they run even without the opt-in. `nbchars/preview` passes full `os.environ` (catalog audit F9) |
@@ -35,7 +35,7 @@ verified on Windows**. Lane model: [PARITY-MODEL.md](PARITY-MODEL.md).
 ## The runner off macOS (catalog audit F7): exactly what happens on Windows today
 
 - **rc3-lane (add451d8) and main (32a8ca48)** do **not** contain windows-lane (`git merge-base --is-ancestor windows-lane rc3-lane` = no; no `platforms.py`, no `host_compat.py`). On Windows: the plugin loads; on Hermes 0.18.2 every tool call fails with `AttributeError` (`ctx.get_config`); on 0.20.1+ `locate()` checks only the macOS defaults then PATH (`godot not found; configure godot_path. Checked /Applications/Godot.app/...`); and any child is refused by `Runner.sandbox_argv` with `sandbox_unavailable: Required no-network/write-confinement sandbox unavailable on this host; no child started`, whatever env var is set. So `new`, build, playtest and export cannot run. Source: `git show rc3-lane:adventure_maker/runner.py`, `Runner.sandbox_argv` (`if sys.platform != 'darwin' ...`).
-- **windows-lane / win2-lane (this branch)**: without `HERMES64_WINDOWS_RUNNER=job` the same refusal, plus the sentence telling the owner how to opt in. With it, children run in the Job Object above. This is the code Dylan's PC ran (package cd15b620 contains it; sheet v1 step 4 sets the variable) and new/playtest/export passed.
+- **windows-lane / win2-lane (this branch)**: without `HERMES64_WINDOWS_RUNNER=job` the same refusal, plus the sentence telling the owner how to opt in. With it, children run in the Job Object above. This is the code the owner's PC ran (package cd15b620 contains it; sheet v1 step 4 sets the variable) and new/playtest/export passed.
 - **Fix for the integrator**: merge win2-lane (runner, platforms, host_compat, safety). If only the runner is wanted on rc3, [parity-patches/rc3-windows-runner.patch](parity-patches/rc3-windows-runner.patch) (`runner.py` + new `platforms.py`, from windows-lane) applies cleanly to rc3-lane (`git apply --check` OK); probed on an rc3 archive with simulated win32: refuses without opt-in, passes argv unchanged with it. The catalog `platforms` field is truthful only at a SHA that contains it.
 
 ## Fixed in this lane (files this branch owns)
@@ -80,6 +80,6 @@ known-bad control next to it:
 
 - Everything in the table marked "no", and every Windows behaviour of this lane's `safety.py` change (simulated only;
   `st_reparse_tag` on a real junction was not observed).
-- That Dylan's PC had `HERMES64_WINDOWS_RUNNER=job` set (inferred from children running).
+- That the owner's PC had `HERMES64_WINDOWS_RUNNER=job` set (inferred from children running).
 - Job Object behaviour on a real PC (process-tree kill, memory cap); audio import, locomotion bake and Godot fetch on
   Windows; Studio on Windows; web builds in a browser.

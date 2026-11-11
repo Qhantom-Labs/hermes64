@@ -51,7 +51,7 @@ passes the gates (rig kit `validate_character`, palette, no cuboids, hair, silho
 
 ## Rules
 
-- People display names stay placeholders (`placeholder: true`) until Dylan names them; the masked lead is Qhantom.
+- People display names stay placeholders (`placeholder: true`) until the owner names them; the masked lead is Qhantom.
   The plugin's own cast is renamed only in `catalog/names.json`; ids never change.
 - Brief words the library cannot express on that body are listed in the recipe `notes` ("not available: ..."):
   tell the user instead of silently substituting.

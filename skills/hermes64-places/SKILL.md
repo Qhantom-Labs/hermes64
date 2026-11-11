@@ -58,7 +58,7 @@ It clones the bundle to scratch, installs the mood and recipe pieces there, and 
 path. It runs the style gate, the n64 gate and the reference band (style bible env statistics p10-p90) on the
 game-camera frame. On failure it changes only bounded knobs (clutter, spacing, seed re-roll, light 0.85-1.15,
 contrast 0-0.2, camera pull 0-0.3) and tries again. Read `evidence/placemaker/<run>/report.txt`, which lists every attempt.
-Report numbers and what is shown. **Do not call a room good-looking; looks are for Dylan to judge.**
+Report numbers and what is shown. **Do not call a room good-looking; looks are for the owner to judge.**
 
 ## 4. Use the result in a game
 
@@ -72,7 +72,7 @@ plain lobby, because a region link cannot point at its own room.
 
     python3 -B -m tools.place_maker examples wizard_tower_interior          # few-shot: approved params + seeds
     python3 -B -m tools.place_maker compare --run evidence/placemaker/<run> --room <room id>
-    python3 -B -m tools.place_maker approve --run ... --room ... --by Dylan  # only when Dylan says so
+    python3 -B -m tools.place_maker approve --run ... --room ... --by "the owner"  # only when the owner says so
 
 Offer approved params and seeds first when the user wants "more like that one". `compare` reports palette and
 layout distances to approvals. These are numbers, not a verdict. The store starts empty. Never record an approval

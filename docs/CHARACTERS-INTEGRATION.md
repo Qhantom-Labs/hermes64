@@ -235,7 +235,7 @@ For the showcase staging, apply `characters.integration.apply_presentation(spec,
 
 `characters/.gitignore` excludes `/internal/` and any `cameo_visor_01.glb` descendant. Actual `git check-ignore -v` returned the `/internal/` rule for the imported cameo. Explicit owned staging must never use `-f` on that directory.
 
-`package_public` builds a fresh allowlisted **source bundle**, excludes internal/reference/evidence/cache trees, removes restricted manifest/binding rows and refuses/culls restricted GLB hashes even under another GLB filename. The executed package reports **28 characters** and excludes `characters/internal/cameo_visor/cameo_visor_01.glb`. The unit test independently walks packaged GLBs and confirms the cameo hash is absent. This is not a tested Godot PCK/export-template release; that separate release pipeline must use this exclusion boundary. No public repository, push or upload occurred.
+`package_public` builds a fresh allowlisted **source bundle**, excludes internal/reference/evidence/cache trees, removes restricted manifest/binding rows and refuses/culls restricted GLB hashes even under another GLB filename. The executed package reports **28 characters** and excludes `characters/internal/cameo_visor/cameo_visor_01.glb`. The unit test independently walks packaged GLBs and confirms the cameo hash is absent. This is not a tested Godot PCK/export-template release; that separate release pipeline must use this exclusion boundary. That lane made no public repository, push or upload.
 
 ## Budgets: bodies pass, combined room cap does not
 

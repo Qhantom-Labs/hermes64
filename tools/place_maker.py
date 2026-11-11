@@ -404,7 +404,7 @@ def make_many(requests, run, seconds=40, render_rounds=3, bundle=None, fresh=Fal
 
 
 def report_text(report):
-    lines = ["PLACEMAKER run %s (numbers only; looks are for Dylan to judge)" % report["run"]]
+    lines = ["PLACEMAKER run %s (numbers only; looks are for the owner to judge)" % report["run"]]
     for i in report["installs"]:
         lines.append("install: %s" % json.dumps(i, sort_keys=True))
     for name, r in sorted(report["requests"].items()):
@@ -686,7 +686,7 @@ def finish(report, out_dir, store=None):
     demo = approval_demo(report, store or (SCRATCH.parent / "placemaker-approvals-demo"))
     L = ["# PLACEMAKER proof: what is shown", "",
          "Real runtime frames from the plugin's normal Service path (scaffold, compile, check, build_assets, open with "
-         "screenshots) in a scratch bundle clone. Numbers only; how it looks is for Dylan to judge.", "",
+         "screenshots) in a scratch bundle clone. Numbers only; how it looks is for the owner to judge.", "",
          "Run: `python3 -B -m tools.place_maker proof --requests docs/placemaker/proof-requests.json --run %s` "
          "(report: `evidence/placemaker/%s/report.txt`, git-ignored)." % (report["run"], report["run"]), "",
          "## Files", ""]

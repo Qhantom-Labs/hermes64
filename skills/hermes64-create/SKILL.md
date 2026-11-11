@@ -30,12 +30,17 @@ If part of the request cannot be made, make the closest Hermes64 game and say ex
    Read `story:`: `will make`, `not as asked` (closest thing and fix) and `named in the prompt, used nowhere`. Fix
    the brief, then tell the human in ONE message: "I will make: ... Not as asked: X (closest: Y)." Do not wait.
 5. `create_flow run` (2 to 15 min): `python3 -B -m adventure_maker.create_flow run "<the full prompt>" --brief <path>
-   --name <slug>`. It compiles, proves the story, builds the rooms, lets bots play and takes pictures. Last line:
+   --name <slug>`. It compiles, proves the story, makes this game's own hero and three or four of the things the
+   brief names as new pieces in the pack's style, lays the entry out for the setting, builds the rooms, lets bots
+   play and takes pictures. Nobody has to ask for the new pieces: never add words to the human's prompt. Last line:
    `report: <path>`. Start it with the terminal's `background: true` and wait for it: a tool call is cut off after
    7 minutes while the run goes on. Never start a second run while one runs (`status --name <slug>`). Before you
    reply, wait until every background run you started has ended (`process_manage`).
-6. Read that `CREATE-REPORT.md`: `In the game`, `Not applied` (asked -> closest -> fix), the gates (story check,
-   bots, style, N64).
+6. Read that `CREATE-REPORT.md`: `In the game`, `Made new for this game`, `Not applied` (asked -> closest -> fix),
+   the gates (story check, bots, style, N64). Every game needs its own hero and at least three new pieces. When
+   `Made new` shows fewer, or a thing the brief names is only a library piece, make it yourself, at most twice per
+   thing, with the `Characters` and `Pieces made with the generators` lines under Advanced. Why: two different
+   prompts must not give the same rooms and cast, and the human should never have to ask for it.
 7. To change the game, edit the brief and run step 5 again: every gate runs again. `hermes64_edit` makes one story
    edit and re-proves it, but only on a game whose story check says `proved`; a fight or a course makes it
    `conditional`, and `hermes64_edit` then answers `baseline_unproved`.
@@ -43,8 +48,11 @@ If part of the request cannot be made, make the closest Hermes64 game and say ex
    ROUGH or BROKEN): only after a change made with tools. The run already did both.
 9. `hermes64_open` with `screenshots: true`: only when the human wants to see or play it.
 10. `hermes64_export` with `targets`: only when the human wants a build to share.
-11. Reply: what is in the game, every `Not applied` row in plain words, the gate numbers, and the pictures in
-    `GAMES/<slug>/create/captures/`. Do not judge looks; the human does.
+11. Reply: what is in the game, what was made new for it, every `Not applied` row in plain words, the gate
+    numbers, and the pictures in `GAMES/<slug>/create/captures/`. Include the returned **How to play** block: the
+    exact Godot `Play:` command, `Default keys:` from the built game, and `Game folder:`. Do not replace it with an
+    offer to open the game. If play is not ready, copy that reason instead of inventing a command. Do not judge
+    looks; the human does.
 
 Setup trouble (Python, numpy, Godot): `hermes64_doctor` shows what is missing and what to do. Never install anything.
 

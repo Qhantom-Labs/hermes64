@@ -24,7 +24,7 @@ State: <project>/.create/state.json (input/output hashes per stage, seconds, one
 and compared, so a nondeterministic stage is refused instead of recorded. Everything is bounded by --budget-seconds;
 an exhausted budget pauses (resumable), never truncates silently. No network, no model client, no installs: recipes
 for missing pieces come from project recipes, the shipped exemplars or create/candidates.json written by the agent.
-The closeness score counts needs, gates and attempts. It is never an aesthetic score; looks are for Dylan to judge.
+The closeness score counts needs, gates and attempts. It is never an aesthetic score; looks are for the owner to judge.
 """
 import argparse
 import copy
@@ -800,10 +800,14 @@ def stage_assets(ctx):
     from .newgame import CAST
     base = mood['base']
     cast = CAST.get(base) or CAST.get(DEFAULT_PACK)
+    from . import create_craft                                                     # VARIETY V1 (5 lines): craft by default
+    prompt = ctx.read_json('create/prompt.json')['prompt']
+    protagonist = create_craft.craft_protagonist(ctx, prompt, brief)
     for i, c in enumerate(brief.get('characters', [])):
         used = cast[0] if c.get('role') == 'player' else cast[1]
         rows.append({'want': 'character: ' + c['want'], 'status': 'not covered',
                      'why': 'no new character made; the public cast %r stands in' % used})
+    rows = create_craft.character_rows(rows, brief, protagonist)                   # VARIETY V1
     rows.append({'want': 'sounds and music', 'status': 'not covered', 'why': 'no new audio; the %s sound palette is used' % pack_id})
     candidates = {}
     if ctx.exists('create/candidates.json'):
@@ -811,10 +815,14 @@ def stage_assets(ctx):
         if not isinstance(candidates, dict):
             raise CreateError('create_candidates', 'create/candidates.json must map brief lines to recipes',
                               'see skills/hermes64-create/SKILL.md')
+    rows, candidates, craft = create_craft.plan(prompt, brief, rows, candidates)  # VARIETY V1: brief-named pieces made new
     p = gen_tools.workspace(ctx.root)
     try:
         report = asset_loop.run(p.root, brief, {'rows': rows}, kit_pack, candidates=candidates, seed=SEED, max_tries=4,
                                 python_path=ctx.settings.get('python_path', ''))
+        report = create_craft.retry_plain(report, rows, craft, lambda gap_rows: asset_loop.run(     # VARIETY V2 (3 lines)
+            p.root, brief, {'rows': gap_rows}, kit_pack, candidates={}, seed=SEED, max_tries=4,
+            python_path=ctx.settings.get('python_path', '')))
     except (ValueError, gen_tools.RecipeError) as e:
         raise CreateError('create_assets', str(e), 'fix create/candidates.json or brief.json and run again')
     out_rows = []
@@ -881,7 +889,8 @@ def stage_assets(ctx):
         summary.append(item)
     ctx.write('create/assets.json', {'format': 'hermes64-create-assets/1', 'pack': pack_id, 'kit_pack': kit_pack,
                                      'counts': final['counts'], 'ready': final['ready'], 'total': final['total'],
-                                     'substituted_here': substituted, 'rows': summary})
+                                     'substituted_here': substituted, 'rows': summary,
+                                     'craft': craft, 'protagonist': protagonist})      # VARIETY V3 (this line)
     return {}
 
 
@@ -1000,6 +1009,13 @@ def choose_pattern(options, bw, keys, scale=None):
     return sorted(usable, key=lambda p: (sign * area(p), -len(set(p['tags']) & bw), options.index(p)))[0]
 
 
+def entry_pattern(fam, family, bw, keys, scale, brief):
+    """VARIETY V6: (pattern, why): the word-order choice, or the layout that names more of the brief's setting."""
+    from . import create_craft
+    return create_craft.setting_pattern(fam['outdoor'], family, choose_pattern(fam['outdoor'], bw, keys, scale),
+                                        brief.get('prompt', ''), brief, keys, scale, lambda p: pattern_size_m(p)[0])
+
+
 def scale_report(scale, reason, outdoor, indoor):
     """(line, rows): the rooms line (plot sizes) and Not applied rows where the create flow cannot match the scale."""
     size = lambda p: '%g x %g m' % pattern_size_m(p)
@@ -1021,6 +1037,16 @@ def scale_report(scale, reason, outdoor, indoor):
 
 def _piece_info(manifest, key):
     return manifest['pieces'].get(key)
+
+
+HANGS_WHY = ('it hangs on a wall or ceiling and this planner has no mount for it; standing free it would float '
+             '(style gate floating check); not placed')
+
+
+def hangs(info):
+    """VARIETY V8: a kit piece made to hang (banner, sconce, hung lantern): its mesh starts above the floor, so it
+    must never stand free as scenery."""
+    return bool(info) and info.get('anchor') in ('wall_face', 'ceiling_hook')
 
 
 def plan_dressing(ctx, assets, family, keys, bindings_doc, gen_ok):
@@ -1046,6 +1072,9 @@ def plan_dressing(ctx, assets, family, keys, bindings_doc, gen_ok):
             key, mode = gid, ('compiler' if info['anchor'] == 'free' else 'lot')
         elif gid in keys and not info:
             key, mode = gid, 'append'
+        elif hangs(info) and gid in keys:                                                     # VARIETY V8
+            skipped.append({'want': row['want'], 'id': gid, 'reason': HANGS_WHY})
+            continue
         elif info and info.get('anchor') not in ('free', 'lot_line', 'lot_centre') and gid in keys:
             # grid/socket pieces cannot be snapped by this planner; they may stand as distant scenery outside the plot
             key, mode = gid, 'vista'
@@ -1248,8 +1277,9 @@ def stage_rooms(ctx):
     fam = load_patterns()['families'][family]
     mod = bundle_import(ctx, fam['compiler'])
     scale, scale_reason = brief_room_scale(brief)      # FINALINT2: medium (default) keeps the word-based choice
-    outdoor = choose_pattern(fam['outdoor'], bw, keys, scale)
+    outdoor, layout_why = entry_pattern(fam, family, bw, keys, scale, dict(brief, prompt=prompt))      # VARIETY V6
     indoor = choose_pattern(fam['indoor'], bw, keys, scale)
+    rooms_doc['layout'] = {'entry': outdoor['id'], 'why': layout_why}                                  # VARIETY V6
     story, lay = story_layout(ctx, outdoor, indoor)
     brief, not_applied = story_hints(brief, story)     # the story's fight / course / no-combat words route modules too
     if lay is not None:      # people and story spots are kept clear of the dressing, and their triangles are kept free
@@ -1298,10 +1328,21 @@ def stage_rooms(ctx):
         if not it['placed'] and it['where'] == 'indoor':
             it['overflow'] = True
     mark_landmark(items, brief, inner_name, outdoor)      # TFIX F1a: the destination as room 1's landmark
+    from . import create_craft                            # VARIETY V4 (2 lines): else the brief's crafted landmark
+    create_craft.mark_landmark(items, outdoor, assets)
     room_o, pres_o, rep_o = dress(mod, out_plan, outdoor, items, SEED, placed, None, 'outdoor')
     rooms_doc['entry_source'] = 'create pattern %s (%s)' % (outdoor['id'], outdoor['source'])
     not_placed = skipped + [{'want': it['want'], 'id': it['id'], 'instance': it['instance'],
                              'reason': it.get('why', 'no room took it')} for it in items if not it['placed']]
+    # Reserved floor lights use the existing emissive light role, rather than tiny fire cores.
+    # The lamp stays within the brazier's reserved footprint and below the lowest room ceiling.
+    lamps = accent_lamps(pres_o, outdoor)
+    if inner_res is None:
+        lamps = accent_lamps(pres_i, indoor) or lamps
+    if lamps:
+        presets.append({'id': 'cf_accent_lamp', 'asset_id': 'furn.lamp', 'params_json': json.dumps({
+            'kind': 'floor', 'height': 1.8, 'shade': 'drum', 'shade_size': 0.8,
+            'base': 'tripod', 'stand_role': 'metal'})})
     # project pack: the chosen style pack + presets for pieces not bound in it (foreign families, gen: recipes)
     pack = copy.deepcopy(style)
     used = {p['asset'] for p in placed} | {pc.get('asset') for pc in pres_o['pieces'] + pres_i['pieces']}
@@ -1387,6 +1428,8 @@ def stage_rooms(ctx):
                                'inside_plot_m': list(pattern_size_m(indoor)) if inner_res is None else None}
     not_applied += name_rows(prompt, brief, story if lay is not None else None)
     not_applied += weather_rows(ctx, brief, mood)        # TFIX F6
+    not_applied += create_craft.report_rows(assets)      # VARIETY V5 (2 lines): craft misses are rows; the made cast plays
+    spec = create_craft.apply_cast(spec, assets)
     rooms_doc.update(rooms=[{'id': 'entry', 'pattern': outdoor['id'], 'report': rep_o},
                             {'id': 'inside', 'pattern': indoor['id'] if inner_res is None else 'placemaker', 'report': rep_i}],
                      placed=placed, not_placed=not_placed, notes=notes,
@@ -1538,6 +1581,18 @@ def keepsake_spot(pattern, pres, inner_res):
     if not centre or len(centre) != 2:
         return None
     return [round(float(centre[0]), 2), 0.0, round(float(centre[1]), 2)]
+
+
+def accent_lamps(pres, pat):
+    """Replace only the reserved create-pattern sources; no metric kit scaling or palette edits."""
+    spots = {tuple(p['at_m']) for p in pat['plan']['pieces'] if p['key'] == 'cst.brazier'}
+    changed = False
+    for p in pres['pieces']:
+        x, y, z = p['position']
+        if p['asset'] == 'cst.brazier' and y == 0 and (x, z) in spots:
+            p['asset'] = 'preset/cf_accent_lamp'
+            changed = True
+    return changed
 
 
 def _place_inner(api, family, base, bw, notes):
@@ -1854,7 +1909,7 @@ def closeness(asset_report, rooms, build, play, caps, consistency_ok, prov_ok):
     return {'score': score, 'coverage': round(coverage, 3), 'placement': round(placement, 3),
             'gates': gates, 'gate_fraction': round(gate_frac, 3), 'first_try': round(first_try, 3),
             'formula': '100 x (0.5 coverage of brief needs + 0.15 placed share of ready needs + 0.3 gates passed + 0.05 first-try share)',
-            'note': 'Closeness to the brief\'s listed needs and to the gates. Not an aesthetic score; looks are for Dylan to judge.'}
+            'note': 'Closeness to the brief\'s listed needs and to the gates. Not an aesthetic score; looks are for the owner to judge.'}
 
 
 def plain_lines(asset_report, rooms, style, mood):
@@ -1909,6 +1964,15 @@ def story_summary(spec):
             'fighters': foes, 'modules': [m['id'] for m in mods if m['id'] not in ('abilities', 'challenge')]}
 
 
+from .creation_reply import how_to_play
+
+
+def made_new_line(ctx):
+    """VARIETY V7: the report's one line on what this run made new (the hero and the brief-named pieces)."""
+    from . import create_craft
+    return create_craft.made_line(ctx.read_json('create/assets.json') if ctx.exists('create/assets.json') else {})
+
+
 def stage_report(ctx, state):
     from . import asset_report as AR, provenance
     ar = ctx.read_json('ASSET-REPORT.json')
@@ -1935,6 +1999,7 @@ def stage_report(ctx, state):
                                                'pack_notes')},
            'mood_install': {k: inst.get(k) for k in ('pack', 'installed', 'built', 'failed', 'extras', 'bundle_writes', 'note')},
            'asset_counts': ar['counts'], 'asset_ready': ar['ready'], 'asset_total': ar['total'],
+           'made_new': made_new_line(ctx),                                                       # VARIETY V7
            'asset_consistency': consistency, 'provenance': {'ok': prov.get('ok'), 'errors': prov.get('errors', [])[:8],
                                                             'assets': len(provenance.load(ctx.root).get('assets', []))},
            'rooms': [{'id': r['id'], 'pattern': r['pattern'], 'tri_estimate': r['report'].get('tri_estimate_with_appended',
@@ -1954,7 +2019,8 @@ def stage_report(ctx, state):
            'could_not_make': plain_lines(ar, rooms, style, mood), 'not_applied': rooms.get('not_applied', []),
            'story': story_summary(ctx.read_json('source/spec.json')) if ctx.exists('source/spec.json') else {},
            'ledger': ledger, 'closeness': score,
-           'note': 'Measured numbers and named gaps only. Appearance is for Dylan to judge.'}
+           'note': 'Measured numbers and named gaps only. Appearance is for the owner to judge.'}
+    rep['how_to_play'] = how_to_play(ctx.root, ctx.settings, caps, play)
     ctx.write('CREATE-REPORT.json', rep)
     ctx.write('CREATE-REPORT.md', report_md(rep).encode())
     return {}
@@ -1975,6 +2041,7 @@ def report_md(rep):
     c = rep['asset_counts']
     L += ['', '## Assets', '', 'Ready %d of %d needs: %s.' % (rep['asset_ready'], rep['asset_total'],
           ', '.join('%s %d' % (k, v) for k, v in c.items())),
+          rep.get('made_new') or 'Made new for this game: not recorded.',                        # VARIETY V7
           'Report consistency: %s. Provenance export check: %s (%d asset records).' % (
               rep['asset_consistency']['ok'], rep['provenance']['ok'], rep['provenance']['assets']),
           '', '## What I could not make and what I used instead', '']
@@ -2003,7 +2070,7 @@ def report_md(rep):
           'Gates: %s' % ', '.join('%s=%s' % (g, v) for g, v in rep['closeness']['gates'].items()),
           rep['closeness']['note'], '', '## Captures', '']
     L += ['- ' + f for f in k.get('frames', [])] or ['- none']
-    L += ['', rep['note'], '']
+    L += ['', *rep.get('how_to_play', {}).get('lines', []), '', rep['note'], '']
     return '\n'.join(L)
 
 
@@ -2156,6 +2223,9 @@ def run(settings, name, prompt=None, opts=None):
         rec.pop('error', None)
         dirty = True
         save_state(ctx, state)
+    state['how_to_play'] = how_to_play(ctx.root, settings,
+        ctx.read_json('create/captures.json') if ctx.exists('create/captures.json') else {},
+        ctx.read_json('create/playtest.json') if ctx.exists('create/playtest.json') else {})
     return state
 
 
@@ -2206,6 +2276,7 @@ def command_create(settings, premise, style=None, name=None, default_root=None, 
         if rep.get('not_applied'):
             lines.append('Not applied: %d parts of the prompt (story, mechanics, names), listed in the report'
                          % len(rep['not_applied']))
+        lines.extend(rep.get('how_to_play', {}).get('lines', []))
         return '\n'.join(lines)
     except CreateError as e:
         return 'Hermes64 create: ' + e.line()
@@ -2333,7 +2404,7 @@ def plan_lines(brief_path, bundle=None, style=None):
         keys, _ = bindings_keys(ctx, base)
         bw = set(brief_words(brief))
         try:
-            line, rows = scale_report(scale[0], scale[1], choose_pattern(fam['outdoor'], bw, keys, scale[0]),
+            line, rows = scale_report(scale[0], scale[1], entry_pattern(fam, family_for(base), bw, keys, scale[0], brief)[0],  # VARIETY V6
                                       choose_pattern(fam['indoor'], bw, keys, scale[0]))
             if story is None and not routed and scale[0] == brief_room_scale({})[0] and place_api() is not None:
                 line += ' (or a placemaker archetype that matches the brief)'
@@ -2382,7 +2453,7 @@ def story_plan_lines(ctx, brief, story, base, will, hint_rows, scale=None):
         keys, _ = bindings_keys(ctx, base)
         bw = set(brief_words(brief))
         try:
-            lay = CS.layout(story, {'entry': choose_pattern(fam['outdoor'], bw, keys, scale),
+            lay = CS.layout(story, {'entry': entry_pattern(fam, family_for(base), bw, keys, scale, brief)[0],  # VARIETY V6
                                     'inside': choose_pattern(fam['indoor'], bw, keys, scale)}, Slots, SEED)
         except CS.StoryError as e:
             return L + ['  story: %s: %s Next: %s' % (e.code, e.message, e.next_step)]
@@ -2533,6 +2604,7 @@ def main(argv=None):
             opts['brief_file'] = str(Path(opts['brief_file']).resolve())
         state = run(settings, name, a.prompt, opts)
         print('\n'.join(status_lines(state)))
+        print('\n'.join(state['how_to_play']['lines']))
         ctx = Ctx(settings, name)
         if ctx.exists('CREATE-REPORT.json'):
             rep = ctx.read_json('CREATE-REPORT.json')

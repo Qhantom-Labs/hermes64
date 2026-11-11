@@ -1,7 +1,7 @@
 --- a/docs/PACKAGE-CONTENTS.md
 +++ b/docs/PACKAGE-CONTENTS.md
 @@ -33,6 +33,7 @@
- | `cameo/*` | The optional cameo pack (assembled at MERGE4; Dylan decided it ships in the plugin package): the model `cameo_visor_01.glb`, its notice `LICENSE-CAMEO.md`, manifest and README; delete the folder to remove it |
+ | `cameo/*` | The optional cameo pack (assembled at MERGE4; the owner decided it ships in the plugin package): the model `cameo_visor_01.glb`, its notice `LICENSE-CAMEO.md`, manifest and README; delete the folder to remove it |
  | `rigs/*` | The rig kit (merged at MERGE4): `rigs/<id>/rig.json`, `clips.json`, `clips.glb` and the mannequins. The in-process validator (`adventure_maker/rigkit`) and the hub's `compat.rig` check read them; without them every hub install failed from a package (found by `tests/test_merge4_cameo.py`) |
  | `desktop/plugin.js`, `dashboard/manifest.json`, `dashboard/plugin_api.py` | Hermes64 Studio (merged at MERGE4): the Desktop half (one generated ES module) and the backend routes it calls; without them a package install has no Studio tab |
 +| `tools/style_bible.py` | Recipe screening uses the existing derived bible consumer; generator CLI and skill ship under `adventure_maker/*` and `skills/*` |

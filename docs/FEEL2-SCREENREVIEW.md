@@ -4,7 +4,7 @@
 
 RESUME2, 2026-11-10: loaded and visually inspected **all seven curated strips / 35 source PNGs** using `vision_analyze`: `orbit.png`, `run.png`, `blocked.png`, `transition.png`, `quick-transition.png`, `native.png`, `modules.png`, under `evidence/feel2/review-resume2/`.
 
-`index.json` records every selected source and strip SHA-256. Its **423 retained capture files** are an inventory, **not a claim that all 423 were viewed**. The older `review/` catalogue is likewise not substituted for this session's actual inspection. This is assistant visual review, not Dylan's art or play-feel approval.
+`index.json` records every selected source and strip SHA-256. Its **423 retained capture files** are an inventory, **not a claim that all 423 were viewed**. The older `review/` catalogue is likewise not substituted for this session's actual inspection. This is assistant visual review, not the owner's art or play-feel approval.
 
 | Strip | What is visibly supported | Weak frames / honest limit |
 | --- | --- | --- |

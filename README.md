@@ -1,125 +1,110 @@
 # Hermes64
 
-A Hermes Agent plugin that makes small 3D adventure games in the style of late-1990s consoles. Describe a game in one sentence; Hermes64 builds a playable starter in Godot, checks its story, lets bots play it, and edits it when you ask in chat. Games are ordinary Godot projects on your disk. A starter is not a finished original game.
+Hermes64 is a plugin that lets your own Hermes agent make and edit small, room-based 3D adventure games in a late-1990s console style. You describe the game; your agent works with Godot, structured game data, story checks and bot playtests.
 
-## What you get
+## Install, then ask
 
-- Ask your agent "make me a game about ...": it plans, builds, proves and bot-plays a game from your sentence. `/hermes64 new "<premise>"` makes a quick starter with a style and supported template picked from the premise, or named explicitly.
-- Edits by chat: move doors, add endings, change roles or apply a bounded JSON patch, then re-check the story.
-- Style packs, room kits, characters, audio and optional gameplay modules (arenas, timed courses), all as data files.
-- Place archetypes (wizard tower room, frontier main street, subway platform, castle great hall, forest camp) dress a room from data in the chosen pack and mood, with a render-and-measure loop and an approval store: see [docs/PLACES.md](docs/PLACES.md).
-- A proof badge per build: story proof, bot playtests and softlock count; it never claims more than its reports ([docs/PROOF-BADGE.md](docs/PROOF-BADGE.md)).
-- Local exports for web, macOS and Windows; a local checked Hub of styles, kits, characters, sounds and games ([docs/HUB.md](docs/HUB.md)).
-- 27 agent tools, the `/hermes64` slash command, eleven bundled skills, and a Studio tab for the Hermes desktop app. Setup reporting is included in `hermes64_doctor`, not a separate tool.
-
-## Make an original game
-
-Load **hermes64:hermes64-author** and ask the agent to design a world map, NPC dialogue, gates and endings, then compile/check/bot/replay it. The compact outline compiler and reusable quest patterns are data-driven, not a reskin selector. Worked purple tower: `examples/wizard-purple/world.json`. [Authoring guide](docs/AUTHORING.md) · [Supported mechanics and limits](docs/AUTHORING-SCOPE.md). `/hermes64 new` is the starter workflow, not this complete authoring process.
-
-## Requirements
-
-| | |
-|---|---|
-| Hermes Agent | 0.18.2 or newer (`requires_hermes: ">=0.18.2"`). 0.18.2–0.20.0 uses the bundled compatibility adapter and needs an explicit `projects_root`. On 0.20.1–0.20.3, set `projects_root` for Studio. Old-host compatibility is tested with stub contexts; the real catalog host exercised is 0.22.7. [Host compatibility](docs/HOST-COMPAT.md). |
-| Operating system | macOS (Apple silicon or Intel) and Windows 11 only (`platforms: [macos, windows]` in `plugin.yaml`). Linux authoring is refused. Windows needs the opt-in Job Object runner; see [Platforms](#platforms) for limitations. |
-| Godot | 4.6.2 standard build (not .NET), from https://github.com/godotengine/godot-builds/releases/tag/4.6.2-stable. Export templates are needed only for exports. |
-| Python packages | numpy and Pillow, declared in `plugin.yaml` (`numpy>=2.0,<3`, `Pillow>=11.3,<14`); Hermes installs them into its own Python when you install the plugin. A configured `python_path` must have the packages too. |
-| Blender | Optional. Default `builder=auto` uses Blender when found, otherwise the Python static-kit builder with numpy. `builder=python` selects Python explicitly; new armatures still need Blender. Strict mesh parity is not proven ([parity](docs/NOBLENDER-PARITY.md)). |
-
-## Quickstart
-
-Installation and activation require the owner's approval. Once the release repository is available:
-
+With Hermes already working, install from the public repository (https://github.com/Qhantom-Labs/hermes64):
 ```sh
 hermes plugins install Qhantom-Labs/hermes64 --enable
 ```
+This needs the network: Hermes clones the repository and asks before preparing numpy and Pillow. Approve dependency preparation only after reviewing the prompt. **Restart Hermes, then start a NEW chat after install**; an existing chat may not see the plugin.
 
-Restart Hermes, then just ask your agent in the chat, the way you ask it for anything else:
-
-```text
-Make me a game about a wizard tower with a ghost and three crystal keys
+If the one-liner is unavailable, or you need an exact release, use the release zip (Mac, default Hermes home `~/.hermes`; Hermes's Python must already have numpy and Pillow). Move any older `plugins/hermes64` outside `plugins/` first:
+```sh
+ZIP=hermes64-rc8-XXXXXXXX.zip   # the file you downloaded
+shasum -a 256 "$ZIP"            # must equal the published SHA-256
+mkdir -p ~/.hermes/plugins
+ditto -x -k "$ZIP" ~/.hermes/plugins
+python3 -B ~/.hermes/plugins/hermes64/tools/check_install.py
+hermes plugins enable hermes64
 ```
+Full checksum/backup recipe and the (unverified) PowerShell steps: [Install for your agent](docs/INSTALL-FOR-YOUR-AGENT.md).
 
-No slash command or skill name is needed. The agent finds the bundled `hermes64:hermes64-create` skill (on hosts that do not list plugin skills, a one-line hint from the plugin points it there), plans the game, builds it, lets bots play it and replies with what is in the game, what was not applied, the gate results, pictures and how to play it. With no `projects_root` set, games go to the same default folder `/hermes64 new` uses (`plugin-data/hermes64/games` in your Hermes home). Keys: WASD move, E act, Tab actions, I inventory, Esc settings ([PLAY.md](PLAY.md)). [Step-by-step guide](docs/QUICKSTART.md).
+> Make me a game about a wizard tower with a ghost and three crystal keys.
 
-Checkup (optional): type `/hermes64 setup` for a read-only checklist, or ask the agent for `hermes64_doctor`; both also give the official editor/export-template download plan and cannot download or accept consent. Quick starter without the agent: `/hermes64 new "A fox searches the village for its lost lantern"` gives the game folder, style, badge and `Play:` command (a model can use `hermes64_demo(premise="...")` for the same starter). In the desktop app a slash command's reply is shown as small grey plain text; the agent's replies are normal chat messages.
+**Expect minutes, not an instant finished game.** The agent plans, builds, lets bots play, and should report what it could not make. A fuller game can take longer and needs iteration. Missing Godot stops the build for your approval; it is not downloaded automatically.
 
-If Godot is missing, review `/hermes64 setup --fetch`, then type `/hermes64 setup --fetch --yes` yourself to approve the official download. Add `--templates` for exports. Do not have an agent infer download approval from a request to make a game. [Setup details](docs/SETUP-FETCH.md).
+**Games:** normally `<Hermes home>/plugin-data/hermes64/games`, or your configured `projects_root`. Older hosts need an explicit folder.
 
-## Settings
+**Platforms:** macOS and Windows 11; this package's native Windows run is not established. Linux authoring is unsupported.
 
-Settings, Plugins, Hermes64, or `plugins.entries.hermes64.settings` in `config.yaml`:
+[Quick start and troubleshooting](QUICKSTART.md) · [Game-type strengths and measured limits](docs/GAME-TYPE-STRENGTHS.md) · [Honest scope](docs/AUTHORING-SCOPE.md)
 
-- `projects_root`: existing absolute folder for your games. With the documented storage API, blank uses `<Hermes home>/plugin-data/hermes64/games`. Older hosts need the setting or use their available `ctx.state` fallback; Studio on those hosts needs the explicit setting. Earlier pre-release games in the old namespaced folder are not moved or deleted: point `projects_root` at that folder to keep using them.
-- `godot_path`, `blender_path`, `python_path`, `ffmpeg_path`: override discovery. A bad explicit path is an error, never a silent fallback. Godot discovery includes its verified setup cache.
-- `builder`, `character_exporter`: `python`, `blender` or `auto`.
-- `hub_url`: an HTTPS Hub registry you trust. Blank keeps Hub downloads off; the separately approved setup fetch is described below.
+## Demo
 
-## Platforms
+**Teknium vs. Tyrants** is a separate demo game built with Hermes64.
+It was authored as data through the plugin's create, compile and bot tools.
+It demonstrates combat waves and sequential CEO duels.
+Bots exercise the authored encounters and prove completion of the tested route.
+That is mechanical evidence, not a claim about player-facing polish or human playability.
+The demo is separate from the plugin; its assets are not needed to install Hermes64.
+[demo video: link added at submission]
 
-- **macOS**: central build/check/play/export children run under `sandbox-exec`, with network denied and writes confined to the project.
-- **Windows 11**: the runner refuses children until the owner opts in with `HERMES64_WINDOWS_RUNNER=job` and restarts Hermes. The Job Object limits resources and kills its child tree, but provides **no OS-enforced network or write confinement**. This composed tree has Mac simulation evidence, not a new native-Windows acceptance. Earlier PC results concern an earlier package: [platform parity](docs/PLATFORM-PARITY.md), [Windows details](docs/WINDOWS.md), [test sheet](docs/WINDOWS-TEST-SHEET.md).
-- **Linux**: not a supported platform for this plugin. Authoring children fail closed because there is no Linux sandbox implementation. Exported web builds can still run in a browser.
+## Requirements and setup
 
-Windows discovery checks Godot in `%LOCALAPPDATA%\Programs\Godot`, Program Files, winget, scoop, the verified cache and PATH; an explicit override wins. Check installation with `py tools\check_install.py` and `py -B -m adventure_maker.doctor --windows-checklist`. Windows export targets are `windows` and `web`; `macos` needs a Mac. To serve an exported web folder locally: `py -m http.server 8000`. Unsigned exported games can trigger SmartScreen: More info, then Run anyway. Saves and logs are per game under `%APPDATA%\Hermes64\<game id>` ([saves and legacy adoption](docs/SAVES.md)).
+| Requirement | What to know |
+|---|---|
+| Hermes Agent | Manifest floor `>=0.18.2`. The older-host adapter is not a clean-install certification. The quick start separates local source checks for 0.18.2, 0.22.7 and 0.23.1 from actual runtime checks. |
+| Godot | **4.6.2**, standard build, not .NET. Export templates are needed only for exports. |
+| Python dependencies | `numpy>=2.0,<3` and `Pillow>=11.3,<14` are declared in `plugin.yaml`. Recent Hermes installers can prepare them with consent. A separately configured `python_path` must have the needed packages too. Do not assume old hosts install them. |
+| Blender | Optional for the default static-room workflow: `builder=auto` can use the Python builder with numpy when Blender is absent. Some character workflows still require Blender; strict static-mesh parity is not established. |
 
-## What this plugin does on your computer
+In a new chat, `/hermes64 setup` is a read-only checklist. The agent can call `hermes64_doctor` for the same setup guidance; it cannot approve downloads through that tool.
 
-**Runs local programs.** To build, check, play and export games Hermes64 starts Godot 4.6.2, Blender (optional), Python (your Hermes Python by default) and, only for audio import, your own ffmpeg. Every run has a time limit (up to one hour for character exports). The central runner uses the platform isolation above. Some character/preview/audio subprocesses run outside that central sandbox: [platform parity](docs/PLATFORM-PARITY.md). Children started by the build runner, character gate and Godot previews get a scrubbed environment; ffmpeg audio import and the Blender character exporter still inherit Hermes's environment. On macOS it also uses `sips` (image resizing), `launchctl` (detect a desktop session), `open` (Studio launch) and the system `xattr` for an explicitly fetched, verified Godot app only.
+If Godot is missing:
 
-**Network.** Off by default. If you set `hub_url`, it reads that Hub registry over HTTPS without redirects. Nothing is uploaded and there is no telemetry. Hermes itself installs numpy and Pillow from PyPI when you install the plugin.
+1. Type `/hermes64 setup --fetch` to inspect the official download plan. It downloads nothing.
+2. If you approve it, type `/hermes64 setup --fetch --yes` yourself.
+3. Retry your game request. Add `--templates` to the approved fetch only when you need exports.
 
-**Setup download (only when you type it).** If you type `/hermes64 setup --fetch --yes` (or run `tools/hermes64_setup.py --fetch` and answer yes), Hermes64 downloads the official Godot 4.6.2 editor for your OS (`Godot_v4.6.2-stable_macos.universal.zip` or `Godot_v4.6.2-stable_win64.exe.zip`, capped at 512 MiB). With `--templates` it also downloads Godot's official export templates (`Godot_v4.6.2-stable_export_templates.tpz`, about 1.25 GB, capped at 1.4 GiB), keeps only the three players exports use and deletes the archive. Both come only from `github.com/godotengine/godot-builds` (redirects only to GitHub's release-asset hosts); every download must match Godot's published SHA-512 before unpacking. Files go to `~/Library/Caches/hermes64/` (macOS) or `%LOCALAPPDATA%\hermes64\` (Windows), never the plugin folder. It runs the verified Godot once with `--version`; on macOS it removes quarantine from that verified Godot.app only. The model-facing doctor only reports the plan and human command. No hosted stub bundle is used. [Full details](docs/SETUP-FETCH.md).
+The fetch checks pinned SHA-512 before unpacking the official Godot release. It uses a per-user cache, not the plugin directory; on macOS it removes quarantine only from the verified fetched Godot app and checks `--version`. Downloads and template storage are extra setup, not game-build time. [Setup details](docs/SETUP-FETCH.md).
 
-**Background process.** Studio's Play button serves one exported web game from `127.0.0.1` on a random port; it stops when you close it or after 30 idle minutes.
+## What the agent can do
 
-**Files it reads or writes.** Games go to your chosen/default games folder. It reads your installed Godot, Blender and ffmpeg, Godot export templates (hash-checked on export), verified setup cache, and reference images or audio you point it at. It never reads Hermes credentials, `.env` files or other apps' private data, and never writes into its own plugin folder.
+- Plan a game with the bundled `hermes64:hermes64-create` skill, build it and read `CREATE-REPORT.md`, including every `Not applied` row. The create flow's output and report end with a **How to play** block (game folder, the `Play:` command for the built game, default keys), and the skill asks the agent to pass it on. The current create flow starts with two rooms; additional named places are not automatically additional rooms. It also makes the game's own hero and three or four of the pieces the brief names, and reports a miss as a `Not applied` row.
+- Make a faster, narrower starter with `/hermes64 new "A fox searches the village for its lost lantern"`. This is not the full agent-designed workflow. Use its returned `Play:` command, not a guessed game path. Its reply has a `Note:` line when your names get stock shapes (in this example the fox is the standard human body and the lantern the pack's key model), when a requested genre such as racing is not supported, and with the measured reason when its style audit scores below 90.
+- Author larger finite room graphs, dialogue, gates and endings with `hermes64:hermes64-author`. Grid puzzles use a separate module workflow.
+- Edit supported story data, then re-check it. `hermes64_edit` requires a proved story; combat/course games can be conditional and need the create/module workflow instead.
+- Build rooms and props from packs and bounded data recipes, reuse the public cast, work with audio, and export for macOS, Windows or web subject to each target's requirements.
 
-**Credentials.** None needed or stored.
+The package declares **27 tools**, one `pre_llm_call` hint hook, the `/hermes64` command, **11 bundled skills**, and a Desktop Studio extension. These are inventories, not a claim that every workflow has passed on every host (`plugin.yaml`, `__init__.py`).
 
-## Scope
+Games are local editable projects. Bot completion, finite story proof, replay and measured image checks are different results; none judges fun, balance or appearance. Games can fail the plugin's own measured style audit. Quick starters measured on the development Mac: no style word FAIL 84/100; a castle premise (`castle_keep`) FAIL 0/100, also after its window fix; `polar` after the premise WARN 97/100. Rebuilding 21 earlier agent-game briefs without the agent: 8 FAIL, 12 WARN, 1 PASS. Unsupported requests include general jumping, climbing, swimming, vehicles, player gun/aim/ammo systems, multiplayer, seamless open worlds and arbitrary per-game scripts.
 
-Hermes64 makes room-based 3D games in a late-1990s console style: exploration and story, bounded melee arenas and bosses, grid puzzles and timed on-foot courses. It is not a general game engine for any prompt. Stories, gates and effects use finite contracts, and puzzle authoring is a separate workflow ([supported mechanics and limits](docs/AUTHORING-SCOPE.md)).
+## Time and evidence
 
-- **Not supported:** general jumping or air control, climbing, swimming, vehicles, a general shooter system, multiplayer, seamless open worlds, crafting or economy systems, and arbitrary per-game scripts. A requested thing can be missing; the plugin reports the gap instead of renaming a stock object.
-- **Proof, bots and the style audit are separate results.** Bots follow bounded paths and cannot judge difficulty, fun or looks. On this release the default fox starter (`/hermes64 new "A fox searches the village for its lost lantern"`, Blender hidden) built its assets and 2 bots finished; its measured style audit scored **WARN 88/100** (2 rooms, none failing).
-- Starter rooms are small (a 4 x 4 grid); a room-size setting is not in this release.
-- Per game type, what is strong, what is rough and what is not supported, with measured numbers: [docs/GAME-TYPE-STRENGTHS.md](docs/GAME-TYPE-STRENGTHS.md).
+A full agent-designed game takes minutes to craft; allow longer for more authoring, repairs and iteration. The create skill budgets 2–15 minutes for its build stage, not a guaranteed deadline. Setup, dependency preparation and downloads are separate. Do not repeat a build just because a foreground call timed out: the agent should run the long build in the background and wait for its report.
 
-## How long does it take?
+The game-type table records earlier measured examples with their conditions and failures. Those numbers are not a success rate for new prompts or a certification of this candidate. No all-green test-suite or clean first-install claim is made here: before rc8's last documentation merge, the plugin's 1,728 tests ran on the development Mac with 1 failure (a check that reads a development evidence file the package does not carry).
 
-**Starter: seconds. Agent-designed game: minutes. Polished game: plan for hours of iteration.** The hours are a planning allowance, not a measured benchmark. Setup and downloads are extra.
+## Settings and storage
 
-| What | Measured | Conditions |
-|---|---|---|
-| Starter: `/hermes64 new` with the fox premise | 18 s | One run of this release's package on the development Mac (Apple M4 Pro, other jobs running), Python room builder, Blender hidden. Style audit WARN 88/100 |
-| Agent-designed game with the bundled `hermes64-create` skill, Claude Opus 5.5 (medium) | median 329 s, 10 tool calls per game | 6 detailed prompts, one run each, on the pre-release tree with this skill. 6/6 games built, 6/6 bot runs finished |
-| The same with GPT-6.1 Sol (low) | median 277 s, 12 tool calls per game | Same prompts and tree. 6/6 built, 6/6 bot runs finished |
+Use the active profile's Hermes64 settings (`plugins.entries.hermes64.settings`):
 
-These are single samples on one machine, not latency promises. Reasoning levels are the requested settings.
+- `projects_root`: an existing absolute games directory. On current storage-capable hosts, blank uses `<Hermes home>/plugin-data/hermes64/games`. The 0.18.2 adapter requires an explicit directory. Existing games are not migrated automatically.
+- `godot_path`, `blender_path`, `python_path`, `ffmpeg_path`: explicit executable paths override discovery. A bad explicit path is an error, not a fallback.
+- `builder`: `auto`, `python` or `blender`; `character_exporter` is a separate setting.
+- `hub_url`: optional trusted HTTPS registry; blank disables Hub downloads.
 
-## Tested hardware
+[How to play and default keys](PLAY.md) · [Host compatibility](docs/HOST-COMPAT.md) · [Playtests and reports](docs/PLAYTEST.md) · [Exports](docs/EXPORT.md)
 
-| Platform | What ran | Not established |
-|---|---|---|
-| macOS, development Mac (Apple M4 Pro, 64 GB, macOS 27.0.1, Godot 4.6.2) | Native renders, bots, exports, and this release's package checks | Intel Macs; Gatekeeper and notarization on another machine |
-| A second Mac (MacBook) | An earlier interim build: official Godot 4.6.2 download verified, Python room builder without Blender | Clean install, create, edit and export of this release |
-| Windows 11 PC (RTX 4070 Ti SUPER, Hermes 0.18.2) | An earlier package: fox starter built, 2 headless bots passed, Windows and web exports booted, examples at 59-60 FPS | This release's package on Windows |
+## Platforms and security boundaries
 
-## Limits
+**macOS:** the central build/check/play/export runner uses `sandbox-exec`, denying network and confining writes. Not every helper uses that runner; consult [platform parity](docs/PLATFORM-PARITY.md).
 
-- Starters need further authoring; module support is scoped to the exact build's reports.
-- Bot playtests do not judge fun, balance or appearance. The default game can fail its own measured style audit.
-- Some exported steps take time. Individual step timings and receipts are not continuous progress guarantees.
-- Native-Windows execution of this exact composed package, real upstream setup downloads and installation with fresh dependencies need separate verification. Simulation and loopback fixtures are not substitutes.
-- Character/rig and visual acceptance are specific to their recorded evidence; no human art approval is implied.
+**Windows 11:** child execution requires an owner opt-in to `HERMES64_WINDOWS_RUNNER=job`, followed by a restart. Job Objects limit resources and child lifetime, but provide **no OS-enforced network or write confinement**. This candidate's native Windows install/build/export remains unverified. [Windows guide](docs/WINDOWS.md).
 
-## Docs
+**Linux:** no supported authoring runner. A web export is a separate browser target, not Linux-host plugin support.
 
-[Quick start](docs/QUICKSTART.md) · [Authoring](docs/AUTHORING.md) · [Playing](PLAY.md) · [Hub](docs/HUB.md) · [Exports](docs/EXPORT.md) · [Proof badge](docs/PROOF-BADGE.md) · [Disclosure details](docs/DISCLOSURE.md) · [Package contents](docs/PACKAGE-CONTENTS.md)
+**Local processes:** Godot, Python, optional Blender and user-provided ffmpeg. Some character/preview/audio subprocesses are outside the central runner; ffmpeg audio import and the Blender character exporter can inherit the host environment. Plugin code is not a universal sandbox.
 
-The Studio tab's `desktop/plugin.js` is generated from shipped `studio/prototype/js/*`, `studio/prototype/studio.css` and `studio/plugin/glue.js` by `python3 -B studio/tools/sync_shared.py`.
+**Network:** normal game creation does not fetch Godot. Optional approved setup fetches and configured Hub reads use HTTPS; Hermes dependency preparation is a separate host action. The plugin manifest declares no credentials or required environment secrets. That declaration is not a guarantee about every external program it launches.
 
-## Licence
+**Files and background work:** project data, generated assets, reports and exports use project/data roots; setup has a separate cache. One exception: when the agent create flow generates a style pack for a game, it saves that pack inside the installed plugin folder (285 to 288 files under `kits/library/`, `kits/packs/` and `packs/`, plus one `mood-report-*.json`, in 3 of 4 judged rc6 builds), and `tools/check_install.py` then lists those files as extra. Studio Play can serve an exported game on `127.0.0.1` at a random port, with a 30-idle-minute limit. [Disclosure](docs/DISCLOSURE.md) · [Setup download disclosure](docs/SETUP-FETCH.md).
 
-MIT ([LICENSE](LICENSE)), copyright Qhantom Labs and Hermes64 contributors. Godot is MIT-licensed and is not bundled. This package does not include the optional cameo pack. Third-party notices: [licenses/](licenses/).
+## Licence and submission
+
+MIT ([LICENSE](LICENSE)), copyright Qhantom Labs and Hermes64 contributors. Godot is not bundled; its notices are in [licenses/](licenses/). The default package excludes the optional cameo pack. A model waiver is not a licence or permission to redistribute private demo assets.
+
+**Hermes64 itself is the plugin submission.** A showcase game illustrates it; installing the plugin does not require that demo. The repository is public; catalog submission, video/post and form submission are separate owner decisions.

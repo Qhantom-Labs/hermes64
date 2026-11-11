@@ -1,6 +1,6 @@
-# Putting a hermes64 web export on Cloudflare Pages (steps for Dylan)
+# Putting a hermes64 web export on Cloudflare Pages (steps for the owner)
 
-No agent runs these steps. Deploying, the domain and the Cloudflare account are Dylan's decisions, one by one.
+No agent runs these steps. Deploying, the domain and the Cloudflare account are the owner's decisions, one by one.
 
 ## 1. Pack the export (local, no network)
 
@@ -30,7 +30,7 @@ python3 -B -m tools.site_pack_smoke <site folder> <new output folder> [--ignore-
 
 The per-file limit used by default, **25 MiB, was not read from Cloudflare's documentation** in this lane (no network was allowed). Look it up on Cloudflare's Pages limits page. If it is different, re-pack with `--limit-mib <value>` (and `--part-mib` at or below it). If Pages ever accepts the whole file, `--limit-mib 100` packs with no split and no loader.
 
-## 4. Upload (Dylan, in the Cloudflare dashboard)
+## 4. Upload (the owner, in the Cloudflare dashboard)
 
 Unverified outline from general knowledge; follow Cloudflare's current screens if they differ:
 

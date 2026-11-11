@@ -138,7 +138,7 @@ class Project:
                 fail('exists', 'Project already exists; scaffold never overwrites')
             self.write_json('.maker/project.json', {'format': 1, 'name': name})
         elif not self.root.is_dir() or not self.path('.maker/project.json').is_file():
-            fail('project', 'Not a managed adventure project; scaffold first')
+            fail('project', 'No game named %r in %s; create one with /hermes64 new "A short adventure".' % (name, base))
         elif self.read_json('.maker/project.json') != {'format': 1, 'name': name}:
             fail('project', 'Invalid managed project marker')
 

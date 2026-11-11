@@ -2,7 +2,7 @@
 
 **Status: built, untested on Windows.** All Windows behaviour below was built and checked on a Mac by simulation
 (patched `sys.platform`/`os.name`, `PureWindowsPath`/`ntpath` path tests, a grep gate, removed POSIX `os`
-functions). Nothing here has run on a Windows PC yet. Dylan's run of [WINDOWS-TEST-SHEET.md](WINDOWS-TEST-SHEET.md)
+functions). Nothing here has run on a Windows PC yet. The owner's run of [WINDOWS-TEST-SHEET.md](WINDOWS-TEST-SHEET.md)
 is the first real test; results go under "Tested by the owner" at the end.
 
 ## What works where
@@ -105,4 +105,4 @@ the Studio shelf on NTFS.
 
 ## Tested by the owner
 
-Not yet. Record the date, PC, Windows version, GPU and Dylan's words here after the test sheet.
+Not yet. Record the date, PC, Windows version, GPU and the owner's words here after the test sheet.

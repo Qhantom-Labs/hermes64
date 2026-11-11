@@ -21,6 +21,7 @@ from .schemas import ID, obj, text, validate
 from .runner import locate
 from .templates import premise_spec
 from . import badge as badges
+from .creation_reply import reply_notes
 
 MAX_PREMISE = 300
 NAME = re.compile(r'[a-z][a-z0-9_-]{0,63}')
@@ -74,7 +75,7 @@ def normalize_premise(premise):
     if not isinstance(premise, str) or not premise.strip():
         fail('new_premise_empty', 'Give a one-sentence premise, e.g. ' + EXAMPLE + '.')
     clean = ''.join(ch for ch in ' '.join(premise.split()) if ch.isprintable())
-    if not clean:
+    if not clean or not any(ch.isalnum() for ch in clean):
         fail('new_premise_empty', 'Give a one-sentence premise, e.g. ' + EXAMPLE + '.')
     if len(clean) > MAX_PREMISE:
         fail('new_premise_long', 'That premise is %d characters; keep it to one sentence under %d characters and try again.'
@@ -281,6 +282,10 @@ def resolve_root(settings, default_root):
 
 def starter_spec(settings, premise, name, pack_id, template=None, slots=None, games_root=None):
     """Existing premise template, dressed with bundled public cast and a bound keepsake asset."""
+    from .creation_reply import generic_prompt
+    title_premise = premise
+    if not slots:
+        premise = generic_prompt(premise)
     from .packs import Packs
     pack = Packs(settings).get(pack_id)
     from . import templates, pack_rooms
@@ -297,7 +302,7 @@ def starter_spec(settings, premise, name, pack_id, template=None, slots=None, ga
         apply(spec, slots or {}, rooms)
     elif slots:
         spec['metadata'].setdefault('presentation', {})['text_boxes'] = bool(slots.get('text_boxes', False))
-    spec['title'] = (slots or {}).get('title') or title_for(premise)
+    spec['title'] = (slots or {}).get('title') or title_for(title_premise)
     bundle = Path(settings.get('bundle_root') or Path(__file__).resolve().parents[1])
     path = bundle / 'bindings.json'
     rows = json.loads(path.read_text(encoding='utf-8')).get('characters', []) if path.is_file() else []
@@ -537,6 +542,8 @@ def finish(settings, service, root, uses_default, name, earlier, premise, asked,
             first = '%s, but it needs work: %s' % (made, (reasons or ['see the badge'])[0])
         style_line = 'Style: %s (%s), %s' % (STYLE_NAMES[pack], pack, reason)
         lines = [first, style_line, room_scale.summary_line(scaled), 'Badge: ' + badge['text'], 'Play: ' + command]
+        notes = reply_notes(premise, asked, spec, template)
+        lines.extend(notes)
         if template != 'two_room_collect_v1' or record:
             lines.insert(3, 'Template: %s (%s)' % (template, template_reason))
         if record:
@@ -554,6 +561,11 @@ def finish(settings, service, root, uses_default, name, earlier, premise, asked,
             lines.append('Not yet applied: ' + ', '.join(unapplied))
         if audited['result'] and audited['result'].get('contact_sheet'):
             lines.append('Style audit sheet: ' + str(project.root / audited['result']['contact_sheet']))
+        if audited['result']:
+            from .creation_reply import audit_details
+            detail = audit_details(project.read_json(audited['result']['report_path']))
+            if detail:
+                lines.append(detail)
         engine = other_godot(gversion, tools['godot'], lead='Made and played with')
         if engine:
             lines.append('Godot: ' + engine + '.')
@@ -575,7 +587,7 @@ def finish(settings, service, root, uses_default, name, earlier, premise, asked,
                   'made_at': made_at,
                   'style_audit': audited['line'], 'assets': assets, 'next': steps,
                   'project_dir': str(project.root), 'title': title, 'premise': premise,
-                  'story': story_card, 'not_applied': unapplied,
+                  'story': story_card, 'not_applied': unapplied, 'notes': notes,
                   'template': card['template'], 'style': card['style'], 'rooms': card['rooms'], 'badge': badge['text'],
                   'proof_badge': badge, 'play_command': command,
                   'play_argv': argv, 'paths': paths, 'default_games_folder': uses_default, 'stages': stages,
@@ -666,7 +678,16 @@ def parse(raw, include_story=False, include_scale=False):
         if end < 0:
             fail('new_quote', 'The premise is missing its closing quote; try ' + EXAMPLE + '.')
         premise, value = value[1:end], value[end + 1:]
-    tokens = value.split()
+    lexer = shlex.shlex(value, posix=True)
+    lexer.whitespace_split = True
+    lexer.commenters = ''
+    lexer.escape = ''  # paths and premise text keep literal backslashes (including Windows paths)
+    if premise is None:
+        lexer.quotes = '"'  # an apostrophe in an unquoted sentence is text, not an opening quote
+    try:
+        tokens = list(lexer)
+    except ValueError:
+        fail('new_quote', 'An option is missing its closing quote; use --name fox-lantern.')
     index = 0
     while index < len(tokens):
         token = tokens[index]
@@ -709,6 +730,10 @@ def parse(raw, include_story=False, include_scale=False):
 
 
 def failure(exc):
+    if isinstance(exc, ModuleNotFoundError) and exc.name in ('numpy', 'PIL'):
+        return {'ok': False, 'error': {'code': 'new_dependency', 'message':
+            'The Python running Hermes cannot import %s. Use a Hermes Python with that dependency available '
+            'before retrying; python_path is the separate build Python, so its setup check does not check this interpreter.' % exc.name}}
     if isinstance(exc, Fault):
         return {'ok': False, 'error': {'code': exc.code, 'message': one_line(exc)[:1000]}}
     return {'ok': False, 'error': {'code': 'new_internal', 'message': one_line(

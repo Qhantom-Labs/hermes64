@@ -17,7 +17,7 @@ cannot silently regress). At runtime an id that is somehow unsafe falls back to 
 
 ## The bug this fixes (SAVEFIX, 2026-11-10)
 
-Dylan's Windows PC: thaw, relay_combat, reedland_mixed and puzzle_hall all saved to one shared
+The owner's Windows PC: thaw, relay_combat, reedland_mixed and puzzle_hall all saved to one shared
 `%APPDATA%\Adventure Runtime\` slot, overwriting each other. Cause: the runtime template and `export.py` used the key
 `config/custom_user_dir`, which Godot does not read (the setting is `config/custom_user_dir_name`). With the name
 empty, Godot falls back to `config/name` = "Adventure Runtime" for every game, on every desktop OS. The older docs
@@ -50,5 +50,5 @@ overwritten before this fix and start fresh.
 - **Not done:** OS-level key presses. F5/F9 were injected as `InputEventKey` into Godot's input pipeline
   (`tools/savefix_keys.gd`); this unattended run had no Accessibility permission (`osascript ... key code` refused,
   desktop driver needs approval). Web and Windows were not run; Windows resolution follows the same Godot code path
-  (`get_data_path()` + `custom_user_dir_name`) but is unverified until Dylan's PC re-runs sheet step for saves.
+  (`get_data_path()` + `custom_user_dir_name`) but is unverified until the owner's PC re-runs sheet step for saves.
 - Replays/goldens: `test_golden`, `test_runner`, `test_puzzle_runtime` green, nothing re-pinned.

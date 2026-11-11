@@ -22,7 +22,7 @@ def make(root, rows, brief=None, placements=()):
     return {'format': 'hermes64-asset-report/1', 'brief': brief or {}, 'rows': rows,
             'total': len(rows), 'ready': sum(counts[k] for k in READY),
             'counts': {k: counts[k] for k in STATUSES}, 'placements': list(placements),
-            'note': 'Numeric checks are not appearance approval. Appearance is for Dylan to judge.'}
+            'note': 'Numeric checks are not appearance approval. Appearance is for the owner to judge.'}
 
 
 def with_bindings(root, report, bindings, bundle_root, *, placements=()):
@@ -79,7 +79,7 @@ def text(report):
         'Made new: ' + names(('generated',)),
         'Library: ' + names(('existed', 'remapped')),
         'Converted: ' + names(('converted',)) + '. Stand-ins: ' + names(('substituted',)),
-        'Appearance is for Dylan to judge.'
+        'Appearance is for the owner to judge.'
     ]) + '\n'
 
 

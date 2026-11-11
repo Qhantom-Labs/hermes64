@@ -44,9 +44,10 @@ def digest(raw):
 
 
 def _mask():
-    try:
+    # Package layout, not a dependency ImportError, chooses the import route.
+    if '.' in (__package__ or ''):
         from ..kits.core import mask_recipe
-    except ImportError:
+    else:
         from kits.core import mask_recipe
     return mask_recipe
 

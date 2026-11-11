@@ -6,7 +6,7 @@ Owner: Hermes Main. Bounded executor: Astra / Prometheus. Local prototype only; 
 
 - Python: `3.9.6 (default, Oct 19 2026, 19:18:13) `; verifier executable `/Applications/Xcode.app/Contents/Developer/usr/bin/python3`.
 - Existing Blender 5.2.1 LTS and Godot 4.6.2; windowed Mobile/Metal renderer. No install, download, export template, network/public operation or live Hermes activation.
-- Verified implementation commit: `89b383de9ed3bf83d1fe4b83fc16c06764afa1cc`. No remotes. A later documentation-only receipt commit may follow; this is **not the final catalog pin**.
+- The receipts below are historical implementation evidence from commit `89b383de9ed3bf83d1fe4b83fc16c06764afa1cc`, not current-package acceptance. Current-package receipts are `docs/FINALINT4-RESULT.md` (rc7) and `docs/FINALINT5-RESULT.md` (rc8, to be produced by the integrator); these are repository-only release records. The catalog PR pins the public repository's own full commit SHA. No future pin or rc8 result is asserted here.
 - 130 source files match the verifier's captured SHA-256 values; no changed source silently credited to an earlier run.
 
 ## Reproduce and exact command receipts
@@ -142,4 +142,4 @@ All ten rooms are below the 6,000-triangle room ceiling. Real kit geometry, LOOK
 - Actual character-lane assets, bone retargeting, shared rig/deformation/animation tests, costume/coat fidelity and held-frame character animation. All characters remain marked placeholders; manifest-only replacement is documented, not real-character acceptance.
 - Listening, subjective audio quality, human movement/camera/UI feel, spatial reachability/collision perfection, narrative staging and final visual/style acceptance. Legal actions are exposed in a menu without proximity gating.
 - Arbitrary natural-language generation/edit precision, automatic rebaking of arbitrary project palettes, and all 43 kit parameter sweeps in this assembled run. Main’s prior lane verification is provenance, not a claim that those sweeps were rerun here.
-- No public repository, push, catalog PR, X demo, Typeform, contact, install or live activation. Optional combat/lab-building backlog remains unstarted. Real character landing and independent review return to Main, not a competing queue.
+- At that pin: no public repository, push, catalog PR, X demo, Typeform, contact, install or live activation. Optional combat/lab-building backlog remains unstarted. Real character landing and independent review return to Main, not a competing queue.

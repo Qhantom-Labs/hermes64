@@ -356,7 +356,7 @@ If a shared catalogue is ever built, it should be a separate opt-in, per game, w
 
 ## Taken from the reference, as principles only
 
-From Dylan's private reference screenshot (which is not in this repository), we took composition and interaction principles, never art:
+From the owner's private reference screenshot (which is not in this repository), we took composition and interaction principles, never art:
 
 1. Four horizontal bands at the same heights, measured to within about 1% (see `CRITIQUE-STEER1.md`):
    - logo, icon bar and counter;

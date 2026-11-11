@@ -12,7 +12,7 @@ Tokens in this file are the host's estimate (compact JSON of the OpenAI tool def
   plugin tool, core or not, behind `tool_search` / `tool_describe` / `tool_call`. The model sees one listing line per
   tool. Hermes64 costs 641 tokens of listing (27 tools) in the default schema, or 265 with only the 11 CORE tools.
   Each call costs one bridge round: `tool_describe` once for the schemas, then `tool_call`.
-- **Dylan's PC (0.18.2) and 0.16.0-0.19.0:** tool search runs on `auto`. It defers plugin and MCP tools only when
+- **the owner's PC (0.18.2) and 0.16.0-0.19.0:** tool search runs on `auto`. It defers plugin and MCP tools only when
   together they use more than 10% of the context window. Hermes64 alone is 4,283 tokens, under every threshold
   (12,800 at 128K), so **all 27 tools are eager**. When MCP servers push the total over the line, every plugin tool
   defers behind a bare bridge with no listing (378 tokens): the agent must search to find any Hermes64 tool.
@@ -28,8 +28,8 @@ Nothing breaks on older hosts: the plugin registers the full set everywhere, exa
 | where | version | how known |
 |---|---|---|
 | this Mac (host here) | 0.22.7, commit b200f5bc60, tag `v0.22.7` (2026-11-03); install built 2026-11-05, tree dirty | `hermes_cli.main --version`, `install-stamp.json` |
-| Dylan's PC | 0.18.2 = release tag `v2026.7.7.2` (2026-07-07) | `__version__` in `hermes_cli/__init__.py` at that tag |
-| Dylan's MacBook | **unknown here**: no file this lane can read records it (Dylan says it differs). Any version falls in one row below | - |
+| the owner's PC | 0.18.2 = release tag `v2026.7.7.2` (2026-07-07) | `__version__` in `hermes_cli/__init__.py` at that tag |
+| the owner's MacBook | **unknown here**: no file this lane can read records it (the owner says it differs). Any version falls in one row below | - |
 
 ## Behaviour by host version
 

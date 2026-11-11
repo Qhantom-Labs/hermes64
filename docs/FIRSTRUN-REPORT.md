@@ -84,7 +84,7 @@ Files both lanes touch, different regions (expected to merge cleanly, check at m
 - Rendering on other GPUs (style audit scores, playtest frame times), an Intel Mac, other macOS versions, a home folder with spaces in its path.
 - A model driving the tools from a plain chat request (here every argument was typed by hand).
 
-## Copy-paste test prompt for Dylan's MacBook
+## Copy-paste test prompt for the owner's MacBook
 
 Paste this into Hermes on the MacBook (after copying `hermes64-firstrun2.zip` or a newer package from `firstrun-lane` into `~/Downloads`):
 

@@ -94,7 +94,7 @@ F9 quick-load, hold R retry/reset.
     py -B -m adventure_maker.doctor --windows-checklist
     ```
 
-    Expected: `PASS  hermes64 0.1.0 at C:\H64\hermes64: N/N files verified` (both numbers equal), then `OK` /
+    Expected: `PASS  hermes64 1.0.0-rc at C:\H64\hermes64: N/N files verified` (both numbers equal), then `OK` /
     `MISSING` / `OFF` lines with a fix each and a `RESULT` line. Send back: both outputs.
 13. `hermes --version`. Hermes 0.18.2 to 0.20.0 runs Hermes64 in **compatibility mode**: settings come from
     `config.yaml` and there is no default games folder, so set the plugin setting `projects_root` to an existing

@@ -68,7 +68,7 @@ marker is a pure function of fixed-tick state (`modules/combat/telegraph.gd`, `r
 The challenge entry posts of the fight in progress are hidden while it runs, because they would stand inside the arena
 as clutter. Boss events never reopen the narration panel.
 
-## Tunables for Dylan
+## Tunables for the owner
 
 Edit `runtime/godot/modules/combat/readability.json` to change the defaults for all games. To change one pack or one
 room, add a `"combat"` block with the same keys:

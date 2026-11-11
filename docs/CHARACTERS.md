@@ -129,7 +129,7 @@ code: `RANGE`, `UNKNOWN_PART`, `PART_BODY`, `ROLE`, `SLOT`, `BUDGET`, `RIG`, `LO
 
 ## Names
 
-- People keep `placeholder: true` until Dylan names them.
+- People keep `placeholder: true` until the owner names them.
 - The masked lead (`new_arrival`) shows as **Qhantom**; ids never change.
 - The plugin's own cast takes its display names from `catalog/names.json`, the one editable names file (owned by the
   hub lane).

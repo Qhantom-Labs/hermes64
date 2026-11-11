@@ -2,7 +2,7 @@
 
 ## Additive stock catalog interface — wave 2
 
-**INTERFACE READY / FROZEN; 208 assets AVAILABLE and numerically verified.** The v1 Thaw manifest and 38 WAV files remain byte-for-byte preserved, with unchanged mtimes. Dylan reports listening to and loving those originals; the 170 new sounds have no listening approval. Core synthesis is theme-agnostic; packs select sound IDs and parameter presets as JSON data. This contract does not install a plugin/runtime adapter.
+**INTERFACE READY / FROZEN; 208 assets AVAILABLE and numerically verified.** The v1 Thaw manifest and 38 WAV files remain byte-for-byte preserved, with unchanged mtimes. The owner reports listening to and loving those originals; the 170 new sounds have no listening approval. Core synthesis is theme-agnostic; packs select sound IDs and parameter presets as JSON data. This contract does not install a plugin/runtime adapter.
 
 Verified delivery: `../evidence/wave2/stage20-verify.log` (69 tests and full build/audit/media/query sequence). `../catalog.json` SHA-256: `81ab8380d25e1d5e3dd45a027a551ed18fd20ec4c76a546a98341b7ca3f53f80`. Catalog WAVs: 14,095,138 bytes; six 40.5-second review samplers: 10,716,564 bytes; combined: 23.662283 MiB. All 28 catalog loops pass the unchanged PCM seam gates. New-asset sweep: 220 cases across 11 families; 1,190 per-asset known-bad controls reject correctly.
 
@@ -50,7 +50,7 @@ Bindings refer to supplied WAVs; their `gain` is runtime mix gain (0–1). Prese
 
 ### Review deliverables
 
-`samplers/`: category-ordered concatenated WAVs, each 40–60 seconds, with `index.json`/README timecodes and source IDs. Long loops may be excerpted and short blips repeated; these transformations are labeled and do not modify source assets. `stock/spectra/` provides sheets/numeric summaries for all new sounds; review flags stay until Dylan listens. Size reports distinguish canonical catalog WAVs, review sampler WAVs, and non-shipping rebuild evidence.
+`samplers/`: category-ordered concatenated WAVs, each 40–60 seconds, with `index.json`/README timecodes and source IDs. Long loops may be excerpted and short blips repeated; these transformations are labeled and do not modify source assets. `stock/spectra/` provides sheets/numeric summaries for all new sounds; review flags stay until the owner listens. Size reports distinguish canonical catalog WAVs, review sampler WAVs, and non-shipping rebuild evidence.
 
 Implemented commands (from lane root):
 

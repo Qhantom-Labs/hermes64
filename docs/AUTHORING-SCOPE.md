@@ -1,37 +1,44 @@
 # Hermes64 authoring scope
 
-This is a bounded 3D adventure authoring toolkit, **not an arbitrary game engine from any prompt**. Themes and narratives are general; verbs and runtime mechanics are finite. An agent must say when a prompt requires unsupported mechanics, not deliver the same starter under a new title.
+**A bounded 3D adventure toolkit, not an arbitrary game engine from any prompt.** Your agent can write finite game data and run checks. It must say what it cannot represent rather than silently replacing the request with a renamed starter.
 
-## Available on this base
+## Three workflows, different scope
 
-- Room-to-room exploration; reciprocal doors with finite key/flag/role/dialogue conditions; explicit actions, conversations, quests and terminal endings.
-- Inventory items (finite identity membership, no quantities), optional monotone collectibles and identity-based groups through full STORY 1.1 data.
-- Branching objectives and endings as separate actions/guards. Conditions are AND lists; no general Boolean expressions. Effects are a closed whitelist.
-- Non-combat NPC guardians and clue/key/puzzle **gates** authored as finite story logic. These are not autonomous AI NPCs or combat bosses.
-- STORY 1.2 bounded combat arenas/waves/robot and boss templates **through the existing module contract**, not through new per-game scripts. Combat code is owned by the combat lane and unchanged here. No combat playability/balance acceptance is supplied by AUTHOR's three games.
-- STORY 1.2 ordered timed **on-foot** courses with countdown, deadline and checkpoint retry. Conditional logical proof plus real-input bot evidence, not a human difficulty guarantee.
-- STORY 1.3 grid puzzles (switches, keys/locks, blocks, braziers, pressure plates, timed gates) via their documented **separate module data-pointer and puzzle runtime workflow**. They do not go through legacy scaffold/check/replay. The new compact outline compiler emits 1.1 or course-only 1.2, not 1.3.
-- Explicit public cast reuse with authored names/roles, existing bundled pack scenery, data-only lighting/fog/grade moods, actual native captures and local exports.
+| Workflow | What to expect | Source |
+|---|---|---|
+| Plain request through `hermes64-create` | Plans an authored brief, builds rooms/assets, runs story checks and bots, writes `CREATE-REPORT.md`. The rc7 flow starts with an outdoor entry and one interior; more named places can become story spots, not additional rooms. Entry cast is bounded to 4 and interior cast to 3. `setting.room_scale` is optional. | [Create skill](../skills/hermes64-create/SKILL.md), especially “What the flow makes” |
+| `/hermes64 new` / `hermes64_demo(premise=...)` | A quicker starter selected from supported templates; not the complete original-authoring workflow. | [Quick start](../QUICKSTART.md) |
+| Direct authoring / module tools | Finite room graphs, authored dialogue, gates and endings; separate supported combat, course and grid-puzzle contracts. More authoring and checks are required. | [Authoring](AUTHORING.md), [module skill](../skills/hermes64-gameplay-modules/SKILL.md) |
 
-## Out of scope today
+## Supported contracts
 
-| Request | Why it cannot honestly be promised |
+- Room-to-room exploration, authored actions/conversations, finite quests and terminal endings; doors can be gated by keys, flags, roles and dialogue conditions.
+- Inventory membership and finite story effects, not a general money/materials economy. Branching endings are authored guards/actions, not arbitrary program code.
+- Bounded melee arenas, waves, robot and boss contracts. A combat/courses story proof may be **conditional**, not fully proved by the story checker.
+- Ordered timed **on-foot** courses with checkpoints and retry; a timed run is not a platformer or vehicle race.
+- Grid puzzles through the separate puzzle module/runtime workflow. The plain create flow does not build a grid puzzle automatically; it can report a door-lock or choice as the closest supported alternative.
+- Bundled public cast/packs, supported character workflows and bounded data-only prop recipes. An asset for every noun, a new costume or an arbitrary imported rig is not guaranteed.
+- Local captures, bot/replay reports and exports subject to engine/templates, platform and content restrictions.
+
+## Not promised
+
+| Request | Boundary |
 |---|---|
-| Platformer, precision jump course, climbing, grappling, swimming, flight | No general authored jump/air-control/vertical traversal system. Flat X/Z room layouts and on-foot checkpoint spheres are not a platformer. |
-| Racer, kart game, driving/flying simulator | No vehicle dynamics, steering model, laps beyond the course's one-lap contract, opponents, traffic or racing AI. A timed walk/run is not vehicle racing. |
-| FPS/TPS, bullet-hell, arbitrary shooter | Existing bounded enemy projectile patterns are not a general ranged-player/aiming/ammo/weapon game system. |
-| Multiplayer, MMO, online co-op, persistent server economy | No networking, server authority, accounts or shared persistent world. |
-| RTS, city builder, farming/survival simulation, crafting/economy | No general resources/counters, scheduling, production, construction or simulation loops. Inventory is finite identities, not a money or materials economy. |
-| Seamless open world | Regions are a finite connected room graph, not continuous terrain streaming or global simulation. |
-| Arbitrary RPG statistics, XP, branching skill trees, procedural loot | Abilities are finite monotone tokens; no general leveling, currencies, random loot or per-game scripts. |
-| Arbitrary genre mashup/module combination | Contracts impose ownership and family restrictions; e.g. a puzzle room cannot also host a challenge and the puzzle family excludes regions. |
-| Original assets for every noun in a prompt | This lane reuses existing bound assets and colours the runtime mood. It does not implement prompt-to-mesh, general image/texture generation, external converters or arbitrary project-local generators. A purple fog/grade is not a new purple asset library. |
-| Bespoke wizard/pirate costumes or autonomous conversations | Public cast are stand-ins. Character generation/adoption remains separately gated; dialogue is authored finite text, not live NPC inference. |
-| Native Windows/Linux host certification | Native tool runner on this base requires macOS Seatbelt. Windows export is a target, not evidence of native Windows operation. |
-| Human fun, art approval, balance or production readiness | Checkers and bots measure bounded properties. The author can inspect pixels and list weaknesses, but cannot approve art on the user's behalf. |
+| Platformer, precision jumping, climbing, swimming or flight | No general authored vertical-traversal/air-control system. |
+| Vehicles, kart racing, driving simulation | No vehicle dynamics or racing AI. |
+| General FPS/TPS or bullet-hell | Bounded enemy attack patterns are not a player aiming/ammo/weapon system. |
+| Multiplayer, MMO, online co-op | No shared networked world/server-authority contract. |
+| Seamless open world | Rooms form a finite graph, not continuous terrain streaming. |
+| Crafting, economy, city/farm/survival simulation, arbitrary RPG stats | No general simulation/counter/production/levelling system. |
+| Arbitrary module combinations | Module ownership restrictions apply; a puzzle room cannot also host a challenge. |
+| Autonomous NPC conversations | Dialogue is authored text, not live NPC inference. |
+| Any prompt represented exactly | Check `Not applied`; the agent must state unsupported details and alternatives. |
+| Human fun, balance, appearance or production readiness | Checks and bots do not supply human acceptance. |
 
-## What “passed” means here
+## What a report establishes
 
-1.1: `proved` story obligations, complete physical bot paths for every ending, and Godot witness replay/save round-trip. 1.2: `conditional` stays conditional; AUTHOR adds a replay route for single-ending module games requiring **fresh** complete physical module coverage, strict recorded input/movie hash playback and a real initial-checkpoint save/load. Multi-ending module movies are refused rather than inferred from one continuous terminal run. 1.3 is documented separately, not newly verified here.
+A finite story proof is not a physical playtest. A completed bot path is not every possible human route. A strict replay tests recorded inputs/hashes; image/geometry audits measure their named thresholds. Keep their verdicts separate, including conditional, refused and failed results.
 
-A stranger's install, a second model following the skill, five varied prompts, native Windows, recipient exports and human visual acceptance remain separate product acceptance requirements.
+`hermes64_edit` requires a proved story baseline. A combat/course game can refuse that tool as `baseline_unproved`; use the appropriate create/module workflow and re-run its checks instead of claiming every edit is automatically proved.
+
+The manifest targets macOS and Windows; the latter's Job Object opt-in has no OS network/write confinement. Linux authoring is unsupported. Clean installs, native Windows execution of the final package, recipient export boots and human approval remain separate acceptance checks. Historical measurements live in [game-type strengths](GAME-TYPE-STRENGTHS.md); they are not a certification of a later candidate.

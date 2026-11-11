@@ -73,6 +73,6 @@ Default: 22.05 kHz mono PCM16, 14-bit internal texture, soft low-pass, short rev
 
 Loops use circular synthesis/tails and a short fixed-origin C1 boundary bridge, not silence ramps. The pulsed radar recipe explicitly selects a non-silent circular origin; musical timelines are never rotated. Sparse music stems allow intentional rests, while full loops must pass boundary energy checks.
 
-Default project bank caps: 64 canonical assets and 32 MiB of rendered payload, including all stems/MIDI/JSON sidecars. Manifest JSON has a separate 1 MiB cap. The compact bundled cache is limited to 1 MiB; render the rest on demand. Full-size rebuilds, verification projects and Dylan's sampler WAVs are not repository payload. Exact disk totals are in `RESULT.md`.
+Default project bank caps: 64 canonical assets and 32 MiB of rendered payload, including all stems/MIDI/JSON sidecars. Manifest JSON has a separate 1 MiB cap. The compact bundled cache is limited to 1 MiB; render the rest on demand. Full-size rebuilds, verification projects and the owner's sampler WAVs are not repository payload. Exact disk totals are in `RESULT.md`.
 
 Known risks, not heard: bright glass/metal and creature highs may ring; noisy weather/fire can fatigue; voices are babble rather than speech; repeating short loops/blips can become obvious; per-file headroom does not guarantee safe overlap. Reverb and sampler preview fades are not proof of seamless runtime playback. No new sound is approved by an automated validator.

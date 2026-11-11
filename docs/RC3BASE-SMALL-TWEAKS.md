@@ -1,7 +1,7 @@
 # RC3-BASE small tweaks (collected, NOT fixed here)
 
 Collected at M0 from the merged lanes' own weak-frame lists (`docs/MOVE-RESULT.md`, `docs/CAM-RESULT.md`,
-`docs/FEEL2-RESULT.md`, `docs/LIVEFIX-RESULT.md`) and from what the RC3-BASE verification touched. Dylan's
+`docs/FEEL2-RESULT.md`, `docs/LIVEFIX-RESULT.md`) and from what the RC3-BASE verification touched. The owner's
 play note on play-fix4 (move-lane 2443ba4f): "walls better, movement and camera a lot better; small tweaks
 remain". His own list is still to be collected; this file is the agent-side list for that session. None of
 these items is fixed on `rc3-lane`. Each is a general plugin feature (per `PRODUCT-PRINCIPLE.md`), not a
@@ -20,7 +20,7 @@ demo hack.
 4. **Low, close lens at walls** (Thaw `wall-W-bump`) and **player at frame edge** on side bumps (Thaw
    `wall-D-bump`). Pull-in could keep a minimum framing height and recentre laterally.
 5. **Orbit-key response is the weakest direction metric** (min dot 0.49 for orbit keys, 0.59 mouse orbit,
-   0.60 hold-S; everything else >= 0.78). Within budget, but the first place to look if Dylan still finds
+   0.60 hold-S; everything else >= 0.78). Within budget, but the first place to look if the owner still finds
    orbit-while-walking confusing.
 6. **Crowded Workstation arrival** after the Thaw door; E-prompt overlaps the player in some frames.
 

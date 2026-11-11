@@ -1,6 +1,6 @@
 # PLACEMAKER proof: what is shown
 
-Real runtime frames from the plugin's normal Service path (scaffold, compile, check, build_assets, open with screenshots) in a scratch bundle clone. Numbers only; how it looks is for Dylan to judge.
+Real runtime frames from the plugin's normal Service path (scaffold, compile, check, build_assets, open with screenshots) in a scratch bundle clone. Numbers only; how it looks is for the owner to judge.
 
 Run: `python3 -B -m tools.place_maker proof --requests docs/placemaker/proof-requests.json --run proof4` (report: `evidence/placemaker/proof4/report.txt`, git-ignored).
 

@@ -2,7 +2,7 @@
 
 Scope: `win3-lane`, base `aa569b4f`; offline Mac review/simulation, NOT native-Windows acceptance. Main owns composition; WIN3 owns only its worktree and `win3-kit`. No gate changes, installs, fetch, publication or host restart.
 
-Hardware evidence is Dylan's earlier report, not a run of WIN3: CyberPowerPC GamingPC, Windows 11 Home 25H2 build 26200.9711, BB2SM, RTX 4070 Ti SUPER driver 610.88, Hermes 0.18.2, official Godot 4.6.2; GL compatibility 59–60 FPS; fox authored after a local compat fix, two bots, Windows+web exported and Windows boot passed. That local diff remains missing.
+Hardware evidence is the owner's earlier report, not a run of WIN3: CyberPowerPC GamingPC, Windows 11 Home 25H2 build 26200.9711, BB2SM, RTX 4070 Ti SUPER driver 610.88, Hermes 0.18.2, official Godot 4.6.2; GL compatibility 59–60 FPS; fox authored after a local compat fix, two bots, Windows+web exported and Windows boot passed. That local diff remains missing.
 
 ## Evidence matrix
 
@@ -28,7 +28,7 @@ Status refers to static/simulated candidate behavior unless explicitly labelled 
 | Symlinks/junctions | OK | No production symlink creation in packaged Python. `safety.inspect_path` rejects links/name-surrogate tags; cloud placeholder allowed there. Studio shelf is stricter and may hide OneDrive folders. Never require admin/symlink permission; use short local non-OneDrive roots. |
 | Case/device project names | FIXED | Lowercase slug validation avoids case aliases; Windows filesystem handles existing names case-insensitively. `relative` rejects con/nul etc but Project constructor failed to run that check on project id itself; known-bad reproduced before mkdir. NTFS behavior still not exercised. |
 | MAX_PATH/deep runs | RISK | `check_install` warns at >=250; deep .maker/runs/<uuid>/release + imported resources can exceed 260. No global registry change here. Use `%SystemDrive%/H64` if writable, or a short user-owned local root. LongPathsEnabled alone is not proof every dependency supports long paths; kit reports it only. |
-| SmartScreen/antivirus | RISK | Adventure.exe is unsigned, no signing/resource mutation/rcedit required. Only use exact checksum-verified Dylan-approved archive; do not disable Defender/SmartScreen or run as admin. Stop on quarantine/security policy; owner can inspect warning. Acceptance not tested. |
+| SmartScreen/antivirus | RISK | Adventure.exe is unsigned, no signing/resource mutation/rcedit required. Only use exact checksum-verified owner-approved archive; do not disable Defender/SmartScreen or run as admin. Stop on quarantine/security policy; owner can inspect warning. Acceptance not tested. |
 | GPU/rendering | OK | Runtime project defaults gl_compatibility, exporter enforces it. Prior PC report 59–60 FPS applies to prior builds only; Vulkan/Forward+ is neither required nor a supported fallback verification here. Driver number from owner report, no updates attempted. |
 | Demo game | RISK | Frozen demo outside worktree is read-only and Mac-export-only; old save-key paths remain there. See WIN3-DEMO.md for exact composition/export and playback steps; do not relabel old web/Mac outputs as Windows exports. |
 

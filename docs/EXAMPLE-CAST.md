@@ -1,6 +1,6 @@
 # Bundled examples: every game has a bound player character
 
-Dylan's Windows run rebuilt the bundled **Reedland Relay: Arena** example (`game:relay_combat`,
+The owner's Windows run rebuilt the bundled **Reedland Relay: Arena** example (`game:relay_combat`,
 `examples/gameplay-combat-arena`) and it had **no player character**; his PC agent added Relay's courier by hand.
 
 ## Cause
@@ -52,4 +52,4 @@ pre-fix shape, an unbound id, a missing body, an unplaced protagonist) each fail
 with the same errors (camera, contrast, cuboid_placeholder, fog, void: the fixture has no presentation or style pack;
 unchanged by this fix). Contact sheets: `evidence/win2/relay_combat-before.png` shows a small green placeholder at the
 back of the arena, `relay_combat-after.png` a dark two-legged figure in the same spot. At 160 px the figure is too
-small to confirm the body visually; how it looks is for Dylan to judge (test sheet v2, step C).
+small to confirm the body visually; how it looks is for the owner to judge (test sheet v2, step C).

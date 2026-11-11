@@ -5,7 +5,7 @@ Every host API Hermes64 touches is listed in docs/HOST-COMPAT.md. Summary:
 - REQUIRED at registration: ``ctx.register_tool`` (Hermes >= 0.3). Missing -> one plain HostCompatError naming the
   minimum version, never an AttributeError deep inside a tool module.
 - OPTIONAL, degraded when missing:
-  ``ctx.get_config`` and ``ctx.state`` (both added in Hermes 0.20.1). On an older host (Dylan's Windows PC ran 0.18.2)
+  ``ctx.get_config`` and ``ctx.state`` (both added in Hermes 0.20.1). On an older host (the owner's Windows PC ran 0.18.2)
   the adapter reads ``plugins.entries.hermes64.settings`` (legacy ``.config``) through
   ``hermes_cli.config.load_config_readonly`` (present in 0.18.2), else returns the default; ``state`` stays absent,
   so `/hermes64 new` without a projects_root gives the existing plain "choose a projects_root" message.
@@ -14,7 +14,7 @@ Every host API Hermes64 touches is listed in docs/HOST-COMPAT.md. Summary:
   an unknown version is allowed (the API checks still apply). Hosts >= 0.21.2 also enforce ``requires_hermes`` in
   plugin.yaml before importing us.
 
-ADOPT SLOT: Dylan's PC agent applied a local compatibility fix for Hermes 0.18.2 whose diff has not been received.
+ADOPT SLOT: the owner's PC agent applied a local compatibility fix for Hermes 0.18.2 whose diff has not been received.
 When it arrives, compare it with this module (docs/HOST-COMPAT.md "Adopt the PC fix") and fold any API it touched
 that this adapter does not cover into OPTIONAL/REQUIRED below, with a stub test in tests/test_host_compat.py.
 """

@@ -1,0 +1,189 @@
+{
+  "format": "hermes64-create-craft/1",
+  "note": "VARIETY: what the create flow crafts by default from a plain brief. Templates are bounded hermes64-recipe/1 pieces in unit space (every length is a multiple of the one `height` parameter; roles are pack palette roles, never colours), so each one is built and gated by the same generator path an agent recipe takes. `words` are matched against the prompt and the brief's wants; `names` are the brief lines a piece may answer. `role`: landmark (may take the pattern's landmark slot), set (stands outside), prop (dressed where its class goes). An agent recipe in create/candidates.json for the same want always wins. Role rule (measured, kits/core/look.py set median texture energy <= 0.050): more than half of a template's textured roles come from the roles that measure <= 0.049 in every shipped mood (wood, frame, leather, sand, bark, post, dirt, snow, trim, light, cushion); `a|b` declares the palette-role alternative the loop may step to.",
+  "max_pieces": 4,
+  "min_pieces": 3,
+  "protagonists": [
+    {"words": ["knight", "paladin", "squire", "soldier", "guard"], "name": "Knight", "text": "stern knight in a grey tunic with a red shawl, belt, boots and gloves, crop hair"},
+    {"words": ["apprentice", "wizard", "witch", "mage", "sorcerer", "sorceress", "student"], "name": "Apprentice", "text": "young apprentice in a purple robe with a hood holding a staff, braid"},
+    {"words": ["keeper", "lighthouse", "fisherman", "sailor", "captain"], "name": "Keeper", "text": "bearded keeper in a navy parka with a beanie, scarf and boots holding a lantern"},
+    {"words": ["fox", "wolf", "dog", "puppy", "hound"], "name": "Fox", "text": "small orange dog with white socks", "closest": "the four-legged dog body in an orange coat (no fox body exists)"},
+    {"words": ["cat", "kitten", "lynx"], "name": "Cat", "text": "small grey cat with white socks"},
+    {"words": ["mechanic", "engineer", "astronaut", "pilot", "technician"], "name": "Mechanic", "text": "mechanic in an orange coverall with gloves, belt and a backpack"},
+    {"words": ["pirate", "pirates", "buccaneer", "smuggler", "crew"], "name": "Pirate", "text": "pirate in a red vest with a beard, belt and boots, long hair"},
+    {"words": ["robot", "android", "droid"], "name": "Robot", "text": "small robot"},
+    {"words": ["princess", "prince", "queen", "king", "bride"], "name": "Royal", "text": "young royal in a purple robe with a red shawl and belt, long hair"},
+    {"words": ["farmer", "villager", "child", "girl", "boy", "traveller", "traveler", "wanderer", "explorer", "hunter", "ranger"], "name": "Wanderer", "text": "young wanderer in a green tunic with a scarf, belt and boots holding a lantern"}
+  ],
+  "protagonist_default": {"name": "Traveller", "text": "traveller in a {accent} tunic with a scarf, belt and boots"},
+  "pieces": [
+    {"words": ["crystal", "crystals", "key", "keys"], "want": "crystal key", "names": ["key", "crystal"], "template": "crystal_key", "role": "prop"},
+    {"words": ["portal", "gate", "gateway"], "want": "portal ring", "names": ["portal"], "template": "portal_ring", "role": "set"},
+    {"words": ["floating", "island", "islet"], "unless": ["jungle", "pirate", "pirates", "treasure"], "want": "floating island", "names": ["island"], "template": "floating_island", "role": "set"},
+    {"words": ["lighthouse", "beacon"], "want": "lighthouse", "names": ["lighthouse"], "template": "lighthouse", "role": "landmark"},
+    {"words": ["keeper", "storm", "sea", "harbour", "harbor", "ship", "sailor", "anchor"], "unless": ["space", "station", "tower", "wizard"], "want": "anchor", "names": ["anchor"], "template": "anchor", "role": "set"},
+    {"words": ["storm", "wind", "gale", "weather"], "unless": ["tower", "wizard"], "want": "weather vane", "names": ["vane"], "template": "weather_vane", "role": "set"},
+    {"words": ["love", "beloved", "heart", "bride", "sweetheart", "wedding"], "want": "lovers' arch", "names": ["arch", "shrine"], "template": "shrine_arch", "role": "landmark"},
+    {"words": ["love", "beloved", "heart", "locket", "ring", "keepsake"], "want": "locket", "names": ["locket"], "template": "locket", "role": "prop"},
+    {"words": ["knight", "sword", "paladin", "squire"], "want": "sword in the stone", "names": ["sword"], "template": "sword_stone", "role": "set"},
+    {"words": ["lantern", "lamp", "night", "dark", "midnight", "candle"], "unless": ["space", "station"], "want": "lantern", "names": ["lantern", "lamp"], "template": "lantern", "role": "set"},
+    {"words": ["love", "rose", "flower", "garden"], "want": "rose", "names": ["rose"], "template": "rose", "role": "prop"},
+    {"words": ["snow", "snowy", "winter", "frost", "ice"], "want": "snowman", "names": ["snowman"], "template": "snowman", "role": "set"},
+    {"words": ["snow", "snowy", "winter", "sled", "sledge"], "want": "sled", "names": ["sled", "sledge"], "template": "sled", "role": "set"},
+    {"words": ["station", "space", "antenna", "signal", "satellite", "drifting"], "want": "signal beacon", "names": ["beacon", "antenna"], "template": "signal_beacon", "role": "landmark"},
+    {"words": ["mechanic", "repair", "repairing", "hull", "station", "ship"], "unless": ["pirate", "pirates", "sea", "storm"], "want": "hull panel", "names": ["panel"], "template": "hull_panel", "role": "set"},
+    {"words": ["mechanic", "repair", "repairing", "tool", "tools", "engineer"], "want": "toolbox", "names": ["toolbox"], "template": "toolbox", "role": "prop"},
+    {"words": ["station", "space", "engine", "power", "reactor", "battery"], "want": "power cell", "names": ["cell", "battery"], "template": "power_cell", "role": "prop"},
+    {"words": ["pirate", "pirates", "flag", "crew"], "want": "pirate flag", "names": ["flag"], "template": "pirate_flag", "role": "landmark"},
+    {"words": ["treasure", "chest", "gold", "buried"], "want": "treasure chest", "names": ["chest"], "template": "treasure_chest", "role": "prop"},
+    {"words": ["buried", "treasure", "map", "dig", "hunting"], "want": "x marks the spot", "names": ["spot"], "template": "x_marks_spot", "role": "set"},
+    {"words": ["jungle", "island", "beach", "tropical", "palm"], "unless": ["floating", "tower"], "want": "palm", "names": ["palm"], "template": "palm", "role": "set"},
+    {"words": ["grave", "graveyard", "tomb", "cemetery", "haunted"], "want": "gravestone", "names": ["gravestone", "grave", "tombstone"], "template": "gravestone", "role": "set"}
+  ],
+  "defaults": [
+    {"want": "waypost", "names": ["waypost", "signpost"], "template": "waypost", "role": "set"},
+    {"want": "lantern", "names": ["lantern", "lamp"], "template": "lantern", "role": "set"},
+    {"want": "keepsake chest", "names": ["chest"], "template": "treasure_chest", "role": "prop"}
+  ],
+  "layouts": {
+    "note": "VARIETY: entry layouts for the brief's setting. Each is the family's shipped kit skeleton (`from`) with another plot ground, entry building or wall piece (shipped kit keys only) and, with `mirror`, the same plan seen from the other corner (camera, door, anchors and the landmark slot mirrored). A layout is taken only when it names strictly more of the brief's setting words than the word-order choice; the genre word is not counted. `aliases` map a said word to the tag it means.",
+    "aliases": {"snowy": "snow", "stormy": "storm", "frozen": "snow", "icy": "snow", "woods": "forest", "wood": "forest", "midnight": "night", "moonlit": "night", "dark": "night", "harbor": "harbour", "seaside": "sea", "ocean": "sea", "coast": "sea", "pirates": "pirate", "tropical": "jungle"},
+    "medieval": [
+      {"id": "glade", "from": "plaza", "mirror": true, "ground": "mter.ground__meadow_4", "doorway": "vlg.chapel__doorway",
+       "tags": ["night", "moon", "forest", "grove", "glade", "garden", "grave", "graveyard", "love", "lost", "chapel", "shrine"]},
+      {"id": "shore", "from": "plaza", "mirror": true, "doorway": "vlg.cottage__stone_doorway",
+       "tags": ["lighthouse", "sea", "storm", "shore", "harbour", "keeper", "ship", "sailor", "cliff", "quay", "dock", "fisherman"]},
+      {"id": "island", "from": "plaza", "ground": "mter.ground__meadow_4", "doorway": "vlg.cottage__doorway", "wall": "vlg.wall__palisade",
+       "tags": ["island", "jungle", "beach", "pirate", "treasure", "palm", "buried", "crew", "camp", "hut"]},
+      {"id": "snow_village", "from": "plaza_snow", "doorway": "vlg.smithy__doorway",
+       "tags": ["snow", "winter", "village", "frost", "ice", "sled"]}
+    ]
+  },
+  "templates": {
+    "lantern": {"class": "structure", "height": 1.5, "ops": [
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.3, "sx": 0.07, "sy": 0.07, "sz": 0.6}],
+      ["lathe", "metal", {"profile": [[0.13, 0.6], [0.15, 0.64], [0.1, 0.68]], "segs": "segments"}],
+      ["lathe", "light", {"profile": [[0.095, 0.68], [0.11, 0.8], [0.095, 0.9]], "segs": "segments"}],
+      ["lathe", "metal", {"profile": [[0.135, 0.9], [0.08, 0.96], [0.02, 1.0]], "segs": "segments"}]]},
+    "locket": {"class": "prop", "height": 0.7, "ops": [
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.25, "sx": 0.5, "sy": 0.5, "sz": 0.5}],
+      ["box", "cushion", {"cx": 0, "cy": 0, "cz": 0.54, "sx": 0.4, "sy": 0.4, "sz": 0.08}],
+      ["blob", "chrome", {"cx": 0, "cy": 0, "cz": 0.72, "rx": 0.14, "ry": 0.06, "rz": 0.14, "segs": 6, "rings": 4}],
+      ["torus", "chrome", {"R": 0.17, "r": 0.02, "segs": 8, "sides": 3}, {"rotate": [90, 0, 0], "translate": [0, 0, 0.8]}]]},
+    "rose": {"class": "prop", "height": 0.8, "ops": [
+      ["lathe", "leather", {"profile": [[0.14, 0], [0.19, 0.28]], "segs": "segments"}],
+      ["tube", "grass|bark", {"path": [[0, 0, 0.26], [0.03, 0, 0.6], [0, 0, 0.84]], "radius": 0.02, "sides": 3}],
+      ["blob", "flower", {"cx": 0, "cy": 0, "cz": 0.9, "rx": 0.11, "ry": 0.11, "rz": 0.1, "segs": 6, "rings": 4}],
+      ["box", "grass|bark", {"cx": 0.09, "cy": 0, "cz": 0.56, "sx": 0.16, "sy": 0.07, "sz": 0.02}]]},
+    "sword_stone": {"class": "structure", "height": 1.3, "ops": [
+      ["blob", "rock", {"cx": 0, "cy": 0, "cz": 0.16, "rx": 0.4, "ry": 0.34, "rz": 0.22, "segs": 6, "rings": 4}],
+      ["box", "chrome", {"cx": 0, "cy": 0, "cz": 0.56, "sx": 0.07, "sy": 0.02, "sz": 0.56}],
+      ["box", "metal|wood", {"cx": 0, "cy": 0, "cz": 0.85, "sx": 0.28, "sy": 0.045, "sz": 0.045}],
+      ["box", "leather", {"cx": 0, "cy": 0, "cz": 0.93, "sx": 0.045, "sy": 0.045, "sz": 0.12}],
+      ["blob", "metal|wood", {"cx": 0, "cy": 0, "cz": 1.0, "rx": 0.045, "ry": 0.045, "rz": 0.045, "segs": 5, "rings": 3}]]},
+    "shrine_arch": {"class": "structure", "height": 3.4, "ops": [
+      ["box", "stone", {"cx": 0.3, "cy": 0, "cz": 0.36, "sx": 0.12, "sy": 0.14, "sz": 0.72}, {"mirror": "x"}],
+      ["box", "stone", {"cx": 0, "cy": 0, "cz": 0.77, "sx": 0.86, "sy": 0.18, "sz": 0.1}],
+      ["prism", "wood", {"outline": [[-0.5, -0.12], [0.5, -0.12], [0.5, 0.12], [-0.5, 0.12]], "z0": 0.82, "z1": 0.88}],
+      ["lathe", "chrome", {"profile": [[0.07, 0.56], [0.05, 0.66], [0.01, 0.7]], "segs": "segments"}],
+      ["box", "sand", {"cx": 0, "cy": 0, "cz": 0.02, "sx": 0.9, "sy": 0.4, "sz": 0.04}]]},
+    "lighthouse": {"class": "structure", "height": 8.0, "ops": [
+      ["lathe", "snow", {"profile": [[0.15, 0], [0.11, 0.7]], "segs": "segments"}],
+      ["lathe", "cushion", {"profile": [[0.136, 0.24], [0.128, 0.36]], "segs": "segments"}],
+      ["lathe", "wood", {"profile": [[0.16, 0.7], [0.16, 0.73]], "segs": "segments"}],
+      ["lathe", "light", {"profile": [[0.08, 0.73], [0.08, 0.86]], "segs": "segments"}],
+      ["lathe", "roof|leather", {"profile": [[0.11, 0.86], [0.06, 0.94], [0.01, 1.0]], "segs": "segments"}],
+      ["box", "wood", {"cx": 0, "cy": -0.146, "cz": 0.08, "sx": 0.07, "sy": 0.02, "sz": 0.16}]]},
+    "anchor": {"class": "structure", "height": 1.5, "ops": [
+      ["box", "metal", {"cx": 0, "cy": 0, "cz": 0.52, "sx": 0.06, "sy": 0.06, "sz": 0.8}],
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.84, "sx": 0.44, "sy": 0.05, "sz": 0.05}],
+      ["torus", "metal", {"R": 0.07, "r": 0.02, "segs": 6, "sides": 3}, {"rotate": [90, 0, 0], "translate": [0, 0, 0.97]}],
+      ["box", "metal", {"cx": 0.17, "cy": 0, "cz": 0.2, "sx": 0.36, "sy": 0.06, "sz": 0.07}, {"rotate": [0, -32, 0], "mirror": "x"}],
+      ["blob", "sand", {"cx": 0, "cy": 0, "cz": 0.06, "rx": 0.3, "ry": 0.22, "rz": 0.08, "segs": 6, "rings": 3}]]},
+    "weather_vane": {"class": "structure", "height": 2.6, "ops": [
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.42, "sx": 0.035, "sy": 0.035, "sz": 0.84}],
+      ["box", "metal", {"cx": 0, "cy": 0, "cz": 0.9, "sx": 0.44, "sy": 0.015, "sz": 0.04}],
+      ["box", "metal", {"cx": 0, "cy": 0, "cz": 0.8, "sx": 0.015, "sy": 0.3, "sz": 0.025}],
+      ["blob", "chrome", {"cx": 0, "cy": 0, "cz": 0.97, "rx": 0.035, "ry": 0.035, "rz": 0.035, "segs": 5, "rings": 3}],
+      ["box", "stone|sand", {"cx": 0, "cy": 0, "cz": 0.03, "sx": 0.2, "sy": 0.2, "sz": 0.06}]]},
+    "snowman": {"class": "structure", "height": 1.4, "ops": [
+      ["blob", "snow", {"cx": 0, "cy": 0, "cz": 0.24, "rx": 0.3, "ry": 0.3, "rz": 0.26, "segs": 6, "rings": 4}],
+      ["blob", "snow", {"cx": 0, "cy": 0, "cz": 0.62, "rx": 0.2, "ry": 0.2, "rz": 0.19, "segs": 6, "rings": 4}],
+      ["lathe", "leather", {"profile": [[0.17, 0.78], [0.17, 0.8]], "segs": "segments"}],
+      ["lathe", "leather", {"profile": [[0.11, 0.8], [0.1, 0.98]], "segs": "segments"}],
+      ["box", "cushion", {"cx": 0, "cy": 0, "cz": 0.47, "sx": 0.36, "sy": 0.36, "sz": 0.05}]]},
+    "sled": {"class": "structure", "height": 1.3, "ops": [
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.2, "sx": 0.42, "sy": 0.9, "sz": 0.04}],
+      ["box", "post", {"cx": 0.19, "cy": 0, "cz": 0.05, "sx": 0.04, "sy": 1.0, "sz": 0.06}, {"mirror": "x"}],
+      ["box", "post", {"cx": 0.19, "cy": 0.3, "cz": 0.13, "sx": 0.035, "sy": 0.04, "sz": 0.12}, {"mirror": "x"}],
+      ["box", "post", {"cx": 0.19, "cy": -0.3, "cz": 0.13, "sx": 0.035, "sy": 0.04, "sz": 0.12}, {"mirror": "x"}],
+      ["tube", "rope", {"path": [[-0.15, -0.46, 0.2], [0, -0.7, 0.26], [0.15, -0.46, 0.2]], "radius": 0.012, "sides": 3}]]},
+    "hull_panel": {"class": "structure", "height": 1.8, "ops": [
+      ["box", "hull", {"cx": 0, "cy": 0, "cz": 0.52, "sx": 0.7, "sy": 0.05, "sz": 0.84}],
+      ["box", "metal|trim", {"cx": 0.25, "cy": -0.035, "cz": 0.52, "sx": 0.05, "sy": 0.03, "sz": 0.8}, {"mirror": "x"}],
+      ["box", "light", {"cx": 0, "cy": -0.035, "cz": 0.72, "sx": 0.42, "sy": 0.02, "sz": 0.08}],
+      ["box", "frame", {"cx": 0.28, "cy": 0.1, "cz": 0.05, "sx": 0.08, "sy": 0.36, "sz": 0.1}, {"mirror": "x"}]]},
+    "toolbox": {"class": "prop", "height": 0.8, "ops": [
+      ["box", "metal", {"cx": 0, "cy": 0, "cz": 0.2, "sx": 0.9, "sy": 0.42, "sz": 0.4}],
+      ["box", "trim", {"cx": 0, "cy": 0, "cz": 0.42, "sx": 0.92, "sy": 0.44, "sz": 0.05}],
+      ["tube", "frame", {"path": [[-0.25, 0, 0.44], [-0.25, 0, 0.6], [0.25, 0, 0.6], [0.25, 0, 0.44]], "radius": 0.022, "sides": 3}],
+      ["box", "chrome", {"cx": 0, "cy": -0.22, "cz": 0.3, "sx": 0.12, "sy": 0.02, "sz": 0.08}]]},
+    "signal_beacon": {"class": "structure", "height": 5.0, "ops": [
+      ["box", "frame", {"cx": 0, "cy": 0, "cz": 0.04, "sx": 0.3, "sy": 0.3, "sz": 0.08}],
+      ["lathe", "metal", {"profile": [[0.035, 0.08], [0.02, 0.78]], "segs": "segments"}],
+      ["lathe", "hull", {"profile": [[0.02, 0.76], [0.2, 0.88]], "segs": "segments"}],
+      ["blob", "light", {"cx": 0, "cy": 0, "cz": 0.96, "rx": 0.04, "ry": 0.04, "rz": 0.04, "segs": 5, "rings": 3}],
+      ["box", "trim", {"cx": 0.12, "cy": 0, "cz": 0.2, "sx": 0.24, "sy": 0.02, "sz": 0.02}, {"rotate": [0, 40, 0], "mirror": "x"}]]},
+    "power_cell": {"class": "prop", "height": 0.9, "ops": [
+      ["lathe", "frame", {"profile": [[0.2, 0], [0.2, 0.12]], "segs": "segments"}],
+      ["lathe", "light", {"profile": [[0.14, 0.12], [0.14, 0.8]], "segs": "segments"}],
+      ["lathe", "frame", {"profile": [[0.2, 0.8], [0.2, 0.9], [0.08, 1.0]], "segs": "segments"}]]},
+    "pirate_flag": {"class": "structure", "height": 5.0, "ops": [
+      ["blob", "sand", {"cx": 0, "cy": 0, "cz": 0.03, "rx": 0.26, "ry": 0.22, "rz": 0.06, "segs": 6, "rings": 3}],
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.5, "sx": 0.025, "sy": 0.025, "sz": 1.0}],
+      ["box", "fabric|leather", {"cx": 0.16, "cy": 0, "cz": 0.86, "sx": 0.3, "sy": 0.008, "sz": 0.2}],
+      ["box", "snow", {"cx": 0.16, "cy": -0.006, "cz": 0.87, "sx": 0.09, "sy": 0.006, "sz": 0.08}],
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.98, "sx": 0.1, "sy": 0.02, "sz": 0.02}]]},
+    "treasure_chest": {"class": "prop", "height": 0.8, "ops": [
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.22, "sx": 1.0, "sy": 0.6, "sz": 0.44}],
+      ["box", "wood", {"cx": 0, "cy": 0.12, "cz": 0.56, "sx": 1.0, "sy": 0.5, "sz": 0.14}, {"rotate": [-18, 0, 0]}],
+      ["box", "metal|leather", {"cx": 0.32, "cy": 0, "cz": 0.23, "sx": 0.08, "sy": 0.63, "sz": 0.47}, {"mirror": "x"}],
+      ["box", "chrome", {"cx": 0, "cy": -0.31, "cz": 0.34, "sx": 0.12, "sy": 0.04, "sz": 0.14}],
+      ["blob", "chrome", {"cx": 0, "cy": -0.04, "cz": 0.46, "rx": 0.4, "ry": 0.2, "rz": 0.07, "segs": 6, "rings": 3}]]},
+    "x_marks_spot": {"class": "structure", "height": 1.3, "ops": [
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.02, "sx": 0.8, "sy": 0.12, "sz": 0.03}, {"rotate": [0, 0, 45]}],
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.03, "sx": 0.8, "sy": 0.12, "sz": 0.03}, {"rotate": [0, 0, -45]}],
+      ["box", "wood", {"cx": 0.36, "cy": 0.2, "cz": 0.42, "sx": 0.035, "sy": 0.035, "sz": 0.84}],
+      ["box", "metal", {"cx": 0.36, "cy": 0.2, "cz": 0.1, "sx": 0.16, "sy": 0.02, "sz": 0.22}],
+      ["blob", "sand", {"cx": 0.3, "cy": 0.3, "cz": 0.04, "rx": 0.24, "ry": 0.2, "rz": 0.08, "segs": 6, "rings": 3}]]},
+    "palm": {"class": "flora", "height": 4.6, "ops": [
+      ["tube", "bark", {"path": [[0, 0, 0], [0.03, 0, 0.4], [0.09, 0, 0.8]], "radius": 0.035, "sides": 5}],
+      ["box", "foliage", {"cx": 0.3, "cy": 0, "cz": 0.78, "sx": 0.44, "sy": 0.1, "sz": 0.015}, {"rotate": [0, 18, 0], "repeat": {"count": 6, "rotate": [0, 0, 60]}}],
+      ["blob", "leather", {"cx": 0.09, "cy": 0, "cz": 0.8, "rx": 0.06, "ry": 0.06, "rz": 0.05, "segs": 5, "rings": 3}]]},
+    "crystal_key": {"class": "prop", "height": 0.9, "ops": [
+      ["lathe", "frame", {"profile": [[0.16, 0], [0.12, 0.08]], "segs": "segments"}],
+      ["lathe", "ice", {"profile": [[0.03, 0.08], [0.07, 0.3], [0.07, 0.62], [0.02, 0.7]], "segs": "segments"}],
+      ["torus", "chrome", {"R": 0.12, "r": 0.03, "segs": 6, "sides": 3}, {"rotate": [90, 0, 0], "translate": [0, 0, 0.84]}],
+      ["box", "trim", {"cx": 0.09, "cy": 0, "cz": 0.2, "sx": 0.08, "sy": 0.04, "sz": 0.05}],
+      ["box", "trim", {"cx": 0.09, "cy": 0, "cz": 0.32, "sx": 0.08, "sy": 0.04, "sz": 0.05}]]},
+    "portal_ring": {"class": "structure", "height": 3.2, "ops": [
+      ["box", "frame", {"cx": 0, "cy": 0, "cz": 0.04, "sx": 0.8, "sy": 0.3, "sz": 0.08}],
+      ["torus", "stone", {"R": 0.38, "r": 0.07, "segs": 10, "sides": 4}, {"rotate": [90, 0, 0], "translate": [0, 0, 0.53]}],
+      ["lathe", "light", {"profile": [[0.3, 0], [0.3, 0.02]], "segs": 10}, {"rotate": [90, 0, 0], "translate": [0, 0.01, 0.53]}]]},
+    "floating_island": {"class": "structure", "height": 4.0, "ops": [
+      ["lathe", "rock|dirt", {"profile": [[0.03, 0], [0.26, 0.3], [0.5, 0.52]], "segs": "segments"}],
+      ["lathe", "grass|sand", {"profile": [[0.5, 0.52], [0.46, 0.58], [0.2, 0.62]], "segs": "segments"}],
+      ["lathe", "ice|light", {"profile": [[0.05, 0.6], [0.08, 0.78], [0.01, 1.0]], "segs": 5}],
+      ["blob", "rock|dirt", {"cx": 0.24, "cy": 0.1, "cz": 0.64, "rx": 0.09, "ry": 0.08, "rz": 0.06, "segs": 5, "rings": 3}]]},
+    "gravestone": {"class": "structure", "height": 1.1, "ops": [
+      ["box", "dirt", {"cx": 0, "cy": 0, "cz": 0.05, "sx": 0.7, "sy": 0.3, "sz": 0.1}],
+      ["box", "stone", {"cx": 0, "cy": 0, "cz": 0.48, "sx": 0.52, "sy": 0.12, "sz": 0.76}],
+      ["lathe", "stone", {"profile": [[0.26, 0], [0.26, 0.12]], "segs": 6}, {"rotate": [90, 0, 0], "translate": [0, 0.06, 0.86]}],
+      ["blob", "sand", {"cx": 0, "cy": -0.22, "cz": 0.05, "rx": 0.3, "ry": 0.16, "rz": 0.07, "segs": 6, "rings": 3}]]},
+    "waypost": {"class": "structure", "height": 2.4, "ops": [
+      ["box", "wood", {"cx": 0, "cy": 0, "cz": 0.5, "sx": 0.05, "sy": 0.05, "sz": 1.0}],
+      ["box", "trim", {"cx": 0.14, "cy": 0, "cz": 0.84, "sx": 0.36, "sy": 0.02, "sz": 0.09}],
+      ["box", "trim", {"cx": -0.12, "cy": 0, "cz": 0.68, "sx": 0.32, "sy": 0.02, "sz": 0.09}],
+      ["blob", "rock", {"cx": 0, "cy": 0, "cz": 0.03, "rx": 0.14, "ry": 0.12, "rz": 0.05, "segs": 5, "rings": 3}]]}
+  }
+}

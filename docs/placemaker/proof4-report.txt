@@ -1,4 +1,4 @@
-PLACEMAKER run proof4 (numbers only; looks are for Dylan to judge)
+PLACEMAKER run proof4 (numbers only; looks are for the owner to judge)
 
 camp_a  [forest_clearing_camp]  asked {"clutter": 1, "mood": "golden_hour", "seed": 3, "size": "small"}  attempts 1 (renders 1)  best #1  all checks passed
   #1 size small mood golden_hour clutter 1 seed 3 light 1.00 contrast 0.00 pull 0.00: static ok clear 4.27 m reach 2/2 cov 0.343 | render ok: style passed n64 passed band 0.71 tris 4230

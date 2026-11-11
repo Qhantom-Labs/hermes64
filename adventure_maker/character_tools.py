@@ -9,7 +9,7 @@ Actions
   build    recipe -> characters/built/<id>.glb + clips + gates report + manifest entry + catalog.json row (hub shape)
   bind     id (built) or glb (cameo pack / community file) + display_name -> characters/cast.json, only after the
            rig kit validator passes (the same validator every generated character passes); people keep
-           placeholder: true until Dylan names them
+           placeholder: true until the owner names them
 Writes only inside the managed project (adventure_maker.safety.Project); Blender runs through
 adventure_maker.runner.Runner (macOS sandbox, no network, project-confined writes); no shell strings.
 """
