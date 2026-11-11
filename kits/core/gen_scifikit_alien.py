@@ -1,7 +1,7 @@
 """SCIFIKIT alien flora / rock / crystal (alien.*): crystal clusters, a crystal spire, cap trees, glow-bulb plants,
 fan fronds, tendril corals, alien grass, faceted boulders, a natural rock arch, rock spires (hoodoos) and a geode.
 
-Original strange-world shapes in the Ocarina-era look: low-sided lathes and lofts with tapered, leaning forms; crystal
+Original strange-world shapes in the N64-era look: low-sided lathes and lofts with tapered, leaning forms; crystal
 tips and spore lights use emissive roles (light / flower), stalks and rocks use painted organic / strata textures.
 Every piece is deterministic from (params, seed); parts that could touch are separate nodes (no self-intersection).
 Blender space: +Z up. Origin floor_center: footprint centred, lowest point on the ground."""

@@ -1,7 +1,7 @@
 """CYBERKIT towers and frontages (cytower.*): six tower silhouettes, street facades, megastructure arch, antenna
 spire, crown halo, rooftop garden, balcony units, skybridge and a low corner annex.
 
-Ocarina-era rules: every mass is chamfered or tapered (no raw cuboids), storeys are 4 m and their windows are PAINTED
+N64-era rules: every mass is chamfered or tapered (no raw cuboids), storeys are 4 m and their windows are PAINTED
 into the facade texture (wall / wall_alt); lit floors are emissive window bands (kit_card nodes, role fire) a few
 centimetres proud of the face, so a tower reads as strips of warm and cool panes at night at a few triangles per
 floor. Neon accents (ledge strips, crown halos, edge tubes) sample the pack's light atlas through an accent SLOT

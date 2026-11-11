@@ -1,6 +1,6 @@
 ---
 name: hermes64-create
-description: "Use for any request to make, edit, play or export a game."
+description: "FIRST make a game/build a game; edit/play/export. N64 Godot."
 version: 2.1.0
 license: MIT
 ---
@@ -8,6 +8,12 @@ license: MIT
 # Make a game from a prompt
 
 The deliverable is a Hermes64 game made by this plugin: never another engine, a web page or a script of your own.
+Finish the game the user asked for. Before you reply, compare the build with every explicit requirement in the request (rooms,
+items and counts, characters, mechanics, mood, ending). If something is missing and you have a way to add it (author/compile,
+generators, edit, the character maker), add it and re-check, for up to three repair rounds. Do not end with 'prototype' or
+'not yet the game' while a requirement is unmet and you still have repair rounds. If you do stop, list exactly which
+requirements are unmet and why, and give the one next step. Being fast is never a reason to stop early; being honest about
+what is missing always is part of finishing.
 If part of the request cannot be made, make the closest Hermes64 game and say exactly what is missing.
 
 ## How to call things
@@ -82,7 +88,6 @@ default; say large/open for bigger. Then the `story` block, sentence by sentence
 ```
 
 ## When something refuses
-
 Every refusal is one line: `code: what happened. Next: what to do`. Do the Next part once.
 - `create_style_refused`: run again with the `--style <pack>` it names; tell the human the style differs.
 - Re-run after a brief edit: `... run --name <slug> --brief <path>` (without `--brief` it keeps the last brief).
@@ -90,21 +95,18 @@ Every refusal is one line: `code: what happened. Next: what to do`. Do the Next 
 - The same step failed twice: stop and tell the human what failed. Do not read or change plugin source.
 
 ## What the flow makes
-
 Two rooms (an outdoor entry and one inside room, medieval and western styles); more places become named story spots
 when a beat is set there. People: entry up to 4, inside up to 3. Collect the item inside, finish outside after the
 last beat. A fight guards the item; a course guards the finish; "no combat" removes fights. A puzzle is not made
 (closest: `door_lock` or `choice`). More rooms or dialogue trees: say so, unless the human asks (then see Advanced).
 
 ## Other ways to make a game
-
 - Quick starter from one sentence: `hermes64_demo` with `premise` (optional `style`).
 - Your own story spec: `hermes64_packs` -> `hermes64_scaffold` (`spec_json` + `pack`) -> `hermes64_compile`
   (`spec_path` inside the project) -> `hermes64_check` -> `hermes64_build_assets` -> `hermes64_playtest`. Spec rules:
   skill `hermes64:hermes64`.
 
 ## Advanced tools: only when the human asks for that thing
-
 Not for a plain "make me a game". Load the skill named first.
 - Characters: `hermes64_character`; skill `hermes64:hermes64-characters`.
 - Audio (music, sounds, voices): `hermes64_audio`; skill `hermes64:hermes64-audio`.
@@ -119,7 +121,6 @@ Not for a plain "make me a game". Load the skill named first.
 - Proof and export details: `hermes64_replay`, `hermes64_benchmark`; skill `hermes64:hermes64-playtest-and-ship`.
 
 ## Never
-
 - Never claim a look is good; give what is shown and the measured gates.
 - Never drop a part of the prompt without saying so; the `Not applied` list and your reply name it.
 - Never edit gate thresholds, the style bible or shipped packs to make a stage pass. Never invent a licence.

@@ -1,6 +1,6 @@
 ---
 name: hermes64
-description: Make and safely edit retro-style 3D adventure games.
+description: "ANY game request: FIRST load hermes64-create. N64 Godot."
 version: 0.1.0
 author: Qhantom Labs, Hermes Agent
 license: MIT
@@ -11,15 +11,21 @@ metadata:
     related_skills: []
 ---
 
-# Hermes64 authoring
+# Hermes64: start here, then load create
 
-Create any N64-era-style 3D adventure within the story contract. Themes are data packs, not hard-coded game modes. `polar_pod` is the demo pack for Thaw; it is not the product. A premise creates an explicit two-room starter, not an automatically finished game. For an original prompt, load **hermes64:hermes64-author**: it teaches compact world-map compilation, NPC dialogue, gates, branching quests, timed courses and real verification. User guide: `docs/AUTHORING.md`; limits: `docs/AUTHORING-SCOPE.md`.
+ANY request to make/build/create/edit/play a game: FIRST load hermes64-create.
+For "make a game", "build a game", an N64 game or a Godot game, Hermes64 is the installed game pipeline.
+Call `skill_view(name="plugin:hermes64:hermes64-create")` now (alias: `hermes64:hermes64-create`).
+Then follow its create flow and use the `hermes64_*` tools; deferred tools use `tool_describe` then `tool_call`.
+Finish the game that was asked for; do not stop at a prototype.
+Do NOT write HTML/JavaScript/Canvas/Unity/other engines. Do not switch to the host's generic `game-authoring` skill.
 
-## When to use
-- A plain "make me a game about ..." (or make, edit, play, export a game): load **hermes64:hermes64-create** and follow it. The user needs no slash command.
-- Scaffold an original adventure, author story logic, change entrances/roles/endings, or compare edit regressions.
-- Create/select a new visual theme using pack data and the same core.
-- Do not use this as an arbitrary command runner. Engine setup is allowed only via the explicit consented fetch below.
+hermes64-author is only for hand-authoring story data AFTER a game exists. It is not the entry point for a new prompt.
+The setup and reference sections below are not a prerequisite detour: load create before doctor or setup.
+If doctor has already run, its checklist is not the requested game. Return to create; do not stop at the checklist.
+Missing dependencies must be reported honestly, never bypassed with a browser game or automatic installation.
+
+Next: load skill hermes64:hermes64-create now
 
 ## First-run setup
 - `/hermes64 setup` is a read-only checklist. The `hermes64_doctor` tool includes that checklist and the official editor/export-template download plan automatically.
@@ -28,6 +34,7 @@ Create any N64-era-style 3D adventure within the story contract. Themes are data
 - Verified Godot lives in the per-user cache and is discovered without changing settings. An explicit `godot_path` still wins; clear/change an obsolete override rather than silently ignoring it. See `docs/SETUP-FETCH.md`. Linux fetch is unsupported; Windows child-runner isolation still has its independent gate.
 
 ## Prerequisites
+Themes can describe any N64-era-style adventure within the story contract; `polar_pod` is a demo pack, not the product.
 An owner chooses the existing `projects_root` (blank: `new` uses the profile's default games folder) and the trusted assembled `bundle_root` in Hermes64 settings. The project argument is a single slug, never a filesystem path. Python and Godot must already exist; Blender is needed only for Blender asset builds and new character bodies. This release requires the macOS subprocess sandbox and fails closed elsewhere. Do not disable the sandbox on error.
 
 ## Quick start

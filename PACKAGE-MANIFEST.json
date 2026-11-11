@@ -7,9 +7,9 @@
    "sha256": "1db18daab2b86871d95c167856665912c3716ac06b3036f26f9efadb05989d51"
   },
   {
-   "bytes": 2822,
+   "bytes": 3950,
    "path": "CHANGELOG.md",
-   "sha256": "e12004128c776c2a6ceecd2872d2aa780523bc3f585612b253a9bf20ec38fd3d"
+   "sha256": "7c748b97eb065cde3813b91f7179ad415e50509e017cb960e6fab95eab223b42"
   },
   {
    "bytes": 1095,
@@ -27,9 +27,9 @@
    "sha256": "283cae9c7e3412c1c5f1609aeb04aa2a15b25084e4c176ab2f1867ac9fd16d06"
   },
   {
-   "bytes": 10960,
+   "bytes": 11723,
    "path": "README.md",
-   "sha256": "cf2c5076f60eff8fd60e3f4422620ab6dbc6733e17dda89c8eaa38bc343ddb51"
+   "sha256": "035bde5558a70d71847a15b90ac2eff3bb1a98cd1fef96d74248d0e52510ba8a"
   },
   {
    "bytes": 11955,
@@ -42,9 +42,9 @@
    "sha256": "776b39ad0d160e18b886988f688b177854c1db27dd86a705fa00a020031af9e7"
   },
   {
-   "bytes": 3108,
+   "bytes": 3117,
    "path": "__init__.py",
-   "sha256": "d55006ae1c9129a66ad28f89eedbb967263c8fc78c9a76a455d53e6fb7db80bd"
+   "sha256": "95d5b8466b00f3fbad3280c18333c62c7f6e8c7b061161f75990c88e6792bc88"
   },
   {
    "bytes": 77,
@@ -412,9 +412,9 @@
    "sha256": "b8b61fb9c3085501d841c6474432813608f68d7050c3a818af2c5e894fd9b469"
   },
   {
-   "bytes": 3101,
+   "bytes": 4755,
    "path": "adventure_maker/native_hint.py",
-   "sha256": "84c2f592b534da7310c24b86d858b045b9b80b22eba50750bc10821d4b0083e6"
+   "sha256": "cb54d1cc0a075d6401d1c59173b03e5200d06f8cb2c06c8ab4a6c6196531b96a"
   },
   {
    "bytes": 4626,
@@ -742,9 +742,9 @@
    "sha256": "fb39b6b7d9569f56a5325799458c17874580962a3b06cd1839a78e2a19091cbb"
   },
   {
-   "bytes": 35050,
+   "bytes": 35559,
    "path": "adventure_maker/service.py",
-   "sha256": "e342b018e6ce0f0201af2f43daae9c842e7819b385371a448458beda88553531"
+   "sha256": "c43c111e34e10da52a4e1a279c5601d5159714ba4f482b83c1ee7e46d6460730"
   },
   {
    "bytes": 16333,
@@ -787,9 +787,9 @@
    "sha256": "7416b43d0debd26b113f015b6364fce925c41eee6fd70568eb023b64f30ca5fc"
   },
   {
-   "bytes": 19973,
+   "bytes": 20049,
    "path": "adventure_maker/templates.py",
-   "sha256": "941e50f34f7088232c029a68ac84f38f833e2082aa99d87d9f5a55ab8324cfe9"
+   "sha256": "ac3922f007bb305b6194745287dcd57ed5345ded526a83814cd7c9fbc1d77915"
   },
   {
    "bytes": 9843,
@@ -2177,9 +2177,9 @@
    "sha256": "4f7e744df4032c0bfbbc28b23aa15513041de12aab39c3e771e89ee82a855de9"
   },
   {
-   "bytes": 2620806,
+   "bytes": 2620802,
    "path": "catalog/catalog.json",
-   "sha256": "1edb3dc99077280c76767f2e768bae143de91b90b00859d658c22412313befdc"
+   "sha256": "137cd8b027902739a47d4564ccab4cdc9fc9c8d5f565204f0fdddfbbbea8b220"
   },
   {
    "bytes": 7505,
@@ -3272,14 +3272,14 @@
    "sha256": "9e2d99aaaf6e7aaf2e702a3eaa6069153e833a699459d77b55dd24f980b33b36"
   },
   {
-   "bytes": 16132,
+   "bytes": 16148,
    "path": "docs/ANCIENTKIT.md",
-   "sha256": "afc3da1895c8114aa7d980d88a23daeb76e4d10210973a01529c514ff33f042a"
+   "sha256": "84ad9a295d4548ae3b0c28dd9e8eeb1513807b3d469339aa49339b2cd4d81b0d"
   },
   {
-   "bytes": 10650,
+   "bytes": 10646,
    "path": "docs/ANY-PROMPT.md",
-   "sha256": "559857137a3f9313af72547c51af788c28f2d2f7dac10bd9f46626d127be2e90"
+   "sha256": "a8efc2c9e689c1b43add2f45b8bcff8eab86ebeb0f93e6efe78d4e5d3033759e"
   },
   {
    "bytes": 4348,
@@ -3417,9 +3417,9 @@
    "sha256": "3a71a501e92e89a7662492aa2c234fc5d60cb384ac74f3432bf3a64d272a2483"
   },
   {
-   "bytes": 7931,
+   "bytes": 7951,
    "path": "docs/CYBERKIT.md",
-   "sha256": "c0b8c1d05f055c69f90d4b37dd4c03bea6e7c4848ea35cb723aa28836bce7ae5"
+   "sha256": "4a43adc712055e54b559c45848475d4659d9206f5828ceda8ec7506eac898e60"
   },
   {
    "bytes": 4232,
@@ -3617,14 +3617,14 @@
    "sha256": "ed01b8081e46f3fbbe94bdef35f92c62aa4b0aedb463c6dafff96b9aaca838f9"
   },
   {
-   "bytes": 10971,
+   "bytes": 10964,
    "path": "docs/N64-FIDELITY-AUDIT.md",
-   "sha256": "41fbfe2150baa1f014c6e7183bd18dfe87684f31b6229180ef1eb9147db7fbe7"
+   "sha256": "4424ea50e6af2e9fae9e1999fafbfac70575c628b01467f87cdf95c2b0242170"
   },
   {
-   "bytes": 9858,
+   "bytes": 9850,
    "path": "docs/N64-LOOK-CONVENTIONS.md",
-   "sha256": "6eb914e20d200bb94a1f2d47b57593804bd7bced0f9b48f300d21e58bccf48cc"
+   "sha256": "737e7820fbf673779b1c0b1f1784669a080641314232ff44bb13d6d5c93b8af1"
   },
   {
    "bytes": 9861,
@@ -3787,9 +3787,9 @@
    "sha256": "265fcfe1aed589845bad8d111d202c68d822b234e24cd0581e56161770179566"
   },
   {
-   "bytes": 17220,
+   "bytes": 17236,
    "path": "docs/SCIFIKIT.md",
-   "sha256": "1c687eeee2ffa26854f3d2a23fb02c83acf77e1809b41e5cb85508fe1a0ba5b1"
+   "sha256": "50dd06b3720703e41f6bb4031fe096c91731d333d319841f95a7e67142123063"
   },
   {
    "bytes": 1370,
@@ -3897,9 +3897,9 @@
    "sha256": "09ca5a6687be4d4c44ce252e036d74eb7db42a136f0c6055e6d83ca6bc28ebcd"
   },
   {
-   "bytes": 12109,
+   "bytes": 12125,
    "path": "docs/WESTERNKIT.md",
-   "sha256": "7609a94468f6ce8986ea71f0b933001c2c1a97fcb3957af2d19e5903f4c33d9a"
+   "sha256": "08938ae21949e7ed387812ec9c3581ad4465ac38c5f9863c2aaff0ae894a79e0"
   },
   {
    "bytes": 9656,
@@ -4599,7 +4599,7 @@
   {
    "bytes": 1274164,
    "path": "hub/index.json",
-   "sha256": "4cab3cac835a6b90c94f2d758cfa99048927680488fd86287b307c743a592fd5"
+   "sha256": "281e2ddd8179a78ba57085f49eb3f900916bfa12591e18eb3a01f2ea55750dc6"
   },
   {
    "bytes": 30316,
@@ -4794,7 +4794,7 @@
   {
    "bytes": 521596,
    "path": "hub/site/index.html",
-   "sha256": "70570b580c01cae16199c58ab75f1f3bcb9b6d161e702a850e8f00121b12bb80"
+   "sha256": "93564653a11f2788c86d21e2680df345d7ae0867cf0e8ed2744d303be5bcc91c"
   },
   {
    "bytes": 19777,
@@ -4937,9 +4937,9 @@
    "sha256": "ae689d2e8b488d1bb677c6f0b48cf0307c2842f92fa5135c1c41777a49ed79c5"
   },
   {
-   "bytes": 41232,
+   "bytes": 41228,
    "path": "kits/core/gen_cyberkit_tower.py",
-   "sha256": "374f00d918da24052698363350fce4386d486bc59c9e7dd5748c5f2ed30fb171"
+   "sha256": "b5da8b261927a68f265dfaa02697aaa8f20994f6a0a11b95f2109b770ea51a12"
   },
   {
    "bytes": 20864,
@@ -5017,14 +5017,14 @@
    "sha256": "e10ed3aac4ed4b858004126b3c59fac330e832a0fec5bcdf3da64864c076bdfa"
   },
   {
-   "bytes": 17035,
+   "bytes": 17031,
    "path": "kits/core/gen_scifikit_alien.py",
-   "sha256": "2af12578f938cc73a2a0ec86dc30c36213824ec7526dc086a96c2a4585cb79f7"
+   "sha256": "840ac29379e7cbdee6c4df380290d639d7157d86ce921032fce078dd58d36e03"
   },
   {
-   "bytes": 25010,
+   "bytes": 25006,
    "path": "kits/core/gen_scifikit_props.py",
-   "sha256": "13acf780cbb02e83cdfee4d1fa76f13d581fac03a98d301ef5b821ce36e26686"
+   "sha256": "289725f2c305e0c2d236976d4205437a112dab60f42ae445523085713ce23a78"
   },
   {
    "bytes": 15469,
@@ -5072,9 +5072,9 @@
    "sha256": "8b74656b4b86fd63ea2cfba6bab13311440d0d6417b4a574d12ab4a386a4b5eb"
   },
   {
-   "bytes": 29176,
+   "bytes": 29172,
    "path": "kits/core/gen_westernkit_paint.py",
-   "sha256": "61e6c2919145713de99160a95e9261a8793dade731d1ddad7079bfbdfce34add"
+   "sha256": "7c25cdc47c2262967ec5f5b4e9d661a540744ba03bebc29f73820ba2781cd70c"
   },
   {
    "bytes": 34772,
@@ -5192,14 +5192,14 @@
    "sha256": "b1e91d7ece71e20390a6d1ceac0cca2a965c11170131d4013e1c8ddea4f6506c"
   },
   {
-   "bytes": 26233,
+   "bytes": 26229,
    "path": "kits/core/texgen_cyber.py",
-   "sha256": "375a19b1d44b07bdd2295cc9cad2d624f02d950c7cab3ecacc9c99e7ff64c752"
+   "sha256": "b2603c6de7820df152a95d80d540a2e4c8a8495959c5f8d1e129364e5e971097"
   },
   {
-   "bytes": 23750,
+   "bytes": 23746,
    "path": "kits/core/texgen_dungeon.py",
-   "sha256": "c4c89f1da4c1e22c0ca91966410bbde4f7fca2d9119408feb5c65b3eb397239b"
+   "sha256": "c5d2e1ca5b33fec4a2e9781cee1b1b205b5e0e04b0b41a027727ff541bd789c1"
   },
   {
    "bytes": 11780,
@@ -27252,24 +27252,24 @@
    "sha256": "322d4fdf5daf509a73793c30c2d5fde7b37c47d8f83e8dc1aefc36e37518194b"
   },
   {
-   "bytes": 19801,
+   "bytes": 19797,
    "path": "kits/packs/alien_world/pack.json",
-   "sha256": "6be4d0692154b747ebcb817cafd329f9d915a49a39e1232201eea40683233932"
+   "sha256": "6db53ef57eeeeb03ff9a01b1868afed2251860b7ffcb13dd53f13ef0e083b680"
   },
   {
-   "bytes": 24287,
+   "bytes": 24283,
    "path": "kits/packs/ancient_ruins/pack.json",
-   "sha256": "45a22c9269cce58b90ce916ea09fe251f262a8a996d4df6b02c95d3b1d23f67a"
+   "sha256": "b92e982ffd061989d04c10fa4db7e00f2a42ccb5c6de03b837cb114e164e31d7"
   },
   {
-   "bytes": 28068,
+   "bytes": 28064,
    "path": "kits/packs/canyon_mesa/pack.json",
-   "sha256": "3570dd7cef1a600489f94d54af234f548d405e1ba46ccc563000ede470c022fc"
+   "sha256": "52bc003050ebc7ef374f2009a05c5421b137cda60d733870c40f382e51509ceb"
   },
   {
-   "bytes": 26547,
+   "bytes": 26543,
    "path": "kits/packs/castle_keep/pack.json",
-   "sha256": "61e03263d64fcfcd0ae1bc2eb5d63ed0a241d64ee0b790800f482dad3ae62797"
+   "sha256": "faab243a252c1f8b76234fa935c6715b046fc07eef39789b3f7d02cb227b63bd"
   },
   {
    "bytes": 5840,
@@ -27312,29 +27312,29 @@
    "sha256": "a512d88ae25d075c495f466cf3c81d2673b7b408d118f14ba64c9e8411c29b59"
   },
   {
-   "bytes": 28050,
+   "bytes": 28046,
    "path": "kits/packs/frontier_town/pack.json",
-   "sha256": "7d924df68739e573286b146f24a1abbb1deee0a109afee1fab36d346e0412e25"
+   "sha256": "6ab04145bca016a597322e17765dcb6c49f86a7a19abdce7b00e794935c4dff7"
   },
   {
-   "bytes": 28109,
+   "bytes": 28105,
    "path": "kits/packs/frontier_town_golden/pack.json",
-   "sha256": "9743f47e204aca47785de3c3d8f7edc92853fa6f8735765ea98be0027b93b6b0"
+   "sha256": "e1df283354351b9f8c025caf6ef43cbedfb34983dc518e12c87b9d7270796d67"
   },
   {
-   "bytes": 27987,
+   "bytes": 27983,
    "path": "kits/packs/frontier_town_night/pack.json",
-   "sha256": "342d1314b0982f1b521993fd11bd4ae28b5e1803753b50e0d3585cc877123124"
+   "sha256": "abe6e3bcae60b1fcf8adf73e7ca63647e1417631e764f7baa41d9d8b59aaebe5"
   },
   {
-   "bytes": 24507,
+   "bytes": 24503,
    "path": "kits/packs/jungle_temple/pack.json",
-   "sha256": "d4dda3b73e40a48b024d767278f5daf03c8479b03ac2dd351e5f7a8b87d5246e"
+   "sha256": "15161289b5befb28be1fda1424c4a5f00d426b6208040ac65140ae5982ab30aa"
   },
   {
-   "bytes": 26404,
+   "bytes": 26400,
    "path": "kits/packs/medieval_village/pack.json",
-   "sha256": "8a11c3b2010385c6c4c859632735d1a5c83e59cbf15b4afbbf0050f26dda2440"
+   "sha256": "8d9b640b0ce0ae2b182a2bff08197ab589a9e22b366cb60af6d1a33028e3eaa0"
   },
   {
    "bytes": 909,
@@ -27377,9 +27377,9 @@
    "sha256": "b48eae5ef65cadd316a4db66c02ac8ea58b6700465967a04239ea4f76e55280a"
   },
   {
-   "bytes": 22161,
+   "bytes": 22157,
    "path": "kits/packs/neon_city_night/pack.json",
-   "sha256": "ec9442012acfa94df90ba67326f7201778bcd15a63db6262cce28a40e2578fcc"
+   "sha256": "401a846fd93b7f33fc92854a156cbfa040ccef6b8a2329385ad5d19ae7d1d47b"
   },
   {
    "bytes": 4047,
@@ -27422,19 +27422,19 @@
    "sha256": "9ebe8339b1de749d218cb7c7f56f933e58cbdc586a853881e009d30ef6d1916e"
   },
   {
-   "bytes": 20473,
+   "bytes": 20469,
    "path": "kits/packs/space_station/pack.json",
-   "sha256": "877efe078be74bfec09ad62537c2ed86386390b3254f887316f556e8e9e367ec"
+   "sha256": "61e0eb62a861d3e6066afc4a3b46b2c0c6a0491afb4ed86038a353f3d522284d"
   },
   {
-   "bytes": 25423,
+   "bytes": 25419,
    "path": "kits/packs/stone_dungeon/pack.json",
-   "sha256": "932d6bf85b4228c8125da345a0c8e83f84f023706c8fb4ee6c9d4798b3f78eaa"
+   "sha256": "2cf81b49d1a909b7ff3e8e3fee124d59475812793e5133f94262e1a4739eacfe"
   },
   {
-   "bytes": 25537,
+   "bytes": 25533,
    "path": "kits/packs/stone_dungeon_torchlit/pack.json",
-   "sha256": "6bc780c5f3b10d3e25c73a7041d3b802adc4bf47cca98fc937d6ed504d88789e"
+   "sha256": "ace41306dc08e110ee9bd055fc9376b785aaee089fc686e4347f6d8d00f4c0e4"
   },
   {
    "bytes": 7824,
@@ -27697,9 +27697,9 @@
    "sha256": "5bd19d3a51c16f531450dcfbf0c916475e72962bdefa692ad9767ee80f42f637"
   },
   {
-   "bytes": 1988,
+   "bytes": 1984,
    "path": "packs/alien_world/pack.json",
-   "sha256": "7b98ce9b8c952115028936f38ccfabc9acaaa945f06dd77d4441208eede08782"
+   "sha256": "407918cb0ba1d622b6dfa3e66de43f8c8ea21b34c6679d30f618bfaeec72540c"
   },
   {
    "bytes": 12979,
@@ -27712,14 +27712,14 @@
    "sha256": "f6a60d2a59efb2d1b77e15ca56626aa4efefd525420eff4663ac216f13ed05bc"
   },
   {
-   "bytes": 2085,
+   "bytes": 2081,
    "path": "packs/ancient_ruins/pack.json",
-   "sha256": "c597b8082f70a9605a4b215a09dcb3b55511a9b499301605d607655ee8f520ae"
+   "sha256": "ead8bcb5d0f7e05aa6e7ccc1033531aa6962057b9a9813d069583a517f21bc22"
   },
   {
-   "bytes": 13728,
+   "bytes": 13720,
    "path": "packs/ancient_ruins/view.json",
-   "sha256": "a97ccd8bc952ea4d314bfad0fe215063bd04c249781ab342f0c6875fbbba9f35"
+   "sha256": "284811e8d1460186b09439618422c8f8203680f2ade58e9f3a0617627bc0ee90"
   },
   {
    "bytes": 52658,
@@ -27727,9 +27727,9 @@
    "sha256": "35507641497b2ec9955378d244c74c7ab0a707434ca3f8f98e812614808fdfd6"
   },
   {
-   "bytes": 1983,
+   "bytes": 1979,
    "path": "packs/canyon_mesa/pack.json",
-   "sha256": "92c05a527081b5a14c665c3ffe700da3918c00257499bcb14f1f9c085f3eebfc"
+   "sha256": "5e17c98708c3855937308f57c25b9e5462270bd2ad86751139a6903f7b99cc26"
   },
   {
    "bytes": 14887,
@@ -27742,14 +27742,14 @@
    "sha256": "c243958911928a1ca6d9e3c22378e6ed9d172755fff7ac9b53412b6566a983a5"
   },
   {
-   "bytes": 1931,
+   "bytes": 1927,
    "path": "packs/castle_keep/pack.json",
-   "sha256": "ed75cb67396c04206676d7a4e881249da85a8e08b0aca77f5997b2ac92a9e85a"
+   "sha256": "0a06651351f6c204012a0d96c9e64c5e08d27bfe8dec83021f95f634fdd82c46"
   },
   {
-   "bytes": 17221,
+   "bytes": 17209,
    "path": "packs/castle_keep/view.json",
-   "sha256": "b7a676c9093804957b060e1d68de249e133a222f841b9b10fff2b2df76a8ab97"
+   "sha256": "e132a8d77cc1dae475a175bf672e492d25f43c6d28de82fabcd7e4421cc5af9f"
   },
   {
    "bytes": 31609,
@@ -27787,9 +27787,9 @@
    "sha256": "341594423004ce89b2ab86991498d94b43523b6089a7cb1977dd400f6b73ed1e"
   },
   {
-   "bytes": 1995,
+   "bytes": 1991,
    "path": "packs/frontier_town/pack.json",
-   "sha256": "06a82a0ed64d4869e2b788f7d19cde94eae8b5fadac655b156a476f8d3f9be8b"
+   "sha256": "2e37d23781b3b0d259c173c28a0a67227fdbbfcc787a9cea6c8e6efb6cfe5dd0"
   },
   {
    "bytes": 14909,
@@ -27802,9 +27802,9 @@
    "sha256": "d46e9161dca33ceda3946f82a7bdeff0af2a0b399757758f2ea4d5d54b2db311"
   },
   {
-   "bytes": 2017,
+   "bytes": 2013,
    "path": "packs/frontier_town_golden/pack.json",
-   "sha256": "22a2d65131b7507a77461341d44e558acb8cf54332988f6021fbfa4e089ae9ab"
+   "sha256": "059c6cae52b31e655bfc29ab9fd21322022bc664407fcec2d292b2d7a48f182e"
   },
   {
    "bytes": 14956,
@@ -27817,9 +27817,9 @@
    "sha256": "f4ee18eefc2711244e22ee22960a3166ffc3f9ea1af6b7b0a5ed9926b13b9d67"
   },
   {
-   "bytes": 2039,
+   "bytes": 2035,
    "path": "packs/frontier_town_night/pack.json",
-   "sha256": "6154f18acf28bda362b0251b0b360496c82188e4aaee8f0a441d0617a0f16198"
+   "sha256": "58356017715270006e565b7d6bcd99fc0956c7496f2512256feaccfde6205ed2"
   },
   {
    "bytes": 14960,
@@ -27832,9 +27832,9 @@
    "sha256": "1b5582b4aef8dce4b59b7b66dfa60515279755cf12de7390563a53fd7564cd05"
   },
   {
-   "bytes": 2142,
+   "bytes": 2138,
    "path": "packs/jungle_temple/pack.json",
-   "sha256": "f8f75eb3b567322d1ebcd6ba7e84e8257ab67bc09d90d4416a54597d88066ece"
+   "sha256": "77218c6f142edc7b63deddef061283cf7b0c354bc7211f464f51008629bd9793"
   },
   {
    "bytes": 13589,
@@ -27847,14 +27847,14 @@
    "sha256": "6cca3a7f5919a7d1643157e732504b51265597b20aa297d2ca4aa548f3a37e26"
   },
   {
-   "bytes": 2003,
+   "bytes": 1999,
    "path": "packs/medieval_village/pack.json",
-   "sha256": "19ebdd864b0f1a641a1821b1905ca599b94205d3e11a3b28bb6b34061c86d792"
+   "sha256": "522e0e7c2607c9cc95876696e89f3b5a6199678d28911339b887650a0d1eb4e1"
   },
   {
-   "bytes": 17255,
+   "bytes": 17243,
    "path": "packs/medieval_village/view.json",
-   "sha256": "7d95144837742b77e6138deffdef923a2dccee8205fd183b26042230b6013b07"
+   "sha256": "fcffd1812b889fba53ff79ff39833f372d4c4af8ba6875dfea8a38cdeebe7476"
   },
   {
    "bytes": 54389,
@@ -27862,9 +27862,9 @@
    "sha256": "fd8ee1212900de5be28f4a62440847cd82eb308071c8b436764ac46c3d42040a"
   },
   {
-   "bytes": 2105,
+   "bytes": 2101,
    "path": "packs/medieval_village_dusk/pack.json",
-   "sha256": "7dd584553f20bfa4288d56b2199afc9bb59b7460ea8bbad3a04901dbf8ca85c4"
+   "sha256": "265eba2a20d120e9aef6a9950c68f8a9b302f74250d8252050233360132d0fbe"
   },
   {
    "bytes": 17220,
@@ -27877,9 +27877,9 @@
    "sha256": "c95f35c6ea2302a52b8c7288dc7c1167726653a83ebc75ecffdebe2b02dc798a"
   },
   {
-   "bytes": 2071,
+   "bytes": 2067,
    "path": "packs/medieval_village_night/pack.json",
-   "sha256": "b461ab41434da1bc31eec39f880f99c8ee31bf3736ee50c55f792a1a075f7cf6"
+   "sha256": "4554a5b0e52df4641a687774a27e4f79d75e28b39b4f2ea9863d498f280f29e4"
   },
   {
    "bytes": 17507,
@@ -27892,9 +27892,9 @@
    "sha256": "5d8c5361bc3eaf6995cf4e5c1c2bce7ea465ebf9a9d3a6a40adc09c2d3a99fe5"
   },
   {
-   "bytes": 2076,
+   "bytes": 2072,
    "path": "packs/medieval_village_snow/pack.json",
-   "sha256": "faf0aea5cb2c21a2a2a2f7d30942df81a83764b4eb33fe988034d39e1a052ba9"
+   "sha256": "4ed7123f2a6ffe68a2112fed620de92eeaaba83885ad1495038078f56e11e769"
   },
   {
    "bytes": 17000,
@@ -27927,9 +27927,9 @@
    "sha256": "a800a84b07a86bdfdda4d7ff4fe20a12a398c73d1c51cac6c1c361e720a125e7"
   },
   {
-   "bytes": 1648,
+   "bytes": 1644,
    "path": "packs/neon_city_night/pack.json",
-   "sha256": "ff5148251e099f8c9c59a2cf8c06f3538b7f649c6da647ab1fffe5028ceeda1f"
+   "sha256": "96b8ff8cb8ec4b4508a9c30aea863a602c23d3a95f10bec35569133c8aa19f31"
   },
   {
    "bytes": 14922,
@@ -27977,14 +27977,14 @@
    "sha256": "f79eb55f6f72ea24502520c4c42c52905530b775667453d61b85d823ca9e8645"
   },
   {
-   "bytes": 1959,
+   "bytes": 1955,
    "path": "packs/space_station/pack.json",
-   "sha256": "5ba0f0510523f5f2b302dc35b2dcb8a38d6128a57e8ee449056a838f1900d7f5"
+   "sha256": "0dc8b05811e8315fa9868c42db2fc47cc43537b455a6eac1605c8bed7b6feedb"
   },
   {
-   "bytes": 19675,
+   "bytes": 19663,
    "path": "packs/space_station/view.json",
-   "sha256": "346084ae293ab724a16651470e7bb29862555b5c9b370036f9d22bd5841e34bc"
+   "sha256": "83a39434cb30b2ccc5195ca3db50773599411590893afcc07326cdfb9ba2c2a9"
   },
   {
    "bytes": 32698,
@@ -27992,14 +27992,14 @@
    "sha256": "68d4f5b93a6fb39a06c1f097ecb80da5c992c4f69cb77d274738642f4d52c0af"
   },
   {
-   "bytes": 1943,
+   "bytes": 1939,
    "path": "packs/stone_dungeon/pack.json",
-   "sha256": "202354167950d485ef7f2a6b1e71e85762d2d7e401b2ef660605eb8ae7d44e1f"
+   "sha256": "2810d06dc644d01e9835a8d4340834ec9f06fe2025c4e7f0d1a3d2eb3c6c4907"
   },
   {
-   "bytes": 16338,
+   "bytes": 16330,
    "path": "packs/stone_dungeon/view.json",
-   "sha256": "ab939632b6986a7bd4230c70516a5a6b2f304ef2e521ad8abdb3cf4485aa0ea6"
+   "sha256": "a6d34d21fb243f400c863c2b49dcd9bc544a6bca0732392bdb43b0f7ab40f2db"
   },
   {
    "bytes": 34003,
@@ -28007,9 +28007,9 @@
    "sha256": "fe69498ff68c0d9725a9a967caf2b7c339ce15c52440eb8a97af9ae1112f587d"
   },
   {
-   "bytes": 2044,
+   "bytes": 2040,
    "path": "packs/stone_dungeon_torchlit/pack.json",
-   "sha256": "de594506fc8db8688ab4409981e5ac94d62506c89cbc3b87fecb5595d7122607"
+   "sha256": "86245b178cf606e1a2edf684837f6df8ef04a580112f8d6175db7ee8849c04d3"
   },
   {
    "bytes": 15886,
@@ -29362,9 +29362,9 @@
    "sha256": "a5f48e73e50c4d6f510a9ea98a5dd1be4e0f4f2a4e5afb3d932642ca7cba6d22"
   },
   {
-   "bytes": 9919,
+   "bytes": 10352,
    "path": "skills/hermes64-author/SKILL.md",
-   "sha256": "81f1741cf9b3b8033e5f35c95feba3cf1a98ab20ea495e579c92cc62cbaff051"
+   "sha256": "215c2b2a75f19ea7deedc2502018e6296460b4489a9896eb7dd278914f1779d8"
   },
   {
    "bytes": 4519,
@@ -29377,9 +29377,9 @@
    "sha256": "acf02ff720d045248ffee854b1dac40c800a07908b597687a17c66709c58f516"
   },
   {
-   "bytes": 9337,
+   "bytes": 9996,
    "path": "skills/hermes64-create/SKILL.md",
-   "sha256": "d3a59a9df1e13e8361773c04f68dedfaef188d01cef17ace711d983f06d8432e"
+   "sha256": "d99007075d536c22f316599b111afb4289bd31647d3fdbbaefa97afd6c65261c"
   },
   {
    "bytes": 8705,
@@ -29437,9 +29437,9 @@
    "sha256": "23ad673a95a2b4dcda31701bd5104b5f89993a3520e78c07afd971cda3abf2f5"
   },
   {
-   "bytes": 16933,
+   "bytes": 17172,
    "path": "skills/hermes64/SKILL.md",
-   "sha256": "3d9ee2d1961b602a35a9c08993196bb502174a64f6853780ed056e0ec3e2bae1"
+   "sha256": "ddd4fa73a4274637fe45392350a59654f5fbb70e1a526ad0751d919fc3b651f6"
   },
   {
    "bytes": 100,
@@ -29820,12 +29820,12 @@
  },
  "schema": "hermes64-package/1",
  "source": {
-  "commit": "a5bebdbac3948cdd009d3768e1239f1adcfe70b8",
+  "commit": "0aa9f752818c5ee365837eaba7a0ab1d96ccbc6a",
   "tree": "clean"
  },
  "tools": 27,
  "totals": {
-  "bytes": 151905240,
+  "bytes": 151910563,
   "files": 5959
  },
  "version": "1.0.0-rc"

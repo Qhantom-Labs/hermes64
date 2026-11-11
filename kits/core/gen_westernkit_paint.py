@@ -1,6 +1,6 @@
 """WESTERNKIT painted field generators (additive, theme-agnostic; registered into texgen.FIELD_GENS on import).
 
-Frontier surfaces painted by code for the Ocarina-era look: lap-sided and board-and-batten timber, plank decks, wood
+Frontier surfaces painted by code for the N64-era look: lap-sided and board-and-batten timber, plank decks, wood
 shingles, corrugated tin, adobe plaster, brick, fieldstone, layered canyon sandstone, desert ground with wheel ruts,
 sage scrub, cactus ribs, saloon wallpaper, a back-bar bottle shelf, blank posters and sign boards, painted window panes,
 plank doors and the frontier sky dome (gradient + mesa silhouettes + streak clouds or stars).

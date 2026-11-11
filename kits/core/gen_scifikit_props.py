@@ -1,7 +1,7 @@
 """SCIFIKIT tech props (tech.*): consoles, holo-table stand, cryo pods, crates, tanks, cable runs, vents, reactor
 column, robot charging pod, lockers, info terminal, command seat.
 
-Original designs in the Ocarina-era look: tapered pedestals, slanted desks, chamfered plates, lathed capsules with
+Original designs in the N64-era look: tapered pedestals, slanted desks, chamfered plates, lathed capsules with
 painted bands; screens and light strips are emissive painted textures (no real holograms: the holo-table carries a
 small lathed globe on its emitter, a static prop the style gate reads like any other accent). Blender space: +Z up,
 front faces -Y (glTF +Z, the operator side). Free props stand on the floor (origin floor_center); wall props (wall

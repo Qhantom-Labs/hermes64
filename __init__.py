@@ -12,8 +12,8 @@ from .adventure_maker import host_compat, native_hint
 # Bundled skills carry the detail the compact tool schemas leave out (docs/TOKEN-DIET.md).
 # Descriptions mirror each SKILL.md frontmatter (tests/test_schema_budget.py checks they match).
 SKILLS = {
-    'hermes64-author': 'Use when building original games. Compile maps and verify.',
-    'hermes64': 'Make and safely edit retro-style 3D adventure games.',
+    'hermes64-author': 'Hand-author story data AFTER a game exists; not entry point.',
+    'hermes64': 'ANY game request: FIRST load hermes64-create. N64 Godot.',
     'hermes64-audio': 'Create and validate original retro game audio banks.',
     'hermes64-gameplay-modules': 'Use when authoring gameplay data. Verify bounded contracts.',
     'hermes64-playtest-and-ship': 'Use when testing or shipping Hermes64. Keep proof gates.',
@@ -22,7 +22,7 @@ SKILLS = {
     'hermes64-hub': 'Use when sharing or installing Hermes64 Hub entries.',
     'hermes64-generators': 'Use when a game needs a new prop. Author bounded recipes.',
     'hermes64-places': 'Use when asked for a type of place. Dress rooms from data.',
-    'hermes64-create': 'Use for any request to make, edit, play or export a game.',
+    'hermes64-create': 'FIRST make a game/build a game; edit/play/export. N64 Godot.',
 }
 
 

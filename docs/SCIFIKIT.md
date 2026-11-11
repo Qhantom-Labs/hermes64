@@ -1,6 +1,6 @@
 # SCIFIKIT: sci-fi / space styles and the station / tech / ship / alien / terrain / sky kits
 
-The kit adds two style profiles in the Ocarina-era N64 look, and six deterministic kit families that interlock on a
+The kit adds two style profiles in the late-1990s 3D console adventure look, and six deterministic kit families that interlock on a
 station grid and a terrain grid. Like the forest, polar and dungeon worlds, it is built only from code: painted
 textures, baked vertex light and AO, and GLB validation. The designs are original. No franchise assets, names,
 logos, ships or silhouettes were used.

@@ -275,7 +275,8 @@ def premise_spec(premise, project, pack):
         return {'id': 'passage', 'wall': 'north', 'position': 1, 'to_room': to,
                 'to_door': 'passage', 'label': 'Through the passage', 'conditions': []}
     def room(id, to, people):
-        return {'id': id, 'name': id.replace('_', ' ').title(), 'description': pack['description'],
+        # Pack descriptions are authoring metadata, never player-facing room narration.
+        return {'id': id, 'name': id.replace('_', ' ').title(), 'description': premise,
                 'grid_size': [4, 4], 'kit_refs': [], 'doors': [door(to)],
                 'cameras': [{'id': 'fixed', 'position': [2, 3, 5], 'look_at': [2, 0, 2]}],
                 'props': [], 'character_ids': people}

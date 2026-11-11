@@ -1,17 +1,20 @@
-"""One-line hint so a plain sentence reaches Hermes64 (docs/NATIVE-RESULT.md).
+"""Route game requests to create on every host exposing pre_llm_call.
 
-A user installs the plugin and tells their agent "make me a game about ...": no slash command, no preloaded skill.
-Hosts before 0.21.6 keep plugin skills out of the agent's skills index (skill_view by exact name only), so the agent
-may never learn that the create skill exists. This ``pre_llm_call`` hook adds ONE line to that turn's user message
-when the message looks like a game request and the conversation has not loaded the create skill yet. Hosts treat
-hook context as ephemeral (never stored, never in the system prompt). Pure text matching: no I/O, never raises.
+The host appends context to the user turn (and may persist it in api_content),
+not the system prompt. It runs once per user turn, not between tool calls.
+Only a successful create skill_view call/result pair suppresses the hint;
+root/author sibling banners, prior hints and failed loads are not evidence.
+Pure conversation inspection: no I/O, never breaks the host turn.
 """
 import json
 import re
 
 SKILL = 'hermes64:hermes64-create'
-HINT = ("Hermes64 plugin: for this game request, load skill_view('%s') first unless it is already loaded, "
-        "then follow it. No slash command is needed." % SKILL)
+SKILL_NAMES = (SKILL, 'plugin:' + SKILL, 'hermes64-create')
+HINT = ("Hermes64 is installed: use it for any game request. Do NOT write HTML/JavaScript/Canvas/Unity/other engines. "
+        "Load the create skill FIRST: skill_view(name='plugin:hermes64:hermes64-create') "
+        "(alias: skill_view(name='hermes64:hermes64-create')), then use the hermes64_* tools and follow its create flow. "
+        "Do not detour to game-authoring or stop after doctor; doctor is a checklist, not a game.")
 _VERB = (r'(make|making|build|building|create|creating|design|generate|prototype|want|need|craft|edit|change|add|'
          r'remix|play|playtest|export|ship)')
 _NOUN = r'(game|games|adventure|adventures|platformer|rpg|level|levels|quest)'
@@ -38,20 +41,52 @@ def looks_like_game_request(text):
 
 
 def skill_loaded(history):
-    """True when the recent conversation already viewed or carries the create skill."""
-    if not history:
+    """Require a matching successful skill_view result containing the create body.
+
+    A pending call, a root/author result with the host's sibling banner, a
+    linked reference and a user/assistant mention do not load this skill.
+    """
+    if not isinstance(history, (list, tuple)):
         return False
-    try:
-        blob = json.dumps(list(history)[-HISTORY_WINDOW:], default=str)
-    except (TypeError, ValueError):
-        return False
-    return 'hermes64-create' in blob
+    calls = {}
+    for row in history:
+        if not isinstance(row, dict):
+            continue
+        if row.get('role') == 'assistant':
+            for call in row.get('tool_calls') or []:
+                if not isinstance(call, dict):
+                    continue
+                function = call.get('function') or {}
+                if not isinstance(function, dict) or function.get('name') != 'skill_view':
+                    continue
+                args = function.get('arguments')
+                try:
+                    args = json.loads(args) if isinstance(args, str) else args
+                except (TypeError, ValueError):
+                    continue
+                if (isinstance(args, dict) and args.get('name') in SKILL_NAMES
+                        and not args.get('file_path') and call.get('id')):
+                    calls[call['id']] = True
+        elif row.get('role') == 'tool' and row.get('tool_call_id') in calls:
+            raw = row.get('content')
+            try:
+                result = raw if isinstance(raw, dict) else json.loads(message_text(raw))
+            except (TypeError, ValueError):
+                continue
+            if not isinstance(result, dict):
+                continue
+            body = result.get('content')
+            if (result.get('success') is True and result.get('name') in SKILL_NAMES
+                    and not result.get('file') and isinstance(body, str)
+                    and re.search(r'^name:\s*[\"\']?hermes64-create[\"\']?\s*$', body, re.M)):
+                return True
+    return False
 
 
 def pre_llm_call(user_message=None, conversation_history=None, **_kwargs):
     try:
         text = message_text(user_message)
-        if 'hermes64-create' in text or not looks_like_game_request(text) or skill_loaded(conversation_history):
+        if not looks_like_game_request(text) or skill_loaded(conversation_history):
             return None
         return {'context': HINT}
     except Exception:  # a hint must never break a turn

@@ -319,7 +319,7 @@
      0.86,
      0.4
     ],
-    "note": "Ocarina-era dungeon interior: warm-grey ambient, a stone-white key from above so floors and carvings read, blue-grey shade (baked wet/iron steps) and a dark slate fog swallowing the far end of a long hall, ceilings falling gently into shadow; the warm light comes from the torches (emitters + painted pools). Cool terms are blue (green >= red), never violet: warm stone mixed with violet turns magenta.",
+    "note": "N64-era dungeon interior: warm-grey ambient, a stone-white key from above so floors and carvings read, blue-grey shade (baked wet/iron steps) and a dark slate fog swallowing the far end of a long hall, ceilings falling gently into shadow; the warm light comes from the torches (emitters + painted pools). Cool terms are blue (green >= red), never violet: warm stone mixed with violet turns magenta.",
     "room": {
      "base_ao": 0.26,
      "base_height": 0.5,
@@ -458,7 +458,7 @@
      0.86,
      0.4
     ],
-    "note": "Ocarina-era dungeon interior: warm-grey ambient, a stone-white key from above so floors and carvings read, blue-grey shade (baked wet/iron steps) and a dark slate fog swallowing the far end of a long hall, ceilings falling gently into shadow; the warm light comes from the torches (emitters + painted pools). Cool terms are blue (green >= red), never violet: warm stone mixed with violet turns magenta.",
+    "note": "N64-era dungeon interior: warm-grey ambient, a stone-white key from above so floors and carvings read, blue-grey shade (baked wet/iron steps) and a dark slate fog swallowing the far end of a long hall, ceilings falling gently into shadow; the warm light comes from the torches (emitters + painted pools). Cool terms are blue (green >= red), never violet: warm stone mixed with violet turns magenta.",
     "room": {
      "base_ao": 0.26,
      "base_height": 0.5,

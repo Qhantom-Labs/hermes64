@@ -1,7 +1,7 @@
 {
  "id": "frontier_town_golden",
  "version": "1.0.0",
- "note": "Ocarina-era frontier: painted timber, ochre dust, red rock, sage scrub, tin and lamplight. GOLDEN HOUR: low warm key from the west, violet shade steps, gold-peach horizon haze. Data only; WESTERNKIT kit families (wtown./wrail./wmine./wprop./wland./wsky.) built from the shared Hermes64 core.",
+ "note": "N64-era frontier: painted timber, ochre dust, red rock, sage scrub, tin and lamplight. GOLDEN HOUR: low warm key from the west, violet shade steps, gold-peach horizon haze. Data only; WESTERNKIT kit families (wtown./wrail./wmine./wprop./wland./wsky.) built from the shared Hermes64 core.",
  "palette": [
   "#0e0f1d",
   "#1e2442",

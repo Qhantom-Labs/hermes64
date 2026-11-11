@@ -1,7 +1,7 @@
 """CYBERKIT painted field generators (additive, theme-agnostic; registered into texgen.FIELD_GENS by
 kits/core/gen_cyberkit.py on import, before any cyber pack texture is made).
 
-Ocarina-era night-city surfaces painted by code: storey facades with dark window recesses, glass curtain walls,
+N64-era night-city surfaces painted by code: storey facades with dark window recesses, glass curtain walls,
 wet asphalt with painted sheen, sidewalk slabs, crosswalk paint, roof membranes, ceramic tiles, shutters, grates, and
 the SLOT ATLASES (glyph signs, blade signs, displays, neon tube rows, window-light rows, banners) whose cell table
 lives in kits/core/cykit.py.

@@ -1,7 +1,7 @@
 {
  "id": "stone_dungeon_torchlit",
  "version": "1.0.0",
- "note": "Ocarina-era stone dungeon: cut and mossy stone, wet cave rock, iron, timber, jade rune accents and a dark lake, shadow-indigo fog. LIT-TORCH variant: warm torch pools baked into the vertex colour (point_bake) and a light ramp that ends in torchlight amber. Data only; DUNGEONKIT kit families (dgn./cave./tmpl./lake.) built from the shared Hermes64 core.",
+ "note": "N64-era stone dungeon: cut and mossy stone, wet cave rock, iron, timber, jade rune accents and a dark lake, shadow-indigo fog. LIT-TORCH variant: warm torch pools baked into the vertex colour (point_bake) and a light ramp that ends in torchlight amber. Data only; DUNGEONKIT kit families (dgn./cave./tmpl./lake.) built from the shared Hermes64 core.",
  "palette": [
   "#06070f",
   "#0e1429",

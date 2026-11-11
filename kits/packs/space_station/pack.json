@@ -1,7 +1,7 @@
 {
  "id": "space_station",
  "version": "1.0.0",
- "note": "Ocarina-era space station: clean white hull plating, steel trims and grated decks, cyan neon light bands, warning-amber hazard lips and dark viewports onto painted star fields with a violet planet. Data only; SCIFIKIT kit families (stn./tech./ship./skyx.) from the shared Hermes64 core.",
+ "note": "N64-era space station: clean white hull plating, steel trims and grated decks, cyan neon light bands, warning-amber hazard lips and dark viewports onto painted star fields with a violet planet. Data only; SCIFIKIT kit families (stn./tech./ship./skyx.) from the shared Hermes64 core.",
  "palette": [
   "#04050b",
   "#0a0f22",

@@ -1,6 +1,6 @@
 # WESTERNKIT: frontier town and canyon style profiles and kit families
 
-The lane adds an original wild-west / frontier pack to the kit system in the Ocarina-era N64 look:
+The lane adds an original wild-west / frontier pack to the kit system in the late-1990s 3D console adventure look:
 
 - four style profiles: `frontier_town` at noon, golden hour and night, plus `canyon_mesa`;
 - six deterministic kit families: town architecture, rail, mine, props, nature / terrain and sky backdrops;

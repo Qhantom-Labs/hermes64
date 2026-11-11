@@ -4,7 +4,7 @@
 
 ## What is shipped
 
-An original Ocarina-era cyber-city kit: painted code-generated textures, beveled/tapered geometry, baked vertex lighting/AO, restrained emissive glyph signage, soft runtime filtering, and layered rain-haze skyline cards. No borrowed franchise assets or branding. Private study pixels are not shipped.
+An original late-1990s 3D console adventure cyber-city kit: painted code-generated textures, beveled/tapered geometry, baked vertex lighting/AO, restrained emissive glyph signage, soft runtime filtering, and layered rain-haze skyline cards. No borrowed franchise assets or branding. Private study pixels are not shipped.
 
 | Family | Generators | Keys including presets | Triangle range |
 |---|---:|---:|---:|

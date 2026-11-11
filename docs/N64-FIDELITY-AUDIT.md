@@ -1,7 +1,7 @@
 # N64-FIDELITY audit (round 0, "before")
 
 Lane N64-FIDELITY, 2026-11-08. Base commit `80d5236` (real cast active by default). Question asked of every frame:
-*what about this would not have shipped on a Nintendo 64 in 1998?* Measured numbers below come from the commands listed;
+*what about this would not have shipped on an N64 in 1998?* Measured numbers below come from the commands listed;
 judgements are marked as such. Private study references (14 original-N64 screenshots plus the style images listed in
 STYLE-BIBLE-v0) were viewed beside every capture; they live outside the repository and are never copied, traced, sampled
 or named here. Only aggregate calibration numbers derived from them appear in this file.

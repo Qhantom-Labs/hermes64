@@ -1,7 +1,7 @@
 {
  "id": "jungle_temple",
  "version": "1.0.0",
- "note": "Ocarina-era ancient ruins: mossy temple stone, moss and hanging vines, dark leaf litter, gold idols, a humid green-grey haze. Data only; ANCIENTKIT kit families (ruin./relic./wild./land.) from the shared Hermes64 core.",
+ "note": "N64-era ancient ruins: mossy temple stone, moss and hanging vines, dark leaf litter, gold idols, a humid green-grey haze. Data only; ANCIENTKIT kit families (ruin./relic./wild./land.) from the shared Hermes64 core.",
  "palette": [
   "#0b120f",
   "#18231f",

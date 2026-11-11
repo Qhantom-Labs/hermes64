@@ -1,7 +1,7 @@
 {
  "id": "neon_city_night",
  "version": "1.0.0",
- "note": "Ocarina-era neon megacity at night: near-black blue-violet towers with painted lit-window bands, wet asphalt, steel and concrete, cyan / magenta / amber / violet neon accent slots, mauve rain haze that IS the horizon glow. Data only; CYBERKIT kit families (cytower./cystreet./cysign./cytech./cyroom./cydress./cysky.) built from the shared Hermes64 core.",
+ "note": "N64-era neon megacity at night: near-black blue-violet towers with painted lit-window bands, wet asphalt, steel and concrete, cyan / magenta / amber / violet neon accent slots, mauve rain haze that IS the horizon glow. Data only; CYBERKIT kit families (cytower./cystreet./cysign./cytech./cyroom./cydress./cysky.) built from the shared Hermes64 core.",
  "palette": [
   "#07060e",
   "#100d1f",

@@ -1,7 +1,7 @@
 {
  "id": "canyon_mesa",
  "version": "1.0.0",
- "note": "Ocarina-era frontier: painted timber, ochre dust, red rock, sage scrub, tin and lamplight. CANYON: red-rock strata, red sand and sage scrub under a deep blue sky, warm dust haze. Data only; WESTERNKIT kit families (wtown./wrail./wmine./wprop./wland./wsky.) built from the shared Hermes64 core.",
+ "note": "N64-era frontier: painted timber, ochre dust, red rock, sage scrub, tin and lamplight. CANYON: red-rock strata, red sand and sage scrub under a deep blue sky, warm dust haze. Data only; WESTERNKIT kit families (wtown./wrail./wmine./wprop./wland./wsky.) built from the shared Hermes64 core.",
  "palette": [
   "#0e0f1d",
   "#1e2442",

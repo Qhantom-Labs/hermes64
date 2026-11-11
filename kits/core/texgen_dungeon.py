@@ -1,6 +1,6 @@
 """DUNGEONKIT painted field generators (additive, theme-agnostic; registered into texgen.FIELD_GENS).
 
-Ocarina-era stone, cave, relief and water surfaces painted by code. Every generator returns a tileable float field in
+N64-era stone, cave, relief and water surfaces painted by code. Every generator returns a tileable float field in
 [0, 1] (row 0 = TOP of the image) that texgen.make_texture maps onto the recipe ramp with the shared N64 convention
 (mottle quantization). Two painting rules keep the textures painted rather than noisy (n64_gate library hf energy):
 

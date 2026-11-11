@@ -1,6 +1,6 @@
 ---
 name: hermes64-author
-description: Use when building original games. Compile maps and verify.
+description: "Hand-author story data AFTER a game exists; not entry point."
 version: 0.1.0
 author: Qhantom Labs, Hermes Agent
 license: MIT
@@ -11,9 +11,16 @@ metadata:
     related_skills: [hermes64, hermes64-gameplay-modules, hermes64-playtest-and-ship]
 ---
 
-# Author an original game, not a reskinned starter
+# Hand-author story data in an existing Hermes64 game
 
-Use for an original prompt, room graph, NPC conversation, gates, branching quest or timed course. The **agent designs the game**. The compiler does not interpret prose or call a model. `/hermes64 new` still makes a starter; do not present it as the requested original game.
+This is not the entry point for a new game. FIRST load `skill_view(name="plugin:hermes64:hermes64-create")`
+(alias: `hermes64:hermes64-create`) for any make/build/create/edit/play game request, then follow its create flow.
+Only return here AFTER a game exists and you specifically need hand-authored story data. Do not switch to generic
+`game-authoring`, HTML/JavaScript/Canvas/Unity or another engine; use the `hermes64_*` tools.
+
+Use this reference for an existing game's room graph, NPC conversation, gates, branching quest or timed course.
+The compiler does not interpret prose or call a model. `/hermes64 new` still makes a starter; do not present it as
+an automatically finished original game.
 
 Read `docs/AUTHORING-SCOPE.md` first. Work inside an existing owner-chosen projects root; never install tools, enable a profile, download, publish or modify plugin code for a game. Godot 4.6.2 and Python with numpy must already be available; the native sandbox currently requires macOS. Verify numpy in the clean child environment, not just your interactive shell. Use `hermes64_doctor` on an existing project, or follow the main skill's first-run guidance.
 

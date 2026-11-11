@@ -1,5 +1,5 @@
 {
- "description": "Ocarina-era stone dungeon, caves, temple and dark lake: painted cut and mossy stone, wet cave rock, iron, timber, jade rune accents, torchlight amber, shadow-indigo fog. Lit-torch variant: warm torch pools baked into the vertex colour. Data only; DUNGEONKIT kit families (dgn./dprop./cave./tmpl./lake.) from the shared Hermes64 core.",
+ "description": "N64-era stone dungeon, caves, temple and dark lake: painted cut and mossy stone, wet cave rock, iron, timber, jade rune accents, torchlight amber, shadow-indigo fog. Lit-torch variant: warm torch pools baked into the vertex colour. Data only; DUNGEONKIT kit families (dgn./dprop./cave./tmpl./lake.) from the shared Hermes64 core.",
  "format": 1,
  "id": "stone_dungeon_torchlit",
  "kit_pack_id": "stone_dungeon_torchlit",

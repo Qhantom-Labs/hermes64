@@ -9,10 +9,11 @@ With Hermes already working, install from the public repository (https://github.
 hermes plugins install Qhantom-Labs/hermes64 --enable
 ```
 This needs the network: Hermes clones the repository and asks before preparing numpy and Pillow. Approve dependency preparation only after reviewing the prompt. **Restart Hermes, then start a NEW chat after install**; an existing chat may not see the plugin.
+If Hermes says dependency install was skipped (non-interactive shell), run `hermes plugins enable hermes64` in a terminal and approve numpy/Pillow; the zip route needs numpy/Pillow in the Python the plugin runs under (set the `python_path` setting if a run stops on NumPy).
 
-If the one-liner is unavailable, or you need an exact release, use the release zip (Mac, default Hermes home `~/.hermes`; Hermes's Python must already have numpy and Pillow). Move any older `plugins/hermes64` outside `plugins/` first:
+If the one-liner is unavailable, or you need an exact release, use the release zip (Mac, default Hermes home `~/.hermes`). The zip is attached to the GitHub release of this repository, when one exists; otherwise ask the maintainers. Move any older `plugins/hermes64` outside `plugins/` first:
 ```sh
-ZIP=hermes64-rc8-XXXXXXXX.zip   # the file you downloaded
+ZIP=hermes64-rc81-XXXXXXXX.zip  # the rc8.1 file you downloaded
 shasum -a 256 "$ZIP"            # must equal the published SHA-256
 mkdir -p ~/.hermes/plugins
 ditto -x -k "$ZIP" ~/.hermes/plugins
@@ -23,7 +24,7 @@ Full checksum/backup recipe and the (unverified) PowerShell steps: [Install for 
 
 > Make me a game about a wizard tower with a ghost and three crystal keys.
 
-**Expect minutes, not an instant finished game.** The agent plans, builds, lets bots play, and should report what it could not make. A fuller game can take longer and needs iteration. Missing Godot stops the build for your approval; it is not downloaded automatically.
+**Expect minutes, not an instant finished game.** The agent plans, builds, lets bots play, and should report what it could not make. Missing Godot stops the build for your approval; it is not downloaded automatically.
 
 **Games:** normally `<Hermes home>/plugin-data/hermes64/games`, or your configured `projects_root`. Older hosts need an explicit folder.
 
@@ -40,6 +41,14 @@ Bots exercise the authored encounters and prove completion of the tested route.
 That is mechanical evidence, not a claim about player-facing polish or human playability.
 The demo is separate from the plugin; its assets are not needed to install Hermes64.
 [demo video: link added at submission]
+
+## What works best, and the limits
+
+Best supported settings (measured): medieval village and castle, snow village, night village, shore and lighthouse, island, western town, cyber city.
+A plain brief gets a crafted hero, 3-4 made objects and an entry layout chosen from the setting.
+Settings without ready-made rooms (for example space, underwater, desert, candy) have no ready-made rooms in this release: the flow stops with a clear message, and the agent may hand-author rooms or pick the nearest pack.
+The default shape is two rooms, one outside and one inside; more rooms and mechanics can be added with the author skill.
+No jumping or platforming. Games are checked by bots, not by human playtests. Native Windows is not verified.
 
 ## Requirements and setup
 
@@ -62,7 +71,7 @@ The fetch checks pinned SHA-512 before unpacking the official Godot release. It 
 
 ## What the agent can do
 
-- Plan a game with the bundled `hermes64:hermes64-create` skill, build it and read `CREATE-REPORT.md`, including every `Not applied` row. The create flow's output and report end with a **How to play** block (game folder, the `Play:` command for the built game, default keys), and the skill asks the agent to pass it on. The current create flow starts with two rooms; additional named places are not automatically additional rooms. It also makes the game's own hero and three or four of the pieces the brief names, and reports a miss as a `Not applied` row.
+- Plan a game with the bundled `hermes64:hermes64-create` skill, build it and read `CREATE-REPORT.md`, including every `Not applied` row. The create flow's output and report end with a **How to play** block (game folder, the `Play:` command for the built game, default keys), and the skill asks the agent to pass it on.
 - Make a faster, narrower starter with `/hermes64 new "A fox searches the village for its lost lantern"`. This is not the full agent-designed workflow. Use its returned `Play:` command, not a guessed game path. Its reply has a `Note:` line when your names get stock shapes (in this example the fox is the standard human body and the lantern the pack's key model), when a requested genre such as racing is not supported, and with the measured reason when its style audit scores below 90.
 - Author larger finite room graphs, dialogue, gates and endings with `hermes64:hermes64-author`. Grid puzzles use a separate module workflow.
 - Edit supported story data, then re-check it. `hermes64_edit` requires a proved story; combat/course games can be conditional and need the create/module workflow instead.
@@ -74,7 +83,7 @@ Games are local editable projects. Bot completion, finite story proof, replay an
 
 ## Time and evidence
 
-A full agent-designed game takes minutes to craft; allow longer for more authoring, repairs and iteration. The create skill budgets 2–15 minutes for its build stage, not a guaranteed deadline. Setup, dependency preparation and downloads are separate. Do not repeat a build just because a foreground call timed out: the agent should run the long build in the background and wait for its report.
+A full agent-designed game takes minutes to craft; allow longer for more authoring, repairs and iteration. The create skill budgets 2–15 minutes for its build stage, not a guaranteed deadline. Setup and downloads are separate. Do not repeat a build just because a foreground call timed out: the agent should run the long build in the background and wait for its report.
 
 The game-type table records earlier measured examples with their conditions and failures. Those numbers are not a success rate for new prompts or a certification of this candidate. No all-green test-suite or clean first-install claim is made here: before rc8's last documentation merge, the plugin's 1,728 tests ran on the development Mac with 1 failure (a check that reads a development evidence file the package does not carry).
 

@@ -263,6 +263,13 @@ class Service:
                 'publish refuse them unless waived=true: %s' % (len(waived), '; '.join(
                     '%s/%s (%s, %s: %s)' % (w['project'], w['id'], w['owner'], w['approved_on'], ', '.join(w['checks'] or []))
                     for w in waived))]
+        ready = bool(rows) and not any(row['status'] == 'missing' for row in rows)
+        next_action = ('Next: to make a game, load hermes64-create and follow it' if ready else
+                       'Next: resolve the missing checklist items with the user, then load hermes64-create; '
+                       'do not substitute another engine or install anything automatically.')
+        setup['message'] += '\n' + next_action
+        out['table'] += '\n\n' + next_action
+        out['next'] = next_action
         return out
 
     def pack_from_refs(self, project, args):

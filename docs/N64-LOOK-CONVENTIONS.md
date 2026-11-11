@@ -1,6 +1,6 @@
 # N64 look conventions
 
-One shared, theme-agnostic convention for how Hermes64 frames look: the original-1998 Nintendo 64 art direction
+One shared, theme-agnostic convention for how Hermes64 frames look: the original-1998 N64 art direction
 (soft, vertex-lit, low-res filtered textures, fog matched to a painted sky, organic low-poly shapes), written down here
 and encoded as data in **`kits/core/n64_look.json`**. Every pack, kit build and future style profile inherits it; packs
 supply colours and environment data only. Nothing in code names Thaw, Last Light, polar or forest.

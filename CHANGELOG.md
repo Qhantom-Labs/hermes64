@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0-rc8.1 (release candidate: rc8c plus routing, completion and text fixes, 2026-11-11)
+
+- Routing: the root `hermes64` skill is a hard router to `hermes64-create` for any game request; `hermes64-author` is not an entry point for a new prompt; the pre-call hint and skill-loaded detection follow (HINTFIX).
+- Completion rule: before replying, the create skill compares the build with every explicit requirement of the request and repairs missing parts for up to three rounds; if it stops, it lists the unmet requirements and the one next step. The root router says to finish the game that was asked for.
+- Player-visible text: a pack's description is no longer shown as in-game narration; shipped style descriptions no longer name other companies' franchises (catalog and hub bindings regenerated) (SCRUB).
+- README: dependency-skip note for non-interactive installs, rc8.1 zip recipe, and a short "What works best, and the limits" section.
+- Not included: the accent-lamp repair (held), the create-skill rewrite and neutral stages for settings without ready-made rooms (not verified in time).
+- Everything in rc8c below.
+
 ## 1.0.0-rc8c (release candidate: rc8 plus the variety change, 2026-11-11)
 
 - The create run makes the game's own hero with the character maker and three or four pieces the brief names with the bounded generator loop (at most four tries each), from a plain prompt, with no extra parameter or tool; the entry layout is picked from the setting words. `CREATE-REPORT.md` has a `Made new for this game` line, and a hero or piece that was not made is a `Not applied` row with the closest stand-in.

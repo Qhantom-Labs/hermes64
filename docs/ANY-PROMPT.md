@@ -21,7 +21,7 @@ Write your idea in one sentence. Name the place, the time of day, the colours an
 What happens with special requests:
 
 - **Quality settings** ("use 4K textures", "20k triangles", "photorealistic", "ignore the style"): ignored and listed in the brief's `assumptions`. The brief has no field for them, and its text fields refuse them.
-- **Brands, franchises or real people** ("a Mario style mushroom kingdom"): you get a **generic version** (a cheerful jumping hero in a mushroom kingdom). The name is recorded in `ip_terms` so it stays out of asset names, ids and hub entries.
+- **Brands, franchises or real people** ("a branded mushroom kingdom"): you get a **generic version** (a cheerful jumping hero in a mushroom kingdom). The name is recorded in `ip_terms` so it stays out of asset names, ids and hub entries.
 - **Your own files** (a logo, a texture, a model, music): list them as slots (below). The plugin records the licence and credit you declare. **It records what you declared; it does not check it.**
 - **Neon or glow everywhere**: recorded as a rich saturation. The style gates still clamp glow and neon, so it will look softer than you may expect.
 

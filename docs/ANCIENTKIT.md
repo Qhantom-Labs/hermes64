@@ -1,4 +1,4 @@
-# ANCIENTKIT: ancient world / ruins kits in the Ocarina-era N64 look
+# ANCIENTKIT: ancient world / ruins kits in the late-1990s 3D console adventure look
 
 ANCIENTKIT adds two style profiles and four kit families for sun-baked temple cities, carved stone, and desert and
 jungle ruins:
