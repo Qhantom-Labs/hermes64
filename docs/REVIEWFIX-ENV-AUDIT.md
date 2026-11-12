@@ -43,7 +43,7 @@ Line numbers are for this version; the submitted version's line is in brackets.
 | `dashboard/plugin_api.py:365` [345] | the exported Windows game (Studio launch) | the game's Runner environment, `child_env(<game>/.maker/local)` |
 | `dashboard/plugin_api.py:400` [380] | `/usr/bin/open -n` on the exported .app (Studio launch) | the same |
 | `adventure_maker/audit.py:51` [49] | `/bin/launchctl managername` | `scratch_env()` |
-| `adventure_maker/create_flow.py:2519` [2517] | `python -I -c 'import numpy'` | `scratch_env()` |
+| `adventure_maker/create_flow.py:2643` [2517] | `python -I -c 'import numpy'` | `scratch_env()` |
 | `adventure_maker/setup_check.py:48` [46] and `:64` [60] | `python -I` numpy and Pillow probes | `scratch_env()` |
 | `adventure_maker/scene_capture.py:57` [56] | Godot replay capture (command-line tool) | `scratch_env()` |
 | `adventure_maker/nbchars/api.py:248` [246] | Blender, the `blender` character exporter | `scratch_env()` |
@@ -81,7 +81,20 @@ None of these passes a credential. They were left as they are to keep this chang
 
 | Site | Child | Environment and reason |
 | --- | --- | --- |
-| `adventure_maker/create_flow.py:2661` (`rerun_env`, line 2649) | the same `create_flow` command, re-run once under the configured numpy Python when the starting Python has no numpy | the parent environment plus `HERMES64_CREATE_RERUN=1` and the plugin root on `PYTHONPATH`. The child is the plugin's own code with the same arguments, not a third-party program. It needs `HERMES_HOME` and the `HERMES64_*` settings, and every tool it starts goes through Runner. |
+| `adventure_maker/create_flow.py:2785` (`rerun_env`, line 2773) | the same `create_flow` command, re-run once under the configured numpy Python when the starting Python has no numpy | the parent environment plus `HERMES64_CREATE_RERUN=1` and the plugin root on `PYTHONPATH`. The child is the plugin's own code with the same arguments, not a third-party program. It needs `HERMES_HOME` and the `HERMES64_*` settings, and every tool it starts goes through Runner. |
+
+## Styles branch integration (post-submission)
+
+The styles work adds no direct child-process site or environment variable. Setting routing in
+`adventure_maker/create_setting.py`, the room compilers `tools/scifikit_rooms.py` and `tools/ancientkit_rooms.py`,
+and the mood adjustment in `tools/mood_pack.py` run in-process. Derived-pack installation uses the existing
+`core.pipeline.build_one(..., builder='python')`, which has no implicit subprocesses. Other create-flow build,
+Godot and Blender children retain their existing Runner paths.
+
+The numpy probe above still uses `scratch_env()`; the same-command rerun remains the sole allow-listed inherited
+environment. Only their line numbers changed when the styles code was merged. The shipped-source static scan and
+sentinel tests in `tests/test_reviewfix_childenv.py` were run on the merged styles tree; this is not a new Windows
+or Linux execution claim.
 
 ## Through Runner (no direct child)
 

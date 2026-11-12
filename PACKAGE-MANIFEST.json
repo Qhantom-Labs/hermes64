@@ -262,9 +262,9 @@
    "sha256": "17fd30218e6aef4f56189caa4eed85f039952ff07af065f318c1666ffa7de469"
   },
   {
-   "bytes": 154951,
+   "bytes": 162906,
    "path": "adventure_maker/create_flow.py",
-   "sha256": "1ef2c3535ca42ac244203883c4029352f426de2feddb63f69ed350a93733a5cd"
+   "sha256": "aa687c67cf4919eaf31730de97afaadd7de8cb25412d87a7eb6ea3db448b8d3d"
   },
   {
    "bytes": 1965,
@@ -272,9 +272,19 @@
    "sha256": "50fb7eb91a68e185911531890357f606fff9fbae40cfc2e9e5e891f6c9d903db"
   },
   {
-   "bytes": 10003,
+   "bytes": 24428,
    "path": "adventure_maker/create_patterns.json",
-   "sha256": "59eb8da699cd9102e08df80f7a7fc16b3bfeb24061dce89fc54a1c33838e9dc8"
+   "sha256": "ec1610e92749c9a48349f8d9cc7ffc5d4164e3b31ee013c9b07104b5580dfad1"
+  },
+  {
+   "bytes": 5489,
+   "path": "adventure_maker/create_setting.json",
+   "sha256": "51626ad1f80559a1c45c0eb237b16297fdfb566735eacd692b2369183cded098"
+  },
+  {
+   "bytes": 18300,
+   "path": "adventure_maker/create_setting.py",
+   "sha256": "71db0c23f00b1813a853fb32ceadc054835cd7d1a5c0063e8aee4ffe241c18a9"
   },
   {
    "bytes": 6776,
@@ -3327,6 +3337,11 @@
    "sha256": "d737166a817fa13a5fef9a3faa7024b953bd0d6950c42aa2b31c661524759217"
   },
   {
+   "bytes": 507,
+   "path": "docs/BRANCH-NOTES.md",
+   "sha256": "6ee327232018e56ec03bc0348a39c435f21706e91e596512107e802a3127dc30"
+  },
+  {
    "bytes": 1821,
    "path": "docs/CAM-BASELINE.md",
    "sha256": "0dd962470ae2efd8ffe8b22d901c80f27c6dc44945e970d988f39896e2b57c64"
@@ -3667,9 +3682,9 @@
    "sha256": "feb6f929a0218482ea81115581f44618f1ce5c525cfdc00edcac9bea074ea95d"
   },
   {
-   "bytes": 17462,
+   "bytes": 18205,
    "path": "docs/PACKAGE-CONTENTS.md",
-   "sha256": "67e5cf35a0297193effb6f885bcfc877e106726c885376bf54ee0fa929498f8e"
+   "sha256": "290e8a34a167ce7ccd5c9462ae9e42b675c59142256d5f1d25f7caa7b0289b08"
   },
   {
    "bytes": 2989,
@@ -3737,9 +3752,9 @@
    "sha256": "2e716189b38ae937c562edd956e189f76590207fbd21f37e03ed4f8bd29be96a"
   },
   {
-   "bytes": 9013,
+   "bytes": 9921,
    "path": "docs/REVIEWFIX-ENV-AUDIT.md",
-   "sha256": "bff78735f95de0dd28ebf10899d1fcf5005581ac61ef4bdc04860bba2d58eaf4"
+   "sha256": "41efdcdeabe8138428b2b01e38e8a0ee473a89035a71e2df6d2ed0e7e5dab126"
   },
   {
    "bytes": 13156,
@@ -29382,9 +29397,9 @@
    "sha256": "acf02ff720d045248ffee854b1dac40c800a07908b597687a17c66709c58f516"
   },
   {
-   "bytes": 10057,
+   "bytes": 10069,
    "path": "skills/hermes64-create/SKILL.md",
-   "sha256": "7d6b8c8604e76770723e8dde691a3f6287bcd0158c480003b2b0f86efe2d4809"
+   "sha256": "43724f5899ce957c24dfc8cd4ad7c97a8a8f070afc9811b5f2be1a53e2d3881a"
   },
   {
    "bytes": 8705,
@@ -29717,6 +29732,11 @@
    "sha256": "1fb47552f67d1845e10fd2efd238fb8800a31261c33b4de00f0153a7a45248f6"
   },
   {
+   "bytes": 15548,
+   "path": "tools/ancientkit_rooms.py",
+   "sha256": "a698c1c74f4df9fcc12e3e7ae2ddb13752cdc9fa5b1d7543833ce737ac8cfd74"
+  },
+  {
    "bytes": 1093,
    "path": "tools/bin/MANIFEST.json",
    "sha256": "fb4a3fb6ccef031802dea3947129693f10db43e9a3fb0b7af2c2a9ec1cf44286"
@@ -29757,9 +29777,9 @@
    "sha256": "766177a9e25143c04c3355239f9061570e5a6dad801e6f09ee98963c81ca2d2d"
   },
   {
-   "bytes": 14701,
+   "bytes": 15747,
    "path": "tools/mood_pack.py",
-   "sha256": "6e9538420f3a8ab8824f6f2b8b71ccb977c381d5bbfa33cc4c22f8e0d3cdf4d5"
+   "sha256": "89c5ce0cf56036ab1b735ef599b2963e72ef02d148b176403e4ec614c79dbe3f"
   },
   {
    "bytes": 48398,
@@ -29785,6 +29805,11 @@
    "bytes": 16833,
    "path": "tools/roomlook.py",
    "sha256": "3f1e154a5fe929b609bd3cd7e95a6ac64f3b843a9b5a61ca27349954fed4ab1c"
+  },
+  {
+   "bytes": 17711,
+   "path": "tools/scifikit_rooms.py",
+   "sha256": "1547cf6c1ce3efbfef4e5c5a2b1c5ed866b930321a4add3c15212edd6bb36e73"
   },
   {
    "bytes": 25006,
@@ -29825,13 +29850,13 @@
  },
  "schema": "hermes64-package/1",
  "source": {
-  "commit": "58404673a9fb50c20559024eb44e9fea85c71150",
+  "commit": "40f28b94ca73fdb15cdb32a2dfe3827acdd65ef6",
   "tree": "clean"
  },
  "tools": 27,
  "totals": {
-  "bytes": 151926448,
-  "files": 5960
+  "bytes": 152009092,
+  "files": 5965
  },
  "version": "1.0.0-rc"
 }

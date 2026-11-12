@@ -221,8 +221,11 @@ def load_patterns():
     return json.loads(PATTERNS.read_text(encoding='utf-8'))
 
 
-def family_for(base):
+def family_for(base, setting=False):
+    """The create-pattern family of a pack. setting_only families (STYLEGEN-1) count only for a derived setting."""
     for fam, row in load_patterns()['families'].items():
+        if row.get('setting_only') and not setting:
+            continue
         if any(base == p or base.startswith(p + '_') for p in row['packs']):
             return fam
     return None
@@ -382,6 +385,8 @@ def stage_brief(ctx):
             if added:
                 brief['assumptions'] = list(brief.get('assumptions', []))[:23] + [
                     ('create vocabulary words used: ' + ', '.join(added))[:120]]
+            from . import create_setting                  # STYLEGEN-1: setting place words (keyword brief only)
+            brief, _cues = create_setting.apply_cues(brief, text, B.D)
             if ctx.opts.get('room_scale'):      # FINALINT2: `/hermes64 new create "<prompt>" large` (the scale word)
                 brief['setting']['room_scale'] = ctx.opts['room_scale']
         B.validate(brief)
@@ -426,6 +431,8 @@ def shipped_packs(ctx):
                 continue            # a derived mood pack installed by an earlier create, not a shipped base
         except ValueError:
             continue
+        if (d / 'setting.json').is_file():
+            continue                # STYLEGEN-1: a derived setting pack, never a base
         rows.append(d.name)
     return rows
 
@@ -583,7 +590,24 @@ def stage_style(ctx):
             r['score'] = round(r['score'] - r['parts']['time'], 2)
             r['parts']['time'] = 0
         scores.sort(key=lambda r: (-r['score'], r['pack']))
-    base, reason, pack_notes = choose_pack(scores, caller=ctx.opts.get('style'))
+    try:
+        base, reason, pack_notes = choose_pack(scores, caller=ctx.opts.get('style'))
+    except CreateError as e:                  # STYLEGEN-1: a refused genre may have a derived setting
+        routed = setting_style(ctx, brief, scores, e) if e.code == 'create_style_refused' else None
+        if routed is None:
+            raise
+        return routed
+    pick = next((r for r in scores if r['pack'] == base), None)
+    if pick and not ctx.opts.get('style') and pick['genre'] not in ('', 'adventure') and pick['genre_coverage'] == 0:
+        routed = setting_style(ctx, brief, scores, None)       # STYLEGEN-1: no pack covers the genre at all
+        if routed is not None:
+            return routed
+    from . import create_setting as CSET
+    if not ctx.opts.get('style') and CSET.prefers(brief):      # STYLEGEN-2: a setting row that beats the tag pick
+        routed = setting_style(ctx, brief, scores, None, picked=base)
+        if routed is not None:
+            return routed
+        pack_notes = pack_notes + ['preferred ' + ln for ln in setting_decision(ctx, brief)[1]]
     if explicit_palette:
         pack_notes = pack_notes + ['the brief names its palette (%s), so a derived mood is preferred over hand-made time '
                                    'variants' % brief['palette_mood'].get('dominant')]
@@ -652,11 +676,65 @@ def stage_style(ctx):
     return {'create/style.json': out}
 
 
+def setting_decision(ctx, brief):
+    """STYLEGEN-1: (decision or None, lines) from adventure_maker/create_setting.py, once per brief and run."""
+    from . import create_setting as CSET
+    key = ('setting', sha(canon(brief)))
+    if key not in ctx.memo:
+        mp = bundle_import(ctx, 'tools.mood_pack')
+        ctx.memo[key] = CSET.decide(ctx.bundle, brief, mp, family_for, load_patterns()['families'],
+                                    lambda pid: bindings_keys(ctx, pid), one_line)
+    return ctx.memo[key]
+
+
+def setting_adjust(ctx, setting, mp):
+    """STYLEGEN-2: the emissive neon margin step of a setting pack, rebuilt from the style stage's decision so the mood
+    and install stages derive the same pack. None for every pack that is not a derived setting."""
+    if not setting or not setting.get('mood'):
+        return None
+    from . import create_setting as CSET
+    return CSET.adjuster_for(ctx.bundle, setting, load_patterns()['families'], mp.M)
+
+
+def setting_style(ctx, brief, scores, err, picked=None):
+    """STYLEGEN-1: the style choice for a derived setting (adventure_maker/create_setting.py), or None. With no usable
+    setting and a refusal, the refusal is raised again with the setting lines appended (never a silent substitute).
+    picked (STYLEGEN-2): the tag-scored pick that a preferred setting row replaces."""
+    d, lines = setting_decision(ctx, brief)
+    if d is None:
+        if err is not None:          # the setting lines go before the candidate list, so the one-line cap keeps them
+            head, _sep, tail = err.message.partition(' Top candidates: ')
+            raise CreateError(err.code, '%s. %s. Top candidates: %s' % (head.rstrip('.'), '; '.join(lines), tail),
+                              err.next_step)
+        return None
+    if err is not None:
+        first = err.message
+    elif picked:
+        first = 'the setting row %s is preferred over the tag-scored pick %s' % (d['setting'], picked)
+    else:
+        first = 'no shipped pack covers the genre %r' % brief['setting'].get('genre')
+    out = {'format': 'hermes64-create-style/1', 'base': d['base'], 'scores': scores[:6],
+           'reason': 'derived setting %s from the reference %s: %s' % (d['setting'], d['base'], first),
+           'candidates': [_score_line(r) for r in scores[:3]], 'pack_notes': list(lines), 'adjustments': [],
+           'family': d['family'], 'pack': d['pack'], 'mood': d['mood'],
+           'setting': {k: d.get(k) for k in ('setting', 'base', 'pack', 'mood', 'family', 'entry', 'inside', 'extras')
+                       + (('entry_camera',) if d.get('entry_camera') else ())}}
+    if d['mood']:
+        out.update(mood_status='derived', mood_reason='setting %s: mood %s on %s' % (d['setting'], d['mood'], d['base']),
+                   derive={'id': d['pack'], 'pack_sha256': d['pack_sha256'], 'strength': d['strength'],
+                           'clamped': d['clamped'], 'style_pack': True})
+    else:
+        out.update(mood_status='none', mood_reason='setting %s: %s used as-is' % (d['setting'], d['base']))
+    return {'create/style.json': out}
+
+
 def stage_mood(ctx):
     """Write the derived mood kit pack into the PROJECT (kits/packs/<id>/pack.json), so the asset stage builds every
     piece in the mood. Nothing is written to the bundle here."""
     style = ctx.read_json('create/style.json')
     out = {'format': 'hermes64-create-mood/1', 'pack': style['pack'], 'base': style['base'], 'derived': False}
+    if style.get('setting'):                  # STYLEGEN-1: the rooms and install stages read the setting from here
+        out['setting'] = style['setting']
     if style.get('mood_status') != 'derived':
         out['note'] = 'no derived mood (%s)' % style.get('mood_status')
         ctx.write('create/mood.json', out)
@@ -667,8 +745,9 @@ def stage_mood(ctx):
         return {}
     mp = bundle_import(ctx, 'tools.mood_pack')
     mood_arg = style.get('mood_spec') or style['mood']
-    derived, sp, view, rep = mp.derive_all(style['base'], mood_arg, style['pack'] if style.get('mood_spec') else None,
-                                           root=ctx.bundle)
+    derived, sp, view, rep = mp.derive_all(style['base'], mood_arg, style['pack'] if (style.get('mood_spec') or
+                                           style.get('setting')) else None, root=ctx.bundle,
+                                           adjust=setting_adjust(ctx, style.get('setting'), mp))
     if derived['id'] != style['pack'] or rep['pack_sha256'] != style['derive']['pack_sha256']:
         raise CreateError('create_mood', 'derived %s (%s) differs from the style choice' % (derived['id'], rep['pack_sha256'][:12]),
                           'run again with --redo style')
@@ -695,15 +774,17 @@ def stage_install(ctx):
     base_keys, _ = bindings_keys(ctx, base)
     core_kits = {k['id'] for k in json.loads((ctx.bundle / 'kits/manifest.json').read_text(encoding='utf-8'))['kits']}
     extras = sorted({r['id'] for r in assets['rows'] if r['status'] in ('existed', 'remapped', 'substituted')
-                     and r.get('id') in reg and r['id'] not in base_keys and r['id'] not in core_kits})
+                     and r.get('id') in reg and r['id'] not in base_keys and r['id'] not in core_kits}
+                    | set((mood.get('setting') or {}).get('extras') or []))    # STYLEGEN-1: setting pattern pieces
     mp = bundle_import(ctx, 'tools.mood_pack')
     kit = ctx.bundle / 'kits/packs' / pid / 'pack.json'
     bind = ctx.bundle / 'packs' / pid / 'bindings.json'
     present = kit.is_file() and bind.is_file() and mp.M.pack_sha(json.loads(kit.read_text(encoding='utf-8'))) == mood['pack_sha256']
     style = ctx.read_json('create/style.json')
     if not present:
-        summary = mp.install(ctx.bundle, base, style.get('mood_spec') or style['mood'],
-                             extra=extras, new_id=pid if style.get('mood_spec') else None, quiet=True)
+        summary = mp.install(ctx.bundle, base, style.get('mood_spec') or style['mood'], extra=extras,
+                             new_id=pid if (style.get('mood_spec') or mood.get('setting')) else None, quiet=True,
+                             adjust=setting_adjust(ctx, mood.get('setting'), mp))
         out.update(built=summary['built'], failed=sorted(summary['failed']), failed_reasons=summary['failed'])
     else:
         doc = json.loads(bind.read_text(encoding='utf-8'))
@@ -729,6 +810,11 @@ def stage_install(ctx):
                    failed=sorted(failed), failed_reasons=failed)
     out.update(installed=True, extras=extras,
                bundle_writes=['packs/%s/' % pid, 'kits/packs/%s/' % pid, 'kits/library/%s/' % pid])
+    if mood.get('setting'):                   # STYLEGEN-1: marks a setting pack (shipped_packs never offers it as a base)
+        from . import create_setting as CSET
+        (ctx.bundle / 'packs' / pid / 'setting.json').write_bytes(pretty(CSET.marker(dict(
+            mood['setting'], pack_sha256=mood.get('pack_sha256')))))
+        out['setting'] = mood['setting']['setting']
     ctx.write('create/install.json', out)
     return {}
 
@@ -1260,7 +1346,8 @@ def stage_rooms(ctx):
     pack_id, base = mood['pack'], mood['base']
     style = Packs(ctx.settings, ctx.service.project(ctx.name)).get(pack_id)
     keys, bdoc = bindings_keys(ctx, pack_id)
-    family = family_for(base)
+    setting = mood.get('setting')                     # STYLEGEN-1: a derived setting names its family and patterns
+    family = setting['family'] if setting else family_for(base)
     gen_ok = gen_presets_supported()
     bw = set(brief_words(brief))
     items, skipped, presets = plan_dressing(ctx, assets, family, keys, bdoc, gen_ok)
@@ -1275,6 +1362,9 @@ def stage_rooms(ctx):
         raise CreateError('create_rooms', 'no room pattern or kit compiler covers the %s pack family yet' % base,
                           'pass --style with a medieval or western pack, or hand-author the rooms (skills/hermes64-create)')
     fam = load_patterns()['families'][family]
+    if setting:
+        fam = setting_patterns(fam, setting, base)
+        rooms_doc['setting'] = setting['setting']
     mod = bundle_import(ctx, fam['compiler'])
     scale, scale_reason = brief_room_scale(brief)      # FINALINT2: medium (default) keeps the word-based choice
     outdoor, layout_why = entry_pattern(fam, family, bw, keys, scale, dict(brief, prompt=prompt))      # VARIETY V6
@@ -1728,6 +1818,22 @@ def camera_candidates(pat, knobs):
     return out
 
 
+def setting_patterns(fam, setting, base):
+    """STYLEGEN-1/2: the family's patterns as a setting uses them: the row's named patterns, the reference's own look
+    profiles, and the row's entry_camera (one of the entry pattern's calibrated alternates, inside camera_knobs)."""
+    from . import create_setting as CSET
+    knobs = load_patterns()['camera_knobs']
+
+    def camera(pat, alt_id):
+        for cand in camera_candidates(pat, knobs):
+            if cand['id'] == alt_id and not cand['lights']:
+                return cand['camera']
+        raise CreateError('create_camera', 'setting %s names the camera %s, which pattern %s does not offer' % (
+            setting.get('setting'), alt_id, pat['id']), 'name one of the pattern camera alternates (create_patterns.json)')
+    outs, ins = CSET.chosen_patterns(fam, setting, base, camera=camera)
+    return dict(fam, outdoor=outs, indoor=ins)
+
+
 def _retryable(reasons, knobs):
     """A failure a camera/light candidate could change (anything but floating pieces and uncut doors)."""
     return any(not any(r.startswith(n) for n in knobs['never_retry']) for r in reasons)
@@ -1781,6 +1887,9 @@ def frame_rooms(ctx, result, rooms_sg, secs):
     knobs = patterns['camera_knobs']
     rooms_doc = ctx.read_json('create/rooms.json')
     fam = patterns['families'].get(rooms_doc.get('family') or '', {})
+    setting = (ctx.read_json('create/mood.json') if ctx.exists('create/mood.json') else {}).get('setting')
+    if fam and setting:         # STYLEGEN-2: candidates are relative to the camera the setting's room was built with
+        fam = setting_patterns(fam, setting, setting.get('base'))
     pats = {}
     for r in rooms_doc.get('rooms', []):
         pat = next((p for p in fam.get('outdoor', []) + fam.get('indoor', []) if p['id'] == r['pattern']), None)
@@ -1995,8 +2104,9 @@ def stage_report(ctx, state):
     score = closeness(ar, rooms, build, play, caps, consistency['ok'], prov.get('ok'))
     rep = {'format': REPORT_FORMAT, 'project': ctx.name, 'prompt': ctx.read_json('create/prompt.json')['prompt'],
            'brief_summary': B.summary(brief), 'brief_filled_by': brief.get('filled_by'),
-           'style': {k: style.get(k) for k in ('base', 'pack', 'mood', 'mood_status', 'mood_reason', 'reason', 'candidates',
-                                               'pack_notes')},
+           'style': dict({k: style.get(k) for k in ('base', 'pack', 'mood', 'mood_status', 'mood_reason', 'reason',
+                                                    'candidates', 'pack_notes')},
+                         **({'setting': style['setting']} if style.get('setting') else {})),     # STYLEGEN-1
            'mood_install': {k: inst.get(k) for k in ('pack', 'installed', 'built', 'failed', 'extras', 'bundle_writes', 'note')},
            'asset_counts': ar['counts'], 'asset_ready': ar['ready'], 'asset_total': ar['total'],
            'made_new': made_new_line(ctx),                                                       # VARIETY V7
@@ -2385,13 +2495,27 @@ def plan_lines(brief_path, bundle=None, style=None):
             r['parts']['time'] = 0
         scores.sort(key=lambda r: (-r['score'], r['pack']))
     L += ['', 'pack:']
-    base = None
+    base, routed = None, None
     try:
         base, reason, notes = choose_pack(scores, caller=style)
-        L.append('  %s: %s' % (base, reason))
-        L += ['  note: ' + n for n in notes]
+        pick = next((r for r in scores if r['pack'] == base), None)
+        if pick and not style and pick['genre'] not in ('', 'adventure') and pick['genre_coverage'] == 0:
+            routed = setting_decision(ctx, brief)[0]        # STYLEGEN-1: as stage_style
+        if routed is None:
+            L.append('  %s: %s' % (base, reason))
+            L += ['  note: ' + n for n in notes]
     except CreateError as e:
-        L.append('  ' + e.line())
+        lines = []
+        if e.code == 'create_style_refused':
+            routed, lines = setting_decision(ctx, brief)
+        if routed is None:
+            L.append('  ' + e.line())
+            L += ['  note: ' + ln for ln in lines]
+    if routed is not None:         # the run derives this pack itself: no --style is needed
+        L.append('  %s: derived setting %s from %s + mood %s; the run builds it (no --style needed)' % (
+            routed['pack'], routed['setting'], routed['base'], routed['mood']))
+        L += ['  note: ' + ln for ln in routed['lines']]
+        base = None
     if base:
         L += ['', 'palette:'] + palette_plan_lines(ctx, brief, base, explicit)
     brief_r, hint_rows = story_hints(brief, story)

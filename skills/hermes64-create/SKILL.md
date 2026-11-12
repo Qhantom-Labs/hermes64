@@ -90,7 +90,7 @@ default; say large/open for bigger. Then the `story` block, sentence by sentence
 
 ## When something refuses
 Every refusal is one line: `code: what happened. Next: what to do`. Do the Next part once.
-- `create_style_refused`: run again with the `--style <pack>` it names; tell the human the style differs.
+- Off-catalogue settings derive automatically. `create_style_refused`: run with its `--style`; say the style differs.
 - Re-run after a brief edit: `... run --name <slug> --brief <path>` (without `--brief` it keeps the last brief).
   `status --name <slug>` shows each stage.
 - The same step failed twice: stop and tell the human what failed. Do not read or change plugin source.
