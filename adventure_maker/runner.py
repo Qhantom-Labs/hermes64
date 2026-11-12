@@ -119,6 +119,13 @@ def _default_candidates(tool, default, platform=None, env=None):
     return tuple(first) + (default, tool)
 
 
+def silent_godot(argv):
+    """Automated Linux runs need no audio devices; interactive Play commands stay untouched."""
+    if platforms.host() != 'linux' or '--audio-driver' in argv[:argv.index('--') if '--' in argv else len(argv)]:
+        return argv
+    return [argv[0], '--audio-driver', 'Dummy'] + list(argv[1:])
+
+
 class Runner:
     def __init__(self, project, *, _linux_isolation=None):
         self.project = project
@@ -238,6 +245,9 @@ class Runner:
             proc.wait(timeout=5)
             proc.stdout.close()
             proc.stderr.close()
+            if platforms.host() == 'linux':
+                from .linux_runtime import cleanup
+                cleanup(self.project)
         result = {'returncode': code, 'stdout': bytes(buffers['stdout']).decode('utf-8', 'strict'),
                   'stderr': bytes(buffers['stderr']).decode('utf-8', 'replace'),
                   'elapsed_seconds': round(time.monotonic() - started, 4)}

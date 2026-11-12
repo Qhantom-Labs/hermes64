@@ -4,7 +4,7 @@ import hashlib
 import json
 from pathlib import Path
 from .adapters import Components
-from .runner import locate
+from .runner import locate, silent_godot
 from .safety import Fault
 from .playtest import verdict, write_reports, SCOPE
 
@@ -20,6 +20,7 @@ def physical(project, settings, game_path, proof, folder, render=False):
     project.write_json(folder + '/runtime/playtest-config.json', config)
     argv = [locate('godot', settings.get('godot_path', ''))] + ([] if render else ['--headless'])
     argv += ['--fixed-fps', '60', '--disable-vsync', '--path', str(runtime), '--script', 'res://playtest/module_runner.gd']
+    argv = silent_godot(argv)
     try:
         process = component.runner.run(argv, project.root, timeout=180)
     except Fault as exc:

@@ -4,7 +4,7 @@ import os
 import hashlib
 from .schemas import validate
 from .packs import validate_pack, fingerprint
-from .runner import Runner, locate
+from .runner import Runner, locate, silent_godot
 from .safety import JSON_LIMIT, fail, inspect_path, relative, strict_json
 
 
@@ -178,6 +178,7 @@ class Components:
                 '--game', str(self.project.path(game)), '--proof', str(self.project.path(proof_path)),
                 '--report', str(self.project.path(report_path))]
         if save_path: argv += ['--save', str(self.project.path(save_path))]
+        argv = silent_godot(argv)
         process = self.runner.run(argv, self.project.root, timeout=180)
         self.project.write_json(folder + '/godot.process.json', dict(process, argv=argv))
         if process['returncode'] != 0:

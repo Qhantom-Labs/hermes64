@@ -53,8 +53,10 @@ def child_env(home, base=None):
 
 def _run(godot, args, timeout, home):
     env = child_env(home)
+    from ..runner import silent_godot
+    argv = silent_godot([godot, '--path', str(PROJECT)] + args)
     try:
-        p = subprocess.run([godot, '--path', str(PROJECT)] + args, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=timeout, env=env)
+        p = subprocess.run(argv, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=timeout, env=env)
         return p.returncode, p.stdout, p.stderr
     except subprocess.TimeoutExpired as e:
         return 124, (e.stdout or b'').decode() if isinstance(e.stdout, bytes) else (e.stdout or ''), 'timeout'

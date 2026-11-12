@@ -116,8 +116,9 @@ def capture(frames, out, godot=None, size=(320,240), allow_software=False, timeo
     env = {k:os.environ[k] for k in ('PATH','LANG','LC_ALL','SystemRoot','WINDIR','PATHEXT') if k in os.environ}
     for key in ('HOME','TMPDIR','XDG_CONFIG_HOME','XDG_CACHE_HOME','XDG_DATA_HOME')+(('USERPROFILE','APPDATA','LOCALAPPDATA','TEMP','TMP') if os.name=='nt' else ()):
         path = out/key.lower(); path.mkdir(exist_ok=True); env[key] = str(path)
-    argv = [str(Path(exe).resolve()),'--path',str(runtime),'--resolution','320x240',
-            '--script','res://noblender_capture.gd','--',str(job)]
+    from .runner import silent_godot
+    argv = silent_godot([str(Path(exe).resolve()),'--path',str(runtime),'--resolution','320x240',
+            '--script','res://noblender_capture.gd','--',str(job)])
     with (out/'godot.log').open('w', encoding='utf-8') as log:
         proc = subprocess.run(argv,cwd=out,env=env,stdout=log,stderr=subprocess.STDOUT,stdin=subprocess.DEVNULL,timeout=timeout)
     (out/'process.json').write_bytes(json.dumps({'argv':argv,'returncode':proc.returncode},indent=1).encode('utf-8'))

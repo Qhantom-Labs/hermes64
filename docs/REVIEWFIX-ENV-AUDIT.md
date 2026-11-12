@@ -23,7 +23,7 @@ What a child gets:
   `PYTHONDONTWRITEBYTECODE=1`, `PYTHONNOUSERSITE=1`; `BLENDER_USER_CONFIG`, `BLENDER_USER_SCRIPTS` and
   `BLENDER_USER_DATAFILES` in the folder.
 - Linux: the same project/scratch-local folders and Python/Blender flags; `PATH=/usr/local/bin:/usr/bin:/bin`,
-  `LANG=C.UTF-8` and `LC_ALL=C.UTF-8`, through `linux_sandbox.environment()`.
+  `LANG=C.UTF-8` and `LC_ALL=C.UTF-8`, through `linux_sandbox.environment()`. PLATFORMS-3 adds explicit `XDG_RUNTIME_DIR=/tmp/hermes64-runtime` and `PULSE_RUNTIME_PATH`/`PULSE_STATE_PATH` under its `pulse` child, `PULSE_CLIENTCONFIG` under that root, and a private Unix `PULSE_SERVER`. Under bwrap these are in its private tmpfs, never inherited host/project audio runtime paths. Automated Linux Godot captures/bots/replays/exports select the Dummy audio driver; no host sound-device bind is added.
 - Windows: `USERPROFILE`, `HOME`, `APPDATA`, `LOCALAPPDATA`, `TEMP` and `TMP` in the folder. `SystemRoot` and `WINDIR`
   come from the parent (default `C:\Windows`). `PATH` is System32, the Windows folder and Wbem only. The child also
   gets `PATHEXT`, `COMSPEC`, `NUMBER_OF_PROCESSORS` and `PROCESSOR_ARCHITECTURE` (from the parent), `PYTHONUTF8`,
@@ -84,7 +84,7 @@ launch, and Studio Windows launch already uses `child_env(<game>/.maker/local)`.
 
 - `adventure_maker/blender_version.py:25`: bounded version-only Blender child uses `scratch_env()` and Windows `CREATE_NO_WINDOW`; no ambient provider/Hermes keys.
 - `adventure_maker/linux_display.py:58`: tiny real PNG probe runs through `Runner.run`. Its Xvfb wrapper starts **inside** bwrap, after namespace/limit setup; the wrapper's `subprocess.Popen` and nested `subprocess.run` retain only Runner's scrubbed environment. It adds its own `DISPLAY=:<private number>` and `LIBGL_ALWAYS_SOFTWARE=1`, never inherits either from the host. Xvfb has `-nolisten tcp`, a private tmpfs socket, no host socket/auth bind, and Runner's PID-namespace cleanup.
-- bwrap 0.12 adds `PWD` itself; the C7 allowlist tolerates only that extra key. Provider keys, sentinel keys and all `HERMES*` variables remain disallowed.
+- bwrap 0.12 adds `PWD` itself; C7 accepts that key plus PLATFORMS-3's explicitly generated private-runtime constants. Provider keys, sentinel keys and all `HERMES*` variables remain disallowed. `linux_runtime.cleanup` adds no child process: it only unlinks the known internal Pulse runtime-link shape after the run or before an existing project's audit.
 
 ## Other explicit sites (6 calls)
 

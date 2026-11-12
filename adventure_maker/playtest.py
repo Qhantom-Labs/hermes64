@@ -5,7 +5,7 @@ import html
 import json
 from pathlib import Path
 from .adapters import Components
-from .runner import locate
+from .runner import locate, silent_godot
 from .safety import Fault
 
 SCOPE = ('Bounded deterministic physical probes at 60 Hz plus seeded explorer inputs. '
@@ -146,6 +146,7 @@ def run(service, project, args, control=''):
     exe = locate('godot', service.settings.get('godot_path', ''))
     argv = [exe] + ([] if args.get('render', False) else ['--headless'])
     argv += ['--fixed-fps', '60', '--disable-vsync', '--path', str(runtime), '--script', 'res://playtest/runner.gd']
+    argv = silent_godot(argv)
     try:
         process = c.runner.run(argv, project.root, timeout=180)
     except Fault as exc:

@@ -1860,7 +1860,9 @@ def stage_capture(ctx):
             return False
         # A cached tiny probe is not a guarantee that a fresh display/full game will start.
         # Preserve the actual failure and continue to report; never turn it into a visual pass.
-        detail = one_line((result.get('process') or {}).get('stderr') or
+        process = result.get('process') or {}
+        validation_errors = (process.get('capture_validation') or {}).get('errors', [])
+        detail = one_line('; '.join(validation_errors) or process.get('stderr') or
                           (result.get('error') or {}).get('message') or result.get('message') or
                           result.get('status') or 'open returned no capture')[:800]
         no_display = any(s in detail for s in ('X11 Display is not available', 'Wayland display', 'capture display:'))
@@ -1907,6 +1909,8 @@ def stage_capture(ctx):
     except Exception as e:
         out['n64'] = {'status': 'not_run', 'reason': one_line(e)[:200]}
     out['capture'] = result.get('capture')
+    if platforms.host() == 'linux':
+        out['benign_stderr'] = (result.get('process') or {}).get('benign_stderr', [])
     ctx.write('create/captures.json', out)
     if not result.get('ok'):
         raise CreateError('create_capture', 'open/capture did not pass: %s' % one_line(result.get('status')),
@@ -2044,6 +2048,7 @@ def stage_report(ctx, state):
            'captures': {'frames': caps.get('frames', []), 'style_gate': (caps.get('style_gate') or {}).get('status'),
                         'style_rooms': (caps.get('style_gate') or {}).get('rooms'),
                         **({'reason': caps['reason']} if caps.get('reason') else {}),
+                        **({'benign_stderr': caps['benign_stderr']} if 'benign_stderr' in caps else {}),
                         'n64': (caps.get('n64') or {}).get('status'), 'n64_rooms': (caps.get('n64') or {}).get('rooms'),
                         'camera_choice': caps.get('camera_choice'), 'camera_attempts': len([a for a in caps.get('camera_attempts', [])
                                                                                             if 'rooms' in a])},
@@ -2103,6 +2108,8 @@ def report_md(rep):
           'Gates: %s' % ', '.join('%s=%s' % (g, v) for g, v in rep['closeness']['gates'].items()),
           rep['closeness']['note'], '', '## Captures', '']
     L += ['- ' + f for f in k.get('frames', [])] or ['- none']
+    if k.get('benign_stderr'):
+        L += ['', '### Benign stderr (device diagnostics, retained)', ''] + ['- ' + one_line(s) for s in k['benign_stderr']]
     L += ['', *rep.get('how_to_play', {}).get('lines', []), '', rep['note'], '']
     return '\n'.join(L)
 

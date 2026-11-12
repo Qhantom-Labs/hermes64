@@ -1,10 +1,12 @@
 # Hermes64 on Linux
 
-**Status. Linux: two real runs on Debian 13/bwrap 0.12.0: run 1 failed (fixed), run 2 authoring built, played and exported games with two remaining failures (fixed in this candidate, awaiting run 3). Not verified.** "Played" means bot playtests, not a human playthrough.
+**Status. Linux: three real Debian 13/bwrap 0.12.0 runs. Run 3 reached C7 12/12 and real private-Xvfb PNG capture, but D10's verdict and subsequent D11 calls failed. Candidate repairs await a fourth Linux run. Not verified. Tested by the owner: Not yet.** Bot play is not human play.
 
-Run 1 (`6af4ba26`) failed official children because NPROC was applied before namespace setup; run 2 (`acbcb657`) confirms the LINUXFIX repair starts real Runner children. Run 2's only failures were C7's bwrap-generated PWD and D10's no-display capture stopping before CREATE-REPORT.md. This candidate repairs both; run the **third-run addendum** in [LINUX-TEST-SHEET.md](LINUX-TEST-SHEET.md). The host NPROC ceiling stayed 63991 while the inner limit was 514; fork exhaustion was not exercised. Missing Hermes on that VM is a prerequisite gap, not a plugin defect.
+Run 1 (`6af4ba26`) failed official children because NPROC preceded namespace setup; run 2 (`acbcb657`) confirmed that repair but failed PWD/capture reporting. Run 3 (`72eb6565`) confirmed C7 12/12, tiny PNG readiness, D8 bots/export and D9 rendered audit. D10 wrote 18 PNGs with `CAPTURE status=passed rooms=2 missing=0` and both rooms passed its style gate; the plugin wrongly treated benign Xvfb/ALSA stderr as capture failure. Rendered Godot also left `.maker/local/config/pulse/<machine-id>-runtime` pointing into `.maker/local/tmp/pulse-*`, so D11 on rendered games failed path safety. An unrendered diagnostic game still passed bots/web/Windows export and refused macOS as designed.
 
-Three exact raw receipt bodies and the Windows run are indexed in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). They remain source-only; no outputs attachments ship. Tested by the owner remains Not yet.
+This candidate uses the capture protocol and decoded PNGs, records narrowly recognized device diagnostics in `benign_stderr`, disables audio in automated Linux Godot runs, isolates runtime/Pulse paths in bwrap's private tmpfs, and removes only the exact benign internal PulseAudio runtime-link shape. The next audited tool call repairs an older affected game with a note; arbitrary/escaping/source/assets/export symlinks remain rejected. Re-run **C7, D10 and D11**, plus B5/D9 controls, using the **fourth Linux run** addendum in [LINUX-TEST-SHEET.md](LINUX-TEST-SHEET.md).
+
+Four exact receipt bodies (three Linux, one Windows) are indexed in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). They remain source-only; no raw outputs ship. Host NPROC stayed 63991, inner NPROC was 514; fork exhaustion and Linux Hermes integration were not exercised.
 
 ## What you need
 
@@ -70,7 +72,11 @@ Godot's `--headless` display uses a dummy renderer: it cannot supply real style/
 
 The Linux doctor/setup performs a tiny **real rendered PNG through Runner.run**, not just executable discovery. Without Xvfb, or when the tiny capture fails (missing Mesa/GLX, startup error, engine failure), it says `capture display: missing, install xvfb (sudo apt install xvfb)` and the exact reason **before** the user starts authoring. Installing xvfb is a human-approved system action, not performed by doctor. A present Xvfb alone does not earn OK.
 
-Without that route the create flow still builds/bot-tests the game and writes `CREATE-REPORT.md`; style and N64 gates read **not run: no display on this machine**, with the reason, never passed. A Vulkan/lavapipe switch is not silently substituted because it changes the renderer being measured, and no usable Compatibility headless/offscreen renderer was established for 4.6.2. The private-Xvfb route awaits the real Linux third run.
+Without that route the create flow still builds/bot-tests the game and writes `CREATE-REPORT.md`; style and N64 gates read **not run: no display on this machine**, with the reason, never passed. A Vulkan/lavapipe switch is not silently substituted because it changes the renderer being measured. Run 3 established real private-Xvfb/Mesa PNG production, not acceptance of this candidate's verdict/cleanup repairs.
+
+Automated Linux Godot capture/replay/bot/export processes select `--audio-driver Dummy`; manual Play commands retain normal sound. bwrap exposes no host sound devices. `XDG_RUNTIME_DIR`, `PULSE_RUNTIME_PATH`, `PULSE_STATE_PATH`, `PULSE_CLIENTCONFIG` and `PULSE_SERVER` use `/tmp/hermes64-runtime` inside its private tmpfs. The weaker unconfined opt-in has no private tmpfs and earns no equivalent isolation claim. Raw stderr is preserved; only exact known device messages are demoted to `benign_stderr`. Unknown `ERROR:`, script/parse/load errors, crashes/signals, nonzero exit, missing marker/room/file, corrupt or blank primary PNGs still fail.
+
+General path safety still rejects **every remaining symlink**. Before an audit and after a sandboxed Linux run, cleanup unlinks only `.maker/local/config/pulse/*-runtime` whose literal target has the same project's `.maker/local/tmp/pulse-<alphanumeric>` shape and whose target ancestors contain no symlinks. It never follows a symlinked cleanup parent or deletes the target. An affected older game is repaired on its next audited tool call with a `runtime_cleanup` note; source/assets/export links and any outside-project link stay rejected.
 
 ## The child sandbox (bubblewrap)
 

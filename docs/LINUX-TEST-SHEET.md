@@ -219,7 +219,8 @@ try:
     code, out, err, tag = child('import os; print(" ".join(sorted(os.environ)))')
     allowed = {'HOME', 'TMPDIR', 'XDG_CONFIG_HOME', 'XDG_CACHE_HOME', 'XDG_DATA_HOME', 'PATH', 'LANG', 'LC_ALL',
                'PYTHONDONTWRITEBYTECODE', 'PYTHONNOUSERSITE', 'BLENDER_USER_CONFIG', 'BLENDER_USER_SCRIPTS',
-               'BLENDER_USER_DATAFILES', 'PWD'}  # bwrap 0.12 sets PWD itself, not inherited
+               'BLENDER_USER_DATAFILES', 'XDG_RUNTIME_DIR', 'PULSE_RUNTIME_PATH', 'PULSE_STATE_PATH',
+               'PULSE_CLIENTCONFIG', 'PULSE_SERVER', 'PWD'}  # explicit private-runtime constants; bwrap creates PWD
     extra = sorted(set(out.split()) - allowed)
     check('env scrubbed', out and 'H64_SECRET_TEST' not in out and not extra, 'extra=%s' % extra)
     code, out, err, tag = child('import resource as r; print(*[r.getrlimit(getattr(r, k))[0] for k in '
@@ -395,7 +396,19 @@ EOF
     `bwrap --version`, and `dmesg | grep -i -E 'apparmor|denied' | tail -20` if AppArmor may be involved. Do not
     work around a failure by changing plugin code or gates; report it.
 
-## Third-run addendum: PLATFORMS-2 candidate
+## Fourth Linux run addendum: PLATFORMS-3 candidate
+
+**Linux: Not verified. Tested by the owner: Not yet.** Preserve all three prior receipts. Record the exact candidate SHA, use a fresh `$T`, and extract C7 again from this sheet (the private runtime keys are now explicit constants, not inherited variables). Do not install packages, change sysctls or enable the unconfined fallback to obtain a pass.
+
+1. **B5 / C7:** real confined Runner readiness and tiny PNG probe must pass. Re-run C7 with `--no-fork`; expect **12/12**, with no provider/Hermes/sentinel key. New `XDG_RUNTIME_DIR`/`PULSE_*` values point under `/tmp/hermes64-runtime` in the private per-run tmpfs, not a project or host Pulse socket. NPROC exhaustion remains not exercised on a shared machine.
+2. **D9 control:** build a fresh game and run its rendered audit. Preserve WARN findings (run 3 was 88/100, not human approval). Save process argv/stderr and list runtime symlinks afterward. Automated rendered/headless Godot argv should include `--audio-driver Dummy`; no host sound/display devices are exposed.
+3. **D10:** re-run the create flow. Require exit 0, exact `CAPTURE status=passed` marker/count, complete `capture.json`, actual decodable/nonblank PNGs and CREATE-REPORT.md/.json. Read actual style/N64 verdicts, per-room reasons and copied frames; never replace a failed visual gate with a pass. Known device diagnostics may appear only in a retained `benign_stderr` list; script/parse/load/crash/signal errors, nonzero exit, missing marker or missing/blank images must still fail. A missing display remains an honest not-run report, not a visual pass.
+4. **D11 on that rendered game:** bot playtest, web export and Windows cross-export must succeed; macOS must retain its explicit target refusal. Repeat once on the D9 rendered game. Check there is no surviving `.maker/local/config/pulse/*-runtime` link after any child.
+5. **Existing-game repair:** if untouched run-3 affected games remain at their original scratch paths, make an archival backup first, then run the next playtest/export call on the original game path. Require a `runtime_cleanup` note, the reported internal Pulse runtime link removed without deleting its target, and bots/export proceeding without manual deletion. Preserve the original receipt/outputs and the backup; save this call as a new diagnostic. A moved/copied game's absolute link to the old scratch root is outside the new project and must still be refused, not silently removed.
+
+Save the new process reports, CREATE reports, screens listing and symlink listing with the fourth receipt; do not modify plugin code or visual thresholds. If the first real attempt differs from the local simulation, retain it as a failure. Human graphics/audio/save, Studio, Hermes integration and fork exhaustion are separate gates, not implied by this addendum.
+
+## Third-run addendum: PLATFORMS-2 candidate (historical; run completed)
 
 Record the exact candidate commit and use a **fresh** `$T`; retain both earlier receipts. Re-run **B5, C7 (expect 12/12 with `--no-fork`), D8, D9, D10 and D11**, with the updated probe extracted from this sheet, not the old saved script.
 

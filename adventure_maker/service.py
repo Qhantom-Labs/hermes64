@@ -86,6 +86,9 @@ class Service:
         self.settings = dict(settings or {})
 
     def response(self, value, project):
+        notes = getattr(project, 'runtime_cleanup', [])
+        if notes:
+            value = dict(value, runtime_cleanup=notes)
         raw = encode(value)  # validate canonical file JSON; files/hashes remain UTF-8, unchanged
         wire = json.dumps(value, ensure_ascii=True, sort_keys=True, separators=(',', ':'), allow_nan=False)
         if len(wire) <= OUTPUT_LIMIT:
@@ -528,9 +531,14 @@ class Service:
         capture = result.get('capture')
         ok = result['returncode'] == 0 and 'SCRIPT ERROR' not in result['stderr'] and 'ERROR:' not in result['stderr']
         if args.get('screenshots'): ok = ok and isinstance(capture, dict) and capture.get('status') == 'passed'
+        from . import platforms
+        if args.get('screenshots') and platforms.host() == 'linux':
+            from .capture_protocol import assess
+            ok = assess(project, folder, result, project.read_json(current['game']).get('rooms', []))
+            project.write_json(folder + '/open.process.json', result)
         out = {'ok': bool(ok), 'status': 'captured' if capture else 'exited', 'process': result,
                'capture': capture, 'report_path': folder + '/open.process.json', 'verified_playable': False}
-        if args.get('screenshots') and isinstance(capture, dict):
+        if args.get('screenshots') and isinstance(capture, dict) and (platforms.host() != 'linux' or ok):
             out.update(self.look_verdict(project, folder, result.get('theme_path')))
         return out
 

@@ -10,7 +10,7 @@ import shutil
 import stat
 import zipfile
 from .adapters import Components
-from .runner import locate
+from .runner import locate, silent_godot
 from . import platforms
 from .safety import fail, inspect_path
 
@@ -419,7 +419,7 @@ def run(service, project, args):
         if digest(dest.read_bytes())!=TEMPLATE_HASHES[target] and not _stub_accepted(target,dest): fail('export_template_hash','Local template cache differs')
     (local_templates/'version.txt').write_bytes('4.6.2.stable\n'.encode('utf-8'))
     exe=str(local_engine)
-    version=c.runner.run([exe,'--version'],project.root)
+    version=c.runner.run(silent_godot([exe,'--version']),project.root)
     project.write_json(folder+'/engine-version.process.json',version)
     if not version['stdout'].startswith('4.6.2.stable.official.'): fail('engine_version','Export requires official Godot 4.6.2')
     share=project.path(folder+'/share'); share.mkdir()
@@ -430,7 +430,7 @@ def run(service, project, args):
         artifact=dest/({'web':'index.html','macos':'Adventure.zip','windows':'Adventure.exe'}[target])
         # Explicit import pass makes export behavior independent of editor history.
         for phase,tail in [('import',['--editor','--import']),('export',['--export-release','Ship',str(artifact)])]:
-            argv=[exe,'--headless','--path',str(release)]+tail
+            argv=silent_godot([exe,'--headless','--path',str(release)]+tail)
             proc=c.runner.run(argv,project.root,timeout=180)
             project.write_json(folder+'/'+target+'-'+phase+'.process.json',dict(proc,argv=argv))
             if proc['returncode'] or 'SCRIPT ERROR' in proc['stderr'] or 'ERROR:' in proc['stderr']:

@@ -146,6 +146,10 @@ class Project:
         return inspect_path(self.root / relative(rel))
 
     def audit(self):
+        from . import platforms
+        if platforms.host() == 'linux':
+            from .linux_runtime import cleanup
+            cleanup(self)
         inspect_path(self.root)
         count = 0
         for parent, dirs, files in os.walk(self.root, followlinks=False):

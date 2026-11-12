@@ -57,7 +57,8 @@ func _initialize():
 def command(argv, xvfb):
     """Same renderer as the game, with a fresh private X display; never --headless."""
     return [sys.executable, '-I', '-S', '-c', XVFB, xvfb, argv[0], '--display-driver', 'x11',
-            '--rendering-method', 'gl_compatibility', '--rendering-driver', 'opengl3'] + list(argv[1:])
+            '--rendering-method', 'gl_compatibility', '--rendering-driver', 'opengl3',
+            '--audio-driver', 'Dummy'] + list(argv[1:])
 
 
 def probe(godot, xvfb):

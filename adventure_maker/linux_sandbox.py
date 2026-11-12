@@ -227,7 +227,9 @@ def bwrap_argv(bwrap, project_root, argv, plugin_root=PLUGIN_ROOT, extra_ro=(), 
         path = '/etc/' + name
         if exists(path):
             cmd += ['--ro-bind', path, path]
-    cmd += ['--proc', '/proc', '--dev', '/dev', '--tmpfs', '/tmp']
+    cmd += ['--proc', '/proc', '--dev', '/dev', '--tmpfs', '/tmp',
+            '--perms', '0700', '--dir', '/tmp/hermes64-runtime',
+            '--perms', '0700', '--dir', '/tmp/hermes64-runtime/pulse']
     project = str(project_root)
     ro = [str(plugin_root)] + list(extra_ro)
     if argv:
@@ -416,7 +418,12 @@ def command(project_root, argv, iso=None, env=None, python=None, values=None):
 def environment(paths):
     """Child environment on Linux: project-local HOME/TMPDIR/XDG_* (already in paths), system PATH, C.UTF-8."""
     out = dict(paths)
-    out.update(PATH='/usr/local/bin:/usr/bin:/bin', LANG='C.UTF-8', LC_ALL='C.UTF-8',
+    out.update(XDG_RUNTIME_DIR='/tmp/hermes64-runtime',
+               PULSE_RUNTIME_PATH='/tmp/hermes64-runtime/pulse',
+               PULSE_STATE_PATH='/tmp/hermes64-runtime/pulse',
+               PULSE_CLIENTCONFIG='/tmp/hermes64-runtime/client.conf',
+               PULSE_SERVER='unix:/tmp/hermes64-runtime/pulse/native',
+               PATH='/usr/local/bin:/usr/bin:/bin', LANG='C.UTF-8', LC_ALL='C.UTF-8',
                PYTHONDONTWRITEBYTECODE='1', PYTHONNOUSERSITE='1',
                BLENDER_USER_CONFIG=paths['XDG_CONFIG_HOME'], BLENDER_USER_SCRIPTS=paths['XDG_CONFIG_HOME'],
                BLENDER_USER_DATAFILES=paths['XDG_DATA_HOME'])

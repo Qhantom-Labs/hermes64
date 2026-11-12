@@ -1,45 +1,48 @@
 # Platform parity: macOS, Windows and Linux
 
-**Linux: two real runs on Debian 13/bwrap 0.12.0: run 1 failed (fixed), run 2 authoring built, played and exported games with two remaining failures (fixed in this candidate, awaiting run 3). Windows 11: one real run: runner/exports pass, bundled demo failed on Blender 4.5 (fixed in this candidate), game not played by a human. Not verified.** Linux "played" means bots. macOS retains its development-Mac acceptance; nothing here upgrades another platform.
+**Linux: three real Debian 13/bwrap 0.12.0 runs; run 3 reached C7 12/12 and private-Xvfb rendering, but D10 capture classification and subsequent D11 calls failed. Candidate repairs await a fourth run. Windows 11: one real run; runner/diagnostic exports pass, default Blender 4.5 demo failed, native rerun and human play pending. Linux and Windows: Not verified. Tested by the owner: Not yet.** Linux play means bots. macOS retains its development-Mac acceptance.
 
-Receipt custody and exact limitations: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Rerun sheets: [Linux](LINUX-TEST-SHEET.md), [Windows](WINDOWS-TEST-SHEET.md). Tested by the owner: **Not yet.**
+Receipt custody and exact limitations: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Rerun sheets: [Linux](LINUX-TEST-SHEET.md), [Windows](WINDOWS-TEST-SHEET.md).
 
 ## Implementation versus real evidence
 
 | Feature | Windows path | Linux path | macOS path | Real receipt / remaining gap |
 |---|---|---|---|---|
-| Install / load | Git clone or checksum-checked ZIP + Expand-Archive/robocopy; old-host adapter | owner/repo install or ZIP; bare catalog name may exclude Linux | repository install / ZIP | Windows 0.18.2 enabled plugin, chat model 404 blocked chat tests. Linux Hermes absent, integration not run. No nonexistent install `--ref` flag. |
-| `check_install` | `py tools\check_install.py`; strict hashes, CRLF/long-path diagnostics | `python3 tools/check_install.py` | same | Windows clone failed, ZIP passed. `.gitattributes` was in development source but missing from package; now included with `* -text`. Root `.git/` metadata ignored, nested extras still warn. |
-| Doctor/setup | Job Object row; Blender version + visible warning outside 5.2.1 | Real Runner confinement readiness + separate real tiny rendered PNG probe; exact missing-display fix | existing rows unchanged | Windows C6 lacked version check. Linux run 2 B5 real-runner child passed, but D10 exposed missing display; new capture readiness awaits run 3. |
-| Discovery | env/settings overrides; Program Files, winget/scoop/Steam/portable Blender | official Godot names, `/usr`, `/opt`, user folders/tarballs; snap/flatpak refused | Homebrew, `/Applications`, PATH | Automatic non-Mac Blender discovery prefers measured 5.2.1, then compatibility candidates. Explicit override wins. Mac order and character-exporter selection unchanged. |
-| Create/edit/assets/bots | Opt-in Job Object | bubblewrap default; explicit unconfined fallback | sandbox-exec | Linux run 2 demo/new/bots pass, D10 failed only capture/report. Windows Python-builder diagnostic passes; default 4.5 demo failed, candidate fix needs native rerun. |
-| Materials | 4.2–4.5 LTS compatibility repair, 5.x path | same code | 5.2.1 path preserved | Enable `use_nodes` only if tree is None. 5.2.1 verified on Mac; 4.5 LTS fix untested on a real run until the Windows re-run. |
-| Rendered style/N64 | interactive desktop | Private Xvfb inside sandbox + Compatibility/OpenGL3 software rendering; no host socket/auth bind | existing Aqua window path | Godot headless uses a dummy renderer, not evidence of visual fidelity. On missing/failed Linux capture probe: both gates not_run with reason, CREATE-REPORT.md still written. No false pass. |
-| Export windows | exe+pck+zip, headless boot smoke | cross-export | cross-export | Windows D12 diagnostic project boot passed; Linux run 2 exported. Candidate/default-builder reruns pending; human play absent. |
-| Export web | same exporter | same exporter; template copy inside project | same, Studio loopback server | Both real runs exported; no human browser picture/audio tested. |
-| Export macos | explicit refusal (codesign needs Mac) | same refusal | signed local app | Both receipts recorded intended refusal. |
-| Native Linux export | n/a | not supported (no template pinned) | n/a | No new target or pin added. |
-| Studio | checked-path shelf, PLAY WINDOWS BUILD + explicit confirmation | same common backend | descriptor shelf, PLAY MACOS BUILD | Native PC shelf/launch and human E16 not run. |
-| Audio import | sanitized ffmpeg child, no console | parent PATH/common folders; scrubbed child | Homebrew/PATH | Linux ffmpeg 7.1.5 found in run 2. Full native audio import not exercised. |
-| Godot fetch | pinned Windows archive, explicit consent | refused until Linux pin is separately added | pinned universal archive | PC reused existing engine/templates. No fetch in this lane, no pin/catalog edits. |
-| Runner | suspended Job assignment, tree cleanup, 64 processes/8 GB, private folders; **no OS network/write confinement** | namespaces, no network, hidden home, read-only system, project-only host write, outer safe limits then inner NPROC | existing sandbox policy and process-group cleanup | Windows D9 6/6; Linux C7 11/12 only PWD failure. Fork exhaustion/memory exhaustion unmeasured. |
-| Children outside Runner | sanitized version/probe/preview/ffmpeg helpers | same; capture itself stays in Runner | existing behavior | Sanitization is not OS confinement; child-environment audit lists sites and intentional exceptions. |
-| Runtime/save | GL Compatibility, `%APPDATA%\Hermes64\<id>` | web build; no native Linux target | existing custom user folder | Windows headless boot is not human graphics/audio/save acceptance. |
+| Install / load | clone or checksum-checked ZIP; old-host adapter | owner/repo or ZIP; catalog may exclude Linux | repository / ZIP | Windows old host enabled plugin, model 404 blocked chat. Linux Hermes absent. No invented install commit flag. |
+| `check_install` | strict hashes, CRLF/long-path help | same hash checker | same | Windows clone failed, ZIP passed; prior repair includes byte-preserving `.gitattributes`. Default native clone rerun pending. |
+| Doctor/setup | Job Object row; Blender version/warning | real Runner confinement readiness plus tiny private-Xvfb PNG | existing rows unchanged | Linux run 3 B5 passes both probes; a tiny pass does not guarantee a later capture. |
+| Discovery | overrides; Program Files/winget/scoop/portable | official Godot names, system/user folders; snap/flatpak refused | Homebrew, Applications, PATH | Prior candidate prefers measured Blender 5.2.1 automatically off Mac; explicit choice wins. |
+| Create/edit/assets/bots | opt-in Job Object | bwrap default; explicit weaker fallback | sandbox-exec | Linux run 3 demo/new/bots work, D10 produces report/PNGs but mislabels capture. Windows Python-builder diagnostic is not default 4.5 acceptance. |
+| Materials | conditional 4.x nodes compatibility repair | same | existing 5.2.1 path | Real Mac 5.2.1 asset bytes retained by prior lane; real 4.5 builder rerun pending. |
+| Rendered style/N64 | interactive desktop | private Xvfb + Compatibility/OpenGL3 software GL | existing Aqua path | Run 3 real capture marker/18 PNG names/style pass; D10 false failure fixed by protocol/image checks. Native new verdict still pending; receipt contains no PNG bytes/N64 verdict. |
+| Capture verdict | existing Windows behavior | exit + marker + room coverage + expected PNGs/CRC/decode/nonblank primary frames; narrow benign stderr list | existing behavior unchanged | Script/parse/load/crash/signal errors, unknown ERROR, nonzero exit, missing marker/image fail. Style/N64 thresholds unchanged. |
+| Automated audio/runtime | existing behavior | Dummy Godot driver; explicit private tmpfs XDG/Pulse runtime; no host sound-device bind | existing behavior unchanged | Run 3 audio fallback created a Pulse runtime link; prevention is a candidate pending native run 4. Manual Play keeps normal audio. |
+| Runtime-link cleanup | no exemption | pre-audit and post-run unlink only exact Pulse config-runtime link to same project's controlled tmp/pulse-* | general symlink refusal unchanged | Older affected games repair on next audited call with a note. Arbitrary/outside/source/assets/export links still fail. |
+| Export windows | native headless smoke | cross-export | cross-export | Windows diagnostic boot pass; Linux run 3 rendered-game calls fail at path audit, while never-rendered control exports. Rerun after capture required. |
+| Export web | same exporter | same exporter | same + Studio loopback | Linux run 3 control exports; human browser picture/audio absent. |
+| Export macos | explicit target refusal | same refusal | local signed app | Never-rendered Linux control records correct refusal; rendered game previously failed earlier path guard. |
+| Native Linux export | n/a | unsupported, no template pin | n/a | No new target/pin. |
+| Studio | checked-path shelf, confirmed launch | common backend | existing descriptor shelf | Native PC/Linux human Studio steps pending. |
+| Audio import | sanitized ffmpeg child | parent PATH/common folders, scrubbed child | Homebrew/PATH | Linux ffmpeg 7.1.5 found; full native audio import not exercised. |
+| Godot fetch | pinned archive, explicit consent | refused without separate Linux SHA-512 pin | pinned universal archive | No downloads, fetch/catalog/pin changes in this lane. |
+| Runner | suspended Job assignment, tree cleanup, 64 processes/8 GB; no OS network/write confinement | namespaces, no network, hidden home, read-only system, project-only host writes plus private tmpfs; safe outer limits/inner NPROC | existing policy/process cleanup | Windows 6/6; Linux C7 **12/12**. Fork/memory exhaustion not exercised. |
+| Children outside Runner | sanitized probes/preview/ffmpeg | same, capture remains inside Runner | existing behavior | Sanitization is not OS confinement; see child-environment audit. |
+| Runtime/save | GL Compatibility, APPDATA custom folder | web output, no native target | existing custom folder | Headless/bot success is not human picture/audio/save acceptance. |
 
 ## Safety and preservation
 
-- Every platform keeps relative-path/NTFS-reserved-name, traversal, symlink/reparse and guarded project rules in `safety.py`.
-- Linux still fails closed without working bwrap unless the owner knowingly opts into `HERMES64_LINUX_RUNNER=unconfined` (no OS-enforced network/write confinement). READY requires the real confined runner child, not fallback availability.
-- NPROC remains an inner brake (visible namespace tasks + 512, inherited ceilings clamped). PID-namespace teardown is lifetime cleanup, not a task-count cap. Run 2 observed 514 inside / 63991 unchanged outside; bounded fork exhaustion was skipped on the shared machine.
-- The C7 allowlist adds only PWD, generated by bwrap 0.12.0. Provider/Hermes variables remain forbidden. Display wrapper adds only its own private DISPLAY and software-GL flag after sanitization.
-- No changes to `runtime/godot/**`, Mac sandbox policy/environment/argv, template/fetch pins, catalog yaml, or exporter-parity verdict. Existing parity was already STALE; changing blendio's source fingerprint must not falsely refresh it.
+- Relative/NTFS/traversal/reparse/hardlink protections remain. No symlink is accepted into normal project traversal; a narrow benign runtime link is unlinked first, never followed or used as an excuse to skip audit.
+- Linux fails closed without bwrap unless the owner explicitly chooses the weaker unconfined mode. READY requires the confined real child. The unconfined fallback has no private tmpfs and earns no matching runtime-isolation claim.
+- Inner NPROC is unchanged (namespace tasks + 512, inherited ceilings clamped). Runs 2/3 show 514 inside and host 63991 unchanged. PID teardown bounds lifetime, not fork count.
+- C7 allows bwrap's generated PWD and the new explicit runtime constants. No ambient PULSE/XDG/provider/Hermes/sentinel value is inherited. Xvfb adds only its own private DISPLAY/software-GL flag.
+- No change to runtime/godot resources, Mac sandbox/environment/argv outputs, pins/catalog yaml or exporter-parity verdict. The character parity verdict was already STALE; no oracle receipt is refreshed here.
 
 ## Local tests, not native acceptance
 
-`tests.test_platforms2` covers Blender tree-None and 5.x no-touch controls; version/discovery/warnings; manifest/CRLF/Git checkout/publish-tree preservation; PWD with secret negative controls; Xvfb route argv, sanitized real stand-in children, real-run capture protocol failures; create/report no-display continuation.
+`tests.test_platforms3` uses exact received stderr, real decoded fixture PNGs, fatal/missing/corrupt/blank controls, create report/frame continuity, Dummy argv, runtime constants and real local stand-in process/timeout cleanup. It drives render-link → subsequent playtest/export dispatch and existing-game repair through the real project guards, with platform engines/actions simulated explicitly.
 
-Related suites include `test_linuxfix`, `test_linux_platform`, `test_windows_paths`, `test_windows_lane_fixes`, `test_platform_parity`, `test_reviewfix_childenv`, `test_windows_gate`, package/registration/catalog/hub/schema and affected create/audit/builder suites. Full executed counts and asset/replay/output digest results are in repository-only `docs/PLATFORMS2-RESULT.md`.
+Required prior suites remain in the local selection: platforms2/linuxfix/Linux platform, reviewfix environment/hints, schema/public text, package/registration/catalog/hub, create report/camera classes, related runner/audit/portability suites. Completed counts, Mac 21-output byte identity, 15 replay results, extracted-ZIP checks and scratch-home validator details belong in source-only `docs/PLATFORMS3-RESULT.md`, not in a native platform claim.
 
 ## Not verified
 
-This exact candidate on real Windows/Linux; Linux Xvfb/Mesa rendering and fork-cap exhaustion; Windows 4.5 default builder; human console flash, graphics/audio/save and Studio play; Linux Hermes integration. Simulation, Mac output preservation and a successful headless boot do not accept those paths.
+Exact candidate on real Windows/Linux; Linux verdict/Dummy/runtime-link prevention/repair after actual Xvfb, fork-cap exhaustion and Hermes integration; Windows default 4.5 builder/clone rerun; human console flash, graphics/audio/save, Studio/browser play. **Tested by the owner: Not yet.**
