@@ -6,22 +6,24 @@ an exported game. The one exception is the plugin re-running its own `create_flo
 
 ## One rule, reused
 
-`adventure_maker/runner.py` `Runner.environment()` (lines 90-124) already built the minimal environment for every
-`Runner.run` child. It is unchanged, and its macOS output is byte-identical to the submitted version (sha256 of the
+`adventure_maker/runner.py` `Runner.environment()` (lines 115-152) builds the minimal environment for every
+`Runner.run` child. Its macOS/Windows mappings are unchanged; the original reviewfix measured macOS output was byte-identical to the submitted version (sha256 of the
 JSON-encoded dict for a fixed project: `107e2480…`, 1,074 bytes, on both trees; Windows branch with a fixed parent
 mapping: `5561af69…`, 1,374 bytes, on both trees).
 
-Two small helpers reuse it for children started outside `Runner.run` (`runner.py` lines 192-212):
+Two small helpers reuse it for children started outside `Runner.run` (`runner.py` lines 241-251):
 
 - `child_env(folder)`: `Runner.environment()` with its `.maker/local` folders placed in `folder`.
 - `scratch_env()`: `child_env()` in a new temporary folder that is removed when the child has finished.
 
 What a child gets:
 
-- macOS/Linux: `HOME`, `TMPDIR`, `XDG_CONFIG_HOME`, `XDG_CACHE_HOME` and `XDG_DATA_HOME` in the folder;
+- macOS: `HOME`, `TMPDIR`, `XDG_CONFIG_HOME`, `XDG_CACHE_HOME` and `XDG_DATA_HOME` in the folder;
   `PATH=/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin`; `LANG` and `LC_ALL` set to `en_US.UTF-8`;
   `PYTHONDONTWRITEBYTECODE=1`, `PYTHONNOUSERSITE=1`; `BLENDER_USER_CONFIG`, `BLENDER_USER_SCRIPTS` and
   `BLENDER_USER_DATAFILES` in the folder.
+- Linux: the same project/scratch-local folders and Python/Blender flags; `PATH=/usr/local/bin:/usr/bin:/bin`,
+  `LANG=C.UTF-8` and `LC_ALL=C.UTF-8`, through `linux_sandbox.environment()`.
 - Windows: `USERPROFILE`, `HOME`, `APPDATA`, `LOCALAPPDATA`, `TEMP` and `TMP` in the folder. `SystemRoot` and `WINDIR`
   come from the parent (default `C:\Windows`). `PATH` is System32, the Windows folder and Wbem only. The child also
   gets `PATHEXT`, `COMSPEC`, `NUMBER_OF_PROCESSORS` and `PROCESSOR_ARCHITECTURE` (from the parent), `PYTHONUTF8`,
@@ -31,20 +33,20 @@ What a child gets:
   The Godot, Blender, ffmpeg and Python paths are resolved by the parent from the plugin settings or the
   `HERMES64_*` overrides and passed as the program path.
 
-## Sites changed (18 calls in 11 files)
+## Sites changed by reviewfix (18 calls in 11 files)
 
 Line numbers are for this version; the submitted version's line is in brackets.
 
 | Site | Child | Environment now |
 | --- | --- | --- |
 | `adventure_maker/audio_import.py:108` [105] and `:111` [108] | ffmpeg (probe, decode, version) | `scratch_env()` |
-| `adventure_maker/godot_fetch.py:246` [240] | the newly fetched Godot, `--version` | `scratch_env()` |
-| `adventure_maker/godot_fetch.py:234` [231] | `xattr`, quarantine on the fetched Godot.app | `scratch_env()` |
+| `adventure_maker/godot_fetch.py:292` [240] | the newly fetched Godot, `--version` | `scratch_env()` |
+| `adventure_maker/godot_fetch.py:280` [231] | `xattr`, quarantine on the fetched Godot.app | `scratch_env()` |
 | `dashboard/plugin_api.py:365` [345] | the exported Windows game (Studio launch) | the game's Runner environment, `child_env(<game>/.maker/local)` |
 | `dashboard/plugin_api.py:400` [380] | `/usr/bin/open -n` on the exported .app (Studio launch) | the same |
 | `adventure_maker/audit.py:51` [49] | `/bin/launchctl managername` | `scratch_env()` |
 | `adventure_maker/create_flow.py:2519` [2517] | `python -I -c 'import numpy'` | `scratch_env()` |
-| `adventure_maker/setup_check.py:48` [46] and `:64` [60] | `python -I` numpy and Pillow probes | `scratch_env()` |
+| `adventure_maker/setup_check.py:48` [46] and `:64` [60] | `python -I` numpy and Pillow probes | `scratch_env()`; merged with Windows-only `CREATE_NO_WINDOW` |
 | `adventure_maker/scene_capture.py:57` [56] | Godot replay capture (command-line tool) | `scratch_env()` |
 | `adventure_maker/nbchars/api.py:248` [246] | Blender, the `blender` character exporter | `scratch_env()` |
 | `adventure_maker/nbchars/parity.py:338` [336] | Blender, parity re-export | `scratch_env()` |
@@ -65,14 +67,27 @@ the project folder. A game started from the Studio therefore keeps its saves and
 (`nbchars/select.py`). That verdict was already STALE in the submitted version: recorded `c2ec6e38…`, submitted tree
 `be0486eb…`, this tree `3149c5e5…`. So exporter selection is unchanged.
 
-## Already explicit (unchanged, 6 calls)
+## New platforms children (2 calls)
 
 | Site | Child | Environment |
 | --- | --- | --- |
-| `adventure_maker/runner.py:153` and `:291` | every `Runner.run` child (macOS sandbox, Windows job) | `Runner.environment()`, the rule above |
+| `adventure_maker/linux_sandbox.py:269` (`_help`) | bwrap `--help`, before the functional probe | `scratch_env()`; temporary home/config/cache/temp folders removed after it exits |
+| `adventure_maker/linux_sandbox.py:304` (`probe`) | bwrap functional probe and its isolated Python | `child_env(<writable probe project>/.maker/local)`; every writable environment folder is inside the existing writable bind and removed with the probe tree |
+
+The probe's `env` parameter is host-discovery input only, never the child's environment. The rlimit shim replaces
+itself with bwrap/the target via `os.execv`, retaining the explicit Runner environment; it starts no extra inherited-
+environment subprocess. Normal Linux authoring and Windows Job Object launches still use the two Runner sites below.
+No new Windows spawning site was added by the platforms lane: suspended start/resume changes the existing job
+launch, and Studio Windows launch already uses `child_env(<game>/.maker/local)`.
+
+## Other explicit sites (6 calls)
+
+| Site | Child | Environment |
+| --- | --- | --- |
+| `adventure_maker/runner.py:188` and `:384` | every `Runner.run` child (macOS sandbox, Linux rlimit shim/bwrap or opt-in unconfined mode, Windows suspended/job launch) | `Runner.environment()`, the rule above |
 | `adventure_maker/static_preview.py:122` | Godot still capture | `PATH`, `LANG`, `LC_ALL`, `SystemRoot`, `WINDIR` and `PATHEXT` from the parent; HOME, TMPDIR and XDG (Windows: profile and temp) in the capture folder |
 | `adventure_maker/nbchars/preview.py:56` | Godot character preview | allow-list of OS basics (`PATH`, `LANG`, `LC_ALL`, `LC_CTYPE`, `TZ`, `DISPLAY`, `WAYLAND_DISPLAY`, `XDG_RUNTIME_DIR`, `SystemRoot`, `WINDIR`, `COMSPEC`, `PATHEXT`, `NUMBER_OF_PROCESSORS`, `PROCESSOR_ARCHITECTURE`, `TMPDIR`, `TEMP`, `TMP`) plus a scratch HOME and profile folders; the display variables are kept for a windowed preview |
-| `adventure_maker/character_gate.py:97` | the plugin's own rig validator (`python -m adventure_maker.rigkit`), command-line fallback used only when the rig kit cannot be imported in-process (the package ships it, so the in-process path runs) | macOS/Linux: `PATH=/usr/bin:/bin`, `LANG=C.UTF-8`, `PYTHONDONTWRITEBYTECODE`, plus `HOME` and `TMPDIR` from the parent. Windows: `SystemRoot`, `WINDIR`, `TEMP`, `TMP`, `USERPROFILE`, `APPDATA` and `LOCALAPPDATA` from the parent, plus a System32 `PATH`. The real home folder is kept so that numpy installed in the user's site-packages stays importable (this child runs without `-I`) |
+| `adventure_maker/character_gate.py:99` | the plugin's own rig validator (`python -m adventure_maker.rigkit`), command-line fallback used only when the rig kit cannot be imported in-process (the package ships it, so the in-process path runs) | macOS/Linux: `PATH=/usr/bin:/bin`, `LANG=C.UTF-8`, `PYTHONDONTWRITEBYTECODE`, plus `HOME` and `TMPDIR` from the parent. Windows: `SystemRoot`, `WINDIR`, `TEMP`, `TMP`, `USERPROFILE`, `APPDATA` and `LOCALAPPDATA` from the parent, plus a System32 `PATH`. The real home folder is kept so that numpy installed in the user's site-packages stays importable (this child runs without `-I`); Windows-only `CREATE_NO_WINDOW` is retained |
 | `refpack/tool.py:44` | the refpack worker (`python worker.py`) | `PATH` and `HOME` from the parent, `TMPDIR` set to the work folder, `LANG`/`LC_ALL=C`, `PYTHONDONTWRITEBYTECODE`; HOME kept for the same site-packages reason |
 
 None of these passes a credential. They were left as they are to keep this change small.
@@ -91,7 +106,7 @@ version check, `codesign`), `newgame.py` (numpy probe), `gen_tools.py` and `char
 
 ## Nothing else starts a child
 
-The shipped Python has no `os.system`, `os.popen`, `os.exec*`, `os.spawn*`, `pty`, `asyncio` subprocesses,
+Outside the rlimit shim's replacement `os.execv` described above, the shipped Python has no `os.system`, `os.popen`, `os.exec*`, `os.spawn*`, `pty`, `asyncio` subprocesses,
 `webbrowser` or `multiprocessing`. The GDScript runtime has no `OS.execute`, `OS.create_process` or `OS.shell_open`.
 The Studio's JavaScript runs in the desktop app and starts no process.
 
@@ -106,3 +121,8 @@ The Studio's JavaScript runs in the desktop app and starts no process.
   allow-list above. It also requires each file that starts a child to be listed here.
 - Windows was not run. The Windows branch is the existing `windows_environment()`, checked by unit test with
   sentinels in the parent mapping.
+- Platforms merge regression tests: `tests.test_linux_platform.ProbeEnvironment` runs real POSIX stand-in children
+  for bwrap help and the probe, with parent sentinels and the Linux platform decision simulated. They require the
+  exact Runner mapping (not just missing keys), local writable folders and cleanup. Before the repair, help leaked
+  a sentinel and the probe lacked ten Runner variables. These are macOS simulation/child-environment checks, not
+  native Linux or Windows receipts. Real platform status remains unverified.

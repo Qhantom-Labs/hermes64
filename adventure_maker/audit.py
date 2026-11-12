@@ -44,6 +44,9 @@ def display_available():
         # a service (session 0) cannot. SESSIONNAME is Console or RDP-* for interactive sessions.
         session = os.environ.get('SESSIONNAME', '')
         return (bool(session), 'Windows desktop session (%s)' % session if session else 'no interactive Windows session')
+    if sys.platform.startswith('linux'):
+        # The bubblewrap runner has no display (headless authoring; docs/LINUX-RUNNER-DESIGN.md).
+        return False, 'Linux: headless authoring, no display inside the sandbox'
     if sys.platform != 'darwin':
         return False, 'not macOS'
     try:

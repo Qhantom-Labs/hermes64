@@ -46,7 +46,7 @@ def _python(settings, probe=None):
     try:
         with scratch_env() as env:
             out = subprocess.run([exe, '-I', '-B', '-c', 'import numpy; print(numpy.__version__)'],
-                                 capture_output=True, text=True, encoding='utf-8', timeout=20, env=env)
+                                 capture_output=True, text=True, encoding='utf-8', timeout=20, env=env, **_no_window())
         return exe, (out.stdout.strip() or None) if out.returncode == 0 else None
     except (OSError, subprocess.TimeoutExpired):
         return exe, None
@@ -62,10 +62,33 @@ def _pillow(exe, probe=None):
     try:
         with scratch_env() as env:
             out = subprocess.run([exe, '-I', '-B', '-c', 'import PIL; print(PIL.__version__)'],
-                                 capture_output=True, text=True, encoding='utf-8', timeout=20, env=env)
+                                 capture_output=True, text=True, encoding='utf-8', timeout=20, env=env, **_no_window())
         return (out.stdout.strip() or None) if out.returncode == 0 else None
     except (OSError, subprocess.TimeoutExpired):
         return None
+
+
+def _no_window():
+    """Windows: a console program (python.exe) started by a Hermes without a console would flash a console window."""
+    return {'creationflags': getattr(subprocess, 'CREATE_NO_WINDOW', 0x08000000)} if os.name == 'nt' else {}
+
+
+def runner_row(platform=None, env=None, iso=None):
+    """(status, detail, command) for the child runner on Linux and Windows; None on macOS (sandbox-exec is built in)."""
+    from . import platforms
+    plat = platforms.host(platform)
+    if plat not in ('linux', 'win32'):
+        return None
+    iso = iso or platforms.isolation(platform, env)
+    if iso['available']:
+        return 'ok', '%s: %s' % (iso['mode'], iso['note']), None
+    if plat == 'win32':
+        command = '$env:%s = "%s" in PowerShell (or a user environment variable), then restart Hermes' % (
+            platforms.WINDOWS_RUNNER_ENV, platforms.WINDOWS_RUNNER_VALUE)
+    else:
+        command = ('install bubblewrap (Debian/Ubuntu: sudo apt install bubblewrap) or fix what the note names, '
+                   'then restart Hermes; or, knowingly, %s=%s' % (platforms.LINUX_RUNNER_ENV, platforms.LINUX_RUNNER_VALUE))
+    return 'missing', '%s: %s' % (iso['mode'], iso['note']), command
 
 
 def numpy_command(exe, platform=None, home=None):
@@ -115,6 +138,9 @@ def check(settings, probe_numpy=None, blender_present=None, templates=None, stub
 
     add('Python', 'ok' if sys.version_info >= (3, 9) else 'missing', sys.version.split()[0], 'everything',
         None if sys.version_info >= (3, 9) else _open('https://www.python.org/downloads/'))
+    runner = runner_row()
+    if runner is not None:          # Linux and Windows only: macOS rows are unchanged
+        add('Child runner', runner[0], runner[1], 'making and rebuilding games', runner[2])
     gpath, gver = _godot(settings)
     if not gpath:
         add('Godot 4.6.2', 'missing', 'not found', 'playing, replaying, screenshots and exporting games', '/hermes64 setup --fetch')
@@ -192,7 +218,7 @@ SYMBOL = {'ok': '[ok]', 'missing': '[MISSING]', 'optional': '[optional]'}
 
 def summary(rows):
     by = {r['item']: r['status'] for r in rows}
-    make = by['Python'] == 'ok' and by.get('Games folder', 'ok') == 'ok'
+    make = by['Python'] == 'ok' and by.get('Games folder', 'ok') == 'ok' and by.get('Child runner', 'ok') == 'ok'
     play = make and by['Godot 4.6.2'] == 'ok'
     return ('Ready: make games %s; play %s; room models %s; export %s.' % (
         'yes' if make else 'no', 'yes' if play else 'no',
@@ -257,7 +283,8 @@ def run(settings, fetch=False, yes=False, include_templates=False, interactive=F
         rows = check(settings, games_root=games_root)
         report(render(rows, fetched=fetch))
         by = {r['item']: r['status'] for r in rows}
-        return {'ok': by['Python'] == 'ok' and by['Godot 4.6.2'] == 'ok' and by['Games folder'] == 'ok',
+        return {'ok': by['Python'] == 'ok' and by['Godot 4.6.2'] == 'ok' and by['Games folder'] == 'ok' and
+                by.get('Child runner', 'ok') == 'ok',
                 'status': 'checked_after_fetch' if fetch else 'checked', 'message': '\n'.join(lines), 'rows': rows}
     except (godot_fetch.FetchError, OSError, ValueError) as exc:
         report('Setup failed: ' + str(exc))

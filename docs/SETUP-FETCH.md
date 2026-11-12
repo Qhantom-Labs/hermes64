@@ -10,6 +10,7 @@ From a terminal in the plugin folder:
 
 - macOS: `python3 tools/hermes64_setup.py --fetch [--templates]`
 - Windows PowerShell: `py tools/hermes64_setup.py --fetch [--templates]`
+- Linux: `python3 tools/hermes64_setup.py --fetch` is **refused** in this release (no Linux pin; see below)
 
 The terminal asks `Download and verify these files? [y/N]`; Enter or `n` cancels. Add `--yes` only to approve
 without a prompt. In automation, `--json` returns the result; progress and disclosure go to stderr.
@@ -29,7 +30,7 @@ mirrored or repackaged.
 | `Godot_v4.6.2-stable_macos.universal.zip` | macOS, always | not measured here | 536,870,912 bytes |
 | `Godot_v4.6.2-stable_win64.exe.zip` | Windows, always | not measured here | 536,870,912 bytes |
 | `Godot_v4.6.2-stable_export_templates.tpz` | only with `--templates` | about 1.25 GB | 1,468,006,400 bytes (1.4 GiB) |
-| Linux | unsupported | no Linux hash pinned; no guessed download | |
+| `Godot_v4.6.2-stable_linux.x86_64.zip`, `..._linux.arm64.zip` | Linux | **refused**: no official SHA-512 for them is pinned in `tools/fetch-manifest.json`, and none is guessed | 536,870,912 bytes once pinned |
 
 From the `.tpz`, setup keeps exactly `web_nothreads_release.zip`, `macos.zip` and `windows_release_x86_64.exe`
 (read member by name, never by extracting archive paths), checks each against the sha256 pinned in
@@ -49,6 +50,10 @@ Never into the plugin folder and never into Applications/Program Files:
 - Windows: `%LOCALAPPDATA%\hermes64\godot\4.6.2\windows\Godot_v4.6.2-stable_win64.exe`;
   templates: `%LOCALAPPDATA%\hermes64\templates\4.6.2.stable\` (fallback when LOCALAPPDATA is absent: the user's
   `AppData\Local\hermes64`). The console exe from the zip is not substituted for the standard exe.
+- Linux (after a maintainer adds the pin): `~/.cache/hermes64/godot/4.6.2/linux-x86_64/` (or `linux-arm64`;
+  `$XDG_CACHE_HOME` when set). The code path is in place (verify, unpack, mark only the verified file
+  executable, run `--version` once); until the pin exists every Linux fetch is refused before any connection.
+  Installing Godot by hand and adding the pin: [LINUX.md](LINUX.md).
 
 The Godot finder used by setup, doctor, play and export checks the integrity-checked cache before its ordinary
 defaults. **An explicit `godot_path` always wins**; setup warns about a stale one and never changes your settings.
@@ -56,8 +61,9 @@ The exporter uses Godot's own export_templates folder first and the fetched temp
 bytes match the pinned sha256. A cache receipt records the editor's archive pin, version and file hashes; a changed
 or partial cache is not reused. Remove a version's cache folder to uninstall. No registry or system-wide changes.
 
-The Windows-lane finder lives in a different file; Main applies `docs/GODOTFETCH-WINDOWS-FINDER.patch` when
-composing that lane. The fetch does not enable the Windows child runner or weaken any sandbox gate.
+The finder that reads this cache is `platforms.godot_candidates` (`docs/GODOTFETCH-WINDOWS-FINDER.patch` is
+already applied). The fetch does not enable the Windows child runner, change the Linux runner or weaken any
+sandbox gate.
 
 ## Verification, Gatekeeper and failures
 

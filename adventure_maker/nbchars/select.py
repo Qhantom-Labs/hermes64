@@ -67,8 +67,8 @@ def _blender_path(settings):
     configured = (settings or {}).get('blender_path') or ''
     if configured:
         cands = [configured]
-    elif platforms.is_windows():
-        cands = platforms.blender_candidates()
+    elif platforms.is_windows() or platforms.host() == 'linux':
+        cands = [c for c in platforms.blender_candidates() if not platforms.sandboxed_package(c)]
     else:
         cands = [c for c in (platforms.override('blender'),) if c] + list(BLENDER_DEFAULTS)
     for c in cands:

@@ -20,9 +20,18 @@ GODOT_VERSION = '4.6.2'
 GODOT_RELEASE = 'https://github.com/godotengine/godot/releases/tag/4.6.2-stable'
 
 
-def godot_help(configured=''):
-    """The one Godot-missing message (doctor, /hermes64 new): exact version, where to get it, per-OS steps. One line."""
+def godot_help(configured='', platform=None):
+    """The one Godot-missing message (doctor, /hermes64 new): exact version, where to get it, per-OS steps. One line.
+    On Linux the macOS/Windows steps are replaced by the Linux ones (the text stays under the refusal length cap)."""
     where = ' at the configured godot_path %r' % configured[:240] if configured else ''
+    if platforms.host(platform) == 'linux':
+        return ("Godot wasn't found%s. Hermes64 supports Godot %s, the standard build (not the .NET build): %s . "
+                "Linux: download Godot_v4.6.2-stable_linux.x86_64.zip (or .arm64) from that release, check it against "
+                "the release's SHA512-SUMS.txt, unzip it, chmod +x the file and set HERMES64_GODOT (or godot_path) "
+                "to it; Hermes64 also looks in /usr/local/bin, /opt, ~/.local/bin, ~/bin and ~/Downloads. "
+                "/hermes64 setup --fetch is refused on Linux until a Linux SHA-512 pin is added (docs/LINUX.md). "
+                "snap and flatpak builds are not used (their launcher cannot run inside the bubblewrap "
+                "sandbox)." % (where, GODOT_VERSION, GODOT_RELEASE))
     return ("Godot wasn't found%s. Hermes64 supports Godot %s, the standard build (not the .NET build): %s . "
             "Run /hermes64 setup --fetch for an explicit, hash-verified download into your user cache. "
             "macOS: unzip Godot_v4.6.2-stable_macos.universal.zip, move Godot.app to Applications, then Control-click it "
@@ -102,8 +111,14 @@ PLATFORM_NOTE = ('This computer is not a Mac: Hermes64 runs Godot, Blender and i
                  'you opt in to the Windows Job Object runner (no OS network or write confinement): see the Windows '
                  'checklist (python -m adventure_maker.doctor --windows-checklist). Playing exported games and the web '
                  'play builds needs no opt-in.')
-LINUX_NOTE = ('This computer is Linux: Hermes64 has no Linux child sandbox yet, so making games is off; exported web '
-              'builds run in any browser.')
+LINUX_NOTE = ('This computer is Linux: Hermes64 makes games only inside the bubblewrap (bwrap) sandbox (no network, '
+              'writes confined to the project), and that sandbox is not working here, so making and rebuilding games '
+              'is off. The reason and the fix are in platform.isolation.note; checklist: python3 -m '
+              'adventure_maker.doctor --linux-checklist (docs/LINUX.md). Exported web builds run in any browser.')
+LINUX_UNCONFINED_NOTE = ('This computer is Linux and runs Godot, Blender and Python unconfined by your '
+                         'HERMES64_LINUX_RUNNER=unconfined opt-in: no OS-enforced network or write confinement; '
+                         'process-group kill and rlimits only.')
+OTHER_NOTE = 'This operating system has no Hermes64 child sandbox, so making games is off.'
 
 
 def guidance(programs, platform=None, templates=None, env=None):
@@ -114,10 +129,16 @@ def guidance(programs, platform=None, templates=None, env=None):
     if plat == 'win32':
         if not platforms.windows_runner_enabled(env):
             lines.append(PLATFORM_NOTE)
+    elif plat == 'linux':
+        iso = platforms.isolation(platform, env)
+        if iso['mode'] == 'unconfined':
+            lines.append(LINUX_UNCONFINED_NOTE)
+        elif not iso['available']:
+            lines.append(LINUX_NOTE)
     elif plat != 'darwin':
-        lines.append(LINUX_NOTE)
+        lines.append(OTHER_NOTE)
     if not programs['godot']['available']:
-        lines.append(godot_help(programs['godot'].get('configured', '')))
+        lines.append(godot_help(programs['godot'].get('configured', ''), platform))
     if templates is not None and not templates['available']:
         lines.append(templates_help())
     if not programs['blender']['available']:
@@ -222,9 +243,43 @@ def windows_report(platform='win32'):
     return platforms.windows_checklist(report)
 
 
+LINUX_REQUIRED = 4     # Python, numpy, child runner, Godot: the first lines of platforms.linux_checklist
+
+
+def linux_report(settings=None, iso=None):
+    """The Linux checklist lines for this computer (on another OS: a simulation with no real program lookups)."""
+    import shutil
+    report = probe(dict({'python_path':sys.executable}, **(settings or {})),python_capabilities())
+    if platforms.host() != 'linux':
+        report['programs'] = {'godot':{'available':False},'blender':{'available':False}}
+        home = platforms.PurePosixPath('/home/you')
+        report['export_templates'] = dict(export_templates(platform='linux',env={},home=home),available=False,targets=[])
+        return platforms.linux_checklist(report,env={},home=home,iso=iso or platforms.isolation('linux',{}))
+    try:
+        from .audio_formats import find_ffmpeg
+        report['ffmpeg'] = {'available':bool(find_ffmpeg()[0])}
+    except Exception:
+        report['ffmpeg'] = {'available':False}
+    folder = Path.home()
+    try:
+        disk = (shutil.disk_usage(str(folder)).free,str(folder))
+    except OSError:
+        disk = None
+    return platforms.linux_checklist(report,iso=iso,disk=disk)
+
+
 def main():
     if '--runtime-json' in sys.argv:
         print(json.dumps(python_capabilities(),sort_keys=True))
+    elif '--linux-checklist' in sys.argv:
+        if platforms.host() != 'linux':
+            print('SIMULATED: this computer is %s, not Linux; program lookups below are not real.' % platforms.host())
+        lines = linux_report()
+        for line in lines:
+            print(line)
+        required = lines[:LINUX_REQUIRED] + [l for l in lines if l.startswith('LOW')]
+        print('RESULT  %s' % ('READY to make games' if all(not l.startswith(('MISSING','OFF','LOW')) for l in required)
+                              else 'NOT READY: fix the MISSING/OFF/LOW lines above'))
     elif '--windows-checklist' in sys.argv:
         if platforms.host() != 'win32':
             print('SIMULATED: this computer is %s, not Windows; program lookups below are not real.' % platforms.host())

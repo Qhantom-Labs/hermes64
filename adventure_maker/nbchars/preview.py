@@ -22,8 +22,9 @@ def godot_path(configured=None):
     from .. import platforms
     if configured:
         cands = [configured]
-    elif platforms.is_windows():
-        cands = platforms.godot_candidates()
+    elif platforms.is_windows() or platforms.host() == 'linux':
+        cands = [c for c in platforms.godot_candidates()
+                 if not platforms.sandboxed_package(c, shutil.which(c) if not platforms.looks_like_path(c) else c)]
     else:
         cands = [c for c in (platforms.override('godot'),) if c] + list(GODOT_DEFAULTS)
     for c in cands:

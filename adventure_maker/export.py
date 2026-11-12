@@ -126,6 +126,12 @@ def zip_tree(root, output):
             z.writestr(info,path.read_bytes())
 
 
+def preset_template(target,host_template,local_templates,platform=None):
+    """The template path written into export_presets.cfg. Linux: the bubblewrap sandbox hides $HOME, so the preset
+    names the hash-checked copy inside the project (local_templates); macOS and Windows keep the host template."""
+    return local_templates/TEMPLATES[target] if platforms.host(platform)=='linux' else host_template
+
+
 def template_path(target):
     base=Path(str(platforms.templates_dir()))   # macOS ~/Library/..., Windows %APPDATA%\Godot\..., or HERMES64_TEMPLATES
     version=inspect_path(base/'version.txt')
@@ -419,7 +425,7 @@ def run(service, project, args):
     share=project.path(folder+'/share'); share.mkdir()
     rows=[]
     for target in targets:
-        (release/'export_presets.cfg').write_bytes(preset(target,templates[target]).encode('utf-8'))
+        (release/'export_presets.cfg').write_bytes(preset(target,preset_template(target,templates[target],local_templates)).encode('utf-8'))
         dest=share/target; dest.mkdir()
         artifact=dest/({'web':'index.html','macos':'Adventure.zip','windows':'Adventure.exe'}[target])
         # Explicit import pass makes export behavior independent of editor history.

@@ -94,7 +94,9 @@ def rig_gate(glb_path, rig, clips=None, profile='grounded', expect_sha256=None, 
         else:
             env = {'PATH': '/usr/bin:/bin', 'PYTHONDONTWRITEBYTECODE': '1', 'HOME': os.environ.get('HOME', '/tmp'),
                    'TMPDIR': os.environ.get('TMPDIR', '/tmp'), 'LANG': 'C.UTF-8'}
-        proc = subprocess.run(argv, cwd=str(Path(root).resolve()), capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=900, env=env)
+        # Windows: python.exe is a console program; without CREATE_NO_WINDOW a console window flashes per run.
+        flags = {'creationflags': getattr(subprocess, 'CREATE_NO_WINDOW', 0x08000000)} if os.name == 'nt' else {}
+        proc = subprocess.run(argv, cwd=str(Path(root).resolve()), capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=900, env=env, **flags)
         try:
             rep = json.loads(proc.stdout)
             if isinstance(rep, list):

@@ -2059,8 +2059,14 @@ function detailMenu(item, caps = {}) {
   const g = item.game
   const web = hasExport(g, 'web')
   const mac = hasExport(g, 'macos')
+  // A Windows backend (caps.nativeTarget 'windows', from /studio/catalogue) launches the Windows export instead of
+  // the macOS one; every other host keeps the macOS entry unchanged.
+  const win = caps.nativeTarget === 'windows' && hasExport(g, 'windows')
+  const play = caps.nativeTarget === 'windows'
+    ? { id: 'play', label: web || !win ? 'PLAY' : 'PLAY WINDOWS BUILD', tag: web ? 'WEB' : win ? 'WINDOWS' : 'NO BUILD', enabled: web || win, native: !web && win, target: !web && win ? 'windows' : null, reason: web || win ? '' : 'No web export yet. Export first.' }
+    : { id: 'play', label: web || !mac ? 'PLAY' : 'PLAY MACOS BUILD', tag: web ? 'WEB' : mac ? 'MACOS' : 'NO BUILD', enabled: web || mac, native: !web && mac, reason: web || mac ? '' : 'No web export yet. Export first.' }
   return [
-    { id: 'play', label: web || !mac ? 'PLAY' : 'PLAY MACOS BUILD', tag: web ? 'WEB' : mac ? 'MACOS' : 'NO BUILD', enabled: web || mac, native: !web && mac, reason: web || mac ? '' : 'No web export yet. Export first.' },
+    play,
     { id: 'edit', label: 'EDIT WITH HERMES', enabled: true, reason: '' },
     { id: 'export', label: 'EXPORT', tag: g.sample ? 'SAMPLE' : '', enabled: !g.sample, reason: g.sample ? 'Sample entry: nothing to export' : '' },
     { id: 'folder', label: 'OPEN FOLDER', tag: g.sample ? 'SAMPLE' : caps.reveal === false ? 'REMOTE' : '', enabled: !g.sample && caps.reveal !== false, reason: g.sample ? 'Sample entry: no project folder' : caps.reveal === false ? 'Folder is on another machine' : '' }
@@ -2180,7 +2186,7 @@ function reduce(state, action, cat, caps = {}) {
       if (t === 'move' || t === 'vertical') return { state: Object.assign({}, state, { confirm: Object.assign({}, state.confirm, { yes: !state.confirm.yes }) }), effects: [{ type: 'sound', id: SOUND.move }] }
       if (t === 'open') {
         if (state.confirm.yes) {
-          fx.push({ type: 'sound', id: SOUND.insert }, { type: 'play', id: item.id, target: 'macos' })
+          fx.push({ type: 'sound', id: SOUND.insert }, { type: 'play', id: item.id, target: state.confirm.target || 'macos' })
           return { state: Object.assign({}, state, { confirm: null }), effects: fx }
         }
         return { state: Object.assign({}, state, { confirm: null }), effects: [{ type: 'sound', id: SOUND.back }] }
@@ -2205,7 +2211,7 @@ function reduce(state, action, cat, caps = {}) {
       const entry = menu[state.menu]
       if (!entry || !entry.enabled) return { state: Object.assign({}, state, { notice: entry ? { text: entry.reason, tone: 'warn' } : null }), effects: [{ type: 'sound', id: SOUND.bump }] }
       if (entry.id === 'play') {
-        if (entry.native) return { state: Object.assign({}, state, { confirm: { kind: 'native', yes: false } }), effects: [{ type: 'sound', id: SOUND.select }] }
+        if (entry.native) return { state: Object.assign({}, state, { confirm: Object.assign({ kind: 'native', yes: false }, entry.target ? { target: entry.target } : {}) }), effects: [{ type: 'sound', id: SOUND.select }] }
         fx.push({ type: 'sound', id: SOUND.insert }, { type: 'play', id: item.id, target: 'web' })
         return { state: Object.assign({}, state, { view: 'play', playing: { id: item.id, target: 'web' } }), effects: fx }
       }
@@ -2917,7 +2923,7 @@ async function boot(root, opts = {}) {
         '<div class="cols"><div><div class="checks">' + rows.map((r, i) => '<div class="check" data-tone="' + r.tone + '" title="' + escapeHtml(r.words) + '"><span class="dot is-' + dots[i] + '"></span>' + pixelLabel(r.label, 1.7) + '<span class="val">' + pixelLabel(r.value, 1.7) + '</span></div>').join('') + '</div>' +
         '<div class="shots">' + shotsFor(g).slice(0, 3).map(src => '<div class="shot" style="background-image:url(' + JSON.stringify(src).slice(1, -1) + ')"></div>').join('') + '</div></div>' +
         menuHTML(menu) + '</div>' +
-        '<div class="confirm' + (state.confirm ? ' is-on' : '') + '"><p>Launch the macOS build outside Hermes? It runs as a normal app.</p><div class="row">' +
+        '<div class="confirm' + (state.confirm ? ' is-on' : '') + '"><p>' + (state.confirm && state.confirm.target === 'windows' ? 'Launch the Windows build outside Hermes? It runs as a normal program.' : 'Launch the macOS build outside Hermes? It runs as a normal app.') + '</p><div class="row">' +
         '<span class="opt' + (state.confirm && state.confirm.yes ? ' is-on' : '') + '" data-yes="1">' + pixelLabel('LAUNCH', 2) + '</span>' +
         '<span class="opt' + (state.confirm && !state.confirm.yes ? ' is-on' : '') + '" data-yes="0">' + pixelLabel('CANCEL', 2) + '</span></div></div>'
     }
@@ -3063,8 +3069,8 @@ async function boot(root, opts = {}) {
 
   function startPlay(e, now) {
     debug.plays.push({ id: e.id, target: e.target })
-    if (e.target === 'macos') {
-      if (hostApi.launchNative) later(hostApi.launchNative(e), r => setNotice(r && r.ok ? 'OPENED THE MACOS BUILD' : (r && r.message) || 'COULD NOT OPEN THE BUILD', r && r.ok ? 'good' : 'warn'))
+    if (e.target === 'macos' || e.target === 'windows') {
+      if (hostApi.launchNative) later(hostApi.launchNative(e), r => setNotice(r && r.ok ? (e.target === 'windows' ? 'OPENED THE WINDOWS BUILD' : 'OPENED THE MACOS BUILD') : (r && r.message) || 'COULD NOT OPEN THE BUILD', r && r.ok ? 'good' : 'warn'))
       else state = Object.assign({}, state, { notice: { text: 'NATIVE LAUNCH HAPPENS IN THE DESKTOP APP', tone: 'good' } })
       return
     }
@@ -3525,6 +3531,8 @@ function studioHost(ctx, hooks) {
         throw new Error(backendErrorSentence(err))
       }
       if (!r || r.ok !== true) throw new Error((r && r.message) || backendErrorSentence(''))
+      // A Windows backend says so; the detail menu then offers PLAY WINDOWS BUILD (macOS backends say nothing).
+      if (r.native_launch === 'windows') this.caps.nativeTarget = 'windows'
       return r.catalogue
     },
     async image(src) {
@@ -3562,7 +3570,7 @@ function studioHost(ctx, hooks) {
     hideFrame() { hooks.setFrame(null) },
     eject() { return rest('/studio/stop', { method: 'POST', body: {} }).catch(() => null) },
     async launchNative(e) {
-      const r = await rest('/studio/launch', { method: 'POST', body: { game: e.id, target: 'macos' } })
+      const r = await rest('/studio/launch', { method: 'POST', body: { game: e.id, target: e.target === 'windows' ? 'windows' : 'macos' } })
       return r && r.ok ? { ok: true } : { ok: false, message: (r && r.message) || 'Could not open the build' }
     },
     async reveal(id) {

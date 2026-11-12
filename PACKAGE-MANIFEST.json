@@ -7,9 +7,9 @@
    "sha256": "1db18daab2b86871d95c167856665912c3716ac06b3036f26f9efadb05989d51"
   },
   {
-   "bytes": 4713,
+   "bytes": 7399,
    "path": "CHANGELOG.md",
-   "sha256": "7b61c6169f63d5519d669d10f23aad2a8ea1543a438124d72bf754a6e0aa126f"
+   "sha256": "d650ddcf8e46fa5ee92fb8bc1fe813ef7e279c62fcab58474a6763d220c55c23"
   },
   {
    "bytes": 1095,
@@ -27,9 +27,9 @@
    "sha256": "283cae9c7e3412c1c5f1609aeb04aa2a15b25084e4c176ab2f1867ac9fd16d06"
   },
   {
-   "bytes": 11748,
+   "bytes": 12695,
    "path": "README.md",
-   "sha256": "fc19cf552651feb0d681ce40d0ee337faf3654a7d5013a0a345fd814cc412b07"
+   "sha256": "72b792ade3f1cfbcea096d82aacc6bb2af806ba805444edaaaab146d6db4b24a"
   },
   {
    "bytes": 11955,
@@ -117,9 +117,9 @@
    "sha256": "4d18481083a5e1a86df704a11988c97eb3f5d791dafd862e2fe460d5067a69d4"
   },
   {
-   "bytes": 42983,
+   "bytes": 43203,
    "path": "adventure_maker/audit.py",
-   "sha256": "d378a819c9e3979c08dfe24f916c10c7997ea9319ddc0135a31327678f42deeb"
+   "sha256": "4b77630c3d90c665b4feeac1d0316607a5261c454b9b7190e55e1a5892ba9036"
   },
   {
    "bytes": 24313,
@@ -162,9 +162,9 @@
    "sha256": "c8e679e15d13c61512d1c24f525a128889b126326332172cb631318c0c02fc67"
   },
   {
-   "bytes": 19102,
+   "bytes": 19336,
    "path": "adventure_maker/character_gate.py",
-   "sha256": "d4fe5dab058e9ffada91e9457654f550043f205003511dff7739797768c39b99"
+   "sha256": "521534bcaf60a77c0e16e8d59d5b4e6eda9cb0829c126bb7b777bebe0fb5d955"
   },
   {
    "bytes": 11762,
@@ -302,14 +302,14 @@
    "sha256": "77d72c89278b76a88b33b145213c197b96a5dcbdc1a2c3ed74db94069eb6d9eb"
   },
   {
-   "bytes": 14322,
+   "bytes": 17915,
    "path": "adventure_maker/doctor.py",
-   "sha256": "f4124274cfdcef55ec6a1ca02b97e75e14a9923b7f81e90d69774cdb905a8818"
+   "sha256": "384a1a8f2b6127b2b5acd1faa3d3bd22c60e3bb5ef24f6b9a3352fc2e6ee5358"
   },
   {
-   "bytes": 34575,
+   "bytes": 35021,
    "path": "adventure_maker/export.py",
-   "sha256": "40b9e7beb5df57e49ae2b575df2f7c1581976f5267632b88bea0dc5df0628522"
+   "sha256": "4021f2575662e2df75f1405c6e23b8f45d01a3e92f57d164c8f94425b8506637"
   },
   {
    "bytes": 4395,
@@ -337,9 +337,9 @@
    "sha256": "9b6c5ebbda0a01eecbc04f679e8433c171dc0ae182d68299fb3c4e6b79571b2d"
   },
   {
-   "bytes": 21975,
+   "bytes": 25315,
    "path": "adventure_maker/godot_fetch.py",
-   "sha256": "51534dd4c46cc9b88dd1b1caa42b96ea07a443f3055a142b20d7564a2d264c96"
+   "sha256": "caa68fb18a35c966305b9bbf50097837fa8fc6d2fbb73010ed98943998e932b6"
   },
   {
    "bytes": 15074,
@@ -370,6 +370,11 @@
    "bytes": 38625,
    "path": "adventure_maker/hub_sources.py",
    "sha256": "683a6e7d964f93f77754e20f1d3bde4b9eae75bc0f0f4e2d398542beb995cb94"
+  },
+  {
+   "bytes": 20953,
+   "path": "adventure_maker/linux_sandbox.py",
+   "sha256": "cd6675d58a596139148f640ec8758a40a07b96c7622eb29aefb9bff61eefdfe9"
   },
   {
    "bytes": 714,
@@ -487,9 +492,9 @@
    "sha256": "00f07ab05223b2328f211dc4b97417dd0ed19b59b3c0735ca87b34b9054f631b"
   },
   {
-   "bytes": 8621,
+   "bytes": 8780,
    "path": "adventure_maker/nbchars/preview.py",
-   "sha256": "800f5c20f38cc007538d1c6099c387da52642f1cec194648331d91dd4315cc62"
+   "sha256": "af07d073b06884c3aaa78ccc00cf3e220d8fa6dfe35237fcdc32e864d7390651"
   },
   {
    "bytes": 4458,
@@ -502,9 +507,9 @@
    "sha256": "855df7d205508daa4696d6fb4e8e91de8527f7e08b8ce7aa0108664133fc7e40"
   },
   {
-   "bytes": 6740,
+   "bytes": 6822,
    "path": "adventure_maker/nbchars/select.py",
-   "sha256": "a13f6d29bac9231526e6d72b13386d09cb8ad805ff72d1caebe98b6e4b3c944c"
+   "sha256": "a548c56b7cc8bf3e08a94291a800d581830ebc586ee5e9cc59647a703c09804d"
   },
   {
    "bytes": 8901,
@@ -517,9 +522,9 @@
    "sha256": "5f2c5b70feaaae275e0d9a5d8974a5a77f0e3f6ecf3d1facbddb888dbc6c72cc"
   },
   {
-   "bytes": 46455,
+   "bytes": 46989,
    "path": "adventure_maker/newgame.py",
-   "sha256": "71e023aa02cf3a31f918a7b8ebd24aed87dcc0d00c669ca6a533caf46d8ac49c"
+   "sha256": "075a6a77cc88d6765945baa9c19744133504c26941549e961b56593848b546d4"
   },
   {
    "bytes": 22487,
@@ -552,9 +557,9 @@
    "sha256": "83268d6a961e88ffd1a09ab199b9e54fa894bb9220baa778796bcf015ff7c364"
   },
   {
-   "bytes": 17531,
+   "bytes": 26148,
    "path": "adventure_maker/platforms.py",
-   "sha256": "81f3715cadc2030f5cd5dda0d3b9b2eaf11bbd51eca3f918767d96da87cc2345"
+   "sha256": "44bdc6914caf433cbca1beb3e1a0650a2bb3823da12554b1873a922b689f34cb"
   },
   {
    "bytes": 13339,
@@ -722,9 +727,9 @@
    "sha256": "b5e41fc9d3c7cebc3371185b0012827f5595afb24ca5c02e39e68eb15982ac93"
   },
   {
-   "bytes": 17211,
+   "bytes": 22381,
    "path": "adventure_maker/runner.py",
-   "sha256": "62886282dfbb3dd8c6fa234da1fd737838acbd0514f01b9a477aa14162e03b35"
+   "sha256": "3db6abe731ba632e56fa6b9b57405b76a9d0d1b20d14c00ad0eb798ed6431c23"
   },
   {
    "bytes": 7959,
@@ -747,9 +752,9 @@
    "sha256": "c43c111e34e10da52a4e1a279c5601d5159714ba4f482b83c1ee7e46d6460730"
   },
   {
-   "bytes": 16509,
+   "bytes": 18053,
    "path": "adventure_maker/setup_check.py",
-   "sha256": "02639c308384411219dfb9b2273322f70d7e5c68a55de3e2fa5c977e784c1141"
+   "sha256": "6ff9a69df1e750faf9838b50494334b4376e85225a1eb44a8985a5151a6578ee"
   },
   {
    "bytes": 11789,
@@ -3252,14 +3257,14 @@
    "sha256": "0b6196117062efb2ac1bed13e39f992b0415fc71e1300d5e24d9b3f346c21bb3"
   },
   {
-   "bytes": 20153,
+   "bytes": 20341,
    "path": "dashboard/plugin_api.py",
-   "sha256": "9e6f76f68479ef3c61dcdb6f213a926c1be7cecb81c273aa8b7e1de9488a3565"
+   "sha256": "0afc50359a9666c636fe3b76421a68737d82cf954be10f38c3471ca77a432dbd"
   },
   {
-   "bytes": 222988,
+   "bytes": 224104,
    "path": "desktop/plugin.js",
-   "sha256": "8ba79e2bd1051a98a012f1ab3165f5e1e1a14b7f2cdb66cb3c5ed2aa33b43bf1"
+   "sha256": "7de91c17dddb98c257b8b166c6fe8d63219afd75eb578fde5ff157588ba31f26"
   },
   {
    "bytes": 20852,
@@ -3312,9 +3317,9 @@
    "sha256": "49420ae02b88b1117e33761da29ebcf86899fc0e0ad5df80a7123c28ffb0fbf6"
   },
   {
-   "bytes": 4470,
+   "bytes": 4528,
    "path": "docs/AUTHORING-SCOPE.md",
-   "sha256": "70be779a7060a9493d215b6a7ce8fb00117c939393ca7bff28bd8323f8ffb8dd"
+   "sha256": "82a24d9389867d7ea6b91282d79fe301bd90c240842ed6751ee7153a4712a909"
   },
   {
    "bytes": 8353,
@@ -3325,6 +3330,11 @@
    "bytes": 6532,
    "path": "docs/AUTOREPAIR.md",
    "sha256": "d737166a817fa13a5fef9a3faa7024b953bd0d6950c42aa2b31c661524759217"
+  },
+  {
+   "bytes": 718,
+   "path": "docs/BRANCH-NOTES.md",
+   "sha256": "4fd074ef1a517f41f05d9ded8e220eaf3d51bf16988cf94b548ff0d551add14d"
   },
   {
    "bytes": 1821,
@@ -3432,9 +3442,9 @@
    "sha256": "5438440e6f25ac55e83570eb15d7187543426a97b6eecfc7bab228625995e746"
   },
   {
-   "bytes": 4496,
+   "bytes": 4746,
    "path": "docs/DISCLOSURE.md",
-   "sha256": "6ae245114f449203576d0db368f8b78ccc2c5898838c49530995727c7163dff4"
+   "sha256": "c278b2d8a57c4978f178d8179a8d98faac3c8a50d43a5bc1b686b8951ad124bd"
   },
   {
    "bytes": 17258,
@@ -3537,9 +3547,9 @@
    "sha256": "8340d55b12bb41f98b15ebabe32783dd80d3bfc6313d85aa89d57c3eba8f3960"
   },
   {
-   "bytes": 10091,
+   "bytes": 11579,
    "path": "docs/INSTALL-FOR-YOUR-AGENT.md",
-   "sha256": "d8267512c1bbc6d2285b6356ed6a05d20e59d75683d6af0e5c2f2a45f24bcca6"
+   "sha256": "cc950b8d06b7b096e665bf47fc7c4677097c6d29893802836d9c0f57eb2f28ca"
   },
   {
    "bytes": 3852,
@@ -3570,6 +3580,21 @@
    "bytes": 4613,
    "path": "docs/INTEGB2-FIXES.md",
    "sha256": "c758f097db5064450fbc6c79ad9e8007b2f8c8db79782e4fef04151fc1e615ac"
+  },
+  {
+   "bytes": 6242,
+   "path": "docs/LINUX-RUNNER-DESIGN.md",
+   "sha256": "ab5477b868b2453e6cadf75b48664297184ab7048d4bf1e24089fa88609d7ab5"
+  },
+  {
+   "bytes": 21814,
+   "path": "docs/LINUX-TEST-SHEET.md",
+   "sha256": "941c10c7f006ac2d2c634a21deb31900fd37b3bfb30f2d81da6ea621f7b5151d"
+  },
+  {
+   "bytes": 11084,
+   "path": "docs/LINUX.md",
+   "sha256": "17f9f0786b887534c252a4819382fb5c1f0f4dca768af8fcb9fc971e2fba2c0a"
   },
   {
    "bytes": 7324,
@@ -3667,9 +3692,9 @@
    "sha256": "feb6f929a0218482ea81115581f44618f1ce5c525cfdc00edcac9bea074ea95d"
   },
   {
-   "bytes": 17462,
+   "bytes": 18064,
    "path": "docs/PACKAGE-CONTENTS.md",
-   "sha256": "67e5cf35a0297193effb6f885bcfc877e106726c885376bf54ee0fa929498f8e"
+   "sha256": "9c07cd613a36edbcb89789083ac42d86726b772b6b5e17808a10325a606a9b82"
   },
   {
    "bytes": 2989,
@@ -3692,9 +3717,14 @@
    "sha256": "1766fd1e7f79d9ca3330d975e170398e44472221f00d91fa384f296a1c0cd247"
   },
   {
-   "bytes": 13665,
+   "bytes": 6024,
+   "path": "docs/PLATFORM-EVIDENCE.md",
+   "sha256": "becce730c0d252e7db861aa05eae6eb3abe77f1686994fa37ba2859baefe64a6"
+  },
+  {
+   "bytes": 10836,
    "path": "docs/PLATFORM-PARITY.md",
-   "sha256": "499e75e3aca542ae7e371a26276621929e02b54e17a12e12620d7b3cfc25706b"
+   "sha256": "150bbe421a51ce818020e8f9ec2a2a6fa54ee0c8a4a048e58954becef37d4337"
   },
   {
    "bytes": 6569,
@@ -3737,9 +3767,9 @@
    "sha256": "2e716189b38ae937c562edd956e189f76590207fbd21f37e03ed4f8bd29be96a"
   },
   {
-   "bytes": 9013,
+   "bytes": 11075,
    "path": "docs/REVIEWFIX-ENV-AUDIT.md",
-   "sha256": "bff78735f95de0dd28ebf10899d1fcf5005581ac61ef4bdc04860bba2d58eaf4"
+   "sha256": "ed13d0d9f91f4bb6cfaa8d2e4b180b13ab7cd3c9322ca83b63f274680562a955"
   },
   {
    "bytes": 13156,
@@ -3802,9 +3832,9 @@
    "sha256": "356ccfe5b1356ead96b44d50054256af45984cdb3b83e8a59c95d34410aa4d03"
   },
   {
-   "bytes": 5848,
+   "bytes": 6509,
    "path": "docs/SETUP-FETCH.md",
-   "sha256": "0a6262b1934d19472817f5506b984accde041a1f04f4107de42116d9345701d5"
+   "sha256": "155f7c4ae16121c15ecf0d98faab8203038bdb979981372d23233410f3b21a8d"
   },
   {
    "bytes": 3640,
@@ -3917,19 +3947,19 @@
    "sha256": "972e48b5b7de2863371403c02dc08b1e0f858136625f602b7c45e17fd50f83aa"
   },
   {
-   "bytes": 7723,
+   "bytes": 16926,
    "path": "docs/WINDOWS-TEST-SHEET.md",
-   "sha256": "1aba3afb1639d72674de8b402a18ffc5c9553f3a84ed0220c64a625f3a934b4b"
+   "sha256": "55f3096dbd1a202aa982f9b28cdd35c24872f71e441f5123b3cb364fe92f10b6"
   },
   {
-   "bytes": 8494,
+   "bytes": 12423,
    "path": "docs/WINDOWS.md",
-   "sha256": "c22d56c8a88342b92480c98c1c8963656f5babd5e520b5c763a4e4fdc8d13045"
+   "sha256": "1d4c5bbbcb255085fd29e12fde420a40e4d0b0edfe7660c67af6a01faab4e35a"
   },
   {
-   "bytes": 7292,
+   "bytes": 7419,
    "path": "docs/ZEROSETUP-INVENTORY.md",
-   "sha256": "2c7f6fc9c2559154bf0e23724f13a27ac97f3b3a9f0904228c8aca4d374e847c"
+   "sha256": "217635f93a81caa3d9f41dd2bd0849bbc079ad08babb3d28d7d85011c80034fd"
   },
   {
    "bytes": 767,
@@ -4235,6 +4265,16 @@
    "bytes": 74227,
    "path": "docs/puzzles/puzzle_weights_solved.png",
    "sha256": "ec147ef3ea31bacd7dbaf918ac70ba8be7f4f9879a2fa1a39d37748c49b93167"
+  },
+  {
+   "bytes": 2615,
+   "path": "docs/receipts/LINUX-RECEIPT-TEMPLATE.md",
+   "sha256": "f9b3f7d0c361493969b0a6d493281fa1cbc9058ac22865921800967ca3763aef"
+  },
+  {
+   "bytes": 2587,
+   "path": "docs/receipts/WINDOWS-RECEIPT-TEMPLATE.md",
+   "sha256": "93e0e3925f24b785d06f77756be210836cbf93925be30e3e33719641c88dbe1d"
   },
   {
    "bytes": 322,
@@ -29442,9 +29482,9 @@
    "sha256": "23ad673a95a2b4dcda31701bd5104b5f89993a3520e78c07afd971cda3abf2f5"
   },
   {
-   "bytes": 17232,
+   "bytes": 17282,
    "path": "skills/hermes64/SKILL.md",
-   "sha256": "bd429badb393fe30311c30d3981882f692ef91d83b28ab58e172419d22521dcf"
+   "sha256": "b490686f177161b8c4fee16e7ac2e97a31bfad2c0af8e9cae85d3eb3cfddc654"
   },
   {
    "bytes": 100,
@@ -29632,14 +29672,14 @@
    "sha256": "d39992945da9c5a635fb0e3e00a8ffb28e94f93e8056de538df748f65206328d"
   },
   {
-   "bytes": 9120,
+   "bytes": 9346,
    "path": "studio/plugin/glue.js",
-   "sha256": "13cb6efbda976bfbace32cf61a1be5c8d9f4e7c9b5e0552439d9074eab566fff"
+   "sha256": "f210b71e20e080d66339c9682bfd5f2a183462475ac325ffaaf1b59f23d87fbb"
   },
   {
-   "bytes": 54509,
+   "bytes": 54731,
    "path": "studio/prototype/js/app.js",
-   "sha256": "2ab93a3bc2afb49e1171db95f8e492ea4d650a4260bca051a5783ebfc7e54c66"
+   "sha256": "96d3c8603a9ffec2d523688250dc23530e01915d43bc67676645c047dd792125"
   },
   {
    "bytes": 19184,
@@ -29697,9 +29737,9 @@
    "sha256": "3467e2bb0cc686523e2dd30a2c5583af7176cf47cfcf7d81cd4ee732313a4d20"
   },
   {
-   "bytes": 17315,
+   "bytes": 17983,
    "path": "studio/prototype/js/state.js",
-   "sha256": "23de8e56b1f76f46fdc5ef562b3105da09b55151ca7d2bef7e89cc9ddea86ac7"
+   "sha256": "9abd7637d7833cb51bab571017a6811a9d901fbf186749123a85806a1906fadb"
   },
   {
    "bytes": 33009,
@@ -29814,8 +29854,8 @@
     "hits": 321
    },
    "qhantom": {
-    "files": 32,
-    "hits": 587
+    "files": 37,
+    "hits": 594
    },
    "teknium": {
     "files": 14,
@@ -29825,13 +29865,13 @@
  },
  "schema": "hermes64-package/1",
  "source": {
-  "commit": "58404673a9fb50c20559024eb44e9fea85c71150",
+  "commit": "f7939a8f98962c3b8a66550bdf8544fa160b2299",
   "tree": "clean"
  },
  "tools": 27,
  "totals": {
-  "bytes": 151926448,
-  "files": 5960
+  "bytes": 152044078,
+  "files": 5968
  },
  "version": "1.0.0-rc"
 }

@@ -20,7 +20,7 @@ ditto -x -k "$ZIP" ~/.hermes/plugins
 python3 -B ~/.hermes/plugins/hermes64/tools/check_install.py
 hermes plugins enable hermes64
 ```
-Full checksum/backup recipe and the (unverified) PowerShell steps: [Install for your agent](docs/INSTALL-FOR-YOUR-AGENT.md).
+Zip steps for Windows (PowerShell, `Expand-Archive`) and Linux: [Windows guide](docs/WINDOWS.md) · [Linux guide](docs/LINUX.md). Full checksum/backup recipe: [Install for your agent](docs/INSTALL-FOR-YOUR-AGENT.md).
 
 > Make me a game about a wizard tower with a ghost and three crystal keys.
 
@@ -28,7 +28,7 @@ Full checksum/backup recipe and the (unverified) PowerShell steps: [Install for 
 
 **Games:** normally `<Hermes home>/plugin-data/hermes64/games`, or your configured `projects_root`. Older hosts need an explicit folder.
 
-**Platforms:** macOS and Windows 11; this package's native Windows run is not established. Linux authoring is unsupported.
+**Platforms:** macOS: verified. Windows 11: targeted, not verified. Linux: authoring implemented behind bubblewrap, not verified until receipts exist. [What each claim rests on](docs/PLATFORM-EVIDENCE.md).
 
 [Quick start and troubleshooting](QUICKSTART.md) · [Game-type strengths and measured limits](docs/GAME-TYPE-STRENGTHS.md) · [Honest scope](docs/AUTHORING-SCOPE.md)
 
@@ -48,7 +48,7 @@ Best supported settings (measured): medieval village and castle, snow village, n
 A plain brief gets a crafted hero, 3-4 made objects and an entry layout chosen from the setting.
 Settings without ready-made rooms (for example space, underwater, desert, candy) have no ready-made rooms in this release: the flow stops with a clear message, and the agent may hand-author rooms or pick the nearest pack.
 The default shape is two rooms, one outside and one inside; more rooms and mechanics can be added with the author skill.
-No jumping or platforming. Games are checked by bots, not by human playtests. Native Windows is not verified.
+No jumping or platforming. Games are checked by bots, not by human playtests. Windows and Linux are not verified.
 
 ## Requirements and setup
 
@@ -58,6 +58,7 @@ No jumping or platforming. Games are checked by bots, not by human playtests. Na
 | Godot | **4.6.2**, standard build, not .NET. Export templates are needed only for exports. |
 | Python dependencies | `numpy>=2.0,<3` and `Pillow>=11.3,<14` are declared in `plugin.yaml`. Recent Hermes installers can prepare them with consent. A separately configured `python_path` must have the needed packages too. Do not assume old hosts install them. |
 | Blender | Optional for the default static-room workflow: `builder=auto` can use the Python builder with numpy when Blender is absent. Some character workflows still require Blender; strict static-mesh parity is not established. |
+| bubblewrap | Linux only: `bwrap` 0.4 or newer is the child sandbox; without a working one, making games is off. |
 
 In a new chat, `/hermes64 setup` is a read-only checklist. The agent can call `hermes64_doctor` for the same setup guidance; it cannot approve downloads through that tool.
 
@@ -67,7 +68,7 @@ If Godot is missing:
 2. If you approve it, type `/hermes64 setup --fetch --yes` yourself.
 3. Retry your game request. Add `--templates` to the approved fetch only when you need exports.
 
-The fetch checks pinned SHA-512 before unpacking the official Godot release. It uses a per-user cache, not the plugin directory; on macOS it removes quarantine only from the verified fetched Godot app and checks `--version`. Downloads and template storage are extra setup, not game-build time. [Setup details](docs/SETUP-FETCH.md).
+The fetch checks pinned SHA-512 before unpacking the official Godot release. It uses a per-user cache, not the plugin directory; on macOS it removes quarantine only from the verified fetched Godot app and checks `--version`. On Linux the fetch is refused until a Linux SHA-512 pin is added; install Godot by hand ([Linux guide](docs/LINUX.md)). Downloads and template storage are extra setup, not game-build time. [Setup details](docs/SETUP-FETCH.md).
 
 ## What the agent can do
 
@@ -102,9 +103,9 @@ Use the active profile's Hermes64 settings (`plugins.entries.hermes64.settings`)
 
 **macOS:** the central build/check/play/export runner uses `sandbox-exec`, denying network and confining writes. Not every helper uses that runner; consult [platform parity](docs/PLATFORM-PARITY.md).
 
-**Windows 11:** child execution requires an owner opt-in to `HERMES64_WINDOWS_RUNNER=job`, followed by a restart. Job Objects limit resources and child lifetime, but provide **no OS-enforced network or write confinement**. This candidate's native Windows install/build/export remains unverified. [Windows guide](docs/WINDOWS.md).
+**Windows 11:** child execution requires an owner opt-in to `HERMES64_WINDOWS_RUNNER=job`, followed by a restart. Job Objects limit resources and child lifetime (each child is placed in its job before it runs), but provide **no OS-enforced network or write confinement**. This candidate's native Windows install/build/export remains unverified. [Windows guide](docs/WINDOWS.md) · [test sheet](docs/WINDOWS-TEST-SHEET.md).
 
-**Linux:** no supported authoring runner. A web export is a separate browser target, not Linux-host plugin support.
+**Linux:** authoring is implemented behind bubblewrap (no network, writes confined to the project, home folder hidden) and is **not verified**: no Linux computer has run it yet. Without a working bubblewrap every child is refused with the reason and the fix; `HERMES64_LINUX_RUNNER=unconfined` is an explicit owner opt-in with **no OS-enforced network or write confinement** (process-group kill and rlimits only). macOS exports and native Linux exports are not available from Linux. [Linux guide](docs/LINUX.md) · [test sheet](docs/LINUX-TEST-SHEET.md).
 
 **Local processes:** Godot, Python, optional Blender and user-provided ffmpeg. Some character/preview/audio subprocesses are outside the central runner; ffmpeg audio import and the Blender character exporter can inherit the host environment. Plugin code is not a universal sandbox.
 

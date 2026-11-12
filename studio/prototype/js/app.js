@@ -600,7 +600,7 @@ export async function boot(root, opts = {}) {
         '<div class="cols"><div><div class="checks">' + rows.map((r, i) => '<div class="check" data-tone="' + r.tone + '" title="' + escapeHtml(r.words) + '"><span class="dot is-' + dots[i] + '"></span>' + pixelLabel(r.label, 1.7) + '<span class="val">' + pixelLabel(r.value, 1.7) + '</span></div>').join('') + '</div>' +
         '<div class="shots">' + shotsFor(g).slice(0, 3).map(src => '<div class="shot" style="background-image:url(' + JSON.stringify(src).slice(1, -1) + ')"></div>').join('') + '</div></div>' +
         menuHTML(menu) + '</div>' +
-        '<div class="confirm' + (state.confirm ? ' is-on' : '') + '"><p>Launch the macOS build outside Hermes? It runs as a normal app.</p><div class="row">' +
+        '<div class="confirm' + (state.confirm ? ' is-on' : '') + '"><p>' + (state.confirm && state.confirm.target === 'windows' ? 'Launch the Windows build outside Hermes? It runs as a normal program.' : 'Launch the macOS build outside Hermes? It runs as a normal app.') + '</p><div class="row">' +
         '<span class="opt' + (state.confirm && state.confirm.yes ? ' is-on' : '') + '" data-yes="1">' + pixelLabel('LAUNCH', 2) + '</span>' +
         '<span class="opt' + (state.confirm && !state.confirm.yes ? ' is-on' : '') + '" data-yes="0">' + pixelLabel('CANCEL', 2) + '</span></div></div>'
     }
@@ -746,8 +746,8 @@ export async function boot(root, opts = {}) {
 
   function startPlay(e, now) {
     debug.plays.push({ id: e.id, target: e.target })
-    if (e.target === 'macos') {
-      if (hostApi.launchNative) later(hostApi.launchNative(e), r => setNotice(r && r.ok ? 'OPENED THE MACOS BUILD' : (r && r.message) || 'COULD NOT OPEN THE BUILD', r && r.ok ? 'good' : 'warn'))
+    if (e.target === 'macos' || e.target === 'windows') {
+      if (hostApi.launchNative) later(hostApi.launchNative(e), r => setNotice(r && r.ok ? (e.target === 'windows' ? 'OPENED THE WINDOWS BUILD' : 'OPENED THE MACOS BUILD') : (r && r.message) || 'COULD NOT OPEN THE BUILD', r && r.ok ? 'good' : 'warn'))
       else state = Object.assign({}, state, { notice: { text: 'NATIVE LAUNCH HAPPENS IN THE DESKTOP APP', tone: 'good' } })
       return
     }

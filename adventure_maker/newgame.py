@@ -243,6 +243,10 @@ def preflight(settings):
     if platforms.is_windows():
         if not platforms.windows_runner_enabled():
             fail('new_platform', platforms.isolation('win32')['note'] + ' Nothing was created.')
+    elif platforms.host() == 'linux':
+        iso = platforms.isolation('linux')
+        if not iso['available']:
+            fail('new_platform', iso['note'] + ' Nothing was created.')
     elif sys.platform != 'darwin' or not Path('/usr/bin/sandbox-exec').is_file():
         fail('new_platform', 'Hermes64 makes games on macOS (built-in sandbox-exec) and, after an opt-in, on Windows; '
              'this computer has neither, so nothing was created.')
@@ -569,6 +573,10 @@ def finish(settings, service, root, uses_default, name, earlier, premise, asked,
         engine = other_godot(gversion, tools['godot'], lead='Made and played with')
         if engine:
             lines.append('Godot: ' + engine + '.')
+        from . import platforms
+        if platforms.host() == 'linux' and platforms.isolation('linux')['mode'] == 'unconfined':
+            lines.append('Runner: unconfined Linux runner by your HERMES64_LINUX_RUNNER=unconfined opt-in: no '
+                         'OS-enforced network or write confinement; process-group kill and rlimits only.')
         if not tools['blender']:
             lines.append(blender_line(settings, assets))
         message = '\n'.join(lines)
