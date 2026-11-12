@@ -150,7 +150,7 @@
     },
     "build_types": {
       "type": "array",
-      "maxItems": 12,
+      "maxItems": 64,
       "items": {
         "type": "string",
         "minLength": 1,
@@ -159,7 +159,7 @@
     },
     "props": {
       "type": "array",
-      "maxItems": 40,
+      "maxItems": 256,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -178,7 +178,7 @@
           "count": {
             "type": "integer",
             "minimum": 1,
-            "maximum": 32
+            "maximum": 64
           },
           "importance": {
             "$ref": "#/$defs/importance"
@@ -191,7 +191,7 @@
     },
     "characters": {
       "type": "array",
-      "maxItems": 16,
+      "maxItems": 256,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -212,7 +212,7 @@
           "count": {
             "type": "integer",
             "minimum": 1,
-            "maximum": 16
+            "maximum": 64
           }
         }
       }
@@ -278,7 +278,7 @@
     },
     "ip_terms": {
       "type": "array",
-      "maxItems": 16,
+      "maxItems": 64,
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -307,7 +307,7 @@
     },
     "unrecognised": {
       "type": "array",
-      "maxItems": 16,
+      "maxItems": 256,
       "items": {
         "type": "string",
         "minLength": 1,
@@ -317,7 +317,7 @@
     },
     "assumptions": {
       "type": "array",
-      "maxItems": 24,
+      "maxItems": 256,
       "items": {
         "type": "string",
         "minLength": 1,
@@ -327,7 +327,7 @@
     },
     "tags": {
       "type": "array",
-      "maxItems": 40,
+      "maxItems": 256,
       "items": {
         "type": "string",
         "minLength": 1,

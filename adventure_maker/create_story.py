@@ -117,7 +117,15 @@ def done_ref(v, path):
 
 
 SPEC_FIELDS = ('title', 'player', 'cast', 'places', 'item', 'beats', 'quests', 'door_lock', 'choice', 'waves', 'course',
-               'win', 'lose', 'mechanics')
+               'win', 'lose', 'mechanics', 'rooms', 'keys')
+# LONGSTORY: list limits sized for a long story (a brief that names more places than the create flow builds is built
+# up to create_long.json max_rooms and the rest are reported as story spots, never refused here).
+# LONGSTORY-2 (Dylan: "the only cap we want is the art style"): these are input-size safety ceilings no real prompt
+# reaches (a brief file of that size), not game caps. Rooms past create_long.json max_rooms (64, a build safety
+# ceiling), people past a room's triangle budget and waves past the at-once budget are built elsewhere or split, and
+# every one is reported; nothing here shrinks a story.
+MAX_CAST, MAX_PLACES, MAX_BEATS, MAX_QUESTS, MAX_WAVES, MAX_KEYS, MAX_MECHANICS = 256, 256, 256, 256, 64, 64, 64
+MAX_ROOMS_FIELD, MAX_WAVE_SIZE = 256, 64
 
 
 def validate(story, brief=None):
@@ -131,7 +139,7 @@ def validate(story, brief=None):
         out['player'] = {'name': _text(p.get('name'), 'player.name', 40)}
     names = {}
     out['cast'] = []
-    for i, c in enumerate(_list(s.get('cast', []), 'cast', 8)):
+    for i, c in enumerate(_list(s.get('cast', []), 'cast', MAX_CAST)):
         c = _obj(c, 'cast[%d]' % i, ('name', 'role', 'place', 'says', 'about'))
         name = _text(c.get('name'), 'cast[%d].name' % i, 40)
         if c.get('role') not in ROLES:
@@ -145,7 +153,7 @@ def validate(story, brief=None):
         names[name.lower()] = row
         out['cast'].append(row)
     out['places'] = []
-    for i, p in enumerate(_list(s.get('places', []), 'places', 6)):
+    for i, p in enumerate(_list(s.get('places', []), 'places', MAX_PLACES)):
         p = _obj(p, 'places[%d]' % i, ('name', 'kind', 'about'))
         if p.get('kind') not in KINDS:
             _fail('places[%d].kind' % i, 'must be outdoor or indoor')
@@ -154,12 +162,28 @@ def validate(story, brief=None):
             row['about'] = _text(p['about'], 'places[%d].about' % i, 160)
         out['places'].append(row)
     if 'item' in s:
-        it = _obj(s['item'], 'item', ('name', 'about'))
+        it = _obj(s['item'], 'item', ('name', 'about', 'place'))
         out['item'] = {'name': _text(it.get('name'), 'item.name', 40)}
         if it.get('about') is not None:
             out['item']['about'] = _text(it['about'], 'item.about', 160)
+        if it.get('place') is not None:
+            out['item']['place'] = _text(it['place'], 'item.place', 60)
+    if s.get('rooms') is not None:
+        if type(s['rooms']) is not int or not 1 <= s['rooms'] <= MAX_ROOMS_FIELD:
+            _fail('rooms', 'must be a whole number of rooms, e.g. 6 (one room per place; past create_long.json max_rooms '
+                           'the rest become story spots, listed in the result)')
+        out['rooms'] = s['rooms']
+    if s.get('keys') is not None:
+        out['keys'] = []
+        for i, k in enumerate(_list(s['keys'], 'keys', MAX_KEYS)):
+            k = _obj(k, 'keys[%d]' % i, ('name', 'place', 'opens', 'about'))
+            row = {'name': _text(k.get('name'), 'keys[%d].name' % i, 40)}
+            for f in ('place', 'opens'):
+                if k.get(f) is not None:
+                    row[f] = _text(k[f], 'keys[%d].%s' % (i, f), 60)
+            out['keys'].append(row)
     out['beats'] = []
-    for i, b in enumerate(_list(s.get('beats', []), 'beats', 8)):
+    for i, b in enumerate(_list(s.get('beats', []), 'beats', MAX_BEATS)):
         b = _obj(b, 'beats[%d]' % i, ('text', 'label', 'place', 'who', 'when'))
         row = {'text': _text(b.get('text'), 'beats[%d].text' % i, 200)}
         for k, n in (('label', 40), ('place', 60), ('who', 40), ('when', 24)):
@@ -168,7 +192,7 @@ def validate(story, brief=None):
         out['beats'].append(row)
     nbeats = len(out['beats'])
     out['quests'] = []
-    for i, q in enumerate(_list(s.get('quests', []), 'quests', 6)):
+    for i, q in enumerate(_list(s.get('quests', []), 'quests', MAX_QUESTS)):
         q = _obj(q, 'quests[%d]' % i, ('title', 'done_when', 'about'))
         kind, arg = done_ref(q.get('done_when'), 'quests[%d].done_when' % i)
         _check_ref(kind, arg, 'quests[%d].done_when' % i, nbeats, names, s)
@@ -190,9 +214,9 @@ def validate(story, brief=None):
             row['who'] = _text(ch['who'], 'choice.who', 40)
         out['choice'] = row
     if 'waves' in s:
-        w = _list(s['waves'], 'waves', 4, 1)
-        if not all(type(x) is int and 1 <= x <= 3 for x in w):
-            _fail('waves', 'each wave is a whole number of enemies from 1 to 3, e.g. [2, 3]')
+        w = _list(s['waves'], 'waves', MAX_WAVES, 1)
+        if not all(type(x) is int and 1 <= x <= MAX_WAVE_SIZE for x in w):
+            _fail('waves', 'each wave is a whole number of enemies, e.g. [2, 3] (more than fit at once are split and said)')
         out['waves'] = w
     if 'course' in s:
         c = _obj(s['course'], 'course', ('seconds', 'checkpoints'))
@@ -203,7 +227,7 @@ def validate(story, brief=None):
     for k in ('win', 'lose'):
         if s.get(k) is not None:
             out[k] = _text(s[k], k, 200)
-    out['mechanics'] = [_text(m, 'mechanics[%d]' % i, 40).lower() for i, m in enumerate(_list(s.get('mechanics', []), 'mechanics', 10))]
+    out['mechanics'] = [_text(m, 'mechanics[%d]' % i, 40).lower() for i, m in enumerate(_list(s.get('mechanics', []), 'mechanics', MAX_MECHANICS))]
     if brief:
         _ip_check(out, brief)
     return out
@@ -406,6 +430,10 @@ def layout(story, pats, slots_cls, seed=7):
                             'reason': 'the create flow builds two rooms (%s, %s) and no beat is set there' % (
                                 lay['rooms']['entry'] or 'entry', lay['rooms']['inside'] or 'inside'),
                             'closest': 'none', 'fix': 'set a beat there (it becomes a named story spot), or hand-author a third room'})
+    if story.get('keys'):        # LONGSTORY: keys are built in a long story (3+ places); here they are said, not dropped
+        lay['rows'].append({'feature': 'keys', 'asked': ', '.join(k['name'] for k in story['keys']), 'status': 'closest',
+                            'reason': 'the two-room game has one door', 'closest': 'story.door_lock on the inside door',
+                            'fix': 'name 3 or more places (one room each): keys then open the doors they name'})
     lock = story.get('door_lock')
     if lock:
         need = list(range(1, lock[1] + 1)) if lock[0] == 'beat' else []

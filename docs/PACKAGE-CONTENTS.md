@@ -80,6 +80,9 @@ DOCS2 proposed these rules and changed documentation only; FINALINT5 applied the
 | INCLUDE `QUICKSTART.md`, `CHANGELOG.md`, `SECURITY.md`, `.gitignore` | Ship the root onboarding/release/security/source-tree guidance. `README.md` already ships. |
 | EXCLUDE `docs/submission/*`, `docs/docs2/*`, `docs/PUBLIC-READINESS.md` | Submission drafts and local audit/verification records are developer-only. |
 | EXCLUDE `docs/*-HUNKS.md`, `docs/MERGE-HANDOFF.md`, `docs/MERGE-LEDGER.md` | Keep developer handoff/private conversion provenance out of the public package. This also excludes `docs/DOCS2-HUNKS.md`. |
+| `tools/scifikit_rooms.py` | STYLEGEN-1: the SCIFIKIT room compiler that compiles the `scifi` create patterns (`adventure_maker/create_patterns.json`) a derived setting pack (`adventure_maker/create_setting.py`) builds on; stdlib plus the shipped socket manifest |
+| `tools/ancientkit_rooms.py` | STYLEGEN-2: the ANCIENTKIT room compiler that compiles the `ancient` create patterns (court, approach, shrine from the calibrated ANCIENTKIT demo) the jungle, ancient and desert setting rows (`adventure_maker/create_setting.json`) build on; stdlib plus the shipped socket manifest |
+| EXCLUDE `docs/STYLEGEN*`, `docs/stylegen*/*` | STYLEGEN lanes (post-submission): plans, evidence, receipts and stdlib measurement scripts are developer-only. |
 | Existing EXCLUDE `docs/*-RESULT.md` | Already keeps `docs/DOCS2-RESULT.md` out; do not ship it as user documentation. |
 
 The rc8 archive's contents, links and manifest are checked in `docs/FINALINT5-RESULT.md` (repository only).

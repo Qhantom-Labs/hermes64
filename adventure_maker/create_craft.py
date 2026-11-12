@@ -122,12 +122,20 @@ def recipe_for(template_id, data=None):
             'parameters': params, 'operations': ops}
 
 
-def choose_pieces(said, bag, data, skip=(), have=0):
-    """The ordered craft list (entry order is priority): pieces the user's own words (`said`) name, up to max_pieces;
-    then pieces only the brief's other words (`bag`) name, then the defaults, up to min_pieces. `skip` (templates
-    already offered) and `have` (pieces already planned) let plan() ask again when a choice could not be used."""
+def max_pieces(data, rooms=2):
+    """LONGSTORY-2: crafted pieces the prompt's own words may ask for: pieces_per_room for every room (the two-room game
+    keeps max_pieces, 4). The rooms stage places what fits each room's triangle budget and lists the rest as not
+    placed with that reason, so this follows the budget instead of capping the game."""
+    return max(int(data['max_pieces']), int(data.get('pieces_per_room', 2)) * int(rooms or 2))
+
+
+def choose_pieces(said, bag, data, skip=(), have=0, rooms=2):
+    """The ordered craft list (entry order is priority): pieces the user's own words (`said`) name, up to max_pieces
+    (per room: max_pieces()); then pieces only the brief's other words (`bag`) name, then the defaults, up to
+    min_pieces. `skip` (templates already offered) and `have` (pieces already planned) let plan() ask again when a
+    choice could not be used."""
     out, used = [None] * have, set(skip)
-    for src, limit, label in ((said, data['max_pieces'], 'prompt word'), (bag, data['min_pieces'], 'brief word')):
+    for src, limit, label in ((said, max_pieces(data, rooms), 'prompt word'), (bag, data['min_pieces'], 'brief word')):
         for e in data['pieces']:
             if len(out) >= limit:
                 break
@@ -144,7 +152,7 @@ def choose_pieces(said, bag, data, skip=(), have=0):
     return out[have:]
 
 
-def plan(prompt, brief, rows, candidates):
+def plan(prompt, brief, rows, candidates, rooms=2):
     """(rows, candidates, craft): gap rows and candidates with the default craft pieces added. A piece whose name an
     existing row already asks for is attached to that row (so the brief's own want is the one made); otherwise it is a
     new row. Rows the agent gave a candidate for, and 'not covered' rows, are left alone."""
@@ -157,7 +165,7 @@ def plan(prompt, brief, rows, candidates):
         if not queue:
             if offered and len(craft['pieces']) >= data['min_pieces']:
                 break
-            queue = choose_pieces(said, bag, data, skip=offered, have=len(craft['pieces']))
+            queue = choose_pieces(said, bag, data, skip=offered, have=len(craft['pieces']), rooms=rooms)
             if not queue:
                 break
         e = queue.pop(0)

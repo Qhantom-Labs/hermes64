@@ -1,0 +1,93 @@
+{
+ "format": "hermes64-create-long/1",
+ "note": "LONGSTORY: what the create flow uses when a story names 3 or more places (one room per place). Door slots are where an extra door may be cut in a create pattern, with the shipped kit piece that carries the door socket, transcribed from the kit demos (tools/medievalkit_demo.py square: east postern; tools/westernkit_demo.py main_street: west/east fence gateways, entry facades) and checked by each kit's own room compiler. `inside` slots lead to interiors (the pattern's own @door first); `road` slots join outdoor rooms. Coordinates are the BASE pattern's plot frame; layout variants derived from a base (create_craft.json layouts) take the base's slots, mirrored with it. Interior shell rows swap the pattern's shell (and ceiling) for another shipped shell of the same footprint and door, so two interiors of one pattern are not copies. Lot-line slot pieces carry \"kind\": \"landmark\" like the demo's saloon entry: the compiler marks other lot pieces \"wall\", which the runtime makes one solid box across the door (measured: the west gateway door target was unreachable). Everything here is data; max_rooms is a build safety ceiling (64).",
+ "max_rooms": 64,
+ "max_rooms_note": "LONGSTORY-2: a build safety ceiling (run time of one create), not a game cap: every place is a room up to 64; places past it become named story spots, each listed under Not applied. The triangle budget is per room, so more rooms never break the N64 budget.",
+ "people": {"outdoor": 4, "indoor": 3},
+ "people_note": "LONGSTORY-2: only a fallback when a room's triangle estimate cannot be computed. People per room come from the room's triangle budget (create_long.stage_rooms: ROOM_CAP - ROOM_RESERVE - the room's own pieces - fighters kept free, in PERSON_TRIS each). Story spots have no cap: as many as the room has free floor.",
+ "outdoor_slots": {
+  "plaza": {
+   "inside": [{"use": "@door"}, {"side": "s", "cell": 1, "door_to": "vlg.cottage__doorway"}],
+   "road": [{"side": "e", "cell": 1, "edge": [3, 1, "e"], "piece": "vlg.wall__postern"},
+            {"side": "e", "cell": 2, "edge": [3, 2, "e"], "piece": "vlg.wall__postern"},
+            {"side": "e", "cell": 3, "edge": [3, 3, "e"], "piece": "vlg.wall__postern"},
+            {"side": "e", "cell": 0, "edge": [3, 0, "e"], "piece": "vlg.wall__postern"}]
+  },
+  "plaza_snow": {
+   "inside": [{"use": "@door"}, {"side": "s", "cell": 1, "door_to": "vlg.cottage__doorway"}],
+   "road": [{"side": "e", "cell": 1, "edge": [3, 1, "e"], "piece": "vlg.wall__postern"},
+            {"side": "e", "cell": 2, "edge": [3, 2, "e"], "piece": "vlg.wall__postern"},
+            {"side": "e", "cell": 3, "edge": [3, 3, "e"], "piece": "vlg.wall__postern"},
+            {"side": "e", "cell": 0, "edge": [3, 0, "e"], "piece": "vlg.wall__postern"}]
+  },
+  "surface": {
+   "inside": [{"use": "@door"},
+              {"side": "n", "cell": 3, "at_m": [14.5, 0.4], "yaw": 0, "piece": "stn.airlock", "kind": "landmark"},
+              {"side": "w", "cell": 2, "at_m": [0.4, 10.5], "yaw": 90, "piece": "stn.airlock", "kind": "landmark"}],
+   "road": [{"side": "e", "cell": 1, "at_m": [24.6, 6.5], "yaw": -90, "piece": "stn.airlock", "kind": "landmark"},
+            {"side": "n", "cell": 4, "at_m": [18.5, 0.4], "yaw": 0, "piece": "stn.airlock", "kind": "landmark"}]
+  },
+  "court": {
+   "inside": [{"use": "@door"},
+              {"side": "w", "cell": 3, "edge": [0, 3, "w"], "piece": "ruin.wall__door"},
+              {"side": "e", "cell": 3, "edge": [4, 3, "e"], "piece": "ruin.wall__door"}],
+   "road": [{"side": "e", "cell": 1, "edge": [4, 1, "e"], "piece": "ruin.wall__door"},
+            {"side": "e", "cell": 2, "edge": [4, 2, "e"], "piece": "ruin.wall__door"}]
+  },
+  "approach": {
+   "inside": [{"use": "@door"},
+              {"side": "w", "cell": 4, "edge": [0, 4, "w"], "piece": "ruin.wall__door"},
+              {"side": "e", "cell": 4, "edge": [4, 4, "e"], "piece": "ruin.wall__door"}],
+   "road": [{"side": "s", "cell": 2, "edge": [2, 7, "s"], "piece": "ruin.wall__door"},
+            {"side": "e", "cell": 6, "edge": [4, 6, "e"], "piece": "ruin.wall__door"}]
+  },
+  "street": {
+   "inside": [{"use": "@door"},
+              {"side": "n", "cell": 3.0, "lot": [3.0, 0, "n"], "piece": "wtown.store__entry", "kind": "landmark"},
+              {"side": "s", "cell": 1.0, "lot": [1.0, 4, "s"], "piece": "wtown.sheriff__entry", "kind": "landmark"},
+              {"side": "s", "cell": 2.0, "lot": [3.0, 4, "s"], "piece": "wtown.bank__entry", "kind": "landmark"}],
+   "road": [{"side": "w", "cell": 1.5, "lot": [0, 2, "w"], "piece": "wtown.fence__gateway", "kind": "landmark"},
+            {"side": "e", "cell": 1.5, "lot": [5, 2, "e"], "piece": "wtown.fence__gateway", "kind": "landmark"}]
+  }
+ },
+ "settings": {
+  "note": "LONGSTORY-2: how a derived setting (create_setting.json rows) builds a story with 3+ places in its own family's rooms instead of a refusal. hub: outdoor_slots spine patterns with indoor leaves, as medieval and western (surface: extra airlocks on the plot edge, the way the pattern's own door is cut; court and approach: ruin.wall__door edge pieces, the kit's door wall). chain: the kit's rooms have one or two door sockets (SCIFIKIT station shells: hangar, bridge 1; deck 2), so every place is a room in story order, each joined to the next: the row's entry pattern first, link patterns in the middle, an end pattern (one door) last. spine/indoor/link/end name create_patterns.json patterns of the setting's family.",
+  "station": {"topology": "chain", "link": ["deck"], "end": ["hangar", "bridge"]},
+  "moon": {"topology": "hub", "spine": ["surface"], "indoor": ["bridge"]},
+  "underwater": {"topology": "hub", "spine": ["surface"], "indoor": ["bridge"]},
+  "jungle": {"topology": "hub", "spine": ["court", "approach"], "indoor": ["shrine"]},
+  "ancient": {"topology": "hub", "spine": ["approach", "court"], "indoor": ["shrine"]},
+  "desert": {"topology": "hub", "spine": ["approach", "court"], "indoor": ["shrine"]}
+ },
+ "outdoor_variants": {
+  "note": "Long-story outdoor variants of a base pattern: shipped kit keys swapped one for one (same anchor and footprint), so the base pattern's slots, lanes and camera hold. Measured: wsky.mesas__near behind the street failed the style gate's depth layering (2/3 bands), so no variant uses it. For families whose create_craft.json layouts cannot vary the pattern (western: the street has lot pieces, which the mirror does not move).",
+  "street": [
+   {"id": "street_yard", "swap": {"wland.ground__main": "wland.ground__yard", "wsky.mesas__town": "wsky.mesas__canyon"},
+    "tags": ["canyon", "ranch", "yard", "corral", "mine", "desert", "pass", "trail", "rail", "train", "depot"]},
+   {"id": "street_far", "swap": {"wland.ground__main": "wland.ground__yard"},
+    "tags": ["ghost", "abandoned", "old", "ruin", "ruined", "empty", "outskirts", "edge", "camp"]}
+  ]
+ },
+ "mechanics": {
+  "note": "Long-story rows read before create_story.json mechanics (same longest-phrase match): what a story with 3+ places builds that the two-room table does not say.",
+  "rows": [
+   {"words": ["key", "keys", "keycard", "keycards", "locked gate", "gate", "gates", "locked door", "locked doors", "lock", "locks", "unlock"], "status": "made",
+    "what": "story.keys: each key lies in a place and the door into the place it opens needs it"},
+   {"words": ["rooms", "many rooms", "long story", "long game", "long adventure", "journey", "quest", "multiple rooms", "hub"], "status": "made",
+    "what": "one room per story place (max_rooms 64 is a safety ceiling); the first outdoor place is the hub"},
+   {"words": ["mid-boss", "mid boss", "final boss", "showdown", "final showdown", "bosses"], "status": "made",
+    "what": "each boss fights in its place; the last fight room is the final boss"}
+  ]
+ },
+ "closed": {"vlg.tavern__doorway": "vlg.tavern", "vlg.cottage__doorway": "vlg.cottage", "vlg.chapel__doorway": "vlg.chapel",
+            "vlg.smithy__doorway": "vlg.smithy", "vlg.cottage__stone_doorway": "vlg.cottage__stone",
+            "wtown.saloon__entry": "wtown.saloon", "ruin.wall__door": "ruin.wall"},
+ "indoor_shells": {
+  "hall": [{"shell": "cst.hall__throne", "ceiling": "cst.ceiling__throne", "words": ["throne", "king", "queen", "court", "palace", "lord", "dragon"]},
+           {"shell": "cst.hall__great", "ceiling": "cst.ceiling__vault", "words": ["great", "keep", "castle", "feast", "banquet", "manor", "fortress"]},
+           {"shell": "cst.hall", "ceiling": "cst.ceiling__vault", "words": ["crypt", "tomb", "vault", "dungeon", "cellar", "catacomb", "temple", "shrine", "church", "chapel", "library", "archive", "barracks"]}],
+  "taproom": [{"shell": "vlg.room__taproom", "ceiling": "vlg.ceiling", "words": ["tavern", "inn", "taproom", "pub", "alehouse", "hearth"]},
+              {"shell": "vlg.room", "ceiling": "vlg.ceiling", "words": ["house", "cottage", "home", "hut", "shop", "smithy", "forge", "mill", "workshop", "study"]}],
+  "saloon": [{"shell": "wtown.room__saloon", "ceiling": null, "words": ["saloon", "bar", "mine", "train", "station", "bank", "office", "jail", "store", "hotel"]}]
+ }
+}

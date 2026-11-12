@@ -2,6 +2,8 @@
   "format": "hermes64-create-craft/1",
   "note": "VARIETY: what the create flow crafts by default from a plain brief. Templates are bounded hermes64-recipe/1 pieces in unit space (every length is a multiple of the one `height` parameter; roles are pack palette roles, never colours), so each one is built and gated by the same generator path an agent recipe takes. `words` are matched against the prompt and the brief's wants; `names` are the brief lines a piece may answer. `role`: landmark (may take the pattern's landmark slot), set (stands outside), prop (dressed where its class goes). An agent recipe in create/candidates.json for the same want always wins. Role rule (measured, kits/core/look.py set median texture energy <= 0.050): more than half of a template's textured roles come from the roles that measure <= 0.049 in every shipped mood (wood, frame, leather, sand, bark, post, dirt, snow, trim, light, cushion); `a|b` declares the palette-role alternative the loop may step to.",
   "max_pieces": 4,
+  "pieces_per_room": 2,
+  "pieces_note": "LONGSTORY-2: max_pieces is the two-room game's share; a story with more rooms may craft pieces_per_room for every room (create_craft.max_pieces). Every crafted piece still passes the generator gates, and the rooms stage places only what fits each room's triangle budget (the rest is listed as not placed, with the budget reason).",
   "min_pieces": 3,
   "protagonists": [
     {"words": ["knight", "paladin", "squire", "soldier", "guard"], "name": "Knight", "text": "stern knight in a grey tunic with a red shawl, belt, boots and gloves, crop hair"},

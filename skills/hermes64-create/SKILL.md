@@ -72,12 +72,12 @@ up to 32, `setting.place` up to 80, the prompt up to 600. `setting.room_scale` (
 default; say large/open for bigger. Then the `story` block, sentence by sentence:
 - every named person -> `story.cast` (`name` as written; `role`: npc, companion, rival, suspect, captive, traitor,
   enemy, boss); the player -> `story.player.name`. A captive is the one you free; it follows you out.
-- every place -> `story.places` (`kind` outdoor/indoor, `about` = one line on entering). A title -> `story.title`.
-- the thing to get -> `story.item.name`. What happens, in order -> `story.beats` (`text`; `who`, `place`, `when`).
+- every place -> `story.places` (`kind` outdoor/indoor, `about` = one line on entering): one room each. Title -> `story.title`.
+- the thing to get -> `story.item` (`name`, `place`). What happens, in order -> `story.beats` (`text`; `who`, `place`, `when`).
 - goals -> `story.quests` with `done_when`: `beat N`, `talk NAME`, `item`, `fight`, `course`, `choice` or `end`.
-- a fight -> cast with role enemy/boss, `waves` like `[2, 2]` (at most 2 at once; a 3 is split and reported);
-  a race -> `course` with `seconds` and checkpoints;
-  an accusation or riddle -> `choice` (2-4 options, `right`); a locked door -> `door_lock: "beat 2"`.
+- a fight -> cast with role enemy/boss and their `place` (a fight in each); `waves` like `[2, 2]` (at most 2 at once:
+  a 3 is split and reported); keys or a locked gate -> `keys` `[{"name", "place", "opens": "<place>"}]`; a race ->
+  `course`; an accusation or riddle -> `choice` (2-4 options, `right`); a door opened by a beat -> `door_lock: "beat 2"`.
 - endings -> `win` (and `lose`); every gameplay word of the prompt -> `mechanics` ("no combat", "stealth", ...).
 
 ```json
@@ -90,16 +90,16 @@ default; say large/open for bigger. Then the `story` block, sentence by sentence
 
 ## When something refuses
 Every refusal is one line: `code: what happened. Next: what to do`. Do the Next part once.
-- `create_style_refused`: run again with the `--style <pack>` it names; tell the human the style differs.
+- Off-catalogue settings derive automatically; a note "built in the nearest style ...": say the style differs (`--style`).
 - Re-run after a brief edit: `... run --name <slug> --brief <path>` (without `--brief` it keeps the last brief).
   `status --name <slug>` shows each stage.
 - The same step failed twice: stop and tell the human what failed. Do not read or change plugin source.
 
 ## What the flow makes
-Two rooms (an outdoor entry and one inside room, medieval and western styles); more places become named story spots
-when a beat is set there. People: entry up to 4, inside up to 3. Collect the item inside, finish outside after the
-last beat. A fight guards the item; a course guards the finish; "no combat" removes fights. A puzzle is not made
-(closest: `door_lock` or `choice`). More rooms or dialogue trees: say so, unless the human asks (then see Advanced).
+Say yes and build it; never shrink the request. 3+ places: one room per place (64 is only a safety ceiling); people per
+room as its triangle budget allows; keys open the doors they name; each boss fights in its place, the last is the final
+boss; it ends where the last beat is. 0-2 places: two rooms. Moon, sea floor, jungle, desert, station: own derived rooms;
+others the nearest, said. Only the N64 art budget limits; anything left out is `Not applied`. No puzzle (closest: `keys`).
 
 ## Other ways to make a game
 - Quick starter from one sentence: `hermes64_demo` with `premise` (optional `style`).

@@ -142,9 +142,9 @@
    "sha256": "05374a09190b2a4a2cd460f118512b1d5fe4e36d12a58c0f5bbfd43b18910db8"
   },
   {
-   "bytes": 66293,
+   "bytes": 66697,
    "path": "adventure_maker/brief.py",
-   "sha256": "0822ce609dfe74501183acbc4e7e6cf64b2d2b5cf0a00253a83153c5382d6270"
+   "sha256": "db2c2372566209e7d17e4f5a110d6901a9acd9f49e64d070a86094d96095d453"
   },
   {
    "bytes": 3693,
@@ -252,19 +252,29 @@
    "sha256": "d187a687b5cb74433d072182aad9c3de940554327182b7920b450fcd30a49e36"
   },
   {
-   "bytes": 20645,
+   "bytes": 21019,
    "path": "adventure_maker/create_craft.json",
-   "sha256": "077ed28b659676a63708b173f285748fc3e824d0c55728126f0ee54688cc6956"
+   "sha256": "c7925ee83a1add715ab3b8cb29a59c917ee11018ab2f7e35eafd74feb4f36ef1"
   },
   {
-   "bytes": 23641,
+   "bytes": 24156,
    "path": "adventure_maker/create_craft.py",
-   "sha256": "17fd30218e6aef4f56189caa4eed85f039952ff07af065f318c1666ffa7de469"
+   "sha256": "ba13203f150dcd78ba1fd4749cefc06135878be41d32a3ffcf775f460c9a868e"
   },
   {
-   "bytes": 154951,
+   "bytes": 165748,
    "path": "adventure_maker/create_flow.py",
-   "sha256": "1ef2c3535ca42ac244203883c4029352f426de2feddb63f69ed350a93733a5cd"
+   "sha256": "bfa063b2b6f1bc1c4cbcfc1e62b0e1169cdbe3351de04ea8e0dab1f53000eca7"
+  },
+  {
+   "bytes": 9154,
+   "path": "adventure_maker/create_long.json",
+   "sha256": "134f6bcb1a86b5f98ea1d703d5eec4468c094d583cc29c900af3a6879d01b2b3"
+  },
+  {
+   "bytes": 84764,
+   "path": "adventure_maker/create_long.py",
+   "sha256": "a25b846e1bfa49c49ee8e49b2a8f01eb162d40adfecf3fae03ce908ae6039bf2"
   },
   {
    "bytes": 1965,
@@ -272,19 +282,29 @@
    "sha256": "50fb7eb91a68e185911531890357f606fff9fbae40cfc2e9e5e891f6c9d903db"
   },
   {
-   "bytes": 10003,
+   "bytes": 25873,
    "path": "adventure_maker/create_patterns.json",
-   "sha256": "59eb8da699cd9102e08df80f7a7fc16b3bfeb24061dce89fc54a1c33838e9dc8"
+   "sha256": "c2bbd25201d968098c6648d545098a45d0a2a1f1d26aa61b3790655a5eb05cc4"
   },
   {
-   "bytes": 6776,
+   "bytes": 6112,
+   "path": "adventure_maker/create_setting.json",
+   "sha256": "87fa2a9dd29678b416ec6e226a1142cb6804124cad072b544e36b0c7d5b8d9cb"
+  },
+  {
+   "bytes": 20108,
+   "path": "adventure_maker/create_setting.py",
+   "sha256": "13c15557beaea2b5238443e9b093cc38537d1d9301632020e0e429b8b16aac19"
+  },
+  {
+   "bytes": 7384,
    "path": "adventure_maker/create_story.json",
-   "sha256": "9624e956d5e5b5884ec85464b1672e56af5e0aa864eff78875f7f944830c2f4b"
+   "sha256": "575c1af9212c896eebcdf4762d5b964042ee09eaa5b263d5c6735e4d7b6dc9b1"
   },
   {
-   "bytes": 42892,
+   "bytes": 45191,
    "path": "adventure_maker/create_story.py",
-   "sha256": "ef6f85ef4c465b7afee38d930eadfaf73192ddafd18345509d0d872acdcb9fb3"
+   "sha256": "b149754ac16dcbbbc0a50a96a7119a10d2cfbfbc67c7ecaa50c678577d1d7203"
   },
   {
    "bytes": 3811,
@@ -3022,9 +3042,9 @@
    "sha256": "61b29e22cfc84ba277a3951c63b638e6d4a4abffdb7f238594c43f357f048665"
   },
   {
-   "bytes": 13442,
+   "bytes": 13447,
    "path": "contracts/brief/1.0.0.json",
-   "sha256": "44edfc9406ca301381f5e49daf79b8d2076668c3c89c3e74053d84fb12610cb8"
+   "sha256": "5e37483681e22ac61e38a8b59cc01703b679211c12e756b7afc910488ddd31fd"
   },
   {
    "bytes": 3864,
@@ -3582,6 +3602,11 @@
    "sha256": "c0ba9e5d2e22fe71376a5dcd2181b9a7077e7046a5c782e22539555b78e634fd"
   },
   {
+   "bytes": 9140,
+   "path": "docs/LONGSTORY-PLAN.md",
+   "sha256": "a061877c8faa588d274613b5566b07a5b958ef057f28f557700f8ee836567c71"
+  },
+  {
    "bytes": 10370,
    "path": "docs/MEDIEVALKIT.md",
    "sha256": "b676957e873f8ea67769064b52e9e317d27aa459877e3bc5e0f09ef97c16af9d"
@@ -3667,9 +3692,9 @@
    "sha256": "feb6f929a0218482ea81115581f44618f1ce5c525cfdc00edcac9bea074ea95d"
   },
   {
-   "bytes": 17462,
+   "bytes": 18205,
    "path": "docs/PACKAGE-CONTENTS.md",
-   "sha256": "67e5cf35a0297193effb6f885bcfc877e106726c885376bf54ee0fa929498f8e"
+   "sha256": "290e8a34a167ce7ccd5c9462ae9e42b675c59142256d5f1d25f7caa7b0289b08"
   },
   {
    "bytes": 2989,
@@ -29382,9 +29407,9 @@
    "sha256": "acf02ff720d045248ffee854b1dac40c800a07908b597687a17c66709c58f516"
   },
   {
-   "bytes": 10057,
+   "bytes": 10214,
    "path": "skills/hermes64-create/SKILL.md",
-   "sha256": "7d6b8c8604e76770723e8dde691a3f6287bcd0158c480003b2b0f86efe2d4809"
+   "sha256": "408b2fa97d4797e18b4a3b7268ae91e11f67e22dec4c420b5ffe4d8a1c9c8afc"
   },
   {
    "bytes": 8705,
@@ -29717,6 +29742,11 @@
    "sha256": "1fb47552f67d1845e10fd2efd238fb8800a31261c33b4de00f0153a7a45248f6"
   },
   {
+   "bytes": 15548,
+   "path": "tools/ancientkit_rooms.py",
+   "sha256": "a698c1c74f4df9fcc12e3e7ae2ddb13752cdc9fa5b1d7543833ce737ac8cfd74"
+  },
+  {
    "bytes": 1093,
    "path": "tools/bin/MANIFEST.json",
    "sha256": "fb4a3fb6ccef031802dea3947129693f10db43e9a3fb0b7af2c2a9ec1cf44286"
@@ -29757,9 +29787,9 @@
    "sha256": "766177a9e25143c04c3355239f9061570e5a6dad801e6f09ee98963c81ca2d2d"
   },
   {
-   "bytes": 14701,
+   "bytes": 15747,
    "path": "tools/mood_pack.py",
-   "sha256": "6e9538420f3a8ab8824f6f2b8b71ccb977c381d5bbfa33cc4c22f8e0d3cdf4d5"
+   "sha256": "89c5ce0cf56036ab1b735ef599b2963e72ef02d148b176403e4ec614c79dbe3f"
   },
   {
    "bytes": 48398,
@@ -29785,6 +29815,11 @@
    "bytes": 16833,
    "path": "tools/roomlook.py",
    "sha256": "3f1e154a5fe929b609bd3cd7e95a6ac64f3b843a9b5a61ca27349954fed4ab1c"
+  },
+  {
+   "bytes": 17711,
+   "path": "tools/scifikit_rooms.py",
+   "sha256": "1547cf6c1ce3efbfef4e5c5a2b1c5ed866b930321a4add3c15212edd6bb36e73"
   },
   {
    "bytes": 25006,
@@ -29825,13 +29860,13 @@
  },
  "schema": "hermes64-package/1",
  "source": {
-  "commit": "58404673a9fb50c20559024eb44e9fea85c71150",
+  "commit": "a576821ab38d01154a6a7462f56e5d7baed6d07d",
   "tree": "clean"
  },
  "tools": 27,
  "totals": {
-  "bytes": 151926448,
-  "files": 5960
+  "bytes": 152121803,
+  "files": 5967
  },
  "version": "1.0.0-rc"
 }
