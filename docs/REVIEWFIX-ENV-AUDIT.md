@@ -72,11 +72,12 @@ the project folder. A game started from the Studio therefore keeps its saves and
 | Site | Child | Environment |
 | --- | --- | --- |
 | `adventure_maker/linux_sandbox.py:269` (`_help`) | bwrap `--help`, before the functional probe | `scratch_env()`; temporary home/config/cache/temp folders removed after it exits |
-| `adventure_maker/linux_sandbox.py:304` (`probe`) | bwrap functional probe and its isolated Python | `child_env(<writable probe project>/.maker/local)`; every writable environment folder is inside the existing writable bind and removed with the probe tree |
+| `adventure_maker/linux_sandbox.py` (`probe`) | functional probe via the **same `Runner.run`** as builds | `Runner.environment()` in the writable probe project's `.maker/local`; same command builder, outer safe limits, inner NPROC and bounded tree cleanup; the nested tiny child explicitly retains only that already-sanitized mapping |
 
-The probe's `env` parameter is host-discovery input only, never the child's environment. The rlimit shim replaces
-itself with bwrap/the target via `os.execv`, retaining the explicit Runner environment; it starts no extra inherited-
-environment subprocess. Normal Linux authoring and Windows Job Object launches still use the two Runner sites below.
+The probe's `env` parameter is host-discovery input only, never the child's environment. Both rlimit shims replace
+themselves via `os.execv`, retaining the explicit Runner environment. The inner probe starts one tiny nested Python
+with an explicit copy of that already-sanitized environment; no ambient parent mapping is forwarded. Normal Linux
+authoring and Windows Job Object launches still use the two Runner sites below.
 No new Windows spawning site was added by the platforms lane: suspended start/resume changes the existing job
 launch, and Studio Windows launch already uses `child_env(<game>/.maker/local)`.
 

@@ -1,8 +1,9 @@
-# Linux test sheet v1 (about 60 minutes)
+# Linux test sheet v2 (about 60 minutes)
 
-For a tester on a **real Linux computer**. Nothing on this sheet has passed yet: Linux authoring was implemented and
-simulated on a Mac only ([LINUX.md](LINUX.md), [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). Record what really
-happens, pass or fail; never retype or tidy output. The receipt template is
+For a tester on a **real Linux computer**. The first Debian 13/bwrap 0.12.0 run failed every official child;
+[its receipt](receipts/LINUX-RECEIPT-2026-11-12-debian13.md) is retained. The candidate fix has only Mac simulation
+evidence and awaits the second-run addendum below. Record what really happens, pass or fail; never retype or tidy
+output ([LINUX.md](LINUX.md), [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). The receipt template is
 [receipts/LINUX-RECEIPT-TEMPLATE.md](receipts/LINUX-RECEIPT-TEMPLATE.md).
 
 Rules:
@@ -239,7 +240,7 @@ try:
     if '--no-fork' not in sys.argv:
         FORK = ('import errno, os, time  # %s\n' % fork_tag +
                 'n = 0; err = "none"\n'
-                'for i in range(2000):\n'
+                'for i in range(768):\n'
                 ' try:\n'
                 '  pid = os.fork()\n'
                 ' except OSError as e:\n'
@@ -254,8 +255,11 @@ try:
         counted = os.path.join(root, 'fork-count.txt')
         count = open(counted).read() if os.path.exists(counted) else 'none'
         left = mine(is_fork)
-        check('fork storm killed', code == 'FAULT:timeout' and not left, '%s; leftovers=%d' % (code, len(left)))
-        print('INFO fork count and stop reason (cap = processes you had + 512):', count)
+        forked = count.split()
+        cap_holds = len(forked) == 2 and forked[0].isdigit() and 0 < int(forked[0]) < 768 and forked[1] == 'EAGAIN'
+        check('fork storm killed', code == 'FAULT:timeout' and not left and cap_holds,
+              '%s; leftovers=%d; fork count/stop=%s; cap observed=%s' % (code, len(left), count, cap_holds))
+        print('INFO fork count and stop reason (inner visible tasks + 512; inherited ceilings may be lower):', count)
 finally:
     for pid in mine(is_keep) + mine(is_fork):
         try:
@@ -392,3 +396,50 @@ EOF
 17. On any failure also attach: the `.maker/runs/*/*.process.json` file a message names, the full checklist output,
     `bwrap --version`, and `dmesg | grep -i -E 'apparmor|denied' | tail -20` if AppArmor may be involved. Do not
     work around a failure by changing plugin code or gates; report it.
+
+## Second-run addendum: LINUXFIX candidate (awaiting execution)
+
+The first run on Debian 13/bwrap 0.12.0 failed every official child even though the old checklist said READY.
+Keep [that receipt](receipts/LINUX-RECEIPT-2026-11-12-debian13.md). On the fixed candidate, in a new `$T` (do not
+reuse the half-made `fox1`/`light1` folders), record the exact new SHA and redo **B5, C7, D8, D9 and D10**, then D11
+if authoring succeeds. The child-runner row must explicitly say a real `Runner.run` readiness child exited 0;
+otherwise READY must not appear. Debian's system ffmpeg should now be found without changing the child PATH.
+
+**New step C7a, inside and outside facts** (no sysctl changes, no environment dump):
+
+```sh
+cd "$PLUGIN"
+{ printf 'OUTSIDE sandbox\n'; bash -c 'printf "ulimit -u: "; ulimit -u; cat /proc/self/status | grep -E "^(Uid|NSpid|Threads):"; grep -i "Max processes" /proc/self/limits'; } \
+  2>&1 | tee "$R/outputs/c7a-host.txt"
+"$PY" -B - "$T" <<'EOF' 2>&1 | tee "$R/outputs/c7a-inside.txt"
+import json, sys
+from pathlib import Path
+from adventure_maker.runner import Runner
+from adventure_maker.safety import Project, Fault
+from adventure_maker import linux_sandbox
+base = Path(sys.argv[1]).resolve() / 'limit-facts'
+base.mkdir(parents=True, exist_ok=True)
+print('ISOLATION', linux_sandbox.status()['mode'])
+try:
+    p = Project(str(base), 'facts', create=True)
+    r = Runner(p).run(['/bin/bash', '-c', 'printf "INSIDE sandbox\\nulimit -u: "; ulimit -u; cat /proc/self/status | grep -E "^(Uid|NSpid|Threads):"; grep -i "Max processes" /proc/self/limits'], p.root, timeout=10)
+    print('exit', r['returncode'], 'isolation', r.get('isolation'))
+    print(r['stdout'], end='')
+    print(r['stderr'], end='')
+except Fault as e:
+    print('FAULT', e.code, str(e))
+EOF
+```
+
+`/proc/self/status` has **no NPROC field** on ordinary Linux: Uid/NSpid/Threads show namespace/task facts; the
+NPROC soft/hard ceilings are `Max processes` in `/proc/self/limits` and `ulimit -u`. Record both, not an empty grep
+as a pass. Inside must exit 0 with `linux-bwrap`, a small namespace-visible task baseline plus 512 (or a stricter
+inherited ceiling), not the old host-process-plus-512 value. The original host ceiling must not be changed.
+
+The bounded C7 fork check now requires **positive fork headroom, EAGAIN before 768 forks, timeout, and no surviving
+tagged child**. It keeps the same 13 checks (12 with `--no-fork`); it no longer passes merely because a run timed
+out. NPROC is retained, not replaced by the PID namespace. A namespace controls visibility/lifetime, not a task-count
+cap. Run exhaustion only on a dedicated VM with machine-owner approval; shared machines must use `--no-fork` and
+record the cap as **not exercised**. A different inherited/cgroup ceiling can also cause EAGAIN: record those
+limits before attributing the observed stop to this plugin. No native Linux or Windows verification is implied by
+this addendum or the Mac simulation tests.

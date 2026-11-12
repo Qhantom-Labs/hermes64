@@ -1,10 +1,14 @@
 # Hermes64 on Linux
 
-**Status: authoring is implemented behind bubblewrap and is not verified on Linux.** Everything below was built and
-checked on a Mac by simulation (`tests/test_linux_platform.py`: fake bubblewrap, fake file systems, the real run loop
-with a local stand-in child). No Linux computer has run it yet. The first real run follows
-[LINUX-TEST-SHEET.md](LINUX-TEST-SHEET.md); its receipt goes under `docs/receipts/` and only then can this page say
-more. Evidence rules: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md).
+**Status: Linux: first real run (Debian 13, bwrap 0.12.0, 2026-11-12) FAILED: sandbox_unavailable on every child; fix in this release candidate is untested on a real Linux machine; not verified.**
+
+[First receipt](receipts/LINUX-RECEIPT-2026-11-12-debian13.md), plugin `6af4ba26`, tester Grok Bot: the old
+checklist falsely said READY, but no game compiled or exported. Removing only `RLIMIT_NPROC` from the pre-bwrap
+shim made the diagnostic command work. The candidate now applies NPROC **inside** bwrap, after namespaces exist,
+and readiness must execute the real Runner child with the same limits and environment. These fixes have only
+Mac-host simulation evidence and await a **second Linux run**: the addendum in [LINUX-TEST-SHEET.md](LINUX-TEST-SHEET.md).
+The tester's missing `hermes` command was a machine prerequisite, not a plugin defect; Hermes integration was skipped.
+Evidence rules: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md).
 
 ## What you need
 
@@ -53,7 +57,16 @@ The checklist, run from the plugin folder (it prints `READY` or what to fix, one
 cd ~/.hermes/plugins/hermes64 && python3 -B -m adventure_maker.doctor --linux-checklist
 ```
 
-In a chat, `/hermes64 setup` shows the same items, including a **Child runner** row.
+In a chat, `/hermes64 setup` shows the same items, including a **Child runner** row. It is OK only after a real
+small child exits 0 through `Runner.run`, using the production command builder, limits, scrubbed environment and
+cleanup. That child checks the confinement markers and starts one nested tiny child under the effective limits.
+Failure prints the actual error and likely cause, not READY. Unconfined opt-in remains runnable but cannot earn
+sandboxed READY. Results are cached per process; restart Hermes or call the explicit probe refresh after a fix.
+
+ffmpeg discovery happens in the parent: Linux now checks PATH and system folders when no bundled decoder exists.
+The old intake lookup checked only `HERMES64_FFMPEG` and a hash-pinned tools file; it missed Debian's `/usr/bin/ffmpeg`.
+The separate bring-your-own audio importer already checked PATH. No child-environment widening was needed.
+`check_install` ignores a top-level `.git/` directory in a normal clone; nested metadata and unrelated extras still warn.
 
 ## The child sandbox (bubblewrap)
 
@@ -61,11 +74,15 @@ On macOS every Godot, Blender and Python child runs under `sandbox-exec`. On Lin
 bubblewrap: each child gets its own user, mount, PID, IPC, UTS and network namespaces. Inside, there is no network
 (only an isolated loopback), the system folders are read-only, your home folder is not visible, and the game project
 is the only writable folder. The child and everything it starts are killed when the run ends, times out (180 s at
-most) or prints more than 1 MiB. Limits: 16 GiB address space, 4,096 open files, no core files, a process cap.
+most) or prints more than 1 MiB. Limits: 16 GiB address space, 4,096 open files, no core files; the NPROC task
+limit is now installed **after** bwrap setup (visible same-UID tasks/threads plus 512, never raising inherited
+ceilings). PID-namespace teardown bounds lifetime, not fork count; the NPROC brake is retained. An inherited low
+limit can still prevent child forks. Native behavior and fork-cap enforcement await the second Linux run.
 Design and exact flags: [LINUX-RUNNER-DESIGN.md](LINUX-RUNNER-DESIGN.md).
 
-Hermes64 checks once per session that bubblewrap really works (a tiny sandboxed probe: write inside allowed, write to
-`/usr` denied, a host file hidden, a network connect refused). If anything fails, **every child is refused** with
+Hermes64 checks once per session that bubblewrap really works (through the real runner, including both limit
+shims: write inside allowed, write to `/usr` denied, a host file hidden, a network connect refused, one nested tiny
+child exits 0). If anything fails, **every confined child is refused** with
 `sandbox_unavailable` and a sentence that says what is missing:
 
 | Message names | Fix |

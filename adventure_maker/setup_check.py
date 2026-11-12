@@ -80,6 +80,10 @@ def runner_row(platform=None, env=None, iso=None):
     if plat not in ('linux', 'win32'):
         return None
     iso = iso or platforms.isolation(platform, env)
+    if plat == 'linux' and iso['available'] and not (
+            iso['mode'] == 'bwrap' and iso.get('runner_probe_ok', False)):
+        return ('missing', '%s: %s No sandboxed Runner.run readiness child passed; READY is withheld.' %
+                (iso['mode'], iso['note']), 'run python3 -m adventure_maker.doctor --linux-checklist; fix the runner failure')
     if iso['available']:
         return 'ok', '%s: %s' % (iso['mode'], iso['note']), None
     if plat == 'win32':

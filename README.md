@@ -28,7 +28,7 @@ Zip steps for Windows (PowerShell, `Expand-Archive`) and Linux: [Windows guide](
 
 **Games:** normally `<Hermes home>/plugin-data/hermes64/games`, or your configured `projects_root`. Older hosts need an explicit folder.
 
-**Platforms:** macOS: verified. Windows 11: targeted, not verified. Linux: authoring implemented behind bubblewrap, not verified until receipts exist. [What each claim rests on](docs/PLATFORM-EVIDENCE.md).
+**Platforms:** macOS: verified. Windows 11: targeted, not verified. Linux: first real run (Debian 13, bwrap 0.12.0, 2026-11-12) FAILED: sandbox_unavailable on every child; fix in this release candidate is untested on a real Linux machine; not verified. [What each claim rests on](docs/PLATFORM-EVIDENCE.md).
 
 [Quick start and troubleshooting](QUICKSTART.md) · [Game-type strengths and measured limits](docs/GAME-TYPE-STRENGTHS.md) · [Honest scope](docs/AUTHORING-SCOPE.md)
 
@@ -105,7 +105,7 @@ Use the active profile's Hermes64 settings (`plugins.entries.hermes64.settings`)
 
 **Windows 11:** child execution requires an owner opt-in to `HERMES64_WINDOWS_RUNNER=job`, followed by a restart. Job Objects limit resources and child lifetime (each child is placed in its job before it runs), but provide **no OS-enforced network or write confinement**. This candidate's native Windows install/build/export remains unverified. [Windows guide](docs/WINDOWS.md) · [test sheet](docs/WINDOWS-TEST-SHEET.md).
 
-**Linux:** authoring is implemented behind bubblewrap (no network, writes confined to the project, home folder hidden) and is **not verified**: no Linux computer has run it yet. Without a working bubblewrap every child is refused with the reason and the fix; `HERMES64_LINUX_RUNNER=unconfined` is an explicit owner opt-in with **no OS-enforced network or write confinement** (process-group kill and rlimits only). macOS exports and native Linux exports are not available from Linux. [Linux guide](docs/LINUX.md) · [test sheet](docs/LINUX-TEST-SHEET.md).
+**Linux:** the first real run (Debian 13, bwrap 0.12.0, 2026-11-12) **failed every official child** with `sandbox_unavailable`; no game compiled or exported. The candidate moves the task limit after namespace setup and tests readiness through the real runner; the fix is untested on a real Linux machine, awaiting a second run, and **not verified**. The bubblewrap design confines network/writes and hides home; without a working sandbox every child is refused. `HERMES64_LINUX_RUNNER=unconfined` is an explicit owner opt-in with **no OS-enforced network or write confinement** (process-group kill and rlimits only), never a sandboxed READY result. macOS exports and native Linux exports are not available from Linux. [Linux guide](docs/LINUX.md).
 
 **Local processes:** Godot, Python, optional Blender and user-provided ffmpeg. Some character/preview/audio subprocesses are outside the central runner; ffmpeg audio import and the Blender character exporter can inherit the host environment. Plugin code is not a universal sandbox.
 

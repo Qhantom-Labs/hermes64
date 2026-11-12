@@ -109,8 +109,10 @@ def _default_candidates(tool, default, platform=None, env=None):
 
 
 class Runner:
-    def __init__(self, project):
+    def __init__(self, project, *, _linux_isolation=None):
         self.project = project
+        # Probe bootstrap only: a candidate record, never cached or advertised as ready until Runner.run passes.
+        self._linux_isolation = _linux_isolation
 
     def environment(self):
         if platforms.is_windows():
@@ -151,7 +153,7 @@ class Runner:
                      BLENDER_USER_DATAFILES=paths['LOCALAPPDATA'])
         return paths
 
-    def sandbox_argv(self, argv):
+    def sandbox_argv(self, argv, *, _linux_iso=None):
         if platforms.is_windows():
             if not platforms.windows_runner_enabled():
                 fail('sandbox_unavailable', 'Required no-network/write-confinement sandbox unavailable on this host; '
@@ -159,7 +161,7 @@ class Runner:
             return list(argv)
         if platforms.host() == 'linux':
             from . import linux_sandbox
-            iso = linux_sandbox.status()          # fail closed before the project is touched
+            iso = _linux_iso or self._linux_isolation or linux_sandbox.status()  # fail closed before launch
             if not iso['available']:
                 fail('sandbox_unavailable', 'Required no-network/write-confinement sandbox unavailable on this host; '
                      'no child started. ' + iso['note'])
@@ -179,7 +181,13 @@ class Runner:
         if not Path(argv[0]).is_absolute() or not Path(argv[0]).is_file():
             fail('missing_tool', 'Executable not found: ' + argv[0])
         self.project.audit()
-        command = self.sandbox_argv(argv)
+        iso = None
+        if platforms.host() == 'linux':
+            from . import linux_sandbox
+            iso = self._linux_isolation or linux_sandbox.status()
+            command = self.sandbox_argv(argv, _linux_iso=iso)
+        else:
+            command = self.sandbox_argv(argv)
         env = self.environment()
         if platforms.is_windows():
             return _run_windows(command, cwd, env, timeout)
@@ -224,7 +232,7 @@ class Runner:
                   'elapsed_seconds': round(time.monotonic() - started, 4)}
         if platforms.host() == 'linux':
             from . import linux_sandbox
-            return linux_sandbox.finish(result, linux_sandbox.status())   # cached probe; records the isolation mode
+            return linux_sandbox.finish(result, iso)  # the same record used to build this child's command
         return result
 
 

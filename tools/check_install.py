@@ -81,6 +81,9 @@ def check(folder, platform=None):
                 fail.append('changed (size or sha256 differs): ' + row['path'])
     for path in sorted(folder.rglob('*')):
         rel = path.relative_to(folder).as_posix()
+        # A normal git clone adds repository metadata. Ignore only a top-level .git directory, not nested extras.
+        if rel.startswith('.git/') and (folder / '.git').is_dir():
+            continue
         if path.is_dir() or rel == MANIFEST or any(part in IGNORED_PARTS for part in path.parts) or rel.endswith('.pyc'):
             continue
         if rel not in listed:

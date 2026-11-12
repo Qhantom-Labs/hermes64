@@ -4,10 +4,10 @@ Safest default, decided from what is on disk:
 - WAV (PCM): read and processed in pure Python (``wave`` + adventure_maker/audio_dsp.py). Nothing extra.
 - OGG Vorbis and MP3: Godot 4.6.2 plays both natively (AudioStreamOggVorbis, AudioStreamMP3), so they need no
   decoder in the plugin; they are recognised from their headers and passed through unchanged.
-- Anything else (FLAC, AAC/M4A, Opus, AIFF, ...): needs a converter. ffmpeg is OPTIONAL and is used only from
-  an explicit path (HERMES64_FFMPEG) or the pinned lookup path tools/bin/<platform>/ffmpeg[.exe] whose sha256
-  must match tools/bin/MANIFEST.json. A random ffmpeg on PATH is never picked up silently (its licence and build
-  are unknown: Homebrew's is a GPL build linked to 30+ shared libraries).
+- Anything else (FLAC, AAC/M4A, Opus, AIFF, ...): needs a converter. ffmpeg is OPTIONAL. On macOS/Windows it is
+  used only from HERMES64_FFMPEG or a hash-pinned tools/bin/<platform>/ffmpeg[.exe] (the existing licence policy).
+  On Linux, if that bundled file is absent, parent-side discovery also checks PATH and common system folders,
+  as bring-your-own audio already does. Nothing is bundled or downloaded; child environments remain minimal.
 Nothing here downloads anything.
 """
 import hashlib
@@ -129,6 +129,16 @@ def find_ffmpeg(env=None, key=None):
     pinned = BIN / key / name
     row = manifest().get('binaries', {}).get(key, {})
     if not pinned.is_file():
+        if key.startswith('linux-'):
+            # Linux uses the same parent-side system discovery as bring-your-own audio. No download or bundling.
+            from . import platforms
+            import shutil
+            found = shutil.which(name, path=env.get('PATH', ''))
+            candidates = ([found] if found else []) + platforms.ffmpeg_candidates('linux', env)
+            for candidate in candidates:
+                p = Path(candidate)
+                if p.is_file() and os.access(str(p), os.X_OK):
+                    return str(p), None
         return None, ('place a licence-reviewed ffmpeg at tools/bin/%s/%s (optional; see docs/ZEROSETUP-RESULT.md) '
                       'or set %s to an ffmpeg you trust' % (key, name, ENV_FFMPEG))
     want = row.get('sha256') or ''

@@ -232,6 +232,8 @@ def ffmpeg_candidates(platform=None, env=None):
         return [str(W(_env(env).get('ProgramFiles') or r'C:\Program Files') / 'ffmpeg' / 'bin' / 'ffmpeg.exe'),
                 str(W(r'C:\ffmpeg') / 'bin' / 'ffmpeg.exe')]
     root = PurePosixPath('/')
+    if host(platform) == 'linux':
+        return [str(root / 'usr' / 'local' / 'bin' / 'ffmpeg'), str(root / 'usr' / 'bin' / 'ffmpeg')]
     return [str(root / 'opt' / 'homebrew' / 'bin' / 'ffmpeg'),
             str(root / 'usr' / 'local' / 'bin' / 'ffmpeg'), str(root / 'usr' / 'bin' / 'ffmpeg')]
 
@@ -397,7 +399,11 @@ def linux_checklist(report=None, env=None, home=None, iso=None, disk=None):
         'OK     ' if ok else 'MISSING', '' if ok else ': approve numpy when Hermes asks (hermes plugins enable '
         'hermes64), or point python_path at a Python that has it'))
     iso = iso or isolation('linux', e)
-    lines.append('%s  Child runner (%s): %s' % ('OK     ' if iso['available'] else 'OFF    ', iso['mode'], iso['note']))
+    ready = iso['available'] and iso['mode'] == 'bwrap' and iso.get('runner_probe_ok', False)
+    note = iso['note'] + ('' if ready or not iso['available'] else
+                          ' No sandboxed Runner.run readiness child passed; READY is withheld.')
+    lines.append('%s  Child runner (%s): %s' % (
+        'OK     ' if ready else 'MISSING' if iso['available'] else 'OFF    ', iso['mode'], note))
     godot = (report.get('programs') or {}).get('godot') or {}
     lines.append('%s  Godot 4.6.2 standard build%s' % (
         'OK     ' if godot.get('available') else 'MISSING',

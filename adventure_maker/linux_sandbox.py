@@ -2,8 +2,9 @@
 
 Design: docs/LINUX-RUNNER-DESIGN.md. Standard library only. Every child gets new user, mount, PID, IPC, UTS and
 network namespaces (only loopback), an empty tmpfs root with read-only system folders, the plugin folder and the tool
-itself bound read-only, and the game project as the only writable host path. $HOME is not visible. A stdlib shim sets
-rlimits (setrlimit, as ulimit/prlimit do) and then execs bwrap. runner.Runner keeps the macOS run loop: new session,
+itself bound read-only, and the game project as the only writable host path. The outer stdlib shim sets safe
+memory/CPU/file/core limits then execs bwrap; an inner shim applies NPROC after namespace creation and execs the tool.
+Runner keeps the macOS run loop: new session,
 killpg at every exit; --die-with-parent plus the PID namespace tear the whole tree down.
 
 Default is fail closed: without a bwrap that passes the probe every child is refused (sandbox_unavailable) with the
@@ -41,16 +42,25 @@ PLUGIN_ROOT = Path(__file__).resolve().parents[1]
 # The rlimit shim: lower soft and hard limits (never raise them), then exec the real command. Lowering cannot fail
 # with EPERM; any other error ends the run before the command starts (fail closed).
 SHIM = ('import json,os,resource,sys\n'
+        'def visible_tasks():\n'
+        ' n=0\n'
+        ' for p in os.listdir("/proc"):\n'
+        '  if not p.isdigit(): continue\n'
+        '  try:\n'
+        '   if os.stat("/proc/"+p).st_uid==os.getuid(): n+=len(os.listdir("/proc/"+p+"/task"))\n'
+        '  except FileNotFoundError: pass\n'
+        ' return max(n,1)\n'
         'for k,v in sorted(json.loads(sys.argv[1]).items()):\n'
         ' r=getattr(resource,k,None)\n'
         ' if r is None: continue\n'
+        ' if v=="visible_tasks+512": v=visible_tasks()+512\n'
         ' s,h=resource.getrlimit(r)\n'
-        ' v=v if h==resource.RLIM_INFINITY else min(v,h)\n'
+        ' v=min([v]+[x for x in (s,h) if x!=resource.RLIM_INFINITY])\n'
         ' resource.setrlimit(r,(v,v))\n'
         'os.execv(sys.argv[3],sys.argv[3:])\n')
 
 # Runs inside the probe sandbox: argv = writable dir, hidden host file.
-PROBE = ('import errno,os,socket,sys\n'
+PROBE = ('import errno,os,socket,subprocess,sys\n'
          'w,hidden=sys.argv[1],sys.argv[2]\n'
          'out=[]\n'
          'try:\n'
@@ -64,8 +74,12 @@ PROBE = ('import errno,os,socket,sys\n'
          'try:\n'
          ' s.connect((' + repr(PROBE_ADDRESS[0]) + ',' + str(PROBE_ADDRESS[1]) + ')); out.append("NET_OPEN")\n'
          'except OSError as e: out.append("NET_BLOCKED" if e.errno==errno.ENETUNREACH else "NET_OTHER:"+str(e.errno))\n'
+         'try:\n'
+         ' c=subprocess.run([sys.executable,"-I","-S","-c","pass"],env=dict(os.environ),timeout=2,stdin=subprocess.DEVNULL)\n'
+         ' out.append("CHILD_OK" if c.returncode==0 else "CHILD_FAILED:"+str(c.returncode))\n'
+         'except (OSError,subprocess.SubprocessError) as e: out.append("CHILD_FAILED:"+str(e))\n'
          'print(" ".join(out))\n')
-PROBE_OK = ('WRITE_INSIDE_OK', 'WRITE_SYSTEM_DENIED', 'HIDDEN_ABSENT', 'NET_BLOCKED')
+PROBE_OK = ('WRITE_INSIDE_OK', 'WRITE_SYSTEM_DENIED', 'HIDDEN_ABSENT', 'NET_BLOCKED', 'CHILD_OK')
 
 INSTALL_LINES = ('Debian/Ubuntu: sudo apt install bubblewrap; Fedora: sudo dnf install bubblewrap; '
                  'Arch: sudo pacman -S bubblewrap; openSUSE: sudo zypper install bubblewrap; Alpine: sudo apk add '
@@ -147,6 +161,11 @@ def diagnose(stderr, facts):
                                    '/etc/sysctl.d/). bwrap said: ' + first)
     if facts.get('apparmor_restrict_unprivileged_userns') == 1:
         return 'apparmor_userns', APPARMOR_FIX + ' bwrap said: ' + first
+    if 'Resource temporarily unavailable' in (stderr or ''):
+        return 'namespace_resources', (first + '. Likely namespace/task resource exhaustion: check inherited '
+                'RLIMIT_NPROC (tasks/threads, not just process leaders), user namespace ceilings, and cgroup '
+                'pids/memory limits. Hermes64 applies its own NPROC limit only after bwrap setup; a stricter '
+                'inherited limit still applies. See docs/LINUX.md and the Linux retest addendum.')
     if facts.get('container'):
         return 'container', ('This looks like a container, and its security policy blocks the user namespaces bwrap '
                              'needs. Run Hermes on the host, or allow user namespaces in the container. bwrap said: '
@@ -250,7 +269,8 @@ def user_process_count(listdir=os.listdir, stat=os.stat, uid=None):
 
 
 def limits(nproc=None):
-    """The rlimits each child gets (RLIMIT_NPROC = the user's current processes + headroom: a fork-bomb brake)."""
+    """Unconfined/default-shim limits: host process-leader count + headroom is an approximate fork brake.
+    Confined command() instead sizes NPROC inside the new namespace and never lowers it before bwrap setup."""
     values = dict(LIMITS)
     values['RLIMIT_NPROC'] = (user_process_count() if nproc is None else nproc) + NPROC_HEADROOM
     return values
@@ -258,8 +278,8 @@ def limits(nproc=None):
 
 def shim_argv(argv, python=None, values=None):
     """[python -I -S -c SHIM limits --] + argv: set rlimits in a fresh process, then exec argv[0]."""
-    return [python or sys.executable, '-I', '-S', '-c', SHIM, json.dumps(values or limits(), sort_keys=True),
-            '--'] + list(argv)
+    return [python or sys.executable, '-I', '-S', '-c', SHIM,
+            json.dumps(limits() if values is None else values, sort_keys=True), '--'] + list(argv)
 
 
 def _help(bwrap, run=subprocess.run):
@@ -275,7 +295,8 @@ def _help(bwrap, run=subprocess.run):
 
 def probe(bwrap, run=subprocess.run, python=None, base=None, read=_read, exists=os.path.exists, env=None):
     """Run the real probe once: {'ok', 'reason', 'detail', 'cap_drop'}. Never raises for a host problem."""
-    from .runner import child_env
+    from .runner import Runner
+    from .safety import Fault, Project
     facts = host_facts(read=read, exists=exists, env=env)
     help_text = _help(bwrap, run)
     missing = [f for f in REQUIRED_FLAGS if help_text and f not in help_text]
@@ -293,26 +314,31 @@ def probe(bwrap, run=subprocess.run, python=None, base=None, read=_read, exists=
         return {'ok': False, 'reason': 'probe_folder', 'cap_drop': cap_drop,
                 'detail': 'Could not make the probe folder in %s: %s' % (base, exc)}
     try:
-        writable = work / 'project'
-        writable.mkdir()
-        hidden = work / 'hidden-host-file'
-        hidden.write_text('not for the sandbox\n', encoding='utf-8')
-        argv = [python, '-I', '-S', '-c', PROBE, str(writable), str(hidden)]
-        cmd = bwrap_argv(bwrap, writable, argv[:5], plugin_root=writable, exists=exists, read=read,
-                         cap_drop=cap_drop) + [str(writable), str(hidden)]
         try:
-            out = run(cmd, capture_output=True, text=True, encoding='utf-8', errors='replace',
-                      timeout=PROBE_TIMEOUT, stdin=subprocess.DEVNULL, cwd=str(writable),
-                      env=child_env(writable / '.maker' / 'local'))
-        except subprocess.TimeoutExpired:
-            return {'ok': False, 'reason': 'probe_timeout', 'cap_drop': cap_drop,
-                    'detail': 'The bwrap probe did not finish in %d s; refusing.' % PROBE_TIMEOUT}
-        except OSError as exc:
+            project = Project(str(work.resolve()), 'project', create=True)
+            writable = project.root
+            hidden = work / 'hidden-host-file'
+            hidden.write_text('not for the sandbox\n', encoding='utf-8')
+        except (OSError, Fault) as exc:
+            return {'ok': False, 'reason': 'probe_folder', 'cap_drop': cap_drop,
+                    'detail': 'Could not prepare the managed readiness folder: %s' % exc}
+        # The sentinel is derived in the child: an absolute argv path would be auto-bound read-only by command().
+        code = PROBE.replace('sys.argv[2]', 'os.path.join(os.path.dirname(sys.argv[1]),"hidden-host-file")')
+        argv = [python, '-I', '-S', '-c', code, str(writable)]
+        candidate = {'mode': 'bwrap', 'available': True, 'bwrap': bwrap, 'cap_drop': cap_drop}
+        try:
+            out = Runner(project, _linux_isolation=candidate).run(argv, writable, timeout=PROBE_TIMEOUT)
+        except Fault as exc:
+            reason, detail = diagnose(str(exc), facts)
+            if exc.code == 'timeout':
+                reason, detail = 'probe_timeout', 'The runner probe timed out: ' + str(exc)
+            return {'ok': False, 'reason': reason, 'cap_drop': cap_drop, 'detail': detail}
+        except (OSError, ValueError) as exc:
             return {'ok': False, 'reason': 'probe_failed', 'cap_drop': cap_drop,
-                    'detail': 'bwrap could not be started: %s' % exc}
-        marks = (out.stdout or '').split()
-        if out.returncode != 0 or not marks:
-            reason, detail = diagnose(out.stderr, facts)
+                    'detail': 'Runner.run could not start the readiness child: %s' % exc}
+        marks = (out['stdout'] or '').split()
+        if out['returncode'] != 0 or not marks:
+            reason, detail = diagnose(out['stderr'], facts)
             return {'ok': False, 'reason': reason, 'detail': detail, 'cap_drop': cap_drop}
         bad = [m for m in PROBE_OK if m not in marks]
         if bad:
@@ -352,9 +378,10 @@ def status(env=None, refresh=False, which=None, run=subprocess.run, read=_read, 
         result = _CACHE[key]
     if result['ok']:
         return {'mode': 'bwrap', 'available': True, 'network_blocked': True, 'writes_confined': True,
-                'bwrap': bwrap, 'reason': 'ok', 'cap_drop': result.get('cap_drop', True),
+                'bwrap': bwrap, 'reason': 'ok', 'cap_drop': result.get('cap_drop', True), 'runner_probe_ok': True,
                 'note': ('Linux bubblewrap sandbox: no network, writes confined to the project folder, home folder '
-                         'hidden, process tree killed at the end of each run.')}
+                         'hidden, process tree killed at the end of each run. Readiness child via Runner.run '
+                         '(same command, limits and environment) exited 0 inside the sandbox.')}
     if opted:
         return {'mode': 'unconfined', 'available': True, 'network_blocked': False, 'writes_confined': False,
                 'bwrap': bwrap, 'reason': result['reason'], 'cap_drop': False,
@@ -372,10 +399,18 @@ def command(project_root, argv, iso=None, env=None, python=None, values=None):
         fail('sandbox_unavailable', 'Required no-network/write-confinement sandbox unavailable on this host; no child '
              'started. ' + iso['note'])
     if iso['mode'] == 'bwrap':
-        inner = bwrap_argv(iso['bwrap'], project_root, argv, cap_drop=iso.get('cap_drop', True))
-    else:
-        inner = list(argv)
-    return shim_argv(inner, python=python, values=values)
+        # Never lower NPROC before clone/unshare: Linux namespace ucounts can inherit that small ceiling.
+        # Evaluate the baseline only after bwrap has installed the new /proc and dropped capabilities.
+        py = python or sys.executable
+        safe = dict(LIMITS if values is None else values)
+        nproc = safe.pop('RLIMIT_NPROC', 'visible_tasks+512')
+        extra = tool_binds(py) + tool_binds(_resolved(py))
+        inner = bwrap_argv(iso['bwrap'], project_root, argv, extra_ro=extra,
+                           cap_drop=iso.get('cap_drop', True))
+        cut = inner.index('--')
+        inner = inner[:cut + 1] + shim_argv(argv, python=py, values={'RLIMIT_NPROC': nproc})
+        return shim_argv(inner, python=py, values=safe)
+    return shim_argv(list(argv), python=python, values=values)
 
 
 def environment(paths):
