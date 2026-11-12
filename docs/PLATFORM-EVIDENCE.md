@@ -1,58 +1,40 @@
 # Platform evidence: what each platform claim rests on
 
-**Answer.** Linux: first real run (Debian 13, bwrap 0.12.0, 2026-11-12) FAILED: sandbox_unavailable on every child; fix in this release candidate is untested on a real Linux machine; not verified.
+**Answer. Linux: two real runs on Debian 13/bwrap 0.12.0: run 1 failed (fixed), run 2 authoring built, played and exported games with two remaining failures (fixed in this candidate, awaiting run 3). Windows 11: one real run: runner/exports pass, bundled demo failed on Blender 4.5 (fixed in this candidate), game not played by a human. Not verified.**
 
-[The recorded receipt](receipts/LINUX-RECEIPT-2026-11-12-debian13.md) is Grok Bot's run of plugin `6af4ba26`
-on a Debian 13 VM. It records a false READY checklist, then failed C7 and D8–D11 children with
-`bwrap: Creating new namespace failed: Resource temporarily unavailable`. No game compiled or exported. Its diagnostic
-isolated pre-bwrap NPROC as the trigger: the same argv worked without that limit. The precise exhausted kernel
-counter was not measured. The candidate moves NPROC inside the sandbox and makes the real runner execute the
-readiness child. **A second real Linux run is required**; Mac simulation is not that evidence.
+"Played" in the Linux receipt means bot playtests, not a human seeing/hearing a game. Windows exports came from the diagnostic Python-builder project, not the failed default-builder demo. Candidate repairs have local Mac execution/simulation evidence only; they are not native platform acceptance.
 
-The supplied receipt contains quoted lines and output-file references, not the referenced raw output attachments.
-Those files are not reproduced or invented here. Missing Hermes (`hermes: command not found`) was the tester VM's
-prerequisite, not a plugin regression; the Hermes integration step was skipped.
+## Exact receipt custody
 
-| Platform | Status for this release | Basis |
+The three received `RECEIPT.md` bodies are copied byte-for-byte in the source repository. Windows `<user>` / `<pc>` placeholders are retained; `box` in the second Linux receipt is the supplied machine/account alias, not a personal name. Raw `outputs/` attachments were read for diagnosis but are **not shipped or committed**. These exact raw bodies are repository-only so their alias paths do not enter the install package.
+
+| Run | Source commit | Raw receipt in the source repository |
 |---|---|---|
-| macOS | **Verified** on the development Mac | Repository test/package receipts (`docs/*-RESULT.md`, repository only); candidate preservation checks are in LINUXFIX-RESULT |
-| Windows 11 | **Built and simulated, not verified** | Mac simulation; owner-relayed summaries for older packages, no receipt |
-| Linux | **First real run failed; candidate fix awaiting second run; not verified** | [Debian receipt](receipts/LINUX-RECEIPT-2026-11-12-debian13.md); candidate simulation tests on Mac only |
+| Debian 13 run 1 | `6af4ba26` | [LINUX-RECEIPT-2026-11-12-debian13-run1.md](https://github.com/Qhantom-Labs/hermes64/blob/post-submission/platforms/docs/receipts/LINUX-RECEIPT-2026-11-12-debian13-run1.md) |
+| Debian 13 run 2 | `acbcb657` | [LINUX-RECEIPT-2026-11-12-debian13-run2-linuxfix.md](https://github.com/Qhantom-Labs/hermes64/blob/post-submission/platforms/docs/receipts/LINUX-RECEIPT-2026-11-12-debian13-run2-linuxfix.md) |
+| Windows 11 run 1 | `6af4ba26` | [WINDOWS-RECEIPT-2026-11-12-win11-run1.md](https://github.com/Qhantom-Labs/hermes64/blob/post-submission/platforms/docs/receipts/WINDOWS-RECEIPT-2026-11-12-win11-run1.md) |
 
-A receipt is necessary, not sufficient, for a verified claim: the relevant paths must actually pass for the exact
-candidate. A failed run does not establish acceptance. "Tested by the owner" stays "Not yet." here: the Linux
-executor was an agent, and no successful owner-run candidate receipt exists.
+Source links identify the intended public-branch custody location, not a claim that this local candidate has been published.
 
-## Claim by claim
+## Findings and their limits
 
-"Relayed summary" below means the owner's 2026-11-10 Windows notes in the maintainers' decision log, not raw
-output. The older Windows package was `cd15b620`; its local compatibility fix was never received.
-
-| Claim | Recorded evidence | What this release may say |
+| Finding | Established evidence | Candidate change / remaining gate |
 |---|---|---|
-| Windows plugin load, `check_install` 4962/4962, checklist READY, discovery, `/hermes64 new` and two bot playtests | Relayed summary 1, Windows 11 25H2, Hermes 0.18.2, older package `cd15b620` after an unreceived local fix | Not verified for this release |
-| Windows Blender failure | Relayed summary 1, no error text; older package defaulted to Blender | Cause unknown; current auto builder falls back to Python when Blender is absent |
-| Windows export/boot and older examples at 59–60 FPS | Relayed summary 1 | Not verified for this release |
-| Mac-exported Windows game audio, dodge, push/pull, F5/F9, Chrome web play | Relayed summary 2; found a save defect later fixed, not retested on PC | Older exported-game evidence only; save fix not verified on PC |
-| Windows Job Object opt-in, tree kill, process/memory caps, suspended assignment | No native receipt; inferred opt-in is not evidence | Simulated only |
-| WIN3 script, Windows fetch and Studio | No native receipt | Not run on Windows |
-| Linux prerequisites | Debian receipt A1/A3/B4: bwrap, Python/numpy/Pillow, official Godot archives/templates; A2 lacked Hermes | Recorded prerequisites only; no successful authoring |
-| Linux checklist READY | Receipt B5/F14, but every official child then failed | **False positive in the old probe**, not acceptance; fixed readiness path awaits retest |
-| Linux confinement, timeout, fork cap | Receipt C7: sandbox_unavailable; fork exhaustion skipped on shared VM | Not verified; second C7 required |
-| Linux demo/new/create flow/playtest/web/windows export | Receipt D8–D11: sandbox_unavailable or no current build | Failed; candidate awaits D8/D9/D10 and downstream retest |
-| Linux macOS-export refusal | Receipt D11 returned the specified export_target refusal | Refusal recorded only; no authoring or export acceptance |
-| Linux web picture/sound, Hermes integration | D12/E13 skipped: no browser/build, no Hermes | Not run |
-| Linux unconfined fallback | F14 exercised opt-in/disclosure; timeout/setsid check failed | Not a sandbox guarantee or verified fallback acceptance |
-| macOS authoring/tests/package | Existing repository receipts | Verified on development Mac; not cross-platform evidence |
+| Linux run 1: every official child failed namespace creation | Same bwrap argv worked without the outer NPROC limit. Old readiness bypassed the official limit shim. | LINUXFIX moved NPROC inside bwrap and exercised real `Runner.run`; run 2 confirms official children start. Exact original exhausted kernel counter remains unknown. |
+| Linux run 2 B5 / C7a | Actual readiness child exited 0. Inside NPROC 514 (baseline 2 + 512); host soft/hard ceiling remained 63991. | No task-limit change here. Bounded fork exhaustion was skipped on the shared machine; enforcement under exhaustion remains unmeasured. |
+| Linux run 2 C7: 11/12 | Only `extra=['PWD']`; `env -i bwrap ... env` independently prints PWD for bwrap's working directory. Other confinement/timeout checks passed. | Allow only bwrap-created PWD in the sheet; provider/Hermes/sentinel variables remain forbidden. C7 must reach 12/12 with `--no-fork` on run 3. |
+| Linux run 2 D8/D9/D11 | Demo and new games built and passed bots. Web/Windows exports succeeded; macOS refused as designed. ffmpeg 7.1.5 now found. | Rerun B5, C7, D8–D11 on this exact candidate. No human web picture/audio or Hermes integration was exercised. |
+| Linux run 2 D10 | All stages through playtest done; capture Godot exited 1: `X11 Display is not available`, then Wayland failed. Report never ran. | Private Xvfb + software Compatibility/OpenGL3 inside existing sandbox; actual tiny PNG probe before use. Missing/failed route gives both visual gates `not_run`, exact reason and CREATE-REPORT.md, not a pass. Native route awaits run 3. |
+| Linux D11 first attempt | All tool results printed, then `NameError: name 'EOF' is not defined`; clean repeat succeeded. | Tester heredoc typo, not a plugin defect. No code repair for this. |
+| Windows C5 | Fresh clone files changed to CRLF (1,137; retry 650); GitHub ZIP passed every manifest hash. | Existing root `* -text` rule was **omitted from the package/publish tree**. Ship `.gitattributes`; keep hashes strict, explain CRLF damage. Test fresh default clone and ZIP again. |
+| Windows C6/D10 | READY claimed Blender OK without a version. Default auto picked 4.5.11 LTS; material `node_tree` was None at `_nt_clear`. | Enable nodes only when absent; existing 5.x tree untouched. Prefer 5.2.1 during automatic non-Mac discovery; show version and warning for all other versions/unknown. Real 4.5 run pending. |
+| Windows D9/D12 | Six runner checks pass; detached/breakaway survivors absent. Diagnostic Python-builder project passed bots/web/Windows export and Windows headless boot. | No claim about unexercised memory-cap exhaustion, console flash, picture/sound/save or default Blender builder. Job Object still has no OS network/write confinement. |
+| Windows chat / human steps | Configured model returned HTTP 404; C7/D11/D13 chat rebuild skipped. E14–E16 and console flash not observed. | Require a working configured chat model; mark visual/audio steps human-only. No inference/config repair is implied. |
 
-## Corrections and receipt custody
+## Platform status
 
-- Historical PLATFORMS-RESULT describes the state before this first Linux receipt; its "never run" lines are historical,
-  not current claims. README, LINUX.md and this table now record the failed first run rather than "never run".
-- PLATFORM-PARITY separates implementation from native evidence and links here; no Windows claim is upgraded.
-- Linux task limits still exist. Namespace teardown is **not** claimed to be a process-count cap. The bounded fork
-  probe must observe positive fork headroom and EAGAIN below its safety bound on an approved dedicated Linux VM.
-- Use the second-run addendum in [LINUX-TEST-SHEET.md](LINUX-TEST-SHEET.md). Keep both receipts, with exact SHAs.
-- New receipts normally go in `docs/receipts/<platform>/<YYYY-MM-DD>-<machine alias>/`, with sanitized raw outputs.
-  The supplied first-run receipt is retained at the direct path linked above. Do not add names, hostnames, tokens,
-  environment/config contents, or success claims for skipped steps.
+- **macOS:** existing development-Mac acceptance remains; candidate sandbox/output and Blender-asset preservation checks are reported in repository-only `docs/PLATFORMS2-RESULT.md`.
+- **Linux / Windows:** **Not verified.** A partial real receipt does not accept this candidate. Run the PLATFORMS-2 addenda in [Linux sheet](LINUX-TEST-SHEET.md) and [Windows sheet](WINDOWS-TEST-SHEET.md).
+- **Tested by the owner: Not yet.** The executors were agents (Grok Bot/Prometheus), not owner acceptance. Per-command owner approval on the PC is not a human game playtest.
+
+Earlier prose-only Windows reports and the older edited first-run Linux receipt are historical. The three exact bodies above and their raw outputs, not guesses about those older reports, establish these findings. No network, install, push, catalog/platform-pin change or real-machine rerun was performed by this candidate lane.

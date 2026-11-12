@@ -47,7 +47,8 @@ def locate(tool, configured='', platform=None, env=None):
                 _refuse_sandboxed_package(tool, configured, result)
             return result
         fail('missing_tool', '{} not found at configured path {!r}; change {}_path to an existing local executable'.format(tool, configured, tool))
-    skipped = []
+    skipped, blenders = [], []
+    choose_version = tool == 'blender' and (linux or platforms.is_windows(platform))
     for candidate in _default_candidates(tool, DEFAULTS[tool], platform, env):
         result = executable(candidate)
         if result:
@@ -56,7 +57,17 @@ def locate(tool, configured='', platform=None, env=None):
                     _refuse_sandboxed_package(tool, candidate, result)
                 skipped.append('%s (%s)' % (candidate, platforms.sandboxed_package(candidate, result)))
                 continue
+            if choose_version and candidate != platforms.override(tool, env):
+                from .blender_version import probe, rank
+                score = rank(probe(result))
+                if score == 0:
+                    return result
+                if result not in [p for _score, p in blenders]:
+                    blenders.append((score, result))
+                continue
             return result
+    if blenders:
+        return min(blenders, key=lambda item: item[0])[1]  # stable: discovery order breaks ties
     fail('missing_tool', '{} not found; configure {}_path (or {}). Checked {} and PATH. Nothing was installed.{}'.format(
         tool, tool, platforms.OVERRIDE_ENV[tool], _checked(tool, platform, env),
         (' Skipped ' + ', '.join(skipped) + ': ' + platforms.SANDBOXED_PACKAGE_NOTE) if skipped else ''))

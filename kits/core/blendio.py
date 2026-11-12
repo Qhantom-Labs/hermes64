@@ -28,6 +28,10 @@ def reset():
 
 
 def _nt_clear(m):
+    # 4.x materials start without nodes; 5.x already has a tree. Do not touch the
+    # deprecated use_nodes property on 5.x: preserve its exported material bytes.
+    if m.node_tree is None:
+        m.use_nodes = True
     nt = m.node_tree
     for n in list(nt.nodes):
         nt.nodes.remove(n)

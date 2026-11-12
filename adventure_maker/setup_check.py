@@ -1,7 +1,8 @@
 """One-step setup checklist and explicit opt-in fetch; stdlib only.
 
-Checklist/doctor never download or launch Godot. Only an explicit --fetch plus confirmation invokes
-pinned first-run fetching; the selected Python is probed for numpy as before.
+Checklist/doctor never download. Mac behavior is unchanged; Linux separately probes a
+tiny rendered capture through Runner, and non-Mac Blender rows probe --version. Only
+explicit --fetch plus confirmation invokes pinned first-run fetching.
 """
 import json
 import os
@@ -132,7 +133,7 @@ def check(settings, probe_numpy=None, blender_present=None, templates=None, stub
     """Rows of {item, status: ok|missing|optional, detail, needed_for, command}. Arguments after ``settings``
     exist so tests can simulate a machine without the programs. A simulated numpy probe without a Pillow probe
     leaves Pillow unprobed (reported as not importable) rather than starting a real interpreter."""
-    from . import builders, doctor, stubs, audio_formats
+    from . import builders, doctor, stubs, audio_formats, platforms
     from .export import TEMPLATES
     from .safety import Fault
     rows = []
@@ -156,6 +157,12 @@ def check(settings, probe_numpy=None, blender_present=None, templates=None, stub
         add('Godot 4.6.2', 'ok', gpath + ('' if gver else ' (version not read on this system; exports check it)'),
             'playing and exporting games')
 
+    if platforms.host() == 'linux':
+        from .linux_display import status as display_status
+        display = display_status(settings)
+        add('capture display', 'ok' if display['ok'] else 'optional',
+            display['detail'] if display['ok'] else 'missing, install xvfb (sudo apt install xvfb); reason: ' + display['detail'],
+            'rendered style/N64 gates (logic builds and bots still run)')
     official = templates if templates is not None else doctor.export_templates()
     st = stub_status if stub_status is not None else stubs.status()
     have = {t: (t in official.get('targets', [])) or st['targets'].get(t, False) for t in TEMPLATES}
@@ -206,6 +213,16 @@ def check(settings, probe_numpy=None, blender_present=None, templates=None, stub
     add('Blender', 'ok' if present else 'optional', 'found' if present else
         'not found (optional: with builder=auto, room models use the Python builder)',
         'builder=blender and character review renders', None)
+    from . import platforms
+    if present and platforms.host() in ('linux', 'win32'):
+        from . import blender_version
+        from .runner import locate
+        try:
+            version = blender_version.probe(locate('blender', settings.get('blender_path') or ''))
+        except Fault:
+            version = None
+        rows[-1].update(status='ok' if version == blender_version.TESTED else 'optional',
+                        detail=blender_version.note(version))
 
     fexe, why = ffmpeg if ffmpeg is not None else audio_formats.find_ffmpeg()
     add('Audio', 'ok', 'WAV read in pure Python; OGG Vorbis and MP3 play natively in Godot', 'game sound', None)

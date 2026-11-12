@@ -1,79 +1,45 @@
 # Platform parity: macOS, Windows and Linux
 
-**Answer.** Every plugin feature has a macOS, a Windows and a Linux path. **macOS is verified** on the development
-Mac. **Windows 11 is built and simulated, not verified**: the only real-PC reports are two owner-relayed prose
-summaries about older packages (windows-lane `cd15b620` and Mac-exported games), with no receipt. **Linux's first
-real run failed every official child** (Debian 13, bwrap 0.12.0, 2026-11-12, plugin `6af4ba26`). The candidate fix
-awaits a second Linux run; Linux is **not verified**. What each claim rests on:
-[PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). The real tests: [WINDOWS-TEST-SHEET.md](WINDOWS-TEST-SHEET.md) and
-[LINUX-TEST-SHEET.md](LINUX-TEST-SHEET.md). A row changes to "verified" only from a receipt under `docs/receipts/`.
+**Linux: two real runs on Debian 13/bwrap 0.12.0: run 1 failed (fixed), run 2 authoring built, played and exported games with two remaining failures (fixed in this candidate, awaiting run 3). Windows 11: one real run: runner/exports pass, bundled demo failed on Blender 4.5 (fixed in this candidate), game not played by a human. Not verified.** Linux "played" means bots. macOS retains its development-Mac acceptance; nothing here upgrades another platform.
 
-"Tested here" = tests and probes on the Mac. "Real machine" = what a real Windows PC or Linux computer showed.
+Receipt custody and exact limitations: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Rerun sheets: [Linux](LINUX-TEST-SHEET.md), [Windows](WINDOWS-TEST-SHEET.md). Tested by the owner: **Not yet.**
 
-## Feature table
+## Implementation versus real evidence
 
-| Feature | Windows path | Linux path | macOS path | Tested here | Real machine | Gaps |
-|---|---|---|---|---|---|---|
-| Install / load in Hermes | `hermes plugins install Qhantom-Labs/hermes64 --enable`, or the zip with `Expand-Archive`; `host_compat` adapter for Hermes 0.18.2-0.20.0 | same `owner/repo` install (a bare catalog-name install follows the catalog entry's platform list, set outside this repository) | same; native host API on 0.20.1+ | `test_merge4_windows_load` (win32, POSIX `os` removed), `test_host_compat`, `test_registration` | Windows: relayed, older package, after a local fix that was never received; no receipt. Linux: E13 skipped (Hermes absent) | the 0.18.2 adapter is unproven on a real PC |
-| `check_install` (package check) | `py tools\check_install.py`; names CRLF damage and paths >= 250 chars | `python3 tools/check_install.py` | same | `test_windows_paths::InstallCheck`, `test_package` | Windows: relayed number for an older package; no receipt. Linux: B4 passed with extra .git warnings | candidate ignores only root .git metadata |
-| Doctor / setup checklist | `--windows-checklist`; setup **Child runner** row | `--linux-checklist` (Python, numpy, runner, Godot, Pillow, templates, Blender, ffmpeg, disk); setup **Child runner** row | `~/Library/Application Support/Godot/...`; no runner row | `test_windows_paths`, `test_linux_platform::ChecklistAndMessages` | Linux B5 falsely printed READY before every official child failed | candidate requires a real runner child; second run pending |
-| Find Godot / Blender / Python | `HERMES64_*` env, the fetch cache, `%LOCALAPPDATA%\Programs\Godot`, Program Files, winget, scoop, Steam (Blender), portable Blender zips, Downloads, PATH | `HERMES64_*` env, official 4.6.2 file names in `/usr/local/bin`, `/usr/bin`, `/opt`, `~/.local/bin`, `~/bin`, `~/Applications`, `~/Downloads`; Blender tarball folders; snap/flatpak detected and skipped | `/Applications`, Homebrew, PATH, Hermes's own Python | `test_windows_paths::Candidates`, `test_windows_lane_fixes::BlenderOnWindows`, `test_linux_platform::Discovery` | Windows: relayed "Blender failed" (older package defaulting to `builder=blender`; error text never sent) | Linux discovery and snap/flatpak handling unproven |
-| `/hermes64 new`, create, edit, build, playtest | runner with a Job Object (opt-in `HERMES64_WINDOWS_RUNNER=job`) | runner inside bubblewrap (default; fail closed), or unconfined by opt-in | runner under `sandbox-exec` | `test_platform_parity::WindowsRunnerEndToEnd`, `test_linux_platform::LinuxRunnerEndToEnd` (real local child, fake bwrap) | Windows: relayed for an older package; no receipt. Linux: D8–D11 failed with sandbox_unavailable or no current build | candidate needs the second Linux sheet run |
-| Export `windows` | `.exe` + `.pck` + zip; on Windows also boots the `.exe` headless | cross-export as from a Mac | cross-export | `test_windows_paths::Export` | Windows: relayed boot/FPS for Mac-made builds; no receipt | Linux cross-export unproven |
-| Export `web` | same exporter | same exporter; the preset names the hash-checked template copy inside the project (bwrap hides `$HOME`) | same; Studio 127.0.0.1 server | exporter tests, `test_linux_platform::Refusals` | Linux D11 failed (no current build); D12 browser play skipped | browser play unverified for these builds |
-| Export `macos` | refused with one sentence (needs codesign) | refused with the same sentence | `.app` | `test_windows_paths::Export`, `test_linux_platform::Refusals` | n/a (by design) | not fixable without Apple tooling |
-| Native Linux export | n/a | **not supported yet** (no Linux template pinned or kept) | n/a | `test_linux_platform` | n/a | needs a pinned Linux template |
-| Studio (Desktop tab, dashboard API) | shelf in checked-path mode; web play on 127.0.0.1; **PLAY WINDOWS BUILD** when the backend is Windows | same code as macOS | descriptor reads; **PLAY MACOS BUILD** (`open`) | `StudioShelfPathMode`, `test_native_launch_target_windows`, `studio/harness/test_shared.mjs`, `test_windows_lane_fixes::StudioWindowsLaunch` | none | the shelf refuses every reparse point (OneDrive placeholders may be hidden) |
-| Audio import (ffmpeg) | `CREATE_NO_WINDOW`; `ffmpeg.exe` via setting/PATH/Program Files | PATH / common folders | Homebrew / PATH | audio tests | none | ffmpeg runs outside the runner on every OS |
-| Godot + templates fetch | pinned SHA-512 Windows zip into `%LOCALAPPDATA%\hermes64\` | **refused**: no Linux archive SHA-512 is pinned (docs say how a maintainer adds one) | universal zip into `~/Library/Caches/hermes64/`, quarantine handling | `test_godotfetch` (loopback fixture), `test_linux_platform::FetchPins` | none (no real download anywhere) | a real fetch on every OS |
-| Packaging | same package; `.gitattributes * -text`; NTFS-safe names | same package | same | `test_package`, `test_windows_paths::RepoFileNames`, `test_platform_parity::LongPathsAndText` | Windows: relayed install of an older package | deep install roots can pass MAX_PATH; `check_install` warns |
-| Runner / sandbox | Job Object: suspended start then assign, kill-on-close tree, 64 processes, 8 GB, private profile folders, system-only PATH, CRLF normalised; **no network block, no write confinement**; refused without opt-in | bubblewrap: new namespaces, no network, read-only system, home hidden, project the only writable folder, rlimits, PID-namespace tree kill; functional probe; refused without a working bwrap; `unconfined` opt-in = rlimits + process-group kill only | `sandbox-exec`: no network, writes only in the project; process-group kill | `test_platform_parity`, `test_windows_lane_fixes::SuspendedStart`, `test_linux_platform` | Linux C7 failed; unconfined F14 timeout check failed; candidate retest pending | macOS and the Linux unconfined mode: a grandchild that starts its own session survives the process-group kill |
-| Children outside the runner | `character_gate` (CLI fallback only), `static_preview`, `nbchars/preview`, ffmpeg run `subprocess.run` directly (argv lists) | same | same, also without `sandbox-exec` | `test_platform_parity::SubprocessQuotingInSource` | none | not sandboxed on any OS; on Windows they run even without the opt-in; `nbchars/preview` passes the full environment |
-| Exported game runtime | GL Compatibility (OpenGL 3.3); saves `%APPDATA%\Hermes64\<id>` | no native Linux build; web builds run in a browser | `~/Library/Application Support/Hermes64/<id>` | byte checks | Windows: relayed boot/FPS and play checks for older Mac-made builds; save fix not re-run | web play on Linux unverified |
+| Feature | Windows path | Linux path | macOS path | Real receipt / remaining gap |
+|---|---|---|---|---|
+| Install / load | Git clone or checksum-checked ZIP + Expand-Archive/robocopy; old-host adapter | owner/repo install or ZIP; bare catalog name may exclude Linux | repository install / ZIP | Windows 0.18.2 enabled plugin, chat model 404 blocked chat tests. Linux Hermes absent, integration not run. No nonexistent install `--ref` flag. |
+| `check_install` | `py tools\check_install.py`; strict hashes, CRLF/long-path diagnostics | `python3 tools/check_install.py` | same | Windows clone failed, ZIP passed. `.gitattributes` was in development source but missing from package; now included with `* -text`. Root `.git/` metadata ignored, nested extras still warn. |
+| Doctor/setup | Job Object row; Blender version + visible warning outside 5.2.1 | Real Runner confinement readiness + separate real tiny rendered PNG probe; exact missing-display fix | existing rows unchanged | Windows C6 lacked version check. Linux run 2 B5 real-runner child passed, but D10 exposed missing display; new capture readiness awaits run 3. |
+| Discovery | env/settings overrides; Program Files, winget/scoop/Steam/portable Blender | official Godot names, `/usr`, `/opt`, user folders/tarballs; snap/flatpak refused | Homebrew, `/Applications`, PATH | Automatic non-Mac Blender discovery prefers measured 5.2.1, then compatibility candidates. Explicit override wins. Mac order and character-exporter selection unchanged. |
+| Create/edit/assets/bots | Opt-in Job Object | bubblewrap default; explicit unconfined fallback | sandbox-exec | Linux run 2 demo/new/bots pass, D10 failed only capture/report. Windows Python-builder diagnostic passes; default 4.5 demo failed, candidate fix needs native rerun. |
+| Materials | 4.2–4.5 LTS compatibility repair, 5.x path | same code | 5.2.1 path preserved | Enable `use_nodes` only if tree is None. 5.2.1 verified on Mac; 4.5 LTS fix untested on a real run until the Windows re-run. |
+| Rendered style/N64 | interactive desktop | Private Xvfb inside sandbox + Compatibility/OpenGL3 software rendering; no host socket/auth bind | existing Aqua window path | Godot headless uses a dummy renderer, not evidence of visual fidelity. On missing/failed Linux capture probe: both gates not_run with reason, CREATE-REPORT.md still written. No false pass. |
+| Export windows | exe+pck+zip, headless boot smoke | cross-export | cross-export | Windows D12 diagnostic project boot passed; Linux run 2 exported. Candidate/default-builder reruns pending; human play absent. |
+| Export web | same exporter | same exporter; template copy inside project | same, Studio loopback server | Both real runs exported; no human browser picture/audio tested. |
+| Export macos | explicit refusal (codesign needs Mac) | same refusal | signed local app | Both receipts recorded intended refusal. |
+| Native Linux export | n/a | not supported (no template pinned) | n/a | No new target or pin added. |
+| Studio | checked-path shelf, PLAY WINDOWS BUILD + explicit confirmation | same common backend | descriptor shelf, PLAY MACOS BUILD | Native PC shelf/launch and human E16 not run. |
+| Audio import | sanitized ffmpeg child, no console | parent PATH/common folders; scrubbed child | Homebrew/PATH | Linux ffmpeg 7.1.5 found in run 2. Full native audio import not exercised. |
+| Godot fetch | pinned Windows archive, explicit consent | refused until Linux pin is separately added | pinned universal archive | PC reused existing engine/templates. No fetch in this lane, no pin/catalog edits. |
+| Runner | suspended Job assignment, tree cleanup, 64 processes/8 GB, private folders; **no OS network/write confinement** | namespaces, no network, hidden home, read-only system, project-only host write, outer safe limits then inner NPROC | existing sandbox policy and process-group cleanup | Windows D9 6/6; Linux C7 11/12 only PWD failure. Fork exhaustion/memory exhaustion unmeasured. |
+| Children outside Runner | sanitized version/probe/preview/ffmpeg helpers | same; capture itself stays in Runner | existing behavior | Sanitization is not OS confinement; child-environment audit lists sites and intentional exceptions. |
+| Runtime/save | GL Compatibility, `%APPDATA%\Hermes64\<id>` | web build; no native Linux target | existing custom user folder | Windows headless boot is not human graphics/audio/save acceptance. |
 
-## The runner off macOS
+## Safety and preservation
 
-- **Windows** without `HERMES64_WINDOWS_RUNNER=job`: every child is refused (`sandbox_unavailable`) with the sentence
-  that says how to opt in. With it, children run in the Job Object above; the child is created suspended, put in
-  the job, then resumed (closed in rc9: before, a grandchild started in the gap between start and assignment could
-  escape the kill).
-- **Linux**: [LINUX-RUNNER-DESIGN.md](LINUX-RUNNER-DESIGN.md). Without a bwrap that passes the probe, every child is
-  refused with the cause (missing bwrap, Ubuntu AppArmor, userns sysctls, container, WSL 1) and the fix; the owner
-  may opt in to `HERMES64_LINUX_RUNNER=unconfined` (no OS-enforced network or write confinement; process-group kill
-  and rlimits only), disclosed in doctor, setup, the `/hermes64 new` reply and every run result.
-- **Other systems**: refused.
+- Every platform keeps relative-path/NTFS-reserved-name, traversal, symlink/reparse and guarded project rules in `safety.py`.
+- Linux still fails closed without working bwrap unless the owner knowingly opts into `HERMES64_LINUX_RUNNER=unconfined` (no OS-enforced network/write confinement). READY requires the real confined runner child, not fallback availability.
+- NPROC remains an inner brake (visible namespace tasks + 512, inherited ceilings clamped). PID-namespace teardown is lifetime cleanup, not a task-count cap. Run 2 observed 514 inside / 63991 unchanged outside; bounded fork exhaustion was skipped on the shared machine.
+- The C7 allowlist adds only PWD, generated by bwrap 0.12.0. Provider/Hermes variables remain forbidden. Display wrapper adds only its own private DISPLAY and software-GL flag after sanitization.
+- No changes to `runtime/godot/**`, Mac sandbox policy/environment/argv, template/fetch pins, catalog yaml, or exporter-parity verdict. Existing parity was already STALE; changing blendio's source fingerprint must not falsely refresh it.
 
-## Same rule on every OS (safety.py)
+## Local tests, not native acceptance
 
-`adventure_maker/safety.py`, so a project made on one OS opens on another:
-- `relative()` refuses NTFS-reserved device names (`con`, `nul`, `aux.txt`, `com1`-`com9`, `lpt1`-`lpt9`), a trailing
-  dot or space and `<>"|?*`, plus `\`, `:`, drive letters, UNC and traversal.
-- `inspect_path()` refuses directory junctions and symlinks reported as reparse points (`st_reparse_tag`
-  name-surrogate bit); OneDrive/cloud placeholders are not name-surrogates and stay allowed. No effect on macOS or
-  Linux (`st_reparse_tag` absent).
+`tests.test_platforms2` covers Blender tree-None and 5.x no-touch controls; version/discovery/warnings; manifest/CRLF/Git checkout/publish-tree preservation; PWD with secret negative controls; Xvfb route argv, sanitized real stand-in children, real-run capture protocol failures; create/report no-display continuation.
 
-## Simulation tests
+Related suites include `test_linuxfix`, `test_linux_platform`, `test_windows_paths`, `test_windows_lane_fixes`, `test_platform_parity`, `test_reviewfix_childenv`, `test_windows_gate`, package/registration/catalog/hub/schema and affected create/audit/builder suites. Full executed counts and asset/replay/output digest results are in repository-only `docs/PLATFORMS2-RESULT.md`.
 
-Each has a known-bad control next to it.
+## Not verified
 
-| File | What runs |
-|---|---|
-| `tests/test_platform_parity.py` | win32 runner end to end with a fake `Popen`/Job and POSIX `os` functions removed; subprocess quoting round trips; no-sandbox refusals; CRLF; drive letters and backslashes; case-insensitive and reserved names; long paths; hard-coded `/`; no shell in source |
-| `tests/test_windows_lane_fixes.py` | suspended start against a fake `kernel32` (assign before resume, only the child's thread, every failure kills the child), THREADENTRY32 layout, CREATE_SUSPENDED in `Popen`, Blender candidates and newest-first order, the Studio Windows flag, no console window for setup and character-gate probes |
-| `tests/test_linux_platform.py` | bwrap argv (namespaces, read-only system, minimal `/etc`, merged-usr symlinks, tool binds, project the only writable path, home hidden, argv untouched); the rlimit shim really lowering limits; probe parsing and every named cause; fail closed, exact-value opt-in, bwrap winning; the real POSIX run loop through bwrap/unconfined command lines (timeout, output cap, scrubbed env, isolation tag); macOS argv and environment unchanged; discovery with snap/flatpak; the missing Linux pin; checklist text; refusals |
-| `studio/harness/test_shared.mjs` | the Studio reducer: PLAY WINDOWS BUILD only on a Windows backend, the same explicit YES confirm, macOS entry unchanged |
-
-## Parity patches
-
-The patches in [parity-patches/](parity-patches/) for other lanes are already contained in this tree:
-`audio_import.py` passes `CREATE_NO_WINDOW` on Windows and the locomotion spec is read as UTF-8 (both
-`audiopipe-ffmpeg-no-window.patch` and `chars-locomotion-utf8.patch` pass `git apply --check -R`, so they are
-applied); `rc3-windows-runner.patch` is history for the rc3 integrator. The Studio Windows launch button this page
-once listed as missing is in rc9.
-
-## NOT verified
-
-- Everything above on a real Windows PC or Linux computer for this release.
-- That an earlier PC run had `HERMES64_WINDOWS_RUNNER=job` set (inferred from children running).
-- Job Object behaviour on a real PC (suspended start, tree kill, memory cap); bubblewrap behaviour on any real
-  distribution; audio import, the Godot fetch, Studio and web builds in a browser on Windows or Linux.
+This exact candidate on real Windows/Linux; Linux Xvfb/Mesa rendering and fork-cap exhaustion; Windows 4.5 default builder; human console flash, graphics/audio/save and Studio play; Linux Hermes integration. Simulation, Mac output preservation and a successful headless boot do not accept those paths.

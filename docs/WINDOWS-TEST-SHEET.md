@@ -1,12 +1,11 @@
-# Windows test sheet v4 (about 60 minutes)
+# Windows test sheet v5 (about 60 minutes)
 
-**Every command on this sheet needs the PC owner's approval before it runs.** Commands are kept small: run one
-block, show the output, get the next approval. Nothing here has passed on this release yet: earlier Windows reports
-were prose about older packages, with no receipt ([PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). Record what really
-happens; never retype or tidy output. Receipt template:
+**Every command on this sheet needs the PC owner's approval before it runs.** Commands are kept small: run one block, show the output, get the next approval. One real Windows run recorded default Blender 4.5 failure, CRLF clone damage, runner 6/6 and diagnostic Python-builder export success; human play was not done ([PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). Use the PLATFORMS-2 rerun addendum below. Record what really happens; never retype or tidy output. Receipt template:
 [receipts/WINDOWS-RECEIPT-TEMPLATE.md](receipts/WINDOWS-RECEIPT-TEMPLATE.md).
 
 Rules:
+- Chat/model prerequisite: C7, D8, D11 and D13's chat rebuild need a configured working model. Obtain a harmless ordinary chat reply before those steps. A 404/model-not-found means SKIPPED prerequisite, not a plugin pass. CLI `chat -q` may send slash text to the model instead of dispatching it; type slash commands in an interactive chat.
+- **Human step** means someone at the PC must observe the desktop or hear/play the game: D9 console flash, D11's walking observation, E14–E16. An agent with no desktop/audio access records SKIPPED, never a visual/audio pass.
 - Use **PowerShell** (not cmd). Short folders: `C:\H64`. If `py` is missing, use the full path of a Python 3.9+
   `python.exe` everywhere `py` appears.
 - No secrets in receipts: no tokens, `.env`, `config.yaml`, user names or the PC name (write `<user>`, `<pc>`).
@@ -72,8 +71,15 @@ Rules:
    $PLUGIN = "$HH\plugins\hermes64"; Test-Path "$PLUGIN\plugin.yaml" | Tee-Object -Append "$R\outputs\c4-unzip.txt"
    ```
 
-   **PASS if** it prints `True` (not `plugins\hermes64\hermes64`). Without a zip: `hermes plugins install
-   Qhantom-Labs/hermes64 --ref COMMIT_UNDER_TEST --enable`, then `$PLUGIN = "$HH\plugins\hermes64"`.
+   **PASS if** it prints `True` (not `plugins\hermes64\hermes64`). The Hermes 0.18.2 plugin installer has no commit-selection flag. For an exact commit, use a fresh clone (not a reused damaged checkout):
+
+   ```powershell
+   git clone -c core.autocrlf=false https://github.com/Qhantom-Labs/hermes64 "$T\candidate-clone"
+   git -C "$T\candidate-clone" checkout COMMIT_UNDER_TEST
+   $PLUGIN = "$T\candidate-clone"; git -C $PLUGIN rev-parse HEAD
+   ```
+
+   Or use a checksum-checked GitHub archive ZIP, `Expand-Archive` it into a fresh staging folder, then copy its inner plugin folder into `$HH\plugins\hermes64` with `robocopy SOURCE "$HH\plugins\hermes64" /E` (exit codes 0–7 are success; 8+ failure). Inspect the ZIP's top folder: GitHub archives use `hermes64-<commit>`, release packages use `hermes64`. Stop the gateway and Hermes **with owner approval first** if the destination says "folder in use"; do not repeatedly overwrite a live loaded plugin. Back up/move the old plugin outside `plugins/` before replacement. Recheck C5 on the final destination, then enable and start a new chat.
 5. Package check:
 
    ```powershell
@@ -216,7 +222,7 @@ print('RESULT %s (%d/%d checks passed)' % ('PASS' if all(results) else 'FAIL', s
    the listed names, more than 1 MiB of output stops the child, and neither a detached grandchild nor a
    breakaway attempt survives the run (expected `BREAKAWAY_REFUSED 5`). The `INFO network` line is expected to say
    `OPEN`: record it (Windows does not block the network here, as documented). Also record: did any console window
-   flash during the probe (yes/no)?
+   flash during the probe (yes/no)? **Human step:** if the executor cannot see the PC desktop, record SKIPPED, not no flash.
 10. A bundled example through the whole pipeline (scaffold, compile, proof, build, bot playtest, web export):
 
     ```powershell
@@ -250,7 +256,7 @@ print('RESULT %s (%d/%d checks passed)' % ('PASS' if all(results) else 'FAIL', s
     **PASS if** the playtest and the web + windows export say `ok=True` (on Windows the export also boots the `.exe`
     headless), and `macos` says `ok=False` with `export_target` and `The macos target needs a Mac ... Nothing was
     exported.`
-13. Blender (only if it is installed; a report on an older package said Blender failed, cause unknown):
+13. Blender (only if installed; run 1's default 4.5.11 LTS demo failed on a None node_tree; this candidate fixes it):
 
     ```powershell
     Set-Location $PLUGIN; py -B -c "from adventure_maker import runner; print(runner.locate('blender'))" 2>&1 | Tee-Object "$R\outputs\d13-blender.txt"
@@ -263,9 +269,9 @@ print('RESULT %s (%d/%d checks passed)' % ('PASS' if all(results) else 'FAIL', s
 
 ## E. Playing (10 min)
 
-14. Double-click the exported `Adventure.exe` (from step 12's windows export). Play a minute: picture, sound,
+14. **Human step.** Double-click the exported `Adventure.exe` (from step 12's windows export). Play a minute: picture, sound,
     W/A/S/D, E, Esc menu, F5 quick-save then F9 quick-load. Record works / not per item and a screenshot.
-15. The web export in a browser (double-clicking `index.html` does not work):
+15. **Human step.** The web export in a browser (double-clicking `index.html` does not work):
 
     ```powershell
     py -m http.server --bind 127.0.0.1 8000 --directory 'WEB_FOLDER_FROM_STEP_12'
@@ -273,7 +279,7 @@ print('RESULT %s (%d/%d checks passed)' % ('PASS' if all(results) else 'FAIL', s
 
     Open http://127.0.0.1:8000/ in Edge or Chrome, click once, play a minute (do not press F5 in the browser).
     Ctrl+C stops the server. Record works / not and any red lines in the browser console (F12).
-16. Studio (only if your Hermes has the desktop app or dashboard with the Hermes64 tab): open it, pick the fox game,
+16. **Human step.** Studio (only if your Hermes has the desktop app or dashboard with the Hermes64 tab): open it, pick the fox game,
     choose **PLAY WINDOWS BUILD**, move to **YES**, confirm. **PASS if** the game starts outside Hermes. Record
     a screenshot of the menu. If the tab or the entry is missing, record that (SKIPPED with the reason).
 
@@ -292,6 +298,18 @@ print('RESULT %s (%d/%d checks passed)' % ('PASS' if all(results) else 'FAIL', s
     `$R\RECEIPT.md` from the files in `$R\outputs`, mark each step PASS / FAIL / SKIPPED with the reason, remove user
     and PC names, and hand the folder over as `docs/receipts/windows/<YYYY-MM-DD>-<machine alias>/`. Do not edit
     `WINDOWS.md` or "Tested by the owner"; maintainers update them from the receipt.
+
+## PLATFORMS-2 third-run addendum (Windows re-run)
+
+Record the exact candidate SHA and use fresh install/game folders. Re-run **C5 (both a default git clone and ZIP), C6, D10 default builder, D12 and D13**. This is the follow-up to the one Windows receipt, not a claim that two PC runs already occurred.
+
+- **C5:** in a new folder, default `git clone https://github.com/Qhantom-Labs/hermes64 ...`, checkout the exact candidate, then check_install. The shipped `.gitattributes` must prevent CRLF damage even if `core.autocrlf=true`. Separately install the checksum-checked ZIP with Expand-Archive/robocopy and run the same check. Record both outputs and exact SHAs. Stop gateway/Hermes with owner approval if the folder is in use; old damaged files must be replaced, not trusted because attributes were added later.
+- **C6:** Blender row must show the actual version, not plain OK. 4.5.11 LTS must show a visible WARNING (compatibility fix pending native rerun); 5.2.1 is the Mac-tested version. Unknown/newer versions cannot silently earn OK.
+- **D10:** use **default builder=auto** with installed 4.5 LTS, a fresh project (for example thaw2), and no diagnostic Python override. Require the full demo pipeline. Save Blender process/error JSON on any failure.
+- **D12:** use that successful default-builder project (replace the sample `fox` argv and `$Games` accordingly), bots + web/Windows export/headless boot and macOS refusal. Do not reuse thaw1py as proof of the default-builder fix.
+- **D13:** record discovery **and version**, then the explicit Blender room rebuild if chat is available. A working configured model is required; record prerequisite SKIPPED if it still returns 404.
+
+D9's console-flash observation and **E14–E16 are human steps**. They remain untested unless someone at the PC actually observes/hears/plays them. Owner acceptance remains Not yet until separately received.
 
 ## If something fails
 

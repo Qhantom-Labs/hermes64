@@ -1,14 +1,10 @@
 # Hermes64 on Linux
 
-**Status: Linux: first real run (Debian 13, bwrap 0.12.0, 2026-11-12) FAILED: sandbox_unavailable on every child; fix in this release candidate is untested on a real Linux machine; not verified.**
+**Status. Linux: two real runs on Debian 13/bwrap 0.12.0: run 1 failed (fixed), run 2 authoring built, played and exported games with two remaining failures (fixed in this candidate, awaiting run 3). Not verified.** "Played" means bot playtests, not a human playthrough.
 
-[First receipt](receipts/LINUX-RECEIPT-2026-11-12-debian13.md), plugin `6af4ba26`, tester Grok Bot: the old
-checklist falsely said READY, but no game compiled or exported. Removing only `RLIMIT_NPROC` from the pre-bwrap
-shim made the diagnostic command work. The candidate now applies NPROC **inside** bwrap, after namespaces exist,
-and readiness must execute the real Runner child with the same limits and environment. These fixes have only
-Mac-host simulation evidence and await a **second Linux run**: the addendum in [LINUX-TEST-SHEET.md](LINUX-TEST-SHEET.md).
-The tester's missing `hermes` command was a machine prerequisite, not a plugin defect; Hermes integration was skipped.
-Evidence rules: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md).
+Run 1 (`6af4ba26`) failed official children because NPROC was applied before namespace setup; run 2 (`acbcb657`) confirms the LINUXFIX repair starts real Runner children. Run 2's only failures were C7's bwrap-generated PWD and D10's no-display capture stopping before CREATE-REPORT.md. This candidate repairs both; run the **third-run addendum** in [LINUX-TEST-SHEET.md](LINUX-TEST-SHEET.md). The host NPROC ceiling stayed 63991 while the inner limit was 514; fork exhaustion was not exercised. Missing Hermes on that VM is a prerequisite gap, not a plugin defect.
+
+Three exact raw receipt bodies and the Windows run are indexed in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). They remain source-only; no outputs attachments ship. Tested by the owner remains Not yet.
 
 ## What you need
 
@@ -68,6 +64,14 @@ The old intake lookup checked only `HERMES64_FFMPEG` and a hash-pinned tools fil
 The separate bring-your-own audio importer already checked PATH. No child-environment widening was needed.
 `check_install` ignores a top-level `.git/` directory in a normal clone; nested metadata and unrelated extras still warn.
 
+## Capture display, checked before a game run
+
+Godot's `--headless` display uses a dummy renderer: it cannot supply real style/N64 screenshots. This candidate keeps the game's Compatibility renderer (`--rendering-method gl_compatibility --rendering-driver opengl3`) and starts an existing `Xvfb` inside the same sandbox, with software Mesa (`LIBGL_ALWAYS_SOFTWARE=1`). `xvfb-run` is not required; the plugin invokes Xvfb directly with `-displayfd`, a private `/tmp` socket, no TCP and no inherited DISPLAY, Wayland socket or host auth bind. No packages are installed automatically.
+
+The Linux doctor/setup performs a tiny **real rendered PNG through Runner.run**, not just executable discovery. Without Xvfb, or when the tiny capture fails (missing Mesa/GLX, startup error, engine failure), it says `capture display: missing, install xvfb (sudo apt install xvfb)` and the exact reason **before** the user starts authoring. Installing xvfb is a human-approved system action, not performed by doctor. A present Xvfb alone does not earn OK.
+
+Without that route the create flow still builds/bot-tests the game and writes `CREATE-REPORT.md`; style and N64 gates read **not run: no display on this machine**, with the reason, never passed. A Vulkan/lavapipe switch is not silently substituted because it changes the renderer being measured, and no usable Compatibility headless/offscreen renderer was established for 4.6.2. The private-Xvfb route awaits the real Linux third run.
+
 ## The child sandbox (bubblewrap)
 
 On macOS every Godot, Blender and Python child runs under `sandbox-exec`. On Linux the same rule is enforced with
@@ -77,7 +81,7 @@ is the only writable folder. The child and everything it starts are killed when 
 most) or prints more than 1 MiB. Limits: 16 GiB address space, 4,096 open files, no core files; the NPROC task
 limit is now installed **after** bwrap setup (visible same-UID tasks/threads plus 512, never raising inherited
 ceilings). PID-namespace teardown bounds lifetime, not fork count; the NPROC brake is retained. An inherited low
-limit can still prevent child forks. Native behavior and fork-cap enforcement await the second Linux run.
+limit can still prevent child forks. Run 2 observed the inner limit and cleanup; bounded fork-cap enforcement still needs a dedicated-machine run.
 Design and exact flags: [LINUX-RUNNER-DESIGN.md](LINUX-RUNNER-DESIGN.md).
 
 Hermes64 checks once per session that bubblewrap really works (through the real runner, including both limit
@@ -169,7 +173,7 @@ count (the same as on macOS).
 | Export `windows` | implemented (the same cross-export a Mac does), not verified |
 | Export `macos` | refused with one sentence: the macOS target needs a Mac (codesign) |
 | Native Linux export | **not supported yet**: no Linux export template is pinned or kept |
-| Screenshots, measured style audit | skipped: authoring is headless (no display inside the sandbox) and reported as skipped |
+| Screenshots, measured style audit | Private Xvfb + software Compatibility/OpenGL3 inside sandbox, only after real tiny PNG probe succeeds; otherwise both style/N64 gates not_run and CREATE-REPORT.md still written |
 | Studio (Desktop tab) shelf and web play | same code as macOS; not run on Linux |
 | Godot fetch (`setup --fetch`) | refused until a Linux SHA-512 pin exists |
 

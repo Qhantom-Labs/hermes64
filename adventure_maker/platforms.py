@@ -375,7 +375,8 @@ def windows_checklist(report=None, env=None, home=None):
     iso = isolation('win32', e)
     lines.append('%s  Child runner (%s): %s' % ('OK     ' if iso['available'] else 'OFF    ', iso['mode'], iso['note']))
     blender = (report.get('programs') or {}).get('blender') or {}
-    lines.append('%s  Blender (optional)' % ('OK     ' if blender.get('available') else 'absent '))
+    from .blender_version import row as blender_row
+    lines.append(blender_row(blender))
     lines.append('INFO     Long paths: keep the plugin and projects in short folders (e.g. C:\\H64) or enable '
                  'Windows long paths; unzip the plugin ZIP with Explorer or Expand-Archive, not git with autocrlf.')
     return lines
@@ -420,7 +421,8 @@ def linux_checklist(report=None, env=None, home=None, iso=None, disk=None):
                                        tpl.get('folder') or templates_dir('linux', e, h),
                                        ', '.join(tpl.get('targets') or []) or 'none'))
     blender = (report.get('programs') or {}).get('blender') or {}
-    lines.append('%s  Blender (optional)' % ('OK     ' if blender.get('available') else 'absent '))
+    from .blender_version import row as blender_row
+    lines.append(blender_row(blender))
     ffmpeg = report.get('ffmpeg') or {}
     lines.append('%s  ffmpeg (optional: FLAC/M4A/Opus/AIFF audio import)' % ('OK     ' if ffmpeg.get('available')
                                                                                else 'absent '))
@@ -428,9 +430,11 @@ def linux_checklist(report=None, env=None, home=None, iso=None, disk=None):
         free, folder = disk
         lines.append('%s  Disk space: %.1f GiB free in %s (keep at least %d GiB)' % (
             'OK     ' if free >= LINUX_DISK_MIN else 'LOW    ', free / 1024 ** 3, folder, LINUX_DISK_MIN // 1024 ** 3))
-    lines.append('INFO     Authoring is headless on Linux: Godot runs without a display, so screenshots and the '
-                 'measured style audit are skipped (reported as such). Web exports play in a browser from a local '
-                 '127.0.0.1 server (Studio Play, or python3 -m http.server --bind 127.0.0.1).')
+    from .linux_display import row as display_row
+    lines.append(display_row(report.get('capture_display') or {}))
+    lines.append('INFO     Linux logic builds/bots are headless; visual style/N64 gates require the tiny rendered '
+                 'capture probe above. Without it they read not run: no display on this machine; create still writes '
+                 'CREATE-REPORT.md. Web exports play in a browser from a local 127.0.0.1 server.')
     return lines
 
 

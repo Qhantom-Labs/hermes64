@@ -1,11 +1,8 @@
 # Hermes64 on Windows
 
-**Status: built and simulated, not verified on Windows.** All Windows behaviour below was built and checked on a Mac
-by simulation (patched `sys.platform`/`os.name`, `PureWindowsPath`/`ntpath` path tests, a fake `kernel32`, a grep
-gate, removed POSIX `os` functions). The only reports from a real PC are two owner-relayed prose summaries about
-**older packages**, with no receipt ([PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). The first real test of this
-release is [WINDOWS-TEST-SHEET.md](WINDOWS-TEST-SHEET.md); results go under "Tested by the owner" at the end, only
-from a receipt.
+**Status. Windows 11: one real run: runner/exports pass, bundled demo failed on Blender 4.5 (fixed in this candidate), game not played by a human. Not verified.**
+
+The `6af4ba26` receipt records Windows 11 Home, Hermes 0.18.2, runner D9 6/6, and bot/export/headless-boot success on a diagnostic Python-builder project. Default auto selected Blender 4.5.11 LTS and failed on a missing material node tree; C5 clone hashes failed after CRLF conversion, while ZIP hashes passed. Candidate fixes and exact source-only receipts: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Rerun the PLATFORMS-2 addendum in [WINDOWS-TEST-SHEET.md](WINDOWS-TEST-SHEET.md). Agent execution with per-command approval is not owner play acceptance; Tested by the owner stays Not yet.
 
 ## Install
 
@@ -37,6 +34,22 @@ Python: builds run the Python in the plugin setting `python_path` (or `HERMES64_
 numpy (and Pillow for JPEG references) in its own site-packages; children run it with `-I`, so user-site packages do
 not count. If a build stops on NumPy, set `python_path` to a `python.exe` that has it, for example a virtual
 environment's `Scripts\python.exe`.
+
+## Exact candidate install / locked folders
+
+Hermes 0.18.2 has no plugin-install commit-selection flag. Use a **fresh** `git clone -c core.autocrlf=false https://github.com/Qhantom-Labs/hermes64 C:\H64\candidate`, then `git -C C:\H64\candidate checkout COMMIT_UNDER_TEST`, or a checksum-checked GitHub ZIP. Do not reuse a clone whose bytes were already converted.
+
+For either staged tree, copy its inner plugin folder into the final destination with `robocopy`:
+
+```powershell
+$HH = Split-Path -Parent (hermes config path)
+$Source = 'C:\H64\candidate'    # or the extracted ZIP's inner hermes64-<commit> folder
+robocopy $Source "$HH\plugins\hermes64" /E
+if ($LASTEXITCODE -ge 8) { throw 'Plugin copy failed; do not enable it' }
+py -B "$HH\plugins\hermes64\tools\check_install.py"
+```
+
+First stop Hermes and the gateway **with owner approval** and back up/move any old plugin outside `plugins/`. If Windows says "folder in use", stop the gateway first; do not force repeated overwrites while it is loaded. GitHub archives use a `hermes64-<commit>` top folder; release ZIPs use `hermes64`. Verify the final destination's hashes, enable, then start a new chat. A configured working model is required for chat steps; HTTP 404/model-not-found is a prerequisite failure.
 
 ## What works where
 
@@ -106,10 +119,7 @@ Turn it on (PowerShell, current user, then restart Hermes):
   rc9) and the create, places, generators, hub and audio skills are shown on Windows; `hermes64-author`,
   `-characters`, `-cover`, `-gameplay-modules` and `-playtest-and-ship` still declare macOS only (they contain
   POSIX or repository-only commands), so Hermes does not offer them on Windows. The tools they describe still work.
-- **Blender**: an earlier report (older package) said "Blender failed" without the error text. That package
-  defaulted to `builder=blender`, so a PC without Blender fails that way; the default is now `builder=auto` (the
-  Python builder when Blender is not found). Blender is also searched in more places now (table above). A Blender
-  that is found but crashes is not replaced automatically: set `builder=python` deliberately.
+- **Blender**: supported compatibility targets are 4.2 LTS through 4.5 LTS and 5.x. **5.2.1 verified on Mac; 4.5 LTS fix untested on a real run until the Windows re-run.** The fix enables nodes only when `node_tree` is None; existing 5.x trees are untouched. Non-Mac automatic discovery prefers measured 5.2.1, then compatibility candidates; explicit `blender_path` / `HERMES64_BLENDER` still wins. Doctor prints the version, with a visible WARNING outside the exact tested version or when unreadable. Mac discovery and character-exporter selection stay unchanged. The version compatibility repair covers the static KITS builder. Character Blender export/review helpers are separate and still need 5.2.1; their 4.x compatibility is not claimed. A found Blender that fails is not silently replaced: deliberately select `builder=python` for diagnosis, not default-builder acceptance.
 
 ## Grep gate
 
@@ -145,10 +155,7 @@ template hashes, the privacy scanner, the `plugin.yaml` tool list. Developer too
 
 ## Not verified
 
-Everything in the table above on a real Windows PC, in particular: the Job Object runner starting Godot, Blender and
-Python (and the suspended start); Godot's stdout through pipes; the exported `.exe` starting, rendering, playing
-sound and saving; GPU drivers; SmartScreen wording; winget/scoop/Steam install folders; long-path behaviour; Hermes
-on Windows loading this package; the Studio shelf and the PLAY WINDOWS BUILD entry on NTFS.
+The exact candidate's default 4.5 builder and new checkout fix need a real PC rerun. D9 passed six runner checks and D12 passed headless boot on the diagnostic Python-builder project; those do not cover console flash, graphics/audio/save, memory-cap exhaustion, SmartScreen, Studio shelf/PLAY WINDOWS BUILD, or a human playthrough. Chat-model 404 prevented C7/D11/D13 chat rebuilds; use a configured working model first.
 
 ## Tested by the owner
 

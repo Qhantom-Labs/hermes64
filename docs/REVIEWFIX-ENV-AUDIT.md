@@ -28,8 +28,7 @@ What a child gets:
   come from the parent (default `C:\Windows`). `PATH` is System32, the Windows folder and Wbem only. The child also
   gets `PATHEXT`, `COMSPEC`, `NUMBER_OF_PROCESSORS` and `PROCESSOR_ARCHITECTURE` (from the parent), `PYTHONUTF8`,
   `PYTHONIOENCODING`, the Python flags above and the Blender folders.
-- Nothing else from the parent. These are not needed by the sites below: `DISPLAY`, `WAYLAND_DISPLAY` and
-  `XDG_RUNTIME_DIR` (no Linux window is opened here), and `PYTHONPATH` (the Python children run `-I` or need none).
+- Nothing else from the parent. `DISPLAY`, `WAYLAND_DISPLAY` and `XDG_RUNTIME_DIR` are not inherited by Runner; the Linux capture wrapper creates its own private DISPLAY. `PYTHONPATH` is not inherited either (Python children run `-I` or need none).
   The Godot, Blender, ffmpeg and Python paths are resolved by the parent from the plugin settings or the
   `HERMES64_*` overrides and passed as the program path.
 
@@ -80,6 +79,12 @@ with an explicit copy of that already-sanitized environment; no ambient parent m
 authoring and Windows Job Object launches still use the two Runner sites below.
 No new Windows spawning site was added by the platforms lane: suspended start/resume changes the existing job
 launch, and Studio Windows launch already uses `child_env(<game>/.maker/local)`.
+
+## PLATFORMS-2 additions
+
+- `adventure_maker/blender_version.py:25`: bounded version-only Blender child uses `scratch_env()` and Windows `CREATE_NO_WINDOW`; no ambient provider/Hermes keys.
+- `adventure_maker/linux_display.py:58`: tiny real PNG probe runs through `Runner.run`. Its Xvfb wrapper starts **inside** bwrap, after namespace/limit setup; the wrapper's `subprocess.Popen` and nested `subprocess.run` retain only Runner's scrubbed environment. It adds its own `DISPLAY=:<private number>` and `LIBGL_ALWAYS_SOFTWARE=1`, never inherits either from the host. Xvfb has `-nolisten tcp`, a private tmpfs socket, no host socket/auth bind, and Runner's PID-namespace cleanup.
+- bwrap 0.12 adds `PWD` itself; the C7 allowlist tolerates only that extra key. Provider keys, sentinel keys and all `HERMES*` variables remain disallowed.
 
 ## Other explicit sites (6 calls)
 

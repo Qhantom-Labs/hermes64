@@ -1,4 +1,5 @@
-"""Read-only capability probe. Stdlib; does not install, launch engines or change settings.
+"""Capability probe. Stdlib; no installs or settings changes. On non-Mac hosts
+Blender version-only checks and, on Linux, a tiny sandboxed display capture can run.
 
 For the selected child interpreter, run this module through Components.runner
 with python_path (see NOBLENDER-INTEGRATION.md). A direct probe reports only the
@@ -173,6 +174,9 @@ def probe(settings=None, python_info=None):
         except Fault as e:
             programs[name] = {'available':False,'reason':str(e),'setting':name+'_path',
                               'configured':settings.get(name+'_path','') or ''}
+    if platforms.host() in ('linux', 'win32') and programs['blender']['available']:
+        from . import blender_version
+        programs['blender']['version'] = blender_version.probe(programs['blender']['path'])
     numpy = py['supported'] and py['numpy']['available'] and py['selected_interpreter_verified']
     godot,blender = programs['godot']['available'],programs['blender']['available']
     def row(available,needs):
@@ -265,6 +269,8 @@ def linux_report(settings=None, iso=None):
         disk = (shutil.disk_usage(str(folder)).free,str(folder))
     except OSError:
         disk = None
+    from .linux_display import status as display_status
+    report['capture_display'] = display_status(settings)
     return platforms.linux_checklist(report,iso=iso,disk=disk)
 
 

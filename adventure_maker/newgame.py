@@ -661,7 +661,7 @@ def quick_audit(service, project, stages):
     """Style audit after the playtest when a real window can open; otherwise an honest 'not run (no display)'."""
     from . import audit
     begin = time.monotonic()
-    available, why = audit.display_available()
+    available, why = audit.display_available(service.settings) if sys.platform.startswith('linux') else audit.display_available()
     if not available:
         stages.append({'stage': 'audit', 'seconds': round(time.monotonic() - begin, 3), 'status': 'not_run'})
         return {'line': 'style audit: not run (no display)', 'result': None,

@@ -19,6 +19,7 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 | Rule | Why users need it |
 |---|---|
 | `plugin.yaml`, `__init__.py`, `LICENSE`, `README.md`, `PLAY.md`, `RESULT.md`, `licenses/*` | Manifest, entrypoint, licences, quick start, the acceptance limits README links to |
+| `.gitattributes` | Preserve every manifest-hashed byte on clone (`* -text`), even with Windows core.autocrlf=true; the package/publish tree must include this file. |
 | `bindings.json`, `characters/*` | Public bundled cast and its staging code (runtime character bindings); since MERGE3 also `characters/combat/` (combat manifest, 4 enemy and 4 prop GLBs) |
 | `adventure_maker/*`, `adventure_modules/*`, `story/*`, `refpack/*` | Tool code, story compiler/checker, module contracts, reference-pack drafting |
 | `runtime/*` | Godot runtime layer, including `runtime/godot/tests/playthrough.gd` used by `hermes64_replay` |
@@ -49,6 +50,7 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 
 | Rule | Why it stays repository-only |
 |---|---|
+| `docs/receipts/*-2026-11-12-*.md` | Raw platform receipt bodies remain byte-for-byte in the source repository, including alias-only paths; no raw outputs ship. Public platform guides summarize them and link to source custody. |
 | `evidence/*` | Lane and verification evidence (803 tracked files, ~47 MB) |
 | `premises/teknium-vs-tyrants/*` | Showcase story stays outside the plugin, in the user's games-folder premises directory |
 | `docs/sources/*` | Original lane receipts copied at assembly (hashed in `PROVENANCE.json`) |

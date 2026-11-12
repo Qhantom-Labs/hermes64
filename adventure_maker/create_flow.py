@@ -1837,7 +1837,17 @@ def frame_rooms(ctx, result, rooms_sg, secs):
 
 
 def stage_capture(ctx):
-    from . import n64_gate
+    from . import n64_gate, platforms
+    if platforms.host() == 'linux':
+        from .linux_display import status
+        display = status(ctx.settings)
+        if not display['ok']:
+            reason = 'not run: no display on this machine; ' + display['detail']
+            ctx.write('create/captures.json', {'format': 'hermes64-create-captures/1', 'ok': False,
+                      'status': 'not_run', 'reason': reason, 'frames': [], 'camera_attempts': [], 'camera_choice': {},
+                      'style_gate': {'status': 'not_run', 'reason': reason},
+                      'n64': {'status': 'not_run', 'reason': reason}})
+            return {}  # Built/bot-tested game remains usable; report must still run. No visual gate passes.
     secs = int(ctx.opts.get('open_seconds') or OPEN_SECONDS)
     if ctx.exists('create/frame/spec.json'):     # an earlier camera choice is current: measure the pattern build first
         ctx.path('create/frame/spec.json').unlink()
@@ -1845,10 +1855,30 @@ def stage_capture(ctx):
         if not comp.get('ok'):
             raise CreateError('create_capture', 'recompiling source/spec.json failed: %s' % one_line(
                 (comp.get('error') or {}).get('message', '')), 'run again with --redo build')
+    def linux_failure(result):
+        if platforms.host() != 'linux' or result.get('ok'):
+            return False
+        # A cached tiny probe is not a guarantee that a fresh display/full game will start.
+        # Preserve the actual failure and continue to report; never turn it into a visual pass.
+        detail = one_line((result.get('process') or {}).get('stderr') or
+                          (result.get('error') or {}).get('message') or result.get('message') or
+                          result.get('status') or 'open returned no capture')[:800]
+        no_display = any(s in detail for s in ('X11 Display is not available', 'Wayland display', 'capture display:'))
+        reason = ('not run: no display on this machine; ' if no_display else 'capture failed: ') + detail
+        status = 'not_run' if no_display else 'failed'
+        ctx.write('create/captures.json', {'format': 'hermes64-create-captures/1', 'ok': False,
+                  'status': status, 'reason': reason, 'report_path': result.get('report_path'), 'frames': [],
+                  'camera_attempts': [], 'camera_choice': {}, 'style_gate': {'status': status, 'reason': reason},
+                  'n64': {'status': status, 'reason': reason}})
+        return True
     result, rooms_sg = _open_measure(ctx, secs)
+    if linux_failure(result):
+        return {}
     attempts, choice = [], {}
     if result.get('report_path') and not ctx.opts.get('no_camera_retry'):
         result, rooms_sg, attempts, choice = frame_rooms(ctx, result, rooms_sg, secs)
+    if linux_failure(result):
+        return {}
     out = {'format': 'hermes64-create-captures/1', 'ok': bool(result.get('ok')), 'status': result.get('status'),
            'report_path': result.get('report_path'), 'frames': [], 'camera_attempts': attempts, 'camera_choice': choice,
            'camera_build': 'create/frame/spec.json' if any(v != 'pattern' for v in choice.values()) else 'source/spec.json'}
@@ -2013,6 +2043,7 @@ def stage_report(ctx, state):
                                                  'missing_assets', 'reasons', 'html_path')},
            'captures': {'frames': caps.get('frames', []), 'style_gate': (caps.get('style_gate') or {}).get('status'),
                         'style_rooms': (caps.get('style_gate') or {}).get('rooms'),
+                        **({'reason': caps['reason']} if caps.get('reason') else {}),
                         'n64': (caps.get('n64') or {}).get('status'), 'n64_rooms': (caps.get('n64') or {}).get('rooms'),
                         'camera_choice': caps.get('camera_choice'), 'camera_attempts': len([a for a in caps.get('camera_attempts', [])
                                                                                             if 'rooms' in a])},
@@ -2061,11 +2092,13 @@ def report_md(rep):
           '- bots: %s, finished: %s (goal: %s); stuck %s, unreachable %s, missing assets %s' % (
               p.get('status'), p.get('bot_completed'), p.get('goal_check'), p.get('stuck'), p.get('unreachable'), p.get('missing_assets')),
           '- runtime rooms: %s' % json.dumps(p.get('rooms')),
-          '- style gate: %s; N64 fidelity: %s' % (k.get('style_gate'), k.get('n64')),
+          '- style gate: %s; N64 fidelity: %s%s' % (k.get('style_gate'), k.get('n64'),
+              ('; ' + k['reason']) if k.get('reason') else ''),
           '- style gate rooms: %s' % ('; '.join('%s %s%s' % (r.get('id'), r.get('status'), (' (' + ', '.join(r.get('reasons', [])) + ')')
                                                            if r.get('reasons') else '') for r in (k.get('style_rooms') or [])) or 'none'),
-          '- cameras: %s after %s measured capture(s) (bounded knobs in create_patterns.json camera_knobs)' % (
-              json.dumps(k.get('camera_choice') or {}), k.get('camera_attempts') or 1),
+          ('- cameras: not run; ' + k['reason'] if k.get('reason') else
+           '- cameras: %s after %s measured capture(s) (bounded knobs in create_patterns.json camera_knobs)' % (
+              json.dumps(k.get('camera_choice') or {}), k.get('camera_attempts') or 1)),
           '', '## Closeness score', '', '%s / 100. %s' % (rep['closeness']['score'], rep['closeness']['formula']),
           'Gates: %s' % ', '.join('%s=%s' % (g, v) for g, v in rep['closeness']['gates'].items()),
           rep['closeness']['note'], '', '## Captures', '']

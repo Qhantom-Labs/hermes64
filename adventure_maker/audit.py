@@ -34,7 +34,7 @@ EXTERIOR_REASONS = ('no sky', 'flat sky', 'distance haze', 'near ground', 'depth
 SCOPE = 'measured low-resolution renders (240 scanlines, aspect-aware width) vs the style lock; not human art approval'
 
 
-def display_available():
+def display_available(settings=None):
     """(available, reason). A real window needs a macOS GUI (Aqua) session; HERMES64_DISPLAY=0 forces off."""
     forced = os.environ.get('HERMES64_DISPLAY')
     if forced == '0':
@@ -45,8 +45,9 @@ def display_available():
         session = os.environ.get('SESSIONNAME', '')
         return (bool(session), 'Windows desktop session (%s)' % session if session else 'no interactive Windows session')
     if sys.platform.startswith('linux'):
-        # The bubblewrap runner has no display (headless authoring; docs/LINUX-RUNNER-DESIGN.md).
-        return False, 'Linux: headless authoring, no display inside the sandbox'
+        from .linux_display import status
+        result = status(settings)
+        return result['ok'], result['detail']
     if sys.platform != 'darwin':
         return False, 'not macOS'
     try:
@@ -605,6 +606,10 @@ def render(settings, project, game, folder, views):
     argv = [exe, '--path', str(runtime), 'res://tests/audit_main.tscn', '--', '--game=' + str(project.path(game)),
             '--pack=' + str(runtime / 'theme.json'), '--bindings=' + str(runtime / 'bindings.json'),
             '--screens=' + str(screens), '--audit_views=' + str(views)]
+    from . import platforms
+    if platforms.host() == 'linux':
+        from .linux_display import prepare
+        argv = prepare(argv, settings)
     process = c.runner.run(argv, project.root, timeout=180)
     project.write_json(folder + '/audit.process.json', dict(process, argv=argv))
     if not (screens / 'capture.json').is_file():
@@ -654,7 +659,7 @@ def run(service, project, args):
     pack = Packs(service.settings, project).selected(spec)
     root = Path(service.settings.get('bundle_root') or Path(__file__).resolve().parents[1])
     folder = service.folder(project, 'audit')
-    ok_display, why = display_available()
+    ok_display, why = display_available(service.settings) if sys.platform.startswith('linux') else display_available()
     screens = theme = None
     if ok_display:
         screens, theme = render(service.settings, project, current['game'], folder, args.get('views', 1))

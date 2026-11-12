@@ -113,8 +113,9 @@ def check(folder, platform=None):
             except (OSError, ValueError, KeyError) as exc:
                 fail.append('cameo/cameo.json unreadable (%s)' % type(exc).__name__)
     if crlf:
-        fail.append('%d file(s) had their line endings changed to Windows CRLF, usually by git core.autocrlf or an editor: '
-                    'unzip the package again with Explorer or Expand-Archive (or clone with: git -c core.autocrlf=false clone ...)'
+        fail.append('%d file(s): line endings were changed by git on Windows (CRLF), or by an editor: '
+                    'install from the GitHub zip (Explorer / Expand-Archive) or git clone -c core.autocrlf=false; '
+                    '.gitattributes now prevents this on a fresh checkout. Existing damaged files must be replaced.'
                     % len(crlf))
     longest = max((len(str(Path(os.path.abspath(str(folder))) / r['path'])) for r in rows), default=0)
     if longest >= WINDOWS_PATH_LIMIT and (platform or sys.platform) == 'win32':

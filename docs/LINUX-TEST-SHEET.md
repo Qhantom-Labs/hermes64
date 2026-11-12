@@ -1,12 +1,10 @@
-# Linux test sheet v2 (about 60 minutes)
+# Linux test sheet v3 (about 60 minutes)
 
-For a tester on a **real Linux computer**. The first Debian 13/bwrap 0.12.0 run failed every official child;
-[its receipt](receipts/LINUX-RECEIPT-2026-11-12-debian13.md) is retained. The candidate fix has only Mac simulation
-evidence and awaits the second-run addendum below. Record what really happens, pass or fail; never retype or tidy
-output ([LINUX.md](LINUX.md), [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). The receipt template is
+For a tester on a **real Linux computer**. Two Debian 13/bwrap 0.12.0 runs are recorded in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md): run 1 failed, run 2 built/bot-played/exported games with C7 PWD and D10 display failures. Use the **third-run addendum** below for this candidate. Record what really happens, pass or fail; never retype or tidy output. ([LINUX.md](LINUX.md), [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). The receipt template is
 [receipts/LINUX-RECEIPT-TEMPLATE.md](receipts/LINUX-RECEIPT-TEMPLATE.md).
 
 Rules:
+- Hermes chat steps (especially E13) require a configured working model. Confirm a harmless ordinary chat reply first; HTTP 404/model-not-found is a prerequisite failure, not plugin acceptance.
 - Use a scratch folder (`$T` below) and, for the Hermes part, a separate Hermes profile or `HERMES_HOME`, so the
   tester's own setup is untouched. Commands marked **sudo** change the machine: run them only with the machine
   owner's approval and undo them as written.
@@ -221,7 +219,7 @@ try:
     code, out, err, tag = child('import os; print(" ".join(sorted(os.environ)))')
     allowed = {'HOME', 'TMPDIR', 'XDG_CONFIG_HOME', 'XDG_CACHE_HOME', 'XDG_DATA_HOME', 'PATH', 'LANG', 'LC_ALL',
                'PYTHONDONTWRITEBYTECODE', 'PYTHONNOUSERSITE', 'BLENDER_USER_CONFIG', 'BLENDER_USER_SCRIPTS',
-               'BLENDER_USER_DATAFILES'}
+               'BLENDER_USER_DATAFILES', 'PWD'}  # bwrap 0.12 sets PWD itself, not inherited
     extra = sorted(set(out.split()) - allowed)
     check('env scrubbed', out and 'H64_SECRET_TEST' not in out and not extra, 'extra=%s' % extra)
     code, out, err, tag = child('import resource as r; print(*[r.getrlimit(getattr(r, k))[0] for k in '
@@ -397,7 +395,21 @@ EOF
     `bwrap --version`, and `dmesg | grep -i -E 'apparmor|denied' | tail -20` if AppArmor may be involved. Do not
     work around a failure by changing plugin code or gates; report it.
 
-## Second-run addendum: LINUXFIX candidate (awaiting execution)
+## Third-run addendum: PLATFORMS-2 candidate
+
+Record the exact candidate commit and use a **fresh** `$T`; retain both earlier receipts. Re-run **B5, C7 (expect 12/12 with `--no-fork`), D8, D9, D10 and D11**, with the updated probe extracted from this sheet, not the old saved script.
+
+- **B5:** confined Runner child must exit 0. Record the separate `capture display` row. If Xvfb is already installed, the real tiny Compatibility/OpenGL3 PNG must succeed before capture OK. If absent/failed, record the exact reason; doctor must say `capture display: missing, install xvfb (sudo apt install xvfb)` before any create. Do not install without separate machine-owner approval.
+- **C7:** bwrap 0.12.0 sets PWD itself, even with an empty input environment. Only PWD was added to the allowlist; no provider keys, HERMES variables or `H64_SECRET_TEST` may survive. Expect `RESULT PASS (12/12 checks passed)` on this shared machine. Fork exhaustion remains not exercised; do not run it without dedicated-machine permission.
+- **D8/D9:** default demo/new build and bots pass. Keep all output, including ffmpeg discovery and play commands.
+- **D10:** all logic stages and report must complete. With a working capture route, require actual PNGs and record real style/N64 verdicts (a failed style gate is not a pass). Without it, CREATE-REPORT.md must still exist, both gates must say `not_run` / `not run: no display on this machine`, no visual pass or invented frame.
+- **D11:** bot playtest, web and Windows exports succeed; macOS retains its explicit refusal. Paste the heredoc terminator only as a shell delimiter, never into Python (the first attempt in run 2 had a tester `EOF` typo, not a plugin bug).
+
+Write a new receipt; do not edit an earlier one or mark Linux acceptance from these instructions.
+
+## Second-run addendum: LINUXFIX candidate (historical; run completed)
+
+The second real run used this addendum; its results are in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Keep the C7a diagnostic below. For this candidate use the third-run list above it.
 
 The first run on Debian 13/bwrap 0.12.0 failed every official child even though the old checklist said READY.
 Keep [that receipt](receipts/LINUX-RECEIPT-2026-11-12-debian13.md). On the fixed candidate, in a new `$T` (do not
