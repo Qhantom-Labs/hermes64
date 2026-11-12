@@ -1,5 +1,11 @@
 # Changelog
 
+## Review fixes on rc8.2 (catalog review, 2026-11-12)
+
+- Child processes: ffmpeg, the Godot version check, Blender, system tools and a game started from the Studio get the runner's minimal environment (system PATH, UTF-8 locale, home and temp folders in a scratch or project folder), never Hermes's environment or provider keys. Every place that starts a child is listed in `docs/REVIEWFIX-ENV-AUDIT.md`. A game started from the Studio keeps its saves in the project's `.maker/local` folders.
+- Routing hint: a message that names another engine or language (Unity, HTML, pygame and others) gets the hint without its "Do NOT write HTML/..." sentence, so the user's explicit choice wins; the root and create skills say the same.
+- Everything in the entries below.
+
 ## 1.0.0-rc8.1 (release candidate: rc8c plus routing, completion and text fixes, 2026-11-11)
 
 - Routing: the root `hermes64` skill is a hard router to `hermes64-create` for any game request; `hermes64-author` is not an entry point for a new prompt; the pre-call hint and skill-loaded detection follow (HINTFIX).

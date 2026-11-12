@@ -99,13 +99,16 @@ def ref_crop(src, cache):
     if out.is_file():
         return out
     out.parent.mkdir(parents=True, exist_ok=True)
-    info = subprocess.run(['/usr/bin/sips', '-g', 'pixelWidth', '-g', 'pixelHeight', str(src)], capture_output=True, text=True).stdout
+    from adventure_maker.runner import scratch_env
+    with scratch_env() as env:
+        info = subprocess.run(['/usr/bin/sips', '-g', 'pixelWidth', '-g', 'pixelHeight', str(src)], capture_output=True, text=True, env=env).stdout
     w = int(info.split('pixelWidth:')[1].split()[0])
     h = int(info.split('pixelHeight:')[1].split()[0])
     cw, ch = (int(h * 4 / 3), h) if w * 3 > h * 4 else (w, int(w * 3 / 4))
     tmp = out.with_suffix('.tmp.png')
-    subprocess.run(['/usr/bin/sips', '-s', 'format', 'png', '-c', str(ch), str(cw), str(src), '--out', str(tmp)], check=True, capture_output=True)
-    subprocess.run(['/usr/bin/sips', '-z', '240', '320', str(tmp), '--out', str(out)], check=True, capture_output=True)
+    with scratch_env() as env:
+        subprocess.run(['/usr/bin/sips', '-s', 'format', 'png', '-c', str(ch), str(cw), str(src), '--out', str(tmp)], check=True, capture_output=True, env=env)
+        subprocess.run(['/usr/bin/sips', '-z', '240', '320', str(tmp), '--out', str(out)], check=True, capture_output=True, env=env)
     tmp.unlink()
     return out
 

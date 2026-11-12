@@ -6,14 +6,16 @@ docs/WINDOWS.md) a child runs in a Job Object that kills it and everything it st
 caps processes and memory, and gets private profile folders inside the project; network and writes are NOT
 OS-confined. Without the opt-in a child is refused (sandbox_unavailable) exactly as before.
 """
+import contextlib
 import json
 import os
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 import selectors
 import shutil
 import signal
 import subprocess
 import sys
+import tempfile
 import time
 from .safety import Fault, fail
 from . import platforms
@@ -185,6 +187,29 @@ class Runner:
         return {'returncode': code, 'stdout': bytes(buffers['stdout']).decode('utf-8', 'strict'),
                 'stderr': bytes(buffers['stderr']).decode('utf-8', 'replace'),
                 'elapsed_seconds': round(time.monotonic() - started, 4)}
+
+
+class _Local:
+    """A plain folder in place of a project's .maker/local: all that Runner.environment() asks a project for."""
+
+    def __init__(self, folder):
+        self.folder = Path(folder)
+
+    def path(self, rel):
+        return self.folder.joinpath(*PurePosixPath(rel).relative_to('.maker/local').parts)
+
+
+def child_env(folder):
+    """Runner.environment() for a child started outside Runner.run (ffmpeg, a Godot --version check, Blender, an
+    exported game): the same minimal variables, with HOME/TMPDIR/XDG (Windows: profile and temp) folders in `folder`."""
+    return Runner(_Local(folder)).environment()
+
+
+@contextlib.contextmanager
+def scratch_env():
+    """child_env() in a new temporary folder that is removed once the child has finished."""
+    with tempfile.TemporaryDirectory(prefix='hermes64-child-') as folder:
+        yield child_env(folder)
 
 
 # ---------------------------------------------------------------- Windows (opt-in)

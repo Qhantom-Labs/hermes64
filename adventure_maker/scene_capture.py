@@ -49,12 +49,13 @@ def main(argv=None):
     out = a.out.resolve()
     if out.exists():
         raise SystemExit('Output folder exists; choose a new one: %s' % out)
-    from .runner import locate
+    from .runner import locate, scratch_env
     godot = locate('godot', a.godot)
     out.mkdir(parents=True)
     argv_run = command(godot, Path(runtime).resolve(), Path(movie).resolve(), out, a.tail)
-    done = subprocess.run(argv_run, capture_output=True, text=True, encoding='utf-8', errors='replace',
-                          timeout=a.tail + 1800, check=False)
+    with scratch_env() as env:
+        done = subprocess.run(argv_run, capture_output=True, text=True, encoding='utf-8', errors='replace',
+                              timeout=a.tail + 1800, check=False, env=env)
     process = json.dumps({'argv': argv_run, 'returncode': done.returncode,
                           'stdout_tail': done.stdout[-4000:], 'stderr_tail': done.stderr[-4000:]}, indent=2)
     (out / 'process.json').write_text(process, encoding='utf-8')

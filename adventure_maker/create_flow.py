@@ -2513,8 +2513,11 @@ def host_plugin_settings(home=None, plugin='hermes64'):
 def python_has_numpy(python):
     """Builds run the configured Python isolated (-I): numpy must import that way (user site-packages do not count)."""
     import subprocess
+    from .runner import scratch_env
     try:
-        return subprocess.run([python, '-I', '-c', 'import numpy'], capture_output=True, timeout=60).returncode == 0
+        with scratch_env() as env:
+            return subprocess.run([python, '-I', '-c', 'import numpy'], capture_output=True, timeout=60,
+                                  env=env).returncode == 0
     except (OSError, subprocess.SubprocessError):
         return False
 

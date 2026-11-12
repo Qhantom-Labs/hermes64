@@ -25,6 +25,7 @@ import sys
 import wave
 
 from . import platforms
+from .runner import scratch_env
 from .safety import Fault, fail
 
 GENERATOR = 'hermes64.audio_import/1'
@@ -101,12 +102,14 @@ def _run(ffmpeg, args, data=None, timeout=600):
         argv = [str(ffmpeg), '-hide_banner'] + (['-nostdin'] if data is None else []) + list(args)
         # Windows: no console window flashing up per ffmpeg call when Hermes runs without a console.
         extra = {'creationflags': getattr(subprocess, 'CREATE_NO_WINDOW', 0x08000000)} if os.name == 'nt' else {}
-        if data is None:
-            proc = subprocess.run(argv, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                                  timeout=timeout, **extra)
-        else:
-            proc = subprocess.run(argv, input=data, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=timeout,
-                                  **extra)
+        # Runner's minimal environment (scratch HOME/TMPDIR, system PATH): never Hermes's variables or provider keys.
+        with scratch_env() as env:
+            if data is None:
+                proc = subprocess.run(argv, stdin=subprocess.DEVNULL, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                      timeout=timeout, env=env, **extra)
+            else:
+                proc = subprocess.run(argv, input=data, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+                                      timeout=timeout, env=env, **extra)
     except subprocess.TimeoutExpired:
         _fail('ffmpeg_timeout', 'ffmpeg timed out')
     except OSError as exc:

@@ -32,6 +32,7 @@ sys.path.insert(0, str(R))
 
 from adventure_maker import place  # noqa: E402
 from adventure_maker.place import PlaceError  # noqa: E402
+from adventure_maker.runner import scratch_env  # noqa: E402
 from tools import place_measure as PM  # noqa: E402
 
 SCRATCH = Path(os.environ.get("PLACEMAKER_BUNDLE") or (Path.home() / ".hermes" / "cache" / "scratch" / "placemaker-bundle")).resolve()
@@ -49,12 +50,14 @@ def clone_bundle(dest=SCRATCH, fresh=False):
             src, dst = R / sub, dest / sub
             if dst.exists():
                 shutil.rmtree(dst)
-            subprocess.run(["cp", "-cR", str(src), str(dst)], check=True)
+            with scratch_env() as env:
+                subprocess.run(["cp", "-cR", str(src), str(dst)], check=True, env=env)
         return dest
     if dest.exists():
         shutil.rmtree(dest)
     dest.parent.mkdir(parents=True, exist_ok=True)
-    subprocess.run(["cp", "-cR", str(R), str(dest)], check=True)
+    with scratch_env() as env:
+        subprocess.run(["cp", "-cR", str(R), str(dest)], check=True, env=env)
     for sub in ("evidence", ".git", "place_approvals"):
         p = dest / sub
         if p.is_dir():

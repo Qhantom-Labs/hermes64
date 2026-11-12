@@ -20,6 +20,7 @@ import sys
 
 from . import style_gate, n64_gate, repair
 from .repair import Builder, pointer, finding, index_of, nearest_asset
+from .runner import scratch_env
 from .safety import fail
 
 FORMAT = 'hermes64-style-audit/1'
@@ -46,8 +47,9 @@ def display_available():
     if sys.platform != 'darwin':
         return False, 'not macOS'
     try:
-        name = subprocess.run(['/bin/launchctl', 'managername'], capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=5,
-                              stdin=subprocess.DEVNULL).stdout.strip()
+        with scratch_env() as env:
+            name = subprocess.run(['/bin/launchctl', 'managername'], capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=5,
+                                  stdin=subprocess.DEVNULL, env=env).stdout.strip()
     except (OSError, subprocess.SubprocessError):
         return False, 'launchctl unavailable'
     return (name == 'Aqua'), ('GUI session' if name == 'Aqua' else 'no GUI session (%s)' % (name or 'unknown'))

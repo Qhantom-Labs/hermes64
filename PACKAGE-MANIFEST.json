@@ -7,9 +7,9 @@
    "sha256": "1db18daab2b86871d95c167856665912c3716ac06b3036f26f9efadb05989d51"
   },
   {
-   "bytes": 3950,
+   "bytes": 4713,
    "path": "CHANGELOG.md",
-   "sha256": "7c748b97eb065cde3813b91f7179ad415e50509e017cb960e6fab95eab223b42"
+   "sha256": "7b61c6169f63d5519d669d10f23aad2a8ea1543a438124d72bf754a6e0aa126f"
   },
   {
    "bytes": 1095,
@@ -92,9 +92,9 @@
    "sha256": "f1b1261435463e49b3f7647652fd77ad52046e4c6bf520ae792da50db1ac08a9"
   },
   {
-   "bytes": 33927,
+   "bytes": 34154,
    "path": "adventure_maker/audio_import.py",
-   "sha256": "c138b79b0da5e03ab2e6b895db92a3c46d541ce12c3c6f4dc51286a8e9812172"
+   "sha256": "00ec410d6a7a5233bb990110f426be54a4fd168aa7a83d6d0887566f8e303564"
   },
   {
    "bytes": 10446,
@@ -117,9 +117,9 @@
    "sha256": "4d18481083a5e1a86df704a11988c97eb3f5d791dafd862e2fe460d5067a69d4"
   },
   {
-   "bytes": 42899,
+   "bytes": 42983,
    "path": "adventure_maker/audit.py",
-   "sha256": "db4fa7a116a3b7af27cc6ad427481d3ec31daa5623da951e425af3950e746ef2"
+   "sha256": "d378a819c9e3979c08dfe24f916c10c7997ea9319ddc0135a31327678f42deeb"
   },
   {
    "bytes": 24313,
@@ -262,9 +262,9 @@
    "sha256": "17fd30218e6aef4f56189caa4eed85f039952ff07af065f318c1666ffa7de469"
   },
   {
-   "bytes": 154833,
+   "bytes": 154951,
    "path": "adventure_maker/create_flow.py",
-   "sha256": "d023f0aac6a844e45366658166ebb66f9f59425f22ff53cf6522e3d24bd1f5cd"
+   "sha256": "1ef2c3535ca42ac244203883c4029352f426de2feddb63f69ed350a93733a5cd"
   },
   {
    "bytes": 1965,
@@ -337,9 +337,9 @@
    "sha256": "9b6c5ebbda0a01eecbc04f679e8433c171dc0ae182d68299fb3c4e6b79571b2d"
   },
   {
-   "bytes": 21703,
+   "bytes": 21975,
    "path": "adventure_maker/godot_fetch.py",
-   "sha256": "de525c195339fc5671f8ecc0a9b5da8523988cd801d3a5d5368bee6655f792b0"
+   "sha256": "51534dd4c46cc9b88dd1b1caa42b96ea07a443f3055a142b20d7564a2d264c96"
   },
   {
    "bytes": 15074,
@@ -412,9 +412,9 @@
    "sha256": "b8b61fb9c3085501d841c6474432813608f68d7050c3a818af2c5e894fd9b469"
   },
   {
-   "bytes": 4755,
+   "bytes": 7018,
    "path": "adventure_maker/native_hint.py",
-   "sha256": "cb54d1cc0a075d6401d1c59173b03e5200d06f8cb2c06c8ab4a6c6196531b96a"
+   "sha256": "ff975b45309f4309b3066dbb0213dbb52dec58f4178b6d39cee6f2684eeb4559"
   },
   {
    "bytes": 4626,
@@ -442,9 +442,9 @@
    "sha256": "867dd985f81ac7f3333b4fbcdb4a6424491a5217f980b4db0260299ee51d17e6"
   },
   {
-   "bytes": 15008,
+   "bytes": 15089,
    "path": "adventure_maker/nbchars/api.py",
-   "sha256": "55872dbf7c8611ccd5cdd318e29290b10bf15cb96b48ffe33e2a7e0cf60a68c4"
+   "sha256": "f537d61e47c02d696e6592347ff3300ef6b272cc380fd7dd48397099c0c84580"
   },
   {
    "bytes": 22940,
@@ -482,9 +482,9 @@
    "sha256": "de3d611f8ed82db149cb6125976f814388e282408037a04c82316a30988f37ee"
   },
   {
-   "bytes": 17746,
+   "bytes": 17854,
    "path": "adventure_maker/nbchars/parity.py",
-   "sha256": "3eb2903b338086c858100d5f446cfe9b7938fb14432ce0c7bc2b337a806ccb20"
+   "sha256": "00f07ab05223b2328f211dc4b97417dd0ed19b59b3c0735ca87b34b9054f631b"
   },
   {
    "bytes": 8621,
@@ -722,9 +722,9 @@
    "sha256": "b5e41fc9d3c7cebc3371185b0012827f5595afb24ca5c02e39e68eb15982ac93"
   },
   {
-   "bytes": 16294,
+   "bytes": 17211,
    "path": "adventure_maker/runner.py",
-   "sha256": "3ee868947fca2570de2203da0d0b36b3fa4b039489217b70170a6e8e56900a9e"
+   "sha256": "62886282dfbb3dd8c6fa234da1fd737838acbd0514f01b9a477aa14162e03b35"
   },
   {
    "bytes": 7959,
@@ -732,9 +732,9 @@
    "sha256": "3e569f3c3095cd92ba8e4fa0a27fdd9943c8273a8ba8b318163291c201a63de8"
   },
   {
-   "bytes": 4001,
+   "bytes": 4062,
    "path": "adventure_maker/scene_capture.py",
-   "sha256": "43544d99f49f2d8824327886a19427030fbd1c7f0d947bf28f21432c5ff04da1"
+   "sha256": "bea1a920e6a5a4cdbc8190d5994d3a0fcdbe895f9a47cc0e336a827a194f8f5b"
   },
   {
    "bytes": 8818,
@@ -747,9 +747,9 @@
    "sha256": "c43c111e34e10da52a4e1a279c5601d5159714ba4f482b83c1ee7e46d6460730"
   },
   {
-   "bytes": 16333,
+   "bytes": 16509,
    "path": "adventure_maker/setup_check.py",
-   "sha256": "1572882e636173df8058ebad7044341e6c916bcf5f0a4cfcdbafb1359f764140"
+   "sha256": "02639c308384411219dfb9b2273322f70d7e5c68a55de3e2fa5c977e784c1141"
   },
   {
    "bytes": 11789,
@@ -3252,9 +3252,9 @@
    "sha256": "0b6196117062efb2ac1bed13e39f992b0415fc71e1300d5e24d9b3f346c21bb3"
   },
   {
-   "bytes": 19002,
+   "bytes": 20153,
    "path": "dashboard/plugin_api.py",
-   "sha256": "c87b31f2b6346499515cf1b93e5fad373839104a5d9087ea4fff748815f9d3be"
+   "sha256": "9e6f76f68479ef3c61dcdb6f213a926c1be7cecb81c273aa8b7e1de9488a3565"
   },
   {
    "bytes": 222988,
@@ -3735,6 +3735,11 @@
    "bytes": 1866,
    "path": "docs/README-SHIP-FRAGMENT.md",
    "sha256": "2e716189b38ae937c562edd956e189f76590207fbd21f37e03ed4f8bd29be96a"
+  },
+  {
+   "bytes": 9013,
+   "path": "docs/REVIEWFIX-ENV-AUDIT.md",
+   "sha256": "bff78735f95de0dd28ebf10899d1fcf5005581ac61ef4bdc04860bba2d58eaf4"
   },
   {
    "bytes": 13156,
@@ -29377,9 +29382,9 @@
    "sha256": "acf02ff720d045248ffee854b1dac40c800a07908b597687a17c66709c58f516"
   },
   {
-   "bytes": 9996,
+   "bytes": 10057,
    "path": "skills/hermes64-create/SKILL.md",
-   "sha256": "d99007075d536c22f316599b111afb4289bd31647d3fdbbaefa97afd6c65261c"
+   "sha256": "7d6b8c8604e76770723e8dde691a3f6287bcd0158c480003b2b0f86efe2d4809"
   },
   {
    "bytes": 8705,
@@ -29437,9 +29442,9 @@
    "sha256": "23ad673a95a2b4dcda31701bd5104b5f89993a3520e78c07afd971cda3abf2f5"
   },
   {
-   "bytes": 17172,
+   "bytes": 17232,
    "path": "skills/hermes64/SKILL.md",
-   "sha256": "ddd4fa73a4274637fe45392350a59654f5fbb70e1a526ad0751d919fc3b651f6"
+   "sha256": "bd429badb393fe30311c30d3981882f692ef91d83b28ab58e172419d22521dcf"
   },
   {
    "bytes": 100,
@@ -29757,9 +29762,9 @@
    "sha256": "6e9538420f3a8ab8824f6f2b8b71ccb977c381d5bbfa33cc4c22f8e0d3cdf4d5"
   },
   {
-   "bytes": 48241,
+   "bytes": 48398,
    "path": "tools/place_maker.py",
-   "sha256": "bc70124c7e8a308ae3a147ac4075b1fdfa5a184c5daaded572fe8f594b8048cb"
+   "sha256": "e2fb5af28954bbc9877e214faaffed6027c0e8e49e774fe8f59aad52e926e70a"
   },
   {
    "bytes": 9661,
@@ -29777,9 +29782,9 @@
    "sha256": "08c0c962915daac64e95cdda418c93fb8aa7ac030bd0de283d5e22ee601f4bea"
   },
   {
-   "bytes": 16681,
+   "bytes": 16833,
    "path": "tools/roomlook.py",
-   "sha256": "62c23c781251bac69bb4f5d2bad0760e5617b4c6a942244c148b9d5c7eb1eb79"
+   "sha256": "3f1e154a5fe929b609bd3cd7e95a6ac64f3b843a9b5a61ca27349954fed4ab1c"
   },
   {
    "bytes": 25006,
@@ -29820,13 +29825,13 @@
  },
  "schema": "hermes64-package/1",
  "source": {
-  "commit": "20444b87eeb65fa0e777c45dfd76df8f50e0d695",
+  "commit": "58404673a9fb50c20559024eb44e9fea85c71150",
   "tree": "clean"
  },
  "tools": 27,
  "totals": {
-  "bytes": 151910784,
-  "files": 5959
+  "bytes": 151926448,
+  "files": 5960
  },
  "version": "1.0.0-rc"
 }

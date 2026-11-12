@@ -333,7 +333,10 @@ def reexport_blender(oracle, out, ids, blender_path, log=print):
     argv = [bp, '--background', '--factory-startup', '--disable-autoexec', '--python',
             str(repo / 'tools' / 'nbchars_blender_export.py'), '--', '--gen', str(repo / 'characters' / 'gen'), '--out',
             str(bo), '--what', 'parity', '--only', ','.join(ids), '--oracle', str(oracle)]
-    p = subprocess.run(argv, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=3600)
+    from ..runner import scratch_env
+    with scratch_env() as env:
+        p = subprocess.run(argv, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=3600,
+                           env=env)
     res = []
     if p.returncode != 0:
         return [{'error': 'blender exit %d' % p.returncode, 'stderr': p.stderr[-800:]}]

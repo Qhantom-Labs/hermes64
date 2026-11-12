@@ -42,9 +42,11 @@ def _python(settings, probe=None):
         return None, None
     if probe is not None:
         return exe, probe(exe)
+    from .runner import scratch_env
     try:
-        out = subprocess.run([exe, '-I', '-B', '-c', 'import numpy; print(numpy.__version__)'],
-                             capture_output=True, text=True, encoding='utf-8', timeout=20)
+        with scratch_env() as env:
+            out = subprocess.run([exe, '-I', '-B', '-c', 'import numpy; print(numpy.__version__)'],
+                                 capture_output=True, text=True, encoding='utf-8', timeout=20, env=env)
         return exe, (out.stdout.strip() or None) if out.returncode == 0 else None
     except (OSError, subprocess.TimeoutExpired):
         return exe, None
@@ -56,9 +58,11 @@ def _pillow(exe, probe=None):
         return None
     if probe is not None:
         return probe(exe)
+    from .runner import scratch_env
     try:
-        out = subprocess.run([exe, '-I', '-B', '-c', 'import PIL; print(PIL.__version__)'],
-                             capture_output=True, text=True, encoding='utf-8', timeout=20)
+        with scratch_env() as env:
+            out = subprocess.run([exe, '-I', '-B', '-c', 'import PIL; print(PIL.__version__)'],
+                                 capture_output=True, text=True, encoding='utf-8', timeout=20, env=env)
         return (out.stdout.strip() or None) if out.returncode == 0 else None
     except (OSError, subprocess.TimeoutExpired):
         return None

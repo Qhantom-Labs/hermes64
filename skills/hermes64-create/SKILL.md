@@ -7,7 +7,8 @@ license: MIT
 
 # Make a game from a prompt
 
-The deliverable is a Hermes64 game made by this plugin: never another engine, a web page or a script of your own.
+The deliverable is a Hermes64 game made by this plugin: never another engine, a web page or a script of your own,
+unless the user asks for another engine or language by name.
 Finish the game the user asked for. Before you reply, compare the build with every explicit requirement in the request (rooms,
 items and counts, characters, mechanics, mood, ending). If something is missing and you have a way to add it (author/compile,
 generators, edit, the character maker), add it and re-check, for up to three repair rounds. Do not end with 'prototype' or

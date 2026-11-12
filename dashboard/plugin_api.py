@@ -18,7 +18,8 @@ Side effects, each only on an explicit click in the Studio:
   ``/studio/stop``, on the next play, or after 30 idle minutes.
 - ``POST /studio/stop``   stops that server.
 - ``POST /studio/launch`` macOS only: ``/usr/bin/open -n`` on the exported .app that the
-  scan finds for that game (never a client-supplied path).
+  scan finds for that game (never a client-supplied path), with the minimal environment
+  Runner gives that game (its .maker/local folders, created if missing), never Hermes's.
 
 No network beyond 127.0.0.1, no uploads, no writes. Handlers are plain ``def`` so the
 host runs them off the event loop.
@@ -339,11 +340,30 @@ def api_stop():
     return {'ok': True, 'stopped': _PlayServer.stop()}
 
 
-def _start_detached(argv, cwd):
+def _load_runner():
+    """adventure_maker/runner.py (stdlib, with its .safety and .platforms), loaded by path like the scanner."""
+    name = 'hermes64_studio_adventure_maker'
+    if name not in sys.modules:
+        folder = PLUGIN_ROOT / 'adventure_maker'
+        spec = importlib.util.spec_from_file_location(name, str(folder / '__init__.py'),
+                                                      submodule_search_locations=[str(folder)])
+        mod = importlib.util.module_from_spec(spec)
+        sys.modules[name] = mod
+        spec.loader.exec_module(mod)
+    return importlib.import_module(name + '.runner')
+
+
+def _game_env(root, game):
+    """The minimal environment Runner gives this game's children (HOME, temp and profile folders in its .maker/local,
+    system PATH only): a launched build never sees Hermes's environment or provider keys."""
+    return _load_runner().child_env(Path(root) / game / '.maker' / 'local')
+
+
+def _start_detached(argv, cwd, env):
     """Windows: start the exported game as its own process (no console, not tied to Hermes); returns at once."""
     flags = getattr(subprocess, 'DETACHED_PROCESS', 0x8) | getattr(subprocess, 'CREATE_NEW_PROCESS_GROUP', 0x200)
-    subprocess.Popen(argv, cwd=cwd, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                     creationflags=flags, close_fds=True)
+    subprocess.Popen(argv, cwd=cwd, env=env, stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                     stderr=subprocess.DEVNULL, creationflags=flags, close_fds=True)
 
 
 def api_launch(settings, body, runner=subprocess.run, starter=_start_detached, platform=None):
@@ -361,7 +381,7 @@ def api_launch(settings, body, runner=subprocess.run, starter=_start_detached, p
             return _fail('NO_EXPORT', 'the Windows export has no .exe')
         folder = os.path.join(root, *base_rel.split('/'))
         try:
-            starter([os.path.join(folder, *entry.split('/'))], folder)
+            starter([os.path.join(folder, *entry.split('/'))], folder, _game_env(root, body['game']))
         except OSError:
             return _fail('LAUNCH', 'Windows refused to start the build (SmartScreen may need More info, then Run anyway)')
         return {'ok': True}
@@ -378,7 +398,8 @@ def api_launch(settings, body, runner=subprocess.run, starter=_start_detached, p
     if kind != 'dir' or not entry.endswith('.app'):
         return _fail('NO_EXPORT', 'the macOS export is not an app bundle')
     proc = runner(['/usr/bin/open', '-n', os.path.join(root, base_rel, entry)], stdin=subprocess.DEVNULL,
-                  stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, timeout=15, check=False)
+                  stdout=subprocess.DEVNULL, stderr=subprocess.PIPE, timeout=15, check=False,
+                  env=_game_env(root, body['game']))
     if proc.returncode != 0:
         return _fail('LAUNCH', 'macOS refused to open the build (unsigned local builds may need right-click → Open once)')
     return {'ok': True}

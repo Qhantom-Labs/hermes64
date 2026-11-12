@@ -23,6 +23,8 @@ import urllib.request
 import zipfile
 from pathlib import Path, PurePosixPath
 
+from .runner import scratch_env
+
 MANIFEST = Path(__file__).resolve().parents[1] / 'tools/fetch-manifest.json'
 VERSION = '4.6.2'
 MAX_DOWNLOAD = 1400 * 1024 * 1024          # hard ceiling for any one file (the official .tpz is about 1.25 GB)
@@ -228,8 +230,10 @@ def clear_quarantine(app):
     xattr = shutil.which('xattr', path=os.defpath)
     if not xattr:
         raise FetchError('Could not find the system xattr tool; quarantine was not changed.')
-    out = subprocess.run([xattr, '-r', '-d', 'com.apple.quarantine', str(app)],
-                         capture_output=True, text=True, encoding='utf-8', timeout=15, stdin=subprocess.DEVNULL)
+    with scratch_env() as env:
+        out = subprocess.run([xattr, '-r', '-d', 'com.apple.quarantine', str(app)],
+                             capture_output=True, text=True, encoding='utf-8', timeout=15,
+                             stdin=subprocess.DEVNULL, env=env)
     errors = [line for line in out.stderr.splitlines() if line.strip()]
     absent_only = bool(errors) and all('No such xattr: com.apple.quarantine' in line for line in errors)
     if out.returncode and not absent_only:
@@ -237,8 +241,10 @@ def clear_quarantine(app):
 
 
 def version_check(exe):
-    out = subprocess.run([str(exe), '--version'], capture_output=True, text=True, encoding='utf-8',
-                         timeout=15, stdin=subprocess.DEVNULL)
+    # Runner's minimal environment (scratch HOME/TMPDIR, system PATH): never Hermes's variables or provider keys.
+    with scratch_env() as env:
+        out = subprocess.run([str(exe), '--version'], capture_output=True, text=True, encoding='utf-8',
+                             timeout=15, stdin=subprocess.DEVNULL, env=env)
     version = out.stdout.strip()
     if out.returncode or not re.fullmatch(r'4\.6\.2\.stable(?:\.[A-Za-z0-9_-]+)*', version):
         raise FetchError('Verified Godot failed --version check (expected 4.6.2.stable): ' + version[:160])

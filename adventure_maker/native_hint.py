@@ -4,6 +4,8 @@ The host appends context to the user turn (and may persist it in api_content),
 not the system prompt. It runs once per user turn, not between tool calls.
 Only a successful create skill_view call/result pair suppresses the hint;
 root/author sibling banners, prior hints and failed loads are not evidence.
+When the user names another engine or language (OTHER_ENGINE_NAMES/WORDS), the hint drops its "Do NOT write
+HTML/..." sentence: an explicit request for another engine wins.
 Pure conversation inspection: no I/O, never breaks the host turn.
 """
 import json
@@ -11,10 +13,31 @@ import re
 
 SKILL = 'hermes64:hermes64-create'
 SKILL_NAMES = (SKILL, 'plugin:' + SKILL, 'hermes64-create')
-HINT = ("Hermes64 is installed: use it for any game request. Do NOT write HTML/JavaScript/Canvas/Unity/other engines. "
+GUARD = "Do NOT write HTML/JavaScript/Canvas/Unity/other engines. "
+HINT = ("Hermes64 is installed: use it for any game request. " + GUARD +
         "Load the create skill FIRST: skill_view(name='plugin:hermes64:hermes64-create') "
         "(alias: skill_view(name='hermes64:hermes64-create')), then use the hermes64_* tools and follow its create flow. "
         "Do not detour to game-authoring or stop after doctor; doctor is a checklist, not a game.")
+# The user asked for another engine or language: the same hint without GUARD, so their explicit choice wins.
+HINT_OTHER_ENGINE = HINT.replace(GUARD, '')
+# Engines and languages a user may ask for instead. NAMES count anywhere as whole words (case-insensitive). WORDS are
+# also ordinary English (a unity of purpose, a python), so they count only as "in/with/using/via WORD" or
+# "WORD game/engine/code/project/script/app".
+OTHER_ENGINE_NAMES = ('html', 'html5', 'javascript', 'js', 'typescript', 'webgl', 'three.js', 'threejs', 'phaser',
+                      'pixi.js', 'babylon.js', 'p5.js', 'unity3d', 'unreal', 'roblox', 'luau', 'game maker',
+                      'gamemaker', 'rpg maker', 'defold', 'love2d', 'pico-8', 'pico8', 'gdevelop', 'bevy', 'monogame',
+                      'libgdx', 'raylib', 'pygame', 'c++', 'c#', 'csharp')
+OTHER_ENGINE_WORDS = ('unity', 'canvas', 'python', 'rust', 'java', 'lua', 'swift', 'scratch', 'construct', 'react')
+
+
+def _either(words):
+    return '|'.join(re.escape(w).replace(r'\ ', r'\s+') for w in sorted(words, key=len, reverse=True))
+
+
+_OTHER_ENGINE = re.compile(r'(?<![\w.#+-])(?:%s|(?:in|with|using|via)\s+(?:%s)|(?:%s)\s+'
+                           r'(?:games?|engine|code|project|script|app))(?![\w#+])'
+                           % (_either(OTHER_ENGINE_NAMES), _either(OTHER_ENGINE_WORDS), _either(OTHER_ENGINE_WORDS)),
+                           re.I)
 _VERB = (r'(make|making|build|building|create|creating|design|generate|prototype|want|need|craft|edit|change|add|'
          r'remix|play|playtest|export|ship)')
 _NOUN = r'(game|games|adventure|adventures|platformer|rpg|level|levels|quest)'
@@ -38,6 +61,17 @@ def message_text(message):
 
 def looks_like_game_request(text):
     return bool(text) and bool(_NAMED.search(text) or _REQUEST.search(text))
+
+
+def names_other_engine(text, history=None):
+    """True when this message, or one of the user's recent messages, names another engine or language.
+
+    Only user rows count, and this hint's own text is removed first (it names engines itself).
+    """
+    rows = list(history)[-HISTORY_WINDOW:] if isinstance(history, (list, tuple)) else []
+    texts = [text] + [message_text(row.get('content')) for row in rows
+                      if isinstance(row, dict) and row.get('role') == 'user']
+    return any(_OTHER_ENGINE.search(t.replace(HINT, '').replace(GUARD, '')) for t in texts if t)
 
 
 def skill_loaded(history):
@@ -88,7 +122,7 @@ def pre_llm_call(user_message=None, conversation_history=None, **_kwargs):
         text = message_text(user_message)
         if not looks_like_game_request(text) or skill_loaded(conversation_history):
             return None
-        return {'context': HINT}
+        return {'context': HINT_OTHER_ENGINE if names_other_engine(text, conversation_history) else HINT}
     except Exception:  # a hint must never break a turn
         return None
 

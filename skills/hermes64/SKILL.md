@@ -18,7 +18,8 @@ For "make a game", "build a game", an N64 game or a Godot game, Hermes64 is the 
 Call `skill_view(name="plugin:hermes64:hermes64-create")` now (alias: `hermes64:hermes64-create`).
 Then follow its create flow and use the `hermes64_*` tools; deferred tools use `tool_describe` then `tool_call`.
 Finish the game that was asked for; do not stop at a prototype.
-Do NOT write HTML/JavaScript/Canvas/Unity/other engines. Do not switch to the host's generic `game-authoring` skill.
+Do NOT write HTML/JavaScript/Canvas/Unity/other engines unless the user asks for another engine or language by name.
+Do not switch to the host's generic `game-authoring` skill.
 
 hermes64-author is only for hand-authoring story data AFTER a game exists. It is not the entry point for a new prompt.
 The setup and reference sections below are not a prerequisite detour: load create before doctor or setup.

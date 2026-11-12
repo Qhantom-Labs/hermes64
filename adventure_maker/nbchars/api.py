@@ -243,7 +243,9 @@ def _blender_export(blender, out, what, only):
             '--gen', str(REPO / 'characters' / 'gen'), '--out', str(out), '--what', what]
     if only:
         argv += ['--only', ','.join(sorted(only))]
-    p = subprocess.run(argv, capture_output=True, text=True, timeout=3600)
+    from ..runner import scratch_env
+    with scratch_env() as env:
+        p = subprocess.run(argv, capture_output=True, text=True, timeout=3600, env=env)
     if p.returncode != 0:
         raise ExportError('blender exporter failed (exit %d): %s' % (p.returncode, p.stderr[-800:]))
     f = out / ('manifest.json' if what == 'cast' else 'export.json')
