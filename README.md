@@ -28,7 +28,7 @@ Zip steps for Windows (PowerShell, `Expand-Archive`) and Linux: [Windows guide](
 
 **Games:** normally `<Hermes home>/plugin-data/hermes64/games`, or your configured `projects_root`. Older hosts need an explicit folder.
 
-**Platforms:** macOS: verified. Linux: three real Debian 13/bwrap 0.12.0 runs; run 3 reached C7 12/12 and real private-Xvfb captures, but exposed an incorrect capture verdict and a PulseAudio symlink blocking later calls. Candidate repairs await a fourth Linux run. Windows 11: one real run: runner/diagnostic exports pass, default demo failed on Blender 4.5 (candidate repair pending native rerun), no human play. **Linux and Windows: Not verified. Tested by the owner: Not yet.** Linux play means bots. [What each claim rests on](docs/PLATFORM-EVIDENCE.md).
+**Platforms:** macOS: verified. Linux: four real Debian 13/bwrap 0.12.0 runs. Run 4 confirms C7 12/12, capture/report verdicts and PulseAudio cleanup; it exposes a platform-independent export gate blocking project-generated characters. The local-export policy repair awaits a fifth Linux run. Windows 11: one real run: runner/diagnostic exports pass, default demo failed on Blender 4.5 (candidate repair pending native rerun), no human play. **Linux and Windows: Not verified. Tested by the owner: Not yet.** Linux play means bots. [What each claim rests on](docs/PLATFORM-EVIDENCE.md).
 
 [Quick start and troubleshooting](QUICKSTART.md) · [Game-type strengths and measured limits](docs/GAME-TYPE-STRENGTHS.md) · [Honest scope](docs/AUTHORING-SCOPE.md)
 

@@ -461,7 +461,7 @@ def gate_directory(folder, theme=None, thresholds=None, rooms=None):
                 with_acc, len(measured), 100 * th['accent_rooms_min_fraction']))
     ok = rows and all(r['status'] == 'passed' for r in rows) and not set_reasons
     return {'status': 'passed' if ok else 'failed', 'rooms': rows, 'set_reasons': set_reasons,
-            'thresholds': th, 'scope': 'measured 320x240 captures vs pack thresholds; not human art approval'}
+            'thresholds': th, 'scope': 'measured captures at their recorded dimensions vs pack thresholds; not human art approval'}
 
 
 def summary_lines(report):

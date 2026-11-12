@@ -1,10 +1,12 @@
 # Platform parity: macOS, Windows and Linux
 
-**Linux: three real Debian 13/bwrap 0.12.0 runs; run 3 reached C7 12/12 and private-Xvfb rendering, but D10 capture classification and subsequent D11 calls failed. Candidate repairs await a fourth run. Windows 11: one real run; runner/diagnostic exports pass, default Blender 4.5 demo failed, native rerun and human play pending. Linux and Windows: Not verified. Tested by the owner: Not yet.** Linux play means bots. macOS retains its development-Mac acceptance.
+**Linux: four real Debian 13/bwrap 0.12.0 runs; run 4 confirms C7 12/12, capture/report/style/N64 results and PulseAudio prevention/repair, then exposes a platform-independent project-character export refusal. Local-export policy repair awaits a fifth run. Windows 11: one real run; runner/diagnostic exports pass, default Blender 4.5 demo failed, native rerun and human play pending. Linux and Windows: Not verified. Tested by the owner: Not yet.** Linux play means bots. macOS retains its development-Mac acceptance.
 
 Receipt custody and exact limitations: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Rerun sheets: [Linux](LINUX-TEST-SHEET.md), [Windows](WINDOWS-TEST-SHEET.md).
 
-## Implementation versus real evidence
+## Historical implementation table (through run 3)
+
+Run-4 confirmations and the current export candidate are recorded below; pending-run-4 phrases in this historical table are superseded there.
 
 | Feature | Windows path | Linux path | macOS path | Real receipt / remaining gap |
 |---|---|---|---|---|
@@ -43,6 +45,14 @@ Receipt custody and exact limitations: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.
 
 Required prior suites remain in the local selection: platforms2/linuxfix/Linux platform, reviewfix environment/hints, schema/public text, package/registration/catalog/hub, create report/camera classes, related runner/audit/portability suites. Completed counts, Mac 21-output byte identity, 15 replay results, extracted-ZIP checks and scratch-home validator details belong in source-only `docs/PLATFORMS3-RESULT.md`, not in a native platform claim.
 
+## Run-4 update and current candidate
+
+Run 4 at public `35a12561` (source `6a0ee0cf`) confirms capture-from-facts, copied CREATE frames and actual style/N64 passes, private Dummy audio/runtime paths, exact old-game Pulse repair and outside-project-link refusal. C7 is again 12/12. No fresh Pulse link remains after any child. D11 bots pass on both games; web/Windows exports pass on stock `fox2` and fail on project-character `light2` with `release_private`. macOS retains its explicit non-Mac target refusal.
+
+The local candidate separates project-generation/owner-rights admission from the frozen public-manifest path. It records non-manifest actors, including source/locomotion/role derivatives; refuses private/restricted/cameo/unknown provenance; keeps Hub code and policies unchanged. See [EXPORT.md](EXPORT.md). Requiring only a self-declared public flag would not be sufficient, and an owner rig waiver is not a rights licence.
+
+Local tests: `tests.test_export_chars` (synthetic engine/target simulation, both recipe formats, transformations, rights, refusal/report controls) and `tests.test_platforms4` (omitted-warning count and corrected dimension-neutral scope). Final counts, 21-output Mac oracle, 15 replays, exact fixture export hashes and package checks belong in source-only `docs/PLATFORMS4-RESULT.md`. Captured PNG bytes were not attached to run 4; recorded decode results are not a new independent pixel audit. No host-after snapshot was supplied. No style thresholds, sandbox resources, pins or Hub/public cast manifest changed.
+
 ## Not verified
 
-Exact candidate on real Windows/Linux; Linux verdict/Dummy/runtime-link prevention/repair after actual Xvfb, fork-cap exhaustion and Hermes integration; Windows default 4.5 builder/clone rerun; human console flash, graphics/audio/save, Studio/browser play. **Tested by the owner: Not yet.**
+Exact candidate on real Windows/Linux; fifth-run project-character export check, dedicated Linux fork-cap exhaustion and Hermes integration; Windows default 4.5 builder/clone rerun; human console flash, graphics/audio/save, Studio/browser play. Run 4 established the previous capture/Pulse repairs, not acceptance of this candidate. **Tested by the owner: Not yet.**

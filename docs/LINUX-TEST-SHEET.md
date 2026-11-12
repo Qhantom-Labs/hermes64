@@ -1,6 +1,6 @@
 # Linux test sheet v3 (about 60 minutes)
 
-For a tester on a **real Linux computer**. Two Debian 13/bwrap 0.12.0 runs are recorded in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md): run 1 failed, run 2 built/bot-played/exported games with C7 PWD and D10 display failures. Use the **third-run addendum** below for this candidate. Record what really happens, pass or fail; never retype or tidy output. ([LINUX.md](LINUX.md), [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). The receipt template is
+For a tester on a **real Linux computer**. Four Debian 13/bwrap 0.12.0 runs are recorded in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Run 4 confirms capture/Pulse repairs but fails export of a project-generated character. Use the **fifth Linux run addendum** below for this candidate. Record what really happens, pass or fail; never retype or tidy output. ([LINUX.md](LINUX.md), [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). The receipt template is
 [receipts/LINUX-RECEIPT-TEMPLATE.md](receipts/LINUX-RECEIPT-TEMPLATE.md).
 
 Rules:
@@ -396,7 +396,17 @@ EOF
     `bwrap --version`, and `dmesg | grep -i -E 'apparmor|denied' | tail -20` if AppArmor may be involved. Do not
     work around a failure by changing plugin code or gates; report it.
 
-## Fourth Linux run addendum: PLATFORMS-3 candidate
+## Fifth Linux run addendum: PLATFORMS-4 / EXPORT-CHARS candidate
+
+**Linux and Windows: Not verified. Tested by the owner: Not yet.** Preserve all four earlier receipts. Record the exact new candidate SHA, use a fresh `$T`, no plugin edits, installs, sysctl changes or unconfined fallback. Run 4 already established the capture/Pulse repairs; do not replace its receipt with this run.
+
+1. **B5/C7 controls:** extract the current probe from this sheet, require real Runner/tiny-PNG readiness and C7 **12/12** with `--no-fork`; record the private XDG/Pulse constants. Keep fork exhaustion unexercised on the shared machine.
+2. **D10 with a project character:** use the create-flow game, not only `/hermes64 new`. Confirm `characters/cast.json` contains a `source=generated` character built by the plugin (e.g. the prior `bearded_keeper_navy_a` case). Retain saved recipe, character manifest and passing build/gates receipt. Require successful protocol/decodable PNGs/18 copied frames where expected and honest actual style/N64 verdicts; no threshold changes or substituted passes.
+3. **D11 on that same D10 game:** bots, **web and Windows exports must succeed**. Check `project_characters` in export/closure reports and `CHARACTER-PROVENANCE.json` in release and beside each target: user-generated, not public-manifest, original/final SHA-256, generator and recipe hash. Check the bound character media is present, no absolute home paths/raw receipts or missing licence notices, and no Pulse runtime link after each child. macOS must retain its explicit target refusal and write no macOS target.
+4. **Stock/negative controls:** repeat D11 on a rendered stock-character D9 game; no new project-character disclosure should appear. In a separate owned fixture, an imported unknown GLB without owner rights provenance must refuse `release_private` with creator/provenance guidance; private/restricted/cameo data stays refused. A rig-quality waiver alone must not supply rights. Do not edit real private files to construct this control. Hub/public-manifest policy is not waived by local export success.
+5. Save stdout/stderr/process receipts, all reports and copied-frame listings. Record read-only host-after facts (namespace/NPROC values and bounded process count, never an ambient environment/secrets dump), probe checksum, and symlinks. Never run D11 by invoking a helper file without its plugin import path; use the sheet's Python block. D12 human browser, graphics/audio/save, Studio, Hermes integration and dedicated fork-cap exercise remain separate.
+
+## Fourth Linux run addendum: PLATFORMS-3 candidate (historical; run completed)
 
 **Linux: Not verified. Tested by the owner: Not yet.** Preserve all three prior receipts. Record the exact candidate SHA, use a fresh `$T`, and extract C7 again from this sheet (the private runtime keys are now explicit constants, not inherited variables). Do not install packages, change sysctls or enable the unconfined fallback to obtain a pass.
 
@@ -422,7 +432,7 @@ Write a new receipt; do not edit an earlier one or mark Linux acceptance from th
 
 ## Second-run addendum: LINUXFIX candidate (historical; run completed)
 
-The second real run used this addendum; its results are in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Keep the C7a diagnostic below. For this candidate use the third-run list above it.
+The second real run used this addendum; its results are in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Keep the C7a diagnostic below. For this candidate use the fifth-run list above it.
 
 The first run on Debian 13/bwrap 0.12.0 failed every official child even though the old checklist said READY.
 Keep [that receipt](receipts/LINUX-RECEIPT-2026-11-12-debian13.md). On the fixed candidate, in a new `$T` (do not

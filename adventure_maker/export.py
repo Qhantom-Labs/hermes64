@@ -261,12 +261,13 @@ def stage(c, game_path, folder):
     project+='\n[editor]\n\nexport/convert_text_resources_to_binary=false\n'
     (output/'project.godot').write_bytes(project.encode('utf-8'))
     bindings=json.loads((generated/'bindings.json').read_text(encoding='utf-8'))
-    # Real characters must be members of the public frozen manifest, not merely self-declared public.
+    # Frozen public assets keep their original byte path; project admissions are local-only.
     records=manifest.get('characters',manifest.get('assets',[]))
     if isinstance(records,dict): records=list(records.values())
     admitted={row['sha256'] for row in records}
     closure=[]
     provenance_files={}
+    project_characters=[]
     def media(path, expected, suffix=None):
         path=inspect_path(Path(path))
         if not path.is_file(): fail('release_asset','Release requires every bound asset, not an absent fallback')
@@ -286,14 +287,19 @@ def stage(c, game_path, folder):
         row=copy.deepcopy(row)
         original=row.pop('path',None)
         row.pop('glb',None)
-        if actor and not row.get('placeholder') and row['sha256'] not in admitted:
-            fail('release_private','Character hash not admitted by public manifest')
+        disclosure=None
+        if actor:
+            from .export_characters import admit
+            disclosure=admit(c.project,c.root,dict(row,path=original),admitted)
+            if disclosure is not None and disclosure not in project_characters:
+                public_data(disclosure)
+                project_characters.append(disclosure)
         bound=inspect_path(Path(original))
         project_asset=c.project.root in bound.parents
         rel=bound.relative_to(c.project.root).as_posix() if project_asset else ''
         manifest=c.project.path('assets/PROVENANCE.json').is_file()
         required=row.get('licence_required',False) or (licence_scope and (rel.startswith(('assets/generated/','assets/imported/','assets/kit/')) or (manifest and not actor)))
-        if required:
+        if required and disclosure is None:
             if project_asset: provenance_id=rel
             elif c.root in bound.parents and not actor: provenance_id='bundle/'+bound.relative_to(c.root).as_posix()
             else: fail('release_licence','Required asset provenance is outside project/bundle')
@@ -306,14 +312,15 @@ def stage(c, game_path, folder):
         public_data(row)
         return row
     bindings['assets']={k:bind(row) for k,row in bindings['assets'].items()}
-    bindings['characters']=[bind(row,True) for row in bindings['characters'] if any(row['body_id']==ch['body_id'] and row['base_rig_id']==ch['base_rig_id'] and row['params']==ch['params'] for ch in game['characters'])]
+    bindings['characters']=[bind(row,True) for row in bindings['characters'] if row.get('for_ids') or any(row['body_id']==ch['body_id'] and row['base_rig_id']==ch['base_rig_id'] and row['params']==ch['params'] for ch in game['characters'])]
     # Combat art (module games only): enemy models for the staged kit pack and the weapon of each bound
     # character's pack, as hash-checked media like every other bound asset.
     combat=None
     if game.get('contract_version')=='1.2.0' and (generated/'combat.json').is_file():
         combat=json.loads((generated/'combat.json').read_text(encoding='utf-8'))
         packs={row.get('character_pack') for row in bindings['characters']}
-        combat['enemies']={k:dict(row,path=media(row['path'],row['sha256'])) for k,row in combat['enemies'].items()}
+        combat['enemies']={k:(bind(row,True) if row.get('cast_id') or c.project.root in inspect_path(Path(row['path'])).parents
+                              else dict(row,path=media(row['path'],row['sha256']))) for k,row in combat['enemies'].items()}
         combat['weapons']={k:dict(row,path=media(row['path'],row['sha256'])) for k,row in combat['weapons'].items() if k in packs}
     theme=json.loads((generated/'theme.json').read_text(encoding='utf-8'))
     env=inspect_path(Path(theme.pop('env_root')))
@@ -338,8 +345,13 @@ def stage(c, game_path, folder):
     if provenance_files:
         from .provenance import prepare_export
         prepare_export(c.project.root,provenance_files,str(output.relative_to(c.project.root)),bundle_root=c.root)
+    if project_characters:
+        c.project.write_json(folder+'/release/CHARACTER-PROVENANCE.json',
+                             {'scope':'local export only; not public-manifest or Hub admission','characters':project_characters})
     rows=scan_tree(output)
     record={'game_hash':game['game_hash'],'files':rows,'media':closure}
+    if project_characters:
+        record['project_characters']=project_characters
     if puzzle is not None:
         record['puzzle_game_hash']=puzzle['game_hash']   # the STORY 1.3 build; game_hash is its lowered 1.2 build
     c.project.write_json(folder+'/closure.json',record)
@@ -446,6 +458,8 @@ def run(service, project, args):
                     if (info.external_attr>>16)&0o111: p.chmod(0o755)
             artifact.unlink()
         shutil.copytree(release/'licenses',dest/'licenses')
+        if (release/'CHARACTER-PROVENANCE.json').is_file():
+            shutil.copy2(release/'CHARACTER-PROVENANCE.json',dest/'CHARACTER-PROVENANCE.json')
         (dest/'README.txt').write_bytes(('Hermes64 local export. Keyboard: WASD/arrows move (Shift run; Alt precision); E act/confirm; Q or Backspace cancel; hold Z Focus; Space dodge in combat/courses (confirm in menus); Tab action menu; I inventory; Esc pause/settings; F5/F9 quick save/load; hold R retry from checkpoint; C optional camera.\n'+
             ('Serve this directory over localhost HTTP (python3 -m http.server --bind 127.0.0.1; Windows: py -m http.server --bind 127.0.0.1). Open index.html; WebGL2 required. No threads/PWA/service worker. Browser saves use local IndexedDB.\n' if target=='web' else 'Saves are local Godot user data, under Hermes64/game-id.\n')+
             ('Windows: unsigned, so SmartScreen may warn: More info, then Run anyway. Saves and the log (logs\\godot.log): %APPDATA%\\Hermes64\\<game id>.\n' if target=='windows' else '')+
@@ -497,6 +511,9 @@ def run(service, project, args):
     (share/'FILES.json').write_bytes(json.dumps(all_files,sort_keys=True,indent=2).encode('utf-8'))
     zip_tree(share,project.path(folder+'/share.zip'))
     report={'ok':True,'status':'exported_local_only','targets':rows,'share_path':folder+'/share','zip_path':folder+'/share.zip','report_path':folder+'/report.json','bytes':sum(r['bytes'] for r in all_files),'privacy_scan':'passed: explicit portable closure + nested-archive/home-path scan','proof_status':proof['status'],'network':'none; no upload','scope':'Build success is not browser/recipient execution; see per-target verification.'}
+    closure=project.read_json(folder+'/closure.json')
+    if closure.get('project_characters'):
+        report['project_characters']=closure['project_characters']
     report['module_preview'] = physical is not None
     report['physical_report'] = folder+'/physical/report.json' if physical is not None else None
     report['build_pointer'] = current['pointer']
