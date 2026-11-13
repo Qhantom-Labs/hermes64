@@ -1,6 +1,24 @@
 # Linux test sheet v3 (about 60 minutes)
 
-For a tester on a **real Linux computer**. Four Debian 13/bwrap 0.12.0 runs are recorded in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Run 4 confirms capture/Pulse repairs but fails export of a project-generated character. Use the **fifth Linux run addendum** below for this candidate. Record what really happens, pass or fail; never retype or tidy output. ([LINUX.md](LINUX.md), [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). The receipt template is
+## Current evidence and remaining human/optional work
+
+Linux: experimental, receipts attached. Five real Debian 13/bwrap 0.12.0 runs, with Xvfb present. Run 5 (`55cdfc10`) passed authoring, bot playtest, web+Windows export and project-character export; B5 passed and C7 was 12/12 (`--no-fork`). Windows 11: experimental, receipts attached. Two real runs on Windows 11 Home, Blender 4.5.11, Hermes 0.18.2 and runner `job`. Run 2 (`72eb6565`) passed default-builder authoring, git-clone/ZIP/installed-folder check_install (C5 x3), C6 with Blender WARN and D12 web+Windows export; run 1 supplied the runner probes. **Tested by the owner: Not yet. Executors were Grok Bot/Prometheus, not owner playtests.**
+
+**What is left for a Windows human:**
+- E14: play the Windows game; check picture/audio, controls, save/load.
+- E15: serve and play the web build in Edge/Chrome; check browser console/audio.
+- D9: watch the runner probe and game launch for console flash; rerun probes on the latest commit if commissioned.
+- E16: Studio shelf/launch if available. Chat steps need a working model first.
+
+**Optional Linux items:**
+- Fork exhaustion only with explicit permission on a suitable host; all supplied C7 runs used `--no-fork`.
+- Private-cast/cameo/renamed-private/waiver-only refusal tests need a maintainer fixture, not real private files or invented owner approval.
+- AppArmor-restricted userns hosts, hosts without Xvfb (documented clean failure only), real desktop play/audio and Hermes integration remain outside native coverage.
+
+Historical steps/addenda follow. Completed receipts are immutable; supplied runs do not exercise this exact local head.
+
+
+For a tester on a **real Linux computer**. Five Debian 13/bwrap 0.12.0 runs are recorded in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md); run 5 passed B5/C7/D10/D11 and project-character export. Experimental, receipts attached. The historical addenda below retain reproducible steps; they are not pending runs. Record exact output without tidying it. The receipt template is
 [receipts/LINUX-RECEIPT-TEMPLATE.md](receipts/LINUX-RECEIPT-TEMPLATE.md).
 
 Rules:
@@ -88,7 +106,7 @@ Rules:
    cd "$PLUGIN"; python3 -B tools/check_install.py 2>&1 | tee "$R/outputs/b4-check-install.txt"
    ```
 
-   **PASS if** (zip) `PASS hermes64 ... N/N files verified` with both numbers equal. A git checkout has no
+   **PASS if** (zip) a PASS from check_install with N/N matching SHA-256 files with both numbers equal. A git checkout has no
    `PACKAGE-MANIFEST.json`; its `FAIL ... missing` line is expected there: record it and go on.
 5. The Linux checklist and the sandbox probe:
 
@@ -396,9 +414,9 @@ EOF
     `bwrap --version`, and `dmesg | grep -i -E 'apparmor|denied' | tail -20` if AppArmor may be involved. Do not
     work around a failure by changing plugin code or gates; report it.
 
-## Fifth Linux run addendum: PLATFORMS-4 / EXPORT-CHARS candidate
+## Fifth Linux run addendum: PLATFORMS-4 / EXPORT-CHARS candidate (historical; run completed)
 
-**Linux and Windows: Not verified. Tested by the owner: Not yet.** Preserve all four earlier receipts. Record the exact new candidate SHA, use a fresh `$T`, no plugin edits, installs, sysctl changes or unconfined fallback. Run 4 already established the capture/Pulse repairs; do not replace its receipt with this run.
+**Linux and Windows: experimental, receipts attached. Tested by the owner: Not yet.** Preserve all four earlier receipts. Record the exact new candidate SHA, use a fresh `$T`, no plugin edits, installs, sysctl changes or unconfined fallback. Run 4 already established the capture/Pulse repairs; do not replace its receipt with this run.
 
 1. **B5/C7 controls:** extract the current probe from this sheet, require real Runner/tiny-PNG readiness and C7 **12/12** with `--no-fork`; record the private XDG/Pulse constants. Keep fork exhaustion unexercised on the shared machine.
 2. **D10 with a project character:** use the create-flow game, not only `/hermes64 new`. Confirm `characters/cast.json` contains a `source=generated` character built by the plugin (e.g. the prior `bearded_keeper_navy_a` case). Retain saved recipe, character manifest and passing build/gates receipt. Require successful protocol/decodable PNGs/18 copied frames where expected and honest actual style/N64 verdicts; no threshold changes or substituted passes.
@@ -408,7 +426,7 @@ EOF
 
 ## Fourth Linux run addendum: PLATFORMS-3 candidate (historical; run completed)
 
-**Linux: Not verified. Tested by the owner: Not yet.** Preserve all three prior receipts. Record the exact candidate SHA, use a fresh `$T`, and extract C7 again from this sheet (the private runtime keys are now explicit constants, not inherited variables). Do not install packages, change sysctls or enable the unconfined fallback to obtain a pass.
+**Linux: experimental, receipts attached. Tested by the owner: Not yet.** Preserve all three prior receipts. Record the exact candidate SHA, use a fresh `$T`, and extract C7 again from this sheet (the private runtime keys are now explicit constants, not inherited variables). Do not install packages, change sysctls or enable the unconfined fallback to obtain a pass.
 
 1. **B5 / C7:** real confined Runner readiness and tiny PNG probe must pass. Re-run C7 with `--no-fork`; expect **12/12**, with no provider/Hermes/sentinel key. New `XDG_RUNTIME_DIR`/`PULSE_*` values point under `/tmp/hermes64-runtime` in the private per-run tmpfs, not a project or host Pulse socket. NPROC exhaustion remains not exercised on a shared machine.
 2. **D9 control:** build a fresh game and run its rendered audit. Preserve WARN findings (run 3 was 88/100, not human approval). Save process argv/stderr and list runtime symlinks afterward. Automated rendered/headless Godot argv should include `--audio-driver Dummy`; no host sound/display devices are exposed.
@@ -432,7 +450,7 @@ Write a new receipt; do not edit an earlier one or mark Linux acceptance from th
 
 ## Second-run addendum: LINUXFIX candidate (historical; run completed)
 
-The second real run used this addendum; its results are in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Keep the C7a diagnostic below. For this candidate use the fifth-run list above it.
+The second real run used this addendum; its results are in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Keep the C7a diagnostic below. The fifth-run list above was completed on 55cdfc10; use it for a future explicitly commissioned rerun.
 
 The first run on Debian 13/bwrap 0.12.0 failed every official child even though the old checklist said READY.
 Keep [that receipt](receipts/LINUX-RECEIPT-2026-11-12-debian13.md). On the fixed candidate, in a new `$T` (do not

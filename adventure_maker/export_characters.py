@@ -30,7 +30,12 @@ def policy(value):
                 value.get('source') == 'cameo_pack' or
                 value.get('licence') in ('LicenseRef-Private', 'NOASSERTION', 'unknown') or
                 'cameo' in value.get('tags', [])):
-            refuse('private/restricted or unlicensed character metadata')
+            reason = 'private/restricted or unlicensed character metadata'
+            if value.get('visibility') == 'internal' and value.get('rights_declared') is not True:
+                reason += ('; visibility internal: the owner must correct the community visibility only if legitimately releasable'
+                           '; no owner-rights declaration on this metadata: the owner must record explicit rights/licence'
+                           ' provenance in assets/PROVENANCE.json (separate from visibility)')
+            refuse(reason)
         for child in value.values():
             policy(child)
     elif isinstance(value, list):

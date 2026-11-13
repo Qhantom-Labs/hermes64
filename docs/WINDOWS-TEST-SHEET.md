@@ -1,6 +1,24 @@
 # Windows test sheet v5 (about 60 minutes)
 
-**Every command on this sheet needs the PC owner's approval before it runs.** Commands are kept small: run one block, show the output, get the next approval. One real Windows run recorded default Blender 4.5 failure, CRLF clone damage, runner 6/6 and diagnostic Python-builder export success; human play was not done ([PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). Use the PLATFORMS-2 rerun addendum below. Record what really happens; never retype or tidy output. Receipt template:
+## Current evidence and remaining human/optional work
+
+Linux: experimental, receipts attached. Five real Debian 13/bwrap 0.12.0 runs, with Xvfb present. Run 5 (`55cdfc10`) passed authoring, bot playtest, web+Windows export and project-character export; B5 passed and C7 was 12/12 (`--no-fork`). Windows 11: experimental, receipts attached. Two real runs on Windows 11 Home, Blender 4.5.11, Hermes 0.18.2 and runner `job`. Run 2 (`72eb6565`) passed default-builder authoring, git-clone/ZIP/installed-folder check_install (C5 x3), C6 with Blender WARN and D12 web+Windows export; run 1 supplied the runner probes. **Tested by the owner: Not yet. Executors were Grok Bot/Prometheus, not owner playtests.**
+
+**What is left for a Windows human:**
+- E14: play the Windows game; check picture/audio, controls, save/load.
+- E15: serve and play the web build in Edge/Chrome; check browser console/audio.
+- D9: watch the runner probe and game launch for console flash; rerun probes on the latest commit if commissioned.
+- E16: Studio shelf/launch if available. Chat steps need a working model first.
+
+**Optional Linux items:**
+- Fork exhaustion only with explicit permission on a suitable host; all supplied C7 runs used `--no-fork`.
+- Private-cast/cameo/renamed-private/waiver-only refusal tests need a maintainer fixture, not real private files or invented owner approval.
+- AppArmor-restricted userns hosts, hosts without Xvfb (documented clean failure only), real desktop play/audio and Hermes integration remain outside native coverage.
+
+Historical steps/addenda follow. Completed receipts are immutable; supplied runs do not exercise this exact local head.
+
+
+**Every command on this sheet needs the PC owner's approval before it runs.** Commands are kept small: run one block, show the output, get the next approval. Two supplied Windows runs record the default-builder/clone repairs and automated exports; human play remains open ([PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md)). Historical PLATFORMS-2 steps below were completed in run 2. Record exact output, never tidy it. Receipt template:
 [receipts/WINDOWS-RECEIPT-TEMPLATE.md](receipts/WINDOWS-RECEIPT-TEMPLATE.md).
 
 Rules:
@@ -86,7 +104,7 @@ Rules:
    py -B "$PLUGIN\tools\check_install.py" 2>&1 | Tee-Object "$R\outputs\c5-check-install.txt"
    ```
 
-   **PASS if** `PASS  hermes64 ... N/N files verified` with both numbers equal. **FAIL if** it names CRLF damage or a
+   **PASS if** a PASS from check_install with N/N matching SHA-256 files with both numbers equal. **FAIL if** it names CRLF damage or a
    long path: send the output.
 6. The Windows checklist:
 
@@ -301,10 +319,10 @@ print('RESULT %s (%d/%d checks passed)' % ('PASS' if all(results) else 'FAIL', s
 
 ## PLATFORMS-2 third-run addendum (Windows re-run)
 
-Record the exact candidate SHA and use fresh install/game folders. Re-run **C5 (both a default git clone and ZIP), C6, D10 default builder, D12 and D13**. This is the follow-up to the one Windows receipt, not a claim that two PC runs already occurred.
+Record the exact candidate SHA and use fresh install/game folders for any future commissioned rerun. **C5 (default git clone and ZIP), C6, D10 default builder, D12 and D13 discovery** were completed in Windows run 2 at `72eb6565`; D13 chat rebuild was prerequisite-skipped. Historical instructions follow, not an outstanding automated rerun request.
 
 - **C5:** in a new folder, default `git clone https://github.com/Qhantom-Labs/hermes64 ...`, checkout the exact candidate, then check_install. The shipped `.gitattributes` must prevent CRLF damage even if `core.autocrlf=true`. Separately install the checksum-checked ZIP with Expand-Archive/robocopy and run the same check. Record both outputs and exact SHAs. Stop gateway/Hermes with owner approval if the folder is in use; old damaged files must be replaced, not trusted because attributes were added later.
-- **C6:** Blender row must show the actual version, not plain OK. 4.5.11 LTS must show a visible WARNING (compatibility fix pending native rerun); 5.2.1 is the Mac-tested version. Unknown/newer versions cannot silently earn OK.
+- **C6:** Blender row must show the actual version, not plain OK. 4.5.11 LTS must show a visible WARNING (compatibility WARN retained; default builder passed in run 2); 5.2.1 is the Mac-tested version. Unknown/newer versions cannot silently earn OK.
 - **D10:** use **default builder=auto** with installed 4.5 LTS, a fresh project (for example thaw2), and no diagnostic Python override. Require the full demo pipeline. Save Blender process/error JSON on any failure.
 - **D12:** use that successful default-builder project (replace the sample `fox` argv and `$Games` accordingly), bots + web/Windows export/headless boot and macOS refusal. Do not reuse thaw1py as proof of the default-builder fix.
 - **D13:** record discovery **and version**, then the explicit Blender room rebuild if chat is available. A working configured model is required; record prerequisite SKIPPED if it still returns 404.

@@ -32,9 +32,9 @@
    "sha256": "283cae9c7e3412c1c5f1609aeb04aa2a15b25084e4c176ab2f1867ac9fd16d06"
   },
   {
-   "bytes": 13287,
+   "bytes": 13702,
    "path": "README.md",
-   "sha256": "c31a91eae0d7013a493114d052e24a8654059b5efb9031da3bb8013468d5c9e3"
+   "sha256": "daea40ba2e84ac5a30b6d2938ec4cc85d548d6b597de69699327e6cfcae41005"
   },
   {
    "bytes": 11955,
@@ -327,9 +327,9 @@
    "sha256": "06a0996fd8a85d460f6608621ebde23f54f576f6a90858c8bf23797a107777c5"
   },
   {
-   "bytes": 10692,
+   "bytes": 11169,
    "path": "adventure_maker/export_characters.py",
-   "sha256": "cb77028d8d46a03684823001270dc66d81ca190797c1211aebf4836a8b602e49"
+   "sha256": "3a22b3756255601d911c3ada6fb4e20fdceae65798592f4a50180e233f42a4c9"
   },
   {
    "bytes": 4395,
@@ -3617,14 +3617,14 @@
    "sha256": "03e37c7594427eb364f82d5a14ca8ca8eaa830a0491ff041b7f8fe3ffe2ff5c4"
   },
   {
-   "bytes": 33020,
+   "bytes": 34732,
    "path": "docs/LINUX-TEST-SHEET.md",
-   "sha256": "e52d773fd90941bb5f16709584b686257b4c5daee21378de6082d3bf3b746af6"
+   "sha256": "5df28acbb1f014003ddfb6946ad675f0c81b03fae2bed4f824aedd74ddc3415d"
   },
   {
-   "bytes": 16935,
+   "bytes": 17282,
    "path": "docs/LINUX.md",
-   "sha256": "2bd0e08941cfa94d0a72f524e13d52537f5f97bb63e04659b0ab1cf0ce73e4b4"
+   "sha256": "9a480b36e76b83aaf1704500aca3d5d946fafcc5d9fc61319c12b280d5c1eb3c"
   },
   {
    "bytes": 7324,
@@ -3747,14 +3747,14 @@
    "sha256": "1766fd1e7f79d9ca3330d975e170398e44472221f00d91fa384f296a1c0cd247"
   },
   {
-   "bytes": 8412,
+   "bytes": 6872,
    "path": "docs/PLATFORM-EVIDENCE.md",
-   "sha256": "a6ce736a4d02b704954e92f8c29c714c3cfb6b6126741b145a9717fbdf23e31a"
+   "sha256": "39df6e58b97cde0499fdd25518eae23a5dcbebdb4bc84d12173a387e2e905a7a"
   },
   {
-   "bytes": 9348,
+   "bytes": 5070,
    "path": "docs/PLATFORM-PARITY.md",
-   "sha256": "6289bbdc55ec3213bd31847294e12573356346ace1c50641cfe9f17127923645"
+   "sha256": "25560c3233624f6198ec3baf3c70c6d5dc374c72491de2af46eb347d03160fa2"
   },
   {
    "bytes": 6569,
@@ -3977,14 +3977,14 @@
    "sha256": "972e48b5b7de2863371403c02dc08b1e0f858136625f602b7c45e17fd50f83aa"
   },
   {
-   "bytes": 20513,
+   "bytes": 22258,
    "path": "docs/WINDOWS-TEST-SHEET.md",
-   "sha256": "b83ca9a8e325d53b72a0a84b39af5ee38fc200644e7d21ab75f613e399cbe212"
+   "sha256": "61a239e19d60c4de0916b841d938d38f1076ae88ef0cef01bcda5eef0fb341f0"
   },
   {
-   "bytes": 14296,
+   "bytes": 14997,
    "path": "docs/WINDOWS.md",
-   "sha256": "7595d5ca8f4f72b86d14fabd231d5483319508066736bda250623b8d4894c0ba"
+   "sha256": "3950f70938df89fc6d89ebcf21ce8536703a4288fd1e8c20aa3d6d928186109c"
   },
   {
    "bytes": 7419,
@@ -29880,12 +29880,12 @@
   "blocking": 0,
   "report_only": {
    "cameo": {
-    "files": 68,
-    "hits": 329
+    "files": 70,
+    "hits": 335
    },
    "qhantom": {
     "files": 37,
-    "hits": 600
+    "hits": 602
    },
    "teknium": {
     "files": 14,
@@ -29895,12 +29895,12 @@
  },
  "schema": "hermes64-package/1",
  "source": {
-  "commit": "0619f6d6b91edbb9d4bee773e0de288a34e01336",
+  "commit": "32337ecb0562f292360efb3d49be855e2021e389",
   "tree": "clean"
  },
  "tools": 27,
  "totals": {
-  "bytes": 152115866,
+  "bytes": 152115445,
   "files": 5974
  },
  "version": "1.0.0-rc"

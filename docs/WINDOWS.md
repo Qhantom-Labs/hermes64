@@ -1,8 +1,10 @@
 # Hermes64 on Windows
 
-**Status. Windows 11: one real run: runner/exports pass, bundled demo failed on Blender 4.5 (fixed in this candidate), game not played by a human. Not verified.**
+**Status. Windows 11: experimental, receipts attached. Two real runs on Windows 11 Home, Blender 4.5.11, Hermes 0.18.2 and runner `job`. Run 2 (`72eb6565`) passed default-builder authoring, git-clone/ZIP/installed-folder check_install (C5 x3), C6 with Blender WARN and D12 web+Windows export; run 1 supplied the runner probes. Tested by the owner: Not yet. Executors were Grok Bot/Prometheus, not owner playtests.**
 
-The `6af4ba26` receipt records Windows 11 Home, Hermes 0.18.2, runner D9 6/6, and bot/export/headless-boot success on a diagnostic Python-builder project. Default auto selected Blender 4.5.11 LTS and failed on a missing material node tree; C5 clone hashes failed after CRLF conversion, while ZIP hashes passed. Candidate fixes and exact source-only receipts: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Rerun the PLATFORMS-2 addendum in [WINDOWS-TEST-SHEET.md](WINDOWS-TEST-SHEET.md). Agent execution with per-command approval is not owner play acceptance; Tested by the owner stays Not yet.
+Run 1 (`6af4ba26`) passed D9 6/6 runner probes and diagnostic Python-builder exports, but default Blender authoring and clone line endings failed. Run 2 (`72eb6565`) passed the default auto builder with Blender 4.5.11, check_install via default git clone, ZIP and installed folder, and D12 bot/web+Windows export. C6 keeps its Blender compatibility WARN. One room-shell candidate failed topology, then the designed retry built the next candidate. Windows native export passed a headless boot; web export is not browser play. [Exact source-only receipts](PLATFORM-EVIDENCE.md).
+
+Not covered: human E14–E16 game/browser/Studio, console flash, chat steps (model prerequisite HTTP 404), or D9 probes on run 2/the latest commit. Supplied native runs are not an execution of this exact local head. [Human checklist](WINDOWS-TEST-SHEET.md). **Tested by the owner: Not yet.**
 
 ## Install
 
@@ -58,7 +60,7 @@ First stop Hermes and the gateway **with owner approval** and back up/move any o
 | Plugin loads, registers 27 tools and `/hermes64` | yes | built | `tests/test_merge4_windows_load.py` (simulated win32, POSIX `os` functions removed) |
 | `hermes64_doctor`, Windows checklist, `/hermes64 setup` **Child runner** row | yes | built | `python -m adventure_maker.doctor --windows-checklist`; `tests/test_windows_paths.py` |
 | `py tools\check_install.py` (package check) | yes | built; names CRLF damage and long paths | `tests/test_windows_paths.py::InstallCheck` |
-| Find Godot | `/Applications`, PATH | `HERMES64_GODOT`, the verified fetch cache, `%LOCALAPPDATA%\Programs\Godot`, `Program Files\Godot`, winget, scoop, Downloads, PATH | `tests/test_windows_paths.py::Candidates` |
+| Find Godot | `/Applications`, PATH | `HERMES64_GODOT`, the checksum-checked fetch cache, `%LOCALAPPDATA%\Programs\Godot`, `Program Files\Godot`, winget, scoop, Downloads, PATH | `tests/test_windows_paths.py::Candidates` |
 | Find Blender | Homebrew, `/Applications` | `HERMES64_BLENDER`, `Program Files\Blender Foundation\Blender <v>` (newest first), Steam, scoop, unzipped `blender-<v>-windows-x64` in Downloads/Desktop/home, PATH | `tests/test_windows_lane_fixes.py::BlenderOnWindows` |
 | Export templates folder | `~/Library/Application Support/Godot/...` | `%APPDATA%\Godot\export_templates\4.6.2.stable` or `HERMES64_TEMPLATES` | `Templates` tests |
 | Godot fetch (`/hermes64 setup --fetch`) | yes | built: pinned SHA-512 Windows x86-64 zip into `%LOCALAPPDATA%\hermes64\` | `tests/test_godotfetch.py` (loopback fixture; no real download anywhere) |
@@ -113,13 +115,12 @@ Turn it on (PowerShell, current user, then restart Hermes):
   Godot's own log is in the same folder, `logs\godot.log` (Godot 4 logs to a file by default on desktop).
 - **SmartScreen**: the `.exe` is unsigned. Windows may show "Windows protected your PC": click **More info**, then
   **Run anyway**.
-- **Graphics**: exported games use Godot's GL Compatibility renderer (OpenGL 3.3 on Windows). Not verified on any
-  PC GPU.
+- **Graphics**: exported games use Godot's GL Compatibility renderer (OpenGL 3.3 on Windows). Human graphics/audio acceptance on a PC GPU remains open; supplied automated runs were headless.
 - **Skills**: Hermes shows a skill only on the systems its `platforms` field names. The core `hermes64` skill (from
   rc9) and the create, places, generators, hub and audio skills are shown on Windows; `hermes64-author`,
   `-characters`, `-cover`, `-gameplay-modules` and `-playtest-and-ship` still declare macOS only (they contain
   POSIX or repository-only commands), so Hermes does not offer them on Windows. The tools they describe still work.
-- **Blender**: supported compatibility targets are 4.2 LTS through 4.5 LTS and 5.x. **5.2.1 verified on Mac; 4.5 LTS fix untested on a real run until the Windows re-run.** The fix enables nodes only when `node_tree` is None; existing 5.x trees are untouched. Non-Mac automatic discovery prefers measured 5.2.1, then compatibility candidates; explicit `blender_path` / `HERMES64_BLENDER` still wins. Doctor prints the version, with a visible WARNING outside the exact tested version or when unreadable. Mac discovery and character-exporter selection stay unchanged. The version compatibility repair covers the static KITS builder. Character Blender export/review helpers are separate and still need 5.2.1; their 4.x compatibility is not claimed. A found Blender that fails is not silently replaced: deliberately select `builder=python` for diagnosis, not default-builder acceptance.
+- **Blender**: supported compatibility targets are 4.2 LTS through 4.5 LTS and 5.x. **5.2.1 measured on Mac; default-builder authoring passed on Windows Blender 4.5.11 in run 2 (C6 WARN retained).** The fix enables nodes only when `node_tree` is None; existing 5.x trees are untouched. Non-Mac automatic discovery prefers measured 5.2.1, then compatibility candidates; explicit `blender_path` / `HERMES64_BLENDER` still wins. Doctor prints the version, with a visible WARNING outside the exact tested version or when unreadable. Mac discovery and character-exporter selection stay unchanged. The version compatibility repair covers the static KITS builder. Character Blender export/review helpers are separate and still need 5.2.1; their 4.x compatibility is not claimed. A found Blender that fails is not silently replaced: deliberately select `builder=python` for diagnosis, not default-builder acceptance.
 
 ## Grep gate
 
@@ -153,11 +154,11 @@ Not changed: the macOS sandbox policy text, simulation and replay code, `runtime
 template hashes, the privacy scanner, the `plugin.yaml` tool list. Developer tools under `tools/` (other than
 `check_install.py` and `windows_gate.py`) and `tools/verify_all.sh` remain macOS-only.
 
-## Not verified
+## Remaining coverage
 
-The exact candidate's default 4.5 builder and new checkout fix need a real PC rerun. D9 passed six runner checks and D12 passed headless boot on the diagnostic Python-builder project; those do not cover console flash, graphics/audio/save, memory-cap exhaustion, SmartScreen, Studio shelf/PLAY WINDOWS BUILD, or a human playthrough. Chat-model 404 prevented C7/D11/D13 chat rebuilds; use a configured working model first.
+Experimental, receipts attached. Human E14 Windows picture/audio/controls/save, E15 web play in Edge/Chrome, D9 console flash and E16 Studio if available remain open. D9 runner probes passed on run 1 only, not run 2 or the latest commit. Chat steps require a working configured model; the supplied model returned HTTP 404. Resource-exhaustion, SmartScreen and recipient play are not established by a headless boot. No new real-machine run occurred in this local lane.
 
 ## Tested by the owner
 
 Not yet. Record the date, PC alias, Windows version, GPU and the owner's words here only from a receipt
-(`docs/receipts/windows/`).
+(see [receipt index](PLATFORM-EVIDENCE.md)).

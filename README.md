@@ -28,7 +28,7 @@ Zip steps for Windows (PowerShell, `Expand-Archive`) and Linux: [Windows guide](
 
 **Games:** normally `<Hermes home>/plugin-data/hermes64/games`, or your configured `projects_root`. Older hosts need an explicit folder.
 
-**Platforms:** macOS: verified. Linux: four real Debian 13/bwrap 0.12.0 runs. Run 4 confirms C7 12/12, capture/report verdicts and PulseAudio cleanup; it exposes a platform-independent export gate blocking project-generated characters. The local-export policy repair awaits a fifth Linux run. Windows 11: one real run: runner/diagnostic exports pass, default demo failed on Blender 4.5 (candidate repair pending native rerun), no human play. **Linux and Windows: Not verified. Tested by the owner: Not yet.** Linux play means bots. [What each claim rests on](docs/PLATFORM-EVIDENCE.md).
+**Platforms:** macOS: development-Mac acceptance retained. Linux: experimental, receipts attached. Five real Debian 13/bwrap 0.12.0 runs, with Xvfb present. Run 5 (`55cdfc10`) passed authoring, bot playtest, web+Windows export and project-character export; B5 passed and C7 was 12/12 (`--no-fork`). Windows 11: experimental, receipts attached. Two real runs on Windows 11 Home, Blender 4.5.11, Hermes 0.18.2 and runner `job`. Run 2 (`72eb6565`) passed default-builder authoring, git-clone/ZIP/installed-folder check_install (C5 x3), C6 with Blender WARN and D12 web+Windows export; run 1 supplied the runner probes. **Tested by the owner: Not yet. Executors were Grok Bot/Prometheus, not owner playtests.** [Evidence and remaining gaps](docs/PLATFORM-EVIDENCE.md).
 
 [Quick start and troubleshooting](QUICKSTART.md) · [Game-type strengths and measured limits](docs/GAME-TYPE-STRENGTHS.md) · [Honest scope](docs/AUTHORING-SCOPE.md)
 
@@ -48,7 +48,7 @@ Best supported settings (measured): medieval village and castle, snow village, n
 A plain brief gets a crafted hero, 3-4 made objects and an entry layout chosen from the setting.
 Settings without ready-made rooms (for example space, underwater, desert, candy) have no ready-made rooms in this release: the flow stops with a clear message, and the agent may hand-author rooms or pick the nearest pack.
 The default shape is two rooms, one outside and one inside; more rooms and mechanics can be added with the author skill.
-No jumping or platforming. Games are checked by bots, not by human playtests. Windows and Linux are not verified.
+No jumping or platforming. Games are checked by bots, not by human playtests. Windows and Linux remain experimental, receipts attached.
 
 ## Requirements and setup
 
@@ -68,7 +68,7 @@ If Godot is missing:
 2. If you approve it, type `/hermes64 setup --fetch --yes` yourself.
 3. Retry your game request. Add `--templates` to the approved fetch only when you need exports.
 
-The fetch checks pinned SHA-512 before unpacking the official Godot release. It uses a per-user cache, not the plugin directory; on macOS it removes quarantine only from the verified fetched Godot app and checks `--version`. On Linux the fetch is refused until a Linux SHA-512 pin is added; install Godot by hand ([Linux guide](docs/LINUX.md)). Downloads and template storage are extra setup, not game-build time. [Setup details](docs/SETUP-FETCH.md).
+The fetch checks pinned SHA-512 before unpacking the official Godot release. It uses a per-user cache, not the plugin directory; on macOS it removes quarantine only from the checksum-checked fetched Godot app and checks `--version`. On Linux the fetch is refused until a Linux SHA-512 pin is added; install Godot by hand ([Linux guide](docs/LINUX.md)). Downloads and template storage are extra setup, not game-build time. [Setup details](docs/SETUP-FETCH.md).
 
 ## What the agent can do
 
@@ -103,9 +103,9 @@ Use the active profile's Hermes64 settings (`plugins.entries.hermes64.settings`)
 
 **macOS:** the central build/check/play/export runner uses `sandbox-exec`, denying network and confining writes. Not every helper uses that runner; consult [platform parity](docs/PLATFORM-PARITY.md).
 
-**Windows 11:** child execution requires an owner opt-in to `HERMES64_WINDOWS_RUNNER=job`, followed by a restart. Job Objects limit resources and child lifetime (each child is placed in its job before it runs), but provide **no OS-enforced network or write confinement**. This candidate's native Windows install/build/export remains unverified. [Windows guide](docs/WINDOWS.md) · [test sheet](docs/WINDOWS-TEST-SHEET.md).
+**Windows 11:** child execution requires an owner opt-in to `HERMES64_WINDOWS_RUNNER=job`, followed by a restart. Job Objects limit resources and child lifetime (each child is placed in its job before it runs), but provide **no OS-enforced network or write confinement**. Two supplied runs cover install/build/export on their recorded commits, not human play or this exact local head. [Windows guide](docs/WINDOWS.md) · [test sheet](docs/WINDOWS-TEST-SHEET.md).
 
-**Linux:** three real Debian 13/bwrap 0.12.0 runs now reach C7 12/12 and private-Xvfb rendering. Run 3 still failed D10's capture classification and D11 after a PulseAudio runtime symlink appeared; candidate repairs await a fourth run. **Not verified.** The bubblewrap design confines network/writes and hides home; without a working sandbox every child is refused. `HERMES64_LINUX_RUNNER=unconfined` is an explicit owner opt-in with **no OS-enforced network or write confinement** (process-group kill and rlimits only), never a sandboxed READY result. macOS exports and native Linux exports are not available from Linux. [Linux guide](docs/LINUX.md).
+**Linux:** Linux: experimental, receipts attached. Five real Debian 13/bwrap 0.12.0 runs, with Xvfb present. Run 5 (`55cdfc10`) passed authoring, bot playtest, web+Windows export and project-character export; B5 passed and C7 was 12/12 (`--no-fork`). Fork-count enforcement, AppArmor-restricted user namespaces, hosts without Xvfb (documented clean failure only), real desktop play/audio and private-cast refusal tests remain outside native coverage. Bubblewrap confines network/writes and hides home; children fail closed without a working sandbox. The explicit `HERMES64_LINUX_RUNNER=unconfined` fallback has **no OS-enforced network or write confinement**, only process-group kill and rlimits, and never earns sandboxed READY. macOS and native Linux exports are unavailable from Linux. [Linux guide](docs/LINUX.md).
 
 **Local processes:** Godot, Python, optional Blender and user-provided ffmpeg. Some character/preview/audio subprocesses are outside the central runner; shipped child sites use explicit sanitized environments, with the documented create-flow self-rerun exception. Sanitization is not OS confinement. [Child-environment audit](docs/REVIEWFIX-ENV-AUDIT.md). Plugin code is not a universal sandbox.
 

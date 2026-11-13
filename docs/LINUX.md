@@ -1,12 +1,14 @@
 # Hermes64 on Linux
 
-**Status. Linux: four real Debian 13/bwrap 0.12.0 runs. Run 4 confirms C7 12/12, D10's real capture/style/N64/report results and PulseAudio prevention/repair. D11 exposes a platform-independent export gate blocking project-generated characters. The local-export repair awaits a fifth Linux run. Not verified. Tested by the owner: Not yet.** Bot play is not human play.
+**Status. Linux: experimental, receipts attached. Five real Debian 13/bwrap 0.12.0 runs, with Xvfb present. Run 5 (`55cdfc10`) passed authoring, bot playtest, web+Windows export and project-character export; B5 passed and C7 was 12/12 (`--no-fork`). Tested by the owner: Not yet. Executors were Grok Bot/Prometheus, not owner playtests.** Bot play is not human play.
 
 Run 1 (`6af4ba26`) failed official children because NPROC preceded namespace setup; run 2 (`acbcb657`) confirmed that repair but failed PWD/capture reporting. Run 3 (`72eb6565`) confirmed C7 12/12, tiny PNG readiness, D8 bots/export and D9 rendered audit. D10 wrote 18 PNGs with `CAPTURE status=passed rooms=2 missing=0` and both rooms passed its style gate; the plugin wrongly treated benign Xvfb/ALSA stderr as capture failure. Rendered Godot also left `.maker/local/config/pulse/<machine-id>-runtime` pointing into `.maker/local/tmp/pulse-*`, so D11 on rendered games failed path safety. An unrendered diagnostic game still passed bots/web/Windows export and refused macOS as designed.
 
-Run 4 (`35a12561`, source `6a0ee0cf`) confirms those capture and runtime-link repairs: D10 keeps 18 copied frames and real style/N64 passes; the original poisoned game repairs automatically, while a copied game's outside-root link still refuses. Both rendered games leave no new Pulse link. D11 bots pass on both; web/Windows export succeeds on stock-character `fox2` but refuses generated `bearded_keeper_navy_a` in `light2` because the old export gate required public-manifest membership. The candidate now checks project generation/owner-rights evidence separately from public redistribution and records every non-manifest admission; private/restricted/unknown characters remain blocked. Re-run **D10 and D11 on a project-character game**, B5/C7 and stock controls using the **fifth Linux run** addendum in [LINUX-TEST-SHEET.md](LINUX-TEST-SHEET.md).
+Run 4 (`35a12561`, source `6a0ee0cf`) passed D10 capture/style/N64/report and Pulse prevention/repair, but D11 refused the project character with `release_private`. Run 5 (`55cdfc10`) passed D10 and D11 on the same fresh project-character game, plus the stock-character control. Project exports disclose **user-generated, not part of the public manifest** in export/closure reports and `CHARACTER-PROVENANCE.json`; stock exports need no disclosure. Unknown imported characters still refuse with creator/provenance instructions. Private-cast/cameo/renamed-private/waiver-only native refusals were NOT RUN. Local maintainer fixture tests are separate evidence, not native coverage. Hub is unchanged.
 
-Five exact receipt bodies (four Linux, one Windows) are indexed in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). They remain source-only; no raw outputs ship. Earlier runs recorded host NPROC 63991 and inner NPROC 514; run 4 has no separate host-after snapshot. Fork exhaustion and Linux Hermes integration were not exercised.
+The run-5 receipt reports two internal build files with absolute scratch paths (`release/export_presets.cfg`, `release/.godot/editor/project_metadata.cfg`); neither ships in share/ or ZIPs. Five Linux and two Windows exact receipt bodies are indexed in [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md), source-only without raw output trees. Redactions remain as received.
+
+Remaining native gaps: fork-count cap (`--no-fork`), AppArmor-restricted userns hosts, hosts without Xvfb (documented clean failure, not a real no-Xvfb run), real desktop play/audio/save, Linux Hermes integration, and private-cast refusal tests. Use maintainer fixtures, never real private files; fork exhaustion needs explicit permission. Missing restriction sysctls do not establish that AppArmor is disabled. [Test sheet](LINUX-TEST-SHEET.md).
 
 ## What you need
 
@@ -32,7 +34,7 @@ hermes plugins install Qhantom-Labs/hermes64 --enable
 
 Use the `owner/repo` form on Linux. An install by the bare catalog name (`hermes plugins install hermes64`) follows
 the Hermes catalog entry's platform list, which is set in the catalog, not in this repository, and may not include
-Linux while Linux is unverified; Hermes refuses such an install with "unavailable on linux". Approve numpy and Pillow
+Linux while Linux remains experimental; Hermes refuses such an install with "unavailable on linux". Approve numpy and Pillow
 when Hermes asks;
 if it says dependency install was skipped, run `hermes plugins enable hermes64` in a terminal. Restart Hermes and
 start a **new** chat.
@@ -72,7 +74,7 @@ Godot's `--headless` display uses a dummy renderer: it cannot supply real style/
 
 The Linux doctor/setup performs a tiny **real rendered PNG through Runner.run**, not just executable discovery. Without Xvfb, or when the tiny capture fails (missing Mesa/GLX, startup error, engine failure), it says `capture display: missing, install xvfb (sudo apt install xvfb)` and the exact reason **before** the user starts authoring. Installing xvfb is a human-approved system action, not performed by doctor. A present Xvfb alone does not earn OK.
 
-Without that route the create flow still builds/bot-tests the game and writes `CREATE-REPORT.md`; style and N64 gates read **not run: no display on this machine**, with the reason, never passed. A Vulkan/lavapipe switch is not silently substituted because it changes the renderer being measured. Run 4 established the repaired verdict/report/cleanup path; fifth-run export admission is the remaining candidate gate.
+Without that route the create flow still builds/bot-tests the game and writes `CREATE-REPORT.md`; style and N64 gates read **not run: no display on this machine**, with the reason, never passed. A Vulkan/lavapipe switch is not silently substituted because it changes the renderer being measured. Run 4 established the repaired verdict/report/cleanup path; run 5 passed project-character export on its recorded commit.
 
 Automated Linux Godot capture/replay/bot/export processes select `--audio-driver Dummy`; manual Play commands retain normal sound. bwrap exposes no host sound devices. `XDG_RUNTIME_DIR`, `PULSE_RUNTIME_PATH`, `PULSE_STATE_PATH`, `PULSE_CLIENTCONFIG` and `PULSE_SERVER` use `/tmp/hermes64-runtime` inside its private tmpfs. The weaker unconfined opt-in has no private tmpfs and earns no equivalent isolation claim. Raw stderr is preserved; only exact known device messages are demoted to `benign_stderr`. Unknown `ERROR:`, script/parse/load errors, crashes/signals, nonzero exit, missing marker/room/file, corrupt or blank primary PNGs still fail.
 
@@ -174,9 +176,9 @@ count (the same as on macOS).
 
 | Feature | Linux status |
 |---|---|
-| `/hermes64 new`, the create flow, edit, check, replay, build assets, bot playtest | implemented (inside bubblewrap), not verified |
-| Export `web` | implemented, not verified; play it in a browser from a local server |
-| Export `windows` | implemented (the same cross-export a Mac does), not verified |
+| `/hermes64 new`, the create flow, edit, check, replay, build assets, bot playtest | passed in the recorded Debian runs; experimental, receipts attached |
+| Export `web` | export passed on run 5; human browser play remains open |
+| Export `windows` | cross-export passed on run 5; recipient play remains open |
 | Export `macos` | refused with one sentence: the macOS target needs a Mac (codesign) |
 | Native Linux export | **not supported yet**: no Linux export template is pinned or kept |
 | Screenshots, measured style audit | Private Xvfb + software Compatibility/OpenGL3 inside sandbox, only after real tiny PNG probe succeeds; otherwise both style/N64 gates not_run and CREATE-REPORT.md still written |
