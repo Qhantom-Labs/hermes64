@@ -1,5 +1,5 @@
 """Native conditional-module replay; never credit analysis assumptions as inputs."""
-from .runner import locate
+from .runner import locate, silent_godot
 from .safety import fail
 
 
@@ -11,6 +11,7 @@ def verify_movie(component, runtime, movie, folder):
     project.write_json(runtime+'/author-replay-config.json',config)
     argv=[locate('godot',component.settings.get('godot_path','')),'--headless','--fixed-fps','60','--disable-vsync',
           '--path',str(project.path(runtime)),'--script','res://tests/author_module_replay.gd']
+    argv=silent_godot(argv)
     process=component.runner.run(argv,project.root,timeout=180)
     project.write_json(folder+'/process.json',dict(process,argv=argv))
     report=project.read_json(folder+'/native.json')

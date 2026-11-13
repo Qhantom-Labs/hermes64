@@ -31,6 +31,8 @@ function studioHost(ctx, hooks) {
         throw new Error(backendErrorSentence(err))
       }
       if (!r || r.ok !== true) throw new Error((r && r.message) || backendErrorSentence(''))
+      // A Windows backend says so; the detail menu then offers PLAY WINDOWS BUILD (macOS backends say nothing).
+      if (r.native_launch === 'windows') this.caps.nativeTarget = 'windows'
       return r.catalogue
     },
     async image(src) {
@@ -68,7 +70,7 @@ function studioHost(ctx, hooks) {
     hideFrame() { hooks.setFrame(null) },
     eject() { return rest('/studio/stop', { method: 'POST', body: {} }).catch(() => null) },
     async launchNative(e) {
-      const r = await rest('/studio/launch', { method: 'POST', body: { game: e.id, target: 'macos' } })
+      const r = await rest('/studio/launch', { method: 'POST', body: { game: e.id, target: e.target === 'windows' ? 'windows' : 'macos' } })
       return r && r.ok ? { ok: true } : { ok: false, message: (r && r.message) || 'Could not open the build' }
     },
     async reveal(id) {

@@ -105,6 +105,8 @@ def preview_material(src, pack, sc):
         c = np.where(c <= 0.04045, c / 12.92, ((c + 0.055) / 1.055) ** 2.4)
         tint = (float(c[0]), float(c[1]), float(c[2]), 1.0)
     m = bpy.data.materials.new("prev_" + (src.name if src else "none"))
+    if m.node_tree is None:  # Blender 4.x; leave the existing 5.x tree untouched
+        m.use_nodes = True
     nt = m.node_tree
     for n in list(nt.nodes):
         nt.nodes.remove(n)

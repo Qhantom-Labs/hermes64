@@ -4,7 +4,7 @@ description: "ANY game request: FIRST load hermes64-create. N64 Godot."
 version: 0.1.0
 author: Qhantom Labs, Hermes Agent
 license: MIT
-platforms: [macos]
+platforms: [macos, windows, linux]
 metadata:
   hermes:
     tags: [games, authoring, local]
@@ -32,7 +32,7 @@ Next: load skill hermes64:hermes64-create now
 - `/hermes64 setup` is a read-only checklist. The `hermes64_doctor` tool includes that checklist and the official editor/export-template download plan automatically.
 - If Godot is missing, inspect `hermes64_doctor`'s `setup.download_plan`: it returns the official files, SHA-512 pins, caps and cache folder plus the command the user must type. The tool never downloads and has no consent argument: show the plan and ask the user to type `/hermes64 setup --fetch --yes` (`--templates` for the official export templates) themselves. Never type or dispatch that command for them, and never infer approval from a game-making request.
 - CLI equivalent: `python3 tools/hermes64_setup.py --fetch` (`py` on Windows). It prompts `[y/N]`; `--yes` is explicit noninteractive consent typed by the user. Download failure is not successful setup; rerun the same command to restart cleanly, not a manual unverified unpack.
-- Verified Godot lives in the per-user cache and is discovered without changing settings. An explicit `godot_path` still wins; clear/change an obsolete override rather than silently ignoring it. See `docs/SETUP-FETCH.md`. Linux fetch is unsupported; Windows child-runner isolation still has its independent gate.
+- Verified Godot lives in the per-user cache and is discovered without changing settings. An explicit `godot_path` still wins; clear/change an obsolete override rather than silently ignoring it. See `docs/SETUP-FETCH.md`. Linux fetch is refused (no Linux pin; Godot is installed by hand); the Windows and Linux child runners keep their own gates.
 
 ## Prerequisites
 Themes can describe any N64-era-style adventure within the story contract; `polar_pod` is a demo pack, not the product.

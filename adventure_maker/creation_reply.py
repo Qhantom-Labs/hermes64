@@ -95,8 +95,9 @@ def audit_details(report):
     findings = [f for room in report.get('rooms', []) for f in room.get('findings', [])]
     errors = [f for f in findings if f.get('severity') == 'error']
     reasons = list(dict.fromkeys(' '.join(str(f.get('says', '')).split()) for f in errors or findings))
-    return 'Style detail: %s/100 (target 90); %s.' % (
-        report['score'], '; '.join(reasons[:3]) or 'see the measured audit report for the shortfall')
+    remainder = '; %d more; see the measured audit report' % (len(reasons) - 3) if len(reasons) > 3 else ''
+    return 'Style detail: %s/100 (target 90); %s%s.' % (
+        report['score'], '; '.join(reasons[:3]) or 'see the measured audit report for the shortfall', remainder)
 
 
 # Only explicit mechanics words, not the absence of a setting/genre keyword.

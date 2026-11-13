@@ -81,6 +81,9 @@ def check(folder, platform=None):
                 fail.append('changed (size or sha256 differs): ' + row['path'])
     for path in sorted(folder.rglob('*')):
         rel = path.relative_to(folder).as_posix()
+        # A normal git clone adds repository metadata. Ignore only a top-level .git directory, not nested extras.
+        if rel.startswith('.git/') and (folder / '.git').is_dir():
+            continue
         if path.is_dir() or rel == MANIFEST or any(part in IGNORED_PARTS for part in path.parts) or rel.endswith('.pyc'):
             continue
         if rel not in listed:
@@ -110,8 +113,9 @@ def check(folder, platform=None):
             except (OSError, ValueError, KeyError) as exc:
                 fail.append('cameo/cameo.json unreadable (%s)' % type(exc).__name__)
     if crlf:
-        fail.append('%d file(s) had their line endings changed to Windows CRLF, usually by git core.autocrlf or an editor: '
-                    'unzip the package again with Explorer or Expand-Archive (or clone with: git -c core.autocrlf=false clone ...)'
+        fail.append('%d file(s): line endings were changed by git on Windows (CRLF), or by an editor: '
+                    'install from the GitHub zip (Explorer / Expand-Archive) or git clone -c core.autocrlf=false; '
+                    '.gitattributes now prevents this on a fresh checkout. Existing damaged files must be replaced.'
                     % len(crlf))
     longest = max((len(str(Path(os.path.abspath(str(folder))) / r['path'])) for r in rows), default=0)
     if longest >= WINDOWS_PATH_LIMIT and (platform or sys.platform) == 'win32':

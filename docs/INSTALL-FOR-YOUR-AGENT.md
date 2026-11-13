@@ -2,6 +2,11 @@
 
 Use a supplied release ZIP when you cannot reach GitHub (the public route is `hermes plugins install Qhantom-Labs/hermes64 --enable`) or you want an exact candidate. **This is installation guidance, not permission to publish, change credentials, disable guards, restart shared services or fetch extra software.** Give the agent the ZIP, its SHA-256 from a separate trusted release message, and the absolute Hermes home/profile you actually use. No credential is needed in the message.
 
+**Where the Hermes home is.** macOS and Linux: `~/.hermes`. Windows: `%LOCALAPPDATA%\hermes` (Hermes 0.18.2 and
+newer). `HERMES_HOME` overrides the default on every system, and a profile has its own folder under
+`profiles\<name>`. `hermes config path` prints the config file inside the home in
+use; plugins go in its `plugins` folder.
+
 The archive must contain one top-level `hermes64/` directory with `plugin.yaml` and `PACKAGE-MANIFEST.json`. Verify before replacing an existing copy. Backups belong **outside** `plugins/`, otherwise Hermes can discover the old copy too. Do not overwrite an in-use plugin; close the relevant session or arrange a safe refresh first.
 
 ## Mac: one paste to your agent
@@ -120,8 +125,22 @@ if ($LASTEXITCODE -ne 0) { throw 'Enable failed; do not claim activation' }
 hermes plugins list --enabled
 ```
 
+Then, for making games on Windows, the owner opts in to the Job Object runner (current user, then restart Hermes):
+`[Environment]::SetEnvironmentVariable('HERMES64_WINDOWS_RUNNER', 'job', 'User')`. If builds stop on NumPy, set the
+plugin setting `python_path` to a `python.exe` whose own site-packages have numpy (for example a virtual
+environment's `Scripts\python.exe`). [WINDOWS.md](WINDOWS.md) has the rest.
+
+## Linux (UNVERIFIED on Linux)
+
+The public route works the same way on Linux: `hermes plugins install Qhantom-Labs/hermes64 --enable` (use this
+`owner/repo` form). For a zip, the Mac recipe above applies with two changes: `sha256sum` instead of
+`/usr/bin/shasum -a 256`, and `python3 -m zipfile -e "$ZIP" "$STAGE"` instead of `ditto -x -k` (the package needs no
+file modes). Making games needs a working bubblewrap (`bwrap`) and Godot 4.6.2 installed by hand; check both with
+`python3 -B -m adventure_maker.doctor --linux-checklist` in the plugin folder. [LINUX.md](LINUX.md) has the details,
+including the Ubuntu 24.04 AppArmor step and the explicit `HERMES64_LINUX_RUNNER=unconfined` opt-in.
+
 ## What was actually checked
 
 The Mac extraction/check/backup block was exercised against a **scratch home**, not the owner's active install, using the rc7 ZIP. Its source is `807b472dcce4d1a63f7163afde602c614198a7fe`; its SHA-256 is `ac185329f2d381100fd8216cf3c1bc1c19f8330ec2452e71e80045b8e4b12ad0`. **Do not reuse that hash for rc8.** The package's `check_install.py` checked 5,964 files.
 
-No enable/dependency installation, live-session reload, fresh-model first game or actual Godot download was performed in this docs lane. The PowerShell block has not run on Windows. The running build-identification line must come from the recipient's new chat, not from copying this document.
+No enable/dependency installation, live-session reload, fresh-model first game or actual Godot download was performed in this docs lane. The PowerShell block has not run on Windows, and the Linux variant has not run on Linux. The running build-identification line must come from the recipient's new chat, not from copying this document.

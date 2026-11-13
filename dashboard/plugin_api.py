@@ -153,7 +153,7 @@ def known_styles():
     return _known
 
 
-def api_catalogue(settings):
+def api_catalogue(settings, platform=None):
     try:
         cat = sc.scan(_root(settings), known_styles())
     except sc.ScanError as exc:
@@ -165,7 +165,10 @@ def api_catalogue(settings):
         for i, shot in enumerate(g.get('shots', [])):
             if 'sha256' in shot:
                 shot['src'] = 'cover/' + g['id'] + '/' + str(i + 1) + '/' + shot['sha256'][:12]
-    return {'ok': True, 'catalogue': cat}
+    out = {'ok': True, 'catalogue': cat}
+    if (platform or sys.platform) == 'win32':
+        out['native_launch'] = 'windows'      # the Studio offers PLAY WINDOWS BUILD (api_launch target windows)
+    return out
 
 
 def api_cover(settings, game, index, tag):

@@ -72,8 +72,14 @@ export function detailMenu(item, caps = {}) {
   const g = item.game
   const web = hasExport(g, 'web')
   const mac = hasExport(g, 'macos')
+  // A Windows backend (caps.nativeTarget 'windows', from /studio/catalogue) launches the Windows export instead of
+  // the macOS one; every other host keeps the macOS entry unchanged.
+  const win = caps.nativeTarget === 'windows' && hasExport(g, 'windows')
+  const play = caps.nativeTarget === 'windows'
+    ? { id: 'play', label: web || !win ? 'PLAY' : 'PLAY WINDOWS BUILD', tag: web ? 'WEB' : win ? 'WINDOWS' : 'NO BUILD', enabled: web || win, native: !web && win, target: !web && win ? 'windows' : null, reason: web || win ? '' : 'No web export yet. Export first.' }
+    : { id: 'play', label: web || !mac ? 'PLAY' : 'PLAY MACOS BUILD', tag: web ? 'WEB' : mac ? 'MACOS' : 'NO BUILD', enabled: web || mac, native: !web && mac, reason: web || mac ? '' : 'No web export yet. Export first.' }
   return [
-    { id: 'play', label: web || !mac ? 'PLAY' : 'PLAY MACOS BUILD', tag: web ? 'WEB' : mac ? 'MACOS' : 'NO BUILD', enabled: web || mac, native: !web && mac, reason: web || mac ? '' : 'No web export yet. Export first.' },
+    play,
     { id: 'edit', label: 'EDIT WITH HERMES', enabled: true, reason: '' },
     { id: 'export', label: 'EXPORT', tag: g.sample ? 'SAMPLE' : '', enabled: !g.sample, reason: g.sample ? 'Sample entry: nothing to export' : '' },
     { id: 'folder', label: 'OPEN FOLDER', tag: g.sample ? 'SAMPLE' : caps.reveal === false ? 'REMOTE' : '', enabled: !g.sample && caps.reveal !== false, reason: g.sample ? 'Sample entry: no project folder' : caps.reveal === false ? 'Folder is on another machine' : '' }
@@ -193,7 +199,7 @@ export function reduce(state, action, cat, caps = {}) {
       if (t === 'move' || t === 'vertical') return { state: Object.assign({}, state, { confirm: Object.assign({}, state.confirm, { yes: !state.confirm.yes }) }), effects: [{ type: 'sound', id: SOUND.move }] }
       if (t === 'open') {
         if (state.confirm.yes) {
-          fx.push({ type: 'sound', id: SOUND.insert }, { type: 'play', id: item.id, target: 'macos' })
+          fx.push({ type: 'sound', id: SOUND.insert }, { type: 'play', id: item.id, target: state.confirm.target || 'macos' })
           return { state: Object.assign({}, state, { confirm: null }), effects: fx }
         }
         return { state: Object.assign({}, state, { confirm: null }), effects: [{ type: 'sound', id: SOUND.back }] }
@@ -218,7 +224,7 @@ export function reduce(state, action, cat, caps = {}) {
       const entry = menu[state.menu]
       if (!entry || !entry.enabled) return { state: Object.assign({}, state, { notice: entry ? { text: entry.reason, tone: 'warn' } : null }), effects: [{ type: 'sound', id: SOUND.bump }] }
       if (entry.id === 'play') {
-        if (entry.native) return { state: Object.assign({}, state, { confirm: { kind: 'native', yes: false } }), effects: [{ type: 'sound', id: SOUND.select }] }
+        if (entry.native) return { state: Object.assign({}, state, { confirm: Object.assign({ kind: 'native', yes: false }, entry.target ? { target: entry.target } : {}) }), effects: [{ type: 'sound', id: SOUND.select }] }
         fx.push({ type: 'sound', id: SOUND.insert }, { type: 'play', id: item.id, target: 'web' })
         return { state: Object.assign({}, state, { view: 'play', playing: { id: item.id, target: 'web' } }), effects: fx }
       }

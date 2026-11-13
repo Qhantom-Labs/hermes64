@@ -1,7 +1,8 @@
 """One-step setup checklist and explicit opt-in fetch; stdlib only.
 
-Checklist/doctor never download or launch Godot. Only an explicit --fetch plus confirmation invokes
-pinned first-run fetching; the selected Python is probed for numpy as before.
+Checklist/doctor never download. Mac behavior is unchanged; Linux separately probes a
+tiny rendered capture through Runner, and non-Mac Blender rows probe --version. Only
+explicit --fetch plus confirmation invokes pinned first-run fetching.
 """
 import json
 import os
@@ -46,7 +47,7 @@ def _python(settings, probe=None):
     try:
         with scratch_env() as env:
             out = subprocess.run([exe, '-I', '-B', '-c', 'import numpy; print(numpy.__version__)'],
-                                 capture_output=True, text=True, encoding='utf-8', timeout=20, env=env)
+                                 capture_output=True, text=True, encoding='utf-8', timeout=20, env=env, **_no_window())
         return exe, (out.stdout.strip() or None) if out.returncode == 0 else None
     except (OSError, subprocess.TimeoutExpired):
         return exe, None
@@ -62,10 +63,37 @@ def _pillow(exe, probe=None):
     try:
         with scratch_env() as env:
             out = subprocess.run([exe, '-I', '-B', '-c', 'import PIL; print(PIL.__version__)'],
-                                 capture_output=True, text=True, encoding='utf-8', timeout=20, env=env)
+                                 capture_output=True, text=True, encoding='utf-8', timeout=20, env=env, **_no_window())
         return (out.stdout.strip() or None) if out.returncode == 0 else None
     except (OSError, subprocess.TimeoutExpired):
         return None
+
+
+def _no_window():
+    """Windows: a console program (python.exe) started by a Hermes without a console would flash a console window."""
+    return {'creationflags': getattr(subprocess, 'CREATE_NO_WINDOW', 0x08000000)} if os.name == 'nt' else {}
+
+
+def runner_row(platform=None, env=None, iso=None):
+    """(status, detail, command) for the child runner on Linux and Windows; None on macOS (sandbox-exec is built in)."""
+    from . import platforms
+    plat = platforms.host(platform)
+    if plat not in ('linux', 'win32'):
+        return None
+    iso = iso or platforms.isolation(platform, env)
+    if plat == 'linux' and iso['available'] and not (
+            iso['mode'] == 'bwrap' and iso.get('runner_probe_ok', False)):
+        return ('missing', '%s: %s No sandboxed Runner.run readiness child passed; READY is withheld.' %
+                (iso['mode'], iso['note']), 'run python3 -m adventure_maker.doctor --linux-checklist; fix the runner failure')
+    if iso['available']:
+        return 'ok', '%s: %s' % (iso['mode'], iso['note']), None
+    if plat == 'win32':
+        command = '$env:%s = "%s" in PowerShell (or a user environment variable), then restart Hermes' % (
+            platforms.WINDOWS_RUNNER_ENV, platforms.WINDOWS_RUNNER_VALUE)
+    else:
+        command = ('install bubblewrap (Debian/Ubuntu: sudo apt install bubblewrap) or fix what the note names, '
+                   'then restart Hermes; or, knowingly, %s=%s' % (platforms.LINUX_RUNNER_ENV, platforms.LINUX_RUNNER_VALUE))
+    return 'missing', '%s: %s' % (iso['mode'], iso['note']), command
 
 
 def numpy_command(exe, platform=None, home=None):
@@ -105,7 +133,7 @@ def check(settings, probe_numpy=None, blender_present=None, templates=None, stub
     """Rows of {item, status: ok|missing|optional, detail, needed_for, command}. Arguments after ``settings``
     exist so tests can simulate a machine without the programs. A simulated numpy probe without a Pillow probe
     leaves Pillow unprobed (reported as not importable) rather than starting a real interpreter."""
-    from . import builders, doctor, stubs, audio_formats
+    from . import builders, doctor, stubs, audio_formats, platforms
     from .export import TEMPLATES
     from .safety import Fault
     rows = []
@@ -115,6 +143,9 @@ def check(settings, probe_numpy=None, blender_present=None, templates=None, stub
 
     add('Python', 'ok' if sys.version_info >= (3, 9) else 'missing', sys.version.split()[0], 'everything',
         None if sys.version_info >= (3, 9) else _open('https://www.python.org/downloads/'))
+    runner = runner_row()
+    if runner is not None:          # Linux and Windows only: macOS rows are unchanged
+        add('Child runner', runner[0], runner[1], 'making and rebuilding games', runner[2])
     gpath, gver = _godot(settings)
     if not gpath:
         add('Godot 4.6.2', 'missing', 'not found', 'playing, replaying, screenshots and exporting games', '/hermes64 setup --fetch')
@@ -126,6 +157,12 @@ def check(settings, probe_numpy=None, blender_present=None, templates=None, stub
         add('Godot 4.6.2', 'ok', gpath + ('' if gver else ' (version not read on this system; exports check it)'),
             'playing and exporting games')
 
+    if platforms.host() == 'linux':
+        from .linux_display import status as display_status
+        display = display_status(settings)
+        add('capture display', 'ok' if display['ok'] else 'optional',
+            display['detail'] if display['ok'] else 'missing, install xvfb (sudo apt install xvfb); reason: ' + display['detail'],
+            'rendered style/N64 gates (logic builds and bots still run)')
     official = templates if templates is not None else doctor.export_templates()
     st = stub_status if stub_status is not None else stubs.status()
     have = {t: (t in official.get('targets', [])) or st['targets'].get(t, False) for t in TEMPLATES}
@@ -176,6 +213,16 @@ def check(settings, probe_numpy=None, blender_present=None, templates=None, stub
     add('Blender', 'ok' if present else 'optional', 'found' if present else
         'not found (optional: with builder=auto, room models use the Python builder)',
         'builder=blender and character review renders', None)
+    from . import platforms
+    if present and platforms.host() in ('linux', 'win32'):
+        from . import blender_version
+        from .runner import locate
+        try:
+            version = blender_version.probe(locate('blender', settings.get('blender_path') or ''))
+        except Fault:
+            version = None
+        rows[-1].update(status='ok' if version == blender_version.TESTED else 'optional',
+                        detail=blender_version.note(version))
 
     fexe, why = ffmpeg if ffmpeg is not None else audio_formats.find_ffmpeg()
     add('Audio', 'ok', 'WAV read in pure Python; OGG Vorbis and MP3 play natively in Godot', 'game sound', None)
@@ -192,7 +239,7 @@ SYMBOL = {'ok': '[ok]', 'missing': '[MISSING]', 'optional': '[optional]'}
 
 def summary(rows):
     by = {r['item']: r['status'] for r in rows}
-    make = by['Python'] == 'ok' and by.get('Games folder', 'ok') == 'ok'
+    make = by['Python'] == 'ok' and by.get('Games folder', 'ok') == 'ok' and by.get('Child runner', 'ok') == 'ok'
     play = make and by['Godot 4.6.2'] == 'ok'
     return ('Ready: make games %s; play %s; room models %s; export %s.' % (
         'yes' if make else 'no', 'yes' if play else 'no',
@@ -257,7 +304,8 @@ def run(settings, fetch=False, yes=False, include_templates=False, interactive=F
         rows = check(settings, games_root=games_root)
         report(render(rows, fetched=fetch))
         by = {r['item']: r['status'] for r in rows}
-        return {'ok': by['Python'] == 'ok' and by['Godot 4.6.2'] == 'ok' and by['Games folder'] == 'ok',
+        return {'ok': by['Python'] == 'ok' and by['Godot 4.6.2'] == 'ok' and by['Games folder'] == 'ok' and
+                by.get('Child runner', 'ok') == 'ok',
                 'status': 'checked_after_fetch' if fetch else 'checked', 'message': '\n'.join(lines), 'rows': rows}
     except (godot_fetch.FetchError, OSError, ValueError) as exc:
         report('Setup failed: ' + str(exc))

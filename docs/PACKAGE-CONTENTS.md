@@ -19,6 +19,7 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 | Rule | Why users need it |
 |---|---|
 | `plugin.yaml`, `__init__.py`, `LICENSE`, `README.md`, `PLAY.md`, `RESULT.md`, `licenses/*` | Manifest, entrypoint, licences, quick start, the acceptance limits README links to |
+| `.gitattributes` | Preserve every manifest-hashed byte on clone (`* -text`), even with Windows core.autocrlf=true; the package/publish tree must include this file. |
 | `bindings.json`, `characters/*` | Public bundled cast and its staging code (runtime character bindings); since MERGE3 also `characters/combat/` (combat manifest, 4 enemy and 4 prop GLBs) |
 | `adventure_maker/*`, `adventure_modules/*`, `story/*`, `refpack/*` | Tool code, story compiler/checker, module contracts, reference-pack drafting |
 | `runtime/*` | Godot runtime layer, including `runtime/godot/tests/playthrough.gd` used by `hermes64_replay` |
@@ -28,7 +29,7 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 | `examples/*` | Bundled examples used by `hermes64_demo` and module docs |
 | `premises/*` | Neutral data-only story files and prompt text; user stories can also live in the games folder |
 | `skills/*` | The 11 bundled skills, registered in `__init__.py`; discovery behavior depends on the host |
-| `docs/*` | User and integration docs (story spec, packs, playtest, export, badge, token diet) |
+| `docs/*` | User and integration docs (story spec, packs, playtest, export, badge, token diet; since rc9 the platform guides `LINUX.md`, `WINDOWS.md`, `PLATFORM-EVIDENCE.md`, `LINUX-RUNNER-DESIGN.md`, both test sheets and the receipt templates in `docs/receipts/`) |
 | `catalog/*` | The generated asset catalog (`catalog.json`, thumbnails) and `names.json`, the one file the hub reads display names from |
 | `hub/*` | The bundled Hub registry: `index.json`, preview PNGs and the offline browse page `hub/site/` (`hermes64_hub` reads the index and rebuilds each seed archive from the shipped files) |
 | `cameo/*` | **Opt-in, not in the default package** (`OPTIONAL_CAMEO`; `python3 -B -m tools.package --out DIR --with-cameo` adds it). MERGE4 recorded an owner decision that it ships; for this release that decision is open, so the default leaves it out (FINALINT). The optional cameo pack: the model `cameo_visor_01.glb`, its notice `LICENSE-CAMEO.md`, manifest and README; delete the folder to remove it |
@@ -40,7 +41,7 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 | `studio/plugin/glue.js`, `studio/prototype/js/*`, `studio/prototype/studio.css`, `studio/tools/sync_shared.py` | The readable sources `desktop/plugin.js` is generated from and the stdlib generator: `python3 -B studio/tools/sync_shared.py` rebuilds it (CAT-FIX F10). Harness, mock backend, covers and screenshots stay in the repository |
 | `tools/__init__.py`, `tools/pngtool.py`, `tools/import_characters.py` | The only `tools/` modules imported at runtime (playtest contact sheet, character staging) |
 | `tools/roomlook.py` | MERGE4: imported by `characters/integration.capture_games` (reached through the shipped `tools/import_characters.py`); without it `hermes plugins validate` on the package read `tools.roomlook` as a private Hermes core import (the `git archive` of the repository was clean because the file is there) |
-| `tools/check_install.py` | MERGE4: checks an installed copy against the `PACKAGE-MANIFEST.json` that `--out` writes (every file's size and sha256, the source commit) and prints PASS or FAIL; stdlib, read-only, runs on macOS and Windows |
+| `tools/check_install.py` | MERGE4: checks an installed copy against the `PACKAGE-MANIFEST.json` that `--out` writes (every file's size and sha256, the source commit) and prints PASS or FAIL; stdlib, read-only; run on macOS here, written for Windows and Linux too (both test sheets run it) |
 | `tools/hermes64_setup.py` | One-step setup checklist; only a user-typed `--fetch` plus confirmation downloads the official Godot editor (and, with `--templates`, the official export templates) into a per-user cache. Plain checklist downloads nothing; see `docs/SETUP-FETCH.md` |
 | `tools/fetch-manifest.json` | Pinned download plan (official godot-builds 4.6.2-stable URLs and their published SHA-512), printed by `--fetch-plan`. CAT-FIX F4 removed the self-hosted stub bundle and its builder |
 | `tools/bin/MANIFEST.json` | ZEROSETUP: pinned (empty) manifest for the optional `tools/bin/<platform>/ffmpeg` lookup; no binary ships |
@@ -49,6 +50,7 @@ It reads `git ls-files --cached --others --exclude-standard` (what a commit woul
 
 | Rule | Why it stays repository-only |
 |---|---|
+| `docs/receipts/*-2026-11-12-*.md` | Raw platform receipt bodies remain byte-for-byte in the source repository, including alias-only paths; no raw outputs ship. Public platform guides summarize them and link to source custody. |
 | `evidence/*` | Lane and verification evidence (803 tracked files, ~47 MB) |
 | `premises/teknium-vs-tyrants/*` | Showcase story stays outside the plugin, in the user's games-folder premises directory |
 | `docs/sources/*` | Original lane receipts copied at assembly (hashed in `PROVENANCE.json`) |
@@ -83,6 +85,12 @@ DOCS2 proposed these rules and changed documentation only; FINALINT5 applied the
 | Existing EXCLUDE `docs/*-RESULT.md` | Already keeps `docs/DOCS2-RESULT.md` out; do not ship it as user documentation. |
 
 The rc8 archive's contents, links and manifest are checked in `docs/FINALINT5-RESULT.md` (repository only).
+
+## rc9 platform files (PLATFORMS)
+
+No rule changed. Shipped through the existing rules: `adventure_maker/linux_sandbox.py` (the Linux bubblewrap runner)
+and the docs above. Repository-only through the existing rules: `docs/PLATFORMS-RESULT.md` (`docs/*-RESULT.md`),
+`tests/test_linux_platform.py` and `tests/test_windows_lane_fixes.py` (`tests/*`), and `tools/windows_gate.py`.
 
 ## Privacy scan (MERGE4)
 

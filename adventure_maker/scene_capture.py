@@ -26,9 +26,10 @@ def newest_run(game_dir):
 
 
 def command(godot, runtime, movie, out, tail):
-    return [godot, '--fixed-fps', '60', '--disable-vsync', '--path', str(runtime), '--',
+    from .runner import silent_godot
+    return silent_godot([godot, '--fixed-fps', '60', '--disable-vsync', '--path', str(runtime), '--',
             '--pack=res://theme.json', '--bindings=res://bindings.json', '--replay', str(movie),
-            '--capture_scenes=' + str(out), '--capture_tail=%d' % tail]
+            '--capture_scenes=' + str(out), '--capture_tail=%d' % tail])
 
 
 def main(argv=None):

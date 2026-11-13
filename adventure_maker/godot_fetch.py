@@ -33,6 +33,13 @@ MAX_MEMBERS = 4096
 MAX_TEMPLATE_MEMBER = 600 * 1024 * 1024
 EXECUTABLES = {'darwin': 'Godot.app/Contents/MacOS/Godot', 'windows': 'Godot_v4.6.2-stable_win64.exe'}
 ARTIFACTS = {'darwin': 'godot-4.6.2-macos-editor', 'windows': 'godot-4.6.2-windows-editor'}
+# Linux editor builds, by CPU. The code path is ready, but tools/fetch-manifest.json carries NO Linux row: no official
+# SHA-512 for these archives was ever recorded in this repository, and a hash is never guessed. Until a maintainer adds
+# the row from the release's SHA512-SUMS.txt (docs/LINUX.md, "Adding the Linux pin"), the Linux fetch is refused.
+LINUX = {'x86_64': ('godot-4.6.2-linux-x86_64-editor', 'Godot_v4.6.2-stable_linux.x86_64.zip',
+                    'Godot_v4.6.2-stable_linux.x86_64'),
+         'arm64': ('godot-4.6.2-linux-arm64-editor', 'Godot_v4.6.2-stable_linux.arm64.zip',
+                   'Godot_v4.6.2-stable_linux.arm64')}
 TEMPLATES_ARTIFACT = 'godot-4.6.2-export-templates'
 TEMPLATE_VERSION = '4.6.2.stable'
 # The one origin a pinned row may name; redirects may only go to GitHub's release-asset hosts.
@@ -48,24 +55,63 @@ def platform_key():
     return 'darwin' if sys.platform == 'darwin' else 'windows' if os.name == 'nt' else 'linux'
 
 
+def linux_arch(machine=None):
+    """'x86_64' or 'arm64' for the Linux builds Godot publishes; None for any other CPU."""
+    import platform as _platform
+    value = (machine or _platform.machine() or '').lower()
+    return 'x86_64' if value in ('x86_64', 'amd64') else 'arm64' if value in ('aarch64', 'arm64') else None
+
+
 def cache_dir(platform=None):
     key = platform or platform_key()
     if key == 'darwin':
         return Path.home() / 'Library/Caches/hermes64'
     if key == 'windows':
         return Path(os.environ.get('LOCALAPPDATA') or Path.home() / 'AppData/Local') / 'hermes64'
-    raise FetchError('Godot fetch is unsupported on Linux/this platform; no Linux archive hash is pinned.')
+    if key == 'linux':
+        return Path(os.environ.get('XDG_CACHE_HOME') or Path.home() / '.cache') / 'hermes64'
+    raise FetchError('Godot fetch is unsupported on this platform; only macOS, Windows and Linux are known.')
 
 
 def artifacts():
     return json.loads(MANIFEST.read_text(encoding='utf-8'))['artifacts']
 
 
-def godot_artifact(platform=None):
+def folder_key(platform=None, machine=None):
+    """The cache subfolder for this platform's editor: darwin, windows, linux-x86_64 or linux-arm64."""
     key = platform or platform_key()
+    if key == 'linux':
+        arch = linux_arch(machine)
+        return 'linux-' + arch if arch else None
+    return key if key in ARTIFACTS else None
+
+
+def godot_artifact(platform=None, machine=None):
+    key = platform or platform_key()
+    if key == 'linux':
+        arch = linux_arch(machine)
+        if arch is None:
+            raise FetchError('Godot fetch is unsupported on Linux for this CPU (%s); Godot publishes x86_64 and arm64 '
+                             'Linux builds. Nothing was downloaded.' % (machine or 'unknown'))
+        name, archive, exe = LINUX[arch]
+        rows = artifacts()
+        if name not in rows:
+            raise FetchError('Godot fetch on Linux (%s) is unsupported until the official SHA-512 of %s is pinned in '
+                             'tools/fetch-manifest.json (artifact "%s"); this plugin never downloads an unpinned file, '
+                             'so nothing was downloaded. Install Godot 4.6.2 yourself and set HERMES64_GODOT (docs/'
+                             'LINUX.md, "Install Godot by hand"), or add the pin from the release\'s SHA512-SUMS.txt '
+                             '(docs/LINUX.md, "Adding the Linux pin").' % (arch, archive, name))
+        return dict(rows[name], executable=exe)
     if key not in ARTIFACTS:
-        raise FetchError('Godot fetch is unsupported on Linux/this platform; no Linux archive hash is pinned.')
+        raise FetchError('Godot fetch is unsupported on this platform; only macOS, Windows and Linux are known.')
     return dict(artifacts()[ARTIFACTS[key]], executable=EXECUTABLES[key])
+
+
+def expected_executable(platform, machine=None):
+    if platform == 'linux':
+        arch = linux_arch(machine)
+        return LINUX[arch][2] if arch else None
+    return EXECUTABLES.get(platform)
 
 
 def validate_url(url):
@@ -280,19 +326,26 @@ def _cached(row, folder):
 def cached_godot(platform=None):
     """Read-only finder candidate. No process, HTTP request or quarantine changes."""
     key = platform or platform_key()
+    if key == 'linux':
+        try:
+            row = godot_artifact(key)       # no pinned Linux row: nothing in a cache can be verified, so none is used
+        except (FetchError, OSError, ValueError, KeyError):
+            return None
+        return _cached(row, cache_dir(key) / 'godot' / VERSION / folder_key(key))
     if key not in ARTIFACTS:
         return None
     return _cached(godot_artifact(key), cache_dir(key) / 'godot' / VERSION / key)
 
 
 def install_godot(row, cache, platform, emit=print, *, _url_policy=None):
-    if platform not in EXECUTABLES or row.get('executable') != EXECUTABLES[platform]:
+    expected = expected_executable(platform)
+    if platform not in ('darwin', 'windows', 'linux') or not expected or row.get('executable') != expected:
         raise FetchError('Unsupported platform or unexpected Godot executable layout.')
     # Godot archives must use Main's official SHA-512 pin, never a weaker fallback field.
     if not re.fullmatch('[0-9a-f]{128}', row.get('sha512', '')):
         raise FetchError('Godot requires a valid official SHA-512 archive pin; nothing was downloaded.')
     (_url_policy or validate_origin)(row['url'])
-    folder = Path(cache) / 'godot' / VERSION / platform
+    folder = Path(cache) / 'godot' / VERSION / folder_key(platform)
     existing = _cached(row, folder)
     if existing:
         emit('Already present and integrity-checked: %s (no download).' % existing)
@@ -311,6 +364,8 @@ def install_godot(row, cache, platform, emit=print, *, _url_policy=None):
             if platform == 'darwin':
                 exe.chmod(0o755)
                 clear_quarantine(stage / 'Godot.app')
+            elif platform == 'linux':
+                exe.chmod(0o755)         # zip members are written without their mode bits
             version = version_check(exe)  # First and only engine execution during setup.
             algorithm, pin = _pin(row)
             receipt = {'pin': {algorithm: pin}, 'executable': row['executable'], 'version': version, 'files': _tree_hashes(stage)}
@@ -423,6 +478,8 @@ def plan(platform=None, include_templates=False):
                   'Source: %s' % item['url'], '%s: %s; licence: %s' % (algorithm, pin, item.get('licence', 'MIT'))]
     lines += ['Each file is checked against its official SHA-512 before anything is unpacked; a mismatch deletes it.',
               'Godot unpacked cap: %s bytes; download timeout: 600 s per file (5 s socket inactivity).' % MAX_UNPACKED,
+              'Linux: mark only this newly verified file executable; run only --version after verification.'
+              if key == 'linux' else
               'macOS: remove quarantine only from this newly verified Godot.app; run only --version after verification.']
     if include_templates:
         lines.append('Templates: keep only web_nothreads_release.zip, macos.zip and windows_release_x86_64.exe '

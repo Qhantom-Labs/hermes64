@@ -48,7 +48,7 @@ APFS clones (`cp -c`) or one shared, hash-checked editor copy would remove most 
 |---|---|---|---|---|---|
 | macOS (Apple / Intel) | `Godot_v4.6.2-stable_macos.universal.zip`, Gatekeeper "Open" once; exporter needs the signed `.app` bundle | stub bundle verified here (export parity run below) | optional | Hermes's venv has numpy on this Mac; other installs unknown | not needed |
 | Windows x86-64 | `Godot_v4.6.2-stable_win64.exe.zip`; windows-lane code, **untested on Windows** | same stub bundle (the `.exe` stub is byte-identical to the official template) | optional | unknown which Python Hermes ships on Windows | not needed |
-| Linux | not a supported play host (runner refuses outside macOS / opt-in Windows job runner) | n/a (Linux templates not pinned) | n/a | n/a | n/a |
+| Linux | installed by hand: no Linux editor SHA-512 is pinned, so `setup --fetch` is refused (rc9: authoring runner = bubblewrap, not verified; [LINUX.md](LINUX.md)) | web and windows stubs as above; no Linux template pinned | optional | the `python_path` Python | optional |
 | Web player | no install; browser with WebGL2 | `web_nothreads_release.zip` (official bytes) | n/a | n/a | n/a |
 
 ## Sizes that matter to a new user, before and after this lane

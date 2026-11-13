@@ -2,7 +2,7 @@
 
 `hermes64_export(project, targets)` accepts `web`, `macos`, `windows` (one or more unique targets). It builds an exact current **proved** game and returns paths to the report, share folder and ZIP. It never uploads, publishes, downloads or installs templates. Building is not recipient acceptance.
 
-Supported build host: this macOS sandbox and installed official Godot 4.6.2. Other build hosts currently fail closed through the existing runner. Targets:
+Build hosts use their existing platform runner: macOS Seatbelt, Linux bubblewrap, or Windows Job Object. macOS retains development-Mac acceptance; supplied Linux/Windows runs are partial evidence, **not verified** platform status. The `macos` target requires a Mac for local ad-hoc signing. Targets:
 
 | Target | Contents / limits |
 |---|---|
@@ -48,12 +48,25 @@ Release staging is an allowlist, not a recursive copy of the source repository:
 
 1. Recheck story proof; reject source/binding policy flags (`internal_only`, `restricted`, `public_release=false`), private references, cameo identifiers and home/external paths.
 2. Admit only runtime source and the release entry. Exclude test controls, evidence, source exports, original manifests, private character folders and generators.
-3. Require each bound media file, verify its hash and trusted containment. Character GLBs must also belong to the frozen public manifest. Bound internal-only data is rejected rather than silently removed.
+3. Require each bound media file, verify its hash and trusted containment. Character GLBs must belong to the frozen public manifest **or satisfy the project-local policy below**. Bound internal-only data is rejected rather than silently removed.
 4. Copy the referenced closure to content-addressed `res://media/` paths; rewrite bindings, environment, theme and audio paths. Keep original media bytes for the runtime's GLTFDocument/Image/WAV readers.
 5. Use a release-only resource-relative boot and game-specific `user://` save location. Export uses Godot compatibility renderer for web portability, not changed authored visuals/story/cast.
 6. Scan staged files and final payloads/nested ZIPs, reject symlinks/hardlinks/special files and private/home references. No absolute host-home paths are allowed. This literal/structured scanner is not a general secret classifier and does not certify arbitrary user-authored content's legal clearance.
 
 Official templates contain non-user path strings. Generated web virtual HOME is relocated to `/data/web_user`; macOS/Windows Rust diagnostic roots are relocated to `/build/runner/.cargo/` or `/data/runner/.cargo/`. These narrowly defined equal-length substitutions preserve WASM/PE/Mach-O layout; native Mac output is ad-hoc re-signed, and notices identify the modifications. Arbitrary private paths are **not** sanitized into acceptance. OpenXR `/input/home/click` is not a home-root path and is not altered. Windows execution after diagnostic relocation remains unverified.
+
+## Project characters: local export is not Hub publication
+
+The frozen manifest protects the plugin's redistributable stock cast; it is not a cap on a user's own creations. Local exports also admit:
+
+- **Generated here:** a bound `source=generated` cast row linked to the saved recipe, project character manifest, passing `hermes64-character-build/1.0.0` character-gate receipt and exact original GLB hash. Supported generator IDs are `python`, `blender` and Creator64's `creator`. Recipe hashing follows the relevant writer. Hash-linked locomotion and validated player/enemy derivatives retain admission. Missing review renders remain disclosed as `not_run`, not invented as passes.
+- **Owner rights declared:** an owner-authored `assets/PROVENANCE.json` row for the bound source, format `hermes64-provenance/1`, with `source=converted`, exact `file`/`sha256`, `rights_declared=true`, nonempty `owner_approved`, `licence_required=true`, known output and original licences, `gates.ok=true`, and `converted_from={name,sha256,licence}`. `name` is the original basename, not a machine path. Attribution licences need `credit`. Record through `adventure_maker.provenance.record(project_root, row)` after actual gates pass; the exporter does not invent ownership or approval. A community cast/catalog row defaults to internal/NOASSERTION: the owner must explicitly correct those declarations too, not just add another permissive row.
+
+`LicenseRef-Private`, unknown licences, explicit private/internal/restricted flags, cameo content and private references remain refused, even with generated or owner-declared metadata. Denial records in the trusted bundled catalog and project catalog/provenance follow hashes through renamed files, originals, locomotion, waivers and final role derivatives. A rig-quality waiver from `character_waiver` only admits named quality failures; it is **not** evidence of rights. When present its cast/block match is checked, and the original source must separately qualify above. Do not ask an agent to supply an owner's approval itself.
+
+Each non-manifest admission appears as `project_characters` in the closure/export report and as `CHARACTER-PROVENANCE.json` inside the release and beside each target. It says **user-generated** or **user-owned, not part of the public manifest**, with original/final hashes, recipe/generator or rights basis, and skipped checks. Raw receipts and absolute machine paths are not copied. Existing public-manifest/placeholder-only exports gain no disclosure file or report field.
+
+This is a **local-export** exception only. `hermes64_hub` does not call it; its existing source/index, licence and owner-waiver acknowledgement rules are unchanged. Local export does not add a character to the public manifest, publish anything, or confer Hub eligibility.
 
 ## Browser acceptance
 

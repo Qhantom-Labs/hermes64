@@ -20,7 +20,7 @@ ditto -x -k "$ZIP" ~/.hermes/plugins
 python3 -B ~/.hermes/plugins/hermes64/tools/check_install.py
 hermes plugins enable hermes64
 ```
-Full checksum/backup recipe and the (unverified) PowerShell steps: [Install for your agent](docs/INSTALL-FOR-YOUR-AGENT.md).
+Zip steps for Windows (PowerShell, `Expand-Archive`) and Linux: [Windows guide](docs/WINDOWS.md) · [Linux guide](docs/LINUX.md). Full checksum/backup recipe: [Install for your agent](docs/INSTALL-FOR-YOUR-AGENT.md).
 
 > Make me a game about a wizard tower with a ghost and three crystal keys.
 
@@ -28,7 +28,7 @@ Full checksum/backup recipe and the (unverified) PowerShell steps: [Install for 
 
 **Games:** normally `<Hermes home>/plugin-data/hermes64/games`, or your configured `projects_root`. Older hosts need an explicit folder.
 
-**Platforms:** macOS and Windows 11; this package's native Windows run is not established. Linux authoring is unsupported.
+**Platforms:** macOS: development-Mac acceptance retained. Linux: experimental, receipts attached. Five real Debian 13/bwrap 0.12.0 runs, with Xvfb present. Run 5 (`55cdfc10`) passed authoring, bot playtest, web+Windows export and project-character export; B5 passed and C7 was 12/12 (`--no-fork`). Windows 11: experimental, receipts attached. Two real runs on Windows 11 Home, Blender 4.5.11, Hermes 0.18.2 and runner `job`. Run 2 (`72eb6565`) passed default-builder authoring, git-clone/ZIP/installed-folder check_install (C5 x3), C6 with Blender WARN and D12 web+Windows export; run 1 supplied the runner probes. **Tested by the owner: Not yet. Executors were Grok Bot/Prometheus, not owner playtests.** [Evidence and remaining gaps](docs/PLATFORM-EVIDENCE.md).
 
 [Quick start and troubleshooting](QUICKSTART.md) · [Game-type strengths and measured limits](docs/GAME-TYPE-STRENGTHS.md) · [Honest scope](docs/AUTHORING-SCOPE.md)
 
@@ -48,7 +48,7 @@ Best supported settings (measured): medieval village and castle, snow village, n
 A plain brief gets a crafted hero, 3-4 made objects and an entry layout chosen from the setting.
 Settings without ready-made rooms (for example space, underwater, desert, candy) have no ready-made rooms in this release: the flow stops with a clear message, and the agent may hand-author rooms or pick the nearest pack.
 The default shape is two rooms, one outside and one inside; more rooms and mechanics can be added with the author skill.
-No jumping or platforming. Games are checked by bots, not by human playtests. Native Windows is not verified.
+No jumping or platforming. Games are checked by bots, not by human playtests. Windows and Linux remain experimental, receipts attached.
 
 ## Requirements and setup
 
@@ -58,6 +58,7 @@ No jumping or platforming. Games are checked by bots, not by human playtests. Na
 | Godot | **4.6.2**, standard build, not .NET. Export templates are needed only for exports. |
 | Python dependencies | `numpy>=2.0,<3` and `Pillow>=11.3,<14` are declared in `plugin.yaml`. Recent Hermes installers can prepare them with consent. A separately configured `python_path` must have the needed packages too. Do not assume old hosts install them. |
 | Blender | Optional for the default static-room workflow: `builder=auto` can use the Python builder with numpy when Blender is absent. Some character workflows still require Blender; strict static-mesh parity is not established. |
+| bubblewrap | Linux only: `bwrap` 0.4 or newer is the child sandbox; without a working one, making games is off. |
 
 In a new chat, `/hermes64 setup` is a read-only checklist. The agent can call `hermes64_doctor` for the same setup guidance; it cannot approve downloads through that tool.
 
@@ -67,7 +68,7 @@ If Godot is missing:
 2. If you approve it, type `/hermes64 setup --fetch --yes` yourself.
 3. Retry your game request. Add `--templates` to the approved fetch only when you need exports.
 
-The fetch checks pinned SHA-512 before unpacking the official Godot release. It uses a per-user cache, not the plugin directory; on macOS it removes quarantine only from the verified fetched Godot app and checks `--version`. Downloads and template storage are extra setup, not game-build time. [Setup details](docs/SETUP-FETCH.md).
+The fetch checks pinned SHA-512 before unpacking the official Godot release. It uses a per-user cache, not the plugin directory; on macOS it removes quarantine only from the checksum-checked fetched Godot app and checks `--version`. On Linux the fetch is refused until a Linux SHA-512 pin is added; install Godot by hand ([Linux guide](docs/LINUX.md)). Downloads and template storage are extra setup, not game-build time. [Setup details](docs/SETUP-FETCH.md).
 
 ## What the agent can do
 
@@ -102,11 +103,11 @@ Use the active profile's Hermes64 settings (`plugins.entries.hermes64.settings`)
 
 **macOS:** the central build/check/play/export runner uses `sandbox-exec`, denying network and confining writes. Not every helper uses that runner; consult [platform parity](docs/PLATFORM-PARITY.md).
 
-**Windows 11:** child execution requires an owner opt-in to `HERMES64_WINDOWS_RUNNER=job`, followed by a restart. Job Objects limit resources and child lifetime, but provide **no OS-enforced network or write confinement**. This candidate's native Windows install/build/export remains unverified. [Windows guide](docs/WINDOWS.md).
+**Windows 11:** child execution requires an owner opt-in to `HERMES64_WINDOWS_RUNNER=job`, followed by a restart. Job Objects limit resources and child lifetime (each child is placed in its job before it runs), but provide **no OS-enforced network or write confinement**. Two supplied runs cover install/build/export on their recorded commits, not human play or this exact local head. [Windows guide](docs/WINDOWS.md) · [test sheet](docs/WINDOWS-TEST-SHEET.md).
 
-**Linux:** no supported authoring runner. A web export is a separate browser target, not Linux-host plugin support.
+**Linux:** Linux: experimental, receipts attached. Five real Debian 13/bwrap 0.12.0 runs, with Xvfb present. Run 5 (`55cdfc10`) passed authoring, bot playtest, web+Windows export and project-character export; B5 passed and C7 was 12/12 (`--no-fork`). Fork-count enforcement, AppArmor-restricted user namespaces, hosts without Xvfb (documented clean failure only), real desktop play/audio and private-cast refusal tests remain outside native coverage. Bubblewrap confines network/writes and hides home; children fail closed without a working sandbox. The explicit `HERMES64_LINUX_RUNNER=unconfined` fallback has **no OS-enforced network or write confinement**, only process-group kill and rlimits, and never earns sandboxed READY. macOS and native Linux exports are unavailable from Linux. [Linux guide](docs/LINUX.md).
 
-**Local processes:** Godot, Python, optional Blender and user-provided ffmpeg. Some character/preview/audio subprocesses are outside the central runner; ffmpeg audio import and the Blender character exporter can inherit the host environment. Plugin code is not a universal sandbox.
+**Local processes:** Godot, Python, optional Blender and user-provided ffmpeg. Some character/preview/audio subprocesses are outside the central runner; shipped child sites use explicit sanitized environments, with the documented create-flow self-rerun exception. Sanitization is not OS confinement. [Child-environment audit](docs/REVIEWFIX-ENV-AUDIT.md). Plugin code is not a universal sandbox.
 
 **Network:** normal game creation does not fetch Godot. Optional approved setup fetches and configured Hub reads use HTTPS; Hermes dependency preparation is a separate host action. The plugin manifest declares no credentials or required environment secrets. That declaration is not a guarantee about every external program it launches.
 

@@ -2,8 +2,10 @@
 and Linux, the user override env vars, and the Windows readiness checklist. Standard library only, read-only.
 
 Every function takes the platform, environment and home folder as arguments (defaulting to this computer), so the
-Windows branches are exercised on a Mac with `platform='win32'`, a fake environment and PureWindowsPath paths
-(tests/test_windows_paths.py). Nothing here launches a program, installs anything or touches the network.
+Windows and Linux branches are exercised on a Mac with `platform='win32'` / `'linux'`, a fake environment and pure
+paths (tests/test_windows_paths.py, tests/test_linux_platform.py). Nothing here installs anything or touches the
+network, and nothing launches a program except isolation() on a real Linux host, which asks linux_sandbox for its
+bubblewrap probe (one short sandboxed run per process).
 
 Override env vars (checked before any default location, on every platform):
   HERMES64_GODOT      full path of the Godot 4.6.2 executable
@@ -11,6 +13,8 @@ Override env vars (checked before any default location, on every platform):
   HERMES64_PYTHON     full path of the Python 3.9+ interpreter for child builds
   HERMES64_TEMPLATES  folder holding the Godot 4.6.2.stable export templates (version.txt + template files)
 A plugin setting (godot_path, blender_path, python_path) still wins over the env var.
+Runner opt-ins: HERMES64_WINDOWS_RUNNER=job (Windows Job Object), HERMES64_LINUX_RUNNER=unconfined (Linux without a
+working bubblewrap). Neither gives OS-enforced network or write confinement.
 """
 import ntpath
 import os
@@ -26,6 +30,13 @@ TEMPLATES_ENV = 'HERMES64_TEMPLATES'
 # folders) but without OS-enforced network or write confinement. The owner turns it on knowingly.
 WINDOWS_RUNNER_ENV = 'HERMES64_WINDOWS_RUNNER'
 WINDOWS_RUNNER_VALUE = 'job'
+# Linux: bubblewrap by default (linux_sandbox.py); this opt-in is used only when bwrap is missing or fails its probe.
+LINUX_RUNNER_ENV = 'HERMES64_LINUX_RUNNER'
+LINUX_RUNNER_VALUE = 'unconfined'
+SANDBOXED_PACKAGE_NOTE = ('snap and flatpak programs start through their own sandbox launcher, which is not expected to '
+                          'work inside the Hermes64 Linux sandbox, and they would not see your project folder (not '
+                          'tested). Use the official Linux build instead and set HERMES64_GODOT / HERMES64_BLENDER or '
+                          'godot_path / blender_path to it (docs/LINUX.md).')
 
 
 def host(platform=None):
@@ -155,8 +166,20 @@ def godot_candidates(platform=None, env=None, home=None):
         found += ['/Applications/Godot.app/Contents/MacOS/Godot',
                   str(_home(home, plat) / 'Applications/Godot.app/Contents/MacOS/Godot'), 'godot']
     else:
-        found += ['/usr/bin/godot', '/usr/local/bin/godot', str(_home(home, plat) / '.local/bin/godot'),
-                  'godot4', 'godot', 'Godot_v4.6.2-stable_linux.x86_64']
+        h = _home(home, plat)
+        official = ('Godot_v4.6.2-stable_linux.x86_64', 'Godot_v4.6.2-stable_linux.arm64')
+        roots = ['/usr/local/bin', '/usr/bin', '/opt/godot', '/opt/Godot', '/opt', str(h / '.local/bin'), str(h / 'bin'),
+                 str(h / 'Applications'), str(h / 'Applications/Godot'), str(h / 'Godot'), str(h / 'Downloads')]
+        # The official 4.6.2 file names first: a distro `godot` may be another version (exports check the version).
+        found += [r + '/' + n for r in roots for n in official]
+        found += [str(h / 'Downloads' / n / n) for n in official]          # unzipped into a folder of the same name
+        found += ['/usr/bin/godot', '/usr/local/bin/godot', str(h / '.local/bin/godot'), str(h / 'bin/godot'),
+                  '/usr/local/bin/godot4', '/usr/bin/godot4', str(h / '.local/bin/godot4')]
+        found += [str(p) for p in _glob_linux(PurePosixPath('/opt'), 'godot*', official + ('godot',))]
+        # Found only so locate() can say why it skips them (sandboxed_package).
+        found += ['/snap/bin/godot', '/snap/bin/godot-4', '/var/lib/flatpak/exports/bin/org.godotengine.Godot',
+                  str(h / '.local/share/flatpak/exports/bin/org.godotengine.Godot')]
+        found += list(official) + ['godot4', 'godot']
     return _unique(found)
 
 
@@ -169,12 +192,37 @@ def blender_candidates(platform=None, env=None, home=None):
         local, _roaming, progs, scoop = _win_dirs(e, h)
         for p in progs:
             found += [str(x) for x in _glob_windows(p / 'Blender Foundation', 'Blender*', ('blender.exe',), e)]
-        found += [str(scoop / 'apps' / 'blender' / 'current' / 'blender.exe'), 'blender.exe', 'blender']
+        found += [str(scoop / 'apps' / 'blender' / 'current' / 'blender.exe')]
+        # Steam installs Blender under steamapps\common\Blender; the portable zip unpacks to blender-<v>-windows-x64.
+        found += [str(p / 'Steam' / 'steamapps' / 'common' / 'Blender' / 'blender.exe') for p in progs]
+        for folder in (h / 'Downloads', h / 'Desktop', h):
+            found += [str(x) for x in _glob_windows(folder, 'blender-*-windows-x64', ('blender.exe',), e)]
+        found += ['blender.exe', 'blender']
     elif plat == 'darwin':
         found += ['/opt/homebrew/bin/blender', '/Applications/Blender.app/Contents/MacOS/Blender', 'blender']
     else:
-        found += ['/usr/bin/blender', '/snap/bin/blender', 'blender']
+        h = _home(home, plat)
+        found += ['/usr/bin/blender', '/usr/local/bin/blender', '/opt/blender/blender']
+        found += [str(p) for p in _glob_linux(PurePosixPath('/opt'), 'blender*', ('blender',))]
+        found += [str(h / '.local/bin/blender'), str(h / 'bin/blender'), str(h / 'Applications/blender/blender')]
+        for folder in (h / 'Applications', h, h / 'Downloads'):         # official tarball: blender-<v>-linux-x64/
+            found += [str(p) for p in _glob_linux(folder, 'blender-*', ('blender',))]
+        # Found only so locate() can say why it skips them (sandboxed_package).
+        found += ['/snap/bin/blender', '/var/lib/flatpak/exports/bin/org.blender.Blender',
+                  str(h / '.local/share/flatpak/exports/bin/org.blender.Blender'), 'blender']
     return _unique(found)
+
+
+def sandboxed_package(path, resolved=None):
+    """'snap' or 'flatpak' when a Linux program path (or what it resolves to) belongs to one, else None."""
+    for value in (str(path or ''), str(resolved or '')):
+        if value.startswith('/snap/') or value in ('/usr/bin/snap', '/usr/lib/snapd/snap-confine') or \
+                value.startswith('/var/lib/snapd/'):
+            return 'snap'
+        if '/flatpak/exports/bin/' in value or value.startswith('/var/lib/flatpak/') or \
+                '/.local/share/flatpak/' in value or value == '/usr/bin/flatpak':
+            return 'flatpak'
+    return None
 
 
 def ffmpeg_candidates(platform=None, env=None):
@@ -184,6 +232,8 @@ def ffmpeg_candidates(platform=None, env=None):
         return [str(W(_env(env).get('ProgramFiles') or r'C:\Program Files') / 'ffmpeg' / 'bin' / 'ffmpeg.exe'),
                 str(W(r'C:\ffmpeg') / 'bin' / 'ffmpeg.exe')]
     root = PurePosixPath('/')
+    if host(platform) == 'linux':
+        return [str(root / 'usr' / 'local' / 'bin' / 'ffmpeg'), str(root / 'usr' / 'bin' / 'ffmpeg')]
     return [str(root / 'opt' / 'homebrew' / 'bin' / 'ffmpeg'),
             str(root / 'usr' / 'local' / 'bin' / 'ffmpeg'), str(root / 'usr' / 'bin' / 'ffmpeg')]
 
@@ -290,6 +340,14 @@ def isolation(platform=None, env=None):
                          '$env:%s = "%s" in PowerShell (or set it as a user environment variable) and restart '
                          'Hermes. Children then run in a Windows Job Object without OS network/write '
                          'confinement (docs/WINDOWS.md).' % (WINDOWS_RUNNER_ENV, WINDOWS_RUNNER_VALUE))}
+    if plat == 'linux':
+        if host() == 'linux':
+            from . import linux_sandbox
+            return linux_sandbox.status(env)
+        return {'mode': 'off', 'available': False, 'network_blocked': False, 'writes_confined': False,
+                'note': ('Linux runner not checked: this computer is not Linux (simulation). On Linux, Hermes64 runs '
+                         'children only inside a working bubblewrap (bwrap) sandbox, or unconfined after the %s=%s '
+                         'opt-in (docs/LINUX.md).' % (LINUX_RUNNER_ENV, LINUX_RUNNER_VALUE))}
     return {'mode': 'off', 'available': False, 'network_blocked': False, 'writes_confined': False,
             'note': 'No supported child-process sandbox on this system; making games is off.'}
 
@@ -317,9 +375,66 @@ def windows_checklist(report=None, env=None, home=None):
     iso = isolation('win32', e)
     lines.append('%s  Child runner (%s): %s' % ('OK     ' if iso['available'] else 'OFF    ', iso['mode'], iso['note']))
     blender = (report.get('programs') or {}).get('blender') or {}
-    lines.append('%s  Blender (optional)' % ('OK     ' if blender.get('available') else 'absent '))
+    from .blender_version import row as blender_row
+    lines.append(blender_row(blender))
     lines.append('INFO     Long paths: keep the plugin and projects in short folders (e.g. C:\\H64) or enable '
                  'Windows long paths; unzip the plugin ZIP with Explorer or Expand-Archive, not git with autocrlf.')
+    return lines
+
+
+LINUX_DISK_MIN = 2 * 1024 ** 3        # bytes free: a game and its exports, or the 1.25 GB templates download
+
+
+def linux_checklist(report=None, env=None, home=None, iso=None, disk=None):
+    """Plain lines for a Linux owner, the first four required: Python, numpy, child runner, Godot. Each line is
+    OK/MISSING/OFF/LOW/absent with the exact fix. report = doctor.probe(); iso = isolation('linux');
+    disk = (free bytes, folder) or None."""
+    report = report or {}
+    e = _env(env)
+    h = _home(home, 'linux')
+    lines = []
+    py = report.get('python') or {}
+    lines.append('%s  Python 3.9+ (%s)' % ('OK     ' if py.get('supported') else 'MISSING', py.get('version') or '?'))
+    ok = (py.get('numpy') or {}).get('available')
+    lines.append('%s  numpy (room models without Blender, character bodies)%s' % (
+        'OK     ' if ok else 'MISSING', '' if ok else ': approve numpy when Hermes asks (hermes plugins enable '
+        'hermes64), or point python_path at a Python that has it'))
+    iso = iso or isolation('linux', e)
+    ready = iso['available'] and iso['mode'] == 'bwrap' and iso.get('runner_probe_ok', False)
+    note = iso['note'] + ('' if ready or not iso['available'] else
+                          ' No sandboxed Runner.run readiness child passed; READY is withheld.')
+    lines.append('%s  Child runner (%s): %s' % (
+        'OK     ' if ready else 'MISSING' if iso['available'] else 'OFF    ', iso['mode'], note))
+    godot = (report.get('programs') or {}).get('godot') or {}
+    lines.append('%s  Godot 4.6.2 standard build%s' % (
+        'OK     ' if godot.get('available') else 'MISSING',
+        ' at ' + godot['path'] if godot.get('path') else
+        ': download Godot_v4.6.2-stable_linux.x86_64.zip (or .arm64) from the official 4.6.2-stable release, check it '
+        'against SHA512-SUMS.txt, unzip, chmod +x, and set HERMES64_GODOT (or godot_path) to the file; snap and '
+        'flatpak builds are not used (docs/LINUX.md)'))
+    ok = (py.get('pillow') or {}).get('available')
+    lines.append('%s  Pillow (JPEG references)%s' % ('OK     ' if ok else 'absent ', '' if ok else
+                                                     ': optional; approve it with numpy'))
+    tpl = report.get('export_templates') or {}
+    lines.append('%s  Export templates %s in %s (installed targets: %s; from Linux: web and windows; no native Linux '
+                 'or macOS export)' % ('OK     ' if 'web' in (tpl.get('targets') or []) else 'absent ', TEMPLATE_VERSION,
+                                       tpl.get('folder') or templates_dir('linux', e, h),
+                                       ', '.join(tpl.get('targets') or []) or 'none'))
+    blender = (report.get('programs') or {}).get('blender') or {}
+    from .blender_version import row as blender_row
+    lines.append(blender_row(blender))
+    ffmpeg = report.get('ffmpeg') or {}
+    lines.append('%s  ffmpeg (optional: FLAC/M4A/Opus/AIFF audio import)' % ('OK     ' if ffmpeg.get('available')
+                                                                               else 'absent '))
+    if disk:
+        free, folder = disk
+        lines.append('%s  Disk space: %.1f GiB free in %s (keep at least %d GiB)' % (
+            'OK     ' if free >= LINUX_DISK_MIN else 'LOW    ', free / 1024 ** 3, folder, LINUX_DISK_MIN // 1024 ** 3))
+    from .linux_display import row as display_row
+    lines.append(display_row(report.get('capture_display') or {}))
+    lines.append('INFO     Linux logic builds/bots are headless; visual style/N64 gates require the tiny rendered '
+                 'capture probe above. Without it they read not run: no display on this machine; create still writes '
+                 'CREATE-REPORT.md. Web exports play in a browser from a local 127.0.0.1 server.')
     return lines
 
 
@@ -331,17 +446,36 @@ def _unique(items):
     return out
 
 
+def _natural(path):
+    """Sort key that orders 'Blender 4.10' after 'Blender 4.9' (numbers compared as numbers)."""
+    import re
+    return [(0, int(part), '') if part.isdigit() else (1, 0, part.lower())
+            for part in re.split(r'(\d+)', Path(str(path)).name)]
+
+
 def _glob_windows(root, pattern, names, env):
-    """Real directory listing only when running on Windows (on other hosts the folder cannot exist)."""
+    """Real directory listing only when running on Windows (on other hosts the folder cannot exist). Newest first."""
     if host() != 'win32':
         return []
     try:
-        folders = sorted(Path(str(root)).glob(pattern), reverse=True)
+        folders = sorted(Path(str(root)).glob(pattern), key=_natural, reverse=True)
     except OSError:
         return []
     return [PureWindowsPath(str(f)) / n for f in folders for n in names]
 
 
+def _glob_linux(root, pattern, names):
+    """Real directory listing only when running on Linux (simulations on other hosts list nothing). Newest first."""
+    if host() != 'linux':
+        return []
+    try:
+        folders = sorted((f for f in Path(str(root)).glob(pattern) if f.is_dir()), key=_natural, reverse=True)
+    except OSError:
+        return []
+    return [PurePosixPath(str(f)) / n for f in folders for n in names]
+
+
 __all__ = ['host', 'is_windows', 'command_line', 'split_args', 'pure', 'looks_like_path', 'exe_name', 'python_command', 'override', 'candidates',
            'godot_candidates', 'blender_candidates', 'python_candidates', 'templates_dir', 'project_local_dir',
-           'isolation', 'windows_checklist', 'windows_runner_enabled', 'PureWindowsPath', 'PurePosixPath']
+           'isolation', 'windows_checklist', 'windows_runner_enabled', 'linux_checklist', 'sandboxed_package',
+           'PureWindowsPath', 'PurePosixPath']

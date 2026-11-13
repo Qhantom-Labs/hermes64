@@ -92,9 +92,7 @@ A waived failure is never dropped. It is listed under `report['waived']`, the ch
   waiver block. The refusal (`hub_waived`) names each character. `waived=true` acknowledges it: the entry is tagged
   `owner-waiver`, and publish refuses that entry again unless `waived=true` is passed again. The slash command takes
   `waived=true`.
-- `hermes64_export` is unchanged. By reading `adventure_maker/export.py`, a release export already refuses any bound
-  project character whose hash is not in the public frozen manifest (`release_private`), waived or not. No export with
-  a waived character was run here.
+- `hermes64_export` now also admits evidenced project-generated characters and explicit owner-rights declarations for local builds; see [EXPORT.md](EXPORT.md). The cast/file waiver block must match, and source/locomotion/derived hashes remain checked. This waiver only covers rig quality: it does **not** grant ownership, likeness, copyright or redistribution rights. An unknown imported character needs separate rights/licence provenance; private/restricted/cameo content stays refused. Hub acknowledgement rules above are unchanged.
 
 ## Tests
 

@@ -22,8 +22,9 @@ def godot_path(configured=None):
     from .. import platforms
     if configured:
         cands = [configured]
-    elif platforms.is_windows():
-        cands = platforms.godot_candidates()
+    elif platforms.is_windows() or platforms.host() == 'linux':
+        cands = [c for c in platforms.godot_candidates()
+                 if not platforms.sandboxed_package(c, shutil.which(c) if not platforms.looks_like_path(c) else c)]
     else:
         cands = [c for c in (platforms.override('godot'),) if c] + list(GODOT_DEFAULTS)
     for c in cands:
@@ -52,8 +53,10 @@ def child_env(home, base=None):
 
 def _run(godot, args, timeout, home):
     env = child_env(home)
+    from ..runner import silent_godot
+    argv = silent_godot([godot, '--path', str(PROJECT)] + args)
     try:
-        p = subprocess.run([godot, '--path', str(PROJECT)] + args, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=timeout, env=env)
+        p = subprocess.run(argv, capture_output=True, text=True, encoding='utf-8', errors='replace', timeout=timeout, env=env)
         return p.returncode, p.stdout, p.stderr
     except subprocess.TimeoutExpired as e:
         return 124, (e.stdout or b'').decode() if isinstance(e.stdout, bytes) else (e.stdout or ''), 'timeout'
