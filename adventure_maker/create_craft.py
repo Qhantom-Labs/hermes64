@@ -12,6 +12,11 @@ the stand-in that is used instead (the library piece, the public cast). An agent
 agent-made cast member always wins over the defaults here.
 
 Every create_flow.py call into this module is one line marked `# VARIETY` (see docs/VARIETY-HUNKS.md).
+
+CHARCREATOR: when the prompt names a character (a brief character line the prompt said, or a species word), the hero
+and the host are made by the character creator (hermes64_character style=creator64: one shared style card, so they
+look like one world). A brief that names no character takes exactly the path above (byte-identical outputs). A creator
+miss falls back to that path with the reason kept. The create_flow.py calls are one line each, marked `# CHARCREATOR`.
 """
 import copy
 import hashlib
@@ -122,12 +127,32 @@ def recipe_for(template_id, data=None):
             'parameters': params, 'operations': ops}
 
 
-def choose_pieces(said, bag, data, skip=(), have=0):
-    """The ordered craft list (entry order is priority): pieces the user's own words (`said`) name, up to max_pieces;
-    then pieces only the brief's other words (`bag`) name, then the defaults, up to min_pieces. `skip` (templates
-    already offered) and `have` (pieces already planned) let plan() ask again when a choice could not be used."""
+def max_pieces(data, rooms=2):
+    """LONGSTORY-2: crafted pieces the prompt's own words may ask for: pieces_per_room for every room (the two-room game
+    keeps max_pieces, 4). The rooms stage places what fits each room's triangle budget and lists the rest as not
+    placed with that reason, so this follows the budget instead of capping the game."""
+    return max(int(data['max_pieces']), int(data.get('pieces_per_room', 2)) * int(rooms or 2))
+
+
+def template_cannot_show(prompt, want):
+    """STYLEENGINE-2: the user's own describing words for `want` that change what it is ('jellyfish' in 'a jellyfish
+    lamp'): a craft template would silently make the plain thing, so the want is left to the needs_design path."""
+    from . import needs_design as ND, styleengine as SE
+    head = SE._tokens(want)
+    words = SE._tokens(SE.phrase(prompt, want))
+    if not head or words[-len(head):] != head:
+        return []
+    said = set(SE._tokens(prompt))
+    return [w for w in ND.identity_unknown(words[:-len(head)]) if w in said]
+
+
+def choose_pieces(said, bag, data, skip=(), have=0, rooms=2):
+    """The ordered craft list (entry order is priority): pieces the user's own words (`said`) name, up to max_pieces
+    (per room: max_pieces()); then pieces only the brief's other words (`bag`) name, then the defaults, up to
+    min_pieces. `skip` (templates already offered) and `have` (pieces already planned) let plan() ask again when a
+    choice could not be used."""
     out, used = [None] * have, set(skip)
-    for src, limit, label in ((said, data['max_pieces'], 'prompt word'), (bag, data['min_pieces'], 'brief word')):
+    for src, limit, label in ((said, max_pieces(data, rooms), 'prompt word'), (bag, data['min_pieces'], 'brief word')):
         for e in data['pieces']:
             if len(out) >= limit:
                 break
@@ -144,7 +169,7 @@ def choose_pieces(said, bag, data, skip=(), have=0):
     return out[have:]
 
 
-def plan(prompt, brief, rows, candidates):
+def plan(prompt, brief, rows, candidates, rooms=2):
     """(rows, candidates, craft): gap rows and candidates with the default craft pieces added. A piece whose name an
     existing row already asks for is attached to that row (so the brief's own want is the one made); otherwise it is a
     new row. Rows the agent gave a candidate for, and 'not covered' rows, are left alone."""
@@ -157,7 +182,7 @@ def plan(prompt, brief, rows, candidates):
         if not queue:
             if offered and len(craft['pieces']) >= data['min_pieces']:
                 break
-            queue = choose_pieces(said, bag, data, skip=offered, have=len(craft['pieces']))
+            queue = choose_pieces(said, bag, data, skip=offered, have=len(craft['pieces']), rooms=rooms)
             if not queue:
                 break
         e = queue.pop(0)
@@ -168,6 +193,11 @@ def plan(prompt, brief, rows, candidates):
         want = row['want'] if row else e['want']
         if want in candidates:
             craft['skipped'].append({'want': want, 'reason': 'create/candidates.json already names a recipe for it'})
+            continue
+        odd = template_cannot_show(prompt, want)                      # STYLEENGINE-2
+        if odd:
+            craft['skipped'].append({'want': want, 'reason': 'needs design: the %s template cannot show "%s"'
+                                     % (e['template'], ' '.join(odd))})
             continue
         if row is None and want in wants:
             craft['skipped'].append({'want': want, 'reason': 'the brief already has this line and it is not an asset need'})
@@ -372,6 +402,12 @@ def craft_protagonist(ctx, prompt, brief):
     if mine:
         rec.update(status='crafted', id=mine['id'], rig=(mine.get('rig') or {}).get('id'), by='the cast already made for this game')
         return rec
+    plan = creator_plan(prompt, brief)
+    if plan:                                                                     # CHARCREATOR: the shared card
+        made = _creator_make(ctx, plan['hero'], pick['name'])
+        if made.get('status') == 'crafted':
+            return dict(rec, **made, by=pick['by'] + '; character creator (the prompt names a character)')
+        rec['creator_miss'] = made.get('reason')
     try:
         from .character_tools import CharacterService
         svc = CharacterService(ctx.settings)
@@ -402,17 +438,171 @@ def craft_protagonist(ctx, prompt, brief):
     return rec
 
 
+# ------------------------------------------------------------------------------------------- CHARCREATOR cast
+CREATOR_STYLE = 'creator64'
+HOST_SLOT = 'inhabitant'
+_HEAD_SKIP = {'a', 'an', 'the', 'and', 'of', 'in', 'with', 'old', 'young', 'little', 'big', 'small', 'hero'}
+_PHRASE_STOP = {'in', 'at', 'on', 'near', 'inside', 'into', 'by', 'from', 'to', 'for', 'who', 'while', 'where', 'that',
+                'meets', 'meet', 'sells', 'selling', 'looking', 'finds', 'visits', 'fights', 'helps', 'guards', 'runs',
+                'lives', 'walks', 'explores', 'searching', 'seeking', 'is', 'are', 'has', 'have', 'during', 'under', 'over',
+                'run', 'owned', 'made', 'built', 'called', 'named'}
+_PLACES = {'cafe', 'shop', 'house', 'home', 'village', 'town', 'city', 'temple', 'castle', 'kingdom', 'island', 'forest', 'inn',
+           'tavern', 'bar', 'market', 'den', 'lair', 'tower', 'school', 'planet', 'world', 'station', 'ship', 'park', 'garden',
+           'farm', 'street', 'statue', 'mask', 'shrine', 'museum', 'restaurant', 'hotel', 'factory', 'lab', 'base'}
+_DETERMINERS = {'a', 'an', 'the', 'and', 'with', 'his', 'her', 'their', 'my', 'our', 'some'}
+
+
+def _phrase(w, i):
+    """The prompt words that describe the character at word i: back to its determiner, on through 'with ...'."""
+    j = i
+    while j > 0 and i - j < 3 and w[j - 1] not in _DETERMINERS and w[j - 1] not in _PHRASE_STOP:
+        j -= 1
+    k, with_mode = i + 1, False
+    while k < len(w) and k - i < 12:
+        if w[k] == 'with':
+            with_mode = True
+        elif w[k] in _PHRASE_STOP or (w[k] == 'and' and not with_mode):
+            break
+        k += 1
+    return ' '.join(w[j:k])
+
+
+def creator_plan(prompt, brief):
+    """None when the prompt names no character (the create flow is then byte-identical to before); else
+    {'hero': text, 'host': text, 'named': [phrases]} for the character creator."""
+    from .charcreator import propose as CPR
+    w = words(prompt)
+    sing = [_singular(x) for x in w]
+
+    def at(word):
+        for i, (x, y) in enumerate(zip(w, sing)):
+            if word in (x, y):
+                return i
+        return None
+    named, player = [], None
+    for c in brief.get('characters', []):
+        heads = [x for x in words(c.get('want', '')) if x not in _HEAD_SKIP and at(x) is not None
+                 and (at(x) + 1 >= len(w) or w[at(x) + 1] not in _PLACES)]      # 'a cat cafe', 'a pirate ship': places
+        if not heads:
+            continue
+        i = min(at(x) for x in heads)
+        ph = _phrase(w, i)
+        if c.get('role') == 'player' and player is None:
+            player = (i, ph)
+        elif all(ph != q for _, q in named):
+            named.append((i, ph))
+    for i, x in enumerate(w):                         # species the brief did not list ('a cat cafe run by a fox')
+        if CPR.SPECIES.get(x) not in (None, 'human') and (i + 1 >= len(w) or w[i + 1] not in _PLACES) and \
+                all(not (j <= i < j + len(q.split())) for j, q in named):
+            ph = _phrase(w, i)
+            if all(ph != q for _, q in named) and (player is None or ph != player[1]):
+                named.append((i, ph))
+    if not named and player is None:
+        return None
+    named.sort()
+    phrases = [q for _, q in named]
+    if player is not None:
+        hero = player[1]
+    else:
+        pick = pick_protagonist(prompt, brief)
+        word = pick['by'][len('brief word: '):] if pick['by'].startswith('brief word: ') else None
+        own = next((q for q in phrases if word and word in q.split()), None)
+        hero = (pick['text'] + ', ' + own) if own else pick['text']     # the prompt's own words last: they win
+    mine = set(words(hero)) - _HEAD_SKIP - {'with', 'and', 'a'}
+    rest = [q for q in phrases if q != hero and not hero.endswith(', ' + q) and not (set(q.split()) & mine)]
+    host = rest[0] if rest else next((c['want'] for c in brief.get('characters', []) if c.get('role') != 'player'
+                                      and not (set(words(c['want'])) & mine)), 'villager')
+    return {'hero': hero, 'host': host, 'named': phrases}
+
+
+def _creator_make(ctx, text, name):
+    """propose (style=creator64) -> build -> bind one character; a record (status crafted / not made, reason)."""
+    rec = {'status': 'not made', 'text': text, 'style': CREATOR_STYLE, 'tries': 0}
+    try:
+        from .character_tools import CharacterService
+        svc = CharacterService(ctx.settings)
+        got = json.loads(svc.handle({'action': 'propose', 'project': ctx.name, 'brief': text, 'style': CREATOR_STYLE}))
+        errors = [] if got.get('ok') else [str(got.get('error') or got.get('reason') or       # MERGEPREP-2: a NEEDS
+                                               (got.get('lines') or ['propose refused'])[0])[:160]]  # DESIGN reply says why
+        for v in (got.get('variants') or []) if got.get('ok') else []:
+            if rec['tries'] >= MAX_CHARACTER_TRIES or not v.get('gates_ok'):
+                errors += [str(e)[:160] for e in (v.get('errors') or [])[:1]]
+                continue
+            rec['tries'] += 1
+            built = json.loads(svc.handle({'action': 'build', 'project': ctx.name, 'recipe': v['variant']}))
+            if not built.get('ok'):
+                errors.append(str(built.get('error') or built.get('errors') or 'build refused')[:160])
+                continue
+            bound = json.loads(svc.handle({'action': 'bind', 'project': ctx.name, 'id': built['id'], 'display_name': name}))
+            if not bound.get('ok'):
+                errors.append(str(bound.get('error') or bound.get('reason') or 'bind refused')[:160])
+                continue
+            rec.update(status='crafted', id=built['id'], rig=built.get('rig'), sha256=built.get('sha256'), glb=built.get('glb'),
+                       summary=v.get('summary'), card=built.get('card'))
+            return rec
+        rec['reason'] = '; '.join(errors) or 'no creator variant passed the character gates'
+    except Exception as e:      # optional equipment (numpy python): a miss is a row, never a failed game
+        rec['reason'] = ' '.join(('%s: %s' % (type(e).__name__, e)).split())[:300]
+    return rec
+
+
+def craft_cast(ctx, prompt, brief):
+    """[] when the prompt names no character; else the host made by the creator (the hero's card), or a miss row."""
+    plan = creator_plan(prompt, brief)
+    if not plan:
+        return []
+    if ctx.exists('create/assets.json'):
+        prev = (ctx.read_json('create/assets.json') or {}).get('cast') or []
+        if prev and all(c.get('status') == 'crafted' and (ctx.root / 'characters' / 'built' / str(c.get('id'))).is_dir()
+                        for c in prev):
+            return prev
+    name = _title_words(plan['host'])
+    return [dict(_creator_make(ctx, plan['host'], name), slot=HOST_SLOT, name=name)]
+
+
+def _title_words(text):
+    ws = [x for x in words(text) if x not in _HEAD_SKIP and x not in ('with', 'and')][:2]
+    return (' '.join(x.capitalize() for x in ws) or 'Inhabitant')[:40]
+
+
+def cast_field(cast):
+    """The create/assets.json 'cast' key: absent (byte-identical file) when nothing was asked of the creator."""
+    return {'cast': cast} if cast else {}
+
+
+def cast_rows(rows, brief, cast):
+    """The host's 'public cast stands in' row reads 'made' when the creator made it (rows unchanged otherwise)."""
+    made = [c for c in cast if c.get('status') == 'crafted']
+    if not made:
+        return rows
+    out, done = [], False
+    for r in rows:
+        if not done and r.get('want', '').startswith('character: ') and 'public cast' in r.get('why', '') and \
+                not any(c.get('role') == 'player' and r['want'] == 'character: ' + c['want'] for c in brief.get('characters', [])):
+            r = dict(r, status='covered', why='made by the character creator as %s (%s); same style card as the hero' % (
+                made[0]['id'], made[0]['text']))
+            done = True
+        out.append(r)
+    return out
+
+
 def apply_cast(spec, assets):
-    """The crafted protagonist plays the game's protagonist slot (the same cast mapping hermes64_character bind uses)."""
+    """The crafted protagonist plays the game's protagonist slot (the same cast mapping hermes64_character bind uses);
+    a creator-made host plays the host slot (CHARCREATOR)."""
     prot = assets.get('protagonist') or {}
-    if prot.get('status') != 'crafted' or not prot.get('id'):
+    hosts = [c for c in assets.get('cast') or [] if c.get('status') == 'crafted' and c.get('id')]
+    if (prot.get('status') != 'crafted' or not prot.get('id')) and not hosts:
         return spec
     spec = copy.deepcopy(spec)
-    slot = spec['metadata'].get('protagonist', 'traveller')
-    spec['metadata']['presentation'].setdefault('cast', {})[slot] = prot['id']
-    for ch in spec.get('characters', []):
-        if ch.get('id') == slot and ch.get('name') in ('Traveller', '', None):
-            ch['name'] = str(prot.get('name') or 'Traveller')[:40]
+    if prot.get('status') == 'crafted' and prot.get('id'):
+        slot = spec['metadata'].get('protagonist', 'traveller')
+        spec['metadata']['presentation'].setdefault('cast', {})[slot] = prot['id']
+        for ch in spec.get('characters', []):
+            if ch.get('id') == slot and ch.get('name') in ('Traveller', '', None):
+                ch['name'] = str(prot.get('name') or 'Traveller')[:40]
+    for c in hosts:
+        if any(ch.get('id') == c['slot'] for ch in spec.get('characters', [])):
+            spec['metadata']['presentation'].setdefault('cast', {})[c['slot']] = c['id']
     return spec
 
 
@@ -428,8 +618,16 @@ def made_line(assets):
     prot, craft = assets.get('protagonist') or {}, assets.get('craft') or {'pieces': []}
     made = [c for c in craft['pieces'] if c.get('status') == 'crafted']
     hero = ('hero %s (%s)' % (prot.get('id'), prot.get('text', ''))) if prot.get('status') == 'crafted' else 'no hero'
-    return 'Made new for this game: %s; pieces %d of %d planned%s.' % (
+    hosts = [c for c in assets.get('cast') or [] if c.get('status') == 'crafted']
+    if hosts:                                                                    # CHARCREATOR
+        hero += ''.join('; cast %s (%s)' % (c['id'], c['text']) for c in hosts)
+    line = 'Made new for this game: %s; pieces %d of %d planned%s.' % (
         hero, len(made), len(craft['pieces']), (': ' + ', '.join(c['want'] for c in made)) if made else '')
+    free = [c for c in craft.get('free_form', []) if c.get('status') == 'made']      # STYLEENGINE
+    if craft.get('free_form'):
+        line += ' Made from the brief\'s own words: %d of %d%s.' % (len(free), len(craft['free_form']),
+                                                                   (': ' + ', '.join(c['want'] for c in free)) if free else '')
+    return line
 
 
 def report_rows(assets):
@@ -444,10 +642,25 @@ def report_rows(assets):
         out.append({'feature': 'protagonist', 'asked': prot.get('by', ''), 'status': 'closest',
                     'reason': 'protagonist made as the closest body the character maker has: %s' % prot['closest'],
                     'closest': prot['closest'], 'fix': 'none in the create flow'})
+    for c in assets.get('cast') or []:                                           # CHARCREATOR
+        if c.get('status') != 'crafted':
+            out.append({'feature': 'cast member', 'asked': c.get('text', ''), 'status': 'not_made',
+                        'reason': 'character creator could not make it: %s' % (c.get('reason') or 'unknown'),
+                        'closest': 'the public cast stands in', 'fix': 'hermes64_character propose style=creator64, build, bind'})
+    if prot and prot.get('creator_miss'):
+        out.append({'feature': 'protagonist', 'asked': prot.get('text', ''), 'status': 'closest',
+                    'reason': 'the character creator could not make the hero (%s); the house character maker made it'
+                    % prot['creator_miss'], 'closest': 'house character maker', 'fix': 'none in the create flow'})
     for c in (assets.get('craft') or {}).get('pieces', []):
         if c.get('status') == 'not made':
             out.append({'feature': 'crafted piece', 'asked': c['want'], 'status': 'not_made',
                         'reason': 'crafted %s failed its gates after %s tries: %s' % (c['want'], c.get('tries'), c.get('reason')),
                         'closest': ('library piece %s' % c['stand_in']) if c.get('stand_in') else 'nothing stands in',
                         'fix': 'author a recipe for it (skill hermes64-generators) in create/candidates.json'})
+    for c in (assets.get('craft') or {}).get('free_form', []):                         # STYLEENGINE
+        if c.get('status') == 'not made':
+            out.append({'feature': 'piece from words', 'asked': c['want'], 'status': 'not_made',
+                        'reason': 'made from its words (%s form) but refused: %s' % (c.get('form'), c.get('reason')),
+                        'closest': ('library piece %s' % c['stand_in']) if c.get('stand_in') else 'nothing stands in',
+                        'fix': 'hermes64_character action=make with your own recipe or builder script, then run again'})
     return out

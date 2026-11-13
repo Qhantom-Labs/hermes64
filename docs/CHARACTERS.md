@@ -115,6 +115,19 @@ kinds:
 Values outside the lock's range are clamped, and a one-line reason is reported. Impossible values are refused with a
 code: `RANGE`, `UNKNOWN_PART`, `PART_BODY`, `ROLE`, `SLOT`, `BUDGET`, `RIG`, `LOCK`, `CLIPS`.
 
+## Character creator (`style=creator64`)
+
+`propose ... style=creator64` makes original characters from plain words in one measured card style. Every one has:
+
+- one welded body under 700 triangles;
+- one 64x64 baked-light texture and one unlit material;
+- the human16_v1 rig and all 13 clips of its pack;
+- the same gates as below.
+
+It covers 9 species, 6 builds and 40 geometry modules plus painted outfits, faces and colour words. Blender is not
+needed. Edits, build and bind are the same actions. The card numbers, what it can and cannot make, and per-model
+numbers are in [CHARCREATOR-RESULT.md](CHARCREATOR-RESULT.md).
+
 ## Gates (every built or bound character)
 
 | Gate | What it checks |

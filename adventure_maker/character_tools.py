@@ -10,6 +10,9 @@ Actions
   bind     id (built) or glb (cameo pack / community file) + display_name -> characters/cast.json, only after the
            rig kit validator passes (the same validator every generated character passes); people keep
            placeholder: true until the owner names them
+CHARCREATOR: style=creator64 (or characters/style.json lock creator64) proposes, edits and builds with the character
+creator (adventure_maker/charcreator: original characters in the measured 700-triangle, one-64x64-atlas card style);
+creator recipes dispatch on their body (body.creator) in edit/build/info. Same actions, same fields, same gates.
 Writes only inside the managed project (adventure_maker.safety.Project); Blender runs through
 adventure_maker.runner.Runner (macOS sandbox, no network, project-confined writes); no shell strings.
 """
@@ -38,6 +41,13 @@ ACTIONS = {
     'bind': (('action', 'project', 'id', 'glb', 'display_name', 'placeholder', 'source', 'legacy', 'waive', 'owner_approved',
               'brief'), ('project', 'display_name')),
     'locomotion': (('action', 'project', 'id', 'glb'), ('project',)),
+    # STYLEENGINE: props/world pieces in the pack style (adventure_maker/styleengine.py). brief = the words (make), the
+    # user's rights (import) or a target (conform); recipe = an agent .json recipe or .py builder script; style = pack.
+    # STYLEENGINE-2: render=true = the preview sheet (5 angles + game distance); make id=<built id> render=true alone
+    # re-renders without rebuilding; make with an existing id is a revision (last 5 versions kept)
+    'make': (('action', 'project', 'brief', 'recipe', 'style', 'id', 'render'), ('project',)),
+    'import': (('action', 'project', 'glb', 'references', 'brief', 'style', 'id', 'render'), ('project', 'glb', 'brief')),
+    'conform': (('action', 'project', 'glb', 'id', 'brief', 'style'), ('project',)),
 }
 # A project has one catalog.json (hermes64-catalog/1.0.0) with one write path, adventure_maker/catalog.py
 # (read_project -> upsert -> write_project), shared with /hermes64 hub install. A loose community file has no known
@@ -84,6 +94,22 @@ def _sha(raw):
     return hashlib.sha256(raw).hexdigest()
 
 
+class CreatorLock:
+    """Stand-in lock for the creator (it has its own palette and card; no style-lock file): a house recipe compiled
+    against it is refused with the LOCK code."""
+    id = 'creator64'
+    kind = 'creator'
+    bodies = ('body.creator',)
+
+    def receipt(self):
+        return {'lock': self.id, 'kind': self.kind}
+
+
+def _cc():
+    from . import charcreator
+    return charcreator
+
+
 class CharacterService:
     def __init__(self, settings=None):
         self.settings = dict(settings or {})
@@ -119,7 +145,21 @@ class CharacterService:
         name = args.get('style')
         if not name and project is not None and project.path('characters/style.json').is_file():
             name = project.read_json('characters/style.json').get('lock')
+        if name == CreatorLock.id:
+            return CreatorLock()
         return CS.load_lock(name or 'n64_base')
+
+    def creator_python(self, project):
+        """The build interpreter for the creator child (numpy + Pillow): python_path or the standard locations."""
+        from .runner import locate
+        try:
+            python = locate('python', self.settings.get('python_path', ''))
+        except Fault:
+            python = None
+        if not python or not self.numpy_version(project, python):
+            fail('missing_tool', 'The character creator needs numpy (and Pillow) in python_path; Blender is not needed. '
+                 + PL.doctor(self.blender())['message'])
+        return python
 
     def blender(self):
         from .runner import locate
@@ -207,6 +247,10 @@ class CharacterService:
         return rel
 
     def _run(self, project, recipes, lock, rel_dir, render=True):
+        if isinstance(lock, CreatorLock) or (recipes and all(_cc().is_creator(r) for r in recipes)):
+            from .charcreator import flow
+            return flow.build(recipes, project.path(rel_dir), invoke=self.invoke(project), python=self.creator_python(project),
+                              render=render, rigkit_root=self.settings.get('rigkit_root') or None)
         exporter, python, blender = self.exporter(project)
         out = project.path(rel_dir)
         res = PL.build(recipes, lock, out, invoke=self.invoke(project), blender=blender, render=render,
@@ -215,6 +259,8 @@ class CharacterService:
 
     def _sheet_or_note(self, project, rel_dir, rid, it):
         """Contact sheet from the review renders, or (None, why) when this host has no renderer."""
+        if it.get('exporter') == 'creator' and it.get('sheet'):
+            return '%s/%s' % (rel_dir, Path(it['sheet']).name), None
         if len(it.get('renders') or []) < len(PL.VIEWS):
             return None, it['gates'].get('not_run', {}).get('silhouette', PL.NO_RENDERER)
         renders = {'front': it['renders'][0], 'three_quarter': it['renders'][1], 'side': it['renders'][2]}
@@ -227,16 +273,32 @@ class CharacterService:
     def do_list(self, project, args):
         what = args['what']
         lib = CR.load_parts()
+        if what == 'parts' and args.get('style') == CreatorLock.id:
+            by = {}
+            for mid in _cc().module_ids():
+                by.setdefault(_cc().data()['modules'][mid]['kind'], []).append(mid)
+            d = _cc().data()
+            return {'style': CreatorLock.id, 'modules': by, 'species': sorted(d['species']), 'builds': sorted(d['builds']),
+                    'face_presets': ['face.' + k for k in sorted(d['face_styles'])],
+                    'expressions': {k: d['expression_mouth'][k] for k in ('neutral', 'smile', 'worried', 'surprised')},
+                    'colours': _cc().palette_names(), 'slots': sorted(d['slots']),
+                    'edit_examples': [{'kind': 'swap', 'part': 'hat.star_wizard', 'value': 1.3},
+                                      {'kind': 'color', 'slot': 'cape', 'role': 'green'},
+                                      {'kind': 'face', 'preset': 'face.sleepy', 'expression': 'worried', 'beard': 'beard.long'},
+                                      {'kind': 'hair', 'style': 'long', 'color': 'hair_grey'}]}
         if what == 'parts':
             by = {}
             for pid, row in sorted(lib['parts'].items()):
                 by.setdefault(row['kind'], []).append(pid)
             return {'parts': by, 'count': len(lib['parts'])}
         if what == 'bodies':
-            return {'bodies': {k: {'archetype': v['archetype'], 'rig': '%s@%s' % (v['rig']['id'], v['rig']['version']),
-                                   'tris': v['tris'], 'clip_sets': v['clip_sets']} for k, v in lib['bodies'].items()}}
+            out = {k: {'archetype': v['archetype'], 'rig': '%s@%s' % (v['rig']['id'], v['rig']['version']),
+                       'tris': v['tris'], 'clip_sets': v['clip_sets']} for k, v in lib['bodies'].items()}
+            out[_cc().BODY_ID] = {'archetype': 'person', 'rig': 'human16_v1@1.0.0', 'tris': _cc().data()['base_tris'],
+                                  'clip_sets': ['human_base', 'human_combat'], 'style': CreatorLock.id}
+            return {'bodies': out}
         if what == 'styles':
-            return {'styles': CS.list_locks()}
+            return {'styles': CS.list_locks() + [CreatorLock.id]}
         if what == 'cast' and project is None:
             return {'builtin': builtin_cast()}
         if what == 'recipes':
@@ -252,6 +314,14 @@ class CharacterService:
     def do_info(self, project, args):
         lib = CR.load_parts()
         key = args['id']
+        cc = _cc()
+        if key == CreatorLock.id:
+            d = cc.data()
+            return {'style': key, 'kind': 'creator', 'card': d['card'], 'species': {k: v['label'] for k, v in d['species'].items()},
+                    'builds': {k: v['label'] for k, v in d['builds'].items()}, 'modules': len(d['modules']),
+                    'base_tris': d['base_tris'], 'palette': cc.palette_names(), 'next': 'propose brief=... style=creator64'}
+        if key in cc.data()['modules'] and args.get('style') == CreatorLock.id:
+            return {'module': key, **cc.data()['modules'][key]}
         if key in lib['parts']:
             return {'part': key, **lib['parts'][key]}
         if key in lib['bodies']:
@@ -262,14 +332,57 @@ class CharacterService:
                     'receipt': lk.receipt()}
         if project is not None:
             rel, rec = self.read_recipe(project, key)
+            if cc.is_creator(rec):
+                params, rep = cc.compile(rec)
+                return {'recipe': rel, 'summary': cc.summary(rec), 'clamps': rep['clamps'], 'notes': rep['notes'],
+                        'parts': params['modules'], 'tris': rep['tris']}
             item, rep = CR.compile_build(rec, self.lock(project, args))
             return {'recipe': rel, 'summary': CR.summary(rec), 'clamps': rep['clamps'], 'parts': rep['parts'], 'tris': rep['tris']}
         fail('missing', 'Unknown id ' + key)
 
+    def creature_needs(self, project, brief, creator=False):
+        """STYLEENGINE-2: a creature no creator64 body or rig can be (dragon, snake, jellyfish...) is needs_design,
+        never a person body silently. Returns the reply or None. MERGEPREP-2: under the creator64 lock the
+        creator's species words (bear, rabbit, wolf ...) are bodies it builds on its card."""
+        from . import needs_design as ND
+        ws = set(ND.toks(brief))
+        ws |= {ND._singular(w) for w in ws}
+        animal = sorted(ws & ND.CREATURE_WORDS)
+        if creator:
+            from .charcreator.propose import SPECIES
+            animal = [w for w in animal if w not in SPECIES]
+        if not animal or ws & ND.HUMANOID_OK:
+            return None
+        rec = ND.character_records({'characters': [{'want': brief, 'role': 'npc'}]}, None,
+                                   project=project.root.name)[0]
+        rec['rigs'] = {'human16_v1': 'people and robots (13 clips: idle, walk, run, attack, hurt, ...)',
+                       'quad16_v1': 'cat and dog', 'dasher16_v1': 'enemy creature (dasher)',
+                       'warden15_v1': 'enemy creature (warden)'}
+        rec['options'] = [
+            'a) static creature prop: write a builder script (blobs, sweeps, mirror) and make it with '
+            'hermes64_character action=make project=%s recipe=<script.py> id=%s render=true; it stands still '
+            '(this runtime does not animate props)' % (project.root.name, rec['id']),
+            'b) a person, robot, cat or dog body (propose with those words) if the user accepts that stand-in',
+            'not built yet: a generic creature skeleton (spine chain + optional legs/wings/tail) with procedural '
+            'idle/walk/attack/hurt/death clips mapped onto the runtime clip names']
+        return {'ok': False, 'needs_design': rec, 'lines': ['NEEDS DESIGN: %s' % rec['why']] + rec['options'],
+                'next': rec['options'][0]}
+
     def do_propose(self, project, args):
+        try:                                                             # MERGEPREP-2: which lock (errors come below)
+            creator = isinstance(self.lock(project, args), CreatorLock)
+        except Exception:
+            creator = False
+        nd = self.creature_needs(project, args['brief'], creator=creator)  # STYLEENGINE-2
+        if nd is not None:
+            return nd
         lock = self.lock(project, args)
         refs = [str(project.path(r)) for r in args.get('references', [])]
-        recs = PR.propose(args['brief'], lock, refs)
+        if isinstance(lock, CreatorLock):
+            from .charcreator import propose as CPR
+            recs = CPR.propose(args['brief'])
+        else:
+            recs = PR.propose(args['brief'], lock, refs)
         pid = 'p_' + hashlib.sha256((args['brief'] + '|' + lock.id + '|' + '|'.join(args.get('references', []))).encode()).hexdigest()[:10]
         rel_dir = 'characters/proposals/' + pid
         letters = 'abc'
@@ -283,31 +396,43 @@ class CharacterService:
                 variants.append({'variant': '%s.%s' % (pid, v), 'refused': res['refused'].get(rec['id'])})
                 continue
             sheet, why = self._sheet_or_note(project, rel_dir, rec['id'], it)
-            row = {'variant': '%s.%s' % (pid, v), 'summary': CR.summary(rec), 'notes': rec.get('notes'),
+            row = {'variant': '%s.%s' % (pid, v), 'summary': (_cc().summary(rec) if _cc().is_creator(rec) else CR.summary(rec)),
+                   'notes': rec.get('notes'),
                    'gates_ok': it['ok'], 'errors': it['gates']['errors'][:4], 'clamps': it['recipe']['clamps'],
                    'sheet': sheet, 'recipe': '%s/%s.json' % (rel_dir, v)}
             if why:
                 row['no_sheet'] = why
+            if it.get('card_fit'):
+                cf = it['card_fit']
+                row['card'] = {'tris_body': it['tris_body'], 'tris_props': sum(it['tris_props'].values()), 'height_m': it['height_m'],
+                               'heads_tall': cf['heads_tall_from_neck'], 'colours': it['unique_colours'],
+                               'body_metrics_in_card': '%d/%d' % (cf['body_inside'], cf['body_metrics'])}
             variants.append(row)
         return {'proposal': pid, 'style': lock.id, 'variants': variants, 'exporter': res.get('exporter'),
                 'next': ('show the sheets; the user picks one; then build recipe=<variant> (or edit it first)'
-                         if res.get('review_renders') == 'blender' else
+                         if res.get('review_renders') in ('blender', 'software') else
                          'no contact sheets on this host: describe each variant from its summary; the user picks one; '
                          'then build recipe=<variant> (or edit it first)')}
 
     def do_edit(self, project, args):
-        lock = self.lock(project, args)
         rel, rec = self.read_recipe(project, args['recipe'])
+        cc = _cc()
+        creator = cc.is_creator(rec)
+        lock = CreatorLock() if creator else self.lock(project, args)
         for e in args['edits']:
-            rec = CR.apply_edit(rec, e)
-        item, rep = CR.compile_build(rec, lock)
+            rec = cc.apply_edit(rec, e) if creator else CR.apply_edit(rec, e)
+        if creator:
+            _params, rep = cc.compile(rec)
+            rep = dict(rep, warnings=rep['notes'])
+        else:
+            item, rep = CR.compile_build(rec, lock)
         new_rel = 'characters/recipes/%s.json' % rec['id']
         if project.path(new_rel).is_file():
             old = project.read_json(new_rel)
             project.write_json('characters/recipes/history/%s-%s.json' % (rec['id'], CR.recipe_digest(old)[:8]), old)
         project.write_json(new_rel, rec)
-        out = {'recipe': new_rel, 'summary': CR.summary(rec), 'clamps': rep['clamps'], 'warnings': rep['warnings'],
-               'edits_applied': len(args['edits'])}
+        out = {'recipe': new_rel, 'summary': cc.summary(rec) if creator else CR.summary(rec), 'clamps': rep['clamps'],
+               'warnings': rep['warnings'], 'edits_applied': len(args['edits'])}
         if args.get('render'):
             rel_dir = 'characters/previews/' + rec['id']
             res = self._run(project, [rec], lock, rel_dir)
@@ -319,8 +444,8 @@ class CharacterService:
         return out
 
     def do_build(self, project, args):
-        lock = self.lock(project, args)
         rel, rec = self.read_recipe(project, args['recipe'])
+        lock = CreatorLock() if _cc().is_creator(rec) else self.lock(project, args)
         rel_dir = 'characters/built/' + rec['id']
         res = self._run(project, [rec], lock, rel_dir)
         if rec['id'] in res['refused']:
@@ -355,6 +480,11 @@ class CharacterService:
         if not_run:
             out['not_run'] = not_run
         out['locomotion'] = loco['summary']
+        if it.get('card_fit'):            # CHARCREATOR: measured against the style card (reported, not a gate)
+            out['card'] = {'tris_body': it['tris_body'], 'tris_props': it['tris_props'], 'colours': it['unique_colours'],
+                           'height_m': it['height_m'], 'heads_tall': it['card_fit']['heads_tall_from_neck'],
+                           'body_metrics_in_card': '%d/%d' % (it['card_fit']['body_inside'], it['card_fit']['body_metrics']),
+                           'clips_softened_by_guard': it.get('guard_softened') or {}}
         return out
 
     # ------------------------------------------------------------------ base locomotion (docs/LOCOMOTION.md)
@@ -393,6 +523,132 @@ class CharacterService:
                    'run_enter_mps': blk['run']['enter_mps'], 'run_exit_mps': blk['run']['exit_mps'],
                    'changed_to_fit': {c: rep['clips'][c]['dials_moved'] for c in LOCO.CLIPS if rep['clips'][c].get('dials_moved')}}
         return {'ok': True, 'entry': entry, 'summary': summary}
+
+    # ------------------------------------------------------------------ STYLEENGINE props
+    def styleengine_pack(self, project, args):
+        """The kit pack a prop is built in: style=, else the create flow's pack, else the project spec's, else castle_keep."""
+        if args.get('style'):
+            return args['style'], 'style argument'
+        for rel, key in (('create/assets.json', 'kit_pack'), ('create/mood.json', 'pack')):
+            if project.path(rel).is_file():
+                got = (project.read_json(rel) or {}).get(key)
+                if got:
+                    return got, rel
+        if project.path('source/spec.json').is_file():
+            pk = ((project.read_json('source/spec.json') or {}).get('metadata') or {}).get('pack')
+            if pk:
+                return pk, 'source/spec.json'
+        return 'castle_keep', 'default (pass style=<pack> to choose)'
+
+    def styleengine_reply(self, row, pack, why):
+        from . import styleengine as SE
+        if row.get('needs_design'):                    # STYLEENGINE-2: nothing generic was built; the agent designs it
+            rec = row['needs_design']
+            return {'ok': False, 'needs_design': rec, 'id': rec['id'], 'pack': pack,
+                    'lines': ['NEEDS DESIGN: %s' % rec['why'], 'design it yourself: write a builder script (two worked '
+                              'examples in needs_design.examples; API: %s), then: %s' % (
+                                  rec['builder_reference'], rec['submit']['builder_script'])],
+                    'next': rec['submit']['builder_script']}
+        out = {k: row.get(k) for k in ('ok', 'id', 'file', 'sha256', 'tri_count', 'measure', 'gates', 'hints', 'error',
+                                        'errors', 'total_seconds', 'version', 'design_for')}
+        out = {k: v for k, v in out.items() if v is not None}
+        out.update(pack=pack, pack_from=why, lines=SE.report_lines(row),
+                   attempts=[{k: a.get(k) for k in ('try', 'ok', 'errors', 'next')} for a in row.get('attempts', [])],
+                   notes=(row.get('info') or {}).get('notes', []))
+        if (row.get('info') or {}).get('size_m'):
+            out['size_m'] = row['info']['size_m']
+        if row.get('ok'):
+            out['budget'] = {'piece_tris': SE.CLASS_TRIS.get((row.get('recipe') or {}).get('class'), 300),
+                             'class': (row.get('recipe') or {}).get('class')}
+            out['next'] = (row['design_for']['next'] if row.get('design_for') else
+                           'to use it in a create-flow game: add {"<brief line>": "%s"} to create/candidates.json and run '
+                           'create_flow again from assets' % row['id'])
+        out['ok'] = bool(row.get('ok'))
+        return out
+
+    def styleengine_preview(self, project, pack, rid, file):
+        """STYLEENGINE-2: the look-and-fix loop's pictures (se_preview.py); numbers stay in the reply either way."""
+        from . import se_preview as PV
+        src = project.path(file) if not Path(str(file)).is_absolute() else Path(str(file))
+        got = PV.render(self.settings, project, pack, [{'id': re.sub(r'[^a-z0-9_]', '_', rid)[:48],
+                                                         'parts': [{'glb': str(src)}]}],
+                        '.maker/local/styleengine/previews/%s' % re.sub(r'[^a-z0-9_]', '_', rid)[:48])
+        if got.get('ok') and got.get('pieces'):
+            pc = got['pieces'][0]
+            return {'sheet': pc['sheet'], 'sheet_path': pc['sheet_abs'], 'shots': pc['shots'], 'size_m': pc['size_m'],
+                    'layout': got['sheet_layout'], 'seconds': got['seconds'],
+                    'look': 'open the sheet image and compare it with what you meant; then make again with a revised '
+                            'script (same id = a new version; the last 5 are kept)'}
+        return {'not_rendered': got.get('why') or 'the renderer refused', 'seconds': got.get('seconds')}
+
+    def do_make(self, project, args):
+        from . import styleengine as SE
+        pack, why = self.styleengine_pack(project, args)
+        if not args.get('brief') and not args.get('recipe'):
+            if args.get('render') and args.get('id'):                  # STYLEENGINE-2: preview only, no rebuild
+                rid = args['id'][4:] if args['id'].startswith('gen:') else args['id']
+                from .se_preview import latest_file
+                file = latest_file(project, rid)
+                if not file:
+                    fail('missing', 'No built piece with id %s here (make it first)' % rid)
+                return {'ok': True, 'id': rid, 'file': file, 'pack': pack,             # same folder as make's preview
+                        'preview': self.styleengine_preview(project, pack, 'gen:' + rid, file)}
+            fail('arguments', 'make needs brief (the words) or recipe (a project .json recipe or .py builder script)')
+        try:
+            row = SE.make(project.root, pack, brief=args.get('brief'), source=args.get('recipe'), out_id=args.get('id'),
+                          python_path=self.settings.get('python_path', ''))
+        except SE.StyleEngineError as e:
+            fail('arguments', str(e))
+        out = self.styleengine_reply(row, pack, why)
+        if row.get('ok') and args.get('render'):
+            out['preview'] = self.styleengine_preview(project, pack, row['id'], row['file'])
+            self.keep_version_sheet(project, out)
+        return out
+
+    @staticmethod
+    def keep_version_sheet(project, out):
+        """STYLEENGINE-2: each version's preview sheet stays next to its recipe (assets/designs/<id>/v<N>.png), so
+        an agent can compare versions before it rolls back."""
+        ver, pv = out.get('version') or {}, out.get('preview') or {}
+        hist = str(ver.get('history') or '')
+        if not ver.get('version') or not pv.get('sheet_path') or not hist.endswith('/history.json'):
+            return
+        rel = '%s/v%d.png' % (hist[:-len('/history.json')], int(ver['version']))
+        try:
+            project.path(rel).write_bytes(Path(pv['sheet_path']).read_bytes())
+            pv['version_sheet'] = rel
+        except OSError:
+            pass
+
+    def do_import(self, project, args):
+        from . import styleengine as SE
+        pack, why = self.styleengine_pack(project, args)
+        try:
+            row = SE.import_file(project.root, pack, args['glb'], brief=args['brief'], textures=args.get('references', []),
+                                 out_id=args.get('id'), python_path=self.settings.get('python_path', ''))
+        except SE.StyleEngineError as e:
+            fail('arguments', str(e))
+        out = self.styleengine_reply(row, pack, why)
+        if row.get('ok') and args.get('render'):                                           # STYLEENGINE-2
+            out['preview'] = self.styleengine_preview(project, pack, row['id'], row['file'])
+        return out
+
+    def do_conform(self, project, args):
+        from . import styleengine as SE
+        pack, why = self.styleengine_pack(project, args)
+        glb = args.get('glb')
+        if not glb and args.get('id'):
+            rows = [r for r in (project.read_json('assets/PROVENANCE.json') or {}).get('assets', [])
+                    if r.get('id') in (args['id'], 'gen:' + args['id'])] if project.path('assets/PROVENANCE.json').is_file() else []
+            glb = rows[-1]['file'] if rows else None
+        if not glb:
+            fail('arguments', 'conform needs glb (a project GLB) or id (a built recipe id)')
+        try:
+            row = SE.conform_asset(project.root, pack, glb, brief=args.get('brief', ''),
+                                   python_path=self.settings.get('python_path', ''))
+        except SE.StyleEngineError as e:
+            fail('arguments', str(e))
+        return self.styleengine_reply(row, pack, why)
 
     def do_locomotion(self, project, args):
         if ('id' in args) == ('glb' in args):

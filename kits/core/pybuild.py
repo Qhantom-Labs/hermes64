@@ -45,8 +45,11 @@ Blender's mesh shading normal model.
 
 
 class Materials:
-    def __init__(self, writer, pack, tex_dir, extras=None):
+    def __init__(self, writer, pack, tex_dir, extras=None, conform=None):
         self.w, self.pack, self.tex_dir = writer, pack, Path(tex_dir)
+        # STYLEENGINE: per-asset texture conform (extra soften passes / dither) for every textured role; None (every
+        # asset without a conform block) paints exactly as before.
+        self.conform = conform
         self.cache, self.written = {}, {}
         # DUNGEONKIT (additive): generator-declared runtime hints per role (asset.meta["material_extras"], e.g. the lake
         # kit's water vertex wobble or a waterfall's own scroll). Only known keys, merged into extras.n64; generators that
@@ -72,7 +75,11 @@ class Materials:
                                        'roughnessFactor': f32(.2 if kind=='chrome_env' else .05)}
             info.update(env=spec['env'],tint=spec['tint'])
         elif kind in TEXTURED_KINDS:
-            arr = make_texture(spec['texture'],self.pack.pal,self.pack.seed_id,role)
+            tex = spec['texture']
+            if self.conform:
+                from .conform import conformed_texture_spec
+                tex = conformed_texture_spec(tex, self.conform.get('soften', 0), self.conform.get('dither'))
+            arr = make_texture(tex,self.pack.pal,self.pack.seed_id,role)
             if kind == 'card_alpha':
                 a = alpha_mask(spec['texture'].get('alpha','disc'),arr.shape[0],self.pack.seed_id,role)
                 arr = np.concatenate([arr,a[:,:,None]],2)
@@ -111,7 +118,7 @@ def build(asset, pack, out, tex_dir):
     w.doc['asset']['extras'] = {'vertex_color_encoding':'srgb8', 'vertex_color_note':
         'Display-space bytes, intentionally nonstandard. Use Hermes64 N64 shader, not generic glTF material.'}
     w.doc.update(nodes=[],meshes=[],scenes=[{'name':'Scene','nodes':[]}],scene=0)
-    mf = Materials(w,pack,tex_dir,asset.meta.get('material_extras'))
+    mf = Materials(w,pack,tex_dir,asset.meta.get('material_extras'),asset.meta.get('texture_conform'))
     rig = bake.asset_rig(pack.light_rig, asset)  # DUNGEONKIT: opt-in baked point lights / ray AO (pack data)
     nodes = sorted(asset.nodes,key=lambda node:node.name)  # Blender exports objects in name order.
     by_name = {n.name:i for i,n in enumerate(nodes)}

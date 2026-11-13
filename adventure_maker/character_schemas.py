@@ -18,12 +18,14 @@ CHARACTER_SCHEMA = {
     'description': ('House-style characters from recipes: propose three variants with contact sheets for the user to '
                     'pick, edit with typed edits, build the chosen one (GLB, clips, every gate incl. the rig kit), '
                     'list/info parts, bind a character to the project cast, locomotion = bake run + walk for a body '
-                    '(docs/LOCOMOTION.md). Never auto-adopts. Local Blender; '
+                    '(docs/LOCOMOTION.md); make/import/conform = any prop in the pack style. Never auto-adopts. Local Blender; '
                     'writes only inside the project. Details: skill hermes64:hermes64-characters.'),
     'parameters': {
         'type': 'object', 'additionalProperties': False, 'required': ['action'],
         'properties': {
-            'action': {'enum': ['propose', 'build', 'edit', 'list', 'info', 'bind', 'locomotion']},
+            # STYLEENGINE (additive): make/import/conform = any prop or world piece in the pack's N64 style
+            # (adventure_maker/styleengine.py, docs/STYLEENGINE-PLAN.md); existing fields only
+            'action': {'enum': ['propose', 'build', 'edit', 'list', 'info', 'bind', 'locomotion', 'make', 'import', 'conform']},
             'project': {'type': 'string', 'pattern': '^[a-z0-9][a-z0-9_-]{0,63}$'},
             'brief': {'type': 'string', 'minLength': 3, 'maxLength': 400},
             'references': {'type': 'array', 'items': PATH, 'maxItems': 4},

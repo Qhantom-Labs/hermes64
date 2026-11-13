@@ -87,7 +87,7 @@ def relative(value):
         fail('path', 'Invalid path characters')
     parts = value.split('/')
     if any(p in ('', '.', '..') for p in parts) or value.startswith('/'):
-        fail('path', 'Absolute/traversal path rejected')
+        fail('path', 'Absolute/traversal path rejected (give the path inside the game folder, e.g. assets/scripts/x.py)')
     # Same rule on every OS so a project made on a Mac opens on Windows: NTFS refuses <>"|?*, drops a trailing dot or
     # space (foo. == foo) and maps reserved device names (con, nul, aux.txt, com1...) to devices.
     for part in parts:

@@ -7,6 +7,11 @@ license: MIT
 
 # Make a new environment piece (data, not code)
 
+**Designing a thing yourself (needs_design, any object):** write a builder script with
+`references/builder-api.md` (the API, one page) and `references/art-direction.md` (how pieces read in this style
+plus a checklist), then `hermes64_character action=make project=<game> recipe=<script.py> id=<id> render=true`,
+open the preview sheet, revise with the same id. The recipe route below stays for JSON recipes.
+
 Use the existing terminal/file surface, not a new Hermes tool. Work in the plugin root with the configured Python 3.9+ interpreter that already has numpy. No installs, network/model endpoints or source modules are needed. `python` below means that interpreter. Builds use the existing Runner sandbox (currently macOS only; no sandbox means refusal, not an unsandboxed fallback).
 
 1. Read the project's `brief.json`, taxonomy gap report, and `kits/core/style_bible.json`. A partial match is not the requested item: name a stand-in or generate a piece. Character bodies, audio and world layout belong to their own tools. Never claim this path generates those.

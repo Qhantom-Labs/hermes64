@@ -1,0 +1,572 @@
+{
+ "schema": "hermes64-charstyle-card/1",
+ "references": 2,
+ "method": "tools/charcreator_measure.py",
+ "body": {
+  "height_m": {
+   "min": 1.7001,
+   "max": 1.7126,
+   "mean": 1.7064
+  },
+  "ground_min_y_m": {
+   "min": 0.0,
+   "max": 0.0003,
+   "mean": 0.0001
+  },
+  "head_height_from_neck": {
+   "min": 0.2052,
+   "max": 0.2065,
+   "mean": 0.2058
+  },
+  "heads_tall_from_neck": {
+   "min": 4.843,
+   "max": 4.874,
+   "mean": 4.8585
+  },
+  "head_mesh_height": {
+   "min": 0.2365,
+   "max": 0.2862,
+   "mean": 0.2613
+  },
+  "heads_tall_mesh": {
+   "min": 3.494,
+   "max": 4.228,
+   "mean": 3.861
+  },
+  "head_width": {
+   "min": 0.2231,
+   "max": 0.32,
+   "mean": 0.2716
+  },
+  "head_depth": {
+   "min": 0.2006,
+   "max": 0.3122,
+   "mean": 0.2564
+  },
+  "neck_y": {
+   "min": 0.7935,
+   "max": 0.7948,
+   "mean": 0.7941
+  },
+  "pelvis_y": {
+   "min": 0.5374,
+   "max": 0.5533,
+   "mean": 0.5454
+  },
+  "shoulder_joint_y": {
+   "min": 0.7271,
+   "max": 0.7382,
+   "mean": 0.7327
+  },
+  "shoulder_joint_span": {
+   "min": 0.1781,
+   "max": 0.2316,
+   "mean": 0.2049
+  },
+  "hip_joint_span": {
+   "min": 0.1209,
+   "max": 0.156,
+   "mean": 0.1384
+  },
+  "shoulder_width_outer": {
+   "min": 0.2914,
+   "max": 0.3266,
+   "mean": 0.309
+  },
+  "torso_width": {
+   "min": 0.1643,
+   "max": 0.1965,
+   "mean": 0.1804
+  },
+  "torso_depth": {
+   "min": 0.1802,
+   "max": 0.2246,
+   "mean": 0.2024
+  },
+  "hip_width_outer": {
+   "min": 0.1348,
+   "max": 0.1869,
+   "mean": 0.1608
+  },
+  "upper_arm": {
+   "min": 0.1271,
+   "max": 0.1288,
+   "mean": 0.128
+  },
+  "forearm": {
+   "min": 0.1497,
+   "max": 0.1521,
+   "mean": 0.1509
+  },
+  "thigh": {
+   "min": 0.1761,
+   "max": 0.1961,
+   "mean": 0.1861
+  },
+  "shin": {
+   "min": 0.2264,
+   "max": 0.2405,
+   "mean": 0.2334
+  },
+  "arm_total": {
+   "min": 0.2768,
+   "max": 0.2809,
+   "mean": 0.2788
+  },
+  "leg_total_joint": {
+   "min": 0.408,
+   "max": 0.413,
+   "mean": 0.4105
+  },
+  "foot_joint_y": {
+   "min": 0.0974,
+   "max": 0.0987,
+   "mean": 0.098
+  },
+  "upper_arm_radius_median": {
+   "min": 0.0326,
+   "max": 0.0489,
+   "mean": 0.0407
+  },
+  "upper_arm_radius_max": {
+   "min": 0.0591,
+   "max": 0.1168,
+   "mean": 0.088
+  },
+  "forearm_radius_median": {
+   "min": 0.0425,
+   "max": 0.0554,
+   "mean": 0.049
+  },
+  "forearm_radius_max": {
+   "min": 0.0479,
+   "max": 0.075,
+   "mean": 0.0614
+  },
+  "thigh_radius_median": {
+   "min": 0.0522,
+   "max": 0.0548,
+   "mean": 0.0535
+  },
+  "thigh_radius_max": {
+   "min": 0.0652,
+   "max": 0.0993,
+   "mean": 0.0822
+  },
+  "shin_radius_median": {
+   "min": 0.0602,
+   "max": 0.0603,
+   "mean": 0.0602
+  },
+  "shin_radius_max": {
+   "min": 0.0892,
+   "max": 0.1085,
+   "mean": 0.0988
+  },
+  "hand_length": {
+   "min": 0.1053,
+   "max": 0.1216,
+   "mean": 0.1134
+  },
+  "hand_width": {
+   "min": 0.0677,
+   "max": 0.0847,
+   "mean": 0.0762
+  },
+  "hand_height": {
+   "min": 0.1053,
+   "max": 0.1216,
+   "mean": 0.1134
+  },
+  "foot_length": {
+   "min": 0.2143,
+   "max": 0.2238,
+   "mean": 0.219
+  },
+  "foot_width": {
+   "min": 0.1435,
+   "max": 0.1495,
+   "mean": 0.1465
+  },
+  "foot_height": {
+   "min": 0.0926,
+   "max": 0.0997,
+   "mean": 0.0961
+  },
+  "width_total": {
+   "min": 0.4999,
+   "max": 0.5642,
+   "mean": 0.5321
+  },
+  "depth_total": {
+   "min": 0.2548,
+   "max": 0.3469,
+   "mean": 0.3009
+  },
+  "head_below_neck": {
+   "min": 0.0313,
+   "max": 0.0798,
+   "mean": 0.0556
+  },
+  "head_back_extent": {
+   "min": 0.0911,
+   "max": 0.1965,
+   "mean": 0.1438
+  },
+  "head_front_extent": {
+   "min": 0.1095,
+   "max": 0.1158,
+   "mean": 0.1127
+  }
+ },
+ "texture": {
+  "part_top_minus_bottom_lum": {
+   "min": -0.0957,
+   "max": -0.0268,
+   "mean": -0.0612
+  },
+  "rgba5551_lattice_share": {
+   "min": 0.3333,
+   "max": 0.5677,
+   "mean": 0.4505
+  },
+  "images": {
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "materials": {
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "uv_coverage": {
+   "min": 0.2039,
+   "max": 0.2336,
+   "mean": 0.2188
+  },
+  "unique_colors_used": {
+   "min": 28,
+   "max": 29,
+   "mean": 28.5
+  },
+  "unique_colors_atlas": {
+   "min": 28,
+   "max": 29,
+   "mean": 28.5
+  },
+  "colors_for_90pct": {
+   "min": 20,
+   "max": 22,
+   "mean": 21.0
+  },
+  "colors_for_95pct": {
+   "min": 23,
+   "max": 25,
+   "mean": 24.0
+  },
+  "lum_p05": {
+   "min": 0.0586,
+   "max": 0.1064,
+   "mean": 0.0825
+  },
+  "lum_p50": {
+   "min": 0.2036,
+   "max": 0.3536,
+   "mean": 0.2786
+  },
+  "lum_p95": {
+   "min": 0.7757,
+   "max": 0.7942,
+   "mean": 0.785
+  },
+  "step_mean": {
+   "min": 0.0759,
+   "max": 0.0864,
+   "mean": 0.0811
+  },
+  "step_p90": {
+   "min": 0.2252,
+   "max": 0.2678,
+   "mean": 0.2465
+  },
+  "flat_neighbour_share": {
+   "min": 0.3621,
+   "max": 0.4128,
+   "mean": 0.3874
+  },
+  "checker_share": {
+   "min": 0.0143,
+   "max": 0.0234,
+   "mean": 0.0188
+  },
+  "border_to_interior_lum": {
+   "min": 1.0688,
+   "max": 1.141,
+   "mean": 1.1049
+  },
+  "saturation_mean": {
+   "min": 0.3136,
+   "max": 0.5462,
+   "mean": 0.4299
+  },
+  "saturation_p90": {
+   "min": 0.4673,
+   "max": 0.7576,
+   "mean": 0.6125
+  },
+  "hue_families": {
+   "min": 2,
+   "max": 6,
+   "mean": 4.0
+  },
+  "baked_up_minus_down_lum": {
+   "min": 0.0371,
+   "max": 0.1731,
+   "mean": 0.1051
+  },
+  "baked_front_minus_side_lum": {
+   "min": 0.0052,
+   "max": 0.0293,
+   "mean": 0.0173
+  },
+  "vertex_color_unique": {
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  },
+  "vertex_color_lum_min": {
+   "min": 1.0,
+   "max": 1.0,
+   "mean": 1.0
+  }
+ },
+ "triangles": {
+  "total": {
+   "min": 698,
+   "max": 698,
+   "mean": 698.0
+  },
+  "share": {
+   "head": {
+    "min": 0.2536,
+    "max": 0.2679,
+    "mean": 0.2608
+   },
+   "torso": {
+    "min": 0.1347,
+    "max": 0.1404,
+    "mean": 0.1376
+   },
+   "arms": {
+    "min": 0.1418,
+    "max": 0.1562,
+    "mean": 0.149
+   },
+   "hands": {
+    "min": 0.0716,
+    "max": 0.0817,
+    "mean": 0.0766
+   },
+   "legs": {
+    "min": 0.2822,
+    "max": 0.2894,
+    "mean": 0.2858
+   },
+   "feet": {
+    "min": 0.0888,
+    "max": 0.0917,
+    "mean": 0.0902
+   }
+  }
+ },
+ "uv_area_share": {
+  "head": {
+   "min": 0.4423,
+   "max": 0.5823,
+   "mean": 0.5123
+  },
+  "torso": {
+   "min": 0.0633,
+   "max": 0.0889,
+   "mean": 0.0761
+  },
+  "arms": {
+   "min": 0.0735,
+   "max": 0.1169,
+   "mean": 0.0952
+  },
+  "hands": {
+   "min": 0.0315,
+   "max": 0.0348,
+   "mean": 0.0331
+  },
+  "legs": {
+   "min": 0.1653,
+   "max": 0.2344,
+   "mean": 0.1998
+  },
+  "feet": {
+   "min": 0.0807,
+   "max": 0.086,
+   "mean": 0.0833
+  }
+ },
+ "silhouette": {
+  "front": {
+   "bands": 24,
+   "min": [
+    0.3125,
+    0.3021,
+    0.25,
+    0.2292,
+    0.2708,
+    0.25,
+    0.25,
+    0.2188,
+    0.5,
+    0.5,
+    0.4792,
+    0.4583,
+    0.4688,
+    0.4271,
+    0.375,
+    0.3229,
+    0.3229,
+    0.3333,
+    0.2812,
+    0.1562,
+    0.1667,
+    0.2083,
+    0.2188,
+    0.1667
+   ],
+   "max": [
+    0.4167,
+    0.3958,
+    0.3229,
+    0.3229,
+    0.3333,
+    0.3646,
+    0.3438,
+    0.3125,
+    0.5625,
+    0.5521,
+    0.5104,
+    0.5104,
+    0.5,
+    0.4896,
+    0.4583,
+    0.4271,
+    0.3958,
+    0.3542,
+    0.3229,
+    0.3125,
+    0.2708,
+    0.25,
+    0.2292,
+    0.1771
+   ]
+  },
+  "side": {
+   "bands": 24,
+   "min": [
+    0.2083,
+    0.1979,
+    0.1042,
+    0.1042,
+    0.125,
+    0.1354,
+    0.125,
+    0.0729,
+    0.0833,
+    0.0938,
+    0.1042,
+    0.1042,
+    0.1146,
+    0.1146,
+    0.1562,
+    0.1667,
+    0.1667,
+    0.1562,
+    0.1562,
+    0.1458,
+    0.1875,
+    0.1875,
+    0.1979,
+    0.125
+   ],
+   "max": [
+    0.2292,
+    0.2083,
+    0.1458,
+    0.1146,
+    0.1354,
+    0.1771,
+    0.1562,
+    0.1458,
+    0.1458,
+    0.1354,
+    0.125,
+    0.125,
+    0.1354,
+    0.1562,
+    0.1667,
+    0.2083,
+    0.2604,
+    0.2396,
+    0.2708,
+    0.2604,
+    0.25,
+    0.25,
+    0.25,
+    0.1875
+   ]
+  }
+ },
+ "material": {
+  "count": 1,
+  "unlit": true,
+  "n64_kinds": [
+   "baked_unlit"
+  ],
+  "samplers": [
+   {
+    "magFilter": 9729,
+    "minFilter": 9987
+   }
+  ],
+  "primitives": {
+   "min": 1,
+   "max": 1,
+   "mean": 1.0
+  }
+ },
+ "rig": {
+  "skeleton": [
+   "root",
+   "pelvis",
+   "spine",
+   "head",
+   "upper_arm_l",
+   "forearm_l",
+   "hand_l",
+   "upper_arm_r",
+   "forearm_r",
+   "hand_r",
+   "thigh_l",
+   "shin_l",
+   "foot_l",
+   "thigh_r",
+   "shin_r",
+   "foot_r"
+  ],
+  "skin_name": "rig_human16_v1",
+  "clip_keys": [
+   16
+  ],
+  "clip_interp": [
+   "STEP"
+  ]
+ }
+}

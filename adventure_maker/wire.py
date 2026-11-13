@@ -54,8 +54,9 @@ SHORT = {
                      'game after hash, data-only, style and rig checks; pack an asset or game; publish = local PR draft. '
                      'Never uploads.'),
     # WAIVER: 25 characters shorter (same facts) to make room for bind waive/owner_approved and hub waived, budget unchanged
-    'hermes64_character': ('House-style characters: propose 3 variants, edit, build the user\'s pick (GLB, clips, all gates '
-                           'incl. rig kit; no Blender needed), list/info parts, bind to the cast, locomotion = bake run/walk. '
+    # STYLEENGINE: props named first (the deferred listing shows 80 characters); facts kept, 11 characters shorter
+    'hermes64_character': ('House-style characters and props: propose 3, edit, build the pick (GLB, clips, all gates; no '
+                           'Blender), list/info, bind, locomotion = bake run/walk; make/import/conform any prop. '
                            'Never auto-adopts.'),
 }
 

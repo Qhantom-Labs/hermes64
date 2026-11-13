@@ -25,6 +25,10 @@ hermes64-author is only for hand-authoring story data AFTER a game exists. It is
 The setup and reference sections below are not a prerequisite detour: load create before doctor or setup.
 If doctor has already run, its checklist is not the requested game. Return to create; do not stop at the checklist.
 Missing dependencies must be reported honestly, never bypassed with a browser game or automatic installation.
+A thing the plugin does not know comes back as NEEDS DESIGN (create report, create_flow output, make result):
+you are the designer. Design it yourself with a builder script (macOS; on Windows/Linux a recipe .json), submit it
+with `hermes64_character` make, look at the preview, then resume the game (hermes64-create step 6). Never present a
+placeholder as the thing.
 
 Next: load skill hermes64:hermes64-create now
 
@@ -68,7 +72,7 @@ The advertised schemas are compact; handlers validate the full shapes:
 6. Use `hermes64_pack_create` with serialized validated pack data, then `hermes64_pack_select`. Pack IDs are immutable: create a new ID to revise data. Selection on an already compiled game recompiles/checks a candidate. Run `hermes64_pack_validate`; `data_valid` does not mean rendered style, audio, or assets passed.
 7. Call `hermes64_build_assets`, then `hermes64_replay`. They invoke reviewed local Blender/Godot adapters, not arbitrary scripts. Failures or missing integration seams must be reported honestly; do not substitute fixture outputs. The runtime is a Godot runtime layer, not our engine.
 8. `hermes64_benchmark` takes 1–20 serialized edit operations with exact expected room locality for every operation. It leaves the live source/game revision pointer unchanged. Report validity, identity, unchanged-room bytes, solvability, migration, measured asset validation and real Godot replay separately. Supply a real save: missing save/style/replay evidence cannot pass. Successful migrated saves are loaded by Godot as well as checked by Python.
-9. New characters: `hermes64_character` (skill hermes64:hermes64-characters). Propose three variants from a one-sentence brief, let the user pick from the contact sheets, apply typed edits, then build and bind. Recipes name palette roles, so the project's style lock recolours them; every character passes the rig kit validator before it is shown.
+9. New characters: `hermes64_character` (skill hermes64:hermes64-characters). Propose three variants from a one-sentence brief, let the user pick from the contact sheets, apply typed edits, then build and bind. Recipes name palette roles, so the project's style lock recolours them; every character passes the rig kit validator before it is shown. `style=creator64` is the character creator for plain descriptions (any species, one shared card style).
 10. Only call `hermes64_open` on explicit request to open a local GUI. It is a bounded foreground preview and does not prove playability. `screenshots:true` captures every room through the windowed renderer and reports missing assets, conservative room triangles and placeholder characters. Headless dummy rendering is not screenshot evidence.
 
 10. Auto-repair: a failing check, compile, playtest or audit returns `next`, an ordered list of exact tool calls. Run them in order, then read the newest result's `next` and repeat until it is empty; items in `manual` have no safe automatic fix and need a decision (docs/AUTOREPAIR.md). `hermes64_check(action="audit")` measures rendered rooms against the pack's style lock; it is not human art approval.

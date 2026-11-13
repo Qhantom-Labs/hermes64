@@ -1,0 +1,1600 @@
+{
+ "schema": "hermes64-creator-data/1",
+ "note": "Character creator data (lane CHARCREATOR). Proportions are fractions of height. 'card' summarises the measured style card (characters/creator/card.json = docs/charstyle/meshy_n64_card.json, generic ranges over two reference models); tests keep the copies equal. Every module is original generic geometry built in adventure_maker/charcreator/mesh.py.",
+ "card": {
+  "source": "characters/creator/card.json",
+  "atlas": [
+   64,
+   64
+  ],
+  "materials": 1,
+  "body_tris_lt": 700,
+  "prop_tris_le": 200,
+  "base_colours_max": 16,
+  "unique_colours": [
+   28,
+   29
+  ],
+  "unique_colours_max": 29,
+  "heads_tall_from_neck": [
+   4.843,
+   4.874
+  ],
+  "head_uv_share": [
+   0.4423,
+   0.5823
+  ],
+  "step_mean": [
+   0.0759,
+   0.0864
+  ],
+  "flat_neighbour_share": [
+   0.3621,
+   0.4128
+  ],
+  "checker_share": [
+   0.0143,
+   0.0234
+  ],
+  "border_to_interior_lum": [
+   1.0688,
+   1.141
+  ],
+  "baked_up_minus_down_lum": [
+   0.0371,
+   0.1731
+  ],
+  "lum_p95": [
+   0.7757,
+   0.7942
+  ]
+ },
+ "height_m": [
+  0.95,
+  2.3
+ ],
+ "clips": [
+  "block",
+  "carry",
+  "death",
+  "hurt",
+  "idle",
+  "idle_combat",
+  "interact",
+  "roll",
+  "run",
+  "sit",
+  "swing",
+  "talk",
+  "walk"
+ ],
+ "body_defaults": {
+  "height_m": 1.7,
+  "head_h": 0.195,
+  "neck_to_shoulder": 0.061,
+  "torso_upper": 0.136,
+  "spine_len": 0.052,
+  "hip_drop": 0.035,
+  "ankle_y": 0.098,
+  "thigh_share": 0.45,
+  "arm_angle": 25.0,
+  "forearm_angle": 18.0,
+  "shoulder_x": 0.103,
+  "hip_x": 0.07,
+  "upper_arm": 0.128,
+  "forearm": 0.151,
+  "knee_out": 0.015,
+  "ankle_out": 0.025,
+  "chest_w": 0.172,
+  "waist_w": 0.146,
+  "chest_d": 0.176,
+  "hip_d": 0.165,
+  "neck_r": 0.043,
+  "thigh_r": 0.056,
+  "knee_r": 0.048,
+  "calf_r": 0.058,
+  "boot_r": 0.068,
+  "ankle_r": 0.062,
+  "boot_h": 0.072,
+  "boot_len": 0.218,
+  "boot_w": 0.146,
+  "boot_sole_h": 0.045,
+  "upper_arm_r": 0.042,
+  "elbow_r": 0.039,
+  "forearm_r": 0.048,
+  "wrist_r": 0.041,
+  "hand_len": 0.112,
+  "hand_w": 0.076,
+  "head_w": 0.172,
+  "head_d": 0.178
+ },
+ "multiplicative": [
+  "height_m",
+  "head_h",
+  "neck_to_shoulder",
+  "torso_upper",
+  "spine_len",
+  "hip_drop",
+  "thigh_share",
+  "shoulder_x",
+  "hip_x",
+  "upper_arm",
+  "forearm",
+  "knee_out",
+  "ankle_out",
+  "chest_w",
+  "waist_w",
+  "chest_d",
+  "hip_d",
+  "neck_r",
+  "thigh_r",
+  "knee_r",
+  "calf_r",
+  "boot_r",
+  "ankle_r",
+  "boot_h",
+  "boot_len",
+  "boot_w",
+  "boot_sole_h",
+  "upper_arm_r",
+  "elbow_r",
+  "forearm_r",
+  "wrist_r",
+  "hand_len",
+  "hand_w",
+  "head_w",
+  "head_d"
+ ],
+ "body_ranges": {
+  "head_h": [
+   0.16,
+   0.29
+  ],
+  "shoulder_x": [
+   0.088,
+   0.135
+  ],
+  "hip_x": [
+   0.055,
+   0.095
+  ],
+  "torso_upper": [
+   0.12,
+   0.17
+  ],
+  "chest_w": [
+   0.13,
+   0.26
+  ],
+  "waist_w": [
+   0.11,
+   0.26
+  ],
+  "chest_d": [
+   0.13,
+   0.25
+  ],
+  "hip_d": [
+   0.12,
+   0.23
+  ],
+  "thigh_r": [
+   0.04,
+   0.08
+  ],
+  "calf_r": [
+   0.04,
+   0.08
+  ],
+  "upper_arm_r": [
+   0.03,
+   0.06
+  ],
+  "forearm_r": [
+   0.034,
+   0.066
+  ],
+  "hand_len": [
+   0.08,
+   0.14
+  ],
+  "boot_len": [
+   0.15,
+   0.25
+  ],
+  "boot_w": [
+   0.1,
+   0.17
+  ],
+  "head_w": [
+   0.14,
+   0.26
+  ],
+  "head_d": [
+   0.15,
+   0.26
+  ]
+ },
+ "tune_ranges": {
+  "height_m": [
+   0.95,
+   2.3
+  ],
+  "head_scale": [
+   0.8,
+   1.4
+  ],
+  "shoulder_scale": [
+   0.8,
+   1.3
+  ],
+  "waist_scale": [
+   0.8,
+   1.4
+  ],
+  "leg_scale": [
+   0.85,
+   1.15
+  ],
+  "bulk": [
+   0.8,
+   1.35
+  ]
+ },
+ "builds": {
+  "average": {
+   "label": "average adult",
+   "body": {}
+  },
+  "stocky": {
+   "label": "short and broad",
+   "body": {
+    "height_m": 0.92,
+    "chest_w": 1.18,
+    "waist_w": 1.22,
+    "chest_d": 1.12,
+    "hip_d": 1.1,
+    "thigh_r": 1.15,
+    "calf_r": 1.1,
+    "upper_arm_r": 1.15,
+    "forearm_r": 1.12,
+    "torso_upper": 1.08,
+    "head_h": 1.04,
+    "hip_x": 1.1,
+    "shoulder_x": 1.06,
+    "hand_w": 1.08
+   }
+  },
+  "lean": {
+   "label": "slim",
+   "body": {
+    "height_m": 1.02,
+    "chest_w": 0.86,
+    "waist_w": 0.84,
+    "chest_d": 0.9,
+    "hip_d": 0.92,
+    "thigh_r": 0.85,
+    "calf_r": 0.88,
+    "upper_arm_r": 0.85,
+    "forearm_r": 0.88,
+    "hip_x": 0.94,
+    "boot_r": 0.94
+   }
+  },
+  "tall": {
+   "label": "tall",
+   "body": {
+    "height_m": 1.12,
+    "head_h": 0.94,
+    "chest_w": 0.96,
+    "thigh_r": 0.95,
+    "upper_arm_r": 0.95
+   }
+  },
+  "child": {
+   "label": "child",
+   "body": {
+    "height_m": 0.69,
+    "head_h": 1.28,
+    "head_w": 1.12,
+    "head_d": 1.1,
+    "chest_w": 0.98,
+    "chest_d": 0.95,
+    "hand_len": 0.92,
+    "boot_len": 0.95,
+    "hip_x": 0.95,
+    "shoulder_x": 0.96
+   }
+  },
+  "bulky": {
+   "label": "big and heavy",
+   "body": {
+    "height_m": 1.06,
+    "chest_w": 1.34,
+    "waist_w": 1.36,
+    "chest_d": 1.3,
+    "hip_d": 1.2,
+    "upper_arm_r": 1.3,
+    "forearm_r": 1.24,
+    "thigh_r": 1.25,
+    "calf_r": 1.18,
+    "shoulder_x": 1.14,
+    "hip_x": 1.12,
+    "hand_w": 1.14,
+    "hand_len": 1.06,
+    "boot_w": 1.08,
+    "neck_r": 1.2
+   }
+  }
+ },
+ "species": {
+  "human": {
+   "label": "human",
+   "body": {},
+   "modules": [
+    "hair.crop"
+   ],
+   "face": {
+    "style": "round",
+    "mouth": "line"
+   }
+  },
+  "elf": {
+   "label": "elf (pointed ears)",
+   "body": {
+    "height_m": 1.03,
+    "head_h": 0.98,
+    "chest_w": 0.93
+   },
+   "modules": [
+    "hair.long",
+    "ears.elf"
+   ],
+   "colours": {
+    "skin": "porcelain",
+    "hair": "hair_platinum"
+   },
+   "face": {
+    "style": "anime",
+    "mouth": "line"
+   }
+  },
+  "dwarf": {
+   "label": "dwarf (short, broad, bearded)",
+   "body": {
+    "height_m": 0.76,
+    "head_h": 1.1,
+    "chest_w": 1.2,
+    "waist_w": 1.28,
+    "chest_d": 1.1,
+    "upper_arm_r": 1.15,
+    "forearm_r": 1.12,
+    "hand_w": 1.1,
+    "boot_len": 1.05,
+    "boot_w": 1.06,
+    "thigh_share": 0.96
+   },
+   "modules": [
+    "hair.crop",
+    "beard.long"
+   ],
+   "colours": {
+    "hair": "hair_auburn"
+   },
+   "face": {
+    "style": "dot",
+    "mouth": "none"
+   }
+  },
+  "goblin": {
+   "label": "goblin (small, big head and ears)",
+   "body": {
+    "height_m": 0.66,
+    "head_h": 1.34,
+    "head_w": 1.12,
+    "chest_w": 0.92,
+    "hand_len": 1.1,
+    "boot_len": 0.92
+   },
+   "modules": [
+    "hair.bald",
+    "ears.goblin"
+   ],
+   "colours": {
+    "skin": "green_skin"
+   },
+   "face": {
+    "style": "round",
+    "mouth": "smile"
+   }
+  },
+  "robot": {
+   "label": "robot (metal shell, visor face)",
+   "body": {
+    "head_w": 1.04,
+    "neck_r": 1.1
+   },
+   "modules": [
+    "hair.bald",
+    "horns.antenna"
+   ],
+   "skin_kind": "metal",
+   "colours": {
+    "skin": "silver",
+    "eyes": "eye_cyan"
+   },
+   "face": {
+    "style": "visor",
+    "mouth": "none"
+   }
+  },
+  "cat": {
+   "label": "cat-person",
+   "body": {},
+   "modules": [
+    "hair.crop",
+    "ears.cat",
+    "muzzle.short",
+    "tail.cat"
+   ],
+   "skin_kind": "fur",
+   "colours": {
+    "skin": "fur_orange",
+    "hair": "fur_orange"
+   },
+   "face": {
+    "style": "round",
+    "mouth": "smile"
+   }
+  },
+  "fox": {
+   "label": "fox-person",
+   "body": {},
+   "modules": [
+    "hair.crop",
+    "ears.fox",
+    "muzzle.long",
+    "tail.fox"
+   ],
+   "skin_kind": "fur",
+   "colours": {
+    "skin": "fur_red",
+    "hair": "fur_red"
+   },
+   "face": {
+    "style": "anime",
+    "mouth": "smile"
+   }
+  },
+  "bear": {
+   "label": "bear-person",
+   "body": {
+    "chest_w": 1.12,
+    "waist_w": 1.18
+   },
+   "modules": [
+    "hair.crop",
+    "ears.bear",
+    "muzzle.short",
+    "tail.bear"
+   ],
+   "skin_kind": "fur",
+   "colours": {
+    "skin": "fur_brown",
+    "hair": "fur_brown"
+   },
+   "face": {
+    "style": "dot",
+    "mouth": "line"
+   }
+  },
+  "rabbit": {
+   "label": "rabbit-person",
+   "body": {
+    "head_h": 1.05
+   },
+   "modules": [
+    "hair.crop",
+    "ears.rabbit",
+    "tail.bear"
+   ],
+   "skin_kind": "fur",
+   "colours": {
+    "skin": "fur_white",
+    "hair": "fur_white"
+   },
+   "face": {
+    "style": "round",
+    "mouth": "smile"
+   }
+  }
+ },
+ "base_tris": 516,
+ "modules": {
+  "backpack.pack": {
+   "kind": "backpack",
+   "place": "prop",
+   "label": "backpack",
+   "shape": {},
+   "tris": 48
+  },
+  "beard.long": {
+   "kind": "beard",
+   "place": "body",
+   "label": "long beard",
+   "shape": {
+    "level": 0.4,
+    "length": 0.13,
+    "forward": 0.03
+   },
+   "tris": 24
+  },
+  "beard.short": {
+   "kind": "beard",
+   "place": "body",
+   "label": "short beard",
+   "shape": {
+    "level": 0.5,
+    "length": 0.05
+   },
+   "tris": 24
+  },
+  "beard.stubble": {
+   "kind": "beard",
+   "place": "paint",
+   "label": "stubble (painted)",
+   "shape": {
+    "paint_only": true
+   },
+   "tris": 0
+  },
+  "beard.wizard": {
+   "kind": "beard",
+   "place": "body",
+   "label": "very long wizard beard",
+   "shape": {
+    "level": 0.4,
+    "length": 0.23,
+    "forward": 0.045
+   },
+   "tris": 24
+  },
+  "belt.buckle": {
+   "kind": "belt",
+   "place": "paint",
+   "label": "belt with a big buckle",
+   "shape": {},
+   "tris": 0
+  },
+  "belt.plain": {
+   "kind": "belt",
+   "place": "paint",
+   "label": "belt",
+   "shape": {},
+   "tris": 0
+  },
+  "boots.heavy": {
+   "kind": "boots",
+   "place": "paint",
+   "label": "heavy boots (card default)",
+   "shape": {},
+   "tris": 0
+  },
+  "boots.plain": {
+   "kind": "boots",
+   "place": "paint",
+   "label": "plain boots",
+   "shape": {},
+   "body": {
+    "boot_r": 0.9,
+    "boot_w": 0.9,
+    "boot_len": 0.93,
+    "boot_h": 0.8
+   },
+   "tris": 0
+  },
+  "boots.shoes": {
+   "kind": "boots",
+   "place": "paint",
+   "label": "low shoes",
+   "shape": {},
+   "body": {
+    "boot_r": 0.78,
+    "ankle_r": 0.8,
+    "boot_w": 0.8,
+    "boot_len": 0.85,
+    "boot_h": 0.3,
+    "boot_sole_h": 0.8
+   },
+   "tris": 0
+  },
+  "cape.long": {
+   "kind": "cape",
+   "place": "prop",
+   "label": "long cloak",
+   "shape": {
+    "length": 0.62
+   },
+   "tris": 56
+  },
+  "cape.short": {
+   "kind": "cape",
+   "place": "prop",
+   "label": "short cape",
+   "shape": {
+    "length": 0.4
+   },
+   "tris": 56
+  },
+  "ears.bear": {
+   "kind": "ears",
+   "place": "prop",
+   "label": "round bear ears",
+   "shape": {
+    "shape": "round",
+    "length": 0.045
+   },
+   "tris": 8
+  },
+  "ears.cat": {
+   "kind": "ears",
+   "place": "prop",
+   "label": "cat ears",
+   "shape": {
+    "shape": "top",
+    "length": 0.06
+   },
+   "tris": 8
+  },
+  "ears.elf": {
+   "kind": "ears",
+   "place": "prop",
+   "label": "pointed elf ears",
+   "shape": {
+    "shape": "pointed",
+    "length": 0.05
+   },
+   "tris": 8
+  },
+  "ears.fox": {
+   "kind": "ears",
+   "place": "prop",
+   "label": "fox ears",
+   "shape": {
+    "shape": "top",
+    "length": 0.085
+   },
+   "tris": 8
+  },
+  "ears.goblin": {
+   "kind": "ears",
+   "place": "prop",
+   "label": "big pointed ears",
+   "shape": {
+    "shape": "pointed",
+    "length": 0.1
+   },
+   "tris": 8
+  },
+  "ears.rabbit": {
+   "kind": "ears",
+   "place": "prop",
+   "label": "rabbit ears",
+   "shape": {
+    "shape": "long",
+    "length": 0.15
+   },
+   "tris": 8
+  },
+  "glasses.goggles": {
+   "kind": "glasses",
+   "place": "paint",
+   "label": "goggles (painted)",
+   "shape": {},
+   "tris": 0
+  },
+  "glasses.round": {
+   "kind": "glasses",
+   "place": "paint",
+   "label": "round glasses (painted)",
+   "shape": {},
+   "tris": 0
+  },
+  "gloves.plain": {
+   "kind": "gloves",
+   "place": "paint",
+   "label": "gloves",
+   "shape": {},
+   "tris": 0
+  },
+  "hair.bald": {
+   "kind": "hair",
+   "place": "body",
+   "shape": {
+    "none": true
+   },
+   "label": "bald",
+   "tris": 0
+  },
+  "hair.bob": {
+   "kind": "hair",
+   "place": "body",
+   "label": "bob with bangs",
+   "shape": {
+    "rim": [
+     2.9,
+     2.4,
+     0.9,
+     0.6,
+     0.6,
+     0.6,
+     0.9,
+     2.4
+    ],
+    "thickness": 0.022,
+    "fringe": 0.014
+   },
+   "tris": 56
+  },
+  "hair.bun": {
+   "kind": "hair",
+   "place": "body",
+   "label": "top bun",
+   "shape": {
+    "rim": [
+     3.0,
+     2.8,
+     2.2,
+     1.4,
+     1.2,
+     1.4,
+     2.2,
+     2.8
+    ],
+    "thickness": 0.016,
+    "crown": 2.2
+   },
+   "tris": 56
+  },
+  "hair.crop": {
+   "kind": "hair",
+   "place": "body",
+   "label": "short crop",
+   "shape": {
+    "rim": [
+     3.0,
+     2.8,
+     2.2,
+     1.4,
+     1.2,
+     1.4,
+     2.2,
+     2.8
+    ],
+    "thickness": 0.014
+   },
+   "tris": 56
+  },
+  "hair.curly": {
+   "kind": "hair",
+   "place": "body",
+   "label": "curly mass",
+   "shape": {
+    "rim": [
+     2.9,
+     2.5,
+     1.2,
+     0.8,
+     0.8,
+     0.8,
+     1.2,
+     2.5
+    ],
+    "thickness": 0.026,
+    "spikes": 0.014
+   },
+   "tris": 56
+  },
+  "hair.long": {
+   "kind": "hair",
+   "place": "body",
+   "label": "long, past the shoulders",
+   "shape": {
+    "rim": [
+     3.0,
+     2.7,
+     1.6,
+     1.0,
+     0.8,
+     1.0,
+     1.6,
+     2.7
+    ],
+    "thickness": 0.018,
+    "back_len": 0.17
+   },
+   "tris": 80
+  },
+  "hair.ponytail": {
+   "kind": "hair",
+   "place": "body",
+   "label": "ponytail",
+   "shape": {
+    "rim": [
+     3.0,
+     2.8,
+     2.2,
+     1.4,
+     1.2,
+     1.4,
+     2.2,
+     2.8
+    ],
+    "thickness": 0.016,
+    "back_len": 0.13
+   },
+   "tris": 80
+  },
+  "hair.spiky": {
+   "kind": "hair",
+   "place": "body",
+   "label": "spiky",
+   "shape": {
+    "rim": [
+     3.0,
+     2.8,
+     2.2,
+     1.4,
+     1.2,
+     1.4,
+     2.2,
+     2.8
+    ],
+    "thickness": 0.02,
+    "spikes": 0.04
+   },
+   "tris": 56
+  },
+  "hat.beanie": {
+   "kind": "hat",
+   "place": "prop",
+   "label": "beanie",
+   "shape": {
+    "shape": "beanie"
+   },
+   "excludes": [
+    "hair"
+   ],
+   "tris": 48
+  },
+  "hat.cap": {
+   "kind": "hat",
+   "place": "prop",
+   "label": "peaked cap",
+   "shape": {
+    "shape": "cap"
+   },
+   "tris": 54
+  },
+  "hat.crown": {
+   "kind": "hat",
+   "place": "prop",
+   "label": "crown",
+   "shape": {
+    "shape": "crown"
+   },
+   "tris": 32
+  },
+  "hat.helmet": {
+   "kind": "hat",
+   "place": "prop",
+   "label": "round helmet",
+   "shape": {
+    "shape": "helmet"
+   },
+   "excludes": [
+    "hair"
+   ],
+   "tris": 64
+  },
+  "hat.hood": {
+   "kind": "hat",
+   "place": "prop",
+   "label": "hood",
+   "shape": {
+    "shape": "hood"
+   },
+   "excludes": [
+    "hair"
+   ],
+   "tris": 80
+  },
+  "hat.star_wizard": {
+   "kind": "hat",
+   "place": "prop",
+   "label": "bent wizard hat with painted stars",
+   "shape": {
+    "shape": "cone_bent",
+    "height": 0.22,
+    "brim": 0.06
+   },
+   "paint": "stars",
+   "tris": 80
+  },
+  "hat.top_hat": {
+   "kind": "hat",
+   "place": "prop",
+   "label": "top hat",
+   "shape": {
+    "shape": "top_hat",
+    "height": 0.12
+   },
+   "tris": 64
+  },
+  "hat.wizard": {
+   "kind": "hat",
+   "place": "prop",
+   "label": "pointed wizard hat",
+   "shape": {
+    "shape": "cone",
+    "height": 0.19,
+    "brim": 0.06
+   },
+   "tris": 64
+  },
+  "held.book": {
+   "kind": "held",
+   "place": "prop",
+   "label": "book",
+   "shape": {
+    "item": "book"
+   },
+   "tris": 24
+  },
+  "held.cup": {
+   "kind": "held",
+   "place": "prop",
+   "label": "cup",
+   "shape": {
+    "item": "cup"
+   },
+   "tris": 24
+  },
+  "held.lantern": {
+   "kind": "held",
+   "place": "prop",
+   "label": "lantern",
+   "shape": {
+    "item": "lantern"
+   },
+   "tris": 36
+  },
+  "held.staff": {
+   "kind": "held",
+   "place": "prop",
+   "label": "staff with an orb",
+   "shape": {
+    "item": "staff"
+   },
+   "tris": 44
+  },
+  "held.wand": {
+   "kind": "held",
+   "place": "prop",
+   "label": "wand",
+   "shape": {
+    "item": "wand"
+   },
+   "tris": 20
+  },
+  "horns.antenna": {
+   "kind": "horns",
+   "place": "prop",
+   "label": "twin antennae",
+   "shape": {
+    "length": 0.08
+   },
+   "tris": 32
+  },
+  "horns.big": {
+   "kind": "horns",
+   "place": "prop",
+   "label": "big horns",
+   "shape": {
+    "length": 0.11
+   },
+   "tris": 32
+  },
+  "horns.small": {
+   "kind": "horns",
+   "place": "prop",
+   "label": "small horns",
+   "shape": {
+    "length": 0.06
+   },
+   "tris": 32
+  },
+  "muzzle.long": {
+   "kind": "muzzle",
+   "place": "prop",
+   "label": "long snout",
+   "shape": {
+    "length": 0.075,
+    "radius": 0.026
+   },
+   "tris": 24
+  },
+  "muzzle.short": {
+   "kind": "muzzle",
+   "place": "prop",
+   "label": "short snout",
+   "shape": {
+    "length": 0.045
+   },
+   "tris": 24
+  },
+  "outfit.apron": {
+   "kind": "outfit",
+   "place": "paint",
+   "label": "apron over a shirt",
+   "shape": {},
+   "tris": 0
+  },
+  "outfit.armor": {
+   "kind": "outfit",
+   "place": "paint",
+   "label": "plate armour",
+   "shape": {},
+   "body": {
+    "chest_d": 1.08,
+    "upper_arm_r": 1.08,
+    "chest_w": 1.06
+   },
+   "tris": 0
+  },
+  "outfit.jacket": {
+   "kind": "outfit",
+   "place": "paint",
+   "label": "open jacket over a shirt",
+   "shape": {},
+   "tris": 0
+  },
+  "outfit.overalls": {
+   "kind": "outfit",
+   "place": "paint",
+   "label": "overalls",
+   "shape": {},
+   "tris": 0
+  },
+  "outfit.panels": {
+   "kind": "outfit",
+   "place": "paint",
+   "label": "machine panels (robots)",
+   "shape": {},
+   "tris": 0
+  },
+  "outfit.robe": {
+   "kind": "outfit",
+   "place": "paint",
+   "label": "long robe",
+   "shape": {},
+   "body": {
+    "thigh_r": 1.18,
+    "knee_r": 1.3,
+    "calf_r": 1.12
+   },
+   "tris": 0
+  },
+  "outfit.tunic": {
+   "kind": "outfit",
+   "place": "paint",
+   "label": "tunic and trousers",
+   "shape": {},
+   "tris": 0
+  },
+  "scarf.plain": {
+   "kind": "scarf",
+   "place": "paint",
+   "label": "scarf (painted collar band)",
+   "shape": {},
+   "body": {
+    "neck_r": 1.25
+   },
+   "tris": 0
+  },
+  "tail.bear": {
+   "kind": "tail",
+   "place": "prop",
+   "label": "stub tail",
+   "shape": {
+    "length": 0.08,
+    "radius": 0.03
+   },
+   "tris": 30
+  },
+  "tail.cat": {
+   "kind": "tail",
+   "place": "prop",
+   "label": "thin tail",
+   "shape": {
+    "length": 0.3,
+    "radius": 0.022
+   },
+   "tris": 30
+  },
+  "tail.fox": {
+   "kind": "tail",
+   "place": "prop",
+   "label": "bushy tail",
+   "shape": {
+    "length": 0.34,
+    "radius": 0.042
+   },
+   "tris": 30
+  }
+ },
+ "palette": {
+  "black": {
+   "hex": "#24242b",
+   "family": "cloth"
+  },
+  "blue": {
+   "hex": "#345fb4",
+   "family": "cloth"
+  },
+  "blue_skin": {
+   "hex": "#6e9bd0",
+   "family": "skin"
+  },
+  "bronze": {
+   "hex": "#a8703a",
+   "family": "metal"
+  },
+  "brown": {
+   "hex": "#7a4b2a",
+   "family": "cloth"
+  },
+  "brown_skin": {
+   "hex": "#7c5133",
+   "family": "skin"
+  },
+  "charcoal": {
+   "hex": "#3b3c44",
+   "family": "cloth"
+  },
+  "cream": {
+   "hex": "#efe3c4",
+   "family": "cloth"
+  },
+  "crimson": {
+   "hex": "#8e1f2c",
+   "family": "cloth"
+  },
+  "deep": {
+   "hex": "#50331f",
+   "family": "skin"
+  },
+  "eye_amber": {
+   "hex": "#e0a030",
+   "family": "eye"
+  },
+  "eye_blue": {
+   "hex": "#3f7fd0",
+   "family": "eye"
+  },
+  "eye_brown": {
+   "hex": "#5a3a22",
+   "family": "eye"
+  },
+  "eye_cyan": {
+   "hex": "#40d0e0",
+   "family": "eye"
+  },
+  "eye_dark": {
+   "hex": "#1d1b22",
+   "family": "eye"
+  },
+  "eye_green": {
+   "hex": "#3f9a4a",
+   "family": "eye"
+  },
+  "eye_red": {
+   "hex": "#d03030",
+   "family": "eye"
+  },
+  "fair": {
+   "hex": "#ebc4a2",
+   "family": "skin"
+  },
+  "forest": {
+   "hex": "#2d5a2e",
+   "family": "cloth"
+  },
+  "fur_black": {
+   "hex": "#2a2a30",
+   "family": "fur"
+  },
+  "fur_brown": {
+   "hex": "#7a5232",
+   "family": "fur"
+  },
+  "fur_cream": {
+   "hex": "#e8d6b0",
+   "family": "fur"
+  },
+  "fur_grey": {
+   "hex": "#8c8c92",
+   "family": "fur"
+  },
+  "fur_orange": {
+   "hex": "#d4843a",
+   "family": "fur"
+  },
+  "fur_red": {
+   "hex": "#b8542a",
+   "family": "fur"
+  },
+  "fur_white": {
+   "hex": "#ecebe4",
+   "family": "fur"
+  },
+  "gold": {
+   "hex": "#d0a440",
+   "family": "metal"
+  },
+  "green": {
+   "hex": "#3f8a3c",
+   "family": "cloth"
+  },
+  "green_skin": {
+   "hex": "#7da64a",
+   "family": "skin"
+  },
+  "grey": {
+   "hex": "#8b8d94",
+   "family": "cloth"
+  },
+  "grey_skin": {
+   "hex": "#a0a4aa",
+   "family": "skin"
+  },
+  "hair_auburn": {
+   "hex": "#8e3f22",
+   "family": "hair"
+  },
+  "hair_black": {
+   "hex": "#222026",
+   "family": "hair"
+  },
+  "hair_blond": {
+   "hex": "#d8b45c",
+   "family": "hair"
+  },
+  "hair_blue": {
+   "hex": "#3f6fd0",
+   "family": "hair"
+  },
+  "hair_brown": {
+   "hex": "#6b4428",
+   "family": "hair"
+  },
+  "hair_dark": {
+   "hex": "#3d2b20",
+   "family": "hair"
+  },
+  "hair_ginger": {
+   "hex": "#c0622a",
+   "family": "hair"
+  },
+  "hair_green": {
+   "hex": "#3f9a5a",
+   "family": "hair"
+  },
+  "hair_grey": {
+   "hex": "#9a9aa0",
+   "family": "hair"
+  },
+  "hair_pink": {
+   "hex": "#e07fae",
+   "family": "hair"
+  },
+  "hair_platinum": {
+   "hex": "#ece3c6",
+   "family": "hair"
+  },
+  "hair_purple": {
+   "hex": "#7a4cc0",
+   "family": "hair"
+  },
+  "hair_white": {
+   "hex": "#ecebe6",
+   "family": "hair"
+  },
+  "lime": {
+   "hex": "#8fbf3f",
+   "family": "cloth"
+  },
+  "navy": {
+   "hex": "#263463",
+   "family": "cloth"
+  },
+  "olive": {
+   "hex": "#c49a6c",
+   "family": "skin"
+  },
+  "orange": {
+   "hex": "#d9822b",
+   "family": "cloth"
+  },
+  "peach": {
+   "hex": "#e3ad86",
+   "family": "skin"
+  },
+  "pink": {
+   "hex": "#e07fae",
+   "family": "cloth"
+  },
+  "porcelain": {
+   "hex": "#f3d9c6",
+   "family": "skin"
+  },
+  "purple": {
+   "hex": "#6b3fa0",
+   "family": "cloth"
+  },
+  "red": {
+   "hex": "#b03a2e",
+   "family": "cloth"
+  },
+  "silver": {
+   "hex": "#b9bec8",
+   "family": "metal"
+  },
+  "sky": {
+   "hex": "#6aa8de",
+   "family": "cloth"
+  },
+  "steel": {
+   "hex": "#6e7682",
+   "family": "metal"
+  },
+  "tan": {
+   "hex": "#c4a074",
+   "family": "cloth"
+  },
+  "tan_skin": {
+   "hex": "#a9774c",
+   "family": "skin"
+  },
+  "teal": {
+   "hex": "#2a8c8c",
+   "family": "cloth"
+  },
+  "violet": {
+   "hex": "#9b6fd0",
+   "family": "cloth"
+  },
+  "white": {
+   "hex": "#e8e8e4",
+   "family": "cloth"
+  },
+  "yellow": {
+   "hex": "#e3c13b",
+   "family": "cloth"
+  }
+ },
+ "colour_words": {
+  "amber": "orange",
+  "aqua": "teal",
+  "ash": "grey",
+  "auburn": "hair_auburn",
+  "azure": "sky",
+  "beige": "cream",
+  "black_hair": "hair_black",
+  "blond": "hair_blond",
+  "blonde": "hair_blond",
+  "brass": "gold",
+  "brown_hair": "hair_brown",
+  "brunette": "hair_brown",
+  "burgundy": "crimson",
+  "chocolate": "brown",
+  "chrome": "silver",
+  "cobalt": "blue",
+  "coffee": "brown",
+  "copper": "bronze",
+  "cyan": "sky",
+  "dark": "charcoal",
+  "dark_blue": "navy",
+  "dark_green": "forest",
+  "dark_skin": "deep",
+  "emerald": "green",
+  "ginger": "hair_ginger",
+  "golden": "gold",
+  "gray": "grey",
+  "grey_hair": "hair_grey",
+  "indigo": "navy",
+  "iron": "steel",
+  "ivory": "cream",
+  "jade": "green",
+  "khaki": "tan",
+  "lavender": "violet",
+  "leather": "brown",
+  "lemon": "yellow",
+  "light": "fair",
+  "light_blue": "sky",
+  "lilac": "violet",
+  "magenta": "pink",
+  "maroon": "crimson",
+  "metal": "steel",
+  "midnight": "navy",
+  "moss": "forest",
+  "mustard": "yellow",
+  "olive_green": "forest",
+  "pale": "porcelain",
+  "platinum": "hair_platinum",
+  "redhead": "hair_ginger",
+  "rose": "pink",
+  "royal_blue": "blue",
+  "ruby": "red",
+  "rust": "bronze",
+  "sand": "tan",
+  "scarlet": "red",
+  "silver_hair": "hair_grey",
+  "slate": "charcoal",
+  "turquoise": "teal",
+  "white_hair": "hair_white",
+  "wine": "crimson"
+ },
+ "slots": {
+  "skin": [
+   "skin",
+   "fur",
+   "metal"
+  ],
+  "hair": [
+   "hair",
+   "fur"
+  ],
+  "eyes": [
+   "eye"
+  ],
+  "top": [
+   "cloth",
+   "metal"
+  ],
+  "top2": [
+   "cloth",
+   "metal"
+  ],
+  "legs": [
+   "cloth",
+   "metal"
+  ],
+  "boots": [
+   "cloth",
+   "metal"
+  ],
+  "gloves": [
+   "cloth",
+   "metal"
+  ],
+  "belt": [
+   "cloth",
+   "metal"
+  ],
+  "hat": [
+   "cloth",
+   "metal"
+  ],
+  "hat2": [
+   "cloth",
+   "metal",
+   "eye"
+  ],
+  "cape": [
+   "cloth",
+   "metal"
+  ],
+  "cape2": [
+   "cloth",
+   "metal"
+  ],
+  "pack": [
+   "cloth",
+   "metal"
+  ],
+  "held": [
+   "cloth",
+   "metal",
+   "eye"
+  ],
+  "extra": [
+   "cloth",
+   "metal"
+  ]
+ },
+ "slot_needs": {
+  "hat": [
+   "hat"
+  ],
+  "hat2": [
+   "hat"
+  ],
+  "cape": [
+   "cape"
+  ],
+  "cape2": [
+   "cape"
+  ],
+  "pack": [
+   "backpack"
+  ],
+  "held": [
+   "held"
+  ],
+  "gloves": [
+   "gloves"
+  ],
+  "belt": [
+   "belt"
+  ],
+  "hair": [
+   "hair",
+   "beard",
+   "ears",
+   "tail",
+   "muzzle"
+  ],
+  "extra": [
+   "glasses",
+   "backpack",
+   "horns",
+   "outfit.armor",
+   "outfit.panels"
+  ]
+ },
+ "default_colours": {
+  "skin": "fair",
+  "hair": "hair_brown",
+  "eyes": "eye_dark",
+  "top": "teal",
+  "top2": "cream",
+  "legs": "navy",
+  "boots": "brown",
+  "gloves": "brown",
+  "belt": "brown",
+  "hat": "purple",
+  "hat2": "gold",
+  "cape": "crimson",
+  "cape2": "gold",
+  "pack": "tan",
+  "held": "brown",
+  "extra": "charcoal"
+ },
+ "face_styles": {
+  "dot": "two dark dots",
+  "round": "round eyes with a light glint",
+  "anime": "tall eyes with a glint",
+  "sleepy": "half-closed lines",
+  "visor": "a glowing band across the eyes",
+  "button": "two glowing dots",
+  "none": "no painted features"
+ },
+ "mouths": [
+  "line",
+  "smile",
+  "frown",
+  "open",
+  "none"
+ ],
+ "expression_mouth": {
+  "neutral": "line",
+  "smile": "smile",
+  "worried": "frown",
+  "surprised": "open",
+  "sleepy": "line",
+  "blink": "line",
+  "talk_a": "open",
+  "talk_b": "open"
+ }
+}

@@ -77,13 +77,28 @@ def base_style(base, root=R):
     return sp, view
 
 
-def derive_all(base, mood, new_id=None, textures=True, root=R):
-    """-> (kit_pack, style_pack, view, report). Raises SystemExit with the refusal when every strength fails."""
+def derive_all(base, mood, new_id=None, textures=True, root=R, adjust=None):
+    """-> (kit_pack, style_pack, view, report). Raises SystemExit with the refusal when every strength fails.
+
+    adjust (optional, STYLEGEN-2 setting packs): adjust(kit, derived) -> (derived, note), a caller's colour step run
+    after the checked derivation and before the view is derived. Its result must pass the same checks again
+    (check_derived and, with textures, the look-continuity check), else the derivation is refused. Without adjust
+    nothing changes."""
     bible = M.load_bible()
     kit = base_kit(base, root)
     derived, rep = M.derive_checked(kit, mood, bible, new_id, textures=textures)
     if derived is None:
         raise SystemExit("REFUSED: %s + %s: %s" % (base, mood, "; ".join(rep["errors"][:4])))
+    if adjust is not None:
+        derived, note = adjust(kit, derived)
+        errors = list(M.check_derived(kit, derived, bible)["errors"])
+        if not errors and textures:
+            lc = K.continuity(K.paint_pack_textures(derived), derived, K.paint_pack_textures(kit), kit)
+            errors = ["look: " + e for e in lc["errors"]] if not lc["ok"] else []
+        if errors:
+            raise SystemExit("REFUSED: %s + %s after %s: %s" % (base, mood, (note or {}).get("step", "adjust"),
+                                                                "; ".join(errors[:4])))
+        rep = dict(rep, adjust=note)
     sp, view = base_style(base, root)
     out_view = out_sp = None
     if view is not None:
@@ -123,13 +138,13 @@ def _lib_path(root, pid, gid, preset):
     return Path(root) / "kits" / "library" / pid / sub / ("%s%s.glb" % (gid, "__" + preset if preset else ""))
 
 
-def install(bundle, base, mood, extra=(), new_id=None, quiet=False):
-    """Derive into a bundle root and build its library + bindings. Returns the summary dict."""
+def install(bundle, base, mood, extra=(), new_id=None, quiet=False, adjust=None):
+    """Derive into a bundle root and build its library + bindings. Returns the summary dict. adjust: see derive_all."""
     from core import pipeline, png
     from core.texgen import make_texture
     from adventure_maker.glb import srgb8, inspect
     bundle = Path(bundle)
-    derived, sp, view, rep = derive_all(base, mood, new_id, root=bundle)
+    derived, sp, view, rep = derive_all(base, mood, new_id, root=bundle, adjust=adjust)
     pack_file = write_derived(bundle, derived, sp, view, rep)
     pid = derived["id"]
     bind_base = json.loads((bundle / "packs" / base / "bindings.json").read_text(encoding='utf-8'))

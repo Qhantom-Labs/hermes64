@@ -54,7 +54,8 @@ DEFAULT_BUDGET = 1800
 DEFAULT_PACK = 'n64_v0'
 OPEN_SECONDS = 40
 ROOM_CAP, ROOM_RESERVE = 6000, 300
-MAX_INSTANCES = 3
+MAX_INSTANCES = 64      # LONGSTORY-2: was 3 (silently). Copies of a brief piece as asked; the dress planner places what fits
+                        # the room's triangle budget and lists the rest as not placed. 64 is an input safety ceiling.
 ALT_TRIES = 3
 CAMERA_CLEAR_M = 4.5
 # TFIX F1c: the runtime starts the player at (w/2, 0.7 d) (view/presenter.gd) with the follow camera 4.5 m behind along
@@ -221,8 +222,11 @@ def load_patterns():
     return json.loads(PATTERNS.read_text(encoding='utf-8'))
 
 
-def family_for(base):
+def family_for(base, setting=False):
+    """The create-pattern family of a pack. setting_only families (STYLEGEN-1) count only for a derived setting."""
     for fam, row in load_patterns()['families'].items():
+        if row.get('setting_only') and not setting:
+            continue
         if any(base == p or base.startswith(p + '_') for p in row['packs']):
             return fam
     return None
@@ -382,6 +386,8 @@ def stage_brief(ctx):
             if added:
                 brief['assumptions'] = list(brief.get('assumptions', []))[:23] + [
                     ('create vocabulary words used: ' + ', '.join(added))[:120]]
+            from . import create_setting                  # STYLEGEN-1: setting place words (keyword brief only)
+            brief, _cues = create_setting.apply_cues(brief, text, B.D)
             if ctx.opts.get('room_scale'):      # FINALINT2: `/hermes64 new create "<prompt>" large` (the scale word)
                 brief['setting']['room_scale'] = ctx.opts['room_scale']
         B.validate(brief)
@@ -426,6 +432,8 @@ def shipped_packs(ctx):
                 continue            # a derived mood pack installed by an earlier create, not a shipped base
         except ValueError:
             continue
+        if (d / 'setting.json').is_file():
+            continue                # STYLEGEN-1: a derived setting pack, never a base
         rows.append(d.name)
     return rows
 
@@ -552,12 +560,12 @@ def choose_pack(scores, vocab=None, caller=None):
     genre = pick['genre']
     if genre and genre != 'adventure' and pick['genre_coverage'] == 0:
         better = [r for r in scores if not r['eligible'] and r['genre_coverage'] > 0]
-        if better:
-            raise CreateError('create_style_refused', 'no pack with create room patterns covers the genre %r; %s covers it '
-                              'but has no room pattern. Top candidates: %s' % (genre, better[0]['pack'], top3),
-                              'pass --style %s to accept the nearest pack with room patterns, or hand-author the rooms '
-                              'on %s (skill hermes64-create)' % (pick['pack'], better[0]['pack']))
-        notes.append('no shipped pack covers the genre %r; chosen by the other words' % genre)
+        if better:      # LONGSTORY: built in the nearest pack with room patterns and said (was create_style_refused)
+            notes.append('built in the nearest style with create room patterns, %s: no such pack covers the genre %r; %s '
+                         'covers it but has no room pattern (hand-author rooms on %s: skill hermes64). Top candidates: %s'
+                         % (pick['pack'], genre, better[0]['pack'], better[0]['pack'], top3))
+        else:
+            notes.append('no shipped pack covers the genre %r; chosen by the other words' % genre)
     if scores[0]['pack'] != pick['pack']:
         notes.append('%s scored higher (%.1f) but has no create room pattern' % (scores[0]['pack'], scores[0]['score']))
     second = next((r for r in eligible[1:] if family_for(r['pack']) != family_for(pick['pack'])), None)
@@ -583,7 +591,27 @@ def stage_style(ctx):
             r['score'] = round(r['score'] - r['parts']['time'], 2)
             r['parts']['time'] = 0
         scores.sort(key=lambda r: (-r['score'], r['pack']))
-    base, reason, pack_notes = choose_pack(scores, caller=ctx.opts.get('style'))
+    try:
+        base, reason, pack_notes = choose_pack(scores, caller=ctx.opts.get('style'))
+    except CreateError as e:                  # STYLEGEN-1: a refused genre may have a derived setting
+        routed = setting_style(ctx, brief, scores, e) if e.code == 'create_style_refused' else None
+        if routed is None:
+            raise
+        return routed
+    pick = next((r for r in scores if r['pack'] == base), None)
+    if pick and not ctx.opts.get('style') and pick['genre'] not in ('', 'adventure') and pick['genre_coverage'] == 0:
+        refused = style_refusal(scores, pick)   # LONGSTORY-2: rc83 refused this genre; now a note, a derived setting
+        routed = setting_style(ctx, brief, scores, refused)    # STYLEGEN-1: no pack covers the genre at all
+        if routed is not None:
+            return routed
+        if refused is not None:                 # no setting row, not even a nearest one: the tag pick, and said why
+            pack_notes = pack_notes + setting_decision(ctx, brief, near=True)[1]
+    from . import create_setting as CSET
+    if not ctx.opts.get('style') and CSET.prefers(brief):      # STYLEGEN-2: a setting row that beats the tag pick
+        routed = setting_style(ctx, brief, scores, None, picked=base)
+        if routed is not None:
+            return routed
+        pack_notes = pack_notes + ['preferred ' + ln for ln in setting_decision(ctx, brief)[1]]
     if explicit_palette:
         pack_notes = pack_notes + ['the brief names its palette (%s), so a derived mood is preferred over hand-made time '
                                    'variants' % brief['palette_mood'].get('dominant')]
@@ -652,11 +680,76 @@ def stage_style(ctx):
     return {'create/style.json': out}
 
 
+def style_refusal(scores, pick):
+    """LONGSTORY-2: the create_style_refused that rc83 raised for this pick (a pack without room patterns covers the
+    genre, no pack with patterns does), as an object only: its text names the derived setting that replaces it. None
+    when no pack covers the genre at all (rc83 built that by the other words)."""
+    better = [r for r in scores if not r['eligible'] and r['genre_coverage'] > 0]
+    if not better:
+        return None
+    top3 = '; '.join(_score_line(r) for r in scores[:3])
+    return CreateError('create_style_refused', 'no pack with create room patterns covers the genre %r; %s covers it '
+                       'but has no room pattern. Top candidates: %s' % (pick['genre'], better[0]['pack'], top3),
+                       'pass --style %s to accept the nearest pack with room patterns, or hand-author the rooms '
+                       'on %s (skill hermes64-create)' % (pick['pack'], better[0]['pack']))
+
+
+def setting_decision(ctx, brief, near=False):
+    """STYLEGEN-1: (decision or None, lines) from adventure_maker/create_setting.py, once per brief and run. near
+    (LONGSTORY-2): with no matching row, the nearest row is used and said (create_setting.nearest)."""
+    from . import create_setting as CSET
+    key = ('setting', sha(canon(brief))) + (('near',) if near else ())
+    if key not in ctx.memo:
+        mp = bundle_import(ctx, 'tools.mood_pack')
+        ctx.memo[key] = CSET.decide(ctx.bundle, brief, mp, family_for, load_patterns()['families'],
+                                    lambda pid: bindings_keys(ctx, pid), one_line, near=near)
+    return ctx.memo[key]
+
+
+def setting_adjust(ctx, setting, mp):
+    """STYLEGEN-2: the emissive neon margin step of a setting pack, rebuilt from the style stage's decision so the mood
+    and install stages derive the same pack. None for every pack that is not a derived setting."""
+    if not setting or not setting.get('mood'):
+        return None
+    from . import create_setting as CSET
+    return CSET.adjuster_for(ctx.bundle, setting, load_patterns()['families'], mp.M)
+
+
+def setting_style(ctx, brief, scores, err, picked=None):
+    """STYLEGEN-1: the style choice for a derived setting (adventure_maker/create_setting.py), or None. err (rc83's
+    refusal, LONGSTORY-2) also asks the nearest row; with no usable setting the caller builds the tag pick and says
+    so (never a refusal, never a silent substitute). picked (STYLEGEN-2): the tag pick a preferred row replaces."""
+    d, lines = setting_decision(ctx, brief, near=err is not None)
+    if d is None:                    # LONGSTORY-2: never a refusal; the caller builds the nearest style and says so
+        return None
+    if err is not None:
+        first = err.message
+    elif picked:
+        first = 'the setting row %s is preferred over the tag-scored pick %s' % (d['setting'], picked)
+    else:
+        first = 'no shipped pack covers the genre %r' % brief['setting'].get('genre')
+    out = {'format': 'hermes64-create-style/1', 'base': d['base'], 'scores': scores[:6],
+           'reason': 'derived setting %s from the reference %s: %s' % (d['setting'], d['base'], first),
+           'candidates': [_score_line(r) for r in scores[:3]], 'pack_notes': list(lines), 'adjustments': [],
+           'family': d['family'], 'pack': d['pack'], 'mood': d['mood'],
+           'setting': {k: d.get(k) for k in ('setting', 'base', 'pack', 'mood', 'family', 'entry', 'inside', 'extras')
+                       + (('entry_camera',) if d.get('entry_camera') else ())}}
+    if d['mood']:
+        out.update(mood_status='derived', mood_reason='setting %s: mood %s on %s' % (d['setting'], d['mood'], d['base']),
+                   derive={'id': d['pack'], 'pack_sha256': d['pack_sha256'], 'strength': d['strength'],
+                           'clamped': d['clamped'], 'style_pack': True})
+    else:
+        out.update(mood_status='none', mood_reason='setting %s: %s used as-is' % (d['setting'], d['base']))
+    return {'create/style.json': out}
+
+
 def stage_mood(ctx):
     """Write the derived mood kit pack into the PROJECT (kits/packs/<id>/pack.json), so the asset stage builds every
     piece in the mood. Nothing is written to the bundle here."""
     style = ctx.read_json('create/style.json')
     out = {'format': 'hermes64-create-mood/1', 'pack': style['pack'], 'base': style['base'], 'derived': False}
+    if style.get('setting'):                  # STYLEGEN-1: the rooms and install stages read the setting from here
+        out['setting'] = style['setting']
     if style.get('mood_status') != 'derived':
         out['note'] = 'no derived mood (%s)' % style.get('mood_status')
         ctx.write('create/mood.json', out)
@@ -667,8 +760,9 @@ def stage_mood(ctx):
         return {}
     mp = bundle_import(ctx, 'tools.mood_pack')
     mood_arg = style.get('mood_spec') or style['mood']
-    derived, sp, view, rep = mp.derive_all(style['base'], mood_arg, style['pack'] if style.get('mood_spec') else None,
-                                           root=ctx.bundle)
+    derived, sp, view, rep = mp.derive_all(style['base'], mood_arg, style['pack'] if (style.get('mood_spec') or
+                                           style.get('setting')) else None, root=ctx.bundle,
+                                           adjust=setting_adjust(ctx, style.get('setting'), mp))
     if derived['id'] != style['pack'] or rep['pack_sha256'] != style['derive']['pack_sha256']:
         raise CreateError('create_mood', 'derived %s (%s) differs from the style choice' % (derived['id'], rep['pack_sha256'][:12]),
                           'run again with --redo style')
@@ -695,15 +789,17 @@ def stage_install(ctx):
     base_keys, _ = bindings_keys(ctx, base)
     core_kits = {k['id'] for k in json.loads((ctx.bundle / 'kits/manifest.json').read_text(encoding='utf-8'))['kits']}
     extras = sorted({r['id'] for r in assets['rows'] if r['status'] in ('existed', 'remapped', 'substituted')
-                     and r.get('id') in reg and r['id'] not in base_keys and r['id'] not in core_kits})
+                     and r.get('id') in reg and r['id'] not in base_keys and r['id'] not in core_kits}
+                    | set((mood.get('setting') or {}).get('extras') or []))    # STYLEGEN-1: setting pattern pieces
     mp = bundle_import(ctx, 'tools.mood_pack')
     kit = ctx.bundle / 'kits/packs' / pid / 'pack.json'
     bind = ctx.bundle / 'packs' / pid / 'bindings.json'
     present = kit.is_file() and bind.is_file() and mp.M.pack_sha(json.loads(kit.read_text(encoding='utf-8'))) == mood['pack_sha256']
     style = ctx.read_json('create/style.json')
     if not present:
-        summary = mp.install(ctx.bundle, base, style.get('mood_spec') or style['mood'],
-                             extra=extras, new_id=pid if style.get('mood_spec') else None, quiet=True)
+        summary = mp.install(ctx.bundle, base, style.get('mood_spec') or style['mood'], extra=extras,
+                             new_id=pid if (style.get('mood_spec') or mood.get('setting')) else None, quiet=True,
+                             adjust=setting_adjust(ctx, mood.get('setting'), mp))
         out.update(built=summary['built'], failed=sorted(summary['failed']), failed_reasons=summary['failed'])
     else:
         doc = json.loads(bind.read_text(encoding='utf-8'))
@@ -729,6 +825,11 @@ def stage_install(ctx):
                    failed=sorted(failed), failed_reasons=failed)
     out.update(installed=True, extras=extras,
                bundle_writes=['packs/%s/' % pid, 'kits/packs/%s/' % pid, 'kits/library/%s/' % pid])
+    if mood.get('setting'):                   # STYLEGEN-1: marks a setting pack (shipped_packs never offers it as a base)
+        from . import create_setting as CSET
+        (ctx.bundle / 'packs' / pid / 'setting.json').write_bytes(pretty(CSET.marker(dict(
+            mood['setting'], pack_sha256=mood.get('pack_sha256')))))
+        out['setting'] = mood['setting']['setting']
     ctx.write('create/install.json', out)
     return {}
 
@@ -803,11 +904,13 @@ def stage_assets(ctx):
     from . import create_craft                                                     # VARIETY V1 (5 lines): craft by default
     prompt = ctx.read_json('create/prompt.json')['prompt']
     protagonist = create_craft.craft_protagonist(ctx, prompt, brief)
+    cast_made = create_craft.craft_cast(ctx, prompt, brief)                       # CHARCREATOR: named cast, shared card
     for i, c in enumerate(brief.get('characters', [])):
         used = cast[0] if c.get('role') == 'player' else cast[1]
         rows.append({'want': 'character: ' + c['want'], 'status': 'not covered',
                      'why': 'no new character made; the public cast %r stands in' % used})
     rows = create_craft.character_rows(rows, brief, protagonist)                   # VARIETY V1
+    rows = create_craft.cast_rows(rows, brief, cast_made)                          # CHARCREATOR
     rows.append({'want': 'sounds and music', 'status': 'not covered', 'why': 'no new audio; the %s sound palette is used' % pack_id})
     candidates = {}
     if ctx.exists('create/candidates.json'):
@@ -815,7 +918,11 @@ def stage_assets(ctx):
         if not isinstance(candidates, dict):
             raise CreateError('create_candidates', 'create/candidates.json must map brief lines to recipes',
                               'see skills/hermes64-create/SKILL.md')
-    rows, candidates, craft = create_craft.plan(prompt, brief, rows, candidates)  # VARIETY V1: brief-named pieces made new
+    from . import create_long          # LONGSTORY-2: crafted pieces scale with the rooms (per-room budget share)
+    n_rooms = create_long.room_count(ctx.read_json('create/story.json')) if ctx.exists('create/story.json') else 0
+    rows, candidates, craft = create_craft.plan(prompt, brief, rows, candidates, rooms=n_rooms or 2)  # VARIETY V1
+    from . import styleengine        # STYLEENGINE (2 lines): named things outside the bag are composed from their words
+    rows, candidates, craft = styleengine.free_form(ctx.root, rows, candidates, craft, kit_pack, prompt, brief)
     p = gen_tools.workspace(ctx.root)
     try:
         report = asset_loop.run(p.root, brief, {'rows': rows}, kit_pack, candidates=candidates, seed=SEED, max_tries=4,
@@ -853,8 +960,14 @@ def stage_assets(ctx):
                                alternative_to=first, reason='first match %s failed: %s; next library match %s passed' % (
                                    first, one_line(row.get('reason', ''))[:160], gid))
                     break
+        if row['status'] == 'failed' and gap.get('status') == 'exists' and row.get('source') == 'kit' \
+                and styleengine.energy_wall(row):                                       # STYLEENGINE: conform-and-retry
+            gids = [row['id']] + [a['alternative'] for a in row.get('attempts', []) if a.get('alternative')]
+            row = styleengine.conform_kit(p.root, kit_pack, row, gids, seed=SEED, python_path=ctx.settings.get('python_path', ''),
+                                          mooded=bool(gen_tools.resolve_pack(p.root, kit_pack).d.get('mood')))
         if (row['status'] == 'failed' and gap.get('status') == 'partial' and gap.get('matches')
-                and row.get('reason', '').startswith('no recipe supplied')):
+                and (row.get('reason', '').startswith('no recipe supplied')
+                     or row['want'] in {m['want'] for m in craft.get('free_form', [])})):   # STYLEENGINE
             for gid in [m for m in gap['matches'] if m in reg][:ALT_TRIES]:
                 built = gen_tools.build(p.root, gid, kit_pack, seed=SEED, sweep=False, python_path=ctx.settings.get('python_path', ''))
                 row['attempts'] = row.get('attempts', []) + [{'try': len(row.get('attempts', [])) + 1, 'params': {},
@@ -875,6 +988,8 @@ def stage_assets(ctx):
     summary = []
     for row in final['rows']:
         item = {k: row.get(k) for k in ('want', 'status', 'id', 'file', 'sha256', 'tri_count', 'stand_in', 'reason', 'source', 'params')}
+        if row.get('conformed'):                                                       # STYLEENGINE
+            item['conformed'] = row['conformed']
         item['attempts'] = len(row.get('attempts', []))
         item['count'] = counts.get(row['want'], 1)
         item['importance'] = imp.get(row['want'], 'key')
@@ -887,10 +1002,12 @@ def stage_assets(ctx):
         else:
             item['class'] = _class_of(gid, tag_rows)
         summary.append(item)
+    styleengine.free_form_status(craft, final['rows'])                                # STYLEENGINE
     ctx.write('create/assets.json', {'format': 'hermes64-create-assets/1', 'pack': pack_id, 'kit_pack': kit_pack,
                                      'counts': final['counts'], 'ready': final['ready'], 'total': final['total'],
                                      'substituted_here': substituted, 'rows': summary,
-                                     'craft': craft, 'protagonist': protagonist})      # VARIETY V3 (this line)
+                                     'craft': craft, 'protagonist': protagonist,       # VARIETY V3 (this line)
+                                     **create_craft.cast_field(cast_made)})            # CHARCREATOR (this line)
     return {}
 
 
@@ -911,6 +1028,7 @@ class Slots:
         if cam.get('position'):            # keep the camera's own floor area clear: nothing stands in front of the lens
             self.clear.append((cam['position'][0], cam['position'][2], CAMERA_CLEAR_M))
         self.lanes = [((cx, cz), tuple(pat['door_point_m']))]
+        self.lanes += [(tuple(a), tuple(b)) for a, b in pat.get('extra_lanes_m', [])]     # LONGSTORY: a room's other doors
         self.vistas = list(pat.get('vista_m', []))
         self.lots = list(pat.get('lots', []))
         self.booms = []          # TFIX F1c: the start room's follow-camera boom (set by dress(); see spawn_boom)
@@ -1101,7 +1219,11 @@ def plan_dressing(ctx, assets, family, keys, bindings_doc, gen_ok):
         for i in range(n):
             items.append({'want': row['want'], 'id': gid, 'key': key, 'mode': mode, 'tris': tris, 'radius': radius,
                           'where': where, 'instance': i + 1, 'importance': row.get('importance', 'key'), 'status': row['status']})
-    items.sort(key=lambda it: (it['instance'] > 1, it['importance'] != 'key'))
+    # STYLEENGINE: pieces made from words come after the first copies of library/crafted pieces, so they never move a
+    # piece the game would have had (same slots, same order); among them, the ones the user named come first
+    named = {c['id'] for c in (assets.get('craft') or {}).get('free_form', []) if c.get('named')}
+    items.sort(key=lambda it: (it['instance'] > 1, str(it['id']).startswith('gen:ff_'),
+                               str(it['id']).startswith('gen:ff_') and it['id'] not in named, it['importance'] != 'key'))
     seen, uniq = set(), []
     for pr in presets:
         if pr['id'] not in seen:
@@ -1126,7 +1248,7 @@ def build_room(ctx, mod, pat, rid, name, desc, door_id, to_room, to_door, label,
     return plan
 
 
-def dress(mod, plan, pat, items, seed, placed, not_placed, room_kind):
+def dress(mod, plan, pat, items, seed, placed, not_placed, room_kind, fit=None):
     """Add the items meant for this room; compiler-anchored ones go through the kit compiler (checked), the rest are
     appended to the presentation row after compile with the same clearance and triangle accounting."""
     slots = Slots(pat, seed)
@@ -1139,7 +1261,7 @@ def dress(mod, plan, pat, items, seed, placed, not_placed, room_kind):
     _room, _pres, rep = _compile(mod, plan)
     budget = ROOM_CAP - ROOM_RESERVE - rep['tri_estimate'] - pat.get('reserve_tris', 0)   # story people/fighters
     appended = []
-    for it in items:
+    for k, it in enumerate(items):
         if it['placed']:
             continue
         ok_where = (it['where'] == room_kind) or (room_kind == 'outdoor' and it['where'] == 'vista') or \
@@ -1147,8 +1269,21 @@ def dress(mod, plan, pat, items, seed, placed, not_placed, room_kind):
         if not ok_where:
             continue
         if it['tris'] > budget:
-            it['why'] = 'room triangle budget (%d left, piece %d)' % (budget, it['tris'])
-            continue
+            new = None
+            if fit and it.get('instance', 1) == 1:
+                # STYLEENGINE: decimate-to-fit. The piece gets its share of what is left, pro rata with the first copies
+                # still waiting for this room (at least 40% of its own triangles), else the row stays not placed.
+                later = sum(j['tris'] for j in items[k + 1:] if not j['placed'] and j.get('instance', 1) == 1 and (
+                    j['where'] == room_kind or (room_kind == 'outdoor' and (j['where'] == 'vista' or (
+                        j['where'] == 'indoor' and j.get('overflow'))))))
+                share = budget if not later else max(budget * it['tris'] // (it['tris'] + later), -(-4 * it['tris'] // 10))
+                new = fit(it, min(share, budget)) or (fit(it, budget) if share < budget else None)
+            if new is None:
+                it['why'] = 'room triangle budget (%d left, piece %d)' % (budget, it['tris'])
+                continue
+            it['fit_undo'] = ({k: it.get(k) for k in ('key', 'id', 'tris', 'mode')},
+                              'room triangle budget (%d left, piece %d)' % (budget, it['tris']))
+            it.update(new)
         if it['mode'] == 'lot':
             if not slots.lots:
                 it['why'] = 'no free building lot in the %s pattern' % pat['id']
@@ -1194,6 +1329,14 @@ def dress(mod, plan, pat, items, seed, placed, not_placed, room_kind):
         placed.append({'want': it['want'], 'id': it['id'], 'asset': it['key'], 'room': plan['id'], 'mode': it['mode'],
                        'at_m': spot, 'lot': plan['pieces'][-1].get('lot') if it['mode'] == 'lot' else None,
                        'tris': it['tris'], 'instance': it['instance']})
+        if it.get('fit_from'):                                                         # STYLEENGINE
+            placed[-1]['decimated_from'] = it['fit_from']
+    for it in items:                  # STYLEENGINE: a fitted piece that found no spot is reported exactly as before
+        undo = it.pop('fit_undo', None)
+        if undo and not it['placed']:
+            it.update(undo[0])
+            it.pop('fit_from', None)
+            it['why'] = undo[1]
     room, pres, rep = _compile(mod, plan)
     pres['pieces'] = list(pres['pieces']) + appended
     rep = dict(rep, appended_pieces=len(appended), appended_tris=sum(p['tris'] for p in placed
@@ -1250,6 +1393,9 @@ def weather_rows(ctx, brief, mood):
 
 
 def stage_rooms(ctx):
+    from . import create_long                       # LONGSTORY (2 lines): a story with 3+ places builds a room per place
+    if create_long.wants(ctx):
+        return create_long.stage_rooms(ctx)
     from .packs import Packs, fingerprint, validate_pack
     from .newgame import CAST, COLLECTIBLE_ASSET, title_for
     from .genre_kits import PACKS as GP
@@ -1260,13 +1406,18 @@ def stage_rooms(ctx):
     pack_id, base = mood['pack'], mood['base']
     style = Packs(ctx.settings, ctx.service.project(ctx.name)).get(pack_id)
     keys, bdoc = bindings_keys(ctx, pack_id)
-    family = family_for(base)
+    setting = mood.get('setting')                     # STYLEGEN-1: a derived setting names its family and patterns
+    family = setting['family'] if setting else family_for(base)
     gen_ok = gen_presets_supported()
     bw = set(brief_words(brief))
     items, skipped, presets = plan_dressing(ctx, assets, family, keys, bdoc, gen_ok)
     for it in items:
         it['placed'] = False
     placed, notes = [], []
+    from . import styleengine                                  # STYLEENGINE (2 lines): decimate-to-fit in dress()
+    fit_log, fit = [], None
+    fit = styleengine.fitter(ctx.root, ctx.bundle, assets, bdoc, presets, assets['kit_pack'], fit_log,
+                             ctx.settings.get('python_path', '')) if gen_ok else None
     api = place_api()
     rooms_doc = {'format': 'hermes64-create-rooms/1', 'family': family, 'place_api': bool(api), 'pack': pack_id}
     entry_name = _title(brief['setting'].get('place', ''), 'Arrival')
@@ -1275,6 +1426,9 @@ def stage_rooms(ctx):
         raise CreateError('create_rooms', 'no room pattern or kit compiler covers the %s pack family yet' % base,
                           'pass --style with a medieval or western pack, or hand-author the rooms (skills/hermes64-create)')
     fam = load_patterns()['families'][family]
+    if setting:
+        fam = setting_patterns(fam, setting, base)
+        rooms_doc['setting'] = setting['setting']
     mod = bundle_import(ctx, fam['compiler'])
     scale, scale_reason = brief_room_scale(brief)      # FINALINT2: medium (default) keeps the word-based choice
     outdoor, layout_why = entry_pattern(fam, family, bw, keys, scale, dict(brief, prompt=prompt))      # VARIETY V6
@@ -1323,14 +1477,16 @@ def stage_rooms(ctx):
         in_plan = build_room(ctx, mod, indoor, 'inside', inner_name, desc, 'to_outside', 'entry', 'to_inside',
                              'Go back outside', None, SEED)
         rooms_doc['inner_source'] = 'create pattern %s (%s)' % (indoor['id'], indoor['source'])
-        room_i, pres_i, rep_i = dress(mod, in_plan, indoor, items, SEED, placed, None, 'indoor')
+        room_i, pres_i, rep_i = dress(mod, in_plan, indoor, items, SEED, placed, None, 'indoor', fit)
     for it in items:                      # props that did not fit inside may stand outside
         if not it['placed'] and it['where'] == 'indoor':
             it['overflow'] = True
     mark_landmark(items, brief, inner_name, outdoor)      # TFIX F1a: the destination as room 1's landmark
     from . import create_craft                            # VARIETY V4 (2 lines): else the brief's crafted landmark
     create_craft.mark_landmark(items, outdoor, assets)
-    room_o, pres_o, rep_o = dress(mod, out_plan, outdoor, items, SEED, placed, None, 'outdoor')
+    room_o, pres_o, rep_o = dress(mod, out_plan, outdoor, items, SEED, placed, None, 'outdoor', fit)
+    if fit_log:                                                                        # STYLEENGINE
+        styleengine.fit_record(ctx.root, rooms_doc, fit_log)
     rooms_doc['entry_source'] = 'create pattern %s (%s)' % (outdoor['id'], outdoor['source'])
     not_placed = skipped + [{'want': it['want'], 'id': it['id'], 'instance': it['instance'],
                              'reason': it.get('why', 'no room took it')} for it in items if not it['placed']]
@@ -1728,6 +1884,22 @@ def camera_candidates(pat, knobs):
     return out
 
 
+def setting_patterns(fam, setting, base):
+    """STYLEGEN-1/2: the family's patterns as a setting uses them: the row's named patterns, the reference's own look
+    profiles, and the row's entry_camera (one of the entry pattern's calibrated alternates, inside camera_knobs)."""
+    from . import create_setting as CSET
+    knobs = load_patterns()['camera_knobs']
+
+    def camera(pat, alt_id):
+        for cand in camera_candidates(pat, knobs):
+            if cand['id'] == alt_id and not cand['lights']:
+                return cand['camera']
+        raise CreateError('create_camera', 'setting %s names the camera %s, which pattern %s does not offer' % (
+            setting.get('setting'), alt_id, pat['id']), 'name one of the pattern camera alternates (create_patterns.json)')
+    outs, ins = CSET.chosen_patterns(fam, setting, base, camera=camera)
+    return dict(fam, outdoor=outs, indoor=ins)
+
+
 def _retryable(reasons, knobs):
     """A failure a camera/light candidate could change (anything but floating pieces and uncut doors)."""
     return any(not any(r.startswith(n) for n in knobs['never_retry']) for r in reasons)
@@ -1781,9 +1953,12 @@ def frame_rooms(ctx, result, rooms_sg, secs):
     knobs = patterns['camera_knobs']
     rooms_doc = ctx.read_json('create/rooms.json')
     fam = patterns['families'].get(rooms_doc.get('family') or '', {})
+    setting = (ctx.read_json('create/mood.json') if ctx.exists('create/mood.json') else {}).get('setting')
+    if fam and setting:         # STYLEGEN-2: candidates are relative to the camera the setting's room was built with
+        fam = setting_patterns(fam, setting, setting.get('base'))
     pats = {}
     for r in rooms_doc.get('rooms', []):
-        pat = next((p for p in fam.get('outdoor', []) + fam.get('indoor', []) if p['id'] == r['pattern']), None)
+        pat = r.get('pattern_doc') or next((p for p in fam.get('outdoor', []) + fam.get('indoor', []) if p['id'] == r['pattern']), None)
         if pat is not None:
             pats[r['id']] = pat
     spec0 = ctx.read_json('source/spec.json')
@@ -1849,6 +2024,8 @@ def stage_capture(ctx):
                       'n64': {'status': 'not_run', 'reason': reason}})
             return {}  # Built/bot-tested game remains usable; report must still run. No visual gate passes.
     secs = int(ctx.opts.get('open_seconds') or OPEN_SECONDS)
+    if not ctx.opts.get('open_seconds') and ctx.exists('create/rooms.json'):      # LONGSTORY: more rooms, a longer window
+        secs = int(ctx.read_json('create/rooms.json').get('open_seconds') or secs)
     if ctx.exists('create/frame/spec.json'):     # an earlier camera choice is current: measure the pattern build first
         ctx.path('create/frame/spec.json').unlink()
         comp = ctx.call('compile', spec_path='source/spec.json')
@@ -2029,8 +2206,9 @@ def stage_report(ctx, state):
     score = closeness(ar, rooms, build, play, caps, consistency['ok'], prov.get('ok'))
     rep = {'format': REPORT_FORMAT, 'project': ctx.name, 'prompt': ctx.read_json('create/prompt.json')['prompt'],
            'brief_summary': B.summary(brief), 'brief_filled_by': brief.get('filled_by'),
-           'style': {k: style.get(k) for k in ('base', 'pack', 'mood', 'mood_status', 'mood_reason', 'reason', 'candidates',
-                                               'pack_notes')},
+           'style': dict({k: style.get(k) for k in ('base', 'pack', 'mood', 'mood_status', 'mood_reason', 'reason',
+                                                    'candidates', 'pack_notes')},
+                         **({'setting': style['setting']} if style.get('setting') else {})),     # STYLEGEN-1
            'mood_install': {k: inst.get(k) for k in ('pack', 'installed', 'built', 'failed', 'extras', 'bundle_writes', 'note')},
            'asset_counts': ar['counts'], 'asset_ready': ar['ready'], 'asset_total': ar['total'],
            'made_new': made_new_line(ctx),                                                       # VARIETY V7
@@ -2057,14 +2235,53 @@ def stage_report(ctx, state):
            'ledger': ledger, 'closeness': score,
            'note': 'Measured numbers and named gaps only. Appearance is for the owner to judge.'}
     rep['how_to_play'] = how_to_play(ctx.root, ctx.settings, caps, play)
+    rep.update(needs_design_rows(ctx, brief, rooms, mood))                       # STYLEENGINE-2: leads the report
+    rep['could_not_make'] += ['For "%s" the game holds a marked placeholder (%s), not the thing: needs design (%s).' % (
+        r['name'], r['placeholder'], r.get('why')) for r in rep['needs_design']
+        if r.get('placeholder') and r.get('status') == 'placeholder in the game']
     ctx.write('CREATE-REPORT.json', rep)
     ctx.write('CREATE-REPORT.md', report_md(rep).encode())
     return {}
 
 
+def needs_design_rows(ctx, brief, rooms, mood):
+    """STYLEENGINE-2: what the style engine did not make (named things hold marked placeholders, setting suggestions
+    are listed, creatures no rig can be), with room and budget context -> create/needs_design.json + the report."""
+    from . import needs_design as ND
+    assets = ctx.read_json('create/assets.json') if ctx.exists('create/assets.json') else {}
+    craft = assets.get('craft') or {}
+    recs = [r for r in copy.deepcopy(craft.get('needs_design') or [])]
+    designed = {r['id'] for r in recs if r.get('status') == 'designed by the agent'}
+    made = [c.get('text', '') for c in [assets.get('protagonist') or {}] + list(assets.get('cast') or [])
+            if c.get('status') == 'crafted' and c.get('style') == 'creator64']   # MERGEPREP-2: CHARCREATOR built these
+    recs += [r for r in ND.character_records(brief, assets.get('protagonist'), pack=mood.get('pack'), project=ctx.name,
+                                             made=made)
+             if r['id'] not in designed]                 # a creature designed as a static prop is listed once
+    for r in recs:
+        for k in ('builder_script', 'recipe_json', 'your_file', 'humanoid', 'creature_as_prop'):
+            if k in r.get('submit', {}):
+                r['submit'][k] = r['submit'][k].replace('project=<project>', 'project=' + ctx.name)
+        r['then'] = r.get('then', '').replace('--name <project>', '--name ' + ctx.name)
+    ND.room_context(recs, rooms or {}, ROOM_CAP, ROOM_RESERVE)
+    open_ = [r for r in recs if r.get('status') != 'designed by the agent']
+    doc = {'format': 'hermes64-needs-design/1', 'project': ctx.name, 'open': len(open_), 'records': recs,
+           'skipped_words': craft.get('free_form_skipped', []), 'builder_reference': ND.BUILDER_REF,
+           'art_direction': ND.GUIDE_REF}
+    if recs or ctx.exists('create/needs_design.json'):
+        ctx.write('create/needs_design.json', doc)
+    return {'needs_design': recs, 'needs_design_skipped': craft.get('free_form_skipped', [])}
+
+
 def report_md(rep):
-    L = ['# Create report: %s' % rep['project'], '', 'Prompt: "%s"' % rep['prompt'], '',
-         'Brief (%s): %s' % (rep['brief_filled_by'], rep['brief_summary']), '',
+    from . import needs_design as ND           # STYLEENGINE-2: the report leads with what still needs design
+    nd = [r for r in rep.get('needs_design') or [] if r.get('status') != 'designed by the agent']
+    done = [r for r in rep.get('needs_design') or [] if r.get('status') == 'designed by the agent']
+    L = ['# Create report: %s' % rep['project'], '', 'Prompt: "%s"' % rep['prompt'], '']
+    L += ND.report_lines(nd, rep.get('needs_design_skipped') or (), designed=bool(done))
+    if done:
+        L += ['Designed by the agent (replaced their placeholders): ' + '; '.join(
+            '%s (%s, room %s)' % (r['name'], r['id'], (r.get('context') or {}).get('room')) for r in done), '']
+    L += ['Brief (%s): %s' % (rep['brief_filled_by'], rep['brief_summary']), '',
          'In the game: %s' % '; '.join('%s %s' % (k, ', '.join(map(str, v)) if isinstance(v, list) else v)
                                        for k, v in (rep.get('story') or {}).items() if v not in (None, [], 0, '')), '',
          'Style: base `%s`, pack `%s`; mood %s (%s). %s' % (rep['style']['base'], rep['style']['pack'], rep['style']['mood'],
@@ -2311,6 +2528,10 @@ def command_create(settings, premise, style=None, name=None, default_root=None, 
                      rep['asset_ready'], rep['asset_total'], ', '.join('%s %d' % (k, v) for k, v in rep['asset_counts'].items() if v),
                      play.get('bot_completed'), rep['closeness']['score']),
                  'Report: %s' % (root / name / 'CREATE-REPORT.md')]
+        nd = [r for r in rep.get('needs_design') or [] if r.get('status') != 'designed by the agent']
+        if nd:                                                                           # STYLEENGINE-2
+            lines.insert(1, 'Needs design: %d (marked placeholders, not the things): %s; listed first in the report'
+                         % (len(nd), ', '.join(r['name'] for r in nd)))
         if rep['could_not_make']:
             lines.append('Could not make: %d items, listed in the report' % len(rep['could_not_make']))
         if rep.get('not_applied'):
@@ -2328,7 +2549,7 @@ def command_create(settings, premise, style=None, name=None, default_root=None, 
 BRIEF_TEMPLATE = {
     'format': 'hermes64-brief/1', 'prompt': '<the user prompt>', 'filled_by': 'model',
     'setting': {'genre': '<one genre>', 'genre_hints': ['<0-6 hints or genres>'], 'place': '<short place>',
-                'era': '<short era>', 'scale': 'small outdoor hub + 2 interiors'},
+                'era': '<short era>', 'scale': '<free words; each story place becomes a room (3+ places)>'},
     'mood': {'time': '<time>', 'weather': '<weather>', 'season': '<season>', 'tone': '<tone>'},
     'palette_mood': {'dominant': '<hue>', 'support': ['<hue>'], 'accent': '<hue>', 'value_key': 'mid', 'saturation': 'moderate'},
     'build_types': ['<library words: tower, saloon, train car ...>'],
@@ -2371,10 +2592,11 @@ def vocab_lines(bundle=None):
 STORY_TEMPLATE = {
     'title': '<game title>', 'player': {'name': '<player name>'},
     'cast': [{'name': '<name>', 'role': 'npc', 'place': '<a place name>', 'says': '<one line>'},
-             {'name': '<name>', 'role': 'boss'}],
+             {'name': '<name>', 'role': 'boss', 'place': '<a place name>'}],
     'places': [{'name': '<outdoor place>', 'kind': 'outdoor', 'about': '<one line shown on entering>'},
                {'name': '<indoor place>', 'kind': 'indoor'}],
-    'item': {'name': '<the thing collected inside>'},
+    'item': {'name': '<the thing collected>', 'place': '<a place name>'},
+    'keys': [{'name': '<key>', 'place': '<where it lies>', 'opens': '<the place it opens>'}],
     'beats': [{'text': '<what happens, as the player reads it>', 'label': '<short action>', 'place': '<a place name>'},
               {'text': '<a line>', 'who': '<cast name>', 'when': '<time word, optional>'}],
     'quests': [{'title': '<journal line>', 'done_when': 'beat 1'}],
@@ -2396,9 +2618,28 @@ def find_lines(text, bundle=None, limit=5):
         for gid, score, why in hits:
             bound = sorted(p for p, keys in packs.items() if gid in keys)
             out.append('  %.2f %-22s %s; packs: %s' % (score, gid, '; '.join(why)[:80], ', '.join(bound[:4]) or 'none (library only)'))
-        if row['status'] == 'missing' or not hits:
+        nd = needs_design_hint(phrase, row, hits)                          # STYLEENGINE-2
+        if nd:
+            out.append(nd)
+        elif row['status'] == 'missing' or not hits:
             out.append('  next: author a recipe for it (skill hermes64-generators) and name it in create/candidates.json')
     return out
+
+
+def needs_design_hint(phrase, row, hits):
+    """STYLEENGINE-2: when neither the library nor the style engine has the thing itself, say so (keep the words)."""
+    from . import needs_design as ND, styleengine as SE
+    got = ND.assess(phrase)
+    if got['fit'] == 'known':
+        return None
+    data = SE.load()
+    odd = ND.identity_unknown(SE._tokens(phrase)[:-1], data) if row['status'] != 'missing' else []
+    if row['status'] != 'missing' and hits and not odd:         # the library piece IS the thing ('door', 'ship')
+        return None
+    return ('  NEEDS DESIGN: %s%s. Keep these words in the brief: the run makes a marked placeholder and lists it '
+            'under NEEDS DESIGN; then author a recipe or builder script for it yourself (skill hermes64-create step 6).'
+            % (got['why'] or 'the style engine does not know it',
+               '; the library pieces above are a different thing' if row['status'] != 'missing' and hits else ''))
 
 
 def plan_lines(brief_path, bundle=None, style=None):
@@ -2413,7 +2654,8 @@ def plan_lines(brief_path, bundle=None, style=None):
     rep = T.gap_report(wanted, brief=brief)
     L = ['brief: ok (%s)' % B.summary(brief), '', 'needs:']
     for r in rep['rows']:
-        nxt = {'exists': 'library piece', 'partial': 'stand-in unless you author a recipe', 'missing': 'author a recipe or drop it'}
+        # STYLEENGINE-2: never 'drop it': a thing nothing depicts is designed by the agent (placeholder until then)
+        nxt = {'exists': 'library piece', 'partial': 'stand-in unless you design it', 'missing': 'needs design (you design it)'}
         L.append('  %-22s %-8s %s%s' % (r['want'][:22], r['status'], ', '.join(r.get('matches', [])[:2]),
                                         ' -> ' + nxt.get(r['status'], '') if r['status'] != 'exists' else ''))
     packs = shipped_packs(ctx)
@@ -2425,13 +2667,27 @@ def plan_lines(brief_path, bundle=None, style=None):
             r['parts']['time'] = 0
         scores.sort(key=lambda r: (-r['score'], r['pack']))
     L += ['', 'pack:']
-    base = None
+    base, routed = None, None
     try:
         base, reason, notes = choose_pack(scores, caller=style)
-        L.append('  %s: %s' % (base, reason))
-        L += ['  note: ' + n for n in notes]
+        pick = next((r for r in scores if r['pack'] == base), None)
+        if pick and not style and pick['genre'] not in ('', 'adventure') and pick['genre_coverage'] == 0:
+            routed = setting_decision(ctx, brief)[0]        # STYLEGEN-1: as stage_style
+        if routed is None:
+            L.append('  %s: %s' % (base, reason))
+            L += ['  note: ' + n for n in notes]
     except CreateError as e:
-        L.append('  ' + e.line())
+        lines = []
+        if e.code == 'create_style_refused':
+            routed, lines = setting_decision(ctx, brief)
+        if routed is None:
+            L.append('  ' + e.line())
+            L += ['  note: ' + ln for ln in lines]
+    if routed is not None:         # the run derives this pack itself: no --style is needed
+        L.append('  %s: derived setting %s from %s + mood %s; the run builds it (no --style needed)' % (
+            routed['pack'], routed['setting'], routed['base'], routed['mood']))
+        L += ['  note: ' + ln for ln in routed['lines']]
+        base = None
     if base:
         L += ['', 'palette:'] + palette_plan_lines(ctx, brief, base, explicit)
     brief_r, hint_rows = story_hints(brief, story)
@@ -2488,6 +2744,12 @@ def story_plan_lines(ctx, brief, story, base, will, hint_rows, scale=None):
         L.append('  no story block: people, places, beats and quests of the prompt are not carried (add `story` to the brief)')
     elif base is None or family_for(base) is None:
         L.append('  story layout waits for a pack with room patterns (see pack above)')
+    elif __import__('adventure_maker.create_long', fromlist=['room_count']).room_count(story):    # LONGSTORY: 3+ places
+        from . import create_long
+        keys, _ = bindings_keys(ctx, base)
+        made, notes = create_long.plan_lines(story, brief, family_for(base), keys)
+        L += ['  will make: ' + m for m in made]
+        L += ['  not as asked: ' + n for n in notes + ['%s: %s' % (r['asked'], r['reason']) for r in hint_rows]]
     else:
         fam = load_patterns()['families'][family_for(base)]
         keys, _ = bindings_keys(ctx, base)
@@ -2646,13 +2908,24 @@ def main(argv=None):
         if opts['brief_file']:
             opts['brief_file'] = str(Path(opts['brief_file']).resolve())
         state = run(settings, name, a.prompt, opts)
+        ctx = Ctx(settings, name)
+        from . import needs_design as ND       # STYLEENGINE-2: printed first and last, so an agent cannot miss it
+        nd = []
+        if ctx.exists('CREATE-REPORT.json'):
+            nd = [r for r in ctx.read_json('CREATE-REPORT.json').get('needs_design') or []
+                  if r.get('status') != 'designed by the agent']
+        elif ctx.exists('create/assets.json'):
+            nd = (ctx.read_json('create/assets.json').get('craft') or {}).get('needs_design') or []
+        for ln in ND.cli_lines(nd):
+            print(ln)
         print('\n'.join(status_lines(state)))
         print('\n'.join(state['how_to_play']['lines']))
-        ctx = Ctx(settings, name)
         if ctx.exists('CREATE-REPORT.json'):
             rep = ctx.read_json('CREATE-REPORT.json')
             print('report: %s  closeness %s/100 (needs, gates, attempts; not looks)' % (ctx.path('CREATE-REPORT.md'),
                                                                                        rep['closeness']['score']))
+        for ln in ND.cli_lines(nd):
+            print(ln)
         return 0
     except CreateError as e:
         print('create: ' + e.line(), file=sys.stderr)

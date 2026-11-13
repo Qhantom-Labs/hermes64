@@ -45,6 +45,36 @@ passes the gates (rig kit `validate_character`, palette, no cuboids, hair, silho
    every waived failure as WAIVED with its numbers: show them to the user. Hub pack/publish refuse a waived
    character unless the user asks for `waived=true`.
 
+## Creatures no body fits
+
+Bodies: people and robots (rig human16_v1; with `style=creator64` also elf, dwarf, goblin, cat, fox, bear and rabbit
+people), cat and dog (quad16_v1), two enemy creatures (dasher16_v1,
+warden15_v1). A brief for anything else (dragon, snake, spider, horse, bird, blob, jellyfish, tentacle monster)
+makes `propose` return `needs_design` instead of a person: there is no rig for it. Options: (a) design it as a
+static prop with a builder script (`make ... render=true`, skill hermes64-generators); the runtime does not
+animate props, so it stands still; (b) a person/robot/cat/dog body if the user accepts that. Never present a
+human body as the creature. A generic creature skeleton with procedural clips is designed, not built yet.
+
+## Character creator (`style=creator64`)
+
+For "make me a character: <words>" use the creator: original characters in one measured card style (body under 700
+triangles, one 64x64 baked-light texture, one material, the human rig and all 13 clips). It reads plain words:
+species (human, elf, dwarf, goblin, robot, cat, fox, bear, rabbit), build (stocky, lean, tall, child, bulky), role
+(wizard, knight, merchant, barista, chef, ranger, queen ...), hair, beard, hat, cape, backpack, glasses, a held item
+and colour words ("a green cloak").
+
+1. `action=propose project=<p> brief="<their words>" style=creator64`: three variants, each with a contact sheet
+   (front, three-quarter, side and back) and `card` numbers (triangles, colours, height, heads tall). Blender is not
+   needed. `project` must be an existing game; if there is none, make one first with `hermes64_scaffold`.
+   **The user picks.**
+2. The same typed edits apply: `swap{part, value}` with a size ("make the hat taller": `part=hat.star_wizard value=1.3`),
+   `color{slot, role}` with a colour name ("her cloak to green": `slot=cape role=green`),
+   `face{preset: face.round|face.anime|face.dot|face.sleepy, expression: neutral|smile|worried|surprised, beard}`,
+   `hair{style: long|bob|bun|crop|curly|ponytail|spiky|bald, color}`,
+   `prop{part}`, `height{value}`. Module ids, colours and examples: `action=list what=parts style=creator64`.
+3. `action=build recipe=<proposal.variant>` and then `bind` work as above. `info id=creator64` shows the card.
+   Words it cannot make are listed in the notes as "not available: ...". Tell the user.
+
 ## Look-ups
 
 `action=list what=parts|bodies|styles|recipes|cast`, `action=info id=<part, body, style or recipe>`.

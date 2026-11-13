@@ -101,9 +101,13 @@ def _o(fields):
 ROOM_SCALES = ('small', 'medium', 'large', 'open')   # SCALE: adventure_maker/room_scale.py SCALES (optional word)
 TEXT_FIELDS = {'place': 80, 'era': 40, 'scale': 60, 'want': 60, 'character': 80, 'generic': 80, 'term': 60,
                'for': 60, 'credit': 80, 'note': 120, 'unrecognised': 32}
-PROP = _o({'want': (('text', 60), True), 'count': (('int', 1, 32), True), 'importance': (('word', IMPORTANCE), True),
+# LONGSTORY-2 ("the only cap we want is the art style"): list sizes and counts below are input-size safety ceilings
+# no real prompt reaches (was props 40, characters 16, build types 12, prop count 32, character count 16, assumptions
+# 24); text lengths stay (they fit the pixel-font UI). What does not fit a room's triangle budget is placed elsewhere
+# or listed as not placed, never refused here.
+PROP = _o({'want': (('text', 60), True), 'count': (('int', 1, 64), True), 'importance': (('word', IMPORTANCE), True),
            'source': (('word', PROP_SOURCES), False)})
-CHARACTER = _o({'want': (('text', 80), True), 'role': (('word', ROLES), True), 'count': (('int', 1, 16), False)})
+CHARACTER = _o({'want': (('text', 80), True), 'role': (('word', ROLES), True), 'count': (('int', 1, 64), False)})
 SLOT = _o({'slot': (('id',), True), 'kind': (('word', SLOT_KINDS), True), 'for': (('text', 60), True),
            'file': (('text', 200), False), 'licence': (('licence',), False), 'credit': (('text', 80), False),
            'rights_confirmed': (('bool',), False)})
@@ -120,14 +124,14 @@ SPEC = _o({
     'palette_mood': (_o({'dominant': (('word', HUES), True), 'support': (('list', ('word', HUES), 3), True),
                          'accent': (('word', HUES), True), 'value_key': (('word', VALUE_KEYS), True),
                          'saturation': (('word', SATURATIONS), True)}), True),
-    'build_types': (('list', ('text', 60), 12), True),
-    'props': (('list', PROP, 40), True),
-    'characters': (('list', CHARACTER, 16), True),
+    'build_types': (('list', ('text', 60), 64), True),
+    'props': (('list', PROP, 256), True),
+    'characters': (('list', CHARACTER, 256), True),
     'sources': (_o({'user_assets': (('list', SLOT, 32), True), 'allow_generate': (('bool',), True)}), True),
-    'ip_terms': (('list', IPTERM, 16), True),
-    'unrecognised': (('list', ('text', 32), 16), True),
-    'assumptions': (('list', ('text', 120), 24), True),
-    'tags': (('list', ('text', 40), 40), False),
+    'ip_terms': (('list', IPTERM, 64), True),
+    'unrecognised': (('list', ('text', 32), 256), True),
+    'assumptions': (('list', ('text', 120), 256), True),
+    'tags': (('list', ('text', 40), 256), False),
 })
 
 
@@ -336,7 +340,7 @@ def normalise(raw):
                 same = [x for x in merged if isinstance(x, dict) and isinstance(item.get('want'), str)
                         and isinstance(x.get('want'), str) and x['want'].lower() == item['want'].lower()]
                 if same and type(item['count']) is int and type(same[0]['count']) is int:
-                    same[0]['count'] = min(32, same[0]['count'] + item['count'])
+                    same[0]['count'] = min(64, same[0]['count'] + item['count'])
                     if item['importance'] == 'key':
                         same[0]['importance'] = 'key'
                     continue

@@ -40,7 +40,7 @@ def load_generators(project_dir=None, recipe_id=None):
     if len(ids) > 64:
         raise S.ParamError('project recipe count exceeds 64')
     for gid in ids:
-        spec = spec_from_recipe(load_recipe(project_dir, gid))
+        spec = spec_from_recipe(load_recipe(project_dir, gid), project_dir=project_dir)
         reg[spec.id] = spec
     return reg
 
@@ -74,7 +74,7 @@ def resolve(spec, pack, preset=None, params=None):
 
 
 def build_one(gid, pack_id, preset=None, params=None, seed=0, out=None, tex_dir=None, validate=True,
-              pack_path=None, keep_failed=False, builder="blender", project_dir=None):
+              pack_path=None, keep_failed=False, builder="blender", project_dir=None, texture_conform=None):
     """Returns (status, report). builder=python|blender|auto; no implicit subprocesses."""
     t0 = time.time()
     rep = {"id": gid, "pack": pack_id, "preset": preset, "seed": seed, "out": out, "core_version": CORE_VERSION}
@@ -96,6 +96,8 @@ def build_one(gid, pack_id, preset=None, params=None, seed=0, out=None, tex_dir=
     rep.update({"version": spec.version, "class": spec.cls, "params": P})
     try:
         asset = spec.build(P, seed)
+        if texture_conform:   # STYLEENGINE: a library piece rebuilt with a per-asset texture conform (gates unchanged)
+            asset.meta['texture_conform'] = dict(texture_conform)
         if builder not in ("python", "blender", "auto"):
             raise ValueError("builder must be python, blender or auto")
         selected = ("blender" if asset.character else "python") if builder == "auto" else builder

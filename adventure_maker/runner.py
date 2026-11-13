@@ -171,13 +171,17 @@ class Runner:
                      BLENDER_USER_DATAFILES=paths['LOCALAPPDATA'])
         return paths
 
-    def sandbox_argv(self, argv, *, _linux_iso=None):
+    def sandbox_argv(self, argv, reads=None, *, _linux_iso=None):
         if platforms.is_windows():
+            if reads is not None:   # STYLEENGINE: confined reads need the macOS profile; no such sandbox here
+                fail('sandbox_unavailable', 'Read-confined children (builder scripts) need the macOS sandbox; no child started')
             if not platforms.windows_runner_enabled():
                 fail('sandbox_unavailable', 'Required no-network/write-confinement sandbox unavailable on this host; '
                      'no child started. ' + platforms.isolation('win32')['note'])
             return list(argv)
         if platforms.host() == 'linux':
+            if reads is not None:   # MERGEPREP-2: STYLEENGINE's read list is the macOS profile; refused here as on Windows
+                fail('sandbox_unavailable', 'Read-confined children (builder scripts) need the macOS sandbox; no child started')
             from . import linux_sandbox
             iso = _linux_iso or self._linux_isolation or linux_sandbox.status()  # fail closed before launch
             if not iso['available']:
@@ -189,9 +193,15 @@ class Runner:
         root = json.dumps(str(self.project.root.resolve()))
         policy = ('(version 1) (allow default) (deny network*) (deny file-write*) '
                   '(allow file-write* (subpath ' + root + ') (literal "/dev/null"))')
+        if reads is not None:
+            # STYLEENGINE: an agent builder script may read only the project, the listed trees (bundle, interpreter)
+            # and system paths outside the user's home; later rules win in SBPL. Default: unchanged policy.
+            home = json.dumps(str(Path.home().resolve()))
+            allow = ' '.join('(subpath %s)' % json.dumps(str(Path(r).resolve())) for r in [self.project.root] + list(reads))
+            policy += ' (deny file-read* (subpath ' + home + ')) (allow file-read* ' + allow + ')'
         return ['/usr/bin/sandbox-exec', '-p', policy] + argv
 
-    def run(self, argv, cwd, timeout=30):
+    def run(self, argv, cwd, timeout=30, reads=None):
         if not isinstance(argv, list) or not argv or any(not isinstance(x, str) or '\x00' in x for x in argv):
             fail('arguments', 'Subprocess requires an argv list of strings, never a shell string')
         if not 0 < timeout <= 180:
@@ -201,11 +211,13 @@ class Runner:
         self.project.audit()
         iso = None
         if platforms.host() == 'linux':
+            if reads is not None:   # MERGEPREP-2: refuse before any probe or child (see sandbox_argv)
+                fail('sandbox_unavailable', 'Read-confined children (builder scripts) need the macOS sandbox; no child started')
             from . import linux_sandbox
             iso = self._linux_isolation or linux_sandbox.status()
             command = self.sandbox_argv(argv, _linux_iso=iso)
         else:
-            command = self.sandbox_argv(argv)
+            command = self.sandbox_argv(argv) if reads is None else self.sandbox_argv(argv, reads)
         env = self.environment()
         if platforms.is_windows():
             return _run_windows(command, cwd, env, timeout)

@@ -31,7 +31,7 @@ If part of the request cannot be made, make the closest Hermes64 game and say ex
 1. `create_flow vocab` (once): `python3 -B -m adventure_maker.create_flow vocab` prints the allowed brief words, the
    styles (packs), a brief template, the story fields and the mechanics table.
 2. `create_flow find`: `python3 -B -m adventure_maker.create_flow find "lighthouse, statue, train car"` says
-   `exists` / `partial` / `missing` for each thing. Use the library word in the brief.
+   `exists` / `partial` / `missing` for each thing. Use the library word in the brief; on `NEEDS DESIGN` keep the words.
 3. Write `brief.json` with its `story` block at an absolute path (rules below); pass that same path to `--brief`.
 4. `create_flow plan` (seconds, builds nothing): `python3 -B -m adventure_maker.create_flow plan --brief <path>`.
    Read `story:`: `will make`, `not as asked` (closest thing and fix) and `named in the prompt, used nowhere`. Fix
@@ -43,25 +43,23 @@ If part of the request cannot be made, make the closest Hermes64 game and say ex
    `report: <path>`. Start it with the terminal's `background: true` and wait for it: a tool call is cut off after
    7 minutes while the run goes on. Never start a second run while one runs (`status --name <slug>`). Before you
    reply, wait until every background run you started has ended (`process_manage`).
-6. Read that `CREATE-REPORT.md`: `In the game`, `Made new for this game`, `Not applied` (asked -> closest -> fix),
-   the gates (story check, bots, style, N64). Every game needs its own hero and at least three new pieces. When
-   `Made new` shows fewer, or a thing the brief names is only a library piece, make it yourself, at most twice per
-   thing, with the `Characters` and `Pieces made with the generators` lines under Advanced. Why: two different
-   prompts must not give the same rooms and cast, and the human should never have to ask for it.
+6. Read that `CREATE-REPORT.md`. First `## Needs design`: you design each thing it lists (`Pieces made with the
+   generators`, Advanced). Then `In the game`, `Made new for this game`, `Not applied` (asked -> closest -> fix), the
+   gates (story check, bots, style, N64). Every game needs its own hero and at least three new pieces. When `Made new`
+   shows fewer, or a thing the brief names is only a library piece, make it yourself, at most twice per thing, with
+   the `Characters` and `Pieces made with the generators` lines under Advanced. Why: two different prompts must not
+   give the same rooms and cast, and the human should never have to ask for it.
 7. To change the game, edit the brief and run step 5 again: every gate runs again. `hermes64_edit` makes one story
    edit and re-proves it, but only on a game whose story check says `proved`; a fight or a course makes it
    `conditional`, and `hermes64_edit` then answers `baseline_unproved`.
 8. `hermes64_check` (story proof; `action: "audit"` scores the style) and `hermes64_playtest` (bots: SOLID, PLAYABLE,
    ROUGH or BROKEN): only after a change made with tools. The run already did both.
-9. `hermes64_open` with `screenshots: true`: only when the human wants to see or play it.
-10. `hermes64_export` with `targets`: only when the human wants a build to share.
-11. Reply: what is in the game, what was made new for it, every `Not applied` row in plain words, the gate
-    numbers, and the pictures in `GAMES/<slug>/create/captures/`. Include the returned **How to play** block: the
-    exact Godot `Play:` command, `Default keys:` from the built game, and `Game folder:`. Do not replace it with an
-    offer to open the game. If play is not ready, copy that reason instead of inventing a command. Do not judge
-    looks; the human does.
-
-Setup trouble (Python, numpy, Godot): `hermes64_doctor` shows what is missing and what to do. Never install anything.
+9. `hermes64_open` with `screenshots: true` (to see or play it), `hermes64_export` with `targets` (a build to share):
+   only when the human wants that.
+10. Reply: what is in the game, what was made new for it (what you designed), every `Not applied` row in plain words,
+    the gate numbers, and the pictures in `GAMES/<slug>/create/captures/`. Include the returned **How to play** block:
+    the exact Godot `Play:` command, `Default keys:` and `Game folder:`, not an offer to open the game. If play is not
+    ready, copy that reason instead of inventing a command. Do not judge looks; the human does.
 
 ## Writing brief.json
 
@@ -72,12 +70,12 @@ up to 32, `setting.place` up to 80, the prompt up to 600. `setting.room_scale` (
 default; say large/open for bigger. Then the `story` block, sentence by sentence:
 - every named person -> `story.cast` (`name` as written; `role`: npc, companion, rival, suspect, captive, traitor,
   enemy, boss); the player -> `story.player.name`. A captive is the one you free; it follows you out.
-- every place -> `story.places` (`kind` outdoor/indoor, `about` = one line on entering). A title -> `story.title`.
-- the thing to get -> `story.item.name`. What happens, in order -> `story.beats` (`text`; `who`, `place`, `when`).
+- every place -> `story.places` (`kind` outdoor/indoor, `about` = one line on entering): one room each. Title -> `story.title`.
+- the thing to get -> `story.item` (`name`, `place`). What happens, in order -> `story.beats` (`text`; `who`, `place`, `when`).
 - goals -> `story.quests` with `done_when`: `beat N`, `talk NAME`, `item`, `fight`, `course`, `choice` or `end`.
-- a fight -> cast with role enemy/boss, `waves` like `[2, 2]` (at most 2 at once; a 3 is split and reported);
-  a race -> `course` with `seconds` and checkpoints;
-  an accusation or riddle -> `choice` (2-4 options, `right`); a locked door -> `door_lock: "beat 2"`.
+- a fight -> cast with role enemy/boss and their `place` (a fight in each); `waves` like `[2, 2]` (at most 2 at once:
+  a 3 is split and reported); keys or a locked gate -> `keys` `[{"name", "place", "opens": "<place>"}]`; a race ->
+  `course`; an accusation or riddle -> `choice` (2-4 options, `right`); a door opened by a beat -> `door_lock: "beat 2"`.
 - endings -> `win` (and `lose`); every gameplay word of the prompt -> `mechanics` ("no combat", "stealth", ...).
 
 ```json
@@ -90,16 +88,17 @@ default; say large/open for bigger. Then the `story` block, sentence by sentence
 
 ## When something refuses
 Every refusal is one line: `code: what happened. Next: what to do`. Do the Next part once.
-- `create_style_refused`: run again with the `--style <pack>` it names; tell the human the style differs.
+- Off-catalogue settings derive automatically; a note "built in the nearest style ...": say the style differs (`--style`).
 - Re-run after a brief edit: `... run --name <slug> --brief <path>` (without `--brief` it keeps the last brief).
   `status --name <slug>` shows each stage.
 - The same step failed twice: stop and tell the human what failed. Do not read or change plugin source.
+- Setup trouble (Python, numpy, Godot): `hermes64_doctor` shows what is missing and what to do. Never install anything.
 
 ## What the flow makes
-Two rooms (an outdoor entry and one inside room, medieval and western styles); more places become named story spots
-when a beat is set there. People: entry up to 4, inside up to 3. Collect the item inside, finish outside after the
-last beat. A fight guards the item; a course guards the finish; "no combat" removes fights. A puzzle is not made
-(closest: `door_lock` or `choice`). More rooms or dialogue trees: say so, unless the human asks (then see Advanced).
+Say yes and build it; never shrink the request. 3+ places: one room per place (64 is only a safety ceiling); people per
+room as its triangle budget allows; keys open the doors they name; each boss fights in its place, the last is the final
+boss; it ends where the last beat is. 0-2 places: two rooms. Moon, sea floor, jungle, desert, station: own derived rooms;
+others the nearest, said. Only the N64 art budget limits; anything left out is `Not applied`. No puzzle (closest: `keys`).
 
 ## Other ways to make a game
 - Quick starter from one sentence: `hermes64_demo` with `premise` (optional `style`).
@@ -115,9 +114,10 @@ Not for a plain "make me a game". Load the skill named first.
   `hermes64_module_check`, `hermes64_module_benchmark`; skill `hermes64:hermes64-gameplay-modules`.
 - Styles and moods: `hermes64_kits`, `hermes64_pack_create`, `hermes64_pack_select`, `hermes64_pack_validate`,
   `hermes64_pack_from_refs`. A missing prop: a recipe; skill `hermes64:hermes64-generators`.
-- Pieces made with the generators, in this order: run step 5 once (it creates `GAMES/<slug>`); `gen_tools author`
-  and `build --project GAMES/<slug>`; name `gen:<id>` in `GAMES/<slug>/create/candidates.json`; then
-  `run --name <slug> --redo assets`.
+- Pieces made with the generators: a `NEEDS DESIGN` record (a marked placeholder, never the thing): read it in
+  `GAMES/<slug>/create/needs_design.json` + the two files it names; write `assets/scripts/<id>.py` in the game; the
+  Characters tool with `action: "make"`, `recipe` (that path), `id`, `render: true`; open `preview.sheet_path`, fix,
+  make again (same id, 5 rounds); `run --name <slug>` swaps it in. Other ids: `gen:<id>` in `create/candidates.json`.
 - Box art: `hermes64_cover`; skill `hermes64:hermes64-cover`. Sharing (Hub): `hermes64_hub`; skill `hermes64:hermes64-hub`.
 - Proof and export details: `hermes64_replay`, `hermes64_benchmark`; skill `hermes64:hermes64-playtest-and-ship`.
 

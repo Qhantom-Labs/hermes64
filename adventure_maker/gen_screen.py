@@ -58,11 +58,11 @@ def variants(spec):
     return out
 
 
-def screen(recipe, pack, params=None, seed=0, forbidden_terms=(), sweep=True):
+def screen(recipe, pack, params=None, seed=0, forbidden_terms=(), sweep=True, project_dir=None):
     result = {'ok': False, 'errors': [], 'warnings': [], 'sweep': [], 'gates_scope':
               'closed recipe + parameter extremes + in-memory bible + mesh determinism; not frame/style approval'}
     try:
-        spec = spec_from_recipe(recipe, forbidden_terms)
+        spec = spec_from_recipe(recipe, forbidden_terms, project_dir)
         result['recipe_sha256'] = recipe_hash(recipe)
         bible = SB.load()
         cp = SB.check_pack(bible, pack.d)

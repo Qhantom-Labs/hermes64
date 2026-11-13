@@ -21,6 +21,12 @@ MAX_INSTANCES = 256
 MAX_VERTICES = 8192
 MAX_TRIANGLES = 4096
 MAX_DEPTH = 12
+# STYLEENGINE: with a `conform` block a recipe may build up to these raw sizes; conform then decimates it to its
+# max_tris (never above the class budget). Without the block the budgets above refuse, unchanged.
+RAW_TRIANGLES = 200000
+RAW_VERTICES = 400000
+MESH_BYTES = 16 * 1024 * 1024
+SHA = re.compile(r'^[0-9a-f]{64}$')
 ROLES = frozenset(CORE_ROLES) | frozenset(OPTIONAL_ROLES)
 ID = re.compile(r'^[a-z][a-z0-9_]{1,47}$')
 # This is a conservative input guard, not an IP/person detector. Callers add brief.ip_terms.
@@ -38,6 +44,9 @@ ARGS = {
     'torus': (('R', 'r', 'segs', 'sides'), ()),
     'card': (('w', 'h'), ()),
     'grid_surface': (('nu', 'nv', 'width', 'depth', 'heights'), ()),
+    # STYLEENGINE: a content-addressed project mesh, assets/meshes/<sha256>.obj (meshkit axes, `usemtl <pack role>`).
+    # Builder scripts, imports and decimate-to-fit pieces enter recipes this way; no path is ever accepted.
+    'mesh': (('sha256',), ('kind', 'node')),
 }
 
 
@@ -212,6 +221,21 @@ def _resolved_args(op, params):
     _keys(raw, req + optional, req, prim + ' args')
     args = {}
     for k, v in raw.items():
+        if k == 'kind':
+            if v not in ('solid', 'shell', 'card'):
+                refuse('mesh kind: solid, shell or card (the topology rules of the source node)')
+            args[k] = v
+            continue
+        if k == 'node':          # STYLEENGINE-2: a builder group's name -> node <id>_<name> (later animation/rigging)
+            if not isinstance(v, str) or not re.fullmatch(r'[a-z][a-z0-9_]{0,23}', v):
+                refuse('mesh node: 1-24 lowercase letters, digits, underscores')
+            args[k] = v
+            continue
+        if k == 'sha256':
+            if not isinstance(v, str) or not SHA.fullmatch(v):
+                refuse('mesh sha256: 64 lowercase hex characters (the project file assets/meshes/<sha256>.obj)')
+            args[k] = v
+            continue
         if k in ('outline', 'profile', 'path'):
             n = 3 if k == 'path' else 2
             if not isinstance(v, list) or not (2 if k != 'outline' else 3) <= len(v) <= 32:
@@ -285,10 +309,71 @@ def _parameters(doc):
     return props
 
 
+def _conform_block(doc):
+    """STYLEENGINE optional `conform`: {max_tris: 1-4096, soften: 0-4, dither: 0-1}. Transforms, never gates."""
+    c = doc.get('conform')
+    if c is None:
+        return {}
+    _keys(c, ('max_tris', 'soften', 'dither'), (), 'conform')
+    if 'max_tris' in c and (isinstance(c['max_tris'], bool) or not isinstance(c['max_tris'], int)
+                            or not 1 <= c['max_tris'] <= MAX_TRIANGLES):
+        refuse('conform max_tris: integer in [1,%d]' % MAX_TRIANGLES)
+    if 'soften' in c and (isinstance(c['soften'], bool) or not isinstance(c['soften'], int) or not 0 <= c['soften'] <= 4):
+        refuse('conform soften: integer in [0,4] (extra texture soften passes)')
+    if 'dither' in c and (isinstance(c['dither'], bool) or not isinstance(c['dither'], (int, float))
+                          or not 0 <= c['dither'] <= 1):
+        refuse('conform dither: number in [0,1]')
+    return c
+
+
+def load_mesh(project_dir, sha, role):
+    """STYLEENGINE: assets/meshes/<sha>.obj -> meshkit Mesh (v, f, usemtl <role>, s on/off). Hash-checked."""
+    if project_dir is None:
+        refuse('mesh primitive: only a project recipe can name a project mesh')
+    folder = Path(project_dir).resolve() / 'assets' / 'meshes'
+    path = folder / (sha + '.obj')
+    if folder.is_symlink() or path.is_symlink() or not path.is_file():
+        refuse('mesh primitive: project mesh not found: assets/meshes/%s.obj' % sha)
+    if path.stat().st_size > MESH_BYTES:
+        refuse('mesh primitive: mesh file larger than %d bytes' % MESH_BYTES)
+    raw = path.read_bytes()
+    if hashlib.sha256(raw).hexdigest() != sha:
+        refuse('mesh primitive: assets/meshes/%s.obj changed (hash mismatch)' % sha[:12])
+    m = K.Mesh()
+    cur, smooth, faces = role, False, 0
+    for line in raw.decode('utf-8').splitlines():
+        parts = line.split()
+        if not parts or parts[0].startswith('#'):
+            continue
+        if parts[0] == 'v' and len(parts) >= 4:
+            m.v.append(tuple(float(x) for x in parts[1:4]))
+        elif parts[0] == 'f' and len(parts) >= 4:
+            idx = [int(x.split('/')[0]) for x in parts[1:]]
+            if any(i == 0 for i in idx):
+                refuse('mesh primitive: OBJ indices are 1-based')
+            f = tuple((i - 1) if i > 0 else len(m.v) + i for i in idx)
+            if any(not 0 <= i < len(m.v) for i in f):
+                refuse('mesh primitive: face index out of range')
+            m.f.append(f); m.r.append(cur); m.s.append(smooth); m.uv.append(None)
+            faces += len(f) - 2
+            if faces > RAW_TRIANGLES:
+                refuse('mesh primitive: more than %d raw triangles' % RAW_TRIANGLES)
+        elif parts[0] == 'usemtl' and len(parts) == 2:
+            cur = parts[1] if parts[1] in ROLES else role
+        elif parts[0] == 's' and len(parts) == 2:
+            smooth = parts[1] not in ('off', '0')
+    if not m.f or len(m.v) > RAW_VERTICES:
+        refuse('mesh primitive: empty mesh or more than %d vertices' % RAW_VERTICES)
+    if not all(math.isfinite(c) and abs(c) <= 1000 for v in m.v for c in v):
+        refuse('mesh coordinates must be finite and bounded')
+    return m
+
+
 def validate_recipe(doc, forbidden_terms=()):
     canonical(doc)
-    _keys(doc, ('format', 'id', 'class', 'licence', 'parameters', 'operations', 'sockets'),
+    _keys(doc, ('format', 'id', 'class', 'licence', 'parameters', 'operations', 'sockets', 'conform'),
           ('format', 'id', 'class', 'licence', 'operations'))
+    _conform_block(doc)
     if doc['format'] != 'hermes64-recipe/1':
         refuse('recipe format must be hermes64-recipe/1')
     generic_id(doc['id'], forbidden_terms)
@@ -343,11 +428,13 @@ def validate_recipe(doc, forbidden_terms=()):
     return props
 
 
-def _primitive(op, params):
+def _primitive(op, params, project_dir=None):
     args = _resolved_args(op, params)
     prim = op['primitive']
     role = _role(op['role'], params)
     smooth = op.get('smooth', False)
+    if prim == 'mesh':
+        return load_mesh(project_dir, args['sha256'], role)
     if prim == 'grid_surface':
         nu, nv = args['nu'], args['nv']
         heights = args['heights']
@@ -364,8 +451,9 @@ def _primitive(op, params):
     return fn(**args)
 
 
-def build_recipe(doc, params=None, seed=0):
+def build_recipe(doc, params=None, seed=0, project_dir=None):
     props = validate_recipe(doc)
+    conform = doc.get('conform') or {}
     try:
         P = S.resolve(S.obj(props), [('params', params or {})], None)
     except S.ParamError as e:
@@ -374,9 +462,11 @@ def build_recipe(doc, params=None, seed=0):
         refuse('seed must be an integer in [0,2^31]')
     nodes, vertices, triangles = [], 0, 0
     limit = CORE_CLASSES[doc['class']]
+    # STYLEENGINE: a conform block lets the raw build exceed the budget; it is decimated below (never refused for it)
+    cap_t, cap_v = (RAW_TRIANGLES, RAW_VERTICES) if 'max_tris' in conform else (min(limit, MAX_TRIANGLES), MAX_VERTICES)
     for op in doc['operations']:
         # Primitive arguments are bounded before allocation, even at non-default parameters.
-        m = _primitive(op, P)
+        m = _primitive(op, P, project_dir)
         tr, repeat = op.get('transform', {}), op.get('repeat', {'count': 1})
         scale = _vec(tr.get('scale', [1, 1, 1]), P)
         if any(x <= 0 or x > 10 for x in scale):
@@ -396,14 +486,33 @@ def build_recipe(doc, params=None, seed=0):
                 parts.append(part.copy().scale(*dims))
             for part in parts:
                 vertices += len(part.v); triangles += part.tri_count()
-                if vertices > MAX_VERTICES or triangles > min(limit, MAX_TRIANGLES):
+                if vertices > cap_v or triangles > cap_t:
                     refuse('budget: %d triangles > %d or %d vertices > %d; simplify or reduce repeats/segments' %
                            (triangles, min(limit, MAX_TRIANGLES), vertices, MAX_VERTICES))
                 if not all(math.isfinite(c) and abs(c) <= 1000 for v in part.v for c in v):
                     refuse('mesh coordinates must be finite and bounded')
                 kind = 'card' if op['primitive'] == 'card' else ('shell' if op['primitive'] == 'grid_surface' else 'solid')
-                nodes.append(Node('%s_%03d' % (doc['id'], len(nodes)), part, kind=kind, double_sided=kind == 'card'))
-    asset = finalize(nodes, {'recipe_sha256': recipe_hash(doc), 'recipe_id': doc['id'], 'seed': seed})
+                name = '%s_%03d' % (doc['id'], len(nodes))
+                if op['primitive'] == 'mesh':          # STYLEENGINE: the source node's own kind (default solid)
+                    kind = op['args'].get('kind', 'solid') if isinstance(op['args'], dict) else 'solid'
+                    node = op['args'].get('node') if isinstance(op['args'], dict) else None
+                    if node and not any(n.name.endswith('%s_%s' % (doc['id'], node)) for n in nodes):
+                        name = '%s_%s' % (doc['id'], node)
+                nodes.append(Node(name, part, kind=kind, double_sided=kind == 'card'))
+    meta = {'recipe_sha256': recipe_hash(doc), 'recipe_id': doc['id'], 'seed': seed}
+    if conform:
+        from . import conform as C
+        target = min(int(conform.get('max_tris', limit)), limit, MAX_TRIANGLES)
+        stats = C.decimate_nodes(nodes, target)
+        tris, verts = sum(n.mesh.tri_count() for n in nodes), sum(len(n.mesh.v) for n in nodes)
+        if tris > min(limit, MAX_TRIANGLES) or verts > MAX_VERTICES:
+            refuse('budget: %d triangles > %d or %d vertices > %d after conform; simplify or reduce repeats/segments' %
+                   (tris, min(limit, MAX_TRIANGLES), verts, MAX_VERTICES))
+        meta['conform'] = {'max_tris': target, 'in_tris': stats['in_tris'], 'out_tris': stats['out_tris'],
+                           'decimated': bool(stats.get('changed'))}
+        if conform.get('soften') or 'dither' in conform:
+            meta['texture_conform'] = {'soften': int(conform.get('soften', 0)), 'dither': conform.get('dither')}
+    asset = finalize(nodes, meta)
     # Mesh centring/grounding applies to sockets too; sockets are authored in pre-finalize mesh space.
     # Match sfkit.socket: metadata positions are glTF +Y-up (x,z,-y), not meshkit +Z-up.
     delta = nodes[0].origin
@@ -415,9 +524,10 @@ def build_recipe(doc, params=None, seed=0):
     return asset
 
 
-def spec_from_recipe(doc, forbidden_terms=()):
+def spec_from_recipe(doc, forbidden_terms=(), project_dir=None):
     props = validate_recipe(doc, forbidden_terms)
     # Detach the closure from mutable caller data. Project data never enters REGISTRY.
     frozen = json.loads(canonical(doc))
+    pdir = None if project_dir is None else str(project_dir)
     return GenSpec('gen:' + frozen['id'], '1.0.0', frozen['class'], props,
-                   'Project JSON recipe ' + frozen['id'], lambda P, seed: build_recipe(frozen, P, seed))
+                   'Project JSON recipe ' + frozen['id'], lambda P, seed: build_recipe(frozen, P, seed, pdir))

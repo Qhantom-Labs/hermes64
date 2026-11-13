@@ -94,6 +94,28 @@ def _adjust(recipe, params, errors):
     return new, changes
 
 
+def _conform(recipe, built):
+    """STYLEENGINE: when parameters cannot fix a texture-energy or triangle-budget refusal, write a conform block
+    into the recipe (soften/dither measured by the child's plan; max_tris = the budget the error names) and build
+    again. The gates and budgets measure the result unchanged. Returns (recipe, changes)."""
+    reason = ' '.join(built.get('errors') or []).lower()
+    c = dict(recipe.get('conform') or {})
+    changes = []
+    plan = built.get('conform_hint') or {}
+    if any(w in reason for w in ('texture energy', 'hf energy', 'noisy texture')) and plan.get('conform') \
+            and plan['conform'] != c:
+        changes.append({'conform': plan['conform'], 'from': dict(c), 'why': 'texture energy %s -> %s (median)' % (
+            plan['before']['median_hf'], plan['after']['median_hf'])})
+        c = dict(plan['conform'])
+    m = re.search(r'budget: (\d+) triangles > (\d+)', reason)
+    if m and 'max_tris' not in c:
+        c['max_tris'] = int(m.group(2))
+        changes.append({'conform': {'max_tris': c['max_tris']}, 'why': 'decimate %s -> %s triangles' % m.groups()})
+    if not changes:
+        return recipe, []
+    return dict(recipe, conform=c), changes
+
+
 def _kit(root, matches, pack_id, seed, python_path=''):
     from core import pipeline
     registry = pipeline.load_generators()
@@ -149,6 +171,13 @@ def run(root, brief, gaps, pack_id, *, candidates=None, author=None, max_tries=4
                     if built['ok']:
                         break
                     P, changes = _adjust(recipe, P, built['errors'])
+                    if not changes:                       # STYLEENGINE: a transform instead of a drop
+                        recipe, changes = _conform(recipe, built)
+                        if changes:
+                            gen_tools.author(p.root, recipe, model=model, brief_line=want,
+                                             forbidden_terms=brief.get('ip_terms', ()), replace=True)
+                            row['recipe_sha256'] = gen_tools.recipe_hash(recipe)
+                            row['conform'] = recipe['conform']
                     if not changes:
                         break
                     attempt['next_changes'] = changes

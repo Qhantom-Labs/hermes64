@@ -12,6 +12,7 @@
   "licence":{"type":"string","pattern":"^[A-Za-z0-9.+-]{2,64}$"},
   "parameters":{"type":"object","maxProperties":16,"propertyNames":{"$ref":"#/$defs/id"},"additionalProperties":{"$ref":"#/$defs/parameter"}},
   "operations":{"type":"array","minItems":1,"maxItems":128,"items":{"$ref":"#/$defs/operation"}},
+  "conform":{"type":"object","additionalProperties":false,"description":"STYLEENGINE build-time transforms: decimate to max_tris (never above the class budget; the raw input may then exceed it up to the input ceiling), extra soften passes and dither for every textured role of this asset. The gates measure the result unchanged.","properties":{"max_tris":{"type":"integer","minimum":1,"maximum":4096},"soften":{"type":"integer","minimum":0,"maximum":4},"dither":{"type":"number","minimum":0,"maximum":1}}},
   "sockets":{"type":"array","maxItems":16,"items":{"type":"object","additionalProperties":false,"required":["id","position","facing"],"properties":{"id":{"$ref":"#/$defs/id"},"position":{"$ref":"#/$defs/vec3"},"facing":{"enum":["n","e","s","w","up","down"]}}}}
  },
  "$defs":{
@@ -29,7 +30,7 @@
   "transform":{"type":"object","additionalProperties":false,"properties":{"translate":{"$ref":"#/$defs/vec3"},"rotate":{"$ref":"#/$defs/vec3"},"scale":{"$ref":"#/$defs/vec3"}}},
   "operation":{
    "type":"object","additionalProperties":false,"required":["primitive","args","role"],
-   "properties":{"primitive":{"enum":["box","prism","lathe","loft","tube","blob","torus","card","grid_surface"]},"args":{"type":"object"},"role":{"$ref":"#/$defs/role"},"smooth":{"type":"boolean"},"transform":{"$ref":"#/$defs/transform"},"repeat":{"$ref":"#/$defs/repeat"},"mirror":{"enum":["x","y","z",null]}},
+   "properties":{"primitive":{"enum":["box","prism","lathe","loft","tube","blob","torus","card","grid_surface","mesh"]},"args":{"type":"object"},"role":{"$ref":"#/$defs/role"},"smooth":{"type":"boolean"},"transform":{"$ref":"#/$defs/transform"},"repeat":{"$ref":"#/$defs/repeat"},"mirror":{"enum":["x","y","z",null]}},
    "allOf":[
     {"if":{"properties":{"primitive":{"const":"box"}}},"then":{"properties":{"args":{"$ref":"#/$defs/box"}}}},
     {"if":{"properties":{"primitive":{"const":"prism"}}},"then":{"properties":{"args":{"$ref":"#/$defs/prism"}}}},
@@ -39,7 +40,8 @@
     {"if":{"properties":{"primitive":{"const":"blob"}}},"then":{"properties":{"args":{"$ref":"#/$defs/blob"}}}},
     {"if":{"properties":{"primitive":{"const":"torus"}}},"then":{"properties":{"args":{"$ref":"#/$defs/torus"}}}},
     {"if":{"properties":{"primitive":{"const":"card"}}},"then":{"properties":{"args":{"$ref":"#/$defs/card"}}}},
-    {"if":{"properties":{"primitive":{"const":"grid_surface"}}},"then":{"properties":{"args":{"$ref":"#/$defs/grid_surface"}}}}
+    {"if":{"properties":{"primitive":{"const":"grid_surface"}}},"then":{"properties":{"args":{"$ref":"#/$defs/grid_surface"}}}},
+    {"if":{"properties":{"primitive":{"const":"mesh"}}},"then":{"properties":{"args":{"$ref":"#/$defs/mesh"}}}}
    ]
   },
   "box":{"type":"object","additionalProperties":false,"required":["cx","cy","cz","sx","sy","sz"],"properties":{"cx":{"$ref":"#/$defs/scalar"},"cy":{"$ref":"#/$defs/scalar"},"cz":{"$ref":"#/$defs/scalar"},"sx":{"$ref":"#/$defs/scalar"},"sy":{"$ref":"#/$defs/scalar"},"sz":{"$ref":"#/$defs/scalar"}}},
@@ -50,6 +52,7 @@
   "blob":{"type":"object","additionalProperties":false,"required":["cx","cy","cz","rx","ry","rz"],"properties":{"cx":{"$ref":"#/$defs/scalar"},"cy":{"$ref":"#/$defs/scalar"},"cz":{"$ref":"#/$defs/scalar"},"rx":{"$ref":"#/$defs/scalar"},"ry":{"$ref":"#/$defs/scalar"},"rz":{"$ref":"#/$defs/scalar"},"segs":{"$ref":"#/$defs/scalar"},"rings":{"$ref":"#/$defs/scalar"},"squash_bottom":{"$ref":"#/$defs/scalar"}}},
   "torus":{"type":"object","additionalProperties":false,"required":["R","r","segs","sides"],"properties":{"R":{"$ref":"#/$defs/scalar"},"r":{"$ref":"#/$defs/scalar"},"segs":{"$ref":"#/$defs/scalar"},"sides":{"$ref":"#/$defs/scalar"}}},
   "card":{"type":"object","additionalProperties":false,"required":["w","h"],"properties":{"w":{"$ref":"#/$defs/scalar"},"h":{"$ref":"#/$defs/scalar"}}},
-  "grid_surface":{"type":"object","additionalProperties":false,"required":["nu","nv","width","depth","heights"],"properties":{"nu":{"$ref":"#/$defs/scalar"},"nv":{"$ref":"#/$defs/scalar"},"width":{"$ref":"#/$defs/scalar"},"depth":{"$ref":"#/$defs/scalar"},"heights":{"type":"array","maxItems":25,"items":{"type":"array","maxItems":25,"items":{"$ref":"#/$defs/scalar"}}}}}
+  "grid_surface":{"type":"object","additionalProperties":false,"required":["nu","nv","width","depth","heights"],"properties":{"nu":{"$ref":"#/$defs/scalar"},"nv":{"$ref":"#/$defs/scalar"},"width":{"$ref":"#/$defs/scalar"},"depth":{"$ref":"#/$defs/scalar"},"heights":{"type":"array","maxItems":25,"items":{"type":"array","maxItems":25,"items":{"$ref":"#/$defs/scalar"}}}}},
+  "mesh":{"type":"object","additionalProperties":false,"required":["sha256"],"description":"STYLEENGINE: a content-addressed project mesh assets/meshes/<sha256>.obj (v, f, usemtl <pack role>; meshkit axes); the hash is checked on every build; no paths.","properties":{"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"},"kind":{"enum":["solid","shell","card"]},"node":{"type":"string","pattern":"^[a-z][a-z0-9_]{0,23}$","description":"STYLEENGINE-2: a builder group name; the node is named <recipe id>_<node>"}}}
  }
 }

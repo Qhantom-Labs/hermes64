@@ -17,11 +17,12 @@ Exact receipts and progression: [PLATFORM-EVIDENCE.md](PLATFORM-EVIDENCE.md). Te
 | Unknown import refusal | Run 5 release_private; no share written | Local fixture coverage only | Message now lists internal visibility and missing owner-rights metadata; admission unchanged |
 | Private/cameo/rename/waiver-only refusal | NOT RUN natively | No new native claim | Maintainer fixtures, not private files; rig waiver is not rights |
 | Export macOS | Explicit non-Mac refusal | Explicit non-Mac refusal | Mac signing still needs Mac; no native Linux export target |
+| Long stories, style engine (needs design, previews), derived settings, creator64 characters | Not run natively (merged after run 5); previews take the private Xvfb route | Not run natively (merged after run 2) | Mac evidence only; builder scripts are macOS-only by design (recipe .json elsewhere); creator64 needs numpy + Pillow, no Blender |
 | Human game/browser/Studio/audio/save | Not covered | E14–E16 and console flash not covered | Tested by the owner: Not yet |
 
 ## Preservation and safety
 
-macOS retains development-Mac acceptance. Local acceptance measures the same 21-output Mac sandbox/environment/argv oracle and 15 legacy replays as PLATFORMS-4, with results in source-only `PLATFORMS5-RESULT.md`. The sole production change is refusal-message wording: it does not change the denial predicate or Hub. No runtime resources, thresholds, pins/catalog yaml, public manifest or sandbox policy are changed.
+macOS retains development-Mac acceptance. Local acceptance measures the same 21-output Mac sandbox/environment/argv oracle and 15 legacy replays as PLATFORMS-4, with results in source-only `PLATFORMS5-RESULT.md`. PLATFORMS-5's sole production change is refusal-message wording: it does not change the denial predicate or Hub, and it changes no runtime resources, thresholds, pins/catalog yaml, public manifest or sandbox policy. The long-story, style-engine and creator lines merged afterwards (source-only `MERGEPREP-RESULT.md`).
 
 Linux keeps private namespaces/no network/read-only system/home hidden/project-only host writes plus private tmpfs; without working bwrap, children fail closed unless an owner explicitly selects the weaker unconfined mode. That mode earns no sandboxed READY. Windows Job Object limits lifetime/resources but does not confine network/writes. Existing path/NTFS/reparse/hardlink protection remains.
 

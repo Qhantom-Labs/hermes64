@@ -85,7 +85,8 @@ def resolve_pack(root, pack_id):
 
 def screen_project(root, gid, pack_id, params=None, seed=0, *, sweep=True, forbidden_terms=()):
     p = workspace(root)
-    result = screen(load_recipe(p.root, gid), resolve_pack(p.root, pack_id), params, seed, forbidden_terms, sweep)
+    result = screen(load_recipe(p.root, gid), resolve_pack(p.root, pack_id), params, seed, forbidden_terms, sweep,
+                    project_dir=p.root)
     log_call(p, 'screen', id=gid, pack=pack_id, ok=result['ok'], errors=result['errors'])
     return result
 
@@ -101,6 +102,28 @@ def _texture_gate(pack, textures):
     return look.continuity(values, pack.d)
 
 
+def _energy_plan(pack, textures, doc):
+    """STYLEENGINE: the smallest extra soften/dither (conform.soften_plan) that makes the unchanged texture-energy
+    rules pass on exactly this build's role textures, measured with look.continuity itself; None when energy is not
+    what failed. The caller writes it into the recipe's conform block and builds again."""
+    from core import conform as C, look
+    from core.texgen import make_texture
+    prefix = 'tex_' + pack.id + '_'
+    roles = sorted(name[len(prefix):] if name.startswith(prefix) else name for name in textures)
+    base = (doc or {}).get('conform') or {}
+    k0, d0 = int(base.get('soften', 0)), base.get('dither')
+
+    def paint(role, k, d):
+        tex = C.conformed_texture_spec(pack.mat(role)['texture'], k0 + k, d if d is not None else d0)
+        return make_texture(tex, pack.pal, pack.seed_id, role)
+    plan = C.soften_plan(paint, roles, lambda imgs: look.continuity(imgs, pack.d), max_extra=4 - k0)
+    if plan and plan.get('soften') is not None:
+        plan['conform'] = dict(base, soften=k0 + plan['soften'])
+        if plan.get('dither') is not None:
+            plan['conform']['dither'] = plan['dither']
+    return plan
+
+
 def child(request_file):
     """Trusted child entry point. No recipe can supply code or select a module to load."""
     from core import pipeline
@@ -111,7 +134,7 @@ def child(request_file):
     doc = load_recipe(p.root, req['id']) if is_recipe else None
     pack = resolve_pack(p.root, req['pack'])
     if is_recipe:
-        gate = screen(doc, pack, req['params'], req['seed'], sweep=req['sweep'])
+        gate = screen(doc, pack, req['params'], req['seed'], sweep=req['sweep'], project_dir=p.root)
     else:
         from adventure_maker.gen_screen import SB
         spec = pipeline.load_generators().get(req['id'])
@@ -131,7 +154,7 @@ def child(request_file):
             out.parent.mkdir(parents=True, exist_ok=True)
             status, rep = pipeline.build_one(req['id'], req['pack'], params=req['params'], seed=req['seed'],
                 out=str(out), tex_dir=str(stage / ('textures%d' % i)), builder='python',
-                pack_path=pack.path, project_dir=p.root)
+                pack_path=pack.path, project_dir=p.root, **({'texture_conform': req['conform']} if req.get('conform') else {}))
             reports.append(dict(rep, status=status))
             if status != 'passed':
                 result['errors'].append(rep.get('error') or '; '.join(k + ': ' + v.get('reason', '')
@@ -152,6 +175,10 @@ def child(request_file):
             result['texture_fidelity'] = texture_gate
             if not texture_gate['ok']:
                 result['errors'] += texture_gate['errors']
+                # STYLEENGINE: the conform that would clear a texture-energy refusal (a hint, not a pass); a library
+                # piece's base conform is the one it was built with
+                result['conform_hint'] = _energy_plan(pack, a['textures_written'], doc if is_recipe else
+                                                      {'conform': req.get('conform') or {}})
             result.update(sha256=a['sha256'], tri_count=a['tri_count'], bytes=a['bytes'],
                           validation=a['validation'], meta=a['meta'])
         result['ok'] = not result['errors']
@@ -159,7 +186,7 @@ def child(request_file):
     return 0 if result['ok'] else 3
 
 
-def build(root, gid, pack_id, *, params=None, seed=0, sweep=True, python_path='') -> dict:
+def build(root, gid, pack_id, *, params=None, seed=0, sweep=True, python_path='', conform=None) -> dict:
     from adventure_maker.runner import Runner, locate
     p = workspace(root)
     is_recipe = isinstance(gid, str) and gid.startswith('gen:')
@@ -176,11 +203,15 @@ def build(root, gid, pack_id, *, params=None, seed=0, sweep=True, python_path=''
     source_hash = hashlib.sha256(b''.join(f.read_bytes() for f in sorted((ROOT / 'kits/core').glob('*.py')))).hexdigest()
     key_data = {'recipe': recipe_hash(doc) if is_recipe else gid, 'pack': hashlib.sha256(pack.raw_bytes).hexdigest(),
                 'params': params or {}, 'seed': seed, 'sweep': sweep, 'generator_sources': source_hash}
+    if conform and not is_recipe:   # STYLEENGINE: a library piece with a texture conform (recipes carry their own)
+        key_data['conform'] = conform = {k: conform[k] for k in ('soften', 'dither') if k in conform}
     key = hashlib.sha256(json.dumps(key_data, sort_keys=True).encode()).hexdigest()
     stage_rel = '.maker/local/gen/' + slug + '/' + key
     stage = p.path(stage_rel); stage.mkdir(parents=True, exist_ok=True)
     request = {'project': str(p.root), 'id': gid, 'pack': pack_id, 'params': params or {}, 'seed': seed,
                'stage': stage_rel, 'sweep': sweep}
+    if conform and not is_recipe:
+        request['conform'] = conform
     p.write_json(stage_rel + '/request.json', request)
     argv = [locate('python', python_path), '-I', '-B', str(Path(__file__).resolve()), '_build-child', str(stage / 'request.json')]
     runner = Runner(p)
